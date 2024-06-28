@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -32,11 +32,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-action',
-    templateUrl: './action.component.html',
-    styleUrls: ['./action.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, XivapiActionTooltipDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyRowPipe, NzPipesModule]
+  selector: 'app-action',
+  templateUrl: './action.component.html',
+  styleUrls: ['./action.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, XivapiActionTooltipDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyRowPipe, NzPipesModule]
 })
 export class ActionComponent extends TeamcraftPageComponent {
 
@@ -45,11 +45,21 @@ export class ActionComponent extends TeamcraftPageComponent {
     map(params => params.get('actionId')),
     switchMap((id) => {
       return this.lazyData.getRow('actionsDatabasePages', +id).pipe(
-        withLazyRow(this.lazyData, 'actionCdGroups', action => action.cdGroup),
-        map(([action, cdGroup]) => {
-          if (action.cdGroup && action.recast !== 25) {
-            (action as any).sharesCooldownWith = cdGroup;
+        // withLazyRow(this.lazyData, 'actionCdGroups', action => action.cdGroup),
+        switchMap((action) => {
+          if (action.cdGroup) {
+            return this.lazyData.getRow('actionCdGroups', action.cdGroup).pipe(
+              map(cdGroup => {
+                if (action.cdGroup && action.recast !== 25) {
+                  (action as any).sharesCooldownWith = cdGroup;
+                }
+                return action;
+              })
+            );
           }
+          return of(action);
+        }),
+        map(action => {
           (action as any).combos = Object.keys(actionCombos)
             .filter(key => actionCombos[key] === action.id)
             .map(key => +key);
@@ -86,8 +96,7 @@ export class ActionComponent extends TeamcraftPageComponent {
 
   constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, public settings: SettingsService,
-              seo: SeoService) {
+              router: Router, public settings: SettingsService, seo: SeoService) {
     super(seo);
 
     route.paramMap.pipe(

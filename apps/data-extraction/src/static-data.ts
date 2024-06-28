@@ -1,9 +1,9 @@
 export class StaticData {
   public static readonly CURRENCIES = {
     '1': 10309,
-    '2': 25199,
+    '2': 25199, // Unlimited Crafters' scrip
     '3': 10311,
-    '4': 25200,
+    '4': 25200, // Unlimited Gatherers' scrip
     '5': 10307,
     '6': 33913,
     '7': 33914,
@@ -32,7 +32,8 @@ export class StaticData {
 
   public static readonly TOMESTONES = {
     '1': 28, // Legacy (poetics)
-    '2': 44, // Current unlimited
-    '3': 45 // Current limited
+    // TODO 7.0 make sure this is accurate
+    '2': 46, // Current unlimited
+    '3': 47 // Current limited
   };
 }

@@ -276,14 +276,14 @@
     "id": 14,
     "icon": "/i/062000/062904.png",
     "patch": 2,
-    "en": "Bane of the Tribes",
-    "de": "Fluch der Wilden Stämme",
+    "en": "Banes of Society",
+    "de": "Fluch der Notorischen Monster",
     "ja": "大物狙い：蛮族",
-    "fr": "Traqueur des tribus",
+    "fr": "Traqueur de célébrités",
     "ko": "거물 사냥꾼: 야만족",
     "zh": "蛮族精英猎手",
     "description": {
-      "en": "Defeat the notorious beastmen Lozol Totoloq the Decapitator, Flamefist Ahlygg Roh, and 3rd Order Patriarch Zu Ga.",
+      "en": "Defeat the notorious Lozol Totoloq the Decapitator, Flamefist Ahlygg Roh, and 3rd Order Patriarch Zu Ga.",
       "de": "Die Notorischen Monster Lozol Totoloq der Köpfer, Flammenfaust Ahlygg Roh und Patriarch Zu Ga wurden besiegt.",
       "ja": "断頭のロゾル・トトロック、炎拳のアリグ・ロー、ペイトリアーク03 ズ・ガをすべて討伐する",
       "fr": "Vaincre Lozol Totoloq le décapitateur, Ahlygg Roh poing de feu et Zu Ga patriarche du 3e ordre.",
@@ -3476,7 +3476,7 @@
     "zh": "制革之巧匠",
     "description": {
       "en": "Obtain the first five “Hiding in Plain Sight” achievements.",
-      "de": "Alle „Abziehen am hellichten Tage“-Errungenschaften wurden freigespielt.",
+      "de": "Alle „Abziehen am helllichten Tage“-Errungenschaften wurden freigespielt.",
       "ja": "アチーブメント「革細工職人：素人」「革細工職人：見習」「革細工職人：徒弟」「革細工職人：下級」「革細工職人：上級」をすべて達成する",
       "fr": "Accomplir les cinq hauts faits de la série “Tourner autour des peaux”.",
       "ko": "업적 '숙련된 가죽공예가: 입문', '숙련된 가죽공예가: 견습', '숙련된 가죽공예가: 도제', '숙련된 가죽공예가: 하급', '숙련된 가죽공예가: 상급'을 모두 달성",
@@ -21466,7 +21466,7 @@
     "zh": "六族联盟",
     "description": {
       "en": "Complete the quest “Friends Forever.”",
-      "de": "Den Auftrag „Der Pakt der Stammesvölker“ abgeschlossen.",
+      "de": "Den Auftrag „Der Pakt der Freundesvölker“ abgeschlossen.",
       "ja": "クエスト「集うは我ら、信頼の絆」をコンプリートする",
       "fr": "Accomplir la quête “L'union des liens sacrés”.",
       "ko": "퀘스트 '믿음으로 하나 되어' 완료",
@@ -23065,7 +23065,7 @@
   },
   "1103": {
     "id": 1103,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 17,
     "en": "Triple Team I",
     "de": "Tripleduellant I",
@@ -23086,7 +23086,7 @@
   },
   "1104": {
     "id": 1104,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 17,
     "en": "Triple Team II",
     "de": "Tripleduellant II",
@@ -27206,7 +27206,7 @@
     "icon": "/i/035000/035404.png",
     "patch": 19,
     "en": "Hiding in Plain Sight: Adept",
-    "de": "Abziehen am hellichten Tage: Legende",
+    "de": "Abziehen am helllichten Tage: Legende",
     "ja": "革細工職人：名取",
     "fr": "Tourner autour des peaux : Expert",
     "ko": "숙련된 가죽공예가: 명인",
@@ -28623,7 +28623,7 @@
   },
   "1373": {
     "id": 1373,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 19,
     "en": "Triple Team III",
     "de": "Tripleduellant III",
@@ -31055,7 +31055,7 @@
   },
   "1489": {
     "id": 1489,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 24,
     "en": "Triple Team IV",
     "de": "Tripleduellant IV",
@@ -34058,7 +34058,7 @@
   },
   "1632": {
     "id": 1632,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 30,
     "en": "Triple Team V",
     "de": "Tripleduellant V",
@@ -38653,7 +38653,7 @@
     "icon": "/i/035000/035404.png",
     "patch": 36,
     "en": "Hiding in Plain Sight: Veteran",
-    "de": "Abziehen am hellichten Tage: Koryphäe",
+    "de": "Abziehen am helllichten Tage: Koryphäe",
     "ja": "革細工職人：目録",
     "fr": "Tourner autour des peaux : Maître",
     "ko": "숙련된 가죽공예가: 노장",
@@ -39831,7 +39831,7 @@
   },
   "1909": {
     "id": 1909,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 36,
     "en": "Triple Team VI",
     "de": "Tripleduellant VI",
@@ -40764,10 +40764,10 @@
     "ko": "우리들의 나이트: 1단계",
     "zh": "为人民服务的骑士1",
     "description": {
-      "en": "Complete 50 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
-      "de": "50 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をナイトで50回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 50 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 50 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
+      "de": "50 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をナイトで50回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 50 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "나이트로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 50회 완료\n※ 전사/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计50次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40785,10 +40785,10 @@
     "ko": "우리들의 나이트: 2단계",
     "zh": "为人民服务的骑士2",
     "description": {
-      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
-      "de": "100 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をナイトで100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
+      "de": "100 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をナイトで100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "나이트로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 100회 완료\n※ 전사/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计100次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40806,10 +40806,10 @@
     "ko": "우리들의 나이트: 3단계",
     "zh": "为人民服务的骑士3",
     "description": {
-      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
-      "de": "300 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をナイトで300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
+      "de": "300 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をナイトで300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "나이트로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 300회 완료\n※ 전사/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计300次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40827,10 +40827,10 @@
     "ko": "우리들의 전사: 1단계",
     "zh": "为人民服务的战士1",
     "description": {
-      "en": "Complete 50 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
-      "de": "50 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を戦士で50回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 50 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 50 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
+      "de": "50 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を戦士で50回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 50 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "전사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 50회 완료\n※ 나이트/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计50次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40848,10 +40848,10 @@
     "ko": "우리들의 전사: 2단계",
     "zh": "为人民服务的战士2",
     "description": {
-      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
-      "de": "100 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を戦士で100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
+      "de": "100 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を戦士で100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "전사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 100회 완료\n※ 나이트/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计100次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40869,10 +40869,10 @@
     "ko": "우리들의 전사: 3단계",
     "zh": "为人民服务的战士3",
     "description": {
-      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
-      "de": "300 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を戦士で300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
+      "de": "300 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を戦士で300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "전사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 300회 완료\n※ 나이트/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计300次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40890,10 +40890,10 @@
     "ko": "우리들의 암흑기사: 1단계",
     "zh": "为人民服务的暗黑骑士1",
     "description": {
-      "en": "Complete 50 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
-      "de": "50 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を暗黒騎士で50回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 50 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 50 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
+      "de": "50 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を暗黒騎士で50回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 50 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "암흑기사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 50회 완료\n※ 나이트/전사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用暗黑骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计50次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40911,10 +40911,10 @@
     "ko": "우리들의 암흑기사: 2단계",
     "zh": "为人民服务的暗黑骑士2",
     "description": {
-      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
-      "de": "100 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を暗黒騎士で100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
+      "de": "100 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を暗黒騎士で100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "암흑기사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 100회 완료\n※ 나이트/전사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用暗黑骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计100次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -40932,10 +40932,10 @@
     "ko": "우리들의 암흑기사: 3단계",
     "zh": "为人民服务的暗黑骑士3",
     "description": {
-      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
-      "de": "300 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を暗黒騎士で300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
+      "de": "300 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を暗黒騎士で300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "암흑기사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 300회 완료\n※ 나이트/전사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用暗黑骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计300次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -41691,7 +41691,7 @@
       "en": "Attain rank 3 reputation (friendly) with the Divine Circle.",
       "de": "Ein freundliches Verhältnis zu den Blaupanzern erworben.",
       "ja": "コウジン族「碧甲羅」の友好関係をランク3「友好」にする",
-      "fr": "Atteindre le rang 3 (Ami) de réputation auprès de la tribu des Verts.",
+      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des Verts.",
       "ko": "코우진족 '푸른등 보물찾기단'의 우호 관계 3단계 '우호' 달성",
       "zh": "与甲人族的“碧玉寻宝众”之间的关系程度到达3级“友好”。"
     },
@@ -41712,7 +41712,7 @@
       "en": "Attain rank 4 reputation (trusted) with the Divine Circle.",
       "de": "Ein vertrautes Verhältnis zu den Blaupanzern erworben.",
       "ja": "コウジン族「碧甲羅」の友好関係をランク4「信頼」にする",
-      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès de la tribu des Verts.",
+      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des Verts.",
       "ko": "코우진족 '푸른등 보물찾기단'의 우호 관계 4단계 '신뢰' 달성",
       "zh": "与甲人族的“碧玉寻宝众”之间的关系程度到达4级“信赖”。"
     },
@@ -41733,7 +41733,7 @@
       "en": "Attain rank 6 reputation (honored) with the Divine Circle.",
       "de": "Ein geachtetes Verhältnis zu den Blaupanzern erworben.",
       "ja": "コウジン族「碧甲羅」の友好関係をランク6「名誉」にする",
-      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès de la tribu des Verts.",
+      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des Verts.",
       "ko": "코우진족 '푸른등 보물찾기단'의 우호 관계 6단계 '명예' 달성",
       "zh": "与甲人族的“碧玉寻宝众”之间的关系程度到达6级“名誉”。"
     },
@@ -41754,7 +41754,7 @@
       "en": "Attain rank 7 reputation (sworn) with the Divine Circle.",
       "de": "Ein solidarisches Verhältnis zu den Blaupanzern erworben.",
       "ja": "コウジン族「碧甲羅」の友好関係をランク7「誓約」にする",
-      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès de la tribu des Verts.",
+      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des Verts.",
       "ko": "코우진족 '푸른등 보물찾기단'의 우호 관계 7단계 '서약' 달성",
       "zh": "与甲人族的“碧玉寻宝众”之间的关系程度到达7级“誓约”。"
     },
@@ -47701,7 +47701,7 @@
     "icon": "/i/035000/035404.png",
     "patch": 58,
     "en": "Hiding in Plain Sight: Master",
-    "de": "Abziehen am hellichten Tage: Mythos",
+    "de": "Abziehen am helllichten Tage: Mythos",
     "ja": "革細工職人：印可",
     "fr": "Tourner autour des peaux : Génie",
     "ko": "숙련된 가죽공예가: 인가",
@@ -49483,7 +49483,7 @@
   },
   "2369": {
     "id": 2369,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 58,
     "en": "Triple Team VII",
     "de": "Tripleduellant VII",
@@ -49870,10 +49870,10 @@
     "ko": "우리들의 나이트: 4단계",
     "zh": "为人民服务的骑士4",
     "description": {
-      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
-      "de": "500 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をナイトで500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
+      "de": "500 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をナイトで500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "나이트로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 500회 완료\n※ 전사/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计500次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -49891,10 +49891,10 @@
     "ko": "우리들의 전사: 4단계",
     "zh": "为人民服务的战士4",
     "description": {
-      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
-      "de": "500 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を戦士で500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
+      "de": "500 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を戦士で500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "전사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 500회 완료\n※ 나이트/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计500次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -49912,10 +49912,10 @@
     "ko": "우리들의 암흑기사: 4단계",
     "zh": "为人民服务的暗黑骑士4",
     "description": {
-      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
-      "de": "500 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を暗黒騎士で500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
+      "de": "500 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を暗黒騎士で500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "암흑기사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 500회 완료\n※ 나이트/전사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用暗黑骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计500次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -49933,10 +49933,10 @@
     "ko": "우리들의 건브레이커: 1단계",
     "zh": "为人民服务的绝枪战士1",
     "description": {
-      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
-      "de": "100 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をガンブレイカーで100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 100 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
+      "de": "100 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をガンブレイカーで100回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 100 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "건브레이커로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 100회 완료\n※ 나이트/전사/암흑기사로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用绝枪战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计100次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -49954,10 +49954,10 @@
     "ko": "우리들의 건브레이커: 2단계",
     "zh": "为人民服务的绝枪战士2",
     "description": {
-      "en": "Complete 200 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
-      "de": "200 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をガンブレイカーで200回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 200 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 200 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
+      "de": "200 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をガンブレイカーで200回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 200 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "건브레이커로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 200회 완료\n※ 나이트/전사/암흑기사로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用绝枪战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计200次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -49975,10 +49975,10 @@
     "ko": "우리들의 건브레이커: 3단계",
     "zh": "为人民服务的绝枪战士3",
     "description": {
-      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
-      "de": "300 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をガンブレイカーで300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 300 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
+      "de": "300 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をガンブレイカーで300回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 300 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "건브레이커로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 300회 완료\n※ 나이트/전사/암흑기사로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用绝枪战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计300次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -49996,10 +49996,10 @@
     "ko": "우리들의 건브레이커: 4단계",
     "zh": "为人民服务的绝枪战士4",
     "description": {
-      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
-      "de": "500 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をガンブレイカーで500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 500 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
+      "de": "500 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をガンブレイカーで500回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 500 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "건브레이커로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 500회 완료\n※ 나이트/전사/암흑기사로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用绝枪战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计500次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -58497,7 +58497,7 @@
   },
   "2799": {
     "id": 2799,
-    "icon": "/i/003000/003102.png",
+    "icon": "/i/003000/003116.png",
     "patch": 72,
     "en": "Open and Shut I",
     "de": "Turnierchampion I",
@@ -58518,7 +58518,7 @@
   },
   "2800": {
     "id": 2800,
-    "icon": "/i/003000/003102.png",
+    "icon": "/i/003000/003116.png",
     "patch": 72,
     "en": "Open and Shut II",
     "de": "Turnierchampion II",
@@ -61293,7 +61293,7 @@
     "icon": "/i/035000/035404.png",
     "patch": 77,
     "en": "Hiding in Plain Sight: Genius",
-    "de": "Abziehen am hellichten Tage: Genie",
+    "de": "Abziehen am helllichten Tage: Genie",
     "ja": "革細工職人：高弟",
     "fr": "Tourner autour des peaux : Prodige",
     "ko": "숙련된 가죽공예가: 고제",
@@ -62140,7 +62140,7 @@
     "zh": "战友的希望",
     "description": {
       "en": "Achieve trust level 90 with the avatars for Alphinaud, Alisaie, Thancred, Urianger, Y'shtola, G'raha Tia, and Estinien.",
-      "de": "In „Seite an Seite“ die Charaktere Alphinaud, Alisaie, Thancred, Urianger, G'raha Tia und Estinien auf Stufe 90 hochgestuft.",
+      "de": "In „Seite an Seite“ die Charaktere Alphinaud, Alisaie, Thancred, Urianger, Y'shtola, G'raha Tia und Estinien auf Stufe 90 hochgestuft.",
       "ja": "フェイス「アルフィノ」、「アリゼー」、「サンクレッド」、「ウリエンジェ」、「ヤ・シュトラ」、「グ・ラハ・ティア」、「エスティニアン」のすべてのレベルが90に到達する",
       "fr": "Monter au niveau 90 les alter ego d'Alphinaud, d'Alisaie, de Thancred, d'Urianger, de Y'shtola, de G'raha Tia et d'Estinien.",
       "ko": "알피노, 알리제, 산크레드, 위리앙제, 야슈톨라, 그라하 티아, 에스티니앙 모두 트러스트 레벨 90 달성",
@@ -62517,10 +62517,10 @@
     "ko": "우리들의 나이트: 5단계",
     "zh": "为人民服务的骑士5",
     "description": {
-      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
-      "de": "700 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をナイトで700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
+      "de": "700 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をナイトで700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "나이트로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 700회 완료\n※ 전사/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计700次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -62538,10 +62538,10 @@
     "ko": "우리들의 전사: 5단계",
     "zh": "为人民服务的战士5",
     "description": {
-      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
-      "de": "700 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Stufe 50/60/70/80 oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を戦士で700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
+      "de": "700 Dungeons/Raids (ab Stufe 61), Prüfungen (ab Stufe 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufensteigerung als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を戦士で700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "전사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 700회 완료\n※ 나이트/암흑기사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计700次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -62559,10 +62559,10 @@
     "ko": "우리들의 암흑기사: 5단계",
     "zh": "为人民服务的暗黑骑士5",
     "description": {
-      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
-      "de": "700 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」を暗黒騎士で700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
+      "de": "700 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を暗黒騎士で700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "암흑기사로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 700회 완료\n※ 나이트/전사/건브레이커로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用暗黑骑士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计700次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -62580,10 +62580,10 @@
     "ko": "우리들의 건브레이커: 5단계",
     "zh": "为人民服务的绝枪战士5",
     "description": {
-      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, level 50/60/70/80 duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
-      "de": "700 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. 50/60/70/80 oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
-      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、レベル50・60・70・80ダンジョン）」をガンブレイカーで700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
-      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons nv 50/60/70/80” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
+      "en": "Complete 700 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
+      "de": "700 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をガンブレイカーで700回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 700 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte.",
       "ko": "건브레이커로 일반 던전(레벨 61 이상), 극 토벌전(레벨 61 이상), 환 토벌전, 무작위 레벨링, 무작위 레벨 50/60/70/80 던전을 총 700회 완료\n※ 나이트/전사/암흑기사로 무작위 임무를 완료한 날은 합산되지 않습니다.",
       "zh": "使用绝枪战士挑战“副本迷宫（61级以上）”“歼殛战（61级以上）”“幻巧战”“随机任务：练级”“随机任务：50级/60级/70级/80级”共计700次。\n※随机任务一天只可以计算一个防护职业，且只能计算一次。"
     },
@@ -63159,7 +63159,7 @@
   },
   "3021": {
     "id": 3021,
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "patch": 77,
     "en": "Triple Team VIII",
     "de": "Tripleduellant VIII",
@@ -64974,7 +64974,7 @@
     "ko": "바르바리차를 쓰러뜨린 자",
     "zh": "煞风的降妖者",
     "description": {
-      "en": "Defeat Barbariccia in Storm's Crown (Extreme).",
+      "en": "Defeat Barbariccia on Storm's Crown (Extreme).",
       "de": "Barbarizia in Eschatos - Barbarizia bezwungen.",
       "ja": "極バルバリシア討滅戦でバルバリシアを討伐する",
       "fr": "Vaincre Barbariccia dans le défi “La Toison des tempêtes (extrême)”.",
@@ -65973,7 +65973,7 @@
   },
   "3155": {
     "id": 3155,
-    "icon": "/i/002000/002643.png",
+    "icon": "/i/000000/000317.png",
     "patch": 85,
     "en": "The Bloodsands Below",
     "de": "Auf blutigen Sanden",
@@ -65994,7 +65994,7 @@
   },
   "3156": {
     "id": 3156,
-    "icon": "/i/002000/002643.png",
+    "icon": "/i/000000/000317.png",
     "patch": 85,
     "en": "The Savage Sands Below",
     "de": "Auf epischen Sanden",
@@ -68074,7 +68074,7 @@
     "en": "No Rest (Cycle) for the Wicked III",
     "de": "Müßiggang ist aller Laster Anfang III",
     "ja": "ぼうえきマスター：ランク3",
-    "fr": "Commerçant né II",
+    "fr": "Commerçant né III",
     "ko": "무역 통달: 3단계",
     "zh": "贸易大师3",
     "description": {
@@ -71704,5 +71704,2606 @@
     },
     "item": 0,
     "title": 723
+  },
+  "3429": {
+    "id": 3429,
+    "icon": "/i/030000/030408.png",
+    "patch": 95,
+    "en": "Stick Them with the Pointy End X",
+    "de": "Nur dem Schwert kannst du vertrauen X",
+    "ja": "剣術士：レベル100",
+    "fr": "Gladiateur mythique",
+    "description": {
+      "en": "Achieve gladiator level 100.",
+      "de": "Erfahrungsstufe 100 als Gladiator wurde erreicht.",
+      "ja": "剣術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe gladiateur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3430": {
+    "id": 3430,
+    "icon": "/i/031000/031004.png",
+    "patch": 95,
+    "en": "The Sweet Science X",
+    "de": "Zwei Fäuste für Eorzea X",
+    "ja": "格闘士：レベル100",
+    "fr": "Pugiliste mythique",
+    "description": {
+      "en": "Achieve pugilist level 100.",
+      "de": "Erfahrungsstufe 100 als Faustkämpfer wurde erreicht.",
+      "ja": "格闘士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec avec la classe pugiliste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3431": {
+    "id": 3431,
+    "icon": "/i/031000/031409.png",
+    "patch": 95,
+    "en": "An Axe to Grind X",
+    "de": "Das Kriegsbeil ausgraben X",
+    "ja": "斧術士：レベル100",
+    "fr": "Maraudeur mythique",
+    "description": {
+      "en": "Achieve marauder level 100.",
+      "de": "Erfahrungsstufe 100 als Marodeur  wurde erreicht.",
+      "ja": "斧術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe maraudeur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3432": {
+    "id": 3432,
+    "icon": "/i/031000/031816.png",
+    "patch": 95,
+    "en": "Strong Lance Arm X",
+    "de": "Von der Pike auf X",
+    "ja": "槍術士：レベル100",
+    "fr": "Maître d'hast mythique",
+    "description": {
+      "en": "Achieve lancer level 100.",
+      "de": "Erfahrungsstufe 100 als Pikenier wurde erreicht.",
+      "ja": "槍術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe maître d'hast."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3433": {
+    "id": 3433,
+    "icon": "/i/032000/032204.png",
+    "patch": 95,
+    "en": "Just Talkin' 'bout Shafts X",
+    "de": "Den Bogen raus X",
+    "ja": "弓術士：レベル100",
+    "fr": "Archer mythique",
+    "description": {
+      "en": "Achieve archer level 100.",
+      "de": "Erfahrungsstufe 100 als Waldläufer wurde erreicht.",
+      "ja": "弓術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe archer."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3434": {
+    "id": 3434,
+    "icon": "/i/032000/032611.png",
+    "patch": 95,
+    "en": "I Got the Magic Stick X",
+    "de": "DAS ist mein Zauberstab X",
+    "ja": "幻術士：レベル100",
+    "fr": "Élémentaliste mythique",
+    "description": {
+      "en": "Achieve conjurer level 100.",
+      "de": "Erfahrungsstufe 100 als Druide wurde erreicht.",
+      "ja": "幻術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe élémentaliste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3435": {
+    "id": 3435,
+    "icon": "/i/032000/032806.png",
+    "patch": 95,
+    "en": "Bring Out Your Dead X",
+    "de": "Bringt eure Toten raus X",
+    "ja": "呪術士：レベル100",
+    "fr": "Occultiste mythique",
+    "description": {
+      "en": "Achieve thaumaturge level 100.",
+      "de": "Erfahrungsstufe 100 als Thaumaturg wurde erreicht.",
+      "ja": "呪術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe occultiste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3436": {
+    "id": 3436,
+    "icon": "/i/033000/033401.png",
+    "patch": 95,
+    "en": "Through the Gate X",
+    "de": "Durch die Tore X",
+    "ja": "巴術士：レベル100",
+    "fr": "Arcaniste mythique",
+    "description": {
+      "en": "Achieve arcanist level 100.",
+      "de": "Erfahrungsstufe 100 als Hermetiker wurde erreicht.",
+      "ja": "巴術士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe arcaniste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3437": {
+    "id": 3437,
+    "icon": "/i/033000/033801.png",
+    "patch": 95,
+    "en": "Come on, Rogue X",
+    "de": "Auf leisen Sohlen X",
+    "ja": "双剣士：レベル100",
+    "fr": "Surineur mythique",
+    "description": {
+      "en": "Achieve rogue level 100.",
+      "de": "Erfahrungsstufe 100 als Schurke wurde erreicht.",
+      "ja": "双剣士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe surineur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3438": {
+    "id": 3438,
+    "icon": "/i/034000/034203.png",
+    "patch": 95,
+    "en": "Are You Afraid of the Dark? VIII",
+    "de": "Im Dunkeln lässt sich gut munkeln VIII",
+    "ja": "暗黒騎士：レベル100",
+    "fr": "Chevalier noir mythique",
+    "description": {
+      "en": "Achieve dark knight level 100.",
+      "de": "Erfahrungsstufe 100 als Dunkelritter wurde erreicht.",
+      "ja": "暗黒騎士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job chevalier noir."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3439": {
+    "id": 3439,
+    "icon": "/i/034000/034607.png",
+    "patch": 95,
+    "en": "Mean Machine VIII",
+    "de": "Läuft wie geschmiert VIII",
+    "ja": "機工士：レベル100",
+    "fr": "Machiniste mythique",
+    "description": {
+      "en": "Achieve machinist level 100.",
+      "de": "Erfahrungsstufe 100 als Maschinist wurde erreicht.",
+      "ja": "機工士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job machiniste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3440": {
+    "id": 3440,
+    "icon": "/i/034000/034808.png",
+    "patch": 95,
+    "en": "Starstruck VIII",
+    "de": "Sieg der Sterne VIII",
+    "ja": "占星術師：レベル100",
+    "fr": "Astromancien mythique",
+    "description": {
+      "en": "Achieve astrologian level 100.",
+      "de": "Erfahrungsstufe 100 als Astrologe wurde erreicht.",
+      "ja": "占星術師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job astromancien."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3441": {
+    "id": 3441,
+    "icon": "/i/036000/036747.png",
+    "patch": 95,
+    "en": "How Deep the Rabbit Hole Goes VI",
+    "de": "Alarmstufe Rot VI",
+    "ja": "赤魔道士：レベル100",
+    "fr": "Mage rouge mythique",
+    "description": {
+      "en": "Achieve red mage level 100.",
+      "de": "Erfahrungsstufe 100 als Rotmagier wurde erreicht.",
+      "ja": "赤魔道士のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job mage rouge."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3442": {
+    "id": 3442,
+    "icon": "/i/036000/036427.png",
+    "patch": 95,
+    "en": "Bushido Blade VI",
+    "de": "Bushido - Weg des Samurai VI",
+    "ja": "侍：レベル100",
+    "fr": "Samouraï mythique",
+    "description": {
+      "en": "Achieve samurai level 100.",
+      "de": "Erfahrungsstufe 100 als Samurai wurde erreicht.",
+      "ja": "侍のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job samouraï."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3443": {
+    "id": 3443,
+    "icon": "/i/036000/036005.png",
+    "patch": 95,
+    "en": "More Complex than You Think IV",
+    "de": "Vielleicht bin ich ein Löwe IV",
+    "ja": "ガンブレイカー：レベル100",
+    "fr": "Pistosabreur mythique",
+    "description": {
+      "en": "Achieve gunbreaker level 100.",
+      "de": "Erfahrungsstufe 100 als Revolverklinge wurde erreicht.",
+      "ja": "ガンブレイカーのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job pistosabreur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3444": {
+    "id": 3444,
+    "icon": "/i/036000/036205.png",
+    "patch": 95,
+    "en": "We Got the Beat IV",
+    "de": "Tanz auf der Klinge IV",
+    "ja": "踊り子：レベル100",
+    "fr": "Danseur mythique",
+    "description": {
+      "en": "Achieve dancer level 100.",
+      "de": "Erfahrungsstufe 100 als Tänzer wurde erreicht.",
+      "ja": "踊り子のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job danseur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3445": {
+    "id": 3445,
+    "icon": "/i/037000/037231.png",
+    "patch": 95,
+    "en": "Perchance to Dream III",
+    "de": "Pakt mit der Dunkelheit III",
+    "ja": "リーパー：レベル100",
+    "fr": "Faucheur mythique",
+    "description": {
+      "en": "Achieve reaper level 100.",
+      "de": "Erfahrungsstufe 100 als Schnitter wurde erreicht.",
+      "ja": "リーパーのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job faucheur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3446": {
+    "id": 3446,
+    "icon": "/i/037000/037030.png",
+    "patch": 95,
+    "en": "Do No Harm III",
+    "de": "Uraltes Wissen III",
+    "ja": "賢者：レベル100",
+    "fr": "Sage mythique",
+    "description": {
+      "en": "Achieve sage level 100.",
+      "de": "Erfahrungsstufe 100 als Weiser wurde erreicht.",
+      "ja": "賢者のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job sage."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3447": {
+    "id": 3447,
+    "icon": "/i/037000/037435.png",
+    "patch": 95,
+    "en": "Viper Way Your Tears I",
+    "de": "Und die Viper hat zwei Zähne I",
+    "ja": "ヴァイパー：レベル90",
+    "fr": "Rôdeur vipère légendaire",
+    "description": {
+      "en": "Achieve viper level 90.",
+      "de": "Erfahrungsstufe 90 als Viper wurde erreicht.",
+      "ja": "ヴァイパーのレベルが90に到達する",
+      "fr": "Atteindre le niveau 90 avec le job rôdeur vipère."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3448": {
+    "id": 3448,
+    "icon": "/i/037000/037435.png",
+    "patch": 95,
+    "en": "Viper Way Your Tears II",
+    "de": "Und die Viper hat zwei Zähne II",
+    "ja": "ヴァイパー：レベル100",
+    "fr": "Rôdeur vipère mythique",
+    "description": {
+      "en": "Achieve viper level 100.",
+      "de": "Erfahrungsstufe 100 als Viper wurde erreicht.",
+      "ja": "ヴァイパーのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job rôdeur vipère."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3449": {
+    "id": 3449,
+    "icon": "/i/037000/037640.png",
+    "patch": 95,
+    "en": "Let Me Paint You a Picture I",
+    "de": "Brotlose Kunst I",
+    "ja": "ピクトマンサー：レベル90",
+    "fr": "Pictomancien légendaire",
+    "description": {
+      "en": "Achieve pictomancer level 90.",
+      "de": "Erfahrungsstufe 90 als Piktomant wurde erreicht.",
+      "ja": "ピクトマンサーのレベルが90に到達する",
+      "fr": "Atteindre le niveau 90 avec le job pictomancien."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3450": {
+    "id": 3450,
+    "icon": "/i/037000/037640.png",
+    "patch": 95,
+    "en": "Let Me Paint You a Picture II",
+    "de": "Brotlose Kunst II",
+    "ja": "ピクトマンサー：レベル100",
+    "fr": "Pictomancien mythique",
+    "description": {
+      "en": "Achieve pictomancer level 100.",
+      "de": "Erfahrungsstufe 100 als Piktomant wurde erreicht.",
+      "ja": "ピクトマンサーのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec le job pictomancien."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3451": {
+    "id": 3451,
+    "icon": "/i/035000/035001.png",
+    "patch": 95,
+    "en": "Knock on Wood X",
+    "de": "Aus anderem Holz X",
+    "ja": "木工師：レベル100",
+    "fr": "Menuisier mythique",
+    "description": {
+      "en": "Achieve carpenter level 100.",
+      "de": "Erfahrungsstufe 100 als Zimmerer wurde erreicht.",
+      "ja": "木工師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe menuisier."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3452": {
+    "id": 3452,
+    "icon": "/i/035000/035106.png",
+    "patch": 95,
+    "en": "Temper, Temper X",
+    "de": "Seines Glückes Schmied X",
+    "ja": "鍛冶師：レベル100",
+    "fr": "Forgeron mythique",
+    "description": {
+      "en": "Achieve blacksmith level 100.",
+      "de": "Erfahrungsstufe 100 als Grobschmied wurde erreicht.",
+      "ja": "鍛冶師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe forgeron."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3453": {
+    "id": 3453,
+    "icon": "/i/035000/035203.png",
+    "patch": 95,
+    "en": "The Riddle of Steel X",
+    "de": "Das Geheimnis des Stahls X",
+    "ja": "甲冑師：レベル100",
+    "fr": "Armurier mythique",
+    "description": {
+      "en": "Achieve armorer level 100.",
+      "de": "Erfahrungsstufe 100 als Plattner wurde erreicht.",
+      "ja": "甲冑師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe armurier."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3454": {
+    "id": 3454,
+    "icon": "/i/035000/035301.png",
+    "patch": 95,
+    "en": "Heart of Gold X",
+    "de": "Herz aus Gold X",
+    "ja": "彫金師：レベル100",
+    "fr": "Orfèvre mythique",
+    "description": {
+      "en": "Achieve goldsmith level 100.",
+      "de": "Erfahrungsstufe 100 als Goldschmied wurde erreicht.",
+      "ja": "彫金師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe orfèvre."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3455": {
+    "id": 3455,
+    "icon": "/i/035000/035404.png",
+    "patch": 95,
+    "en": "Tougher than Leather X",
+    "de": "Ganz in Leder X",
+    "ja": "革細工師：レベル100",
+    "fr": "Tanneur mythique",
+    "description": {
+      "en": "Achieve leatherworker level 100.",
+      "de": "Erfahrungsstufe 100 als Gerber wurde erreicht.",
+      "ja": "革細工師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe tanneur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3456": {
+    "id": 3456,
+    "icon": "/i/035000/035501.png",
+    "patch": 95,
+    "en": "Smiling, Styling, and Textiling X",
+    "de": "Eorzeas neue Kleider X",
+    "ja": "裁縫師：レベル100",
+    "fr": "Couturier mythique",
+    "description": {
+      "en": "Achieve weaver level 100.",
+      "de": "Erfahrungsstufe 100 als Weber wurde erreicht.",
+      "ja": "裁縫師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe couturier."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3457": {
+    "id": 3457,
+    "icon": "/i/035000/035604.png",
+    "patch": 95,
+    "en": "'Tis True without Lying X",
+    "de": "Gut gemischt ist halb gewonnen X",
+    "ja": "錬金術師：レベル100",
+    "fr": "Alchimiste mythique",
+    "description": {
+      "en": "Achieve alchemist level 100.",
+      "de": "Erfahrungsstufe 100 als Alchemist wurde erreicht.",
+      "ja": "錬金術師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe alchimiste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3458": {
+    "id": 3458,
+    "icon": "/i/035000/035704.png",
+    "patch": 95,
+    "en": "All in Good Taste X",
+    "de": "Der richtige Pfiff X",
+    "ja": "調理師：レベル100",
+    "fr": "Cuisinier mythique",
+    "description": {
+      "en": "Achieve culinarian level 100.",
+      "de": "Erfahrungsstufe 100 als Gourmet wurde erreicht.",
+      "ja": "調理師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe cuisinier."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3459": {
+    "id": 3459,
+    "icon": "/i/038000/038103.png",
+    "patch": 95,
+    "en": "Fear the Reaper X",
+    "de": "Man erntet, was man sät X",
+    "ja": "園芸師：レベル100",
+    "fr": "Botaniste mythique",
+    "description": {
+      "en": "Achieve botanist level 100.",
+      "de": "Erfahrungsstufe 100 als Gärtner wurde erreicht.",
+      "ja": "園芸師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe botaniste."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3460": {
+    "id": 3460,
+    "icon": "/i/038000/038003.png",
+    "patch": 95,
+    "en": "Breaking Rocks in the Hot Sun X",
+    "de": "Gute Miene zur Mine X",
+    "ja": "採掘師：レベル100",
+    "fr": "Mineur mythique",
+    "description": {
+      "en": "Achieve miner level 100.",
+      "de": "Erfahrungsstufe 100 als Minenarbeiter wurde erreicht.",
+      "ja": "採掘師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe mineur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3461": {
+    "id": 3461,
+    "icon": "/i/038000/038203.png",
+    "patch": 95,
+    "en": "Gone Fishin' X",
+    "de": "Was für ein Kaventsmann X",
+    "ja": "漁師：レベル100",
+    "fr": "Pêcheur mythique",
+    "description": {
+      "en": "Achieve fisher level 100.",
+      "de": "Erfahrungsstufe 100 als Fischer wurde erreicht.",
+      "ja": "漁師のレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec la classe pêcheur."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3462": {
+    "id": 3462,
+    "icon": "/i/002000/002547.png",
+    "patch": 95,
+    "en": "Mastering War VI",
+    "de": "Meister des Krieges VI",
+    "ja": "武を解し者",
+    "fr": "Mythe de la guerre",
+    "description": {
+      "en": "Achieve level 100 as a gladiator, pugilist, marauder, lancer, archer, rogue, dark knight, machinist, samurai, gunbreaker, dancer, reaper, and viper.",
+      "de": "Erfahrungsstufe 100 in allen Klassen der Kriegerdisziplin erreicht.",
+      "ja": "剣術士、格闘士、斧術士、槍術士、弓術士、双剣士、暗黒騎士、機工士、侍、ガンブレイカー、踊り子、リーパー、ヴァイパーのすべてのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec les classes ou jobs gladiateur, pugiliste, maraudeur, maître d'hast, archer, surineur, chevalier noir, machiniste, samouraï, pistosabeur, danseur, faucheur et rôdeur vipère."
+    },
+    "item": 0,
+    "title": 725
+  },
+  "3463": {
+    "id": 3463,
+    "icon": "/i/002000/002661.png",
+    "patch": 95,
+    "en": "Mastering Magic VI",
+    "de": "Meister der Magie VI",
+    "ja": "魔を解し者",
+    "fr": "Mythe de la magie",
+    "description": {
+      "en": "Achieve level 100 as a conjurer, thaumaturge, arcanist, astrologian, red mage, sage, and pictomancer.",
+      "de": "Erfahrungsstufe 90 in allen Klassen der Magierdisziplin erreicht.",
+      "ja": "幻術士、呪術士、巴術士、占星術師、赤魔道士、賢者、ピクトマンサーのすべてのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec les classes ou jobs élémentaliste, occultiste, arcaniste, astromancien, mage rouge, sage et pictomancien."
+    },
+    "item": 0,
+    "title": 726
+  },
+  "3464": {
+    "id": 3464,
+    "icon": "/i/002000/002517.png",
+    "patch": 95,
+    "en": "A Life of Adventure VI",
+    "de": "Tausendsassa VI",
+    "ja": "二十の道を解し者",
+    "fr": "Mythe du corps et de l'esprit",
+    "description": {
+      "en": "Obtain the achievements “Mastering War VI” and “Mastering Magic VI.”",
+      "de": "Die Errungenschaften „Meister des Krieges VI“ und „Meister der Magie VI“ freigespielt.",
+      "ja": "アチーブメント「武を解し者」と「魔を解し者」を達成する",
+      "fr": "Accomplir les hauts faits “Mythe de la guerre” et “Mythe de la magie”."
+    },
+    "item": 43595,
+    "title": 0
+  },
+  "3465": {
+    "id": 3465,
+    "icon": "/i/061000/061269.png",
+    "patch": 95,
+    "en": "Mastering the Hand VI",
+    "de": "Meister des Handwerks VI",
+    "ja": "職人魂を解し冒険者",
+    "fr": "Mythe de la main",
+    "description": {
+      "en": "Achieve level 100 as a carpenter, blacksmith, armorer, goldsmith, leatherworker, weaver, alchemist, and culinarian.",
+      "de": "Erfahrungsstufe 100 in allen Klassen der Handwerkerdisziplin erreicht.",
+      "ja": "木工師、鍛冶師、甲冑師、彫金師、革細工師、裁縫師、錬金術師、調理師のすべてのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec les classes menuisier, forgeron, armurier, orfèvre, tanneur, couturier, alchimiste et cuisinier."
+    },
+    "item": 0,
+    "title": 727
+  },
+  "3466": {
+    "id": 3466,
+    "icon": "/i/001000/001981.png",
+    "patch": 95,
+    "en": "Mastering the Land VI",
+    "de": "Meister der Ressourcen VI",
+    "ja": "黄金の恵みを我が身に",
+    "fr": "Mythe de la terre",
+    "description": {
+      "en": "Achieve level 100 as a miner, botanist, and fisher.",
+      "de": "Erfahrungsstufe 100 in allen Klassen der Sammlerdisziplin erreicht.",
+      "ja": "採掘師、園芸師、漁師のすべてのレベルが100に到達する",
+      "fr": "Atteindre le niveau 100 avec les classes mineur, botaniste et pêcheur."
+    },
+    "item": 0,
+    "title": 728
+  },
+  "3467": {
+    "id": 3467,
+    "icon": "/i/035000/035001.png",
+    "patch": 95,
+    "en": "Going with the Grain: Exemplar",
+    "de": "Immer mit der Faser: Ass",
+    "ja": "木工職人：皆伝",
+    "fr": "Toucher du bois : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 woodworking recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Zimmerer der Stufen 91-100 hergestellt.",
+      "ja": "木工スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses de menuiserie de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3468": {
+    "id": 3468,
+    "icon": "/i/035000/035106.png",
+    "patch": 95,
+    "en": "Working the Bellows: Exemplar",
+    "de": "Spiel mit dem Feuer: Ass",
+    "ja": "鍛冶職人：皆伝",
+    "fr": "En avant, forgez : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 smithing recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Grobschmiede der Stufen 91-100 hergestellt.",
+      "ja": "鍛冶スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses de métallurgie de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3469": {
+    "id": 3469,
+    "icon": "/i/035000/035203.png",
+    "patch": 95,
+    "en": "Pounding Out the Dents: Exemplar",
+    "de": "Da bist du platt: Ass",
+    "ja": "板金職人：皆伝",
+    "fr": "Entre le marteau et l'enclume : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 armorcraft recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Plattner der Stufen 91-100 hergestellt.",
+      "ja": "板金スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses d'armurerie de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3470": {
+    "id": 3470,
+    "icon": "/i/035000/035301.png",
+    "patch": 95,
+    "en": "Cutting the Carats: Exemplar",
+    "de": "Hochkarätige Höchstleistung: Ass",
+    "ja": "彫金職人：皆伝",
+    "fr": "Tout ce qui brille : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 goldsmithing recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Goldschmiede der Stufen 91-100 hergestellt.",
+      "ja": "彫金スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses d'orfèvrerie de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3471": {
+    "id": 3471,
+    "icon": "/i/035000/035404.png",
+    "patch": 95,
+    "en": "Hiding in Plain Sight: Exemplar",
+    "de": "Abziehen am helllichten Tage: Ass",
+    "ja": "革細工職人：皆伝",
+    "fr": "Tourner autour des peaux : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 leatherworking recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Gerber der Stufen 91-100 hergestellt.",
+      "ja": "革細工スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses de tannerie de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3472": {
+    "id": 3472,
+    "icon": "/i/035000/035501.png",
+    "patch": 95,
+    "en": "Threading the Needle: Exemplar",
+    "de": "Weber wenn sie losgelassen: Ass",
+    "ja": "裁縫職人：皆伝",
+    "fr": "De fil en aiguille : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 clothcraft recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Weber der Stufen 91-100 hergestellt.",
+      "ja": "裁縫スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses de couture de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3473": {
+    "id": 3473,
+    "icon": "/i/035000/035604.png",
+    "patch": 95,
+    "en": "Mixing It Up: Exemplar",
+    "de": "Opus Magnum: Ass",
+    "ja": "錬成職人：皆伝",
+    "fr": "Alchimiste d'acier : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 alchemy recipes.",
+      "de": "1.000 Gegenstände nach Syntheserezepten für Alchemisten der Stufen 91-100 hergestellt.",
+      "ja": "錬成スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses d'alchimie de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3474": {
+    "id": 3474,
+    "icon": "/i/035000/035704.png",
+    "patch": 95,
+    "en": "Savoring the Realm: Exemplar",
+    "de": "Das große Fressen: Ass",
+    "ja": "調理職人：皆伝",
+    "fr": "Cordon-bleu : As",
+    "description": {
+      "en": "Successfully synthesize 1,000 times for level 91-100 cooking recipes.",
+      "de": "1.000 Gerichte nach Syntheserezepten für Gourmets der Stufen 91-100 zubereitet.",
+      "ja": "調理スキルのレベル91-100のレシピを1,000回製作する",
+      "fr": "Réaliser 1 000 synthèses de cuisine de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3475": {
+    "id": 3475,
+    "icon": "/i/001000/001056.png",
+    "patch": 95,
+    "en": "Reaping Dawntrail",
+    "de": "Die Sense aus Gold",
+    "ja": "黄金の伐採名人",
+    "fr": "Deux bois, deux mesures : terres de l'aurore",
+    "description": {
+      "en": "Gather 5,000 times from level 91-100 mature trees or lush vegetation.",
+      "de": "5.000 Mal an Stellen mit üppiger Vegetation der Stufe 91-100 Ressourcen geerntet.",
+      "ja": "レベル91-100のポイントで5,000回伐採・草刈を行う",
+      "fr": "Couper ou faucher 5 000 fois sur des arbres matures ou des carrés de végétation de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3476": {
+    "id": 3476,
+    "icon": "/i/001000/001015.png",
+    "patch": 95,
+    "en": "Mining Dawntrail",
+    "de": "Die Spitzhacke aus Gold",
+    "ja": "黄金の採掘名人",
+    "fr": "Payer de mine : terres de l'aurore",
+    "description": {
+      "en": "Gather 5,000 times at level 91-100 mineral deposits or rocky outcrops.",
+      "de": "5.000 Mal an Lagerstätten der Stufe 91-100 Ressourcen abgebaut.",
+      "ja": "レベル91-100のポイントで5,000回採掘・砕岩を行う",
+      "fr": "Extraire 5 000 fois dans des filons ou carrières de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3477": {
+    "id": 3477,
+    "icon": "/i/001000/001101.png",
+    "patch": 95,
+    "en": "Baiting Dawntrail",
+    "de": "Die Angel aus Gold",
+    "ja": "黄金の釣り名人",
+    "fr": "Surveiller sa ligne : terres de l'aurore",
+    "description": {
+      "en": "Fish or gig 3,000 times from level 91-100 waters.",
+      "de": "3.000 Mal an Angelstellen der Stufe 91-100 gefischt.",
+      "ja": "レベル91-100の釣り場・漁場で3,000回採集を行う",
+      "fr": "Pêcher 3 000 fois dans des points de pêche ou de harponnage de niveau 91 à 100."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3478": {
+    "id": 3478,
+    "icon": "/i/062000/062973.png",
+    "patch": 95,
+    "en": "I Made That (Worth Collecting) VII",
+    "de": "Ich hab's sammelbar gemacht VII",
+    "ja": "収集品の製作者：ランク7",
+    "fr": "Facteur de merveilles VII",
+    "description": {
+      "en": "Synthesize 9,000 collectables.",
+      "de": "9.000 Sammlerstücke nach Syntheserezepten hergestellt.",
+      "ja": "収集品を計9,000回製作する",
+      "fr": "Synthétiser 9 000 objets collectionnables."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3479": {
+    "id": 3479,
+    "icon": "/i/060000/060031.png",
+    "patch": 95,
+    "en": "I Collected That VII",
+    "de": "Ich hab's gesammelt VII",
+    "ja": "収集品の採集者：ランク7",
+    "fr": "Chasseur de merveilles VII",
+    "description": {
+      "en": "Gather or catch 12,000 collectables.",
+      "de": "12.000 Sammlerstücke gefunden oder gefangen.",
+      "ja": "収集品を計12,000回採集する",
+      "fr": "Récolter 12 000 objets collectionnables."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3480": {
+    "id": 3480,
+    "icon": "/i/035000/035001.png",
+    "patch": 95,
+    "en": "With Saw in Hand VIII",
+    "de": "Sägende Hand VIII",
+    "ja": "製作稼業木工師：ランク8",
+    "fr": "Féru de la scie VIII",
+    "description": {
+      "en": "Complete 135 unique carpenter levequests.",
+      "de": "135 verschiedene Zimmerer-Fertigungserlasse wurden erfolgreich abgeschlossen.",
+      "ja": "木工師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats de menuisier différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3481": {
+    "id": 3481,
+    "icon": "/i/035000/035106.png",
+    "patch": 95,
+    "en": "With Hammer in Hand VIII",
+    "de": "Hämmernde Hand VIII",
+    "ja": "製作稼業鍛冶師：ランク8",
+    "fr": "Féru de l'enclume VIII",
+    "description": {
+      "en": "Complete 135 unique blacksmith levequests.",
+      "de": "135 verschiedene Grobschmied-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "鍛冶師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats de forgeron différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3482": {
+    "id": 3482,
+    "icon": "/i/035000/035203.png",
+    "patch": 95,
+    "en": "With Steel in Hand VIII",
+    "de": "Stählerne Hand VIII",
+    "ja": "製作稼業甲冑師：ランク8",
+    "fr": "Féru du marteau VIII",
+    "description": {
+      "en": "Complete 135 unique armorer levequests.",
+      "de": "135 verschiedene Plattner-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "甲冑師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats d'armurier différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3483": {
+    "id": 3483,
+    "icon": "/i/035000/035301.png",
+    "patch": 95,
+    "en": "With Gem in Hand VIII",
+    "de": "Goldene Hand VIII",
+    "ja": "製作稼業彫金師：ランク8",
+    "fr": "Féru du joyau VIII",
+    "description": {
+      "en": "Complete 135 unique goldsmith levequests.",
+      "de": "135 verschiedene Goldschmied-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "彫金師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats d'orfèvre différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3484": {
+    "id": 3484,
+    "icon": "/i/035000/035404.png",
+    "patch": 95,
+    "en": "With Skin in Hand VIII",
+    "de": "Gerbende Hand VIII",
+    "ja": "製作稼業革細工師：ランク8",
+    "fr": "Féru du couteau VIII",
+    "description": {
+      "en": "Complete 135 unique leatherworker levequests.",
+      "de": "135 verschiedene Gerber-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "革細工師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats de tanneur différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3485": {
+    "id": 3485,
+    "icon": "/i/035000/035501.png",
+    "patch": 95,
+    "en": "With Needle in Hand VIII",
+    "de": "Webende Hand VIII",
+    "ja": "製作稼業裁縫師：ランク8",
+    "fr": "Féru de l'aiguille VIII",
+    "description": {
+      "en": "Complete 135 unique weaver levequests.",
+      "de": "135 verschiedene Weber-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "裁縫師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats de couturier différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3486": {
+    "id": 3486,
+    "icon": "/i/035000/035604.png",
+    "patch": 95,
+    "en": "With Pestle in Hand VIII",
+    "de": "Brauende Hand VIII",
+    "ja": "製作稼業錬金術師：ランク8",
+    "fr": "Féru de l'alambic VIII",
+    "description": {
+      "en": "Complete 135 unique alchemist levequests.",
+      "de": "135 verschiedene Alchemisten-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "錬金術師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats d'alchimiste différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3487": {
+    "id": 3487,
+    "icon": "/i/035000/035704.png",
+    "patch": 95,
+    "en": "With Pan in Hand VIII",
+    "de": "Brutzelnde Hand VIII",
+    "ja": "製作稼業調理師：ランク8",
+    "fr": "Féru de la poêle VIII",
+    "description": {
+      "en": "Complete 135 unique culinarian levequests.",
+      "de": "135 verschiedene Gourmet-Fertigungserlasse erfolgreich abgeschlossen.",
+      "ja": "調理師のリーヴ：製作稼業を135種類コンプリートする",
+      "fr": "Accomplir 135 mandats de cuisinier différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3488": {
+    "id": 3488,
+    "icon": "/i/038000/038103.png",
+    "patch": 95,
+    "en": "With Axe in Hand VIII",
+    "de": "Blühende Hand VIII",
+    "ja": "採集稼業園芸師：ランク8",
+    "fr": "Féru de la hache VIII",
+    "description": {
+      "en": "Complete 125 unique botanist levequests.",
+      "de": "125 verschiedene Gärtner-Sammelerlasse erfolgreich abgeschlossen.",
+      "ja": "園芸師のリーヴ：採集稼業を125種類コンプリートする",
+      "fr": "Accomplir 125 mandats de botaniste différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3489": {
+    "id": 3489,
+    "icon": "/i/038000/038003.png",
+    "patch": 95,
+    "en": "With Pick in Hand VIII",
+    "de": "Hackende Hand VIII",
+    "ja": "採集稼業採掘師：ランク8",
+    "fr": "Féru de la pioche VIII",
+    "description": {
+      "en": "Complete 125 unique miner levequests.",
+      "de": "125 verschiedene Minenarbeiter-Sammelerlasse erfolgreich abgeschlossen.",
+      "ja": "採掘師のリーヴ：採集稼業を125種類コンプリートする",
+      "fr": "Accomplir 125 mandats de mineur différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3490": {
+    "id": 3490,
+    "icon": "/i/038000/038203.png",
+    "patch": 95,
+    "en": "With Bait in Hand VIII",
+    "de": "Angelnde Hand VIII",
+    "ja": "採集稼業漁師：ランク8",
+    "fr": "Féru de l'hameçon VIII",
+    "description": {
+      "en": "Complete 115 unique fisher levequests.",
+      "de": "115 verschiedene Fischer-Sammelerlasse erfolgreich abgeschlossen.",
+      "ja": "漁師のリーヴ：採集稼業を115種類コンプリートする",
+      "fr": "Accomplir 115 mandats de pêcheur différents."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3491": {
+    "id": 3491,
+    "icon": "/i/026000/026002.png",
+    "patch": 95,
+    "en": "A Promise for the People",
+    "de": "Für das Volk",
+    "ja": "みんなのために",
+    "fr": "Pour le bien de tous",
+    "description": {
+      "en": "Complete the main scenario quest “For All Turali.”",
+      "de": "Den Auftrag „Mit neuer Entschlossenheit“ abgeschlossen.",
+      "ja": "クエスト「みんなのために」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “Pour le bien de tous”."
+    },
+    "item": 0,
+    "title": 729
+  },
+  "3492": {
+    "id": 3492,
+    "icon": "/i/026000/026002.png",
+    "patch": 95,
+    "en": "Peaceful Intentions",
+    "de": "Wir kommen in Frieden",
+    "ja": "ウクラマトの平和",
+    "fr": "La paix selon Wuk Lamat",
+    "description": {
+      "en": "Complete the main scenario quest “The Promise of Peace.”",
+      "de": "Den Auftrag „Die vielen Gesichter des Friedens“ abgeschlossen.",
+      "ja": "クエスト「ウクラマトの平和」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “La paix selon Wuk Lamat”."
+    },
+    "item": 0,
+    "title": 730
+  },
+  "3493": {
+    "id": 3493,
+    "icon": "/i/026000/026002.png",
+    "patch": 95,
+    "en": "In Rite Triumphant",
+    "de": "Die Herren des Ritus",
+    "ja": "すべての路は希望とともに",
+    "fr": "Tous les chemins mènent à l'espoir",
+    "description": {
+      "en": "Complete the main scenario quest “Ever Greater, Ever Brighter.”",
+      "de": "Den Auftrag „Im Licht eines neuen Morgens“ abgeschlossen.",
+      "ja": "クエスト「すべての路は希望とともに」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “Tous les chemins mènent à l'espoir”."
+    },
+    "item": 0,
+    "title": 731
+  },
+  "3494": {
+    "id": 3494,
+    "icon": "/i/026000/026002.png",
+    "patch": 95,
+    "en": "The Worth of a Soul",
+    "de": "Die Kraft der Seelen",
+    "ja": "魂を扱う者たち",
+    "fr": "Une ressource d'âmes",
+    "description": {
+      "en": "Complete the main scenario quest “Gone and Forgotten.”",
+      "de": "Den Auftrag „Die Kraft der Seelen“ abgeschlossen.",
+      "ja": "クエスト「魂を扱う者たち」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “Une ressource d'âmes”."
+    },
+    "item": 0,
+    "title": 732
+  },
+  "3495": {
+    "id": 3495,
+    "icon": "/i/026000/026002.png",
+    "patch": 95,
+    "en": "The Burden of Legacy",
+    "de": "Wunderkind",
+    "ja": "奇跡の子",
+    "fr": "L'enfant prodige",
+    "description": {
+      "en": "Complete the main scenario quest “The Resilient Son.”",
+      "de": "Den Auftrag „Wunderkind“ abgeschlossen.",
+      "ja": "クエスト「奇跡の子」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “L'enfant prodige”."
+    },
+    "item": 0,
+    "title": 733
+  },
+  "3496": {
+    "id": 3496,
+    "icon": "/i/026000/026002.png",
+    "patch": 95,
+    "en": "In the Glow of a New Dawn",
+    "de": "Pfad der Morgensonne",
+    "ja": "黄金のレガシー",
+    "fr": "Le sentier de l'aurore",
+    "description": {
+      "en": "Complete the main scenario quest “Dawntrail.”",
+      "de": "Den Auftrag „Pfad der Morgensonne“ abgeschlossen.",
+      "ja": "クエスト「黄金のレガシー」をコンプリートする",
+      "fr": "Accomplir la quête “Le sentier de l'aurore”."
+    },
+    "item": 0,
+    "title": 734
+  },
+  "3497": {
+    "id": 3497,
+    "icon": "/i/026000/026068.png",
+    "patch": 95,
+    "en": "Victorious Viper",
+    "de": "Der Weg der Viper",
+    "ja": "大物狩りのヴァイパー",
+    "fr": "Vipère au poing",
+    "description": {
+      "en": "Complete the quest “Vengeance of the Viper.”",
+      "de": "Den Auftrag „Der Wille der Natur“ abgeschlossen.",
+      "ja": "クエスト「トラルヴィドラールを狩る者」をコンプリートする",
+      "fr": "Accomplir la quête “Le fléau des Tural vidraal”."
+    },
+    "item": 0,
+    "title": 735
+  },
+  "3498": {
+    "id": 3498,
+    "icon": "/i/026000/026069.png",
+    "patch": 95,
+    "en": "Gotta Follow My Rainbow",
+    "de": "Fantastische Piktomantie",
+    "ja": "想造のピクトマンサー",
+    "fr": "Pictomancien imaginatif",
+    "description": {
+      "en": "Complete the quest “Somewhere Only She Knows.”",
+      "de": "Den Auftrag „Begegnungen und Abschiede“ abgeschlossen.",
+      "ja": "クエスト「旅する画家は幻想を征く」をコンプリートする",
+      "fr": "Accomplir la quête de job “L'œuvre de la maturité”."
+    },
+    "item": 0,
+    "title": 736
+  },
+  "3499": {
+    "id": 3499,
+    "icon": "/i/061000/061264.png",
+    "patch": 95,
+    "en": "No Sleep Till Tuliyollal",
+    "de": "Wiederbeschaffer der Wiege der Schlaflosen",
+    "ja": "イッカクの祭器を奪還せし者",
+    "fr": "Sous la tutelle du Narval",
+    "description": {
+      "en": "Complete the quest “Dreams of a New Day.”",
+      "de": "Den Auftrag „Neue Bande der Freundschaft“ abgeschlossen.",
+      "ja": "クエスト「寝ても覚めても」をコンプリートする",
+      "fr": "Accomplir la quête “Rêves éveillés”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3500": {
+    "id": 3500,
+    "icon": "/i/061000/061251.png",
+    "patch": 95,
+    "en": "A Heartsting's a Heavy Burden",
+    "de": "Wiederbeschaffer von Herzstich",
+    "ja": "サソリの祭器を奪還せし者",
+    "fr": "Sous la tutelle du Scorpion",
+    "description": {
+      "en": "Complete the quest “An Antidote for Anarchy.”",
+      "de": "Den Auftrag „Heilkunst gegen Hexerei“ abgeschlossen.",
+      "ja": "クエスト「毒と癒やしの頂上決戦」をコンプリートする",
+      "fr": "Accomplir la quête “Les deux faces du scorpion”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3501": {
+    "id": 3501,
+    "icon": "/i/061000/061265.png",
+    "patch": 95,
+    "en": "Dreams Woven Anew",
+    "de": "Wiederbeschaffer von Flatterschein",
+    "ja": "アゲハの祭器を奪還せし者",
+    "fr": "Sous la tutelle du Papillon machaon",
+    "description": {
+      "en": "Complete the quest “A Hunter True.”",
+      "de": "Den Auftrag „Krönender Abschuss“ abgeschlossen.",
+      "ja": "クエスト「一端の狩人」をコンプリートする",
+      "fr": "Accomplir la quête “Chasseuse à lunettes... chasseuse honnête”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3502": {
+    "id": 3502,
+    "icon": "/i/061000/061262.png",
+    "patch": 95,
+    "en": "Some Shields Are Made to Be Broken",
+    "de": "Wiederbeschaffer von Stahlschwein",
+    "ja": "アルマジロの祭器を奪還せし者",
+    "fr": "Sous la tutelle du tatou",
+    "description": {
+      "en": "Complete the quest “The Mightiest Shield.”",
+      "de": "Den Auftrag „Der mächtigste Schild“ abgeschlossen.",
+      "ja": "クエスト「打倒！ シャルトフィット盗賊団」をコンプリートする",
+      "fr": "Accomplir la quête “Mauvais cru pour Chalteaufite”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3503": {
+    "id": 3503,
+    "icon": "/i/061000/061253.png",
+    "patch": 95,
+    "en": "Reach for the Apex",
+    "de": "Wiederbeschaffer von Himmelswächter",
+    "ja": "フクロウの祭器を奪還せし者",
+    "fr": "Sous la tutelle de la Chouette",
+    "description": {
+      "en": "Complete the quest “Heroes and Pretenders.”",
+      "de": "Den Auftrag „Ein Mythos in Trümmern“ abgeschlossen.",
+      "ja": "クエスト「祭器と作られた虚像」をコンプリートする",
+      "fr": "Accomplir la quête “Le château de cartes s'effondre”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3504": {
+    "id": 3504,
+    "icon": "/i/001000/001988.png",
+    "patch": 95,
+    "en": "Bonds Forged in Fire",
+    "de": "Das Schmieden metallener Bande",
+    "ja": "金荒物屋の硬い絆",
+    "fr": "Forger des liens dans le métal",
+    "description": {
+      "en": "Complete the quest “A Dream Come True.”",
+      "de": "Den Auftrag „Ein wahrer Wohlplatz“ abgeschlossen.",
+      "ja": "クエスト「王室御用達の金荒物屋」をコンプリートする",
+      "fr": "Accomplir la quête “L'artisane aux mains d'or”."
+    },
+    "item": 0,
+    "title": 737
+  },
+  "3505": {
+    "id": 3505,
+    "icon": "/i/001000/001987.png",
+    "patch": 95,
+    "en": "These Are Their Stories",
+    "de": "Auf den Sonnenseiten",
+    "ja": "パメカと綴じる物語",
+    "fr": "Relier les cultures par la reliure",
+    "description": {
+      "en": "Complete the quest “A Place in the Sun.”",
+      "de": "Den Auftrag „Die, die der Sonne folgen“ abgeschlossen.",
+      "ja": "クエスト「辿りつく故郷」をコンプリートする",
+      "fr": "Accomplir la quête “Les Mille et Une Lunes des Tonawawta”."
+    },
+    "item": 0,
+    "title": 738
+  },
+  "3506": {
+    "id": 3506,
+    "icon": "/i/001000/001955.png",
+    "patch": 95,
+    "en": "Worth the Squeeze",
+    "de": "Magischer Fruchtsaft-Sommelier",
+    "ja": "魔法のジュースの配合士",
+    "fr": "Décoctions rafraîchissantes",
+    "description": {
+      "en": "Complete the quest “Three Cheers for Sweet Juice.”",
+      "de": "Den Auftrag „Ein Prosit dem Erfolg“ abgeschlossen.",
+      "ja": "クエスト「ブネワ族の青い夢」をコンプリートする",
+      "fr": "Accomplir la quête “Le rêve de Xeerol Ja”."
+    },
+    "item": 0,
+    "title": 739
+  },
+  "3507": {
+    "id": 3507,
+    "icon": "/i/001000/001006.png",
+    "patch": 95,
+    "en": "Holistic Gathering",
+    "de": "Heilende Hände",
+    "ja": "癒やしのアポサカリー",
+    "fr": "La pharmacie du ciel bleu",
+    "description": {
+      "en": "Complete the quest “Wellspring of Tears.”",
+      "de": "Den Auftrag „Die blauen Himmelsblüten“ abgeschlossen.",
+      "ja": "クエスト「息吹は尚も絶えずして」をコンプリートする",
+      "fr": "Accomplir la quête “Des larmes tels des pétales”."
+    },
+    "item": 0,
+    "title": 740
+  },
+  "3508": {
+    "id": 3508,
+    "icon": "/i/001000/001116.png",
+    "patch": 95,
+    "en": "Forever Fancy",
+    "de": "Flossig Fabelhaft",
+    "ja": "ドヌハヌの道楽仲間",
+    "fr": "Du caviar pour le bazar",
+    "description": {
+      "en": "Complete the quest “An Odd Fish Odyssey.”",
+      "de": "Den Auftrag „Vollendete Fischillusionsmagie“ abgeschlossen.",
+      "ja": "クエスト「幻魚術を極める怪魚」をコンプリートする",
+      "fr": "Accomplir la quête “De l'électricité dans l'eau”."
+    },
+    "item": 0,
+    "title": 741
+  },
+  "3509": {
+    "id": 3509,
+    "icon": "/i/003000/003139.png",
+    "patch": 95,
+    "en": "Bound by Amity",
+    "de": "Freunde für immer",
+    "ja": "知友の絆",
+    "fr": "Pouvoir de l'amitié",
+    "description": {
+      "en": "Achieve trust level 100 with all available avatars in Dawntrail.",
+      "de": "In „Seite an Seite“ die Charaktere Alphinaud, Alisaie, Thancred, Urianger, Y'shtola, G'raha Tia, Estinien und Krile auf Stufe 100 hochgestuft.",
+      "ja": "フェイス「アルフィノ」、「アリゼー」、「サンクレッド」、「ウリエンジェ」、「ヤ・シュトラ」、「グ・ラハ・ティア」、「エスティニアン」、「クルル」のすべてのレベルが100に到達する",
+      "fr": "Monter au niveau 100 les alter ego d'Alphinaud, d'Alisaie, de Thancred, d'Urianger, de Y'shtola, de G'raha Tia, d'Estinien et de Krile."
+    },
+    "item": 0,
+    "title": 742
+  },
+  "3510": {
+    "id": 3510,
+    "icon": "/i/001000/001019.png",
+    "patch": 95,
+    "en": "Happy Trails",
+    "de": "Das Gold der Erde",
+    "ja": "黄金の探検家",
+    "fr": "Touriste des terres de l'ouest",
+    "description": {
+      "en": "Complete entries 1-45 in your Dawntrail sightseeing log.",
+      "de": "Die sehenswerten Orte 001-045 aus dem Eorzea Incognita für Dawntrail entdeckt.",
+      "ja": "探検手帳：黄金編「001～045」をコンプリートする",
+      "fr": "Découvrir les lieux notoires 001 à 045 du carnet d'exploration de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3511": {
+    "id": 3511,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Urqopacha",
+    "de": "Kartograph: Urqopacha",
+    "ja": "オルコ・パチャを踏破せし者",
+    "fr": "Cartographe du continent : Urqopacha",
+    "description": {
+      "en": "Discover every location within Urqopacha.",
+      "de": "Alle Orte in Urqopacha erkundet.",
+      "ja": "オルコ・パチャを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte d'Urqopacha."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3512": {
+    "id": 3512,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Kozama'uka",
+    "de": "Kartograph: Kozama'uka",
+    "ja": "コザマル・カを踏破せし者",
+    "fr": "Cartographe du continent : Kozama'uka",
+    "description": {
+      "en": "Discover every location within Kozama'uka.",
+      "de": "Alle Orte in Kozama'uka erkundet.",
+      "ja": "コザマル・カを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de Kozama'uka."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3513": {
+    "id": 3513,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Yak T'el",
+    "de": "Kartograph: Yak T'el",
+    "ja": "ヤクテル樹海を踏破せし者",
+    "fr": "Cartographe du continent : Yak T'el",
+    "description": {
+      "en": "Discover every location within Yak T'el.",
+      "de": "Alle Orte in Yak T'el erkundet.",
+      "ja": "ヤクテル樹海を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de Yak T'el."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3514": {
+    "id": 3514,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Shaaloani",
+    "de": "Kartograph: Shaaloani",
+    "ja": "シャーローニ荒野を踏破せし者",
+    "fr": "Cartographe du continent : Shaaloani",
+    "description": {
+      "en": "Discover every location within Shaaloani.",
+      "de": "Alle Orte in Shaaloani erkundet.",
+      "ja": "シャーローニ荒野を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de Shaaloani."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3515": {
+    "id": 3515,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Heritage Found",
+    "de": "Kartograph: Ewiges Erbe",
+    "ja": "ヘリテージファウンドを踏破せし者",
+    "fr": "Cartographe du continent : L'Hoirie recouvrée",
+    "description": {
+      "en": "Discover every location within Heritage Found.",
+      "de": "Alle Orte im Ewigen Erbe erkundet.",
+      "ja": "ヘリテージファウンドを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de L'Hoirie recouvrée."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3516": {
+    "id": 3516,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Living Memory",
+    "de": "Kartograph: Lebende Erinnerung",
+    "ja": "リビング・メモリーを踏破せし者",
+    "fr": "Cartographe du continent : La Mémoire vivante",
+    "description": {
+      "en": "Discover every location within Living Memory.",
+      "de": "Alle Orte in der Lebenden Erinnerung erkundet.",
+      "ja": "リビング・メモリーを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de La Mémoire vivante."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3517": {
+    "id": 3517,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Ihuykatumu",
+    "de": "Kartograph: Ihuykatumu",
+    "ja": "イフイカ・トゥムを踏破せし者",
+    "fr": "Cartographe du continent : Remontée de l'Ihuykatumu",
+    "description": {
+      "en": "Discover every location within Ihuykatumu.",
+      "de": "Alle Orte in Ihuykatumu erkundet.",
+      "ja": "イフイカ・トゥム（濁流遡上）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de la Remontée de l'Ihuykatumu."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3518": {
+    "id": 3518,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Worqor Zormor",
+    "de": "Kartograph: Worqor Zormor",
+    "ja": "ウォーコー・ゾーモーを踏破せし者",
+    "fr": "Cartographe du continent : Worqor Zormor",
+    "description": {
+      "en": "Discover every location within Worqor Zormor.",
+      "de": "Alle Orte auf dem Worqor Zormor erkundet.",
+      "ja": "ウォーコー・ゾーモー（山嶺登頂）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de Worqor Zormor."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3519": {
+    "id": 3519,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: The Skydeep Cenote",
+    "de": "Kartograph: Himmelstiefer Cenote",
+    "ja": "天深きセノーテを踏破せし者",
+    "fr": "Cartographe du continent : Cénote des Cieux infinis",
+    "description": {
+      "en": "Discover every location within the Skydeep Cenote.",
+      "de": "Alle Orte im Himmelstiefen Cenote erkundet.",
+      "ja": "天深きセノーテ（遺産踏査）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du cénote des Cieux infinis."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3520": {
+    "id": 3520,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Vanguard",
+    "de": "Kartograph: Der Außenposten",
+    "ja": "ヴァンガードを踏破せし者",
+    "fr": "Cartographe du continent : L'Avant-garde",
+    "description": {
+      "en": "Discover every location within Vanguard.",
+      "de": "Alle Orte im Außenposten erkundet.",
+      "ja": "ヴァンガード（外征前哨）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de L'Avant-garde."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3521": {
+    "id": 3521,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Origenics",
+    "de": "Kartograph: Origenik",
+    "ja": "オリジェニクスを踏破せし者",
+    "fr": "Cartographe du continent : L'Origenèse",
+    "description": {
+      "en": "Discover every location within Origenics.",
+      "de": "Alle Orte in der Origenik erkundet.",
+      "ja": "オリジェニクス（魂魄工廠）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de l'Origenèse."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3522": {
+    "id": 3522,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Alexandria",
+    "de": "Kartograph: Alexandria",
+    "ja": "アレクサンドリアを踏破せし者",
+    "fr": "Cartographe du continent : Alexandrie",
+    "description": {
+      "en": "Discover every location within Alexandria.",
+      "de": "Alle Orte in Alexandria erkundet.",
+      "ja": "アレクサンドリア（記憶幻想）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte d'Alexandrie."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3523": {
+    "id": 3523,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: Tender Valley",
+    "de": "Kartograph: Kaktorsenke",
+    "ja": "サボテンダーバレーを踏破せし者",
+    "fr": "Cartographe du continent : Vallée des Pampas",
+    "description": {
+      "en": "Discover every location within Tender Valley.",
+      "de": "Alle Orte in der Kaktorsenke erkundet.",
+      "ja": "サボテンダーバレー（荒野秘境）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de la vallée des Pampas."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3524": {
+    "id": 3524,
+    "icon": "/i/001000/001001.png",
+    "patch": 95,
+    "en": "Mapping the Realm: The Strayborough Deadwalk",
+    "de": "Kartograph: Mahrlingen-Promenade",
+    "ja": "ストレイバローを踏破せし者",
+    "fr": "Cartographe du continent : Parc-aux-Errants",
+    "description": {
+      "en": "Discover every location within the Strayborough Deadwalk.",
+      "de": "Alle Orte auf der Mahrlingen-Promenade erkundet.",
+      "ja": "ストレイバロー（悪夢遊園）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du Parc-aux-Errants."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3525": {
+    "id": 3525,
+    "icon": "/i/000000/000317.png",
+    "patch": 95,
+    "en": "Everkept",
+    "de": "Mut ist des Wunders Beginn",
+    "ja": "武王を打倒せし者",
+    "fr": "Fin de règne",
+    "description": {
+      "en": "Defeat Zoraal Ja in Everkeep (Extreme).",
+      "de": "Zoraal Ja in Gok Tajaal - Zoraal Ja bezwungen.",
+      "ja": "極ゾラージャ討滅戦で、ゾラージャを討伐する",
+      "fr": "Vaincre Zoraal Ja dans le défi “Le Pinacle de l'Éternité (extrême)”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3526": {
+    "id": 3526,
+    "icon": "/i/000000/000317.png",
+    "patch": 95,
+    "en": "Valigarmastered",
+    "de": "Katastrophenhilfe",
+    "ja": "生ける天災を狩りし者",
+    "fr": "Calamité enterrée",
+    "description": {
+      "en": "Defeat Valigarmanda in Worqor Lar Dor (Extreme).",
+      "de": "Valigarmanda in Gok Tajaal - Valigarmanda bezwungen.",
+      "ja": "極ヴァリガルマンダ討滅戦で、ヴァリガルマンダを討伐する",
+      "fr": "Vaincre Valigarmanda dans le défi “Worqor Lar Dor (extrême)”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3527": {
+    "id": 3527,
+    "icon": "/i/002000/002505.png",
+    "patch": 95,
+    "en": "Tank You, Paladin VI",
+    "de": "Ein Paladin für alle Fälle VI",
+    "ja": "みんなのナイト：ランク6",
+    "fr": "Paladin philanthrope VI",
+    "description": {
+      "en": "Complete 900 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a paladin.<br>※Each roulette only counts with daily award bonus.",
+      "de": "900 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Paladin abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をナイトで900回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 900 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que paladin.<br>* Seule une mission aléatoire par jour est prise en compte."
+    },
+    "item": 0,
+    "title": 743
+  },
+  "3528": {
+    "id": 3528,
+    "icon": "/i/002000/002551.png",
+    "patch": 95,
+    "en": "Tank You, Warrior VI",
+    "de": "Ein Krieger für alle Fälle VI",
+    "ja": "みんなの戦士：ランク6",
+    "fr": "Guerrier philanthrope VI",
+    "description": {
+      "en": "Complete 900 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a warrior.<br>※Each roulette only counts with daily award bonus.",
+      "de": "900 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Krieger abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を戦士で900回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 900 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que guerrier.<br>* Seule une mission aléatoire par jour est prise en compte."
+    },
+    "item": 0,
+    "title": 744
+  },
+  "3529": {
+    "id": 3529,
+    "icon": "/i/003000/003071.png",
+    "patch": 95,
+    "en": "Tank You, Dark Knight VI",
+    "de": "Ein Dunkelritter für alle Fälle VI",
+    "ja": "みんなの暗黒騎士：ランク6",
+    "fr": "Chevalier noir philanthrope VI",
+    "description": {
+      "en": "Complete 900 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a dark knight.<br>※Each roulette only counts with daily award bonus.",
+      "de": "900 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: Hohe Stufen oder Zufallsinhalte: Stufenst. als Dunkelritter abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」を暗黒騎士で900回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 900 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que chevalier noir.<br>* Seule une mission aléatoire par jour est prise en compte."
+    },
+    "item": 0,
+    "title": 745
+  },
+  "3530": {
+    "id": 3530,
+    "icon": "/i/003000/003406.png",
+    "patch": 95,
+    "en": "Tank You, Gunbreaker VI",
+    "de": "Eine Revolverklinge für alle Fälle VI",
+    "ja": "みんなのガンブレイカー：ランク6",
+    "fr": "Pistosabreur philanthrope VI",
+    "description": {
+      "en": "Complete 900 dungeons (lv. 61 and above), extreme trials (lv. 61 and above), unreal trials, high-level duty roulette dungeons, or duty roulette leveling duties as a gunbreaker.<br>※Each roulette only counts with daily award bonus.",
+      "de": "900 Dungeons/Raids (ab St. 61), Prüfungen (ab St. 61), Traumprüfungen, Zufallsinhalte: St. Hohe Stufen oder Zufallsinhalte: Stufenst. als Revolverklinge abgeschlossen.<br>※ Zufallsinhalte zählen nur einmal täglich.",
+      "ja": "「インスタンスダンジョン（レベル61以上）」と「極討滅戦（レベル61以上）」、「幻討滅戦」、「一部のコンテンツルーレット（レベリング、ハイレベリング）」をガンブレイカーで900回攻略する<br>※コンテンツルーレットは、タンクのいずれかで1日1回のみカウント対象",
+      "fr": "Finir 900 donjons (nv 61 ou plus), défis extrêmes (nv 61 ou plus), défis irréels, missions aléatoires “gain de niveaux” ou “donjons avancés” en tant que pistosabreur.<br>* Seule une mission aléatoire par jour est prise en compte."
+    },
+    "item": 0,
+    "title": 746
+  },
+  "3531": {
+    "id": 3531,
+    "icon": "/i/002000/002680.png",
+    "patch": 95,
+    "en": "Dawn of a New A Game I",
+    "de": "Jag mir ein A auf Tural I",
+    "ja": "黄金の難物殺し：ランク1",
+    "fr": "L'aurore du menu fretin I",
+    "description": {
+      "en": "Slay 100 rank A elite marks in Dawntrail regions.",
+      "de": "100 Elite-Ziele vom Rang A in den Dawntrail-Arealen erlegt.",
+      "ja": "黄金のレガシーのフィールドに出現するランクAのリスキーモブを100体討伐する",
+      "fr": "Abattre 100 cibles d'élite de rang A dans les zones de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3532": {
+    "id": 3532,
+    "icon": "/i/002000/002680.png",
+    "patch": 95,
+    "en": "Dawn of a New A Game II",
+    "de": "Jag mir ein A auf Tural II",
+    "ja": "黄金の難物殺し：ランク2",
+    "fr": "L'aurore du menu fretin II",
+    "description": {
+      "en": "Slay 500 rank A elite marks in Dawntrail regions.",
+      "de": "500 Elite-Ziele vom Rang A in den Dawntrail-Arealen erlegt.",
+      "ja": "黄金のレガシーのフィールドに出現するランクAのリスキーモブを500体討伐する",
+      "fr": "Abattre 500 cibles d'élite de rang A dans les zones de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3533": {
+    "id": 3533,
+    "icon": "/i/002000/002680.png",
+    "patch": 95,
+    "en": "Dawn of a New A Game III",
+    "de": "Jag mir ein A auf Tural III",
+    "ja": "黄金の難物殺し：ランク3",
+    "fr": "L'aurore du menu fretin III",
+    "description": {
+      "en": "Slay 2,000 rank A elite marks in Dawntrail regions.",
+      "de": "2.000 Elite-Ziele vom Rang A in den Dawntrail-Arealen erlegt.",
+      "ja": "黄金のレガシーのフィールドに出現するランクAのリスキーモブを2,000体討伐する",
+      "fr": "Abattre 2 000 cibles d'élite de rang A dans les zones de Dawntrail."
+    },
+    "item": 0,
+    "title": 747
+  },
+  "3534": {
+    "id": 3534,
+    "icon": "/i/002000/002731.png",
+    "patch": 95,
+    "en": "Dawn of a New S Game I",
+    "de": "Jag mir ein S auf Tural I",
+    "ja": "黄金の超大物殺し：ランク1",
+    "fr": "L'aurore du gros gibier I",
+    "description": {
+      "en": "Slay 30 rank S elite marks in Dawntrail regions.",
+      "de": "30 Elite-Ziele vom Rang S oder höher in den Dawntrail-Arealen erlegt.",
+      "ja": "黄金のレガシーのフィールドに出現するランクS以上のリスキーモブを30体討伐する",
+      "fr": "Abattre 30 cibles d'élite de rang S ou plus dans les zones de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3535": {
+    "id": 3535,
+    "icon": "/i/002000/002731.png",
+    "patch": 95,
+    "en": "Dawn of a New S Game II",
+    "de": "Jag mir ein S auf Tural II",
+    "ja": "黄金の超大物殺し：ランク2",
+    "fr": "L'aurore du gros gibier II",
+    "description": {
+      "en": "Slay 300 rank S elite marks in Dawntrail regions.",
+      "de": "300 Elite-Ziele vom Rang S oder höher in den Dawntrail-Arealen erlegt.",
+      "ja": "黄金のレガシーのフィールドに出現するランクS以上のリスキーモブを300体討伐する",
+      "fr": "Abattre 300 cibles d'élite de rang S ou plus dans les zones de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3536": {
+    "id": 3536,
+    "icon": "/i/002000/002731.png",
+    "patch": 95,
+    "en": "Dawn of a New S Game III",
+    "de": "Jag mir ein S auf Tural III",
+    "ja": "黄金の超大物殺し：ランク3",
+    "fr": "L'aurore du gros gibier III",
+    "description": {
+      "en": "Slay 1,000 rank S elite marks in Dawntrail regions.",
+      "de": "1.000 Elite-Ziele vom Rang S oder höher in den Dawntrail-Arealen erlegt.",
+      "ja": "黄金のレガシーのフィールドに出現するランクS以上のリスキーモブを1,000体討伐する",
+      "fr": "Abattre 1 000 cibles d'élite de rang S ou plus dans les zones de Dawntrail."
+    },
+    "item": 0,
+    "title": 748
+  },
+  "3537": {
+    "id": 3537,
+    "icon": "/i/002000/002685.png",
+    "patch": 95,
+    "en": "Dawnbright Hunter",
+    "de": "Goldener Jäger",
+    "ja": "ゴールデンモブハンター",
+    "fr": "Chasseur de l'aurore",
+    "description": {
+      "en": "Obtain the “Dawn of a New A Game III” and “Dawn of a New S Game III” achievements.",
+      "de": "Die Errungenschaften „Jag mir ein A auf Tural III“ und „Jag mir ein S auf Tural III“ erlangt.",
+      "ja": "アチーブメント「黄金の難物殺し：ランク3」と「黄金の超大物殺し：ランク3」を達成する",
+      "fr": "Accomplir les hauts faits “L'aurore du menu fretin III” et “L'aurore du gros gibier III”."
+    },
+    "item": 43599,
+    "title": 0
+  },
+  "3538": {
+    "id": 3538,
+    "icon": "/i/037000/037430.png",
+    "patch": 95,
+    "en": "Aetherpool Party: Twinfangs",
+    "de": "Waffen des Padjal: Zwillingsfänge",
+    "ja": "強化されし魔器：ツインファング",
+    "fr": "Padjale, ton arme : crochets",
+    "description": {
+      "en": "Obtain a pair of Padjali twinfangs.",
+      "de": "Padjal-Zwillingsfänge erhalten.",
+      "ja": "パジャルツインファングを入手する",
+      "fr": "Obtenir une paire de crochets padjals."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3539": {
+    "id": 3539,
+    "icon": "/i/037000/037639.png",
+    "patch": 95,
+    "en": "Aetherpool Party: Fan Brush",
+    "de": "Waffen des Padjal: Fächerpinsel",
+    "ja": "強化されし魔器：ファンブラシ",
+    "fr": "Padjale, ton arme : pinceau éventail",
+    "description": {
+      "en": "Obtain a Padjali fan brush.",
+      "de": "Einen Padjal-Fächerpinsel erhalten.",
+      "ja": "パジャルファンブラシを入手する",
+      "fr": "Obtenir un pinceau éventail padjal."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3540": {
+    "id": 3540,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Freebird: Urqopacha",
+    "de": "Frei wie ein Vogel: Urqopacha",
+    "ja": "オルコ・パチャの風を知る者",
+    "fr": "Aux quatre vents : Urqopacha",
+    "description": {
+      "en": "Attune with all the aether currents in Urqopacha.",
+      "de": "Alle Windätherquellen in Urqopacha gebündelt.",
+      "ja": "オルコ・パチャにて、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés d'Urqopacha."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3541": {
+    "id": 3541,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Freebird: Kozama'uka",
+    "de": "Frei wie ein Vogel: Kozama'uka",
+    "ja": "コザマル・カの風を知る者",
+    "fr": "Aux quatre vents : Kozama'uka",
+    "description": {
+      "en": "Attune with all the aether currents in Kozama'uka.",
+      "de": "Alle Windätherquellen in Kozama'uka gebündelt.",
+      "ja": "コザマル・カにて、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés de Kozama'uka."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3542": {
+    "id": 3542,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Freebird: Yak T'el",
+    "de": "Frei wie ein Vogel: Yak T'el",
+    "ja": "ヤクテル樹海の風を知る者",
+    "fr": "Aux quatre vents : Yak T'el",
+    "description": {
+      "en": "Attune with all the aether currents in Yak T'el.",
+      "de": "Alle Windätherquellen in Yak T'el gebündelt.",
+      "ja": "ヤクテル樹海にて、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés de Yak T'el."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3543": {
+    "id": 3543,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Freebird: Shaaloani",
+    "de": "Frei wie ein Vogel: Shaaloani",
+    "ja": "シャーローニ荒野の風を知る者",
+    "fr": "Aux quatre vents : Shaaloani",
+    "description": {
+      "en": "Attune with all the aether currents in Shaaloani.",
+      "de": "Alle Windätherquellen in Shaaloani gebündelt.",
+      "ja": "シャーローニ荒野にて、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés de Shaaloani."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3544": {
+    "id": 3544,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Freebird: Heritage Found",
+    "de": "Frei wie ein Vogel: Ewiges Erbe",
+    "ja": "ヘリテージファウンドの風を知る者",
+    "fr": "Aux quatre vents : L'Hoirie recouvrée",
+    "description": {
+      "en": "Attune with all the aether currents in Heritage Found.",
+      "de": "Alle Windätherquellen im Ewigen Erbe gebündelt.",
+      "ja": "ヘリテージファウンドにて、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés de L'Hoirie recouvrée."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3545": {
+    "id": 3545,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Freebird: Living Memory",
+    "de": "Frei wie ein Vogel: Lebende Erinnerung",
+    "ja": "リビング・メモリーの風を知る者",
+    "fr": "Aux quatre vents : La Mémoire vivante",
+    "description": {
+      "en": "Attune with all the aether currents in Living Memory.",
+      "de": "Alle Windätherquellen in der Lebenden Erinnerung gebündelt.",
+      "ja": "リビング・メモリーにて、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés de La Mémoire vivante."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3546": {
+    "id": 3546,
+    "icon": "/i/021000/021901.png",
+    "patch": 95,
+    "en": "Frequent Flyer V",
+    "de": "Vielflieger V",
+    "ja": "黄金の風を知る者",
+    "fr": "Navigateur des cieux de l'ouest",
+    "description": {
+      "en": "Obtain “Freebird” achievements for Urqopacha, Kozama'uka, Yak T'el, Shaaloani, Heritage Found, and Living Memory.",
+      "de": "Die „Frei wie ein Vogel“-Errungenschaften in Urqopacha, in Kozama'uka, in Yak T'el, in Shaaloani, im Ewigen Erben und in der Lebenden Erinnerung erhalten.",
+      "ja": "オルコ・パチャ、コザマル・カ、ヤクテル樹海、シャーローニ荒野、ヘリテージファウンド、リビング・メモリーのすべてで、フライングマウントを開放する",
+      "fr": "S'harmoniser avec tous les vents éthérés d'Urqopacha, de Kozama'uka, de Yak T'el, de Shaaloani, de l'Hoirie recouvrée, et de la Mémoire vivante."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3547": {
+    "id": 3547,
+    "icon": "/i/000000/000115.png",
+    "patch": 95,
+    "en": "I Can Dig It XV",
+    "de": "Wer sucht, der findet XV",
+    "ja": "トレジャーハンター：ランク15",
+    "fr": "Creuser son trou XV",
+    "description": {
+      "en": "Decipher 20 timeworn loboskin maps and open the treasure coffers to which they lead.",
+      "de": "20 vergilbte Schakalleder-Schatzkarten entziffert und die dazugehörigen Schatztruhen geöffnet.",
+      "ja": "古ぼけた地図G16を解読し、宝箱を20回開ける",
+      "fr": "Déchiffrer 20 vieilles cartes en peau de loup argenté et ouvrir les coffres auxquels elles conduisent."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3548": {
+    "id": 3548,
+    "icon": "/i/000000/000115.png",
+    "patch": 95,
+    "en": "I Can Dig It XVI",
+    "de": "Wer sucht, der findet XVI",
+    "ja": "トレジャーハンター：ランク16",
+    "fr": "Creuser son trou XVI",
+    "description": {
+      "en": "Decipher 20 timeworn br'aaxskin maps and open the treasure coffers to which they lead.",
+      "de": "20 vergilbte Br'aaxleder-Schatzkarten entziffert und die dazugehörigen Schatztruhen geöffnet.",
+      "ja": "古ぼけた地図G17を解読し、宝箱を20回開ける",
+      "fr": "Déchiffrer 20 vieilles cartes en peau de br'aax et ouvrir les coffres auxquels elles conduisent."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3549": {
+    "id": 3549,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3550": {
+    "id": 3550,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3551": {
+    "id": 3551,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3552": {
+    "id": 3552,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3553": {
+    "id": 3553,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3554": {
+    "id": 3554,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3555": {
+    "id": 3555,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3556": {
+    "id": 3556,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3557": {
+    "id": 3557,
+    "icon": "/i/027000/027661.png",
+    "patch": 95,
+    "en": "Triple-decker XIII",
+    "de": "Tripledecker XIII",
+    "ja": "カードコレクター：ランク13",
+    "fr": "Porte-cartes XIII",
+    "description": {
+      "en": "Obtain 423 unique Triple Triad cards.",
+      "de": "423 verschiedene Triple Triad-Karten erhalten.",
+      "ja": "トリプルトライアドのカードを423種類入手する",
+      "fr": "Obtenir 423 cartes de Triple Triade différentes."
+    },
+    "item": 43876,
+    "title": 0
+  },
+  "3558": {
+    "id": 3558,
+    "icon": "/i/003000/003564.png",
+    "patch": 95,
+    "en": "Triple Team IX",
+    "de": "Tripleduellant IX",
+    "ja": "街角のデュエリスト：ランク9",
+    "fr": "En cartes et en os IX",
+    "description": {
+      "en": "Defeat 123 unique NPCs at Triple Triad.",
+      "de": "123 Triple Triad-Partien gegen NPCs gewonnen.",
+      "ja": "トリプルトライアドで、123人のNPCに勝利する",
+      "fr": "Remporter un duel de Triple Triade contre 123 PNJ différents."
+    },
+    "item": 43875,
+    "title": 0
+  },
+  "3559": {
+    "id": 3559,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Free Market Friend: Urqopacha",
+    "de": "FATE-Händler: Urqopacha",
+    "ja": "広域交易商の味方：オルコ・パチャ",
+    "fr": "Héros de grand chemin : Urqopacha",
+    "description": {
+      "en": "Achieve shared FATE rank 4 in Urqopacha.",
+      "de": "In Urqopacha FATE-Fortschritt Rang 4 erreicht.",
+      "ja": "オルコ・パチャのF.A.T.E.達成度をRANK4にする",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA à Urqopacha."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3560": {
+    "id": 3560,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Free Market Friend: Kozama'uka",
+    "de": "FATE-Händler: Kozama'uka",
+    "ja": "広域交易商の味方：コザマル・カ",
+    "fr": "Héros de grand chemin : Kozama'uka",
+    "description": {
+      "en": "Achieve shared FATE rank 4 in Kozama'uka.",
+      "de": "In Kozama'uka FATE-Fortschritt Rang 4 erreicht.",
+      "ja": "コザマル・カのF.A.T.E.達成度をRANK4にする",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA à Kozama'uka."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3561": {
+    "id": 3561,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Free Market Friend: Yak T'el",
+    "de": "FATE-Händler: Yak T'el",
+    "ja": "広域交易商の味方：ヤクテル樹海",
+    "fr": "Héros de grand chemin : Yak T'el",
+    "description": {
+      "en": "Achieve shared FATE rank 4 in Yak T'el.",
+      "de": "In Yak T'el FATE-Fortschritt Rang 4 erreicht.",
+      "ja": "ヤクテル樹海のF.A.T.E.達成度をRANK4にする",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA à Yak T'el."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3562": {
+    "id": 3562,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Free Market Friend: Shaaloani",
+    "de": "FATE-Händler: Shaaloani",
+    "ja": "広域交易商の味方：シャーローニ荒野",
+    "fr": "Héros de grand chemin : Shaaloani",
+    "description": {
+      "en": "Achieve shared FATE rank 4 in Shaaloani.",
+      "de": "In Shaaloani FATE-Fortschritt Rang 4 erreicht.",
+      "ja": "シャーローニ荒野のF.A.T.E.達成度をRANK4にする",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA à Shaaloani."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3563": {
+    "id": 3563,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Free Market Friend: Heritage Found",
+    "de": "FATE-Händler: Ewiges Erbe",
+    "ja": "広域交易商の味方：ヘリテージファウンド",
+    "fr": "Héros de grand chemin : L'Hoirie recouvrée",
+    "description": {
+      "en": "Achieve shared FATE rank 4 in Heritage Found.",
+      "de": "Im Ewigen Erbe FATE-Fortschritt Rang 4 erreicht.",
+      "ja": "ヘリテージファウンドのF.A.T.E.達成度をRANK4にする",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA à L'Hoirie recouvrée."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3564": {
+    "id": 3564,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Free Market Friend: Living Memory",
+    "de": "FATE-Händler: Lebende Erinnerung",
+    "ja": "広域交易商の味方：リビング・メモリー",
+    "fr": "Héros de grand chemin : La Mémoire vivante",
+    "description": {
+      "en": "Achieve shared FATE rank 4 in Living Memory.",
+      "de": "In der Lebenden Erinnerung FATE-Fortschritt Rang 4 erreicht.",
+      "ja": "リビング・メモリーのF.A.T.E.達成度をRANK4にする",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA à La Mémoire vivante."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3565": {
+    "id": 3565,
+    "icon": "/i/002000/002645.png",
+    "patch": 95,
+    "en": "Transcontinental Trade",
+    "de": "Transkontinentaler Handel",
+    "ja": "広域交易商の後見人",
+    "fr": "Héros de grand chemin : Tural",
+    "description": {
+      "en": "Obtain “Free Market Friend” achievements for all six regions in Tural.",
+      "de": "Die Errungenschaften „FATE-Händler: Urqopacha“, „FATE-Händler: Kozama'uka“, „FATE-Händler: Yak T'el“, „FATE-Händler: Shaaloani“, „FATE-Händler: Ewiges Erbe“ und „FATE-Händler: Lebende Erinnerung“ erlangt.",
+      "ja": "アチーブメント「広域交易商の味方：オルコ・パチャ」と「広域交易商の味方：コザマル・カ」、「広域交易商の味方：ヤクテル樹海」、「広域交易商の味方：シャーローニ荒野」、「広域交易商の味方：ヘリテージファウンド」、「広域交易商の味方：リビング・メモリー」を達成する",
+      "fr": "Accomplir les hauts faits “Héros de grand chemin” pour les régions d'Urqopacha, Kozama'uka, Yak T'el, Shaaloani, L'Hoirie recouvrée et La Mémoire vivante."
+    },
+    "item": 0,
+    "title": 752
+  },
+  "3566": {
+    "id": 3566,
+    "icon": "/i/002000/002629.png",
+    "patch": 95,
+    "en": "Terrible Ttokrrone",
+    "de": "Ttokrrone der Terror",
+    "ja": "トクローネスレイヤー",
+    "fr": "Ttokrrone charmé",
+    "description": {
+      "en": "Successfully complete the FATE “Sandnest Deathmatch” with the highest rating possible.",
+      "de": "Das FATE „In den sandingen Schlund“ mit der bestmöglichen Bewertung abgeschlossen.",
+      "ja": "F.A.T.E.「トクローネ：荒野の死闘」を最高評価でコンプリートする",
+      "fr": "Accomplir l'ALÉA “Ttokrrone&nbsp;: lutte ensablée” avec la meilleure évaluation possible."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3567": {
+    "id": 3567,
+    "icon": "/i/002000/002629.png",
+    "patch": 95,
+    "en": "Thanks for the Mu-mories",
+    "de": "Mu-mmenschanz",
+    "ja": "マジカルブーギー",
+    "fr": "Farandole mu-gique",
+    "description": {
+      "en": "Successfully complete the FATE “Mascot Murder” with the highest rating possible.",
+      "de": "Das FATE „Mordendes Maskottchen“ mit der bestmöglichen Bewertung abgeschlossen.",
+      "ja": "F.A.T.E.「マイカ・ザ・ムー：大団円」を最高評価でコンプリートする",
+      "fr": "Accomplir l'ALÉA “Mica le mu&nbsp;: le grand final” avec la meilleure évaluation possible."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3568": {
+    "id": 3568,
+    "icon": "/i/064000/064452.png",
+    "patch": 95,
+    "en": "Summer's Biggest Fan",
+    "de": "Held der Hitze",
+    "ja": "暑気払いの大うちわ",
+    "fr": "Gros éventails rafraîchissants",
+    "description": {
+      "en": "Complete the quest “Festival Fan Frenzy.”",
+      "de": "Den Auftrag „Großer Fächer, große Wirkung“ abgeschlossen.",
+      "ja": "クエスト「紅蓮祭と魔を祓う大うちわ」をコンプリートする",
+      "fr": "Accomplir la quête “Éventails contre pampas”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3569": {
+    "id": 3569,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3570": {
+    "id": 3570,
+    "icon": "/i/056000/056726.png",
+    "patch": 95,
+    "en": "The Little Fiends in Life",
+    "de": "Ein vorzügliches Allerschutzheiligen",
+    "ja": "感謝味わう守護天節",
+    "fr": "感謝味わう守護天節",
+    "description": {
+      "en": "Complete the quest “All Fiends Sated on All Saints' Wake.”",
+      "de": "Den Auftrag „Ein Unhold auf wohltätiger Mission“ abgeschlossen.",
+      "ja": "クエスト「守護天節と感謝される魔物」をコンプリートする",
+      "fr": "クエスト「守護天節と感謝される魔物」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3571": {
+    "id": 3571,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3572": {
+    "id": 3572,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3573": {
+    "id": 3573,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3574": {
+    "id": 3574,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3575": {
+    "id": 3575,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3576": {
+    "id": 3576,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3577": {
+    "id": 3577,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3578": {
+    "id": 3578,
+    "icon": "/i/000000/000210.png",
+    "patch": 95,
+    "en": "Top Tier: Season Eleven",
+    "de": "Kristallkönig (11. Saison)",
+    "ja": "コンフリクトの王者：シーズン11",
+    "fr": "Roi du conflit : saison 11",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Eleven ranked #1.",
+      "de": "Die 11. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン11にて、ランキングで1位になる",
+      "fr": "Terminer la saison 11 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 753
+  },
+  "3579": {
+    "id": 3579,
+    "icon": "/i/000000/000210.png",
+    "patch": 95,
+    "en": "Crystal in the Rough: Season Eleven",
+    "de": "Kristallfürst (11. Saison)",
+    "ja": "コンフリクトの勇者：シーズン11",
+    "fr": "Prince du conflit : saison 11",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Eleven ranked within the top 30.",
+      "de": "Die 11. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン11にて、ランキングで30位以内に入る",
+      "fr": "Terminer la saison 11 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 754
+  },
+  "3580": {
+    "id": 3580,
+    "icon": "/i/000000/000210.png",
+    "patch": 95,
+    "en": "Ranked and Filed: Season Eleven",
+    "de": "Kristallkämpfer (11. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン11",
+    "fr": "As du conflit : saison 11",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Eleven ranked within the top 100.",
+      "de": "Die 11. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン11にて、ランキングで100位以内に入る",
+      "fr": "Terminer la saison 11 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 755
+  },
+  "3581": {
+    "id": 3581,
+    "icon": "/i/025000/025945.png",
+    "patch": 95,
+    "en": "The Leader of the Band VII",
+    "de": "Hier spielt die Musik VII",
+    "ja": "旋律に魅せられし者：ランク7",
+    "fr": "Mélomane mécanique VII",
+    "description": {
+      "en": "Add 500 unique music rolls to your orchestrion.",
+      "de": "Dem Orchestrion 500 Musikstücke hinzugefügt.",
+      "ja": "オーケストリオン譜面帳に、500種類の楽曲を登録する",
+      "fr": "Ajouter 500 rouleaux différents à votre liste de morceaux pour orchestrion."
+    },
+    "item": 0,
+    "title": 0
   }
 }

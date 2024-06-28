@@ -2437,9 +2437,192 @@ export const weatherIndex = {
       "weatherId": 179
     }
   ],
-  "156": [],
-  "157": [],
-  "158": [],
-  "159": [],
-  "160": []
+  "156": [
+    {
+      "rate": 100,
+      "weatherId": 10
+    }
+  ],
+  "157": [
+    {
+      "rate": 100,
+      "weatherId": 183
+    }
+  ],
+  "158": [
+    {
+      "rate": 100,
+      "weatherId": 181
+    }
+  ],
+  "159": [
+    {
+      "rate": 40,
+      "weatherId": 1
+    },
+    {
+      "rate": 80,
+      "weatherId": 2
+    },
+    {
+      "rate": 85,
+      "weatherId": 3
+    },
+    {
+      "rate": 95,
+      "weatherId": 4
+    },
+    {
+      "rate": 100,
+      "weatherId": 7
+    }
+  ],
+  "160": [
+    {
+      "rate": 20,
+      "weatherId": 1
+    },
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 70,
+      "weatherId": 3
+    },
+    {
+      "rate": 80,
+      "weatherId": 4
+    },
+    {
+      "rate": 90,
+      "weatherId": 5
+    },
+    {
+      "rate": 100,
+      "weatherId": 15
+    }
+  ],
+  "161": [
+    {
+      "rate": 25,
+      "weatherId": 1
+    },
+    {
+      "rate": 60,
+      "weatherId": 2
+    },
+    {
+      "rate": 75,
+      "weatherId": 3
+    },
+    {
+      "rate": 85,
+      "weatherId": 4
+    },
+    {
+      "rate": 95,
+      "weatherId": 7
+    },
+    {
+      "rate": 100,
+      "weatherId": 8
+    }
+  ],
+  "162": [
+    {
+      "rate": 15,
+      "weatherId": 1
+    },
+    {
+      "rate": 55,
+      "weatherId": 2
+    },
+    {
+      "rate": 70,
+      "weatherId": 3
+    },
+    {
+      "rate": 85,
+      "weatherId": 4
+    },
+    {
+      "rate": 100,
+      "weatherId": 7
+    }
+  ],
+  "163": [
+    {
+      "rate": 100,
+      "weatherId": 2
+    }
+  ],
+  "164": [
+    {
+      "rate": 5,
+      "weatherId": 1
+    },
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 70,
+      "weatherId": 3
+    },
+    {
+      "rate": 85,
+      "weatherId": 11
+    },
+    {
+      "rate": 100,
+      "weatherId": 6
+    }
+  ],
+  "165": [
+    {
+      "rate": 5,
+      "weatherId": 2
+    },
+    {
+      "rate": 25,
+      "weatherId": 3
+    },
+    {
+      "rate": 40,
+      "weatherId": 4
+    },
+    {
+      "rate": 45,
+      "weatherId": 7
+    },
+    {
+      "rate": 50,
+      "weatherId": 10
+    },
+    {
+      "rate": 100,
+      "weatherId": 50
+    }
+  ],
+  "166": [
+    {
+      "rate": 10,
+      "weatherId": 7
+    },
+    {
+      "rate": 20,
+      "weatherId": 4
+    },
+    {
+      "rate": 40,
+      "weatherId": 3
+    },
+    {
+      "rate": 100,
+      "weatherId": 2
+    }
+  ],
+  "167": [],
+  "168": []
 };

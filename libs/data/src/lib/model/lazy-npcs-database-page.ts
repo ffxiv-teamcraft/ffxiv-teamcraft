@@ -141,6 +141,7 @@ export interface Title {
 
 export enum Ja {
   Achievement = "ACHIEVEMENT",
+  AlpacaPorter = "ALPACA PORTER",
   AmaroPorter = "AMARO PORTER",
   Blunderville = "BLUNDERVILLE",
   Cactpot = "CACTPOT",
@@ -204,8 +205,10 @@ export enum Ja {
   TheMaskedCarnivale = "THE MASKED CARNIVALE",
   TotalTrade = "TOTAL TRADE",
   Trade = "TRADE",
+  Training = "TRAINING",
   Transportation = "TRANSPORTATION",
   TripleTriad = "TRIPLE TRIAD",
+  Turalileves = "TURALILEVES",
   VariantDungeon = "VARIANT DUNGEON",
   Weather = "WEATHER",
   Workshop = "WORKSHOP",

@@ -39,12 +39,21 @@ export interface Description {
 }
 
 export interface ProcStatus {
-  icon: string;
+  icon: Icon;
   id:   number;
 }
 
+export enum Icon {
+  Empty = "",
+  I000000000010PNG = "/i/000000/000010.png",
+  I000000000100PNG = "/i/000000/000100.png",
+  I029000029469PNG = "/i/029000/029469.png",
+  I029000029470PNG = "/i/029000/029470.png",
+  I029000029499PNG = "/i/029000/029499.png",
+  I039000039186PNG = "/i/039000/039186.png",
+}
+
 export interface Target {
-  dead:    boolean;
   hostile: boolean;
   party:   boolean;
   self:    boolean;
@@ -58,6 +67,6 @@ export interface Trait {
   icon:        string;
   id:          number;
   ja:          string;
-  ko:          string;
-  zh:          string;
+  ko?:         string;
+  zh?:         string;
 }

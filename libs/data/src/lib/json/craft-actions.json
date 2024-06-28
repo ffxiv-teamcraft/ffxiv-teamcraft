@@ -2644,5 +2644,245 @@
     "de": "Götter Werk",
     "ja": "匠の神業",
     "fr": "Main divine"
+  },
+  "100443": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100444": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100445": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100446": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100447": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100448": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100449": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100450": {
+    "en": "Refined Touch",
+    "de": "Raffinierte Veredelung",
+    "ja": "洗練加工",
+    "fr": "Ouvrage raffiné"
+  },
+  "100451": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100452": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100453": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100454": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100455": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100456": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100457": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100458": {
+    "en": "Daring Touch",
+    "de": "Kühne Veredelung",
+    "ja": "デアリングタッチ",
+    "fr": "Ouvrage audacieux"
+  },
+  "100459": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100460": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100461": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100462": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100463": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100464": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100465": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100466": {
+    "en": "Quick Innovation",
+    "de": "Spontane Innovation",
+    "ja": "クイックイノベーション",
+    "fr": "Innovation instantanée"
+  },
+  "100467": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100468": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100469": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100470": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100471": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100472": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100473": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100474": {
+    "en": "Immaculate Mend",
+    "de": "Winkelzug",
+    "ja": "パーフェクトメンド",
+    "fr": "Réparation totale"
+  },
+  "100475": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100476": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100477": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100478": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100479": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100480": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100481": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
+  },
+  "100482": {
+    "en": "Trained Perfection",
+    "de": "Meisters Beitrag",
+    "ja": "匠の絶技",
+    "fr": "Main suprême"
   }
 }
