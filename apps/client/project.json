@@ -24,6 +24,8 @@
         "tsConfig": "apps/client/tsconfig.app.json",
         "assets": [
           "apps/client/src/favicon.ico",
+          "apps/client/src/sitemap.xml",
+          "apps/client/src/robots.txt",
           "apps/client/src/assets",
           {
             "glob": "**/*",
