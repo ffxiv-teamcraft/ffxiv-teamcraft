@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.1...v11.2.2) (2024-06-29)
+
+
+### Features
+
+* **db:** add many early DT monsters & allagan reports ([208ebe2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/208ebe2775f2d0996c817f2a02d01ae17bd8d6a8))
+
+
+### Bug Fixes
+
+* **desktop:** fix retainer detection ([77a727d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77a727da0d6578127fcc550ac937d9ee61e84cf8))
+* **desktop:** fixed fishing reporter ([83dc422](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83dc422b3c9c3a75fefe567fe34475e836ab2136))
+* **desktop:** handle new lvl 91 fisher skill in reporter ([1c2d558](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c2d558c247e68534143c4147b6af70820040130))
+* **simulator:** fix Refined Touch combo with Basic Touch & Quick Innovation CP cost ([aae5366](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aae5366ff8546525d92797841542655e925511de))
+
 ### [11.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.0...v11.2.1) (2024-06-28)
 
 
