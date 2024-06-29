@@ -5,6 +5,7 @@ export enum ListTag {
   STORMBLOOD = 'STORMBLOOD',
   SHADOWBRINGERS = 'SHADOWBRINGERS',
   ENDWALKER = 'ENDWALKER',
+  DAWNTRAIL = 'DAWNTRAIL',
 
 
   // Theme tags
@@ -44,6 +45,7 @@ export enum ListTag {
   NIN = 'NIN',
   SAM = 'SAM',
   RPR = 'RPR',
+  VPR = 'VPR',
 
   BRD = 'BRD',
   MCH = 'MCH',
@@ -53,6 +55,7 @@ export enum ListTag {
   SMN = 'SMN',
   RDM = 'RDM',
   BLU = 'BLU',
+  PCT = 'PCT',
 
   CRP = 'CRP',
   BSM = 'BSM',
