@@ -260,7 +260,7 @@ export abstract class AbstractExtractor {
       }
     });
     return res$;
-  };
+  }
 
   protected cleanupString(input: string): string {
     if (input === undefined) {

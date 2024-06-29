@@ -2957,10 +2957,10 @@
     cross-spawn "^5.1.0"
     nan "^2.18.0"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.1.tgz#d773dbadd30229c6a957118b1c3edab80c761ba0"
-  integrity sha512-FiTIspLjXzY6KmzYYGRg5R5wmmzEtuL6Az3FW2NRHmYoZaiCDuTkvxyHZo4QussMV448UbHPKeIlXSOWGbTWHA==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.2.tgz#e6232337cf7d54e3af9f17fa1eaac249207e6cdf"
+  integrity sha512-tWXJ3p18vGgOEhT/eqC2NHn7d7b4D5/ho1WwK7w6xq39fDzq6YDY+0kEGolXvDL5wW1RAavAqr988WeJza+NMQ==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.10"
 
