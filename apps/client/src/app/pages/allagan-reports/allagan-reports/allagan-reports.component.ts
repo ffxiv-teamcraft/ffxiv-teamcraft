@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AllaganReportsService } from '../allagan-reports.service';
-import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -31,16 +30,16 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-allagan-reports',
-    templateUrl: './allagan-reports.component.html',
-    styleUrls: ['./allagan-reports.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NgIf, NzSelectModule, FormsModule, NgFor, NzDividerModule, NzCardModule, NzStatisticModule, NzEmptyModule, LazyScrollComponent, ItemIconComponent, I18nNameComponent, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, NzPopconfirmModule, NzGridModule, NzTagModule, ReportSourceDisplayComponent, ReportSourceCompactDetailsComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule]
+  selector: 'app-allagan-reports',
+  templateUrl: './allagan-reports.component.html',
+  styleUrls: ['./allagan-reports.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NgIf, NzSelectModule, FormsModule, NgFor, NzDividerModule, NzCardModule, NzStatisticModule, NzEmptyModule, LazyScrollComponent, ItemIconComponent, I18nNameComponent, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, NzPopconfirmModule, NzGridModule, NzTagModule, ReportSourceDisplayComponent, ReportSourceCompactDetailsComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class AllaganReportsComponent {
 
@@ -117,7 +116,7 @@ export class AllaganReportsComponent {
   public sourceFilter$ = this.allaganReportsService.filter$;
 
   constructor(public allaganReportsService: AllaganReportsService,
-              private dialog: NzModalService, public translate: TranslateService,
+              public translate: TranslateService,
               private lazyData: LazyDataFacade, private authFacade: AuthFacade,
               private message: NzMessageService, private cd: ChangeDetectorRef) {
   }

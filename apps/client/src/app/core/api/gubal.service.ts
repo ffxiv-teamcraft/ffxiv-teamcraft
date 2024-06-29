@@ -1,7 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
-import { catchError, debounceTime, first, mapTo, switchMap } from 'rxjs/operators';
+import { catchError, debounceTime, first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { DataReporter } from '../data-reporting/data-reporter';
@@ -72,7 +71,7 @@ export class GubalService {
         });
       }),
       catchError(() => of(null)),
-      mapTo(null)
+      map(() => null)
     );
   }
 }
