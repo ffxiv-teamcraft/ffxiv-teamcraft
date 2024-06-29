@@ -138,7 +138,7 @@ export class FishingReporter implements DataReporter {
           weatherId,
           previousWeatherId
         };
-      }),
+      })
     );
 
 
@@ -165,18 +165,25 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const mooch$ = packets$.pipe(
+    const moochSelection$ = packets$.pipe(
       ofMessageType('systemLogMessage'),
       toIpcData(),
-      filter(packet => packet.param1 === 1121 || packet.param1 === 1110),
+      filter(packet => [1121, 1110, 3522].includes(packet.param1)),
       map(packet => {
-        if (packet.param1 === 1121) {
+        if (packet.param1 === 1121 || packet.param1 === 3522) {
           return packet.param3;
         }
         return null;
       }),
       startWith(null)
     );
+
+    const resetMooch$ = packets$.pipe(
+      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
+      map(() => null)
+    );
+
+    const mooch$ = merge(moochSelection$, resetMooch$);
 
     const misses$ = combineLatest([
       packets$.pipe(

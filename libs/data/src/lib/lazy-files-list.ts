@@ -593,7 +593,7 @@ export const lazyFilesList = {
   },
   'statuses': {
     'fileName': 'statuses.json',
-    'hashedFileName': 'statuses.e03aba6aa1feab18c6e13670620734dceacde17f.json'
+    'hashedFileName': 'statuses.24662b19e8cc82d1e468bd4d38a259ee3d1a8610.json'
   },
   'submarineParts': {
     'fileName': 'submarine-parts.json',
