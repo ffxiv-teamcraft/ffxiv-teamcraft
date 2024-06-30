@@ -98,7 +98,7 @@ export class RotationResultTagComponent implements OnInit {
       switchMap(([[rotation, gearSets, _recipe, simulationSet], recipes]) => {
         return combineLatest([this.foods$, this.medicines$]).pipe(
           map(([foods, medicines]) => {
-            let recipe = recipes.find(r => r.id === (_recipe || rotation.recipe).id) as unknown as Craft;
+            let recipe: Craft = recipes.find(r => r.id === _recipe.id) as unknown as Craft;
             if (!recipe) {
               recipe = rotation.recipe as unknown as Craft;
             }
