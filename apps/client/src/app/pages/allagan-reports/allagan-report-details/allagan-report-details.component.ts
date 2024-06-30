@@ -1,18 +1,18 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { debounceTime, distinctUntilChanged, filter, first, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { AllaganReportSource, Hookset, I18nName, SearchType, SpearfishingShadowSize, SpearfishingSpeed, Tug } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { pickBy, uniq } from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReportStatus } from '../model/allagan-report-status';
-import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { FishContextService } from '../../db/service/fish-context.service';
@@ -61,12 +61,12 @@ function durationRequired(control: AbstractControl) {
 }
 
 @Component({
-    selector: 'app-allagan-report-details',
-    templateUrl: './allagan-report-details.component.html',
-    styleUrls: ['./allagan-report-details.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [QuickSearchComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzDividerModule, PageLoaderComponent, NzEmptyModule, LazyScrollComponent, AllaganReportRowComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NzInputModule, NzAutocompleteModule, NzButtonModule, NzInputNumberModule, NzAlertModule, NzSpinModule, PredatorsInputComponent, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionNamePipe, AbsolutePipe, MapNamePipe, TugNamePipe, HooksetActionIdPipe]
+  selector: 'app-allagan-report-details',
+  templateUrl: './allagan-report-details.component.html',
+  styleUrls: ['./allagan-report-details.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [QuickSearchComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzDividerModule, PageLoaderComponent, NzEmptyModule, LazyScrollComponent, AllaganReportRowComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NzInputModule, NzAutocompleteModule, NzButtonModule, NzInputNumberModule, NzAlertModule, NzSpinModule, PredatorsInputComponent, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionNamePipe, AbsolutePipe, MapNamePipe, TugNamePipe, HooksetActionIdPipe]
 })
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
@@ -301,6 +301,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
             };
           })
         );
+    }),
+    catchError(() => {
+      this.message.error('Failed to load gubal data');
+      return of(null);
     }),
     tap(() => this.loadingGubal = false),
     shareReplay({ bufferSize: 1, refCount: true })

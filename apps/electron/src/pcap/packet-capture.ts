@@ -190,6 +190,7 @@ export class PacketCapture {
         log.info('[pcap] Using localOpcodes:', localDataPath);
       }
     } else {
+      // TODO DT flag for KR/CN
       options.deucalionDllPath = region === 'Global' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion_6.dll');
     }
 

@@ -6,7 +6,7 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import { Hookset, Tug } from '@ffxiv-teamcraft/types';
+import { Hookset, Tug, Region } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import type { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv/models';
@@ -121,7 +121,8 @@ export class FishingReporter implements DataReporter {
     });
 
     const throw$ = packets$.pipe(
-      ofMessageType('eventPlay4'),
+      // TODO DT flag for KR/CN
+      ofMessageType(this.settings.region === Region.Global ? 'eventPlay4' : 'eventPlay'),
       toIpcData(),
       filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
       delay(200),

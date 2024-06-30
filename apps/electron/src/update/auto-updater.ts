@@ -1,6 +1,7 @@
 import { MainWindow } from '../window/main-window';
 import log from 'electron-log';
 import { app, autoUpdater, BrowserWindow, ipcMain } from 'electron';
+import { PacketCapture } from '../pcap/packet-capture';
 
 
 export class AutoUpdater {
@@ -8,7 +9,7 @@ export class AutoUpdater {
     return this.mainWindow.win;
   }
 
-  constructor(private mainWindow: MainWindow) {
+  constructor(private mainWindow: MainWindow, private pcap: PacketCapture) {
   }
 
   connectListeners(): void {
@@ -59,7 +60,9 @@ export class AutoUpdater {
 
     ipcMain.on('install-update', () => {
       (<any>app).isQuitting = true;
-      autoUpdater.quitAndInstall();
+      this.pcap.stop().then(() => {
+        autoUpdater.quitAndInstall();
+      });
     });
 
 
