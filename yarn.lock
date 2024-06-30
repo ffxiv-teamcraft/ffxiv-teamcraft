@@ -2957,10 +2957,10 @@
     cross-spawn "^5.1.0"
     nan "^2.18.0"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.3.tgz#8aa96f662e3309831b59543c1d0b8e96da4122f3"
-  integrity sha512-MdvMBDUSgUi/PYlDz/1G6AzjgWs+RZdL73Ts0Br1is5KXK0NXKK75tucd0ISI3m46VIPagY90NvAlYdIdB9laA==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.4.tgz#20703c60b203322da6bf8907222a66d18120effb"
+  integrity sha512-qUekX5+bpm6y1hngr3iqVUn0IgjIzZfGnIWHXvV7Y3UFSFtt04T0Zng99UHGXKV/xu8jijYUNNKs7dMQuwM8yg==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.10"
 
@@ -2971,10 +2971,10 @@
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^3.5.5":
-  version "3.5.5"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.5.5.tgz#a737ca443d74d835771ee5d77eeaa70fd2d641e5"
-  integrity sha512-Otw+QW5qGZCYaLw6AW+ARfjFGTcL5+F/eN/xxuk3ZwS2y3MYcPSkd/8l9NT+d+a9jEAJp5/R71oDqL/p+DjXbw==
+"@ffxiv-teamcraft/simulator@^3.5.6":
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.5.6.tgz#1ced8eaed5de4ccb388c8b9432552b2571496c3e"
+  integrity sha512-oJ/yxhQIWtK+04oBEA73n8Pv510jabXV48Tz/NR2p+iNevcb2ogxRFIi44Vx4kMM1xwR5L/Bok16rXzaqNtgoQ==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
