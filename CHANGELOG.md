@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.2...v11.2.3) (2024-06-30)
+
+
+### Features
+
+* **desktop:** marketboard listing packet fixes, kudos to Karashiiro ([07be6a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07be6a80dc06a618e5b418a5f59555406a535d63))
+* **lists:** add Dawntrail tag and new job tags ([68a4fc3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68a4fc3c04189ac33b9b125aaf266171a049646d))
+
+
+### Bug Fixes
+
+* **desktop:** fixed fishing reporter for KR ([5b90b53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b90b5355e7f3b42b8d465747638ecc4d5bc3f1e))
+* **desktop:** fixed wrong KR region packet capture dll sum path ([5119048](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51190485323a90f19563866b82282b224325293c))
+* **desktop:** make sure to kill pcap before applying update ([c47a55f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c47a55f2423b56bf5630cfd8580308acb88bd146))
+* **fishing:** change display format for eorzean time in misses popup ([e314a3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e314a3a3be9242a19af5f5fae6ec900468fed9a1))
+* **gearsets:** add slot icons for new materias ([3520417](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3520417b0470e424b6948ef9808da3b0f586ee20))
+* **list:** show rotation's result on item's recipe with linked rotation ([6c06177](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c061777846e180ab4f3bd2e701d4ca2f58e443c))
+* **simulator:** fix drag and drop preview ([1d03dd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d03dd1db17b85730bf29083cfa7fd4fcbe022d5))
+* **simulator:** fix Trained Perfection's specialist requirement and general implementation ([4a63a48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a63a4830b308728c851a02b6edda2d20dc1fb4e))
+
 ### [11.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.1...v11.2.2) (2024-06-29)
 
 
