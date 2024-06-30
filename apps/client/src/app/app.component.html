@@ -291,12 +291,6 @@
                             {{'CUSTOM_LINKS.Title' | translate}}
                           </a>
                         }
-                        @if (user.sekrit) {
-                          <a nz-menu-item routerLink="/mappy">
-                            <i nz-icon nzType="scan"></i>
-                            Mappy
-                          </a>
-                        }
                       }
                       <span nz-menu-divider></span>
                       @if (loggedIn$ | async) {

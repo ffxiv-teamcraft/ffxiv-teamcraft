@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DevGuard } from './core/guard/dev.guard';
 import { ModeratorGuard } from './core/guard/moderator.guard';
 
 const routes: Routes = [
@@ -74,10 +73,6 @@ const routes: Routes = [
   {
     path: 'fishing-reporter-overlay',
     loadChildren: () => import('./pages/fishing-reporter-overlay/fishing-reporter-overlay.module').then(m => m.FishingReporterOverlayModule)
-  },
-  {
-    path: 'mappy',
-    loadChildren: () => import('./pages/mappy/mappy.module').then(m => m.MappyModule)
   },
   {
     path: 'mappy-overlay',
