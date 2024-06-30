@@ -81,7 +81,7 @@ if (!isUpdating) {
     mainWindow.whenReady();
   });
 
-  const autoUpdater = new AutoUpdater(mainWindow);
+  const autoUpdater = new AutoUpdater(mainWindow, pcapManager);
   autoUpdater.connectListeners();
 
   // Then, create the Electron application
