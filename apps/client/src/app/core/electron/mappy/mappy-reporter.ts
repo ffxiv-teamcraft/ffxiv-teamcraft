@@ -7,7 +7,6 @@ import { delayWhen, filter, map, switchMap, takeUntil, tap } from 'rxjs/operator
 import { combineLatest, interval, merge, Subject } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
-import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { Aetheryte } from '../../data/aetheryte';
 import { Npc } from '../../../pages/db/model/npc/npc';
 import { uniqBy } from 'lodash';
@@ -60,9 +59,6 @@ export interface MappyReporterState {
   bnpcs: BNpcEntry[];
   mappyBnpcs: BNpcEntry[];
   outOfBoundsBnpcs: BNpcEntry[];
-  objs: ObjEntry[];
-  mappyObjs: ObjEntry[];
-  outOfBoundsObjs: ObjEntry[];
   aetherytes: GameDataEntry<Aetheryte>[];
   enpcs: GameDataEntry<Npc>[];
   trail: Vector2[];
@@ -93,10 +89,7 @@ export class MappyReporterService {
     layersNotConfigured: false,
     territoryMaps: [],
     mapId: 0,
-    objs: [],
     outOfBoundsBnpcs: [],
-    mappyObjs: [],
-    outOfBoundsObjs: [],
     player: undefined,
     playerCoords: undefined,
     playerRotationTransform: '',
@@ -323,56 +316,6 @@ export class MappyReporterService {
         });
       }
     });
-
-    // Objects
-    // Disabled for now because we don't need to report nodes anymore
-    // this.ipc.objectSpawnPackets$.pipe(
-    //   takeUntil(this.stop$),
-    //   delayWhen(() => {
-    //     return this.state.zoning ? interval(2000) : interval(0);
-    //   }),
-    //   filter(() => this.state !== undefined),
-    //   withLazyData(this.lazyData, 'territoryLayers', 'maps', 'gatheringPointToNodeId', 'nodes')
-    // ).subscribe(([packet, territoryLayers, maps, gatheringPointToNodeId, nodes]) => {
-    //   const position = {
-    //     x: packet.position.x,
-    //     y: packet.position.z,
-    //     z: packet.position.y
-    //   };
-    //   const coords = this.getCoords(position);
-    //   const uniqId = `${packet.objId}-${Math.floor(coords.x)}/${Math.floor(coords.y)}`;
-    //   if (this.state.objs.some(row => row.uniqId === uniqId)
-    //     || this.state.outOfBoundsObjs.some(row => row.uniqId === uniqId)
-    //     || packet.objKind !== 6) {
-    //     return;
-    //   }
-    //   const obj: ObjEntry = {
-    //     id: packet.objId,
-    //     kind: packet.objKind,
-    //     position: position,
-    //     ingameCoords: coords,
-    //     displayPosition: this.getPosition(position),
-    //     uniqId: uniqId,
-    //     icon: this.getNodeIcon(packet.objId, gatheringPointToNodeId, nodes),
-    //     timestamp: Date.now()
-    //   };
-    //
-    //   if (this.isInLayer(coords, this.getCurrentLayer(territoryLayers, maps).bounds)) {
-    //     this.setState({
-    //       objs: [
-    //         ...this.state.objs,
-    //         obj
-    //       ]
-    //     });
-    //   } else {
-    //     this.setState({
-    //       outOfBoundsObjs: [
-    //         ...this.state.outOfBoundsObjs,
-    //         obj
-    //       ]
-    //     });
-    //   }
-    // });
   }
 
   private getCurrentLayer(territoryLayers: LazyData['territoryLayers'], maps: LazyData['maps']): TerritoryLayer {
@@ -435,8 +378,6 @@ export class MappyReporterService {
         map: maps[mapId],
         bnpcs: [],
         outOfBoundsBnpcs: [],
-        objs: [],
-        outOfBoundsObjs: [],
         trail: [],
         enpcs: enpcs.map(row => {
           return {
@@ -477,30 +418,12 @@ export class MappyReporterService {
           return this.isInLayer(bnpc.ingameCoords, this.getCurrentLayer(territoryLayers, maps).bounds);
         });
 
-        const newObjs = this.state.outOfBoundsObjs.filter(obj => {
-          return this.isInLayer(obj.ingameCoords, this.getCurrentLayer(territoryLayers, maps).bounds);
-        });
-
         newState.outOfBoundsBnpcs = uniqBy([
           ...this.state.bnpcs,
           ...this.state.outOfBoundsBnpcs
         ], 'uniqId');
 
-        newState.outOfBoundsObjs = uniqBy([
-          ...this.state.objs,
-          ...this.state.outOfBoundsObjs
-        ], 'uniqId');
-
         newState.bnpcs = newBnpcs.map(row => {
-          const newCoords = this.getCoords(row.position);
-          return {
-            ...row,
-            ingameCoords: newCoords,
-            displayPosition: this.mapService.getPositionPercentOnMap(newState.map, newCoords),
-            timestamp: Date.now()
-          };
-        });
-        newState.objs = newObjs.map(row => {
           const newCoords = this.getCoords(row.position);
           return {
             ...row,
@@ -519,10 +442,7 @@ export class MappyReporterService {
       return;
     }
     this.http.get<XivapiReportEntry[]>(`https://${MappyReporterService.XIVAPI_URL}/mappy/map/${mapId}`)
-      .pipe(
-        withLazyData(this.lazyData, 'gatheringPointToNodeId', 'nodes')
-      )
-      .subscribe(([reports, gatheringPointToNodeId, nodes]) => {
+      .subscribe((reports) => {
         this.setState({
           mappyBnpcs: reports
             .filter(report => report.Type === 'BNPC')
@@ -550,46 +470,9 @@ export class MappyReporterService {
                 },
                 uniqId: ''
               };
-            }),
-          mappyObjs: reports
-            .filter(report => report.Type === 'Node')
-            .map(report => {
-              return {
-                id: report.NodeID,
-                kind: 6,
-                icon: this.getNodeIcon(report.NodeID, gatheringPointToNodeId, nodes),
-                timestamp: 0,
-                position: {
-                  x: report.CoordinateX,
-                  y: report.CoordinateY,
-                  z: report.CoordinateZ
-                },
-                ingameCoords: {
-                  x: report.PosX,
-                  y: report.PosY,
-                  z: report.PosZ
-                },
-                displayPosition: {
-                  x: report.PixelX / 20.48,
-                  y: report.PixelY / 20.48
-                },
-                uniqId: ''
-              };
             })
         });
       });
-  }
-
-  private getNodeIcon(gatheringPointBaseId: number, gatheringPointToNodeId: LazyData['gatheringPointToNodeId'], nodes: LazyData['nodes']): string {
-    const nodeId = gatheringPointToNodeId[gatheringPointBaseId];
-    const node = nodes[nodeId];
-    if (!node) {
-      return './assets/icons/mappy/highlight.png';
-    }
-    if (node.limited) {
-      return NodeTypeIconPipe.timed_icons[node.type];
-    }
-    return NodeTypeIconPipe.icons[node.type];
   }
 
   private getCoords(coords: Vector2 | Vector3): Vector3 {
@@ -661,32 +544,7 @@ export class MappyReporterService {
         };
       });
 
-    const objReports: XivapiReportEntry[] = snapshot.objs
-      .filter(obj => obj.timestamp > this.reportedUntil && obj.id !== undefined)
-      .map(obj => {
-        return {
-          BNpcBaseID: 0,
-          BNpcNameID: 0,
-          CoordinateX: obj.position.x,
-          CoordinateY: obj.position.y,
-          CoordinateZ: obj.position.z,
-          FateID: 0,
-          HP: 0,
-          Level: 0,
-          MapID: snapshot.mapId,
-          MapTerritoryID: snapshot.map.territory_id,
-          NodeID: obj.id,
-          PixelX: Math.floor(obj.displayPosition.x * 20.48),
-          PixelY: Math.floor(obj.displayPosition.y * 20.48),
-          PlaceNameID: snapshot.map.placename_id,
-          PosX: obj.ingameCoords.x,
-          PosY: obj.ingameCoords.y,
-          PosZ: obj.ingameCoords.z,
-          Type: 'Node'
-        };
-      });
-
-    const reports = [...bnpcReports, ...objReports];
+    const reports = [...bnpcReports];
 
     if (reports.length === 0) {
       return;
