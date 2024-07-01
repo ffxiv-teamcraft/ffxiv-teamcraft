@@ -673,6 +673,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "Archiver",
     "Unarchive": "Désarchiver",
     "Regenerate": "Mettre la liste à jour vers la dernière version de Teamcraft",
