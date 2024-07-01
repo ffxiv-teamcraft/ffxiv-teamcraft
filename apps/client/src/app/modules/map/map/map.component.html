@@ -11,7 +11,7 @@
     }
     @if (unknownPosition) {
       <div class="unknown-position">
-        {{'No_known_coordinates' | translate}}
+        {{emptyMessage | translate}}
       </div>
     }
     @for (marker of markers; track trackByMarker($index, marker)) {

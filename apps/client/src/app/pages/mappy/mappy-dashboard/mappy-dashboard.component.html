@@ -1,0 +1,37 @@
+<nz-page-header>
+  <nz-page-header-title>
+    {{ 'MAPPY.Dashboard' | translate }}
+  </nz-page-header-title>
+  <nz-page-header-extra>
+    <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
+      <label nz-radio-button nzValue="all">All maps</label>
+      <label nz-radio-button nzValue="empty">Empty maps</label>
+      <label nz-radio-button nzValue="scanned">Scanned maps</label>
+    </nz-radio-group>
+  </nz-page-header-extra>
+</nz-page-header>
+
+<div class="flex-row-wrap gap-10 space-between">
+  @if (display$ | async; as display) {
+    <nz-divider nzOrientation="left" nzText="{{display.length}} maps listed"></nz-divider>
+    @for (row of display; track row.id) {
+      <nz-card [nzCover]="cover">
+        <ng-template #cover>
+          <app-map [mapId]="row.id" [markers]="row.markers" emptyMessage="Empty mappy data"></app-map>
+        </ng-template>
+        <nz-card-meta [nzTitle]="title" [nzDescription]="description">
+          <ng-template #title>
+            <i>{{ row.id }}</i> - {{ row.id | mapName | i18n }}
+          </ng-template>
+          <ng-template #description>
+            <nz-tag class="custom-tag" style.border-color="#87d068">
+              {{ row.reports.length }} reports
+            </nz-tag>
+          </ng-template>
+        </nz-card-meta>
+      </nz-card>
+    } @empty {
+      <nz-empty nzNotFoundContent="No maps matching current filters"></nz-empty>
+    }
+  }
+</div>

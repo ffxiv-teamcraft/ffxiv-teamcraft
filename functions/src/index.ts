@@ -104,6 +104,11 @@ export const searchCommunityLists = functions.runWith(runtimeOpts).https.onReque
  * END OF SEARCH STUFF
  */
 
+export const getMappyData = functions.runWith(runtimeOpts).https.onRequest(async (req, res) => {
+  const reports = await firestore.collection('mappy').get().then(snaps => snaps.docs.map(doc => doc.data()));
+  res.status(200).send(reports);
+});
+
 // IS history endpoint
 export const islandSanctuaryHistory = functions.runWith(runtimeOpts).https.onRequest(async (req, res) => {
   let previousWeeklyReset = new Date();

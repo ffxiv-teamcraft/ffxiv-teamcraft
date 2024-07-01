@@ -249,6 +249,18 @@ export abstract class FirestoreStorage<T extends DataModel> {
     });
   }
 
+  addMany(entities: T[]): Observable<void> {
+    return this.zone.runOutsideAngular(() => {
+      const batch = writeBatch(this.firestore);
+      entities
+        .filter(entity => !!entity)
+        .forEach(entity => {
+          batch.set(doc(collection(this.firestore, this.getBaseUri())), entity);
+        });
+      return from(batch.commit());
+    });
+  }
+
   /**
    * Run a transaction with server copy of a given entity
    * @param entityId

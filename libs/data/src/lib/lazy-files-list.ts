@@ -133,7 +133,7 @@ export const lazyFilesList = {
   },
   'equipment': {
     'fileName': 'equipment.json',
-    'hashedFileName': 'equipment.27e2e48f9e20bdce08336fb229b62c9123686033.json'
+    'hashedFileName': 'equipment.31daeeb50f5c55d7d77d53a855490e5d1854545d.json'
   },
   'eventItems': {
     'fileName': 'event-items.json',
@@ -373,7 +373,7 @@ export const lazyFilesList = {
   },
   'jobCategories': {
     'fileName': 'job-categories.json',
-    'hashedFileName': 'job-categories.08a8f8a63efc8cc986954dae681e93113e9782ab.json'
+    'hashedFileName': 'job-categories.f4d6248c54c1946f24e331e828257ab0a5d51329.json'
   },
   'jobName': {
     'fileName': 'job-name.json',

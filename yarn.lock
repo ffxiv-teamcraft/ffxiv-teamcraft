@@ -2957,10 +2957,10 @@
     cross-spawn "^5.1.0"
     nan "^2.18.0"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.4.tgz#20703c60b203322da6bf8907222a66d18120effb"
-  integrity sha512-qUekX5+bpm6y1hngr3iqVUn0IgjIzZfGnIWHXvV7Y3UFSFtt04T0Zng99UHGXKV/xu8jijYUNNKs7dMQuwM8yg==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.5.tgz#612e20ecc885b84b24e574bdea93481f742440ae"
+  integrity sha512-ezxPdPPr2sbJ2SsDBidUqI2BDyzdkC/1U5lOsVWDPwDn3v1cKAvCnhwMOR9ETo9MCNxhP/i+ETvror3LV3/REQ==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.10"
 
@@ -6349,13 +6349,6 @@
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@wry/trie/-/trie-0.5.0.tgz#11e783f3a53f6e4cd1d42d2d1323f5bc3fa99c94"
   integrity sha512-FNoYzHawTMk/6KMQoEG5O4PuioX19UbwdQKF44yw0nLfOypfQdjtfZzo/UIJWAJ23sNIFbD1Ug9lbaDGMwbqQA==
-  dependencies:
-    tslib "^2.3.0"
-
-"@xivapi/angular-client@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@xivapi/angular-client/-/angular-client-2.0.1.tgz#c95aebdeb00d3483d4771caab0d038324d49867d"
-  integrity sha512-RN3MoYqimt07QEAfVPhFI62Cy0/Ep/ubOcfIcaXsx+vEQcMwnvCwigL7Y3scU1pVFJhi5ce4jS89PdqtPqC2PA==
   dependencies:
     tslib "^2.3.0"
 

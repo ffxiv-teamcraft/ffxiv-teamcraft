@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.3...v11.2.4) (2024-07-01)
+
+
+### Bug Fixes
+
+* **desktop:** better retainer matching logic for longer names support ([87e5eca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/87e5eca9b1afd8995d82743d04fcecc69338dc1b))
+* **gearset:** fixed double row sometimes showing in editor ([ccb125b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ccb125b1b97c73318c6a72d08f6f5a818e204efa))
+* **layout-editor:** fix buttons display editor ([cbff639](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cbff63952abfb34259e1db5dc90e26d57d05651e))
+* **leveling-equipment:** now working properly with VPR and PCT ([37f8b02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37f8b02b733c5a24fce1864e4abfabf60fbf5ba7))
+* **list-tags:** add missing translation for Dawntrail ([73681cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73681cc22cb3b26f9e3b429a70cbbc77c14f125b))
+* **simulator:** fix drag preview size in result rotation ([5fb3dd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5fb3dd142a5955d5c0b6877980174805615f4d99))
+* **simulator:** fix search with fewer characters in recipe picker ([d797f83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d797f830cdf953ccd8c8fd3b29a1fc82f8f65dae))
+
 ### [11.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.2...v11.2.3) (2024-06-30)
 
 

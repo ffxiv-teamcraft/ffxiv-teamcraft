@@ -291,6 +291,12 @@
                             {{'CUSTOM_LINKS.Title' | translate}}
                           </a>
                         }
+                        @if (user.sekrit || user.admin) {
+                          <a nz-menu-item routerLink="/mappy">
+                            <i nz-icon nzType="scan"></i>
+                            Mappy
+                          </a>
+                        }
                       }
                       <span nz-menu-divider></span>
                       @if (loggedIn$ | async) {
@@ -338,7 +344,7 @@
                     <app-navigation-sidebar
                       [desktop]="platformService.isDesktop()"
                       [collapsed]="settings.compactSidebar"
-                      [mappyEnabled]="mappy.available"
+                      [mappyEnabled]="mappy.available && (user$ | async)?.sekrit"
                       [version]="version"
                       (showPatchNotes)="showPatchNotes()">
                     </app-navigation-sidebar>
