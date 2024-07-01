@@ -8,7 +8,7 @@ export class MappyExtractor extends AbstractExtractor {
   public isSpecific = true;
 
   doExtract(xiv: XivDataService): void {
-    const mapData$ = this.get('https://xivapi.com/mappy/json');
+    const mapData$ = this.get('https://us-central1-ffxivteamcraft.cloudfunctions.net/getMappyData');
 
 
     const mapDiscoveryIndexes$ = this.getSheet<any>(xiv, 'Map', ['DiscoveryIndex']);

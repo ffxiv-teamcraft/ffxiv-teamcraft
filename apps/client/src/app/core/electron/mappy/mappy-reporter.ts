@@ -1,21 +1,23 @@
 import { IpcService } from '../ipc.service';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { TerritoryLayer, Vector2, Vector3 } from '@ffxiv-teamcraft/types';
-import { delayWhen, filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { combineLatest, interval, merge, Subject } from 'rxjs';
+import { delayWhen, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { combineLatest, interval, merge, Subject, take } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
 import { Aetheryte } from '../../data/aetheryte';
 import { Npc } from '../../../pages/db/model/npc/npc';
 import { uniqBy } from 'lodash';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { XivapiReportEntry } from './xivapi-report-entry';
 import type { UpdatePositionHandler } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../rxjs/with-lazy-data';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
+import { MappyEntry } from '../../database/mappy/mappy-entry';
+import { MappyService } from '../../database/mappy.service';
+import { where } from '@angular/fire/firestore';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 export interface MappyMarker {
   position: Vector3;
@@ -71,9 +73,9 @@ export interface MappyReporterState {
 })
 export class MappyReporterService {
 
-  private static readonly XIVAPI_URL = 'xivapi.com';
-
-  public available = false;
+  public get available() {
+    return this.settings.enableMappy;
+  }
 
   private reportedUntil = Date.now();
 
@@ -104,18 +106,16 @@ export class MappyReporterService {
 
   private stop$ = new Subject<void>();
 
-  constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
+  private mappyService = inject(MappyService);
+
+  constructor(private ipc: IpcService, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade, private mapService: MapService,
-              private http: HttpClient, private settings: SettingsService) {
+              private settings: SettingsService) {
   }
 
   public start(): void {
-    const queryParams = new HttpParams().set('private_key', this.settings.xivapiKey);
-    this.http.get<{ ok: boolean, username: string }>(`https://${MappyReporterService.XIVAPI_URL}/mappy/check-key`, {
-      params: queryParams
-    }).subscribe(result => {
-      this.available = result.ok;
-      if (this.available) {
+    this.authFacade.user$.pipe(first()).subscribe(user => {
+      if (user.sekrit) {
         this.initReporter();
       }
     });
@@ -142,7 +142,6 @@ export class MappyReporterService {
   }
 
   private initReporter(): void {
-
     this.ipc.on('mappy:reload', () => {
       this.addMappyData(this.state.mapId);
     });
@@ -193,7 +192,7 @@ export class MappyReporterService {
         ).pipe(
           takeUntil(this.stop$),
           filter(() => {
-            return !!this.state.mapId;
+            return this.state.mapId > 0;
           }),
           tap((p) => {
             positionTicks++;
@@ -457,11 +456,12 @@ export class MappyReporterService {
   }
 
   private addMappyData(mapId: number): void {
-    if (mapId === 0) {
+    if (mapId <= 0) {
       return;
     }
-    this.http.get<XivapiReportEntry[]>(`https://${MappyReporterService.XIVAPI_URL}/mappy/map/${mapId}`)
-      .subscribe((reports) => {
+    this.mappyService.query(where('MapID', '==', mapId))
+      .pipe(take(1))
+      .subscribe(reports => {
         this.setState({
           mappyBnpcs: reports
             .filter(report => report.Type === 'BNPC')
@@ -538,7 +538,7 @@ export class MappyReporterService {
     // As we're doing a snapshot, we need to register date before we send data, not after.
     const newReport = Date.now();
     const snapshot = { ...this.state };
-    const bnpcReports: XivapiReportEntry[] = snapshot.bnpcs
+    const reports: MappyEntry[] = snapshot.bnpcs
       .filter(bnpc => bnpc.timestamp > this.reportedUntil)
       .map(bnpc => {
         return {
@@ -563,14 +563,13 @@ export class MappyReporterService {
         };
       });
 
-    const reports = [...bnpcReports];
-
     if (reports.length === 0) {
       return;
     }
 
-    const queryParams = new HttpParams().set('private_key', this.settings.xivapiKey);
-    this.http.post(`https://${MappyReporterService.XIVAPI_URL}/mappy/submit`, reports, { params: queryParams }).subscribe(() => {
+    combineLatest(reports.map(report => {
+      return this.mappyService.add(report);
+    })).subscribe(() => {
       this.setState({
         reports: this.state.reports + 1
       });
