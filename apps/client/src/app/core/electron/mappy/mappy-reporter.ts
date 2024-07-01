@@ -299,7 +299,7 @@ export class MappyReporterService {
         z: packet.pos.y
       };
       const coords = this.getCoords(position);
-      const uniqId = `${packet.bNpcName}-${coords.x}/${coords.y}`;
+      const uniqId = `${packet.bNpcName}-${Math.floor(coords.x)}/${Math.floor(coords.y)}`;
       if (this.state.bnpcs.some(row => row.uniqId === uniqId)
         || this.state.outOfBoundsBnpcs.some(row => row.uniqId === uniqId)) {
         return;
