@@ -1,0 +1,74 @@
+@if (display$ | async; as display) {
+  <div>
+    <nz-divider nzOrientation="left" [nzText]="title">
+      <ng-template #title>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>{{display.map.id | mapName | i18n}}</div>
+          <div>
+            <button nz-button nzSize="small" nzShape="circle" (click)="reloader$.next()">
+              <i nz-icon nzType="reload" nzTheme="outline"></i>
+            </button>
+          </div>
+        </div>
+      </ng-template>
+    </nz-divider>
+    <div fxLayout="row" fxLayout.lt-xl="column" fxLayoutGap="10px">
+      <div class="map">
+        <img [src]="display.map.image" alt="" class="map-background">
+        @for (bnpc of display.bnpcs; track trackByID($index, bnpc)) {
+          <img [src]="bnpc.FateID ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
+            class="marker hover"
+            [style.width.px]="32"
+            [style.height.px]="32"
+            [style.margin-left.px]="-32/2"
+            [style.margin-top.px]="-32/2"
+            [style.top.%]="+bnpc.cssCoords.y"
+            [style.left.%]="+bnpc.cssCoords.x"
+            nz-tooltip
+            [nzTooltipTitle]="bnpc.BNpcNameID | i18nRow:'mobs' | i18n">
+        }
+        @for (node of display.nodes; track trackByID($index, node)) {
+          <img [src]="getNodeIcon(node.NodeID) | async"
+            class="marker hover"
+            [style.width.px]="32"
+            [style.height.px]="32"
+            [style.margin-left.px]="-32/2"
+            [style.margin-top.px]="-32/2"
+            [style.top.%]="+node.cssCoords.y"
+            [style.left.%]="+node.cssCoords.x"
+            nz-tooltip
+            [nzTooltipTitle]="node.BNpcNameID | i18nRow:'mobs' | i18n">
+        }
+      </div>
+      <div fxLayout="column">
+        <nz-statistic [nzValue]="display.entries.length" [nzTitle]="'MAPPY.Total_entries' | translate"></nz-statistic>
+        <nz-statistic [nzValue]="display.updates?.BNPC ? (display.updates?.BNPC* 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate"
+        [nzTitle]="'MAPPY.Last_bnpc_update' | translate"></nz-statistic>
+        <nz-statistic [nzValue]="display.updates?.Node ? (display.updates?.Node * 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate"
+        [nzTitle]="'MAPPY.Last_node_update' | translate"></nz-statistic>
+        <nz-divider nzOrientation="left" nzText="{{'MAPPY.Missing_nodes' | translate}}"></nz-divider>
+        @if (display.missingNodes.length === 0) {
+          <nz-empty [nzNotFoundContent]="'MAPPY.No_missing_nodes' | translate"></nz-empty>
+        }
+        <ul>
+          @for (node of display.missingNodes; track node) {
+            <li>
+              <span>{{node.id}} - {{node.zoneid | i18nRow:'places' | i18n}}</span>
+              <ul>
+                @for (item of node.items; track item) {
+                  <li>{{item | itemName | i18n}}</li>
+                }
+              </ul>
+            </li>
+          }
+        </ul>
+        @if (isAdmin$ | async) {
+          <button nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+          (nzOnConfirm)="clearMap(display.map.id)">{{'MAPPY.Clear_map' | translate}}</button>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <app-page-loader></app-page-loader>
+}
