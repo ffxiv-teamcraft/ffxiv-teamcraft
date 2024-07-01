@@ -27,7 +27,6 @@ import { AuthModule } from './core/auth/auth.module';
 import { AlarmsSidebarModule } from './modules/alarms-sidebar/alarms-sidebar.module';
 import { AlarmsModule } from './core/alarms/alarms.module';
 import { ListModule } from './modules/list/list.module';
-import { XivapiClientModule } from '@xivapi/angular-client';
 import { TranslationsLoaderFactory } from './translations-loader';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -115,8 +114,8 @@ import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-rep
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
 import { GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER } from './core/analytics/analytics-router-initializer';
-import { getFirestore, initializeFirestore, memoryLocalCache, provideFirestore } from '@angular/fire/firestore';
-import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
@@ -209,7 +208,6 @@ const nzConfig: NzConfig = {
         deps: [HttpClient, PLATFORM_ID, PlatformService]
       }
     }),
-    XivapiClientModule.forRoot(),
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
     DirtyModule,
     AppRoutingModule,
