@@ -6352,6 +6352,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@xivapi/angular-client@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@xivapi/angular-client/-/angular-client-2.0.1.tgz#c95aebdeb00d3483d4771caab0d038324d49867d"
+  integrity sha512-RN3MoYqimt07QEAfVPhFI62Cy0/Ep/ubOcfIcaXsx+vEQcMwnvCwigL7Y3scU1pVFJhi5ce4jS89PdqtPqC2PA==
+  dependencies:
+    tslib "^2.3.0"
+
 "@xivapi/nodestone@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@xivapi/nodestone/-/nodestone-0.2.7.tgz#992f30027cde92c50d7496dcb3dfe792d8109aba"
