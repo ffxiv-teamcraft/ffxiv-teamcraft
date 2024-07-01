@@ -567,13 +567,12 @@ export class MappyReporterService {
       return;
     }
 
-    combineLatest(reports.map(report => {
-      return this.mappyService.add(report);
-    })).subscribe(() => {
-      this.setState({
-        reports: this.state.reports + 1
+    this.mappyService.addMany(reports)
+      .subscribe(() => {
+        this.setState({
+          reports: this.state.reports + 1
+        });
+        this.reportedUntil = newReport;
       });
-      this.reportedUntil = newReport;
-    });
   }
 }

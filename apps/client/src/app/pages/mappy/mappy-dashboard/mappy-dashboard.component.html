@@ -1,46 +1,37 @@
-<nz-divider nzOrientation="left" [nzText]="title">
-  <ng-template #title>
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div>{{'MAPPY.Dashboard' | translate}}</div>
-      <div>
-        <button nz-button nzSize="small" nzShape="circle" (click)="reloader$.next()">
-          <i nz-icon nzType="reload" nzTheme="outline"></i>
-        </button>
-      </div>
-    </div>
-  </ng-template>
-</nz-divider>
+<nz-page-header>
+  <nz-page-header-title>
+    {{ 'MAPPY.Dashboard' | translate }}
+  </nz-page-header-title>
+  <nz-page-header-extra>
+    <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
+      <label nz-radio-button nzValue="all">All maps</label>
+      <label nz-radio-button nzValue="empty">Empty maps</label>
+      <label nz-radio-button nzValue="scanned">Scanned maps</label>
+    </nz-radio-group>
+  </nz-page-header-extra>
+</nz-page-header>
 
-<div fxLayout="row" fxLayoutAlign="center center" class="missing-nodes-toggle" fxLayoutGap="5px">
-  <nz-switch [ngModel]="onlyMissingNodes$ | async" (ngModelChange)="onlyMissingNodes$.next($event)"></nz-switch>
-  <div>{{'MAPPY.Only_missing_nodes' | translate}}</div>
-</div>
-
-<div *ngIf="display$ | async as maps" fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center flex-start">
-  <div *ngFor="let map of maps">
-    <nz-card [nzCover]="cover" [nzActions]="[openAction]">
-      <ng-template #cover>
-        <img [src]="map.image" alt="" class="map-cover">
-      </ng-template>
-      <nz-card-meta [nzTitle]="title" [nzDescription]="description">
-        <ng-template #title>
-          <i>{{map.id}}</i> - {{map.id | mapName | i18n}}
+<div class="flex-row-wrap gap-10 space-between">
+  @if (display$ | async; as display) {
+    <nz-divider nzOrientation="left" nzText="{{display.length}} maps listed"></nz-divider>
+    @for (row of display; track row.id) {
+      <nz-card [nzCover]="cover">
+        <ng-template #cover>
+          <app-map [mapId]="row.id" [markers]="row.markers" emptyMessage="Empty mappy data"></app-map>
         </ng-template>
-        <ng-template #description>
-          <nz-tag class="custom-tag" [style.border-color]="map.updates?.BNPC && !map.old.BNPC ? '#87d068' : '#f50'">
-            <span class="companion-svg">&#x0F202;</span>
-            {{map.updates?.BNPC ? (map.updates?.BNPC * 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate}}
-          </nz-tag>
-          <nz-tag class="custom-tag" [style.border-color]="map.updates?.Node && !map.old.Node ? '#87d068' : '#f50'">
-            <span class="companion-svg">&#x0F016;</span>
-            {{map.updates?.Node ? (map.updates?.Node * 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate}}
-          </nz-tag>
-          <nz-tag [nzColor]="'#f50'" *ngIf="map.missingNodes > 0">{{'MAPPY.X_Missing_nodes' | translate:{ amount: map.missingNodes } }}</nz-tag>
-        </ng-template>
-        <ng-template #openAction>
-          <a routerLink="/mappy/{{map.id}}">{{'MAPPY.Open_details' | translate}}</a>
-        </ng-template>
-      </nz-card-meta>
-    </nz-card>
-  </div>
+        <nz-card-meta [nzTitle]="title" [nzDescription]="description">
+          <ng-template #title>
+            <i>{{ row.id }}</i> - {{ row.id | mapName | i18n }}
+          </ng-template>
+          <ng-template #description>
+            <nz-tag class="custom-tag" style.border-color="#87d068">
+              {{ row.reports.length }} reports
+            </nz-tag>
+          </ng-template>
+        </nz-card-meta>
+      </nz-card>
+    } @empty {
+      <nz-empty nzNotFoundContent="No maps matching current filters"></nz-empty>
+    }
+  }
 </div>

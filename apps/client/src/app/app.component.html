@@ -291,7 +291,7 @@
                             {{'CUSTOM_LINKS.Title' | translate}}
                           </a>
                         }
-                        @if (user.sekrit) {
+                        @if (user.sekrit || user.admin) {
                           <a nz-menu-item routerLink="/mappy">
                             <i nz-icon nzType="scan"></i>
                             Mappy
