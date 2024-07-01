@@ -673,6 +673,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "归档",
     "Unarchive": "取消归档",
     "Regenerate": "更新清单到最新的 Teamcraft 版本",
