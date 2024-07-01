@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
 import { ExtendedModule } from '@angular/flex-layout/extended';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
-import { NgStyle, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgStyle } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -40,7 +40,7 @@ export class MapComponent extends DialogComponent implements OnInit {
   aetheryteZIndex = 5;
 
   @Input()
-  emptyMessage: string = 'No_known_coordinates';
+  emptyMessage = 'No_known_coordinates';
 
   mapData$: Observable<MapData>;
 

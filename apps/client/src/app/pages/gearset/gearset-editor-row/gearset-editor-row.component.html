@@ -18,7 +18,7 @@
           [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
         </div>
         <div fxLayout="row" (click)="triggerEditMaterias()" class="materias">
-          @for (materia of materias; track materia; let i = $index) {
+          @for (materia of materias; track i; let i = $index) {
             <app-materia-slot-icon
               nz-tooltip
               [nzTooltipTitle]="materia === 0 ? null : materia | itemName | i18n"

@@ -4,7 +4,7 @@
   </div>
   <nz-divider></nz-divider>
   <div fxLayout="column" class="materia-row" fxLayoutGap="10px">
-    @for (materia of equipmentPiece.materias; track materia; let i = $index) {
+    @for (materia of equipmentPiece.materias; track i; let i = $index) {
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <div fxLayout="column" fxLayoutAlign="center center">
           @if (materia > 0) {
@@ -52,7 +52,7 @@
                        nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
               @for (row of materiaMenu$ | async; track row) {
                 <nz-option-group [nzLabel]="row.baseParamId | i18nRow:'baseParams' | i18n">
-                  @for (materia of row.materias; track materia) {
+                  @for (materia of row.materias; track $index) {
                     <nz-option [nzValue]="materia" [nzLabel]="materia | itemName | i18n" nzCustomContent>
                       <app-i18n-name [id]="materia" content="items"></app-i18n-name>
                       (@if (getBonus(materia, i) | async; as bonus) {
@@ -71,7 +71,7 @@
             @for (row of materiaMenu$ | async; track row) {
               <li nz-submenu [nzTitle]="row.baseParamId | i18nRow:'baseParams' | i18n">
                 <ul>
-                  @for (materia of row.materias; track materia) {
+                  @for (materia of row.materias; track $index) {
                     @if (materia > 0) {
                       <li nz-menu-item
                           (click)="setMateria(i, materia)"

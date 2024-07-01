@@ -561,18 +561,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.saveChanges(gearset);
   }
 
-  trackByItemId(index: number, row: any): number {
-    return row.item.ID;
-  }
-
-  trackByCategory(index: number, row: any): string {
-    return row.name;
-  }
-
-  trackByChunk(index: number): number {
-    return index;
-  }
-
   private getMaterias(item: any, propertyName: string, itemMeldingData: LazyData['itemMeldingData']): number[] {
     if (this.materiaCache[`${item.itemId}:${propertyName}`]) {
       return this.materiaCache[`${item.itemId}:${propertyName}`].materias;
