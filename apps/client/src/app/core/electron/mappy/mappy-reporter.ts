@@ -1,6 +1,5 @@
 import { IpcService } from '../ipc.service';
 import { Injectable } from '@angular/core';
-import { AuthFacade } from '../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { TerritoryLayer, Vector2, Vector3 } from '@ffxiv-teamcraft/types';
 import { delayWhen, filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -105,7 +104,7 @@ export class MappyReporterService {
 
   private stop$ = new Subject<void>();
 
-  constructor(private ipc: IpcService, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
+  constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               private eorzeaFacade: EorzeaFacade, private mapService: MapService,
               private http: HttpClient, private settings: SettingsService) {
   }
@@ -164,7 +163,7 @@ export class MappyReporterService {
         const acceptedMaps = Object.values(nodes).map(n => n.map);
         return this.eorzeaFacade.mapId$.pipe(
           map(mapId => {
-            return acceptedMaps.includes(mapId) ? mapId : 0;
+            return acceptedMaps.includes(mapId) ? mapId : -1;
           })
         );
       })
@@ -271,7 +270,7 @@ export class MappyReporterService {
     ).subscribe(([packet, territoryLayers, maps]) => {
       const isPet = packet.bNpcName >= 1398 && packet.bNpcName <= 1404;
       const isChocobo = packet.bNpcName === 780;
-      if (isPet || isChocobo) {
+      if (isPet || isChocobo || this.state.mapId <= 0) {
         return;
       }
 
@@ -353,12 +352,32 @@ export class MappyReporterService {
   }
 
   private setMap(mapId: number, territoryChanged: boolean): void {
-    if (!mapId) {
-      return;
-    }
     // Start by pushing current reports
     this.pushReports();
     this.addMappyData(mapId);
+    if (mapId <= 0) {
+      this.setState({
+        zoning: false,
+        aetherytes: [],
+        bnpcs: [],
+        mappyBnpcs: [],
+        debug: undefined,
+        enpcs: [],
+        map: undefined,
+        layersNotConfigured: false,
+        territoryMaps: [],
+        mapId: -1,
+        outOfBoundsBnpcs: [],
+        player: undefined,
+        playerCoords: undefined,
+        playerRotationTransform: '',
+        subZoneId: 0,
+        trail: [],
+        zoneId: 0,
+        reports: 0
+      });
+      return;
+    }
 
     combineLatest([
       this.lazyData.getEntry('npcs'),
