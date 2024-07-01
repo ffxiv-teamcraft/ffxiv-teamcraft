@@ -68,6 +68,7 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { increment, UpdateData, where } from '@angular/fire/firestore';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Injectable()
 export class ListsEffects {
@@ -313,8 +314,12 @@ export class ListsEffects {
     }),
     switchMap(list => {
         if (list.offline) {
-          list.$key = `offline${Math.floor(Math.random() * 1000000000)}`;
-          this.saveToLocalstorage(list, true);
+          if (this.ipc.isChildWindow) {
+            this.message.error(this.translate.instant('LIST.Offline_lists_no_child_window'));
+          } else {
+            list.$key = `offline${Math.floor(Math.random() * 1000000000)}`;
+            this.saveToLocalstorage(list, true);
+          }
           return EMPTY;
         }
         if (list.$key) {
@@ -329,7 +334,11 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     switchMap((action) => {
       if (action.payload.offline) {
-        this.saveToLocalstorage(action.payload, false);
+        if (this.ipc.isChildWindow) {
+          this.message.error(this.translate.instant('LIST.Offline_lists_no_child_window'));
+        } else {
+          this.saveToLocalstorage(action.payload, false);
+        }
         return of(null);
       }
       if (action.payload.hasCommission) {
@@ -361,7 +370,11 @@ export class ListsEffects {
       }
       this.pricingService.removeEntriesForList(action.key);
       if (action.offline) {
-        this.removeFromLocalStorage(action.key);
+        if (this.ipc.isChildWindow) {
+          this.message.error(this.translate.instant('LIST.Offline_lists_no_child_window'));
+        } else {
+          this.removeFromLocalStorage(action.key);
+        }
         return EMPTY;
       }
       return this.listService.remove(action.key).pipe(
@@ -468,10 +481,14 @@ export class ListsEffects {
       return safeCombineLatest(groupedByList
         .map(({ list, actions }) => {
           if (list.offline) {
-            actions.forEach(action => {
-              ListController.updateAllStatuses(list, action.itemId);
-            });
-            this.saveToLocalstorage(list, false);
+            if (this.ipc.isChildWindow) {
+              this.message.error(this.translate.instant('LIST.Offline_lists_no_child_window'));
+            } else {
+              actions.forEach(action => {
+                ListController.updateAllStatuses(list, action.itemId);
+              });
+              this.saveToLocalstorage(list, false);
+            }
             return of(null);
           } else {
             if (list.hasCommission) {
@@ -518,8 +535,12 @@ export class ListsEffects {
     mergeMap(action => {
       const localList = this.localStore.find(l => l.$key === action.$key);
       if (localList) {
-        Object.assign(localList, action.payload);
-        this.saveToLocalstorage(localList, false);
+        if (this.ipc.isChildWindow) {
+          this.message.error(this.translate.instant('LIST.Offline_lists_no_child_window'));
+        } else {
+          Object.assign(localList, action.payload);
+          this.saveToLocalstorage(localList, false);
+        }
         return EMPTY;
       }
       // Yikes, we're forced to cast as unknown first because the types should probably be more accurate
@@ -529,24 +550,6 @@ export class ListsEffects {
       });
     })
   ), { dispatch: false });
-
-  /**
-   * History stuff
-   */
-  // addModificationsHistoryEntry$ = createEffect(() => this.actions$.pipe(
-  //   ofType<AddModificationHistoryEntries>(ListsActionTypes.AddModificationHistoryEntries),
-  //   switchMap(({ entries }) => this.listHistoryService.addHistoryEntries(entries))
-  // ), { dispatch: false });
-  //
-  // removeModificationHistoryEntry$ = createEffect(() => this.actions$.pipe(
-  //   ofType<RemoveModificationHistoryEntry>(ListsActionTypes.RemoveModificationHistoryEntry),
-  //   switchMap(({ id }) => this.listHistoryService.removeEntry(id))
-  // ), { dispatch: false });
-  //
-  // clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
-  //   ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
-  //   switchMap(({ key }) => this.listHistoryService.removeListEntries(key))
-  // ), { dispatch: false });
 
   /**
    * LISTENERS
@@ -585,6 +588,7 @@ export class ListsEffects {
     private discordWebhookService: DiscordWebhookService,
     private serializer: NgSerializerService,
     private notificationService: NzNotificationService,
+    private message: NzMessageService,
     private platform: PlatformService,
     private ipc: IpcService,
     private settings: SettingsService,
