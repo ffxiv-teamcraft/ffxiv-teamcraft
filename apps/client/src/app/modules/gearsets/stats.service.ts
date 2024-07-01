@@ -480,6 +480,7 @@ export class StatsService {
       case 30:
       case 31:
       case 38:
+      case 41:
         return BaseParam.DEXTERITY;
       // Healers
       case 6:
@@ -495,6 +496,7 @@ export class StatsService {
       case 27:
       case 35:
       case 36:
+      case 42:
         return BaseParam.INTELLIGENCE;
     }
     return 0;
