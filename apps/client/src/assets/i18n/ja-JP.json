@@ -1961,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "並べ替え: ",
     "Sort_asc": "昇順",
     "Sort_desc": "降順",
