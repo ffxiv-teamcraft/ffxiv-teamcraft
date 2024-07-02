@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.4...v11.2.5) (2024-07-02)
+
+
+### Features
+
+* **db:** allagan reports import ([6896a54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6896a5478bf339622662845d3a24d54a603b43d0))
+* **settings:** add Tuliyollal to the list of available starting places ([ae93477](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae93477227750f4b9c621d2ef1d0bb99b3f4ad32))
+
+
+### Bug Fixes
+
+* **db:** better display for snagging and stats loading fix ([524cf8e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/524cf8e78e7668523a7f633b1f192d0eb8f6d006))
+* **desktop:** add an error message when trying to edit offline lists from a child window ([6decbab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6decbabcd1380ca78db5c28d4ee56f3125b9448d))
+* **simulator:** fix Trained Perfection's interaction with Groundwork ([63c64e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63c64e824a0f522611c047d993554d6f263446df))
+* **simulator:** step-by-step report is now loading properly ([93fa3ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/93fa3ca10f0b412fea3d07c4f56dc380ceaf40e9))
+
 ### [11.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.3...v11.2.4) (2024-07-01)
 
 
