@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.5...v11.2.6) (2024-07-02)
+
+
+### Bug Fixes
+
+* **simulator:** fix trained perfection lasting forever ([6fee1f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fee1f170b89c7242fef62091615ea38b6cf10c4))
+
 ### [11.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.4...v11.2.5) (2024-07-02)
 
 
