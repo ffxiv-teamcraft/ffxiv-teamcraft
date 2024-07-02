@@ -107,7 +107,7 @@ export class ZoneBreakdown {
       return;
     }
     if (hideZoneDuplicates) {
-      if (this.rows.some(r => r.items.some(i => i.id === item.id))) {
+      if (this.rows.some(r => r.items.some(i => i.id === item.id && item.finalItem === i.finalItem))) {
         if (!(coords && coords.x > 0 && coords.y > 0) && !fateId) {
           return;
         } else {
