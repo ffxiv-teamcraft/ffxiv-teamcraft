@@ -1961,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "排序： ",
     "Sort_asc": "升序",
     "Sort_desc": "降序",
