@@ -60,9 +60,7 @@ export class AutoUpdater {
 
     ipcMain.on('install-update', () => {
       (<any>app).isQuitting = true;
-      this.pcap.stop().then(() => {
-        autoUpdater.quitAndInstall();
-      });
+      autoUpdater.quitAndInstall();
     });
 
 

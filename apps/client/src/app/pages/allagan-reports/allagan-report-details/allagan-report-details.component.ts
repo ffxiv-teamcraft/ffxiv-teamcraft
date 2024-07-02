@@ -297,7 +297,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               weathers: weathers.data.weathers.length > 4 ? [] : weathers.data.weathers.filter(w => w.occurences > 5).map(w => w.weatherId),
               weathersFrom: weathers.data.weatherTransitions.length > 5 ? [] : weathers.data.weatherTransitions.filter(w => w.occurences > 5).map(w => w.previousWeatherId),
               snagging: stats.data.snagging > 90,
-              minGathering: stats.data.stats.aggregate.min.gathering
+              minGathering: stats.data.stats.min_gathering
             };
           })
         );

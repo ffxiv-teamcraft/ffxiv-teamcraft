@@ -35,7 +35,15 @@
       </div>
     </div>
     <div class="detail-value">
-      <div>{{ (stats$ | async).snagging | number: '1.0-1' }}%</div>
+      @if ((stats$ | async).snagging; as snagging) {
+        <span nz-tooltip nzTooltipTitle="{{ snagging | number: '1.0-1' }}%">
+            @if (snagging > 90) {
+              {{ "Yes" | translate }}
+            } @else {
+              {{ "No" | translate }}
+            }
+          </span>
+      }
     </div>
   </div>
   <div fxFlex="1 1 auto"></div>

@@ -108,6 +108,26 @@ export class MappyReporterService {
 
   private mappyService = inject(MappyService);
 
+  private static PETS = [
+    1398,
+    1399,
+    1400,
+    1401,
+    1402,
+    1403,
+    1404,
+    3204,
+    3208,
+    6566,
+    8227,
+    8228,
+    10261,
+    10262,
+    10263,
+    10264,
+    13159
+  ]
+
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade, private mapService: MapService,
               private settings: SettingsService) {
@@ -267,7 +287,7 @@ export class MappyReporterService {
       }),
       withLazyData(this.lazyData, 'territoryLayers', 'maps')
     ).subscribe(([packet, territoryLayers, maps]) => {
-      const isPet = packet.bNpcName >= 1398 && packet.bNpcName <= 1404;
+      const isPet = MappyReporterService.PETS.includes(packet.bNpcName);
       const isChocobo = packet.bNpcName === 780;
       if (isPet || isChocobo || this.state.mapId <= 0) {
         return;
@@ -279,7 +299,7 @@ export class MappyReporterService {
         z: packet.pos.y
       };
       const coords = this.getCoords(position);
-      const uniqId = `${packet.bNpcName}-${coords.x}/${coords.y}`;
+      const uniqId = `${packet.bNpcName}-${Math.floor(coords.x)}/${Math.floor(coords.y)}`;
       if (this.state.bnpcs.some(row => row.uniqId === uniqId)
         || this.state.outOfBoundsBnpcs.some(row => row.uniqId === uniqId)) {
         return;
