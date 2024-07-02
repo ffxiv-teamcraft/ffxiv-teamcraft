@@ -1961,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft n'a pas réussi à se connecter à la base de données, il semble que quelque chose ne fonctionne pas ou vous n'avez pas accès à internet."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "Trier par: ",
     "Sort_asc": "Croissant",
     "Sort_desc": "Décroissant",
