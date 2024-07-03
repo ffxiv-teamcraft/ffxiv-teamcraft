@@ -1631,9 +1631,27 @@
       "shadowSize": 0
     }
   ],
+  "43810": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
   "43811": [
     {
       "speed": 0,
+      "shadowSize": 1
+    }
+  ],
+  "43817": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "43821": [
+    {
+      "speed": 3,
       "shadowSize": 1
     }
   ]
