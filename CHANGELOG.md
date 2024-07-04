@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.6...v11.2.7) (2024-07-04)
+
+
+### Features
+
+* **db:** allagan reports import ([2299a7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2299a7aad57c54c9a38d75f6fd6f548d90860baa))
+* **search:** small new tip about quick search feature ([009e743](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/009e7438d94fdef98deab5d728355592d8fdc1a4))
+
+
+### Bug Fixes
+
+* **db:** fix collectable exp % display in item's page ([b46b5e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b46b5e7ae86853b029d04aae9b90be192cfae18b))
+* **db:** fix trade location for oddly delicate mats ([c17810f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c17810f460662111e8267b08c39a8d66ecb00c04))
+* **gearset:** fix materia orange scrip cost display ([3ee9d41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ee9d419cdd9327c337f9bb6fc69b5d11a624b0a))
+* **gearset:** fix melding rate for XI on NQ and NQ and XII on HQ ([ec6d33d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec6d33d9e3b397a8e9f01682542ebae5ad008c05))
+* **levequests:** disable add selection to list if nothing is selected ([88d98ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88d98ab16546f8d7c7e09dd45e3a070f0ea61e82))
+* **list:** don't consider final items as duplicate in hide zone duplicates ([1701215](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1701215c1eaee989ab5e25cac773f0b1fb6c69a6))
+
 ### [11.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.5...v11.2.6) (2024-07-02)
 
 

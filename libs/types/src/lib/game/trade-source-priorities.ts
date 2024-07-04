@@ -11,10 +11,12 @@ export const TRADE_SOURCES_PRIORITIES = {
   10311: 0, // Red gatherer
   17833: 0, // Yellow crafter
   17834: 0, // Yellow gatherer
-  25199: 30, // White crafter
-  25200: 30, // White gatherer
+  25199: 0, // White crafter
+  25200: 0, // White gatherer
   33913: 30, // Purple crafter
   33914: 30, // Purple gatherer
+  41784: 30, // Orange crafter
+  41785: 30, // Orange gatherer
   // Tomestones
   28: 28, // Poetics
   35: 0, // Creation (can't obtain them anymore)

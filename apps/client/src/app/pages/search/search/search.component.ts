@@ -61,7 +61,6 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { SeoService } from '../../../core/seo/seo.service';
 
 @Component({
   selector: 'app-search',
@@ -139,7 +138,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   );
 
   lastPatch$ = this.patches$.pipe(
-    map(patches => patches[0]),
+    map(patches => patches[0])
   );
 
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(

@@ -95,7 +95,7 @@
       <label [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)" nz-checkbox>
         {{'Select_all' | translate}}
       </label>
-      <button (click)="addSelectedLevesToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
+      <button (click)="addSelectedLevesToList(results)" nz-button [disabled]="!canAddSelectedLeves(results)">{{'LISTS.Add_selection' | translate}}</button>
     </div>
     <div class="results">
       <app-page-loader [loading]="loading">
@@ -199,7 +199,7 @@
           </div>
         }
         <div fxLayout="row" fxLayoutAlign="center center">
-          <button (click)="addSelectedLevesToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
+          <button (click)="addSelectedLevesToList(results)" nz-button [disabled]="!canAddSelectedLeves(results)">{{'LISTS.Add_selection' | translate}}</button>
         </div>
       </div>
     </app-page-loader>

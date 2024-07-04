@@ -24,6 +24,8 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
 
   itemPatches = this.requireLazyFile('itemPatch');
 
+  itemNames = this.requireLazyFile('items');
+
   patches = this.requireLazyFile('patchNames');
 
 
@@ -66,12 +68,17 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
     if (collectableReward) {
       const expansion = this.patches[this.itemPatches[itemId]]?.ex;
       // Specific case for fishing trade goods exchange was collectableReward[1].group === 73 ? 1044740 : 1035014, keeping it here just in case
-      const npc = {
+      let npc = {
         2: 1045080,
         3: 1027566, // Limbeth
         4: 1045080, // Quinnana
         5: 1045080 // Quinnana
       }[expansion];
+
+      if (this.itemNames[itemId].en.startsWith('Oddly')) {
+        npc = 1035014;
+      }
+
       return [{
         type: 'CollectableReward',
         id: +collectableReward[0],
