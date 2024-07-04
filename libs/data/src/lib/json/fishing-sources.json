@@ -26016,6 +26016,15 @@
       "video": "https://www.youtube.com/watch?v=q1xJNuhNh0U"
     }
   ],
+  "43674": [
+    {
+      "spot": 296,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
   "43678": [
     {
       "spot": 297,
@@ -26035,6 +26044,14 @@
       "video": "https://youtu.be/msG-FcWTMf0"
     }
   ],
+  "43682": [
+    {
+      "spot": 298,
+      "tug": 0,
+      "bait": 43851,
+      "minGathering": 0
+    }
+  ],
   "43692": [
     {
       "spot": 300,
@@ -26050,6 +26067,15 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43691,
+      "minGathering": 0
+    }
+  ],
+  "43694": [
+    {
+      "spot": 301,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
       "minGathering": 0
     }
   ],
