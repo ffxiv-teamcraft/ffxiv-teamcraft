@@ -49,11 +49,11 @@ interface ExpObj {
 }
 
 @Component({
-    selector: 'app-levequests',
-    templateUrl: './levequests.component.html',
-    styleUrls: ['./levequests.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
+  selector: 'app-levequests',
+  templateUrl: './levequests.component.html',
+  styleUrls: ['./levequests.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
@@ -361,6 +361,10 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   public addSelectedLevesToList(leves: Levequest[]): void {
     this.addLevesToList(leves.filter(leve => leve.selected));
+  }
+
+  public canAddSelectedLeves(leves: Levequest[]): boolean {
+    return leves.some(leve => leve.selected);
   }
 
   public selectAll(leves: Levequest[], selected: boolean): void {
