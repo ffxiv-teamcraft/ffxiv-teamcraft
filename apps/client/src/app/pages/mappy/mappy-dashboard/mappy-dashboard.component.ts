@@ -26,6 +26,7 @@ import { MapMarker } from '../../../modules/map/map-marker';
 import { MapComponent } from '../../../modules/map/map/map.component';
 import { NzRadioComponent, NzRadioGroupComponent } from 'ng-zorro-antd/radio';
 import { NzEmptyComponent } from 'ng-zorro-antd/empty';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-mappy-dashboard',
@@ -52,6 +53,7 @@ export class MappyDashboardComponent {
     this.mappy.query(),
     this.displayMode$
   ]).pipe(
+    takeUntilDestroyed(),
     map(([maps, reports, displayMode]) => {
       return maps.map((row: LazyMap) => {
         const mapReports = reports.filter(r => r.MapID === row.id);
