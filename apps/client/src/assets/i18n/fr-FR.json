@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Utiliser l'ID lodestone",
   "LodestoneId": "ID lodestone",
   "List_forked": "Liste copiée sur votre compte",
-  "List_fork": "Copier cette liste sur votre compte",
+  "List_fork": "Copiez cette liste sur votre compte (ctrl + clic pour la copier en tant que liste hors ligne)",
   "List_not_found": "Liste introuvable ou vous n'avez pas les droits d'accès",
   "Requirements_for_craft": "Voir les prérequis",
   "Zone_breakdown": "Résumé par zone",
@@ -673,7 +673,7 @@
     }
   },
   "LIST": {
-    "Offline_lists_no_child_window": "Les listes hors-ligne ne fonctionnent pas dans les sous-fenêtre, vos changements ne seront pas appliqués dans la fenêtre principale.",
+    "Offline_lists_no_child_window": "Les listes hors-ligne ne fonctionnent pas dans les sous-fenêtres, vos changements ne seront pas appliqués dans la fenêtre principale.",
     "Archive": "Archiver",
     "Unarchive": "Désarchiver",
     "Regenerate": "Mettre la liste à jour vers la dernière version de Teamcraft",
@@ -1648,7 +1648,7 @@
       "Requires_gc_rank": "Nécessite le rang de Grand Compagnie {{rank}}"
     },
     "FISH": {
-      "Fruity_video": "Vidéo comment capturer",
+      "Fruity_video": "Vidéo comment attraper",
       "Fruity_video_description": "Lien vers la \"Vidéo comment attraper\" de Fruity Snacks pour ce poisson",
       "Hour": "Heure du jour",
       "Etime": "Heure éorzéenne",
@@ -1671,7 +1671,7 @@
       "Avg_size": "Taille moy",
       "Used_as_mooch_for": "Utilisé comme vif pour",
       "No_known_mooch_usage": "Aucune utilisation en tant que vif connue pour ce poisson",
-      "No_spot_filter": "Aucun filtre de spot",
+      "No_spot_filter": "Aucun filtre d'emplacement",
       "Chances_for_transition": "Chance pour que cette transition se produise",
       "Weather_chances": "Chance d'apparition de chaque météo",
       "Bait": "Appât",
@@ -2982,7 +2982,7 @@
       "SLOW": "Lent",
       "AVERAGE": "Moyen",
       "FAST": "Rapide",
-      "FASTER": "Plus rapide",
+      "FASTER": "Plutôt rapide",
       "VERY_FAST": "Très rapide"
     },
     "SHADOWS": {
@@ -2991,18 +2991,18 @@
       "LARGE": "Grand"
     },
     "SOURCE": {
-      "DESYNTH": "Ethérolysé à partir de",
-      "REDUCTION": "REDUCTION",
-      "GARDENING": "GARDENING",
-      "LOOT": "LOOT",
-      "VENTURE": "VENTURE",
-      "VOYAGE": "VOYAGE",
+      "DESYNTH": "Recyclé à partir de",
+      "REDUCTION": "Ethérolysé à partir de",
+      "GARDENING": "Jardinage",
+      "LOOT": "Butin",
+      "VENTURE": "Tâche de servant",
+      "VOYAGE": "Voyage",
       "DROP": "Drop (obtenu en tuant un monstre)",
       "INSTANCE": "Instance",
       "FISHING": "Pêche",
       "SPEARFISHING": "Pêche au harpon",
       "FATE": "Aléa",
-      "MOGSTATION": "MOGSTATION",
+      "MOGSTATION": "Station Mog",
       "DEPRECATED": "Déprécié",
       "ISLAND_ANIMAL": "Pâturage de la Félicité Insulaire",
       "QUEST": "Quête"
