@@ -177,11 +177,6 @@ export class UniversalisService {
   }
 
   public initCapture(): void {
-    this.ipc.marketBoardSearchResult$.subscribe((searchResults) => {
-      if (this.settings.enableUniversalisSourcing) {
-        this.handleMarketboardSearchResult(searchResults);
-      }
-    });
     this.ipc.marketboardListingCount$
       .pipe(
         switchMap(packet => {
@@ -220,35 +215,6 @@ export class UniversalisService {
     });
   }
 
-  public handleMarketboardSearchResult(packet: MarketBoardSearchResult): void {
-    combineLatest([this.cid$, this.worldId$]).pipe(
-      first(),
-      switchMap(([cid, worldId]) => {
-        const data = {
-          worldID: worldId,
-          uploaderID: cid,
-          itemIDs: compact(packet.items.map((item) => {
-            if (item.itemCatalogId && !item.quantity) {
-              return item.itemCatalogId;
-            }
-          })),
-          op: {
-            listings: -1
-          }
-        };
-        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
-          headers: new HttpHeaders().append('Content-Type', 'application/json')
-        }).pipe(
-          catchError(e => {
-            console.error(e);
-            console.log(data);
-            return of(null);
-          })
-        );
-      })
-    ).subscribe();
-  }
-
   public handleMarketboardListingPackets(packets: MarketBoardItemListing[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
@@ -282,7 +248,7 @@ export class UniversalisService {
                   creatorID: item.artisanId.toString(10),
                   sellerID: item.retainerOwnerId.toString(10),
                   lastReviewTime: item.lastReviewTime,
-                  stainID: item.dyeId
+                  stainID: item.primaryDyeId
                 };
               })];
           }, [])
