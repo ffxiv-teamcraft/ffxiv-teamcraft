@@ -2337,7 +2337,7 @@
       "Button": "Cliquer sur ce bouton d'information ouvre la page de la base de données contenant les détails de l'élément qui se trouve à côté (nom d'un pnj, carte, objet, monstre, etc.). Pour les objets, cliquer sur l'icône ouvre également la page de la base de données."
     },
     "DESYNTH": {
-      "Job": "Sélectionnez le job que vous souhaitez pex.",
+      "Job": "Sélectionnez le job que vous souhaitez monter en niveau",
       "Level": "Entrez le niveau de recyclage du job",
       "Search": "Cliquez sur Recherche, et c'est terminé !"
     },
@@ -2709,7 +2709,7 @@
     "Include_crafting": "Inclure l'artisanat",
     "Include_purchases": "Inclure les achats",
     "Include_trades": "Inclure les échanges",
-    "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
+    "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour monter le niveau de vos jobs",
     "Generate_list": "Générer une liste",
     "Empty_slot": "Emplacement vide",
     "In_inventory": "Vous avez cet objet dans un de vos inventaires",
