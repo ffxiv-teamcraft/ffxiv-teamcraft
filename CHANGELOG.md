@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.8...v11.2.9) (2024-07-06)
+
+
+### Bug Fixes
+
+* **desktop:** disable mappy when not available to prevent massive db usage ([587c831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/587c8317b0a808571fdfb44e3e467823160a9e15))
+
 ### [11.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.7...v11.2.8) (2024-07-06)
 
 
