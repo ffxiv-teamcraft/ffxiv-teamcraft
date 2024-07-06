@@ -1631,6 +1631,36 @@
       "shadowSize": 0
     }
   ],
+  "43804": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "43805": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43807": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "43808": [
+    {
+      "speed": 5,
+      "shadowSize": 2
+    }
+  ],
+  "43809": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
+  ],
   "43810": [
     {
       "speed": 2,
@@ -1643,6 +1673,18 @@
       "shadowSize": 1
     }
   ],
+  "43812": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "43813": [
+    {
+      "speed": 5,
+      "shadowSize": 2
+    }
+  ],
   "43817": [
     {
       "speed": 1,
@@ -1653,6 +1695,44 @@
     {
       "speed": 3,
       "shadowSize": 1
+    }
+  ],
+  "43829": [
+    {
+      "speed": 4,
+      "shadowSize": 0
+    }
+  ],
+  "43837": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43838": [
+    {
+      "speed": 0,
+      "shadowSize": 1
+    }
+  ],
+  "43842": [
+    {
+      "speed": 5,
+      "shadowSize": 2,
+      "spawn": 0,
+      "duration": 0
+    }
+  ],
+  "43845": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43847": [
+    {
+      "speed": 5,
+      "shadowSize": 2
     }
   ]
 }
