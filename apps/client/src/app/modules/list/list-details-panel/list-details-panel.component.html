@@ -36,7 +36,7 @@
               }
               @if (compact) {
                 <div nz-row [nzGutter]="[10,10]">
-                  @for (item of items; track item) {
+                  @for (item of items; track item.id) {
                     <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="8" [nzXl]="6" [nzXXl]="4">
                       <app-compact-item-row
                         [item]="item"

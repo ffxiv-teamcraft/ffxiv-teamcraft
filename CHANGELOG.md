@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.7...v11.2.8) (2024-07-06)
+
+
+### Features
+
+* **allagan-reports:** connect to new gubal instance ([5d91b70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d91b706a42571ab3f9f32250c1f87c073768785))
+
+
+### Bug Fixes
+
+* **community-rotation:** bring back result tag ([c61272f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c61272f775e345635db28ed7181651bff03c1ada))
+* **db:** better leve name display in FR item pages ([3f9ca50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f9ca502ea744ebe9a279c9bc00f90c7cfd05e7d))
+* **desktop:** fix Universalis reporter ([43312bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43312bdfc84fbe03e49362efcf975b8340927311))
+* **list:** fix re-rendering issue in minimalist display ([a6edfd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6edfd04dc4f305a0c8f1106a94fd5ec31cab5e3))
+* **lists:** ignore last map in gemstone trader zone breakdown ([6630f05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6630f059474646ad47cf00725603cbd35a9b71c8))
+* **settings:** better logic for custom notification sound removal ([0876102](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0876102eb8639586c93b03c18848d0ad25e5fe5e))
+
 ### [11.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.6...v11.2.7) (2024-07-04)
 
 

@@ -551,7 +551,7 @@
         <nz-form-control [nzSpan]="12">
           @if (platform.isDesktop()) {
             <div class="custom-sound-toggle">
-              <nz-switch [(ngModel)]="enableCustomSound[type]"></nz-switch>
+              <nz-switch [(ngModel)]="enableCustomSound[type]" (ngModelChange)="!$event?setNotificationSound(type, sounds[0]):null"></nz-switch>
               {{'ALARMS.Custom_sound' | translate}}
             </div>
           }

@@ -100,10 +100,10 @@ export class ZoneBreakdown {
    */
   private addToBreakdown(zoneId: number, mapId: number, item: ListRow, hideZoneDuplicates: boolean, coords: Vector2, fateId?: number): void {
     const existingRow = this.rows.find(r => r.mapId === mapId);
-    // If we hide duplicates and it's bicolor gems, ignore eulmore and crystarium
+    // If we hide duplicates and it's bicolor gems, ignore "all items" shop that needs to be unlocked
     if (hideZoneDuplicates
       && getItemSource(item, DataType.TRADE_SOURCES).some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)))
-      && [497, 498, 693, 694].includes(mapId)) {
+      && [497, 498, 693, 694, 856].includes(mapId)) {
       return;
     }
     if (hideZoneDuplicates) {
