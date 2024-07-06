@@ -673,6 +673,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "归档",
     "Unarchive": "取消归档",
     "Regenerate": "更新清单到最新的 Teamcraft 版本",
@@ -897,6 +898,7 @@
     "STORMBLOOD": "红莲之狂潮",
     "SHADOWBRINGERS": "暗影之逆焰",
     "ENDWALKER": "晓月之终途",
+    "DAWNTRAIL": "Dawntrail",
     "OUTDATED": "已过期",
     "GEAR": "装备",
     "CONSUMABLE": "消耗品",
@@ -1959,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "排序： ",
     "Sort_asc": "升序",
     "Sort_desc": "降序",

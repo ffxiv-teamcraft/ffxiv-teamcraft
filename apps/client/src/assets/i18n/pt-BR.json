@@ -673,6 +673,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "Archive",
     "Unarchive": "Unarchive",
     "Regenerate": "Actualizar a lista para a ultima versão de Teamcraft",
@@ -897,6 +898,7 @@
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
     "ENDWALKER": "Endwalker",
+    "DAWNTRAIL": "Dawntrail",
     "OUTDATED": "Desatualizado",
     "GEAR": "Equipamento",
     "CONSUMABLE": "Consumível",
@@ -1959,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "Sort by: ",
     "Sort_asc": "Ascending",
     "Sort_desc": "Descending",
