@@ -2,14 +2,13 @@ import { IpcService } from '../ipc.service';
 import { inject, Injectable } from '@angular/core';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { TerritoryLayer, Vector2, Vector3 } from '@ffxiv-teamcraft/types';
-import { delayWhen, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { delayWhen, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, interval, merge, Subject, take } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
 import { Aetheryte } from '../../data/aetheryte';
 import { Npc } from '../../../pages/db/model/npc/npc';
 import { uniqBy } from 'lodash';
-import { SettingsService } from '../../../modules/settings/settings.service';
 import type { UpdatePositionHandler } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../rxjs/with-lazy-data';
@@ -73,9 +72,14 @@ export interface MappyReporterState {
 })
 export class MappyReporterService {
 
-  public get available() {
-    return this.settings.enableMappy;
-  }
+  #auth = inject(AuthFacade);
+
+  public available$ = this.#auth.user$.pipe(
+    map(user => user.sekrit),
+    shareReplay(1)
+  );
+
+  public running = false;
 
   private reportedUntil = Date.now();
 
@@ -126,11 +130,10 @@ export class MappyReporterService {
     10263,
     10264,
     13159
-  ]
+  ];
 
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
-              private eorzeaFacade: EorzeaFacade, private mapService: MapService,
-              private settings: SettingsService) {
+              private eorzeaFacade: EorzeaFacade, private mapService: MapService) {
   }
 
   public start(): void {
@@ -145,6 +148,7 @@ export class MappyReporterService {
     this.intervals.forEach(i => clearInterval(i));
     this.intervals = [];
     this.stop$.next();
+    this.running = true;
   }
 
   private isInLayer(coords: Vector3, layerBounds: Vector3<{ min: number, max: number }>): boolean {
@@ -162,6 +166,8 @@ export class MappyReporterService {
   }
 
   private initReporter(): void {
+    console.log('[MAPPY] INIT');
+    this.running = true;
     this.ipc.on('mappy:reload', () => {
       this.addMappyData(this.state.mapId);
     });
