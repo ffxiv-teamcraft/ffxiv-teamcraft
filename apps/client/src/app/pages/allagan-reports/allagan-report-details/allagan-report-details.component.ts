@@ -70,7 +70,7 @@ function durationRequired(control: AbstractControl) {
 })
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
-  private reloader$ = new BehaviorSubject<void>(void 0);
+  private reloader$ = new Subject<void>();
 
   loadingReports = false;
 
@@ -99,6 +99,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   );
 
   itemDetails$ = this.reloader$.pipe(
+    debounceTime(500),
+    startWith(void 0),
     switchMap(() => this.itemId$),
     tap(() => this.loadingReports = true),
     withLazyData(this.lazyData, 'fishes', 'fishingSpots', 'fishParameter'),
@@ -135,6 +137,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   );
 
   itemReportsQueue$ = this.reloader$.pipe(
+    debounceTime(500),
+    startWith(void 0),
     switchMap(() => this.itemId$),
     tap(() => this.loadingReportsQueue = true),
     switchMap(itemId => {
