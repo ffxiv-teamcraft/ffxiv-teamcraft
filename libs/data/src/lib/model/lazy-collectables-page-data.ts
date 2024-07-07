@@ -52,8 +52,10 @@ export interface Alarm {
   nodeId:       number;
   predators:    any[];
   reduction:    boolean;
+  shadowSize?:  number;
   snagging:     boolean;
   spawns:       number[];
+  speed?:       number;
   type:         number;
   weathers:     number[];
   weathersFrom: any[];
