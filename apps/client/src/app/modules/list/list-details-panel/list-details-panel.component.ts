@@ -233,7 +233,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       return;
     }
     if (this.displayRow.zoneBreakdown) {
-      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
+      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.settings, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
       safeCombineLatest(this.zoneBreakdown.rows
         .map(row => {
           return this.hasPositionsInRows(row.items, row.zoneId).pipe(
