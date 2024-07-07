@@ -673,6 +673,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "アーカイブ",
     "Unarchive": "アーカイブ解除",
     "Regenerate": "最新Teamcraftバージョンにリストをアップデートする",
@@ -897,6 +898,7 @@
     "STORMBLOOD": "紅蓮のリベレーター",
     "SHADOWBRINGERS": "漆黒のヴィランズ",
     "ENDWALKER": "暁月のフィナーレ",
+    "DAWNTRAIL": "Dawntrail",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -1959,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "並べ替え: ",
     "Sort_asc": "昇順",
     "Sort_desc": "降順",

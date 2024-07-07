@@ -50,13 +50,15 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { StaticData } from '../../../lazy-data/static-data';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
 
 @Component({
   selector: 'app-settings-popup',
   templateUrl: './settings-popup.component.html',
   styleUrls: ['./settings-popup.component.less'],
   standalone: true,
-  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe]
+  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe]
 })
 export class SettingsPopupComponent {
 
@@ -149,6 +151,8 @@ export class SettingsPopupComponent {
     }
   ];
 
+  globalFATEMapIds = StaticData.globalFATEShopMapIds;
+
   housingMaps$ = this.lazyData.getEntry('maps').pipe(
     map(maps => uniqBy(Object.values(maps).filter(v => v.housing), v => v.placename_id))
   );
@@ -163,6 +167,8 @@ export class SettingsPopupComponent {
   public sidebarFavorites = [...this.settings.sidebarFavorites];
 
   public favoriteAetherytes = [...this.settings.favoriteAetherytes];
+
+  public unlockedFATEAreas = [...this.settings.unlockedFATEAreas];
 
   public ignoredInventories = [...this.settings.ignoredInventories];
 

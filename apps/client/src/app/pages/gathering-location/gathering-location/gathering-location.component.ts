@@ -1,21 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { debounceTime, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, interval, merge, Observable, of, ReplaySubject, Subject, timer } from 'rxjs';
+import { debounce, debounceTime, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
-import { MapService } from '../../../modules/map/map.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
-import { GatheringNode } from '@ffxiv-teamcraft/types';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { UntypedFormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlarmDetails, GatheringNode, SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { AlarmDetails, SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 import { AlarmDisplayPipe } from '../../../core/alarms/alarm-display.pipe';
 import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
 import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
@@ -41,12 +38,13 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 interface ResultRow {
   originalItemId: number,
@@ -55,12 +53,12 @@ interface ResultRow {
 }
 
 @Component({
-    selector: 'app-gathering-location',
-    templateUrl: './gathering-location.component.html',
-    styleUrls: ['./gathering-location.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, FlexModule, NzButtonModule, NzIconModule, NzInputModule, NzSelectModule, ItemIconComponent, NzSwitchModule, NzToolTipModule, NzWaveModule, NzPaginationModule, NgTemplateOutlet, NzCardModule, MapComponent, NodeDetailsComponent, GatheringItemUsesComponent, FishingBaitComponent, SpearfishingSpeedComponent, NzTagModule, AlarmButtonComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, ActionIconPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
+  selector: 'app-gathering-location',
+  templateUrl: './gathering-location.component.html',
+  styleUrls: ['./gathering-location.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, FlexModule, NzButtonModule, NzIconModule, NzInputModule, NzSelectModule, ItemIconComponent, NzSwitchModule, NzToolTipModule, NzWaveModule, NzPaginationModule, NgTemplateOutlet, NzCardModule, MapComponent, NodeDetailsComponent, GatheringItemUsesComponent, FishingBaitComponent, SpearfishingSpeedComponent, NzTagModule, AlarmButtonComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, ActionIconPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class GatheringLocationComponent {
 
@@ -92,6 +90,23 @@ export class GatheringLocationComponent {
   ];
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  routeQuery$: ReplaySubject<string> = new ReplaySubject<string>();
+
+  enterPress$ = new Subject<void>();
+
+  searchQuery$ = merge(
+    this.query$.pipe(map(query => ({ query, source: 'input' }))),
+    this.routeQuery$.pipe(map(query => ({ query, source: 'route' })))
+  ).pipe(
+    switchMap(({ query, source }) => {
+      if(source === 'route' || !this.settings.disableSearchDebounce){
+        return of(query);
+      }
+      return this.enterPress$.pipe(map(() => query));
+    }),
+    debounce(() => this.settings.disableSearchDebounce ? of(null) : timer(500))
+  );
 
   results$: Observable<{ rows: ResultRow[], total: number }>;
 
@@ -151,16 +166,31 @@ export class GatheringLocationComponent {
   pageSize = 12;
 
   constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService, private router: Router,
+              private router: Router, private settings: SettingsService,
               private route: ActivatedRoute, public translate: TranslateService,
-              private gatheringNodesService: GatheringNodesService, private message: NzMessageService,
+              private gatheringNodesService: GatheringNodesService,
               private fb: UntypedFormBuilder, private lazyData: LazyDataFacade) {
 
+
+    this.route.queryParams
+      .pipe(
+        first()
+      )
+      .subscribe(params => {
+        this.routeQuery$.next(params.query || '');
+        if (params.use || params.type) {
+          this.filtersForm.patchValue({
+            use: params.use || -1,
+            type: +params.type || -1
+          });
+          this.submitFilters();
+        }
+      });
+
     const resultsData$ = combineLatest([
-      this.query$,
+      this.searchQuery$,
       this.filters$
     ]).pipe(
-      debounceTime(500),
       tap(([query, filters]) => {
         const queryParams: any = {
           query: query.length > 0 ? query : null
@@ -258,19 +288,6 @@ export class GatheringLocationComponent {
         };
       })
     );
-
-    this.route.queryParams
-      .pipe(first())
-      .subscribe(params => {
-        this.query$.next(params.query || '');
-        if (params.use || params.type) {
-          this.filtersForm.patchValue({
-            use: params.use || -1,
-            type: +params.type || -1
-          });
-          this.submitFilters();
-        }
-      });
   }
 
   public addAlarm(alarm: PersistedAlarm, group?: AlarmGroup): void {

@@ -34,6 +34,5 @@ export class StaticData {
     ]
   };
 
-  // List of GatheringPointBase ids that cannot spawn anymore due to various conditions
-  public static ignoredNodes = [653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680];
+  public static globalFATEShopMapIds = [497, 498, 693, 694, 856]
 }

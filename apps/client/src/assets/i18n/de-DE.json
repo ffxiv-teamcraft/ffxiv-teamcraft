@@ -673,6 +673,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "Archivieren",
     "Unarchive": "Wiederherstellen",
     "Regenerate": "Liste auf aktuellste Teamcraft Version aktualisieren",
@@ -897,6 +898,7 @@
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
     "ENDWALKER": "Endwalker",
+    "DAWNTRAIL": "Dawntrail",
     "OUTDATED": "veraltet",
     "GEAR": "Ausrüstung",
     "CONSUMABLE": "Benutzbares",
@@ -1959,6 +1961,7 @@
     "Firebase_blocked": "Teamcraft konnte die Datenbank nicht erreichen. Scheinbar wird der Zugriff blockiert oder du hast keine Internetverbindung."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "Sortieren nach:",
     "Sort_asc": "Aufsteigend",
     "Sort_desc": "Absteigend",

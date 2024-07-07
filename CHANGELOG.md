@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.9...v11.2.10) (2024-07-07)
+
+
+### Features
+
+* **settings:** new setting to select unlocked global FATE vendors for better zone breakdown ([1216226](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/121622670ffa2ccedc3c545739a8a0395d289e6f))
+
+
+### Bug Fixes
+
+* **gathering-location:** disable debounce now applied to this page too ([30679fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/30679fc779e846158c6d6732f54a4179ec2a805a))
+* **list-details:** copy panel as text is now consistent with copy whole list ([4151b00](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4151b00e9b798b63e826d3169bc5f69a2ef4a773))
+* **simulator:** set wait time to 3 for quick innovation ([e292dff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e292dff23e26f01ca43dd7245206c119943a5f7e))
+
 ### [11.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.8...v11.2.9) (2024-07-06)
 
 

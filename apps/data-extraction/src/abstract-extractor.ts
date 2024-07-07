@@ -238,7 +238,7 @@ export abstract class AbstractExtractor {
   protected gubalRequest(gql: string): Observable<any> {
     const res$ = new Subject();
     request.post({
-      url: 'https://gubal.ffxivteamcraft.com/v1/graphql',
+      url: 'https://gubal.ffxivteamcraft.com/graphql',
       json: true,
       headers: {
         'content-type': 'application/json',
