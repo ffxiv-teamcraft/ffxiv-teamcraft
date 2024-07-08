@@ -940,6 +940,8 @@
     "SMN": "INV",
     "RDM": "MRG",
     "BLU": "MBU",
+    "PCT": "PCT",
+    "VPR": "VPR",
     "CRP": "MEN",
     "BSM": "FOR",
     "ARM": "ARM",
