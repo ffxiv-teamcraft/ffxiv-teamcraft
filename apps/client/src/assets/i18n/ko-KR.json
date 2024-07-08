@@ -550,7 +550,7 @@
     "Desktop_tip_description": "데스크톱 앱은 더 빠른 오프라인 검색 기능을 사용할 수 있으며, 오버레이 기능과 패킷 캡쳐 기능을 사용할 수 있습니다(기본적으로 패킷 캡쳐는 비활성화된 상태입니다). 더 나은 경험을 원하신다면 데스크톱 앱을 적극 권장합니다.",
     "Lists_offline_by_default": "Make lists offline by default",
     "Unlocked_FATE_areas": "Unlocked FATE shops",
-    "Unlocked_FATE_areas_explain": "Maps in which you have unlocked FATE vendor after doing enough FATEs",
+    "Unlocked_FATE_areas_explain": "Cities in which you have unlocked FATE shop after completing all Shared FATEs for that expansion.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
