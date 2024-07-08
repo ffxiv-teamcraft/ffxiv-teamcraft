@@ -550,7 +550,7 @@
     "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
     "Lists_offline_by_default": "Make lists offline by default",
     "Unlocked_FATE_areas": "Unlocked FATE shops",
-    "Unlocked_FATE_areas_explain": "Maps in which you have unlocked FATE vendor after doing enough FATEs",
+    "Unlocked_FATE_areas_explain": "Cities in which you have unlocked FATE shop after completing all Shared FATEs for that expansion.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
