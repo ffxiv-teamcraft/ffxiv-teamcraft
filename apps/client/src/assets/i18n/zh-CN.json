@@ -18,7 +18,7 @@
   "List_fork_in_progress": "正在复制清单到您的账号…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请在 Discord 上与 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "{{version}} 更新",
+  "Patch_notes": "版本日志",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在Patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
@@ -940,6 +940,8 @@
     "SMN": "召唤",
     "RDM": "赤魔",
     "BLU": "青魔",
+    "PCT": "PCT",
+    "VPR": "VPR",
     "CRP": "刻木匠",
     "BSM": "锻铁匠",
     "ARM": "铸甲",
@@ -1963,7 +1965,7 @@
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
-    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
+    "Quick_search_tip": "按下 Ctrl + Shift + F 可在任何页面打开一个快速搜索框！",
     "Sort_by": "排序： ",
     "Sort_asc": "升序",
     "Sort_desc": "降序",
@@ -3265,6 +3267,6 @@
     "Food_Picker": "食物选择器",
     "Reminders": "CD计时器",
     "About": "关于",
-    "Fish_Train": "Fish Train"
+    "Fish_Train": "渔车"
   }
 }
