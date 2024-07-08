@@ -59,24 +59,15 @@ export class CraftingReplayEffects {
   addCraftingReplay$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CraftingReplayActions.addCraftingReplay),
-      switchMap(action => {
-        return from(httpsCallable<{ replay: CraftingReplay }, { hash: string }>(this.afs, 'hashReplay')({ replay: action.craftingReplay })).pipe(
-          map(res => {
-            action.craftingReplay.hash = res.data.hash;
-            return action.craftingReplay;
-          }),
-          tap(replay => {
-            const localstore = this.getLocalstore();
-            const newLength = localstore.unshift(replay);
-            if (newLength > CraftingReplayEffects.MAX_LOG_SIZE) {
-              localstore.pop();
-            }
-            this.setLocalstore(localstore);
-          }),
-          map(replay => {
-            return CraftingReplayActions.addHashedCraftingReplay({ craftingReplay: replay });
-          })
-        );
+      map(action => {
+        const replay = action.craftingReplay;
+        const localstore = this.getLocalstore();
+        const newLength = localstore.unshift(replay);
+        if (newLength > CraftingReplayEffects.MAX_LOG_SIZE) {
+          localstore.pop();
+        }
+        this.setLocalstore(localstore);
+        return CraftingReplayActions.addHashedCraftingReplay({ craftingReplay: replay });
       })
     );
   });
