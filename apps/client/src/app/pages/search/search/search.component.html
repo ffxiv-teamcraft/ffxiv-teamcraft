@@ -512,7 +512,7 @@
               [nzPageIndex]="page$ | async" [nzTotal]="results.total"
               [nzPageSize]="pageSize" [nzShowTotal]="rangeTemplate"></nz-pagination>
           }
-          @for (row of results.paginated; track trackByItem($index, row); let odd = $odd) {
+          @for (row of results.paginated; track row.itemId + (row.recipe?.recipeId || ''); let odd = $odd) {
             <app-search-result
               [odd]="odd" [row]="row" [currentLang]="translate.currentLang"
               [selected]="row.selected"

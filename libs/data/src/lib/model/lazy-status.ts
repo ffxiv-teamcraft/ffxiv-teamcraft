@@ -5,6 +5,7 @@ export interface LazyStatus {
   fr:          string;
   icon:        string;
   ja:          string;
+  maxStacks:   number;
 }
 
 export interface Description {

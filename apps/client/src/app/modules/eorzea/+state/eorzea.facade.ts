@@ -11,6 +11,7 @@ import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { StatusEntry } from '../status-entry';
 
 @Injectable({
   providedIn: 'root'
@@ -123,11 +124,11 @@ export class EorzeaFacade {
     this.store.dispatch(new SetStatuses([]));
   }
 
-  setStatuses(statuses: number[]) {
+  setStatuses(statuses: StatusEntry[]) {
     this.store.dispatch(new SetStatuses(statuses));
   }
 
-  addStatus(effect: number) {
+  addStatus(effect: StatusEntry) {
     this.store.dispatch(new AddStatus(effect));
   }
 
