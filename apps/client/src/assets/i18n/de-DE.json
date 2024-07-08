@@ -940,6 +940,8 @@
     "SMN": "BSW",
     "RDM": "RMA",
     "BLU": "BMA",
+    "PCT": "PCT",
+    "VPR": "VPR",
     "CRP": "ZMR",
     "BSM": "GRS",
     "ARM": "PLA",
