@@ -861,7 +861,7 @@ export class SettingsService {
   }
 
   public get autoUpdateStats(): boolean {
-    return this.getBoolean('autoUpdateStats', false);
+    return this.getBoolean('autoUpdateStats', true);
   }
 
   public set autoUpdateStats(update: boolean) {

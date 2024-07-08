@@ -280,7 +280,8 @@ export class PacketCaptureTrackerService {
               return {
                 id: row.id,
                 stacks: this.getStatusStacks(row.param, lazyStatus),
-                duration: row.duration
+                duration: row.duration,
+                param: row.param
               } as StatusEntry;
             })
           );
@@ -307,6 +308,7 @@ export class PacketCaptureTrackerService {
                   id: effect.effectId,
                   stacks: this.getStatusStacks(effect.param, lazyStatus),
                   duration: effect.duration,
+                  param: effect.param
                 } as StatusEntry;
               })
             )

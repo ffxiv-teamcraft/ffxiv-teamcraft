@@ -1,5 +1,6 @@
 export interface StatusEntry {
-  id: number,
-  stacks: number,
-  duration: number
+  id: number;
+  stacks: number;
+  duration: number;
+  param: number;
 }
