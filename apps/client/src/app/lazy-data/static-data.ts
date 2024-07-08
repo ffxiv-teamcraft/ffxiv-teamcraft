@@ -34,5 +34,5 @@ export class StaticData {
     ]
   };
 
-  public static globalFATEShopMapIds = [497, 498, 693, 694, 856]
+  public static globalFATEShopMapIds = [497, 498, 693, 694, 855, 856]
 }

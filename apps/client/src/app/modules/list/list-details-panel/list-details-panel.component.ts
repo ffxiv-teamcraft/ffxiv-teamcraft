@@ -165,7 +165,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   npcBreakdown$: Observable<NpcBreakdown> = combineLatest([this.displayRow$, this.canSkip$]).pipe(
     debounceTime(10),
-    map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, canSkip))
+    map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, this.settings, canSkip))
   );
 
   constructor(private i18n: I18nToolsService, public translate: TranslateService,

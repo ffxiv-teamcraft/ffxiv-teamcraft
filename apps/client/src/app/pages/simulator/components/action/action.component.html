@@ -29,7 +29,7 @@
 <nz-dropdown-menu #template="nzDropdownMenu">
   @if (simulation) {
     <ul (click)="close()" nz-menu>
-      @for (condition of availableConditions; track condition) {
+      @for (condition of availableConditions; track condition.condition) {
         <li (click)="setState(condition.condition)" [nzSelected]="state === condition.condition"
         nz-menu-item>{{('SIMULATOR.STATE.' + condition.name) | translate}}</li>
       }
