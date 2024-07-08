@@ -5,11 +5,8 @@ import { XivDataService } from '../xiv/xiv-data.service';
 export class MappyExtractor extends AbstractExtractor {
   private monsters = {};
 
-  public isSpecific = true;
-
   doExtract(xiv: XivDataService): void {
     const mapData$ = this.get('https://us-central1-ffxivteamcraft.cloudfunctions.net/getMappyData');
-
 
     const mapDiscoveryIndexes$ = this.getSheet<any>(xiv, 'Map', ['DiscoveryIndex']);
 

@@ -26186,6 +26186,15 @@
       "minGathering": 0
     }
   ],
+  "43752": [
+    {
+      "spot": 319,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
   "43762": [
     {
       "spot": 322,
@@ -26193,6 +26202,30 @@
       "tug": 2,
       "bait": 43857,
       "minGathering": 0
+    }
+  ],
+  "43775": [
+    {
+      "spot": 326,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0,
+      "video": "https://youtu.be/Jk0NOIwX4eI"
+    }
+  ],
+  "43795": [
+    {
+      "spot": 332,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43859,
+      "weathers": [
+        4,
+        3
+      ],
+      "minGathering": 0,
+      "video": "https://youtu.be/6Dih5jNWcaY"
     }
   ],
   "43903": [
