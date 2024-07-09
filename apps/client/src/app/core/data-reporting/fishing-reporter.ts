@@ -171,7 +171,8 @@ export class FishingReporter implements DataReporter {
     const moochSelection$ = packets$.pipe(
       ofMessageType('systemLogMessage'),
       toIpcData(),
-      filter(packet => [1121, 1110, 3522].includes(packet.param1)),
+      // 1129: Nothing bites
+      filter(packet => [1121, 5558, 3522, 1129].includes(packet.param1)),
       map(packet => {
         if (packet.param1 === 1121 || packet.param1 === 3522) {
           return packet.param3;
@@ -180,13 +181,6 @@ export class FishingReporter implements DataReporter {
       }),
       startWith(null)
     );
-
-    const resetMooch$ = packets$.pipe(
-      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
-      map(() => null)
-    );
-
-    const mooch$ = merge(moochSelection$, resetMooch$);
 
     const misses$ = combineLatest([
       packets$.pipe(
@@ -217,6 +211,16 @@ export class FishingReporter implements DataReporter {
         };
       })
     );
+
+    const resetMooch$ = merge(packets$.pipe(
+        ofMessageType('actorControlSelf', 'fishingBaitMsg')
+      ),
+      misses$
+    ).pipe(
+      map(() => null)
+    );
+
+    const mooch$ = merge(moochSelection$, resetMooch$);
 
     const hookset$ = actionTimeline$.pipe(
       map(key => {
@@ -340,8 +344,8 @@ export class FishingReporter implements DataReporter {
           chum: throwData.statuses.some(({ id }) => id === 763),
           patience: throwData.statuses.some(({ id }) => id === 850),
           intuition: throwData.statuses.some(({ id }) => id === 568),
-          aLure: biteData.statuses.find(({id}) => id === 3972)?.stacks || 0,
-          mLure: biteData.statuses.find(({id}) => id === 3973)?.stacks || 0,
+          aLure: biteData.statuses.find(({ id }) => id === 3972)?.stacks || 0,
+          mLure: biteData.statuses.find(({ id }) => id === 3973)?.stacks || 0,
           mooch: mooch !== null,
           tug: biteData.tug,
           hookset,

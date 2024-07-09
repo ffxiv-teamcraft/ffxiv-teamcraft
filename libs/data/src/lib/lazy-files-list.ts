@@ -141,7 +141,7 @@ export const lazyFilesList = {
   },
   'exVersions': {
     'fileName': 'ex-versions.json',
-    'hashedFileName': 'ex-versions.0619162866b8ad009e0ff847cd5a46ae00362fa8.json'
+    'hashedFileName': 'ex-versions.42dd52b7198296729e5f914390742e7a16d38483.json'
   },
   'extractableItems': {
     'fileName': 'extractable-items.json',
