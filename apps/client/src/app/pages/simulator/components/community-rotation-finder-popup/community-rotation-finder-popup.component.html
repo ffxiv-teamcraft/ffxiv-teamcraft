@@ -14,7 +14,7 @@
     @if (rows.length > 0) {
       <nz-divider [nzText]="'SIMULATOR.Click_on_rotation' | translate"></nz-divider>
     }
-    @for (row of rows; track row) {
+    @for (row of rows; track row.rotation.$key) {
       <nz-card nzHoverable (click)="select(row.rotation)">
         <div class="rotation-row" fxLayout="column" fxLayoutGap="10px">
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -91,7 +91,7 @@
             }
           </div>
           <div fxLayout="row wrap" fxLayoutGap="10px">
-            @for (action of row.actions; track action) {
+            @for (action of row.actions; track action.getIds()[0]) {
               <app-action [action]="action" [hideCost]="true"></app-action>
             }
           </div>

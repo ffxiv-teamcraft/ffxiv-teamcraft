@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { StatusEntry } from '../status-entry';
 
 export enum EorzeaActionTypes {
   Reset = '[Eorzea] Reset',
@@ -53,14 +54,14 @@ export class RemoveStatus implements Action {
 export class AddStatus implements Action {
   readonly type = EorzeaActionTypes.AddStatus;
 
-  constructor(public payload: number) {
+  constructor(public payload: StatusEntry) {
   }
 }
 
 export class SetStatuses implements Action {
   readonly type = EorzeaActionTypes.SetStatuses;
 
-  constructor(public payload: number[]) {
+  constructor(public payload: StatusEntry[]) {
   }
 }
 

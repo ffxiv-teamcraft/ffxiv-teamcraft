@@ -33,7 +33,7 @@
           <nz-input-group [nzAddOnBefore]="'GATHERING_LOCATIONS.Use' | translate">
             <nz-select class="with-addon-before" formControlName="use">
               <nz-option [nzLabel]="'COMMON.Any' | translate" [nzValue]="-1"></nz-option>
-              @for (use of uses; track use) {
+              @for (use of uses; track $index) {
                 <nz-option [nzLabel]="use.needsTranslate ? (use.value | translate) : use.value | itemName | i18n"
                            [nzValue]="use.value" nzCustomContent>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

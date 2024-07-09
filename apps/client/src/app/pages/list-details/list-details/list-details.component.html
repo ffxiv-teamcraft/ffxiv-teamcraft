@@ -283,9 +283,11 @@
     fxLayoutGap="5px">
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutGap="5px">
-        <button nz-button nzSize="small" nzType="primary" (click)="addItems()">
-          <i nz-icon nzType="plus"></i> {{ 'LIST_DETAILS.Add_item' | translate }}
-        </button>
+        @if((permissionLevel$ | async) >= 30) {
+          <button nz-button nzSize="small" nzType="primary" (click)="addItems()">
+            <i nz-icon nzType="plus"></i> {{ 'LIST_DETAILS.Add_item' | translate }}
+          </button>
+        }
         <button (click)="createAlarms(list)" [nzTooltipTitle]="'LIST.Add_all_alarms' | translate" nz-button nz-tooltip
           nzShape="circle" nzSize="small">
           <i nz-icon nzType="bell"></i>

@@ -2,27 +2,31 @@
   <div class="flex-column gap-10">
     <div class="flex-row space-between">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <div>{{drop.id | i18nRow:'mobs' | i18n}}</div>
+        <div>{{ drop.id | i18nRow:'mobs' | i18n }}</div>
         <app-db-button [id]="drop.id % 100000" type="mob"></app-db-button>
       </div>
       <div class="flex-column align-end justify-end">
-        <div>{{drop.zoneid | i18nRow:'places' | i18n}}</div>
+        <div>{{ drop.zoneid | i18nRow:'places' | i18n }}</div>
         @if (drop?.position) {
           <app-map-position [mapId]="drop.mapid" [marker]="drop?.position"
-          [zoneId]="drop.zoneid" [additionalMarkers]="getMarkers(drop) | async"></app-map-position>
+                            [zoneId]="drop.zoneid" [additionalMarkers]="getMarkers(drop) | async"></app-map-position>
         }
         @if (drop.mapid | closestAetheryte: drop?.position | async; as aetheryte) {
           <div
             class="closest-tp">
             <img alt="" class="aetheryte-icon"
-              src="./assets/icons/Aetheryte.png"> {{aetheryte?.nameid | i18nRow:'places' | i18n}}
-            </div>
-          }
-        </div>
+                 src="./assets/icons/Aetheryte.png"> {{ aetheryte?.nameid | i18nRow:'places' | i18n }}
+          </div>
+        }
       </div>
-      @if (i <= 2) {
-        <app-map [mapId]="drop.mapid" [markers]="getMarkers(drop) | async"
-        ></app-map>
-      }
     </div>
-  }
+    @if (i <= 2) {
+      @if (getMarkers(drop) | async; as markers) {
+        @if (markers.length > 0) {
+          <app-map [mapId]="drop.mapid" [markers]="getMarkers(drop) | async"
+          ></app-map>
+        }
+      }
+    }
+  </div>
+}

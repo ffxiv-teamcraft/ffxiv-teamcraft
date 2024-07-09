@@ -82,10 +82,10 @@ export class GatheringLocationComponent {
       icon: './assets/icons/Reduce.png'
     },
     {
-      value: 25200
+      value: 33914
     },
     {
-      value: 33914
+      value: 41785
     }
   ];
 

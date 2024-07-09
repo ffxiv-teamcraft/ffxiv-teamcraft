@@ -103,7 +103,7 @@ export class ZoneBreakdown {
     const existingRow = this.rows.find(r => r.mapId === mapId);
     // If we hide duplicates and it's bicolor gems, ignore "all items" shop that needs to be unlocked
     const gemstoneTrades = getItemSource(item, DataType.TRADE_SOURCES).filter(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)));
-    const isBicolorTrade = hideZoneDuplicates && gemstoneTrades;
+    const isBicolorTrade = hideZoneDuplicates && gemstoneTrades.length > 0;
     if (isBicolorTrade) {
       if (StaticData.globalFATEShopMapIds.includes(mapId)) {
         // If user unlocked this FATE trade NPC, prioritize it, else skip it

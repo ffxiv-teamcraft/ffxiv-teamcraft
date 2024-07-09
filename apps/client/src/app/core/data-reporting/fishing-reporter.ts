@@ -6,7 +6,7 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import { Hookset, Tug, Region } from '@ffxiv-teamcraft/types';
+import { Hookset, Region, Tug } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import type { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv/models';
@@ -145,10 +145,12 @@ export class FishingReporter implements DataReporter {
 
     const bite$ = eventPlay$.pipe(
       filter(packet => packet.scene === 5),
-      map(packet => {
+      withLatestFrom(this.eorzea.statuses$),
+      map(([packet, statuses]) => {
         return {
           timestamp: Date.now(),
-          tug: this.getTug(packet.param5)
+          tug: this.getTug(packet.param5),
+          statuses
         };
       })
     );
@@ -169,7 +171,8 @@ export class FishingReporter implements DataReporter {
     const moochSelection$ = packets$.pipe(
       ofMessageType('systemLogMessage'),
       toIpcData(),
-      filter(packet => [1121, 1110, 3522].includes(packet.param1)),
+      // 1129: Nothing bites
+      filter(packet => [1121, 5558, 3522, 1129].includes(packet.param1)),
       map(packet => {
         if (packet.param1 === 1121 || packet.param1 === 3522) {
           return packet.param3;
@@ -178,13 +181,6 @@ export class FishingReporter implements DataReporter {
       }),
       startWith(null)
     );
-
-    const resetMooch$ = packets$.pipe(
-      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
-      map(() => null)
-    );
-
-    const mooch$ = merge(moochSelection$, resetMooch$);
 
     const misses$ = combineLatest([
       packets$.pipe(
@@ -215,6 +211,16 @@ export class FishingReporter implements DataReporter {
         };
       })
     );
+
+    const resetMooch$ = merge(packets$.pipe(
+        ofMessageType('actorControlSelf', 'fishingBaitMsg')
+      ),
+      misses$
+    ).pipe(
+      map(() => null)
+    );
+
+    const mooch$ = merge(moochSelection$, resetMooch$);
 
     const hookset$ = actionTimeline$.pipe(
       map(key => {
@@ -333,11 +339,13 @@ export class FishingReporter implements DataReporter {
           previousWeatherId: throwData.previousWeatherId,
           baitId,
           biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
-          fishEyes: throwData.statuses.includes(762),
-          snagging: throwData.statuses.includes(761),
-          chum: throwData.statuses.includes(763),
-          patience: throwData.statuses.includes(850),
-          intuition: throwData.statuses.includes(568),
+          fishEyes: throwData.statuses.some(({ id }) => id === 762),
+          snagging: throwData.statuses.some(({ id }) => id === 761),
+          chum: throwData.statuses.some(({ id }) => id === 763),
+          patience: throwData.statuses.some(({ id }) => id === 850),
+          intuition: throwData.statuses.some(({ id }) => id === 568),
+          aLure: biteData.statuses.find(({ id }) => id === 3972)?.stacks || 0,
+          mLure: biteData.statuses.find(({ id }) => id === 3973)?.stacks || 0,
           mooch: mooch !== null,
           tug: biteData.tug,
           hookset,

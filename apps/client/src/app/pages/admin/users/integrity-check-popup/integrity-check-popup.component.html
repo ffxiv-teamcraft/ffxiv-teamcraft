@@ -1,6 +1,6 @@
 @if (results$ | async; as results) {
   <ul class="result-list">
-    @for (row of results; track row) {
+    @for (row of results; track row.label) {
       <li fxLayout="row" fxLayoutGap="5px">
         <div>
           @switch (row.result) {

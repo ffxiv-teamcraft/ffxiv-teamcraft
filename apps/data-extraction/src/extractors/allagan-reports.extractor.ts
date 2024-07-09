@@ -162,8 +162,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
           })
         );
       })
-    ).subscribe((res) => {
-      console.log(res);
+    ).subscribe(() => {
       this.done();
     });
   }

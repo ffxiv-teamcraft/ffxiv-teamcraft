@@ -10,6 +10,7 @@ import structuredClone from '@ungap/structured-clone';
 import { LayoutRowFilter } from '../../../../core/layout/layout-row-filter';
 import { SettingsService } from '../../../settings/settings.service';
 import { List } from '../../model/list';
+import { StaticData } from '../../../../lazy-data/static-data';
 
 export class StepByStepList {
   public alarms: ListRow[] = [];
@@ -66,6 +67,18 @@ export class StepByStepList {
               if (this.shouldAddMap(position.mapId)) {
                 const preparedSource: ItemSource = structuredClone(source);
                 if (preparedSource.type === DataType.TRADE_SOURCES) {
+                  const gemstoneTrades = preparedSource.data.filter(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)));
+                  if (gemstoneTrades.length > 0) {
+                    if (StaticData.globalFATEShopMapIds.includes(position.mapId)) {
+                      if (!this.settings.unlockedFATEAreas.includes(position.mapId)) {
+                        return;
+                      }
+                    } else {
+                      if (gemstoneTrades.some(ts => ts.npcs.some(npc => this.settings.unlockedFATEAreas.includes(npc.mapId)))) {
+                        return;
+                      }
+                    }
+                  }
                   // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
                   preparedSource.data = preparedSource.data.filter(ts => {
                     return ts.npcs.some(npc => npc.mapId === position.mapId);
