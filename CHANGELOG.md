@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.10...v11.2.11) (2024-07-09)
+
+
+### Features
+
+* **db:** more monster positions and allagan reports ([2d33c8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d33c8b22820796b924982f16bb0b66ca2b8c19e))
+* **desktop:** fixed auto update stats, now handling food buffs properly ([8c112a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c112a6aed299c7d664aa53431d7d070660f1c6b))
+* **desktop:** support for new lure actions in captured data ([ec4b5b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec4b5b7b6d6553e37053fe4d152b6557562df6d4))
+
+
+### Bug Fixes
+
+* **db:** fail gracefully if a monster has no known position ([e49b685](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e49b68545acffbeb003fbb3be90d4e7e63abfccd))
+* **fishing-reporter:** fix new mooch logic ([7d7630a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d7630a9e04e76a308a369e9bfffa4be0374f441))
+* **gathering-location:** update scrips in uses filter ([55ce2dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/55ce2ddfcf641d822ad7543d64efc37a277f2635))
+* **inventory:** add Dawntrail to the list of filter expansions ([127e828](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/127e828c272f7170f8040b72463044d5fc5a9c60))
+* **lists:** add VPR and PCT tag translations ([be37f1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be37f1c89a9ee549d4f389b7a71063bb5ba08663))
+* **lists:** better max width for description ([3672fd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3672fd6342fe46f1426e1407f2e333e6a4e857e8))
+* **lists:** fixed team WRITE permission not applied to list panel ([470ca74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/470ca747b651f9cd0be9aba117ff0a1ea2d298bc))
+* **settings:** fix new FATE shops setting ([75e4dca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/75e4dca437f80022d649739c65bd216d1d1fb135))
+
 ### [11.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.9...v11.2.10) (2024-07-07)
 
 
