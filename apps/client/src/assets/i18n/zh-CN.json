@@ -18,7 +18,7 @@
   "List_fork_in_progress": "正在复制清单到您的账号…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请在 Discord 上与 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "{{version}} 更新",
+  "Patch_notes": "版本日志",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在Patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
@@ -549,6 +549,8 @@
     "Desktop_tip_title": "Teamcraft 拥有桌面客户端！更好、更快、更强！",
     "Desktop_tip_description": "桌面客户端使用离线搜索更快， 它还添加了悬浮窗功能和更多使用数据包捕获的功能(如果你想避免使用数据包捕获，默认情况下它是禁用的)。强烈建议使用它而不是网页版以获得更好的体验。",
     "Lists_offline_by_default": "默认使用离线模式创建清单",
+    "Unlocked_FATE_areas": "已解锁的 FATE 商店",
+    "Unlocked_FATE_areas_explain": "当某一版本的所有危命任务完成度达到满级后， 相对应的主城会解锁FATE商店",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -673,7 +675,7 @@
     }
   },
   "LIST": {
-    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
+    "Offline_lists_no_child_window": "离线清单无法通过子窗口编辑，您的改动将无法提交至主窗口。",
     "Archive": "归档",
     "Unarchive": "取消归档",
     "Regenerate": "更新清单到最新的 Teamcraft 版本",
@@ -938,6 +940,8 @@
     "SMN": "召唤",
     "RDM": "赤魔",
     "BLU": "青魔",
+    "PCT": "PCT",
+    "VPR": "VPR",
     "CRP": "刻木匠",
     "BSM": "锻铁匠",
     "ARM": "铸甲",
@@ -989,8 +993,8 @@
     "Ephemeral_node": "限时采集点，可以刷新",
     "Intro": "采集地点用于快速搜索可采集物品，并查看其详情，并为节点设置采集闹钟。在上面的输入框中输入物品名字，它会找到你要找的物品！",
     "Hidden_item": "隐藏资源",
-    "Sublime_item": "Sublime",
-    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
+    "Sublime_item": "升华",
+    "Sublime_item_explain": "这个物品是通过采集其最大收藏价值的非升华变体获得的。",
     "Fish_eyes": "通过鱼眼忽略天气以外的条件",
     "Add_alarm": "添加闹钟",
     "Add_alarm_fish_eyes": "添加使用鱼眼的闹钟",
@@ -1961,7 +1965,7 @@
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
-    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
+    "Quick_search_tip": "按下 Ctrl + Shift + F 可在任何页面打开一个快速搜索框！",
     "Sort_by": "排序： ",
     "Sort_asc": "升序",
     "Sort_desc": "降序",
@@ -3263,6 +3267,6 @@
     "Food_Picker": "食物选择器",
     "Reminders": "CD计时器",
     "About": "关于",
-    "Fish_Train": "Fish Train"
+    "Fish_Train": "渔车"
   }
 }
