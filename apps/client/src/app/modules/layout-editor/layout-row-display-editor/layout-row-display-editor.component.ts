@@ -42,10 +42,10 @@ export class LayoutRowDisplayEditorComponent {
   setType(item: ItemRowMenuElement, type: 'button' | 'menu'): void {
     if (type === 'menu') {
       this.layout.rowsDisplay.buttons = this.layout.rowsDisplay.buttons.filter(i => i !== item);
-      this.layout.rowsDisplay.menu.push(item);
+      this.layout.rowsDisplay.menu = [...this.layout.rowsDisplay.menu, item];
     } else {
       this.layout.rowsDisplay.menu = this.layout.rowsDisplay.menu.filter(i => i !== item);
-      this.layout.rowsDisplay.buttons.push(item);
+      this.layout.rowsDisplay.buttons = [...this.layout.rowsDisplay.buttons, item];
     }
   }
 

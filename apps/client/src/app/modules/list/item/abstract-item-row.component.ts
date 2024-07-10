@@ -71,7 +71,9 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     shareReplay(1)
   );
 
-  buttonsCache = {};
+  get buttonsCache() {
+    return this.layout.buttonsCache;
+  }
 
   finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -323,9 +325,6 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
 
   @Input()
   public set layout(l: ListLayout) {
-    if (l) {
-      this.buttonsCache = l.buttonsCache;
-    }
     this._layout = l;
   }
 

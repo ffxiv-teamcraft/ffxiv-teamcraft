@@ -132,8 +132,8 @@ export class LayoutEditorComponent {
       },
       nzFooter: null
     }).afterClose
-      .subscribe(() => {
-        this.dirty = true;
+      .subscribe((res) => {
+        this.save(res);
       });
   }
 
