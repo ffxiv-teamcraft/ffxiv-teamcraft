@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, combineLatest, interval, merge, Observable, of, ReplaySubject, Subject, timer } from 'rxjs';
-import { debounce, debounceTime, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, timer } from 'rxjs';
+import { debounce, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
@@ -100,7 +100,7 @@ export class GatheringLocationComponent {
     this.routeQuery$.pipe(map(query => ({ query, source: 'route' })))
   ).pipe(
     switchMap(({ query, source }) => {
-      if(source === 'route' || !this.settings.disableSearchDebounce){
+      if (source === 'route' || !this.settings.disableSearchDebounce) {
         return of(query);
       }
       return this.enterPress$.pipe(map(() => query));
@@ -144,7 +144,7 @@ export class GatheringLocationComponent {
         filter((data) => data.every(Boolean)),
         first(),
         map(([items, index, scripIndex, aetherialReduce]) => {
-          return items.filter(row => {
+          return items.slice(0, 50).filter(row => {
             return index[row.id] !== undefined;
           }).map(row => {
             return {
