@@ -171,8 +171,10 @@ export class FishingReporter implements DataReporter {
     const moochSelection$ = packets$.pipe(
       ofMessageType('systemLogMessage'),
       toIpcData(),
+      // 1121: Cast with hooked fish
+      // 3522: You apply <bait> to your line
       // 1129: Nothing bites
-      filter(packet => [1121, 5558, 3522, 1129].includes(packet.param1)),
+      filter(packet => [1121, 3522, 1129].includes(packet.param1)),
       map(packet => {
         if (packet.param1 === 1121 || packet.param1 === 3522) {
           return packet.param3;
@@ -216,7 +218,7 @@ export class FishingReporter implements DataReporter {
         ofMessageType('actorControlSelf', 'fishingBaitMsg')
       ),
       misses$,
-      fishCaught$.pipe(debounceTime(500))
+      fishCaught$.pipe(debounceTime(750))
     ).pipe(
       map(() => null)
     );
