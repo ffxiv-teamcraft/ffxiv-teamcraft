@@ -120,7 +120,7 @@
                       </div>
                     </ng-template>
                     <div fxLayout="column">
-                      @for (row of category.items; track row.item.itemId; let last = $last; let odd = $odd) {
+                      @for (row of category.items; track row.equipmentPiece.itemId; let last = $last; let odd = $odd) {
                         <app-gearset-editor-row [property]="category.property"
                           [equipmentPiece]="row.equipmentPiece"
                           [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"
