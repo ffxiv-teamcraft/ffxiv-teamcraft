@@ -1717,10 +1717,8 @@
   ],
   "43842": [
     {
-      "speed": 5,
-      "shadowSize": 2,
-      "spawn": 0,
-      "duration": 0
+      "speed": 3,
+      "shadowSize": 2
     }
   ],
   "43845": [
