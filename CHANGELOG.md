@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.11...v11.2.12) (2024-07-10)
+
+
+### Features
+
+* **db:** allagan reports and more monster positions ([b78c990](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b78c9909d18c166001183cc9a32edc224cb9e037))
+* **log-tracking:** better naming for new DoL book categories ([d4be94e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d4be94eaeac86e416dfb7416f9e8af3b5c5a47eb))
+
+
+### Bug Fixes
+
+* **alarms:** allow 0 as spawn value in custom alarms ([c1bee95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1bee954cf37c1351f3fdeb9808f956927da13c2))
+* **desktop:** fix step-by-step overlay not loading ([a66edb2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a66edb2e57979cf14c96d9c5daeb374f166ec3d9))
+* **gathering-location:** limit # of results to 50 to prevent freeze ([dbc286f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dbc286f24dd5477fd127d214b03474a52f70094c))
+* **gearset-editor:** fix double row display ([f27c9cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f27c9cd7edb51c7045c35c8d33e8bc322f6d69a0))
+* **layout:** apply button/menu changes immediately ([e82ab64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e82ab6435a5232c33943e28d908887dd97a78c95))
+* **patreon/tipeee:** fix auth token refresh ([eab2a56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eab2a56a0f2b1c1660db863371aff8f224e7c234))
+* **profile:** add missing folklore books to profile editor ([7cd70b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7cd70b7b314ac7df7ad4929d952ab5083c481781))
+* **profile:** fix save stats for all crafters resetting priorities ([13e4a9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/13e4a9fb445d2a79ae773352af9d67f3cb4e12a3))
+
 ### [11.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.10...v11.2.11) (2024-07-09)
 
 
