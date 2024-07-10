@@ -101,15 +101,15 @@ export const lazyFilesList = {
   },
   'craftingLevels': {
     'fileName': 'crafting-levels.json',
-    'hashedFileName': 'crafting-levels.7a44b07e17adaaa2dc00f9f7469dd702eee42c9f.json'
+    'hashedFileName': 'crafting-levels.6659e067134e2e185fc1332884fabba96d3400a1.json'
   },
   'craftingLogPages': {
     'fileName': 'crafting-log-pages.json',
-    'hashedFileName': 'crafting-log-pages.418399141743bd9c3b954520d41d1b5fbaf716f0.json'
+    'hashedFileName': 'crafting-log-pages.a74888481469136c3a7e7ba14c6751a9f68dd530.json'
   },
   'craftingLog': {
     'fileName': 'crafting-log.json',
-    'hashedFileName': 'crafting-log.e66ce58f1a70dad17372e9282818174656401f77.json'
+    'hashedFileName': 'crafting-log.e114da17ca375f3794c89f837fa0917d2e168081.json'
   },
   'deprecatedItems': {
     'fileName': 'deprecated-items.json',
@@ -209,7 +209,7 @@ export const lazyFilesList = {
   },
   'gatheringLevels': {
     'fileName': 'gathering-levels.json',
-    'hashedFileName': 'gathering-levels.5db5d946cb7a1e6280a1a5c34d33bf7ade3b9263.json'
+    'hashedFileName': 'gathering-levels.5570ee2fa915d511ae8f9e745cd4f30f53996b77.json'
   },
   'gatheringLogPages': {
     'fileName': 'gathering-log-pages.json',
@@ -405,7 +405,7 @@ export const lazyFilesList = {
   },
   'logTrackerPageData': {
     'fileName': 'log-tracker-page-data.json',
-    'hashedFileName': 'log-tracker-page-data.4c72447603933df7e2c8e872dca5321bd4187b60.json'
+    'hashedFileName': 'log-tracker-page-data.074396293a74d1a4e35bd540e0737dbac55e47a8.json'
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
@@ -461,7 +461,7 @@ export const lazyFilesList = {
   },
   'notebookDivision': {
     'fileName': 'notebook-division.json',
-    'hashedFileName': 'notebook-division.e1e2fff654a18589b9a22166c0edc2bc8a3d4151.json'
+    'hashedFileName': 'notebook-division.18c892174b91d2f5c7add9d027610152e184a304.json'
   },
   'npcSearch': {
     'fileName': 'npc-search.index',

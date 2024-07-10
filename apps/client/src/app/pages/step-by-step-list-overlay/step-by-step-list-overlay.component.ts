@@ -76,6 +76,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     super(eorzeaFacade, ipc, listsFacade, layoutsFacade, settings, lazyData, mapService, etime, alarmsFacade);
     this.layoutsFacade.loadAll();
     this.ipc.send('overlay:pcap', { enabled: true, url: '/step-by-step-list-overlay' });
+    this.ipc.send('app-state:get');
     this.ipc.mainWindowState$.pipe(
       filter(state => {
         return state.lists && state.layouts;
