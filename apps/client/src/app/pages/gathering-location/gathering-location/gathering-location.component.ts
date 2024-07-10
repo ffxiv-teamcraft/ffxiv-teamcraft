@@ -144,7 +144,7 @@ export class GatheringLocationComponent {
         filter((data) => data.every(Boolean)),
         first(),
         map(([items, index, scripIndex, aetherialReduce]) => {
-          return items.slice(0, 50).filter(row => {
+          return items.filter(row => {
             return index[row.id] !== undefined;
           }).map(row => {
             return {
@@ -241,7 +241,7 @@ export class GatheringLocationComponent {
             return [res, filters];
           }),
           switchMap(([rows, filters]) => {
-            return safeCombineLatest(rows.map(row => {
+            return safeCombineLatest(rows.slice(0, 50).map(row => {
                 const itemId = row.id;
                 return this.gatheringNodesService.getItemNodes(itemId).pipe(
                   map(nodes => {
