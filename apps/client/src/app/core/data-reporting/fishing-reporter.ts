@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
@@ -215,7 +215,8 @@ export class FishingReporter implements DataReporter {
     const resetMooch$ = merge(packets$.pipe(
         ofMessageType('actorControlSelf', 'fishingBaitMsg')
       ),
-      misses$
+      misses$,
+      fishCaught$.pipe(debounceTime(500))
     ).pipe(
       map(() => null)
     );
