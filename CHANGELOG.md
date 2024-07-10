@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.12...v11.2.13) (2024-07-10)
+
+
+### Bug Fixes
+
+* **desktop:** fix overlay tracking of new mooch fish ([0ec4358](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ec43580b11d7c82c3210e33e8840256c230b8ef))
+* **gathering-location:** fixed wrong slice that broke search ([395f58f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/395f58f198812eb7cd16d22ee86791ad7a607e64))
+* **hunting:** better handling of empty coords ([16456c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16456c655078a36a1881c714430a1130f51884d1))
+
 ### [11.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.11...v11.2.12) (2024-07-10)
 
 
