@@ -89,8 +89,10 @@ export class AuthEffects {
       if (user.supporter) {
         if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
           this.supportService.refreshPatreonToken(user);
+          return null
         } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 1800000) {
           this.supportService.refreshTipeeeToken(user);
+          return null
         }
       }
       if (user.defaultLodestoneId === undefined && user.lodestoneIds?.length > 0) {
@@ -101,6 +103,7 @@ export class AuthEffects {
       }
       return user;
     }),
+    filter(Boolean),
     map(user => new UserFetched(user)),
     debounceTime(250)
   ));
