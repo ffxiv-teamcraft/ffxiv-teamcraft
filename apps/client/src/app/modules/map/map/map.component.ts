@@ -17,6 +17,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { AsyncPipe, DecimalPipe, NgStyle } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-map',
@@ -70,7 +71,7 @@ export class MapComponent extends DialogComponent implements OnInit {
   _markers: MapMarker[] = [];
 
   get markers(): MapMarker[] {
-    return this._markers;
+    return uniqBy(this._markers, marker => this.trackByMarker(0, marker)).filter(Boolean);
   }
 
   @Input()
