@@ -114,8 +114,8 @@ import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-rep
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
 import { GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER } from './core/analytics/analytics-router-initializer';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { CACHE_SIZE_UNLIMITED, initializeFirestore, persistentLocalCache, persistentMultipleTabManager, provideFirestore } from '@angular/fire/firestore';
+import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
@@ -300,7 +300,9 @@ const nzConfig: NzConfig = {
     provideHttpClient(withInterceptorsFromDi()),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => initializeFirestore(getApp(), {
+      localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager(), cacheSizeBytes: CACHE_SIZE_UNLIMITED })
+    })),
     provideDatabase(() => getDatabase()),
     provideFunctions(() => getFunctions()),
     providePerformance(() => getPerformance())

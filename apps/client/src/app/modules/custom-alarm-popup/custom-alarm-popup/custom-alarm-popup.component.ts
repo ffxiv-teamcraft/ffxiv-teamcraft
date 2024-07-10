@@ -144,7 +144,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       validators: (control: AbstractControl) => {
         const spawn = control.value.spawn;
         const weather = (control.value.weathers && control.value.weathers.length > 0);
-        if (spawn || weather) {
+        if (spawn > 0 || weather) {
           return null;
         }
 

@@ -26016,6 +26016,96 @@
       "video": "https://www.youtube.com/watch?v=q1xJNuhNh0U"
     }
   ],
+  "43664": [
+    {
+      "spot": 294,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43665": [
+    {
+      "spot": 294,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43666": [
+    {
+      "spot": 294,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43667": [
+    {
+      "spot": 295,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
+  "43668": [
+    {
+      "spot": 295,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
+  "43669": [
+    {
+      "spot": 295,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
+  "43670": [
+    {
+      "spot": 295,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
+  "43671": [
+    {
+      "spot": 295,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
+  "43672": [
+    {
+      "spot": 296,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
+  "43673": [
+    {
+      "spot": 296,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
   "43674": [
     {
       "spot": 296,
@@ -26141,12 +26231,139 @@
       "minGathering": 0
     }
   ],
+  "43712": [
+    {
+      "spot": 307,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43715": [
+    {
+      "spot": 310,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 309,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 308,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43716": [
+    {
+      "spot": 310,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 309,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 308,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43717": [
+    {
+      "spot": 308,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43718": [
+    {
+      "spot": 308,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43719": [
+    {
+      "spot": 309,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43720": [
+    {
+      "spot": 309,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43721": [
+    {
+      "spot": 310,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
   "43722": [
     {
       "spot": 310,
       "hookset": 1,
       "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43723": [
+    {
+      "spot": 311,
+      "hookset": 2,
+      "tug": 2,
       "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43724": [
+    {
+      "spot": 311,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43725": [
+    {
+      "spot": 311,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
       "minGathering": 0
     }
   ],
@@ -26159,6 +26376,42 @@
       "minGathering": 0
     }
   ],
+  "43727": [
+    {
+      "spot": 311,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43728": [
+    {
+      "spot": 312,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43729": [
+    {
+      "spot": 312,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43730": [
+    {
+      "spot": 312,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43728,
+      "minGathering": 0
+    }
+  ],
   "43731": [
     {
       "spot": 312,
@@ -26168,12 +26421,140 @@
       "minGathering": 0
     }
   ],
+  "43732": [
+    {
+      "spot": 316,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 315,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 317,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 314,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 313,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43733": [
+    {
+      "spot": 313,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43734": [
+    {
+      "spot": 317,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 316,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 315,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 314,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 313,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43735": [
+    {
+      "spot": 313,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29717,
+      "minGathering": 0
+    }
+  ],
+  "43736": [
+    {
+      "spot": 314,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
   "43737": [
     {
       "spot": 314,
       "hookset": 1,
       "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43738": [
+    {
+      "spot": 315,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43739": [
+    {
+      "spot": 315,
+      "hookset": 1,
+      "tug": 0,
       "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43740": [
+    {
+      "spot": 315,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
       "minGathering": 0
     }
   ],
@@ -26186,6 +26567,17 @@
       "minGathering": 0
     }
   ],
+  "43749": [
+    {
+      "spot": 318,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43747,
+      "spawn": 18,
+      "duration": 2,
+      "minGathering": 0
+    }
+  ],
   "43752": [
     {
       "spot": 319,
@@ -26193,6 +26585,16 @@
       "tug": 0,
       "bait": 43855,
       "minGathering": 0
+    }
+  ],
+  "43761": [
+    {
+      "spot": 321,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43853,
+      "minGathering": 0,
+      "video": "https://youtu.be/Te0bYY9_Pl8"
     }
   ],
   "43762": [
@@ -26212,6 +26614,54 @@
       "bait": 43855,
       "minGathering": 0,
       "video": "https://youtu.be/Jk0NOIwX4eI"
+    }
+  ],
+  "43776": [
+    {
+      "spot": 327,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "weathers": [
+        2
+      ],
+      "minGathering": 0
+    }
+  ],
+  "43777": [
+    {
+      "spot": 327,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "weathers": [
+        2
+      ],
+      "minGathering": 0
+    }
+  ],
+  "43778": [
+    {
+      "spot": 327,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "weathers": [
+        2
+      ],
+      "minGathering": 0
+    }
+  ],
+  "43779": [
+    {
+      "spot": 327,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "weathers": [
+        2
+      ],
+      "minGathering": 0
     }
   ],
   "43795": [

@@ -6,7 +6,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { chunk } from 'lodash';
+import { chunk, uniqBy } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -241,14 +241,14 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             }, []);
           return prepared
             .map(category => {
-              category.items = category.items.sort((a, b) => {
+              category.items = uniqBy(category.items.sort((a, b) => {
                 const aIlvl = lazyIlvls[a.equipmentPiece.itemId];
                 const bIlvl = lazyIlvls[b.equipmentPiece.itemId];
                 if (aIlvl === bIlvl) {
                   return b.equipmentPiece.itemId - a.equipmentPiece.itemId;
                 }
                 return aIlvl - bIlvl;
-              }).slice(0, 20); // Max 20 items per category to avoid rendering issues.
+              }), (row: any) => row.equipmentPiece.itemId).slice(0, 20); // Max 20 items per category to avoid rendering issues.
               return category;
             })
             .sort((a, b) => {

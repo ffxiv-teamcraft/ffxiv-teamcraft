@@ -143,8 +143,8 @@
               </ng-template>
               <ng-template nz-tab>
                 <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
-                  <ng-container *ngFor="let page of tab; let pageIndex = index" nzSize="small" nzTabPosition="left" class="vertical-tabs">
-                    <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dolSelectedPage = page.id">
+                  <ng-container *ngFor="let page of tab; let pageIndex = index" class="vertical-tabs">
+                    <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate"  (nzSelect)="dolSelectedPage = page.id">
                       <ng-template #titleTemplate>
                         <span>{{ page.divisionId | i18nRow:'notebookDivision' | i18n }}
                           ({{getDolPageCompletion(page)}})
