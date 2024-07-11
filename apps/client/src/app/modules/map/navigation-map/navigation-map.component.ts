@@ -24,6 +24,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { MapComponent } from '../map/map.component';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
+import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 
 @Component({
   selector: 'app-navigation-map',
@@ -49,6 +50,8 @@ export class NavigationMapComponent extends DialogComponent implements OnInit {
 
   markedAsDone = [];
 
+  aggregate?: ProcessedListAggregate;
+
   constructor(private mapService: MapService, private listsFacade: ListsFacade) {
     super();
   }
@@ -70,15 +73,19 @@ export class NavigationMapComponent extends DialogComponent implements OnInit {
   }
 
   markStepAsDone(step: NavigationStep): void {
+    if (this.aggregate) {
+      this.aggregate.generateSetItemDone(step.listRow, step.item_amount, step.finalItem)(this.listsFacade);
+    } else {
+      this.listsFacade.setItemDone({
+        itemId: step.itemId,
+        itemIcon: step.iconid,
+        finalItem: step.finalItem,
+        delta: step.item_amount,
+        recipeId: null,
+        totalNeeded: step.total_item_amount
+      });
+    }
     this.markedAsDone.push(step.itemId);
-    this.listsFacade.setItemDone({
-      itemId: step.itemId,
-      itemIcon: step.iconid,
-      finalItem: step.finalItem,
-      delta: step.item_amount,
-      recipeId: null,
-      totalNeeded: step.total_item_amount
-    });
   }
 
 }

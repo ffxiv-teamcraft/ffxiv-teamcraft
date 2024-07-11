@@ -275,6 +275,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       nzContent: NavigationMapComponent,
       nzData: {
         mapId: zoneBreakdownRow.mapId,
+        aggregate: this.aggregate,
         points: <NavigationObjective[]>zoneBreakdownRow.items
           .filter(item => item.done < item.amount)
           .map(item => {
@@ -291,7 +292,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 type: partial.type,
                 gatheringType: partial.gatheringType,
                 monster: partial.monster,
-                finalItem: this.finalItems || item.finalItem || false
+                finalItem: this.finalItems || item.finalItem || false,
+                listRow: item
               };
             }
             return undefined;
@@ -321,7 +323,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   type: partial.type,
                   gatheringType: partial.gatheringType,
                   monster: partial.monster,
-                  fnalItem: this.finalItems || item.finalItem || false
+                  finalItem: this.finalItems || item.finalItem || false,
+                  listRow: item
                 };
               }
               return undefined;
@@ -346,14 +349,18 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       }),
       takeUntil(ref.afterClose)
     ).subscribe(step => {
-      this.listsFacade.setItemDone({
-        itemId: step.itemId,
-        itemIcon: step.iconid,
-        finalItem: step.finalItem,
-        delta: step.item_amount,
-        recipeId: null,
-        totalNeeded: step.total_item_amount
-      });
+      if (this.aggregate) {
+        this.aggregate.generateSetItemDone(step.listRow, step.item_amount, step.finalItem)(this.listsFacade);
+      } else {
+        this.listsFacade.setItemDone({
+          itemId: step.itemId,
+          itemIcon: step.iconid,
+          finalItem: step.finalItem,
+          delta: step.item_amount,
+          recipeId: null,
+          totalNeeded: step.total_item_amount
+        });
+      }
     });
   }
 
