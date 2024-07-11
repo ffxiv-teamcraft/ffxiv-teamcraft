@@ -1145,6 +1145,8 @@
     "Stats_applied": "Stats applied",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
     "Full_buttons": "Show full buttons",
+    "Macro_only_mode": "Macro only mode",
+    "Macro_only_mode_tooltip": "Ignores stats, useful for quickly building and exporting your own macros",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
