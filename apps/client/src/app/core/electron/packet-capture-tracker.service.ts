@@ -42,7 +42,7 @@ export class PacketCaptureTrackerService {
       return 0;
     }
     // If status can's have stacks, return 0
-    if (status.maxStacks === 0) {
+    if (!status || status.maxStacks === 0) {
       return 0;
     }
     return param;
