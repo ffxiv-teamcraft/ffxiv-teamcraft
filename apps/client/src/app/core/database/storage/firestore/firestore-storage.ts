@@ -1,4 +1,4 @@
-import { defer, from, Observable, of, Subject, throwError } from 'rxjs';
+import { defer, from, Observable, of, Subject } from 'rxjs';
 import { DataModel } from '../data-model';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
@@ -106,9 +106,23 @@ export abstract class FirestoreStorage<T extends DataModel> {
   }
 
   public query(...filterQuery: QueryConstraint[]): Observable<T[]> {
+    if (filterQuery.length === 0) {
+      return this.getAll();
+    }
     return collectionData(query(this.collection, ...filterQuery).withConverter(this.converter)).pipe(
       catchError(error => {
         console.error(`QUERY ${this.getBaseUri()}`);
+        console.error(error);
+        throw error;
+      }),
+      distinctUntilChanged((a, b) => isEqual(a, b))
+    );
+  }
+
+  public getAll(): Observable<T[]> {
+    return collectionData(this.collection).pipe(
+      catchError(error => {
+        console.error(`CollectionData ${this.getBaseUri()}`);
         console.error(error);
         throw error;
       }),
