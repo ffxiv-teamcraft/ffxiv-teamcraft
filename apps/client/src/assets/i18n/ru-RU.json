@@ -141,6 +141,8 @@
     "Pause": "Пауза",
     "Speed": "Скорость",
     "Done": "Готово",
+    "Ready": "Ready",
+    "Loading": "Loading",
     "Length": "Длина",
     "Save": "Сохранить",
     "Reset": "Сбросить",
@@ -209,6 +211,7 @@
     "Private": "Приватный",
     "Pagination_text": "{{start}}-{{end}} из {{total}} предметов",
     "And_X_more": "и еще {{amount}}...",
+    "items": "items",
     "DAYS": {
       "Monday": "Понедельник",
       "Tuesday": "Вторник",
@@ -1459,6 +1462,20 @@
     "Export_FSH_completion": "Экспорт завершен как JSON",
     "Export_FSH_completion_copied": "JSON скопирован в буфер обмена",
     "Log_in_to_track": "Войдите, чтобы иметь возможность отслеживать завершенность журнала",
+    "Logs_import_done": "Your logs have been imported successfully",
+    "Crafting_log": "Crafting log",
+    "Gathering_log": "Gathering log (including fishing)",
+    "Import_using_pcap": "Import using packet capture",
+    "IMPORT": {
+      "Data_loading": "Data preloading",
+      "Packet_capture": "Packet capture",
+      "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
+      "Ready": "Ready to import your logs !",
+      "Log_in_explain": "Go to the login page (don't close the game, prefer disconnect) and log in using the character you want to import logs from",
+      "Additions": "Additions",
+      "Deletions": "Deletions",
+      "Save": "Apply these changes"
+    },
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
