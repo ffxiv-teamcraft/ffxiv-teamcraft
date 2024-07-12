@@ -26122,11 +26122,29 @@
       "spot": 297,
       "hookset": 2,
       "tug": 2,
-      "bait": 29717,
+      "bait": 43851,
+      "minGathering": 0
+    }
+  ],
+  "43677": [
+    {
+      "spot": 297,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43851,
       "minGathering": 0
     }
   ],
   "43678": [
+    {
+      "spot": 297,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43851,
+      "minGathering": 0
+    }
+  ],
+  "43679": [
     {
       "spot": 297,
       "hookset": 1,
@@ -26189,6 +26207,15 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43696": [
+    {
+      "spot": 302,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43849,
       "minGathering": 0
     }
   ],
@@ -26594,6 +26621,15 @@
   "43752": [
     {
       "spot": 319,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43755": [
+    {
+      "spot": 320,
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
