@@ -58,16 +58,18 @@ export class ListPickerDrawerComponent {
 
     this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$, this.query$]).pipe(
       debounceTime(100),
-      map(([workshops, compacts, query]) => {
+      map(([workshops, lists, query]) => {
         return workshops
           .map(workshop => {
             return {
               workshop: workshop,
               lists: workshop.listIds
                 .map(key => {
-                  const list = compacts.find(c => c.$key === key);
+                  const list = lists.find(c => c.$key === key);
                   if (list !== undefined) {
                     list.workshopId = workshop.$key;
+                  } else {
+                    this.listsFacade.load(key);
                   }
                   return list;
                 })

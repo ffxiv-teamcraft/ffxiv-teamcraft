@@ -81,7 +81,7 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
   }
 
   public getUserCommunityRotations(userId: string): Observable<CraftingRotation[]> {
-    return this.query(where(`public`, '==', true), where('authorId', '==', userId));
+    return this.query(where('authorId', '==', userId), where(`public`, '==', true));
   }
 
   protected getBaseUri(): string {
