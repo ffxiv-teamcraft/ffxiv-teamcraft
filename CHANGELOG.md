@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.13...v11.3.0) (2024-07-12)
+
+
+### Features
+
+* **common:** add icons for VPR and PCT ([2b7eb1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b7eb1feba886a09d70000d06faacc8b8df11ab5))
+* **db:** add position data for more monsters, kudos to Inni ! ([b54b9b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b54b9b28496d0c561706d40a1e9e7d5b515464e8))
+* **desktop:** new button to import log tracker from game, kudos to Khaotic ! ([7a02969](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a02969107399889bd9122a46be9130aeae192ce))
+
+
+### Bug Fixes
+
+* **desktop:** better fix for step-by-step overlay sometimes not loading ([bcccb38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bcccb38ee74ea208000b20e39fc178987618d6fe))
+* **desktop:** fix status tracking sometimes stopping ([6c50777](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c507772eba240c00afc1a8c4b7643c1e3fbba47))
+* **desktop:** shared lists sometimes not loading in own workshops ([ec8a981](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec8a981e56571b90210fff0e0b792b7e43a0e1d7))
+* **layout:** fix gemstone traders option skipping some hunting alternatives ([786a5ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/786a5ca6b2dbfb4423c64d45708ce5d9af45dd95))
+* **list-aggregate:** gathering item check from navigation path ([ed4a257](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed4a25721e6f455e18d34e3c1fa7d4c3bb0e1da7)), closes [#2871](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2871)
+* **simulator:** fixed off-by-one issue in quality formula ([6341b61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6341b615f4bc2011a71401a629385b8439df0bed))
+
 ### [11.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.12...v11.2.13) (2024-07-10)
 
 
