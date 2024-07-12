@@ -29,6 +29,10 @@
     </div>
   </div>
   @if (readyToImport$ | async) {
+    <nz-alert nzType="warning" nzShowIcon
+              [nzMessage]="'LOG_TRACKER.IMPORT.Details' | translate"
+              [nzDescription]="'LOG_TRACKER.IMPORT.Details_explain' | translate">
+    </nz-alert>
     @if (logs$ | async; as logs) {
       @if (diff$ | async; as diff) {
         <ng-template #addedTitleRef>
