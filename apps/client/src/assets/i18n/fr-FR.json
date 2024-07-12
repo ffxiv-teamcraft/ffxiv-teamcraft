@@ -141,6 +141,8 @@
     "Pause": "Pause",
     "Speed": "Vitesse",
     "Done": "Terminé",
+    "Ready": "Ready",
+    "Loading": "Loading",
     "Length": "Longueur",
     "Save": "Sauvegarder",
     "Reset": "Réinitialiser",
@@ -209,6 +211,7 @@
     "Private": "Privé",
     "Pagination_text": "{{start}}-{{end}} sur {{total}} élément(s)",
     "And_X_more": "et {{amount}} autres...",
+    "items": "items",
     "DAYS": {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -1459,6 +1462,20 @@
     "Export_FSH_completion": "Exporter la complétion en JSON",
     "Export_FSH_completion_copied": "Complétion copiée au format JSON dans votre presse papier",
     "Log_in_to_track": "Connectez-vous pour être en mesure de suivre la réalisation de votre carnet de recette",
+    "Logs_import_done": "Your logs have been imported successfully",
+    "Crafting_log": "Crafting log",
+    "Gathering_log": "Gathering log (including fishing)",
+    "Import_using_pcap": "Import using packet capture",
+    "IMPORT": {
+      "Data_loading": "Data preloading",
+      "Packet_capture": "Packet capture",
+      "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
+      "Ready": "Ready to import your logs !",
+      "Log_in_explain": "Go to the login page (don't close the game, prefer disconnect) and log in using the character you want to import logs from",
+      "Additions": "Additions",
+      "Deletions": "Deletions",
+      "Save": "Apply these changes"
+    },
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
