@@ -1,7 +1,7 @@
 export interface LazyFishingSource {
   bait:              number;
   duration?:         number;
-  hookset?:          number;
+  hookset:           number;
   minGathering:      number;
   oceanFishingTime?: number;
   predators?:        Predator[];
