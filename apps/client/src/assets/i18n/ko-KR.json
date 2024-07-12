@@ -141,6 +141,8 @@
     "Pause": "일시정지",
     "Speed": "속도",
     "Done": "완료",
+    "Ready": "Ready",
+    "Loading": "Loading",
     "Length": "길이",
     "Save": "저장",
     "Reset": "초기화",
@@ -209,6 +211,7 @@
     "Private": "비공개",
     "Pagination_text": "총 {{total}} 종류의 아이템 중 {{start}}-{{end}} 번째 아이템",
     "And_X_more": "{{amount}} 번 더...",
+    "items": "items",
     "DAYS": {
       "Monday": "월요일",
       "Tuesday": "화요일",
@@ -1459,6 +1462,20 @@
     "Export_FSH_completion": "JSON 형식으로 완료 목록 내보내기",
     "Export_FSH_completion_copied": "JSON 형식의 완료 목록이 클립보드에 복사되었습니다",
     "Log_in_to_track": "로그 트래커 완료를 추적하기 위해 로그인",
+    "Logs_import_done": "Your logs have been imported successfully",
+    "Crafting_log": "Crafting log",
+    "Gathering_log": "Gathering log (including fishing)",
+    "Import_using_pcap": "Import using packet capture",
+    "IMPORT": {
+      "Data_loading": "Data preloading",
+      "Packet_capture": "Packet capture",
+      "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
+      "Ready": "Ready to import your logs !",
+      "Log_in_explain": "Go to the login page (don't close the game, prefer disconnect) and log in using the character you want to import logs from",
+      "Additions": "Additions",
+      "Deletions": "Deletions",
+      "Save": "Apply these changes"
+    },
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
