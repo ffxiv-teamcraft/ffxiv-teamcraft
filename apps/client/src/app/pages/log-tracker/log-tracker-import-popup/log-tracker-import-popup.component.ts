@@ -171,6 +171,7 @@ export class LogTrackerImportPopupComponent {
 
   protected saveLogs(log: LogTracking): void {
     this.#auth.user$.pipe(
+      first(),
       switchMap(user => {
         return this.#logTrackingService.set(`${user.$key}:${user.defaultLodestoneId?.toString()}`, log);
       })
