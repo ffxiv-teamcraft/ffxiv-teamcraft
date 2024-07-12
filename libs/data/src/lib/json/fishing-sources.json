@@ -24413,6 +24413,7 @@
   "37851": [
     {
       "spot": 281,
+      "hookset": 1,
       "tug": 1,
       "bait": 36591,
       "spawn": 2,
@@ -25850,6 +25851,7 @@
   "41406": [
     {
       "spot": 285,
+      "hookset": 1,
       "tug": 1,
       "bait": 36597,
       "spawn": 12,
@@ -26149,6 +26151,17 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43851,
+      "minGathering": 0
+    }
+  ],
+  "43685": [
+    {
+      "spot": 299,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "spawn": 20,
+      "duration": 4,
       "minGathering": 0
     }
   ],
