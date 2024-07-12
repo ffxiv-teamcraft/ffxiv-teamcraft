@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { catchError, first, map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SupportUsPopupComponent } from './support-us-popup/support-us-popup.component';
@@ -54,23 +54,24 @@ export class SupportService {
     }
   }
 
-  public refreshPatreonToken(user: TeamcraftUser): void {
-    this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth-refresh?refresh_token=${user.patreonRefreshToken}`)
+  public refreshPatreonToken(user: TeamcraftUser): Observable<TeamcraftUser> {
+    return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth-refresh?refresh_token=${user.patreonRefreshToken}`)
       .pipe(catchError(() => {
-        return of(null);
-      }))
-      .subscribe((response: any) => {
-        if (response === null) {
-          delete user.patreonToken;
-          delete user.patreonRefreshToken;
-          delete user.lastPatreonRefresh;
-        } else {
-          user.patreonToken = response.access_token;
-          user.patreonRefreshToken = response.refresh_token;
-          user.lastPatreonRefresh = Date.now();
-        }
-        this.authFacade.updateUser(user);
-      });
+          return of(null);
+        }),
+        map((response: any) => {
+          if (response === null) {
+            delete user.patreonToken;
+            delete user.patreonRefreshToken;
+            delete user.lastPatreonRefresh;
+          } else {
+            user.patreonToken = response.access_token;
+            user.patreonRefreshToken = response.refresh_token;
+            user.lastPatreonRefresh = Date.now();
+          }
+          return user;
+        })
+      );
   }
 
   public tipeeeOauth(): void {
@@ -104,23 +105,24 @@ export class SupportService {
     }
   }
 
-  public refreshTipeeeToken(user: TeamcraftUser): void {
-    this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/tipeee-oauth-refresh?refresh_token=${user.tipeeeRefreshToken}`)
+  public refreshTipeeeToken(user: TeamcraftUser): Observable<TeamcraftUser> {
+    return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/tipeee-oauth-refresh?refresh_token=${user.tipeeeRefreshToken}`)
       .pipe(catchError(() => {
-        return of(null);
-      }))
-      .subscribe((response: any) => {
-        if (response === null) {
-          delete user.tipeeeToken;
-          delete user.tipeeeRefreshToken;
-          delete user.lastTipeeeRefresh;
-        } else {
-          user.tipeeeToken = response.access_token;
-          user.tipeeeRefreshToken = response.refresh_token;
-          user.lastTipeeeRefresh = Date.now();
-        }
-        this.authFacade.updateUser(user);
-      });
+          return of(null);
+        }),
+        map((response: any) => {
+          if (response === null) {
+            delete user.tipeeeToken;
+            delete user.tipeeeRefreshToken;
+            delete user.lastTipeeeRefresh;
+          } else {
+            user.tipeeeToken = response.access_token;
+            user.tipeeeRefreshToken = response.refresh_token;
+            user.lastTipeeeRefresh = Date.now();
+          }
+          return user;
+        })
+      );
   }
 
   public showSupportUsPopup(): void {

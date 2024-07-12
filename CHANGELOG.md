@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.0...v11.3.1) (2024-07-12)
+
+
+### Bug Fixes
+
+* **log-tracker:** add warning about spearfishing and non-tracked resources in import ([5f37715](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f37715cfe915517bd4ac3f563ee659296229388))
+* **log-tracker:** import only once instead of after every user change ([ff4583b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff4583b57fa5fd28cd88fcb5764cb60bd87d4175))
+* **tipeee:** possible fix for tipeee link resetting every login ([7766d08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7766d08854e284623af1e458812270cb46bd0cfb))
+
 ## [11.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.13...v11.3.0) (2024-07-12)
 
 

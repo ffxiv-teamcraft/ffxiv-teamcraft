@@ -25,7 +25,6 @@ import {
 } from './auth.actions';
 import { Store } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
-import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
@@ -84,15 +83,17 @@ export class AuthEffects {
         })
       );
     }),
-    map((user: TeamcraftUser) => {
+    switchMap((user: TeamcraftUser) => {
       // If token has been refreshed more than 3 weeks ago, refresh it now.
       if (user.supporter) {
         if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
-          this.supportService.refreshPatreonToken(user);
-          return null
-        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 1800000) {
-          this.supportService.refreshTipeeeToken(user);
-          return null
+          return this.supportService.refreshPatreonToken(user).pipe(
+            tap(res => this.authFacade.updateUser(res))
+          );
+        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 15 * 60 * 1000) {
+          return this.supportService.refreshTipeeeToken(user).pipe(
+            tap(res => this.authFacade.updateUser(res))
+          );
         }
       }
       if (user.defaultLodestoneId === undefined && user.lodestoneIds?.length > 0) {
@@ -101,7 +102,7 @@ export class AuthEffects {
       if (user.defaultLodestoneId && !user.lodestoneIds.some(entry => entry.id === user.defaultLodestoneId)) {
         user.defaultLodestoneId = user.lodestoneIds[0].id;
       }
-      return user;
+      return of(user);
     }),
     filter(Boolean),
     map(user => new UserFetched(user)),
