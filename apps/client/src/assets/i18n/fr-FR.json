@@ -1471,7 +1471,9 @@
       "Packet_capture": "Packet capture",
       "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
       "Ready": "Ready to import your logs !",
-      "Log_in_explain": "Go to the login page (don't close the game, prefer disconnect) and log in using the character you want to import logs from",
+      "Log_in_explain": "Go to character selection (System - Log Out) and log in using the character you want to import the logs of. Do NOT close the game",
+      "Details": "Important details",
+      "Details_explain": "Log import will reset your spearfishing log (support will be added in a future update) and will remove any recipe/item that's not tracked for ingame achievements.",
       "Additions": "Additions",
       "Deletions": "Deletions",
       "Save": "Apply these changes"
