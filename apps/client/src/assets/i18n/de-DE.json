@@ -141,6 +141,8 @@
     "Pause": "Pause",
     "Speed": "Geschwindigkeit",
     "Done": "Fertig",
+    "Ready": "Ready",
+    "Loading": "Loading",
     "Length": "Länge",
     "Save": "Speichern",
     "Reset": "Neustart",
@@ -209,6 +211,7 @@
     "Private": "Privat",
     "Pagination_text": "{{start}}-{{end}} von {{total}} Gegenständen",
     "And_X_more": "und {{amount}} mehr...",
+    "items": "items",
     "DAYS": {
       "Monday": "Montag",
       "Tuesday": "Dienstag",
@@ -1459,6 +1462,20 @@
     "Export_FSH_completion": "Fertigstellung als JSON exportieren",
     "Export_FSH_completion_copied": "JSON in die Zwischenablage kopiert",
     "Log_in_to_track": "Logge dich ein, um die Vervollständigung des Notizbuchs verfolgen zu können",
+    "Logs_import_done": "Your logs have been imported successfully",
+    "Crafting_log": "Crafting log",
+    "Gathering_log": "Gathering log (including fishing)",
+    "Import_using_pcap": "Import using packet capture",
+    "IMPORT": {
+      "Data_loading": "Data preloading",
+      "Packet_capture": "Packet capture",
+      "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
+      "Ready": "Ready to import your logs !",
+      "Log_in_explain": "Go to the login page (don't close the game, prefer disconnect) and log in using the character you want to import logs from",
+      "Additions": "Additions",
+      "Deletions": "Deletions",
+      "Save": "Apply these changes"
+    },
     "PAGE": {
       "Master_recipes": "Meisterrezepte ({{number}})",
       "Housing_items": "Unterkunft ({{number}})",
