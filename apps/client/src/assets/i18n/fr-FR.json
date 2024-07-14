@@ -212,6 +212,7 @@
     "Pagination_text": "{{start}}-{{end}} sur {{total}} élément(s)",
     "And_X_more": "et {{amount}} autres...",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -614,7 +615,7 @@
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
     "Autofill_from_packets": "Remplissage automatique des statistiques en utilisant la capture de paquets (prendra également en compte les buffs de nourriture)",
-    "Autofill_stats_explain": "Passez au job souhaité pour le mettre à jour, fermez cette popup une fois que vous avez terminé. Assurez-vous que vous n'avez pas de nourriture active, sinon cela sauvera vos statistiques avec la nourriture active.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
     "Open_public_profile": "Afficher le profil public",
     "Community_contributions": "Contributions communautaires",
     "Fishing_rankings": "Classement de Pêche",
