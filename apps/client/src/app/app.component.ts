@@ -687,7 +687,7 @@ export class AppComponent implements OnInit {
       c = '0x' + c.join('');
       return `rgba(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')},${opacity})`;
     }
-    throw new Error('Bad Hex');
+    throw new Error(`Bad Hex: ${hex}`);
   }
 
   public toggleTimeFormat(): void {
