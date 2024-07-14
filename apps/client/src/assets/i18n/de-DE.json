@@ -212,6 +212,7 @@
     "Pagination_text": "{{start}}-{{end}} von {{total}} Gegenständen",
     "And_X_more": "und {{amount}} mehr...",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "Montag",
       "Tuesday": "Dienstag",
@@ -614,7 +615,7 @@
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
     "Autofill_from_packets": "Werte automatisch mit Paketerfassung ausfüllen (berücksichtigt auch Nahrungseffekte)",
-    "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
     "Open_public_profile": "Öffentliches Profil öffnen",
     "Community_contributions": "Community-Beiträge",
     "Fishing_rankings": "Fischer-Ranglisten",
