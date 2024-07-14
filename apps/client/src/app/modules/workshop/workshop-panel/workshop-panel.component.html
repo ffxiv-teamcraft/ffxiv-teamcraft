@@ -4,7 +4,7 @@
       class="ngx-dnd-container lists-container"
       cdkDropList id="ws-lists-group" [cdkDropListConnectedTo]="['lists-group']"
       fxLayout="column" fxLayoutGap="5px">
-      @for (list of lists; track trackByList($index, list)) {
+      @for (list of lists; track list.$key) {
         <div class="list-panel"
           cdkDrag [cdkDragData]="list">
           <app-list-panel [list]="list"></app-list-panel>
