@@ -212,6 +212,7 @@
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "And_X_more": "and {{amount}} more...",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "Monday",
       "Tuesday": "Tuesday",
