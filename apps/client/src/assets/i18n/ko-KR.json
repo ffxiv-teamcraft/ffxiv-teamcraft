@@ -212,6 +212,7 @@
     "Pagination_text": "총 {{total}} 종류의 아이템 중 {{start}}-{{end}} 번째 아이템",
     "And_X_more": "{{amount}} 번 더...",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "월요일",
       "Tuesday": "화요일",
@@ -614,7 +615,7 @@
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
     "Autofill_from_packets": "패킷 캡쳐를 사용하여 능력치 자동 채우기 (음식 사용 시 음식도 포함됩니다)",
-    "Autofill_stats_explain": "갱신을 위해 원하는 직업으로 변경해 주시고, 완료가 되면 이 팝업창을 닫으세요.(음식 효과가 포함되지 않게 해주세요. 시뮬레이터 사용 시 음식 효과가 포함된 능력치라면 사용할 때 문제가 생길 수 있습니다)",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
     "Open_public_profile": "공개 프로필 보기",
     "Community_contributions": "커뮤니티 목록 및 로테이션",
     "Fishing_rankings": "낚시 순위",
