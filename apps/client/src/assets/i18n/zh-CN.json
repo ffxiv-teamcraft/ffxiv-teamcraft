@@ -212,6 +212,7 @@
     "Pagination_text": "{{total}} 物品中的 {{start}}-{{end}}",
     "And_X_more": "还有 {{amount}} 个……",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "星期一",
       "Tuesday": "星期二",
@@ -614,7 +615,7 @@
     "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
     "Autofill_from_packets": "使用数据包捕获自动填充数据 (也会考虑食物统计)",
-    "Autofill_stats_explain": "切换到相应的职业以更新其属性，更新完成后可关闭此弹窗。请确保当前没有正在生效的食物效果，否则记录的属性中会包含食物的加成。",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
     "Open_public_profile": "打开公开档案",
     "Community_contributions": "社区贡献",
     "Fishing_rankings": "垂钓排名",
