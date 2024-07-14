@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ByregotsBlessing, CraftingAction, CraftingJob, FinalAppraisal, Simulation } from '@ffxiv-teamcraft/simulator';
+import { ByregotsBlessing, CraftingAction, CraftingJob, FinalAppraisal, HastyTouch, Simulation } from '@ffxiv-teamcraft/simulator';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Consumable } from '../../model/consumable';
@@ -120,6 +120,9 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
           this.i18n.getActionName(new FinalAppraisal().getIds()[0]).pipe(
             map(actionName => ({ action: null, actionName }))
           ),
+          this.i18n.getActionName(new HastyTouch().getIds()[0]).pipe(
+            map(actionName => ({ action: null, actionName }))
+          ),
           ...this.rotation.map(action => {
             return this.i18n.getActionName(action.getIds()[0]).pipe(
               map(actionName => ({ action, actionName }))
@@ -127,7 +130,7 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
           })
         ]);
       })
-    ).subscribe(([finalAppraisal, ...actions]) => {
+    ).subscribe(([finalAppraisal, hastyTouch, ...actions]) => {
       actions.forEach(({ action, actionName }, actionIndex) => {
         let macroFragment = this.macro[this.macro.length - 1];
         // One macro is 15 lines, if this one is full, create another one.
@@ -140,6 +143,10 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
           macroFragment.push(`/statusoff "${finalAppraisal.actionName}"`);
           totalLength++;
         } else {
+          // If it's daring touch
+          if (action.getIds()[0] === 100451) {
+            actionName = hastyTouch.actionName;
+          }
           if (actionName.indexOf(' ') > -1 || this.translator.currentLang === 'ko') {
             actionName = `"${actionName}"`;
           }
