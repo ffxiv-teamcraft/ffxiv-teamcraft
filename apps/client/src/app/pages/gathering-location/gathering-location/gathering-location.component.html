@@ -7,7 +7,7 @@
             <i nz-icon nzType="search"></i>
           </div>
           <div class="search-title">
-            {{'ITEMS.Title' | translate}}
+            {{ 'ITEMS.Title' | translate }}
           </div>
         </div>
       </div>
@@ -18,10 +18,10 @@
               <nz-option [nzLabel]="'COMMON.Any' | translate" [nzValue]="-1"></nz-option>
               @for (type of nodeTypes; track type; let i = $index) {
                 <nz-option [nzLabel]="('NODE_TYPE.' + type) | translate"
-                  [nzValue]="i" nzCustomContent>
+                           [nzValue]="i" nzCustomContent>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <img src="{{i | nodeTypeIcon | xivapiIcon}}" alt="" class="type-icon">
-                    <div>{{('NODE_TYPE.' + type) | translate}}</div>
+                    <div>{{ ('NODE_TYPE.' + type) | translate }}</div>
                   </div>
                 </nz-option>
               }
@@ -33,19 +33,19 @@
           <nz-input-group [nzAddOnBefore]="'GATHERING_LOCATIONS.Use' | translate">
             <nz-select class="with-addon-before" formControlName="use">
               <nz-option [nzLabel]="'COMMON.Any' | translate" [nzValue]="-1"></nz-option>
-              @for (use of uses; track use) {
+              @for (use of uses; track $index) {
                 <nz-option [nzLabel]="use.needsTranslate ? (use.value | translate) : use.value | itemName | i18n"
-                  [nzValue]="use.value" nzCustomContent>
+                           [nzValue]="use.value" nzCustomContent>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     @if (use.needsTranslate) {
                       <img src="{{use.icon}}" alt="" class="use-icon">
-                      <div>{{use.value | translate}}</div>
+                      <div>{{ use.value | translate }}</div>
                     }
                     @if (!use.needsTranslate) {
                       @if (!use.needsTranslate) {
                         <app-item-icon width="32" [itemId]="use.value" disableClick="true" tooltipDisabled="true"></app-item-icon>
                       }
-                      <div>{{use.value | itemName | i18n}}</div>
+                      <div>{{ use.value | itemName | i18n }}</div>
                     }
                   </div>
                 </nz-option>
@@ -57,22 +57,23 @@
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <nz-switch [ngModelOptions]="{standalone: true}" [ngModel]="compactDisplay$ | async" (ngModelChange)="saveCompactDisplay($event)"></nz-switch>
           <div>
-            {{'Compact_display' | translate}}
+            {{ 'Compact_display' | translate }}
           </div>
         </div>
       </div>
     </div>
     <div class="input">
       <nz-input-group [nzSuffix]="suffixTemplate">
-        <input #searchInput (keyup)="query$.next(searchInput.value)" [ngModel]="query$.value"
-          autofocus
-          [ngModelOptions]="{standalone: true}"
-          class="search-input"
-          nz-input placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" type="text">
+        <input #searchInput (ngModelChange)="query$.next(searchInput.value)" [ngModel]="query$.value"
+               autofocus
+               (keydown.enter)="enterPress$.next()"
+               [ngModelOptions]="{standalone: true}"
+               class="search-input"
+               nz-input placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" type="text">
         <ng-template #suffixTemplate>
           @if (query$ | async) {
             <i
-              (click)="query$.next('')"
+              (click)="enterPress$.next();query$.next('')"
               class="ant-input-clear-icon"
               nz-icon
               nz-tooltip
@@ -87,13 +88,13 @@
     <div fxLayout="row wrap" fxLayoutGap="10px" class="apply-filters">
       <div fxFlex="1 1 auto">
         <button nz-button nzType="primary" type="submit" fxFlex="1 1 auto" [disabled]="filtersForm.get('use')?.value === -1 && (query$ | async)?.length < 3"
-          (click)="submitFilters()">
-          <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+                (click)="submitFilters()">
+          <i nz-icon nzType="filter"></i> {{ 'ITEMS.Apply_filters' | translate }}
         </button>
       </div>
       <div>
         <button (click)="resetFilters()" nz-button type="button">
-          <i nz-icon nzType="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+          <i nz-icon nzType="reload"></i> {{ 'ITEMS.Reset_filters' | translate }}
         </button>
       </div>
     </div>
@@ -104,20 +105,20 @@
     <ng-template #paginator>
       <div class="paginator">
         <nz-pagination [nzPageIndex]="page$ | async" [nzTotal]="results.total" [nzPageSize]="pageSize" [nzShowTotal]="rangeTemplate"
-        (nzPageIndexChange)="page$.next($event)" nzHideOnSinglePage></nz-pagination>
+                       (nzPageIndexChange)="page$.next($event)" nzHideOnSinglePage></nz-pagination>
         <ng-template #rangeTemplate let-range="range" let-total>
-          {{'GATHERING_LOCATIONS.Page_range' | translate:{ start: range[0], end: range[1], total: total } }}
+          {{ 'GATHERING_LOCATIONS.Page_range' | translate:{ start: range[0], end: range[1], total: total } }}
         </ng-template>
       </div>
     </ng-template>
     <ng-container *ngTemplateOutlet="paginator"></ng-container>
     <div class="results">
-      @for (row of results.rows; track row) {
+      @for (row of results.rows; track row.node.id) {
         <ng-container [class.compact-node]="compactDisplay$ | async">
-      <nz-card [nzActions]="(row.node.spawns?.length > 0 || row.node.weathers?.length > 0)?
+          <nz-card [nzActions]="(row.node.spawns?.length > 0 || row.node.weathers?.length > 0)?
              (alarmGroups$ | async)?.length > 0 && canCreateAlarmFromNode(alarms$ | async, row.node)?[actionAlarm]:[actionAlarm]
              :[]"
-            [nzCover]="(compactDisplay$ | async)?null:map">
+                   [nzCover]="(compactDisplay$ | async)?null:map">
             <nz-card-meta [nzAvatar]="itemIcon" [nzDescription]="description" [nzTitle]="title">
             </nz-card-meta>
             <ng-template #itemIcon>
@@ -126,12 +127,12 @@
           </nz-card>
           <ng-template #map>
             <app-map [mapId]="row.node.map"
-            [markers]="[{x: row.node.x, y: row.node.y, size: {x:0, y:0}, iconType: 'img', iconImg: row.node.type | nodeTypeIcon: (row.node.spawns || []).length > 0}]"></app-map>
+                     [markers]="[{x: row.node.x, y: row.node.y, size: {x:0, y:0}, iconType: 'img', iconImg: row.node.type | nodeTypeIcon: (row.node.spawns || []).length > 0}]"></app-map>
           </ng-template>
           <ng-template #title>
             <div class="card-title">
               <div>
-                {{row.node.matchingItemId | itemName | i18n}}
+                {{ row.node.matchingItemId | itemName | i18n }}
               </div>
             </div>
           </ng-template>
@@ -150,91 +151,93 @@
                     }
                     @if (row.node.snagging) {
                       <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-                        src="./assets/icons/status/snagging.png">
-                      }
-                    </div>
-                    @if (row.node.baits !== undefined) {
-                      <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>
-                    }
-                    @if (row.node.hookset) {
-                      <img [nzTooltipTitle]="row.node.hookset | hooksetActionId | actionName | i18n" class="gig-icon" nz-tooltip
-                        [src]="row.node.hookset | hooksetActionId | actionIcon | xivapiIcon">
-                    }
-                    @if (row.node.speed !== undefined) {
-                      <div>
-                        {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[row.node.speed]) | translate}}
-                        <app-spearfishing-speed [speed]="row.node.speed"></app-spearfishing-speed>
-                      </div>
-                    }
-                    @if (row.node.shadowSize !== undefined) {
-                      <div>
-                        {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[row.node.shadowSize]) | translate}}
-                      </div>
-                    }
-                    @if (row.node.tug > -1) {
-                      <nz-tag>{{row.node.tug | tugName | translate}}</nz-tag>
-                    }
-                    @if (row.node.predators && row.node.predators.length > 0) {
-                      <div fxLayout="row" fxLayoutAlign="flex-start center"
-                        fxLayoutGap="10px">
-                        <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
-                          src="./assets/icons/status/predators.png">
-                          @for (predator of row.node.predators; track predator) {
-                            <div fxLayout="row" fxLayoutAlign="flex-start center"
-                              fxLayoutGap="5px">
-                            <div>{{predator.amount}}x</div>
-                            <app-item-icon [itemId]="predator.id" [width]="32"></app-item-icon>
-                          </div>
-                        }
-                      </div>
+                           src="./assets/icons/status/snagging.png">
                     }
                   </div>
+                  @if (row.node.baits !== undefined) {
+                    <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>
+                  }
+                  @if (row.node.hookset) {
+                    <img [nzTooltipTitle]="row.node.hookset | hooksetActionId | actionName | i18n" class="gig-icon" nz-tooltip
+                         [src]="row.node.hookset | hooksetActionId | actionIcon | xivapiIcon">
+                  }
+                  @if (row.node.speed !== undefined) {
+                    <div>
+                      {{ 'ALLAGAN_REPORTS.Speed' | translate }}: {{ ('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[row.node.speed]) | translate }}
+                      <app-spearfishing-speed [speed]="row.node.speed"></app-spearfishing-speed>
+                    </div>
+                  }
+                  @if (row.node.shadowSize !== undefined) {
+                    <div>
+                      {{ 'ALLAGAN_REPORTS.Shadow_size' | translate }}
+                      : {{ ('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[row.node.shadowSize]) | translate }}
+                    </div>
+                  }
+                  @if (row.node.tug > -1) {
+                    <nz-tag>{{ row.node.tug | tugName | translate }}</nz-tag>
+                  }
+                  @if (row.node.predators && row.node.predators.length > 0) {
+                    <div fxLayout="row" fxLayoutAlign="flex-start center"
+                         fxLayoutGap="10px">
+                      <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                           src="./assets/icons/status/predators.png">
+                      @for (predator of row.node.predators; track predator) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center"
+                             fxLayoutGap="5px">
+                          <div>{{ predator.amount }}x</div>
+                          <app-item-icon [itemId]="predator.id" [width]="32"></app-item-icon>
+                        </div>
+                      }
+                    </div>
+                  }
                 </div>
-                <div fxFlex="1 1 auto"></div>
               </div>
-            </ng-template>
-            <ng-template #actionAlarm>
-              <div fxLayout="row" fxLayoutAlign="space-around center">
-                @for (generatedAlarm of row.alarms; track trackByAlarm($index, generatedAlarm)) {
-                  @if ((generatedAlarm | alarmDisplay | async); as alarm) {
-                    @if (alarm.remainingTime !== undefined) {
-                      <div
-                        fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                        @if (generatedAlarm.fishEyes) {
-                          <img nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
-                            [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
-                            alt="" class="fish-eyes-alarm">
-                        }
-                        <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="addAlarm($event.alarm)" (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
-                        [alarmGroups]="alarmGroups$ | async" [showPosition]="false" [tooltipText]="'GATHERING_LOCATIONS.Add_alarm' | translate"></app-alarm-button>
-                      </div>
-                    }
+              <div fxFlex="1 1 auto"></div>
+            </div>
+          </ng-template>
+          <ng-template #actionAlarm>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              @for (generatedAlarm of row.alarms; track trackByAlarm($index, generatedAlarm)) {
+                @if ((generatedAlarm | alarmDisplay | async); as alarm) {
+                  @if (alarm.remainingTime !== undefined) {
+                    <div
+                      fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      @if (generatedAlarm.fishEyes) {
+                        <img nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
+                             [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
+                             alt="" class="fish-eyes-alarm">
+                      }
+                      <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="addAlarm($event.alarm)" (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
+                                        [alarmGroups]="alarmGroups$ | async" [showPosition]="false"
+                                        [tooltipText]="'GATHERING_LOCATIONS.Add_alarm' | translate"></app-alarm-button>
+                    </div>
                   }
                 }
-              </div>
-            </ng-template>
-            @if (results.length === 0) {
-              <app-fullpage-message>{{'No_items_found' | translate}}</app-fullpage-message>
-            }
-          </ng-container>
-        }
-      </div>
-      <ng-container *ngTemplateOutlet="paginator"></ng-container>
-      @if (results.total === 0) {
-        <app-fullpage-message fontSize="2rem">
-          {{'GATHERING_LOCATIONS.No_items' | translate}}
-        </app-fullpage-message>
+              }
+            </div>
+          </ng-template>
+          @if (results.length === 0) {
+            <app-fullpage-message>{{ 'No_items_found' | translate }}</app-fullpage-message>
+          }
+        </ng-container>
       }
     </div>
+    <ng-container *ngTemplateOutlet="paginator"></ng-container>
+    @if (results.total === 0) {
+      <app-fullpage-message fontSize="2rem">
+        {{ 'GATHERING_LOCATIONS.No_items' | translate }}
+      </app-fullpage-message>
+    }
+  </div>
+} @else {
+  @if (showIntro) {
+    <div class="intro">
+      {{ 'GATHERING_LOCATIONS.Intro' | translate }}
+    </div>
   } @else {
-    @if (showIntro) {
-      <div class="intro">
-        {{'GATHERING_LOCATIONS.Intro' | translate}}
-      </div>
-    } @else {
-      @if (loading) {
-        <app-page-loader></app-page-loader>
-      }
+    @if (loading) {
+      <app-page-loader></app-page-loader>
     }
   }
+}
 

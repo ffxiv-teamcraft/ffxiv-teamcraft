@@ -43,10 +43,10 @@ export class FishDetailsContainerComponent {
 
   public readonly stats$: Observable<FishDetailsStatsSummary> = this.fishCtx.statisticsByFish$.pipe(
     map((res) => ({
-      min: res.data?.stats.aggregate.min.size / 10,
-      max: res.data?.stats.aggregate.max.size / 10,
-      avg: res.data?.stats.aggregate.avg.size / 10,
-      gathering: res.data?.stats.aggregate.min.gathering,
+      min: res.data?.stats.min_size / 10,
+      max: res.data?.stats.max_size / 10,
+      avg: res.data?.stats.avg_size / 10,
+      gathering: res.data?.stats.min_gathering,
       snagging: res.data?.snagging
     })),
     startWith({}),

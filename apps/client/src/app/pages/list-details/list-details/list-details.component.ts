@@ -231,6 +231,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   toggleStepByStepOverlay(): void {
     this.ipc.openOverlay('/step-by-step-list-overlay');
+    this.ipc.sendState();
   }
 
   ngOnInit() {

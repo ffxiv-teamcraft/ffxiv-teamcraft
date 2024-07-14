@@ -1065,7 +1065,7 @@
   },
   "134": {
     "name": {
-      "en": "Umbral Duststorm",
+      "en": "Umbral Duststorms",
       "ja": "土霊風",
       "de": "Erdseelenwinde",
       "fr": "Vent ombral de terre"
@@ -1145,7 +1145,7 @@
   },
   "144": {
     "name": {
-      "en": "Firestorm",
+      "en": "Firestorms",
       "ja": "焔嵐 ",
       "de": "Flammensturm",
       "fr": "Tempête de feu"
@@ -1185,7 +1185,7 @@
   },
   "149": {
     "name": {
-      "en": "Astromagnetic Storm",
+      "en": "Astromagnetic Storms",
       "ja": "磁気嵐",
       "de": "Magnetsturm",
       "fr": "Astromagnétique"
@@ -1437,6 +1437,70 @@
       "ja": "虚無",
       "de": "Leere",
       "fr": "Néant"
+    }
+  },
+  "181": {
+    "name": {
+      "en": "Liminality",
+      "ja": "暗天",
+      "de": "Verhangen",
+      "fr": "Ombrageux"
+    }
+  },
+  "182": {
+    "name": {
+      "en": "Liminality",
+      "ja": "暗天",
+      "de": "Verhangen",
+      "fr": "Ombrageux"
+    }
+  },
+  "183": {
+    "name": {
+      "en": "Projection",
+      "ja": "仮想",
+      "de": "Imaginär",
+      "fr": "Virtuel"
+    }
+  },
+  "184": {
+    "name": {
+      "en": "Projection",
+      "ja": "仮想",
+      "de": "Imaginär",
+      "fr": "Virtuel"
+    }
+  },
+  "185": {
+    "name": {
+      "en": "Projection",
+      "ja": "仮想",
+      "de": "Imaginär",
+      "fr": "Virtuel"
+    }
+  },
+  "186": {
+    "name": {
+      "en": "Projection",
+      "ja": "仮想",
+      "de": "Imaginär",
+      "fr": "Virtuel"
+    }
+  },
+  "187": {
+    "name": {
+      "en": "Reminiscence",
+      "ja": "記憶",
+      "de": "Reminiszenz",
+      "fr": "Mémoriel"
+    }
+  },
+  "188": {
+    "name": {
+      "en": "Ominous Clouds",
+      "ja": "暗雲",
+      "de": "Gespenstisch",
+      "fr": "Brume spectrale"
     }
   }
 }

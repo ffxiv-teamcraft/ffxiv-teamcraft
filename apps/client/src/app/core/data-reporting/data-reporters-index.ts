@@ -1,6 +1,4 @@
 import { InjectionToken, Provider } from '@angular/core';
-import { ReductionResultReporter } from './reduction-result-reporter';
-import { PacketCaptureTrackerService } from '../electron/packet-capture-tracker.service';
 import { FishingReporter } from './fishing-reporter';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
@@ -17,7 +15,7 @@ export const DataReporters = new InjectionToken('DataReporters');
 
 export const DATA_REPORTERS: Provider[] = [
   // { provide: DataReporters, useClass: DesynthResultReporter, multi: true },
-  { provide: DataReporters, useClass: ReductionResultReporter, multi: true, deps: [PacketCaptureTrackerService] },
+  // { provide: DataReporters, useClass: ReductionResultReporter, multi: true, deps: [PacketCaptureTrackerService] },
   {
     provide: DataReporters, useClass: FishingReporter, multi: true, deps: [
       EorzeaFacade, LazyDataFacade, EorzeanTimeService,

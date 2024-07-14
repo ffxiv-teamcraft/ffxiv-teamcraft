@@ -4334,7 +4334,7 @@
   "723": {
     "en": "Epic Hero",
     "ja": "Epic Hero",
-    "de": "epischer Held",
+    "de": "Epischer Held",
     "fr": "Héros épique"
   },
   "724": {
@@ -4342,5 +4342,191 @@
     "ja": "the First‘s Foremost",
     "de": "Meisterperfektionierer",
     "fr": "Innovateur du premier reflet"
+  },
+  "725": {
+    "en": "Arbiter of War",
+    "ja": "Arbiter of War",
+    "de": "Richter des Krieges",
+    "fr": "Arbitre de la guerre"
+  },
+  "726": {
+    "en": "Arbiter of Magic",
+    "ja": "Arbiter of Magic",
+    "de": "Richter der Magie",
+    "fr": "Arbitre de la magie"
+  },
+  "727": {
+    "en": "Arbiter of the Arts",
+    "ja": "Arbiter of the Arts",
+    "de": "Richter des Handwerks",
+    "fr": "Arbitre de la main"
+  },
+  "728": {
+    "en": "Arbiter of the Land",
+    "ja": "Arbiter of the Land",
+    "de": "Richter des Landes",
+    "fr": "Arbitre de la terre"
+  },
+  "729": {
+    "en": "On the Trail",
+    "ja": "On the Trail",
+    "de": "auf neuen Pfaden",
+    "fr": "Réitérateur de la geste"
+  },
+  "730": {
+    "en": "Herald of Peace",
+    "ja": "Herald of Peace",
+    "de": "Friedenssucher",
+    "fr": "Héraut de la paix"
+  },
+  "731": {
+    "en": "Sunforged",
+    "ja": "Sunforged",
+    "de": "Sonnenkrone",
+    "fr": "Forgeur d'Aurarque"
+  },
+  "732": {
+    "en": "Domebreaker",
+    "ja": "Domebreaker",
+    "de": "Kuppelbrecher",
+    "fr": "Pénétrateur de dôme"
+  },
+  "733": {
+    "en": "Knight of Alexandria",
+    "ja": "Knight of Alexandria",
+    "de": "Rittermeister Alexandrias",
+    "fr": "Protecteur d'Alexandrie"
+  },
+  "734": {
+    "en": "Of the New Dawn",
+    "ja": "of the New Dawn",
+    "de": "der Morgendämmerung",
+    "fr": "Aurore nouvelle"
+  },
+  "735": {
+    "en": "Twinfang",
+    "ja": "Twinfang",
+    "de": "Zwillingsfang",
+    "fr": "Prédateur ophidien"
+  },
+  "736": {
+    "en": "Picto Perfect",
+    "ja": "Picto Perfect",
+    "de": "Pikto-Virtuose",
+    "fr": "Picto perfection"
+  },
+  "737": {
+    "en": "Of Countless Alloys",
+    "ja": "of Countless Alloys",
+    "de": "der tausend Essen",
+    "fr": "Aux Mille et un alliages"
+  },
+  "738": {
+    "en": "Of Countless Crafts",
+    "ja": "of Countless Crafts",
+    "de": "der tausend Werke",
+    "fr": "Aux Mille et un ouvrages"
+  },
+  "739": {
+    "en": "Of Countless Concoctions",
+    "ja": "of Countless Concoctions",
+    "de": "der tausend Tropfen",
+    "fr": "Aux Mille et une concoctions"
+  },
+  "740": {
+    "en": "Of Countless Treasures",
+    "ja": "of Countless Treasures",
+    "de": "der tausend Schätze",
+    "fr": "Aux Mille et un trésors"
+  },
+  "741": {
+    "en": "Of Countless Catches",
+    "ja": "of Countless Catches",
+    "de": "der tausend Netze",
+    "fr": "Aux Mille et une prises"
+  },
+  "742": {
+    "en": "Goldheart",
+    "ja": "Goldheart",
+    "de": "Goldherz",
+    "fr": "Cœur en or"
+  },
+  "743": {
+    "en": "Of Untarnished Oath",
+    "ja": "of Untarnished Oath",
+    "de": "des edlen Eides",
+    "fr": "Serment immaculé"
+  },
+  "744": {
+    "en": "Of Untarnished Steel",
+    "ja": "of Untarnished Steel",
+    "de": "des edlen Willens",
+    "fr": "Acier immaculé"
+  },
+  "745": {
+    "en": "Of Untarnished Principle",
+    "ja": "of Untarnished Principle",
+    "de": "der edlen Schwärze",
+    "fr": "Morale immaculée"
+  },
+  "746": {
+    "en": "Of Untarnished Lealty",
+    "ja": "of Untarnished Lealty",
+    "de": "des edlen Herzens",
+    "fr": "Loyauté immaculée"
+  },
+  "747": {
+    "en": "Of the Bright Plume",
+    "ja": "of the Bright Plume",
+    "de": "von der bunten Feder",
+    "fr": "Plume claire"
+  },
+  "748": {
+    "en": "Winged Death",
+    "ja": "Winged Death",
+    "de": "Todesschwinge",
+    "fr": "Mort ailée"
+  },
+  "749": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "750": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "751": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "752": {
+    "en": "Practically Pelupelu",
+    "ja": "Practically Pelupelu",
+    "de": "Praktisch Pelupelu",
+    "fr": "Pratiquement Pelupelu"
+  },
+  "753": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "754": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "755": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
   }
 }

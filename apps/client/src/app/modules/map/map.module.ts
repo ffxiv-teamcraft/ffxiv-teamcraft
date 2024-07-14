@@ -7,7 +7,6 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { MapComponent } from './map/map.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { XivapiClientModule } from '@xivapi/angular-client';
 import { NavigationMapComponent } from './navigation-map/navigation-map.component';
 import { WorldNavigationMapComponent } from './world-navigation-map/world-navigation-map.component';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +22,6 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
   imports: [
     CommonModule,
     FlexLayoutModule,
-    XivapiClientModule,
     FormsModule,
     RouterModule,
     NzToolTipModule,

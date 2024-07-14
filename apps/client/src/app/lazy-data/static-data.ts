@@ -12,7 +12,9 @@ export class StaticData {
       [17, 10, 7, 5], // VII
       [17, 0, 0, 0], // VIII
       [17, 10, 7, 5], // IX
-      [17, 0, 0, 0] // X
+      [17, 0, 0, 0], // X
+      [17, 10, 7, 5], // XI
+      [17, 0, 0, 0] // XII
     ],
     nq: [
       // Sockets
@@ -26,10 +28,11 @@ export class StaticData {
       [12, 6, 3, 2], // VII
       [12, 0, 0, 0], // VIII
       [12, 6, 3, 2], // IX
-      [12, 0, 0, 0] // X
+      [12, 0, 0, 0], // X
+      [12, 6, 3, 2], // XI
+      [12, 0, 0, 0] // XII
     ]
   };
 
-  // List of GatheringPointBase ids that cannot spawn anymore due to various conditions
-  public static ignoredNodes = [653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680];
+  public static globalFATEShopMapIds = [497, 498, 693, 694, 855, 856]
 }

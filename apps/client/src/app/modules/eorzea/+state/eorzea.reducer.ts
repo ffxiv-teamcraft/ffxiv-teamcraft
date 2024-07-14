@@ -1,4 +1,5 @@
 import { EorzeaAction, EorzeaActionTypes } from './eorzea.actions';
+import { StatusEntry } from '../status-entry';
 
 export const EORZEA_FEATURE_KEY = 'eorzea';
 
@@ -8,7 +9,7 @@ export interface EorzeaState {
   baitId: number;
   pcapWeather: number;
   previousPcapWeather: number;
-  statuses: number[];
+  statuses: StatusEntry[];
 }
 
 export interface EorzeaPartialState {
@@ -59,7 +60,7 @@ export function eorzeaReducer(
     case EorzeaActionTypes.RemoveStatus: {
       state = {
         ...state,
-        statuses: state.statuses.filter(s => s !== action.payload)
+        statuses: state.statuses.filter(s => s.id !== action.payload)
       };
       break;
     }

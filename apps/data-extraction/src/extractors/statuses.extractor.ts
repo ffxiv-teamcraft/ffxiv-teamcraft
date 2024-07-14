@@ -6,7 +6,7 @@ export class StatusesExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): any {
     const statuses = {};
     combineLatest([
-      this.getSheet(xiv, 'Status', ['Name_*', 'Description_*', 'Icon', 'Level', 'ClassJob#', 'ClassJobCategory#'])
+      this.getSheet(xiv, 'Status', ['Name_*', 'Description_*', 'Icon', 'Level', 'ClassJob#', 'ClassJobCategory#', 'MaxStacks'])
     ]).subscribe(([rows]) => {
       rows.forEach((status) => {
         statuses[status.index] = {
@@ -15,6 +15,7 @@ export class StatusesExtractor extends AbstractExtractor {
           ja: status.Name_ja,
           fr: status.Name_fr,
           icon: status.Icon,
+          maxStacks: status.MaxStacks,
           description: {
             en: status.Description_en,
             de: status.Description_de,

@@ -240,6 +240,17 @@ export class FishContextService {
       const snagging = (100 * res.data.snagging.filter((entry) => entry.snagging === true).reduce((acc, row) => acc + row.occurences, 0)) / totalSnagging;
       return { ...res, data: { ...res.data, snagging } };
     }),
+    map(res => {
+      if (Array.isArray(res.data.stats)) {
+        res.data.stats = {
+          min_gathering: [...res.data.stats].sort((a, b) => a.min_gathering - b.min_gathering)[0].min_gathering,
+          max_size: [...res.data.stats].sort((a, b) => b.max_size - a.max_size)[0].max_size,
+          min_size: [...res.data.stats].sort((a, b) => a.min_size - b.min_size)[0].min_size,
+          avg_size: [...res.data.stats].reduce((acc, row) => row.avg_size + acc, 0) / res.data.stats.length
+        };
+      }
+      return res;
+    }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 

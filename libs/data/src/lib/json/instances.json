@@ -1577,7 +1577,7 @@
   },
   "51": {
     "id": 51,
-    "en": "The Temple of the Fist",
+    "en": "the Temple of the Fist",
     "ja": "壊神修行 星導山寺院",
     "de": "Tempel der Faust",
     "fr": "le Temple du Poing",
@@ -2281,7 +2281,7 @@
   },
   "73": {
     "id": 73,
-    "en": "The Grand Cosmos",
+    "en": "the Grand Cosmos",
     "ja": "魔法宮殿 グラン・コスモス",
     "de": "Chateau Cosmea",
     "fr": "le Cosmos coruscant",
@@ -2441,7 +2441,7 @@
   },
   "78": {
     "id": 78,
-    "en": "The Tower of Zot",
+    "en": "the Tower of Zot",
     "ja": "異形楼閣 ゾットの塔",
     "de": "Der Turm von Zot",
     "fr": "La tour de Zott",
@@ -2496,7 +2496,7 @@
     "levelReq": 90,
     "ilvlReq": 540,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 716,
     "contentText": [
       27032,
@@ -2505,7 +2505,7 @@
   },
   "80": {
     "id": 80,
-    "en": "The Tower of Babil",
+    "en": "the Tower of Babil",
     "ja": "魔導神門 バブイルの塔",
     "de": "Der Turm von Babil",
     "fr": "La tour de Babil",
@@ -2537,7 +2537,7 @@
   },
   "81": {
     "id": 81,
-    "en": "The Aitiascope",
+    "en": "the Aitiascope",
     "ja": "星海潜航 アイティオン星晶鏡",
     "de": "Das Aitiaskop",
     "fr": "le Prisme de l'Aitia",
@@ -2633,7 +2633,7 @@
   },
   "84": {
     "id": 84,
-    "en": "The Dead Ends",
+    "en": "the Dead Ends",
     "ja": "最終幻想 レムナント",
     "de": "Das Sternengrab",
     "fr": "L'Issue aux Impasses",
@@ -2656,7 +2656,7 @@
     "levelReq": 90,
     "ilvlReq": 540,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 736,
     "contentText": [
       30830,
@@ -2688,7 +2688,7 @@
     "levelReq": 90,
     "ilvlReq": 540,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 706,
     "contentText": [
       30611,
@@ -2752,7 +2752,7 @@
     "levelReq": 90,
     "ilvlReq": 560,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 752,
     "contentText": [
       32814,
@@ -2784,7 +2784,7 @@
     "levelReq": 90,
     "ilvlReq": 575,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 768,
     "contentText": [
       33929,
@@ -2816,7 +2816,7 @@
     "levelReq": 90,
     "ilvlReq": 590,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 815,
     "contentText": [
       35229,
@@ -2848,7 +2848,7 @@
     "levelReq": 90,
     "ilvlReq": 605,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 831,
     "contentText": [
       36605,
@@ -2857,7 +2857,7 @@
   },
   "91": {
     "id": 91,
-    "en": "The Lunar Subterrane",
+    "en": "the Lunar Subterrane",
     "ja": "深淵潜行 月の地下渓谷",
     "de": "Monduntergrund",
     "fr": "Le Souterrain lunaire",
@@ -2880,11 +2880,265 @@
     "levelReq": 90,
     "ilvlReq": 620,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 864,
     "contentText": [
       37852,
       37800
+    ]
+  },
+  "92": {
+    "id": 92,
+    "en": "Worqor Zormor",
+    "ja": "山嶺登頂 ウォーコー・ゾーモー",
+    "de": "Worqor Zormor",
+    "fr": "Worqor Zormor",
+    "description": {
+      "en": "Wuk Lamat has undertaken the Feat of Proof, a challenge which has you seeking the whereabouts of the elector, High Luminary Gurfurlur. The search immerses you in the culture and history of the Yok Huy, and ultimately leads your party to the foot of the sacred peak, Worqor Zormor. The elector, you are told, awaits you at its summit, but simply scaling the soaring mountain─and surviving the mountain's denizens─will be a feat in and of itself!",
+      "ja": "ヨカフイ族の集落にて、ウクラマトたちに与えられた「墓の試練」。それは、連王の選者である祭司長、グーフールーを見つけ出すことだった。<br>選者の姿を求める一行は、古き歴史を紐解きながら歩を進め、ついにはオルコ・パチャの最高峰にしてヨカフイ族の聖地たるウォーコー・ゾーモーへとたどり着く。危険な魔物がひしめく山嶺を登頂し、試練を突破せよ！",
+      "de": "Du hast es mit Wuk Lamat und deinen Kameraden bis nach Worlars Echo geschafft, wo die Prüfung des Grabes abgehalten wird. Wie ihr dort erfahrt, besteht diese daraus, den Hohepriester Gurfurlur, der auch das Amt des Thronrichters bekleidet, ausfindig zu machen. Auf den Spuren des Riesen lernt ihr nach und nach mehr über die Geschichte, Denkweise und Lebensart der Yok Huy, bis ihr euch schließlich am Fuß des Worqor Zormor wiederfindet. Bei diesem Gipfel handelt es sich nicht nur um den höchsten des Kontinents, sondern auch um eine heilige Stätte der Yok Huy. Euch wird mitgeteilt, dass sich der Hohepriester an der Spitze des Berges befindet, die sowohl aufgrund der dort heimischen Bestien als auch der vorherrschenden dünnen Luft nicht leicht zu erreichen sein wird. Um die Prüfung des Grabes zu bestehen, bleibt jedoch keine andere Wahl, als den Aufstieg in Angriff zu nehmen!",
+      "fr": "Au village des Yok Huy, Wuk Lamat s'est vu imposer l'“épreuve des tombes”, consistant à retrouver Gurfurlur, grand chaman et arbitre royal. Vous êtes donc partis à la recherche du géant, démêlant au passage le fil d'une histoire riche et contrastée. Votre enquête vous a finalement conduits à Worqor Zormor, le plus haut sommet d'Urqopacha, un lieu sacré aux yeux des Yok Huy. Gravissez ce pic peuplé d'une faune ô combien redoutable, et réussissez la quatrième épreuve du rite de succession&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112555.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 93,
+    "ilvlReq": 635,
+    "sync": 94,
+    "exp": 4268880,
+    "map": 902,
+    "contentText": [
+      38125,
+      38100
+    ]
+  },
+  "93": {
+    "id": 93,
+    "en": "Origenics",
+    "ja": "魂魄工廠 オリジェニクス",
+    "de": "Origenik",
+    "fr": "L'Origenèse",
+    "description": {
+      "en": "With his invasion force defeated, Zoraal Ja has turned on his own people, killing them to empower himself with their souls. He now awaits Wuk Lamat at the summit of Everkeep, and if you are to reach him, you must fight your way through Origenics, the facility for processing the souls of the departed. Guided by the members of Oblivion, you and your comrades sally forth for the grueling climb to the roiling storm clouds above.",
+      "ja": "追い詰められたゾラージャは、さらなる魂の力を欲して自国民までもその手にかけた。ウクラマトと冒険者たち一行は彼の行方を追い、エバーキープの最上層を目指す。<br>その経路となるのは、地上から最上層まで貫くように建てられた魂魄工廠「オリジェニクス」――死した者の魂と記憶を分離し、そのエーテルを魂資源として再利用するための加工施設である。オブリビオンの情報支援を受けつつ、雲上へと通じる路を駆け上れ。",
+      "de": "Aufgrund der Niederlage seiner Truppen in Tuliyollal sieht sich Zoraal Ja in die Enge getrieben. Und in seinem wahnsinnigen Streben nach Stärke schreckt er selbst vor dem Massenmord an seinem eigenen Volk nicht zurück. Alles, um die Kraft ihrer Seelen sein Eigen zu machen und seine Ambitionen zu verwirklichen. Doch Wuk Lamat, du und eure Freunde gedenkt nicht, ihn einfach so gewähren zu lassen. Um zu ihm an die Spitze des Immerfrieds zu gelangen, müsst ihr die Origenik durchqueren&nbsp;- eine Aufbereitungsanlage für Seelen, die sich wie ein gigantischer Pfeiler durch den gesamten Immerfried bis nach oben erstreckt. Bist du bereit, dich ihren dunklen Geheimnissen zu stellen und dir einen Pfad bis an die Spitze zu bahnen? Die Labore der Origenik erwarten dich&nbsp;... ",
+      "fr": "Acculé au sommet de la Gardienne de l'Éternité, Zoraal Ja n'a pas hésité à lever la main sur son propre peuple pour accroître son pouvoir. Wuk Lamat et ses compagnons n'ont plus d'autre choix que de le mettre définitivement hors d'état de nuire afin d'éviter une plongée dans l'horreur absolue. Devant eux se dresse l'Origenèse, une immense usine qui s'étend du sol jusqu'au dernier étage de la tour, où les souvenirs des défunts sont séparés de leurs âmes pour alimenter la fabrication de réserves sans cesse renouvelées. Fiez-vous aux informations glanées par vos alliés d'Oblivion et débusquez votre ennemi juré de sa cachette&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112558.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 99,
+    "ilvlReq": 650,
+    "sync": 100,
+    "exp": 5856480,
+    "map": 905,
+    "contentText": [
+      38241,
+      38200
+    ]
+  },
+  "94": {
+    "id": 94,
+    "en": "Ihuykatumu",
+    "ja": "濁流遡上 イフイカ・トゥム",
+    "de": "Ihuykatumu",
+    "fr": "La Remontée de l'Ihuykatumu",
+    "description": {
+      "en": "With two keystones now won and her father's historic journey pointing the way, Wuk Lamat sets her sights on the Moblin settlement perched above the waterfalls of Kozama'uka. As misfortune would have it, the wild storm which passed through the region has collapsed the great stairs leading up the cliffs, leading the resourceful Erenville to arrange an alternative route: a barge-like vessel pulled upriver by a massive-yet-gentle punutiy. Brace yourself to fight not only the current but an abundance of fierce wildlife as you forge along Yok Tural's mighty Ihuykatumu!",
+      "ja": "ふたつの秘石を手に入れたウクラマトと冒険者たち一行は、かつて連王グルージャジャが辿った旅路をなぞるように、コザマル・カの滝上にあるモブリン族の集落を目指す。<br>しかし大嵐の影響で大階段は崩落し、陸路での移動は困難となっていた。そこでエレンヴィルの発案に従い、ヨカ・トラル随一の大河イフイカ・トゥムを遡上することに。いざ海獣プヌティーの牽引する小船に乗り込み、襲いくる流域の野生生物たちを退け、上流域を目指せ！",
+      "de": "Du hast Wuk Lamat dabei geholfen, bereits zwei Prüfungen zu bestehen, und somit die entsprechenden Prüfsteine erhalten. Um weiter dem Pfad des Dämmerkönigs zu folgen, macht ihr euch nun zur Siedlung der Moblins auf, die neben den Wasserfällen von Kozama'uka gelegen ist. Jedoch sind die gewaltigen Stufen, die üblicherweise für diese Reise genutzt werden würden, im jüngsten Sturm zerstört worden. Erenville bereitet daher ein Boot für euch vor, welches von einem Punutiy über den Ihuykatumu, den größten Fluss Yok Turals, flussaufwärts gezogen werden soll. Deine Aufgabe wird es sein, dafür zu sorgen, eventuelle Angriffe wilder Bestien während der Flussfahrt abzuwehren. Damit heißt es: Alle an Bord und Leinen los!",
+      "fr": "Possédant déjà deux gemmes du rite de succession, les pas de Gulool Ja Ja vous mènent désormais au village mobelin, au sommet des chutes de Kozama'uka. Malheureusement, la récente tempête a rendu impraticable l'escalier permettant d'y accéder, forçant Erenville à vous proposer une voie alternative. Grâce à une barge tirée par un punutiy, vous vous apprêtez à remonter l'Ihuykatumu, un fleuve aux eaux aussi tumultueuses que dangereuses&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112554.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 91,
+    "ilvlReq": 630,
+    "sync": 92,
+    "exp": 3780000,
+    "map": 897,
+    "contentText": [
+      38420,
+      38400
+    ]
+  },
+  "95": {
+    "id": 95,
+    "en": "Alexandria",
+    "ja": "記憶幻想 アレクサンドリア",
+    "de": "Alexandria",
+    "fr": "Alexandrie",
+    "description": {
+      "en": "In their darkest hour, the people of Alexandria had found comfort in the belief that physical death is not the end, and through the miracle of electrope, that belief was made reality. Yet everything comes at a price. Determined to sustain the Endless no matter the cost, Sphene has chosen the unconscionable course of massacring innocents. Seeking to prevent her from preying upon other reflections, you and your comrades prepare to send your souls into the Meso Terminal, where a virtual domain generated by her memories awaits.",
+      "ja": "かつて命の無常を儚む人々が、自らへの慰めとして願った永遠の生は、万能の物質エレクトロープを得て現実のものとなった。だが、何事にも代償はつきもの。永久人の女王スフェーンは、彼女が愛する者たちの記憶を永らえさせるため、他者の命を奪うという許されざる路を選ぶ。<br>そして今、冒険者とウクラマトたち一行は、命を収奪されんとする数多の世界を救うべく、スフェーンの記憶によって紡がれた幻想世界へと足を踏み入れるのだった。",
+      "de": "Nachdem die große Katastrophe vor mehreren hundert Jahren so vielen Alexandriten das Leben kostete, gelang den Wissenschaftlern der Wahrung nach langen Mühen mithilfe der Elektrob-Technologie schließlich das unmöglich Geglaubte: die Speicherung von Seelen und Erinnerung. Doch das somit erlangte ewige Leben kommt mit einem hohen Preis. Um das Fortbestehen der Endlosen zu sichern, wird eine immer größer werdende Menge Lebensenergie benötigt. Die stets fürsorgliche, ihr Volk liebende Sphene ist zu diesem Zweck bereit, ihr Selbst aufzugeben und die Leben anderer Welten für die Unendlichkeit ihrer Leute zu opfern. Du und deine Freunde sind nun die Einzigen, die noch zwischen ihr und der Auslöschung der Spiegelwelten stehen. Reise tief in das virtuelle Abbild von Sphenes Erinnerungen und erlebe selbst, welcher Schmerz die Königin seit Jahrhunderten plagt.",
+      "fr": "Confrontés comme tous les peuples avant eux au caractère éphémère de l'existence, les Alexandrins pensaient avoir trouvé le secret de la vie éternelle grâce au miracle de l'électrope. Malheureusement pour eux, on ne bafoue pas les lois de la nature sans en payer le prix... Pour prolonger le rêve éveillé de ses bien-aimés sujets, la reine Sphene choisit de faire porter le fardeau de cette utopie aux habitants des autres mondes en les massacrant afin de s'approprier leur énergie. Désormais le dernier rempart protégeant d'innombrables innocents, vous et vos compagnons vous apprêtez à pénétrer dans le système central de La Mémoire vivante pour poursuivre Sphene dans les méandres de ses souvenirs&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112559.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 670,
+    "sync": 100,
+    "exp": 0,
+    "map": 910,
+    "contentText": [
+      38756,
+      38700
+    ]
+  },
+  "96": {
+    "id": 96,
+    "en": "The Skydeep Cenote",
+    "ja": "遺産踏査 天深きセノーテ",
+    "de": "Himmelstiefer Cenote",
+    "fr": "Le cénote des Cieux infinis",
+    "description": {
+      "en": "Having successfully collected all seven keystones, Wuk Lamat now faces her final challenge as a claimant: finding the city of gold. All clues point to Yak T'el, whose only uncharted terrain lies in the Skydeep Cenote. Long before the Mamool Ja converted it to a cenotaph for children lost to the dream of blessed siblings, the Yok Huy quarried its depths and witnessed dreams of their own. Now you must tread this path of ancient awe and endless sorrow to discover for yourself what lies glimmering in the deep...",
+      "ja": "七つの秘石を集めることに成功したウクラマトと冒険者たち一行は、「継承の儀」の勝者となるべく、ついに黄金郷の発見へと挑むことに。ヤクテル樹海において、捜索の手が及んでいない場所があるとすれば、それは禁足地たる天深きセノーテのみ。かつてヨカフイ族が石切場として開き、後年、マムージャ族が双頭の赤子たちの慰霊堂として用いるようになった遺構である。悲しみの歴史に埋もれた冥き路を進み、輝ける黄金郷を見つけ出せ！",
+      "de": "Wuk Lamat hat mit deiner Hilfe alle sieben Prüfsteine erhalten, womit ihr euch nun der letzten Herausforderung des Ritus der Thronfolge stellt - die Stadt aus Gold ausfindig zu machen. Im Laufe eurer Nachforschungen erfahrt ihr von dem sogenannten Himmelstiefen Cenote, der einzige Ort in Yak T'el, dessen Betreten seit jeher untersagt ist und somit nie gründlich untersucht wurde. Erzählungen zufolge nutzten die Yok Huy diese Grotte einst als Steinbruch, doch momentan fungiert sie als Ruheort all jener Kinder der Mamool Ja, die den Lehren des Zwilingsblutes geopfert wurden. Mache dich auf in diese Ruine begraben von Trauer und Tod, auf dass die Stadt aus Gold in ihren Tiefen liegen möge!",
+      "fr": "Les sept gemmes enfin en sa possession, Wuk Lamat doit maintenant accomplir l'objectif final du rite, à savoir retrouver la fameuse cité d'or. D'après vos nouveaux alliés, il n'existe qu'un endroit à Yak T'el susceptible de l'abriter, puisque personne n'ose s'approcher de ce lieu tabou : le cénote des Cieux infinis, l'ancienne carrière yok huy qui sert aujourd'hui de sépulture pour les enfants mort-nés des Mamool Ja... Il est temps pour vous et vos compagnons de braver l'interdit et d'arpenter ce chemin lugubre à l'histoire tragique, en espérant que votre destination se trouve bien de l'autre côté..."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112556.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 95,
+    "ilvlReq": 640,
+    "sync": 96,
+    "exp": 4777920,
+    "map": 915,
+    "contentText": [
+      38614,
+      38600
+    ]
+  },
+  "97": {
+    "id": 97,
+    "en": "Vanguard",
+    "ja": "外征前哨 ヴァンガード",
+    "de": "Der Außenposten",
+    "fr": "L'Avant-garde",
+    "description": {
+      "en": "Zoraal Ja retreats to the dome in Yyasulani, but not before laying siege to his home and slaying his own father. This foul deed cannot go unpunished, and so Wuk Lamat lays plans to pierce the dome and pursue him. To that end, the engineers of Xak Tural Railing refit their ceruleum-powered train christened the Dawnblazer, and after avoiding fire from Zoraal Ja's forces, successfully send it careening into the fortress bridging the dome with the outside world. With the path forward now open, the battle for Tuliyollal begins as you and your companions take your first bold steps into enemy territory.",
+      "ja": "民を殺し、父を弑し、祖国トライヨラに宣戦布告したゾラージャを追い、ウクラマトと冒険者たち一行はヤースラニ荒野を覆う「ドーム」への侵入を決意する。<br>XTRR社の協力を得て青燐機関車を改造、爆弾列車「ドーンブレイザー号」を完成させた一行は、決死の覚悟で線路上に繋がる敵基地施設への突撃を敢行。その防備に文字通りに風穴を開けると、ドーム内に通じるであろう施設内部を目指す。夜明けを告げる青き炎を狼煙に、故郷を護るための戦いが今、始まる！",
+      "de": "Er mordete ihr Volk, ihren Vater und erklärte ihrem Land den Krieg. Doch Wuk Lamat wäre nicht die Krone des Mutes, wenn sie Zoraal Ja einfach gewähren ließe. Zusammen mit dir und euren Kameraden geht sie in die Offensive und beschließt, den Kampf in die Kuppel zu tragen. Mithilfe der Eisenbahnfanatiker von XTRR und Verbündeten aus ganz Tuliyollal gelingt euch der Bau eines wahren Bombenexpresses, der mit einem großen Knall ein riesiges Loch in die Befestigungen des Feindes reißt. Der Weg ins Innere der Kuppel steht euch somit nun offen. Aber verkünden die blauen Flammen entlang eures Pfades auch wirklich den Beginn der Morgendämmerung für Tuliyollal? Es liegt nun an dir, das Blatt zu wenden und es Zoraal Ja für seine Gräueltaten heimzuzahlen! ",
+      "fr": "Désireux de retrouver la trace de Zoraal Ja, après qu'il a attaqué Tuliyollal, tué son propre père et déclaré son intention d'envahir le Tural, vos compagnons et vous-même avez décidé de vous infiltrer dans le mystérieux dôme apparu au beau milieu de la Yyasulani. À l'aide de la locomotive de la compagnie de chemin de fer locale, renforcée et renommée pour l'occasion “l'Explaurore”, vous avez ouvert une brèche dans le rempart de la base ennemie qui doit vous permettre d'accéder au dôme. Frayez-vous un passage au forceps dans cette installation&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112557.png",
+    "gamePatch": 95,
+    "contentType": 2,
+    "levelReq": 97,
+    "ilvlReq": 645,
+    "sync": 98,
+    "exp": 5307120,
+    "map": 899,
+    "contentText": [
+      38837,
+      38800
+    ]
+  },
+  "98": {
+    "id": 98,
+    "en": "Tender Valley",
+    "ja": "荒野秘境 サボテンダーバレー",
+    "de": "Kaktorsenke",
+    "fr": "La Vallée des Pampas",
+    "description": {
+      "en": "At the behest of Zeycihan, professor of archeology at the Studium, you are tasked with venturing into a valley swarming with sabotenders. In the furthest reaches of this gorge of succulents lie the remnants of an ancient structure believed to be of Yok Huy origin, but if you are to discover what mysteries dwell within, you must first survive the innumerous needles of the valley's denizens...",
+      "ja": "トラル各地で発掘を行うシャーレアン魔法大学の考古学者、ゼイキハンから紹介を受けた次なる冒険の舞台、それはシャーローニ荒野の外れにあるというサボテンダーバレー。文字通り、サボテンが群生する渓谷の奥には、かつてサカ・トラルに渡ったヨカフイ族のものと思われる、古き遺構があるらしい。<br>先行調査より撤退したというゼイキハンの足取りも辿りつつ、凶暴なサボテンダーたちの針を掻い潜り、歴史の不思議が眠り続ける遺跡最深部へ到達せよ。",
+      "de": "Zeycihan ist ein sharlayanischer Archäologe, dessen Studien ihn nach Tural verschlagen haben. Nun liegt sein ganzer Fokus auf der Kaktorsenke, ein Tal am äußersten Rand von Shaloaani. Inmitten der Vielzahl von Kaktoren unterschiedlichster Art ragen uralte Ruinen in den Himmel, die den einstigen Herren Turals gehört haben sollen: den Yok Huy. Wandle auf Zeycihans Spuren, bahne dir einen Weg durch die abertausend Nadeln und lüfte das Geheimnis, das unter dem Staub der Jahrhunderte schlummert ...",
+      "fr": "Zeycihan, professeur d'archéologie à l'académie de magie de Sharlayan, a été chargé par l'ancien Aurarque de la Raison d'explorer le Tural à la recherche de vestiges anciens. Il a découvert dans un des recoins de la Shaaloani une vallée abritant des ruines inconnues. Cependant, l'endroit est envahi par les pampas en tout genre et vous êtes la seule personne suffisamment forte pour arpenter les lieux et peut-être percer leurs mystères."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112560.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 670,
+    "sync": 100,
+    "exp": 0,
+    "map": 900,
+    "contentText": [
+      39407,
+      39400
+    ]
+  },
+  "99": {
+    "id": 99,
+    "en": "The Strayborough Deadwalk",
+    "ja": "悪夢遊園 ストレイバロー",
+    "de": "Mahrlingen-Promenade",
+    "fr": "le Parc-aux-Errants",
+    "description": {
+      "en": "Dreamborough─a district of Living Memory long thought lost to interdimensional fusion─rises from the rift after decades of disconnection. Yet what lies beyond its gates is not the dazzling paradise of Constancy's memory, but a land marred by shadow and haunted by vestiges of the Endless who once called it home. You must venture into the twisted grounds and quell the lost souls' agony once and for all...but the phantoms within do not take kindly to the living.",
+      "ja": "かつてリビング・メモリーに存在した5番目のエリア、遊園区画ドリーマーバロー。原初世界との局所的世界統合の過程で次元の狭間に消えたはずのこの場所が、「世界を繋ぐ力」の発動に伴って奇跡的に繋がりを回復する。<br>しかし長きに亘る次元漂流の果てに永久人たちは消え去り、その内部はいまや不気味な変貌を遂げていた。案内係とノスタルジアの願いに応え、冒険者は調査に向かうが――。",
+      "de": "Ursprünglich gab es in der Lebenden Erinnerung mehr als nur vier Areale. Doch die Aktivierung der Weltenfusion durch Zoraal Ja und Sphene ließ diese zwischen den Dimensionen verschwinden. Für lange Zeit galten die übrigen Areale somit als verloren, bis schließlich die erneute Aktivierung der Weltenfusion in deinem Kampf mit der Ewigen Königin dafür gesorgt zu haben scheint, dass die Verbindung zu einem von ihnen wiederhergestellt werden konnte. Die zum Zeitpunkt des Verschwindens des Areals in ihm gestrandeten Endlosen haben sich nun schon lange aufgelöst, ihre Erinnerungen jedoch scheinen von seinen Attraktionen Besitz ergriffen und die einst wundersam-fröhliche Traumpromenade in einen Albtraumrummel verwandelt zu haben. Constancys und Nostalgias Bitte folgend, machst du dich auf, die rastlosen Seelen der Endlosen zu erlösen und ihnen endlich ihre wohlverdiente Ruhe zu gewähren.",
+      "fr": "Le Parc-aux-Rêveurs était jadis un lieu de joie et de fête connu de tous les Éternels comme le cinquième quartier de La Mémoire vivante. Hélas, il semble avoir été englouti par une faille interdimensionnelle quelques décennies plus tôt, condamnant ses occupants à errer entre les dimensions pour l'éternité... du moins, jusqu'à ce qu'une nouvelle faille s'ouvre un jour sans crier gare. Toutefois, une brève exploration préliminaire a permis de révéler que les Éternels piégés à l'intérieur avaient disparu depuis longtemps et que les installations du parc semblaient comme... possédées. À la demande de Nostalgia et de Constancy, vous décidez de vous aventurer dans cet endroit où les éclats de rire se mêlent aux cris d'effroi, où le burlesque se teinte de funeste, et où les rêves se métamorphosent en cauchemars."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112561.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 670,
+    "sync": 100,
+    "exp": 0,
+    "map": 917,
+    "contentText": [
+      38362,
+      38300
     ]
   },
   "5001": {
@@ -4694,6 +4948,345 @@
     "contentText": [
       37750,
       37700
+    ]
+  },
+  "5068": {
+    "id": 5068,
+    "en": "A Father First",
+    "ja": "王として、父として",
+    "de": "Des Vaters viele Sorgen",
+    "fr": "L'Aurarque et le père",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "gamePatch": 91,
+    "contentType": 7,
+    "levelReq": 92,
+    "ilvlReq": 0,
+    "sync": 92,
+    "exp": 0,
+    "map": 931,
+    "contentText": [
+      38519,
+      38500
+    ]
+  },
+  "5069": {
+    "id": 5069,
+    "en": "The Feat of the Brotherhood",
+    "ja": "友の試練",
+    "de": "Von Schuld und Sühne",
+    "fr": "L'épreuve de l'amitié",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 95,
+    "ilvlReq": 0,
+    "sync": 95,
+    "exp": 0,
+    "map": 859,
+    "contentText": [
+      39230,
+      39200
+    ]
+  },
+  "5070": {
+    "id": 5070,
+    "en": "Taking a Stand",
+    "ja": "笑顔を護るための戦い",
+    "de": "Mit scharfer Axt und leichtem Lächeln",
+    "fr": "Préserver la paix",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 94,
+    "ilvlReq": 0,
+    "sync": 94,
+    "exp": 0,
+    "map": 859,
+    "contentText": [
+      38929,
+      38900
+    ]
+  },
+  "5071": {
+    "id": 5071,
+    "en": "An Antidote for Anarchy",
+    "ja": "毒と癒やしの頂上決戦",
+    "de": "Heilkunst gegen Hexerei",
+    "fr": "Les deux faces du scorpion",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 45,
+    "contentText": [
+      39335,
+      39300
+    ]
+  },
+  "5072": {
+    "id": 5072,
+    "en": "Fangs of the Viper",
+    "ja": "ヴァイパーの使命",
+    "de": "Einführung in die Viperologie",
+    "fr": "Le devoir des rôdeurs vipère",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 80,
+    "ilvlReq": 0,
+    "sync": 80,
+    "exp": 0,
+    "map": 21,
+    "contentText": [
+      39533,
+      39500
+    ]
+  },
+  "5073": {
+    "id": 5073,
+    "en": "A Hunter True",
+    "ja": "一端の狩人",
+    "de": "Krönender Abschuss",
+    "fr": "Chasseuse à lunettes... chasseuse honnête",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 375,
+    "contentText": [
+      39032,
+      39000
+    ]
+  },
+  "5074": {
+    "id": 5074,
+    "en": "Somewhere Only She Knows",
+    "ja": "旅する画家は幻想を征く",
+    "de": "Begegnungen und Abschiede",
+    "fr": "L'œuvre de la maturité",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 90,
+    "ilvlReq": 0,
+    "sync": 90,
+    "exp": 0,
+    "map": 941,
+    "contentText": [
+      40013,
+      40000
+    ]
+  },
+  "5075": {
+    "id": 5075,
+    "en": "The Protector and the Destroyer",
+    "ja": "護る者、壊す者",
+    "de": "Schützer des Volkes, Schlächter des Volkes",
+    "fr": "Protecteurs et destructeurs",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 98,
+    "ilvlReq": 0,
+    "sync": 98,
+    "exp": 0,
+    "map": 856,
+    "contentText": [
+      39755,
+      39700
+    ]
+  },
+  "5076": {
+    "id": 5076,
+    "en": "The Mightiest Shield",
+    "ja": "打倒！ シャルトフィット盗賊団",
+    "de": "Der mächtigste Schild",
+    "fr": "Mauvais cru pour Chalteaufite",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 417,
+    "contentText": [
+      39939,
+      39900
+    ]
+  },
+  "5077": {
+    "id": 5077,
+    "en": "Mind over Manor",
+    "ja": "旅する画家は森都を征く",
+    "de": "Nächtliche Ruhestörung",
+    "fr": "Tapage nocturne",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 80,
+    "ilvlReq": 0,
+    "sync": 80,
+    "exp": 0,
+    "map": 940,
+    "contentText": [
+      40093,
+      40050
+    ]
+  },
+  "5078": {
+    "id": 5078,
+    "en": "Heroes and Pretenders",
+    "ja": "祭器と作られた虚像",
+    "de": "Ein Mythos in Trümmern",
+    "fr": "Le château de cartes s'effondre",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 825,
+    "contentText": [
+      40137,
+      40100
+    ]
+  },
+  "5079": {
+    "id": 5079,
+    "en": "Vengeance of the Viper",
+    "ja": "トラルヴィドラールを狩る者",
+    "de": "Der Wille der Natur",
+    "fr": "Le fléau des Tural vidraal",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 90,
+    "ilvlReq": 0,
+    "sync": 90,
+    "exp": 0,
+    "map": 23,
+    "contentText": [
+      39624,
+      39600
+    ]
+  },
+  "5080": {
+    "id": 5080,
+    "en": "Dreams of a New Day",
+    "ja": "寝ても覚めても",
+    "de": "Neue Bande der Freundschaft",
+    "fr": "Rêves éveillés",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 215,
+    "contentText": [
+      40544,
+      40500
     ]
   },
   "10001": {
@@ -7431,7 +8024,7 @@
   },
   "20062": {
     "id": 20062,
-    "en": "The Dancing Plague",
+    "en": "the Dancing Plague",
     "ja": "ティターニア討滅戦",
     "de": "Offenbarung - Titania",
     "fr": "la Valse du Monarque",
@@ -7495,7 +8088,7 @@
   },
   "20064": {
     "id": 20064,
-    "en": "The Crown of the Immaculate",
+    "en": "the Crown of the Immaculate",
     "ja": "イノセンス討滅戦",
     "de": "Offenbarung - Innozenz",
     "fr": "La Couronne de l'Immaculé",
@@ -7559,7 +8152,7 @@
   },
   "20066": {
     "id": 20066,
-    "en": "The Dying Gasp",
+    "en": "the Dying Gasp",
     "ja": "ハーデス討滅戦",
     "de": "Offenbarung - Hades",
     "fr": "le Râle de l'Agonie",
@@ -7591,7 +8184,7 @@
   },
   "20067": {
     "id": 20067,
-    "en": "The Minstrel's Ballad: Hades's Elegy",
+    "en": "the Minstrel's Ballad: Hades's Elegy",
     "ja": "極ハーデス討滅戦",
     "de": "Letzte Läuterung - Hades",
     "fr": "Le Râle de l'Agonie (extrême)",
@@ -7847,7 +8440,7 @@
   },
   "20075": {
     "id": 20075,
-    "en": "The Cloud Deck",
+    "en": "the Cloud Deck",
     "ja": "ダイヤウェポン捕獲作戦",
     "de": "Diamantblitz - Entfesselung",
     "fr": "Le Tillac des Cirrus",
@@ -7879,7 +8472,7 @@
   },
   "20076": {
     "id": 20076,
-    "en": "The Cloud Deck (Extreme)",
+    "en": "the Cloud Deck (Extreme)",
     "ja": "極ダイヤウェポン捕獲作戦",
     "de": "Diamantblitz - Trauma",
     "fr": "Le Tillac des Cirrus (extrême)",
@@ -7911,7 +8504,7 @@
   },
   "20077": {
     "id": 20077,
-    "en": "The Mothercrystal",
+    "en": "the Mothercrystal",
     "ja": "ハイデリン討滅戦",
     "de": "Prophetie - Hydaelyn",
     "fr": "Le Cristal-mère",
@@ -7943,7 +8536,7 @@
   },
   "20078": {
     "id": 20078,
-    "en": "The Minstrel's Ballad: Hydaelyn's Call",
+    "en": "the Minstrel's Ballad: Hydaelyn's Call",
     "ja": "極ハイデリン討滅戦",
     "de": "Eschatos - Hydaelyn",
     "fr": "Le Cristal-mère (extrême)",
@@ -7975,7 +8568,7 @@
   },
   "20079": {
     "id": 20079,
-    "en": "The Final Day",
+    "en": "the Final Day",
     "ja": "終焉の戦い",
     "de": "Prophetie - Endsängerin",
     "fr": "le Répons final",
@@ -8007,7 +8600,7 @@
   },
   "20080": {
     "id": 20080,
-    "en": "The Dark Inside",
+    "en": "the Dark Inside",
     "ja": "ゾディアーク討滅戦",
     "de": "Prophetie - Zodiark",
     "fr": "Le Cratère des Martyrs",
@@ -8039,7 +8632,7 @@
   },
   "20081": {
     "id": 20081,
-    "en": "The Minstrel's Ballad: Zodiark's Fall",
+    "en": "the Minstrel's Ballad: Zodiark's Fall",
     "ja": "極ゾディアーク討滅戦",
     "de": "Eschatos - Zodiark",
     "fr": "Le Cratère des Martyrs (extrême)",
@@ -8103,7 +8696,7 @@
   },
   "20083": {
     "id": 20083,
-    "en": "The Minstrel's Ballad: Endsinger's Aria",
+    "en": "the Minstrel's Ballad: Endsinger's Aria",
     "ja": "終極の戦い",
     "de": "Eschatos - Endsängerin",
     "fr": "le Répons final (extrême)",
@@ -8263,7 +8856,7 @@
   },
   "20088": {
     "id": 20088,
-    "en": "The Gilded Araya",
+    "en": "the Gilded Araya",
     "ja": "アスラ討滅戦",
     "de": "Prophetie - Asura",
     "fr": "Le temple doré d'Araya",
@@ -8295,7 +8888,7 @@
   },
   "20089": {
     "id": 20089,
-    "en": "The Voidcast Dais",
+    "en": "the Voidcast Dais",
     "ja": "ゴルベーザ討滅戦",
     "de": "Prophetie - Golbez",
     "fr": "La Chaire de l'Exilée",
@@ -8327,7 +8920,7 @@
   },
   "20090": {
     "id": 20090,
-    "en": "The Voidcast Dais (Extreme)",
+    "en": "the Voidcast Dais (Extreme)",
     "ja": "極ゴルベーザ討滅戦",
     "de": "Eschatos - Golbez",
     "fr": "La Chaire de l'Exilée (extrême)",
@@ -8359,7 +8952,7 @@
   },
   "20091": {
     "id": 20091,
-    "en": "The Abyssal Fracture",
+    "en": "the Abyssal Fracture",
     "ja": "ゼロムス討滅戦",
     "de": "Prophetie - Zeromus",
     "fr": "La Fracture abyssale",
@@ -8391,7 +8984,7 @@
   },
   "20092": {
     "id": 20092,
-    "en": "The Abyssal Fracture (Extreme)",
+    "en": "the Abyssal Fracture (Extreme)",
     "ja": "極ゼロムス討滅戦",
     "de": "Eschatos - Zeromus",
     "fr": "La Fracture abyssale (extrême)",
@@ -8419,6 +9012,163 @@
     "contentText": [
       38032,
       38000
+    ]
+  },
+  "20093": {
+    "id": 20093,
+    "en": "Worqor Lar Dor",
+    "ja": "ヴァリガルマンダ討滅戦",
+    "de": "Zel Tajaal - Valigarmanda",
+    "fr": "Worqor Lar Dor",
+    "description": {
+      "en": "In the lands of Tural, there is a class of beasts which transcends the limits of the natural order─the tural vidraal. The mightiest of these, the feared and fearsome Valigarmanda, caused centuries of suffering until it was at last sealed away in the mountain fastness of Urqopacha by a young Gulool Ja Ja. Eighty years later, however, a foolish claimant in the rite of succession has seen fit to release the Skyruin from its icy prison. If you would spare Tural's people a new age of terror, then you must stand with Wuk Lamat against this flying calamity and its endless elemental fury.",
+      "ja": "トラル大陸において、他と一線を画す規格外の力を持った獣はこう呼ばれる。大地を掌握する者――トラルヴィドラールと。その中でも最強と恐れられる存在、「ヴァリガルマンダ」は約80年前に若き日のグルージャジャらによって成敗され、オルコ・パチャ山麓に封印されてきた。だが、この「生ける天災」が、継承の儀の最中に解き放たれてしまう。かくしてウクラマトと冒険者たち一行は、トラル大陸の平穏を護るべく立ち上がる。火、氷、雷の力を振るう伝説の有翼蛇を討滅せよ！",
+      "de": "Auf Tural erhalten jene Lebewesen, welche Tausende von Jahren überdauern und unvorstellbar gewaltige Mächte besitzen, einen besonderen Namen&nbsp;- Tural Vidraal. Selbst achtzig Jahre, nachdem sie im Anschluss an einen erbitterten Kampf mit Gulool Ja Ja und dessen Gefährten in den Bergen des Urqupacha versiegelt wurde, gilt Valigarmanda, die Geflügelte Geißel, auch jetzt noch als die stärkste dieser legendären Bestien. Eben diese lebenden Katastrophe ist nun im Laufe des Ritus der Thronfolge aus ihrem Schlaf gerissen worden. Jetzt liegt es an dir, gemeinsam mit Wuk Lamat und den übrigen Thronanwärtern, den stärksten Tural Vidraal aufzuhalten, bevor er erneut eine Schneise der Verwüstung durch den Kontinent ziehen kann!",
+      "fr": "Les Tural vidraal. “Ceux qui règnent sur la terre.” Des créatures aux facultés hors normes et à la puissance incommensurable. La plus terrifiante de toutes, Valigarmanda, fut emprisonnée il y a huit décennies au pied des montagnes d'Urqopacha par le jeune Gulool Ja Ja et ses alliés, au terme d'un bras de fer absolument épique. Or, voilà que la “calamité incarnée” se retrouve libérée en plein rite de succession&nbsp;! Wuk Lamat décide alors de mettre la compétition entre parenthèses afin de sauver le Tural aux côtés de ses frères. Joignez-vous à elle dans son combat contre l'oiseau-serpent de légende, maître des éléments feu, glace et foudre&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112562.png",
+    "gamePatch": 91,
+    "contentType": 4,
+    "levelReq": 93,
+    "ilvlReq": 0,
+    "sync": 94,
+    "exp": 0,
+    "map": 925,
+    "contentText": [
+      40812,
+      40800
+    ]
+  },
+  "20094": {
+    "id": 20094,
+    "en": "Worqor Lar Dor (Extreme)",
+    "ja": "極ヴァリガルマンダ討滅戦",
+    "de": "Gok Tajaal - Valigarmanda",
+    "fr": "Worqor Lar Dor (extrême)",
+    "description": {
+      "en": "In a land of unfamiliar views and vistas, the wandering minstrel remains a familiar constant, as does his appetite for thrilling and fantastic tales. You speak with him of your clash with the dread Valigarmanda, and it sets his mind to racing─each strike a note to be woven into song, a tale of high adventure that will endure for generations.<br><br>Ever wont to embellish his retellings, he muses on a foe untouched by the fetters of imprisonment, a Valigarmanda who can bring its full might to bear. Would the Third Promise and her companions have emerged victorious from such a threat? Such is the question raised in your mind as melodies stir your memories, setting you before the mighty serpent once more...",
+      "ja": "異邦の詩人は謳う。80年にも亘って氷漬けにされていた伝説のトラルヴィドラールのことを。「生ける天災」と呼ばれしヴァリガルマンダは、まさにトラル最強の一角。長き封印で弱る前は、果たしてどれほどの力を振るったのだろうか――。<br>トラル大陸においても、異邦の詩人の作風は変わらない。英雄譚が継承されるようにと願い、今日も今日とて事実に激しく脚色を加えるのだ。斯くして冒険者は、幻想に彩られた「ヴァリガルマンダ」との戦いを追体験する。",
+      "de": "Valigarmanda, die Geflügelte Geißel, bot euch selbst geschwächt von achtzig Jahren Versiegelungen einen Kampf, den ihr nur mit Mühe und Not für euch entscheiden konntet. Doch was, wenn die Lebende Katastrophe bei vollen Kräften gewesen wäre, wie vor ihrer Niederlage gegen den Dämmerkönig? Die Verse des Fahrenden Sängers wecken Vorstellungen in dir, die nicht zum ersten Mal deinen Kopf durchkreuzen. Und so tragen dich deine Gedanken zurück nach Worqor Lar Dor, wo dich der legendäre Tural Vidraal in seiner vollen Blüte erwartet ...!",
+      "fr": "De passage au Tural, le ménestrel errant nous narre la légende du Tural vidraal resté emprisonné quatre-vingts ans dans la glace&nbsp;: Valigarmanda, alias la “calamité incarnée”. L'une des entités les plus puissantes du Tural – du moins, avant que ses décennies d'enfermement ne lui ôtent une partie de sa force. Mais qu'à cela ne tienne puisque, fidèle à sa méthode, notre harpiste préféré se fera un plaisir de dépeindre la bête au meilleur de ses capacités. Projetez-vous dans son récit, et revivez votre combat sous un jour plus héroïque que jamais&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112563.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 690,
+    "sync": 100,
+    "exp": 0,
+    "map": 925,
+    "contentText": [
+      40812,
+      40800
+    ]
+  },
+  "20095": {
+    "id": 20095,
+    "en": "The Interphos",
+    "ja": "エターナルクイーン討滅戦",
+    "de": "Zel Tajaal - Ewige Königin",
+    "fr": "Interphos",
+    "description": {
+      "en": "A world free of suffering and loss... This earnest wish, made by the young Queen Sphene in her final moments, was realized centuries later in the form of Living Memory, the twisted paradise behind the legend of the golden city. In order to obtain the aether needed to sustain the sanctuary’s recreated denizens, Sphene has shed her conscience─the memories she had as a living person─to arise as within the Meso Terminal a terrifying entity possessed of absolute authority. Thus empowered, she now seeks to initiate interdimensional fusion and harvest the life force of people in other worlds, and it falls to you to stop her before untold lives are sacrificed.",
+      "ja": "誰もが、悩みも争いもなく生きられますように――ひとりの少女が死に際に願った祈りは、やがて歪な黄金郷として結実した。愛する民を永久に生かすには、異界の命を奪い続けねばならない。その非道を為すため、少女スフェーンの記憶から形作られた理想の王は、優しき心を自ら消し去る。<br>かくして生まれたるは、鋼の躯体に鎧われた「エターナルクイーン」。彼女を止めねば、残存する鏡像世界から数多の命が失われる。今こそ、孤独な路を突き進まんとする機械仕掛けの女王に立ち向かい、そのコアを破壊せよ！",
+      "de": "Eine Welt ganz ohne Sorge und Leid. Das letzte Gebet einer jungen Königin auf dem Sterbebett würde schließlich in der Erschaffung der Stadt aus Gold münden&nbsp;- einem Paradies, in dem die Erinnerungen der Verstorbenen als Endlose auf ewig weiterleben können. Doch wo Licht ist, ist auch Schatten, denn für das Fortbestehen einiger Weniger müssen etliche Leben anderer Welten geopfert werden. Sphene, die auserwählte Hülle für die Wünsche und Hoffnungen der jungen Königin von anno dazumal, ist bereit, im Austausch für die Ewigkeit ihres geliebten Volkes nicht nur ihr Herz, sondern auch alles andere Leben in den Splitterwelten aufzugeben. Als kalte Maschine des Todes folgt sie nun lediglich dem ihr einprogrammierten Befehl, Welten zu fusionieren und deren Energie zu ernten&nbsp;- völlig gewissenlos und ohne Gefühl. Sollte es dir nicht gelingen, sie aufzuhalten, wird dies früher oder später das Ende jeglicher Existenz bedeuten. Und so betrittst du ein weiteres Mal deinen Pfad als Weltenretterin, fest entschlossen, den Kern der Ewigen Königin zu vernichten.",
+      "fr": "Un monde sans souffrance, où rien n'est jamais perdu... Ce qui fut un jour le dernier souhait d'une jeune reine est depuis devenu réalité sous la forme de La Mémoire vivante, le paradis immuable à l'origine de la légende de la cité d'or. Prête à tout pour maintenir en vie ses précieux sujets, Sphene a décidé de s'affranchir de ses souvenirs afin de devenir une machine destructrice dénuée de tout sentiment. Désormais, elle n'a qu'un seul et unique but&nbsp;: éliminer tout obstacle qui l'empêche d'activer le pouvoir de relier les mondes pour siphonner l'éther tant convoité. Affrontez l'autoproclamée Reine Éternité et abrogez le règne de carnage qu'elle promet, afin que prenne fin son rêve vicié d'immortalité pour les siens."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112566.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 670,
+    "sync": 100,
+    "exp": 0,
+    "map": 928,
+    "contentText": [
+      39838,
+      39800
+    ]
+  },
+  "20096": {
+    "id": 20096,
+    "en": "Everkeep",
+    "ja": "ゾラージャ討滅戦",
+    "de": "Zel Tajaal - Zoraal Ja",
+    "fr": "Le Pinacle de l'Éternité",
+    "description": {
+      "en": "Known as the Resilient Son for the miracle of his birth, the First Promise Zoraal Ja was driven solely by the desire to prove his worth. So it was that he had embarked upon the path of conquest, but it led him nowhere save to an empty summit. Having failed to win the throne and surpass his father, he remains consumed by his obsession and has devoured the souls of his own people in a bid to achieve his ends. For the sake of not only Tuliyollal, but the entire star, you must put an end to the struggle of this tormented man.",
+      "ja": "かつてトライヨラに、「奇跡の子」と呼ばれた第一王子がいた。双頭の連王の血を引きながら、フビゴの顔立ちにブネワの青鱗を持つ稀なる姿で生まれた彼は、己の価値を証明せんと覇道を進み続けた。<br>だが、闘い歩んだ末に辿り着いたのは、失われた楼閣の空虚な頂だった。偉大な父王を超えることも、玉座を継承することも、民から愛されることもなく、行き場のない大空の下に追い詰められたのだ。守るべき命を喰らい、肥大化した自己に押しつぶされんとする哀れな男に、最後の引導を渡せ。",
+      "de": "Der erste Prinz Tuliyollals, Zoraal Ja&nbsp;- einst auch als das „Wunderkind“ bekannt. Als einziger leiblicher Nachkomme des zwillingsköpfigen Königs Gulool Ja Ja war es nicht nur sein unübliches Aussehen als blauschuppiger Hoobigo, das ihn stets als Auserwählten dastehen ließ. Stets mit dem übergroßen Schatten seines Vaters hadernd, beschritt er schließlich einen Pfad der nicht enden wollenden Gewalt, an dessen Ende er nun sogar sein Selbst verlor&nbsp;- alles nur, um der Welt seine Stärke zu beweisen. In die Ecke gedrängt, schlachtete er hierzu unzählige Unschuldige seines Volkes ab&nbsp;- in dem Streben, sich ihre Seelen eigen zu machen und ungeahnte Mächte zu erlangen. Doch der Zoraal Ja, der nun vor dir steht, ist nur mehr ein Schatten des ehemals anmutigen und geachteten Prinzen. Bringe dem von seinem selbst gewählten Pfad Gepeinigten seine letzte Ruhe.",
+      "fr": "Il était une fois un prince tuliyollois que ses compatriotes surnommaient “l'enfant prodige”... Unique descendant biologique de l'aurarque Gulool Ja Ja, Zoraal Ja incarne en outre un cas rarissime de Hoobigo recouvert des écailles bleues typiques des Boonewa. Hélas, tant de particularités firent que son sang royal lui monta à la tête, et l'engagea sur un chemin de violence et de destruction au bout duquel il s'était juré de prouver sa supériorité au monde. Après qu'il a échoué à hériter légitimement du trône de son pays natal, sa haine l'aura poussé jusqu'au parricide et à l'opprobre irrévocable aux yeux de tous les peuples qui l'auront eu pour souverain. Acculé au sommet froid et inhospitalier de la Gardienne de l'Éternité, symbole de l'impasse vers laquelle sa route délétère s'est toujours dirigée, il n'attend plus que vous pour déchaîner ses ultimes forces, gonflées à bloc des âmes d'êtres qu'il a tant fait souffrir à défaut de les protéger. Mettez un terme à son égoïsme sans bornes et envoyez-le rejoindre ses innombrables victimes&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112564.png",
+    "gamePatch": 95,
+    "contentType": 4,
+    "levelReq": 99,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 929,
+    "contentText": [
+      40423,
+      40400
+    ]
+  },
+  "20097": {
+    "id": 20097,
+    "en": "Everkeep (Extreme)",
+    "ja": "極ゾラージャ討滅戦",
+    "de": "Gok Tajaal - Zoraal Ja",
+    "fr": "Le Pinacle de l'Éternité (extrême)",
+    "description": {
+      "en": "In his blind pursuit to surpass his father, the Resilient Son lost his way, and set foot upon a path that distanced him from friends, comrades, and loved ones. At the end was naught but a twisted throne, before which Zoraal Ja consumed the souls of his own people in a bid to fulfill his hollow ambitions. Was it the pride of a king that consumed his heart in these final moments, or was his conscience weighed down by all he had done? The sorrowful notes of the wandering minstrel's song weave a thread of tragedy through the tale of the First Promise, and your heart grows heavier with each mournful chord. Memories of the encounter soon come flooding back, visions of a harrowing battle playing once again in your mind's eye.",
+      "ja": "異邦の詩人は謳う。偉大な父王を超えんと足掻きながら、歩むべき路を誤った「奇跡の子」のことを。友もなく、仲間も得ず、愛も知らぬままに追い詰められた男の生き様を。<br>失われた楼閣の頂に据えられた歪な玉座の前で、彼は守るべき民の命を喰らう異形と化した。彼の胸中になお渦巻くのは、王の矜持か、あるいは――。光の戦士は今、ゾラージャとの戦いを追体験する。",
+      "de": "Des Fahrenden Sängers Melodien gewähren dir Einblick in die Gefühlswelt eines falschen Königs, dessen Pfad vor allem von einer ewigen Spirale des Selbsthasses und dem Streben nach wahrer Stärke geprägt zu sein schien. Weder Freund noch Familie vermochten ihn aus seinem selbst errichteten Turm der Einsamkeit in der Mitte des Reiches zu befreien, und so geschah es eines Tages, dass der König sein wahres Selbst in all seiner Hässlichkeit entblößte und sich verwandelte. Ihm wuchsen pulsierende Schwingen und er fiel über die unschuldigen Bewohner seiner Stadt her. Doch mit jedem, den er verzehrte, wurde er nicht nur größer und stärker, er vergaß auch jegliches Gefühl von Fülle und hörte einfach nicht mehr auf. Ob der König wohl zu solch Gräueltaten fähig gewesen wäre, hätte er in seinem Leben mehr Liebe erfahren? Je mehr du über diese Frage nachdenkst, desto tiefer saugen dich die Melodien des Sängers in ihren Bann, bis du dich schließlich erneut in jener Schlacht über den Wolken wiederfindest&nbsp;...",
+      "fr": "Les mélodies de la harpe du ménestrel errant évoquent en vous l'univers intérieur ravagé du prince déchu Zoraal Ja, “l'enfant prodige”, ayant abjuré l'amitié, la loyauté et l'amour dans le seul but de prouver aux yeux du monde qu'il était capable de surpasser son aurarque de père. Debout devant un trône vide au sommet d'une immense tour, il a exterminé son propre peuple et englouti une quantité d'âmes défiant la raison pour se transformer en monstre absolu. Serait-il mû par les derniers restes de fierté régalienne qui demeurent encore en lui&nbsp;? À vous de le découvrir en vous laissant porter par la voix enchanteresse de votre camarade poète..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112565.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 690,
+    "sync": 100,
+    "exp": 0,
+    "map": 929,
+    "contentText": [
+      40423,
+      40400
     ]
   },
   "25001": {
@@ -11228,7 +11978,7 @@
   },
   "30086": {
     "id": 30086,
-    "en": "The Epic of Alexander (Ultimate)",
+    "en": "the Epic of Alexander (Ultimate)",
     "ja": "絶アレキサンダー討滅戦",
     "de": "Alexander (fatal)",
     "fr": "L'Odyssée d'Alexander (fatal)",
@@ -11260,7 +12010,7 @@
   },
   "30087": {
     "id": 30087,
-    "en": "The Copied Factory",
+    "en": "the Copied Factory",
     "ja": "複製サレタ工場廃墟",
     "de": "Die kopierte Fabrik",
     "fr": "La réplique de l'usine désaffectée",
@@ -11836,7 +12586,7 @@
   },
   "30105": {
     "id": 30105,
-    "en": "The Tower at Paradigm's Breach",
+    "en": "the Tower at Paradigm's Breach",
     "ja": "希望ノ砲台：「塔」",
     "de": "Der Turm, Paradigmenbrecher",
     "fr": "La tour de la Contingence",
@@ -11923,7 +12673,7 @@
     "levelReq": 90,
     "ilvlReq": 565,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 731,
     "contentText": [
       32509,
@@ -11987,7 +12737,7 @@
     "levelReq": 90,
     "ilvlReq": 565,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 722,
     "contentText": [
       32201,
@@ -12051,7 +12801,7 @@
     "levelReq": 90,
     "ilvlReq": 565,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 709,
     "contentText": [
       32118,
@@ -12115,7 +12865,7 @@
     "levelReq": 90,
     "ilvlReq": 565,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 730,
     "contentText": [
       30904,
@@ -12179,7 +12929,7 @@
     "levelReq": 90,
     "ilvlReq": 565,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 755,
     "contentText": [
       33089,
@@ -12211,7 +12961,7 @@
     "levelReq": 90,
     "ilvlReq": 585,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 807,
     "contentText": [
       34900,
@@ -12275,7 +13025,7 @@
     "levelReq": 90,
     "ilvlReq": 585,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 792,
     "contentText": [
       34617,
@@ -12339,7 +13089,7 @@
     "levelReq": 90,
     "ilvlReq": 585,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 771,
     "contentText": [
       34709,
@@ -12403,7 +13153,7 @@
     "levelReq": 90,
     "ilvlReq": 585,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 808,
     "contentText": [
       35033,
@@ -12444,7 +13194,7 @@
   },
   "30124": {
     "id": 30124,
-    "en": "The Omega Protocol (Ultimate)",
+    "en": "the Omega Protocol (Ultimate)",
     "ja": "絶オメガ検証戦",
     "de": "Omega (fatal)",
     "fr": "le Protocole Oméga (fatal)",
@@ -12499,7 +13249,7 @@
     "levelReq": 90,
     "ilvlReq": 595,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 811,
     "contentText": [
       35173,
@@ -12531,7 +13281,7 @@
     "levelReq": 90,
     "ilvlReq": 615,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 837,
     "contentText": [
       36225,
@@ -12595,7 +13345,7 @@
     "levelReq": 90,
     "ilvlReq": 615,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 834,
     "contentText": [
       37119,
@@ -12659,7 +13409,7 @@
     "levelReq": 90,
     "ilvlReq": 615,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 839,
     "contentText": [
       37015,
@@ -12706,7 +13456,7 @@
     "fr": "Le Paradis du Pandæmonium - Apothéose",
     "description": {
       "en": "The chief keyward of Pandæmonium's appetite for godhood has been made only more keen by twelve millennia of slumber, and even her own flesh and blood are naught but tools with which to feed her hunger. No sacrifice too great, no price too high, Athena would see all life extinguished if it brought her even one ilm closer to her ultimate goal. Her wicked ambitions can be suffered no longer, so you must journey into Pandæmonium's heart and cut out their source.",
-      "ja": "パンデモニウムの長官アテナ。彼女は、人を超越した存在、すなわち「神」に至ろうと、監獄内の創造生物はおろか、自らの家族すらも利用して、醜悪な実験を繰り返していた。その執念は、1万2千年の時を超えて現代に復活してなお、消えるどころか燃え盛るばかり。<br>己の欲望を満たすため、周囲のすべてを犠牲にするような行いをこれ以上許してはおけない。星海に幻出せし大監獄の最奥にて、すべての元凶アテナを打倒せよ！",
+      "ja": "パンデモニウムの長官アテナ。彼女は、人を超越した存在、すなわち「神」に至ろうと、監獄内の創造生物はおろか、自らの家族すらも利用して、醜悪な実験を繰り返していた。その執念は、1万2000年の時を超えて現代に復活してなお、消えるどころか燃え盛るばかり。<br>己の欲望を満たすため、周囲のすべてを犠牲にするような行いをこれ以上許してはおけない。星海に幻出せし大監獄の最奥にて、すべての元凶アテナを打倒せよ！",
       "de": "Du stellst dich Athena, Leiterin des Pandæmoniums. In ihrem Streben, zu einem göttlichen Wesen zu werden, das jeden Bewohner des Planeten transzendiert, führte sie wieder und wieder grauenhafte Experimente durch&nbsp;- nicht nur an den eingekerkerten Schöpfungen, sondern auch an ihrer eigenen Familie. Selbst zwölftausend Jahre und eine Wiedergeburt reichten nicht, ihren wissenschaftlichen Wahnsinn zu brechen. Es ist Zeit, Athenas mörderischem Plan ein Ende zu bereiten!",
       "fr": "La vérité est là&nbsp;: Athéna, l'ancienne directrice du Pandæmonium, s'est servie non seulement des créatures dont elle avait la charge, mais aussi des membres de sa propre famille, pour mener de sombres expériences visant à faire d'elle un être transcendant l'espèce humaine&nbsp;; autrement dit, une déesse. Quelque douze mille années n'auront pas suffi à éteindre son ambition, bien au contraire&nbsp;: désormais ressuscitée, elle est plus que jamais prête à sacrifier tout ce qui l'entoure pour accomplir ses égoïstes desseins. Cette folie n'a que trop duré&nbsp;: pénétrez dans le tréfonds du Pandæmonium, et terrassez la maîtresse des lieux pour de bon&nbsp;!"
     },
@@ -12723,7 +13473,7 @@
     "levelReq": 90,
     "ilvlReq": 615,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 835,
     "contentText": [
       36911,
@@ -12787,7 +13537,7 @@
     "levelReq": 90,
     "ilvlReq": 625,
     "sync": 90,
-    "exp": 0,
+    "exp": 3300000,
     "map": 884,
     "contentText": [
       34423,
@@ -13540,7 +14290,7 @@
   },
   "36001": {
     "id": 36001,
-    "en": "The Sil'dihn Subterrane",
+    "en": "the Sil'dihn Subterrane",
     "ja": "ヴァリアントダンジョン シラディハ水道",
     "de": "Die Unterstadt von Sil'dih",
     "fr": "Les canalisations sildiennes - Donjon à embranchements",
@@ -13828,7 +14578,7 @@
   },
   "40027": {
     "id": 40027,
-    "en": "The Palaistra",
+    "en": "the Palaistra",
     "ja": "パライストラ",
     "de": "Die Palästra",
     "fr": "Le Palestre",
@@ -13856,7 +14606,7 @@
   },
   "40028": {
     "id": 40028,
-    "en": "The Volcanic Heart",
+    "en": "the Volcanic Heart",
     "ja": "ヴォルカニック・ハート",
     "de": "Das Herz des Vulkans",
     "fr": "Le Cœur volcanique",
@@ -14065,7 +14815,7 @@
   },
   "40036": {
     "id": 40036,
-    "en": "The Clockwork Castletown",
+    "en": "the Clockwork Castletown",
     "ja": "東方絡繰御殿",
     "de": "Die Mechanische Menagerie",
     "fr": "Le Traquenard oriental",
@@ -14097,7 +14847,7 @@
   },
   "40037": {
     "id": 40037,
-    "en": "The Clockwork Castletown",
+    "en": "the Clockwork Castletown",
     "ja": "東方絡繰御殿",
     "de": "Die Mechanische Menagerie",
     "fr": "Le Traquenard oriental",
@@ -14161,7 +14911,7 @@
   },
   "40039": {
     "id": 40039,
-    "en": "The Red Sands",
+    "en": "the Red Sands",
     "ja": "レッド・サンズ",
     "de": "Die Roten Sande",
     "fr": "Les Sables sanglants",
@@ -14189,7 +14939,7 @@
   },
   "40040": {
     "id": 40040,
-    "en": "The Red Sands",
+    "en": "the Red Sands",
     "ja": "レッド・サンズ",
     "de": "Die Roten Sande",
     "fr": "Les Sables sanglants",
@@ -14596,7 +15346,7 @@
   },
   "55009": {
     "id": 55009,
-    "en": "The Excitatron 6000",
+    "en": "the Excitatron 6000",
     "ja": "宝物庫 エキサイトロン",
     "de": "Euphoratron",
     "fr": "Le Ludodrome",
@@ -14623,7 +15373,7 @@
   },
   "55011": {
     "id": 55011,
-    "en": "The Shifting Gymnasion Agonon",
+    "en": "the Shifting Gymnasion Agonon",
     "ja": "宝物庫 エルピス・ギュムナシオン祭殿",
     "de": "Gymnasion Agonon",
     "fr": "Elpis Gymnasion",
@@ -16565,38 +17315,6 @@
     "contentText": [
       24948,
       24900
-    ]
-  },
-  "64008": {
-    "id": 64008,
-    "en": "The Singularity Reactor (Unreal)",
-    "ja": "幻ナイツ・オブ・ラウンド討滅戦",
-    "de": "Traumprüfung - Singularitäts-Reaktor",
-    "fr": "Le Réacteur de singularité (irréel)",
-    "description": {
-      "en": "The faux commander is in the mood for a classic tale featuring knights in shining armor, and naught could fit the bill better than your mortal struggle with King Thordan and his knights twelve. Letting your mind roam free in memory's cathedral, you face the self-proclaimed god-king once more in a battle to determine the fate of man and dragon both...",
-      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るはナイツ・オブ・ラウンドとの死闘。千年もの戦を終結に導くのは教皇トールダンと蒼天騎士たちか、あるいは冒険者か。いま魔大陸での決戦が語られる。",
-      "de": "Niemand weiß besser als du, dass es nur einer guten Tasse Tee bedarf, damit Sotan ins Reden kommt und eine Geschichte zum Besten gibt. Diesmal geht es um die Ritter der Tafelrunde und ihre Treue zu Thordan, die so unerschütterlich ist wie ihre Klingen scharf. Stelle dich abermals jener Schlacht, die den Ausgang eines tausend Jahre währenden Krieges entscheiden sollte&nbsp;...",
-      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Thordan et ses chevaliers de la Table ronde, qui mit fin à une guerre millénaire, vous revient en mémoire... Terrassez-les afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
-    },
-    "members": {
-      "HealersPerParty": 2,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 2,
-      "TanksPerParty": 2
-    },
-    "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112547.png",
-    "gamePatch": 88,
-    "contentType": 4,
-    "levelReq": 90,
-    "ilvlReq": 560,
-    "sync": 90,
-    "exp": 0,
-    "map": 236,
-    "contentText": [
-      8808,
-      8800
     ]
   }
 }

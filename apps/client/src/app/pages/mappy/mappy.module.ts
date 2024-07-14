@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MappyComponent } from './mappy/mappy.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MapModule } from '../../modules/map/map.module';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -22,22 +21,18 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard'
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   },
   {
     path: 'dashboard',
     component: MappyDashboardComponent,
     canLoad: [MappyGuard]
-  },
-  {
-    path: ':mapId',
-    component: MappyComponent,
-    canLoad: [MappyGuard]
   }
 ];
 
 @NgModule({
-    imports: [
+  imports: [
     CommonModule,
     MapModule,
     FlexLayoutModule,
@@ -53,8 +48,8 @@ const routes: Routes = [
     NzCardModule,
     NzEmptyModule,
     NzSwitchModule,
-    MappyComponent, MappyDashboardComponent
-]
+    MappyDashboardComponent
+  ]
 })
 export class MappyModule {
 }

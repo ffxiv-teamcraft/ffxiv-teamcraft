@@ -11,10 +11,12 @@ export const TRADE_SOURCES_PRIORITIES = {
   10311: 0, // Red gatherer
   17833: 0, // Yellow crafter
   17834: 0, // Yellow gatherer
-  25199: 30, // White crafter
-  25200: 30, // White gatherer
+  25199: 0, // White crafter
+  25200: 0, // White gatherer
   33913: 30, // Purple crafter
   33914: 30, // Purple gatherer
+  41784: 30, // Orange crafter
+  41785: 30, // Orange gatherer
   // Tomestones
   28: 28, // Poetics
   35: 0, // Creation (can't obtain them anymore)
@@ -25,9 +27,10 @@ export const TRADE_SOURCES_PRIORITIES = {
   40: 0, // Allegory
   41: 0, // Revelation
   42: 0, // Aphorism
-  43: 25, // Astronomy
-  44: 25, // Causality
-  45: 25, // Comedy
+  43: 0, // Astronomy
+  44: 0, // Causality
+  45: 0, // Comedy
+  46: 25, // Aesthetics
   7811: 28, // Rowena's Token (Soldiery)
   9383: 28, // Rowena's Token (Poetics)
   14298: 28, // Rowena's Token (Lore)

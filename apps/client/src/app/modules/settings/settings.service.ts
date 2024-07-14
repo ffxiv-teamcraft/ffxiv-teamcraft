@@ -379,6 +379,14 @@ export class SettingsService {
     this.setSetting('favoriteAetherytes', JSON.stringify(favoriteAetherytes));
   }
 
+  public get unlockedFATEAreas(): number[] {
+    return JSON.parse(this.getSetting('unlockedFATEAreas', '[]'));
+  }
+
+  public set unlockedFATEAreas(unlockedFATEAreas: number[]) {
+    this.setSetting('unlockedFATEAreas', JSON.stringify(unlockedFATEAreas));
+  }
+
   public get compactSidebar(): boolean {
     return IS_HEADLESS ? true : this.getBoolean('compact-sidebar', false);
   }
@@ -853,7 +861,7 @@ export class SettingsService {
   }
 
   public get autoUpdateStats(): boolean {
-    return this.getBoolean('autoUpdateStats', false);
+    return this.getBoolean('autoUpdateStats', true);
   }
 
   public set autoUpdateStats(update: boolean) {

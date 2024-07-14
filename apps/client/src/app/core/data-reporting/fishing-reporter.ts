@@ -1,12 +1,12 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import { Hookset, Tug } from '@ffxiv-teamcraft/types';
+import { Hookset, Region, Tug } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import type { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv/models';
@@ -120,8 +120,11 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    const throw$ = eventPlay$.pipe(
-      filter(packet => packet.scene === 1),
+    const throw$ = packets$.pipe(
+      // TODO DT flag for KR/CN
+      ofMessageType(this.settings.region === Region.Global ? 'eventPlay4' : 'eventPlay'),
+      toIpcData(),
+      filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
       delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
@@ -139,12 +142,15 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+
     const bite$ = eventPlay$.pipe(
       filter(packet => packet.scene === 5),
-      map(packet => {
+      withLatestFrom(this.eorzea.statuses$),
+      map(([packet, statuses]) => {
         return {
           timestamp: Date.now(),
-          tug: this.getTug(packet.param5)
+          tug: this.getTug(packet.param5),
+          statuses
         };
       })
     );
@@ -162,12 +168,15 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const mooch$ = packets$.pipe(
+    const moochSelection$ = packets$.pipe(
       ofMessageType('systemLogMessage'),
       toIpcData(),
-      filter(packet => packet.param1 === 1121 || packet.param1 === 1110),
+      // 1121: Cast with hooked fish
+      // 3522: You apply <bait> to your line
+      // 1129: Nothing bites
+      filter(packet => [1121, 3522, 1129].includes(packet.param1)),
       map(packet => {
-        if (packet.param1 === 1121) {
+        if (packet.param1 === 1121 || packet.param1 === 3522) {
           return packet.param3;
         }
         return null;
@@ -205,6 +214,17 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    const resetMooch$ = merge(packets$.pipe(
+        ofMessageType('actorControlSelf', 'fishingBaitMsg')
+      ),
+      misses$,
+      fishCaught$.pipe(debounceTime(750))
+    ).pipe(
+      map(() => null)
+    );
+
+    const mooch$ = merge(moochSelection$, resetMooch$);
+
     const hookset$ = actionTimeline$.pipe(
       map(key => {
         if (key.indexOf('strong') > -1) {
@@ -220,7 +240,7 @@ export class FishingReporter implements DataReporter {
 
     const playerStats$ = merge(
       packets$.pipe(ofMessageType('playerStats'), toIpcData()),
-      packets$.pipe(ofMessageType('logout'), mapTo(null))
+      packets$.pipe(ofMessageType('logout'), map(() => null))
     );
 
     const fisherStats$ = combineLatest([
@@ -322,11 +342,13 @@ export class FishingReporter implements DataReporter {
           previousWeatherId: throwData.previousWeatherId,
           baitId,
           biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
-          fishEyes: throwData.statuses.includes(762),
-          snagging: throwData.statuses.includes(761),
-          chum: throwData.statuses.includes(763),
-          patience: throwData.statuses.includes(850),
-          intuition: throwData.statuses.includes(568),
+          fishEyes: throwData.statuses.some(({ id }) => id === 762),
+          snagging: throwData.statuses.some(({ id }) => id === 761),
+          chum: throwData.statuses.some(({ id }) => id === 763),
+          patience: throwData.statuses.some(({ id }) => id === 850),
+          intuition: throwData.statuses.some(({ id }) => id === 568),
+          aLure: biteData.statuses.find(({ id }) => id === 3972)?.stacks || 0,
+          mLure: biteData.statuses.find(({ id }) => id === 3973)?.stacks || 0,
           mooch: mooch !== null,
           tug: biteData.tug,
           hookset,

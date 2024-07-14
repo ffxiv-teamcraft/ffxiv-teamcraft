@@ -65,7 +65,7 @@ export class RecipeChoicePopupComponent extends DialogComponent {
         return this.dataService.searchItem(query, [], true, [null, 'desc'], true);
       }),
       map(results => {
-        return results.map(res => res.recipe).filter(recipe => recipe !== undefined);
+        return results.map(res => res.recipe).filter(recipe => recipe !== undefined).slice(0, 50);
       }),
       tap(() => this.loading = false),
       startWith([])

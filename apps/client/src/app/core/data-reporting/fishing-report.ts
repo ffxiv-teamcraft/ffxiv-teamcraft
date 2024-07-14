@@ -18,6 +18,8 @@ export interface FishingReport {
   hookset: Hookset;
   spot: number;
   size: number;
+  aLure: number;
+  mLure: number;
 
   userId?: string;
   date?: number;

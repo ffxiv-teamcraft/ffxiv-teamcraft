@@ -117,10 +117,15 @@
           <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
           @if (state.statuses) {
             <div fxLayout="row" fxLayoutGap="5px">
-              @for (status of state.statuses; track trackByValue($index, status)) {
-                <img src="{{status | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip
-                  [nzTooltipTitle]="status | i18nRow:'statuses' | async | i18n"
+              @for (status of state.statuses; track status.id) {
+                <div class="buff-container">
+                <img src="{{status.id | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip
+                  [nzTooltipTitle]="status.id | i18nRow:'statuses' | async | i18n"
                   alt="{{status}}">
+                  @if (status.stacks > 0) {
+                    <span class="stacks">{{ status.stacks }}</span>
+                  }
+                </div>
               }
               @if (state.statuses.length === 0) {
                 <span>
@@ -197,6 +202,14 @@
               <div fxLayout="row" fxLayoutAlign="space-between center">
                 <div>{{763 | i18nRow:'statuses' | async | i18n}}</div>
                 <div>{{(report.chum ? 'Yes' : 'No') | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{3973 | i18nRow:'statuses' | async | i18n}}</div>
+                <div>{{report.mLure}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{3974 | i18nRow:'statuses' | async | i18n}}</div>
+                <div>{{report.aLure}}</div>
               </div>
               <div fxLayout="row" fxLayoutAlign="space-between center">
                 <div>{{'DB.FISH.OVERLAY.Mooch_report' | translate}}</div>

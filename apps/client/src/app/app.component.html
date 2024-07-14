@@ -291,7 +291,7 @@
                             {{'CUSTOM_LINKS.Title' | translate}}
                           </a>
                         }
-                        @if (user.sekrit) {
+                        @if (mappy.running) {
                           <a nz-menu-item routerLink="/mappy">
                             <i nz-icon nzType="scan"></i>
                             Mappy
@@ -344,7 +344,7 @@
                     <app-navigation-sidebar
                       [desktop]="platformService.isDesktop()"
                       [collapsed]="settings.compactSidebar"
-                      [mappyEnabled]="mappy.available"
+                      [mappyEnabled]="mappy.running"
                       [version]="version"
                       (showPatchNotes)="showPatchNotes()">
                     </app-navigation-sidebar>
@@ -368,7 +368,7 @@
                             <img src="./assets/icons/classjob/fisher.png" alt="">
                           </button>
                         }
-                        @if (ipc.pcapToggle && mappy.available) {
+                        @if (ipc.pcapToggle && mappy.running) {
                           <button nz-button nzShape="circle"
                             nz-tooltip nzTooltipTitle="Open mappy overlay"
                             (click)="openOverlay('/mappy-overlay')">

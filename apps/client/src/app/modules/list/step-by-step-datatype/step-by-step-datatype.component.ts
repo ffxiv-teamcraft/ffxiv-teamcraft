@@ -31,6 +31,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, LowerCasePipe } from '@angular/common';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
     selector: 'app-step-by-step-datatype',
@@ -70,7 +71,7 @@ export class StepByStepDatatypeComponent {
           ...step.row,
           sources: step.sources
         };
-      }), this.lazyData, true);
+      }), this.lazyData, true, this.settings);
     }),
     switchMap(breakdown => {
       return breakdown.rows$.pipe(
@@ -89,7 +90,7 @@ export class StepByStepDatatypeComponent {
   );
 
   constructor(private listsFacade: ListsFacade, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService) {
+              private i18n: I18nToolsService, private settings: SettingsService) {
   }
 
   public getNpcName(id: number): Observable<string> {

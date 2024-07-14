@@ -19,13 +19,14 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 import { groupBy } from 'lodash';
+import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
 
 @Component({
   selector: 'app-fishing-misses-popup',
   templateUrl: './fishing-misses-popup.component.html',
   styleUrls: ['./fishing-misses-popup.component.less'],
   standalone: true,
-  imports: [NzTableModule, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe]
+  imports: [NzTableModule, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe, HourDisplayPipe]
 })
 export class FishingMissesPopupComponent extends DialogComponent implements OnInit {
 

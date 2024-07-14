@@ -53,10 +53,10 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [560, [Validators.min(1), Validators.required]],
+      rlvl: [690, [Validators.min(1), Validators.required]],
       level: [this.curMaxLevel, [Validators.min(1), Validators.max(this.curMaxLevel), Validators.required]],
-      progress: [3500, [Validators.min(1), Validators.required]],
-      quality: [7200, [Validators.min(1), Validators.required]],
+      progress: [6600, [Validators.min(1), Validators.required]],
+      quality: [12000, [Validators.min(1), Validators.required]],
       durability: [80, [Validators.min(1), Validators.required]],
       expert: [false]
     });
@@ -71,10 +71,10 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
     const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 560,
+        rlvl: 690,
         level: this.env.maxLevel,
-        progress: 3500,
-        quality: 7200,
+        progress: 6600,
+        quality: 12000,
         durability: 80,
         expert: false
       }),

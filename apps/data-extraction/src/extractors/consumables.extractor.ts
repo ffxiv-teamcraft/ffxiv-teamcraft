@@ -18,7 +18,8 @@ export class ConsumablesExtractor extends AbstractExtractor {
               ID: item.index,
               LevelEquip: item.LevelEquip,
               LevelItem: item.LevelItem,
-              Bonuses: bonus
+              Bonuses: bonus,
+              itemFood: item.ItemAction.Data[1]
             };
             if (item.ItemSearchCategory === 45) {
               // It's a food

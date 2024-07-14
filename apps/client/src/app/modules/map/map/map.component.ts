@@ -15,16 +15,17 @@ import { RouterLink } from '@angular/router';
 import { ExtendedModule } from '@angular/flex-layout/extended';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
-import { NgStyle, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgStyle } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
+import { uniqBy } from 'lodash';
 
 @Component({
-    selector: 'app-map',
-    templateUrl: './map.component.html',
-    styleUrls: ['./map.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [DbButtonComponent, NzToolTipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [DbButtonComponent, NzToolTipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapComponent extends DialogComponent implements OnInit {
 
@@ -38,6 +39,9 @@ export class MapComponent extends DialogComponent implements OnInit {
 
   @Input()
   aetheryteZIndex = 5;
+
+  @Input()
+  emptyMessage = 'No_known_coordinates';
 
   mapData$: Observable<MapData>;
 
@@ -67,7 +71,7 @@ export class MapComponent extends DialogComponent implements OnInit {
   _markers: MapMarker[] = [];
 
   get markers(): MapMarker[] {
-    return this._markers;
+    return uniqBy(this._markers, marker => this.trackByMarker(0, marker)).filter(Boolean);
   }
 
   @Input()

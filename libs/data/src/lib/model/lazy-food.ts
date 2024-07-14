@@ -3,6 +3,7 @@ export interface LazyFood {
   ID:         number;
   LevelEquip: number;
   LevelItem:  number;
+  itemFood:   number;
 }
 
 export interface Bonuses {

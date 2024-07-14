@@ -6833,67 +6833,67 @@
   },
   {
     "id": 855,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4504,
+    "name": "Tuliyollal",
+    "territory": 1185,
+    "scale": 180,
+    "weatherRate": 159
   },
   {
     "id": 856,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4503,
+    "name": "Solution Nine",
+    "territory": 1186,
+    "scale": 180,
+    "weatherRate": 163
   },
   {
     "id": 857,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4505,
+    "name": "Urqopacha",
+    "territory": 1187,
+    "scale": 100,
+    "weatherRate": 160
   },
   {
     "id": 858,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4506,
+    "name": "Kozama'uka",
+    "territory": 1188,
+    "scale": 100,
+    "weatherRate": 161
   },
   {
     "id": 859,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4507,
+    "name": "Yak T'el",
+    "territory": 1189,
+    "scale": 100,
+    "weatherRate": 162
   },
   {
     "id": 860,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4508,
+    "name": "Shaaloani",
+    "territory": 1190,
+    "scale": 100,
+    "weatherRate": 164
   },
   {
     "id": 861,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4509,
+    "name": "Heritage Found",
+    "territory": 1191,
+    "scale": 100,
+    "weatherRate": 165
   },
   {
     "id": 862,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4510,
+    "name": "Living Memory",
+    "territory": 1192,
+    "scale": 100,
+    "weatherRate": 166
   },
   {
     "id": 863,
@@ -7169,22 +7169,214 @@
   },
   {
     "id": 897,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4602,
+    "name": "Ihuykatumu",
+    "territory": 1167,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 898,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4602,
+    "name": "Ihuykatumu",
+    "territory": 1167,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 899,
+    "zone": 4909,
+    "name": "Vanguard",
+    "territory": 1198,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 900,
+    "zone": 4926,
+    "name": "Tender Valley",
+    "territory": 1203,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 901,
+    "zone": 4926,
+    "name": "Tender Valley",
+    "territory": 1203,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 902,
+    "zone": 4480,
+    "name": "Worqor Zormor",
+    "territory": 1193,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 903,
+    "zone": 4480,
+    "name": "Worqor Zormor",
+    "territory": 1193,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 904,
+    "zone": 4480,
+    "name": "Worqor Zormor",
+    "territory": 1193,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 905,
+    "zone": 5007,
+    "name": "Origenics",
+    "territory": 1208,
+    "scale": 200,
+    "weatherRate": 156
+  },
+  {
+    "id": 906,
+    "zone": 5007,
+    "name": "Origenics",
+    "territory": 1208,
+    "scale": 200,
+    "weatherRate": 156
+  },
+  {
+    "id": 907,
+    "zone": 5007,
+    "name": "Origenics",
+    "territory": 1208,
+    "scale": 200,
+    "weatherRate": 156
+  },
+  {
+    "id": 908,
+    "zone": 5007,
+    "name": "Origenics",
+    "territory": 1208,
+    "scale": 200,
+    "weatherRate": 156
+  },
+  {
+    "id": 909,
+    "zone": 5007,
+    "name": "Origenics",
+    "territory": 1208,
+    "scale": 200,
+    "weatherRate": 156
+  },
+  {
+    "id": 910,
+    "zone": 3799,
+    "name": "Alexandria",
+    "territory": 1199,
+    "scale": 200,
+    "weatherRate": 157
+  },
+  {
+    "id": 911,
+    "zone": 3799,
+    "name": "Alexandria",
+    "territory": 1199,
+    "scale": 200,
+    "weatherRate": 157
+  },
+  {
+    "id": 912,
+    "zone": 3799,
+    "name": "Alexandria",
+    "territory": 1199,
+    "scale": 200,
+    "weatherRate": 157
+  },
+  {
+    "id": 913,
+    "zone": 3799,
+    "name": "Alexandria",
+    "territory": 1199,
+    "scale": 200,
+    "weatherRate": 157
+  },
+  {
+    "id": 914,
+    "zone": 3799,
+    "name": "Alexandria",
+    "territory": 1199,
+    "scale": 200,
+    "weatherRate": 157
+  },
+  {
+    "id": 915,
+    "zone": 5027,
+    "name": "The Skydeep Cenote",
+    "territory": 1194,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 916,
+    "zone": 5027,
+    "name": "The Skydeep Cenote",
+    "territory": 1194,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 917,
+    "zone": 5105,
+    "name": "Strayborough",
+    "territory": 1204,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 918,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": null,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 919,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": null,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 920,
+    "zone": 4500,
+    "name": "Yok Tural",
+    "territory": null,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 921,
+    "zone": 4501,
+    "name": "Xak Tural",
+    "territory": null,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 922,
+    "zone": 4502,
+    "name": "Unlost World",
+    "territory": null,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 923,
     "zone": 0,
     "name": "",
     "territory": null,
@@ -7192,11 +7384,147 @@
     "weatherRate": null
   },
   {
-    "id": 900,
+    "id": 924,
     "zone": 0,
     "name": "",
     "territory": null,
     "scale": 0,
     "weatherRate": null
+  },
+  {
+    "id": 925,
+    "zone": 5115,
+    "name": "Worqor Lar Dor",
+    "territory": 1195,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 926,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 927,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 928,
+    "zone": 5116,
+    "name": "Interphos",
+    "territory": 1202,
+    "scale": 400,
+    "weatherRate": 157
+  },
+  {
+    "id": 929,
+    "zone": 5117,
+    "name": "Summit of Everkeep",
+    "territory": 1200,
+    "scale": 400,
+    "weatherRate": 158
+  },
+  {
+    "id": 930,
+    "zone": 5105,
+    "name": "Strayborough",
+    "territory": 1204,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 931,
+    "zone": 4523,
+    "name": "Sunperch",
+    "territory": 1170,
+    "scale": 400,
+    "weatherRate": 159
+  },
+  {
+    "id": 932,
+    "zone": 4748,
+    "name": "Earthen Sky Hideout",
+    "territory": 1171,
+    "scale": 400,
+    "weatherRate": 165
+  },
+  {
+    "id": 933,
+    "zone": 4750,
+    "name": "Main Deck",
+    "territory": 1206,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 934,
+    "zone": 4654,
+    "name": "The Backroom",
+    "territory": 1207,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 935,
+    "zone": 4909,
+    "name": "Vanguard",
+    "territory": 1219,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 936,
+    "zone": 4751,
+    "name": "Skydeep Cenote Inner Chamber",
+    "territory": 1222,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 937,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 938,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 939,
+    "zone": 4540,
+    "name": "The For'ard Cabins",
+    "territory": 1205,
+    "scale": 800,
+    "weatherRate": 159
+  },
+  {
+    "id": 940,
+    "zone": 5120,
+    "name": "Manor Basement",
+    "territory": 1233,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 941,
+    "zone": 5121,
+    "name": "Dreamlike Palace",
+    "territory": 1234,
+    "scale": 200,
+    "weatherRate": 0
   }
 ]

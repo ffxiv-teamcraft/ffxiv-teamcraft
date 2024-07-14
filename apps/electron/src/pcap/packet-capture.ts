@@ -17,6 +17,7 @@ export class PacketCapture {
     'airshipTimers',
     'currencyCrystalInfo',
     'clientTrigger',
+    'craftingLog',
     'desynthResult',
     'effectResult',
     'eventFinish',
@@ -28,6 +29,7 @@ export class PacketCapture {
     'eventStart',
     'freeCompanyInfo',
     'freeCompanyDialog',
+    'gatheringLog',
     'initZone',
     'inventoryModifyHandler',
     'inventoryTransaction',
@@ -190,7 +192,8 @@ export class PacketCapture {
         log.info('[pcap] Using localOpcodes:', localDataPath);
       }
     } else {
-      options.deucalionDllPath = join(app.getAppPath(), '../../deucalion/deucalion.dll');
+      // TODO DT flag for KR/CN
+      options.deucalionDllPath = region === 'Global' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion_6.dll');
     }
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);

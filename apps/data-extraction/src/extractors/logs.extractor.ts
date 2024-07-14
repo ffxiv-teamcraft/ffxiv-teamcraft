@@ -82,6 +82,19 @@ export class LogsExtractor extends AbstractExtractor {
                   [2028, 2029, -1, 2031], // Sea of Stars
                   [2033, 2032, 2034, -1]  // World Sundered
                 ][row.index - 2010][index] || -1;
+              } else if (row.index >= 2015 && row.index <= 2017) {
+                // DT folklores
+                /**
+                 * 2015: Yok Tural
+                 * 2016: Xak Tural
+                 * 2017: Alexandria
+                 */
+                // Quarrying, Mining, Logging, Harvesting
+                return {
+                  2015: [2037, 2038, -1, -1],
+                  2016: [2040, -1, 2042, -1],
+                  2017: [2044, -1, -1, 2047],
+                }[row.index][index] || -1;
               } else if ([2006, 2007, 2008, 2009].includes(row.index)) {
                 return -1;
               } else {
@@ -107,7 +120,7 @@ export class LogsExtractor extends AbstractExtractor {
     this.getSheet<any>(this.xiv, 'RecipeNotebookList', ['Recipe.CraftType', 'Recipe.SecretRecipeBook', 'Recipe.RecipeLevelTable', 'Recipe.ItemResult'], true, 1).subscribe((completeFetch) => {
       completeFetch.forEach(page => {
         // If it's an empty page or a collectable one, don't go further
-        if (!page.Recipe[0] || page.Recipe[0]?.index <= 0 || (page.index >= 1256 && page.index < 1280)) {
+        if (!page.Recipe[0] || page.Recipe[0]?.index <= 0 || (page.index >= 1256 && page.index < 1280) || (page.index >= 1456 && page.index <= 1463)) {
           return;
         }
         page.Recipe.forEach((recipe) => {
@@ -277,7 +290,7 @@ export class LogsExtractor extends AbstractExtractor {
     ).subscribe((completeFetch) => {
       const spots = [];
       completeFetch
-        .filter(spot => spot.Item[0] && spot.PlaceName && (spot.TerritoryType || spot.index >= 10000))
+        .filter(spot => spot.Item[0] && spot.PlaceName && ((spot.TerritoryType && spot.TerritoryType.Map) || spot.index >= 10000))
         .forEach(spot => {
           // Let's check if this is diadem
           if (!spot.TerritoryType && spot.index >= 10000) {

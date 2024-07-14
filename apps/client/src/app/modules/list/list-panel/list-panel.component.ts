@@ -135,7 +135,7 @@ export class ListPanelComponent extends TeamcraftComponent {
             return [Math.max(
               PermissionsController.getPermissionLevel(list, userId),
               PermissionsController.getPermissionLevel(list, user.currentFcId),
-              isTeamList ? PermissionLevel.PARTICIPATE : PermissionLevel.NONE,
+              isTeamList ? PermissionsController.getPermissionLevel(list, `team:${list.teamId}`) : PermissionLevel.NONE,
               teamLeader ? PermissionLevel.WRITE : PermissionLevel.NONE
             ), isFavorite.value];
           } else {

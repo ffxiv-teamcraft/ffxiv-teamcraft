@@ -141,6 +141,8 @@
     "Pause": "Pause",
     "Speed": "Speed",
     "Done": "Done",
+    "Ready": "Ready",
+    "Loading": "Loading",
     "Length": "Length",
     "Save": "Save",
     "Reset": "Reset",
@@ -209,6 +211,7 @@
     "Private": "Private",
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "And_X_more": "and {{amount}} more...",
+    "items": "items",
     "DAYS": {
       "Monday": "Monday",
       "Tuesday": "Tuesday",
@@ -549,6 +552,8 @@
     "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
     "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
     "Lists_offline_by_default": "Make lists offline by default",
+    "Unlocked_FATE_areas": "Unlocked FATE shops",
+    "Unlocked_FATE_areas_explain": "Cities in which you have unlocked FATE shop after completing all Shared FATEs for that expansion.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -673,6 +678,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "Archive",
     "Unarchive": "Unarchive",
     "Regenerate": "Update list to latest Teamcraft version",
@@ -897,6 +903,7 @@
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
     "ENDWALKER": "Endwalker",
+    "DAWNTRAIL": "Dawntrail",
     "OUTDATED": "Outdated",
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
@@ -936,6 +943,8 @@
     "SMN": "SMN",
     "RDM": "RDM",
     "BLU": "BLU",
+    "PCT": "PCT",
+    "VPR": "VPR",
     "CRP": "CRP",
     "BSM": "BSM",
     "ARM": "ARM",
@@ -1453,6 +1462,22 @@
     "Export_FSH_completion": "Export completion as JSON",
     "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
     "Log_in_to_track": "Log in to be able to track your Log Tracker completion",
+    "Logs_import_done": "Your logs have been imported successfully",
+    "Crafting_log": "Crafting log",
+    "Gathering_log": "Gathering log (including fishing)",
+    "Import_using_pcap": "Import using packet capture",
+    "IMPORT": {
+      "Data_loading": "Data preloading",
+      "Packet_capture": "Packet capture",
+      "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
+      "Ready": "Ready to import your logs !",
+      "Log_in_explain": "Go to character selection (System - Log Out) and log in using the character you want to import the logs of. Do NOT close the game",
+      "Details": "Important details",
+      "Details_explain": "Log import will reset your spearfishing log (support will be added in a future update) and will remove any recipe/item that's not tracked for ingame achievements.",
+      "Additions": "Additions",
+      "Deletions": "Deletions",
+      "Save": "Apply these changes"
+    },
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
@@ -1959,6 +1984,7 @@
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "Sort by: ",
     "Sort_asc": "Ascending",
     "Sort_desc": "Descending",

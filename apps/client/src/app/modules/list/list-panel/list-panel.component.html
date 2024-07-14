@@ -263,7 +263,7 @@
                       <li nz-submenu>
                         <span title>{{'TEAMS.Assign_list' | translate}}</span>
                         <ul>
-                          @for (team of teams; track team) {
+                          @for (team of teams; track team.$key) {
                             <li (click)="assignTeam(_list, team)" nz-menu-item>{{team.name}}</li>
                           }
                         </ul>

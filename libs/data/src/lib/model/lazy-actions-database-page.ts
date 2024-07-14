@@ -44,7 +44,6 @@ export interface ProcStatus {
 }
 
 export interface Target {
-  dead:    boolean;
   hostile: boolean;
   party:   boolean;
   self:    boolean;
@@ -58,6 +57,6 @@ export interface Trait {
   icon:        string;
   id:          number;
   ja:          string;
-  ko:          string;
-  zh:          string;
+  ko?:         string;
+  zh?:         string;
 }

@@ -1,0 +1,112 @@
+<div class="flex-column gap-20">
+  <div nz-row>
+    <div nz-col [nzSpan]="12" class="status">
+      <div class="status-title">
+        {{ 'LOG_TRACKER.IMPORT.Data_loading' | translate }}
+      </div>
+      <div class="status-value">
+        @if (baseData$ | async) {
+          <span nz-icon nzType="check" nzTheme="outline"></span> {{ 'COMMON.Ready' | translate }}
+        } @else {
+          <nz-spin/> {{ 'COMMON.Loading' | translate }}
+        }
+      </div>
+    </div>
+    <div nz-col [nzSpan]="12" class="status">
+      <div class="status-title">
+        {{ 'LOG_TRACKER.IMPORT.Packet_capture' | translate }}
+      </div>
+      <div class="status-value">
+        @if (pcapReady$ | async) {
+          <span nz-icon nzType="check" nzTheme="outline"></span> {{ 'COMMON.Ready' | translate }}
+        } @else {
+          <span class="error">
+          <span nz-icon nzType="close" nzTheme="outline"></span> {{ 'COMMON.Error' | translate }}
+            <i>{{ 'LOG_TRACKER.IMPORT.Packet_capture_error' | translate }}</i>
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+  @if (readyToImport$ | async) {
+    <nz-alert nzType="warning" nzShowIcon
+              [nzMessage]="'LOG_TRACKER.IMPORT.Details' | translate"
+              [nzDescription]="'LOG_TRACKER.IMPORT.Details_explain' | translate">
+    </nz-alert>
+    @if (logs$ | async; as logs) {
+      @if (diff$ | async; as diff) {
+        <ng-template #addedTitleRef>
+          <span class="added-title">
+            <span nz-icon nzType="plus" nzTheme="outline"></span>
+            {{ 'LOG_TRACKER.IMPORT.Additions' | translate }}
+          </span>
+        </ng-template>
+        <ng-template #deletedTitleRef>
+          <span class="deleted-title">
+            <span nz-icon nzType="minus" nzTheme="outline"></span>
+            {{ 'LOG_TRACKER.IMPORT.Deletions' | translate }}
+          </span>
+        </ng-template>
+        <ng-template #craftingLogRef>
+          <span class="added-title">
+          <span class="companion-svg" [innerHtml]="8 | jobUnicode"></span>
+            {{ 'LOG_TRACKER.Crafting_log' | translate }}
+          </span>
+        </ng-template>
+
+        <ng-template #gatheringItemsListing let-items>
+          <app-lazy-scroll [data]="items" [rowTemplate]="itemRowTpl">
+            <ng-template #itemRowTpl let-itemId>
+              <div class="flex-row gap-5 align-center">
+                <app-item-icon [width]="24" [itemId]="itemId"></app-item-icon>
+                <app-i18n-name content="items" [id]="itemId"></app-i18n-name>
+              </div>
+
+            </ng-template>
+          </app-lazy-scroll>
+        </ng-template>
+
+        <ng-template #craftingItemsListing let-rows>
+          <app-lazy-scroll [data]="rows" [rowTemplate]="itemRowTpl" [trackBy]="trackByRecipe">
+            <ng-template #itemRowTpl let-recipe>
+              <div class="flex-row gap-5 align-center">
+                <app-item-icon [width]="24" [itemId]="recipe.result"></app-item-icon>
+                <span class="companion-svg" [innerHtml]="recipe.job | jobUnicode"></span>&nbsp;<app-i18n-name content="items"
+                                                                                                              [id]="recipe.result"></app-i18n-name>
+              </div>
+            </ng-template>
+          </app-lazy-scroll>
+        </ng-template>
+
+        <nz-divider [nzText]="craftingLogRef"></nz-divider>
+        <nz-card [nzTitle]="addedTitleRef" nzExtra="{{diff.additions.crafting.length}} {{'COMMON.items' | translate}}">
+          <ng-container *ngTemplateOutlet="craftingItemsListing;context:{$implicit: diff.additions.crafting}"></ng-container>
+        </nz-card>
+        <nz-card [nzTitle]="deletedTitleRef" nzExtra="{{diff.deletions.crafting.length}} {{'COMMON.items' | translate}}">
+          <ng-container *ngTemplateOutlet="craftingItemsListing;context:{$implicit: diff.deletions.crafting}"></ng-container>
+        </nz-card>
+
+        <ng-template #gatheringLogRef>
+          <img alt="Gathering" class="job-icon" src="./assets/icons/BTN.png">
+          {{ 'LOG_TRACKER.Gathering_log' | translate }}
+        </ng-template>
+        <nz-divider [nzText]="gatheringLogRef"></nz-divider>
+        <nz-card [nzTitle]="addedTitleRef" nzExtra="{{diff.additions.gathering.length}} {{'COMMON.items' | translate}}">
+          <ng-container *ngTemplateOutlet="gatheringItemsListing;context:{$implicit: diff.additions.gathering}"></ng-container>
+        </nz-card>
+        <nz-card [nzTitle]="deletedTitleRef" nzExtra="{{diff.deletions.gathering.length}} {{'COMMON.items' | translate}}">
+          <ng-container *ngTemplateOutlet="gatheringItemsListing;context:{$implicit: diff.deletions.gathering}"></ng-container>
+        </nz-card>
+
+        <button nz-button nzBlock nzType="primary" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="saveLogs(logs)">{{ 'LOG_TRACKER.IMPORT.Save' | translate }}
+        </button>
+      }
+    } @else {
+      <nz-alert nzType="info" nzShowIcon
+                [nzMessage]="'LOG_TRACKER.IMPORT.Ready' | translate"
+                [nzDescription]="'LOG_TRACKER.IMPORT.Log_in_explain' | translate">
+      </nz-alert>
+    }
+  }
+</div>

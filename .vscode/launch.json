@@ -18,9 +18,10 @@
         "/./~/*": "${webRoot}/node_modules/*"
       }
     },
-
-    //// Heavily based off https://github.com/abartho/electron-typescript-vscode
     {
+      // A configuration based on the time-of-writing's CONTRIBUTING.md
+      // NOTE: Some changes that are picked up by --watch flag can be reflected
+      // in the electron app simply by refreshing the app (CTRL-R)
       "name": "Electron: Main",
       "type": "node",
       "request": "launch",
@@ -50,6 +51,7 @@
   ],
   "compounds": [ // Launch multiple configurations concurrently
     {
+      // Heavily based off https://github.com/abartho/electron-typescript-vscode
       "name": "Electron: All",
       "configurations": [
         "Electron: Main",

@@ -2,17 +2,18 @@ import { ZoneBreakdownRow } from './zone-breakdown-row';
 import { ListRow } from '../../modules/list/model/list-row';
 import { tpWindowEntries } from '../../core/data/sources/tp-window-entries';
 import { LayoutRowFilter } from '../../core/layout/layout-row-filter';
-import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType, getItemSource, Vector2 } from '@ffxiv-teamcraft/types';
 import { Drop } from '../../modules/list/model/drop';
 import { PersistedAlarm } from '../../core/alarms/persisted-alarm';
 import { Vendor } from '../../modules/list/model/vendor';
 import { TradeSource } from '../../modules/list/model/trade-source';
-import { Vector2 } from '@ffxiv-teamcraft/types';
 import { mapIds } from '../../core/data/sources/map-ids';
+import { StaticData } from '../../lazy-data/static-data';
+import { SettingsService } from '../../modules/settings/settings.service';
 
 export class ZoneBreakdown {
 
-  constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false, private finalItems = false) {
+  constructor(rows: ListRow[], private settings: SettingsService, filterChain?: string, hideZoneDuplicates = false, private finalItems = false) {
     rows.forEach(row => {
       if (getItemSource(row, DataType.GATHERED_BY, true).nodes !== undefined && getItemSource(row, DataType.GATHERED_BY, true).nodes.length !== 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
@@ -20,7 +21,7 @@ export class ZoneBreakdown {
           const coords = { x: node.x || 0, y: node.y || 0 };
           // In the case of fishing, we have to get the zone name differently, as the spot has zoneid for its own place name, not the map's name
           if (node.type === 4) {
-            this.addToBreakdown(mapIds.find(m => m.id === node.map)?.zone, node.map, row, hideZoneDuplicates, coords);
+            this.addToBreakdown(mapIds.find(m => m.id === node.map)?.zone, node.map, row, hideZoneDuplicates, coords, [DataType.GATHERED_BY]);
           } else {
             this.addToBreakdown(node.zoneId, node.map, {
               ...row, sources: row.sources.map(source => {
@@ -33,7 +34,7 @@ export class ZoneBreakdown {
                 }
                 return source;
               })
-            }, hideZoneDuplicates, coords);
+            }, hideZoneDuplicates, coords, [DataType.GATHERED_BY]);
           }
         });
       } else if (getItemSource(row, DataType.TRADE_SOURCES).length > 0
@@ -47,25 +48,25 @@ export class ZoneBreakdown {
             ];
           }, []);
         allNpcs.forEach(npc => {
-          this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates, npc.coords);
+          this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates, npc.coords, [DataType.TRADE_SOURCES]);
         });
         if (allNpcs.length === 0) {
-          this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null);
+          this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null, [DataType.TRADE_SOURCES]);
         }
       } else if (getItemSource<Drop[]>(row, DataType.DROPS).filter(drop => drop.zoneid > 0).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
         getItemSource(row, DataType.DROPS).forEach(drop => {
-          this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates, drop.position);
+          this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates, drop.position, [DataType.DROPS]);
         });
       } else if (getItemSource(row, DataType.ALARMS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
         getItemSource<PersistedAlarm[]>(row, DataType.ALARMS).forEach(alarm => {
-          this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates, alarm.coords);
+          this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates, alarm.coords, [DataType.ALARMS]);
         });
       } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
         getItemSource<Vendor[]>(row, DataType.VENDORS).forEach(vendor => {
-          this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates, vendor.coords);
+          this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates, vendor.coords, [DataType.VENDORS]);
         });
       } else {
-        this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null);
+        this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null, []);
       }
     });
   }
@@ -91,28 +92,36 @@ export class ZoneBreakdown {
 
   /**
    * Adds a row to the current rows, avoiding zone duplication.
-   * @param zoneId
-   * @param item
-   * @param mapId
-   * @param hideZoneDuplicates
-   * @param coords
-   * @param fateId
    */
-  private addToBreakdown(zoneId: number, mapId: number, item: ListRow, hideZoneDuplicates: boolean, coords: Vector2, fateId?: number): void {
+  private addToBreakdown(zoneId: number, mapId: number, item: ListRow, hideZoneDuplicates: boolean, coords: Vector2, matchingSources:DataType[], fateId?: number): void {
     const existingRow = this.rows.find(r => r.mapId === mapId);
-    // If we hide duplicates and it's bicolor gems, ignore eulmore and crystarium
-    if (hideZoneDuplicates
-      && getItemSource(item, DataType.TRADE_SOURCES).some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)))
-      && [497, 498, 693, 694].includes(mapId)) {
-      return;
+    // If we hide duplicates and it's bicolor gems, ignore "all items" shop that needs to be unlocked
+    const gemstoneTrades = matchingSources.includes(DataType.TRADE_SOURCES) && getItemSource(item, DataType.TRADE_SOURCES).filter(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)));
+    const isBicolorTrade = hideZoneDuplicates && gemstoneTrades.length > 0;
+    if (isBicolorTrade) {
+      if (StaticData.globalFATEShopMapIds.includes(mapId)) {
+        // If user unlocked this FATE trade NPC, prioritize it, else skip it
+        if (this.settings.unlockedFATEAreas.includes(mapId)) {
+          this.removeRowsForItem(item.id);
+        } else {
+          return;
+        }
+      } else {
+        // Else, it's a bicolor gemstone shop but not main city
+
+        // If user unlocked global FATE shop for this trade, ignore the current row because we'll want to prioritize global anyways
+        if (gemstoneTrades.some(ts => ts.npcs.some(npc => this.settings.unlockedFATEAreas.includes(npc.mapId)))) {
+          return;
+        }
+      }
     }
     if (hideZoneDuplicates) {
-      if (this.rows.some(r => r.items.some(i => i.id === item.id))) {
+      if (this.rows.some(r => r.items.some(i => i.id === item.id && item.finalItem === i.finalItem))) {
         if (!(coords && coords.x > 0 && coords.y > 0) && !fateId) {
           return;
         } else {
           this.removeRowsForItem(item.id);
-          return this.addToBreakdown(zoneId, mapId, item, hideZoneDuplicates, coords);
+          return this.addToBreakdown(zoneId, mapId, item, hideZoneDuplicates, coords, matchingSources);
         }
       }
     }

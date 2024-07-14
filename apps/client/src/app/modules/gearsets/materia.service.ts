@@ -229,10 +229,10 @@ export class MateriaService {
           const extract = getExtract(extracts, materia.id);
           const trades = getItemSource<TradeSource[]>(extract, DataType.TRADE_SOURCES);
           const scripIds = [
-            25199,
-            25200,
             33913,
-            33914
+            33914,
+            41784,
+            41785
           ];
           const scripTrade = {
             id: -1,

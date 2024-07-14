@@ -32,7 +32,7 @@ export abstract class AbstractExtractor {
 
   multiBarRef: any;
 
-  maxLevel = 90;
+  maxLevel = 100;
 
   constructor() {
     interval(AbstractExtractor.XIVAPI_KEY ? 50 : 250)
@@ -238,7 +238,7 @@ export abstract class AbstractExtractor {
   protected gubalRequest(gql: string): Observable<any> {
     const res$ = new Subject();
     request.post({
-      url: 'https://gubal.ffxivteamcraft.com/v1/graphql',
+      url: 'https://gubal.ffxivteamcraft.com/graphql',
       json: true,
       headers: {
         'content-type': 'application/json',
@@ -260,7 +260,7 @@ export abstract class AbstractExtractor {
       }
     });
     return res$;
-  };
+  }
 
   protected cleanupString(input: string): string {
     if (input === undefined) {

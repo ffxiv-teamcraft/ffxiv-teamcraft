@@ -91,9 +91,9 @@
       }
       @if (items$ | async; as chunks) {
         <div fxLayout="column" fxLayoutGap="10px">
-          @for (categories of chunks; track trackByChunk($index, categories)) {
+          @for (categories of chunks; track $index) {
             <div nz-row>
-              @for (category of categories; track trackByCategory($index, category); let last = $last; let first = $first) {
+              @for (category of categories; track category.name; let last = $last; let first = $first) {
                 <div nz-col [nzMd]="stats.length > 3 ? 24 : 12" nzSm="24" class="category-card" [class.full]="stats.length > 3" [class.last]="last"
                   [class.first]="first"
                   >
@@ -120,7 +120,7 @@
                       </div>
                     </ng-template>
                     <div fxLayout="column">
-                      @for (row of category.items; track trackByItemId($index, row); let last = $last; let odd = $odd) {
+                      @for (row of category.items; track row.equipmentPiece.itemId; let last = $last; let odd = $odd) {
                         <app-gearset-editor-row [property]="category.property"
                           [equipmentPiece]="row.equipmentPiece"
                           [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"

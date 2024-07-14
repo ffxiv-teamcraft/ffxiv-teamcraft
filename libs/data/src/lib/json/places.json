@@ -22788,10 +22788,10 @@
     "fr": "Limbes du Pandæmonium - Cloaque"
   },
   "3799": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alexandria",
+    "ja": "アレクサンドリア",
+    "de": "Alexandria",
+    "fr": "Alexandrie"
   },
   "3800": {
     "en": "The Studium",
@@ -26094,52 +26094,52 @@
     "fr": "Voie de la Longévité"
   },
   "4350": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Dream She Lived",
+    "ja": "彼女が生きた時代",
+    "de": "Ihr gelebter Traum",
+    "fr": "Sa vie"
   },
   "4351": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Containment Area III",
+    "ja": "隔離領域III",
+    "de": "Kontaminierungszone III",
+    "fr": "Quartier d'isolement III"
   },
   "4352": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Dream She Lost",
+    "ja": "彼女が死にゆく時代",
+    "de": "Ihr verlorener Traum",
+    "fr": "Son trépas"
   },
   "4353": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Containment Area V",
+    "ja": "隔離領域V",
+    "de": "Kontaminierungszone V",
+    "fr": "Quartier d'isolement V"
   },
   "4354": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "My Dream Everlasting",
+    "ja": "私が微睡む時代",
+    "de": "Mein ewiger Traum",
+    "fr": "Mon sommeil"
   },
   "4355": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alexandria",
+    "ja": "アレクサンドリア城下町",
+    "de": "Alexandria",
+    "fr": "Faubourgs d'Alexandrie"
   },
   "4356": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Volatile Memory Cache",
+    "ja": "流れゆく記憶の狭間",
+    "de": "Volatiler Zwischenspeicher",
+    "fr": "Espace mémoire volatile"
   },
   "4357": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alexandria",
+    "ja": "アレクサンドリア城下町",
+    "de": "Alexandria",
+    "fr": "Faubourgs d'Alexandrie"
   },
   "4358": {
     "en": "The Aetherial Slough",
@@ -26874,90 +26874,4326 @@
     "fr": "Branches de l'Incalculable"
   },
   "4480": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Worqor Zormor",
+    "ja": "ウォーコー・ゾーモー",
+    "de": "Worqor Zormor",
+    "fr": "Worqor Zormor"
   },
   "4481": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zirgor Zormor",
+    "ja": "ジィゴ・ゾーモー",
+    "de": "Jirgor Zormor",
+    "fr": "Zirgor Zormor"
   },
   "4482": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Morgardar Ridge",
+    "ja": "モーガァダー天壁",
+    "de": "Morgardar-Himmelswand",
+    "fr": "Mur céleste de Morgardar"
   },
   "4483": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Summit of Zor",
+    "ja": "ゾーの天頂",
+    "de": "Gipfel von Zor",
+    "fr": "Zénith de Zor"
   },
   "4484": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zirgor Zormor",
+    "ja": "ジィゴ・ゾーモー",
+    "de": "Jirgor Zormor",
+    "fr": "Zirgor Zormor"
   },
   "4485": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Morgardar Ridge",
+    "ja": "モーガァダー天壁",
+    "de": "Morgardar-Himmelswand",
+    "fr": "Mur céleste de Morgardar"
   },
   "4486": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Summit of Zor",
+    "ja": "ゾーの天頂",
+    "de": "Gipfel von Zor",
+    "fr": "Zénith de Zor"
   },
   "4487": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ruin's Wrath",
+    "ja": "猛凰の爪痕",
+    "de": "Narbe des Wildvogels",
+    "fr": "Griffures du Phénix"
   },
   "4488": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Calmgrounds",
+    "ja": "凪の露営地",
+    "de": "Lager der Windstille",
+    "fr": "Campement tranquille"
   },
   "4489": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Grounding Way",
+    "ja": "凪への復路",
+    "de": "Rückkehr der Windstille",
+    "fr": "Retour à la tranquillité"
   },
   "4490": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Skybound",
+    "ja": "雲への往路",
+    "de": "Wolkenpfad",
+    "fr": "Aller vers les nuages"
   },
   "4491": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Forsaken Haze",
+    "ja": "煙嵐の廃路",
+    "de": "Antiker Dunstpfad",
+    "fr": "Passage des Brumes"
   },
   "4492": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Morgar Rise",
+    "ja": "モーガァの白海",
+    "de": "Weißes Meer von Morgar",
+    "fr": "Mer blanche de Morgar"
   },
   "4493": {
+    "en": "Council of Morgar",
+    "ja": "モーガァ王屯所",
+    "de": "Morgar-Königsquartier",
+    "fr": "Quartiers royaux de Morgar"
+  },
+  "4494": {
+    "en": "Karryor the Resting",
+    "ja": "カーリョー陵墓",
+    "de": "Karror-Grabstätte",
+    "fr": "Mausolée de Karryor"
+  },
+  "4495": {
+    "en": "Corrupted Memory Cache",
+    "ja": "消えゆく記憶の狭間",
+    "de": "Korrumpierter Zwischenspeicher",
+    "fr": "Espace mémoire corrompu"
+  },
+  "4496": {
+    "en": "Alexandria",
+    "ja": "アレクサンドリア城下町",
+    "de": "Alexandria",
+    "fr": "Faubourgs d'Alexandrie"
+  },
+  "4497": {
+    "en": "Victors' March",
+    "ja": "凱旋通り",
+    "de": "Siegesallee",
+    "fr": "Voie du Triomphe"
+  },
+  "4498": {
+    "en": "Peacemeet",
+    "ja": "平和広場",
+    "de": "Friedschluss",
+    "fr": "Place de la Paix"
+  },
+  "4499": {
+    "en": "Reascension",
+    "ja": "再臨の地",
+    "de": "Wiederauferstehung",
+    "fr": "Théâtre du Second avènement"
+  },
+  "4500": {
+    "en": "Yok Tural",
+    "ja": "ヨカ・トラル",
+    "de": "Yok Tural",
+    "fr": "Yok Tural"
+  },
+  "4501": {
+    "en": "Xak Tural",
+    "ja": "サカ・トラル",
+    "de": "Xak Tural",
+    "fr": "Xak Tural"
+  },
+  "4502": {
+    "en": "Unlost World",
+    "ja": "アンロスト・ワールド",
+    "de": "Unverlorene Welt",
+    "fr": "Monde inéphémère"
+  },
+  "4503": {
+    "en": "Solution Nine",
+    "ja": "ソリューション・ナイン",
+    "de": "Lösung Neun",
+    "fr": "Solution Neuf"
+  },
+  "4504": {
+    "en": "Tuliyollal",
+    "ja": "トライヨラ",
+    "de": "Tuliyollal",
+    "fr": "Tuliyollal"
+  },
+  "4505": {
+    "en": "Urqopacha",
+    "ja": "オルコ・パチャ",
+    "de": "Urqopacha",
+    "fr": "Urqopacha"
+  },
+  "4506": {
+    "en": "Kozama'uka",
+    "ja": "コザマル・カ",
+    "de": "Kozama'uka",
+    "fr": "Kozama'uka"
+  },
+  "4507": {
+    "en": "Yak T'el",
+    "ja": "ヤクテル樹海",
+    "de": "Yak T'el",
+    "fr": "Yak T'el"
+  },
+  "4508": {
+    "en": "Shaaloani",
+    "ja": "シャーローニ荒野",
+    "de": "Shaaloani",
+    "fr": "Shaaloani"
+  },
+  "4509": {
+    "en": "Heritage Found",
+    "ja": "ヘリテージファウンド",
+    "de": "Ewiges Erbe",
+    "fr": "L'Hoirie recouvrée"
+  },
+  "4510": {
+    "en": "Living Memory",
+    "ja": "リビング・メモリー",
+    "de": "Lebende Erinnerung",
+    "fr": "La Mémoire vivante"
+  },
+  "4511": {
+    "en": "Yok Tural",
+    "ja": "ヨカ・トラル",
+    "de": "Yok Tural",
+    "fr": "Yok Tural"
+  },
+  "4512": {
+    "en": "Xak Tural",
+    "ja": "サカ・トラル",
+    "de": "Xak Tural",
+    "fr": "Xak Tural"
+  },
+  "4513": {
+    "en": "Unlost World",
+    "ja": "アンロスト・ワールド",
+    "de": "Unverlorene Welt",
+    "fr": "Monde inéphémère"
+  },
+  "4514": {
+    "en": "Solution Nine",
+    "ja": "ソリューション・ナイン",
+    "de": "Lösung Neun",
+    "fr": "Solution Neuf"
+  },
+  "4515": {
+    "en": "Tuliyollal",
+    "ja": "トライヨラ",
+    "de": "Tuliyollal",
+    "fr": "Tuliyollal"
+  },
+  "4516": {
+    "en": "The Arterial Climb",
+    "ja": "連なる丘",
+    "de": "Hohe Steige",
+    "fr": "L'Éminence"
+  },
+  "4517": {
+    "en": "Copperstone",
+    "ja": "赤銅の門庭",
+    "de": "Bronzefeste",
+    "fr": "Mail de Cuivre"
+  },
+  "4518": {
+    "en": "High Tide Harbor",
+    "ja": "満ちた玄関",
+    "de": "Hochfluthafen",
+    "fr": "Perron des Valeureux"
+  },
+  "4519": {
+    "en": "The Resplendent Quarter",
+    "ja": "翼鏡の街",
+    "de": "Glanzfeder-Viertel",
+    "fr": "La Nuée bigarrée"
+  },
+  "4520": {
+    "en": "Exultation",
+    "ja": "鸞翔の城郭",
+    "de": "Frohlockung",
+    "fr": "Bastide du Quetzal"
+  },
+  "4521": {
+    "en": "Vollok Shoonsa",
+    "ja": "ヴォロク連王宮",
+    "de": "Vollok Shoonsa",
+    "fr": "Palais de Vollok Shoonsa"
+  },
+  "4522": {
+    "en": "The Winged Walk",
+    "ja": "羽毛広場",
+    "de": "Fiederplatz",
+    "fr": "La Juchée"
+  },
+  "4523": {
+    "en": "Sunperch",
+    "ja": "金凰の間",
+    "de": "Sonnensitz",
+    "fr": "Salle de l'Aurore"
+  },
+  "4524": {
+    "en": "Pinion's Reach",
+    "ja": "鵬翼の露台",
+    "de": "Alula",
+    "fr": "Loggia aux Livrées"
+  },
+  "4525": {
+    "en": "Xak Tural Skygate",
+    "ja": "サカ・トラル関門",
+    "de": "Himmelstor von Xak Tural",
+    "fr": "Porte du Xak Tural"
+  },
+  "4526": {
+    "en": "Zorgor the Boundless",
+    "ja": "ゾーゴー永結橋",
+    "de": "Zorgor die Weite",
+    "fr": "Traverse de Zorgor"
+  },
+  "4527": {
+    "en": "Brightploom Post",
+    "ja": "ブライトプルーム・ポスト",
+    "de": "Grellfeder-Posten",
+    "fr": "Vigie de Claireplume"
+  },
+  "4528": {
+    "en": "Hunu'iliy",
+    "ja": "フヌイリーの塔",
+    "de": "Hunu'iliy",
+    "fr": "Phare de Hunu'iliy"
+  },
+  "4529": {
+    "en": "Ek-wawya Plaza",
+    "ja": "エクワーヤ広場",
+    "de": "Platz von Ek-wawya",
+    "fr": "Place d'Ek-wawya"
+  },
+  "4530": {
+    "en": "Talonmarch",
+    "ja": "鳥趾大路",
+    "de": "Krallfußstraße",
+    "fr": "L'Artère des Serres"
+  },
+  "4531": {
+    "en": "Seafoam Fields",
+    "ja": "シーフォーム農園",
+    "de": "Meerschaumfelder",
+    "fr": "Champs d'Écume"
+  },
+  "4532": {
+    "en": "Bayside Bevy",
+    "ja": "ベイサイド・ベヴィー",
+    "de": "Küstenkolonie",
+    "fr": "Baie commerçante"
+  },
+  "4533": {
+    "en": "Wachumeqimeqi",
+    "ja": "ワチュメキメキ万貨街",
+    "de": "Markt von Wachumeqimeqi",
+    "fr": "Bazar aux Mille Perles"
+  },
+  "4534": {
+    "en": "Aunt Tii's Tacos",
+    "ja": "タコスのチーちゃん",
+    "de": "Tante Tiis Tacos",
+    "fr": "Aux Tacos de Tiisol"
+  },
+  "4535": {
+    "en": "Tuliyollal Aetheryte Plaza",
+    "ja": "エーテライト・プラザ",
+    "de": "Ätherytenplatz",
+    "fr": "Place de l'Éthérite"
+  },
+  "4536": {
+    "en": "Downripple",
+    "ja": "嘴休めの泉",
+    "de": "Schnabelhort",
+    "fr": "L'Abreuvoir"
+  },
+  "4537": {
+    "en": "Xbalyav Ty'e",
+    "ja": "シャバーブチェ",
+    "de": "Xbalyav Ty'e",
+    "fr": "Xbalyav Ty'e"
+  },
+  "4538": {
+    "en": "Gornitruq Gleamsands",
+    "ja": "ゴーニトルクの宝浜",
+    "de": "Schimmersande von Gornitruq",
+    "fr": "Les Gemmes de Gornitruq"
+  },
+  "4539": {
+    "en": "Morrow's Measure",
+    "ja": "金煌なる旅程",
+    "de": "Kronzeugen",
+    "fr": "Le Périple doré"
+  },
+  "4540": {
+    "en": "The For'ard Cabins",
+    "ja": "フォルアード・キャビンズ",
+    "de": "Kielkajüten",
+    "fr": "Cabines de Proue"
+  },
+  "4541": {
+    "en": "Arch of the Dawn",
+    "ja": "グルージャジャ凱旋門",
+    "de": "Tor der Morgensonne",
+    "fr": "Arc de Gulool Ja Ja"
+  },
+  "4542": {
+    "en": "The Dawnherald",
+    "ja": "曙歌の大太鼓",
+    "de": "Dämmerschlag",
+    "fr": "Tambour matineux"
+  },
+  "4543": {
+    "en": "Dirigible Landing",
+    "ja": "気球発着場",
+    "de": "Ballonplatz",
+    "fr": "Embarcadère à ballons"
+  },
+  "4544": {
+    "en": "Alpaca Stables",
+    "ja": "アルパカ停留場",
+    "de": "Alpakahalt",
+    "fr": "Étable à alpagas"
+  },
+  "4545": {
+    "en": "Chabayuqeq",
+    "ja": "チャバ・ユケク",
+    "de": "Chabayuqeq",
+    "fr": "Chabayuqeq"
+  },
+  "4546": {
+    "en": "Chabameki",
+    "ja": "チャバ・メキ",
+    "de": "Chabameki",
+    "fr": "Chabameki"
+  },
+  "4547": {
+    "en": "Solace",
+    "ja": "千古への慰め",
+    "de": "Steter Trost",
+    "fr": "L'Hommage aux Temps jadis"
+  },
+  "4548": {
+    "en": "Sorrow",
+    "ja": "遥遠なる嘆き",
+    "de": "Ferner Kummer",
+    "fr": "Les Lointains Sanglots"
+  },
+  "4549": {
+    "en": "Larh Tortoh",
+    "ja": "ラァー・トートー",
+    "de": "Larh Tortoh",
+    "fr": "Larh Tortoh"
+  },
+  "4550": {
+    "en": "Wachunpelo",
+    "ja": "ワチュン・ペロ",
+    "de": "Wachunpelo",
+    "fr": "Wachunpelo"
+  },
+  "4551": {
+    "en": "Mezcal Distillery",
+    "ja": "メスカル蒸留所",
+    "de": "Mezcal-Brennerei",
+    "fr": "Distillerie de Mezcal"
+  },
+  "4552": {
+    "en": "The Family Ranch",
+    "ja": "友の牧場",
+    "de": "Freundesfarm",
+    "fr": "L'Alpaguerie"
+  },
+  "4553": {
+    "en": "Delicate Designs",
+    "ja": "指先の館",
+    "de": "Haus der Fingerfertigkeit",
+    "fr": "Maison des Petites Mains"
+  },
+  "4554": {
+    "en": "Icuvlo's Inn",
+    "ja": "イクヴロ隊商宿",
+    "de": "Icuvlos Karawanserei",
+    "fr": "L'Aménité d'Icuvlo"
+  },
+  "4555": {
+    "en": "Agave Jaws",
+    "ja": "アガベの歯列",
+    "de": "Agavenfänge",
+    "fr": "Les Quenottes d'Agave"
+  },
+  "4556": {
+    "en": "Panaqpelu Retreat",
+    "ja": "パナクペル・リトリート",
+    "de": "Panaqpelu-Therme",
+    "fr": "Retraite de Panaqpelu"
+  },
+  "4557": {
+    "en": "Povlu's Peddlery",
+    "ja": "ポーベル商運公司",
+    "de": "Povlus Handelshaus",
+    "fr": "Comptoir de Povlu"
+  },
+  "4558": {
+    "en": "Ciblu's Coffee Grounds",
+    "ja": "キーベル・カピー農園",
+    "de": "Ciblus Kaffeehof",
+    "fr": "Caféière de Ciblu"
+  },
+  "4559": {
+    "en": "Miplu's Mate Garden",
+    "ja": "ミープル・マテ茶園",
+    "de": "Miplus Mategarten",
+    "fr": "Matéière de Miplu"
+  },
+  "4560": {
+    "en": "Oruncanca",
+    "ja": "オルン・カンカ",
+    "de": "Oruncanca",
+    "fr": "Oruncanca"
+  },
+  "4561": {
+    "en": "Ten Thousand Steps",
+    "ja": "万ヶ踏跡",
+    "de": "Abertausend Schritte",
+    "fr": "Les Dix Mille Pas"
+  },
+  "4562": {
+    "en": "Worlar's Echo",
+    "ja": "ウォーラーの残響",
+    "de": "Worlars Echo",
+    "fr": "L'Écho de Worlar"
+  },
+  "4563": {
+    "en": "Karryorzar the Gracious",
+    "ja": "カーリョーザー祭拝殿",
+    "de": "Karryorzar der Huldvolle",
+    "fr": "L'Adoration de Karryorzar"
+  },
+  "4564": {
+    "en": "Shades of Grief",
+    "ja": "哀苦の影",
+    "de": "Schatten der Trauer",
+    "fr": "Les Ombres endeuillées"
+  },
+  "4565": {
+    "en": "Naryor Gorna",
+    "ja": "ナーヨー・ゴーナ",
+    "de": "Naryor Gorna",
+    "fr": "Naryor Gorna"
+  },
+  "4566": {
+    "en": "Proof",
+    "ja": "佇む自証",
+    "de": "Zeugnis",
+    "fr": "Les Preuves éternelles"
+  },
+  "4567": {
+    "en": "Sunken Stars",
+    "ja": "涙浮かぶ星池",
+    "de": "Sternentiefe",
+    "fr": "Pleure-aux-Étoiles"
+  },
+  "4568": {
+    "en": "Chirwagur Saltern",
+    "ja": "チーワグー塩田",
+    "de": "Salzgruben der Chirwagur",
+    "fr": "Salin de Chirwagur"
+  },
+  "4569": {
+    "en": "Chirwagur Lake",
+    "ja": "チーワグー塩池",
+    "de": "See der Chirwagur",
+    "fr": "Lac de Chirwagur"
+  },
+  "4570": {
+    "en": "Worqor Zormor",
+    "ja": "ウォーコー・ゾーモー",
+    "de": "Worqor Zormor",
+    "fr": "Worqor Zormor"
+  },
+  "4571": {
+    "en": "Indelible Passage",
+    "ja": "忘れじの深奥",
+    "de": "Schlund des Unvergessens",
+    "fr": "Les Profondeurs Inoubliées"
+  },
+  "4572": {
+    "en": "Sentinel",
+    "ja": "花守の塚屋",
+    "de": "Blühende Wacht",
+    "fr": "Cabane du Gardien des fleurs"
+  },
+  "4573": {
+    "en": "Worqor Lar Dor",
+    "ja": "ウォーコー・ラァ・ドー",
+    "de": "Worqor Lar Dor",
+    "fr": "Worqor Lar Dor"
+  },
+  "4574": {
+    "en": "Karvarhur the First",
+    "ja": "カーヴァーフー湖",
+    "de": "Karvarhur die Erste",
+    "fr": "Berceau de Karvarhur"
+  },
+  "4575": {
+    "en": "Uyuyub'",
+    "ja": "ウユー・ウブ",
+    "de": "Uyuyub'",
+    "fr": "Uyuyub'"
+  },
+  "4576": {
+    "en": "Bopo'uihih",
+    "ja": "ボポル・ウィヒヒ",
+    "de": "Bopo'uihih",
+    "fr": "Bopo'uihih"
+  },
+  "4577": {
+    "en": "Miyakabek'zu",
+    "ja": "ミヤカ・ベック下流",
+    "de": "Miyakabek'zu",
+    "fr": "Miyakabek'zu"
+  },
+  "4578": {
+    "en": "Uyuypoga",
+    "ja": "ウユー・ポガ",
+    "de": "Uyuypoga",
+    "fr": "Uyuypoga"
+  },
+  "4579": {
+    "en": "The Dewspun Bank",
+    "ja": "デュースパン・バンク",
+    "de": "Taustaden",
+    "fr": "Rive aux Fils de rosée"
+  },
+  "4580": {
+    "en": "Miyakabek'zoma",
+    "ja": "ミヤカ・ベック上流",
+    "de": "Miyakabek'zoma",
+    "fr": "Miyakabek'zoma"
+  },
+  "4581": {
+    "en": "The Glostfired Bank",
+    "ja": "グロストファイア・バンク",
+    "de": "Garbrandstaden",
+    "fr": "Rive glaçurée"
+  },
+  "4582": {
+    "en": "Ok'hanu",
+    "ja": "オック・ハヌ",
+    "de": "Ok'hanu",
+    "fr": "Ok'hanu"
+  },
+  "4583": {
+    "en": "House of Winds High",
+    "ja": "生い茂る薫風の屋敷",
+    "de": "Haus der Wuchernden Winde",
+    "fr": "Demeure des Brises généreuses"
+  },
+  "4584": {
+    "en": "Cave Kikitola ",
+    "ja": "キキトラ洞",
+    "de": "Kikitola-Höhle",
+    "fr": "Grotte de Kikitola"
+  },
+  "4585": {
+    "en": "Xodune",
+    "ja": "ショドゥネの滝",
+    "de": "Xodune",
+    "fr": "Xodune"
+  },
+  "4586": {
+    "en": "Xo'onu",
+    "ja": "ショーヌの滝",
+    "de": "Xo'onu",
+    "fr": "Xo'onu"
+  },
+  "4587": {
+    "en": "Xopik'",
+    "ja": "ショピックの滝",
+    "de": "Xopik'",
+    "fr": "Xopik'"
+  },
+  "4588": {
+    "en": "Ku'uxage",
+    "ja": "クル・シャゲ",
+    "de": "Ku'uxage",
+    "fr": "Ku'uxage"
+  },
+  "4589": {
+    "en": "Breath Between",
+    "ja": "竿網桟橋",
+    "de": "Hängender Kai",
+    "fr": "Ponton poissonneux"
+  },
+  "4590": {
+    "en": "Bridge Puyhu",
+    "ja": "プィフ橋",
+    "de": "Puyhu-Brücke",
+    "fr": "Pont de Puyhu"
+  },
+  "4591": {
+    "en": "Fields of Gold",
+    "ja": "金渦水田",
+    "de": "Goldwirbelfelder",
+    "fr": "Plantations dorées"
+  },
+  "4592": {
+    "en": "Ok'bek'be",
+    "ja": "オック・ベックベ",
+    "de": "Ok'bek'be",
+    "fr": "Ok'bek'be"
+  },
+  "4593": {
+    "en": "House of Waters High",
+    "ja": "清き水満ちる浮島の屋敷",
+    "de": "Haus des Kristallenen Wassers",
+    "fr": "Chalet de l'Île aux Eaux claires"
+  },
+  "4594": {
+    "en": "Kozanuakiy",
+    "ja": "コザヌア・キー",
+    "de": "Kozanuakiy",
+    "fr": "Kozanuakiy"
+  },
+  "4595": {
+    "en": "Dock Poga",
+    "ja": "ポガ停船所",
+    "de": "Poga-Dock",
+    "fr": "Embarcadère de Poga"
+  },
+  "4596": {
+    "en": "Flight of We Wingless",
+    "ja": "翼なき姉弟の大階段",
+    "de": "Stufen der Schwingenlosen Geschwister",
+    "fr": "Marches des Sans-ailes"
+  },
+  "4597": {
+    "en": "Stride of the Sun",
+    "ja": "照らされし参道",
+    "de": "Lauf der Goldenen Sonne",
+    "fr": "Route des Glorieux rayons"
+  },
+  "4598": {
+    "en": "Many Fires",
+    "ja": "朋友の灯火",
+    "de": "Viele Flammen",
+    "fr": "Maints-Feux"
+  },
+  "4599": {
+    "en": "Dock Tumu",
+    "ja": "トゥム停船所",
+    "de": "Tumu-Dock",
+    "fr": "Embarcadère de Tumu"
+  },
+  "4600": {
+    "en": "Marsh Ligaka",
+    "ja": "リガカの潟",
+    "de": "Ligaka-Bruch",
+    "fr": "Marais de Ligaka"
+  },
+  "4601": {
+    "en": "Shoals of No Return",
+    "ja": "敗者の船",
+    "de": "Schiffe der Verlorenen",
+    "fr": "Nef-sans-Retour"
+  },
+  "4602": {
+    "en": "Ihuykatumu",
+    "ja": "イフイカ・トゥム",
+    "de": "Ihuykatumu",
+    "fr": "Ihuykatumu"
+  },
+  "4603": {
+    "en": "Earthenshire",
+    "ja": "アースンシャイア",
+    "de": "Irdehalde",
+    "fr": "La Fournée"
+  },
+  "4604": {
+    "en": "The Workpot",
+    "ja": "釉薬の工房",
+    "de": "Schmalte",
+    "fr": "Atelier verni"
+  },
+  "4605": {
+    "en": "Cracked Cistern",
+    "ja": "割れた水瓶",
+    "de": "Zertrümmerter Topf",
+    "fr": "Cruche fendue"
+  },
+  "4606": {
+    "en": "The Imperious",
+    "ja": "飛び立ちし巨影の標",
+    "de": "Mahnende Schatten",
+    "fr": "Les Impérieux"
+  },
+  "4607": {
+    "en": "Deceiver's Mantel",
+    "ja": "奸臣の飾り棚",
+    "de": "Zollamt",
+    "fr": "Comptoir des scélérats"
+  },
+  "4608": {
+    "en": "The Ut'ohmu Horizon",
+    "ja": "ウトォームの地平線",
+    "de": "Horizont von Ut'ohmu",
+    "fr": "L'Horizon d'Ut'ohmu"
+  },
+  "4609": {
+    "en": "The Xobr'it Cinderfield",
+    "ja": "ショブリト灰戦場",
+    "de": "Aschenfront von Xobr'it",
+    "fr": "Plaines cendrées de Xobr'it"
+  },
+  "4610": {
+    "en": "The Ja Tiika Heartland",
+    "ja": "ジャティーカ央森",
+    "de": "Herz von Ja Tiika",
+    "fr": "Sylve-mère de Ja Tiika"
+  },
+  "4611": {
+    "en": "The Cerulean Cexudross",
+    "ja": "底碧きセシュドロース",
+    "de": "Schwarzblauer Cexudross",
+    "fr": "Le Cexudross céruléen"
+  },
+  "4612": {
+    "en": "Dirigible Landing",
+    "ja": "気球発着場",
+    "de": "Ballonplatz",
+    "fr": "Piste d'atterrissage"
+  },
+  "4613": {
+    "en": "Yak Awak Tsoly",
+    "ja": "ヤクアワク・ゾユ",
+    "de": "Yak Awak Tsoly",
+    "fr": "Yak Awak Tsoly"
+  },
+  "4614": {
+    "en": "Iq Br'aax",
+    "ja": "イクブラーシャ",
+    "de": "Iq Br'aax",
+    "fr": "Iq Br'aax"
+  },
+  "4615": {
+    "en": "Garden of the Stars",
+    "ja": "星覚えの園庭",
+    "de": "Sternengarten",
+    "fr": "Jardin du Firmament"
+  },
+  "4616": {
+    "en": "The Fanged Foundry",
+    "ja": "牙磨く鋳工",
+    "de": "Loderfang",
+    "fr": "Fonderie des Crocs de fer"
+  },
+  "4617": {
+    "en": "Xmun Hojaw",
+    "ja": "シャムン・ホジャー",
+    "de": "Xmun Hojaw",
+    "fr": "Xmun Hojaw"
+  },
+  "4618": {
+    "en": "Nightstalker's Shadow",
+    "ja": "睨視する夜番",
+    "de": "Nachtwacht",
+    "fr": "Vigie nocturne"
+  },
+  "4619": {
+    "en": "Xd'aa Talat Tsoly",
+    "ja": "シャダータラト・ゾユ",
+    "de": "Xd'aa Talat Tsoly",
+    "fr": "Xd'aa Talat Tsoly"
+  },
+  "4620": {
+    "en": "Iq Rrax Tsoly",
+    "ja": "イクラシュ・ゾユ",
+    "de": "Iq Rrax Tsoly",
+    "fr": "Iq Rrax Tsoly"
+  },
+  "4621": {
+    "en": "Village of Ilyon Asoh",
+    "ja": "イヨンアソの家々",
+    "de": "Ilyon Asoh",
+    "fr": "Ruines d'Ilyon Asoh"
+  },
+  "4622": {
+    "en": "Xobr'it Tsoly",
+    "ja": "ショブリト・ゾユ",
+    "de": "Xobr'it Tsoly",
+    "fr": "Xobr'it Tsoly"
+  },
+  "4623": {
+    "en": "The Ty'iinbek Traverse",
+    "ja": "ティーンベク洞道",
+    "de": "Ty'iinbek-Tunnel",
+    "fr": "Passage de Ty'iinbek"
+  },
+  "4624": {
+    "en": "Xty'iinbek Tsoly",
+    "ja": "シャティーンベク・ゾユ",
+    "de": "Xty'iinbek Tsoly",
+    "fr": "Xty'iinbek Tsoly"
+  },
+  "4625": {
+    "en": "Mamook",
+    "ja": "マムーク",
+    "de": "Mamook",
+    "fr": "Mamook"
+  },
+  "4626": {
+    "en": "The Glory of Moxuk Reloonuk",
+    "ja": "モシュク・レルーヌク演舞台",
+    "de": "Glorie von Moxuk Reloonuk",
+    "fr": "Couronne de Moxuk Reloonuk"
+  },
+  "4627": {
+    "en": "Sapsweet Cenote",
+    "ja": "甘い涌き水",
+    "de": "Süßquell",
+    "fr": "Douce-Source"
+  },
+  "4628": {
+    "en": "Blue-eyes' Abode",
+    "ja": "碧眼の家",
+    "de": "Haus des Blauauges",
+    "fr": "Demeure d'Œil-d'azur"
+  },
+  "4629": {
+    "en": "Golmajiik Grove",
+    "ja": "ゴルマジーカ蜜園",
+    "de": "Golmajiik-Hain",
+    "fr": "Bosquet de Golmajiik"
+  },
+  "4630": {
+    "en": "Tree of Living Light",
+    "ja": "幻煌樹",
+    "de": "Baum des Lebenden Lichts",
+    "fr": "Arbre furoluminescent"
+  },
+  "4631": {
+    "en": "Choliselvaas",
+    "ja": "空の重し",
+    "de": "Choliselvaas",
+    "fr": "Rocher céleste"
+  },
+  "4632": {
+    "en": "Cenote Neyozzote",
+    "ja": "セノーテ・ネヨーゾテ",
+    "de": "Cenote Neyozzote",
+    "fr": "Cénote Neyozzote"
+  },
+  "4633": {
+    "en": "Moxutural Zooj",
+    "ja": "モシュトラル・ズージャ",
+    "de": "Moxutural Zooj",
+    "fr": "Moxutural Zooj"
+  },
+  "4634": {
+    "en": "Cenote Jayunja",
+    "ja": "セノーテ・ジャユンジャ",
+    "de": "Cenote Jayunja",
+    "fr": "Cénote Jayunja"
+  },
+  "4635": {
+    "en": "Whetstone",
+    "ja": "鱗の錬磨場",
+    "de": "Schuppenschliff",
+    "fr": "L'Aiguisoir"
+  },
+  "4636": {
+    "en": "Ankledeep",
+    "ja": "足首の小セノーテ",
+    "de": "Kleiner Fersenbiss",
+    "fr": "Trempecheville"
+  },
+  "4637": {
+    "en": "Gok Draak Descent",
+    "ja": "ゴクドラーク岩窟",
+    "de": "Tiefen von Gok Draak",
+    "fr": "Caverne de Gok Draak"
+  },
+  "4638": {
+    "en": "The Skydeep Cenote",
+    "ja": "天深きセノーテ",
+    "de": "Himmelstiefer Cenote",
+    "fr": "Cénote des Cieux infinis"
+  },
+  "4639": {
+    "en": "Scanning Port Nine",
+    "ja": "スキャンポート",
+    "de": "Scanpass Neun",
+    "fr": "Sentinelle Neuf"
+  },
+  "4640": {
+    "en": "Residential Sector",
+    "ja": "レジデンシャルセクター",
+    "de": "Wohnsektor",
+    "fr": "Secteur résidentiel"
+  },
+  "4641": {
+    "en": "Commerce Sector",
+    "ja": "コマースセクター",
+    "de": "Handelssektor",
+    "fr": "Secteur commercial"
+  },
+  "4642": {
+    "en": "Government Sector",
+    "ja": "ガバメントセクター",
+    "de": "Regierungssektor",
+    "fr": "Secteur gouvernemental"
+  },
+  "4643": {
+    "en": "Recreation Zone",
+    "ja": "レクリエーションゾーン",
+    "de": "Erholungszone",
+    "fr": "Zone récréative"
+  },
+  "4644": {
+    "en": "Leynode Nine",
+    "ja": "レイノード・ナイン",
+    "de": "Leyknoten Neun",
+    "fr": "Nœud tellurique Neuf"
+  },
+  "4645": {
+    "en": "Information Center",
+    "ja": "インフォメーションセンター",
+    "de": "Auskunft",
+    "fr": "Centre d'informations"
+  },
+  "4646": {
+    "en": "Residential Radius 9-14",
+    "ja": "9-14居住殻",
+    "de": "Wohnradius 9-14",
+    "fr": "Division résidentielle 9-14"
+  },
+  "4647": {
+    "en": "Nexus Arcade",
+    "ja": "ネクサスアーケード",
+    "de": "Nexus-Arkaden",
+    "fr": "Arcades marchandes"
+  },
+  "4648": {
+    "en": "Mosaic",
+    "ja": "モザイク・コーヒー",
+    "de": "Café Mosaik",
+    "fr": "La Mosaïque"
+  },
+  "4649": {
+    "en": "Resolution",
+    "ja": "レゾリューション",
+    "de": "Schlichtung",
+    "fr": "Résolution"
+  },
+  "4650": {
+    "en": "Praxis Park",
+    "ja": "プラクシスパーク",
+    "de": "Gestaltungspark",
+    "fr": "Parc de la Praxis"
+  },
+  "4651": {
+    "en": "True Vue",
+    "ja": "トゥルービュー",
+    "de": "Wahrlee",
+    "fr": "Vraie-vision"
+  },
+  "4652": {
+    "en": "The Arcadion",
+    "ja": "アルカディア・ソサエティ",
+    "de": "Arkadion-Gesellschaft",
+    "fr": "Société de l'Arcadion"
+  },
+  "4653": {
+    "en": "Neon Stein",
+    "ja": "ネオンスタイン",
+    "de": "Neonhumpen",
+    "fr": "La Chope à néons"
+  },
+  "4654": {
+    "en": "The Backroom",
+    "ja": "バックルーム",
+    "de": "Hinterzimmer",
+    "fr": "Le Repaire"
+  },
+  "4655": {
+    "en": "Tritails Training",
+    "ja": "ジム・トライテール",
+    "de": "Tatzentrio-Training",
+    "fr": "Trois Queues"
+  },
+  "4656": {
+    "en": "Yawtanane Grasslands",
+    "ja": "ヤータナネ草地",
+    "de": "Yawtanane-Grassteppe",
+    "fr": "Prairie de Yawtanane"
+  },
+  "4657": {
+    "en": "Pyariyoanaan Plain",
+    "ja": "パリヨーナン沃野",
+    "de": "Pyariyoanaan-Ebene",
+    "fr": "Plaine de Pyariyoanaan"
+  },
+  "4658": {
+    "en": "Eshceyaani Wilds",
+    "ja": "エシュケヤーニ荒原",
+    "de": "Eshceyaani-Ödland",
+    "fr": "Désert d'Eshceyaani"
+  },
+  "4659": {
+    "en": "Hhusatahwi",
+    "ja": "フーサタイ宿場町",
+    "de": "Hhusatahwi",
+    "fr": "Hhusatahwi"
+  },
+  "4660": {
+    "en": "Luwateninyawawsa",
+    "ja": "ルワテニヤーサ",
+    "de": "Luwateninyawawsa",
+    "fr": "Luwateninyawawsa"
+  },
+  "4661": {
+    "en": "Maw of Sansheya",
+    "ja": "サンシェヤの大口",
+    "de": "Schlund von Sansheya",
+    "fr": "Gueule de Sansheya"
+  },
+  "4662": {
+    "en": "Tuliyollal Trailhead",
+    "ja": "トライヨラ関門",
+    "de": "Tor von Tuliyollal",
+    "fr": "Seuil de Tuliyollal"
+  },
+  "4663": {
+    "en": "Lake Toari",
+    "ja": "トーリ湖",
+    "de": "Toari-See",
+    "fr": "Lac Toari"
+  },
+  "4664": {
+    "en": "Mehwahhetsoan",
+    "ja": "メワヘイゾーン",
+    "de": "Mehwahhetsoan",
+    "fr": "Mehwahhetsoan"
+  },
+  "4665": {
+    "en": "Boughs of Hwittayoanaan",
+    "ja": "ウィダヨーナン台地",
+    "de": "Zaine von Hwittayoanaan",
+    "fr": "Plateau de Hwittayoanaan"
+  },
+  "4666": {
+    "en": "Otsekarri Shore",
+    "ja": "善き釣り人の岸辺",
+    "de": "Otsekarri-Ufer",
+    "fr": "Écore d'Otsekarri"
+  },
+  "4667": {
+    "en": "Sheshenewezi Springs",
+    "ja": "シェシェネ青燐泉",
+    "de": "Sheshenewezi-Quellen",
+    "fr": "Sources de Sheshenewezi"
+  },
+  "4668": {
+    "en": "Shaaloani Station",
+    "ja": "シャーローニ駅",
+    "de": "Bahnhof Shaaloani",
+    "fr": "Gare de Shaaloani"
+  },
+  "4669": {
+    "en": "Tonatenyawi",
+    "ja": "トナテニャイ",
+    "de": "Tonatenyawi",
+    "fr": "Tonatenyawi"
+  },
+  "4670": {
+    "en": "Mount Loazensasaya",
+    "ja": "語り風の丘",
+    "de": "Loazensasaya",
+    "fr": "Hauts de Loazensasaya"
+  },
+  "4671": {
+    "en": "Yoweya-hwitto Cemetery",
+    "ja": "ヨエヤ・ウィド墓地",
+    "de": "Friedhof Yoweya-hwitto",
+    "fr": "Cimetière de Yoweya-hwitto"
+  },
+  "4672": {
+    "en": "Yowekwa Canyon",
+    "ja": "ヨエカ峡",
+    "de": "Yowekwa-Canyon",
+    "fr": "Canyon de Yowekwa"
+  },
+  "4673": {
+    "en": "Pyaayehe'pya",
+    "ja": "パーエヘッパの丘",
+    "de": "Pyaayehe'pya",
+    "fr": "Colline de Pyaayehe'pya"
+  },
+  "4674": {
+    "en": "East Yyasulani",
+    "ja": "ヤースラニ荒野東部",
+    "de": "Östliches Yyasulani",
+    "fr": "Yyasulani est"
+  },
+  "4675": {
+    "en": "Everkeep Ward",
+    "ja": "エバーキープ外縁",
+    "de": "Saum des Immerfrieds",
+    "fr": "Exosphère"
+  },
+  "4676": {
+    "en": "Archeo Alexandria",
+    "ja": "旧アレクサンドリア城下町",
+    "de": "Archa-Alexandria",
+    "fr": "Vieille Alexandrie"
+  },
+  "4677": {
+    "en": "Vanguard",
+    "ja": "ヴァンガード",
+    "de": "Außenposten",
+    "fr": "L'Avant-garde"
+  },
+  "4678": {
+    "en": "Yyasulani Station",
+    "ja": "ヤースラニ駅",
+    "de": "Bahnhof Yyasulani",
+    "fr": "Gare de Yyasulani"
+  },
+  "4679": {
+    "en": "Tesh'pyani Village",
+    "ja": "テッシャ・パニ廃村",
+    "de": "Tesh'pyani",
+    "fr": "Ruines de Tesh'pyani"
+  },
+  "4680": {
+    "en": "The Thunderyards",
+    "ja": "サンダーヤード",
+    "de": "Donnersteppe",
+    "fr": "Prés fulgurants"
+  },
+  "4681": {
+    "en": "The Pylons",
+    "ja": "送雷塔群",
+    "de": "Blitznadeln",
+    "fr": "Les Pylônes"
+  },
+  "4682": {
+    "en": "Earthen Sky",
+    "ja": "空の坑道",
+    "de": "Irdener Himmel",
+    "fr": "Cavernes célestes"
+  },
+  "4683": {
+    "en": "Electric Potential",
+    "ja": "蓄雷増幅施設",
+    "de": "Leitladung",
+    "fr": "L'Amplificateur"
+  },
+  "4684": {
+    "en": "Everkeep",
+    "ja": "エバーキープ",
+    "de": "Immerfried",
+    "fr": "Gardienne de l'Éternité"
+  },
+  "4685": {
+    "en": "The Outskirts",
+    "ja": "アウトスカーツ",
+    "de": "Außenbezirke",
+    "fr": "Les Faubourgs"
+  },
+  "4686": {
+    "en": "Yyupye's Halo",
+    "ja": "ユーペ円形農地",
+    "de": "Yyupyes Lichthof",
+    "fr": "Auréole de Yyupye"
+  },
+  "4687": {
+    "en": "The Driftdowns",
+    "ja": "ドリフトダウンズ",
+    "de": "Unterströme",
+    "fr": "La Dérive"
+  },
+  "4688": {
+    "en": "●命名なし",
+    "ja": "●命名なし",
+    "de": "●命名なし",
+    "fr": "●命名なし"
+  },
+  "4689": {
+    "en": "Tumbled Hearthrises",
+    "ja": "融合した家屋",
+    "de": "Erloschene Wärme",
+    "fr": "Faîtages mêlés"
+  },
+  "4690": {
+    "en": "Spire of Trial",
+    "ja": "兵器射爆塔",
+    "de": "Übungsspitze",
+    "fr": "Tour des Épreuves"
+  },
+  "4691": {
+    "en": "Crackling Chasm",
+    "ja": "帯雷危険区域",
+    "de": "Knisterklamm",
+    "fr": "Gouffre grondant"
+  },
+  "4692": {
+    "en": "Submerged Skyline",
+    "ja": "水没した旧市街",
+    "de": "Ertrunkener Horizont",
+    "fr": "Rive noyée"
+  },
+  "4693": {
+    "en": "The Nameslates",
+    "ja": "記名された墓地",
+    "de": "Namensacker",
+    "fr": "Cimetière des Patronymes"
+  },
+  "4694": {
+    "en": "Electrope Strike",
+    "ja": "エレクトロープ採石場",
+    "de": "Elektrob-Bruch",
+    "fr": "Mines d'Électrope"
+  },
+  "4695": {
+    "en": "Gate of Remembrance",
+    "ja": "リメンバー・ゲート",
+    "de": "Tor des Gedenkens",
+    "fr": "Porte du Souvenir"
+  },
+  "4696": {
+    "en": "Canal Town",
+    "ja": "カナルタウン",
+    "de": "Kanalstadt",
+    "fr": "Cité lacustre"
+  },
+  "4697": {
+    "en": "Yesterland",
+    "ja": "イェスタランド",
+    "de": "Gesterland",
+    "fr": "Terre d'hier"
+  },
+  "4698": {
+    "en": "Windspath Gardens",
+    "ja": "ウィンドパスガーデン",
+    "de": "Windpfadgärten",
+    "fr": "Jardins de Soufflevent"
+  },
+  "4699": {
+    "en": "Asyle Volcane",
+    "ja": "ヴォルケーノアサイラム",
+    "de": "Asylkan",
+    "fr": "Asile volcanique"
+  },
+  "4700": {
+    "en": "Leynode Mnemo",
+    "ja": "レイノード・メモリス",
+    "de": "Leyknoten Mnemo",
+    "fr": "Nœud tellurique mnémo"
+  },
+  "4701": {
+    "en": "Meso Terminal",
+    "ja": "メインターミナル",
+    "de": "Meso-System",
+    "fr": "Mésoterminal"
+  },
+  "4702": {
+    "en": "Hydro Terminal",
+    "ja": "ウォーターターミナル",
+    "de": "Hydro-System",
+    "fr": "Hydroterminal"
+  },
+  "4703": {
+    "en": "The Promenade",
+    "ja": "遊水通り",
+    "de": "Promenade",
+    "fr": "La Promenade"
+  },
+  "4704": {
+    "en": "Font of Devotion",
+    "ja": "いたわりの泉",
+    "de": "Tränen der Andacht",
+    "fr": "Fontaine du Dévouement"
+  },
+  "4705": {
+    "en": "Daguerreo Medical Collection",
+    "ja": "ダゲレオ医療史博物館",
+    "de": "Daguerreo-Museum für Medizinische Geschichte",
+    "fr": "Médicothèque Daguéréo"
+  },
+  "4706": {
+    "en": "The Immovable",
+    "ja": "不動の時計塔",
+    "de": "Der Unverstrichene",
+    "fr": "L'Inamovible"
+  },
+  "4707": {
+    "en": "Starglass",
+    "ja": "星河の鏡",
+    "de": "Sternenglas",
+    "fr": "Miroir astral"
+  },
+  "4708": {
+    "en": "Bergmähr-Ring",
+    "ja": "ラウンダバウト・ベルクメア",
+    "de": "Bergmähr-Ring",
+    "fr": "Manège Bergmähr"
+  },
+  "4709": {
+    "en": "Esperance Wheels",
+    "ja": "エスペランス・ホイール",
+    "de": "Rad der Hoffnung",
+    "fr": "Grandes roues de l'Espoir"
+  },
+  "4710": {
+    "en": "Air Cab Station",
+    "ja": "エアキャブ乗り場",
+    "de": "Lufttaxistand",
+    "fr": "Station de taxis aériens"
+  },
+  "4711": {
+    "en": "Proto Alexandria",
+    "ja": "プロト・アレクサンドリア",
+    "de": "Proto-Alexandria",
+    "fr": "Proto-Alexandrie"
+  },
+  "4712": {
+    "en": "Geo Terminal",
+    "ja": "アースターミナル",
+    "de": "Geo-System",
+    "fr": "Géoterminal"
+  },
+  "4713": {
+    "en": "Leynode Aero",
+    "ja": "レイノード・ウィンド",
+    "de": "Leyknoten Aero",
+    "fr": "Nœud tellurique aéro"
+  },
+  "4714": {
+    "en": "Blooms of Discovery",
+    "ja": "探求の花園",
+    "de": "Blüten der Entdeckung",
+    "fr": "Pétales de la Révélation"
+  },
+  "4715": {
+    "en": "Joy of the Mu",
+    "ja": "ムーの散歩道",
+    "de": "Freude der Mu",
+    "fr": "Perchoir des mu"
+  },
+  "4716": {
+    "en": "Cleyra Museum of Nature",
+    "ja": "クレイラ自然史博物館",
+    "de": "Cleyra-Naturkundemuseum",
+    "fr": "Muséum d'histoire naturelle Cleyra"
+  },
+  "4717": {
+    "en": "The Knowable",
+    "ja": "ザ・ノーアブル",
+    "de": "Das Ergründliche",
+    "fr": "Les Acquis"
+  },
+  "4718": {
+    "en": "Aero Terminal",
+    "ja": "ウィンドターミナル",
+    "de": "Aero-System",
+    "fr": "Aéroterminal"
+  },
+  "4719": {
+    "en": "Heatwells",
+    "ja": "アサイラム・ホットウェル",
+    "de": "Glühquellen",
+    "fr": "Aven ardent"
+  },
+  "4720": {
+    "en": "Opal Springs",
+    "ja": "オパールスプリング",
+    "de": "Opalborn",
+    "fr": "Sources opalines"
+  },
+  "4721": {
+    "en": "Leynode Pyro",
+    "ja": "レイノード・ファイア",
+    "de": "Leyknoten Pyro",
+    "fr": "Nœud tellurique pyro"
+  },
+  "4722": {
+    "en": "Arena of Valor",
+    "ja": "アリーナ・オブ・ヴァラー",
+    "de": "Manege der Tapferkeit",
+    "fr": "Arène du Courage"
+  },
+  "4723": {
+    "en": "Steps of the Speaker",
+    "ja": "旧き神子の道",
+    "de": "Stufen der Sprecherin",
+    "fr": "La Voie de la prêtresse"
+  },
+  "4724": {
+    "en": "Matchlock Menagerie",
+    "ja": "マッチロック動物園",
+    "de": "Wildgehege „Feuer & Flamme“",
+    "fr": "Zoo des Gâchettes"
+  },
+  "4725": {
+    "en": "Pyro Terminal",
+    "ja": "ファイアターミナル",
+    "de": "Pyro-System",
+    "fr": "Pyroterminal"
+  },
+  "4726": {
+    "en": "Dirigible Landing",
+    "ja": "気球発着場前",
+    "de": "Ballonplatz",
+    "fr": "Embarcadère à ballons"
+  },
+  "4727": {
+    "en": "The Resplendent Quarter",
+    "ja": "翼鏡の街",
+    "de": "Glanzfeder-Viertel",
+    "fr": "La Nuée bigarrée"
+  },
+  "4728": {
+    "en": "The For'ard Cabins",
+    "ja": "フォルアード・キャビンズ前",
+    "de": "Kielkajüten",
+    "fr": "Cabines de Proue"
+  },
+  "4729": {
+    "en": "Bayside Bevy Marketplace",
+    "ja": "マーケット（ベイサイド・ベヴィー）",
+    "de": "Küstenkolonie (Markt)",
+    "fr": "Marché (Baie commerçante)"
+  },
+  "4730": {
+    "en": "Vollok Shoonsa",
+    "ja": "ヴォロク連王宮前",
+    "de": "Vollok Shoonsa",
+    "fr": "Palais de Vollok Shoonsa"
+  },
+  "4731": {
+    "en": "Wachumeqimeqi",
+    "ja": "ワチュメキメキ万貨街",
+    "de": "Markt von Wachumeqimeqi",
+    "fr": "Bazar aux Mille Perles"
+  },
+  "4732": {
+    "en": "Brightploom Post",
+    "ja": "ブライトプルーム・ポスト前",
+    "de": "Grellfeder-Posten",
+    "fr": "Vigie de Claireplume"
+  },
+  "4733": {
+    "en": "Information Center",
+    "ja": "インフォメーションセンター前",
+    "de": "Auskunft",
+    "fr": "Centre d'informations"
+  },
+  "4734": {
+    "en": "True Vue",
+    "ja": "トゥルービュー",
+    "de": "Wahrlee",
+    "fr": "Vraie-vision"
+  },
+  "4735": {
+    "en": "Neon Stein",
+    "ja": "ネオンスタイン前",
+    "de": "Neonhumpen",
+    "fr": "La Chope à néons"
+  },
+  "4736": {
+    "en": "The Arcadion",
+    "ja": "アルカディア・ソサエティ前",
+    "de": "Arkadion-Gesellschaft",
+    "fr": "Société de l'Arcadion"
+  },
+  "4737": {
+    "en": "Resolution",
+    "ja": "レゾリューション",
+    "de": "Schlichtung",
+    "fr": "Résolution"
+  },
+  "4738": {
+    "en": "Nexus Arcade",
+    "ja": "ネクサスアーケード",
+    "de": "Nexus-Arkaden",
+    "fr": "Arcades marchandes"
+  },
+  "4739": {
+    "en": "Residential Sector",
+    "ja": "レジデンシャルセクター",
+    "de": "Wohnsektor",
+    "fr": "Secteur résidentiel"
+  },
+  "4740": {
+    "en": "Scanning Port Nine (Heritage Found)",
+    "ja": "スキャンポート（ヘリテージファウンド方面）",
+    "de": "Scanpass Neun (zum Ewigen Erbe)",
+    "fr": "Sentinelle Neuf (L'Hoirie recouvrée)"
+  },
+  "4741": {
+    "en": "Arch of the Dawn (Urqopacha)",
+    "ja": "グルージャジャ凱旋門（オルコ・パチャ方面）",
+    "de": "Tor der Morgensonne (nach Urqopacha)",
+    "fr": "Arc de Gulool Ja Ja (Urqopacha)"
+  },
+  "4742": {
+    "en": "Arch of the Dawn (Kozama'uka)",
+    "ja": "グルージャジャ凱旋門（コザマル・カ下流域方面）",
+    "de": "Tor der Morgensonne (ins untere Kozama'uka)",
+    "fr": "Arc de Gulool Ja Ja (Kozama'uka)"
+  },
+  "4743": {
+    "en": "Ihuykatumu (Kozama'uka)",
+    "ja": "イフイカ・トゥム（コザマル・カ上流域方面）",
+    "de": "Ihuykatumu (ins obere Kozama'uka)",
+    "fr": "Cours inférieur de l'Ihuykatumu (Kozama'uka)"
+  },
+  "4744": {
+    "en": "Dirigible Landing (Yak T'el)",
+    "ja": "気球発着場（ヤクテル樹海方面）",
+    "de": "Ballonplatz (nach Yak T'el)",
+    "fr": "Embarcadère à ballons (Yak T'el)"
+  },
+  "4745": {
+    "en": "Xak Tural Skygate (Shaaloani)",
+    "ja": "サカ・トラル関門（シャーローニ荒野方面）",
+    "de": "Himmelstor von Xak Tural (nach Shaaloani)",
+    "fr": "Porte du Xak Tural (Shaaloani)"
+  },
+  "4746": {
+    "en": "Solution Nine Aetheryte Plaza",
+    "ja": "エーテライト・プラザ",
+    "de": "Ätherytenplatz",
+    "fr": "Place de l'Éthérite"
+  },
+  "4747": {
+    "en": "Residential Radius 9-11",
+    "ja": "9-11居住殻",
+    "de": "Wohnradius 9-11",
+    "fr": "Division résidentielle 9-11"
+  },
+  "4748": {
+    "en": "Earthen Sky Hideout",
+    "ja": "空の坑道のアジト",
+    "de": "Unterschlupf im Irdenen Himmel",
+    "fr": "Refuge des Cavernes célestes"
+  },
+  "4749": {
+    "en": "Greenroom",
+    "ja": "控室",
+    "de": "Warteraum",
+    "fr": "Locaux de la Société de l'Arcadion"
+  },
+  "4750": {
+    "en": "Main Deck",
+    "ja": "大洋の船上",
+    "de": "Auf hoher See",
+    "fr": "Pont du navire"
+  },
+  "4751": {
+    "en": "Skydeep Cenote Inner Chamber",
+    "ja": "天深きセノーテ 最深部",
+    "de": "Tiefste Tiefen des Himmelstiefen Cenote",
+    "fr": "Profondeurs du cénote des Cieux infinis"
+  },
+  "4752": {
+    "en": "Sandnest",
+    "ja": "砂呑みのねぐら",
+    "de": "Nest der Sandsäufer",
+    "fr": "Antre sablonneux"
+  },
+  "4753": {
+    "en": "Tower of Mu",
+    "ja": "ムーの台塔",
+    "de": "Spitze der Mu",
+    "fr": "Tour du mu"
+  },
+  "4754": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "4494": {
+  "4755": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4756": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4757": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4758": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4759": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4760": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4761": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4762": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4763": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4764": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4765": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4766": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4767": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4768": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4769": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4770": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4771": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4772": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4773": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4774": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4775": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4776": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4777": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4778": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4779": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4780": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4781": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4782": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4783": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4784": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4785": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4786": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4787": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4788": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4789": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4790": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4791": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4792": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4793": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4794": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4795": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4796": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4797": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4798": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4799": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4800": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4801": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4802": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4803": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4804": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4805": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4806": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4807": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4808": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4809": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4810": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4811": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4812": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4813": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4814": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4815": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4816": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4817": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4818": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4819": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4820": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4821": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4822": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4823": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4824": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4825": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4826": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4827": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4828": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4829": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4830": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4831": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4832": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4835": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4836": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4837": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4838": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4839": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4840": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4844": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4845": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4846": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4847": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4848": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4849": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4850": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4851": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4852": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4853": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4854": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4855": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4856": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4857": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4858": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4859": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4860": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4861": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4862": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4863": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4864": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4865": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4866": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4867": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4868": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4869": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4870": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4871": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4872": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4873": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4874": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4875": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4876": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4877": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4878": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4879": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4880": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4881": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4882": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4883": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4884": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4885": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4886": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4887": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4888": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4889": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4890": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4891": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4892": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4893": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4894": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4895": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4896": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4897": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4898": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4899": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4900": {
+    "en": "Downriver Ihuykatumu",
+    "ja": "イフイカ・トゥム下流域",
+    "de": "Unterlauf des Ihuykatumu",
+    "fr": "Cours inférieur de l'Ihuykatumu"
+  },
+  "4901": {
+    "en": "Midriver Ihuykatumu",
+    "ja": "イフイカ・トゥム中流域",
+    "de": "Mittellauf des Ihuykatumu",
+    "fr": "Cours moyen de l'Ihuykatumu"
+  },
+  "4902": {
+    "en": "Wuk Lamat's Riverboat",
+    "ja": "王女の川船",
+    "de": "Boot der Prinzessin",
+    "fr": "Barge de la Princesse"
+  },
+  "4903": {
+    "en": "Koza'uyuy",
+    "ja": "コザ・ウユー",
+    "de": "Koza'uyuy",
+    "fr": "Koza'uyuy"
+  },
+  "4904": {
+    "en": "Richleaf Tunnels",
+    "ja": "黄葉鉱洞",
+    "de": "Gelbblatt-Grotte",
+    "fr": "Grotte de l'Automne"
+  },
+  "4905": {
+    "en": "Kozaligaka",
+    "ja": "コザ・リガカ",
+    "de": "Kozaligaka",
+    "fr": "Kozaligaka"
+  },
+  "4906": {
+    "en": "Punutiy Pool",
+    "ja": "プヌティープール",
+    "de": "Punutiy-Revier",
+    "fr": "Bassin aux punutiy"
+  },
+  "4907": {
+    "en": "Drowsie's Grotto",
+    "ja": "ドラウジーのねぐら",
+    "de": "Schläfrichs Bau",
+    "fr": "Caverne assoupie"
+  },
+  "4908": {
+    "en": "Breathcatch",
+    "ja": "肺の広場",
+    "de": "Lungenlichtung",
+    "fr": "Cœur de la Selve"
+  },
+  "4909": {
+    "en": "Vanguard",
+    "ja": "ヴァンガード",
+    "de": "Außenposten",
+    "fr": "L'Avant-garde"
+  },
+  "4910": {
+    "en": "Outer Ward",
+    "ja": "外縁区画",
+    "de": "Umrand",
+    "fr": "Périmètre extérieur"
+  },
+  "4911": {
+    "en": "Holding Line",
+    "ja": "待機区画",
+    "de": "Innerer Verteidigungsring",
+    "fr": "Secteur d'attente"
+  },
+  "4912": {
+    "en": "Storage Facility",
+    "ja": "格納区画",
+    "de": "Hangar",
+    "fr": "Aire de stockage"
+  },
+  "4913": {
+    "en": "Crossbridge",
+    "ja": "連絡橋",
+    "de": "Verbindungsbrücke",
+    "fr": "Pont de connexion"
+  },
+  "4914": {
+    "en": "Vanguard Command",
+    "ja": "本営区画",
+    "de": "Zentralsektor",
+    "fr": "Centre de commandement"
+  },
+  "4915": {
+    "en": "Central Garage",
+    "ja": "大型格納庫",
+    "de": "Großhangar",
+    "fr": "Garage central"
+  },
+  "4916": {
+    "en": "Safety Inspection Chamber",
+    "ja": "保安検査室",
+    "de": "Sicherheitskontrollzentrale",
+    "fr": "Salle d'inspection sécuritaire"
+  },
+  "4917": {
+    "en": "Vanguard Control Room",
+    "ja": "前哨基地司令室",
+    "de": "Kommandozentrale",
+    "fr": "Salle de contrôle de L'Avant-garde"
+  },
+  "4918": {
+    "en": "Tender Valley",
+    "ja": "サボテンダーバレー",
+    "de": "Kaktorsenke",
+    "fr": "Vallée des Pampas"
+  },
+  "4919": {
+    "en": "Faded Footstep",
+    "ja": "来たりし者の遺跡",
+    "de": "Bleiche Spur",
+    "fr": "Pas effacés"
+  },
+  "4920": {
+    "en": "The Valley of Sabotenderous Celebrity",
+    "ja": "覇王樹の祭列",
+    "de": "Tal des Königlichen Kaktors",
+    "fr": "Cortège des Arbres-rois"
+  },
+  "4921": {
+    "en": "Zarjor Wash",
+    "ja": "ザージョー水道",
+    "de": "Zarjor-Kanal",
+    "fr": "Aqueduc de Zarjor"
+  },
+  "4922": {
+    "en": "Ancient Arrival",
+    "ja": "来たりし者の参道",
+    "de": "Alte Ankunft",
+    "fr": "Sentier des Pèlerins"
+  },
+  "4923": {
+    "en": "Spineblossom",
+    "ja": "棘咲く苑",
+    "de": "Nadelblüte",
+    "fr": "Jardin épineux"
+  },
+  "4924": {
+    "en": "Tremendous Tank",
+    "ja": "巨躯の貯水槽",
+    "de": "Sagenhafter Speicher",
+    "fr": "Citerne colossale"
+  },
+  "4925": {
+    "en": "Altar of the Urn Exulted",
+    "ja": "蛇壺の祭壇",
+    "de": "Altar der Schlängelnden Urne",
+    "fr": "Autel de l'Urne serpentine"
+  },
+  "4926": {
+    "en": "Tender Valley",
+    "ja": "サボテンダーバレー",
+    "de": "Kaktorsenke",
+    "fr": "Vallée des Pampas"
+  },
+  "4927": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4928": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4929": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4930": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4931": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4932": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4933": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4934": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4935": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4936": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4937": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4938": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4939": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4940": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4941": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4942": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4943": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4944": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4945": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4946": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4947": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4948": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4949": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4950": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4951": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4952": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4953": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4954": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4955": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4956": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4957": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4958": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4959": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4960": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4961": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4962": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4963": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4964": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4965": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4966": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4967": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4968": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4969": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4970": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4971": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4972": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4973": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4974": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4975": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4976": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4977": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4978": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4979": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4980": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4981": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4982": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4983": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4984": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4985": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4986": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4987": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4988": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4989": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4990": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4991": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4992": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4993": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4994": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4995": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4996": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4997": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4998": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4999": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5000": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5001": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5002": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5003": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5004": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5006": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5007": {
+    "en": "Origenics",
+    "ja": "オリジェニクス",
+    "de": "Origenik",
+    "fr": "L'Origenèse"
+  },
+  "5008": {
+    "en": "Hover Docks",
+    "ja": "資源搬入港",
+    "de": "Lieferhafen ",
+    "fr": "Port de livraison"
+  },
+  "5009": {
+    "en": "Lower Origenics",
+    "ja": "下層",
+    "de": "Untere Ebenen",
+    "fr": "Niveau inférieur"
+  },
+  "5010": {
+    "en": "Transport Elevator",
+    "ja": "昇降機",
+    "de": "Lift",
+    "fr": "Monte-charge"
+  },
+  "5011": {
+    "en": "Middle Origenics",
+    "ja": "中層",
+    "de": "Mittlere Ebenen",
+    "fr": "Niveau médian"
+  },
+  "5012": {
+    "en": "Upper Origenics",
+    "ja": "上層",
+    "de": "Obere Ebenen",
+    "fr": "Niveau supérieur"
+  },
+  "5013": {
+    "en": "Intake Wharf",
+    "ja": "資源搬入埠頭",
+    "de": "Anlegestelle",
+    "fr": "Quai d'admission"
+  },
+  "5014": {
+    "en": "Resource Collection Facility",
+    "ja": "資源集積区画",
+    "de": "Frachtenlagerung",
+    "fr": "Zone de stockage des ressources"
+  },
+  "5015": {
+    "en": "Soul Management Division",
+    "ja": "魂魄管理区画",
+    "de": "Seelenverwaltung",
+    "fr": "Zone de contrôle des âmes"
+  },
+  "5016": {
+    "en": "Soul Processing Division",
+    "ja": "魂魄加工区画",
+    "de": "Seelenverarbeitung",
+    "fr": "Zone de traitement des âmes"
+  },
+  "5017": {
+    "en": "Soul Research Division",
+    "ja": "魂魄研究区画",
+    "de": "Seelenforschung",
+    "fr": "Laboratoire de recherche"
+  },
+  "5018": {
+    "en": "Resource Transport Elevator",
+    "ja": "資源用エレベーター",
+    "de": "Lastenaufzug",
+    "fr": "Ascenseur de transport"
+  },
+  "5019": {
+    "en": "Temporary Regulator Storage",
+    "ja": "レギュレーター臨時保管場",
+    "de": "Regulator-Depot",
+    "fr": "Entrepôt des régulateurs"
+  },
+  "5020": {
+    "en": "Resource Transport Elevator",
+    "ja": "資源用エレベーター",
+    "de": "Lastenaufzug",
+    "fr": "Ascenseur de transport"
+  },
+  "5021": {
+    "en": "Soul Extraction Facility",
+    "ja": "魂魄抽出室",
+    "de": "Extraktionskammer",
+    "fr": "Salle d'extraction spirituelle"
+  },
+  "5022": {
+    "en": "Memory Separation Facility",
+    "ja": "記憶洗浄室",
+    "de": "Bereinigungskammer",
+    "fr": "Salle de dissolution mémorielle"
+  },
+  "5023": {
+    "en": "Soul Conveyance Circuit",
+    "ja": "魂資源搬送路",
+    "de": "Lieferleitung",
+    "fr": "Voie d'acheminement"
+  },
+  "5024": {
+    "en": "Surveillance Room",
+    "ja": "警備監視室",
+    "de": "Überwachungskammer",
+    "fr": "Salle de surveillance"
+  },
+  "5025": {
+    "en": "Upper Delivery Port",
+    "ja": "上層搬出口",
+    "de": "Frachtenaufgang",
+    "fr": "Aire supérieure de livraison"
+  },
+  "5026": {
+    "en": "Enhancement Testing Grounds",
+    "ja": "強化実験室",
+    "de": "Labor für Innovative Forschung",
+    "fr": "Salle de renforcement expérimental"
+  },
+  "5027": {
+    "en": "The Skydeep Cenote",
+    "ja": "天深きセノーテ",
+    "de": "Himmelstiefer Cenote",
+    "fr": "Cénote des Cieux infinis"
+  },
+  "5028": {
+    "en": "Gok Draak Cenotaph",
+    "ja": "ゴクドラーク慰霊堂",
+    "de": "Gok Draak Ruhestätte",
+    "fr": "Tombeau de Gok Draak"
+  },
+  "5029": {
+    "en": "Vurgar Quarry",
+    "ja": "ヴーガー採石坑",
+    "de": "Vurgar-Steinbruch",
+    "fr": "Site d'extraction de Vurgar"
+  },
+  "5030": {
+    "en": "Path of Dying Light",
+    "ja": "滅明の路",
+    "de": "Pfad des Schwindenden Lichts",
+    "fr": "Sentier de la Lumière vacillante"
+  },
+  "5031": {
+    "en": "Unsung Elegy",
+    "ja": "無命卵への弔歌壇",
+    "de": "Ungesungene Elegie",
+    "fr": "Thrène aux enfants sacrifiés"
+  },
+  "5032": {
+    "en": "Vurgar Mettlegrounds",
+    "ja": "ヴーガー試戦場",
+    "de": "Vurgar-Prüfstätte",
+    "fr": "Terrain d'entraînement de Vurgar"
+  },
+  "5033": {
+    "en": "Gatekeep's Anvil",
+    "ja": "紫金の門前",
+    "de": "Tor des Violetten Goldes",
+    "fr": "Porte de l'or pourpre"
+  },
+  "5034": {
+    "en": "Tearspent",
+    "ja": "慰めの涙跡",
+    "de": "Tränenspur",
+    "fr": "Larmes de la consolation"
+  },
+  "5035": {
+    "en": "Miners' Mark",
+    "ja": "堅き石切場",
+    "de": "Lager der Steinhauer",
+    "fr": "Carrière des tailleurs de rocs"
+  },
+  "5036": {
+    "en": "Path of Dying Light",
+    "ja": "滅明の路",
+    "de": "Pfad des Schwindenden Lichts",
+    "fr": "Sentier de la Lumière vacillante"
+  },
+  "5037": {
+    "en": "Downripple",
+    "ja": "嘴休めの泉",
+    "de": "Schnabelhort",
+    "fr": "L'Abreuvoir"
+  },
+  "5038": {
+    "en": "The For'ard Cabins",
+    "ja": "フォルアード・キャビンズ",
+    "de": "Kielkajüten",
+    "fr": "Cabines de Proue"
+  },
+  "5039": {
+    "en": "High Tide Harbor",
+    "ja": "満ちた玄関",
+    "de": "Hochfluthafen",
+    "fr": "Perron des Valeureux"
+  },
+  "5040": {
+    "en": "Sunken Stars",
+    "ja": "涙浮かぶ星池",
+    "de": "Sternentiefe",
+    "fr": "Pleure-aux-Étoiles"
+  },
+  "5041": {
+    "en": "Chirwagur Lake",
+    "ja": "チーワグー塩池",
+    "de": "See der Chirwagur",
+    "fr": "Lac de Chirwagur"
+  },
+  "5042": {
+    "en": "Karvarhur the First",
+    "ja": "カーヴァーフー湖",
+    "de": "Karvarhur die Erste",
+    "fr": "Berceau de Karvarhur"
+  },
+  "5043": {
+    "en": "Bopo'uihih",
+    "ja": "ボポル・ウィヒヒ",
+    "de": "Bopo'uihih",
+    "fr": "Bopo'uihih"
+  },
+  "5044": {
+    "en": "Waters Hanu",
+    "ja": "ハヌの水辺",
+    "de": "Hanu-Wasser",
+    "fr": "Berge de Hanu"
+  },
+  "5045": {
+    "en": "Miyakabek'zu",
+    "ja": "ミヤカ・ベック下流",
+    "de": "Miyakabek'zu",
+    "fr": "Miyakabek'zu"
+  },
+  "5046": {
+    "en": "The Dewspun Bank",
+    "ja": "デュースパン・バンク",
+    "de": "Taustaden",
+    "fr": "Rive aux Fils de rosée"
+  },
+  "5047": {
+    "en": "Peaks Poga",
+    "ja": "ポガの岸辺",
+    "de": "Poga-Ufer",
+    "fr": "Berge de Poga"
+  },
+  "5048": {
+    "en": "Ku'uxage",
+    "ja": "クル・シャゲ",
+    "de": "Ku'uxage",
+    "fr": "Ku'uxage"
+  },
+  "5049": {
+    "en": "Miyakabek'zoma",
+    "ja": "ミヤカ・ベック上流",
+    "de": "Miyakabek'zoma",
+    "fr": "Miyakabek'zoma"
+  },
+  "5050": {
+    "en": "Marsh Ligaka",
+    "ja": "リガカの潟",
+    "de": "Ligaka-Bruch",
+    "fr": "Marais de Ligaka"
+  },
+  "5051": {
+    "en": "Xd'aa Talat Tsoly",
+    "ja": "シャダータラト・ゾユ",
+    "de": "Xd'aa Talat Tsoly",
+    "fr": "Xd'aa Talat Tsoly"
+  },
+  "5052": {
+    "en": "Iq Br'aax Reservoir",
+    "ja": "イクブラーシャの溜池",
+    "de": "Iq Br'aax-Becken",
+    "fr": "Réservoir d'Iq Br'aax"
+  },
+  "5053": {
+    "en": "Yak Awak Tsoly",
+    "ja": "ヤクアワク・ゾユ",
+    "de": "Yak Awak Tsoly",
+    "fr": "Yak Awak Tsoly"
+  },
+  "5054": {
+    "en": "Iq Rrax Tsoly",
+    "ja": "イクラシュ・ゾユ",
+    "de": "Iq Rrax Tsoly",
+    "fr": "Iq Rrax Tsoly"
+  },
+  "5055": {
+    "en": "Xobr'it Tsoly",
+    "ja": "ショブリト・ゾユ",
+    "de": "Xobr'it Tsoly",
+    "fr": "Xobr'it Tsoly"
+  },
+  "5056": {
+    "en": "Ankledeep",
+    "ja": "足首の小セノーテ",
+    "de": "Kleiner Fersenbiss",
+    "fr": "Trempecheville"
+  },
+  "5057": {
+    "en": "Cenote Moxutural",
+    "ja": "セノーテ・モシュトラル",
+    "de": "Cenote Moxutural",
+    "fr": "Cénote de Moxutural"
+  },
+  "5058": {
+    "en": "Cenote Jayunja",
+    "ja": "セノーテ・ジャユンジャ",
+    "de": "Cenote Jayunja",
+    "fr": "Cénote Jayunja"
+  },
+  "5059": {
+    "en": "Sapsweet Cenote",
+    "ja": "甘い涌き水",
+    "de": "Süßquell",
+    "fr": "Douce-Source"
+  },
+  "5060": {
+    "en": "Bitterbark Cenote",
+    "ja": "辛水のセノーテ",
+    "de": "Bitternasser Cenote",
+    "fr": "Aigres-Eaux"
+  },
+  "5061": {
+    "en": "Xty'iinbek Tsoly",
+    "ja": "シャティーンベク・ゾユ",
+    "de": "Xty'iinbek Tsoly",
+    "fr": "Xty'iinbek Tsoly"
+  },
+  "5062": {
+    "en": "Niikwerepi",
+    "ja": "ニーケレピ川",
+    "de": "Niikwerepi",
+    "fr": "Niikwerepi"
+  },
+  "5063": {
+    "en": "Lake Toari",
+    "ja": "トーリ湖",
+    "de": "Toari-See",
+    "fr": "Lac Toari"
+  },
+  "5064": {
+    "en": "Westbound Zorgor",
+    "ja": "ゾーゴー海峡西",
+    "de": "Westseite von Zorgor",
+    "fr": "Détroit ouest de Zorgor"
+  },
+  "5065": {
+    "en": "Eastbound Zorgor",
+    "ja": "ゾーゴー海峡東",
+    "de": "Ostseite von Zorgor",
+    "fr": "Détroit est de Zorgor"
+  },
+  "5066": {
+    "en": "Outskirts Shallows",
+    "ja": "アウトスカーツ大濠",
+    "de": "Untiefen der Außenbezirke",
+    "fr": "Bas-fond des Faubourgs"
+  },
+  "5067": {
+    "en": "The Driftdowns",
+    "ja": "ドリフトダウンズ",
+    "de": "Unterströme",
+    "fr": "La Dérive"
+  },
+  "5068": {
+    "en": "Crackling Canyons",
+    "ja": "帯雷危険水域",
+    "de": "Knistergewässer",
+    "fr": "Canyon grondant"
+  },
+  "5069": {
+    "en": "Alexandrian Ruins",
+    "ja": "アレクサンドリア旧市街",
+    "de": "Ruinen von Alexandria",
+    "fr": "Ruines d'Alexandrie"
+  },
+  "5070": {
+    "en": "Residential Sector",
+    "ja": "レジデンシャルセクター",
+    "de": "Wohnsektor",
+    "fr": "Secteur résidentiel"
+  },
+  "5071": {
+    "en": "The Knowable",
+    "ja": "ザ・ノーアブル",
+    "de": "Das Ergründliche",
+    "fr": "Les Acquis"
+  },
+  "5072": {
+    "en": "Mu Springs Eternal",
+    "ja": "ムーの泉",
+    "de": "Quellen der Mu",
+    "fr": "Source des mu"
+  },
+  "5073": {
+    "en": "Leynode Aero",
+    "ja": "レイノード・ウィンド",
+    "de": "Leyknoten Aero",
+    "fr": "Nœud tellurique aéro"
+  },
+  "5074": {
+    "en": "Canal Town South",
+    "ja": "カナルタウン南",
+    "de": "Süden von Kanalstadt ",
+    "fr": "Sud de la Cité lacustre"
+  },
+  "5075": {
+    "en": "Canal Town North",
+    "ja": "カナルタウン北",
+    "de": "Norden von Kanalstadt ",
+    "fr": "Nord de la Cité lacustre"
+  },
+  "5076": {
+    "en": "Proto Alexandria",
+    "ja": "プロト・アレクサンドリア",
+    "de": "Proto-Alexandria",
+    "fr": "Proto-Alexandrie"
+  },
+  "5077": {
+    "en": "Karvarhur the First",
+    "ja": "カーヴァーフー湖",
+    "de": "Karvarhur die Erste",
+    "fr": "Berceau de Karvarhur"
+  },
+  "5078": {
+    "en": "Eastern Marsh Ligaka",
+    "ja": "リガカの潟東",
+    "de": "Östliches Ligaka-Bruch",
+    "fr": "Est des marais de Ligaka"
+  },
+  "5079": {
+    "en": "Western Marsh Ligaka",
+    "ja": "リガカの潟西",
+    "de": "Westliches Ligaka-Bruch",
+    "fr": "Ouest des marais de Ligaka"
+  },
+  "5080": {
+    "en": "Marsh Ligaka Depths",
+    "ja": "リガカの潟中央深部",
+    "de": "Tiefen des Ligaka-Bruchs",
+    "fr": "Profondeurs des marais de Ligaka"
+  },
+  "5081": {
+    "en": "Xd'aa Talat Tsoly",
+    "ja": "シャダータラト・ゾユ",
+    "de": "Xd'aa Talat Tsoly",
+    "fr": "Xd'aa Talat Tsoly"
+  },
+  "5082": {
+    "en": "Western Iq Rrax Tsoly",
+    "ja": "イクラシュ・ゾユ西",
+    "de": "Westen von Iq Rrax Tsoly",
+    "fr": "Ouest de l'Iq Rrax Tsoly"
+  },
+  "5083": {
+    "en": "Eastern Iq Rrax Tsoly",
+    "ja": "イクラシュ・ゾユ東",
+    "de": "Osten von Iq Rrax Tsoly",
+    "fr": "Est de l'Iq Rrax Tsoly"
+  },
+  "5084": {
+    "en": "Iq Rrax Tsoly Depths",
+    "ja": "イクラシュ・ゾユ中央湖底",
+    "de": "Tiefen von Iq Rrax Tsoly",
+    "fr": "Profondeurs de l'Iq Rrax Tsoly"
+  },
+  "5085": {
+    "en": "Northern Lake Toari",
+    "ja": "トーリ湖北",
+    "de": "Nördlicher Toari-See",
+    "fr": "Nord du lac Toari"
+  },
+  "5086": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5087": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5088": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5089": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5090": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5091": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5092": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5093": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5094": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5095": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5096": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5097": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5098": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5099": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5100": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5101": {
+    "en": "Vurgar Armory",
+    "ja": "ヴーガー造兵廠",
+    "de": "Vurgar-Waffenlager",
+    "fr": "Armurerie de Vurgar"
+  },
+  "5102": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5103": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5104": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5105": {
+    "en": "Strayborough",
+    "ja": "ストレイバロー",
+    "de": "Mahrlingen-Promenade",
+    "fr": "Parc-aux-Errants"
+  },
+  "5106": {
+    "en": "Friendship Round",
+    "ja": "フレンドシップラウンド",
+    "de": "Runde der Freundschaft",
+    "fr": "Cercle de l'Amitié"
+  },
+  "5107": {
+    "en": "The Party Plaza",
+    "ja": "パーティープラザ",
+    "de": "Teekreisel",
+    "fr": "Place de la Festivité"
+  },
+  "5108": {
+    "en": "The Restive Hall",
+    "ja": "レストレスホール",
+    "de": "Halle der Nimmerruhe",
+    "fr": "Chambre des Sans-repos"
+  },
+  "5109": {
+    "en": "The Giggling Gate",
+    "ja": "ギグルゲート",
+    "de": "Tor der Torheit",
+    "fr": "Porche de la Joie"
+  },
+  "5110": {
+    "en": "The Boroughfare",
+    "ja": "バローストリート",
+    "de": "Schaudersteig",
+    "fr": "Avenue du Parc"
+  },
+  "5111": {
+    "en": "Forget-Me-Nogg Gardens",
+    "ja": "ナイスヘッド・ガーデン",
+    "de": "Birnengarten",
+    "fr": "Jardin de Sa Cabochesté"
+  },
+  "5112": {
+    "en": "The Frolicking Grounds",
+    "ja": "フロリックパーク",
+    "de": "Frohlockpark",
+    "fr": "Promenade des Guillerets"
+  },
+  "5113": {
+    "en": "The Endless House",
+    "ja": "エンドレスハウス",
+    "de": "Endloses Anwesen",
+    "fr": "Manoir sans fin"
+  },
+  "5114": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5115": {
+    "en": "Worqor Lar Dor",
+    "ja": "ウォーコー・ラァ・ドー",
+    "de": "Worqor Lar Dor",
+    "fr": "Worqor Lar Dor"
+  },
+  "5116": {
+    "en": "Interphos",
+    "ja": "次元黄道",
+    "de": "Interdimensionale Ekliptik",
+    "fr": "Écliptique dimensionnelle"
+  },
+  "5117": {
+    "en": "Summit of Everkeep",
+    "ja": "エバーキープ最上層",
+    "de": "Immerspitze",
+    "fr": "Sommet de la Gardienne de l'Éternité"
+  },
+  "5118": {
+    "en": "Dreamborough South",
+    "ja": "ドリーマーバロー南地区",
+    "de": "Mahrlingen-Promenade Süd",
+    "fr": "Quartier sud des Rêveurs"
+  },
+  "5119": {
+    "en": "Dreamborough North",
+    "ja": "ドリーマーバロー北地区",
+    "de": "Mahrlingen-Promenade Nord",
+    "fr": "Quartier nord des Rêveurs"
+  },
+  "5120": {
+    "en": "Manor Basement",
+    "ja": "廃屋の地下室",
+    "de": "Keller des verlassenen Gebäudes",
+    "fr": "Sous-sol du vieux manoir"
+  },
+  "5121": {
+    "en": "Dreamlike Palace",
+    "ja": "夢香る宮殿",
+    "de": "Palast der Träume",
+    "fr": "Palais au parfum onirique"
+  },
+  "5122": {
+    "en": "Antegallery",
+    "ja": "画廊の間",
+    "de": "Galerie",
+    "fr": "Galerie imaginée"
+  },
+  "5123": {
+    "en": "Artist's Atrium",
+    "ja": "画工の間",
+    "de": "Vorhalle",
+    "fr": "Antichambre imaginée"
+  },
+  "5124": {
+    "en": "Solitary Studio",
+    "ja": "画室の間",
+    "de": "Atelier",
+    "fr": "Salle d'audience imaginée"
+  },
+  "5125": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5126": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5127": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5128": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5130": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5131": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5132": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5133": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5134": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5136": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5137": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5138": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5139": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5140": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5141": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5142": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5143": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5144": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5146": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5147": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5148": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5149": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5150": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5151": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5152": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5153": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5154": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5160": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5161": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5164": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5165": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5167": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5168": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5169": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5170": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5171": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5172": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5173": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5177": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5178": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5181": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5183": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5184": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5185": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5186": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5187": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5188": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5189": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5190": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5191": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5193": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5194": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5195": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5196": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5197": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5198": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5199": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5200": {
     "en": "",
     "ja": "",
     "de": "",

@@ -1,6 +1,7 @@
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 import { Tug } from '@ffxiv-teamcraft/types';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
+import { StatusEntry } from '../../../modules/eorzea/status-entry';
 
 export interface FishingReporterState {
   isFishing: boolean;
@@ -13,7 +14,7 @@ export interface FishingReporterState {
     gp: number;
   };
   mooch?: number;
-  statuses: number[];
+  statuses: StatusEntry[];
   weatherId: number;
   previousWeatherId: number;
   throwData?: any | null;

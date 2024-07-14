@@ -499,6 +499,20 @@ export class IpcService {
     }
   }
 
+  public sendState(): void {
+    this.store
+      .pipe(
+        first()
+      )
+      .subscribe(state => {
+        this.send('app-state:set', {
+          lists: JSON.parse(JSON.stringify(state.lists)),
+          layouts: JSON.parse(JSON.stringify(state.layouts)),
+          eorzea: JSON.parse(JSON.stringify(state.eorzea))
+        });
+      });
+  }
+
   private handleMessage(packet: Message): void {
     this.totalPacketsHandled++;
     if (this.pcapStatus$.value !== PacketCaptureStatus.RUNNING) {

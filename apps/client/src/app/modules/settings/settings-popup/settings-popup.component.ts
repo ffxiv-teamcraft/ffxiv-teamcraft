@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { SettingsService } from '../settings.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../../core/database/user.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
@@ -45,20 +43,22 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { AsyncPipe, NgTemplateOutlet, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { StaticData } from '../../../lazy-data/static-data';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
 
 @Component({
-    selector: 'app-settings-popup',
-    templateUrl: './settings-popup.component.html',
-    styleUrls: ['./settings-popup.component.less'],
-    standalone: true,
-    imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe]
+  selector: 'app-settings-popup',
+  templateUrl: './settings-popup.component.html',
+  styleUrls: ['./settings-popup.component.less'],
+  standalone: true,
+  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe]
 })
 export class SettingsPopupComponent {
 
@@ -144,8 +144,14 @@ export class SettingsPopupComponent {
     {
       id: 183,
       placenameId: 3707
+    },
+    {
+      id: 216,
+      placenameId: 4504
     }
   ];
+
+  globalFATEMapIds = StaticData.globalFATEShopMapIds;
 
   housingMaps$ = this.lazyData.getEntry('maps').pipe(
     map(maps => uniqBy(Object.values(maps).filter(v => v.housing), v => v.placename_id))
@@ -161,6 +167,8 @@ export class SettingsPopupComponent {
   public sidebarFavorites = [...this.settings.sidebarFavorites];
 
   public favoriteAetherytes = [...this.settings.favoriteAetherytes];
+
+  public unlockedFATEAreas = [...this.settings.unlockedFATEAreas];
 
   public ignoredInventories = [...this.settings.ignoredInventories];
 
@@ -370,9 +378,13 @@ export class SettingsPopupComponent {
   }
 
   startMappy(): void {
-    if (!this.mappy.available) {
-      this.mappy.start();
-    }
+    this.mappy.available$.subscribe(available => {
+      if (available && !this.mappy.running) {
+        this.mappy.start();
+      } else {
+        this.mappy.stop();
+      }
+    });
   }
 
   pcapToggleChange(value: boolean): void {
@@ -380,10 +392,6 @@ export class SettingsPopupComponent {
       this.settings.enableUniversalisSourcing = true;
     }
     this.ipc.send('toggle-pcap', value);
-  }
-
-  rawsockChange(value: boolean): void {
-    this.ipc.send('rawsock', value);
   }
 
   openDesktopConsole(): void {

@@ -1,24 +1,21 @@
-import { Component } from '@angular/core';
-import { ListLayout } from '../../../core/layout/list-layout';
+import { Component, inject } from '@angular/core';
 import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
-import { NzModalRef } from 'ng-zorro-antd/modal';
+import { NZ_MODAL_DATA, NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
 import { FlexModule } from '@angular/flex-layout/flex';
-import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-layout-row-display-editor',
-    templateUrl: './layout-row-display-editor.component.html',
-    styleUrls: ['./layout-row-display-editor.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
+  selector: 'app-layout-row-display-editor',
+  templateUrl: './layout-row-display-editor.component.html',
+  styleUrls: ['./layout-row-display-editor.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, TranslateModule]
 })
-export class LayoutRowDisplayEditorComponent extends DialogComponent {
+export class LayoutRowDisplayEditorComponent {
 
   types = ItemRowMenuElement;
 
@@ -26,10 +23,13 @@ export class LayoutRowDisplayEditorComponent extends DialogComponent {
     .map(key => +key)
     .filter(res => this.types[res] !== undefined);
 
-  layout: ListLayout;
+  data = inject(NZ_MODAL_DATA);
+
+  get layout() {
+    return this.data.layout;
+  }
 
   constructor(private modalRef: NzModalRef) {
-    super();
   }
 
   currentType(type: ItemRowMenuElement): 'button' | 'menu' {
@@ -42,10 +42,10 @@ export class LayoutRowDisplayEditorComponent extends DialogComponent {
   setType(item: ItemRowMenuElement, type: 'button' | 'menu'): void {
     if (type === 'menu') {
       this.layout.rowsDisplay.buttons = this.layout.rowsDisplay.buttons.filter(i => i !== item);
-      this.layout.rowsDisplay.menu.push(item);
+      this.layout.rowsDisplay.menu = [...this.layout.rowsDisplay.menu, item];
     } else {
       this.layout.rowsDisplay.menu = this.layout.rowsDisplay.menu.filter(i => i !== item);
-      this.layout.rowsDisplay.buttons.push(item);
+      this.layout.rowsDisplay.buttons = [...this.layout.rowsDisplay.buttons, item];
     }
   }
 

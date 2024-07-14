@@ -18,7 +18,7 @@
   "List_fork_in_progress": "Копирование списка на ваш аккаунт…",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
-  "Patch_notes": "Список исправлений",
+  "Patch_notes": "{{version}} изменения",
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
@@ -190,7 +190,7 @@
     "Never": "Никогда",
     "Festival": "Только во время фестиваля",
     "Back": "Назад",
-    "Support_us_remove_ads": "Поддержите нас чтобы убрать рекламу",
+    "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
     "Support_us": "Поддержите нас",
     "Show_more": "Показать еще",
     "Item": "Предмет",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Использовать lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Список скопирован на ваш аккаунт",
-  "List_fork": "Скопируйте этот список в ваш аккаунт (ctrl + кликните, чтобы скопировать как оффлайн список)",
+  "List_fork": "Копировать список на ваш аккаунт",
   "List_not_found": "Список не найден или у вас нет к нему доступа",
   "Requirements_for_craft": "Посмотреть требования",
   "Zone_breakdown": "Площадь зоны",
@@ -456,7 +456,7 @@
     "Connected_with_tipeee": "Подключено к Tipeee",
     "Nickname": "Ник",
     "Nickname_used": "Данный ник уже используется",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
+    "No_nickname_warning": "Пожалуйста, перейдите на страницу настроек и установите ник, чтобы иметь возможность использовать эксклюзивные функции Patreon'а.",
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "Disable_fc_integration": "Отключить функции обмена ФК",
@@ -549,6 +549,8 @@
     "Desktop_tip_title": "Teamcraft имеет настольное приложение! Лучше, быстрее, сильнее",
     "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
     "Lists_offline_by_default": "Make lists offline by default",
+    "Unlocked_FATE_areas": "Unlocked FATE shops",
+    "Unlocked_FATE_areas_explain": "Cities in which you have unlocked FATE shop after completing all Shared FATEs for that expansion.",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -673,6 +675,7 @@
     }
   },
   "LIST": {
+    "Offline_lists_no_child_window": "Offline lists don't work in child window, your changes won't be applied to the main window.",
     "Archive": "Архив",
     "Unarchive": "Вернуть из архива",
     "Regenerate": "Обновить список до последней версии Teamcraft",
@@ -793,7 +796,7 @@
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
     "Autofill_crafting_gathering_title": "Обнаружен процесс крафта или сбора",
     "Autofill_crafting_gathering_message": "Автозаполнение работает в медленном режиме до тех пор, пока вы не завершите крафт (встанете в игре) или сбор (закроете интерфейс), чтобы избежать проблем с автозаполнением.",
-    "Fill_with_inventory": "Заполнить из инвентаря",
+    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
     "X_needed": "{{amount}} требуется",
@@ -897,6 +900,7 @@
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
     "ENDWALKER": "Endwalker",
+    "DAWNTRAIL": "Dawntrail",
     "OUTDATED": "Устаревший",
     "GEAR": "Снаряжение",
     "CONSUMABLE": "Расходуемое",
@@ -936,6 +940,8 @@
     "SMN": "SMN",
     "RDM": "RDM",
     "BLU": "BLU",
+    "PCT": "PCT",
+    "VPR": "VPR",
     "CRP": "CRP",
     "BSM": "BSM",
     "ARM": "ARM",
@@ -1542,7 +1548,7 @@
     "Search": "Поиск",
     "Generate_list": "Создать быстрый список",
     "Intro": "Введите уровень и нажмите на поиск, чтобы начать",
-    "Loading_message": "Загрузка возможных доставок..."
+    "Loading_message": "Загрузка возможных доставок, это может занять до минуты"
   },
   "DESYNTH": {
     "Title": "Гид по дезинтезу",
@@ -1632,7 +1638,7 @@
     "Currencies": "Валюты",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Разблокирует",
-    "Jump_to_page": "Открыть БД страницу",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Восстановление Ишгарда",
     "GC_supply_value": "Expert Delivery",
     "ITEM": {
@@ -1959,6 +1965,7 @@
     "Firebase_blocked": "Teamcraft не смог достучаться к базе данных. Похоже, что-то блокирует её, либо у вас нет доступа в интернет."
   },
   "SEARCH": {
+    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
     "Sort_by": "Сортировка по: ",
     "Sort_asc": "По возрастанию",
     "Sort_desc": "По убыванию",
@@ -2751,7 +2758,7 @@
     "Starting_at_X": "Начиная с ${{monthly}} в месяц или ${{yearly}} в год",
     "Footer_text": "Всего 1 доллар в месяц оказывает существенное влияние на развитие Teamcraft и приближает меня к моей мечте стать полноправным разработчиком этого проекта и расширить его не только в качестве инструмента для FFXIV.",
     "Already_supporter": "Уже поддерживаете?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Привет, я Miu, разработчик инструмента, который вы сейчас используете.<br/> Teamcraft для меня последние года был хобби, и моя мечта состоит в том, чтобы сделать это основной работой. <br/><br/> С вашей помощью эта мечта может стать реальностью, вы можете поддержать проект на patreon, каждый доллар считается и поможет мне достичь этой цели. <br/><br/> Поддержка проекта на patreon также дает вам некоторые выгоды:",
@@ -3069,7 +3076,7 @@
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
       "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."

@@ -792,16 +792,16 @@
     "fr": "Manifestes midins (magie)"
   },
   "1769649": {
-    "en": "Allagan Tomestones of Poetics (DoW) I",
-    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
-    "de": "Allagische Steine der Poesie (Krieger I)",
-    "fr": "Mémoquartz allagois poétiques (guerre 1)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 240)",
+    "ja": "アラガントームストーン:詩学の取引（ILv240ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 240)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 240)"
   },
   "1769651": {
-    "en": "Allagan Tomestones of Poetics (DoM) I",
-    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
-    "de": "Allagische Steine der Poesie (Magier I)",
-    "fr": "Mémoquartz allagois poétiques (magie 1)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 240)",
+    "ja": "アラガントームストーン:詩学の取引（ILv240ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 240)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 240)"
   },
   "1769653": {
     "en": "",
@@ -840,16 +840,16 @@
     "fr": "Ambre à insecte (divers)"
   },
   "1769660": {
-    "en": "Centurio Seal Exchange (Doman Gear) I",
-    "ja": "セントリオ記章の取引（ドマ風装備その1）",
-    "de": "Centurio-Abzeichen (Domanische Ausrüstung) I",
-    "fr": "Insignes Centurio (équipements domiens 1)"
+    "en": "Doman Gear Exchange (DoW, IL 180)",
+    "ja": "「ドマ様式装備」の取引（ILv180ファイター装備）",
+    "de": "Domanische Ausrüstung (Krieger, G.-St. 180)",
+    "fr": "Insignes Centurio (guerre - NvObj 180)"
   },
   "1769661": {
-    "en": "Centurio Seal Exchange (Doman Gear) II",
-    "ja": "セントリオ記章の取引（ドマ風装備その2）",
-    "de": "Centurio-Abzeichen (Domanische Ausrüstung) II",
-    "fr": "Insignes Centurio (équipements domiens 2)"
+    "en": "Doman Gear Exchange (DoM, IL 180)",
+    "ja": "「ドマ様式装備」の取引（ILv180ソーサラー装備）",
+    "de": "Domanische Ausrüstung (Magier, G.-St. 180)",
+    "fr": "Insignes Centurio (magie - NvObj 180)"
   },
   "1769663": {
     "en": "Seasonal Event Prizes",
@@ -1008,22 +1008,22 @@
     "fr": "Objets"
   },
   "1769715": {
-    "en": "Artifact Gear Exchange (DoW) I",
-    "ja": "新生古典装備の交換(ファイター1)",
-    "de": "Artefakt-Ausrüstung (Krieger I)",
-    "fr": "Artefacts (guerre 1)"
+    "en": "Artifact Gear Exchange (DoW, IL 210) I",
+    "ja": "「新生古典装備」の取引（ILv210ファイター装備1）",
+    "de": "Artefakt-Ausrüstung (Krieger I, G.-St. 210)",
+    "fr": "Artefacts (guerre 1 - NvObj 210)"
   },
   "1769716": {
-    "en": "Artifact Gear Exchange (DoW) II",
-    "ja": "新生古典装備の交換(ファイター2)",
-    "de": "Artefakt-Ausrüstung (Krieger II)",
-    "fr": "Artefacts (guerre 2)"
+    "en": "Artifact Gear Exchange (DoW, IL 210) II",
+    "ja": "「新生古典装備」の取引（ILv210ファイター装備2）",
+    "de": "Artefakt-Ausrüstung (Krieger II, G.-St. 210)",
+    "fr": "Artefacts (guerre 2 - NvObj 210)"
   },
   "1769717": {
-    "en": "Artifact Gear Exchange (DoM)",
-    "ja": "新生古典装備の交換(ソーサラー)",
-    "de": "Artefakt-Ausrüstung (Magier)",
-    "fr": "Artefacts (magie)"
+    "en": "Artifact Gear Exchange (DoM, IL 210)",
+    "ja": "「新生古典装備」の取引（ILv210ソーサラー装備）",
+    "de": "Artefakt-Ausrüstung (Magier, G.-St. 210)",
+    "fr": "Artefacts (magie - NvObj 210)"
   },
   "1769719": {
     "en": "Primal Gear",
@@ -1086,10 +1086,10 @@
     "fr": "Objets (divers)"
   },
   "1769729": {
-    "en": "Eikonic Gear",
-    "ja": "蛮神風装備の取引",
-    "de": "Ikonen-Ausrüstung",
-    "fr": "Équipement primordial"
+    "en": "Allagan Tomestones of Poetics (IL 240 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv240武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 240)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 240)"
   },
   "1769730": {
     "en": "Allagan Tomestones of Poetics (Other)",
@@ -1104,40 +1104,40 @@
     "fr": "Pièces en chêne ixali (matérias)"
   },
   "1769732": {
-    "en": "Allagan Tomestones of Poetics (DoW) II",
-    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
-    "de": "Allagische Steine der Poesie (Krieger II)",
-    "fr": "Mémoquartz allagois poétiques (guerre 2)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 270)",
+    "ja": "アラガントームストーン:詩学の取引（ILv270ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 270)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 270)"
   },
   "1769733": {
-    "en": "Allagan Tomestones of Poetics (DoM) II",
-    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
-    "de": "Allagische Steine der Poesie (Magier II)",
-    "fr": "Mémoquartz allagois poétiques (magie 2)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 270)",
+    "ja": "アラガントームストーン:詩学の取引（ILv270ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 270)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 270)"
   },
   "1769734": {
     "en": "Shire Gear Augmentation (DoW) I.",
-    "ja": "イディルシャイア製装備の強化（ファイターその1）",
+    "ja": "イディルシャイア製装備の改良（ファイターその1）",
     "de": "Verstärkung von hinterländischer Ausrüstung (Krieger I)",
     "fr": "Amélioration d'équipements idylléens (guerre 1)"
   },
   "1769735": {
     "en": "Shire Gear Augmentation (DoW) II.",
-    "ja": "イディルシャイア製装備の強化（ファイターその2）",
+    "ja": "イディルシャイア製装備の改良（ファイターその2）",
     "de": "Verstärkung von hinterländischer Ausrüstung (Krieger II)",
     "fr": "Amélioration d'équipements idylléens (guerre 2)"
   },
   "1769736": {
     "en": "Shire Gear Augmentation (DoM).",
-    "ja": "イディルシャイア製装備の強化（ソーサラー）",
+    "ja": "イディルシャイア製装備の改良（ソーサラー）",
     "de": "Verstärkung von hinterländischer Ausrüstung (Magier)",
     "fr": "Amélioration d'équipements idylléens (magie)"
   },
   "1769737": {
-    "en": "Shire Gear Exchange",
-    "ja": "イディルシャイア製装備の交換",
-    "de": "Hinterländische Ausrüstung",
-    "fr": "Équipement idylléen"
+    "en": "Allagan Tomestones of Poetics (IL 270 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv270武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 270)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 270)"
   },
   "1769738": {
     "en": "Handmaster Accessory Augmentation",
@@ -1806,22 +1806,22 @@
     "fr": ""
   },
   "1769850": {
-    "en": "Allagan Tomestones of Poetics (DoW) I",
-    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
-    "de": "Allagische Steine der Poesie (Krieger I)",
-    "fr": "Mémoquartz allagois poétiques (guerre 1)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 370)",
+    "ja": "アラガントームストーン:詩学の取引（ILv370ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 370)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 370)"
   },
   "1769851": {
-    "en": "Allagan Tomestones of Poetics (DoM) I",
-    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
-    "de": "Allagische Steine der Poesie (Magier I)",
-    "fr": "Mémoquartz allagois poétiques (magie 1)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 370)",
+    "ja": "アラガントームストーン:詩学の取引（ILv370ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 370)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 370)"
   },
   "1769852": {
-    "en": "Ryumyaku Gear Exchange",
-    "ja": "「龍脈装備」の交換",
-    "de": "Ryumyaku-Ausrüstung",
-    "fr": "Échange d'équipements Ryûmyaku"
+    "en": "Allagan Tomestones of Poetics (IL 370 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv370武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 370)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 370)"
   },
   "1769853": {
     "en": "Allagan Tomestones of Poetics (Other)",
@@ -1890,16 +1890,16 @@
     "fr": "Amélioration d'équipements Ryûmyaku (magie)"
   },
   "1769864": {
-    "en": "Ala Mhigan Gear Exchange (DoW)",
-    "ja": "「アラミガン装備」の取引（ファイター）",
-    "de": "Mhigische Ausrüstung (Krieger)",
-    "fr": "Échange d'équipements mhigois (guerre)"
+    "en": "Ala Mhigan Gear Exchange (DoW, IL 310)",
+    "ja": "「アラミガン装備」の取引（ILv310ファイター装備）",
+    "de": "Mhigische Ausrüstung (Krieger, G.-St. 310)",
+    "fr": "Échange d'équipements mhigois (guerre - NvObj 310)"
   },
   "1769865": {
-    "en": "Ala Mhigan Gear Exchange (DoM)",
-    "ja": "「アラミガン装備」の取引（ソーサラー）",
-    "de": "Mhigische Ausrüstung (Magier)",
-    "fr": "Échange d'équipements mhigois (magie)"
+    "en": "Ala Mhigan Gear Exchange (DoM, IL 310)",
+    "ja": "「アラミガン装備」の取引（ILv310ソーサラー装備）",
+    "de": "Mhigische Ausrüstung (Magier, G.-St. 310)",
+    "fr": "Échange d'équipements mhigois (magie - NvObj 310)"
   },
   "1769866": {
     "en": "",
@@ -2016,76 +2016,76 @@
     "fr": ""
   },
   "1769885": {
-    "en": "Resistance Token Acquisition (Weapons)",
-    "ja": "解放軍の手形との交換（武器）",
-    "de": "Waffen in Armeemarken umtauschen",
-    "fr": "Échanger des armes"
+    "en": "Resistance Token Acquisition (NQ Weapons)",
+    "ja": "解放軍の手形との交換（武器NQ）",
+    "de": "NQ-Waffen in Armeemarken umtauschen",
+    "fr": "Échanger des armes QN"
   },
   "1769886": {
-    "en": "Resistance Token Acquisition (Gear)",
-    "ja": "解放軍の手形との交換（防具）",
-    "de": "Rüstungen in Armeemarken umtauschen",
-    "fr": "Échanger des armures"
+    "en": "Resistance Token Acquisition (NQ Gear)",
+    "ja": "解放軍の手形との交換（防具NQ）",
+    "de": "NQ-Rüstungen in Armeemarken umtauschen",
+    "fr": "Échanger des armures QN"
   },
   "1769887": {
-    "en": "Resistance Token Acquisition (Accessories)",
-    "ja": "解放軍の手形との交換（アクセサリー）",
-    "de": "Accessoires in Armeemarken umtauschen",
-    "fr": "Échanger des accessoires"
+    "en": "Resistance Token Acquisition (NQ Accessories)",
+    "ja": "解放軍の手形との交換（アクセサリーNQ）",
+    "de": "NQ-Accessoires in Armeemarken umtauschen",
+    "fr": "Échanger des accessoires QN"
   },
   "1769888": {
-    "en": "Resistance Token Acquisition (Weapons)",
-    "ja": "解放軍の手形との交換（武器）",
+    "en": "Resistance Token Acquisition (HQ Weapons)",
+    "ja": "解放軍の手形との交換（武器HQ）",
     "de": "HQ-Waffen in Armeemarken umtauschen",
-    "fr": "Échanger des armes"
+    "fr": "Échanger des armes HQ"
   },
   "1769889": {
-    "en": "Resistance Token Acquisition (Gear)",
-    "ja": "解放軍の手形との交換（防具）",
+    "en": "Resistance Token Acquisition (HQ Gear)",
+    "ja": "解放軍の手形との交換（防具HQ）",
     "de": "HQ-Rüstungen in Armeemarken umtauschen",
-    "fr": "Échanger des armures"
+    "fr": "Échanger des armures HQ"
   },
   "1769890": {
-    "en": "Resistance Token Acquisition (Accessories)",
-    "ja": "解放軍の手形との交換（アクセサリー）",
+    "en": "Resistance Token Acquisition (HQ Accessories)",
+    "ja": "解放軍の手形との交換（アクセサリーHQ）",
     "de": "HQ-Accessoires in Armeemarken umtauschen",
-    "fr": "Échanger des accessoires"
+    "fr": "Échanger des accessoires HQ"
   },
   "1769891": {
-    "en": "Resistance Token Exchange (Weapons)",
-    "ja": "解放軍の手形の取引（武器）",
-    "de": "Armeemarken in Waffen umtauschen",
-    "fr": "Liste des armes"
+    "en": "Resistance Token Exchange (NQ Weapons)",
+    "ja": "解放軍強化装備の取引（武器NQ）",
+    "de": "Armeemarken in NQ-Waffen umtauschen",
+    "fr": "Liste des armes QN"
   },
   "1769892": {
-    "en": "Resistance Token Exchange (Gear)",
-    "ja": "解放軍の手形の取引（防具）",
-    "de": "Armeemarken in Rüstung umtauschen",
-    "fr": "Liste des armures"
+    "en": "Resistance Token Exchange (NQ Gear)",
+    "ja": "解放軍強化装備の取引（防具NQ）",
+    "de": "Armeemarken in NQ-Rüstung umtauschen",
+    "fr": "Liste des armures QN"
   },
   "1769893": {
-    "en": "Resistance Token Exchange (Accessories)",
-    "ja": "解放軍の手形の取引（アクセサリー）",
-    "de": "Armeemarken in Accessoires umtauschen",
-    "fr": "Liste des accessoires"
+    "en": "Resistance Token Exchange (NQ Accessories)",
+    "ja": "解放軍強化装備の取引（アクセサリーNQ）",
+    "de": "Armeemarken in NQ-Accessoires umtauschen",
+    "fr": "Liste des accessoires QN"
   },
   "1769894": {
-    "en": "Resistance Token Exchange (Weapons)",
-    "ja": "解放軍の手形の取引（武器）",
+    "en": "Resistance Token Exchange (HQ Weapons)",
+    "ja": "解放軍強化装備の取引（武器HQ）",
     "de": "Armeemarken in HQ-Waffen umtauschen",
-    "fr": "Liste des armes"
+    "fr": "Liste des armes HQ"
   },
   "1769895": {
-    "en": "Resistance Token Exchange (Gear)",
-    "ja": "解放軍の手形の取引（防具）",
+    "en": "Resistance Token Exchange (HQ Gear)",
+    "ja": "解放軍強化装備の取引（防具HQ）",
     "de": "Armeemarken in HQ-Rüstung umtauschen",
-    "fr": "Liste des armures"
+    "fr": "Liste des armures HQ"
   },
   "1769896": {
-    "en": "Resistance Token Exchange (Accessories)",
-    "ja": "解放軍の手形の取引（アクセサリー）",
+    "en": "Resistance Token Exchange (HQ Accessories)",
+    "ja": "解放軍強化装備の取引（アクセサリーHQ）",
     "de": "Armeemarken in HQ-Accessoires umtauschen",
-    "fr": "Liste des accessoires"
+    "fr": "Liste des accessoires HQ"
   },
   "1769897": {
     "en": "Feathers Aplenty",
@@ -2148,16 +2148,16 @@
     "fr": ""
   },
   "1769907": {
-    "en": "Allagan Tomestones of Poetics (DoW) II",
-    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
-    "de": "Allagische Steine der Poesie (Krieger II)",
-    "fr": "Mémoquartz allagois poétiques (guerre 2)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 400)",
+    "ja": "アラガントームストーン:詩学の取引（ILv400ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 400)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 400)"
   },
   "1769908": {
-    "en": "Allagan Tomestones of Poetics (DoM) II",
-    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
-    "de": "Allagische Steine der Poesie (Magier II)",
-    "fr": "Mémoquartz allagois poétiques (magie 2)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 400)",
+    "ja": "アラガントームストーン:詩学の取引（ILv400ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 400)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 400)"
   },
   "1769909": {
     "en": "",
@@ -2166,10 +2166,10 @@
     "fr": ""
   },
   "1769910": {
-    "en": "Scaevan Gear Exchange",
-    "ja": "「スカエウァ装備」の交換",
-    "de": "Scaeva-Ausrüstung",
-    "fr": "Échange d'équipements Scaeva"
+    "en": "Allagan Tomestones of Poetics (IL 400 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv400武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 400)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 400)"
   },
   "1769911": {
     "en": "Scaevan Gear Augmentation (DoW) I",
@@ -2190,16 +2190,16 @@
     "fr": "Amélioration d'équipements Scaeva (magie)"
   },
   "1769914": {
-    "en": "Lost Allagan Gear (DoW)",
-    "ja": "「ロストアラガン装備」の取引（ファイター）",
-    "de": "Verschollene allagische Ausrüstung (Krieger)",
-    "fr": "Échange d'équipements allagois oubliés (guerre)"
+    "en": "Lost Allagan Gear (DoW, IL 340)",
+    "ja": "「ロストアラガン装備」の取引（ILv340ファイター装備）",
+    "de": "Verschollene allagische Ausrüstung (Krieger, G.-St. 340)",
+    "fr": "Échange d'équipements allagois oubliés (guerre - NvObj 340)"
   },
   "1769915": {
-    "en": "Lost Allagan Gear (DoM)",
-    "ja": "「ロストアラガン装備」の取引（ソーサラー）",
-    "de": "Verschollene allagische Ausrüstung (Magier)",
-    "fr": "Échange d'équipements allagois oubliés (magie)"
+    "en": "Lost Allagan Gear (DoM, IL 340)",
+    "ja": "「ロストアラガン装備」の取引（ILv340ソーサラー装備）",
+    "de": "Verschollene allagische Ausrüstung (Magier, G.-St. 340)",
+    "fr": "Échange d'équipements allagois oubliés (magie - NvObj 340)"
   },
   "1769916": {
     "en": "Auspice Gear (Suzaku)",
@@ -2283,19 +2283,19 @@
     "en": "Newest Irregular Tomestone Exchange",
     "ja": "最新の希少トームストーンの取引",
     "de": "Ungewöhnliche Allagische Steine (neu)",
-    "fr": "Récents mémoquartz allagois inhabituels"
+    "fr": "Récents mémoquartz inhabituels"
   },
   "1769930": {
     "en": "Previous Irregular Tomestone Exchange",
     "ja": "前回の希少トームストーンの取引",
     "de": "Ungewöhnliche Allagische Steine (vorherig)",
-    "fr": "Précédents mémoquartz allagois inhabituels"
+    "fr": "Précédents mémoquartz inhabituels"
   },
   "1769931": {
     "en": "Past Irregular Tomestone Exchange",
     "ja": "以前の希少トームストーンの取引",
     "de": "Ungewöhnliche Allagische Steine (alt)",
-    "fr": "Anciens mémoquartz allagois inhabituels"
+    "fr": "Anciens mémoquartz inhabituels"
   },
   "1769932": {
     "en": "",
@@ -2352,56 +2352,56 @@
     "fr": "Équipements des quatre animaux sacrés (Seiryû)"
   },
   "1769941": {
-    "en": "Rakshasa Token Acquisition (Weapons)",
-    "ja": "羅刹の手形との交換（武器）",
-    "de": "Waffen in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des armes"
+    "en": "Rakshasa Token Acquisition (NQ Weapons)",
+    "ja": "羅刹の手形との交換（武器NQ）",
+    "de": "NQ-Waffen in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des armes QN"
   },
   "1769942": {
-    "en": "Rakshasa Token Acquisition (Gear)",
-    "ja": "羅刹の手形との交換（防具）",
-    "de": "Rüstungen in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des armures"
+    "en": "Rakshasa Token Acquisition (NQ Gear)",
+    "ja": "羅刹の手形との交換（防具NQ）",
+    "de": "NQ-Rüstungen in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des armures QN"
   },
   "1769943": {
-    "en": "Rakshasa Token Acquisition (Accessories)",
-    "ja": "羅刹の手形との交換（アクセサリー）",
-    "de": "Accessoires in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des accessoires"
+    "en": "Rakshasa Token Acquisition (NQ Accessories)",
+    "ja": "羅刹の手形との交換（アクセサリーNQ）",
+    "de": "NQ-Accessoires in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des accessoires QN"
   },
   "1769944": {
-    "en": "Rakshasa Token Acquisition (Weapons)",
-    "ja": "羅刹の手形との交換（武器）",
+    "en": "Rakshasa Token Acquisition (HQ Weapons)",
+    "ja": "羅刹の手形との交換（武器HQ）",
     "de": "HQ-Waffen in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des armes"
+    "fr": "Échanger des armes HQ"
   },
   "1769945": {
-    "en": "Rakshasa Token Acquisition (Gear)",
-    "ja": "羅刹の手形との交換（防具）",
+    "en": "Rakshasa Token Acquisition (HQ Gear)",
+    "ja": "羅刹の手形との交換（防具HQ）",
     "de": "HQ-Rüstungen in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des armures"
+    "fr": "Échanger des armures HQ"
   },
   "1769946": {
-    "en": "Rakshasa Token Acquisition (Accessories)",
-    "ja": "羅刹の手形との交換（アクセサリー）",
+    "en": "Rakshasa Token Acquisition (HQ Accessories)",
+    "ja": "羅刹の手形との交換（アクセサリーHQ）",
     "de": "HQ-Accessoires in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des accessoires"
+    "fr": "Échanger des accessoires HQ"
   },
   "1769947": {
     "en": "Rakshasa Token Exchange (Weapons)",
-    "ja": "羅刹の手形の取引（武器）",
+    "ja": "羅刹強化装備の取引（武器）",
     "de": "Rakshasa-Marken in Waffen umtauschen",
     "fr": "Liste des armes"
   },
   "1769948": {
     "en": "Rakshasa Token Exchange (Gear)",
-    "ja": "羅刹の手形の取引（防具）",
+    "ja": "羅刹強化装備の取引（防具）",
     "de": "Rakshasa-Marken in Rüstung umtauschen",
     "fr": "Liste des armures"
   },
   "1769949": {
     "en": "Rakshasa Token Exchange (Accessories)",
-    "ja": "羅刹の手形の取引（アクセサリー）",
+    "ja": "羅刹強化装備の取引（アクセサリー）",
     "de": "Rakshasa-Marken in Accessoires umtauschen",
     "fr": "Liste des accessoires"
   },
@@ -2820,40 +2820,40 @@
     "fr": "Équipements totémiques (Alexander)"
   },
   "1770019": {
-    "en": "Eulmoran Certificates of Import (Weapons)",
-    "ja": "ユールモアの手形G1との交換（武器）",
-    "de": "Eulmore-Marken I (Waffen)",
-    "fr": "Avoirs d'Eulmore I (armes)"
+    "en": "Eulmoran Certificates of Import (NQ Weapons)",
+    "ja": "ユールモアの手形G1との交換（武器NQ）",
+    "de": "Eulmore-Marken I (NQ-Waffen)",
+    "fr": "Avoirs d'Eulmore I (armes QN)"
   },
   "1770020": {
-    "en": "Eulmoran Certificates of Import (Gear)",
-    "ja": "ユールモアの手形G1との交換（防具）",
-    "de": "Eulmore-Marken I (Rüstung)",
-    "fr": "Avoirs d'Eulmore I (pièces d'armure)"
+    "en": "Eulmoran Certificates of Import (NQ Gear)",
+    "ja": "ユールモアの手形G1との交換（防具NQ）",
+    "de": "Eulmore-Marken I (NQ-Rüstung)",
+    "fr": "Avoirs d'Eulmore I (pièces d'armure QN)"
   },
   "1770021": {
-    "en": "Eulmoran Certificates of Import (Accessories)",
-    "ja": "ユールモアの手形G1との交換（アクセサリー）",
-    "de": "Eulmore-Marken I (Accessoires)",
-    "fr": "Avoirs d'Eulmore I (accessoires)"
+    "en": "Eulmoran Certificates of Import (NQ Accessories)",
+    "ja": "ユールモアの手形G1との交換（アクセサリーNQ）",
+    "de": "Eulmore-Marken I (NQ-Accessoires)",
+    "fr": "Avoirs d'Eulmore I (accessoires QN)"
   },
   "1770022": {
-    "en": "Eulmoran Certificates of Import (Weapons)",
-    "ja": "ユールモアの手形G1との交換（武器）",
-    "de": "Eulmore-Marken I (Waffen)",
-    "fr": "Avoirs d'Eulmore I (armes)"
+    "en": "Eulmoran Certificates of Import (HQ Weapons)",
+    "ja": "ユールモアの手形G1との交換（武器HQ）",
+    "de": "Eulmore-Marken I (HQ-Waffen)",
+    "fr": "Avoirs d'Eulmore I (armes HQ)"
   },
   "1770023": {
-    "en": "Eulmoran Certificates of Import (Gear)",
-    "ja": "ユールモアの手形G1との交換（防具）",
-    "de": "Eulmore-Marken I (Rüstung)",
-    "fr": "Avoirs d'Eulmore I (pièces d'armure)"
+    "en": "Eulmoran Certificates of Import (HQ Gear)",
+    "ja": "ユールモアの手形G1との交換（防具HQ）",
+    "de": "Eulmore-Marken I (HQ-Rüstung)",
+    "fr": "Avoirs d'Eulmore I (pièces d'armure HQ)"
   },
   "1770024": {
-    "en": "Eulmoran Certificates of Import (Accessories)",
-    "ja": "ユールモアの手形G1との交換（アクセサリー）",
-    "de": "Eulmore-Marken I (Accessoires)",
-    "fr": "Avoirs d'Eulmore I (accessoires)"
+    "en": "Eulmoran Certificates of Import (HQ Accessories)",
+    "ja": "ユールモアの手形G1との交換（アクセサリーHQ）",
+    "de": "Eulmore-Marken I (HQ-Accessoires)",
+    "fr": "Avoirs d'Eulmore I (accessoires HQ)"
   },
   "1770025": {
     "en": "Augmented Facet Equipment (Weapons)",
@@ -2949,7 +2949,7 @@
     "en": "Fae Fancies",
     "ja": "ピクシー幻晶貨の取引",
     "de": "Pixie-Glitter",
-    "fr": "Échange d'objets tribaux"
+    "fr": "Échange d'objets des Pixies"
   },
   "1770041": {
     "en": "",
@@ -3000,28 +3000,28 @@
     "fr": "Tenues de cérémonie"
   },
   "1770049": {
-    "en": "Ronkan Gear Exchange (DoW)",
-    "ja": "「ロンカ装備」の取引（ファイター）",
-    "de": "Ronka-Ausrüstung (Krieger)",
-    "fr": "Échange d'équipements ronka (guerre)"
+    "en": "Ronkan Gear Exchange (DoW, IL 440)",
+    "ja": "「ロンカ装備」の取引（ILv440ファイター装備）",
+    "de": "Ronka-Ausrüstung (Krieger, G.-St. 440)",
+    "fr": "Échange d'équipements ronka (guerre - NvObj 440)"
   },
   "1770050": {
-    "en": "Ronkan Gear Exchange (DoM)",
-    "ja": "「ロンカ装備」の取引（ソーサラー）",
-    "de": "Ronka-Ausrüstung (Magier)",
-    "fr": "Échange d'équipements ronka (magie)"
+    "en": "Ronkan Gear Exchange (DoM, IL 440)",
+    "ja": "「ロンカ装備」の取引（ILv440ソーサラー装備）",
+    "de": "Ronka-Ausrüstung (Magier, G.-St. 440)",
+    "fr": "Échange d'équipements ronka (magie - NvObj 440)"
   },
   "1770051": {
-    "en": "Allagan Tomestones of Poetics (DoW) I",
-    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
-    "de": "Allagische Steine der Poesie (Krieger)",
-    "fr": "Mémoquartz allagois poétiques (guerre 1)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 500)",
+    "ja": "アラガントームストーン:詩学の取引（ILv500ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 500)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 500)"
   },
   "1770052": {
-    "en": "Allagan Tomestones of Poetics (DoM) I",
-    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
-    "de": "Allagische Steine der Poesie (Magier)",
-    "fr": "Mémoquartz allagois poétiques (magie 1)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 500)",
+    "ja": "アラガントームストーン:詩学の取引（ILv500ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 500)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 500)"
   },
   "1770053": {
     "en": "Allagan Tomestones of Poetics (Other)",
@@ -3030,10 +3030,10 @@
     "fr": "Mémoquartz allagois poétiques (divers)"
   },
   "1770054": {
-    "en": "Crystarium Gear Exchange",
-    "ja": "「クリスタリウム装備」の交換",
-    "de": "Crystarium-Ausrüstung",
-    "fr": "Échange d'équipements cristariens"
+    "en": "Allagan Tomestones of Poetics (IL 500 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv500武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 500)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 500)"
   },
   "1770055": {
     "en": "Crystarium Gear Augmentation (DoW) I",
@@ -4434,57 +4434,57 @@
     "fr": "Équipements totémiques (Guerrier de la Lumière primordial)"
   },
   "1770288": {
-    "en": "Eulmoran Certificates of Novelty (Weapons)",
-    "ja": "ユールモアの手形G2との交換（武器）",
-    "de": "Eulmore-Marken II (Waffen)",
-    "fr": "Avoirs d'Eulmore II (armes)"
+    "en": "Eulmoran Certificates of Novelty (NQ Weapons)",
+    "ja": "ユールモアの手形G2との交換（武器NQ）",
+    "de": "Eulmore-Marken II (NQ-Waffen)",
+    "fr": "Avoirs d'Eulmore II (armes QN)"
   },
   "1770289": {
-    "en": "Eulmoran Certificates of Novelty (Gear)",
-    "ja": "ユールモアの手形G2との交換（防具）",
-    "de": "Eulmore-Marken II (Rüstungen)",
-    "fr": "Avoirs d'Eulmore II (pièces d'armure)"
+    "en": "Eulmoran Certificates of Novelty (NQ Gear)",
+    "ja": "ユールモアの手形G2との交換（防具NQ）",
+    "de": "Eulmore-Marken II (NQ-Rüstungen)",
+    "fr": "Avoirs d'Eulmore II (pièces d'armure QN)"
   },
   "1770290": {
-    "en": "Eulmoran Certificates of Novelty (Accessories)",
-    "ja": "ユールモアの手形G2との交換（アクセサリー）",
-    "de": "Eulmore-Marken II (Accessoires)",
-    "fr": "Avoirs d'Eulmore II (accessoires)"
+    "en": "Eulmoran Certificates of Novelty (NQ Accessories)",
+    "ja": "ユールモアの手形G2との交換（アクセサリーNQ）",
+    "de": "Eulmore-Marken II (NQ-Accessoires)",
+    "fr": "Avoirs d'Eulmore II (accessoires QN)"
   },
   "1770291": {
-    "en": "Eulmoran Certificates of Novelty (Weapons)",
-    "ja": "ユールモアの手形G2との交換（武器）",
-    "de": "Eulmore-Marken II (Waffen)",
-    "fr": "Avoirs d'Eulmore II (armes)"
+    "en": "Eulmoran Certificates of Novelty (HQ Weapons)",
+    "ja": "ユールモアの手形G2との交換（武器HQ）",
+    "de": "Eulmore-Marken II (HQ-Waffen)",
+    "fr": "Avoirs d'Eulmore II (armes HQ)"
   },
   "1770292": {
-    "en": "Eulmoran Certificates of Novelty (Gear)",
-    "ja": "ユールモアの手形G2との交換（防具）",
-    "de": "Eulmore-Marken II (Rüstungen)",
-    "fr": "Avoirs d'Eulmore II (pièces d'armure)"
+    "en": "Eulmoran Certificates of Novelty (HQ Gear)",
+    "ja": "ユールモアの手形G2との交換（防具HQ）",
+    "de": "Eulmore-Marken II (HQ-Rüstungen)",
+    "fr": "Avoirs d'Eulmore II (pièces d'armure HQ)"
   },
   "1770293": {
-    "en": "Eulmoran Certificates of Novelty (Accessories)",
-    "ja": "ユールモアの手形G2との交換（アクセサリー）",
-    "de": "Eulmore-Marken II (Accessoires)",
-    "fr": "Avoirs d'Eulmore II (accessoires)"
+    "en": "Eulmoran Certificates of Novelty (HQ Accessories)",
+    "ja": "ユールモアの手形G2との交換（アクセサリーHQ）",
+    "de": "Eulmore-Marken II (HQ-Accessoires)",
+    "fr": "Avoirs d'Eulmore II (accessoires HQ)"
   },
   "1770294": {
     "en": "Augmented Neo-Ishgardian Equipment (Weapons)",
     "ja": "ネオイシュガルディアン強化装備の取引（武器）",
-    "de": "Neo-Ishgarder Verstärkungen (Waffen)",
+    "de": "Modifizierte Neo-Ishgarder Ausrüstung (Waffen)",
     "fr": "Amélioration d'armes néo-ishgardaises"
   },
   "1770295": {
     "en": "Augmented Neo-Ishgardian Equipment (Gear)",
     "ja": "ネオイシュガルディアン強化装備の取引（防具）",
-    "de": "Neo-Ishgarder Verstärkungen (Rüstungen)",
+    "de": "Modifizierte Neo-Ishgarder Ausrüstung (Rüstungen)",
     "fr": "Amélioration de pièces d'armure néo-ishgardaises"
   },
   "1770296": {
     "en": "Augmented Neo-Ishgardian Equipment (Accessories)",
     "ja": "ネオイシュガルディアン強化装備の取引（アクセサリー）",
-    "de": "Neo-Ishgarder Verstärkungen (Accessoires)",
+    "de": "Modifizierte Neo-Ishgarder Ausrüstung (Accessoires)",
     "fr": "Amélioration d'accessoires néo-ishgardais"
   },
   "1770297": {
@@ -4608,28 +4608,28 @@
     "fr": ""
   },
   "1770317": {
-    "en": "Deepshadow Gear Exchange (DoW)",
-    "ja": "「ディープシャドウ装備」の取引（ファイター）",
-    "de": "Dunkelschatten-Ausrüstung (Krieger)",
-    "fr": "Échange d'équipements de la Pleine-ombre (guerre)"
+    "en": "Deepshadow Gear Exchange (DoW, IL 470)",
+    "ja": "「ディープシャドウ装備」の取引（ILv470ファイター装備）",
+    "de": "Dunkelschatten-Ausrüstung (Krieger, G.-St. 470)",
+    "fr": "Échange d'équipements de la Pleine-ombre (guerre - NvObj 470)"
   },
   "1770318": {
-    "en": "Deepshadow Gear Exchange (DoM)",
-    "ja": "「ディープシャドウ装備」の取引（ソーサラー）",
-    "de": "Dunkelschatten-Ausrüstung (Magier)",
-    "fr": "Échange d'équipements de la Pleine-ombre (magie)"
+    "en": "Deepshadow Gear Exchange (DoM, IL 470)",
+    "ja": "「ディープシャドウ装備」の取引（ILv470ソーサラー装備）",
+    "de": "Dunkelschatten-Ausrüstung (Magier, G.-St. 470)",
+    "fr": "Échange d'équipements de la Pleine-ombre (magie - NvObj 470)"
   },
   "1770319": {
-    "en": "Allagan Tomestones of Poetics (DoW) II",
-    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
-    "de": "Allagische Steine der Poesie (Krieger II)",
-    "fr": "Mémoquartz allagois poétiques (guerre 2)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 530)",
+    "ja": "アラガントームストーン:詩学の取引（ILv530ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 530)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 530)"
   },
   "1770320": {
-    "en": "Allagan Tomestones of Poetics (DoM) II",
-    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
-    "de": "Allagische Steine der Poesie (Magier II)",
-    "fr": "Mémoquartz allagois poétiques (magie 2)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 530)",
+    "ja": "アラガントームストーン:詩学の取引（ILv530ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 530)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 530)"
   },
   "1770321": {
     "en": "",
@@ -4638,10 +4638,10 @@
     "fr": ""
   },
   "1770322": {
-    "en": "Cryptlurker Gear Exchange",
-    "ja": "「クリプトラーカー装備」の交換",
-    "de": "Gruftschleicher-Ausrüstung",
-    "fr": "Échange d'équipements de rôdeur des cryptes"
+    "en": "Allagan Tomestones of Poetics (IL 530 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv530武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 530)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 530)"
   },
   "1770323": {
     "en": "Cryptlurker Gear Augmentation (DoW) I",
@@ -4749,7 +4749,7 @@
     "en": "Irregular Tomestone Exchange (Seasonal)",
     "ja": "希少トームストーン:祝祭の取引",
     "de": "Ungewöhnliche Allagische Steine (saisonal)",
-    "fr": "Mémoquartz allagois festifs inhabituels"
+    "fr": "Mémoquartz inhabituels festifs"
   },
   "1770341": {
     "en": "Seasonal Event Prizes II",
@@ -4776,40 +4776,40 @@
     "fr": "Équipements de Gunnhildr"
   },
   "1770345": {
-    "en": "Eulmoran Certificates of Grandeur (Weapons)",
-    "ja": "ユールモアの手形G3との交換（武器）",
-    "de": "Eulmore-Marken III (Waffen)",
-    "fr": "Avoirs d'Eulmore III (armes)"
+    "en": "Eulmoran Certificates of Grandeur (NQ Weapons)",
+    "ja": "ユールモアの手形G3との交換（武器NQ）",
+    "de": "Eulmore-Marken III (NQ-Waffen)",
+    "fr": "Avoirs d'Eulmore III (armes QN)"
   },
   "1770346": {
-    "en": "Eulmoran Certificates of Grandeur (Gear)",
-    "ja": "ユールモアの手形G3との交換（防具）",
-    "de": "Eulmore-Marken III (Rüstungen)",
-    "fr": "Avoirs d'Eulmore III (pièces d'armure)"
+    "en": "Eulmoran Certificates of Grandeur (NQ Gear)",
+    "ja": "ユールモアの手形G3との交換（防具NQ）",
+    "de": "Eulmore-Marken III (NQ-Rüstungen)",
+    "fr": "Avoirs d'Eulmore III (pièces d'armure QN)"
   },
   "1770347": {
-    "en": "Eulmoran Certificates of Grandeur (Accessories)",
-    "ja": "ユールモアの手形G3との交換（アクセサリー）",
-    "de": "Eulmore-Marken III (Accessoires)",
-    "fr": "Avoirs d'Eulmore III (accessoires)"
+    "en": "Eulmoran Certificates of Grandeur (NQ Accessories)",
+    "ja": "ユールモアの手形G3との交換（アクセサリーNQ）",
+    "de": "Eulmore-Marken III (NQ-Accessoires)",
+    "fr": "Avoirs d'Eulmore III (accessoires QN)"
   },
   "1770348": {
-    "en": "Eulmoran Certificates of Grandeur (Weapons)",
-    "ja": "ユールモアの手形G3との交換（武器）",
-    "de": "Eulmore-Marken III (Waffen)",
-    "fr": "Avoirs d'Eulmore III (armes)"
+    "en": "Eulmoran Certificates of Grandeur (HQ Weapons)",
+    "ja": "ユールモアの手形G3との交換（武器HQ）",
+    "de": "Eulmore-Marken III (HQ-Waffen)",
+    "fr": "Avoirs d'Eulmore III (armes HQ)"
   },
   "1770349": {
-    "en": "Eulmoran Certificates of Grandeur (Gear)",
-    "ja": "ユールモアの手形G3との交換（防具）",
-    "de": "Eulmore-Marken III (Rüstungen)",
-    "fr": "Avoirs d'Eulmore III (pièces d'armure)"
+    "en": "Eulmoran Certificates of Grandeur (HQ Gear)",
+    "ja": "ユールモアの手形G3との交換（防具HQ）",
+    "de": "Eulmore-Marken III (HQ-Rüstungen)",
+    "fr": "Avoirs d'Eulmore III (pièces d'armure HQ)"
   },
   "1770350": {
-    "en": "Eulmoran Certificates of Grandeur (Accessories)",
-    "ja": "ユールモアの手形G3との交換（アクセサリー）",
-    "de": "Eulmore-Marken III (Accessoires)",
-    "fr": "Avoirs d'Eulmore III (accessoires)"
+    "en": "Eulmoran Certificates of Grandeur (HQ Accessories)",
+    "ja": "ユールモアの手形G3との交換（アクセサリーHQ）",
+    "de": "Eulmore-Marken III (HQ-Accessoires)",
+    "fr": "Avoirs d'Eulmore III (accessoires HQ)"
   },
   "1770351": {
     "en": "Augmented Exarchic Equipment (Weapons)",
@@ -5322,10 +5322,10 @@
     "fr": "Mémoquartz allagois aphoristiques (magie)"
   },
   "1770436": {
-    "en": "Allagan Tomestones of Causality (Other)",
-    "ja": "アラガントームストーン:因果の取引（その他）",
-    "de": "Allagische Steine der Kausalität (Anderes)",
-    "fr": "Mémoquartz allagois déterministes (divers)"
+    "en": "Allagan Tomestones of Poetics (Other)",
+    "ja": "アラガントームストーン:詩学の取引（その他）",
+    "de": "Allagische Steine der Poesie (Anderes)",
+    "fr": "Mémoquartz allagois poétiques (divers)"
   },
   "1770437": {
     "en": "Allagan Tomestones of Astronomy (DoW)",
@@ -5574,34 +5574,34 @@
     "fr": "Assignats mauves : matériaux (Nv ≧ 90)"
   },
   "1770478": {
-    "en": "White Scrip Exchange (Lv. 60/IL 200)",
-    "ja": "白貨の取引：Lv60～向け【ILv200】",
-    "de": "Weiße Scheine (ab St. 60) [G.-St. 200]",
-    "fr": "Assignats blancs (Nv ≧ 60) [NvObj 200]"
+    "en": "Purple Scrip Exchange (Lv. 60/IL 200)",
+    "ja": "紫貨の取引：Lv60～向け【ILv200】",
+    "de": "Violette Scheine (ab St. 60) [G.-St. 200]",
+    "fr": "Assignats mauves (Nv ≧ 60) [NvObj 200]"
   },
   "1770479": {
-    "en": "White Scrip Exchange (Lv. 70/IL 330)",
-    "ja": "白貨の取引：Lv70～向け【ILv330】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "紫貨の取引：Lv70～向け【ILv330】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 330]"
   },
   "1770480": {
-    "en": "White Scrip Exchange (Lv. 70/IL 350)",
-    "ja": "白貨の取引：Lv70～向け【ILv350】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "紫貨の取引：Lv70～向け【ILv350】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 350]"
   },
   "1770481": {
-    "en": "White Scrip Exchange (Lv. 80/IL 440)",
-    "ja": "白貨の取引：Lv80～向け【ILv440】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "紫貨の取引：Lv80～向け【ILv440】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 440]"
   },
   "1770482": {
-    "en": "White Scrip Exchange (Lv. 80/IL 470)",
-    "ja": "白貨の取引：Lv80～向け【ILv470】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "紫貨の取引：Lv80～向け【ILv470】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 470]"
   },
   "1770483": {
     "en": "Purple Scrip Exchange (Lv. 90/IL 570)",
@@ -5610,34 +5610,34 @@
     "fr": "Assignats mauves (Nv ≧ 90) [NvObj 570]"
   },
   "1770484": {
-    "en": "White Scrip Exchange (Lv. 50 Materials)",
-    "ja": "白貨の取引：Lv50～向け素材",
-    "de": "Weiße Scheine (ab St. 50, Materialien)",
-    "fr": "Assignats blancs : matériaux (Nv ≧ 50)"
+    "en": "Purple Scrip Exchange (Lv. 50 Materials)",
+    "ja": "紫貨の取引：Lv50～向け素材",
+    "de": "Violette Scheine (ab St. 50, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 50)"
   },
   "1770485": {
-    "en": "White Scrip Exchange (Lv. 60 Materials/Tokens)",
-    "ja": "白貨の取引：Lv60～向け素材・手形",
-    "de": "Weiße Scheine (ab St. 60, Materialien & Marken)",
-    "fr": "Assignats blancs : matériaux et avoirs (Nv ≧ 60)"
+    "en": "Purple Scrip Exchange (Lv. 60 Materials/Tokens)",
+    "ja": "紫貨の取引：Lv60～向け素材・手形",
+    "de": "Violette Scheine (ab St. 60, Materialien & Marken)",
+    "fr": "Assignats mauves : matériaux et avoirs (Nv ≧ 60)"
   },
   "1770486": {
-    "en": "White Scrip Exchange (Lv. 70 Materials)",
-    "ja": "白貨の取引：Lv70～向け素材",
-    "de": "Weiße Scheine (ab St. 70, Materialien)",
-    "fr": "Assignats blancs : matériaux (Nv ≧ 70)"
+    "en": "Purple Scrip Exchange (Lv. 70 Materials)",
+    "ja": "紫貨の取引：Lv70～向け素材",
+    "de": "Violette Scheine (ab St. 70, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 70)"
   },
   "1770487": {
-    "en": "White Scrip Exchange (Lv. 80 Materials)",
-    "ja": "白貨の取引：Lv80～向け素材",
-    "de": "Weiße Scheine (ab St. 80, Materialien)",
-    "fr": "Assignats blancs : matériaux (Nv ≧ 80)"
+    "en": "Purple Scrip Exchange (Lv. 80 Materials)",
+    "ja": "紫貨の取引：Lv80～向け素材",
+    "de": "Violette Scheine (ab St. 80, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 80)"
   },
   "1770488": {
-    "en": "White Scrip Exchange (Lv. 90 Materials)",
-    "ja": "白貨の取引：Lv90～向け素材",
-    "de": "Weiße Scheine (ab St. 90, Materialien)",
-    "fr": "Assignats blancs : matériaux (Nv ≧ 90)"
+    "en": "Purple Scrip Exchange (Lv. 90 Materials)",
+    "ja": "紫貨の取引：Lv90～向け素材",
+    "de": "Violette Scheine (ab St. 90, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 90)"
   },
   "1770489": {
     "en": "Purple Scrip Exchange (Lv. 90 Materials/Bait/Furnishings)",
@@ -5646,34 +5646,34 @@
     "fr": "Assignats mauves : matériaux, appâts et logement (Nv ≧ 90)"
   },
   "1770490": {
-    "en": "White Scrip Exchange (Lv. 60/IL 200)",
-    "ja": "白貨の取引：Lv60～向け【ILv200】",
-    "de": "Weiße Scheine (ab St. 60) [G.-St. 200]",
-    "fr": "Assignats blancs (Nv ≧ 60) [NvObj 200]"
+    "en": "Purple Scrip Exchange (Lv. 60/IL 200)",
+    "ja": "紫貨の取引：Lv60～向け【ILv200】",
+    "de": "Violette Scheine (ab St. 60) [G.-St. 200]",
+    "fr": "Assignats mauves (Nv ≧ 60) [NvObj 200]"
   },
   "1770491": {
-    "en": "White Scrip Exchange (Lv. 70/IL 330)",
-    "ja": "白貨の取引：Lv70～向け【ILv330】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "紫貨の取引：Lv70～向け【ILv330】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 330]"
   },
   "1770492": {
-    "en": "White Scrip Exchange (Lv. 70/IL 350)",
-    "ja": "白貨の取引：Lv70～向け【ILv350】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "紫貨の取引：Lv70～向け【ILv350】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 350]"
   },
   "1770493": {
-    "en": "White Scrip Exchange (Lv. 80/IL 440)",
-    "ja": "白貨の取引：Lv80～向け【ILv440】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "紫貨の取引：Lv80～向け【ILv440】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 440]"
   },
   "1770494": {
-    "en": "White Scrip Exchange (Lv. 80/IL 470)",
-    "ja": "白貨の取引：Lv80～向け【ILv470】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "紫貨の取引：Lv80～向け【ILv470】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 470]"
   },
   "1770495": {
     "en": "Purple Scrip Exchange (Lv. 90/IL 570)",
@@ -5682,34 +5682,34 @@
     "fr": "Assignats mauves (Nv ≧ 90) [NvObj 570]"
   },
   "1770496": {
-    "en": "White Scrip Exchange (Lv. 50 Materials/Bait)",
-    "ja": "白貨の取引：Lv50～向け釣り餌・素材",
-    "de": "Weiße Scheine (ab St. 50, Materialien & Köder)",
-    "fr": "Assignats blancs : matériaux et appâts (Nv ≧ 50)"
+    "en": "Purple Scrip Exchange (Lv. 50 Materials/Bait)",
+    "ja": "紫貨の取引：Lv50～向け釣り餌・素材",
+    "de": "Violette Scheine (ab St. 50, Materialien & Köder)",
+    "fr": "Assignats mauves : matériaux et appâts (Nv ≧ 50)"
   },
   "1770497": {
-    "en": "White Scrip Exchange (Lv. 60 Materials/Bait/Tokens)",
-    "ja": "白貨の取引：Lv60～向け釣り餌・素材・手形",
-    "de": "Weiße Scheine (ab St. 60, Materialien, Köder & Marken)",
-    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 60)"
+    "en": "Purple Scrip Exchange (Lv. 60 Materials/Bait/Tokens)",
+    "ja": "紫貨の取引：Lv60～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 60, Materialien, Köder & Marken)",
+    "fr": "Assignats mauves : matériaux, appâts et avoirs (Nv ≧ 60)"
   },
   "1770498": {
-    "en": "White Scrip Exchange (Lv. 70 Materials/Bait/Tokens)",
-    "ja": "白貨の取引：Lv70～向け釣り餌・素材・手形",
-    "de": "Weiße Scheine (ab St. 70, Materialien, Köder & Marken)",
-    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 70)"
+    "en": "Purple Scrip Exchange (Lv. 70 Materials/Bait/Tokens)",
+    "ja": "紫貨の取引：Lv70～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 70, Materialien, Köder & Marken)",
+    "fr": "Assignats mauves : matériaux, appâts et avoirs (Nv ≧ 70)"
   },
   "1770499": {
-    "en": "White Scrip Exchange (Lv. 80 Materials/Bait/Tokens)",
-    "ja": "白貨の取引：Lv80～向け釣り餌・素材・手形",
-    "de": "Weiße Scheine (ab St. 80, Materialien, Köder & Marken)",
-    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 80)"
+    "en": "Purple Scrip Exchange (Lv. 80 Materials/Bait/Tokens)",
+    "ja": "紫貨の取引：Lv80～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 80, Materialien, Köder & Marken)",
+    "fr": "Assignats mauves : matériaux, appâts et avoirs (Nv ≧ 80)"
   },
   "1770500": {
-    "en": "White Scrip Exchange (Lv. 90 Bait/Tokens)",
-    "ja": "白貨の取引：Lv90～向け釣り餌・手形",
-    "de": "Weiße Scheine (ab St. 90, Köder & Marken)",
-    "fr": "Assignats blancs : appâts et avoirs (Nv ≧ 90)"
+    "en": "Purple Scrip Exchange (Lv. 90 Bait/Tokens)",
+    "ja": "紫貨の取引：Lv90～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 90, Materialien, Köder & Marken)",
+    "fr": "Assignats mauves : appâts et avoirs (Nv ≧ 90)"
   },
   "1770501": {
     "en": "Bicolor Gemstone Vouchers",
@@ -5718,58 +5718,58 @@
     "fr": "Bons de livraison de gemmes bicolores"
   },
   "1770502": {
-    "en": "White Scrip Exchange (Master Recipes I)",
-    "ja": "白貨の取引：秘伝書（その1）",
-    "de": "Weiße Scheine (Meisterrezepte I)",
-    "fr": "Assignats blancs : recettes expertes I"
+    "en": "Purple Scrip Exchange (Master Recipes I)",
+    "ja": "紫貨の取引：秘伝書（その1）",
+    "de": "Violette Scheine (Meisterrezeptbücher I)",
+    "fr": "Assignats mauves : recettes expertes I"
   },
   "1770503": {
-    "en": "White Scrip Exchange (Lv. 80/IL 500)",
-    "ja": "白貨の取引：Lv80～向け【ILv500】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "紫貨の取引：Lv80～向け【ILv500】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 500]"
   },
   "1770504": {
-    "en": "White Scrip Exchange (Lv. 80/IL 500)",
-    "ja": "白貨の取引：Lv80～向け【ILv500】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "紫貨の取引：Lv80～向け【ILv500】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 500]"
   },
   "1770505": {
-    "en": "White Scrip Exchange (Music/Furnishings/Misc.)",
-    "ja": "白貨の取引：雑貨・譜面・ハウジング関連",
-    "de": "Weiße Scheine (Orchestrion, Unterkünfte & Verschiedenes)",
-    "fr": "Assignats blancs : orchestrion, logement et autres"
+    "en": "Purple Scrip Exchange (Music/Furnishings/Misc.)",
+    "ja": "紫貨の取引：雑貨・譜面・ハウジング関連",
+    "de": "Violette Scheine (Orchestrion, Unterkünfte & Verschiedenes)",
+    "fr": "Assignats mauves : orchestrion, logement et autres"
   },
   "1770506": {
-    "en": "White Scrip Exchange (Materia)",
-    "ja": "白貨の取引：マテリア",
-    "de": "Weiße Scheine (Materia)",
-    "fr": "Assignats blancs : matérias"
+    "en": "Purple Scrip Exchange (Materia)",
+    "ja": "紫貨の取引：マテリア",
+    "de": "Violette Scheine (Materia)",
+    "fr": "Assignats mauves : matérias"
   },
   "1770507": {
-    "en": "Purple Scrip Exchange (Materia)",
-    "ja": "紫貨の取引：マテリア",
-    "de": "Violette Scheine (Materia)",
-    "fr": "Assignats mauves : matérias"
+    "en": "Orange Scrip Exchange (Materia)",
+    "ja": "橙貨の取引：マテリア",
+    "de": "Orange Scheine (Materia)",
+    "fr": "Assignats orange : matérias"
   },
   "1770508": {
-    "en": "White Scrip Exchange (Music/Furnishings/Misc.)",
-    "ja": "白貨の取引：雑貨・譜面・ハウジング関連",
-    "de": "Weiße Scheine (Orchestrion, Unterkünfte & Verschiedenes)",
-    "fr": "Assignats blancs : orchestrion, logement et autres"
+    "en": "Purple Scrip Exchange (Music/Furnishings/Misc.)",
+    "ja": "紫貨の取引：雑貨・譜面・ハウジング関連",
+    "de": "Violette Scheine (Orchestrion, Unterkünfte & Verschiedenes)",
+    "fr": "Assignats mauves : orchestrion, logement et autres"
   },
   "1770509": {
-    "en": "White Scrip Exchange (Materia)",
-    "ja": "白貨の取引：マテリア",
-    "de": "Weiße Scheine (Materia)",
-    "fr": "Assignats blancs : matérias"
-  },
-  "1770510": {
     "en": "Purple Scrip Exchange (Materia)",
     "ja": "紫貨の取引：マテリア",
     "de": "Violette Scheine (Materia)",
     "fr": "Assignats mauves : matérias"
+  },
+  "1770510": {
+    "en": "Orange Scrip Exchange (Materia)",
+    "ja": "橙貨の取引：マテリア",
+    "de": "Orange Scheine (Materia)",
+    "fr": "Assignats orange : matérias"
   },
   "1770511": {
     "en": "Idealized Gear (IL 480)",
@@ -5814,16 +5814,16 @@
     "fr": "[NvObj 480] Équipement d'idéaliste"
   },
   "1770518": {
-    "en": "White Scrip Exchange (Lv. 58/IL 130)",
-    "ja": "白貨の取引：Lv58～向け【ILv130】",
-    "de": "Weiße Scheine (ab St. 58) [G.-St. 130]",
-    "fr": "Assignats blancs (Nv ≧ 58) [NvObj 130]"
+    "en": "Purple Scrip Exchange (Lv. 58/IL 130)",
+    "ja": "紫貨の取引：Lv58～向け【ILv130】",
+    "de": "Violette Scheine (ab St. 58) [G.-St. 130]",
+    "fr": "Assignats mauves (Nv ≧ 58) [NvObj 130]"
   },
   "1770519": {
-    "en": "White Scrip Exchange (Lv. 58/IL 130)",
-    "ja": "白貨の取引：Lv58～向け【ILv130】",
-    "de": "Weiße Scheine (ab St. 58) [G.-St. 130]",
-    "fr": "Assignats blancs (Nv ≧ 58) [NvObj 130]"
+    "en": "Purple Scrip Exchange (Lv. 58/IL 130)",
+    "ja": "紫貨の取引：Lv58～向け【ILv130】",
+    "de": "Violette Scheine (ab St. 58) [G.-St. 130]",
+    "fr": "Assignats mauves (Nv ≧ 58) [NvObj 130]"
   },
   "1770520": {
     "en": "",
@@ -5838,88 +5838,88 @@
     "fr": ""
   },
   "1770522": {
-    "en": "White Scrip Exchange (Lv. 70/IL 330)",
-    "ja": "白貨の取引：Lv70～向け【ILv330】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "紫貨の取引：Lv70～向け【ILv330】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 330]"
   },
   "1770523": {
-    "en": "White Scrip Exchange (Lv. 70/IL 350)",
-    "ja": "白貨の取引：Lv70～向け【ILv350】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "紫貨の取引：Lv70～向け【ILv350】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 350]"
   },
   "1770524": {
-    "en": "White Scrip Exchange (Lv. 80/IL 440)",
-    "ja": "白貨の取引：Lv80～向け【ILv440】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "紫貨の取引：Lv80～向け【ILv440】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 440]"
   },
   "1770525": {
-    "en": "White Scrip Exchange (Lv. 80/IL 470)",
-    "ja": "白貨の取引：Lv80～向け【ILv470】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "紫貨の取引：Lv80～向け【ILv470】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 470]"
   },
   "1770526": {
-    "en": "White Scrip Exchange (Lv. 80/IL 500)",
-    "ja": "白貨の取引：Lv80～向け【ILv500】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "紫貨の取引：Lv80～向け【ILv500】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 500]"
   },
   "1770527": {
-    "en": "White Scrip Exchange (Lv. 70 Materials)",
-    "ja": "白貨の取引：Lv70～向け素材",
-    "de": "Weiße Scheine (ab St. 70, Materialien)",
-    "fr": "Assignats blancs : matériaux (Nv ≧ 70)"
+    "en": "Purple Scrip Exchange (Lv. 70 Materials)",
+    "ja": "紫貨の取引：Lv70～向け素材",
+    "de": "Violette Scheine (ab St. 70, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 70)"
   },
   "1770528": {
-    "en": "White Scrip Exchange (Lv. 80 Materials)",
-    "ja": "白貨の取引：Lv80～向け素材",
-    "de": "Weiße Scheine (ab St. 80, Materialien)",
-    "fr": "Assignats blancs : matériaux (Nv ≧ 80)"
+    "en": "Purple Scrip Exchange (Lv. 80 Materials)",
+    "ja": "紫貨の取引：Lv80～向け素材",
+    "de": "Violette Scheine (ab St. 80, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 80)"
   },
   "1770529": {
-    "en": "White Scrip Exchange (Lv. 70/IL 330)",
-    "ja": "白貨の取引：Lv70～向け【ILv330】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "紫貨の取引：Lv70～向け【ILv330】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 330]"
   },
   "1770530": {
-    "en": "White Scrip Exchange (Lv. 70/IL 350)",
-    "ja": "白貨の取引：Lv70～向け【ILv350】",
-    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
-    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+    "en": "Purple Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "紫貨の取引：Lv70～向け【ILv350】",
+    "de": "Violette Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats mauves (Nv ≧ 70) [NvObj 350]"
   },
   "1770531": {
-    "en": "White Scrip Exchange (Lv. 80/IL 440)",
-    "ja": "白貨の取引：Lv80～向け【ILv440】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "紫貨の取引：Lv80～向け【ILv440】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 440]"
   },
   "1770532": {
-    "en": "White Scrip Exchange (Lv. 80/IL 470)",
-    "ja": "白貨の取引：Lv80～向け【ILv470】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "紫貨の取引：Lv80～向け【ILv470】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 470]"
   },
   "1770533": {
-    "en": "White Scrip Exchange (Lv. 80/IL 500)",
-    "ja": "白貨の取引：Lv80～向け【ILv500】",
-    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
-    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+    "en": "Purple Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "紫貨の取引：Lv80～向け【ILv500】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats mauves (Nv ≧ 80) [NvObj 500]"
   },
   "1770534": {
-    "en": "White Scrip Exchange (Lv. 70 Materials/Bait/Tokens)",
-    "ja": "白貨の取引：Lv70～向け釣り餌・素材・手形",
-    "de": "Weiße Scheine (ab St. 70, Materialien, Köder & Marken)",
-    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 70)"
+    "en": "Purple Scrip Exchange (Lv. 70 Materials/Bait/Tokens)",
+    "ja": "紫貨の取引：Lv70～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 70, Materialien, Köder & Marken)",
+    "fr": "Assignats mauves : matériaux, appâts et avoirs (Nv ≧ 70)"
   },
   "1770535": {
-    "en": "White Scrip Exchange (Lv. 80 Materials/Bait/Tokens)",
-    "ja": "白貨の取引：Lv80～向け釣り餌・素材・手形",
-    "de": "Weiße Scheine (ab St. 80, Materialien, Köder & Marken)",
-    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 80)"
+    "en": "Purple Scrip Exchange (Lv. 80 Materials/Bait/Tokens)",
+    "ja": "紫貨の取引：Lv80～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 80, Materialien, Köder & Marken)",
+    "fr": "Assignats mauves : matériaux, appâts et avoirs (Nv ≧ 80)"
   },
   "1770536": {
     "en": "",
@@ -5940,40 +5940,40 @@
     "fr": "Lots (2)"
   },
   "1770539": {
-    "en": "Hannish Certificates of Grade 1 Import (Weapons)",
-    "ja": "ラザハンの手形G1との交換（武器）",
-    "de": "Radz-at-Han-Marken I (Waffen)",
-    "fr": "Avoirs de Radz-at-Han I (armes)"
+    "en": "Hannish Certificates of Grade 1 Import (NQ Weapons)",
+    "ja": "ラザハンの手形G1との交換（武器NQ）",
+    "de": "Radz-at-Han-Marken I (NQ-Waffen)",
+    "fr": "Avoirs de Radz-at-Han I (armes QN)"
   },
   "1770540": {
-    "en": "Hannish Certificates of Grade 1 Import (Gear)",
-    "ja": "ラザハンの手形G1との交換（防具）",
-    "de": "Radz-at-Han-Marken I (Rüstung)",
-    "fr": "Avoirs de Radz-at-Han I (pièces d'armure)"
+    "en": "Hannish Certificates of Grade 1 Import (NQ Gear)",
+    "ja": "ラザハンの手形G1との交換（防具NQ）",
+    "de": "Radz-at-Han-Marken I (NQ-Rüstung)",
+    "fr": "Avoirs de Radz-at-Han I (pièces d'armure QN)"
   },
   "1770541": {
-    "en": "Hannish Certificates of Grade 1 Import (Accessories)",
-    "ja": "ラザハンの手形G1との交換（アクセサリー）",
-    "de": "Radz-at-Han-Marken I (Accessoires)",
-    "fr": "Avoirs de Radz-at-Han I (accessoires)"
+    "en": "Hannish Certificates of Grade 1 Import (NQ Accessories)",
+    "ja": "ラザハンの手形G1との交換（アクセサリーNQ）",
+    "de": "Radz-at-Han-Marken I (NQ-Accessoires)",
+    "fr": "Avoirs de Radz-at-Han I (accessoires QN)"
   },
   "1770542": {
-    "en": "Hannish Certificates of Grade 1 Import (Weapons)",
-    "ja": "ラザハンの手形G1との交換（武器）",
-    "de": "Radz-at-Han-Marken I (Waffen)",
-    "fr": "Avoirs de Radz-at-Han I (armes)"
+    "en": "Hannish Certificates of Grade 1 Import (HQ Weapons)",
+    "ja": "ラザハンの手形G1との交換（武器HQ）",
+    "de": "Radz-at-Han-Marken I (HQ-Waffen)",
+    "fr": "Avoirs de Radz-at-Han I (armes HQ)"
   },
   "1770543": {
-    "en": "Hannish Certificates of Grade 1 Import (Gear)",
-    "ja": "ラザハンの手形G1との交換（防具）",
-    "de": "Radz-at-Han-Marken I (Rüstung)",
-    "fr": "Avoirs de Radz-at-Han I (pièces d'armure)"
+    "en": "Hannish Certificates of Grade 1 Import (HQ Gear)",
+    "ja": "ラザハンの手形G1との交換（防具HQ）",
+    "de": "Radz-at-Han-Marken I (HQ-Rüstung)",
+    "fr": "Avoirs de Radz-at-Han I (pièces d'armure HQ)"
   },
   "1770544": {
-    "en": "Hannish Certificates of Grade 1 Import (Accessories)",
-    "ja": "ラザハンの手形G1との交換（アクセサリー）",
-    "de": "Radz-at-Han-Marken I (Accessoires)",
-    "fr": "Avoirs de Radz-at-Han I (accessoires)"
+    "en": "Hannish Certificates of Grade 1 Import (HQ Accessories)",
+    "ja": "ラザハンの手形G1との交換（アクセサリーHQ）",
+    "de": "Radz-at-Han-Marken I (HQ-Accessoires)",
+    "fr": "Avoirs de Radz-at-Han I (accessoires HQ)"
   },
   "1770545": {
     "en": "Augmented Classical Equipment (Weapons)",
@@ -6229,8 +6229,8 @@
   },
   "1770587": {
     "en": "Miscellaneous",
-    "ja": "その他",
-    "de": "Andere Gegenstände",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
     "fr": "Autres"
   },
   "1770588": {
@@ -6342,16 +6342,16 @@
     "fr": "Échange d'omicoin"
   },
   "1770606": {
-    "en": "Allagan Tomestones of Causality (DoW)",
-    "ja": "アラガントームストーン:因果の取引（ファイター）",
-    "de": "Allagische Steine der Kausalität (Krieger)",
-    "fr": "Mémoquartz allagois déterministes (guerre)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 630)",
+    "ja": "アラガントームストーン:詩学の取引（ILv630ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 630)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 630)"
   },
   "1770607": {
-    "en": "Allagan Tomestones of Causality (DoM)",
-    "ja": "アラガントームストーン:因果の取引（ソーサラー）",
-    "de": "Allagische Steine der Kausalität (Magier)",
-    "fr": "Mémoquartz allagois déterministes (magie)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 630)",
+    "ja": "アラガントームストーン:詩学の取引（ILv630ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 630)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 630)"
   },
   "1770608": {
     "en": "Unsung Relic of Abyssos Exchange (DoW) I",
@@ -6390,10 +6390,10 @@
     "fr": "Codex du Purgatoire (magie)"
   },
   "1770614": {
-    "en": "Allagan Tomestones of Causality Exchange (Weapons)",
-    "ja": "アラガントームストーン:因果の取引（武器）",
-    "de": "Allagische Steine der Kausalität (Waffen)",
-    "fr": "Mémoquartz allagois déterministes (armes)"
+    "en": "Allagan Tomestones of Poetics (IL 630 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv630武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 630)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 630)"
   },
   "1770615": {
     "en": "Lunar Envoy's Gear Augmentation (DoW) I",
@@ -6420,16 +6420,16 @@
     "fr": "Équipements totémiques (Barbariccia)"
   },
   "1770619": {
-    "en": "Moonward Gear Exchange (DoW)",
-    "ja": "「ムーンワード装備」の取引（ファイター）",
-    "de": "Exodus-Ausrüstung (Krieger)",
-    "fr": "Échange d'équipements des lunautes (guerre)"
+    "en": "Moonward Gear Exchange (DoW, IL 570)",
+    "ja": "「ムーンワード装備」の取引（ILv570ファイター装備）",
+    "de": "Exodus-Ausrüstung (Krieger, G.-St. 570)",
+    "fr": "Échange d'équipements des lunautes (guerre - NvObj 570)"
   },
   "1770620": {
-    "en": "Moonward Gear Exchange (DoM)",
-    "ja": "「ムーンワード装備」の取引（ソーサラー）",
-    "de": "Exodus-Ausrüstung (Magier)",
-    "fr": "Échange d'équipements des lunautes (magie)"
+    "en": "Moonward Gear Exchange (DoM, IL 570)",
+    "ja": "「ムーンワード装備」の取引（ILv570ソーサラー装備）",
+    "de": "Exodus-Ausrüstung (Magier, G.-St. 570)",
+    "fr": "Échange d'équipements des lunautes (magie - NvObj 570)"
   },
   "1770621": {
     "en": "Sil'dihn Potsherd Exchange",
@@ -6469,9 +6469,9 @@
   },
   "1770627": {
     "en": "White Scrip Exchange (Master Recipes II)",
-    "ja": "白貨の取引：秘伝書（その2）",
-    "de": "Weiße Scheine (Meisterrezeptbücher II)",
-    "fr": "Assignats blancs : recettes expertes II"
+    "ja": "紫貨の取引：秘伝書（その2）",
+    "de": "Violette Scheine (Meisterrezeptbücher II)",
+    "fr": "Assignats mauves : recettes expertes II"
   },
   "1770628": {
     "en": "Master Recipes II",
@@ -6528,16 +6528,16 @@
     "fr": ""
   },
   "1770637": {
-    "en": "White Crafters' Scrip Exchange",
-    "ja": "クラフタースクリップ:白貨の取引",
-    "de": "Weiße Handwerkerscheine",
-    "fr": "Assignats blancs d'artisan"
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Tausch für Handwerkerscheine",
+    "fr": "Assignats d'artisan"
   },
   "1770638": {
-    "en": "White Gatherers' Scrip Exchange",
-    "ja": "ギャザラースクリップ:白貨の取引",
-    "de": "Weiße Sammlerscheine",
-    "fr": "Assignats blancs de récolteur"
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Tausch für Sammlerscheine",
+    "fr": "Assignats de récolteur"
   },
   "1770639": {
     "en": "",
@@ -6606,40 +6606,40 @@
     "fr": "Cristaux-trophées (protections de mages II)"
   },
   "1770650": {
-    "en": "Hannish Certificates of Grade 2 Import (Weapons)",
-    "ja": "ラザハンの手形G2との交換（武器）",
-    "de": "Radz-at-Han-Marken II (Waffen)",
-    "fr": "Avoirs de Radz-at-Han II (armes)"
+    "en": "Hannish Certificates of Grade 2 Import (NQ Weapons)",
+    "ja": "ラザハンの手形G2との交換（武器NQ）",
+    "de": "Radz-at-Han-Marken II (NQ-Waffen)",
+    "fr": "Avoirs de Radz-at-Han II (armes QN)"
   },
   "1770651": {
-    "en": "Hannish Certificates of Grade 2 Import (Gear)",
-    "ja": "ラザハンの手形G2との交換（防具）",
-    "de": "Radz-at-Han-Marken II (Rüstungen)",
-    "fr": "Avoirs de Radz-at-Han II (pièces d'armure)"
+    "en": "Hannish Certificates of Grade 2 Import (NQ Gear)",
+    "ja": "ラザハンの手形G2との交換（防具NQ）",
+    "de": "Radz-at-Han-Marken II (NQ-Rüstungen)",
+    "fr": "Avoirs de Radz-at-Han II (pièces d'armure QN)"
   },
   "1770652": {
-    "en": "Hannish Certificates of Grade 2 Import (Accessories)",
-    "ja": "ラザハンの手形G2との交換（アクセサリー）",
-    "de": "Radz-at-Han-Marken II (Accessoires)",
-    "fr": "Avoirs de Radz-at-Han II (accessoires)"
+    "en": "Hannish Certificates of Grade 2 Import (NQ Accessories)",
+    "ja": "ラザハンの手形G2との交換（アクセサリーNQ）",
+    "de": "Radz-at-Han-Marken II (NQ-Accessoires)",
+    "fr": "Avoirs de Radz-at-Han II (accessoires QN)"
   },
   "1770653": {
-    "en": "Hannish Certificates of Grade 2 Import (Weapons)",
-    "ja": "ラザハンの手形G2との交換（武器）",
-    "de": "Radz-at-Han-Marken II (Waffen)",
-    "fr": "Avoirs de Radz-at-Han II (armes)"
+    "en": "Hannish Certificates of Grade 2 Import (HQ Weapons)",
+    "ja": "ラザハンの手形G2との交換（武器HQ）",
+    "de": "Radz-at-Han-Marken II (HQ-Waffen)",
+    "fr": "Avoirs de Radz-at-Han II (armes HQ)"
   },
   "1770654": {
-    "en": "Hannish Certificates of Grade 2 Import (Gear)",
-    "ja": "ラザハンの手形G2との交換（防具）",
-    "de": "Radz-at-Han-Marken II (Rüstungen)",
-    "fr": "Avoirs de Radz-at-Han II (pièces d'armure)"
+    "en": "Hannish Certificates of Grade 2 Import (HQ Gear)",
+    "ja": "ラザハンの手形G2との交換（防具HQ）",
+    "de": "Radz-at-Han-Marken II (HQ-Rüstungen)",
+    "fr": "Avoirs de Radz-at-Han II (pièces d'armure HQ)"
   },
   "1770655": {
-    "en": "Hannish Certificates of Grade 2 Import (Accessories)",
-    "ja": "ラザハンの手形G2との交換（アクセサリー）",
-    "de": "Radz-at-Han-Marken II (Accessoires)",
-    "fr": "Avoirs de Radz-at-Han II (accessoires)"
+    "en": "Hannish Certificates of Grade 2 Import (HQ Accessories)",
+    "ja": "ラザハンの手形G2との交換（アクセサリーHQ）",
+    "de": "Radz-at-Han-Marken II (HQ-Accessoires)",
+    "fr": "Avoirs de Radz-at-Han II (accessoires HQ)"
   },
   "1770656": {
     "en": "Augmented Rinascita Equipment (Weapons)",
@@ -6852,16 +6852,16 @@
     "fr": ""
   },
   "1770691": {
-    "en": "Allagan Tomestones of Comedy (DoW)",
-    "ja": "アラガントームストーン:神曲の取引（ファイター）",
-    "de": "Allagische Steine der Komödie (Krieger)",
-    "fr": "Mémoquartz allagois dantesques (guerre)"
+    "en": "Allagan Tomestones of Poetics (DoW, IL 660)",
+    "ja": "アラガントームストーン:詩学の取引（ILv660ファイター装備）",
+    "de": "Allagische Steine der Poesie (Krieger, G.-St. 660)",
+    "fr": "Mémoquartz allagois poétiques (guerre - NvObj 660)"
   },
   "1770692": {
-    "en": "Allagan Tomestones of Comedy (DoM)",
-    "ja": "アラガントームストーン:神曲の取引（ソーサラー）",
-    "de": "Allagische Steine der Komödie (Magier)",
-    "fr": "Mémoquartz allagois dantesques (magie)"
+    "en": "Allagan Tomestones of Poetics (DoM, IL 660)",
+    "ja": "アラガントームストーン:詩学の取引（ILv660ソーサラー装備）",
+    "de": "Allagische Steine der Poesie (Magier, G.-St. 660)",
+    "fr": "Mémoquartz allagois poétiques (magie - NvObj 660)"
   },
   "1770693": {
     "en": "Unsung Relic of Anabaseios Exchange (DoW) I",
@@ -6900,10 +6900,10 @@
     "fr": "Codex du Paradis (magie)"
   },
   "1770699": {
-    "en": "Allagan Tomestones of Comedy Exchange (Weapons)",
-    "ja": "アラガントームストーン:神曲の取引（武器）",
-    "de": "Allagische Steine der Komödie (Waffen)",
-    "fr": "Mémoquartz allagois dantesques (armes)"
+    "en": "Allagan Tomestones of Poetics (IL 660 Weapons)",
+    "ja": "アラガントームストーン:詩学の取引（ILv660武器）",
+    "de": "Allagische Steine der Poesie (Waffen, G.-St. 660)",
+    "fr": "Mémoquartz allagois poétiques (armes - NvObj 660)"
   },
   "1770700": {
     "en": "Credendum Gear Augmentation (DoW) I",
@@ -6930,16 +6930,16 @@
     "fr": "Équipements totémiques (Golbez)"
   },
   "1770704": {
-    "en": "Radiant's Gear (DoW)",
-    "ja": "「レディアント装備」の取引（ファイター）",
-    "de": "Himmelsheer-Ausrüstung (Krieger)",
-    "fr": "Échange d'équipements radieux (guerre)"
+    "en": "Radiant's Gear (DoW, IL 600)",
+    "ja": "「レディアント装備」の取引（ILv600ファイター装備）",
+    "de": "Himmelsheer-Ausrüstung (Krieger, G.-St. 600)",
+    "fr": "Échange d'équipements radieux (guerre - NvObj 600)"
   },
   "1770705": {
-    "en": "Radiant's Gear (DoM)",
-    "ja": "「レディアント装備」の取引（ソーサラー）",
-    "de": "Himmelsheer-Ausrüstung (Magier)",
-    "fr": "Échange d'équipements radieux (magie)"
+    "en": "Radiant's Gear (DoM, IL 600)",
+    "ja": "「レディアント装備」の取引（ILv600ソーサラー装備）",
+    "de": "Himmelsheer-Ausrüstung (Magier, G.-St. 600)",
+    "fr": "Échange d'équipements radieux (magie - NvObj 600)"
   },
   "1770706": {
     "en": "Purple Scrip Exchange (Lv. 90/IL 620)",
@@ -6969,7 +6969,7 @@
     "en": "Newest Irregular Tomestone Exchange",
     "ja": "最新の希少トームストーンの取引",
     "de": "Ungewöhnliche Allagische Steine (neu)",
-    "fr": "Récents mémoquartz allagois inhabituels"
+    "fr": "Récents mémoquartz inhabituels"
   },
   "1770711": {
     "en": "",
@@ -6990,40 +6990,40 @@
     "fr": ""
   },
   "1770714": {
-    "en": "Hannish Certificates of Grade 3 Import (Weapons)",
-    "ja": "ラザハンの手形G3との交換（武器）",
-    "de": "Radz-at-Han-Marken III (Waffen)",
-    "fr": "Avoirs de Radz-at-Han III (armes)"
+    "en": "Hannish Certificates of Grade 3 Import (NQ Weapons)",
+    "ja": "ラザハンの手形G3との交換（武器NQ）",
+    "de": "Radz-at-Han-Marken III (NQ-Waffen)",
+    "fr": "Avoirs de Radz-at-Han III (armes QN)"
   },
   "1770715": {
-    "en": "Hannish Certificates of Grade 3 Import (Gear)",
-    "ja": "ラザハンの手形G3との交換（防具）",
-    "de": "Radz-at-Han-Marken III (Rüstungen)",
-    "fr": "Avoirs de Radz-at-Han III (pièces d'armure)"
+    "en": "Hannish Certificates of Grade 3 Import (NQ Gear)",
+    "ja": "ラザハンの手形G3との交換（防具NQ）",
+    "de": "Radz-at-Han-Marken III (NQ-Rüstungen)",
+    "fr": "Avoirs de Radz-at-Han III (pièces d'armure QN)"
   },
   "1770716": {
-    "en": "Hannish Certificates of Grade 3 Import (Accessories)",
-    "ja": "ラザハンの手形G3との交換（アクセサリー）",
-    "de": "Radz-at-Han-Marken III (Accessoires)",
-    "fr": "Avoirs de Radz-at-Han III (accessoires)"
+    "en": "Hannish Certificates of Grade 3 Import (NQ Accessories)",
+    "ja": "ラザハンの手形G3との交換（アクセサリーNQ）",
+    "de": "Radz-at-Han-Marken III (NQ-Accessoires)",
+    "fr": "Avoirs de Radz-at-Han III (accessoires QN)"
   },
   "1770717": {
-    "en": "Hannish Certificates of Grade 3 Import (Weapons)",
-    "ja": "ラザハンの手形G3との交換（武器）",
-    "de": "Radz-at-Han-Marken III (Waffen)",
-    "fr": "Avoirs de Radz-at-Han III (armes)"
+    "en": "Hannish Certificates of Grade 3 Import (HQ Weapons)",
+    "ja": "ラザハンの手形G3との交換（武器HQ）",
+    "de": "Radz-at-Han-Marken III (HQ-Waffen)",
+    "fr": "Avoirs de Radz-at-Han III (armes HQ)"
   },
   "1770718": {
-    "en": "Hannish Certificates of Grade 3 Import (Gear)",
-    "ja": "ラザハンの手形G3との交換（防具）",
-    "de": "Radz-at-Han-Marken III (Rüstungen)",
-    "fr": "Avoirs de Radz-at-Han III (pièces d'armure)"
+    "en": "Hannish Certificates of Grade 3 Import (HQ Gear)",
+    "ja": "ラザハンの手形G3との交換（防具HQ）",
+    "de": "Radz-at-Han-Marken III (HQ-Rüstungen)",
+    "fr": "Avoirs de Radz-at-Han III (pièces d'armure HQ)"
   },
   "1770719": {
-    "en": "Hannish Certificates of Grade 3 Import (Accessories)",
-    "ja": "ラザハンの手形G3との交換（アクセサリー）",
-    "de": "Radz-at-Han-Marken III (Accessoires)",
-    "fr": "Avoirs de Radz-at-Han III (accessoires)"
+    "en": "Hannish Certificates of Grade 3 Import (HQ Accessories)",
+    "ja": "ラザハンの手形G3との交換（アクセサリーHQ）",
+    "de": "Radz-at-Han-Marken III (HQ-Accessoires)",
+    "fr": "Avoirs de Radz-at-Han III (accessoires HQ)"
   },
   "1770720": {
     "en": "Augmented Diadochos Equipment (Weapons)",
@@ -7106,7 +7106,7 @@
   "1770733": {
     "en": "Elevated Ester Augmentation",
     "ja": "「全天の強化薬」を用いた強化",
-    "de": "Waffenverstärkung (Allhimmel-Lösungsmittel)",
+    "de": "Verstärkung mit Allhimmel-Lösungsmittel",
     "fr": "Amélioration à l'aide d'agent renforçant du ciel ouvert"
   },
   "1770734": {
@@ -7114,5 +7114,935 @@
     "ja": "",
     "de": "",
     "fr": ""
+  },
+  "1770735": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770736": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770737": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770738": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770739": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770740": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770741": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770742": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770743": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770744": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770745": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770746": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770747": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770748": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770749": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770750": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770751": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770752": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770753": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770754": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770755": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770756": {
+    "en": "Silver Chocobo Feather Exchange V (Lv. 90 Gear)",
+    "ja": "シルバーチョコボの羽根の取引（Lv90向け装備）",
+    "de": "Silberne Chocobo-Federn IV (ab St. 90)",
+    "fr": "Pennes de chocobo argenté (Nv 90)"
+  },
+  "1770757": {
+    "en": "Job Gear (Tank)",
+    "ja": "ジョブ専用装備の受取（タンク）",
+    "de": "Job-Ausrüstung (Verteidiger)",
+    "fr": "Équipement de job (Tank)"
+  },
+  "1770758": {
+    "en": "Job Gear (Physical DPS)",
+    "ja": "ジョブ専用装備の受取（DPS：ファイター）",
+    "de": "Job-Ausrüstung (physische Angreifer)",
+    "fr": "Équipement de job (DPS physique)"
+  },
+  "1770759": {
+    "en": "Job Gear (Magical Ranged DPS)",
+    "ja": "ジョブ専用装備の受取（DPS：ソーサラー）",
+    "de": "Job-Ausrüstung (magische Angreifer)",
+    "fr": "Équipement de job (DPS magique)"
+  },
+  "1770760": {
+    "en": "Job Gear (Healer)",
+    "ja": "ジョブ専用装備の受取（ヒーラー）",
+    "de": "Job-Ausrüstung (Heiler)",
+    "fr": "Équipement de job (Soigneur)"
+  },
+  "1770761": {
+    "en": "Sacks of Nuts Exchange",
+    "ja": "モブハントの戦利品の取引",
+    "de": "Kupo-Trophäen",
+    "fr": "Insignes des contrats de chasse"
+  },
+  "1770762": {
+    "en": "Totem Gear (Zoraal Ja)",
+    "ja": "報酬装備の取引（ゾラージャ）",
+    "de": "Zoraal Ja-Ausrüstung",
+    "fr": "Équipements totémiques (Zoraal Ja)"
+  },
+  "1770763": {
+    "en": "Totem Gear (Valigarmanda)",
+    "ja": "報酬装備の取引（ヴァリガルマンダ）",
+    "de": "Valigarmanda-Ausrüstung",
+    "fr": "Équipements totémiques (Valigarmanda)"
+  },
+  "1770764": {
+    "en": "Allagan Tomestones of Aesthetics (DoW, IL 700)",
+    "ja": "アラガントームストーン:美学の取引（ILv700ファイター装備）",
+    "de": "Allagische Steine der Ästhetik (Krieger, G.-St. 700)",
+    "fr": "Mémoquartz allagois esthétiques (guerre - NvObj 700)"
+  },
+  "1770765": {
+    "en": "Allagan Tomestones of Aesthetics (DoM, IL 700)",
+    "ja": "アラガントームストーン:美学の取引（ILv700ソーサラー装備）",
+    "de": "Allagische Steine der Ästhetik (Magier, G.-St. 700)",
+    "fr": "Mémoquartz allagois esthétiques (magie - NvObj 700)"
+  },
+  "1770766": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770767": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770768": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770769": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770770": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770771": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770772": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770773": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770774": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770775": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770776": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770777": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770778": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770779": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770780": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770781": {
+    "en": "Orange Scrip Exchange (Lv. 100/IL 700)",
+    "ja": "橙貨の取引：Lv100～向け【ILv700】",
+    "de": "Orange Scheine (ab St. 100) [G.-St. 700]",
+    "fr": "Assignats orange (Nv ≧ 100) [NvObj 700]"
+  },
+  "1770782": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770783": {
+    "en": "Orange Scrip Exchange (Lv. 100 Materials/Furnishings)",
+    "ja": "橙貨の取引：Lv100～向け素材・ハウジング関連",
+    "de": "Orange Scheine (ab St. 100, Materialien & Unterkünfte)",
+    "fr": "Assignats orange : matériaux et logement (Nv ≧ 100)"
+  },
+  "1770784": {
+    "en": "Orange Scrip Exchange (Lv. 100/IL 700)",
+    "ja": "橙貨の取引：Lv100～向け【ILv700】",
+    "de": "Orange Scheine (ab St. 100) [G.-St. 700]",
+    "fr": "Assignats orange (Nv ≧ 100) [NvObj 700]"
+  },
+  "1770785": {
+    "en": "Purple Scrip Exchange (Lv. 100 Folklore Items)",
+    "ja": "紫貨の取引：Lv100～向け伝承録",
+    "de": "Violette Scheine (ab St. 100, Folklore-Almanache)",
+    "fr": "Assignats mauves : légendes locales (Nv ≧ 100)"
+  },
+  "1770786": {
+    "en": "Orange Scrip Exchange (Lv. 100 Materials/Bait/Tokens)",
+    "ja": "橙貨の取引：Lv100～向け釣り餌・素材・手形",
+    "de": "Orange Scheine (ab St. 100, Köder, Materialien & Marken)",
+    "fr": "Assignats orange : matériaux, appâts et avoirs (Nv ≧ 100)"
+  },
+  "1770787": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 570)",
+    "ja": "紫貨の取引：Lv90～向け【ILv570】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 570]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 570]"
+  },
+  "1770788": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 590)",
+    "ja": "紫貨の取引：Lv90～向け【ILv590】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 590]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 590]"
+  },
+  "1770789": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 620)",
+    "ja": "紫貨の取引：Lv90～向け【ILv620】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 620]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 620]"
+  },
+  "1770790": {
+    "en": "Purple Scrip Exchange (Lv. 90 Materials)",
+    "ja": "紫貨の取引：Lv90～向け素材",
+    "de": "Violette Scheine (ab St. 90, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 90)"
+  },
+  "1770791": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 570)",
+    "ja": "紫貨の取引：Lv90～向け【ILv570】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 570]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 570]"
+  },
+  "1770792": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 590)",
+    "ja": "紫貨の取引：Lv90～向け【ILv590】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 590]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 590]"
+  },
+  "1770793": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 620)",
+    "ja": "紫貨の取引：Lv90～向け【ILv620】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 620]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 620]"
+  },
+  "1770794": {
+    "en": "Purple Scrip Exchange (Lv. 90 Materials/Bait/Tokens)",
+    "ja": "紫貨の取引：Lv90～向け釣り餌・素材・手形",
+    "de": "Violette Scheine (ab St. 90, Köder, Materialien & Marken)",
+    "fr": "Assignats mauves : matériaux, appâts et avoirs (Nv ≧ 90)"
+  },
+  "1770795": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770796": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770797": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770798": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770799": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770800": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770801": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770802": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770803": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770804": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
+  },
+  "1770805": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770806": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770807": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770808": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770809": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770810": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770811": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770812": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770813": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770814": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
+  },
+  "1770815": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770816": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770817": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770818": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770819": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770820": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770821": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770822": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770823": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770824": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
+  },
+  "1770825": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770826": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770827": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770828": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770829": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770830": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770831": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770832": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770833": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770834": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-635] Équipement de l'Élévation"
+  },
+  "1770835": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770836": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770837": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770838": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770839": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770840": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770841": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770842": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770843": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770844": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
+  },
+  "1770845": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770846": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770847": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770848": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770849": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770850": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770851": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770852": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770853": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770854": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
+  },
+  "1770855": {
+    "en": "Extreme & Ultimate Gear (IL 580-635)",
+    "ja": "【ILv580～635】極・絶装備",
+    "de": "[G.-St. 580-635] Waffen (Endwalker und Fatale Raids)",
+    "fr": "[NvObj 580-635] Équipement (défis extrêmes et raids fatals)"
+  },
+  "1770856": {
+    "en": "Limbo Gear (IL 580)",
+    "ja": "【ILv580】リンボ装備",
+    "de": "[G.-St. 580] Limbo-Ausrüstung",
+    "fr": "[NvObj 580] Équipement des Limbes"
+  },
+  "1770857": {
+    "en": "Asphodelos Gear (IL 600-605)",
+    "ja": "【ILv600～605】アスフォデロース装備",
+    "de": "[G.-St. 600-605] Asphodelos-Ausrüstung",
+    "fr": "[NvObj 600-605] Équipement de l'Asphodèle"
+  },
+  "1770858": {
+    "en": "Purgatory Gear (IL 610)",
+    "ja": "【ILv610】パーガトリィ装備",
+    "de": "[G.-St. 610] Fegefeuer-Ausrüstung",
+    "fr": "[NvObj 610] Équipement du Purgatoire"
+  },
+  "1770859": {
+    "en": "The Thirteenth Gear (IL 615-655)",
+    "ja": "【ILv615～655】第十三世界装備",
+    "de": "[G.-St. 615-655] Waffen (Dreizehnter Splitter)",
+    "fr": "[NvObj 615-655] Équipement du treizième reflet"
+  },
+  "1770860": {
+    "en": "Lunar Envoy Gear (IL 630)",
+    "ja": "【ILv630】ルナエンヴォイ装備",
+    "de": "[G.-St. 630] Mondgesandten-Ausrüstung",
+    "fr": "[NvObj 630] Équipement sélénien"
+  },
+  "1770861": {
+    "en": "Abyssos Gear (IL 630-635)",
+    "ja": "【ILv630～635】アビュッソス装備",
+    "de": "[G.-St. 630-635] Abyssos-Ausrüstung",
+    "fr": "[NvObj 630-635] Équipement Abyssos"
+  },
+  "1770862": {
+    "en": "Anabaseios Gear (IL 640)",
+    "ja": "【ILv640】アナバセイオス装備",
+    "de": "[G.-St. 640] Anabaseios-Ausrüstung",
+    "fr": "[NvObj 640] Équipement Anabaseios"
+  },
+  "1770863": {
+    "en": "Credendum Gear (IL 660)",
+    "ja": "【ILv660】クレデンダム装備",
+    "de": "[G.-St. 660] Credendum-Ausrüstung",
+    "fr": "[NvObj 660] Équipement du credo"
+  },
+  "1770864": {
+    "en": "Ascension Gear (IL 660-665)",
+    "ja": "【ILv660～665】アセンション装備",
+    "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
+  },
+  "1770865": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Material",
+    "fr": "Matériaux"
+  },
+  "1770866": {
+    "en": "Mounts/Miscellany",
+    "ja": "マウント・雑貨",
+    "de": "Reittiere & Verschiedenes",
+    "fr": "Montures et autres"
+  },
+  "1770867": {
+    "en": "Materia I",
+    "ja": "マテリア（その1）",
+    "de": "Materia I",
+    "fr": "Matérias I"
+  },
+  "1770868": {
+    "en": "Soph Gear (IL 570)",
+    "ja": "【ILv570】ソフォス装備",
+    "de": "[G.-St. 570] Philosophen-Ausrüstung",
+    "fr": "[NvObj 570] Équipement sapiens"
+  },
+  "1770869": {
+    "en": "Perfectionist Gear (IL 590)",
+    "ja": "【ILv590】パーフェクショニスト装備",
+    "de": "[G.-St. 590] Perfektionisten-Ausrüstung",
+    "fr": "[NvObj 590] Équipement de perfectionniste"
+  },
+  "1770870": {
+    "en": "Afflatus Gear (IL 620)",
+    "ja": "【ILv620】アフレイタス装備",
+    "de": "[G.-St. 620] Afflatus-Ausrüstung",
+    "fr": "[NvObj 620] Équipement de l'inspiration terrestre"
+  },
+  "1770871": {
+    "en": "Miscellany",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
+    "fr": "Divers"
+  },
+  "1770872": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Material",
+    "fr": "Matériaux"
+  },
+  "1770873": {
+    "en": "Master Recipes I",
+    "ja": "秘伝書（その1）",
+    "de": "Meisterrezeptbücher I",
+    "fr": "Recettes expertes I"
+  },
+  "1770874": {
+    "en": "Master Recipes II",
+    "ja": "秘伝書（その2）",
+    "de": "Meisterrezeptbücher II",
+    "fr": "Recettes expertes II"
+  },
+  "1770875": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770876": {
+    "en": "Soph Gear (IL 570)",
+    "ja": "【ILv570】ソフォス装備",
+    "de": "[G.-St. 570] Philosophen-Ausrüstung",
+    "fr": "[NvObj 570] Équipement sapiens"
+  },
+  "1770877": {
+    "en": "Perfectionist Gear (IL 590)",
+    "ja": "【ILv590】パーフェクショニスト装備",
+    "de": "[G.-St. 590] Perfektionisten-Ausrüstung",
+    "fr": "[NvObj 590] Équipement de perfectionniste"
+  },
+  "1770878": {
+    "en": "Afflatus Gear (IL 620)",
+    "ja": "【ILv620】アフレイタス装備",
+    "de": "[G.-St. 620] Afflatus-Ausrüstung",
+    "fr": "[NvObj 620] Équipement de l'inspiration terrestre"
+  },
+  "1770879": {
+    "en": "Bait/Miscellany",
+    "ja": "雑貨・釣り餌",
+    "de": "Köder & Verschiedenes",
+    "fr": "Appât et autres"
+  },
+  "1770880": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Material",
+    "fr": "Matériaux"
+  },
+  "1770881": {
+    "en": "Folklore Items",
+    "ja": "伝承録",
+    "de": "Almanache",
+    "fr": "Légendes locales"
+  },
+  "1770882": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770883": {
+    "en": "Materia II",
+    "ja": "マテリア（その2）",
+    "de": "Materia II",
+    "fr": "Matérias II"
+  },
+  "1770884": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770885": {
+    "en": "Sublime Curiosities",
+    "ja": "アイテムの取引",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "1770886": {
+    "en": "Fieldcraft Items",
+    "ja": "ギャザラー向けアイテムの交換",
+    "de": "Sammler-Gegenstände",
+    "fr": "Objets de récolte"
+  },
+  "1770887": {
+    "en": "Rain Exchange",
+    "ja": "霊薬の取引",
+    "de": "Kondensat",
+    "fr": "Échange de lymphe quintessenciée"
+  },
+  "1770888": {
+    "en": "Furnishings",
+    "ja": "ハウジング関連",
+    "de": "Unterkünfte",
+    "fr": "Logement"
+  },
+  "1770889": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
   }
 }

@@ -70,7 +70,7 @@ export class ShopsExtractor extends AbstractExtractor {
         const shops = uniqBy([
           ...this.handleGilShops(gilShops, gilShopItems),
           ...this.handleSpecialShops(specialShops),
-          ...this.handleGCShop(gcShopItems, gcShopCategories),
+          ...this.handleGCShop(gcShopItems, gcShopCategories)
         ], 'id');
         const mappyJSONRecord = this.requireLazyFile('gubal-bnpcs-index');
         let linked = this.linkNpcs(shops, npcs, npcBases, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
@@ -252,6 +252,9 @@ export class ShopsExtractor extends AbstractExtractor {
         shop.topicSelectId = topicSelects[shop.id];
       }
       shop.npcs = uniq(npcsByShopID[shop.id]);
+      if (shop.trades.some(t => t.currencies.some(c => c.id === 37549 || c.id === 37550))) {
+        shop.npcs = [1043463];
+      }
       return shop;
     });
   }
@@ -419,19 +422,19 @@ export class ShopsExtractor extends AbstractExtractor {
         trades: animaTradeItems
           .filter(row => row.CrystalSand > 0)
           .map(row => {
-          return {
-            items: [{
-              id: row.CrystalSand,
-              amount: row.ReceiveQuantity
-            }],
+            return {
+              items: [{
+                id: row.CrystalSand,
+                amount: row.ReceiveQuantity
+              }],
               currencies: row.Item.filter(Boolean).map((item, index) => {
-              return {
-                id: item,
-                amount: row.Quantity[index]
-              };
-            })
-          };
-        })
+                return {
+                  id: item,
+                  amount: row.Quantity[index]
+                };
+              })
+            };
+          })
       }
     ];
   }

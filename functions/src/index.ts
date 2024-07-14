@@ -1,13 +1,14 @@
-import { RuntimeOptions } from 'firebase-functions';
+import { https, RuntimeOptions } from 'firebase-functions';
 import { subDays } from 'date-fns';
 import axios from 'axios';
+import * as express from 'express';
 
 const functions = require('firebase-functions');
 require('firebase/app');
 require('firebase/firestore');
 const crypto = require('crypto');
-const admin = require('firebase-admin');
-const { PubSub } = require('@google-cloud/pubsub');
+import admin from 'firebase-admin';
+import { PubSub } from '@google-cloud/pubsub';
 admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
@@ -102,6 +103,11 @@ export const searchCommunityLists = functions.runWith(runtimeOpts).https.onReque
 /**
  * END OF SEARCH STUFF
  */
+
+export const getMappyData = functions.runWith(runtimeOpts).https.onRequest(async (req, res) => {
+  const reports = await firestore.collection('mappy').get().then(snaps => snaps.docs.map(doc => doc.data()));
+  res.status(200).send(reports);
+});
 
 // IS history endpoint
 export const islandSanctuaryHistory = functions.runWith(runtimeOpts).https.onRequest(async (req, res) => {
@@ -247,7 +253,7 @@ export const firestoreIslandStatePreventiveLock = functions.runWith(runtimeOpts)
         }],
         username: 'Teamcraft Cloud Function'
       }).catch(err => {
-        console.log(`[DISCORD ERROR HOOK] ${err.message}`)
+        console.log(`[DISCORD ERROR HOOK] ${err.message}`);
       });
     }
     await monitoringRef.transaction(current => {
@@ -410,6 +416,7 @@ export const commissionEditionNotifications = functions.runWith(runtimeOpts).fir
       }
     }));
   }
+  return Promise.resolve();
 });
 
 export const subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
@@ -452,7 +459,6 @@ export const userIdValidator = functions.runWith(runtimeOpts).https.onRequest((r
   const userId = request.query.userId;
   if (validatedCache[userId] !== undefined) {
     response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${validatedCache[userId]}}`);
-    return;
   }
   return firestore.collection('users').doc(userId).get().then(snap => {
     validatedCache[userId] = snap.exists;
@@ -501,6 +507,20 @@ export const getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data,
     .catch(error => {
       console.log(error);
     });
+});
+
+export const updateAppVersion = functions.runWith(runtimeOpts).https.onRequest((req: https.Request, res: express.Response) => {
+  res.set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Headers', 'Content-Type');
+  const ref = admin.database().ref('/app_version');
+  const payload = req.body.payload;
+  if (payload.action === 'published' && !payload.release.prerelease && !payload.release.draft) {
+    return ref.set(payload.release.tag_name.replace('v', '')).then(() => {
+      res.sendStatus(200);
+    });
+  } else {
+    return res.sendStatus(201);
+  }
 });
 
 function getTokenClaims(user) {

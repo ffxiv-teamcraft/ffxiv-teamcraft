@@ -44,6 +44,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { LogTrackerImportPopupComponent } from '../log-tracker-import-popup/log-tracker-import-popup.component';
 
 @Component({
     selector: 'app-log-tracker',
@@ -90,7 +92,7 @@ export class LogTrackerComponent extends TrackerComponent {
   constructor(private authFacade: AuthFacade, private translate: TranslateService,
               private listPicker: ListPickerService,
               private router: Router, private route: ActivatedRoute,
-              protected alarmsFacade: AlarmsFacade,
+              protected alarmsFacade: AlarmsFacade, public ipc: IpcService,
               private lazyData: LazyDataFacade, private dialog: NzModalService,
               public settings: SettingsService, private cdr: ChangeDetectorRef) {
     super(alarmsFacade);
@@ -333,6 +335,15 @@ export class LogTrackerComponent extends TrackerComponent {
       takeUntil(ref.afterClose)
     ).subscribe(step => {
       this.markDolAsDone(step.itemId, true);
+    });
+  }
+
+  public openPcapImportPopup():void{
+    this.dialog.create({
+      nzTitle: this.translate.instant('LOG_TRACKER.Import_using_pcap'),
+      nzContent: LogTrackerImportPopupComponent,
+      nzWidth: '600px',
+      nzFooter: null
     });
   }
 

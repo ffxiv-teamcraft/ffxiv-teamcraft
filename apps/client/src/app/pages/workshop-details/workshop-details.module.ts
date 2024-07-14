@@ -8,7 +8,6 @@ import { ListModule } from '../../modules/list/list.module';
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
 
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { XivapiClientModule } from '@xivapi/angular-client';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
@@ -35,7 +34,6 @@ const routes: Routes = [
     CoreModule,
     FlexLayoutModule,
     FavoritesModule,
-    XivapiClientModule,
     RouterModule.forChild(routes),
     WorkshopModule,
     ListModule,

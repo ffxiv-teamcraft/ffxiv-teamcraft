@@ -9,12 +9,14 @@ import { housingMaterialSuppliers } from '../../core/data/sources/housing-materi
 import { first, map, mergeScan } from 'rxjs/operators';
 import { Vendor } from '../../modules/list/model/vendor';
 import { TradeNpc } from '../../modules/list/model/trade-npc';
+import { StaticData } from '../../lazy-data/static-data';
+import { SettingsService } from '../../modules/settings/settings.service';
 
 export class NpcBreakdown {
   public rows$: Observable<NpcBreakdownRow[]>;
 
   constructor(rows: ListRow[], private lazyData: LazyDataFacade, private prioritizeHousingSupplier: boolean,
-              private readonly canSkip?: Record<number, number>) {
+              private settings: SettingsService, private readonly canSkip?: Record<number, number>) {
     // You can skip an item if there's another item requiring it inside the same array
     this.canSkip = this.canSkip || rows.reduce((registry, row) => {
       return {
@@ -49,7 +51,7 @@ export class NpcBreakdown {
           .map(npc => {
             return {
               npc,
-              score: this.getRowScore(npc, rowsWithNpcs)
+              score: this.getRowScore(npc, rowsWithNpcs, entry.row)
             };
           })
           .sort((a, b) => b.score - a.score)[0];
@@ -80,17 +82,28 @@ export class NpcBreakdown {
       })[0];
   }
 
-  private getRowScore(npc: TradeNpc | Vendor, rowsWithNpcs: { row: ListRow, npcs: ReturnType<NpcBreakdown['getNpcs']> }[]): number {
+  private getRowScore(npc: TradeNpc | Vendor, rowsWithNpcs: { row: ListRow, npcs: ReturnType<NpcBreakdown['getNpcs']> }[], row: ListRow): number {
     const npcId = this.getNpcId(npc);
     // Hardcoded fix for Anna, has a wrong map for some reason.
     if (npcId === 1033785) {
       return 0;
     }
+    const gemstoneTrade = getItemSource(row, DataType.TRADE_SOURCES).some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)));
+    if (gemstoneTrade) {
+      if (StaticData.globalFATEShopMapIds.includes(npc.mapId)) {
+        if (this.settings.unlockedFATEAreas.includes(npc.mapId)) {
+          return 1000;
+        } else {
+          return 0;
+        }
+      }
+
+    }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
     if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(+npcId)) {
       return 1000;
     }
-    const commonNpcBonus = rowsWithNpcs.filter(row => row.npcs.some(n => this.getNpcId(n) === npcId)).length;
+    const commonNpcBonus = rowsWithNpcs.filter(r => r.npcs.some(n => this.getNpcId(n) === npcId)).length;
     if (beastTribeNpcs.includes(npcId)) {
       return 2 * commonNpcBonus;
     }

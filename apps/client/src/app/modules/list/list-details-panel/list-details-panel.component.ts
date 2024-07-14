@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
 import { TotalPanelPricePopupComponent } from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
 import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.component';
@@ -26,7 +26,6 @@ import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
 import { LayoutRowDisplayMode } from '../../../core/layout/layout-row-display-mode';
 import { NpcBreakdown } from '../../../model/common/npc-breakdown';
-import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
@@ -53,15 +52,15 @@ import { AggregateItemRowComponent } from '../item/aggregate-item-row/aggregate-
 import { ItemRowComponent } from '../item/item-row/item-row.component';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-    selector: 'app-list-details-panel',
-    templateUrl: './list-details-panel.component.html',
-    styleUrls: ['./list-details-panel.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
+  selector: 'app-list-details-panel',
+  templateUrl: './list-details-panel.component.html',
+  styleUrls: ['./list-details-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
@@ -166,7 +165,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   npcBreakdown$: Observable<NpcBreakdown> = combineLatest([this.displayRow$, this.canSkip$]).pipe(
     debounceTime(10),
-    map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, canSkip))
+    map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, this.settings, canSkip))
   );
 
   constructor(private i18n: I18nToolsService, public translate: TranslateService,
@@ -234,7 +233,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       return;
     }
     if (this.displayRow.zoneBreakdown) {
-      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
+      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.settings, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
       safeCombineLatest(this.zoneBreakdown.rows
         .map(row => {
           return this.hasPositionsInRows(row.items, row.zoneId).pipe(
@@ -276,6 +275,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       nzContent: NavigationMapComponent,
       nzData: {
         mapId: zoneBreakdownRow.mapId,
+        aggregate: this.aggregate,
         points: <NavigationObjective[]>zoneBreakdownRow.items
           .filter(item => item.done < item.amount)
           .map(item => {
@@ -292,7 +292,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 type: partial.type,
                 gatheringType: partial.gatheringType,
                 monster: partial.monster,
-                fnalItem: this.finalItems || item.finalItem || false
+                finalItem: this.finalItems || item.finalItem || false,
+                listRow: item
               };
             }
             return undefined;
@@ -322,7 +323,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   type: partial.type,
                   gatheringType: partial.gatheringType,
                   monster: partial.monster,
-                  fnalItem: this.finalItems || item.finalItem || false
+                  finalItem: this.finalItems || item.finalItem || false,
+                  listRow: item
                 };
               }
               return undefined;
@@ -347,14 +349,18 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       }),
       takeUntil(ref.afterClose)
     ).subscribe(step => {
-      this.listsFacade.setItemDone({
-        itemId: step.itemId,
-        itemIcon: step.iconid,
-        finalItem: step.finalItem,
-        delta: step.item_amount,
-        recipeId: null,
-        totalNeeded: step.total_item_amount
-      });
+      if (this.aggregate) {
+        this.aggregate.generateSetItemDone(step.listRow, step.item_amount, step.finalItem)(this.listsFacade);
+      } else {
+        this.listsFacade.setItemDone({
+          itemId: step.itemId,
+          itemIcon: step.iconid,
+          finalItem: step.finalItem,
+          delta: step.item_amount,
+          recipeId: null,
+          totalNeeded: step.total_item_amount
+        });
+      }
     });
   }
 
@@ -449,12 +455,17 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     })).pipe(
       map(rowsWithNames => {
         return rowsWithNames.reduce((exportString, { row, itemName }) => {
-          return exportString + `${row.amount}x ${itemName}\n`;
+          return this.appendExportStringWithRow(exportString, row, itemName);
         }, `${this.translate.instant(this.displayRow.title)} :\n`);
       }),
       first()
     );
   };
+
+  appendExportStringWithRow(exportString: string, row: ListRow, itemName: string): string {
+    const remaining = row.amount - (row.done || 0);
+    return (remaining > 0) ? (exportString + `${remaining}x ${itemName}\n`) : exportString;
+  }
 
   trackByItem(index: number, item: ListRow): number {
     return item.id;

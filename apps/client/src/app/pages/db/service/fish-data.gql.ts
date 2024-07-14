@@ -209,18 +209,10 @@ interface FishSnagging {
 }
 
 interface FishStatistics {
-  aggregate: {
-    min: {
-      size: number;
-      gathering: number;
-    };
-    max: {
-      size: number;
-    };
-    avg: {
-      size: number;
-    };
-  };
+  avg_size: number;
+  max_size: number;
+  min_gathering: number;
+  min_size: number;
 }
 
 export interface FishStatisticsResult {
@@ -232,25 +224,17 @@ export interface FishStatisticsResult {
 export class FishStatisticsPerFishPerSpotQuery extends Query<FishStatisticsResult, FishIdSpotIdVariable> {
   public document = gql`
     query FishStatisticsPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      snagging: snagging_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
+      snagging: snagging_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
         itemId
         spot
         snagging
         occurences
       }
-      stats: fishingresults_aggregate(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }}) {
-        aggregate {
-          min {
-            size
-            gathering
-          }
-          max {
-            size
-          }
-          avg {
-            size
-          }
-        }
+      stats: fish_stats(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }}) {
+        avg_size,
+        max_size,
+        min_gathering,
+        min_size
       }
     }
   `;
@@ -275,7 +259,7 @@ interface FishWeatherResult {
 @Injectable()
 export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdWeathersVariable> {
   public document = gql`
-    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int]) {
+    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int!]) {
       weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot

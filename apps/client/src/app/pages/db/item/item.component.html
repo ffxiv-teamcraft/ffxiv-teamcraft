@@ -206,7 +206,7 @@
                       </div>
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.base.exp / 1000 | number}}%</div>
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.base.exp / 10 | number}}%</div>
                       </div>
                     </div>
                   </div>
@@ -346,8 +346,11 @@
                     <nz-list-item [nzContent]="more">
                       <nz-list-item-meta
                         [nzAvatar]="leveAvatar"
-                        [nzTitle]="leve.leveId | i18nRow:'leves' | i18n"
+                        [nzTitle]="leveTitle"
                         [nzDescription]="description">
+                        <ng-template #leveTitle>
+                          <b [innerHTML]="leve.leveId | i18nRow:'leves' | i18n"></b>
+                        </ng-template>
                         <ng-template #description>
                           <span class="companion-svg job-icon" [innerHtml]="leve.job | jobUnicode"></span> lvl {{leve.level}} (x{{leve.amount}})
                         </ng-template>

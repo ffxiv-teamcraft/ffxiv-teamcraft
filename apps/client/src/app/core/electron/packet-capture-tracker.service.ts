@@ -19,6 +19,8 @@ import { NzNotificationRef, NzNotificationService } from 'ng-zorro-antd/notifica
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PlatformService } from '../tools/platform.service';
+import { StatusEntry } from '../../modules/eorzea/status-entry';
+import { LazyStatus } from '@ffxiv-teamcraft/data/model/lazy-status';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +35,17 @@ export class PacketCaptureTrackerService {
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
               private nzNotification: NzNotificationService, private translate: TranslateService,
               private router: Router, private platformService: PlatformService) {
+  }
+
+  private getStatusStacks(param: number, status: LazyStatus): number {
+    if ((param & 0x00FF) === 0x00FF) {
+      return 0;
+    }
+    // If status can's have stacks, return 0
+    if (!status || status.maxStacks === 0) {
+      return 0;
+    }
+    return param;
   }
 
 
@@ -253,19 +266,57 @@ export class PacketCaptureTrackerService {
 
     this.ipc.packets$.pipe(
       ofMessageType('effectResult'),
-      toIpcData()
-    ).subscribe(packet => {
-      for (let i = 0; i < packet.entryCount; i++) {
-        if (packet.statusEntries[i] && packet.statusEntries[i].sourceActorId === packet.actorId) {
-          this.eorzeaFacade.addStatus(packet.statusEntries[i].id);
+      toIpcData(),
+      switchMap(packet => {
+        const toAdd = [];
+        for (let i = 0; i < packet.entryCount; i++) {
+          if (packet.statusEntries[i] && packet.statusEntries[i].sourceActorId === packet.actorId) {
+            toAdd.push(packet.statusEntries[i]);
+          }
         }
+        return combineLatest(toAdd.map(row => {
+          return this.lazyData.getRow('statuses', row.id).pipe(
+            map(lazyStatus => {
+              return {
+                id: row.id,
+                stacks: this.getStatusStacks(row.param, lazyStatus),
+                duration: row.duration,
+                param: row.param
+              } as StatusEntry;
+            })
+          );
+        }));
+      })
+    ).subscribe(statuses => {
+      if (statuses.length > 0) {
+        statuses.forEach(status => {
+          this.eorzeaFacade.addStatus(status);
+        });
       }
     });
 
     this.ipc.packets$.pipe(
-      ofMessageType('statusEffectList')
-    ).subscribe(message => {
-      this.eorzeaFacade.setStatuses(message.parsedIpcData.effects.map(e => e.effectId).filter(id => id > 0));
+      ofMessageType('statusEffectList'),
+      toIpcData(),
+      switchMap(packet => {
+        return combineLatest(packet.effects
+          .filter(e => e.effectId > 0)
+          .map(effect => {
+            return this.lazyData.getRow('statuses', effect.effectId).pipe(
+              map(lazyStatus => {
+                return {
+                  id: effect.effectId,
+                  stacks: this.getStatusStacks(effect.param, lazyStatus),
+                  duration: effect.duration,
+                  param: effect.param
+                } as StatusEntry;
+              })
+            )
+          })
+        );
+      })
+    ).subscribe(statuses => {
+      this.eorzeaFacade.setStatuses(statuses);
     });
 
     this.ipc.packets$.pipe(

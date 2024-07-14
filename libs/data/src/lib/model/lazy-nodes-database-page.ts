@@ -1,31 +1,32 @@
 export interface LazyNodesDatabasePage {
-  alarms?:      Alarm[];
-  base:         number;
-  bonuses:      BonusElement[];
-  de:           string;
-  duration:     number;
-  en:           string;
-  ephemeral:    boolean;
-  folklore?:    number;
-  fr:           string;
-  hiddenItems?: number[];
-  id:           string;
-  items:        Item[];
-  ja:           string;
-  ko:           string;
-  legendary:    boolean;
-  level:        number;
-  limited:      boolean;
-  map:          number;
-  patch:        number;
-  radius:       number;
-  spawns:       number[];
-  type:         number;
-  x:            number;
-  y:            number;
-  z:            number;
-  zh:           string;
-  zoneid:       number;
+  alarms?:       Alarm[];
+  base:          number;
+  bonuses:       BonusElement[];
+  de:            string;
+  duration:      number;
+  en:            string;
+  ephemeral:     boolean;
+  folklore?:     number;
+  fr:            string;
+  hiddenItems?:  number[];
+  id:            string;
+  items:         Item[];
+  ja:            string;
+  ko?:           string;
+  legendary:     boolean;
+  level:         number;
+  limited:       boolean;
+  map:           number;
+  patch:         number;
+  radius:        number;
+  spawns:        number[];
+  sublimeItems?: SublimeItem[];
+  type:          number;
+  x:             number;
+  y:             number;
+  z:             number;
+  zh?:           string;
+  zoneid:        number;
 }
 
 export interface Alarm {
@@ -75,8 +76,15 @@ export interface Item {
 }
 
 export interface GatheringItem {
-  hidden: number;
-  itemId: number;
-  level:  number;
-  stars:  number;
+  hidden:         number;
+  itemId:         number;
+  level:          number;
+  perceptionReq:  number;
+  stars:          number;
+  sublimeVariant: number;
+}
+
+export interface SublimeItem {
+  source:  number;
+  sublime: number;
 }

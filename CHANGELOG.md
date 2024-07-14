@@ -2,6 +2,266 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.0...v11.3.1) (2024-07-12)
+
+
+### Bug Fixes
+
+* **log-tracker:** add warning about spearfishing and non-tracked resources in import ([5f37715](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f37715cfe915517bd4ac3f563ee659296229388))
+* **log-tracker:** import only once instead of after every user change ([ff4583b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff4583b57fa5fd28cd88fcb5764cb60bd87d4175))
+* **tipeee:** possible fix for tipeee link resetting every login ([7766d08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7766d08854e284623af1e458812270cb46bd0cfb))
+
+## [11.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.13...v11.3.0) (2024-07-12)
+
+
+### Features
+
+* **common:** add icons for VPR and PCT ([2b7eb1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b7eb1feba886a09d70000d06faacc8b8df11ab5))
+* **db:** add position data for more monsters, kudos to Inni ! ([b54b9b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b54b9b28496d0c561706d40a1e9e7d5b515464e8))
+* **desktop:** new button to import log tracker from game, kudos to Khaotic ! ([7a02969](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a02969107399889bd9122a46be9130aeae192ce))
+
+
+### Bug Fixes
+
+* **desktop:** better fix for step-by-step overlay sometimes not loading ([bcccb38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bcccb38ee74ea208000b20e39fc178987618d6fe))
+* **desktop:** fix status tracking sometimes stopping ([6c50777](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c507772eba240c00afc1a8c4b7643c1e3fbba47))
+* **desktop:** shared lists sometimes not loading in own workshops ([ec8a981](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec8a981e56571b90210fff0e0b792b7e43a0e1d7))
+* **layout:** fix gemstone traders option skipping some hunting alternatives ([786a5ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/786a5ca6b2dbfb4423c64d45708ce5d9af45dd95))
+* **list-aggregate:** gathering item check from navigation path ([ed4a257](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed4a25721e6f455e18d34e3c1fa7d4c3bb0e1da7)), closes [#2871](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2871)
+* **simulator:** fixed off-by-one issue in quality formula ([6341b61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6341b615f4bc2011a71401a629385b8439df0bed))
+
+### [11.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.12...v11.2.13) (2024-07-10)
+
+
+### Bug Fixes
+
+* **desktop:** fix overlay tracking of new mooch fish ([0ec4358](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ec43580b11d7c82c3210e33e8840256c230b8ef))
+* **gathering-location:** fixed wrong slice that broke search ([395f58f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/395f58f198812eb7cd16d22ee86791ad7a607e64))
+* **hunting:** better handling of empty coords ([16456c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16456c655078a36a1881c714430a1130f51884d1))
+
+### [11.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.11...v11.2.12) (2024-07-10)
+
+
+### Features
+
+* **db:** allagan reports and more monster positions ([b78c990](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b78c9909d18c166001183cc9a32edc224cb9e037))
+* **log-tracking:** better naming for new DoL book categories ([d4be94e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d4be94eaeac86e416dfb7416f9e8af3b5c5a47eb))
+
+
+### Bug Fixes
+
+* **alarms:** allow 0 as spawn value in custom alarms ([c1bee95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1bee954cf37c1351f3fdeb9808f956927da13c2))
+* **desktop:** fix step-by-step overlay not loading ([a66edb2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a66edb2e57979cf14c96d9c5daeb374f166ec3d9))
+* **gathering-location:** limit # of results to 50 to prevent freeze ([dbc286f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dbc286f24dd5477fd127d214b03474a52f70094c))
+* **gearset-editor:** fix double row display ([f27c9cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f27c9cd7edb51c7045c35c8d33e8bc322f6d69a0))
+* **layout:** apply button/menu changes immediately ([e82ab64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e82ab6435a5232c33943e28d908887dd97a78c95))
+* **patreon/tipeee:** fix auth token refresh ([eab2a56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eab2a56a0f2b1c1660db863371aff8f224e7c234))
+* **profile:** add missing folklore books to profile editor ([7cd70b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7cd70b7b314ac7df7ad4929d952ab5083c481781))
+* **profile:** fix save stats for all crafters resetting priorities ([13e4a9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/13e4a9fb445d2a79ae773352af9d67f3cb4e12a3))
+
+### [11.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.10...v11.2.11) (2024-07-09)
+
+
+### Features
+
+* **db:** more monster positions and allagan reports ([2d33c8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d33c8b22820796b924982f16bb0b66ca2b8c19e))
+* **desktop:** fixed auto update stats, now handling food buffs properly ([8c112a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c112a6aed299c7d664aa53431d7d070660f1c6b))
+* **desktop:** support for new lure actions in captured data ([ec4b5b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec4b5b7b6d6553e37053fe4d152b6557562df6d4))
+
+
+### Bug Fixes
+
+* **db:** fail gracefully if a monster has no known position ([e49b685](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e49b68545acffbeb003fbb3be90d4e7e63abfccd))
+* **fishing-reporter:** fix new mooch logic ([7d7630a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d7630a9e04e76a308a369e9bfffa4be0374f441))
+* **gathering-location:** update scrips in uses filter ([55ce2dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/55ce2ddfcf641d822ad7543d64efc37a277f2635))
+* **inventory:** add Dawntrail to the list of filter expansions ([127e828](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/127e828c272f7170f8040b72463044d5fc5a9c60))
+* **lists:** add VPR and PCT tag translations ([be37f1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be37f1c89a9ee549d4f389b7a71063bb5ba08663))
+* **lists:** better max width for description ([3672fd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3672fd6342fe46f1426e1407f2e333e6a4e857e8))
+* **lists:** fixed team WRITE permission not applied to list panel ([470ca74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/470ca747b651f9cd0be9aba117ff0a1ea2d298bc))
+* **settings:** fix new FATE shops setting ([75e4dca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/75e4dca437f80022d649739c65bd216d1d1fb135))
+
+### [11.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.9...v11.2.10) (2024-07-07)
+
+
+### Features
+
+* **settings:** new setting to select unlocked global FATE vendors for better zone breakdown ([1216226](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/121622670ffa2ccedc3c545739a8a0395d289e6f))
+
+
+### Bug Fixes
+
+* **gathering-location:** disable debounce now applied to this page too ([30679fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/30679fc779e846158c6d6732f54a4179ec2a805a))
+* **list-details:** copy panel as text is now consistent with copy whole list ([4151b00](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4151b00e9b798b63e826d3169bc5f69a2ef4a773))
+* **simulator:** set wait time to 3 for quick innovation ([e292dff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e292dff23e26f01ca43dd7245206c119943a5f7e))
+
+### [11.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.8...v11.2.9) (2024-07-06)
+
+
+### Bug Fixes
+
+* **desktop:** disable mappy when not available to prevent massive db usage ([587c831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/587c8317b0a808571fdfb44e3e467823160a9e15))
+
+### [11.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.7...v11.2.8) (2024-07-06)
+
+
+### Features
+
+* **allagan-reports:** connect to new gubal instance ([5d91b70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d91b706a42571ab3f9f32250c1f87c073768785))
+
+
+### Bug Fixes
+
+* **community-rotation:** bring back result tag ([c61272f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c61272f775e345635db28ed7181651bff03c1ada))
+* **db:** better leve name display in FR item pages ([3f9ca50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f9ca502ea744ebe9a279c9bc00f90c7cfd05e7d))
+* **desktop:** fix Universalis reporter ([43312bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43312bdfc84fbe03e49362efcf975b8340927311))
+* **list:** fix re-rendering issue in minimalist display ([a6edfd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6edfd04dc4f305a0c8f1106a94fd5ec31cab5e3))
+* **lists:** ignore last map in gemstone trader zone breakdown ([6630f05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6630f059474646ad47cf00725603cbd35a9b71c8))
+* **settings:** better logic for custom notification sound removal ([0876102](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0876102eb8639586c93b03c18848d0ad25e5fe5e))
+
+### [11.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.6...v11.2.7) (2024-07-04)
+
+
+### Features
+
+* **db:** allagan reports import ([2299a7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2299a7aad57c54c9a38d75f6fd6f548d90860baa))
+* **search:** small new tip about quick search feature ([009e743](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/009e7438d94fdef98deab5d728355592d8fdc1a4))
+
+
+### Bug Fixes
+
+* **db:** fix collectable exp % display in item's page ([b46b5e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b46b5e7ae86853b029d04aae9b90be192cfae18b))
+* **db:** fix trade location for oddly delicate mats ([c17810f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c17810f460662111e8267b08c39a8d66ecb00c04))
+* **gearset:** fix materia orange scrip cost display ([3ee9d41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ee9d419cdd9327c337f9bb6fc69b5d11a624b0a))
+* **gearset:** fix melding rate for XI on NQ and NQ and XII on HQ ([ec6d33d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec6d33d9e3b397a8e9f01682542ebae5ad008c05))
+* **levequests:** disable add selection to list if nothing is selected ([88d98ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88d98ab16546f8d7c7e09dd45e3a070f0ea61e82))
+* **list:** don't consider final items as duplicate in hide zone duplicates ([1701215](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1701215c1eaee989ab5e25cac773f0b1fb6c69a6))
+
+### [11.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.5...v11.2.6) (2024-07-02)
+
+
+### Bug Fixes
+
+* **simulator:** fix trained perfection lasting forever ([6fee1f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fee1f170b89c7242fef62091615ea38b6cf10c4))
+
+### [11.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.4...v11.2.5) (2024-07-02)
+
+
+### Features
+
+* **db:** allagan reports import ([6896a54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6896a5478bf339622662845d3a24d54a603b43d0))
+* **settings:** add Tuliyollal to the list of available starting places ([ae93477](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae93477227750f4b9c621d2ef1d0bb99b3f4ad32))
+
+
+### Bug Fixes
+
+* **db:** better display for snagging and stats loading fix ([524cf8e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/524cf8e78e7668523a7f633b1f192d0eb8f6d006))
+* **desktop:** add an error message when trying to edit offline lists from a child window ([6decbab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6decbabcd1380ca78db5c28d4ee56f3125b9448d))
+* **simulator:** fix Trained Perfection's interaction with Groundwork ([63c64e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63c64e824a0f522611c047d993554d6f263446df))
+* **simulator:** step-by-step report is now loading properly ([93fa3ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/93fa3ca10f0b412fea3d07c4f56dc380ceaf40e9))
+
+### [11.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.3...v11.2.4) (2024-07-01)
+
+
+### Bug Fixes
+
+* **desktop:** better retainer matching logic for longer names support ([87e5eca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/87e5eca9b1afd8995d82743d04fcecc69338dc1b))
+* **gearset:** fixed double row sometimes showing in editor ([ccb125b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ccb125b1b97c73318c6a72d08f6f5a818e204efa))
+* **layout-editor:** fix buttons display editor ([cbff639](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cbff63952abfb34259e1db5dc90e26d57d05651e))
+* **leveling-equipment:** now working properly with VPR and PCT ([37f8b02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37f8b02b733c5a24fce1864e4abfabf60fbf5ba7))
+* **list-tags:** add missing translation for Dawntrail ([73681cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73681cc22cb3b26f9e3b429a70cbbc77c14f125b))
+* **simulator:** fix drag preview size in result rotation ([5fb3dd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5fb3dd142a5955d5c0b6877980174805615f4d99))
+* **simulator:** fix search with fewer characters in recipe picker ([d797f83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d797f830cdf953ccd8c8fd3b29a1fc82f8f65dae))
+
+### [11.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.2...v11.2.3) (2024-06-30)
+
+
+### Features
+
+* **desktop:** marketboard listing packet fixes, kudos to Karashiiro ([07be6a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07be6a80dc06a618e5b418a5f59555406a535d63))
+* **lists:** add Dawntrail tag and new job tags ([68a4fc3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68a4fc3c04189ac33b9b125aaf266171a049646d))
+
+
+### Bug Fixes
+
+* **desktop:** fixed fishing reporter for KR ([5b90b53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b90b5355e7f3b42b8d465747638ecc4d5bc3f1e))
+* **desktop:** fixed wrong KR region packet capture dll sum path ([5119048](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51190485323a90f19563866b82282b224325293c))
+* **desktop:** make sure to kill pcap before applying update ([c47a55f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c47a55f2423b56bf5630cfd8580308acb88bd146))
+* **fishing:** change display format for eorzean time in misses popup ([e314a3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e314a3a3be9242a19af5f5fae6ec900468fed9a1))
+* **gearsets:** add slot icons for new materias ([3520417](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3520417b0470e424b6948ef9808da3b0f586ee20))
+* **list:** show rotation's result on item's recipe with linked rotation ([6c06177](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c061777846e180ab4f3bd2e701d4ca2f58e443c))
+* **simulator:** fix drag and drop preview ([1d03dd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d03dd1db17b85730bf29083cfa7fd4fcbe022d5))
+* **simulator:** fix Trained Perfection's specialist requirement and general implementation ([4a63a48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a63a4830b308728c851a02b6edda2d20dc1fb4e))
+
+### [11.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.1...v11.2.2) (2024-06-29)
+
+
+### Features
+
+* **db:** add many early DT monsters & allagan reports ([208ebe2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/208ebe2775f2d0996c817f2a02d01ae17bd8d6a8))
+
+
+### Bug Fixes
+
+* **desktop:** fix retainer detection ([77a727d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77a727da0d6578127fcc550ac937d9ee61e84cf8))
+* **desktop:** fixed fishing reporter ([83dc422](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83dc422b3c9c3a75fefe567fe34475e836ab2136))
+* **desktop:** handle new lvl 91 fisher skill in reporter ([1c2d558](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c2d558c247e68534143c4147b6af70820040130))
+* **simulator:** fix Refined Touch combo with Basic Touch & Quick Innovation CP cost ([aae5366](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aae5366ff8546525d92797841542655e925511de))
+
+### [11.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.0...v11.2.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* **db:** fix scrips, collectables, leves and shops ([f282442](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f28244285761a71953248febc0b8331d3fe0f02f))
+* **desktop:** packet capture Dawntrail support ([f43cd13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f43cd134d8b964f4aaa73d64715e206c09f60ec3))
+* **gearset:** XI and XII materias can now be meld ([eda6d64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eda6d64cf3a560ae5a79c6dce6e40724318e389e))
+* **list:** checking final items as done in navigation popup now works ([6650e98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6650e981d219778e83dd2bda90126bc52696833e))
+
+## [11.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.3...v11.2.0) (2024-06-28)
+
+
+### Features
+
+* FFXIV 7.0: Dawntrail ! ([3890e6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3890e6bf9ab58f53fb99f0b804242f6f6338fdca))
+* **patroen:** new supporter: Auri Miyumi ([0f7b25f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f7b25f7b2bec859239d236f923feeda7f491908))
+
+
+### Bug Fixes
+
+* **desktop:** center fishing overlay icon ([ed8e00e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed8e00e52946524077c4cb46caf5bd0665b7237a)), closes [#2841](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2841)
+* **simulator:** show button tooltips at the right of buttons ([f9f8c50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9f8c50431c8da46eea02f96b8559108bda743f4))
+* **style:** buttons width and placement in search page ([84ef27c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84ef27c28336a5dc06cffff4b2d646b4fb614f39)), closes [#2840](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2840)
+
+### [11.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.2...v11.1.3) (2024-06-18)
+
+
+### Features
+
+* **db:** kr 6.55 import and cowrie shop NPC link ([7702d8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7702d8da36e4518d15ff5703e8dd0613964b8635))
+* **db:** support for korean v6.55 update ([1d3f580](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d3f580cc110b4e0762d4945ddd6de6bc60f0727))
+
+
+### Bug Fixes
+
+* **desktop:** fix auto updater not downloading update ([2f96101](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f96101b732bc0f480d328138e893b2a59265b86))
+
+### [11.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.1...v11.1.2) (2024-06-17)
+
+
+### Features
+
+* **db:** add new Dynamis servers ([215a1b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/215a1b1db56583f5866f24f40385bc3171a1c1e1))
+
+
+### Bug Fixes
+
+* **admin:** fix character links status check ([f37afcc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f37afcc783df7666f3112c9a62e4664beefd02b5))
+* **alarms:** sort alarms by item id if remaining time is identical ([8180682](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/818068243aa95f8d4b40d54dc92ed7175eb7a077)), closes [#2831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2831)
+* **core:** switch Firestore persistence to memory ([289ad3e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/289ad3ee573dd75ac06b8c65947ccb75eb9e6fa8))
+* **desktop:** fix step-by-step overlay opening in main window on item icon click ([b0c5ea6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0c5ea6d41f7d5363fb64cc49149b3dca979b94e))
+* **step-by-step:** filter sources for current map only ([a046cdd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a046cdda9633c5a0a1f78662246012328021d27d))
+* **step-by-step:** only add alarm once per item to the alarms display ([da068db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da068dbd0816a50c42bca30a8aa2c0b751b5a2c3))
+
 ### [11.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.0...v11.1.1) (2024-06-06)
 
 
