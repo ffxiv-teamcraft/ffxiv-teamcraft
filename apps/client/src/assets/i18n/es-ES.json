@@ -212,6 +212,7 @@
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "And_X_more": "and {{amount}} more...",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "Lunes",
       "Tuesday": "Martes",
@@ -614,7 +615,7 @@
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
     "Autofill_from_packets": "Autollenar valores usando captura de datos (también tendrá en cuenta los bonos de alimentos)",
-    "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla, cierre esta ventana cuando haya terminado. Por favor, asegúrese de no tener comida activa, de lo contrario guardará sus valores incluyendo la comida activa.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
     "Open_public_profile": "Abrir perfil público",
     "Community_contributions": "Contribuciones de la comunidad",
     "Fishing_rankings": "Clasificaciones de pesca",
