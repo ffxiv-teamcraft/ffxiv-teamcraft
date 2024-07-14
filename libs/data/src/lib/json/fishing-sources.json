@@ -26180,7 +26180,8 @@
       "bait": 43858,
       "spawn": 20,
       "duration": 4,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/aCMuzj51IOM"
     }
   ],
   "43692": [
@@ -26671,9 +26672,6 @@
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
-      "weathers": [
-        2
-      ],
       "minGathering": 0
     }
   ],
@@ -26683,9 +26681,6 @@
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
-      "weathers": [
-        2
-      ],
       "minGathering": 0
     }
   ],
@@ -26695,9 +26690,6 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
-      "weathers": [
-        2
-      ],
       "minGathering": 0
     }
   ],
@@ -26707,9 +26699,6 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
-      "weathers": [
-        2
-      ],
       "minGathering": 0
     }
   ],

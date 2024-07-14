@@ -94,6 +94,7 @@ export class SearchExtractor extends AbstractExtractor {
                 }
               };
             }, {}),
+            collectible: collectableFlags[id],
             category: uiCategories[+id],
             cjc: equipment[+id]?.jobs?.reduce((acc, job) => {
               return {

@@ -57,7 +57,7 @@ export class ItemsExtractor extends AbstractExtractor {
 
     combineLatest([
       this.getSheet<any>(xiv, 'Item',
-        ['AlwaysCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'Name', 'Description',
+        ['AlwaysCollectable', 'IsCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'Name', 'Description',
           'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem#', 'LevelEquip', 'StackSize',
           'EquipSlotCategory#', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
           'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial', 'ItemAction',
@@ -150,7 +150,7 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.AetherialReduce) {
             aetherialReduce[item.index] = item.AetherialReduce;
           }
-          if (item.AlwaysCollectable) {
+          if (item.AlwaysCollectable || item.IsCollectable) {
             collectableFlags[item.index] = 1;
           }
           if ([844, 845, 846].includes(item.ItemAction?.Type)) {

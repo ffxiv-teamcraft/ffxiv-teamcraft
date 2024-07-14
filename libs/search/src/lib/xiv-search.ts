@@ -89,6 +89,7 @@ export class XIVSearch {
         })
         .flat();
     }
+    console.log(results, filters);
     return results
       .filter(doc => {
         return filters.every((f: XIVSearchFilter) => {
