@@ -212,6 +212,7 @@
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "And_X_more": "and {{amount}} more...",
     "items": "items",
+    "Empty_list": "Nothing to list here",
     "DAYS": {
       "Monday": "月曜日",
       "Tuesday": "火曜日",
@@ -614,7 +615,7 @@
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
     "Autofill_from_packets": "パケットキャプチャを使用してパラメータを自動入力 (料理バフを含む)",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done. Please make sure you don't have any active food, or else it'll save your stats with the food active.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
     "Open_public_profile": "公開プロフィールを開く",
     "Community_contributions": "コミュニティの貢献",
     "Fishing_rankings": "釣りのランキング",
