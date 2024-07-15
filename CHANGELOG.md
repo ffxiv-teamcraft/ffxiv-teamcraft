@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.1...v11.3.2) (2024-07-15)
+
+
+### Features
+
+* **desktop:** update to electron 31 ([a855c91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a855c914dc55dba82fa8fb03c6d4515556baccc5))
+* **search:** you can now create alarms from the main search page ([4cbbfde](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cbbfde63a309ecd78473bb7201df9966189c897))
+* **sitemap:** Add sitemap and robots.txt files ([4ff10af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ff10af45905ea9bc405951b4d0b9e37d5488aab)), closes [#2816](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2816)
+
+
+### Bug Fixes
+
+* **common:** add empty message for when folder picker has nothing to pick ([3cc82bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3cc82bbd37a998927a7eeedf81ad79f8666315cf))
+* **data:** try to prioritize local vendors in gemstone tooltip data ([29c406b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29c406b25c580b4135dfadfdc3893b8b0f567bf0))
+* **desktop:** make whole close button listen for clicks ([c38ed44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c38ed44be0e3ae0d288ab9e2a895f0782db68137))
+* **i18n:** remove now useless food warning on stats autofill ([c7713b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7713b8c5646a91145971b95dd92c4c8b2f6a6c0))
+* **list:** better update logic for "has all abse ingredients" flag ([a9f4ebb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9f4ebb904bb21208e5c4d077743c3e8243eb6a5))
+* **lists:** better loading logic for workshop lists ([022ff47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/022ff47e5bf681f38490915d32f479fb9b849f46))
+* **search:** collectable filter now applies to gathered items too ([79c04a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79c04a29ed9884c41b5151f2bf449f27c2a39116))
+* **simulator:** output Hasty Touch in macros instead of Daring Touch ([a21776a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a21776a6922c093212712065d45364cb060fb4b3))
+* **step-by-step:** hopefully final fix for initial loading issues ([5d4e319](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d4e31937124ed7eeb17d2dae64d85dff3e214ee))
+* **supporter:** refresh token even if it's already outdated ([cb993db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cb993db4611e5edb9daa512683aae11069d7fc49))
+* **theme:** better error message when bad hex format is used ([fd3cf88](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd3cf88824e795275a93a12142a5c74723e7d72c))
+* **workshops:** don't show lists with empty names in workshops ([0fa3975](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0fa397535ce64d08e9a65a00b3c90173ae5a20b0))
+
 ### [11.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.0...v11.3.1) (2024-07-12)
 
 
