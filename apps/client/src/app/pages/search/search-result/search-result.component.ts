@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { DataType, Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { map } from 'rxjs/operators';
@@ -31,6 +31,11 @@ import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe } from '@angular/common';
+import { AlarmButtonComponent } from '../../../modules/alarm-button/alarm-button/alarm-button.component';
+import { AlarmDisplay } from '../../../core/alarms/alarm-display';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 
 @Component({
     selector: 'app-search-result',
@@ -38,7 +43,7 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./search-result.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, ItemRarityDirective, DbButtonComponent, TutorialStepDirective, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, MarketboardIconComponent, CompanyWorkshopTreeButtonComponent, ItemSourcesDisplayComponent, NzGridModule, NzInputModule, NzInputNumberModule, MouseWheelDirective, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, XivapiL12nPipe, MapNamePipe, IfRegionsPipe]
+  imports: [FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, ItemRarityDirective, DbButtonComponent, TutorialStepDirective, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, MarketboardIconComponent, CompanyWorkshopTreeButtonComponent, ItemSourcesDisplayComponent, NzGridModule, NzInputModule, NzInputNumberModule, MouseWheelDirective, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, XivapiL12nPipe, MapNamePipe, IfRegionsPipe, AlarmButtonComponent]
 })
 export class SearchResultComponent {
 
@@ -48,7 +53,9 @@ export class SearchResultComponent {
   @Input()
   row: SearchResult;
 
-  rowWithSources$ = observeInput(this, 'row').pipe(
+  row$ = observeInput(this, 'row');
+
+  rowWithSources$ = this.row$.pipe(
     map(row => {
       if (row.recipe) {
         row.sources = row.sources.map(source => {
@@ -62,6 +69,12 @@ export class SearchResultComponent {
         });
       }
       return row;
+    })
+  );
+
+  alarms$ = this.row$.pipe(
+    map(row => {
+      return row.sources.find(s => s.type === DataType.ALARMS)?.data;
     })
   );
 
@@ -92,6 +105,22 @@ export class SearchResultComponent {
   searchTypes = SearchType;
 
   public Region = Region;
+
+  alarmsFacade = inject(AlarmsFacade);
+
+  public alarmGroups$ = this.alarmsFacade.allGroups$;
+
+  toggleAlarm(display: AlarmDisplay): void {
+    if (display.registered) {
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
+    } else {
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
+    }
+  }
+
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
+  }
 
   selectionChange(row: SearchResult, selected: boolean): void {
     this.selectedChange.emit({ ...row, selected });
