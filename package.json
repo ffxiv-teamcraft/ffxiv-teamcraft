@@ -109,7 +109,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "1.2.9",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.2.10",
     "@ungap/structured-clone": "^1.2.0",
     "@xivapi/angular-client": "^2.0.1",
     "@xivapi/nodestone": "^0.2.7",
@@ -229,9 +229,9 @@
     "del-cli": "^5.1.0",
     "dexie": "^3.2.3",
     "echarts": "^5.5.0",
-    "electron": "^27.3.7",
-    "electron-builder": "^24.13.3",
-    "electron-builder-squirrel-windows": "^24.13.3",
+    "electron": "^31.2.0",
+    "electron-builder": "^25.0.0",
+    "electron-builder-squirrel-windows": "^25.0.0",
     "enquirer": "^2.3.6",
     "eslint": "8.48.0",
     "express": "^4.19.2",
@@ -286,7 +286,7 @@
     "zone.js": "0.14.6"
   },
   "resolutions": {
-    "@types/node": "20.11.1"
+    "@types/node": "20.14"
   },
   "config": {
     "commitizen": {

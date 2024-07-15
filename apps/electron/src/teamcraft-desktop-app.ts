@@ -44,14 +44,15 @@ export class TeamcraftDesktopApp {
         });
 
 
-      protocol.registerFileProtocol('teamcraft', (req) => {
-        deepLink = req.url.substr(12);
+      protocol.handle('teamcraft', (req) => {
+        deepLink = req.url.slice(12);
         if (deepLink.endsWith('/')) {
-          deepLink = deepLink.substr(0, deepLink.length - 1);
+          deepLink = deepLink.slice(0, deepLink.length - 1);
         }
+        return new Response('OK');
       });
       if (process.platform === 'win32' && process.argv.slice(1).toString().indexOf('--') === -1 && process.argv.slice(1).toString().indexOf('.js') === -1) {
-        deepLink = process.argv.slice(1).toString().substr(12);
+        deepLink = process.argv.slice(1).toString().slice(12);
         if (!deepLink) {
           deepLink = this.store.get('router:uri', '');
         }
@@ -63,7 +64,9 @@ export class TeamcraftDesktopApp {
         deepLink = '';
       }
 
-      request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${(this.argv[0] || '').replace('teamcraft://', '')}`, (err, res) => {
+      const url = app.isPackaged ? this.argv[0] || '' : '';
+
+      request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${(url).replace('teamcraft://', '')}`, (err, res) => {
         if (err) {
           this.bootApp(deepLink);
         } else {
