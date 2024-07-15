@@ -2,6 +2,7 @@ import { AbstractItemDetailsExtractor } from './abstract-item-details-extractor'
 import { DataType, I18nName, TRADE_SOURCES_PRIORITIES, TradeNpc, TradeSource } from '@ffxiv-teamcraft/types';
 import { uniqBy } from 'lodash';
 import { LazyShop } from '@ffxiv-teamcraft/data/model/lazy-shop';
+import { StaticData } from '../../static-data';
 
 export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSource[]> {
   specialShopNames = this.requireLazyFile('specialShopNames');
@@ -144,6 +145,9 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
             return trade.items.some(i => i.id === itemId);
           })
         };
+      })
+      .sort((a,b) => {
+        return b.npcs[0]?.mapId - a.npcs[0]?.mapId;
       }), shop => {
       return `${shop.npcs.map(npc => `${npc.id}|${npc.zoneId}`).join(':')}:${JSON.stringify(shop.trades)}`;
     });

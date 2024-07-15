@@ -1631,6 +1631,12 @@
       "shadowSize": 0
     }
   ],
+  "43803": [
+    {
+      "speed": 0,
+      "shadowSize": 0
+    }
+  ],
   "43804": [
     {
       "speed": 1,
@@ -1638,6 +1644,12 @@
     }
   ],
   "43805": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43806": [
     {
       "speed": 2,
       "shadowSize": 1
