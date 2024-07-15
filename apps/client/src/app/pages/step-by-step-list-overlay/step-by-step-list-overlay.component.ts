@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { IpcService } from '../../core/electron/ipc.service';
@@ -39,8 +39,7 @@ import { PageLoaderComponent } from '../../modules/page-loader/page-loader/page-
     NzListModule, ItemIconModule, ListModule,
     NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent],
   templateUrl: './step-by-step-list-overlay.component.html',
-  styleUrls: ['./step-by-step-list-overlay.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./step-by-step-list-overlay.component.less']
 })
 export class StepByStepListOverlayComponent extends StepByStepComponent implements OnInit {
 
@@ -69,6 +68,8 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   protected override overlay = true;
 
+  #cdr = inject(ChangeDetectorRef);
+
   constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
               protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
               protected settings: SettingsService, protected lazyData: LazyDataFacade,
@@ -82,6 +83,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
         return state.lists && state.layouts;
       })
     ).subscribe((state) => {
+      this.#cdr.detectChanges();
       this.noListSelected = !state.lists.selectedId;
       if (state.lists.selectedId) {
         this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities).filter(list => list.$key === state.lists.selectedId));
