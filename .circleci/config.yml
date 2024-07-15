@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
-    - image: cimg/node:20.11-browsers
+    - image: cimg/node:20.14-browsers
 
 
 version: 2.1
@@ -23,12 +23,6 @@ jobs:
       - run:
           name: Install local dependencies
           command: yarn install --immutable --ignore-scripts
-      - run:
-          name: Ensure pip is installed
-          command: python -m ensurepip --upgrade
-      - run:
-          name: Install python-setuptools
-          command: pip install setuptools
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -154,6 +148,15 @@ jobs:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
       - run: choco install wget -y
+      - run:
+          command: wget https://bootstrap.pypa.io/get-pip.py -P C:\Users\circleci\Downloads\
+          shell: cmd.exe
+      - run:
+          command: python C:\Users\circleci\Downloads\get-pip.py
+          shell: cmd.exe
+      - run:
+          command: pip install setuptools
+          shell: cmd.exe
       - run:
           command: wget https://nodejs.org/dist/v20.14.0/node-v20.14.0-x64.msi -P C:\Users\circleci\Downloads\
           shell: cmd.exe
