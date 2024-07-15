@@ -125,6 +125,11 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.ManyListsLoaded: {
+      state.listDetails = listsAdapter.setMany(action.lists, state.listDetails)
+      break;
+    }
+
     case ListsActionTypes.LoadArchivedLists: {
       state = {
         ...state,

@@ -107,8 +107,6 @@ export class ListsComponent extends TeamcraftComponent {
                 const list = lists.find(c => c.$key === key);
                 if (list !== undefined) {
                   list.workshopId = workshop.$key;
-                } else {
-                  this.listsFacade.load(key);
                 }
                 return list;
               })
