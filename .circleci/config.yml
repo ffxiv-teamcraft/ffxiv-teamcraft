@@ -24,7 +24,10 @@ jobs:
           name: Install local dependencies
           command: yarn install --immutable --ignore-scripts
       - run:
-          name: install python-setuptools
+          name: Ensure pip is installed
+          command: python -m ensurepip --upgrade
+      - run:
+          name: Install python-setuptools
           command: pip install setuptools
       - save_cache:
           name: Save Yarn Package Cache
