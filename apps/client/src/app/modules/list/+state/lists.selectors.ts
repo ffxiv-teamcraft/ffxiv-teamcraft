@@ -32,6 +32,11 @@ const getCompletionNotificationEnabled = createSelector(
   (state: ListsState) => state.completionNotificationEnabled
 );
 
+const getShowArchived = createSelector(
+  getListsState,
+  (state: ListsState) => state.showArchived
+);
+
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
@@ -80,5 +85,6 @@ export const listsQuery = {
   getCompletionNotificationEnabled,
   getListsLoading,
   getConnectedTeams,
-  getSelectedId
+  getSelectedId,
+  getShowArchived
 };

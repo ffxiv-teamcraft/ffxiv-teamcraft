@@ -355,13 +355,14 @@ export class ListController {
   }
 
   public static hasAllBaseIngredients(list: List, item: ListRow, amount = item.amount): boolean {
+    const availableAmount = item.done - item.used;
     // If it's not a craft, break recursion
     if (getItemSource(item, DataType.CRAFTED_BY).length === 0 || item.requires === undefined) {
       // Simply return the amount of the item being equal to the amount needed.
-      return item.done >= amount;
+      return availableAmount >= amount;
     }
     // If we already have the precraft done, don't go further into the requirements.
-    if (item.done >= amount || item.canBeCrafted) {
+    if (availableAmount >= amount || item.canBeCrafted) {
       return true;
     }
     // Don't mind crystals

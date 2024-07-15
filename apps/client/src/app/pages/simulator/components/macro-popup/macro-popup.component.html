@@ -45,14 +45,14 @@
   </div>
 </div>
 <div class="macro">
-  @for (macroFragment of macro; track macroFragment; let i = $index) {
+  @for (macroFragment of macro; track i; let i = $index) {
     <div>
       <pre class="macro-fragment">
         <button [clipboard]="getText(macroFragment)" [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate" class="copy-macro" nz-button nzShape="circle"
           nzSize="small">
           <i nz-icon nzType="copy"></i>
         </button>
-        @for (line of macroFragment; track line) {
+        @for (line of macroFragment; track $index) {
           <span class="macro-line">{{line}}<br></span>
         }
       </pre>

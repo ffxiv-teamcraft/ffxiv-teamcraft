@@ -50,8 +50,14 @@
         }
       </div>
     </div>
-    <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
+    <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start center" fxLayoutAlign.lt-md="center center"
       fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
+      @if(alarms$ | async; as alarms) {
+        @for(alarm of alarms; track alarm.id) {
+          <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups$ | async" (toggleAlarm)="toggleAlarm($event)"
+                            (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+        }
+      }
       <div class="input-box align-center justify-center" nz-col>
         <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(row.recipe !== undefined?addCrafts:null)" [nzCompact]="true"
           class="amount-input">

@@ -193,6 +193,8 @@ export class ListsFacade {
 
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
+  showArchived$ = this.store.select(listsQuery.getShowArchived);
+
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
 
   pinnedList$ = this.store.select(listsQuery.getPinnedListKey());

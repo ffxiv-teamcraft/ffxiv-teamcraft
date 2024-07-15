@@ -50,8 +50,8 @@ export class WorkshopPanelComponent {
   private _lists: List[];
   @Input()
   set lists(lists: List[]) {
-    this._lists = lists;
-    this.aggregatedIds = lists.map(l => l.$key).join(':');
+    this._lists = lists.filter(l => l.name?.length > 0);
+    this.aggregatedIds = this._lists.map(l => l.$key).join(':');
   }
 
   get lists(): List[] {
@@ -74,7 +74,7 @@ export class WorkshopPanelComponent {
   private syncLinkUrl: string;
 
   constructor(private workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
-              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
+              private translate: TranslateService, private dialog: NzModalService,
               private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade,
               private listPicker: ListPickerService) {
     this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.workshop$]).pipe(
@@ -191,9 +191,5 @@ export class WorkshopPanelComponent {
   removeList(list: List): void {
     this._workshop.listIds = this._workshop.listIds.filter(key => key !== list.$key);
     this.workshopsFacade.updateWorkshop(this._workshop);
-  }
-
-  trackByList(index: number, list: List): string {
-    return list.$key;
   }
 }

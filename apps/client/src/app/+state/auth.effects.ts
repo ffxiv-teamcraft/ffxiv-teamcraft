@@ -84,17 +84,16 @@ export class AuthEffects {
       );
     }),
     switchMap((user: TeamcraftUser) => {
-      // If token has been refreshed more than 3 weeks ago, refresh it now.
-      if (user.supporter) {
-        if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
-          return this.supportService.refreshPatreonToken(user).pipe(
-            tap(res => this.authFacade.updateUser(res))
-          );
-        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 15 * 60 * 1000) {
-          return this.supportService.refreshTipeeeToken(user).pipe(
-            tap(res => this.authFacade.updateUser(res))
-          );
-        }
+      // If patreon token has been refreshed more than 3 weeks ago, refresh it now.
+      if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
+        return this.supportService.refreshPatreonToken(user).pipe(
+          tap(res => this.authFacade.updateUser(res))
+        );
+      // Same for tipeee but their token is only valid for 30 minutes...
+      } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 30 * 60 * 1000) {
+        return this.supportService.refreshTipeeeToken(user).pipe(
+          tap(res => this.authFacade.updateUser(res))
+        );
       }
       if (user.defaultLodestoneId === undefined && user.lodestoneIds?.length > 0) {
         user.defaultLodestoneId = user.lodestoneIds[0].id;

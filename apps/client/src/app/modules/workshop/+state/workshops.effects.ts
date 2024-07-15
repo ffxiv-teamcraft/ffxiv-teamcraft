@@ -13,7 +13,7 @@ import {
   WorkshopLoaded,
   WorkshopsActionTypes
 } from './workshops.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { WorkshopService } from '../../../core/database/workshop.service';
@@ -25,6 +25,8 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { ListsFacade } from '../../list/+state/lists.facade';
+import { LoadManyLists } from '../../list/+state/lists.actions';
 
 @Injectable()
 export class WorkshopsEffects {
@@ -60,6 +62,20 @@ export class WorkshopsEffects {
       );
     }),
     map(workshops => new SharedWorkshopsLoaded(workshops))
+  ));
+
+  loadMissingLists$ = createEffect(() => this.actions$.pipe(
+    ofType(WorkshopsActionTypes.SharedWorkshopsLoaded, WorkshopsActionTypes.MyWorkshopsLoaded),
+    switchMap(({ payload }: { payload: Workshop[] }) => {
+      return this.listsFacade.allListDetails$.pipe(
+        first(),
+        map(lists => {
+          return new LoadManyLists(payload.map(workshop => {
+            return workshop.listIds.filter(listId => !lists.some(l => l.$key === listId));
+          }).flat());
+        })
+      );
+    })
   ));
 
 
@@ -179,7 +195,8 @@ export class WorkshopsEffects {
     private workshopsFacade: WorkshopsFacade,
     private message: NzMessageService,
     private translate: TranslateService,
-    private listService: FirestoreListStorage
+    private listService: FirestoreListStorage,
+    private listsFacade: ListsFacade
   ) {
   }
 }

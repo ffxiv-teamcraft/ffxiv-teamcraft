@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { DialogComponent } from '../../../core/dialog.component';
+import { NzEmptyComponent } from 'ng-zorro-antd/empty';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './folder-addition-picker.component.html',
   styleUrls: ['./folder-addition-picker.component.less'],
   standalone: true,
-  imports: [LazyScrollComponent, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+  imports: [LazyScrollComponent, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, NzEmptyComponent]
 })
 export class FolderAdditionPickerComponent extends DialogComponent implements OnInit {
 

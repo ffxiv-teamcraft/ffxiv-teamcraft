@@ -59,7 +59,7 @@
       }
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
-          @for (group of alarmGroups; track group) {
+          @for (group of alarmGroups; track group.$key) {
             <li (click)="addAlarmWithGroup.emit({alarm: alarm, group: group})" nz-menu-item>
               {{group.name}}
             </li>

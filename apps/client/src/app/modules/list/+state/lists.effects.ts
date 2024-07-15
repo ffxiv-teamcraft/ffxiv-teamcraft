@@ -10,7 +10,8 @@ import {
   ListDetailsLoaded,
   ListsActionTypes,
   LoadListDetails,
-  LoadTeamLists,
+  LoadManyLists,
+  LoadTeamLists, ManyListsLoaded,
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
@@ -65,10 +66,11 @@ import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
-import { increment, UpdateData, where } from '@angular/fire/firestore';
+import { documentId, increment, UpdateData, where } from '@angular/fire/firestore';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { chunk } from 'lodash';
 
 @Injectable()
 export class ListsEffects {
@@ -107,6 +109,20 @@ export class ListsEffects {
         .pipe(
           map(lists => new TeamListsLoaded(lists, action.teamId))
         );
+    })
+  ));
+
+  loadManyLists$ = createEffect(() => this.actions$.pipe(
+    ofType<LoadManyLists>(ListsActionTypes.LoadManyLists),
+    withLatestFrom(this.listsFacade.showArchived$),
+    mergeMap(([action, showArchived]) => {
+      const chunks = chunk(action.keys, 30);
+      return combineLatest(chunks.map(ids => {
+        return this.listService.query(where(documentId(), 'in', ids), where('archived', '==', showArchived));
+      }));
+    }),
+    map(lists => {
+      return new ManyListsLoaded(lists.flat())
     })
   ));
 

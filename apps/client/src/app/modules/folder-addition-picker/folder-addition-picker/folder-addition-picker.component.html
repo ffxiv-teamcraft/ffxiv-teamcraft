@@ -4,15 +4,19 @@
       <div class="flex-row align-center gap-10">
         <label (ngModelChange)="setSelection(element, $event)" [ngModel]="false" nz-checkbox></label>
         <div class="flex-column">
-          <b>{{element.name | async}}</b>
-          <i>{{element.description}}</i>
+          <b>{{ element.name | async }}</b>
+          <i>{{ element.description }}</i>
         </div>
       </div>
     </ng-template>
   </app-lazy-scroll>
 
+  @if (elements.length === 0) {
+    <nz-empty [nzNotFoundContent]="'COMMON.Empty_list' | translate"></nz-empty>
+  }
+
   <div>
-    <button (click)="close()" nz-button>{{'Confirm' | translate}}
+    <button (click)="close()" nz-button>{{ 'Confirm' | translate }}
     </button>
   </div>
 </div>

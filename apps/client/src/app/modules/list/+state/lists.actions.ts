@@ -14,6 +14,7 @@ export enum ListsActionTypes {
   ListsForTeamsLoaded = '[Lists] Lists For Team Loaded',
 
   LoadListDetails = '[Lists] Load List',
+  LoadManyLists = '[Lists] Load Many Lists',
   UnloadListDetails = '[Lists] Unload List',
   SelectList = '[Lists] Select List',
 
@@ -26,6 +27,7 @@ export enum ListsActionTypes {
   TeamListsLoaded = '[Lists] Team Lists Loaded',
   SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
+  ManyListsLoaded = '[Lists] Many List Details Loaded',
 
   RemoveReadLock = '[Lists] Remove Read Lock',
 
@@ -114,6 +116,20 @@ export class LoadListDetails implements Action {
   readonly type = ListsActionTypes.LoadListDetails;
 
   constructor(public readonly key: string) {
+  }
+}
+
+export class LoadManyLists implements Action {
+  readonly type = ListsActionTypes.LoadManyLists;
+
+  constructor(public readonly keys: string[]) {
+  }
+}
+
+export class ManyListsLoaded implements Action {
+  readonly type = ListsActionTypes.ManyListsLoaded;
+
+  constructor(public readonly lists: List[]) {
   }
 }
 
@@ -310,4 +326,6 @@ export type ListsAction =
   | ClearModificationsHistory
   | AddModificationHistoryEntries
   | RemoveModificationHistoryEntry
-  | RemoveReadLock;
+  | RemoveReadLock
+  | ManyListsLoaded
+  | LoadManyLists;
