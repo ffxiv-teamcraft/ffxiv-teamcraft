@@ -1207,5 +1207,18 @@
     "ko": "Patch 7.0",
     "zh": "Patch 7.0",
     "version": "7.0"
+  },
+  "96": {
+    "id": 96,
+    "banner": null,
+    "ex": 5,
+    "release": 1721117376,
+    "en": "Patch 7.01",
+    "de": "Patch 7.01",
+    "ja": "Patch 7.01",
+    "fr": "Patch 7.01",
+    "ko": "Patch 7.01",
+    "zh": "Patch 7.01",
+    "version": "7.01"
   }
 }

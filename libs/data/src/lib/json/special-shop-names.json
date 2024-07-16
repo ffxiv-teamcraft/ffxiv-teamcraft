@@ -6468,7 +6468,7 @@
     "fr": "Assignats mauves (Nv ≧ 90) [NvObj 590]"
   },
   "1770627": {
-    "en": "White Scrip Exchange (Master Recipes II)",
+    "en": "Purple Scrip Exchange (Master Recipes II)",
     "ja": "紫貨の取引：秘伝書（その2）",
     "de": "Violette Scheine (Meisterrezeptbücher II)",
     "fr": "Assignats mauves : recettes expertes II"
@@ -7350,22 +7350,22 @@
     "fr": ""
   },
   "1770774": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Light-heavy Hologear Exchange (DoW) I",
+    "ja": "ホログラム装備【ライトヘビー級】の取引（ファイターその1）",
+    "de": "Hologramm-Ausrüstung, Halbschwergewicht (Krieger I)",
+    "fr": "Équipements holographiques des poids mi-lourds (guerre 1)"
   },
   "1770775": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Light-heavy Hologear Exchange (DoW) II",
+    "ja": "ホログラム装備【ライトヘビー級】の取引（ファイターその2）",
+    "de": "Hologramm-Ausrüstung, Halbschwergewicht (Krieger II)",
+    "fr": "Équipements holographiques des poids mi-lourds (guerre 2)"
   },
   "1770776": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Light-heavy Hologear Exchange (DoM)",
+    "ja": "ホログラム装備【ライトヘビー級】の取引（ソーサラー）",
+    "de": "Hologramm-Ausrüstung, Halbschwergewicht (Magier)",
+    "fr": "Équipements holographiques des poids mi-lourds (magie)"
   },
   "1770777": {
     "en": "",
@@ -7713,7 +7713,7 @@
     "en": "Ascension Gear (IL 660-665)",
     "ja": "【ILv660～665】アセンション装備",
     "de": "[G.-St. 660-665] Aufstiegs-Ausrüstung",
-    "fr": "[NvObj 660-635] Équipement de l'Élévation"
+    "fr": "[NvObj 660-665] Équipement de l'Élévation"
   },
   "1770835": {
     "en": "Extreme & Ultimate Gear (IL 580-635)",

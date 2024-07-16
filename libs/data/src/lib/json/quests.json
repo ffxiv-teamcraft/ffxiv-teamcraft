@@ -85757,7 +85757,7 @@
     "name": {
       "en": "Between Sleep and Death",
       "ja": "死と眠りの境界",
-      "de": "In den Fesseln der Schlafes",
+      "de": "In den Fesseln des Schlafes",
       "fr": "Entre le sommeil et la mort"
     },
     "icon": "/i/062000/062522.png",
@@ -86639,7 +86639,7 @@
     "name": {
       "en": "Feeding the River",
       "ja": "エレンヴィルとプヌティー",
-      "de": "Aufs Punutyi gekommen",
+      "de": "Aufs Punutiy gekommen",
       "fr": "L'amour vache marine"
     },
     "icon": "/i/071000/071201.png"
@@ -87704,57 +87704,165 @@
   },
   "70496": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A New Challenger Appears",
+      "ja": "アルカディアの挑戦者",
+      "de": "Das Arkadion ruft!",
+      "fr": "Le nouveau challenger de l'Arcadion"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101306.png"
   },
   "70497": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Claw in the Dark",
+      "ja": "爪研ぐ猫魂",
+      "de": "Die Klaue der Dunkelheit",
+      "fr": "La combattante féline aux griffes acérées"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41768,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112567.png"
   },
   "70498": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sweet Poison",
+      "ja": "劇毒の愛",
+      "de": "Toxische Liebe",
+      "fr": "Un charme piquant et venimeux"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41769,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112569.png"
   },
   "70499": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Yaana's Yarn",
+      "ja": "トライテールの姉妹",
+      "de": "Die Tatzentrio-Schwestern",
+      "fr": "Les sœurs des Trois Queues"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41761,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/101000/101307.png"
   },
   "70500": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Vile Heat",
+      "ja": "爆ぜる悪意",
+      "de": "Bombastische Boshaftigkeit",
+      "fr": "Une brute explosive et sans scrupules"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41757,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112571.png"
   },
   "70501": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Neoteric Witch",
+      "ja": "次世代魔女",
+      "de": "Die Hybrid-Hexe",
+      "fr": "L'Enchanteresse électrique"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      },
+      {
+        "id": 41768,
+        "amount": 3
+      },
+      {
+        "id": 41769,
+        "amount": 3
+      },
+      {
+        "id": 41761,
+        "amount": 3
+      },
+      {
+        "id": 41757,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112573.png"
   },
   "70502": {
     "name": {
@@ -87918,7 +88026,7 @@
     "name": {
       "en": "Written in Stone",
       "ja": "文字では伝わらない想い",
-      "de": "In Stein gemeißelt",
+      "de": "Wo Worte allein nicht genügen",
       "fr": "L'Odyssée du linguiste"
     },
     "icon": "/i/062000/062523.png",
@@ -88115,7 +88223,7 @@
     "name": {
       "en": "As Nature Intends",
       "ja": "自ずから然らしむ",
-      "de": "Im Einklang mit der Natur",
+      "de": "Eins mit der Natur",
       "fr": "Unis à Mère Nature"
     },
     "icon": "/i/062000/062523.png",
@@ -88427,29 +88535,21 @@
   },
   "70551": {
     "name": {
-      "en": "Rising to the Occasion",
-      "ja": "新生祭と西風の海都",
-      "de": "Hochfliegende Pläne",
-      "fr": "Commémoration à la ville des vents d'ouest"
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
     },
-    "icon": "/i/080000/080113.png",
-    "banner": "/i/101000/101366.png"
+    "icon": "/i/071000/071221.png"
   },
   "70552": {
     "name": {
-      "en": "We Who Are About to Set Sail Salute You",
-      "ja": "新生祭と明日への花火",
-      "de": "Unter ein und demselben Himmel",
-      "fr": "Commémoration sous les lumières de l'avenir"
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
     },
-    "icon": "/i/080000/080113.png",
-    "rewards": [
-      {
-        "id": 43587,
-        "amount": 1
-      }
-    ],
-    "banner": "/i/101000/101367.png"
+    "icon": "/i/071000/071221.png"
   },
   "70553": {
     "name": {
@@ -88464,7 +88564,7 @@
     "name": {
       "en": " How Far He'll Go",
       "ja": " 気球飛ばしの眺める先",
-      "de": " 20.000 Yalme über das Meer",
+      "de": " 20.000 Malme über das Meer",
       "fr": " 20 000 yalms dans les airs"
     },
     "icon": "/i/071000/071221.png",
@@ -88600,7 +88700,7 @@
     "name": {
       "en": " Guilding the Lily",
       "ja": " いつか、トラルのギルドに",
-      "de": " Eine Gilde im Tural?",
+      "de": " Eine Gilde auf Tural?",
       "fr": " Une guilde au Tural&nbsp;?"
     },
     "icon": "/i/071000/071221.png",
@@ -90020,7 +90120,7 @@
     "name": {
       "en": " Listen to Your Elders",
       "ja": " ルワテニヤーサの伝承はかく語りき",
-      "de": " Alte Geschichten",
+      "de": " Den alten Geschichten lauschen",
       "fr": " L'oracle de Luwateninyawawsa"
     },
     "icon": "/i/071000/071221.png",

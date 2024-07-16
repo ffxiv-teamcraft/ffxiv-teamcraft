@@ -40099,7 +40099,7 @@
       "en": "A Pelupelu porter on the way to Luwateninyawawsa has discovered a press of peckish yeheheceyaa prohibiting prompt passage to the pueblo. She seeks a kind-hearted soul to scatter the scalekin that they might strike off to the settlement before sundown.",
       "ja": "ペルペル族の行商人が<br>翼竜に行く手を阻まれている<br>[UNHANDLED 0x28]を倒せ",
       "de": "Eine Pelupelu-Händlerin auf dem Weg nach Luwateninyawawsa wird von einigen Yeheheceyaa an der Weiterreise gehindert. Sorge dafür, dass sie ihre Route ungefährdet fortsetzen kann.",
-      "fr": "Un marchand ambulant pelupelu s'est retrouvé piégé par des prédateurs préhistoriques. Débarrassez-le de ces volatiles."
+      "fr": "Des prédateurs préhistoriques bloquent la route d'un marchand ambulant pelupelu. Débarrassez-le de ces volatiles."
     },
     "icon": "/i/060000/060501.png",
     "level": 95,
@@ -40171,7 +40171,7 @@
       "en": "Dharas are mostly harmless when left to wander the wide-open wastes, but should they lose their way and stray too near a settlement, even the slightest contact can rouse the creatures to violence. One such pack currently lingers outside Hhusatahwi and only with swift action can disaster be averted.",
       "ja": "急な環境の変化により<br>土属性の魔物が街の近くに現れた<br>[UNHANDLED 0x28]を倒せ",
       "de": "Dhara sind harmlos, wenn man ihnen nicht auf die Pelle rückt. Kommen sie jedoch in die Nähe von Siedlungen, kann schon der kleinste Kontakt katastrophal enden. Momentan macht ein Rudel die Gegend um Hhusatahwi unsicher und muss schnellstens unschädlich gemacht werden.",
-      "fr": "Les changements drastiques dans l'environnement des plaines ont affecté une meute de dharas qui s'approche dangereusement des habitations. Ne les laissez pas s'en prendre aux habitants."
+      "fr": "Les changements drastiques dans l'environnement des plaines ont affecté une meute de dharas qui s'approche dangereusement des habitations. Éliminez-les avant qu'ils puissent s'en prendre aux habitants."
     },
     "icon": "/i/060000/060501.png",
     "level": 95,
@@ -40189,7 +40189,7 @@
       "en": "The Serpentlord Stirs",
       "ja": "トクローネ：目覚めの予兆",
       "de": "Künder seines Erwachens",
-      "fr": "Ttokkrone&nbsp;: prélude à l'éveil"
+      "fr": "Ttokrrone&nbsp;: prélude à l'éveil"
     },
     "description": {
       "en": "A pack of maddened lunyuhiyshahe threaten the village of Hhusatahwi, as a mysterious warrior whispers warnings of an ancient evil.",
@@ -40213,7 +40213,7 @@
       "en": "The Serpentlord Speaks",
       "ja": "トクローネ：目覚めの前兆",
       "de": "Das Erwachen rückt näher",
-      "fr": "Ttokkrone&nbsp;: le roi des serpents"
+      "fr": "Ttokrrone&nbsp;: le roi des serpents"
     },
     "description": {
       "en": "Following a recent close call with a pack of riled lunyuhiyshahe, the village of Hhusatahwi now finds itself threatened by a similarly agitated congregation of alligators. And as before, Br'uk Vaw of the Setting Sun is there to wax forebodingly on the Serpentlord's return.",
@@ -40237,7 +40237,7 @@
       "en": "The Serpentlord Sires",
       "ja": "トクローネ：狩猟の下準備",
       "de": "Vorbereitung der Jagd",
-      "fr": "Ttokkrone&nbsp;: la grande chasse commence"
+      "fr": "Ttokrrone&nbsp;: la grande chasse commence"
     },
     "description": {
       "en": "Wizened hunter Br'uk Vaw of the Setting Sun seeks to lure the elusive Serpentlord from his den and requires a unique variety of earth crystals known as “Blood of the Land” to do so.",
@@ -40267,7 +40267,7 @@
       "en": "Br'uk Vaw of the Setting Sun would use the Blood of the Land to draw burrowing aspis to the desert surface so that you might slay them, thus provoking the Serpentlord from hiding.",
       "ja": "魔力を求め蛇の群れが現れた<br>[UNHANDLED 0x28]を倒し<br>[UNHANDLED 0x28]を守れ",
       "de": "Mit dem Blut des Bodens will Br'uk Vaw nistende Aspis hervorlocken, damit du sie niederschlagen und so den Schlangenkönig aus seinem Versteck holen kannst.",
-      "fr": "Br'uk Vaw souhaite utiliser les cristaux spirituels pour appâter les aspics. En massacrant ses congénères, il espère obtenir l'attention de Ttokkrone. De votre côté, faites en sorte que les reptiles ne volent pas tous vos cristaux&nbsp;!"
+      "fr": "Br'uk Vaw souhaite utiliser les cristaux spirituels pour appâter les aspics. En massacrant ses congénères, il espère obtenir l'attention de Ttokrrone. De votre côté, faites en sorte que les reptiles ne volent pas tous vos cristaux&nbsp;!"
     },
     "icon": "/i/060000/060504.png",
     "level": 96,
@@ -40380,7 +40380,7 @@
       "en": "Lunyucaua'pyas have gathered in the fields south of Lake Toari, threatening a nearby herd of rroneek tended by the Hhetsarro. If the scalekin are not driven off, their people risk starvation.",
       "ja": "草を食むロネークを狙い<br>獰猛な肉食獣がやってきた<br>[UNHANDLED 0x28]を倒せ",
       "de": "Lunyucaua'pya haben sich in den Feldern südlich des Toari-Sees versammelt und bedrohen eine Rroneek-Herde der Hhetsarro. Wird nichts unternommen, droht eine Hungersnot.",
-      "fr": "Des prédateurs affamés menacent un troupeau de rroneeks qui beuglent joyeusement sans se douter du danger. Éliminez cette menace rapidement&nbsp;!"
+      "fr": "Des prédateurs affamés sont soudainement apparus et risquent de menacer un troupeau de rroneeks. Éliminez cette menace rapidement&nbsp;!"
     },
     "icon": "/i/060000/060501.png",
     "level": 96,
@@ -40908,7 +40908,7 @@
       "en": "After a sudden, unexplained drop in passengers departing from Yak T'el's only dirigible landing, officials dispatched an expeditionary party into the jungle to determine a cause behind the change...only to find the road connecting the port to Ilyon Asoh infested with deadly flora that have a habit of strangling unexpecting travelers. The landing now seeks aid in clearing the overgrowth.",
       "ja": "気球発着場から通じる林道に<br>危険な食獣植物が棲みついた<br>ネクローシス・ロイターを倒せ",
       "de": "Als die Passagierzahlen am Ballonplatz plötzlich rapide sanken, entsandte man ein Expeditionskorps, um der Sache auf den Grund zu gehen. Dabei stellte man fest, dass die Straße nach Ilyon Asoh von Pflanzen mit der unangenehmen Angewohnheit bevölkert wird, sich um die Hälse ahnungsloser Reisender zu schlingen&nbsp;- ein Übel, das an der Wurzel gepackt werden muss.",
-      "fr": "Des flâneurs nécrotiques, de dangereux monstres carnivores, ont établi leur repaire sur la route forestière menant à l'embarcadère des ballons. Eliminez-les avant qu'ils ne blessent de pauvres voyageurs."
+      "fr": "Des flâneurs nécrotiques, de dangereux monstres carnivores, ont établi leur repaire sur la route forestière menant à l'embarcadère à ballons. Eliminez-les avant qu'ils ne blessent de pauvres voyageurs."
     },
     "icon": "/i/060000/060501.png",
     "level": 94,
@@ -40980,7 +40980,7 @@
       "en": "Ask any Xbr'aal and they will tell you the belly of an ik'iit is deeper than the deepest cenote. This comes much to the dismay of Iq Br'aax's foragers who must compete with the creatures for the jungle's fruit. Any assistance in scaring off the insatiable sapiens would not only be greatly appreciated, but greatly rewarded.",
       "ja": "腹を空かせた猿の群れが<br>イクブラーシャに向かおうとしている<br>イキートゥたちを倒せ",
       "de": "Jeder Xbr'aal weiß, dass der Schlund eines Ik'iit unergründlicher ist als der tiefste Cenote. Sehr zum Leidwesen der Wildbeuter aus Iq Br'aax, die sich mit den Vielfraßen um die Früchte des Waldes streiten müssen. Hilfe bei ihrer Vertreibung wird deshalb nicht nur gern gesehen, sondern auch fürstlich belohnt.",
-      "fr": "Une bande de singes affamés se dirige vers Iq Br'aax pour y piller les réserves de nourriture. Repoussez-les ik'iits pour préserver le village de la famine."
+      "fr": "Une bande d'ik'iits affamés se dirige vers Iq Br'aax pour y piller les réserves de nourriture. Repoussez-les pour préserver le village de la famine."
     },
     "icon": "/i/060000/060501.png",
     "level": 94,
@@ -41028,7 +41028,7 @@
       "en": "Refusing to quit while they were ahead, the pair of fearless, yet foolish Xbr'aal youths have ventured deep into the Xobr'it Cinderfield in search of further excitement. They found more ghosts instead.",
       "ja": "肝試しにきたシュバラール族の青年が<br>古戦場で死霊と遭遇してしまった<br>怒れる古兵、怨刃のクフェージャを倒せ",
       "de": "Statt aufzuhören, solange sie können, haben sich die zwei so furchtlosen wie törichten Xbr'aal-Jünglinge auf der Suche nach dem nächsten Nervenkitzel tief auf die Aschenfront gewagt. Jetzt sind sie mit den Nerven am Ende!",
-      "fr": "Alors qu'ils venaient mettre leur courage à l'épreuve sur un ancien champ de bataille, des jeunes xbr'aal se retrouvent face à l'esprit d'un puissant défunt courroucé. Sauvez-les et renvoyez Quheel Ja la lame vengeresse d'où il vient."
+      "fr": "Alors qu'ils venaient mettre leur courage à l'épreuve sur un ancien champ de bataille, des jeunes xbr'aal se retrouvent face à l'esprit d'un puissant défunt courroucé. Renvoyez Quheel Ja la lame vengeresse d'où il vient."
     },
     "icon": "/i/060000/060502.png",
     "level": 94,
@@ -41121,7 +41121,7 @@
       "fr": "Mycophobie, quand tu nous tiens"
     },
     "description": {
-      "en": "Upon arriving in Ja Tiika Heartland to collect medicinal fungi, a gatherer of the Hoobigo discovers the area crawling with hungry fly agarics. And thus has the mushroom hunter become the mushroom hunted.",
+      "en": "Upon arriving in the Ja Tiika Heartland to collect medicinal fungi, a gatherer of the Hoobigo discovers the area crawling with hungry fly agarics. And thus has the mushroom hunter become the mushroom hunted.",
       "ja": "キノコを採りにきたマムージャ族が<br>繁殖した魔物に戸惑っている<br>「ヤクテルの霊茸」を集めろ",
       "de": "Bei seiner Ankunft im Herz von Ja Tiika muss ein Pilzsammler der Hoobigo feststellen, dass es dort vor hungrigen Fliegenpilzen nur so wimmelt. Jetzt ist aus dem Jäger ein Gejagter geworden!",
       "fr": "Un Mamool Ja amateur de champignons souhaite faire une cueillette, mais son lieu de prédilection est envahi par des monstres fongiformes. Aidez-le à récolter des fongus mystiques de Yak T'el."
@@ -41172,7 +41172,7 @@
       "en": "If a moth flaps its wings in the forest, and no one is there to hear it, does it make a sound? Possibly, but it <i>does</i> release a toxic cloud of countless tiny scales that can linger in the air for days killing both flora and fauna alike, so it's best not to let the moth flap its wings at all.",
       "ja": "人里の近くに<br>幻惑の鱗粉を撒き散らす危険な蛾が現れた<br>深き森の霊蛾、ゴーストモスを倒せ",
       "de": "Wenn eine Motte im Wald mit den Flügeln schlägt, und niemand ist da, der es hört, macht sie dann trotzdem ein Geräusch? Vermutlich. Ganz sicher aber hinterlässt sie eine giftige Wolke aus winzigen Schuppen, die tagelang in der Luft schweben und sowohl Flora wie Fauna angreifen. Darum greift man am besten direkt zum Skalpel und lässt sie gar nicht erst dazu kommen.",
-      "fr": "Un dangereux papillon de nuit fantômatique est apparu à proximité d'un village, et commence à répandre de la poudre hallucinogène. Terrassez la phalène fantôme au plus vite."
+      "fr": "Un dangereux papillon de nuit fantômatique est apparu à proximité d'un village en ruines, et commence à répandre de la poudre hallucinogène. Terrassez la phalène fantôme au plus vite."
     },
     "icon": "/i/060000/060502.png",
     "level": 94,
@@ -41220,7 +41220,7 @@
       "en": "Whyever would an under-the-weather wivre wander westward into Whetstone when the well-known waypoint is writhing wall-to-wall with well-oiled warriors? Who knows? But without question, it warrants wholesale warfare.",
       "ja": "鱗の錬磨場の近くに<br>野生化したウィヴルが現れた<br>ウィヴルの群れを倒せ",
       "de": "Warum um alles in der Welt wagen sich Wivren an einen Ort, an dem es vor Kriegern nur so wimmelt? Vermutlich wissen sie es selber nicht. Sicher ist nur, dass es Krieg bedeutet.",
-      "fr": "Un troupeau de wivres sauvages et particulièrement hostiles a fait son apparition près de l'Aiguisoir. Abattez-les afin d'éviter qu'elles ne commettent des dégâts."
+      "fr": "Un troupeau de wivres sauvages et particulièrement hostiles a fait son apparition près de L'Aiguisoir. Abattez-les afin d'éviter qu'elles ne commettent des dégâts."
     },
     "icon": "/i/060000/060501.png",
     "level": 94,
@@ -41262,13 +41262,13 @@
       "en": "Feed Me, Sentries",
       "ja": "思考する奇花「プラントブレイン」",
       "de": "Grüne Gehirne",
-      "fr": "Défi&nbsp;: les fleurs pensantes"
+      "fr": "Défi&nbsp;: la fleur pensante"
     },
     "description": {
       "en": "Even sentient plants must fill the void in their souls, and this one has chosen to do so by consuming anything in sight. Exterminating it will bring a merciful end to its existential dread and return peace to Windspath Gardens.",
       "ja": "ウィンドパスガーデンに<br>突然変異の食獣植物が現れた<br>思考する奇花、プラントブレインを倒せ",
       "de": "In den Windpfadgärten hat sich ein seltsames Lebewesen ausgebreitet. Es hält nicht viel von pflanzenbasierter Ernährung und tut dies wütend kund.",
-      "fr": "Des plantes carnivores ayant rapidement muté ont envahi les jardins de Soufflevent. Abattez les blambourines."
+      "fr": "Une plante carnivore ayant rapidement muté a envahi les jardins de Soufflevent. Abattez la blambourine."
     },
     "icon": "/i/060000/060502.png",
     "level": 99,
@@ -41291,7 +41291,7 @@
     "description": {
       "en": "While the verdant fauna of Windspath Gardens is a feast for the eyes, it is also a literal feast for creatures whose diet consists of anything green and leafy. A store of seeds must be recovered so that the rarer specimens in the gardens are not eaten into extinction.",
       "ja": "種子を好むアガヴォイデスが<br>大挙してザ・ノーアブルに押し寄せた<br>保護のため「希少植物の種子」を集めろ",
-      "de": "Agavoides lieben Samen&nbsp;- und zwar so sehr, dass sie auch vor seltenen Pflanzensamen keinen Halt machen. Beschütze die Samen vor diesen gefräßigen Wesen, die ins Unergründliche eingefallen sind.",
+      "de": "Agavoides lieben Samen&nbsp;- und zwar so sehr, dass sie auch vor seltenen Pflanzensamen keinen Halt machen. Beschütze die Samen vor diesen gefräßigen Wesen, die ins Ergründliche eingefallen sind.",
       "fr": "Une horde d'agavoïdes affamés ont pris d'assaut Les Acquis. Rassemblez les graines de plantes rares afin de les empêcher d'être dévorées."
     },
     "icon": "/i/060000/060503.png",
@@ -41405,7 +41405,7 @@
       "en": "An analysis of the memory chips revealed that the source of the sentries' destruction was among their own number. Bugs in the system are inevitable, and when they present themselves, they must be squashed. Permanently.",
       "ja": "機械兵を大量に破壊した者の正体が<br>暴走した同型であったことが判明した<br>ブロークン・セントリーGXを倒せ",
       "de": "Es stellt sich heraus, dass die vielen zerstörten Maschinensoldaten von einer Maschine gleichen Typs angegriffen wurden. Zerstöre den defekten Unheilstifter!",
-      "fr": "Ce sont des sentinelles GX défectueuses qui ont endommagé les autres machines. Arrêtez-les avant qu'elle ne fassent encore plus de dégâts."
+      "fr": "C'est une sentinelle GX défectueuse qui a endommagé les autres machines. Arrêtez-la avant qu'elle ne fasse encore plus de dégâts."
     },
     "icon": "/i/060000/060502.png",
     "level": 99,
@@ -41854,7 +41854,7 @@
       "en": "Deleterious architectural impact notwithstanding, the recent mole activity has revealed a wealth of subterranean resources. The Moblin forager is eager to seize this lucrative opportunity, and will need all the hand-lending he can get to gather these prized materials for his potsworn.",
       "ja": "モグラたちの活動により<br>地中の鉱石や輝石が表出した<br>「壺匠用の製作素材」を集めろ",
       "de": "Mulls mögen für Freunde des gepflegten Rasens eine Katastrophe darstellen, doch durch ihre Buddelei fördern sie auch allerlei Schätze zutage. Sammle die herumliegenden Erze und Kristalle ein, die die Topfwerker der Moblins sicher gut gebrauchen können.",
-      "fr": "L'activité souterraine des taupes a fait ressurgir de nombreux minerais à la surface, lesquels font d'excellents matériaux pour les mains-du-pot de la Fournée. Ramassez-les&nbsp;!"
+      "fr": "L'activité souterraine des taupes a fait ressurgir de nombreux minerais à la surface, lesquels font d'excellents matériaux pour les mains-du-pot de La Fournée. Ramassez-les&nbsp;!"
     },
     "icon": "/i/060000/060503.png",
     "level": 92,
@@ -41950,7 +41950,7 @@
       "en": "Enticed by the pungent scent of recently expired mushrooms, a voracious caphunter has charged forth in a frenzy. Slay the beast and calm its fury once and for all.",
       "ja": "キノコの芳醇な香りに誘われて<br>幻覚作用を求める巨猪が現れた<br>夢見る猪、[UNHANDLED 0x28]を倒せ",
       "de": "Angelockt vom aromatischen Duft der Pilze, taucht plötzlich ein Hutjäger auf. Das ungestüme Wesen kennt kein Halten, wenn es darum geht, seine Leibspeise aufzuspüren, und führt sich wie wild auf. Gebiete seiner wilden Raserei Einhalt!",
-      "fr": "Attiré par le parfum des champignons, un spécimen d'une espèce de sanglier géant a fait leur apparition. Refroidissez les ardeurs de ce renifleur de bolets&nbsp;!"
+      "fr": "Attiré par le parfum des champignons, un spécimen d'une espèce de sanglier géant a fait son apparition. Refroidissez les ardeurs de ce renifleur de bolets&nbsp;!"
     },
     "icon": "/i/060000/060502.png",
     "level": 92,
@@ -42043,7 +42043,7 @@
       "fr": "Gare aux garous"
     },
     "description": {
-      "en": "A party of hunters find themselves surrounded by a pack of cauahealoas and require a distraction so that they might ",
+      "en": "A party of hunters find themselves surrounded by a pack of cauahealoas and require a distraction so that they might get to safety.",
       "ja": "人狼の群れに襲撃された<br>駆除人たちが窮地に陥っている<br>インクリースド・カワヘアローを倒せ",
       "de": "Einige Merzer konnten mit knapper Not einem verheerenden Cauahealoa-Angriff entgehen. Nun liegt es an dir, ob sie es sicher wieder zurück nach Hause schaffen!",
       "fr": "Un groupe de chasseurs s'est retrouvé piégé par une meute de loups-garous. Allez les défendre."
@@ -42190,7 +42190,7 @@
       "en": "While salvaging an inoperative mechanical sentry, a hapless forger unknowingly triggered the construct's emergency beacon, summoning reinforcements he is most certainly not equipped to handle.",
       "ja": "故障した機械兵の救援信号を感知し<br>ライダータイプの機械兵が現れた<br>ブロークン・セントリーR6を倒せ",
       "de": "Aufgrund des Hilfesignals einer defekten Einheit sind nun motorisierte Maschinensoldaten am Start, die es zu Fall zu bringen gilt!",
-      "fr": "Des sentinelles volantes se sont approchées après avoir détecté le signal de détresse d'une de leurs congénères. Débarrassez-vous de ces machines défectueuses."
+      "fr": "Des sentinelles se sont approchées après avoir détecté le signal de détresse d'une de leurs congénères. Débarrassez-vous de ces machines défectueuses."
     },
     "icon": "/i/060000/060501.png",
     "level": 98,
@@ -42310,7 +42310,7 @@
       "en": "One evening, not too long ago, a mild-mannered monoeye returned from the day's hunt to find the withered husks of his wife and children splayed across the floor of his lair─their souls stolen. Faced with the decision to either turn the other cheek or seek bloody revenge on the world, he ultimately chose the latter.",
       "ja": "魂資源用に仲間を狩られたモノアイが<br>怒りのままに進撃している<br>復讐の単眼、ザ・アベンジャーを倒せ",
       "de": "Ein Einauge ist zum Rachebringer mutiert und lässt seiner unbändigen Wut über seine zum Zwecke der Seelenextrahierung getöteten Kumpanen freien Lauf.",
-      "fr": "Un n'a-qu'un-œil qui a vu ses compagnons périr pour servir de réserve d'âmes a choisi de laisser sa rage vengeresse prendre le dessus en s'attaquant à l'humanité tout entière. Arrêtez-le avant qu'il ne soit trop tard&nbsp;!"
+      "fr": "Un n'a-qu'un-œil qui a vu ses compagnons périr pour servir d'âmes de réserve a choisi de laisser sa rage vengeresse prendre le dessus en s'attaquant à l'humanité tout entière. Arrêtez-le avant qu'il ne soit trop tard&nbsp;!"
     },
     "icon": "/i/060000/060502.png",
     "level": 98,

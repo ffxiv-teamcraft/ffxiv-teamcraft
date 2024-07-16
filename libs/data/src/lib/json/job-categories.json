@@ -1462,16 +1462,17 @@
     ]
   },
   "102": {
-    "en": "PGL ROG MNK NIN SAM",
-    "ja": "格闘士 双剣士 モンク 忍者 侍",
-    "de": "FST SCH MÖN NIN SAM",
-    "fr": "PGL SUR MOI NIN SAM",
+    "en": "PGL ROG MNK NIN SAM VPR",
+    "ja": "格闘士 双剣士 モンク 忍者 侍 ヴァイパー",
+    "de": "FST SCH MÖN NIN SAM VPR",
+    "fr": "PGL SUR MOI NIN SAM VPR",
     "jobs": [
       "PGL",
       "MNK",
       "ROG",
       "NIN",
-      "SAM"
+      "SAM",
+      "VPR"
     ]
   },
   "103": {

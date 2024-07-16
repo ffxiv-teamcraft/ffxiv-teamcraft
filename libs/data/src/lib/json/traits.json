@@ -2828,10 +2828,10 @@
     "level": 68,
     "job": 33,
     "description": {
-      "en": "Reduces <span style=\"color:#ff7b1a\">Lightspeed</span> recast time to 90 seconds.",
-      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#ffbfff\">Lichtgeschwindigkeit</span> auf 90 Sekunden.",
-      "ja": "ライトスピードのリキャストタイムを90秒に短縮させる。",
-      "fr": "Réduit à 90s le temps de recharge de <span style=\"color:#ff7b1a\">Vitesse de la lumière</span>."
+      "en": "Reduces <span style=\"color:#ff7b1a\">Lightspeed</span> recast time to 60 seconds.",
+      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#ffbfff\">Lichtgeschwindigkeit</span> auf 60 Sekunden.",
+      "ja": "ライトスピードのリキャストタイムを60秒に短縮させる。",
+      "fr": "Réduit à 60s le temps de recharge de <span style=\"color:#ff7b1a\">Vitesse de la lumière</span>."
     }
   },
   "190": {
@@ -4418,10 +4418,10 @@
     "level": 58,
     "job": 25,
     "description": {
-      "en": "Grants 3 <span style=\"color:#ffff66\">Umbral Hearts</span> upon casting <span style=\"color:#ff7b1a\">Freeze</span> or executing <span style=\"color:#ff7b1a\">Manafont</span>.",
-      "de": "Gewährt 3 <span style=\"color:#ffff66\">Schattenherzen</span>, wenn <span style=\"color:#ffbfff\">Einfrieren</span> oder <span style=\"color:#ffbfff\">Mana-Brunnen</span> ausgeführt wurde.",
-      "ja": "自身に<span style=\"color:#ff7b1a\">「アンブラルハート」</span>が3つ付与される。<br><span style=\"color:#ffcc22\">発動条件：</span>フリーズおよびマナフォントの実行時",
-      "fr": "Vous octroie 3 degrés de <span style=\"color:#ff7b1a\">Cœur ombral</span> lorsque vous utilisez <span style=\"color:#ff7b1a\">Gel</span> ou <span style=\"color:#ff7b1a\">Vasque de mana</span>."
+      "en": "Grants an <span style=\"color:#ffff66\">Umbral Heart</span> upon casting <span style=\"color:#ff7b1a\">Freeze</span>, or executing <span style=\"color:#ff7b1a\">Manafont</span> or <span style=\"color:#ff7b1a\">Umbral Soul</span>.",
+      "de": "Gewährt <span style=\"color:#ffff66\">Schattenherz</span>, wenn <span style=\"color:#ffbfff\">Einfrieren</span>, <span style=\"color:#ffbfff\">Schattenseele</span> oder <span style=\"color:#ffbfff\">Mana-Brunnen</span> ausgeführt wurde.",
+      "ja": "自身に<span style=\"color:#ff7b1a\">「アンブラルハート」</span>が付与される。<br><span style=\"color:#ffcc22\">発動条件：</span>マナフォント、アンブラルソウル、フリーズの実行時",
+      "fr": "Vous octroie 3 degrés de <span style=\"color:#ff7b1a\">Cœur ombral</span> lorsque vous utilisez <span style=\"color:#ff7b1a\">Âme ombrale</span>, <span style=\"color:#ff7b1a\">Gel</span> ou <span style=\"color:#ff7b1a\">Vasque de mana</span>."
     }
   },
   "296": {
@@ -4433,7 +4433,7 @@
     "level": 1,
     "job": 7,
     "description": {
-      "en": "Casting of certain fire and ice spells will grant a stack of <span style=\"color:#ffff66\">Astral Fire</span> and <span style=\"color:#ffff66\">Umbral Ice</span> respectively.<br><span style=\"color:#ffcc22\">Maximum Stacks: </span>1<br><span style=\"color:#ffcc22\">Duration: </span>15s<br>While under the effect of <span style=\"color:#ffff66\">Astral Fire</span>, the cost of casting <span style=\"color:#ff7b1a\">Fire</span> spells is doubled, MP recovery is reduced to 0, and the potency of <span style=\"color:#ff7b1a\">Ice</span> spells is reduced by 10%.<br>While under the effect of <span style=\"color:#ffff66\">Umbral Ice</span>, the cost of casting <span style=\"color:#ff7b1a\">Ice</span> spells is reduced to 0, 2,500 MP is recovered upon landing an <span style=\"color:#ff7b1a\">Ice</span> spell, and the potency of <span style=\"color:#ff7b1a\">Fire</span> spells is reduced by 10%.",
+      "en": "Casting of certain fire and ice spells will grant a stack of <span style=\"color:#ffff66\">Astral Fire</span> and <span style=\"color:#ffff66\">Umbral Ice</span> respectively.<br><span style=\"color:#ffcc22\">Maximum Stacks: </span>1<br><span style=\"color:#ffcc22\">Duration: </span>15s<br>While under the effect of <span style=\"color:#ffff66\">Astral Fire</span>, the potency of <span style=\"color:#ff7b1a\">Fire</span> spells is increased by 40%, the cost of casting <span style=\"color:#ff7b1a\">Fire</span> spells is doubled, MP recovery is reduced to 0, and the potency of <span style=\"color:#ff7b1a\">Ice</span> spells is reduced by 10%.<br>While under the effect of <span style=\"color:#ffff66\">Umbral Ice</span>, the cost of casting <span style=\"color:#ff7b1a\">Ice</span> spells is reduced to 0, 2,500 MP is recovered upon landing an <span style=\"color:#ff7b1a\">Ice</span> spell, and the potency of <span style=\"color:#ff7b1a\">Fire</span> spells is reduced by 10%.",
       "de": "Gewisse Feuer- und Eiszauber gewähren einen Stapel <span style=\"color:#ffff66\">Lichtfeuer</span> beziehungsweise <span style=\"color:#ffff66\">Schatteneis</span>.<br>Maximalstapelzahl: 1<br>Dauer: 15 Sekunden<br>Effekt von <span style=\"color:#ffff66\">Lichtfeuer</span>:<br>Attacke-Werte von feuerbasierten Zaubern sind um 40&nbsp;％ erhöht.<br>MP-Kosten von feuerbasierten Zaubern sind verdoppelt.<br>MP-Regeneration von eisbasierten Zaubern ist auf 0 reduziert.<br>Attacke-Werte von eisbasierten Zaubern sind um 10&nbsp;％ verringert.<br>Effekt von <span style=\"color:#ffff66\">Schatteneis</span>:<br>Eisbasierte Zauber kosten keine MP.<br>Die Ausführung eines eisbasierten Zaubers regeneriert 2.500 MP.<br>Feuerbasierte Zauber kosten keine MP.<br>Attacke-Werte von feuerbasierten Zaubern sind um 10&nbsp;％ verringert.",
       "ja": "一部の魔法を実行すると、自身に<span style=\"color:#ff7b1a\">「アストラルファイア」</span>もしくは<span style=\"color:#ff7b1a\">「アンブラルブリザード」</span>が付与される。<br><span style=\"color:#ffcc22\">最大スタック数：</span>1　<span style=\"color:#ffcc22\">効果時間：</span>15秒<br><br><span style=\"color:#ffcc22\">アストラルファイア効果：</span>火属性魔法の威力が40％上昇する。<br>火属性魔法の消費ＭＰが2倍になる。<br>時間経過によるＭＰの回復量が0になる。<br>氷属性魔法の消費ＭＰが0になる。<br>氷属性魔法の威力が10％減少する。<br><br><span style=\"color:#ffcc22\">アンブラルブリザード効果：</span>氷属性魔法の消費ＭＰが0になる。<br>氷属性魔法の命中時にＭＰが2500回復する。<br>火属性魔法の消費ＭＰが0になる。<br>火属性魔法の威力が10％減少する。",
       "fr": "Utiliser certains sorts vous octroie <span style=\"color:#ff7b1a\">Feu astral</span> ou <span style=\"color:#ff7b1a\">Glace ombrale</span> (maximum 1).<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 15s<br><span style=\"color:#ffff66\">Effet avec Feu astral&nbsp;:</span> empêche la récupération de MP avec le temps, augmente la puissance des sorts de feu de 40％, mais multiple par deux leur coût en PM.<br>Réduit également la puissance des sorts de glace de 10%, mais réduit à 0 leur coût en PM.<br><span style=\"color:#ffff66\">Effet avec Glace ombrale:</span> restaure 2500 PM quand un sort de glace est utilisé avec succès et réduit à 0 leur coût en PM.<br>Réduit également la puissance des sorts de feu de 10%, mais réduit à 0 leur coût en PM."
@@ -6413,7 +6413,7 @@
     "level": 54,
     "job": 20,
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a\">Bootshine</span> to <span style=\"color:#ff7b1a\">The Forbidden Chakra</span> and <span style=\"color:#ff7b1a\">Steel Peak</span> to <span style=\"color:#ff7b1a\">The Forbidden Chakra</span>.",
+      "en": "Upgrades <span style=\"color:#ff7b1a\">Steel Peak</span> to <span style=\"color:#ff7b1a\">The Forbidden Chakra</span> and <span style=\"color:#ff7b1a\">Steeled Meditation</span> to <span style=\"color:#ff7b1a\">Forbidden Meditation</span>.",
       "de": "Verbessert <span style=\"color:#ffbfff\">Stählerne Meditation</span> zu <span style=\"color:#ffbfff\">Verbotene Meditation</span> und <span style=\"color:#ffbfff\">Stahlzinnen</span> zu <span style=\"color:#ffbfff\">Verbotenes Chakra</span>.",
       "ja": "鉄山闘気が陰陽闘気に、鉄山靠が陰陽闘気斬に変化する。",
       "fr": "Remplace <span style=\"color:#ff7b1a\">Charge d'acier</span> par <span style=\"color:#ff7b1a\">Chakra interdit</span> et <span style=\"color:#ff7b1a\">Méditation profonde</span> par <span style=\"color:#ff7b1a\">Méditation interdite</span>."
@@ -7763,10 +7763,10 @@
     "level": 84,
     "job": 20,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Bootshine</span> to 220, <span style=\"color:#ff7b1a\">True Strike</span> to 290, <span style=\"color:#ff7b1a\">Snap Punch</span> to 300, <span style=\"color:#ff7b1a\">Twin Snakes</span> to 340, <span style=\"color:#ff7b1a\">Demolish</span> to 300, <span style=\"color:#ff7b1a\">Dragon Kick</span> to 280, and <span style=\"color:#ff7b1a\">The Forbidden Chakra</span> to 400.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Schlag auf Schlag</span>: 220<br>Attacke-Wert von <span style=\"color:#ffbfff\">Wahrer Schlag</span>: 290<br>Attacke-Wert von <span style=\"color:#ffbfff\">Peitschenhieb</span>: 300<br>Attacke-Wert von <span style=\"color:#ffbfff\">Doppelviper</span>: 340<br>Attacke-Wert von <span style=\"color:#ffbfff\">Demolieren</span>: 300<br>Attacke-Wert von <span style=\"color:#ffbfff\">Drachentritt</span>: 280<br>Attacke-Wert von <span style=\"color:#ffbfff\">Verbotenes Chakra</span>: 400",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">連撃の威力：</span>220<br><span style=\"color:#ffcc22\">正拳突きの威力：</span>290<br><span style=\"color:#ffcc22\">崩拳の威力：</span>300<br><span style=\"color:#ffcc22\">双掌打の威力：</span>340<br><span style=\"color:#ffcc22\">破砕拳の威力：</span>300<br><span style=\"color:#ffcc22\">双竜脚の威力：</span>280<br><span style=\"color:#ffcc22\">陰陽闘気斬の威力：</span>400",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Volée de coups&nbsp;:</span> 220<br><span style=\"color:#ffff66\">Puissance de Coup de poing direct&nbsp;:</span> 290<br><span style=\"color:#ffff66\">Puissance de Coup de poing brusque&nbsp;:</span> 300<br><span style=\"color:#ffff66\">Puissance de Serpents jumeaux&nbsp;:</span> 340<br><span style=\"color:#ffff66\">Puissance de Démolition&nbsp;:</span> 300<br><span style=\"color:#ffff66\">Puissance de Tacle du dragon&nbsp;:</span> 280<br><span style=\"color:#ffff66\">Puissance de Chakra interdit&nbsp;:</span> 400"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Bootshine</span> to 220, <span style=\"color:#ff7b1a\">True Strike</span> to 300, <span style=\"color:#ff7b1a\">Snap Punch</span> to 270, <span style=\"color:#ff7b1a\">Twin Snakes</span> to 380, <span style=\"color:#ff7b1a\">Demolish</span> to 320, <span style=\"color:#ff7b1a\">Dragon Kick</span> to 280, and <span style=\"color:#ff7b1a\">The Forbidden Chakra</span> to 400.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Schlag auf Schlag</span>: 220<br>Attacke-Wert von <span style=\"color:#ffbfff\">Wahrer Schlag</span>: 300<br>Attacke-Wert von <span style=\"color:#ffbfff\">Peitschenhieb</span>: 270<br>Attacke-Wert von <span style=\"color:#ffbfff\">Doppelviper</span>: 380<br>Attacke-Wert von <span style=\"color:#ffbfff\">Demolieren</span>: 320<br>Attacke-Wert von <span style=\"color:#ffbfff\">Drachentritt</span>: 280<br>Attacke-Wert von <span style=\"color:#ffbfff\">Verbotenes Chakra</span>: 400",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">連撃の威力：</span>220<br><span style=\"color:#ffcc22\">正拳突きの威力：</span>300<br><span style=\"color:#ffcc22\">崩拳の威力：</span>270<br><span style=\"color:#ffcc22\">双掌打の威力：</span>380<br><span style=\"color:#ffcc22\">破砕拳の威力：</span>320<br><span style=\"color:#ffcc22\">双竜脚の威力：</span>280<br><span style=\"color:#ffcc22\">陰陽闘気斬の威力：</span>400",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Volée de coups&nbsp;:</span> 220<br><span style=\"color:#ffff66\">Puissance de Coup de poing direct&nbsp;:</span> 300<br><span style=\"color:#ffff66\">Puissance de Coup de poing brusque&nbsp;:</span> 270<br><span style=\"color:#ffff66\">Puissance de Serpents jumeaux&nbsp;:</span> 380<br><span style=\"color:#ffff66\">Puissance de Démolition&nbsp;:</span> 320<br><span style=\"color:#ffff66\">Puissance de Tacle du dragon&nbsp;:</span> 280<br><span style=\"color:#ffff66\">Puissance de Chakra interdit&nbsp;:</span> 400"
     }
   },
   "519": {
@@ -7853,10 +7853,10 @@
     "level": 55,
     "job": 41,
     "description": {
-      "en": "Allows the execution of <span style=\"color:#ff7b1a\">Death Rattle</span>.<br>Can only be executed after successfully completing a combo with <span style=\"color:#ff7b1a\">Flanksting Strike</span>, <span style=\"color:#ff7b1a\">Flanksbane Fang</span>, <span style=\"color:#ff7b1a\">Hindsting Strike</span>, or <span style=\"color:#ff7b1a\">Hindsbane Fang</span>.",
-      "de": "Nach erfolgreicher Kombo mit <span style=\"color:#ffbfff\">Flankenbiss</span>, <span style=\"color:#ffbfff\">Flankenreißer</span>, <span style=\"color:#ffbfff\">Nackenbiss</span> oder <span style=\"color:#ffbfff\">Nackenreißer</span> kannst du <span style=\"color:#ffbfff\">Todesrasseln</span> ausführen.",
-      "ja": "蛇尾撃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>参の牙【側撃】、参の牙【側裂】、参の牙【背撃】、参の牙【背裂】のコンボ成功時",
-      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Cascabelle mortelle</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> réussir les combos avec <span style=\"color:#ff7b1a\">Saignée du flanc</span>, <span style=\"color:#ff7b1a\">Déchirement du flanc</span>, <span style=\"color:#ff7b1a\">Saignée de l'échine</span> et <span style=\"color:#ff7b1a\">Déchirement de l'échine</span>."
+      "en": "Allows the execution of <span style=\"color:#ff7b1a\">Death Rattle</span>.<br>Can only be executed upon successfully landing <span style=\"color:#ff7b1a\">Flanksting Strike</span>, <span style=\"color:#ff7b1a\">Flanksbane Fang</span>, <span style=\"color:#ff7b1a\">Hindsting Strike</span>, or <span style=\"color:#ff7b1a\">Hindsbane Fang</span>.",
+      "de": "Nach erfolgreicher Ausführung von <span style=\"color:#ffbfff\">Flankenbiss</span>, <span style=\"color:#ffbfff\">Flankenreißer</span>, <span style=\"color:#ffbfff\">Nackenbiss</span> oder <span style=\"color:#ffbfff\">Nackenreißer</span> kannst du <span style=\"color:#ffbfff\">Todesrasseln</span> ausführen.",
+      "ja": "蛇尾撃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>参の牙【側撃】、参の牙【側裂】、参の牙【背撃】、参の牙【背裂】の命中時",
+      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Cascabelle mortelle</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> après avoir utilisé <span style=\"color:#ff7b1a\">Saignée du flanc</span>, <span style=\"color:#ff7b1a\">Déchirement du flanc</span>, <span style=\"color:#ff7b1a\">Saignée de l'échine</span> et <span style=\"color:#ff7b1a\">Déchirement de l'échine</span> avec succès."
     }
   },
   "525": {
@@ -7868,10 +7868,10 @@
     "level": 60,
     "job": 41,
     "description": {
-      "en": "Allows the execution of <span style=\"color:#ff7b1a\">Last Lash</span>.<br>Can only be executed after successfully completing a combo with <span style=\"color:#ff7b1a\">Jagged Maw</span> or <span style=\"color:#ff7b1a\">Bloodied Maw</span>.",
-      "de": "Nach erfolgreicher Kombo mit <span style=\"color:#ffbfff\">Hungernde Kiefer</span> oder <span style=\"color:#ffbfff\">Schlingende Kiefer</span> kannst du <span style=\"color:#ffbfff\">Scharfe Peitsche</span> ausführen.",
-      "ja": "蛇尾閃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>参の大牙【乱撃】および参の大牙【乱裂】のコンボ成功時",
-      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Spirale finale</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> réussir les combos avec <span style=\"color:#ff7b1a\">Déchiquetage vorace</span> et <span style=\"color:#ff7b1a\">Déchiquetage sanglant</span>."
+      "en": "Allows the execution of <span style=\"color:#ff7b1a\">Last Lash</span>.<br>Can only be executed after successfully landing <span style=\"color:#ff7b1a\">Jagged Maw</span> or <span style=\"color:#ff7b1a\">Bloodied Maw</span>.",
+      "de": "Nach erfolgreicher Ausführung von <span style=\"color:#ffbfff\">Hungernde Kiefer</span> oder <span style=\"color:#ffbfff\">Schlingende Kiefer</span> kannst du <span style=\"color:#ffbfff\">Scharfe Peitsche</span> ausführen.",
+      "ja": "蛇尾閃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>参の大牙【乱撃】および参の大牙【乱裂】の命中時",
+      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Spirale finale</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> après avoir utilisé <span style=\"color:#ff7b1a\">Déchiquetage vorace</span> et <span style=\"color:#ff7b1a\">Déchiquetage sanglant</span> avec succès."
     }
   },
   "526": {
@@ -7885,8 +7885,8 @@
     "description": {
       "en": "Allows the execution of <span style=\"color:#ff7b1a\">Twinfang Bite</span> and <span style=\"color:#ff7b1a\">Twinblood Bite</span>.<br>Can only be executed after successfully landing <span style=\"color:#ff7b1a\">Hunter's Coil</span> or <span style=\"color:#ff7b1a\">Swiftskin's Coil</span>.",
       "de": "Nach erfolgreicher Ausführung von <span style=\"color:#ffbfff\">Blutiger Otterngriff</span> oder <span style=\"color:#ffbfff\">Flinker Otterngriff</span> kannst du <span style=\"color:#ffbfff\">Biss der Zwillingsfänge</span> und <span style=\"color:#ffbfff\">Biss der Zwillingsschuppen</span> ausführen.",
-      "ja": "双牙連撃および双牙乱撃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>弐の蛇【猛襲】および弐の蛇【疾速】のコンボ成功時",
-      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Morsure vicieuse</span> et <span style=\"color:#ff7b1a\">Morsure frénétique</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> réussir les combos avec <span style=\"color:#ff7b1a\">Anneaux du prédateur</span> et <span style=\"color:#ff7b1a\">Anneaux de l'écorcheur</span>."
+      "ja": "双牙連撃および双牙乱撃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>弐の蛇【猛襲】および弐の蛇【疾速】の命中時",
+      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Morsure vicieuse</span> et <span style=\"color:#ff7b1a\">Morsure frénétique</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> après avoir utilisé <span style=\"color:#ff7b1a\">Anneaux du prédateur</span> et <span style=\"color:#ff7b1a\">Anneaux de l'écorcheur</span> avec succès."
     }
   },
   "527": {
@@ -7900,8 +7900,8 @@
     "description": {
       "en": "Allows the execution of <span style=\"color:#ff7b1a\">Twinfang Thresh</span> and <span style=\"color:#ff7b1a\">Twinblood Thresh</span>.<br>Can only be executed after successfully landing <span style=\"color:#ff7b1a\">Hunter's Den</span> or <span style=\"color:#ff7b1a\">Swiftskin's Den</span>.",
       "de": "Nach erfolgreicher Ausführung von <span style=\"color:#ffbfff\">Blutige Otterngrube</span> oder <span style=\"color:#ffbfff\">Flinke Otterngrube</span> kannst du <span style=\"color:#ffbfff\">Nest der Zwillingsfänge</span> und <span style=\"color:#ffbfff\">Nest der Zwillingsschuppen</span> ausführen.",
-      "ja": "双牙連閃および双牙乱閃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>弐の大蛇【猛襲】および弐の大蛇【疾速】のコンボ成功時",
-      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Vortex vicieux</span> et <span style=\"color:#ff7b1a\">Vortex frénétique</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> réussir les combos avec <span style=\"color:#ff7b1a\">Tanière du prédateur</span> et <span style=\"color:#ff7b1a\">Tanière de l'écorcheur</span>."
+      "ja": "双牙連閃および双牙乱閃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>弐の大蛇【猛襲】および弐の大蛇【疾速】の命中時",
+      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Vortex vicieux</span> et <span style=\"color:#ff7b1a\">Vortex frénétique</span>.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> après avoir utilisé <span style=\"color:#ff7b1a\">Tanière du prédateur</span> et <span style=\"color:#ff7b1a\">Tanière de l'écorcheur</span> avec succès."
     }
   },
   "528": {
@@ -7975,8 +7975,8 @@
     "description": {
       "en": "Allows the execution of <span style=\"color:#ff7b1a\">Uncoiled Twinfang</span> or <span style=\"color:#ff7b1a\">Uncoiled Twinblood</span> after successfully landing <span style=\"color:#ff7b1a\">Uncoiled Fury</span>.",
       "de": "Nach erfolgreicher <span style=\"color:#ffbfff\">Schlangenschwinge</span> kannst du <span style=\"color:#ffbfff\">Flug der Zwillingsfänge</span> und <span style=\"color:#ffbfff\">Flug der Zwillingsschuppen</span> ausführen.",
-      "ja": "飛蛇連尾撃および飛蛇乱尾撃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>飛蛇の尾実行時",
-      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Assaut vicieux</span> et <span style=\"color:#ff7b1a\">Assaut frénétique</span> après avoir utilisé <span style=\"color:#ff7b1a\">Assaut ophidien</span>."
+      "ja": "飛蛇連尾撃および飛蛇乱尾撃が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>飛蛇の尾の命中時",
+      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Assaut vicieux</span> et <span style=\"color:#ff7b1a\">Assaut frénétique</span> après avoir utilisé <span style=\"color:#ff7b1a\">Assaut ophidien</span> avec succès."
     }
   },
   "533": {
@@ -8003,10 +8003,10 @@
     "level": 100,
     "job": 41,
     "description": {
-      "en": "Allows the execution of <span style=\"color:#ff7b1a\">First Legacy</span> after <span style=\"color:#ff7b1a\">First Generation</span>, <span style=\"color:#ff7b1a\">Second Legacy</span> after <span style=\"color:#ff7b1a\">Second Generation</span>, <span style=\"color:#ff7b1a\">Third Legacy</span> after <span style=\"color:#ff7b1a\">Third Generation</span>, and <span style=\"color:#ff7b1a\">Fourth Legacy</span> after <span style=\"color:#ff7b1a\">Fourth Generation</span>.",
+      "en": "Allows the execution of <span style=\"color:#ff7b1a\">First Legacy</span> after landing <span style=\"color:#ff7b1a\">First Generation</span>, <span style=\"color:#ff7b1a\">Second Legacy</span> after landing <span style=\"color:#ff7b1a\">Second Generation</span>, <span style=\"color:#ff7b1a\">Third Legacy</span> after landing <span style=\"color:#ff7b1a\">Third Generation</span>, and <span style=\"color:#ff7b1a\">Fourth Legacy</span> after landing <span style=\"color:#ff7b1a\">Fourth Generation</span>.",
       "de": "Nach erfolgreicher Ausführung von <span style=\"color:#ffbfff\">Erstes Blut</span>, <span style=\"color:#ffbfff\">Zweites Blut</span>, <span style=\"color:#ffbfff\">Drittes Blut</span> und <span style=\"color:#ffbfff\">Viertes Blut</span> kannst du entsprechend <span style=\"color:#ffbfff\">Erstes Erbe</span>, <span style=\"color:#ffbfff\">Zweites Erbe</span>, <span style=\"color:#ffbfff\">Drittes Erbe</span> und <span style=\"color:#ffbfff\">Viertes Erbe</span> ausführen.",
-      "ja": "祖霊の蛇【壱】、祖霊の蛇【弐】、祖霊の蛇【参】、祖霊の蛇【肆】が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>祖霊の牙【壱】、祖霊の牙【弐】、祖霊の牙【参】、祖霊の牙【肆】それぞれの実行時",
-      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Premier cycle</span>, <span style=\"color:#ff7b1a\">Second cycle</span>, <span style=\"color:#ff7b1a\">Troisième cycle</span> et <span style=\"color:#ff7b1a\">Quatrième cycle</span> après avoir utilisé respectivement <span style=\"color:#ff7b1a\">Première ère</span>, <span style=\"color:#ff7b1a\">Seconde ère</span>, <span style=\"color:#ff7b1a\">Troisième ère</span> et <span style=\"color:#ff7b1a\">Quatrième ère</span>."
+      "ja": "祖霊の蛇【壱】、祖霊の蛇【弐】、祖霊の蛇【参】、祖霊の蛇【肆】が実行できるようになる。<br><span style=\"color:#ffcc22\">発動条件：</span>祖霊の牙【壱】、祖霊の牙【弐】、祖霊の牙【参】、祖霊の牙【肆】それぞれの命中時",
+      "fr": "Permet d'utiliser <span style=\"color:#ff7b1a\">Premier cycle</span>, <span style=\"color:#ff7b1a\">Second cycle</span>, <span style=\"color:#ff7b1a\">Troisième cycle</span> et <span style=\"color:#ff7b1a\">Quatrième cycle</span> après avoir utilisé respectivement <span style=\"color:#ff7b1a\">Première ère</span>, <span style=\"color:#ff7b1a\">Seconde ère</span>, <span style=\"color:#ff7b1a\">Troisième ère</span> et <span style=\"color:#ff7b1a\">Quatrième ère</span> avec succès."
     }
   },
   "535": {
@@ -8336,7 +8336,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "557": {
@@ -8351,7 +8351,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "558": {
@@ -8366,7 +8366,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "559": {
@@ -8381,7 +8381,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "560": {
@@ -8396,7 +8396,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "561": {
@@ -8411,7 +8411,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "562": {
@@ -8426,7 +8426,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "563": {
@@ -8441,7 +8441,7 @@
       "en": "Grants <span style=\"color:#ffff66\">Expedience</span> for 1 step upon using <span style=\"color:#ff7b1a\">Hasty Touch</span>.<br><span style=\"color:#ffcc22\">Expedience Effect: </span>Upgrades <span style=\"color:#ff7b1a\">Hasty Touch</span> to <span style=\"color:#ff7b1a\">Daring Touch</span>.",
       "de": "Gewährt dir <span style=\"color:#ffff66\">Kühne Hand</span>.<br>Dauer: 1 Arbeitsschritt<br>Effekt von <span style=\"color:#ffff66\">Kühne Hand</span>: <span style=\"color:#ffbfff\">Hastige Veredelung</span> ändert sich zu <span style=\"color:#ffbfff\">Kühne Veredelung</span>.<br>Kombo-Bedingung: <span style=\"color:#ffbfff\">Hastige Veredelung</span>",
       "ja": "自身に「匠の好機」が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>1ターン<br><span style=\"color:#ffcc22\">匠の好機効果：</span>ヘイスティタッチがデアリングタッチに変化する<br><span style=\"color:#ffcc22\">発動条件：</span>ヘイスティタッチ成功時",
-      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> En cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
+      "fr": "Vous octroie l'effet Opportunité experte.<br><span style=\"color:#ffff66\">Opportunité experte&nbsp;:</span> en cas de réussite, <span style=\"color:#ff7b1a\">Ouvrage hâtif</span> devient <span style=\"color:#ff7b1a\">Ouvrage audacieux</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 1 tour"
     }
   },
   "564": {
@@ -8528,10 +8528,10 @@
     "level": 100,
     "job": 21,
     "description": {
-      "en": "Grants the effect of <span style=\"color:#ffff66\">Primal Ruination Ready</span> after executing <span style=\"color:#ff7b1a\">Primal Rend</span>.<br><span style=\"color:#ffcc22\">Duration: </span>30s",
-      "de": "Erfolgreiche Ausführung von <span style=\"color:#ffbfff\">Brachiale Gewalt</span> gewährt dir <span style=\"color:#ffff66\">Ruinator</span>.<br>Dauer: 30 Sekunden",
-      "ja": "自身に<span style=\"color:#ff7b1a\">「ルイネーター実行可」</span>が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>30秒<br><span style=\"color:#ffcc22\">発動条件：</span>プライマルレンド実行時",
-      "fr": "Permet de recevoir <span style=\"color:#ff7b1a\">Dévastateur préparé</span> lorsque vous utilisez <span style=\"color:#ff7b1a\">Griffade primitive</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 30s"
+      "en": "Grants the effect of <span style=\"color:#ffff66\">Primal Ruination Ready</span> after executing <span style=\"color:#ff7b1a\">Primal Rend</span>.<br><span style=\"color:#ffcc22\">Duration: </span>20s",
+      "de": "Erfolgreiche Ausführung von <span style=\"color:#ffbfff\">Brachiale Gewalt</span> gewährt dir <span style=\"color:#ffff66\">Ruinator</span>.<br>Dauer: 20 Sekunden",
+      "ja": "自身に<span style=\"color:#ff7b1a\">「ルイネーター実行可」</span>が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>20秒<br><span style=\"color:#ffcc22\">発動条件：</span>プライマルレンド実行時",
+      "fr": "Permet de recevoir <span style=\"color:#ff7b1a\">Dévastateur préparé</span> lorsque vous utilisez <span style=\"color:#ff7b1a\">Griffade primitive</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 20s"
     }
   },
   "570": {
@@ -8828,7 +8828,7 @@
     "level": 82,
     "job": 34,
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a\">Third Eye</span> to <span style=\"color:#ff7b1a\">Tengetsu</span>.",
+      "en": "Upgrades <span style=\"color:#ff7b1a\">Third Eye</span> to <span style=\"color:#ff7b1a\">Tengentsu</span>.",
       "de": "Verbessert <span style=\"color:#ffbfff\">Drittes Auge</span> zu <span style=\"color:#ffbfff\">Tengentsu</span>.",
       "ja": "心眼が天眼通に変化する。",
       "fr": "Remplace <span style=\"color:#ff7b1a\">Troisième œil</span> par <span style=\"color:#ff7b1a\">Tengentsû</span>."
@@ -9188,7 +9188,7 @@
     "level": 92,
     "job": 25,
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a\">Thunder</span> to <span style=\"color:#ff7b1a\">High Thunder</span> and <span style=\"color:#ff7b1a\">Thunder IV</span> to <span style=\"color:#ff7b1a\">High Thunder IV</span>.",
+      "en": "Upgrades <span style=\"color:#ff7b1a\">Thunder III</span> to <span style=\"color:#ff7b1a\">High Thunder</span> and <span style=\"color:#ff7b1a\">Thunder IV</span> to <span style=\"color:#ff7b1a\">High Thunder II</span>.",
       "de": "Verbessert <span style=\"color:#ffbfff\">Blitzga</span> zu <span style=\"color:#ffbfff\">Hoher Blitz</span> und <span style=\"color:#ffbfff\">Blitzka</span> zu <span style=\"color:#ffbfff\">Hohes Blitzra</span>.",
       "ja": "サンダガがハイサンダーに、サンダジャがハイサンダラに変化する。",
       "fr": "Remplace <span style=\"color:#ff7b1a\">Méga Foudre</span> par <span style=\"color:#ff7b1a\">Foudre majeure</span> et <span style=\"color:#ff7b1a\">Giga Foudre</span> par <span style=\"color:#ff7b1a\">Extra Foudre majeure</span>."
@@ -9716,7 +9716,7 @@
       "en": "After exhausting a gathering point's resources, occasionally restores all integrity and gathering attempts.<br>GP is also fully restored, but all gatherer effects expire.<br>Effect cannot be triggered by certain gathering points such as those found in levequests.",
       "de": "Nachdem ein Nutzbaum oder eine üppige Vegetation abgebaut wurde, kann es vorkommen, dass die Belastbarkeit bzw. die Anzahl der Sammelversuche vollständig wiederhergestellt werden und ein weiteres Mal gesammelt werden kann. In diesem Fall werden auch alle SP regeneriert, aber jegliche Status entfernt.<br>An bestimmten Nutzbäumen oder üppigen Vegetationen kann dieser Effekt nicht auftreten, wie beispielsweise solche, die zu einem Freibrief gehören.",
       "ja": "良木や草刈場を採集し終わったとき、まれに耐久／採集回数が最大まで回復し、もう一度採集ができるようになる。<br>その際、GPが全回復し、採集に関わるステータスは解除される。なお、リーヴ関連など、一部の良木や草刈場では発生しない。",
-      "fr": "En de rares occasions, restaure au maximum vos tentatives de récolte après avoir épuisé les ressources d'un arbre matrue ou d'un carré de végétation.<br>Lorsque l'effet se déclenche, tous vos PR sont restaurés, mais les effets obtenus lors de la récolte se dissipent.<br>Ne peut être déclenché dans des contextes spécifiques comme les mandats de guilde."
+      "fr": "En de rares occasions, restaure au maximum vos tentatives de récolte après avoir épuisé les ressources d'un arbre mature ou d'un carré de végétation.<br>Lorsque l'effet se déclenche, tous vos PR sont restaurés, mais les effets obtenus lors de la récolte se dissipent.<br>Ne peut être déclenché dans des contextes spécifiques comme les mandats de guilde."
     }
   },
   "649": {
@@ -9893,10 +9893,10 @@
     "level": 94,
     "job": 20,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Twin Snakes</span> to 380, <span style=\"color:#ff7b1a\">Demolish</span> to 340, <span style=\"color:#ff7b1a\">Dragon Kick</span> to 320, and <span style=\"color:#ff7b1a\">Six-sided Star</span> to 780.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Doppelviper</span>: 380<br>Attacke-Wert von <span style=\"color:#ffbfff\">Demolieren</span>: 340<br>Attacke-Wert von <span style=\"color:#ffbfff\">Drachentritt</span>: 320<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sechsstern-Tritt</span>: 780",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">双掌打の威力：</span>380<br><span style=\"color:#ffcc22\">破砕拳の威力：</span>340<br><span style=\"color:#ffcc22\">双竜脚の威力：</span>320<br><span style=\"color:#ffcc22\">六合星導脚の威力：</span>780",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Serpents jumeaux&nbsp;:</span> 380<br><span style=\"color:#ffff66\">Puissance de Démolition&nbsp;:</span> 340<br><span style=\"color:#ffff66\">Puissance de Tacle du dragon&nbsp;:</span> 320<br><span style=\"color:#ffff66\">Puissance d'Étoile à six branches&nbsp;:</span> 780"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Twin Snakes</span> to 420, <span style=\"color:#ff7b1a\">Demolish</span> to 360, <span style=\"color:#ff7b1a\">Dragon Kick</span> to 320, and <span style=\"color:#ff7b1a\">Six-sided Star</span> to 780.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Doppelviper</span>: 420<br>Attacke-Wert von <span style=\"color:#ffbfff\">Demolieren</span>: 360<br>Attacke-Wert von <span style=\"color:#ffbfff\">Drachentritt</span>: 320<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sechsstern-Tritt</span>: 780",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">双掌打の威力：</span>420<br><span style=\"color:#ffcc22\">破砕拳の威力：</span>360<br><span style=\"color:#ffcc22\">双竜脚の威力：</span>320<br><span style=\"color:#ffcc22\">六合星導脚の威力：</span>780",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Serpents jumeaux&nbsp;:</span> 420<br><span style=\"color:#ffff66\">Puissance de Démolition&nbsp;:</span> 360<br><span style=\"color:#ffff66\">Puissance de Tacle du dragon&nbsp;:</span> 320<br><span style=\"color:#ffff66\">Puissance d'Étoile à six branches&nbsp;:</span> 780"
     }
   },
   "661": {
@@ -10074,7 +10074,7 @@
     "job": 42,
     "description": {
       "en": "Increases the potency of <span style=\"color:#ff7b1a\">Fire in Red</span> to 280, <span style=\"color:#ff7b1a\">Aero in Green</span> to 320, <span style=\"color:#ff7b1a\">Water in Blue</span> to 360, <span style=\"color:#ff7b1a\">Pom Muse</span> to 1,000, <span style=\"color:#ff7b1a\">Winged Muse</span> to 1,000, <span style=\"color:#ff7b1a\">Mog of the Ages</span> to 1,100, and <span style=\"color:#ff7b1a\">Hammer Stamp</span> to 380.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Feuer in Rot</span>: 280<br>Attacke-Wert von <span style=\"color:#ffbfff\">Wind in Grün</span>: 320<br>Attacke-Wert von <span style=\"color:#ffbfff\">Aqua in Blau</span>: 360<br>Attacke-Wert von <span style=\"color:#ffbfff\">Muse mit Bommel</span>: 1000<br>Attacke-Wert von <span style=\"color:#ffbfff\">Beschwingte Muse</span>: 1000<br>Attacke-Wert von <span style=\"color:#ffbfff\">Opus Mognum</span>: 1100<br>Attacke-Wert von <span style=\"color:#ffbfff\">Hammerstempel</span>: 380",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Feuer in Rot</span>: 280<br>Attacke-Wert von <span style=\"color:#ffbfff\">Wind in Grün</span>: 320<br>Attacke-Wert von <span style=\"color:#ffbfff\">Aqua in Blau</span>: 360<br>Attacke-Wert von <span style=\"color:#ffbfff\">Muse mit Bommel</span>: 1.000<br>Attacke-Wert von <span style=\"color:#ffbfff\">Beschwingte Muse</span>: 1.000<br>Attacke-Wert von <span style=\"color:#ffbfff\">Opus Mognum</span>: 1.100<br>Attacke-Wert von <span style=\"color:#ffbfff\">Hammerstempel</span>: 380",
       "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">レッドファイアの威力：</span>280<br><span style=\"color:#ffcc22\">グリーンエアロの威力：</span>320<br><span style=\"color:#ffcc22\">ブルーウォータの威力：</span>360<br><span style=\"color:#ffcc22\">イマジンポンポンの威力：</span>1000<br><span style=\"color:#ffcc22\">イマジンウィングの威力：</span>1000<br><span style=\"color:#ffcc22\">モーグリストリームの威力：</span>1100<br><span style=\"color:#ffcc22\">ハンマースタンプの威力：</span>380",
       "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Feu en rouge&nbsp;:</span> 280<br><span style=\"color:#ffff66\">Puissance de Vent en vert&nbsp;:</span> 320<br><span style=\"color:#ffff66\">Puissance d'Eau en bleu&nbsp;:</span> 360<br><span style=\"color:#ffff66\">Puissance d'Imagi Pompon&nbsp;:</span> 1000<br><span style=\"color:#ffff66\">Puissance d'Imagi Ailes&nbsp;:</span> 1000<br><span style=\"color:#ffff66\">Puissance de Mognum opus&nbsp;:</span> 1100<br><span style=\"color:#ffff66\">Puissance de Tamponnage Marteau&nbsp;:</span> 380"
     }
@@ -10088,10 +10088,10 @@
     "level": 94,
     "job": 33,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Combust III</span>'s damage over time to 70 and <span style=\"color:#ff7b1a\">Fall Malefic</span> to 270.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert des Schaden-über-Zeit-Effekts von <span style=\"color:#ffbfff\">Konjunktion III</span>: 70<br>Attacke-Wert von <span style=\"color:#ffbfff\">Aspekt im Fall</span>: 270",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">コンバガの継続ダメージの威力：</span>70<br><span style=\"color:#ffcc22\">フォールマレフィクの威力：</span>270",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Conjonction supérieure III&nbsp;:</span> 70<br><span style=\"color:#ffff66\">Puissance de Malfaisance en chute&nbsp;:</span> 270"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Combust III</span>'s damage over time to 70, <span style=\"color:#ff7b1a\">Fall Malefic</span> to 270, and <span style=\"color:#ff7b1a\">Macrocosmos</span> to 270.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert des Schaden-über-Zeit-Effekts von <span style=\"color:#ffbfff\">Konjunktion III</span>: 70<br>Attacke-Wert von <span style=\"color:#ffbfff\">Aspekt im Fall</span>: 270<br>Attacke-Wert von <span style=\"color:#ffbfff\">Makrokosmos</span>: 270",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">コンバガの継続ダメージの威力：</span>70<br><span style=\"color:#ffcc22\">フォールマレフィクの威力：</span>270<br><span style=\"color:#ffcc22\">マクロコスモスの威力：</span>270",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Conjonction supérieure III&nbsp;:</span> 70<br><span style=\"color:#ffff66\">Puissance de Malfaisance en chute&nbsp;:</span> 270<br><span style=\"color:#ffff66\">Puissance de Macrocosme&nbsp;:</span> 270"
     }
   },
   "674": {
@@ -10149,7 +10149,7 @@
     "job": 42,
     "description": {
       "en": "Increases the potency of <span style=\"color:#ff7b1a\">Fire in Red</span> to 380, <span style=\"color:#ff7b1a\">Aero in Green</span> to 420, <span style=\"color:#ff7b1a\">Water in Blue</span> to 460, <span style=\"color:#ff7b1a\">Pom Muse</span> to 1,100, <span style=\"color:#ff7b1a\">Winged Muse</span> to 1,100, <span style=\"color:#ff7b1a\">Mog of the Ages</span> to 1,300, <span style=\"color:#ff7b1a\">Hammer Stamp</span> to 520, <span style=\"color:#ff7b1a\">Blizzard in Cyan</span> to 700, <span style=\"color:#ff7b1a\">Stone in Yellow</span> to 740, <span style=\"color:#ff7b1a\">Thunder in Magenta</span> to 780, and <span style=\"color:#ff7b1a\">Holy in White</span> to 460.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Feuer in Rot</span>: 380<br>Attacke-Wert von <span style=\"color:#ffbfff\">Wind in Grün</span>: 420<br>Attacke-Wert von <span style=\"color:#ffbfff\">Aqua in Blau</span>: 460<br>Attacke-Wert von <span style=\"color:#ffbfff\">Muse mit Bommel</span>: 1100<br>Attacke-Wert von <span style=\"color:#ffbfff\">Beschwingte Muse</span>: 1100<br>Attacke-Wert von <span style=\"color:#ffbfff\">Opus Mognum</span>: 1300<br>Attacke-Wert von <span style=\"color:#ffbfff\">Hammerstempel</span>: 520<br>Attacke-Wert von <span style=\"color:#ffbfff\">Eis in Cyan</span>: 700<br>Attacke-Wert von <span style=\"color:#ffbfff\">Stein in Gelb</span>: 740<br>Attacke-Wert von <span style=\"color:#ffbfff\">Blitz in Magenta</span>: 780<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sanctus in Weiß</span>: 460",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Feuer in Rot</span>: 380<br>Attacke-Wert von <span style=\"color:#ffbfff\">Wind in Grün</span>: 420<br>Attacke-Wert von <span style=\"color:#ffbfff\">Aqua in Blau</span>: 460<br>Attacke-Wert von <span style=\"color:#ffbfff\">Muse mit Bommel</span>: 1.100<br>Attacke-Wert von <span style=\"color:#ffbfff\">Beschwingte Muse</span>: 1.100<br>Attacke-Wert von <span style=\"color:#ffbfff\">Opus Mognum</span>: 1.300<br>Attacke-Wert von <span style=\"color:#ffbfff\">Hammerstempel</span>: 520<br>Attacke-Wert von <span style=\"color:#ffbfff\">Eis in Cyan</span>: 700<br>Attacke-Wert von <span style=\"color:#ffbfff\">Stein in Gelb</span>: 740<br>Attacke-Wert von <span style=\"color:#ffbfff\">Blitz in Magenta</span>: 780<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sanctus in Weiß</span>: 460",
       "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">レッドファイアの威力：</span>380<br><span style=\"color:#ffcc22\">グリーンエアロの威力：</span>420<br><span style=\"color:#ffcc22\">ブルーウォータの威力：</span>460<br><span style=\"color:#ffcc22\">イマジンポンポンの威力：</span>1100<br><span style=\"color:#ffcc22\">イマジンウィングの威力：</span>1100<br><span style=\"color:#ffcc22\">モーグリストリームの威力：</span>1300<br><span style=\"color:#ffcc22\">ハンマースタンプの威力：</span>520<br><span style=\"color:#ffcc22\">シアンブリザドの威力：</span>700<br><span style=\"color:#ffcc22\">イエローストーンの威力：</span>740<br><span style=\"color:#ffcc22\">マゼンタサンダーの威力：</span>780<br><span style=\"color:#ffcc22\">ホワイトホーリーの威力：</span>460",
       "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Feu en rouge&nbsp;:</span> 380<br><span style=\"color:#ffff66\">Puissance de Vent en vert&nbsp;:</span> 420<br><span style=\"color:#ffff66\">Puissance d'Eau en bleu&nbsp;:</span> 460<br><span style=\"color:#ffff66\">Puissance d'Imagi Pompon&nbsp;:</span> 1100<br><span style=\"color:#ffff66\">Puissance d'Imagi Ailes&nbsp;:</span> 1100<br><span style=\"color:#ffff66\">Puissance de Mognum opus&nbsp;:</span> 1300<br><span style=\"color:#ffff66\">Puissance de Tamponnage Marteau&nbsp;:</span> 520<br><span style=\"color:#ffff66\">Puissance de Glace en cyan&nbsp;:</span> 700<br><span style=\"color:#ffff66\">Puissance de Terre en jaune&nbsp;:</span> 740<br><span style=\"color:#ffff66\">Puissance de Foudre en magenta&nbsp;:</span> 780<br><span style=\"color:#ffff66\">Puissance de Miracle en blanc&nbsp;:</span> 460"
     }
