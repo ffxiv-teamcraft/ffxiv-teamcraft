@@ -13010,7 +13010,7 @@
   "1627": {
     "en": "Hey Now, You're an All-star",
     "ja": "導かれし盟友たち",
-    "de": "Freund der Wilden",
+    "de": "Freundesfreund",
     "fr": "Petit meurtre entre amis",
     "icon": "/i/060000/060033.png",
     "itemReward": 0
@@ -28568,27 +28568,27 @@
     "itemReward": 0
   },
   "3572": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pick on Someone Your Own Size I",
+    "ja": "アルカディアのライトヘビー級を制覇せし者：ランク1",
+    "de": "Tor des Arkadion I",
+    "fr": "Champion poids mi-lourds de l'Arcadion I",
+    "icon": "/i/002000/002981.png",
     "itemReward": 0
   },
   "3573": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pick on Someone Your Own Size II",
+    "ja": "アルカディアのライトヘビー級を制覇せし者：ランク2",
+    "de": "Tor des Arkadion II",
+    "fr": "Champion poids mi-lourds de l'Arcadion II",
+    "icon": "/i/002000/002981.png",
     "itemReward": 0
   },
   "3574": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pick on Someone Your Own Size III",
+    "ja": "アルカディアのライトヘビー級を制覇せし者：ランク3",
+    "de": "Tor des Arkadion III",
+    "fr": "Champion poids mi-lourds de l'Arcadion III",
+    "icon": "/i/002000/002981.png",
     "itemReward": 0
   },
   "3575": {

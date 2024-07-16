@@ -51640,7 +51640,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Inspired by <span style=\"color:#ff7b1a\">Starry Muse</span>, your spell cast and recast times are reduced.",
-      "de": "Die Inszenierung der <span style=\"color:#ffbfff\">Sternenmuse</span> verkürzt die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie.",
+      "de": "Die Inszenierung der <span style=\"color:#ffbfff\">Sternenmuse</span> verkürzt die Intervalle zwischen Auto-Attacken und die<br>(Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie.",
       "ja": "イマジンスカイの恩恵により、魔法のキャストタイムとリキャストタイムが短縮された状態。",
       "fr": "Le ciel peint réduit les temps de lancement et de recharge des sorts."
     }
@@ -51653,7 +51653,7 @@
     "icon": "/i/013000/013813.png",
     "maxStacks": 0,
     "description": {
-      "en": "Able to execute <span style=\"color:#ff7b1a\">Subtractive Palette</span>.",
+      "en": "Able to execute <span style=\"color:#ff7b1a\">Subtractive Palette</span> without cost.",
       "de": "<span style=\"color:#ffbfff\">Subtraktive Palette</span> kann gewirkt werden.",
       "ja": "サブトラクティブパレットを実行できる状態。",
       "fr": "Palette soustractive peut être lancée."
@@ -53238,7 +53238,7 @@
       "en": "Apollyon's wings are enhanced.",
       "de": "Die Flügel von Apollyon sind verstärkt.",
       "ja": "アポリオンの翅が強化された状態。",
-      "fr": "Les ailes d'Apollyon sont renforcées."
+      "fr": "Les ailes de l'apollyon sont renforcées."
     }
   },
   "3804": {
@@ -53252,7 +53252,7 @@
       "en": "Apollyon's blades are enhanced.",
       "de": "Die Sicheln von Apollyon sind verstärkt.",
       "ja": "アポリオンの鎌が強化された状態。",
-      "fr": "Les ravisseuses d'Apollyon sont renforcées."
+      "fr": "Les ravisseuses de l'apollyon sont renforcées."
     }
   },
   "3805": {
@@ -53298,17 +53298,17 @@
     }
   },
   "3808": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Directional Disregard",
+    "de": "Richtungsbedingungen Ignoriert",
+    "ja": "方向指定解除",
+    "fr": "Libération directionnelle",
+    "icon": "/i/014000/014224.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "All action direction requirements are nullified.",
+      "de": "Richtungsbedingungen für Kommandos werden als erfüllt betrachtet.",
+      "ja": "方向指定条件のあるアクションが、どの方向から実行しても成功する状態。",
+      "fr": "Les actions directionnelles réussissent dans n'importe quelle position."
     }
   },
   "3809": {
@@ -53928,7 +53928,7 @@
     }
   },
   "3853": {
-    "en": "Tengetsu",
+    "en": "Tengentsu",
     "de": "Tengentsu",
     "ja": "天眼通",
     "fr": "Tengentsû",
@@ -53942,7 +53942,7 @@
     }
   },
   "3854": {
-    "en": "Tengetsu's Foresight",
+    "en": "Tengentsu's Foresight",
     "de": "Tengentsu: Sei",
     "ja": "天眼通:生",
     "fr": "Tengentsû&nbsp;: Sei",
@@ -54504,7 +54504,7 @@
   "3894": {
     "en": "Helios Conjunction",
     "de": "Helios in Konjunktion",
-    "ja": "コンジャクション・ヘリオス",
+    "ja": "コンジャンクション・ヘリオス",
     "fr": "Hélios combiné",
     "icon": "/i/013000/013265.png",
     "maxStacks": 0,
@@ -54796,17 +54796,17 @@
     }
   },
   "3915": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Lovely Poison",
+    "de": "Liebliches Gift",
+    "ja": "B・ポイズン",
+    "fr": "Affection empoisonnée",
+    "icon": "/i/014000/014138.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weapon has been lovingly coated with venom.",
+      "de": "Die eigene Waffe ist von Liebe und tödlichem Gift umhüllt.",
+      "ja": "愛とともに、自身の武器に猛毒を仕込んだ状態。",
+      "fr": "L'arme est chargée d'amour et d'un poison virulent."
     }
   },
   "3916": {
@@ -54824,59 +54824,59 @@
     }
   },
   "3917": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Infatuated",
+    "de": "Entzückt",
+    "ja": "メロメロ：好感",
+    "fr": "Séduction&nbsp;: un peu",
+    "icon": "/i/014000/014140.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering minor heart palpitations due to a growing fondness for Honey B. Lovely. Taking damage over time.",
+      "de": "Entzückt von Suzie Summ Honigsüß, wodurch das eigene Herz schneller schlägt. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーに好感を抱き、動悸が激しくなった状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur se font un peu plus rapide du fait de l'attirance pour Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3918": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Head Over Heels",
+    "de": "Verliebt",
+    "ja": "メロメロ：恋心",
+    "fr": "Séduction&nbsp;: beaucoup",
+    "icon": "/i/014000/014141.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering heart palpitations due to an attraction to Honey B. Lovely. Taking damage over time.",
+      "de": "Verliebt in Suzie Summ Honigsüß, wodurch das eigene Herz wie verrückt rast. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーに恋心を抱き、動悸がさらに激しくなった状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur se font beaucoup plus rapide du fait d'une plus grande attirance pour Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3919": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hopeless Devotion",
+    "de": "Verfallen",
+    "ja": "メロメロ：恋慕",
+    "fr": "Séduction&nbsp;: passionnément",
+    "icon": "/i/014000/014142.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering severe heart palpitations due to undying affection for Honey B. Lovely. Taking damage over time.",
+      "de": "Suzie Summ Honigsüß verfallen, wodurch das eigene Herz bis zum Anschlag pocht. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーを恋慕し、動悸がより激しくなった状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur se font extrêmement plus rapide du fait d'une très grande attirance pour Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3920": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fatal Attraction",
+    "de": "Liebeswahn",
+    "ja": "熱狂",
+    "fr": "À la folie",
+    "icon": "/i/014000/014147.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Honey B. Lovely has taken your heart prisoner.",
+      "de": "Von Suzie Summ Honigsüß komplett in den Bann gezogen. Verliert die Kontrolle über den eigenen Körper und die eigenen Sinne.",
+      "ja": "ハニー・B・ラブリーの虜となり、我を忘れた状態。",
+      "fr": "Complètement sous le charme de Honey B. Lovely et incapable de se contrôler."
     }
   },
   "3921": {
@@ -55076,17 +55076,17 @@
     }
   },
   "3935": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Poison Resistance Down II",
+    "de": "Giftresistenz - (stark)",
+    "ja": "毒耐性低下［強］",
+    "fr": "Résistance au poison réduite+",
+    "icon": "/i/014000/014152.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Poison resistance is significantly reduced.",
+      "de": "Resistenz gegen Gift ist stark verringert.",
+      "ja": "毒に対する耐性が著しく低下した状態。",
+      "fr": "La résistance au poison est considérablement réduite."
     }
   },
   "3936": {
@@ -56280,17 +56280,17 @@
     }
   },
   "4021": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doped",
+    "de": "Aufgeputscht",
+    "ja": "ドーピング",
+    "fr": "Dopage",
+    "icon": "/i/014000/014134.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A performance-enhancing compound is amplifying physical strength. Damage dealt is increased.",
+      "de": "Brutalo Bomber verstärkt seine Muskeln mit Aufputschmitteln. Sein ausgeteilter Schaden ist erhöht.",
+      "ja": "ドーピングにより、ブルートボンバーの筋力が増した状態。与ダメージが上昇する。",
+      "fr": "La force musculaire de Brute Bomber est décuplée par l'absorption d'une substance dopante. Les dégâts qu'il inflige sont augmentés."
     }
   },
   "4022": {
@@ -57988,17 +57988,17 @@
     }
   },
   "4143": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Top of the Hive",
+    "de": "Liebliche Biene",
+    "ja": "ラブリーハニー",
+    "fr": "Charme mielleux",
+    "icon": "/i/014000/014222.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Honey B. Lovely is stealing the spotlight.",
+      "de": "Suzie Summ Honigüß zeigt sich von ihrer lieblichen, anziehenden Seite.",
+      "ja": "ハニー・B・ラブリーが魅力を発揮している状態。",
+      "fr": "Honey B. Lovely déploie tout son charme."
     }
   },
   "4144": {

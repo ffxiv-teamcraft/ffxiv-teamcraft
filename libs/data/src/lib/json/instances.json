@@ -3088,7 +3088,7 @@
     "description": {
       "en": "At the behest of Zeycihan, professor of archeology at the Studium, you are tasked with venturing into a valley swarming with sabotenders. In the furthest reaches of this gorge of succulents lie the remnants of an ancient structure believed to be of Yok Huy origin, but if you are to discover what mysteries dwell within, you must first survive the innumerous needles of the valley's denizens...",
       "ja": "トラル各地で発掘を行うシャーレアン魔法大学の考古学者、ゼイキハンから紹介を受けた次なる冒険の舞台、それはシャーローニ荒野の外れにあるというサボテンダーバレー。文字通り、サボテンが群生する渓谷の奥には、かつてサカ・トラルに渡ったヨカフイ族のものと思われる、古き遺構があるらしい。<br>先行調査より撤退したというゼイキハンの足取りも辿りつつ、凶暴なサボテンダーたちの針を掻い潜り、歴史の不思議が眠り続ける遺跡最深部へ到達せよ。",
-      "de": "Zeycihan ist ein sharlayanischer Archäologe, dessen Studien ihn nach Tural verschlagen haben. Nun liegt sein ganzer Fokus auf der Kaktorsenke, ein Tal am äußersten Rand von Shaloaani. Inmitten der Vielzahl von Kaktoren unterschiedlichster Art ragen uralte Ruinen in den Himmel, die den einstigen Herren Turals gehört haben sollen: den Yok Huy. Wandle auf Zeycihans Spuren, bahne dir einen Weg durch die abertausend Nadeln und lüfte das Geheimnis, das unter dem Staub der Jahrhunderte schlummert ...",
+      "de": "Zeycihan ist ein sharlayanischer Archäologe, dessen Studien ihn nach Tural verschlagen haben. Nun liegt sein ganzer Fokus auf der Kaktorsenke, ein Tal am äußersten Rand von Shaaloani. Inmitten der Vielzahl von Kaktoren unterschiedlichster Art ragen uralte Ruinen in den Himmel, die den einstigen Herren Turals gehört haben sollen: den Yok Huy. Wandle auf Zeycihans Spuren, bahne dir einen Weg durch die abertausend Nadeln und lüfte das Geheimnis, das unter dem Staub der Jahrhunderte schlummert ...",
       "fr": "Zeycihan, professeur d'archéologie à l'académie de magie de Sharlayan, a été chargé par l'ancien Aurarque de la Raison d'explorer le Tural à la recherche de vestiges anciens. Il a découvert dans un des recoins de la Shaaloani une vallée abritant des ruines inconnues. Cependant, l'endroit est envahi par les pampas en tout genre et vous êtes la seule personne suffisamment forte pour arpenter les lieux et peut-être percer leurs mystères."
     },
     "members": {
@@ -13542,6 +13542,131 @@
     "contentText": [
       34423,
       34300
+    ]
+  },
+  "30135": {
+    "id": 30135,
+    "en": "AAC Light-heavyweight M1",
+    "ja": "至天の座アルカディア：ライトヘビー級1",
+    "de": "Arkadion - Halbschwergewicht R1",
+    "fr": "Poids mi-lourds CCA - match 1",
+    "description": {
+      "en": "At Metem's invitation, you have entered the Ascension Arcadia Championship, a competition in which the greatest fighters of Alexandria face off in a bid to become grand champion. Yet your opponents wield feral souls to augment their strength, so you in turn must use the simulacra of past warriors to balance the scales. Your debut match is against Black Cat, a fellow rookie harnessing the power of Cath Palug, and if you are to seize victory against this feline foe, you shall need to be agile indeed...",
+      "ja": "メテムから言葉巧みに誘われ、闘技ショー「アルカディア」に挑戦することになった冒険者。それは魔物の魂を注入した闘士たちと対決するという、生身で闘うには危険極まりないものだった。<br>初戦の相手として立ち塞がるのは、怪猫キャスパリーグの魂を注入した新進気鋭の闘士――爪研ぐ猫魂「ブラックキャット」。記憶によって形作られた闘士たちを率いて、記念すべきデビューマッチに挑め！",
+      "de": "Nach einer Einladung von Metem, dem Kommentator des in ganz Lösung Neun beliebten Kampfturniers „Arkadion“, bist du nun die neueste Herausforderin der Attraktion. Hierbei nutzen Kämpfer überlicherweise Regulatoren, um ihre Körper mit Bestienseelen zu vereinen und sich so zu verstärken, du jedoch hast dich dagegen entschieden und trittst mit deiner üblichen Stärke, dafür jedoch mit der Unterstützung von Erinnerungskriegern an. Deine erste Gegnerin ist die sogenannte Klaue der Dunkelheit, Schwarze Katze - Eine junge Hhetsarro, welche ihre Geschwindigkeit und ihren Scharfsinn mithilfe der Seele von „Cath Palug“, einer katzenartigen Bestie, stark erhöht. Es ist an der Zeit, sich deinem Debütkampf im Arkadion zu stellen!",
+      "fr": "Ayant cédé à l'invitation habile de Metem, vous avez accepté de prendre part au spectacle de combats qu'est l'Arcadion. Celui-ci consiste en des affrontements extrêmement dangereux lors desquels les participants absorbent des âmes de créatures pour décupler leurs forces. Votre premier adversaire est Black Cat, une jeune femme qui fait appel au pouvoir du Cath Palug pour obtenir des griffes et une agilité féline. En compagnie de combattants recréés grâce à leurs souvenirs, préparez-vous à faire vos débuts dans la compétition&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112567.png",
+    "gamePatch": 91,
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 685,
+    "sync": 100,
+    "exp": 0,
+    "map": 927,
+    "contentText": [
+      40622,
+      40600
+    ]
+  },
+  "30137": {
+    "id": 30137,
+    "en": "AAC Light-heavyweight M2",
+    "ja": "至天の座アルカディア：ライトヘビー級2",
+    "de": "Arkadion - Halbschwergewicht R2",
+    "fr": "Poids mi-lourds CCA - match 2",
+    "description": {
+      "en": "Having bested Black Cat, you prepare to face your second opponent─Honey B. Lovely. With the pheromones of a queen bee and the charm of a songstress, she enthralls her foes before finishing them with deadly venom. If you are to resist her charms, you must steel yourself for a captivating confrontation...",
+      "ja": "ブラックキャットをリングに沈め、見事に初戦を白星で飾った冒険者。次なる相手は劇毒を有する蜂の魂を注入した闘士――劇毒の愛「ハニー・Ｂ・ラブリー」。<br>アイドル的な愛らしさとフェロモンを以て、相手を魅了してくるという彼女を倒し、アルカディアに生身の挑戦者の名を轟かせよう！",
+      "de": "Du konntest deinen Debütkampf mit einem glorreichen Sieg gegen die Klaue der Dunkelheit krönen, doch deine nächste Gegnerin steht schon bereit: Suzie Summ Honigsüß, die Toxische Liebe. Ihr natürlicher Charme ist bereits gefährlich genug, doch gemeinsam mit ihrem Bienengift und anziehenden Pheromonen, welche sie als verwandelte Bienenkönigin zu nutzen weiß, kann kaum jemand ihrem Bann entfliehen. Stähle dein Herz für einen honigsüßen Todeskampf!",
+      "fr": "Votre victoire contre Black Cat lors de votre tout premier match de la division poids mi-lourds de l'Arcadion vous a donné le droit d'affronter votre prochain adversaire&nbsp;: la charmante et non moins piquante Honey B. Lovely. Prenez garde à cette idole du public, dont l'arsenal mêle des phéromones envoûtantes au poison de l'abeille reine dont elle tire ses pouvoirs&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112569.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 685,
+    "sync": 100,
+    "exp": 0,
+    "map": 923,
+    "contentText": [
+      39129,
+      39100
+    ]
+  },
+  "30139": {
+    "id": 30139,
+    "en": "AAC Light-heavyweight M3",
+    "ja": "至天の座アルカディア：ライトヘビー級3",
+    "de": "Arkadion - Halbschwergewicht R3",
+    "fr": "Poids mi-lourds CCA - match 3",
+    "description": {
+      "en": "The time has come for your title match against the Brute Bomber, who wields the explosive power of a bomb king. Yet he did not become champion by playing by the rules, and if you are to bring this despised heel low, you must be prepared to face all that he may bring to bear.",
+      "ja": "ハニー・Ｂ・ラブリーに勝利し、観客たちの熱い注目を浴びた冒険者。次に立ちはだかるのは炎の魔物「ボムキング」の魂を注入した闘士――爆ぜる悪意「ブルートボンバー」。<br>卑怯千万、極悪非道なラフファイトで有名だという、ライトヘビー級の現王者を討ち果たし、新たな王者を目指そう！",
+      "de": "Du konntest Suzie Summ Honigsüß und ihren gefährlichen Verlockungen widerstehen und dir somit das Anrecht erkämpfen, dich dem Titelverteidiger des Halbschwergewichts stellen zu dürfen: Brutalo Bomber, die Bombastische Boshaftigkeit. Dieser ist nicht nur bekannt für die Explosionen, welche seine „Königsbomber“-Seele erzeugen kann, sondern ebenfalls dafür, jegliche Regeln des Arkadion zu ignorieren und mit hinterhältigen Mitteln zu kämpfen. Mach dich bereit und zeig den Leuten, wie eine wahre Titelverteidigerin aussieht!",
+      "fr": "Grâce à votre triomphe sur Honey B. Lovely, vous êtes en mesure d'affronter le champion de la division des poids mi-lourds&nbsp;: Brute Bomber. Méfiez-vous toutefois, car ce combattant explosif, qui décuple ses forces en faisant appel à l'âme du roi bombo, est tristement célèbre pour les coups bas et les infractions au règlement qu'il commet pour prendre l'avantage sur ses adversaires&nbsp;! Saurez-vous lui ravir son titre de champion&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112571.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 685,
+    "sync": 100,
+    "exp": 0,
+    "map": 926,
+    "contentText": [
+      40221,
+      40200
+    ]
+  },
+  "30141": {
+    "id": 30141,
+    "en": "AAC Light-heavyweight M4",
+    "ja": "至天の座アルカディア：ライトヘビー級4",
+    "de": "Arkadion - Halbschwergewicht R4",
+    "fr": "Poids mi-lourds CCA - match 4",
+    "description": {
+      "en": "In the midst of your crowning ceremony, you are challenged by none other than the electrifying Wicked Thunder, sister of Yaana and former heavyweight fighter of fame. The Ascension Arcadia president has authorized a special exhibition match for this thunderous clash, and now the realm waits with bated breath, wondering who will emerge victorious: the unstoppable upstart, or the neoteric witch?",
+      "ja": "ブルートボンバーとの激闘を制し、見事、ライトヘビー級王者となった冒険者。その初戴冠セレモニーに、想定外の乱入者が現れる。次世代魔女「ウィケッドサンダー」――かつて闘技界を席巻しながらも、謎の失踪を遂げていた人物だ。しかも驚くべきことに彼女は、公衆の面前で冒険者に宣戦布告を行う。<br>この異常事態に対し、アルカディアのオーナーは特別試合のマッチメイクを提案。新王者たる冒険者は、元ヘビー級の闘士だという彼女の挑戦を退けることができるのか！？",
+      "de": "Du konntest Brutalo Bomber bezwingen und dich erfolgreich an die Spitze des Halbschwergewichts kämpfen. Deine Krönungszeremonie wird jedoch von einem unerwarteten Gast gesprengt. Die ehemalige Superschwergewichtskämpferin Tosender Donner, welche bisher spurlos verschwunden war, taucht plötzlich wieder auf und fordert dich zu einem Kampf heraus, mit deiner Seele als Einsatz. Als hätten sich die Ereignisse nicht schon genug überschlagen, erhallt dann die Stimme des Arkadion-Präsidenten und genehmigt den Sonderkampf. Kannst du dich als frischgebackene Titelverteidigerin des Halbschwergewichts gegen die Hybrid-Hexe durchsetzen?",
+      "fr": "Votre victoire contre Brute Bomber vous a permis de vous hisser au sommet de la division des poids mi-lourds. Toutefois, la cérémonie de remise de votre titre a été interrompue par l'intervention inattendue de Wicked Thunder, une ancienne combattante poids lourds qui avait disparu, laquelle vous a lancé un défi et déclaré vouloir votre âme. Le propriétaire de l'Arcadion ayant donné son feu vert pour ce match, préparez-vous à affronter celle que l'on surnomme l'Enchanteresse électrique&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112573.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 685,
+    "sync": 100,
+    "exp": 0,
+    "map": 924,
+    "contentText": [
+      40337,
+      40300
     ]
   },
   "35001": {

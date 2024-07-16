@@ -33956,7 +33956,7 @@
     "icon": "/i/060000/060033.png",
     "patch": 32,
     "en": "Hey Now, You're an All-star",
-    "de": "Freund der Wilden",
+    "de": "Freundesfreund",
     "ja": "導かれし盟友たち",
     "fr": "Petit meurtre entre amis",
     "ko": "한데 모인 맹우들",
@@ -72293,7 +72293,7 @@
     "fr": "Mythe de la magie",
     "description": {
       "en": "Achieve level 100 as a conjurer, thaumaturge, arcanist, astrologian, red mage, sage, and pictomancer.",
-      "de": "Erfahrungsstufe 90 in allen Klassen der Magierdisziplin erreicht.",
+      "de": "Erfahrungsstufe 100 in allen Klassen der Magierdisziplin erreicht.",
       "ja": "幻術士、呪術士、巴術士、占星術師、赤魔道士、賢者、ピクトマンサーのすべてのレベルが100に到達する",
       "fr": "Atteindre le niveau 100 avec les classes ou jobs élémentaliste, occultiste, arcaniste, astromancien, mage rouge, sage et pictomancien."
     },
@@ -74138,51 +74138,51 @@
   },
   "3572": {
     "id": 3572,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002981.png",
+    "patch": 96,
+    "en": "Pick on Someone Your Own Size I",
+    "de": "Tor des Arkadion I",
+    "ja": "アルカディアのライトヘビー級を制覇せし者：ランク1",
+    "fr": "Champion poids mi-lourds de l'Arcadion I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “The Neoteric Witch” and AAC Light-heavyweight Tier.",
+      "de": "Arkadion - Halbschwergewicht sowie den Auftrag „Die Hybrid-Hexe“ erfolgreich abgeschlossen.",
+      "ja": "至天の座アルカディア：ライトヘビー級を攻略し、クエスト「次世代魔女」をコンプリートする",
+      "fr": "Conquérir la division poids mi-lourds CCA et accomplir la quête “L'Enchanteresse électrique”."
     },
     "item": 0,
     "title": 0
   },
   "3573": {
     "id": 3573,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002981.png",
+    "patch": 96,
+    "en": "Pick on Someone Your Own Size II",
+    "de": "Tor des Arkadion II",
+    "ja": "アルカディアのライトヘビー級を制覇せし者：ランク2",
+    "fr": "Champion poids mi-lourds de l'Arcadion II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete AAC Light-heavyweight Tier 5 times.",
+      "de": "5 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
+      "ja": "至天の座アルカディア：ライトヘビー級を計5回攻略する",
+      "fr": "Conquérir la division poids mi-lourds CCA 5 fois."
     },
     "item": 0,
     "title": 0
   },
   "3574": {
     "id": 3574,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002981.png",
+    "patch": 96,
+    "en": "Pick on Someone Your Own Size III",
+    "de": "Tor des Arkadion III",
+    "ja": "アルカディアのライトヘビー級を制覇せし者：ランク3",
+    "fr": "Champion poids mi-lourds de l'Arcadion III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete AAC Light-heavyweight Tier 10 times.",
+      "de": "10 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
+      "ja": "至天の座アルカディア：ライトヘビー級を計10回攻略する",
+      "fr": "Conquérir la division poids mi-lourds CCA 10 fois."
     },
     "item": 0,
     "title": 0

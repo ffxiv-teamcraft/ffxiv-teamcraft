@@ -7377,19 +7377,19 @@
   },
   {
     "id": 923,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5102,
+    "name": "Lovely Lovering",
+    "territory": 1227,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 924,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5103,
+    "name": "The Thundering",
+    "territory": 1231,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 925,
@@ -7401,19 +7401,19 @@
   },
   {
     "id": 926,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5114,
+    "name": "Blasting Ring",
+    "territory": 1229,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 927,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5104,
+    "name": "Scratching Ring",
+    "territory": 1225,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 928,
@@ -7489,19 +7489,19 @@
   },
   {
     "id": 937,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4655,
+    "name": "Tritails Training",
+    "territory": 1223,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 938,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4749,
+    "name": "Greenroom",
+    "territory": 1224,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 939,
