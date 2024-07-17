@@ -26531,7 +26531,10 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43728,
-      "minGathering": 0
+      "spawn": 0,
+      "duration": 2,
+      "minGathering": 0,
+      "video": "https://youtu.be/jKMjSYfgq34"
     }
   ],
   "43732": [
@@ -26780,6 +26783,16 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43793": [
+    {
+      "spot": 332,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43856,
+      "snagging": true,
       "minGathering": 0
     }
   ],
