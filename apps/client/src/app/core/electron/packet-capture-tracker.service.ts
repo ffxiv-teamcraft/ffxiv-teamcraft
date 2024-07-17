@@ -258,12 +258,6 @@ export class PacketCaptureTrackerService {
       this.eorzeaFacade.removeStatus(packet.param1);
     });
 
-    this.ipc.updateClassInfoPackets$.pipe(
-      distinctUntilChanged((a, b) => a.classId === b.classId)
-    ).subscribe((p) => {
-      this.eorzeaFacade.resetStatuses();
-    });
-
     this.ipc.packets$.pipe(
       ofMessageType('effectResult'),
       toIpcData(),

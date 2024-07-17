@@ -99,7 +99,7 @@ export class EorzeaFacade {
             const food = consumables.find(f => f.itemFood === buff.param % 10000);
             Object.keys(food.Bonuses).forEach(bonusKey => {
               if (['CP', 'Craftsmanship', 'Control'].includes(bonusKey)) {
-                const bonus = food[bonusKey];
+                const bonus = food.Bonuses[bonusKey];
                 if (bonus) {
                   const value = hq ? bonus.ValueHQ : bonus.Value;
                   const max = hq ? bonus.MaxHQ : bonus.Max;
@@ -178,11 +178,8 @@ export class EorzeaFacade {
     this.store.dispatch(new RemoveStatus(effect));
   }
 
-  resetStatuses() {
-    this.store.dispatch(new SetStatuses([]));
-  }
-
   setStatuses(statuses: StatusEntry[]) {
+    console.log('SET STATUSES', statuses);
     this.store.dispatch(new SetStatuses(statuses));
   }
 
