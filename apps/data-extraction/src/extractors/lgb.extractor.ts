@@ -70,7 +70,7 @@ export class LgbExtractor extends AbstractExtractor {
 
     // Then, let's work on lgb files
     combineLatest([
-      this.getSheet<any>(xiv, 'Aetheryte', ['Level#', 'Map#', 'IsAetheryte', 'AethernetName#', 'PlaceName#', 'AetherstreamX', 'AetherstreamY']),
+      this.getSheet<any>(xiv, 'Aetheryte', ['Level#', 'Map#', 'IsAetheryte', 'AethernetName#', 'PlaceName#', 'AetherstreamX', 'AetherstreamY', 'Territory#']),
       this.getSheet<any>(xiv, 'HousingAethernet', ['Level', 'TerritoryType.Map#', 'PlaceName#'], true, 1)
     ])
       .subscribe(([xivapiAetherytes, xivapiHousingAetherytes]) => {
@@ -153,6 +153,7 @@ export class LgbExtractor extends AbstractExtractor {
                       map: mapId,
                       ...coords,
                       type: xivapiAetheryte.IsAetheryte ? 0 : 1,
+                      territory: xivapiAetheryte.Territory,
                       nameid: xivapiAetheryte.PlaceName || xivapiAetheryte.AethernetName,
                       aethernetCoords: {
                         x: xivapiAetheryte.AetherstreamX,

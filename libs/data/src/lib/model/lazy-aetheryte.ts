@@ -3,6 +3,7 @@ export interface LazyAetheryte {
   id:              number;
   map:             number;
   nameid:          number;
+  territory?:      number;
   type:            number;
   x:               number;
   y:               number;

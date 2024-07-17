@@ -77,6 +77,7 @@ import { NpcsDbPagesExtractor } from './extractors/db/npcs-db-pages.extractor';
 import { StatusesDbPagesExtractor } from './extractors/db/statuses-db-pages.extractor';
 import { TraitsDbPagesExtractor } from './extractors/db/traits-db-pages.extractor';
 import { QuestsDbPagesExtractor } from './extractors/db/quests-db-pages.extractor';
+import { TelepoRelayExtractor } from './extractors/telepo-relay.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -135,6 +136,7 @@ const extractors: AbstractExtractor[] = [
   new VenturesExtractor(),
   new StatsExtractor(),
   new ShopsExtractor(),
+  new TelepoRelayExtractor(),
   new IslandExtractor(),
   new HwdGathererExtractor(),
   new ActionTimelineExtractor(),

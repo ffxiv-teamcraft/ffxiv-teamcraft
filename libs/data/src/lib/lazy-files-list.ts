@@ -41,7 +41,7 @@ export const lazyFilesList = {
   },
   'aetherytes': {
     'fileName': 'aetherytes.json',
-    'hashedFileName': 'aetherytes.d5fbdc6f84b7426af602a8403a5560ff0c7ec32e.json'
+    'hashedFileName': 'aetherytes.71b7bac357168e3c54ecc8c6faf9acf41c46acf9.json'
   },
   'airshipParts': {
     'fileName': 'airship-parts.json',
@@ -607,9 +607,17 @@ export const lazyFilesList = {
     'fileName': 'submarine-voyages.json',
     'hashedFileName': 'submarine-voyages.d2e80441e762d42a0d417706ae6bd58197f4c06f.json'
   },
+  'telepoRelay': {
+    'fileName': 'telepo-relay.json',
+    'hashedFileName': 'telepo-relay.4276c8a940b935ae122afc284872ef5ac3908b59.json'
+  },
   'territoryLayers': {
     'fileName': 'territory-layers.json',
     'hashedFileName': 'territory-layers.b85977fc3d199f13b4b24abe0d475153d1418f0a.json'
+  },
+  'territoryTypeTelepoRelay': {
+    'fileName': 'territory-type-telepo-relay.json',
+    'hashedFileName': 'territory-type-telepo-relay.96f7f3302a940143f7b29ce64308012f92e686fa.json'
   },
   'titles': {
     'fileName': 'titles.json',

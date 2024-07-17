@@ -14,6 +14,10 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
+import { getTpCost } from './get-tp-cost';
+import { MAP_OVERRIDES } from './map-overrides';
+import { LazyTerritoryTypeTelepoRelay } from '@ffxiv-teamcraft/data/model/lazy-territory-type-telepo-relay';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Injectable()
 export class MapService {
@@ -23,13 +27,6 @@ export class MapService {
 
   // TP duration on the same map, this is an average.
   private static readonly TP_DURATION = 8;
-
-  private static readonly MAP_OVERRIDES = {
-    213: 257, // dravanian forelands => use Idyllshire
-    11: 12, // Limsa lower => use upper
-    13: 14, // Steps of thal => use steps of nald
-    2: 3 // Old gridania => use new
-  };
 
   private cache: { [index: number]: Observable<MapData> } = {};
 
@@ -102,23 +99,23 @@ export class MapService {
                 );
             })
           ).pipe(
-            withLatestFrom(this.eorzea.mapId$.pipe(startWith(0))),
-            switchMap(([optimizedPaths, mapId]: [WorldNavigationStep[], number]) => {
+            withLatestFrom(this.eorzea.mapId$.pipe(startWith(0)), this.lazyData.getEntry('territoryTypeTelepoRelay'), this.lazyData.getEntry('telepoRelay')),
+            switchMap(([optimizedPaths, mapId, territoryTypeTelepoRelay, telepoRelay]) => {
               const res: WorldNavigationStep[] = [];
               const pool = [...optimizedPaths];
               return this.getAetherytes(mapId || this.settings.startingPlace).pipe(
                 map(aetherytes => {
                   const startingPoint = aetherytes[0];
                   res.push(pool.sort((a, b) => {
-                    const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0] as LazyAetheryte);
-                    const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0] as LazyAetheryte);
+                    const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, startingPoint, a.map.aetherytes[0] as LazyAetheryte);
+                    const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, startingPoint, b.map.aetherytes[0] as LazyAetheryte);
                     return aCost - bCost;
                   }).shift());
                   while (pool.length > 0) {
                     res.push(
                       pool.sort((a, b) => {
-                        const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0] as LazyAetheryte, a.map.aetherytes[0] as LazyAetheryte);
-                        const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0] as LazyAetheryte, b.map.aetherytes[0] as LazyAetheryte);
+                        const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, res[res.length - 1].map.aetherytes[0] as LazyAetheryte, a.map.aetherytes[0] as LazyAetheryte);
+                        const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, res[res.length - 1].map.aetherytes[0] as LazyAetheryte, b.map.aetherytes[0] as LazyAetheryte);
                         return aCost - bCost;
                       }).shift()
                     );
@@ -161,8 +158,12 @@ export class MapService {
 
   public sortMapIdsByTpCost(_mapIds: number[]): Observable<number[]> {
     const mapIds = [..._mapIds];
-    return this.lazyData.getEntry('aetherytes').pipe(
-      switchMap(aetherytes => {
+    return combineLatest([
+      this.lazyData.getEntry('aetherytes'),
+      this.lazyData.getEntry('territoryTypeTelepoRelay'),
+      this.lazyData.getEntry('telepoRelay')
+        ]).pipe(
+      switchMap(([aetherytes, territoryTypeTelepoRelay, telepoRelay]) => {
         const currentMapId$ = this.eorzea.mapId$.pipe(startWith(this.settings.startingPlace), debounceTime(10));
         return currentMapId$.pipe(
           map(currentMapId => {
@@ -172,8 +173,8 @@ export class MapService {
               path.push(mapIds.sort((a, b) => {
                 const aAetheryte = this.filterAetherytes(aetherytes, a, true, true)[0];
                 const bAetheryte = this.filterAetherytes(aetherytes, b, true, true)[0];
-                const aCost = this.getTpCost(currentAetheryte, aAetheryte as LazyAetheryte);
-                const bCost = this.getTpCost(currentAetheryte, bAetheryte as LazyAetheryte);
+                const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay,currentAetheryte, aAetheryte as LazyAetheryte);
+                const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay,currentAetheryte, bAetheryte as LazyAetheryte);
                 return aCost - bCost;
               }).shift());
             }
@@ -226,28 +227,8 @@ export class MapService {
     };
   }
 
-  public getTpCost(from: LazyAetheryte, to: LazyAetheryte): number {
-    if (from === undefined || to === undefined) {
-      return 999;
-    }
-    if (this.settings.freeAetheryte === to.nameid) {
-      return 0;
-    }
-    const fromCoords = from.aethernetCoords;
-    const toCoords = to.aethernetCoords;
-    if (fromCoords === undefined || toCoords === undefined) {
-      return 999;
-    }
-
-    if (this.getMapId(from.map) === this.getMapId(to.map)) {
-      return 70;
-    }
-
-    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
-    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
-      return Math.floor(base / 2);
-    }
-    return Math.floor(base);
+  public getTpCost(telepoRelay: LazyData['telepoRelay'], territoryTypeTelepoRelay: LazyData['territoryTypeTelepoRelay'], from: LazyAetheryte, to: LazyAetheryte): number {
+    return getTpCost(telepoRelay, territoryTypeTelepoRelay, from, to, this.settings.favoriteAetherytes, this.settings.freeAetheryte);
   }
 
   private getAetherytes(id: number, excludeMinis = false): Observable<LazyAetheryte[]> {
@@ -271,7 +252,7 @@ export class MapService {
   }
 
   getMapId(mapId: number): number {
-    return MapService.MAP_OVERRIDES[mapId] || mapId;
+    return MAP_OVERRIDES[mapId] || mapId;
   }
 
   private totalDuration(path: NavigationStep[]): number {

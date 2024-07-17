@@ -111,9 +111,9 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
         if (stepByStep.maps.length === 0) {
           return -1;
         }
-        return stepByStep.maps.filter(mapId => {
+        return stepByStep.maps.find(mapId => {
           return mapId !== currentMapId && stepByStep.steps[mapId].progress < 100;
-        })[0];
+        });
       })
     );
   }
