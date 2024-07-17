@@ -123,7 +123,8 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   private setCurrentValue(val?: string): void {
     const next = this.uppercaseFirst(val);
     const didUpdate = this.currentValue !== next;
-    this.currentValue = next;
+    // Replace &nbsp; with just a simple space char
+    this.currentValue = next.replace(/&nbsp;/g, ' ');
     if (didUpdate) {
       this.cd.markForCheck();
     }
