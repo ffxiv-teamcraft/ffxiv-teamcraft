@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.3...v11.3.4) (2024-07-18)
+
+
+### Features
+
+* **db:** fix wrong collectable flag on some items ([1df33ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1df33ed458a90919a29f3d38534ff35484a17c53))
+
+
+### Bug Fixes
+
+* **core:** new teleport cost formula, kudos to WInter and Otter for the help ! ([c01fc43](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c01fc43e05d0b5bd3eb3da11ee2a2b8c4de681f4))
+* **desktop:** better food and buff tracking for auto stats update ([ec74f77](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec74f772882daa5570ed022e0d0d80575783d924))
+* **i18n:** remove &nbsp; from french strings ([62159f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62159f787357ce37884cef5a77f513ba5ee45236))
+* **levequests:** exp threshold level is maxLevel - 10 ([3399d5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3399d5f718da232feb5f44187ca2502ecec3ec29))
+* **list:** possible fix for amount sometimes disabled in pricing mode ([34c0b2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34c0b2c79162393e1e4ea8fbacded8b3c8cb5a48))
+
 ### [11.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.2...v11.3.3) (2024-07-16)
 
 
