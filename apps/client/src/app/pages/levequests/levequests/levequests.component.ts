@@ -392,7 +392,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
         if (leve.hq) {
           leveExp *= 2;
         }
-        if (leve.level < 80 && expObj.level >= 80) {
+        const thresholdLevel = this.environment.maxLevel - 10;
+        if (leve.level < thresholdLevel && expObj.level >= thresholdLevel) {
           leveExp = 1000;
         }
         expObj = {

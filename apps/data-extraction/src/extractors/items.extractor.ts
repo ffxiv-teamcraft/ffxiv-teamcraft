@@ -150,8 +150,11 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.AetherialReduce) {
             aetherialReduce[item.index] = item.AetherialReduce;
           }
-          if (item.AlwaysCollectable || item.IsCollectable) {
+          if (item.AlwaysCollectable) {
             collectableFlags[item.index] = 1;
+          }
+          if (item.IsCollectable) {
+            collectableFlags[item.index] = 2;
           }
           if ([844, 845, 846].includes(item.ItemAction?.Type)) {
             itemBonuses[item.index] = this.processBonuses(itemFood.find(food => food.index === item.ItemAction.Data[1]));

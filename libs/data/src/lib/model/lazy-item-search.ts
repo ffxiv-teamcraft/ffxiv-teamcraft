@@ -4,7 +4,7 @@ export interface LazyItemSearch {
   category?:    number;
   cjc?:         { [key: string]: number };
   clvl?:        number;
-  collectible?: number;
+  collectible?: boolean | number;
   craftJob?:    number;
   craftable?:   boolean;
   data:         Data;

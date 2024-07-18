@@ -21,6 +21,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { PlatformService } from '../tools/platform.service';
 import { StatusEntry } from '../../modules/eorzea/status-entry';
 import { LazyStatus } from '@ffxiv-teamcraft/data/model/lazy-status';
+import { isEqual } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -258,12 +259,6 @@ export class PacketCaptureTrackerService {
       this.eorzeaFacade.removeStatus(packet.param1);
     });
 
-    this.ipc.updateClassInfoPackets$.pipe(
-      distinctUntilChanged((a, b) => a.classId === b.classId)
-    ).subscribe((p) => {
-      this.eorzeaFacade.resetStatuses();
-    });
-
     this.ipc.packets$.pipe(
       ofMessageType('effectResult'),
       toIpcData(),
@@ -311,7 +306,7 @@ export class PacketCaptureTrackerService {
                   param: effect.param
                 } as StatusEntry;
               })
-            )
+            );
           })
         );
       })
@@ -388,12 +383,15 @@ export class PacketCaptureTrackerService {
     /**
      * Stats tracking
      */
-    combineLatest([this.settings.watchSetting('autoUpdateStats', this.settings.autoUpdateStats), this.eorzeaFacade.classJobSet$])
+    combineLatest([this.settings.watchSetting('autoUpdateStats', this.settings.autoUpdateStats), this.eorzeaFacade.classJobSet$, this.authFacade.gearSets$])
       .pipe(
         filter(([autoUpdate]) => autoUpdate)
       )
-      .subscribe(([, set]) => {
-        this.authFacade.saveSet(set);
+      .subscribe(([, set, gearsets]) => {
+        const savedSet = gearsets.find(g => g.jobId === set.jobId);
+        if (!isEqual(savedSet, set)) {
+          this.authFacade.saveSet(set);
+        }
       });
   }
 }
