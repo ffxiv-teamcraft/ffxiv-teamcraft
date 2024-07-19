@@ -120,10 +120,10 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
   }
 
   private getSource(): ItemSource {
-    if (!this.layoutRow || this.item.sources.length === 1) {
+    if (!this.layoutRow || this.item.sources?.length === 1) {
       return this.item.sources[0];
     }
-    return this.item.sources.sort((a, b) => this.getSourceScore(b) - this.getSourceScore(a))[0];
+    return this.item.sources?.sort((a, b) => this.getSourceScore(b) - this.getSourceScore(a))[0];
   }
 
   private getSourceScore(source: ItemSource): number {
