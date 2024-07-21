@@ -26247,6 +26247,52 @@
       "minGathering": 0
     }
   ],
+  "43689": [
+    {
+      "spot": 302,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 300,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 301,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43690": [
+    {
+      "spot": 301,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    },
+    {
+      "spot": 302,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 300,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
   "43692": [
     {
       "spot": 300,
@@ -26274,7 +26320,25 @@
       "minGathering": 0
     }
   ],
+  "43695": [
+    {
+      "spot": 302,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
   "43696": [
+    {
+      "spot": 302,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43849,
+      "minGathering": 0
+    }
+  ],
+  "43697": [
     {
       "spot": 302,
       "hookset": 1,
@@ -26290,6 +26354,13 @@
       "tug": 2,
       "bait": 43849,
       "minGathering": 0
+    },
+    {
+      "spot": 304,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
     }
   ],
   "43699": [
@@ -26298,6 +26369,13 @@
       "hookset": 1,
       "tug": 0,
       "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 304,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
       "minGathering": 0
     }
   ],
@@ -26310,9 +26388,79 @@
       "minGathering": 0
     }
   ],
+  "43701": [
+    {
+      "spot": 304,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43702": [
+    {
+      "spot": 304,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43703": [
+    {
+      "spot": 304,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43704": [
+    {
+      "spot": 305,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43705": [
+    {
+      "spot": 305,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43706": [
+    {
+      "spot": 305,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43707": [
+    {
+      "spot": 305,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
   "43708": [
     {
       "spot": 307,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43849,
+      "minGathering": 0
+    },
+    {
+      "spot": 306,
       "hookset": 2,
       "tug": 2,
       "bait": 43849,
@@ -26335,6 +26483,24 @@
       "minGathering": 0
     }
   ],
+  "43710": [
+    {
+      "spot": 306,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43852,
+      "minGathering": 0
+    }
+  ],
+  "43711": [
+    {
+      "spot": 306,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
   "43712": [
     {
       "spot": 307,
@@ -26342,6 +26508,18 @@
       "tug": 0,
       "bait": 43855,
       "minGathering": 0
+    }
+  ],
+  "43713": [
+    {
+      "spot": 307,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43709,
+      "spawn": 12,
+      "duration": 1,
+      "minGathering": 0,
+      "video": "https://youtu.be/9GJivD1fsl4"
     }
   ],
   "43714": [
@@ -26683,6 +26861,69 @@
       "minGathering": 0
     }
   ],
+  "43742": [
+    {
+      "spot": 316,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43743": [
+    {
+      "spot": 317,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43744": [
+    {
+      "spot": 317,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43745": [
+    {
+      "spot": 318,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43850,
+      "minGathering": 0
+    }
+  ],
+  "43746": [
+    {
+      "spot": 318,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
+  "43747": [
+    {
+      "spot": 318,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43746,
+      "minGathering": 0
+    }
+  ],
+  "43748": [
+    {
+      "spot": 318,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43747,
+      "minGathering": 0
+    }
+  ],
   "43749": [
     {
       "spot": 318,
@@ -26691,12 +26932,63 @@
       "bait": 43747,
       "spawn": 18,
       "duration": 2,
+      "minGathering": 0,
+      "video": "https://youtu.be/Pf-Sm2aA1e0"
+    }
+  ],
+  "43750": [
+    {
+      "spot": 319,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 320,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43751": [
+    {
+      "spot": 319,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 320,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
       "minGathering": 0
     }
   ],
   "43752": [
     {
       "spot": 319,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43753": [
+    {
+      "spot": 319,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43754": [
+    {
+      "spot": 320,
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
@@ -26721,6 +27013,49 @@
       "minGathering": 0
     }
   ],
+  "43757": [
+    {
+      "spot": 321,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43857,
+      "minGathering": 0
+    },
+    {
+      "spot": 322,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43853,
+      "minGathering": 0
+    }
+  ],
+  "43758": [
+    {
+      "spot": 321,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43857,
+      "minGathering": 0
+    }
+  ],
+  "43759": [
+    {
+      "spot": 321,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43853,
+      "minGathering": 0
+    }
+  ],
+  "43760": [
+    {
+      "spot": 321,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43853,
+      "minGathering": 0
+    }
+  ],
   "43761": [
     {
       "spot": 321,
@@ -26737,6 +27072,149 @@
       "hookset": 2,
       "tug": 2,
       "bait": 43857,
+      "minGathering": 0
+    }
+  ],
+  "43763": [
+    {
+      "spot": 322,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43857,
+      "minGathering": 0
+    }
+  ],
+  "43764": [
+    {
+      "spot": 322,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43853,
+      "minGathering": 0
+    }
+  ],
+  "43765": [
+    {
+      "spot": 323,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 324,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43766": [
+    {
+      "spot": 323,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    },
+    {
+      "spot": 324,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43767": [
+    {
+      "spot": 323,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43768": [
+    {
+      "spot": 323,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43769": [
+    {
+      "spot": 324,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43770": [
+    {
+      "spot": 324,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43771": [
+    {
+      "spot": 325,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 326,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43772": [
+    {
+      "spot": 325,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 326,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43773": [
+    {
+      "spot": 325,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 326,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43774": [
+    {
+      "spot": 325,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
       "minGathering": 0
     }
   ],
@@ -26786,6 +27264,165 @@
       "minGathering": 0
     }
   ],
+  "43780": [
+    {
+      "spot": 328,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    },
+    {
+      "spot": 329,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    },
+    {
+      "spot": 330,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43781": [
+    {
+      "spot": 328,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 329,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    },
+    {
+      "spot": 330,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43782": [
+    {
+      "spot": 328,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43783": [
+    {
+      "spot": 328,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43784": [
+    {
+      "spot": 329,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43785": [
+    {
+      "spot": 329,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43786": [
+    {
+      "spot": 330,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43787": [
+    {
+      "spot": 330,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
+    }
+  ],
+  "43788": [
+    {
+      "spot": 331,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43859,
+      "minGathering": 0
+    },
+    {
+      "spot": 332,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
+  "43789": [
+    {
+      "spot": 331,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43856,
+      "minGathering": 0
+    },
+    {
+      "spot": 332,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
+  "43790": [
+    {
+      "spot": 331,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
+  "43791": [
+    {
+      "spot": 331,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
+  "43792": [
+    {
+      "spot": 331,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43859,
+      "minGathering": 0
+    }
+  ],
   "43793": [
     {
       "spot": 332,
@@ -26793,6 +27430,15 @@
       "tug": 2,
       "bait": 43856,
       "snagging": true,
+      "minGathering": 0
+    }
+  ],
+  "43794": [
+    {
+      "spot": 332,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43859,
       "minGathering": 0
     }
   ],
@@ -26808,6 +27454,42 @@
       ],
       "minGathering": 0,
       "video": "https://youtu.be/6Dih5jNWcaY"
+    }
+  ],
+  "43796": [
+    {
+      "spot": 333,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43797": [
+    {
+      "spot": 333,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43798": [
+    {
+      "spot": 333,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43855,
+      "minGathering": 0
+    }
+  ],
+  "43799": [
+    {
+      "spot": 333,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 43858,
+      "minGathering": 0
     }
   ],
   "43903": [
