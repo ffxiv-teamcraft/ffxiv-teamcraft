@@ -11,7 +11,8 @@ import {
   ListsActionTypes,
   LoadListDetails,
   LoadManyLists,
-  LoadTeamLists, ManyListsLoaded,
+  LoadTeamLists,
+  ManyListsLoaded,
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
@@ -118,11 +119,15 @@ export class ListsEffects {
     mergeMap(([action, showArchived]) => {
       const chunks = chunk(action.keys, 30);
       return combineLatest(chunks.map(ids => {
-        return this.listService.query(where(documentId(), 'in', ids), where('archived', '==', showArchived));
+        return this.listService.query(where(documentId(), 'in', ids), where('archived', '==', showArchived)).pipe(
+          mergeMap((lists) => {
+            return combineLatest(lists.map(list => this.listService.completeListData(list)));
+          })
+        );
       }));
     }),
     map(lists => {
-      return new ManyListsLoaded(lists.flat())
+      return new ManyListsLoaded(lists.flat());
     })
   ));
 

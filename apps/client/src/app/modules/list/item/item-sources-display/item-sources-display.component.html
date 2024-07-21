@@ -1,5 +1,5 @@
 <div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
-  @for (source of sourcesDisplay$ | async; track trackByItemSource($index, source)) {
+  @for (source of sourcesDisplay(); track source.type) {
     @switch (source.type) {
       @case (dataTypes.DEPRECATED) {
         <div>
@@ -127,7 +127,7 @@
         </button>
       }
       @case (dataTypes.CRAFTED_BY) {
-        @for (craft of source.data; track trackByCraft($index, craft)) {
+        @for (craft of source.data; track craft.id) {
           <div
             [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
             [fxLayout]="!forceHorizontal && source.data.length > 1?'column':'row'"
