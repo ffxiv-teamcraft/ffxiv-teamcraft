@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { ListRow } from '../model/list-row';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 import { combineLatest, Subject } from 'rxjs';
@@ -37,14 +37,17 @@ import { AsyncPipe } from '@angular/common';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @Component({
-    selector: 'app-step-by-step-row',
-    templateUrl: './step-by-step-row.component.html',
-    styleUrls: ['./step-by-step-row.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzGridModule, ItemIconComponent, I18nNameComponent, ItemNameClipboardDirective, NzToolTipModule, NzButtonModule, NzIconModule, ItemInventoryButtonComponent, NgForTrackByKeyDirective, AlarmButtonComponent, NzTagModule, ItemSourcesDisplayComponent, NgForTrackByIdDirective, CompactAmountInputComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
+  selector: 'app-step-by-step-row',
+  templateUrl: './step-by-step-row.component.html',
+  styleUrls: ['./step-by-step-row.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzGridModule, ItemIconComponent, I18nNameComponent, ItemNameClipboardDirective, NzToolTipModule, NzButtonModule, NzIconModule, ItemInventoryButtonComponent, NgForTrackByKeyDirective, AlarmButtonComponent, NzTagModule, ItemSourcesDisplayComponent, NgForTrackByIdDirective, CompactAmountInputComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class StepByStepRowComponent {
+  @Input({ transform: booleanAttribute })
+  readonly = false;
+
   @Input()
   row: ListRow;
 

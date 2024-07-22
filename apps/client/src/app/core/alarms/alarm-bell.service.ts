@@ -105,7 +105,7 @@ export class AlarmBellService {
           const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
           const notificationBody = `${placeName} - `
             + `${aetheryteName ? aetheryteName : ''}`;
-          this.ring(itemName);
+          this.ring(notificationTitle);
           if (this.platform.isDesktop()) {
             this.ipc.send('notification', {
               title: notificationTitle,

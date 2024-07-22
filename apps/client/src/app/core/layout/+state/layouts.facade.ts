@@ -88,7 +88,7 @@ export class LayoutsFacade {
           } else if (stepByStepDisplay) {
             starter.push(...list.finalItems
               .map((row) => {
-                const craftedBySource = row.sources.find(s => s.type === DataType.CRAFTED_BY);
+                const craftedBySource = row.sources?.find(s => s.type === DataType.CRAFTED_BY);
                 if (craftedBySource) {
                   row.sources = [craftedBySource];
                 }

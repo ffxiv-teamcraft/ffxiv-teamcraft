@@ -62,6 +62,10 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
                   && (equipmentData[p.catalogId]?.jobs || []).includes(jobAbbr[classInfo.classId]?.en as Job);
               })
               .forEach(packet => {
+                // If it's fisher and offhand, skip it as we don't include it in main gearset editor anyways
+                if(packet.slot === 1 && gearset.job === 18){
+                  return;
+                }
                 const itemMeldingData = lazyItemMeldingData[packet.catalogId];
                 const materias = (packet.materia || <number[]>[]).map((materia, index) => {
                   return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;

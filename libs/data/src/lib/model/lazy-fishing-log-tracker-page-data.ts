@@ -86,7 +86,6 @@ export interface Predator {
 
 export interface GatheringNode {
   baits?:            Bait[];
-  base?:             number;
   duration:          number;
   ephemeral:         boolean;
   folklore?:         number;

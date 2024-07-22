@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, Type } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, Input, Type } from '@angular/core';
 import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
 import { ListRow } from '../../model/list-row';
 import { GatheredByComponent } from '../../../item-details/gathered-by/gathered-by.component';
@@ -12,7 +12,6 @@ import { TreasuresComponent } from '../../../item-details/treasures/treasures.co
 import { FatesComponent } from '../../../item-details/fates/fates.component';
 import { VoyagesComponent } from '../../../item-details/voyages/voyages.component';
 import { TradesComponent } from '../../../item-details/trades/trades.component';
-import { CraftedBy } from '../../model/crafted-by';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { CustomItem } from '../../../custom-items/model/custom-item';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -22,14 +21,11 @@ import { GardeningComponent } from '../../../item-details/gardening/gardening.co
 import { MogstationComponent } from '../../../item-details/mogstation/mogstation.component';
 import { QuestsComponent } from '../../../item-details/quests/quests.component';
 import { AchievementsComponent } from '../../../item-details/achievements/achievements.component';
-import { combineLatest, first, map } from 'rxjs';
+import { first } from 'rxjs';
 import { IslandAnimalComponent } from '../../../item-details/island-animal/island-animal.component';
 import { IslandCropComponent } from '../../../item-details/island-crop/island-crop.component';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
-import { observeInput } from '../../../../core/rxjs/observe-input';
-import { shareReplay } from 'rxjs/operators';
-import { Craft } from '@ffxiv-teamcraft/simulator';
 import { LazyRowPipe } from '../../../../pipes/pipes/lazy-row.pipe';
 import { JobUnicodePipe } from '../../../../pipes/pipes/job-unicode.pipe';
 import { TradeIconPipe } from '../../../../pipes/pipes/trade-icon.pipe';
@@ -48,19 +44,18 @@ import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-item-sources-display',
-    templateUrl: './item-sources-display.component.html',
-    styleUrls: ['./item-sources-display.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
+  selector: 'app-item-sources-display',
+  templateUrl: './item-sources-display.component.html',
+  styleUrls: ['./item-sources-display.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()
   dbDisplay = false;
 
-  @Input()
-  sources: ItemSource[];
+  sources = input<ItemSource[]>();
 
   @Input()
   item: Pick<ListRow, 'id' | 'sources'>;
@@ -80,21 +75,16 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()
   forceHorizontal = false;
 
-  @Input()
-  displayedSources: DataType[] | null = null;
+  displayedSources = input<DataType[] | null>();
 
-  sourcesDisplay$ = combineLatest([
-    observeInput(this, 'sources'),
-    observeInput(this, 'displayedSources', true)
-  ]).pipe(
-    map(([sources, displayedSources]) => {
-      if (!displayedSources) {
-        return sources;
-      }
-      return sources.filter(s => displayedSources.includes(s.type));
-    }),
-    shareReplay(1)
-  );
+  sourcesDisplay = computed(() => {
+    const sources = this.sources();
+    const displayedSources = this.displayedSources();
+    if (!this.displayedSources()) {
+      return sources;
+    }
+    return sources.filter(s => displayedSources.includes(s.type));
+  });
 
   dataTypes = DataType;
 
@@ -171,16 +161,8 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
     this.openDetailsPopup(TradesComponent, item, DataType.TRADE_SOURCES);
   }
 
-  public openSimulator(recipeId: string, item: typeof this['item'], entry: CraftedBy): void {
+  public openSimulator(recipeId: string, item: typeof this['item']): void {
     this.rotationPicker.openInSimulator(item.id, recipeId);
-  }
-
-  public trackByItemSource(index: number, source: ItemSource): DataType {
-    return source.type;
-  }
-
-  public trackByCraft(index: number, craft: Craft): string {
-    return craft.id;
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: typeof this['item'], dataType: DataType): void {

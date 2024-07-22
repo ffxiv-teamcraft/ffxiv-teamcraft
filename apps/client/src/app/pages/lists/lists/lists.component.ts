@@ -151,12 +151,10 @@ export class ListsComponent extends TeamcraftComponent {
             lists: workshop.listIds
               .map(key => {
                 const list = lists.find(c => c.$key === key);
-                console.log('LOAD?', key);
                 if (list !== undefined) {
                   list.workshopId = workshop.$key;
                 } else if (!this.loadingLists.includes(key)) {
                   this.loadingLists.push(key);
-                  console.log('LOAD', key);
                   this.listsFacade.load(key);
                 }
                 return list;

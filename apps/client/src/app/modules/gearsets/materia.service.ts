@@ -170,7 +170,7 @@ export class MateriaService {
     return combineLatest([
       safeCombineLatest(materiasObsArray$),
       this.lazyData.getEntry('extracts'),
-      this.settings.watchSetting<number>('materias:confidence', 0.5)
+      this.settings.watchSetting<number>('materias:confidence', this.settings.materiaConfidenceRate || 0.5)
     ]).pipe(
       map(([pieces, extracts, confidence]) => {
         return pieces.reduce((acc, { slot, piece, materias }) => {

@@ -1697,21 +1697,153 @@
       "shadowSize": 2
     }
   ],
+  "43814": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "43815": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "43816": [
+    {
+      "speed": 0,
+      "shadowSize": 0
+    }
+  ],
   "43817": [
     {
       "speed": 1,
       "shadowSize": 1
     }
   ],
+  "43818": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43819": [
+    {
+      "speed": 5,
+      "shadowSize": 2
+    }
+  ],
+  "43820": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
   "43821": [
     {
       "speed": 3,
+      "shadowSize": 1,
+      "predators": [
+        {
+          "id": 43810,
+          "amount": 16
+        }
+      ]
+    }
+  ],
+  "43822": [
+    {
+      "speed": 3,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 43810,
+          "amount": 16
+        }
+      ]
+    }
+  ],
+  "43823": [
+    {
+      "speed": 0,
+      "shadowSize": 0
+    }
+  ],
+  "43824": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "43825": [
+    {
+      "speed": 1,
       "shadowSize": 1
+    }
+  ],
+  "43826": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43827": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "43828": [
+    {
+      "speed": 3,
+      "shadowSize": 2
     }
   ],
   "43829": [
     {
-      "speed": 4,
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "43830": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "43831": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "43832": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "43833": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "43834": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "43835": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "43836": [
+    {
+      "speed": 1,
       "shadowSize": 0
     }
   ],
@@ -1727,10 +1859,60 @@
       "shadowSize": 1
     }
   ],
-  "43842": [
+  "43839": [
     {
       "speed": 3,
       "shadowSize": 2
+    }
+  ],
+  "43840": [
+    {
+      "speed": 5,
+      "shadowSize": 2
+    }
+  ],
+  "43841": [
+    {
+      "speed": 3,
+      "shadowSize": 0,
+      "predators": [
+        {
+          "id": 43836,
+          "amount": 16
+        },
+        {
+          "id": 43842,
+          "amount": 2
+        },
+        {
+          "id": 43833,
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "43842": [
+    {
+      "speed": 5,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 43836,
+          "amount": 16
+        }
+      ]
+    }
+  ],
+  "43843": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "43844": [
+    {
+      "speed": 0,
+      "shadowSize": 0
     }
   ],
   "43845": [
@@ -1739,9 +1921,21 @@
       "shadowSize": 1
     }
   ],
+  "43846": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
   "43847": [
     {
       "speed": 5,
+      "shadowSize": 2
+    }
+  ],
+  "43848": [
+    {
+      "speed": 2,
       "shadowSize": 2
     }
   ]

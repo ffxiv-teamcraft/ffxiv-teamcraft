@@ -7,7 +7,7 @@ import { List } from '../../modules/list/model/list';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { LayoutsFacade } from '../../core/layout/+state/layouts.facade';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
-import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, Observable, of } from 'rxjs';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { MapService } from '../../modules/map/map.service';
@@ -31,13 +31,16 @@ import { ListDisplay } from '../../core/layout/list-display';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { uniqBy } from 'lodash';
 import { PageLoaderComponent } from '../../modules/page-loader/page-loader/page-loader.component';
+import { NavigationObjective } from '../../modules/map/navigation-objective';
+import { ListRow } from '../../modules/list/model/list-row';
+import { StepByStepRowComponent } from '../../modules/list/step-by-step-row/step-by-step-row.component';
 
 @Component({
   selector: 'app-step-by-step-list-overlay',
   standalone: true,
   imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule,
     NzListModule, ItemIconModule, ListModule,
-    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent],
+    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent, StepByStepRowComponent],
   templateUrl: './step-by-step-list-overlay.component.html',
   styleUrls: ['./step-by-step-list-overlay.component.less']
 })
@@ -60,7 +63,9 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  public closestMap$: Observable<number>;
+  public closestMap$: Observable<{ mapId: number, aetheryte: number }>;
+
+  public crafts$: Observable<ListRow[]>;
 
   public stepsList$: Observable<NavigationStep[]>;
 
@@ -107,14 +112,65 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
       map(path => uniqBy(path.path.steps.slice(1), 'itemId'))
     );
     this.closestMap$ = combineLatest([this.stepByStep$, this.mapId$]).pipe(
-      map(([stepByStep, currentMapId]) => {
+      switchMap(([stepByStep, currentMapId]) => {
         if (stepByStep.maps.length === 0) {
-          return -1;
+          return of({
+            mapId: -1,
+            aetheryte: -1
+          });
         }
-        return stepByStep.maps.find(mapId => {
+        const mapId = stepByStep.maps.find(mapId => {
           return mapId !== currentMapId && stepByStep.steps[mapId].progress < 100;
         });
+        const nextMapDisplay = stepByStep.steps[mapId];
+        if(!nextMapDisplay){
+          return of({
+            mapId: -1,
+            aetheryte: -1
+          });
+        }
+        const markers: NavigationObjective[] = nextMapDisplay.sources.map(source => {
+          return nextMapDisplay[source]
+            .filter(row => row.row.amount > row.row.done)
+            .map(row => {
+              return {
+                ...row.coords,
+                itemId: row.row.id,
+                type: row.type,
+                listRow: row.row,
+                icon: row.icon,
+                monster: row.monster,
+                fate: row.fate,
+                additionalStyle: {
+                  width: row.type === 'Hunting' ? '24px' : '32px',
+                  height: row.type === 'Hunting' ? '24px' : '32px'
+                }
+              };
+            });
+        }).flat().filter(Boolean);
+        return this.mapService.getMapById(mapId).pipe(
+          switchMap(mapData => {
+            return combineLatest(markers.map(marker => this.mapService.getNearestAetheryte(mapData, marker)))
+          }),
+          map(aetherytes => {
+            const totalById = aetherytes.reduce((acc, aetheryte) => {
+              return {
+                ...acc,
+                [aetheryte.nameid]: (acc[aetheryte.nameid] || 0) + 1,
+              }
+            }, {} as Record<number, number>);
+            const closestAetheryte = +Object.keys(totalById).sort((a,b) => totalById[b] - totalById[a])[0];
+            return {
+              mapId,
+              aetheryte: closestAetheryte
+            }
+          })
+        )
       })
+    );
+
+    this.crafts$ = this.stepByStep$.pipe(
+      map(stepByStep => stepByStep.crafts)
     );
   }
 }

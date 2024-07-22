@@ -3,7 +3,7 @@
     <div class="flex-row align-center gap-2">
       @if (!row.xivapiIcon) {
         <app-item-icon [itemId]="row.id" [itemName]="row.id | itemName: row | i18n"
-        [width]="24" [forceCollectable]="row.collectable"></app-item-icon>
+        [width]="24" [forceCollectable]="row.collectable" [tooltipDisabled]="readonly" [disableClick]="readonly"></app-item-icon>
       }
       @if (row.xivapiIcon) {
         <app-item-icon [icon]="row.xivapiIcon | xivapiIcon" [itemId]="null"
@@ -32,11 +32,11 @@
 </div>
 @if (hasItemInInventory$ | async) {
   <div nz-col [nzSpan]="4">
-    <app-item-inventory-button [itemId]="row.id" [permissionLevel]="permissionLevel" (add)="add($event, row)"></app-item-inventory-button>
+    <app-item-inventory-button [itemId]="row.id" [permissionLevel]="permissionLevel" (add)="readonly?null:add($event, row)"></app-item-inventory-button>
   </div>
 }
 <div nz-col [nzSpan]="(hasItemInInventory$ | async) ? 4 : 7">
-  @if (showAlarms) {
+  @if (showAlarms && !readonly) {
     @if (alarmsDisplay$ | async; as alarmsDisplay) {
       <div class="timers flex-row align-center gap-5">
         @for (alarm of alarmsDisplay.alarms; track alarm) {
@@ -55,7 +55,7 @@
 <div nz-col [nzSpan]="8">
   <div class="flex-row justify-end gap-5">
     <app-item-sources-display [item]="row" [sources]="row.sources" [displayedSources]="dataTypes" [forceHorizontal]="true"
-    size="small"></app-item-sources-display>
+    size="small" [overlay]="readonly"></app-item-sources-display>
     <div class="spacer"></div>
     @if (masterbooks$ | async; as masterbooks) {
       @for (masterbook of masterbooks; track masterbook) {
@@ -68,7 +68,7 @@
         [width]="24" nz-tooltip></app-item-icon>
       }
     }
-    <app-compact-amount-input [permissionLevel]="permissionLevel" [aggregate]="aggregate" [item]="row" [finalItem]="finalItem"></app-compact-amount-input>
+    <app-compact-amount-input [permissionLevel]="readonly ? 10 : permissionLevel" [aggregate]="aggregate" [item]="row" [finalItem]="finalItem"></app-compact-amount-input>
   </div>
 </div>
 </div>

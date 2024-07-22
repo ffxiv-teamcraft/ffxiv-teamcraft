@@ -57,6 +57,10 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
       packets
         .filter(p => p.containerId === 1000)
         .forEach(packet => {
+          // If it's fisher and offhand, skip it as we don't include it in main gearset editor anyways
+          if(packet.slot === 1 && gearset.job === 18){
+            return;
+          }
           const itemMeldingData = lazyItemMeldingData[packet.catalogId];
           const materias = (packet.materia || <number[]>[]).map((materia, index) => {
             return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;
@@ -80,40 +84,6 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
         });
       this.modalRef.close(gearset);
     });
-  }
-
-  @Memoized()
-  private getPropertyName(slot: number): string {
-    switch (slot) {
-      case 0:
-        return 'mainHand';
-      case 1:
-        return 'offHand';
-      case 2:
-        return 'head';
-      case 3:
-        return 'chest';
-      case 4:
-        return 'gloves';
-      case 5:
-        return 'belt';
-      case 6:
-        return 'legs';
-      case 7:
-        return 'feet';
-      case 8:
-        return 'earRings';
-      case 9:
-        return 'necklace';
-      case 10:
-        return 'bracelet';
-      case 11:
-        return 'ring2';
-      case 12:
-        return 'ring1';
-      case 13:
-        return 'crystal';
-    }
   }
 
 }
