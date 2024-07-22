@@ -77,7 +77,9 @@ export class StatsPopupComponent extends DialogComponent implements OnInit {
       [8, 9, 10, 11, 12, 13, 14, 15].forEach(jobId => {
         const newSet = { ...set, jobId: jobId };
         const previousSet = allSets.find(s => s.jobId === jobId);
-        (newSet as any).priority = (previousSet as any).priority;
+        if (previousSet) {
+          (newSet as any).priority = (previousSet as any).priority;
+        }
         if (set.specialist && previousSet && !previousSet.specialist) {
           newSet.craftsmanship -= 20;
           newSet.control -= 20;
