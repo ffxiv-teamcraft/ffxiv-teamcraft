@@ -124,7 +124,9 @@
   <ng-template #closestMapTpl>
     <app-fullpage-message *ngIf="(mapId$ | async) === 0">{{'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate}}</app-fullpage-message>
     <ng-container *ngIf="(mapId$ | async) > 0">
-      <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap$ | async| mapName | i18n } }}</app-fullpage-message>
+      @if(closestMap$ | async; as closestMap){
+        <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (<app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>)</app-fullpage-message>
+      }
     </ng-container>
   </ng-template>
 </app-overlay-container>
