@@ -177,7 +177,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.eb89f1f3e758769954819ce9481abd1bf6293024.json'
+    'hashedFileName': 'fishing-sources.4b303b4679a27da1dd4b6b7170b070bdeb1afa16.json'
   },
   'fishingSpotSearch': {
     'fileName': 'fishing-spot-search.index',
@@ -661,7 +661,7 @@ export const lazyFilesList = {
   },
   'ventureSources': {
     'fileName': 'venture-sources.json',
-    'hashedFileName': 'venture-sources.e442755432b6a7630c61a09f3b0c84b2bd347990.json'
+    'hashedFileName': 'venture-sources.634209ce332de7045c88cb65bb6cff1ade539fb8.json'
   },
   'ventures': {
     'fileName': 'ventures.json',
@@ -669,7 +669,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.6732f9f4a6cb5003339747247dd6a9094e36a20c.json'
+    'hashedFileName': 'voyage-sources.7efba99cdfdd618c22e19ce044703117923586eb.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
