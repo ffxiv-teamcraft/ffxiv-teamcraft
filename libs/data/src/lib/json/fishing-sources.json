@@ -26249,10 +26249,10 @@
   ],
   "43689": [
     {
-      "spot": 302,
+      "spot": 301,
       "hookset": 2,
       "tug": 2,
-      "bait": 43849,
+      "bait": 43852,
       "minGathering": 0
     },
     {
@@ -26263,10 +26263,10 @@
       "minGathering": 0
     },
     {
-      "spot": 301,
+      "spot": 302,
       "hookset": 2,
       "tug": 2,
-      "bait": 43852,
+      "bait": 43849,
       "minGathering": 0
     }
   ],
@@ -26279,14 +26279,14 @@
       "minGathering": 0
     },
     {
-      "spot": 302,
+      "spot": 300,
       "hookset": 1,
       "tug": 0,
       "bait": 43849,
       "minGathering": 0
     },
     {
-      "spot": 300,
+      "spot": 302,
       "hookset": 1,
       "tug": 0,
       "bait": 43849,
@@ -26938,30 +26938,30 @@
   ],
   "43750": [
     {
-      "spot": 319,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 43855,
-      "minGathering": 0
-    },
-    {
       "spot": 320,
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
       "minGathering": 0
+    },
+    {
+      "spot": 319,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43855,
+      "minGathering": 0
     }
   ],
   "43751": [
     {
-      "spot": 319,
+      "spot": 320,
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
       "minGathering": 0
     },
     {
-      "spot": 320,
+      "spot": 319,
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
@@ -27015,17 +27015,17 @@
   ],
   "43757": [
     {
-      "spot": 321,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 43857,
-      "minGathering": 0
-    },
-    {
       "spot": 322,
       "hookset": 2,
       "tug": 2,
       "bait": 43853,
+      "minGathering": 0
+    },
+    {
+      "spot": 321,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43857,
       "minGathering": 0
     }
   ],
@@ -27095,14 +27095,14 @@
   ],
   "43765": [
     {
-      "spot": 323,
+      "spot": 324,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
       "minGathering": 0
     },
     {
-      "spot": 324,
+      "spot": 323,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
@@ -27111,14 +27111,14 @@
   ],
   "43766": [
     {
-      "spot": 323,
+      "spot": 324,
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
       "minGathering": 0
     },
     {
-      "spot": 324,
+      "spot": 323,
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
@@ -27163,14 +27163,14 @@
   ],
   "43771": [
     {
-      "spot": 325,
+      "spot": 326,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
       "minGathering": 0
     },
     {
-      "spot": 326,
+      "spot": 325,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
@@ -27179,14 +27179,14 @@
   ],
   "43772": [
     {
-      "spot": 325,
+      "spot": 326,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
       "minGathering": 0
     },
     {
-      "spot": 326,
+      "spot": 325,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
@@ -27195,14 +27195,14 @@
   ],
   "43773": [
     {
-      "spot": 325,
+      "spot": 326,
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
       "minGathering": 0
     },
     {
-      "spot": 326,
+      "spot": 325,
       "hookset": 1,
       "tug": 0,
       "bait": 43855,
@@ -27266,7 +27266,7 @@
   ],
   "43780": [
     {
-      "spot": 328,
+      "spot": 330,
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
@@ -27280,7 +27280,7 @@
       "minGathering": 0
     },
     {
-      "spot": 330,
+      "spot": 328,
       "hookset": 2,
       "tug": 2,
       "bait": 43858,
@@ -27289,7 +27289,7 @@
   ],
   "43781": [
     {
-      "spot": 328,
+      "spot": 330,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
@@ -27303,7 +27303,7 @@
       "minGathering": 0
     },
     {
-      "spot": 330,
+      "spot": 328,
       "hookset": 2,
       "tug": 2,
       "bait": 43855,
@@ -27366,14 +27366,14 @@
   ],
   "43788": [
     {
-      "spot": 331,
+      "spot": 332,
       "hookset": 2,
       "tug": 2,
       "bait": 43859,
       "minGathering": 0
     },
     {
-      "spot": 332,
+      "spot": 331,
       "hookset": 2,
       "tug": 2,
       "bait": 43859,
@@ -27382,17 +27382,17 @@
   ],
   "43789": [
     {
-      "spot": 331,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 43856,
-      "minGathering": 0
-    },
-    {
       "spot": 332,
       "hookset": 2,
       "tug": 2,
       "bait": 43859,
+      "minGathering": 0
+    },
+    {
+      "spot": 331,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 43856,
       "minGathering": 0
     }
   ],
