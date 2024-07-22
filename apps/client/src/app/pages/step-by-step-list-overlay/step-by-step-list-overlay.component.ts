@@ -32,13 +32,15 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { uniqBy } from 'lodash';
 import { PageLoaderComponent } from '../../modules/page-loader/page-loader/page-loader.component';
 import { NavigationObjective } from '../../modules/map/navigation-objective';
+import { ListRow } from '../../modules/list/model/list-row';
+import { StepByStepRowComponent } from '../../modules/list/step-by-step-row/step-by-step-row.component';
 
 @Component({
   selector: 'app-step-by-step-list-overlay',
   standalone: true,
   imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule,
     NzListModule, ItemIconModule, ListModule,
-    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent],
+    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent, StepByStepRowComponent],
   templateUrl: './step-by-step-list-overlay.component.html',
   styleUrls: ['./step-by-step-list-overlay.component.less']
 })
@@ -62,6 +64,8 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
   );
 
   public closestMap$: Observable<{ mapId: number, aetheryte: number }>;
+
+  public crafts$: Observable<ListRow[]>;
 
   public stepsList$: Observable<NavigationStep[]>;
 
@@ -119,6 +123,12 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
           return mapId !== currentMapId && stepByStep.steps[mapId].progress < 100;
         });
         const nextMapDisplay = stepByStep.steps[mapId];
+        if(!nextMapDisplay){
+          return of({
+            mapId: -1,
+            aetheryte: -1
+          });
+        }
         const markers: NavigationObjective[] = nextMapDisplay.sources.map(source => {
           return nextMapDisplay[source]
             .filter(row => row.row.amount > row.row.done)
@@ -157,6 +167,10 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
           })
         )
       })
+    );
+
+    this.crafts$ = this.stepByStep$.pipe(
+      map(stepByStep => stepByStep.crafts)
     );
   }
 }

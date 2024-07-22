@@ -1,10 +1,9 @@
 <app-overlay-container uri="/step-by-step-list-overlay">
-  <app-fullpage-message *ngIf="noListSelected; else listDisplayTpl" fontSize="30px"
-                        [disableMobileBreakpoint]="true">{{'LIST_DETAILS.STEP_BY_STEP.No_list' | translate}}</app-fullpage-message>
-
-  <ng-template #listDisplayTpl>
-    <ng-container *ngIf="currentMapDisplay$ | async; else closestMapTpl">
-      <ng-container *ngIf="currentPath$ | async as mapDisplay">
+  @if(noListSelected) {
+    <app-fullpage-message fontSize="30px" [disableMobileBreakpoint]="true">{{'LIST_DETAILS.STEP_BY_STEP.No_list' | translate}}</app-fullpage-message>
+  } @else {
+    @if(currentMapDisplay$ | async) {
+      @if(currentPath$ | async; as mapDisplay) {
         <div class="title-banner">
           <nz-breadcrumb>
             <nz-breadcrumb-item>{{(list$ | async)?.name}}</nz-breadcrumb-item>
@@ -42,7 +41,10 @@
         <nz-list [nzDataSource]="stepsList$ | async" [nzRenderItem]="stepTemplate" nzSize="small" [nzNoResult]="noStepsTpl">
           <ng-template #noStepsTpl>
             <ng-container *ngIf="closestMap$ | async as closestMap">
-              <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap | mapName | i18n }" *ngIf="closestMap > -1"></nz-empty>
+              <nz-empty [nzNotFoundContent]="notFoundContent" *ngIf="closestMap > -1"></nz-empty>
+              <ng-template #notFoundContent>
+                {{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (<app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>)
+              </ng-template>
               <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Only_crafts_remaining' | translate" *ngIf="closestMap === -1"></nz-empty>
             </ng-container>
           </ng-template>
@@ -118,15 +120,26 @@
             </ng-template>
           </nz-list>
         </ng-container>
-      </ng-container>
-    </ng-container>
-  </ng-template>
-  <ng-template #closestMapTpl>
-    <app-fullpage-message *ngIf="(mapId$ | async) === 0">{{'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate}}</app-fullpage-message>
-    <ng-container *ngIf="(mapId$ | async) > 0">
-      @if(closestMap$ | async; as closestMap){
-        <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (<app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>)</app-fullpage-message>
       }
-    </ng-container>
-  </ng-template>
+    } @else {
+      @if((mapId$ | async) === 0) {
+        <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate}}</app-fullpage-message>
+      } @else if ((mapId$ | async) > 0) {
+        @if(closestMap$ | async; as closestMap) {
+          @if(closestMap.mapId > 0){
+            <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (<app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>)</app-fullpage-message>
+          } @else {
+            @if(crafts$ | async; as crafts) {
+              <nz-divider [nzText]="'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate"></nz-divider>
+              @for(craft of crafts; track craft.id) {
+                <app-step-by-step-row [row]="craft" readonly></app-step-by-step-row>
+              } @empty {
+                <nz-empty [nzNotFoundContent]="'COMMON.Empty_list' | translate"></nz-empty>
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 </app-overlay-container>
