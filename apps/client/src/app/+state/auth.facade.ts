@@ -255,10 +255,10 @@ export class AuthFacade {
   );
 
   constructor(private store: Store<{ auth: AuthState }>, private auth: Auth,
-              private platformService: PlatformService, private ipc: IpcService,
+              private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService, private fns: Functions,
-              private logTrackingService: LogTrackingService, private characterService: LodestoneService) {
+              private characterService: LodestoneService) {
     this.ipc.playerSetupPackets$.subscribe(packet => {
       this.setCID(packet.contentId.toString());
     });
