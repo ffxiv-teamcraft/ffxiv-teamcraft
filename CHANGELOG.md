@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.4...v11.3.5) (2024-07-22)
+
+
+### Features
+
+* **db:** allagan reports import ([f9b06f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9b06f6619c6dcbf4c027d971cc6e95abfb0127b))
+* **list:** add best aetheryte to TP to in step by step overlay ([b2e91cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b2e91cbbf23d25acde93bd37ef88ef5aefcd774a)), closes [#2885](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2885)
+* **step-by-step:** show ordered crafts once materials are obtained ([07fbca3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07fbca309c04bc1d40a85dc362ea8a376380e410))
+
+
+### Bug Fixes
+
+* **alarms:** TTS now reads alarm name for custom alarms ([0557af7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0557af7d8628f54ecdbce4fde91f97659006d7f5))
+* **desktop:** proper status id for ambitious lure display ([c8010d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c8010d6e6bc07b2d69ca730711a606b92a50133d))
+* **gearset:** possible fix for diff materia estimate in list generation ([f5b4a5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5b4a5e15f81a0fc07d8d776c02da48d5110acd6))
+* **gearset:** skip FSH offhand in pcap import ([4376072](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43760729b6b864328e6f58f4fe55306f4196bd35))
+* **list:** possible fix for random loading issues with sources ([a7f47dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7f47dd8e9dd565c48afc6c0c1b5fc046792be14))
+* **lists:** lists sometimes opening without any sources loaded ([450f4c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/450f4c0f53ae80ae8afd6da88cee7189bcb887ff))
+
 ### [11.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.3...v11.3.4) (2024-07-18)
 
 
