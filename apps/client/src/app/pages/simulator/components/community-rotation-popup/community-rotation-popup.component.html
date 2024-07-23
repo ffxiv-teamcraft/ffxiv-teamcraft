@@ -15,10 +15,10 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="6" nzRequired>{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-select [(ngModel)]="rotation.community.rlvl" [nzDisabled]="!rotation.public" name="rlvl"
-        nzAllowClear nzShowSearch>
+        nzShowSearch>
         @for (rlvl of rlvls; track rlvl) {
           <nz-option [nzLabel]="rlvl.label" [nzValue]="rlvl.value"></nz-option>
         }
