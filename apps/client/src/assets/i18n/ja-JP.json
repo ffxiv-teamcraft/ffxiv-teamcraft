@@ -1599,7 +1599,7 @@
     "Gathering": "採集",
     "Tradeable": "取引可能",
     "Unique": "レア",
-    "Dyeable": "染色可能",
+    "Dye_slots": "Dye slots",
     "Materia_sockets": "マテリアスロット",
     "Advanced_melding": "マテリア化",
     "Repair_job": "修理ジョブ",
