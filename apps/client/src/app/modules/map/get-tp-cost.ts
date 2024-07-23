@@ -22,7 +22,7 @@ export function getTpCost(telepoRelay: LazyData['telepoRelay'], territoryTypeTel
   const toCoords = to.aethernetCoords;
   const fromTelepo = territoryTypeTelepoRelay[from.territory];
   const toTelepo = territoryTypeTelepoRelay[to.territory];
-  if (fromCoords === undefined || toCoords === undefined) {
+  if (fromCoords === undefined || toCoords === undefined || fromTelepo === undefined || fromTelepo === undefined) {
     return 999;
   }
 

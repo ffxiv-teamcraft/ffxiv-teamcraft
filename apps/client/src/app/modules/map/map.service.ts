@@ -16,7 +16,6 @@ import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { getTpCost } from './get-tp-cost';
 import { MAP_OVERRIDES } from './map-overrides';
-import { LazyTerritoryTypeTelepoRelay } from '@ffxiv-teamcraft/data/model/lazy-territory-type-telepo-relay';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Injectable()
@@ -162,7 +161,7 @@ export class MapService {
       this.lazyData.getEntry('aetherytes'),
       this.lazyData.getEntry('territoryTypeTelepoRelay'),
       this.lazyData.getEntry('telepoRelay')
-        ]).pipe(
+    ]).pipe(
       switchMap(([aetherytes, territoryTypeTelepoRelay, telepoRelay]) => {
         const currentMapId$ = this.eorzea.mapId$.pipe(startWith(this.settings.startingPlace), debounceTime(10));
         return currentMapId$.pipe(
@@ -173,8 +172,8 @@ export class MapService {
               path.push(mapIds.sort((a, b) => {
                 const aAetheryte = this.filterAetherytes(aetherytes, a, true, true)[0];
                 const bAetheryte = this.filterAetherytes(aetherytes, b, true, true)[0];
-                const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay,currentAetheryte, aAetheryte as LazyAetheryte);
-                const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay,currentAetheryte, bAetheryte as LazyAetheryte);
+                const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, currentAetheryte, aAetheryte as LazyAetheryte);
+                const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, currentAetheryte, bAetheryte as LazyAetheryte);
                 return aCost - bCost;
               }).shift());
             }
