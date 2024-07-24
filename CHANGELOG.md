@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.5...v11.3.6) (2024-07-24)
+
+
+### Features
+
+* **db:** more monster locations, kudos to Inni for all the work on this ([57937d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/57937d89fd8524eff32dedcf589057fcdc10ff4f))
+
+
+### Bug Fixes
+
+* **community-rotations:** make rlvl required for community rotations sharing ([c7b5951](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7b595186829693d74a8af7fdee4928bd06c1dba)), closes [#2891](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2891)
+* **db:** fix dye slots extraction and older currencies on old trades ([fbb1e04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbb1e0409cc87ea8fddc870be7e8ebe48e988f0f))
+* **list:** fix optimized path sometimes not loading ([6fd1d8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fd1d8a0a0c779e4f63296ab835955bb89cf365f))
+* **list:** fix tp cost computing with unknown maps ([097feec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/097feec2771179540786e1fa20b470fefb3a1779))
+* **profile:** save for all faling when previous set is missing ([47b88b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47b88b652732c453bcf791bf08c12dcea90b2c50))
+* **step-by-step:** show next map upon steps completion ([d9e5184](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9e51842f7503a61d0c02479c826551e32529ade))
+
 ### [11.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.4...v11.3.5) (2024-07-22)
 
 
