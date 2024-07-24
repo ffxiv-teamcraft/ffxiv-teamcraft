@@ -5,7 +5,7 @@ import { Vector2, Vector3 } from '@ffxiv-teamcraft/types';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { NavigationObjective } from './navigation-objective';
-import { debounceTime, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { max, min, uniq } from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { SettingsService } from '../settings/settings.service';
@@ -16,7 +16,6 @@ import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { getTpCost } from './get-tp-cost';
 import { MAP_OVERRIDES } from './map-overrides';
-import { LazyTerritoryTypeTelepoRelay } from '@ffxiv-teamcraft/data/model/lazy-territory-type-telepo-relay';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Injectable()
@@ -86,7 +85,7 @@ export class MapService {
     return safeCombineLatest(allMaps.map(mapId => this.getMapById(mapId)))
       .pipe(
         switchMap(maps => {
-          return combineLatest(
+          return safeCombineLatest(
             maps.map(mapData => {
               return this.getOptimizedPathOnMap(mapData.id, points.filter(point => point.mapId === mapData.id))
                 .pipe(
@@ -99,33 +98,37 @@ export class MapService {
                 );
             })
           ).pipe(
-            withLatestFrom(this.eorzea.mapId$.pipe(startWith(0)), this.lazyData.getEntry('territoryTypeTelepoRelay'), this.lazyData.getEntry('telepoRelay')),
-            switchMap(([optimizedPaths, mapId, territoryTypeTelepoRelay, telepoRelay]) => {
-              const res: WorldNavigationStep[] = [];
-              const pool = [...optimizedPaths];
-              return this.getAetherytes(mapId || this.settings.startingPlace).pipe(
-                map(aetherytes => {
-                  const startingPoint = aetherytes[0];
-                  res.push(pool.sort((a, b) => {
-                    const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, startingPoint, a.map.aetherytes[0] as LazyAetheryte);
-                    const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, startingPoint, b.map.aetherytes[0] as LazyAetheryte);
-                    return aCost - bCost;
-                  }).shift());
-                  while (pool.length > 0) {
-                    res.push(
-                      pool.sort((a, b) => {
-                        const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, res[res.length - 1].map.aetherytes[0] as LazyAetheryte, a.map.aetherytes[0] as LazyAetheryte);
-                        const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, res[res.length - 1].map.aetherytes[0] as LazyAetheryte, b.map.aetherytes[0] as LazyAetheryte);
+            withLatestFrom(this.eorzea.mapId$.pipe(startWith(0))),
+            switchMap(([optimizedPaths, mapId]) => {
+              return combineLatest([this.lazyData.getEntry('territoryTypeTelepoRelay'), this.lazyData.getEntry('telepoRelay')]).pipe(
+                switchMap(([territoryTypeTelepoRelay, telepoRelay]) => {
+                  const pool = [...optimizedPaths];
+                  return this.getAetherytes(mapId || this.settings.startingPlace).pipe(
+                    map(aetherytes => {
+                      const res: WorldNavigationStep[] = [];
+                      const startingPoint = aetherytes[0];
+                      res.push(pool.sort((a, b) => {
+                        const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, startingPoint, a.map.aetherytes[0] as LazyAetheryte);
+                        const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, startingPoint, b.map.aetherytes[0] as LazyAetheryte);
                         return aCost - bCost;
-                      }).shift()
-                    );
-                  }
-                  return res;
+                      }).shift());
+                      while (pool.length > 0) {
+                        res.push(
+                          pool.sort((a, b) => {
+                            const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, res[res.length - 1].map.aetherytes[0] as LazyAetheryte, a.map.aetherytes[0] as LazyAetheryte);
+                            const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, res[res.length - 1].map.aetherytes[0] as LazyAetheryte, b.map.aetherytes[0] as LazyAetheryte);
+                            return aCost - bCost;
+                          }).shift()
+                        );
+                      }
+                      return res;
+                    })
+                  );
                 })
-              );
+              )
             })
           );
-        })
+        }),
       );
   }
 
@@ -162,7 +165,7 @@ export class MapService {
       this.lazyData.getEntry('aetherytes'),
       this.lazyData.getEntry('territoryTypeTelepoRelay'),
       this.lazyData.getEntry('telepoRelay')
-        ]).pipe(
+    ]).pipe(
       switchMap(([aetherytes, territoryTypeTelepoRelay, telepoRelay]) => {
         const currentMapId$ = this.eorzea.mapId$.pipe(startWith(this.settings.startingPlace), debounceTime(10));
         return currentMapId$.pipe(
@@ -173,8 +176,8 @@ export class MapService {
               path.push(mapIds.sort((a, b) => {
                 const aAetheryte = this.filterAetherytes(aetherytes, a, true, true)[0];
                 const bAetheryte = this.filterAetherytes(aetherytes, b, true, true)[0];
-                const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay,currentAetheryte, aAetheryte as LazyAetheryte);
-                const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay,currentAetheryte, bAetheryte as LazyAetheryte);
+                const aCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, currentAetheryte, aAetheryte as LazyAetheryte);
+                const bCost = this.getTpCost(telepoRelay, territoryTypeTelepoRelay, currentAetheryte, bAetheryte as LazyAetheryte);
                 return aCost - bCost;
               }).shift());
             }

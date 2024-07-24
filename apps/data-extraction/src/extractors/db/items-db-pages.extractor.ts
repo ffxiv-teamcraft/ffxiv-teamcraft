@@ -113,7 +113,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
     combineLatest([
       this.getSheet<any>(xiv, 'Item', ['ClassJobRepair#', 'PriceMid', 'PriceLow', 'ItemSeries#', 'ItemAction.Data#','ItemAction.Type#',
         'AdditionalData#', 'Name', 'Description', 'IsUntradable', 'ClassJobUse#', 'ClassJobCategory#', 'LevelEquip#', 'LevelItem#',
-        'BaseParamValueSpecial#', 'CanBeHq', 'ItemSearchCategory#', 'ItemUICategory#', 'Icon', 'IsUnique'], false, 1)      ,
+        'BaseParamValueSpecial#', 'CanBeHq', 'ItemSearchCategory#', 'ItemUICategory#', 'Icon', 'IsUnique', 'DyeCount'], false, 1)      ,
       this.getSheet(xiv, 'GcSupplyDutyReward', ['SealsExpertDelivery'])
     ])
       .subscribe(([items, supplyDutyReward]) => {
@@ -161,7 +161,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
             gcReward: supplyDutyReward.find(r => r.index === item.LevelItem)?.SealsExpertDelivery,
             kind: item.ItemKind,
             unique: item.IsUnique,
-            dyeable: item.IsDyeable,
+            dyeCount: item.DyeCount,
             searchCategory: item.ItemSearchCategory,
             patch: itemPatch[item.index],
             equipable: !!equipment[item.index],

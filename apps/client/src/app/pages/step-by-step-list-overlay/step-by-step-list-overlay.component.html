@@ -1,13 +1,13 @@
 <app-overlay-container uri="/step-by-step-list-overlay">
-  @if(noListSelected) {
-    <app-fullpage-message fontSize="30px" [disableMobileBreakpoint]="true">{{'LIST_DETAILS.STEP_BY_STEP.No_list' | translate}}</app-fullpage-message>
+  @if (noListSelected) {
+    <app-fullpage-message fontSize="30px" [disableMobileBreakpoint]="true">{{ 'LIST_DETAILS.STEP_BY_STEP.No_list' | translate }}</app-fullpage-message>
   } @else {
-    @if(currentMapDisplay$ | async) {
-      @if(currentPath$ | async; as mapDisplay) {
+    @if (currentMapDisplay$ | async) {
+      @if (currentPath$ | async; as mapDisplay) {
         <div class="title-banner">
           <nz-breadcrumb>
-            <nz-breadcrumb-item>{{(list$ | async)?.name}}</nz-breadcrumb-item>
-            <nz-breadcrumb-item>{{mapId$ | async | mapName | i18n}}</nz-breadcrumb-item>
+            <nz-breadcrumb-item>{{ (list$ | async)?.name }}</nz-breadcrumb-item>
+            <nz-breadcrumb-item>{{ mapId$ | async | mapName | i18n }}</nz-breadcrumb-item>
           </nz-breadcrumb>
         </div>
         <div class="map-container" nz-col [nzMd]="7">
@@ -41,27 +41,29 @@
         <nz-list [nzDataSource]="stepsList$ | async" [nzRenderItem]="stepTemplate" nzSize="small" [nzNoResult]="noStepsTpl">
           <ng-template #noStepsTpl>
             <ng-container *ngIf="closestMap$ | async as closestMap">
-              <nz-empty [nzNotFoundContent]="notFoundContent" *ngIf="closestMap > -1"></nz-empty>
+              <nz-empty [nzNotFoundContent]="notFoundContent" *ngIf="closestMap.mapId > -1"></nz-empty>
               <ng-template #notFoundContent>
-                {{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (<app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>)
+                {{ 'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (
+                <app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>
+                )
               </ng-template>
-              <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Only_crafts_remaining' | translate" *ngIf="closestMap === -1"></nz-empty>
+              <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Only_crafts_remaining' | translate" *ngIf="closestMap.mapId === -1"></nz-empty>
             </ng-container>
           </ng-template>
           <ng-template #stepTemplate let-step>
             <nz-list-item [nzContent]="rowContent">
-              <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
-                                 [nzDescription]="description">
+              <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle" [nzDescription]="description">
                 <ng-template #description>
-                  X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}} <span *ngIf="step.fate">({{step.fate | i18nRow:'fates' | i18n}})</span><span
-                  *ngIf="step.monster">({{step.monster | i18nRow:'mobs' | i18n}})</span>
+                  X: {{ step.x | number:'1.1-1' }} - Y: {{ step.y | number:'1.1-1' }} <span *ngIf="step.fate">({{ step.fate | i18nRow:'fates' | i18n }}
+                  )</span><span
+                  *ngIf="step.monster">({{ step.monster | i18nRow:'mobs' | i18n }})</span>
                 </ng-template>
                 <ng-template #stepTitle>
                   <app-i18n-name *ngIf="step.listRow; else nameTpl" content="items" [id]="step.listRow.id" [itemNameCopy]="step.listRow.id"></app-i18n-name>&nbsp;<img
                   *ngIf="step.icon" class="node-type-icon"
                   [src]="step.icon">
                   <ng-template #nameTpl>
-                    <span [clipboard]="step.name | i18n" nz-tooltip [nzTooltipTitle]="'COMMON.Copy_to_clipboard' | translate">{{step.name | i18n}}</span>
+                    <span [clipboard]="step.name | i18n" nz-tooltip [nzTooltipTitle]="'COMMON.Copy_to_clipboard' | translate">{{ step.name | i18n }}</span>
                   </ng-template>
                 </ng-template>
                 <ng-template #rowContent>
@@ -95,7 +97,7 @@
                 <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
                                    [nzDescription]="description">
                   <ng-template #description>
-                    X: {{alarm.marker.x | number:'1.1-1'}} - Y: {{alarm.marker.y | number:'1.1-1'}}
+                    X: {{ alarm.marker.x | number:'1.1-1' }} - Y: {{ alarm.marker.y | number:'1.1-1' }}
                   </ng-template>
                   <ng-template #stepTitle>
                     <app-i18n-name content="items" [id]="alarm.row.id" [itemNameCopy]="alarm.row.id"></app-i18n-name>&nbsp;<img
@@ -122,16 +124,19 @@
         </ng-container>
       }
     } @else {
-      @if((mapId$ | async) === 0) {
-        <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate}}</app-fullpage-message>
+      @if ((mapId$ | async) === 0) {
+        <app-fullpage-message>{{ 'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate }}</app-fullpage-message>
       } @else if ((mapId$ | async) > 0) {
-        @if(closestMap$ | async; as closestMap) {
-          @if(closestMap.mapId > 0){
-            <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (<app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>)</app-fullpage-message>
+        @if (closestMap$ | async; as closestMap) {
+          @if (closestMap.mapId > 0) {
+            <app-fullpage-message>{{ 'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap.mapId | mapName | i18n } }} (
+              <app-i18n-name content="places" [id]="closestMap.aetheryte"></app-i18n-name>
+              )
+            </app-fullpage-message>
           } @else {
-            @if(crafts$ | async; as crafts) {
+            @if (crafts$ | async; as crafts) {
               <nz-divider [nzText]="'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate"></nz-divider>
-              @for(craft of crafts; track craft.id) {
+              @for (craft of crafts; track craft.id) {
                 <app-step-by-step-row [row]="craft" readonly></app-step-by-step-row>
               } @empty {
                 <nz-empty [nzNotFoundContent]="'COMMON.Empty_list' | translate"></nz-empty>

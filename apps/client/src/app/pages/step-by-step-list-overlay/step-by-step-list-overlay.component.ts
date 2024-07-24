@@ -153,7 +153,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
             return combineLatest(markers.map(marker => this.mapService.getNearestAetheryte(mapData, marker)))
           }),
           map(aetherytes => {
-            const totalById = aetherytes.reduce((acc, aetheryte) => {
+            const totalById = aetherytes.filter(Boolean).reduce((acc, aetheryte) => {
               return {
                 ...acc,
                 [aetheryte.nameid]: (acc[aetheryte.nameid] || 0) + 1,

@@ -1,4 +1,16 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  signal,
+  ViewChildren,
+  WritableSignal
+} from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, take } from 'rxjs';
 import {
   catchError,
@@ -109,6 +121,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe, NgStyle } from '@angular/common';
+import { toObservable } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-simulator',
@@ -225,7 +238,9 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public startingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  public stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
+  public stepStates: WritableSignal<{ [index: number]: StepState }> = signal<{ [index: number]: StepState }>({});
+
+  public stepStates$ = toObservable(this.stepStates);
 
   public qualityPer100$: Observable<number>;
 
@@ -416,7 +431,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       }
       this.applyConsumables(stats);
       this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
-      this.stepStates$.next({});
+      this.stepStates.set({});
 
       this.markAsDirty();
     });
@@ -522,7 +537,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
-      this.stepStates$.next({});
+      this.stepStates.set({});
     });
   }
 
@@ -604,7 +619,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
-      this.stepStates$.next({});
+      this.stepStates.set({});
     });
   }
 
@@ -670,12 +685,12 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     actions.splice(index, 0, action);
     this.actions$.next([...actions]);
 
-    const stepStates = { ...this.stepStates$.value };
+    const stepStates = { ...this.stepStates() };
     for (let i = index; i < actions.length; i++) {
       delete stepStates[i];
     }
 
-    this.stepStates$.next(stepStates);
+    this.stepStates.set(stepStates);
     this.markAsDirty();
   }
 
@@ -759,24 +774,24 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     const actions = this.actions$.value;
     actions.splice(index, 1);
     this.actions$.next([...actions]);
-    const stepStates = { ...this.stepStates$.value };
+    const stepStates = { ...this.stepStates() };
     for (let i = index; i < actions.length; i++) {
       delete stepStates[i];
     }
 
-    this.stepStates$.next(stepStates);
+    this.stepStates.set(stepStates);
     this.markAsDirty();
   }
 
   setState(index: number, state: StepState): void {
-    const newStates = { ...this.stepStates$.value, [index]: state };
+    const newStates = { ...this.stepStates(), [index]: state };
     if (state === this.simulator.StepState.EXCELLENT) {
       newStates[index + 1] = this.simulator.StepState.POOR;
     }
     if (state === this.simulator.StepState.POOR) {
       newStates[index - 1] = this.simulator.StepState.EXCELLENT;
     }
-    this.stepStates$.next(newStates);
+    this.stepStates.set(newStates);
   }
 
   setFail(index: number, failed: boolean): void {
@@ -1065,7 +1080,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     ).subscribe(([[rotation, stats, routeConsumables, rotationChanged], lazyFoods, lazyMedicines]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
-        this.stepStates$.next({});
+        this.stepStates.set({});
       }
       const foods = this.consumablesService.fromLazyData(lazyFoods);
       const medicines = this.consumablesService.fromLazyData(lazyMedicines);
@@ -1181,8 +1196,8 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  trackByAction(index: number, step: ActionResult): number {
-    return step.action.getId(8);
+  trackByAction(index: number, step: ActionResult): string {
+    return step.action.getId(8) + ' ' + index;
   }
 
   private consumablesSortFn = (a, b) => {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, EventEmitter, inject, input, Input, Output } from '@angular/core';
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -15,12 +15,12 @@ import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NgClass } from '@angular/common';
 
 @Component({
-    selector: 'app-action',
-    templateUrl: './action.component.html',
-    styleUrls: ['./action.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzBadgeModule, XivapiActionTooltipDirective, NgClass, ExtendedModule, NzDropDownModule, NzMenuModule, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
+  selector: 'app-action',
+  templateUrl: './action.component.html',
+  styleUrls: ['./action.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzBadgeModule, XivapiActionTooltipDirective, NgClass, ExtendedModule, NzDropDownModule, NzMenuModule, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
 })
 export class ActionComponent {
 
@@ -66,8 +66,11 @@ export class ActionComponent {
   @Input()
   safe = true;
 
-  @Input()
-  state: StepState = StepState.NORMAL;
+  state = input<StepState>(StepState.NORMAL);
+
+  stateColor = computed(() => {
+    return this.getColor(this.state());
+  });
 
   @Input()
   showStateMenu = false;

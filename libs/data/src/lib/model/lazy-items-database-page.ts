@@ -10,6 +10,7 @@ export interface LazyItemsDatabasePage {
   delay?:             number;
   description:        Description;
   desynths?:          number[];
+  dyeCount?:          number;
   elvl?:              number;
   equipSlotCategory?: number;
   equipable?:         boolean;

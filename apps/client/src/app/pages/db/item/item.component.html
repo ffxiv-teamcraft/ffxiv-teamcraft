@@ -113,8 +113,8 @@
           <div class="detail-value">{{(item.unique ? 'Yes' : 'No') | translate}}</div>
         </div>
         <div *ngIf="item.equipable" class="details-block">
-          <div class="detail-name">{{'DB.Dyeable' | translate}}</div>
-          <div class="detail-value">{{(item.dyeable ? 'Yes' : 'No') | translate}}</div>
+          <div class="detail-name">{{'DB.Dye_slots' | translate}}</div>
+          <div class="detail-value">{{item.dyeCount || 0}}</div>
         </div>
         <div *ngIf="item.sockets" class="details-block">
           <div class="detail-name">{{'DB.Materia_sockets' | translate}}</div>
@@ -132,7 +132,7 @@
           <div class="detail-name">{{'DB.Sells_for' | translate}}</div>
           <div class="detail-value">{{item.sellPrice}}</div>
         </div>
-        <div *ngIf="item.gcReward && item.sellPrice && item.equipable && (item.id | lazyRow:'itemRarities' | async) !== 4" class="details-block">
+        <div *ngIf="item.gcReward && item.sellPrice && item.equipable && (item.id | lazyRow:'rarities' | async) !== 4" class="details-block">
           <div class="detail-name">{{'DB.GC_supply_value' | translate}}</div>
           <div class="detail-value"><img src="https://xivapi.com/i/065000/065004_hr1.png" alt="Seals" class="img-icon">{{item.gcReward}}</div>
         </div>
