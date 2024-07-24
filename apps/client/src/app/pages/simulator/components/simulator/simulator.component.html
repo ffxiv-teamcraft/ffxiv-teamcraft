@@ -270,6 +270,14 @@
             </div>
             <div>{{ 'SIMULATOR.Safe_mode' | translate }}</div>
           </div>
+          <div [nzTooltipTitle]="'SIMULATOR.Macro_only_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
+               fxLayoutGap="5px"
+               nz-tooltip>
+            <div>
+              <nz-switch [ngModel]="(macroOnlyMode$ | async)" (ngModelChange)="macroOnlyMode$.next($event)"></nz-switch>
+            </div>
+            <div>{{ 'SIMULATOR.Macro_only_mode' | translate }}</div>
+          </div>
           <div fxFlex="1 1 auto"></div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>
@@ -278,7 +286,7 @@
             <div>{{ 'SIMULATOR.Full_buttons' | translate }}</div>
           </div>
         </div>
-        <nz-collapse>
+        <nz-collapse *ngIf="!(macroOnlyMode$ | async)">
           <nz-collapse-panel [(nzActive)]="settings.configurationPanelExpanded"
                              [nzHeader]="'SIMULATOR.Configuration' | translate">
             <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-evenly"
@@ -591,7 +599,8 @@
           <div
             fxLayout="column"
             fxLayoutGap="10px">
-            <app-simulation-result [result]="resultData"
+            <app-simulation-result *ngIf="!(macroOnlyMode$ | async)"
+                                   [result]="resultData"
                                    [itemId]="itemId"
                                    [progressPer100]="progressPer100$ | async"
                                    [qualityPer100]="qualityPer100$ | async"
@@ -602,7 +611,7 @@
                                    (changeRecipe)="changeRecipe(rotation)"
                                    [custom]="custom">
             </app-simulation-result>
-            <nz-card [class.mobile-buffs]="false | ifMobile: true">
+            <nz-card *ngIf="!(macroOnlyMode$ | async)" [class.mobile-buffs]="false | ifMobile: true">
               <div class="buffs-container" fxLayout="row" fxLayoutAlign="flex-start center">
                 @for (buff of resultData.simulation.buffs; track buff) {
                   <div class="buff-container">
@@ -617,7 +626,7 @@
                 }
               </div>
             </nz-card>
-            <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success" class="actions-card">
+            <nz-card [class.failed]="!(macroOnlyMode$ | async) && actionFailed" [class.success]="!(macroOnlyMode$ | async) && resultData.simulation.success" class="actions-card">
               @if (dirty) {
                 <i [nzTooltipTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
                    class="warning-icon" nz-icon
@@ -659,8 +668,8 @@
                                 [cdkDragDisabled]="!step.action.canBeMoved(i)"
                                 [action]="step.action"
                                 [cpCost]="step.cpDifference"
-                                [disabled]="!step.success || step.skipped"
-                                [failed]="!step.success"
+                                [disabled]="!(macroOnlyMode$ | async) && (!step.success || step.skipped)"
+                                [failed]="!(macroOnlyMode$ | async) && !step.success"
                                 [tooltipDisabled]="step.action.getIds()[0] < 0"
                                 [ignoreDisabled]="true"
                                 [showStateMenu]="true"
@@ -669,7 +678,7 @@
                   </div>
                 }
               </div>
-              @if (resultData.failCause !== undefined) {
+              @if (!(macroOnlyMode$ | async) && resultData.failCause !== undefined) {
                 <div class="fail-reason">
                   @switch (resultData.failCause) {
                     @case ('MISSING_STATS_REQUIREMENT') {
@@ -719,8 +728,8 @@
                                       [cdkDragStartDelay]="50"
                                       [cdkDragDisabled]="snapshotMode"
                                       [action]="action"
-                                      [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                      [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                      [disabled]="!(macroOnlyMode$ | async) && (!action.canBeUsed(resultData.simulation, true) || snapshotMode)"
+                                      [notEnoughCp]="!(macroOnlyMode$ | async) && (action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP)"
                                       [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                                       [simulation]="resultData.simulation"
                                       [tooltipDisabled]="tooltipsDisabled"></app-action>
@@ -751,8 +760,8 @@
                                       [cdkDragStartDelay]="50"
                                       [cdkDragDisabled]="snapshotMode"
                                       [action]="action"
-                                      [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                      [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                      [disabled]="!(macroOnlyMode$ | async) && (!action.canBeUsed(resultData.simulation, true) || snapshotMode)"
+                                      [notEnoughCp]="!(macroOnlyMode$ | async) && (action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP)"
                                       [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                                       [simulation]="resultData.simulation"
                                       [tooltipDisabled]="tooltipsDisabled"></app-action>
@@ -785,8 +794,8 @@
                                       [cdkDragStartDelay]="50"
                                       [cdkDragDisabled]="snapshotMode"
                                       [action]="action"
-                                      [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                      [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                      [disabled]="!(macroOnlyMode$ | async) && (!action.canBeUsed(resultData.simulation, true) || snapshotMode)"
+                                      [notEnoughCp]="!(macroOnlyMode$ | async) && (action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP)"
                                       [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                                       [simulation]="resultData.simulation"
                                       [tooltipDisabled]="tooltipsDisabled"></app-action>
@@ -817,8 +826,8 @@
                                       [cdkDragStartDelay]="50"
                                       [cdkDragDisabled]="snapshotMode"
                                       [action]="action"
-                                      [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                      [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                      [disabled]="!(macroOnlyMode$ | async) && (!action.canBeUsed(resultData.simulation, true) || snapshotMode)"
+                                      [notEnoughCp]="!(macroOnlyMode$ | async) && (action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP)"
                                       [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                                       [simulation]="resultData.simulation"
                                       [tooltipDisabled]="tooltipsDisabled"></app-action>
@@ -850,8 +859,8 @@
                                       [cdkDragStartDelay]="50"
                                       [cdkDragDisabled]="snapshotMode"
                                       [action]="action"
-                                      [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                      [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                      [disabled]="!(macroOnlyMode$ | async) && (!action.canBeUsed(resultData.simulation, true) || snapshotMode)"
+                                      [notEnoughCp]="!(macroOnlyMode$ | async) && (action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP)"
                                       [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                                       [simulation]="resultData.simulation"
                                       [tooltipDisabled]="tooltipsDisabled"></app-action>
