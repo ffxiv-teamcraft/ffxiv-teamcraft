@@ -1477,7 +1477,7 @@
       "Details_explain": "Log import will reset your spearfishing log (support will be added in a future update) and will remove any recipe/item that's not tracked for ingame achievements.",
       "Additions": "Additions",
       "Deletions": "Deletions",
-      "Save": "Apply these changes"
+      "Save": "应用这些更改"
     },
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
