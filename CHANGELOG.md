@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.7...v11.3.8) (2024-07-30)
+
+
+### Bug Fixes
+
+* **db:** add proper entry for patch 7.05 content page ([08f2c9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08f2c9d7757483f8e3b402d6056dcce5458def98))
+
 ### [11.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.6...v11.3.7) (2024-07-30)
 
 
