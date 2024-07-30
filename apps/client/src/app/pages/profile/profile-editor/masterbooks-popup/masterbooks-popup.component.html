@@ -1,6 +1,6 @@
 @if (masterbooks$ | async; as books) {
   <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2px">
-    @for (book of books; track book) {
+    @for (book of books; track book.id) {
       <label [(ngModel)]="book.checked" nz-checkbox>
         {{book.id | itemName | i18n}}
       </label>

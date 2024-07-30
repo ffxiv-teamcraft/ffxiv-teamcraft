@@ -7161,11 +7161,11 @@
   },
   {
     "id": 896,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5000,
+    "name": "Cenote Ja Ja Gural",
+    "territory": 1209,
+    "scale": 100,
+    "weatherRate": 0
   },
   {
     "id": 897,

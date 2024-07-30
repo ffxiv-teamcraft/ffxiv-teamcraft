@@ -88535,21 +88535,29 @@
   },
   "70551": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Rising to the Call",
+      "ja": "新生祭と西風の海都",
+      "de": "Hochfliegende Pläne",
+      "fr": "Commémoration à la ville des vents d'ouest"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png",
+    "banner": "/i/101000/101366.png"
   },
   "70552": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "We Who Are About to Set Sail Salute You",
+      "ja": "新生祭と明日への花火",
+      "de": "Unter ein und demselben Himmel",
+      "fr": "Commémoration sous les lumières de l'avenir"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png",
+    "rewards": [
+      {
+        "id": 43587,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101367.png"
   },
   "70553": {
     "name": {
@@ -90592,7 +90600,7 @@
     "name": {
       "en": "Fire Red, Beast Green",
       "ja": "紅蓮祭と緑のアイツ？",
-      "de": "Grüne Gefahr auf dem Feuermondreigen",
+      "de": "Grüne Gefahr auf dem Feuermond-Reigen",
       "fr": "Des créatures vertes aux Feux de la Mort"
     },
     "icon": "/i/080000/080101.png",
@@ -90613,7 +90621,7 @@
       "en": "The Aether-starved Ahriman",
       "ja": "守護天節と感謝されない魔物",
       "de": "Ein Kampf um Äther und Anerkennung",
-      "fr": "守護天節と感謝されない魔物"
+      "fr": "Un monstre hors de son élément"
     },
     "icon": "/i/080000/080103.png",
     "banner": "/i/101000/101368.png"
@@ -90623,7 +90631,7 @@
       "en": "All Fiends Sated on All Saints' Wake",
       "ja": "守護天節と感謝される魔物",
       "de": "Ein Unhold auf wohltätiger Mission",
-      "fr": "守護天節と感謝される魔物"
+      "fr": "Duel de friandises"
     },
     "icon": "/i/080000/080103.png",
     "rewards": [

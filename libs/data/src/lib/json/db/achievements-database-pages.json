@@ -33963,7 +33963,7 @@
     "zh": "伊修加德的盟友们",
     "description": {
       "en": "Complete the quest “Eternity, Loyalty, Honesty.”",
-      "de": "Den Auftrag „ Sieg der Freundschaft“ abgeschlossen.",
+      "de": "Den Auftrag „Sieg der Freundschaft“ abgeschlossen.",
       "ja": "クエスト「導かれし盟友たち」をコンプリートする",
       "fr": "Accomplir la quête “Une amitié germée du chaos semé”.",
       "ko": "퀘스트 '한데 모인 맹우들' 완료",
@@ -73747,139 +73747,139 @@
   },
   "3549": {
     "id": 3549,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Legends of the Hidden Treasure I",
+    "de": "Jäger des verborgenen Schatzes I",
+    "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク1",
+    "fr": "Visiteur du cénote Ja Ja Gural I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid Cenote Ja Ja Gural.",
+      "de": "1 Mal den Cenote Ja Ja Gural betreten.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルに初めて侵入する",
+      "fr": "Pénétrer 1 fois dans le cénote Ja Ja Gural."
     },
     "item": 0,
-    "title": 0
+    "title": 749
   },
   "3550": {
     "id": 3550,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Legends of the Hidden Treasure II",
+    "de": "Jäger des verborgenen Schatzes II",
+    "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク2",
+    "fr": "Visiteur du cénote Ja Ja Gural II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid Cenote Ja Ja Gural 5 times.",
+      "de": "5 Mal den Cenote Ja Ja Gural betreten.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルに累計5回侵入する",
+      "fr": "Pénétrer 5 fois dans le cénote Ja Ja Gural."
     },
     "item": 0,
     "title": 0
   },
   "3551": {
     "id": 3551,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Legends of the Hidden Treasure III",
+    "de": "Jäger des verborgenen Schatzes III",
+    "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク3",
+    "fr": "Visiteur du cénote Ja Ja Gural III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid Cenote Ja Ja Gural 10 times.",
+      "de": "10 Mal den Cenote Ja Ja Gural betreten.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルに累計10回侵入する",
+      "fr": "Pénétrer 10 fois dans le cénote Ja Ja Gural."
     },
     "item": 0,
     "title": 0
   },
   "3552": {
     "id": 3552,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Legends of the Hidden Treasure IV",
+    "de": "Jäger des verborgenen Schatzes VI",
+    "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク4",
+    "fr": "Visiteur du cénote Ja Ja Gural IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid Cenote Ja Ja Gural 20 times.",
+      "de": "20 Mal den Cenote Ja Ja Gural betreten.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルに累計20回侵入する",
+      "fr": "Pénétrer 20 fois dans le cénote Ja Ja Gural."
     },
     "item": 0,
-    "title": 0
+    "title": 750
   },
   "3553": {
     "id": 3553,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Stay Gold, Cenote I",
+    "de": "Centnerweise Glück I",
+    "ja": "セノーテ・ジャジャグラルの覇者：ランク1",
+    "fr": "Maître du cénote Ja Ja Gural I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid the final platform in Cenote Ja Ja Gural.",
+      "de": "1 Mal den Cenote Ja Ja Gural abgeschlossen.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルを初めて制覇する",
+      "fr": "Conquérir 1 fois le cénote Ja Ja Gural."
     },
     "item": 0,
     "title": 0
   },
   "3554": {
     "id": 3554,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Stay Gold, Cenote II",
+    "de": "Centnerweise Glück II",
+    "ja": "セノーテ・ジャジャグラルの覇者：ランク2",
+    "fr": "Maître du cénote Ja Ja Gural II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid the final platform in Cenote Ja Ja Gural 5 times.",
+      "de": "5 Mal den Cenote Ja Ja Gural abgeschlossen.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルを累計5回制覇する",
+      "fr": "Conquérir 5 fois le cénote Ja Ja Gural."
     },
     "item": 0,
     "title": 0
   },
   "3555": {
     "id": 3555,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Stay Gold, Cenote III",
+    "de": "Centnerweise Glück III",
+    "ja": "セノーテ・ジャジャグラルの覇者：ランク3",
+    "fr": "Maître du cénote Ja Ja Gural III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid the final platform in Cenote Ja Ja Gural 10 times.",
+      "de": "10 Mal den Cenote Ja Ja Gural abgeschlossen.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルを累計10回制覇する",
+      "fr": "Conquérir 10 fois le cénote Ja Ja Gural."
     },
     "item": 0,
     "title": 0
   },
   "3556": {
     "id": 3556,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000116.png",
+    "patch": 97,
+    "en": "Stay Gold, Cenote IV",
+    "de": "Centnerweise Glück IV",
+    "ja": "セノーテ・ジャジャグラルの覇者：ランク4",
+    "fr": "Maître du cénote Ja Ja Gural IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Raid the final platform in Cenote Ja Ja Gural 20 times.",
+      "de": "20 Mal den Cenote Ja Ja Gural abgeschlossen.",
+      "ja": "宝物庫 セノーテ・ジャジャグラルを累計20回制覇する",
+      "fr": "Conquérir 20 fois le cénote Ja Ja Gural."
     },
     "item": 0,
-    "title": 0
+    "title": 751
   },
   "3557": {
     "id": 3557,
@@ -74043,7 +74043,7 @@
     "ja": "トクローネスレイヤー",
     "fr": "Ttokrrone charmé",
     "description": {
-      "en": "Successfully complete the FATE “Sandnest Deathmatch” with the highest rating possible.",
+      "en": "Successfully complete the FATE “The Serpentlord Seethes” with the highest rating possible.",
       "de": "Das FATE „In den sandingen Schlund“ mit der bestmöglichen Bewertung abgeschlossen.",
       "ja": "F.A.T.E.「トクローネ：荒野の死闘」を最高評価でコンプリートする",
       "fr": "Accomplir l'ALÉA “Ttokrrone&nbsp;: lutte ensablée” avec la meilleure évaluation possible."
@@ -74087,17 +74087,17 @@
   },
   "3569": {
     "id": 3569,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026107.png",
+    "patch": 97,
+    "en": "For Eleven's Sake",
+    "de": "Elf magische Jahre",
+    "ja": "ありがとう11周年！",
+    "fr": "Tonnerre de Limsa Lominsa",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “We Who Are About to Set Sail Salute You.”",
+      "de": "Den Auftrag „Unter ein und demselben Himmel“ abgeschlossen.",
+      "ja": "クエスト「新生祭と明日への花火」をコンプリートする",
+      "fr": "Accomplir la quête “Commémoration sous les lumières de l'avenir”."
     },
     "item": 0,
     "title": 0
@@ -74109,12 +74109,12 @@
     "en": "The Little Fiends in Life",
     "de": "Ein vorzügliches Allerschutzheiligen",
     "ja": "感謝味わう守護天節",
-    "fr": "感謝味わう守護天節",
+    "fr": "L'ahriman bien intégré",
     "description": {
       "en": "Complete the quest “All Fiends Sated on All Saints' Wake.”",
       "de": "Den Auftrag „Ein Unhold auf wohltätiger Mission“ abgeschlossen.",
       "ja": "クエスト「守護天節と感謝される魔物」をコンプリートする",
-      "fr": "クエスト「守護天節と感謝される魔物」をコンプリートする"
+      "fr": "Accomplir la quête “Duel de friandises”."
     },
     "item": 0,
     "title": 0
@@ -74189,51 +74189,51 @@
   },
   "3575": {
     "id": 3575,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002981.png",
+    "patch": 97,
+    "en": "Savage Someone Your Own Size I",
+    "de": "Episches Tor des Arkadion I",
+    "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク1",
+    "fr": "Champion poids mi-lourds incontesté de l'Arcadion I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete AAC Light-heavyweight Tier (Savage).",
+      "de": "Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
+      "ja": "至天の座アルカディア零式：ライトヘビー級を攻略する",
+      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 1 fois."
     },
     "item": 0,
     "title": 0
   },
   "3576": {
     "id": 3576,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002981.png",
+    "patch": 97,
+    "en": "Savage Someone Your Own Size II",
+    "de": "Episches Tor des Arkadion II",
+    "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク2",
+    "fr": "Champion poids mi-lourds incontesté de l'Arcadion II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete AAC Light-heavyweight Tier (Savage) 5 times.",
+      "de": "5 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
+      "ja": "至天の座アルカディア零式：ライトヘビー級を計5回攻略する",
+      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 5 fois."
     },
     "item": 0,
     "title": 0
   },
   "3577": {
     "id": 3577,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002981.png",
+    "patch": 97,
+    "en": "Savage Someone Your Own Size III",
+    "de": "Episches Tor des Arkadion III",
+    "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク3",
+    "fr": "Champion poids mi-lourds incontesté de l'Arcadion III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete AAC Light-heavyweight Tier (Savage) 10 times.",
+      "de": "10 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
+      "ja": "至天の座アルカディア零式：ライトヘビー級を計10回攻略する",
+      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 10 fois."
     },
     "item": 0,
     "title": 0

@@ -2041,10 +2041,10 @@
   },
   "1061": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Master Recipes (11)",
+      "ja": "秘伝書:第11巻",
+      "de": "Meister (11)",
+      "fr": "Expert - tome 11"
     },
     "pages": [
       1488,
@@ -2056,8 +2056,8 @@
       1494,
       1495
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 100,
+    "gatheringLevel": 255
   },
   "1062": {
     "name": {

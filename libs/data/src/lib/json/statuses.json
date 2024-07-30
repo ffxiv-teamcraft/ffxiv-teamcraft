@@ -26537,10 +26537,10 @@
     "icon": "/i/012000/012813.png",
     "maxStacks": 0,
     "description": {
-      "en": "The next <span style=\"color:#ff7b1a\">Adloquium</span>, <span style=\"color:#ff7b1a\">Succor</span>, <span style=\"color:#ff7b1a\">Indomitability</span>, or <span style=\"color:#ff7b1a\">Excogitation</span> executed will cost no MP or <span style=\"color:#ffff66\">Aetherflow</span> stacks and will restore critical HP.",
-      "de": "Nächstes <span style=\"color:#ffbfff\">Adloquium</span>, <span style=\"color:#ffbfff\">Kurieren</span>, <span style=\"color:#ffbfff\">Unbezwingbarkeit</span> oder <span style=\"color:#ffbfff\">Weise Voraussicht</span> kostet weder MP noch <span style=\"color:#ffff66\">Ätherfluss</span> und trifft kritisch.",
-      "ja": "次に実行する1回の「鼓舞激励の策」「士気高揚の策」「不撓不屈の策」「深謀遠慮の策」について、ＭＰや「エーテルフロー」を消費することなく実行することができ、かつ必ずクリティカルヒットする状態。",
-      "fr": "Le prochain Traité du réconfort, Traité du soulagement, Traité de la persévérance ou Traité de l'excogitation est critique et ne consomme ni PM ni Flux d'éther."
+      "en": "The next <span style=\"color:#ff7b1a\">Adloquium</span>, <span style=\"color:#ff7b1a\">Concitation</span>, <span style=\"color:#ff7b1a\">Indomitability</span>, or <span style=\"color:#ff7b1a\">Excogitation</span> executed will cost no MP or <span style=\"color:#ffff66\">Aetherflow</span> stacks and will restore critical HP.",
+      "de": "Nächstes <span style=\"color:#ffbfff\">Adloquium</span>, <span style=\"color:#ffbfff\">Übermut</span>, <span style=\"color:#ffbfff\">Unbezwingbarkeit</span> oder <span style=\"color:#ffbfff\">Weise Voraussicht</span> kostet weder MP noch <span style=\"color:#ffff66\">Ätherfluss</span> und trifft kritisch.",
+      "ja": "次に実行する1回の「鼓舞激励の策」「意気軒昂の策」「不撓不屈の策」「深謀遠慮の策」について、ＭＰや「エーテルフロー」を消費することなく実行することができ、かつ必ずクリティカルヒットする状態。",
+      "fr": "Le prochain Traité du réconfort, Traité de l'exultation, Traité de la persévérance ou Traité de l'excogitation est critique et ne consomme ni PM ni Flux d'éther."
     }
   },
   "1897": {
@@ -46032,17 +46032,17 @@
     }
   },
   "3289": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fusefield",
+    "de": "Luntenfeld",
+    "ja": "フューズフィールド",
+    "fr": "Champs de mèches",
+    "icon": "/i/014000/014186.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deploying an infernal field.",
+      "de": "Brutalo-Bomber spannt ein Feld aus Zündschnüren.",
+      "ja": "ブルートボンバーがフューズフィールドを展開し、維持している状態。",
+      "fr": "Brute Bomber a déployé un champs de mèches et le maintient."
     }
   },
   "3290": {
@@ -46242,17 +46242,17 @@
     }
   },
   "3304": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Damage Down",
+    "de": "Schaden -",
+    "ja": "ダメージ低下",
+    "fr": "Malus de dégâts",
+    "icon": "/i/018000/018441.png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is reduced.",
+      "de": "Ausgeteilter Schaden ist verringert.",
+      "ja": "与ダメージが低下した状態。",
+      "fr": "Les dégâts infligés sont réduits."
     }
   },
   "3305": {
@@ -51394,17 +51394,17 @@
     }
   },
   "3672": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Honed Steel",
+    "de": "Tödliche Haltung",
+    "ja": "蛇鋭牙【咬創】",
+    "fr": "Lacération d'acier",
+    "icon": "/i/013000/013757.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Potency of <span style=\"color:#ff7b1a\">Steel Fangs</span> and <span style=\"color:#ff7b1a\">Steel Maw</span> is increased.",
+      "de": "Der Attacke-Wert bestimmter Kommandos ist erhöht.",
+      "ja": "牙の構えから繰り出す特定のアクションの威力を上昇させる状態。",
+      "fr": "La puissance de Crochets d'acier et de Mâchoire d'acier est augmentée."
     }
   },
   "3673": {
@@ -52794,17 +52794,17 @@
     }
   },
   "3772": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Honed Reavers",
+    "de": "Tückische Haltung",
+    "ja": "蛇鋭牙【穿裂】",
+    "fr": "Lacération mortelle",
+    "icon": "/i/013000/013758.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Potency of <span style=\"color:#ff7b1a\">Reaving Fangs</span> and <span style=\"color:#ff7b1a\">Reaving Maw</span> is increased.",
+      "de": "Der Attacke-Wert bestimmter Kommandos ist erhöht.",
+      "ja": "牙の構えから繰り出す特定のアクションの威力を上昇させる状態。",
+      "fr": "La puissance de Crochets mortels et de Mâchoire mortelle est augmentée."
     }
   },
   "3773": {
@@ -53299,7 +53299,7 @@
   },
   "3808": {
     "en": "Directional Disregard",
-    "de": "Richtungsbedingungen Ignoriert",
+    "de": "Richtungsbedingungen ignoriert",
     "ja": "方向指定解除",
     "fr": "Libération directionnelle",
     "icon": "/i/014000/014224.png",
@@ -53853,7 +53853,7 @@
     "description": {
       "en": "Able to execute <span style=\"color:#ff7b1a\">Goring Blade</span>.",
       "de": "<span style=\"color:#ffbfff\">Ausweiden</span> kann ausgeführt werden.",
-      "ja": "ゴアブレード実行可を実行できる状態。",
+      "ja": "ゴアブレードを実行できる状態。",
       "fr": "Lame étripante peut être lancée."
     }
   },
@@ -53922,8 +53922,8 @@
     "maxStacks": 0,
     "description": {
       "en": "Able to execute <span style=\"color:#ff7b1a\">Tsubame-gaeshi</span>.",
-      "de": "Wird während der Wirkungsdauer <span style=\"color:#ffbfff\">Iaijutsu</span> eingesetzt, kann hiernach <span style=\"color:#ffbfff\">Tsubamegaeshi</span> ausgeführt werden.",
-      "ja": "効果中に居合術を実行すると、燕返しを発動できるようになる状態。",
+      "de": "<span style=\"color:#ffbfff\">Tsubamegaeshi</span> kann ausgeführt werden.",
+      "ja": "燕返しを実行できる状態。",
       "fr": "Tsubamegaeshi peut être lancé."
     }
   },
@@ -53944,15 +53944,15 @@
   "3854": {
     "en": "Tengentsu's Foresight",
     "de": "Tengentsu: Sei",
-    "ja": "天眼通:生",
+    "ja": "天眼通：生",
     "fr": "Tengentsû&nbsp;: Sei",
     "icon": "/i/013000/013317.png",
     "maxStacks": 0,
     "description": {
-      "en": "HP will be restored automatically when effect expires.",
-      "de": "Bei Ablauf der Wirkungsdauer werden LP regeneriert.",
-      "ja": "効果時間が経過すると回復効果が発動する状態。",
-      "fr": "Un effet curatif est reçu à la fin de l'effet."
+      "en": "Damage taken is reduced and regenerating HP over time.",
+      "de": "Erlittener Schaden ist verringert und LP werden stetig regeneriert.",
+      "ja": "受けるダメージの一部が軽減され、かつ連続してＨＰが回復している状態。",
+      "fr": "Les dégâts reçus sont réduits et des PV sont récupérés périodiquement."
     }
   },
   "3855": {
@@ -54880,17 +54880,17 @@
     }
   },
   "3921": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Drone",
+    "de": "Darbietung",
+    "ja": "献上",
+    "fr": "Sacrifice d'amour",
+    "icon": "/i/014000/014148.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wholly enthralled by Honey B. Lovely's charms and offering up life force as tribute.",
+      "de": "Hat die Kontrolle über den eigenen Körper und die eigenen Sinne verloren und bietet Suzie Summ Honigsüß die eigene Lebensenergie dar.",
+      "ja": "虜となり行動不能になった状態。ハニー・B・ラブリーに対して、生命力を献上してしまう。",
+      "fr": "Complètement sous le charme et incapable d'agir, au point d'offrir sa force vitale à Honey B. Lovely."
     }
   },
   "3922": {
@@ -54908,171 +54908,171 @@
     }
   },
   "3923": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Infatuated",
+    "de": "Entzückt",
+    "ja": "メロメロ：好感",
+    "fr": "Séduction&nbsp;: un peu",
+    "icon": "/i/014000/014143.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering minor heart palpitations due to a growing fondness for Honey B. Lovely. Taking damage over time.",
+      "de": "Entzückt von Suzie Summ Honigsüß, wodurch das eigene Herz schneller schlägt. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーに好感を抱き、動悸が激しくなった状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur se font un peu plus rapides du fait de l'attirance pour Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3924": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Head Over Heels",
+    "de": "Verliebt",
+    "ja": "メロメロ：恋心",
+    "fr": "Séduction&nbsp;: beaucoup",
+    "icon": "/i/014000/014144.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering heart palpitations due to an attraction to Honey B. Lovely. Taking damage over time.",
+      "de": "Verliebt in Suzie Summ Honigsüß, wodurch das eigene Herz wie verrückt rast. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーに恋心を抱き、動悸がさらに激しくなった状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur se font un beaucoup plus rapides du fait d'une plus grande attirance pour Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3925": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hopeless Devotion",
+    "de": "Verfallen",
+    "ja": "メロメロ：恋慕",
+    "fr": "Séduction&nbsp;: passionnément",
+    "icon": "/i/014000/014145.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering severe heart palpitations due to undying affection for Honey B. Lovely. Taking damage over time.",
+      "de": "Suzie Summ Honigsüß verfallen, wodurch das eigene Herz bis zum Anschlag pocht. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーを恋慕し、動悸がより激しくなった状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur se font extrêmement plus rapides du fait d'une très grande attirance pour Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3926": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Honey Bee Mine",
+    "de": "Unterworfen",
+    "ja": "メロメロ：隷属",
+    "fr": "Séduction&nbsp;: soumission",
+    "icon": "/i/014000/014146.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Taken in Honey B. Lovely's thrall and suffering from a dangerously high heart rate, causing damage over time.",
+      "de": "Suzie Summ Honigsüß unterworfen, wodurch das eigene Herz zu zerreißen droht. Erleidet schrittweise Schaden.",
+      "ja": "ハニー・B・ラブリーに隷属し、動悸が限界突破した状態。ＨＰが徐々に失われる。",
+      "fr": "Les battements du cœur sont devenus incontrôlables du fait d'une soumission totale à Honey B. Lovely. Des dégâts périodiques sont subis."
     }
   },
   "3927": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "ナーヴトキシン：前",
+    "de": "ナーヴトキシン：前",
+    "ja": "ナーヴトキシン：前",
+    "fr": "ナーヴトキシン：前",
+    "icon": "/i/015000/015774.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、前方向に移動してしまう。",
+      "de": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、前方向に移動してしまう。",
+      "ja": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、前方向に移動してしまう。",
+      "fr": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、前方向に移動してしまう。"
     }
   },
   "3928": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "ナーヴトキシン：後",
+    "de": "ナーヴトキシン：後",
+    "ja": "ナーヴトキシン：後",
+    "fr": "ナーヴトキシン：後",
+    "icon": "/i/015000/015775.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、後方向に移動してしまう。",
+      "de": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、後方向に移動してしまう。",
+      "ja": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、後方向に移動してしまう。",
+      "fr": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、後方向に移動してしまう。"
     }
   },
   "3929": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "ナーヴトキシン：左",
+    "de": "ナーヴトキシン：左",
+    "ja": "ナーヴトキシン：左",
+    "fr": "ナーヴトキシン：左",
+    "icon": "/i/015000/015776.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、左方向に移動してしまう。",
+      "de": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、左方向に移動してしまう。",
+      "ja": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、左方向に移動してしまう。",
+      "fr": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、左方向に移動してしまう。"
     }
   },
   "3930": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "ナーヴトキシン：右",
+    "de": "ナーヴトキシン：右",
+    "ja": "ナーヴトキシン：右",
+    "fr": "ナーヴトキシン：右",
+    "icon": "/i/015000/015777.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、右方向に移動してしまう。",
+      "de": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、右方向に移動してしまう。",
+      "ja": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、右方向に移動してしまう。",
+      "fr": "神経毒により、方向感覚に異常が生じた状態。効果時間終了時、右方向に移動してしまう。"
     }
   },
   "3931": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Nine Lives",
+    "de": "Sieben Leben",
+    "ja": "ナインライヴス",
+    "fr": "Neuf-Vies",
+    "icon": "/i/014000/014194.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Actions performed will be remembered.",
+      "de": "Getätigte Handlungen werden im Gedächtnis abgespeichert.",
+      "ja": "自身が行った行動を記憶する状態。",
+      "fr": "Toutes les actions du personnage sont mémorisées."
     }
   },
   "3932": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beeloved Venom: α",
+    "de": "Liebliches Gift: α",
+    "ja": "ラブポイズン：α",
+    "fr": "Poison de l'amour α",
+    "icon": "/i/014000/014149.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Honey B. Lovely's poison is causing damage over time, resulting in paralysis when this effect expires. Contact with specific poisons will trigger an explosion and remove this effect.",
+      "de": "Befallen von Suzies Gift. Erleidet schrittweise Schaden. Bei Ablauf der Wirkungsdauer tritt <span style=\"color:#ffff66\">Paralyse</span> ein. Löst bei Kontakt mit einem bestimmten Gift eine Explosion aus und wird entfernt.",
+      "ja": "ハニー・B・ラブリーの毒に冒された状態。ＨＰが徐々に失われ、効果時間終了時に麻痺状態になる。<br>特定の毒と反応することで爆発が発生し、解除される。",
+      "fr": "Des dégâts périodiques sont subis à cause du poison de Honey B. Lovely. Inflige Paralysie à la fin de l'effet."
     }
   },
   "3933": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beeloved Venom: β",
+    "de": "Liebliches Gift: β",
+    "ja": "ラブポイズン：β",
+    "fr": "Poison de l'amour β",
+    "icon": "/i/014000/014150.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Honey B. Lovely's poison is causing damage over time, resulting in KO when this effect expires. Contact with specific poisons will trigger an explosion and remove this effect.",
+      "de": "Befallen von Suzies Gift. Wird bei Ablauf der Wirkungsdauer kampfunfähig. Löst bei Kontakt mit einem bestimmten Gift eine Explosion aus und wird entfernt.",
+      "ja": "ハニー・B・ラブリーの毒に冒され、効果時間終了時に戦闘不能となる状態。特定の毒と反応することで爆発が発生し、解除される。",
+      "fr": "Le poison de Honey B. Lovely rendra le personnage inconscient à la fin de l'effet. La réaction avec une autre forme de poison provoquera une explosion et dissipera l'effet."
     }
   },
   "3934": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Poison 'n' Pop",
+    "de": "Giftballon",
+    "ja": "ポイズンバルーン",
+    "fr": "Ballon de poison",
+    "icon": "/i/014000/014151.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Poisoned by Honey B. Lovely. An explosion will be triggered when this effect expires.",
+      "de": "Befallen von Suzies Gift. Löst bei Ablauf der Wirkungsdauer eine Explosion aus.",
+      "ja": "ハニー・B・ラブリーの毒に冒された状態。効果時間終了時に爆発する。",
+      "fr": "Le poison de Honey B. Lovely provoquera une explosion à la fin de l'effet."
     }
   },
   "3935": {
@@ -55090,31 +55090,31 @@
     }
   },
   "3936": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Queen Bee",
+    "de": "Bienenkönigin",
+    "ja": "クイーン・B",
+    "fr": "Gelée royale",
+    "icon": "/i/018000/018532.png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Strengthened by a drone's life force.",
+      "de": "Sammelt Lebensenergie von Unterworfenen und verstärkt sich.",
+      "ja": "魅了者から生命力を受け取り、強化された状態。",
+      "fr": "Le pouvoir de Honey B. Lovely est renforcé par l'énergie vitale que lui confèrent ceux tombés sous son charme."
     }
   },
   "3937": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Honeyed Charms",
+    "de": "Bienencharme",
+    "ja": "B・チャーム",
+    "fr": "Affection envoûtante",
+    "icon": "/i/014000/014139.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weapon has been lovingly coated with a pheromone-laced venom.",
+      "de": "Die eigene Waffe ist von Liebe und verlockenden Substanzen umhüllt.",
+      "ja": "愛とともに、自身の武器に魅了毒を仕込んだ状態。",
+      "fr": "L'arme est chargée d'amour et d'un poison envoûtant."
     }
   },
   "3938": {
@@ -55328,17 +55328,17 @@
     }
   },
   "3953": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Femme Fatale",
+    "de": "Femme Fatale",
+    "ja": "ファムファタル",
+    "fr": "Femme fatale",
+    "icon": "/i/019000/019921.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Significantly strengthened by several drones' life force.",
+      "de": "Sammelt Lebensenergie von einer großen Anzahl Unterworfener und verstärkt sich enorm.",
+      "ja": "多数の魅了者から生命力を受け取り、大幅に強化された状態。",
+      "fr": "Le pouvoir de Honey B. Lovely est grandement renforcé par l'énergie vitale que lui confèrent ceux tombés sous son charme."
     }
   },
   "3954": {
@@ -55944,17 +55944,17 @@
     }
   },
   "3997": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Concealed",
+    "de": "Verborgen",
+    "ja": "潜伏",
+    "fr": "Camouflage",
+    "icon": "/i/015000/015673.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to be detected from a distance.",
+      "de": "Kann aus der Entfernung nicht gesehen werden.",
+      "ja": "姿を隠した状態。接近すると発見される。",
+      "fr": "Un subterfuge permet de tromper les regards hostiles à une certaine distance."
     }
   },
   "3998": {
@@ -55972,143 +55972,143 @@
     }
   },
   "3999": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_3999_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3999_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3999_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3999_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014179.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_3999_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_3999_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_3999_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_3999_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4000": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "_rsv_4000_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4000_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4000_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4000_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/018000/018854.png",
+    "maxStacks": 6,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4000_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4000_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4000_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4000_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4001": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "_rsv_4001_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4001_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4001_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4001_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/018000/018847.png",
+    "maxStacks": 6,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4001_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4001_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4001_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4001_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4002": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4002_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4002_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4002_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4002_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014183.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4002_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4002_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4002_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4002_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4003": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4003_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4003_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4003_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4003_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014184.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4003_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4003_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4003_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4003_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4004": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4004_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4004_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4004_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4004_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014180.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4004_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4004_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4004_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4004_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4005": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4005_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4005_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4005_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4005_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014181.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4005_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4005_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4005_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4005_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4006": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4006_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4006_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4006_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4006_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014182.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4006_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4006_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4006_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4006_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4007": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4007_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4007_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4007_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4007_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014185.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4007_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4007_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4007_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4007_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4008": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4008_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4008_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4008_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4008_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/014000/014225.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4008_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4008_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4008_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4008_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4009": {
@@ -56252,31 +56252,31 @@
     }
   },
   "4019": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Chain Deathmatch",
+    "de": "Ketten-Todeskampf",
+    "ja": "チェーンデスマッチ",
+    "fr": "Chaîne de la mort",
+    "icon": "/i/014000/014132.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Singled out for a deathmatch. Damage from opponent's first blow will be reduced; however, failing to receive a blow from said opponent before this effect expires will result in KO.",
+      "de": "Zum Todeskampf auserwählt. 1. Angriff des Todeskampf-Gegners wird geschwächt. Führt zu Kampfunfähigkeit, wenn bis zum Ende der Wirkungsdauer kein Angriff des Todeskampf-Gegners erlitten wurde.",
+      "ja": "デスマッチの相手に指名された状態。指名相手からの攻撃を受けた場合、1回だけ被ダメージを軽減する。ただし、指名相手から攻撃を受けずに効果時間が終了した場合、戦闘不能状態に陥る。",
+      "fr": "Le personnage a été désigné pour un duel à mort. Les dégâts infligés par l'adversaire sont réduits la première fois. Le personnage tombera inconscient s'il ne subit aucune attaque de la part de l'adversaire avant la fin de l'effet."
     }
   },
   "4020": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bombarium",
+    "de": "Bombarium",
+    "ja": "ボンバリウム",
+    "fr": "Bombarium",
+    "icon": "/i/014000/014133.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A highly combustible material has been affixed to the body, resulting in a KO when this effect expires. Contact with a sinister spark will trigger an explosion and remove this effect.",
+      "de": "Mit hochentflammbarem Material behaftet. Wird bei Ablauf der Wirkungsdauer kampfunfähig. Löst bei Kontakt mit Brutalo-Flammen eine Explosion aus und wird entfernt.",
+      "ja": "ボムキングが生成した可燃物が付着した状態。効果時間終了時に戦闘不能になる。<br>なお、魔炎に接触すると爆発を起こし、効果が解除される。",
+      "fr": "Le corps est recouvert d'une substance explosive produite par le roi bombo, laquelle rendra le personnage inconscient à la fin de l'effet. Entrer en contact avec une flamme brutale provoquera une explosion et dissipera l'effet."
     }
   },
   "4021": {
@@ -56294,31 +56294,31 @@
     }
   },
   "4022": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Dangerously Doped",
+    "de": "Stark aufgeputscht",
+    "ja": "ドーピング［強］",
+    "fr": "Surdopage",
+    "icon": "/i/018000/018917.png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A performance-enhancing compound is greatly amplifying physical strength. Damage dealt is increased based on the number of stacks.",
+      "de": "Brutalo Bomber verstärkt seine Muskeln mit Aufputschmitteln. Sein ausgeteilter Schaden ist der Stapelzahl entsprechend erhöht.",
+      "ja": "ドーピングにより、ブルートボンバーの筋力がさらに増した状態。スタック数に応じて与ダメージが上昇する。",
+      "fr": "La force musculaire de Brute Bomber est décuplée par l'absorption d'une substance dopante. Les dégâts qu'il inflige sont augmentés proportionnellement au nombre de fois où l'effet est cumulé."
     }
   },
   "4023": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doped and Detonative",
+    "de": "Maximal aufgeputscht",
+    "ja": "ドーピング［極］",
+    "fr": "Mégadopage",
+    "icon": "/i/014000/014135.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A cocktail of performance-enhancing compounds is amplifying physical strength to an explosive degree.",
+      "de": "Brutalo Bomber verstärkt seine Muskeln so stark mit Aufputschmitteln, dass diese bald bersten werden.",
+      "ja": "ドーピングにより、ブルートボンバーの筋力が爆発的に増強された状態。",
+      "fr": "La force musculaire de Brute Bomber est décuplée de manière explosive par l'absorption d'une substance dopante."
     }
   },
   "4024": {
@@ -56658,87 +56658,87 @@
     }
   },
   "4048": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "One-two Memory",
+    "de": "Sieben Leben: Doppelklaue",
+    "ja": "ナインライヴス：デュアル",
+    "fr": "Neuf-Vies&nbsp;: un-deux",
+    "icon": "/i/014000/014195.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to relive <span style=\"color:#ff7b1a\">One-two Paw</span>.",
+      "de": "Speichert die Erinnerung an eine Doppelklaue.",
+      "ja": "デュアルネイルを記憶している状態。",
+      "fr": "Griffade un-deux a été mémorisée."
     }
   },
   "4049": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Four-crossed Memory",
+    "de": "Sieben Leben: Vierfachklaue",
+    "ja": "ナインライヴス：クアドラプルネイル",
+    "fr": "Neuf-Vies&nbsp;: Quadruple griffade",
+    "icon": "/i/014000/014196.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to relive <span style=\"color:#ff7b1a\">Quadruple Crossing</span>.",
+      "de": "Speichert die Erinnerung an eine Vierfachklaue.",
+      "ja": "クアドラプルネイルを記憶している状態。",
+      "fr": "Quadruple griffade a été mémorisée."
     }
   },
   "4050": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rightward Memory",
+    "de": "Sieben Leben: Rechts",
+    "ja": "ナインライヴス：ライト",
+    "fr": "Neuf-Vies&nbsp;: droite",
+    "icon": "/i/014000/014197.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to relive movement to the right.",
+      "de": "Speichert die Erinnerung an eine Bewegung nach rechts.",
+      "ja": "右方向への移動を記憶している状態。",
+      "fr": "Un déplacement vers la droite a été mémorisé."
     }
   },
   "4051": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Leftward Memory",
+    "de": "Sieben Leben: Links",
+    "ja": "ナインライヴス：レフト",
+    "fr": "Neuf-Vies&nbsp;: gauche",
+    "icon": "/i/014000/014198.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to relive movement to the left.",
+      "de": "Speichert die Erinnerung an eine Bewegung nach links.",
+      "ja": "左方向への移動を記憶している状態。",
+      "fr": "Un déplacement vers la gauche a été mémorisé."
     }
   },
   "4052": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Four-swipe Memory",
+    "de": "Sieben Leben: Vierfache Kralle",
+    "ja": "ナインライヴス：クァッド",
+    "fr": "Neuf-Vies&nbsp;: Quadruple fauchage",
+    "icon": "/i/014000/014200.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to relive <span style=\"color:#ff7b1a\">Quadruple Swipe</span>.",
+      "de": "Speichert die Erinnerung an eine Vierfache Kralle.",
+      "ja": "クァッドクロウを記憶している状態。",
+      "fr": "Quadruple fauchage a été mémorisé."
     }
   },
   "4053": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Two-swipe Memory",
+    "de": "Sieben Leben: Doppelte Kralle",
+    "ja": "ナインライヴス：ダブル",
+    "fr": "Neuf-Vies&nbsp;: Double fauchage",
+    "icon": "/i/014000/014199.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to relive <span style=\"color:#ff7b1a\">Double Swipe</span>.",
+      "de": "Speichert die Erinnerung an eine Doppelte Kralle.",
+      "ja": "ダブルクロウを記憶している状態。",
+      "fr": "Double fauchage a été mémorisé."
     }
   },
   "4054": {
@@ -57996,7 +57996,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Honey B. Lovely is stealing the spotlight.",
-      "de": "Suzie Summ Honigüß zeigt sich von ihrer lieblichen, anziehenden Seite.",
+      "de": "Suzie Summ Honigsüß zeigt sich von ihrer lieblichen, anziehenden Seite.",
       "ja": "ハニー・B・ラブリーが魅力を発揮している状態。",
       "fr": "Honey B. Lovely déploie tout son charme."
     }
@@ -58016,17 +58016,17 @@
     }
   },
   "4145": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rotten Honey",
+    "de": "Verdorbener Honig",
+    "ja": "ブラックハニー",
+    "fr": "Colère mielleuse",
+    "icon": "/i/014000/014223.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Honey B. Lovely is showing her true colors.",
+      "de": "Zeigt ihre wahre Persönlichkeit.",
+      "ja": "ハニー・B・ラブリーが本性を発揮している状態。",
+      "fr": "Honey B. Lovely montre son véritable caractère."
     }
   },
   "4146": {
@@ -58072,17 +58072,17 @@
     }
   },
   "4149": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Sustained Damage",
+    "de": "Schaden über Zeit",
+    "ja": "継続ダメージ",
+    "fr": "Dégâts continus",
+    "icon": "/i/019000/019941.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time.",
+      "de": "Erleidet schrittweise Schaden.",
+      "ja": "無属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques neutres sont subis."
     }
   },
   "4150": {
@@ -58786,6 +58786,286 @@
     }
   },
   "4200": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4201": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4202": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4203": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4204": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4205": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4206": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4207": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4208": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4209": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4210": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4211": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4212": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4213": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4214": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4215": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4216": {
+    "en": "Tsubame-gaeshi",
+    "de": "Tsubamegaeshi",
+    "ja": "燕返し実行可",
+    "fr": "Tsubamegaeshi préparé",
+    "icon": "/i/013000/013315.png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Able to execute <span style=\"color:#ff7b1a\">Tsubame-gaeshi</span>.",
+      "de": "<span style=\"color:#ffbfff\">Tsubamegaeshi</span> kann ausgeführt werden.",
+      "ja": "燕返しを実行できる状態。",
+      "fr": "Tsubamegaeshi peut être lancé."
+    }
+  },
+  "4217": {
+    "en": "Tsubame-gaeshi",
+    "de": "Tsubamegaeshi",
+    "ja": "燕返し実行可",
+    "fr": "Tsubamegaeshi préparé",
+    "icon": "/i/013000/013315.png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Able to execute <span style=\"color:#ff7b1a\">Tsubame-gaeshi</span>.",
+      "de": "<span style=\"color:#ffbfff\">Tsubamegaeshi</span> kann ausgeführt werden.",
+      "ja": "燕返しを実行できる状態。",
+      "fr": "Tsubamegaeshi peut être lancé."
+    }
+  },
+  "4218": {
+    "en": "Tsubame-gaeshi",
+    "de": "Tsubamegaeshi",
+    "ja": "燕返し実行可",
+    "fr": "Tsubamegaeshi préparé",
+    "icon": "/i/013000/013315.png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Able to execute <span style=\"color:#ff7b1a\">Tsubame-gaeshi</span>.",
+      "de": "<span style=\"color:#ffbfff\">Tsubamegaeshi</span> kann ausgeführt werden.",
+      "ja": "燕返しを実行できる状態。",
+      "fr": "Tsubamegaeshi peut être lancé."
+    }
+  },
+  "4219": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4220": {
     "en": "",
     "de": "",
     "ja": "",
