@@ -13576,6 +13576,37 @@
       40600
     ]
   },
+  "30136": {
+    "id": 30136,
+    "en": "AAC Light-heavyweight M1 (Savage)",
+    "ja": "至天の座アルカディア零式：ライトヘビー級1",
+    "de": "Arkadion - Halbschwergewicht R1 (episch)",
+    "fr": "Poids mi-lourds CCA - match 1 (sadique)",
+    "description": {
+      "en": "By his appropriately timed interjections, Gabbro's attention appears wholly rapt on you as you speak of your hair-raising bout with Black Cat─yet you cannot help but notice his curiously furrowed brow. How liberal does he intend to be with his depiction of the battle─what precisely does he see in his mind's eye? Intrigued by the possibilities, you begin to imagine the deadly clash anew... ",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112568.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 700,
+    "sync": 100,
+    "exp": 0,
+    "map": 927,
+    "contentText": [
+      40622,
+      40600
+    ]
+  },
   "30137": {
     "id": 30137,
     "en": "AAC Light-heavyweight M2",
@@ -13607,6 +13638,37 @@
       39100
     ]
   },
+  "30138": {
+    "id": 30138,
+    "en": "AAC Light-heavyweight M2 (Savage)",
+    "ja": "至天の座アルカディア零式：ライトヘビー級2",
+    "de": "Arkadion - Halbschwergewicht R2 (episch)",
+    "fr": "Poids mi-lourds CCA - match 2 (sadique)",
+    "description": {
+      "en": "With her irresistible charms, your victory against Honey B. Lovely was hard-fought. Yet Gabbro's words linger in your mind: what if the sweet songstress revealed a side of herself more vile than you had ever imagined? How might the battle have gone then...?",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112570.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 705,
+    "sync": 100,
+    "exp": 0,
+    "map": 923,
+    "contentText": [
+      39129,
+      39100
+    ]
+  },
   "30139": {
     "id": 30139,
     "en": "AAC Light-heavyweight M3",
@@ -13614,7 +13676,7 @@
     "de": "Arkadion - Halbschwergewicht R3",
     "fr": "Poids mi-lourds CCA - match 3",
     "description": {
-      "en": "The time has come for your title match against the Brute Bomber, who wields the explosive power of a bomb king. Yet he did not become champion by playing by the rules, and if you are to bring this despised heel low, you must be prepared to face all that he may bring to bear.",
+      "en": "The time has come for your title match against the Brute Bomber, who wields the explosive power of the bomb king. Yet he did not become champion by playing by the rules, and if you are to bring this despised heel low, you must be prepared to face all that he may bring to bear.",
       "ja": "ハニー・Ｂ・ラブリーに勝利し、観客たちの熱い注目を浴びた冒険者。次に立ちはだかるのは炎の魔物「ボムキング」の魂を注入した闘士――爆ぜる悪意「ブルートボンバー」。<br>卑怯千万、極悪非道なラフファイトで有名だという、ライトヘビー級の現王者を討ち果たし、新たな王者を目指そう！",
       "de": "Du konntest Suzie Summ Honigsüß und ihren gefährlichen Verlockungen widerstehen und dir somit das Anrecht erkämpfen, dich dem Titelverteidiger des Halbschwergewichts stellen zu dürfen: Brutalo Bomber, die Bombastische Boshaftigkeit. Dieser ist nicht nur bekannt für die Explosionen, welche seine „Königsbomber“-Seele erzeugen kann, sondern ebenfalls dafür, jegliche Regeln des Arkadion zu ignorieren und mit hinterhältigen Mitteln zu kämpfen. Mach dich bereit und zeig den Leuten, wie eine wahre Titelverteidigerin aussieht!",
       "fr": "Grâce à votre triomphe sur Honey B. Lovely, vous êtes en mesure d'affronter le champion de la division des poids mi-lourds&nbsp;: Brute Bomber. Méfiez-vous toutefois, car ce combattant explosif, qui décuple ses forces en faisant appel à l'âme du roi bombo, est tristement célèbre pour les coups bas et les infractions au règlement qu'il commet pour prendre l'avantage sur ses adversaires&nbsp;! Saurez-vous lui ravir son titre de champion&nbsp;?"
@@ -13630,6 +13692,37 @@
     "contentType": 5,
     "levelReq": 100,
     "ilvlReq": 685,
+    "sync": 100,
+    "exp": 0,
+    "map": 926,
+    "contentText": [
+      40221,
+      40200
+    ]
+  },
+  "30140": {
+    "id": 30140,
+    "en": "AAC Light-heavyweight M3 (Savage)",
+    "ja": "至天の座アルカディア零式：ライトヘビー級3",
+    "de": "Arkadion - Halbschwergewicht R3 (episch)",
+    "fr": "Poids mi-lourds CCA - match 3 (sadique)",
+    "description": {
+      "en": "Gabbro invites you to picture the Brute Bomber in a somehow even more degenerate light─one in which the now uncrowned champion would readily stoop to lower lows to seize victory. Surely, such an engagement would be more explosive than the last...",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112572.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 710,
     "sync": 100,
     "exp": 0,
     "map": 926,
@@ -13661,6 +13754,37 @@
     "contentType": 5,
     "levelReq": 100,
     "ilvlReq": 685,
+    "sync": 100,
+    "exp": 0,
+    "map": 924,
+    "contentText": [
+      40337,
+      40300
+    ]
+  },
+  "30142": {
+    "id": 30142,
+    "en": "AAC Light-heavyweight M4 (Savage)",
+    "ja": "至天の座アルカディア零式：ライトヘビー級4",
+    "de": "Arkadion - Halbschwergewicht R4 (episch)",
+    "fr": "Poids mi-lourds CCA - match 4 (sadique)",
+    "description": {
+      "en": "Your match against the neoteric witch came to an abrupt end when the former heavyweight fighter decided to flee─but what if she hadn't? Inspired by a muse of your own from Gabbro's words, your thoughts drift back to that imaginary city of her creation once more, where you envision an altogether novel struggle taking place...",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112574.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 710,
     "sync": 100,
     "exp": 0,
     "map": 924,
@@ -15518,6 +15642,33 @@
     "sync": 90,
     "exp": 0,
     "map": 818,
+    "contentText": [
+      12810,
+      12800
+    ]
+  },
+  "55012": {
+    "id": 55012,
+    "en": "Cenote Ja Ja Gural",
+    "ja": "宝物庫 セノーテ・ジャジャグラル",
+    "de": "Cenote Ja Ja Gural",
+    "fr": "Cénote Ja Ja Gural",
+    "description": null,
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061808.png",
+    "banner": "",
+    "gamePatch": 86,
+    "contentType": 9,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 896,
     "contentText": [
       12810,
       12800
