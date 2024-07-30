@@ -273,7 +273,7 @@ export const lazyFilesList = {
   },
   'instanceSources': {
     'fileName': 'instance-sources.json',
-    'hashedFileName': 'instance-sources.d74d56bd9290db105ef8b59bf5950257fd10d87e.json'
+    'hashedFileName': 'instance-sources.9de9e725447ed909d748fa758a6eb4f9c2de1092.json'
   },
   'instances': {
     'fileName': 'instances.json',
@@ -481,7 +481,7 @@ export const lazyFilesList = {
   },
   'patchNames': {
     'fileName': 'patch-names.json',
-    'hashedFileName': 'patch-names.b49be0fdbf1c15ab9ab1bbb27ba3a16360e29cb4.json'
+    'hashedFileName': 'patch-names.05013c2c749c2fcb8146403987ff1ee431b9c0f7.json'
   },
   'places': {
     'fileName': 'places.json',
@@ -533,7 +533,7 @@ export const lazyFilesList = {
   },
   'reverseInstanceSources': {
     'fileName': 'reverse-instance-sources.json',
-    'hashedFileName': 'reverse-instance-sources.fd2bd269ddce4ed6b433ba4cc5c1cf7f18d76756.json'
+    'hashedFileName': 'reverse-instance-sources.8a2e63de4ea6f7dfc3d43e933808b4e88d56d96d.json'
   },
   'reverseReduction': {
     'fileName': 'reverse-reduction.json',
@@ -669,7 +669,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.1adf7a8733c01922249aae45e986afe7ddda9f29.json'
+    'hashedFileName': 'voyage-sources.6732f9f4a6cb5003339747247dd6a9094e36a20c.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
