@@ -23,6 +23,8 @@
                     </button>
                   }
                   <div class="spacer"></div>
+                  <i>{{team.$key}}</i>
+                  &nbsp;
                   @if (team.leader === (userId$ | async)) {
                     <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteTeam(team)" [nzShape]="'circle'"
                       [nzPopconfirmTitle]="'TEAMS.Delete_confirmation' | translate"
