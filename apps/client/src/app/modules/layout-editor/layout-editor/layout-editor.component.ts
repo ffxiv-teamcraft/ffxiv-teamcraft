@@ -4,9 +4,8 @@ import { Observable } from 'rxjs';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutRow } from '../../../core/layout/layout-row';
 import { LayoutRowOrder } from '../../../core/layout/layout-row-order.enum';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../text-question-popup/text-question-popup/text-question-popup.component';
 import { filter, map } from 'rxjs/operators';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -30,11 +29,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-layout-editor',
-    templateUrl: './layout-editor.component.html',
-    styleUrls: ['./layout-editor.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzToolTipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
+  selector: 'app-layout-editor',
+  templateUrl: './layout-editor.component.html',
+  styleUrls: ['./layout-editor.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzToolTipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
 })
 export class LayoutEditorComponent {
 
@@ -44,7 +43,7 @@ export class LayoutEditorComponent {
 
   dirty = false;
 
-  constructor(private layoutsFacade: LayoutsFacade, private message: NzMessageService, private translate: TranslateService,
+  constructor(private layoutsFacade: LayoutsFacade, private translate: TranslateService,
               private dialog: NzModalService, private serializer: NgSerializerService) {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$.pipe(
       map(layout => layout.clone())
@@ -132,6 +131,9 @@ export class LayoutEditorComponent {
       },
       nzFooter: null
     }).afterClose
+      .pipe(
+        filter(Boolean)
+      )
       .subscribe((res) => {
         this.save(res);
       });
