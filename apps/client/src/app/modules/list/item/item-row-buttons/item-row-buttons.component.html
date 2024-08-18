@@ -214,7 +214,7 @@
     </button>
   }
   <div #menuHost></div>
-  @defer (when missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length) {
+  @if (missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length) {
     <button (click)="checkMasterbooks.emit(missingBooks)"
       [nzTooltipTitle]="'LIST_DETAILS.Missing_masterbook' | translate" class="missing-masterbooks" nz-button
       nz-tooltip

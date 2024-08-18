@@ -262,7 +262,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     super(cd);
 
     this.missingBooks$ = this.masterbooksReloader$.pipe(
-      switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
+      switchMap(() => combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {
         return getItemSource(item, DataType.MASTERBOOKS)
           // Ignore string ids, as they are draft ids
@@ -509,8 +509,8 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     });
   }
 
-  public trackByAlarm(index: number, alarm: PersistedAlarm): string {
-    return alarm.$key;
+  public trackByAlarm(index: number, alarm: PersistedAlarm) {
+    return alarm.$key || index;
   }
 
   public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {
