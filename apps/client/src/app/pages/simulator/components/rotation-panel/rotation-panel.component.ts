@@ -230,18 +230,20 @@ export class RotationPanelComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation): void {
-    combineLatest([this.foods$, this.medicines$]).pipe(
+    combineLatest([this.foods$, this.medicines$, this.authFacade.user$]).pipe(
       first()
-    ).subscribe(([foodsData, medicines]) => {
+    ).subscribe(([foodsData, medicines, user]) => {
       const medicinesData = this.consumablesService.fromLazyData(medicines);
       const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
+      const food = rotation.food || user.defaultConsumables.food;
+      const medicine = rotation.medicine || user.defaultConsumables.medicine;
       this.dialog.create({
         nzContent: MacroPopupComponent,
         nzData: {
           rotation: this.registry.deserializeRotation(rotation.rotation),
           job: rotation.recipe?.job,
-          food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
-          medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+          food: foodsData.find(f => food && f.itemId === food.id && f.hq === food.hq),
+          medicine: medicinesData.find(m => medicine && m.itemId === medicine.id && m.hq === medicine.hq),
           freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
         },
         nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
