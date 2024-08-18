@@ -5,6 +5,5 @@ export enum RotationTag {
   TEALESS = 'Tealess',
   FOODLESS = 'Foodless',
 
-  MAKERS_MARK = 'Makers_Mark',
   MUSCLE_MEMORY = 'Muscle_memory'
 }
