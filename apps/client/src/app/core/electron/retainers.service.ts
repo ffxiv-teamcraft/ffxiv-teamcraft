@@ -98,7 +98,7 @@ export class RetainersService {
             itemCount: packet.itemCount,
             itemSellingCount: packet.sellingCount,
             level: packet.level,
-            job: packet.classJob,
+            job: packet.classJob || 0,
             task: packet.ventureId,
             taskComplete: packet.ventureComplete,
             gil: packet.gil,
