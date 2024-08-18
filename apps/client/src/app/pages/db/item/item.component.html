@@ -92,11 +92,11 @@
               <app-i18n-name content="baseParams" [id]="row.ID"></app-i18n-name>
             </div>
             <div class="detail-value">
-              {{row.NQ}}
+              {{row.NQ}}@if(row.Relative){% ({{row.Max}})}
               <span *ngIf="item.hq" class="hq-value">
             <span *ngIf="item.bonuses === undefined; else itemFoodHQ">(<img alt="HQ" src="./assets/icons/HQ.png">{{row.HQ}})</span>
               <ng-template #itemFoodHQ>
-                <img alt="HQ" src="./assets/icons/HQ.png">{{row.HQ}}
+                <img alt="HQ" src="./assets/icons/HQ.png">{{row.HQ}}@if(row.Relative){% ({{row.MaxHQ}})}
               </ng-template>
             </span>
             </div>
