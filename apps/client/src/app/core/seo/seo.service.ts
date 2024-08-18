@@ -31,7 +31,7 @@ export class SeoService {
   }
 
   private applyConfig(isReset = false): void {
-    this.title.setTitle(this.config.title);
+    this.title.setTitle(this.config.title.replace(/<[^>]*>?/gm, ''));
     this.meta.updateTag({ name: 'twitter:image', content: this.config.image });
     this.meta.updateTag({ name: 'description', content: this.config.description });
     this.meta.updateTag({ name: 'twitter:title', content: this.config.title });

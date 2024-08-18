@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -76,14 +75,14 @@ import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf, NgSwitch, NgSwitchCase, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-    selector: 'app-item',
-    templateUrl: './item.component.html',
-    styleUrls: ['./item.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, ItemRarityDirective, I18nNameComponent, DbButtonComponent, NzButtonModule, NzInputModule, FormsModule, NzWaveModule, NzToolTipModule, NzIconModule, NgFor, MarketboardIconComponent, RouterLink, I18nDisplayComponent, FishComponent, NzDividerModule, FullpageMessageComponent, NzCardModule, LazyScrollComponent, ItemIconComponent, NzTableModule, NzListModule, NgSwitch, NgSwitchCase, GardeningComponent, HuntingComponent, IslandAnimalComponent, TradesComponent, TreasuresComponent, FatesComponent, MogstationComponent, GatheredByComponent, InstancesComponent, ReducedFromComponent, DesynthsComponent, VendorsComponent, VoyagesComponent, VenturesComponent, MapPositionComponent, AchievementsComponent, QuestsComponent, DbCommentsComponent, NgTemplateOutlet, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, LazyRowPipe]
+  selector: 'app-item',
+  templateUrl: './item.component.html',
+  styleUrls: ['./item.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, ItemRarityDirective, I18nNameComponent, DbButtonComponent, NzButtonModule, NzInputModule, FormsModule, NzWaveModule, NzToolTipModule, NzIconModule, NgFor, MarketboardIconComponent, RouterLink, I18nDisplayComponent, FishComponent, NzDividerModule, FullpageMessageComponent, NzCardModule, LazyScrollComponent, ItemIconComponent, NzTableModule, NzListModule, NgSwitch, NgSwitchCase, GardeningComponent, HuntingComponent, IslandAnimalComponent, TradesComponent, TreasuresComponent, FatesComponent, MogstationComponent, GatheredByComponent, InstancesComponent, ReducedFromComponent, DesynthsComponent, VendorsComponent, VoyagesComponent, VenturesComponent, MapPositionComponent, AchievementsComponent, QuestsComponent, DbCommentsComponent, NgTemplateOutlet, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
   public noData = false;
@@ -508,7 +507,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly rotationPicker: RotationPickerService,
     private readonly attt: ATTTService,
     private readonly lazyData: LazyDataFacade,
-    private readonly dialog: NzModalService,
     public readonly settings: SettingsService,
     private readonly apollo: Apollo,
     private readonly itemContext: ItemContextService,
