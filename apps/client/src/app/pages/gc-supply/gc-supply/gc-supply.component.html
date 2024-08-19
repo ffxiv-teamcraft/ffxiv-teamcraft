@@ -1,4 +1,4 @@
-<h1>{{'GC_SUPPLY.Title' | translate}}</h1>
+<h1>{{ 'GC_SUPPLY.Title' | translate }}</h1>
 @if (form$ | async; as form) {
   <form (ngSubmit)="getSupplies(form)" [formGroup]="form" [nzLayout]="'inline'" nz-form>
     @for (control of form.controls | keys; track control) {
@@ -6,7 +6,7 @@
         <nz-form-control>
           <nz-input-group [nzPrefix]="jobIcon" nz-tooltip [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n">
             <input [formControlName]="control" class="lvl-input" min="0" nz-input
-              required type="number"/>
+                   required type="number"/>
           </nz-input-group>
           <ng-template #jobIcon>
             <span class="companion-svg" [innerHtml]="+control | jobUnicode"></span>
@@ -17,7 +17,7 @@
     <nz-form-item>
       <nz-form-control>
         <button [disabled]="!form.valid" nz-button nzType="primary">
-          <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
+          <i nz-icon nzType="search"></i>{{ 'GC_SUPPLY.Search' | translate }}
         </button>
       </nz-form-control>
     </nz-form-item>
@@ -27,41 +27,44 @@
   <div class="results" fxLayout="column" fxLayoutGap="10px">
     @for (row of supplies; track row) {
       <div nz-row nzGutter="10">
-        <div class="flex-row align-center gap-5" nz-col nzMd="6" nzSm="24">
-          <div class="companion-svg" [innerHtml]="row.job | jobUnicode"></div>
-          <div>{{row.job | i18nRow:'jobName' | i18n}}</div>
+        <div nz-col nzMd="6" nzSm="24">
+          <div class="flex-row align-center gap-5">
+            <div class="companion-svg" [innerHtml]="row.job | jobUnicode"></div>
+            <div>{{ row.job | i18nRow:'jobName' | i18n }}</div>
+          </div>
         </div>
         <nz-select #selectBox (ngModelChange)="select(row.job, $event.itemId, $event.count)" [ngModel]="null"
-          class="item-select" nz-col
-          nzAllowClear nzMd="6" nzShowSearch
-          nzSm="24">
+                   class="item-select" nz-col
+                   nzAllowClear nzMd="6" nzShowSearch
+                   nzSm="24">
           @for (item of row.items; track item) {
             <nz-option [nzValue]="item"
-            nzLabel="{{item.itemId | itemName | i18n}} x {{item.count}}"></nz-option>
+                       nzLabel="{{item.itemId | itemName | i18n}} x {{item.count}}"></nz-option>
           }
         </nz-select>
         @if (selectBox.value) {
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6"
-            nzSm="24">
+               nzSm="24">
             <img alt="" class="reward-icon" src="{{20 | lazyIcon}}">
             <div>
-              {{selectBox.value.reward.seals}}
+              {{ selectBox.value.reward.seals }}
             </div>
             <img alt="" class="reward-icon" src="https://xivapi.com/img-misc/exp.png">
             <div>
-              {{selectBox.value.reward.xp}}
+              {{ selectBox.value.reward.xp }}
             </div>
           </div>
         }
       </div>
     }
     <button (click)="generateList()" [disabled]="selection.length === 0" nz-button
-    nzBlock nzType="primary">{{'GC_SUPPLY.Generate_list' | translate}}</button>
+            nzBlock nzType="primary">{{ 'GC_SUPPLY.Generate_list' | translate }}
+    </button>
   </div>
 }
 @if (pristine) {
   <app-fullpage-message height="300px">
-    {{'GC_SUPPLY.Intro' | translate}}
+    {{ 'GC_SUPPLY.Intro' | translate }}
   </app-fullpage-message>
 }
 @if (loading) {

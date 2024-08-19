@@ -7,8 +7,8 @@ import { DataReporter } from '../data-reporting/data-reporter';
 import { DataReporters } from '../data-reporting/data-reporters-index';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { environment } from '../../../environments/environment';
 import { PlatformService } from '../tools/platform.service';
+import { EnvironmentService } from '../environment.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,15 +17,15 @@ export class GubalService {
 
   private readonly version: number;
 
-  constructor(private ipc: IpcService, private authFacade: AuthFacade,
+  constructor(private ipc: IpcService, private authFacade: AuthFacade, private envService: EnvironmentService,
               @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo,
               private platform: PlatformService) {
-    const versionFragments = environment.version.split('.');
+    const versionFragments = envService.gameVersion.toString().split('.');
     this.version = +versionFragments[0] * 100000 + +versionFragments[1] * 100 + +versionFragments[2];
   }
 
   public init(): void {
-    if (this.platform.isDesktop()) {
+    if (this.platform.isDesktop() && this.envService.gameVersion >= 7) {
       combineLatest(this.reporters.map(reporter => {
         return reporter.getDataReports(this.ipc.packets$).pipe(
           debounceTime(500),

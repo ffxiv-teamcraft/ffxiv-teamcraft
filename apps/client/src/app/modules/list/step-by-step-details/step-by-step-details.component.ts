@@ -116,7 +116,7 @@ export class StepByStepDetailsComponent extends StepByStepComponent implements O
         const next = list.maps[mapIndex + 1] || null;
         const previous = mapIndex <= 0 ? null : list.maps[mapIndex - 1];
         const nextIncomplete = list.maps.slice(mapIndex + 1).find(id => !list.steps[id].complete);
-        const previousIncomplete = mapIndex <= 0 ? null : list.maps.slice(0, mapIndex - 1).find(id => !list.steps[id].complete);
+        const previousIncomplete = mapIndex <= 0 ? null : list.maps.slice(0, mapIndex - 1).toReversed().find(id => !list.steps[id].complete);
         return {
           next,
           previous,

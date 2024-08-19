@@ -122,7 +122,7 @@ export class StatsService {
     [375, 394, 1900, 2700, 569, 569],
     [380, 396, 1900, 2800, 569, 569],
     [385, 398, 1900, 2900, 569, 569],
-    [390, 400, 1900, 3000, 569, 569]
+    [504, 420, 1900, 3000, 569, 569]
     // MAIN,SUB,DIV,HP,ELMT,THREAT
   ];
 
@@ -420,6 +420,7 @@ export class StatsService {
       case 30:
       case 31:
       case 38:
+      case 41:
         return [BaseParam.DEXTERITY, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SKILL_SPEED, BaseParam.VITALITY];
       // Healers
       case 6:
@@ -435,6 +436,7 @@ export class StatsService {
       case 27:
       case 35:
       case 36:
+      case 42:
         return [BaseParam.INTELLIGENCE, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SPELL_SPEED, BaseParam.PIETY, BaseParam.VITALITY];
     }
     return [];

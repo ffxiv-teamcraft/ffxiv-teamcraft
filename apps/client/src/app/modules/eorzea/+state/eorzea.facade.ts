@@ -179,7 +179,6 @@ export class EorzeaFacade {
   }
 
   setStatuses(statuses: StatusEntry[]) {
-    console.log('SET STATUSES', statuses);
     this.store.dispatch(new SetStatuses(statuses));
   }
 

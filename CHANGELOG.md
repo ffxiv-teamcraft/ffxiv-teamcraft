@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.8...v11.3.9) (2024-08-19)
+
+
+### Features
+
+* **db:** allagan reports import ([41797b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/41797b6e0dc20d017e36d97982b1b30cd3d55b36))
+* **teams:** add team ID in teams listing display ([5c94002](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c940029097bbe80ea818abf72dc450b3082bf88))
+
+
+### Bug Fixes
+
+* **allagan-reports:** better display for smaller screens ([ffd47af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ffd47af7330c0fd10c7401d3cbe28503792a2647))
+* **community-rotations:** remove maker's mark from tags ([ce62419](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce624199dfa1a14d3823f50fa790ea76f64afddc))
+* **db:** disable reporters for game version < 7 ([510b45b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/510b45b1be6b4982b79b3de9097a0c69c3d90349))
+* **db:** fix bonuses display for consumables ([267f464](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/267f464759c3c335e05ca2d4f022ab47bdc9560c))
+* **db:** remove html tags from browser title attribute ([19a468f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19a468f4767986a976a9716737cf1e0f4fa3b42b))
+* **gearset:** fix base combat stats for level 100 ([1a11a9b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a11a9b0018ecd3dcbf2f3b4c0b370515b896ac1))
+* **gearset:** fix VPR and PCT gearsets not loading ([92c7947](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92c7947b7e8ab28c677cfa171c16c3b087c84d3b))
+* **i18n:** attempting to access properties of undefined in i18n pipe ([1106ac4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1106ac4e6924160797c5e86b0a9cb045e83761e9)), closes [#2903](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2903)
+* **layout:** row buttons display editor breaking list display entirely ([8cc3b87](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8cc3b877d319fa9f5c2380877740462e957e8e8a))
+* **list:** masterbook warning now goes away when clicked ([609ee45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/609ee45b37b94aa9296329e0e1e46ae2c7afcc65))
+* **map:** aetherytes now show above radius circles ([503de10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/503de1014c59ecd152f4dc5cdee2efe0bf678d07))
+* **retainers:** possible fix for retainers import without any class ([e32b41d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e32b41d3c0857361e9968bf0edc5b46b3434f300))
+* **rotation:** consider default consumables in macro popup ([7ded334](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ded3341eb78404584737ef8d5d326f1b7262dc4))
+* **search:** better icon alignment for crafting job select ([7559344](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7559344980fc29a919889507b31222c7f87c1782))
+* **step-by-step:** previous incomplete map now works as expected ([2f23b1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f23b1f1dbce278bfe2270d07fae33d46afe5905))
+
 ### [11.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.7...v11.3.8) (2024-07-30)
 
 

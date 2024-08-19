@@ -216,7 +216,7 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
     this.authFacade.saveMasterbooks(books.map(book => ({ id: book, checked: true })));
     setTimeout(() => {
       this.masterbooksReloader$.next(null);
-    }, 500);
+    }, 1000);
   }
 
   attachRotation(item: ListRow): void {

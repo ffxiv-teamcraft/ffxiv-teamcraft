@@ -23,9 +23,9 @@ type I18nInput =
  * the value matching the user's language will be asyncronously unwrapped.
  */
 @Pipe({
-    name: 'i18n',
-    pure: false,
-    standalone: true
+  name: 'i18n',
+  pure: false,
+  standalone: true
 })
 export class I18nPipe implements PipeTransform, OnDestroy {
   private currentValue?: string;
@@ -121,6 +121,9 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   }
 
   private setCurrentValue(val?: string): void {
+    if (!val) {
+      return;
+    }
     const next = this.uppercaseFirst(val);
     const didUpdate = this.currentValue !== next;
     // Replace &nbsp; with just a simple space char

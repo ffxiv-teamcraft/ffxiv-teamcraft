@@ -226,7 +226,7 @@
                         <nz-option [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
                                    [nzValue]="job" nzCustomContent>
                           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                            <div class="companion-svg job-icon" [innerHtml]="job | jobUnicode"></div>
+                            <div class="companion-svg" [innerHtml]="job | jobUnicode"></div>
                             <div>{{ job | i18nRow:'jobAbbr' | i18n }}</div>
                           </div>
                         </nz-option>

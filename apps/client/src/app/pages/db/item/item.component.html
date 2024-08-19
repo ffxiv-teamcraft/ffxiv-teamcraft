@@ -9,7 +9,7 @@
           <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [src]="item.icon | xivapiIcon" alt="{{item.name | i18n}}" class="item-icon">
             <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-              <h2 [appItemRarity]="item.id" class="item-name">{{item.name | i18n}}</h2>
+              <h2 [appItemRarity]="item.id" class="item-name" [innerHTML]="item.name | i18n"></h2>
               <span *ngIf="item.searchCategory"><app-i18n-name content="searchCategory" [id]="item.searchCategory"></app-i18n-name></span>
               <div *ngIf="item.patch" class="flex-row gap-5 align-center">
                 <app-i18n-name content="patchNames" [id]="item.patch"></app-i18n-name>
@@ -92,11 +92,11 @@
               <app-i18n-name content="baseParams" [id]="row.ID"></app-i18n-name>
             </div>
             <div class="detail-value">
-              {{row.NQ}}
+              {{row.NQ}}@if(row.Relative){% ({{row.Max}})}
               <span *ngIf="item.hq" class="hq-value">
             <span *ngIf="item.bonuses === undefined; else itemFoodHQ">(<img alt="HQ" src="./assets/icons/HQ.png">{{row.HQ}})</span>
               <ng-template #itemFoodHQ>
-                <img alt="HQ" src="./assets/icons/HQ.png">{{row.HQ}}
+                <img alt="HQ" src="./assets/icons/HQ.png">{{row.HQ}}@if(row.Relative){% ({{row.MaxHQ}})}
               </ng-template>
             </span>
             </div>
