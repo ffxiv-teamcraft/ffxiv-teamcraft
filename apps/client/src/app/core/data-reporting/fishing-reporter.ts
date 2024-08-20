@@ -218,7 +218,7 @@ export class FishingReporter implements DataReporter {
         ofMessageType('actorControlSelf', 'fishingBaitMsg')
       ),
       misses$,
-      fishCaught$.pipe(debounceTime(750))
+      fishCaught$.pipe(debounceTime(300))
     ).pipe(
       map(() => null)
     );
