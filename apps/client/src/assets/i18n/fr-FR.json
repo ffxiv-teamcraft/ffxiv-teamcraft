@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "Vous avez des modifications non enregistrées. Veuillez sauvegarder avant de quitter cette page ou tous vos changements seront perdus.",
     "Crafting_optimizer_code": "Code d'import de crafting optimizer",
     "Generated_macro": "Macro en jeu",
-    "Generate_ingame_macro": "Générer une macro en jeu",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "Copier le lien de partage",
     "Share_link_copied": "Lien de rotation copié dans le presse-papiers",
     "Persist": "Sauvegarder cette rotation",
