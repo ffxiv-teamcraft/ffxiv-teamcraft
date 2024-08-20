@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "你有未保存的修改，若不保存离开此页面后修改将会丢失。",
     "Crafting_optimizer_code": "制作优化器导入代码",
     "Generated_macro": "用户宏",
-    "Generate_ingame_macro": "生成用户宏",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "复制分享链接",
     "Share_link_copied": "手法共享链接已复制到剪贴板",
     "Persist": "保存这个手法",
