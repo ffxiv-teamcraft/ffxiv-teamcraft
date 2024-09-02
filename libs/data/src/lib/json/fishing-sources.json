@@ -18294,7 +18294,7 @@
   "29746": [
     {
       "spot": 241,
-      "hookset": 1,
+      "hookset": 2,
       "tug": 1,
       "bait": 29715,
       "snagging": false,
@@ -25187,7 +25187,7 @@
   "40549": [
     {
       "spot": 288,
-      "hookset": 2,
+      "hookset": 1,
       "tug": 1,
       "bait": 29714,
       "minGathering": 0
@@ -25648,7 +25648,7 @@
   "40600": [
     {
       "spot": 293,
-      "hookset": 2,
+      "hookset": 1,
       "tug": 1,
       "bait": 12704,
       "predators": [

@@ -167,7 +167,9 @@ export class LayoutRowFilter {
       25199,
       25200,
       33913,
-      33914
+      33914,
+      41784,
+      41785
     ];
 
     for (const tokenId of scripIds) {
