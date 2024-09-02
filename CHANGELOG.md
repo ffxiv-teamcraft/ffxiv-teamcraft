@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.9...v11.3.10) (2024-09-02)
+
+
+### Features
+
+* **db:** allagan reports import ([71c9588](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71c9588e61fac7b526dad7be2c1e61d071781223))
+* **gear:** update base level values for combat ([5fcbb58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5fcbb585c07dcf71db364649e3029b8baa5f824a))
+
+
+### Bug Fixes
+
+* **layout:** new orange scrips now properly matches scrip trades filter ([4c84fce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c84fce24ac48adccba3f87f48b78c5e07768ae2))
+
 ### [11.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.8...v11.3.9) (2024-08-19)
 
 
