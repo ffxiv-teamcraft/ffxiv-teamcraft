@@ -23096,7 +23096,7 @@
     "zh": "街头决斗者2",
     "description": {
       "en": "Defeat 30 unique NPCs at Triple Triad.",
-      "de": "30 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "30 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、30人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 30 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 30명에게 승리",
@@ -28633,7 +28633,7 @@
     "zh": "街头决斗者3",
     "description": {
       "en": "Defeat 41 unique NPCs at Triple Triad.",
-      "de": "41 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "41 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、41人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 41 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 41명에게 승리",
@@ -31065,7 +31065,7 @@
     "zh": "街头决斗者4",
     "description": {
       "en": "Defeat 50 unique NPCs at Triple Triad.",
-      "de": "50 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "50 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、50人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 50 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 50명에게 승리",
@@ -34068,7 +34068,7 @@
     "zh": "街头决斗者5",
     "description": {
       "en": "Defeat 60 unique NPCs at Triple Triad.",
-      "de": "60 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "60 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、60人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 60 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 60명에게 승리",
@@ -39841,7 +39841,7 @@
     "zh": "街头决斗者6",
     "description": {
       "en": "Defeat 70 unique NPCs at Triple Triad.",
-      "de": "70 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "70 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、70人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 70 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 70명에게 승리",
@@ -49493,7 +49493,7 @@
     "zh": "街头决斗者7",
     "description": {
       "en": "Defeat 92 unique NPCs at Triple Triad.",
-      "de": "92 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "92 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、92人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 92 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 92명에게 승리",
@@ -63169,7 +63169,7 @@
     "zh": "街头决斗者8",
     "description": {
       "en": "Defeat 107 unique NPCs at Triple Triad.",
-      "de": "107 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "107 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、107人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 107 PNJ différents.",
       "ko": "트리플 트라이어드로 NPC 107명에게 승리",
@@ -73801,7 +73801,7 @@
     "icon": "/i/000000/000116.png",
     "patch": 97,
     "en": "Legends of the Hidden Treasure IV",
-    "de": "Jäger des verborgenen Schatzes VI",
+    "de": "Jäger des verborgenen Schatzes IV",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク4",
     "fr": "Visiteur du cénote Ja Ja Gural IV",
     "description": {
@@ -73908,7 +73908,7 @@
     "fr": "En cartes et en os IX",
     "description": {
       "en": "Defeat 123 unique NPCs at Triple Triad.",
-      "de": "123 Triple Triad-Partien gegen NPCs gewonnen.",
+      "de": "123 Triple Triad-Partien gegen verschiedene NPCs gewonnen.",
       "ja": "トリプルトライアドで、123人のNPCに勝利する",
       "fr": "Remporter un duel de Triple Triade contre 123 PNJ différents."
     },
