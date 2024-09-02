@@ -7,38 +7,15 @@ import { environment } from '../../../environments/environment';
 import { PirschBrowserHit, Scalar } from 'pirsch-sdk';
 import { first, skip } from 'rxjs/operators';
 
-declare const gtag: (...args: any[]) => void;
-
 @Injectable({
   providedIn: 'root'
 })
 export class AnalyticsService {
 
-  public static readonly GA4_ID = 'G-RNVD9NJW4N';
-
-  private static readonly GA3_ID = 'UA-104948571-1';
-
   private pirsch: PirschWebClient;
 
-  constructor(private platformService: PlatformService, private ipc: IpcService,
-              translate: TranslateService) {
+  constructor(private platformService: PlatformService, private ipc: IpcService) {
     this.initPirsch(this.platformService.isDesktop());
-    if (this.platformService.isDesktop()) {
-      this.ipc.send('analytics:init', {
-        ga3: AnalyticsService.GA3_ID,
-        ga4: AnalyticsService.GA4_ID,
-        language: translate.currentLang
-      });
-    } else {
-      gtag('config', AnalyticsService.GA3_ID);
-      gtag('config', AnalyticsService.GA4_ID);
-
-      gtag('js', new Date());
-
-      gtag('set', 'user_properties', {
-        'platform': 'web'
-      });
-    }
   }
 
   private initPirsch(desktop: boolean): void {
@@ -63,14 +40,8 @@ export class AnalyticsService {
     }
   }
 
-  public pageView(url: string): void {
+  public pageView(): void {
     this.pirschHit();
-    if (this.platformService.isDesktop()) {
-      this.ipc.send('analytics:pageView', url);
-    } else {
-      gtag('set', 'page', url);
-      gtag('send', 'pageview');
-    }
   }
 
   private generatePirschHit(): PirschBrowserHit {

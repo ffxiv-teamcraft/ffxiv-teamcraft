@@ -26,11 +26,10 @@ export class AdComponent {
 
   constructor(private platform: PlatformService) {
     if (!this.platform.isOverlay()) {
-      console.log('AD INIT');
       this.#router.events.pipe(
         filter(e => e instanceof NavigationEnd)
       ).subscribe((e: NavigationEnd) => {
-        (window as any).adSlots.pageURL = e.url;
+        (window as any).AdSlots.pageURL = e.url;
       });
       this.slotId$ = fromEvent(window, 'resize')
         .pipe(
@@ -62,7 +61,7 @@ export class AdComponent {
             (window as any).reloadAdSlots();
           })
         );
-      (window as any).AdSlots = { cmd: [], displayMode: 'stage', renderOnFirstLoad: false, divCheck: false }
+      (window as any).AdSlots = { cmd: [], renderOnFirstLoad: false, divCheck: false }
       const kumoEl = document.createElement('script');
       kumoEl.async = true;
       kumoEl.setAttribute('src', `https://kumo.network-n.com/dist/app.js`);

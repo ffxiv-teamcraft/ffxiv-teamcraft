@@ -26,7 +26,7 @@ export function AnalyticsRouterInitializer(
         filter((event: NavigationEnd) => event instanceof NavigationEnd),
         skip(1) // Prevent double views on the first trigger (because GA Already send one ping on setup)
       )
-      .subscribe(event => analytics.pageView(event.urlAfterRedirects));
+      .subscribe(event => analytics.pageView());
     // Cleanup
     c.onDestroy(() => subs.unsubscribe());
   };
