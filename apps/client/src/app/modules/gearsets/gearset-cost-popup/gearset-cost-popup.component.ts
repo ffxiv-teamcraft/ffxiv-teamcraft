@@ -44,7 +44,9 @@ export class GearsetCostPopupComponent extends DialogComponent {
         .filter(key => {
           const validPiece = gearset[key] && gearset[key].itemId !== undefined;
           const notDone = !progression || !progression[key]?.item;
-          return validPiece && notDone;
+          // Some PLD shields are bought with the sword as one purchase
+          const notExcludedPLDShield = ![43122].includes(gearset[key]?.itemId);
+          return validPiece && notDone && notExcludedPLDShield;
         })
         .map(key => {
           const gearPiece = gearset[key];
