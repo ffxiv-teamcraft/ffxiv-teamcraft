@@ -7919,6 +7919,24 @@
   "33864": {
     "ko": "60초 동안 자신이 받는 피해량이 20% 감소하고, 8초 동안 자신에게 회복력 25000만큼의 피해를 흡수하는 보호막을 칩니다."
   },
+  "33987": {
+    "ko": "입력한 방향으로 회피합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 발생 시 자신에게 5초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여"
+  },
+  "33988": {
+    "ko": "입력한 방향으로 회피합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 발생 시 자신에게 5초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여"
+  },
+  "33989": {
+    "ko": "입력한 방향으로 회피합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 발생 시 자신에게 5초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여"
+  },
+  "33990": {
+    "ko": "입력한 방향으로 회피합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 발생 시 자신에게 5초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여"
+  },
+  "33997": {
+    "ko": "입력한 방향으로 회피합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 발생 시 자신에게 5초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여"
+  },
+  "34515": {
+    "ko": "대상에게 접근하면서 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리시전 도지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
   "34563": {
     "ko": "대상에게 무속성 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>정면공격 시 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>강력 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 위력이 증가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>강력 방어 시 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>강력 방어 및 정면공격 시 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 320"
   },
@@ -7981,5 +7999,11 @@
   },
   "34786": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>요마의 낫<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하여, 대상을 향해 전방 부채꼴 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 8000\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "34790": {
+    "ko": "대상에게 접근하면서 공격을 가합니다."
+  },
+  "36059": {
+    "ko": "토르갈을 쓰다듬습니다.\n※ 전투 효과는 없습니다."
   }
 }
