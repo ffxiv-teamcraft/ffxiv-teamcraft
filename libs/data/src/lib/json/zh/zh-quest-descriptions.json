@@ -915,7 +915,7 @@
     "zh": "无望流民街的利奥弗里克想让冒险者帮忙送东西。"
   },
   "65869": {
-    "zh": "弗弗鲁帕很担心前往足迹谷的同伴们。"
+    "zh": "地平关的弗弗鲁帕很担心前往足迹谷的同伴们。"
   },
   "65870": {
     "zh": "在足迹谷进行戒备的努努佐夫想托冒险者帮忙传话。"
@@ -924,7 +924,7 @@
     "zh": "月牙湾的梅丽尔达必须迅速备好鱼和肉。"
   },
   "65872": {
-    "zh": "梅丽尔达好像从盗贼们那里听到了些相当不妙的话。"
+    "zh": "月牙湾的梅丽尔达好像从盗贼们那里听到了些相当不妙的话。"
   },
   "65873": {
     "zh": "铜刃团团员弗弗鲁帕想要捉拿盗贼。"
@@ -3216,7 +3216,7 @@
     "zh": "北防波堤的黑涡团团员阿黎洛夫正为同事迟到而烦恼。"
   },
   "66687": {
-    "zh": "北防波堤的黑涡团鲁汉斯副漩士想要委托冒险者讨伐魔物。"
+    "zh": "北防波堤的黑涡团员鲁汉斯副漩士想要委托冒险者讨伐魔物。"
   },
   "66688": {
     "zh": "骷髅谷营地的法尔克布瑞达有事想要向冒险者报告。"
@@ -9243,13 +9243,13 @@
     "zh": "乌尔达哈的马丁好像有些心神不宁。"
   },
   "68733": {
-    "zh": "乌尔达哈的泪男子拉图迦十分慌张。"
+    "zh": "乌尔达哈的泪男子拉图加十分慌张。"
   },
   "68734": {
-    "zh": "乌尔达哈的泪男子拉图迦在等待冒险者。"
+    "zh": "乌尔达哈的泪男子拉图加在等待冒险者。"
   },
   "68735": {
-    "zh": "乌尔达哈的泪男子拉图迦想要称赞冒险者。"
+    "zh": "乌尔达哈的泪男子拉图加想要称赞冒险者。"
   },
   "68736": {
     "zh": "转魂塔广场的卖报人有事想要询问冒险者。"
@@ -13772,6 +13772,12 @@
   "70300": {
     "zh": "秘术师行会的图比尔盖姆有话想跟冒险者说。"
   },
+  "70301": {
+    "zh": "※本任务是特定期间内的任务。\n\n红玉大路国际市场的琪琵·嘉奇亚似乎遇上了烦心事。"
+  },
+  "70302": {
+    "zh": "※本任务是特定期间内的任务。\n\n黄金广场的琪琵·嘉奇亚有事想拜托冒险者。"
+  },
   "70303": {
     "zh": "中庸工艺馆前的盖雷诺尔特有好消息想告诉冒险者。"
   },
@@ -13807,6 +13813,12 @@
   },
   "70314": {
     "zh": "乌尔达哈的马丁看起来有些不甘心。"
+  },
+  "70315": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恒辉作战总部的纳纳恩吉有一个想法。"
+  },
+  "70316": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n黑涡军令部附近的纳纳恩吉希望能继续传记采访。"
   },
   "70317": {
     "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的毛绒绒胡子执行委员有事想拜托冒险者。"
@@ -13849,6 +13861,15 @@
   },
   "70331": {
     "zh": "旧萨雷安的歌鸣威正在寻找冒险者。"
+  },
+  "70332": {
+    "zh": "※本任务是特定期间内的任务。\n\n翠玉大街的新人冒险者正在寻找光之战士。"
+  },
+  "70333": {
+    "zh": "※本任务是特定期间内的任务。\n\n学者走廊的克莱夫正在等待冒险者做好出发前的准备。"
+  },
+  "70334": {
+    "zh": "※本任务是特定期间内的任务。\n\n丰饶神祭坛的克莱夫正有些困惑。"
   },
   "70335": {
     "zh": "以太之光广场的德里昂打算进行最后的取材。"
@@ -13903,5 +13924,1073 @@
   },
   "70352": {
     "zh": "小萨雷安的玛格拉特正在东张西望。"
+  },
+  "70353": {
+    "zh": "贝壳亭的布鲁克·耶伏有事想拜托冒险者。"
+  },
+  "70354": {
+    "zh": "贝壳亭的洛泽尼凯愁眉不展。"
+  },
+  "70355": {
+    "zh": "圣瓦勒鲁瓦扬广场的特恩托瓦正在观察往来的行人。"
+  },
+  "70356": {
+    "zh": "圣瓦勒鲁瓦扬广场的特恩托瓦似乎有什么烦恼。"
+  },
+  "70357": {
+    "zh": "神殿骑士团的菲尔马尔贝仍在警惕敌人。"
+  },
+  "70358": {
+    "zh": "圣瓦勒鲁瓦扬广场的特恩托瓦似乎还未能彻底恢复。"
+  },
+  "70359": {
+    "zh": "圣瓦勒鲁瓦扬广场的特恩托瓦充满干劲。"
+  },
+  "70360": {
+    "zh": "贝壳亭的尼皮内正打量着往来的行人。"
+  },
+  "70361": {
+    "zh": "八分仪广场南侧的洛苏卡纳有事想和冒险者商量。"
+  },
+  "70362": {
+    "zh": "八分仪广场南侧的洛苏卡纳看起来不太高兴。"
+  },
+  "70363": {
+    "zh": "八分仪广场南侧的洛苏卡纳正期待着冒险者的到来。"
+  },
+  "70364": {
+    "zh": "八分仪广场南侧的洛苏卡纳已经决定了今后的目的地。"
+  },
+  "70365": {
+    "zh": "八分仪广场南侧的洛苏卡纳正在等待消息。"
+  },
+  "70366": {
+    "zh": "贝壳亭的夏赛帕看向冒险者的目光中暗含期待。"
+  },
+  "70367": {
+    "zh": "赤诚组营房附近的伊陶喀正在准备进行下一次行动。"
+  },
+  "70368": {
+    "zh": "赤诚组营房附近的伊陶喀掌握了一些新情报。"
+  },
+  "70369": {
+    "zh": "赤诚组营房附近的库伊奇忧心忡忡。"
+  },
+  "70370": {
+    "zh": "赤诚组营房附近的库伊奇看起来十分警惕。"
+  },
+  "70371": {
+    "zh": "赤诚组营房附近的库伊奇有事想告诉冒险者。"
+  },
+  "70372": {
+    "zh": "贝壳亭的拉霍加感到不安。"
+  },
+  "70373": {
+    "zh": "神拳痕的西托加对于夺回祭器一事斗志昂扬。"
+  },
+  "70374": {
+    "zh": "天营门的西托加想要获得更多有关盗贼团的情报。"
+  },
+  "70375": {
+    "zh": "阿拉基利的西托加正在计划与盗贼们进行沟通。"
+  },
+  "70376": {
+    "zh": "阿拉基利的西托加面露不安。"
+  },
+  "70377": {
+    "zh": "阿拉米格人居住区的西托加打算阻止沙尔托菲特的计划。"
+  },
+  "70378": {
+    "zh": "贝壳亭的茨黑希望借用冒险者作为魔法师的智慧。"
+  },
+  "70379": {
+    "zh": "新港的帖佩切想和冒险者谈谈她遇到的困难。"
+  },
+  "70380": {
+    "zh": "新港的帖佩切对调查的事有了新想法。"
+  },
+  "70381": {
+    "zh": "新港的帖佩切想向冒险者报告现在的进展。"
+  },
+  "70382": {
+    "zh": "新港的帖佩切想和冒险者聊聊她收到的信。"
+  },
+  "70383": {
+    "zh": "新港的帖佩切想让冒险者知道，准备工作已经完成了。"
+  },
+  "70384": {
+    "zh": "白金幻象附近的发愁的裁衣匠似乎想委托冒险者仲裁纠纷。"
+  },
+  "70385": {
+    "zh": "裁衣匠行会附近的克苏夸在检查冒险者的装备。"
+  },
+  "70386": {
+    "zh": "角斗士武器百货附近的克苏夸似乎想报告收集情报的结果。"
+  },
+  "70387": {
+    "zh": "石场水车的克苏夸想打听伊可·索可·休玛玖恩的消息。"
+  },
+  "70388": {
+    "zh": "石场水车的克苏夸似乎在等待歌利亚。"
+  },
+  "70389": {
+    "zh": "石场水车的克苏夸似乎想共享情报。"
+  },
+  "70390": {
+    "zh": "丰饶神祭坛附近的发愁的法师正在应对源源不断的投诉。"
+  },
+  "70391": {
+    "zh": "魔女咖啡厅的库啵啵想要去赔礼道歉。"
+  },
+  "70392": {
+    "zh": "绅士区前的库啵啵从冒险者身上感受到了不一般的气质。"
+  },
+  "70393": {
+    "zh": "巨龙首营地的库啵啵从冒险者身上感受到了艺术家的气质。"
+  },
+  "70394": {
+    "zh": "赤诚组营房附近的库啵啵深受打击。"
+  },
+  "70395": {
+    "zh": "艾拉里格墓地前的库啵啵从冒险者身上感受到了神秘艺术家的气质。"
+  },
+  "70396": {
+    "zh": "巴尔德西昂分馆的欧吉卡·岑吉卡有事情想要告诉冒险者。"
+  },
+  "70397": {
+    "zh": "满潮港的乌克·拉玛特很高兴回到了图莱尤拉……"
+  },
+  "70398": {
+    "zh": "萨卡图拉尔关门的乌克·拉玛特想要继续为冒险者带路。"
+  },
+  "70399": {
+    "zh": "金曦的旅程的可露儿对石塔十分感兴趣。"
+  },
+  "70400": {
+    "zh": "沃洛克联王宫的埃伦维尔正在等待冒险者一行人。"
+  },
+  "70401": {
+    "zh": "贝壳亭附近的哈努族协助者正在等待冒险者的提问。"
+  },
+  "70402": {
+    "zh": "哈努聚落入口的乌克·拉玛特想要去寻找选王之人。"
+  },
+  "70403": {
+    "zh": "哈努聚落的乌克·拉玛特完全振作了起来。"
+  },
+  "70404": {
+    "zh": "哈努聚落的利努哈努想要带冒险者去找船匠。"
+  },
+  "70405": {
+    "zh": "哈努聚落的乌克·拉玛特想为展翅节做好准备。"
+  },
+  "70406": {
+    "zh": "哈努聚落的乌克·耶伏想要宣布展翅节的复活。"
+  },
+  "70407": {
+    "zh": "贝壳亭附近的佩鲁佩鲁族协助者正在等待提问。"
+  },
+  "70408": {
+    "zh": "瓦丘恩佩洛入口的乌克·拉玛特想要打听选王之人的情报。"
+  },
+  "70409": {
+    "zh": "朋友牧场的埃伦维尔想和冒险者等人商量试炼的事情。"
+  },
+  "70410": {
+    "zh": "伊库乌洛商旅馆的乌克·拉玛特想要去找下一个交易对象。"
+  },
+  "70411": {
+    "zh": "米普露马黛茶园的乌克·拉玛特想要获取最高级梅斯卡酒。"
+  },
+  "70412": {
+    "zh": "烈酒蒸馏所的乌克·拉玛特想要去找哈维利。"
+  },
+  "70413": {
+    "zh": "恰巴梅奇平原的玛布露正在看着乌克·拉玛特。"
+  },
+  "70414": {
+    "zh": "贝壳亭附近的乌克·拉玛特想要挑战下一个试炼。"
+  },
+  "70415": {
+    "zh": "戈尼特鲁珂宝滩的乌克·拉玛特有些在意丰让丹。"
+  },
+  "70416": {
+    "zh": "朋友的灯火的埃伦维尔似乎想提醒冒险者小心路上的危险。"
+  },
+  "70417": {
+    "zh": "釉药工房前的拉寇洛坷想让冒险者两人推测罐子工的需求。"
+  },
+  "70418": {
+    "zh": "釉药工房的柯纳还有话要说。"
+  },
+  "70419": {
+    "zh": "珠串万货街的乌克·拉玛特想去联王宫报告。"
+  },
+  "70420": {
+    "zh": "沃洛克联王宫的乌克·拉玛特想和大家会合。"
+  },
+  "70421": {
+    "zh": "土陶郡的柯纳想出发寻找乌克·拉玛特。"
+  },
+  "70422": {
+    "zh": "朋友的灯火的柯纳想要完成作战。"
+  },
+  "70423": {
+    "zh": "朋友的灯火的柯纳想与其他同伴会合。"
+  },
+  "70424": {
+    "zh": "朋友的灯火的柯纳正在等待桑克瑞德的联络。"
+  },
+  "70425": {
+    "zh": "朋友的灯火的乌克·拉玛特想要前往尤卡巨人族的集落。"
+  },
+  "70426": {
+    "zh": "卡辽扎神殿前的阿尔菲诺想要收集情报。"
+  },
+  "70427": {
+    "zh": "沃刻佐莫山前的乌克·拉玛特望着山顶。"
+  },
+  "70428": {
+    "zh": "沃拉的回响的阿尔菲诺想要帮助尤卡巨人族。"
+  },
+  "70429": {
+    "zh": "沃拉的回响的埃伦维尔准备让魔法人偶开始追踪艳翼蛇鸟。"
+  },
+  "70430": {
+    "zh": "纳尤戈纳附近的埃伦维尔准备继续追踪艳翼蛇鸟。"
+  },
+  "70431": {
+    "zh": "拉托托花田的桑克瑞德打算决定下一步行动。"
+  },
+  "70432": {
+    "zh": "沃拉的回响的埃伦维尔有一个提议。"
+  },
+  "70433": {
+    "zh": "船头小屋的阿尔菲诺想要回顾现状。"
+  },
+  "70434": {
+    "zh": "红豹村前的乌克·拉玛特想进入村子。"
+  },
+  "70435": {
+    "zh": "记星园庭的柯纳准备去找香蕉叶。"
+  },
+  "70436": {
+    "zh": "白烬古战场的柯纳正在思考如何获得香蕉叶。"
+  },
+  "70437": {
+    "zh": "记星园庭的阿尔菲诺想出发前往下一个试炼地点。"
+  },
+  "70438": {
+    "zh": "钓神基富天坑的洪姆·鲁可静静地站着。"
+  },
+  "70439": {
+    "zh": "记星园庭的乌克·拉玛特想知道冥境隧路的清理状况。"
+  },
+  "70440": {
+    "zh": "玛穆克入口的乌克·拉玛特想去找选王之人。"
+  },
+  "70441": {
+    "zh": "战火炎石舞台西侧的米拉加想带冒险者一行人去某个地方。"
+  },
+  "70442": {
+    "zh": "玛穆克的阿尔菲诺想要召集村民。"
+  },
+  "70443": {
+    "zh": "献出的战地的乌克·拉玛特正在思考着什么。"
+  },
+  "70444": {
+    "zh": "献出的战地的乌克·拉玛特又有了新想法。"
+  },
+  "70445": {
+    "zh": "玛穆克的柯坦拉姆有话要说。"
+  },
+  "70446": {
+    "zh": "船头小屋的佩谢夸正在欢迎冒险者的回归。"
+  },
+  "70447": {
+    "zh": "羽毛广场的可露儿看上去很开心。"
+  },
+  "70448": {
+    "zh": "萨卡图拉尔关门前的埃伦维尔正打算出发。"
+  },
+  "70449": {
+    "zh": "胡萨塔伊驿镇的埃伦维尔正想去查看情况。"
+  },
+  "70450": {
+    "zh": "谢申内青磷泉的埃伦维尔暗自下定了决心。"
+  },
+  "70451": {
+    "zh": "托纳特尼亚维附近的埃伦维尔正在窥探村中的情况。"
+  },
+  "70452": {
+    "zh": "谢申内青磷泉附近的埃伦维尔正注意着镇上。"
+  },
+  "70453": {
+    "zh": "胡萨塔伊驿镇前的埃伦维尔总算是放心了。"
+  },
+  "70454": {
+    "zh": "谢申内青磷泉的埃伦维尔正在等待冒险者。"
+  },
+  "70455": {
+    "zh": "美花黑泽恩附近的埃伦维尔正盯着木材。"
+  },
+  "70456": {
+    "zh": "金凰大堂的乌克·拉玛特失魂落魄地愣在原地。"
+  },
+  "70457": {
+    "zh": "鸟趾大路附近的阿莉塞正打量着倒在地上的敌方士兵。"
+  },
+  "70458": {
+    "zh": "金凰大堂的乌克·拉玛特有话想说。"
+  },
+  "70459": {
+    "zh": "羽毛广场的阿尔菲诺默默给自己鼓劲。"
+  },
+  "70460": {
+    "zh": "夏劳尼站的古·拉哈·提亚思考时表情严肃。"
+  },
+  "70461": {
+    "zh": "谢申内青磷泉的伊亚台正在努力回忆。"
+  },
+  "70462": {
+    "zh": "夏劳尼站的瓦里卡充满了干劲。"
+  },
+  "70463": {
+    "zh": "先锋营附近的埃伦维尔怔怔地看向他的故乡。"
+  },
+  "70464": {
+    "zh": "台夏帕尼废村的阿莉塞仍在怀疑斯菲因。"
+  },
+  "70465": {
+    "zh": "边郊镇的斯菲因想要参观农场。"
+  },
+  "70466": {
+    "zh": "尤派光晕农地的斯菲因准备结束参观。"
+  },
+  "70467": {
+    "zh": "地中天道秘密基地的埃伦维尔表情十分复杂。"
+  },
+  "70468": {
+    "zh": "蓄雷增幅设施的喀赫奇瓦正观察着冒险者一行的反应。"
+  },
+  "70469": {
+    "zh": "地中天道秘密基地的乌克·拉玛特正准备启程前往永护塔。"
+  },
+  "70470": {
+    "zh": "联合商城前的斯菲因正准备带冒险者一行游览九号解决方案。"
+  },
+  "70471": {
+    "zh": "9-14号居住栋附近的斯菲因想继续带冒险者们游览。"
+  },
+  "70472": {
+    "zh": "地场节点·九的乌克·拉玛特正准备前往集合地点。"
+  },
+  "70473": {
+    "zh": "霓虹酒杯的塔索斯正守卫着背后的门。"
+  },
+  "70474": {
+    "zh": "后房的乌克·拉玛特想去找古鲁加。"
+  },
+  "70475": {
+    "zh": "永护塔外围的乌克·拉玛特正打算去追古鲁加。"
+  },
+  "70476": {
+    "zh": "旧亚历山德里亚的欧提斯对冒险者带来的食材十分满意。"
+  },
+  "70477": {
+    "zh": "旧亚历山德里亚的欧提斯十分满意。"
+  },
+  "70478": {
+    "zh": "永护塔前的乌克·拉玛特有事想拜托冒险者。"
+  },
+  "70479": {
+    "zh": "真唯大道的乌克·拉玛特想要为居民们做些力所能及的事。"
+  },
+  "70480": {
+    "zh": "后房的喀赫奇瓦想要举行作战会议。"
+  },
+  "70481": {
+    "zh": "永护塔前喀赫奇瓦正准备带冒险者一行去创生设施的入口。"
+  },
+  "70482": {
+    "zh": "后房的乌克·拉玛特正在斟酌该如何向谢尔开口。"
+  },
+  "70483": {
+    "zh": "鲜羽兵站的乌克·拉玛特想去犒劳勇连队的士兵。"
+  },
+  "70484": {
+    "zh": "海岸鸟群市场的乌克·拉玛特再次振作精神。"
+  },
+  "70485": {
+    "zh": "中央终端前的乌克·拉玛特满心懊恼。"
+  },
+  "70486": {
+    "zh": "游水漫行街的古·拉哈·提亚想要找到遇到麻烦的永久人。"
+  },
+  "70487": {
+    "zh": "水之终端前的喀赫奇瓦凝视着冒险者一行。"
+  },
+  "70488": {
+    "zh": "旋转铁马的乌克·拉玛特有话想和欧提斯说。"
+  },
+  "70489": {
+    "zh": "土之终端前的喀赫奇瓦准备前往下一个区域。"
+  },
+  "70490": {
+    "zh": "勇武竞技场附近的可露儿正努力平复动摇的心情。"
+  },
+  "70491": {
+    "zh": "地场节点·火附近的可露儿准备进入洞窟。"
+  },
+  "70492": {
+    "zh": "火之终端的喀赫奇瓦准备前往下一个区域。"
+  },
+  "70493": {
+    "zh": "探索花园的喀赫奇瓦打算开始探索了。"
+  },
+  "70494": {
+    "zh": "克雷拉自然史博物馆的喀赫奇瓦想尝试空中游览。"
+  },
+  "70495": {
+    "zh": "风之终端的乌克·拉玛特打量着中央终端。"
+  },
+  "70502": {
+    "zh": "珠串万货街的洛皮利正在寻找实力高超的工匠。"
+  },
+  "70504": {
+    "zh": "珠串万货街的拉尔·索吉在看到冒险者的到来后松了一口气。"
+  },
+  "70505": {
+    "zh": "珠串万货街的拉尔·索吉需要处理大批量的日用品订单。"
+  },
+  "70506": {
+    "zh": "珠串万货街的拉尔·索吉不断地接到日用品的订单。"
+  },
+  "70507": {
+    "zh": "珠串万货街的拉尔·索吉接到了加急的订单。"
+  },
+  "70508": {
+    "zh": "珠串万货街的拉尔·索吉感到很失落。"
+  },
+  "70509": {
+    "zh": "珠串万货街的拉尔·索吉正准备进行新的尝试。"
+  },
+  "70510": {
+    "zh": "珠串万货街的拉尔·索吉在面对重要订单时感到十分紧张。"
+  },
+  "70511": {
+    "zh": "珠串万货街的帕梅卡正在观察这边的情况。"
+  },
+  "70512": {
+    "zh": "珠串万货街的帕梅卡准备开始记录。"
+  },
+  "70513": {
+    "zh": "珠串万货街的帕梅卡正在准备下个委托。"
+  },
+  "70514": {
+    "zh": "珠串万货街的帕梅卡想立刻开始下一次委托。"
+  },
+  "70515": {
+    "zh": "珠串万货街的帕梅卡干劲满满。"
+  },
+  "70516": {
+    "zh": "珠串万货街的帕梅卡正等待着下一个委托。"
+  },
+  "70517": {
+    "zh": "珠串万货街的帕梅卡很在意泽莫韦尼的情况。"
+  },
+  "70518": {
+    "zh": "珠串万货街的谢荣加正在寻找熟悉调合的工匠。"
+  },
+  "70519": {
+    "zh": "珠串万货街的谢荣加想要立刻开始试制果汁。"
+  },
+  "70520": {
+    "zh": "珠串万货街的谢荣加想谈谈客人们的反应。"
+  },
+  "70521": {
+    "zh": "珠串万货街的谢荣加很在意哈雷纳鲁坷的反馈。"
+  },
+  "70522": {
+    "zh": "珠串万货街的谢荣加正在思考下一种试制果汁。"
+  },
+  "70523": {
+    "zh": "珠串万货街的谢荣加正在思考新的果汁。"
+  },
+  "70524": {
+    "zh": "珠串万货街的谢荣加正在推进试喝活动的准备工作。"
+  },
+  "70525": {
+    "zh": "珠串万货街的中年采集者目不转睛地盯着冒险者。"
+  },
+  "70526": {
+    "zh": "珠串万货街的休涅想了解冒险者的本事。"
+  },
+  "70527": {
+    "zh": "珠串万货街的休涅今天依然在忙生意。"
+  },
+  "70528": {
+    "zh": "珠串万货街的休涅今天的生意也很顺利。"
+  },
+  "70529": {
+    "zh": "珠串万货街的休涅想委托冒险者送货。"
+  },
+  "70530": {
+    "zh": "珠串万货街的休涅似乎正在为什么发愁。"
+  },
+  "70531": {
+    "zh": "珠串万货街的休涅正等待着冒险者的来访。"
+  },
+  "70532": {
+    "zh": "珠串万货街的多努哈努正在为店铺的经营而烦恼。"
+  },
+  "70533": {
+    "zh": "珠串万货街的多努哈努正在思考能够打倒魔物的怪鱼。"
+  },
+  "70534": {
+    "zh": "珠串万货街的多努哈努正在等待帕谢尼涅归来。"
+  },
+  "70535": {
+    "zh": "珠串万货街的多努哈努正在意气风发地谈论有关鱼的事情。"
+  },
+  "70536": {
+    "zh": "珠串万货街的多努哈努正在催促帕谢尼涅挑战试炼。"
+  },
+  "70537": {
+    "zh": "珠串万货街的多努哈努正在等待帕谢尼涅归来。"
+  },
+  "70538": {
+    "zh": "珠串万货街的多努哈努正在思考有关最强怪鱼的事情。"
+  },
+  "70541": {
+    "zh": "九号解决方案的古怪的研究者有一个提案。"
+  },
+  "70545": {
+    "zh": "图莱尤拉勇武院的辉鳞族正在寻找冒险者。"
+  },
+  "70546": {
+    "zh": "图莱尤拉的波尔·欧伽想为冒险者介绍一个人。"
+  },
+  "70547": {
+    "zh": "图莱尤拉的波尔·欧伽有事情想拜托冒险者。"
+  },
+  "70548": {
+    "zh": "图莱尤拉的波尔·欧伽有事情想告诉冒险者。"
+  },
+  "70549": {
+    "zh": "图莱尤拉的泽伊琪罕正在等待挖掘调查的协助者。"
+  },
+  "70550": {
+    "zh": "九号解决方案的诺斯塔尔吉亚正在寻找冒险者。"
+  },
+  "70553": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n捷足广场的焦躁不安的勇连队队员正在等待搭档的到来。"
+  },
+  "70554": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n气球起降所的伏乌加正在等待后辈回来。"
+  },
+  "70555": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n满潮港的焦急的烹调师正在找寄给自己的货物。"
+  },
+  "70556": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n满潮港的形似玉米的某物孤独地站在那里。"
+  },
+  "70557": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n翼镜街的辉鳞族小孩正在寻找值得信赖的大人。"
+  },
+  "70558": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n曙歌大鼓前的勇连队鼓笛队长正在眺望大鼓。"
+  },
+  "70559": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n海岸鸟群市场的佩鲁佩鲁族旅行商人似乎遇到了麻烦。"
+  },
+  "70560": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n海泡农园的塔皮皮亚深情地注视着田地。"
+  },
+  "70561": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n满潮港的萨雷安博物学家正在寻找某种小动物。"
+  },
+  "70562": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n捷足广场的灵豹之民侍女似乎陷入了沉思。"
+  },
+  "70563": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n羊驼站的佩鲁佩鲁族驯兽人正在寻找羊驼们。"
+  },
+  "70564": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n满潮港的贸易船甲板员正在为接受的询问而发愁。"
+  },
+  "70565": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n羽毛广场的苏拉加正在考虑新举措。"
+  },
+  "70566": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的基弗露正在发愁。"
+  },
+  "70567": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的坡弗利正在寻求制作染料的帮手。"
+  },
+  "70568": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n伊库乌洛商旅馆的乌盖加似乎对温泉很感兴趣。"
+  },
+  "70569": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n伊库乌洛商旅馆的佩鲁佩鲁族工艺匠人好像丢失了什么东西。"
+  },
+  "70570": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n米普露马黛茶园的坡毕利正在为马黛茶而烦恼。"
+  },
+  "70571": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n米普露马黛茶园的脸色很差的商人看上去很失落。"
+  },
+  "70572": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奇毕露咖啡农园的管理仓库的佩鲁佩鲁族正在寻找值得信赖的人。"
+  },
+  "70573": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奇毕露咖啡农园的扎毕利似乎对奇特的咖啡很感兴趣。"
+  },
+  "70574": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的米弗利有工作想委托给本领高强的人。"
+  },
+  "70575": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的慌张的佩鲁佩鲁族正在寻找身手不凡的人。"
+  },
+  "70576": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的玉米大人想要为饥民们分发玉米菜肴。"
+  },
+  "70577": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n伫立的自证的悠闲的尤卡巨人族有想要的东西。"
+  },
+  "70578": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n伫立的自证的健壮的尤卡巨人族正在思考如何处理石材。"
+  },
+  "70579": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不要忘却的深奥的余洼举正在寻找身手不凡的人。"
+  },
+  "70580": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不要忘却的深奥的受伤的尤卡巨人族正在忍受疼痛。"
+  },
+  "70581": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的布波洛正在为药材不足而叹气。"
+  },
+  "70582": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的扎瓦库正在考虑筹备材料的事。"
+  },
+  "70583": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的伽霍鲁想要教给冒险者某种咒术。"
+  },
+  "70584": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的担心的尤卡巨人族有些不冷静。"
+  },
+  "70585": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的搭巴伽正在为棘手的魔物而发愁。"
+  },
+  "70586": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的卡泼格想要委托冒险者帮忙分发东西。"
+  },
+  "70587": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的诺皮利想要卖给冒险者某样东西。"
+  },
+  "70588": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的诺皮利想要制止做黑心交易的贸易商人。"
+  },
+  "70589": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的诺皮利正在考虑吉吉莫鲁的事。"
+  },
+  "70590": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n瓦丘恩佩洛的诺皮利想要跟吉吉莫鲁提出交易。"
+  },
+  "70591": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的姆伏鲁用一种敬畏的眼神看着冒险者。"
+  },
+  "70592": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的姆伏鲁想了解冒险者这份职业。"
+  },
+  "70593": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的姆伏鲁正在思考什么是为人类做贡献的工作。"
+  },
+  "70594": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的姆伏鲁已经下定决心要开启自己的护卫事业。"
+  },
+  "70595": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n沃拉的回响的姆伏鲁正在寻找新的护卫对象。"
+  },
+  "70596": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的卡努哈努被修复工作弄得焦头烂额。"
+  },
+  "70597": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的扎努哈努正在为某件事而发愁。"
+  },
+  "70598": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的莱努哈利正在寻找身手不错的人。"
+  },
+  "70599": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n金涡水田的戈纳哈努想要寻求冒险者的帮助。"
+  },
+  "70600": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的亚努哈努有事想让冒险者体验一下。"
+  },
+  "70601": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n大家的聚落的拉杜加有想要调查的事情。"
+  },
+  "70602": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n繁茂温风大房的图努哈利有事情想让冒险者体验一下。"
+  },
+  "70603": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的戈努哈努似乎有担心的事。"
+  },
+  "70604": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的哈努族屋顶工匠有事情需要寻求帮助。"
+  },
+  "70605": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的洛努哈利有东西想要分发。"
+  },
+  "70606": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的玉米大人想要为饥民们分发玉米菜肴。"
+  },
+  "70607": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的普莱斯塔皮坷正在为某件事而发愁。"
+  },
+  "70608": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的斯托瓦斯提珂正在寻找会游泳的人。"
+  },
+  "70609": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的弗拉拉弗里坷有事想要委托冒险者。"
+  },
+  "70610": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的文达沃珂看起来有些慌张。"
+  },
+  "70611": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的滕帕特里珂正在为某事而烦恼。"
+  },
+  "70612": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的巴诺布罗坷有事想要拜托冒险者。"
+  },
+  "70613": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的多雷德里珂正在寻找来自村落外面的人。"
+  },
+  "70614": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n朋友的灯火的斯维坡斯提坷忙得不可开交。"
+  },
+  "70615": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n朋友的灯火的切寇丘坷正在寻找本领高强的人。"
+  },
+  "70616": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n朋友的灯火的不知所措的佩鲁佩鲁族似乎很困扰。"
+  },
+  "70617": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的拉努哈努想让冒险者为村落的传统活动提供帮助。"
+  },
+  "70618": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的拉努哈努想要开始羽毛的加工作业。"
+  },
+  "70619": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n哈努聚落的拉努哈努想要针对下一道工序进行说明。"
+  },
+  "70620": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n干燥圣地的纳哈恩谢无法掩饰内心的疑惑。"
+  },
+  "70621": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的莫瓦姆珂想让冒险者帮忙解决自己照顾的罐子工的委托。"
+  },
+  "70622": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的安丰伊想要调查莫瓦姆珂重视的东西是什么。"
+  },
+  "70623": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的莫瓦姆珂想要出去收集材料。"
+  },
+  "70624": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的莫瓦姆珂担心安丰伊的去向。"
+  },
+  "70625": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n土陶郡的莫瓦姆珂想要进行下一项工作。"
+  },
+  "70626": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的拉尔·丘库克正在为驱除魔物的事而发愁。"
+  },
+  "70627": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n钓神基富天坑附近的喜欢潜水的少女正在寻找潜水高手。"
+  },
+  "70628": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的爱操心的村民正在担心朋友的安危。"
+  },
+  "70629": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n气球起降所的夏斯·欧伽对年轻人的工作状态感到无语。"
+  },
+  "70630": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n气球起降所的年轻的灵豹之民正在思考可疑人物的事。"
+  },
+  "70631": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的年老的灵豹之民想请身为武者声名显赫的冒险者帮忙。"
+  },
+  "70632": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n余痕屋群的心有不甘的灵豹之民似乎遇到了麻烦。"
+  },
+  "70633": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n气球起降所的晕气球的佩鲁佩鲁族正在寻找可以代劳工作的人。"
+  },
+  "70634": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n磨牙铸工的乌克·佐恩想找人把见习工匠叫来。"
+  },
+  "70635": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的玉米大人想要为饥民们分发玉米菜肴。"
+  },
+  "70636": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的库洛加希望冒险者能了解关于双头雕像的事。"
+  },
+  "70637": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的莉涅加有事想找为城镇的转变带来了契机的冒险者。"
+  },
+  "70638": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的高提加正在对守护玛穆克的雕像表达敬意。"
+  },
+  "70639": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的深思熟虑的霍比格族似乎有个不想被同族知道的委托。"
+  },
+  "70640": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的梅瑞加想要提醒别人注意自己目击到的东西。"
+  },
+  "70641": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的老实的布涅瓦族正在寻找丈夫。"
+  },
+  "70642": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n鲜甜蜜园的琪谢加正在为人手不足而发愁。"
+  },
+  "70643": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n鲜甜蜜园的泽塞加正在思考鲜甜蜜园的未来。"
+  },
+  "70644": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n磨鳞训练场的年迈的霍比格族对完成了试炼的冒险者很感兴趣。"
+  },
+  "70645": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n磨鳞训练场的莫萨加正在寻找身手不凡的人。"
+  },
+  "70646": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的恰特·洛正在寻找本领高强的人。"
+  },
+  "70647": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的恰特·洛已经决定了要如何处置捕获的猎物。"
+  },
+  "70648": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n红豹村的恰特·洛在开始试炼前有个想去的地方。"
+  },
+  "70649": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n白烬古战场的恰特·洛难以抑制自己的紧张之情。"
+  },
+  "70650": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的希迪加感觉快要哭出来了。"
+  },
+  "70651": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的希迪加为了思考对策有事情需要确认。"
+  },
+  "70652": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的高图加想要聊聊自己收集到的情报。"
+  },
+  "70653": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的高图加想要确认烟雾弹的效果。"
+  },
+  "70654": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的高图加似乎有很在意的事。"
+  },
+  "70655": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的尼卡特恩黑正在寻找不引人注意的协助者。"
+  },
+  "70656": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的亚美灰想赶走闹事的客人。"
+  },
+  "70657": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的奇佩苏佩想找人帮忙。"
+  },
+  "70658": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的黑萨尤想请人帮忙寻找某种美食。"
+  },
+  "70659": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的帕合似乎想让冒险者接触一下犎牛。"
+  },
+  "70660": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n图莱尤拉关门的合普正在为等待叫号的商人没出现而发愁。"
+  },
+  "70661": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的玛泽正在寻找能代替猎人的人。"
+  },
+  "70662": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的克帕玉特很在意青磷水相关设备的状况。"
+  },
+  "70663": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的提炼青磷水的负责人正在思考新的业务。"
+  },
+  "70664": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的迎曦之民劳动者想去扫墓。"
+  },
+  "70665": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的特泽尼耶正在忙碌工作着。"
+  },
+  "70666": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n鲁瓦特尼亚萨的帕梅皮亚正在寻找帮忙送蜡烛的人。"
+  },
+  "70667": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n鲁瓦特尼亚萨附近的慌张的少女想要救哥哥。"
+  },
+  "70668": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的担心的迎曦之民需要帮手协助驱散魔物。"
+  },
+  "70669": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的正在发愁的劳动者似乎有所牵挂。"
+  },
+  "70670": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的玉米大人想要给饿肚子的人民发放玉米菜肴。"
+  },
+  "70671": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n夏劳尼站的铁路公司的线路点检员正在寻找能够战斗的人。"
+  },
+  "70672": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n好渔夫湖岸的不知所措的崇灵之民正在寻找擅长潜水的人。"
+  },
+  "70673": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n夏劳尼站的铁路公司的现场监督正在寻找尚未回来的技师。"
+  },
+  "70674": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n美花黑泽恩的赶牛的崇灵之民很在意迷路的犎牛。"
+  },
+  "70675": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n美花黑泽恩的严格的崇灵之民想送东西给妹妹。"
+  },
+  "70676": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的托恩佐黑有事想要委托冒险者。"
+  },
+  "70677": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的基特夸希望冒险者能继续为工作上的事提供帮助。"
+  },
+  "70678": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n图莱尤拉关门的基特夸希望冒险者再次帮忙回收财物。"
+  },
+  "70679": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的基特夸有事想让冒险者帮忙传达给托恩佐黑。"
+  },
+  "70680": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的韦萨恩佩正在等待某人回归。"
+  },
+  "70681": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的卡亚梅内希望冒险者能跟着一起去公司报告。"
+  },
+  "70682": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n山谢亚的大口的卡亚梅内想了解清澈透明的宝石。"
+  },
+  "70683": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n鲁瓦特尼亚萨的卡亚梅内对于拿回了遗石一事感到很焦虑。"
+  },
+  "70684": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n谢申内青磷泉的卡亚梅内想让冒险者帮忙进行调查。"
+  },
+  "70685": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的瓦瓦赛想要介绍自己的工作。"
+  },
+  "70686": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的帕凯纳正在发愁。"
+  },
+  "70687": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的热爱工作的男性一直盯着设备看。"
+  },
+  "70688": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n蓄雷增幅设施的壮实的狩猎者似乎等得有些不耐烦了。"
+  },
+  "70689": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的多利安看起来有些不安。"
+  },
+  "70690": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的玉米大人想要为饥民们分发玉米菜肴。"
+  },
+  "70691": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n终流地的韦泽托尼对冒险者有个提议。"
+  },
+  "70692": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n终流地的尧帕一脸担心地望着远方。"
+  },
+  "70693": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n雷转质矿场的基雷科正在为工作的事一筹莫展。"
+  },
+  "70694": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n雷转质矿场的希纳巴想要寻求冒险者的帮助。"
+  },
+  "70695": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n旧亚历山德里亚的维赛似乎有担心的事。"
+  },
+  "70696": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的纳克恩特似乎在担心什么。"
+  },
+  "70697": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的夏劳奇想要立刻开始农地的调查。"
+  },
+  "70698": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的纳克恩特很在意夏劳奇的情况。"
+  },
+  "70699": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n边郊镇的夏劳奇想要解决农地的问题。"
+  },
+  "70700": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n联合商城的女性接待员想要介绍自己的工作日常。"
+  },
+  "70701": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n真唯大道的失落的清洁工一副痛苦的样子。"
+  },
+  "70702": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n9-14号居住栋的迷路的珲族小孩正在找人。"
+  },
+  "70703": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n锦砖咖啡的忧郁的青年正在为某事烦恼。"
+  },
+  "70704": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n解答所的繁忙的公务员正疲于应对市民的要求。"
+  },
+  "70705": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n真唯大道的悲伤的众阳之民正在寻找能够理解自己的人。"
+  },
+  "70706": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n9-11号居住栋的担心的少年正哭着看向破损的机器兵。"
+  },
+  "70707": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n联合商城的正在寻物的女性一脸困惑地看着周围。"
+  },
+  "70708": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n锦砖咖啡的慌张的女性正在寻找什么。"
+  },
+  "70709": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消遣地区的玉米大人想要为饥民们分发玉米菜肴。"
+  },
+  "70710": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n运河镇的青年向导似乎想跟冒险者打招呼。"
+  },
+  "70711": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n运河镇的医疗史博物馆职员正在寻求人手。"
+  },
+  "70712": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n昨日乐园的开朗的少女正在孤独地闹脾气。"
+  },
+  "70713": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n昨日乐园的聪明伶俐的少年正在找人。"
+  },
+  "70714": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n火山庇护所的不镇定的米拉拉族一副慌乱无措的样子。"
+  },
+  "70715": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n火山庇护所的技术者风貌的米拉拉族情绪很失落。"
+  },
+  "70716": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n风途园圃的温和的老妇想要找人聊天。"
+  },
+  "70717": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n风途园圃的喜爱花草的少年一副喘不上气的样子。"
+  },
+  "70718": {
+    "zh": "※本任务是特定期间内的任务。\n\n舰尾楼的红莲节执行委员玛雅尔·莫雅尔想要告诉冒险者红莲节已经开始的消息。"
+  },
+  "70719": {
+    "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的红莲节执行委员博德富安想抓住逃跑的仙人刺。"
+  },
+  "70720": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的南瓜头女人需要冒险者的帮助。"
+  },
+  "70721": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的菲尔考克斯正在准备开展行动。"
+  },
+  "70723": {
+    "zh": "来生回廊的可疑的药商想让冒险者帮忙送药。"
   }
 }
