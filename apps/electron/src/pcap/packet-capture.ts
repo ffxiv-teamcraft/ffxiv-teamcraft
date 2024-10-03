@@ -84,10 +84,6 @@ export class PacketCapture {
 
   private overlayListeners = [];
 
-  private get region(): Region {
-    return this.store.get<Region>('region', 'Global');
-  }
-
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
@@ -193,7 +189,7 @@ export class PacketCapture {
       }
     } else {
       // TODO DT flag for KR/CN
-      options.deucalionDllPath = region === 'Global' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion_6.dll');
+      options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion_6.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
     }
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);

@@ -306,7 +306,13 @@ export class RecipeFinderComponent implements OnDestroy {
     }
 
     source$.pipe(
-      map((text: string) => JSON.parse(text)),
+      map((text: string) => {
+        try {
+          return JSON.parse(text);
+        } catch (_e) {
+          return [];
+        }
+      }),
       switchMap(items => {
         return this.dialog.create({
           nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
