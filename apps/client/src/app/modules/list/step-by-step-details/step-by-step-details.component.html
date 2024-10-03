@@ -105,7 +105,7 @@
             <ng-template #craftsTitleTpl>
               {{'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate}} ({{list.crafts.length}})
             </ng-template>
-            <app-lazy-scroll [data]="list.crafts" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+            <app-lazy-scroll [data]="list.crafts" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8" [noScroll]="settings.listScrollingMode === 'never'">
               <ng-template #rowTpl let-row let-odd="odd">
                 <app-step-by-step-row [row]="row" [class.odd]="odd"
                                       [finalItem]="row.finalItem"
