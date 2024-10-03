@@ -65,7 +65,7 @@ export class AdComponent {
       const kumoEl = document.createElement('script');
       kumoEl.async = true;
       kumoEl.setAttribute('src', `https://kumo.network-n.com/dist/app.js`);
-      kumoEl.setAttribute('site', `ffxiv-teamcraft`);
+      kumoEl.setAttribute('site', this.platform.isDesktop() ? `ffxiv-teamcraft` : `ffxiv-teamcraft-desktop-site`);
       document.head.appendChild(kumoEl);
     }
   }
