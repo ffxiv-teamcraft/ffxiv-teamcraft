@@ -9,6 +9,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { PlatformService } from '../tools/platform.service';
 import { EnvironmentService } from '../environment.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class GubalService {
   constructor(private ipc: IpcService, private authFacade: AuthFacade, private envService: EnvironmentService,
               @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo,
               private platform: PlatformService) {
-    const versionFragments = envService.gameVersion.toString().split('.');
-    this.version = +versionFragments[0] * 100000 + +versionFragments[1] * 100 + +versionFragments[2];
+    const versionFragments = environment.version.toString().split('.');
+    this.version = (+versionFragments[0] * 100000) + (+versionFragments[1] * 100) + (+versionFragments[2]);
   }
 
   public init(): void {
@@ -65,7 +66,7 @@ export class GubalService {
             data: data.map(row => ({
               ...row,
               userId: userId,
-              version: this.version
+              version: this.version || -1
             }))
           }
         });

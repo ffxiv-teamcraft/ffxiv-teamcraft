@@ -93,7 +93,7 @@ export class MainWindow {
       urls: [
         '*://cdn.intergient.com/*',
         '*://securepubads.g.doubleclick.net/*',
-        '*://tpc.googlesyndication.com/*', // TODO: Still getting file:// ???
+        '*://tpc.googlesyndication.com/*',
         '*://tpc.googlesyndication.com/*/*',
         '*://tpc.googlesyndication.com/**',
         '*://www.googletagservices.com/*',

@@ -1,5 +1,5 @@
 export const gameEnv = {
-  globalGameVersion: 7.0,
-  koreanGameVersion: 6.57,
-  chineseGameVersion: 6.3
+  globalGameVersion: 7.05,
+  koreanGameVersion: 6.58,
+  chineseGameVersion: 7.0
 };
