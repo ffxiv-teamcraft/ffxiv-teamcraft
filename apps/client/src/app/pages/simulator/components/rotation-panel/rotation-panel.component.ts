@@ -235,8 +235,8 @@ export class RotationPanelComponent implements OnInit {
     ).subscribe(([foodsData, medicines, user]) => {
       const medicinesData = this.consumablesService.fromLazyData(medicines);
       const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
-      const food = rotation.food || user.defaultConsumables.food;
-      const medicine = rotation.medicine || user.defaultConsumables.medicine;
+      const food = rotation.food || user.defaultConsumables?.food;
+      const medicine = rotation.medicine || user.defaultConsumables?.medicine;
       this.dialog.create({
         nzContent: MacroPopupComponent,
         nzData: {
