@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.10...v11.3.11) (2024-10-03)
+
+
+### Features
+
+* **db:** allagan reports and CN search update ([f0099f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0099f87f14107d63062262b4cfe7f159cf5e9cd))
+* **db:** support for korean v6.58 update ([f0b0a85](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0b0a859b0ed562948062c8163ffb34ce12e0dee))
+* **desktop:** support for CN 7.0 ([3e7ed3c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e7ed3cba508b37055b432d8f5952fe15db643ed))
+
+
+### Bug Fixes
+
+* **desktop:** bring back fishing data capture ([3f0f35c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f0f35c3ab501eeee54640de947f773662cb6f06))
+* **gearset:** don't count PLD shield when purchased with sword ([8f317d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f317d69a16f069b12cb319ae0fa868b3062d432)), closes [#2914](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2914)
+* **list:** apply scrolling setting in step-by-step crafts ([ed4bd09](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed4bd0978572265f56b4c3ea7f0304a2df5e6a05))
+* **rotation:** fix macro output from community rotations ([691d2f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/691d2f7e2259dc7000ce6cab7fa094362f250bf8))
+
 ### [11.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.9...v11.3.10) (2024-09-02)
 
 
