@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "まだ保存されていない変更があります。このページを離れる前に保存してください。保存しないと変更が失われます。",
     "Crafting_optimizer_code": "Crafting optimizerのコード[=ゲーム内の制作マクロ]",
     "Generated_macro": "ゲームのマクロ",
-    "Generate_ingame_macro": "ゲームのマクロを作ります",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "シェアリンクをコピーする",
     "Share_link_copied": "スキル回しのシェアリンクがクリップボードにコピーされました",
     "Persist": "この回しを保存する",

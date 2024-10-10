@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "У вас есть несохраненные изменения. Пожалуйста, сохраните их перед тем, как покинуть эту страницу или изменения будут потеряны.",
     "Crafting_optimizer_code": "Код импорта crafting optimizer'а",
     "Generated_macro": "Внутриигровой макрос",
-    "Generate_ingame_macro": "Сгенерировать внутриигровой макрос",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "Копировать ссылку",
     "Share_link_copied": "Ссылка на ротацию скопирована в буфер обмена",
     "Persist": "Сохранить эту ротацию",

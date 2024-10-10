@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "저장되지 않은 변경점이 있습니다. 페이지를 나가기 전에 저장을 하지 않으면 변경한 부분이 사라집니다.",
     "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
-    "Generate_ingame_macro": "인게임 매크로 생성",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "공유링크 복사",
     "Share_link_copied": "로테이션 공유용 링크를 클립보드에 복사했습니다",
     "Persist": "현재 로테이션 저장",

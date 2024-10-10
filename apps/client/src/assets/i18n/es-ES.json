@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "Tienes cambios sin guardar. Guarda los datos antes de salir de esta página o los cambios serán perdidos.",
     "Crafting_optimizer_code": "Código de importación de optimizador de artesanía",
     "Generated_macro": "Macro para el juego",
-    "Generate_ingame_macro": "Generar macro para el juego",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "Copiar el vínculo para compartir",
     "Share_link_copied": "Vínculo para compartir rotación copiado al portapapeles",
     "Persist": "Guardar esta rotación",
