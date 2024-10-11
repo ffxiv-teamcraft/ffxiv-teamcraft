@@ -77,7 +77,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.4be0c55889a61e9e9e054596d899306a7c15eee2.json'
+    'hashedFileName': 'collectables-page-data.f98b393fcdf1f91b215375c97aafbd428870385a.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -169,7 +169,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.a59ed65ad5b519b31f684e9a01f121625f303804.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.347f56c776307503df5c87f4fe0ed49a4e73978a.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
