@@ -59,8 +59,8 @@ export class AlarmsExtractor extends GatheredByExtractor<AlarmDetails[]> {
     const patch = this.itemPatch && this.itemPatch[alarm.itemId];
     const expansion = this.xivapiPatches.find(p => p.ID === patch)?.ExVersion;
     const isLegendary = this.legendaryFish && this.legendaryFish[alarm.itemId];
-    // The changes only apply to fishes pre-ShB and non-legendary
-    if (expansion < 3 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
+    // The changes only apply to fishes pre-EW and non-legendary
+    if (expansion < 4 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true, spawns: [] }];
     }

@@ -2,7 +2,7 @@ import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
 import log from 'electron-log';
-import { CaptureInterface, CaptureInterfaceOptions, ErrorCodes, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app } from 'electron';
 
 export class PacketCapture {
@@ -90,20 +90,18 @@ export class PacketCapture {
     });
   }
 
-  restart() {
-    return this.stop().then(() => {
-      this.mainWindow.win.webContents.send('pcap:status', 'starting');
-      setTimeout(() => {
-        this.startPcap();
-      }, 1000);
-    });
+  async restart() {
+    await this.stop();
+    this.mainWindow.win.webContents.send('pcap:status', 'starting');
+    setTimeout(() => {
+      this.startPcap();
+    }, 1000);
   }
 
-  stop(): Promise<void> {
+  async stop(): Promise<void> {
     if (this.captureInterface) {
-      return this.captureInterface.stop().then(() => {
-        delete this.captureInterface;
-      });
+      await this.captureInterface.stop();
+      delete this.captureInterface;
     }
     return Promise.resolve();
   }
@@ -163,10 +161,11 @@ export class PacketCapture {
 
     this.mainWindow.win.webContents.send('pcap:status', 'starting');
 
-    this.startGlobalPcap(region);
+    await this.startGlobalPcap(region);
   }
 
-  private startGlobalPcap(region: Region): void {
+  private async startGlobalPcap(region: Region): Promise<void> {
+    const { CaptureInterface, ErrorCodes } = await import('@ffxiv-teamcraft/pcap-ffxiv');
     const options: Partial<CaptureInterfaceOptions> = {
       region: region,
       filter: (header, typeName: Message['type']) => {
@@ -188,7 +187,6 @@ export class PacketCapture {
         log.info('[pcap] Using localOpcodes:', localDataPath);
       }
     } else {
-      // TODO DT flag for KR/CN
       options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion_6.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
     }
 

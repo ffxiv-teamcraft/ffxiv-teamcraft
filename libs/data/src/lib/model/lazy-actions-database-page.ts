@@ -58,5 +58,5 @@ export interface Trait {
   id:          number;
   ja:          string;
   ko?:         string;
-  zh?:         string;
+  zh:          string;
 }

@@ -7,7 +7,7 @@ export interface LazyGatheringNodeSearch {
   ja:    string;
   ko?:   string;
   patch: number;
-  zh?:   string;
+  zh:    string;
 }
 
 export interface Data {
