@@ -25,7 +25,7 @@ export interface LazyNodesDatabasePage {
   x:             number;
   y:             number;
   z:             number;
-  zh?:           string;
+  zh:            string;
   zoneid:        number;
 }
 

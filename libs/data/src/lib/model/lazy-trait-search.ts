@@ -9,7 +9,7 @@ export interface LazyTraitSearch {
   ko?:   string;
   lvl:   number;
   patch: number;
-  zh?:   string;
+  zh:    string;
 }
 
 export interface Data {
