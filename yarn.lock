@@ -2968,22 +2968,22 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.1.tgz#b9da6a878a371829a0502c9b6c1c143ef6663f4d"
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
-"@ffxiv-teamcraft/dll-inject@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.11.tgz#0f657601ddf3406269757066e30850c8819db308"
-  integrity sha512-+0PpSLRBkp8NtgwJSRdSz5PRn/8rSEhLuQSCsG4w8doporj49GDxcEL345a6LLgydLj1bXML8NmkQPHanwIvdw==
+"@ffxiv-teamcraft/dll-inject@0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.13.tgz#6f7f86eee0877c1c8c7643d2a36d21d1298d2a80"
+  integrity sha512-MEamC/BmKXWsUd4vUjRB0kh+eKlTwDLtPeOIf2z/J/NcgMcvoNAxyBwNvqCrC3NncOhzWjQU82dA+qA6DKetpA==
   dependencies:
     bindings "^1.5.0"
     cross-spawn "^5.1.0"
-    nan "^2.20.0"
+    nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.11":
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.11.tgz#b5dec495a2ed5bd5be846b79c6903237c1d9ca42"
-  integrity sha512-RX7QTn5+L6xsyVvxHTAfEMQ1oDd0wJi+uWXJpJkF2+48xyNlrnOyKnsWg3OeaIQOc111UeZ68iNtLwdPJCI3lQ==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.12":
+  version "1.2.12"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.12.tgz#4800be42ff33f2c19b1861bab5d1998d3864e231"
+  integrity sha512-g9pxLnloRZE/TJgMmiTDgTjn/iwZgKJrPsRS/xfyehxRGbMSC6tE6EScVrOAJG1UAAGi/ABh5C4YU52myXd8HQ==
   dependencies:
-    "@ffxiv-teamcraft/dll-inject" "0.0.11"
+    "@ffxiv-teamcraft/dll-inject" "0.0.13"
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.5.11", "@ffxiv-teamcraft/simulator@^3.5.11":
   version "3.5.11"
@@ -16615,10 +16615,10 @@ nan@^2.16.0:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.17.0.tgz#c0150a2368a182f033e9aa5195ec76ea41a199cb"
   integrity sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==
 
-nan@^2.20.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.20.0.tgz#08c5ea813dd54ed16e5bd6505bf42af4f7838ca3"
-  integrity sha512-bk3gXBZDGILuuo/6sKtr0DQmSThYHLtNCdSdXk9YkxD/jK6X2vmCyyXBBxyqZ4XcnzTyYEAThfX3DCEnLf6igw==
+nan@^2.22.0:
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.22.0.tgz#31bc433fc33213c97bad36404bb68063de604de3"
+  integrity sha512-nbajikzWTMwsW+eSsNm3QwlOs7het9gGJU5dDZzRTQGk03vyBOauxgI4VakDzE0PtsGTmXPsXTbbjVhRwR5mpw==
 
 nanoid@^3.3.7:
   version "3.3.7"
@@ -22344,6 +22344,7 @@ wordwrapjs@^4.0.0:
     typical "^5.2.0"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
