@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.11...v11.3.12) (2024-10-11)
+
+
+### Bug Fixes
+
+* **db:** apply fish eyes to ShB fish too ([f1a95ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f1a95acff4bf2a00087f601ee8eeb3223e85543d))
+* **desktop:** only import pcap module if pcap is enabled to prevent boot crash ([19b009f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19b009fd4da6307f5cf35e4848c122704e2cbec4))
+* **desktop:** tentative to avoid Antivirus false positive ([d78911c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d78911c125d8686073b8388c3fbfafdbd8a7308c)), closes [#2926](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2926)
+
 ### [11.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.10...v11.3.11) (2024-10-03)
 
 
