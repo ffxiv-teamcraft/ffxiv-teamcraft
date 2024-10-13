@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "Bitte ändere die Zone (durch Teleportieren oder Betreten eines Hauses), um dein Inventar zu aktualisieren. Dieses Popup wird geschlossen, sobald der Vorgang fertig ist. Falls dieses Problem weiterhin besteht, probiere den Leitfaden zur Fehlerbehebung von Paketen in den angehefteten Nachrichten von #troubleshooting auf dem Teamcraft-Discord.",
     "Outdated": "Die Paketerfassung funktioniert nicht",
     "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben.",
-    "Possible_missing_firewall_rule": "Die Paketerfassung funktioniert nicht ordnungsgemäß",
-    "Possible_missing_firewall_rule_description": "Teamcraft sieht nur einige der Pakete und kann die Pakete, die im Zusammenhang mit dem Inventar, Statistiken, Ausrüstung, etc. stehen, nicht einsehen. Dies kann auf eine fehlende Firewall-Regel auf deinem PC zurückzuführen sein.",
-    "Possible_missing_firewall_rule_check": "Wenn diese Nachricht nicht verschwindet, nachdem du dich in einen neuen Bereich teleportiert hast, fehlt eventuell eine Firewall-Regel oder die Paketerfassung funktioniert aus einem anderen Grund nicht (falls dies der Fall ist, tritt bitte dem Discord Server bei und besuche den Kanal #troubleshooting).",
-    "Rawsock_needs_admin": "RawSocket-Aufnahmemodus benötigt Administratorrechte",
-    "Rawsock_needs_admin_description": "Um Firewall-Regeln richtig zu steuern und den Datenverkehr vom Spiel erfassen zu können, benötigt der RawSocket-Modus die Ausführung von TC mit Administratorenrechten. Du kannst es schließen und erneut als Admin ausführen, um dieses Problem zu beheben oder wähle eine der folgenden Optionen.",
-    "Switch_to_winpcap": "Zum winpcap-Modus wechseln",
     "Disable_pcap": "Paketerfassung deaktivieren",
-    "Install_npcap": "Npcap fehlt auf dem System",
-    "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
-    "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
     "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als anonyme Person",
     "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst.",
     "Status": "Paketerfassungsstatus",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "Paketaufzeichnung konnte nicht gestartet werden",
     "RESTART_GAME": "Paketerfassung wurde nicht korrekt beendet",
     "GAME_RUNNING_AS_ADMIN": "Zugriff auf Spielprozess nicht möglich",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.",
       "RESTART_GAME": "Bitte starte das Spiel neu, um die Paketerfassung korrekt ausführen zu können.",
-      "GAME_RUNNING_AS_ADMIN": "Das Spiel läuft als Admin. Bitte starte es entweder normal neu oder starte Teamcraft als Administrator neu."
+      "GAME_RUNNING_AS_ADMIN": "Das Spiel läuft als Admin. Bitte starte es entweder normal neu oder starte Teamcraft als Administrator neu.",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
