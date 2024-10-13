@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "Пожалуйста, измените зону (по телепорту или войдите в дом), чтобы обновить ваш инвентарь. Это всплывающее окно будет закрыто, как только это будет сделано. Если эта проблема повторится, посмотрите руководство по устранению неполадок захвата пакетов в канале #troubleshooting на сервере Teamcraft Discord.",
     "Outdated": "Захват пакетов не работает",
     "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях.",
-    "Possible_missing_firewall_rule": "Захват пакетов работает некорректно",
-    "Possible_missing_firewall_rule_description": "Teamcraft видит только некоторые пакеты и не содержит тех, которые связаны с инвентарем, параметрами, одеждой и т.д., это может быть вызвано отсутствием правила брандмауэра на вашем компьютере.",
-    "Possible_missing_firewall_rule_check": "Если это сообщение не исчезает после телепорта в новую область, значит отсутствует правило брандмауэра или захват пакетов вообще не работает по другой причине (если это так, перейдите на канал #troubleshooting на сервере Teamcraft Discord).",
-    "Rawsock_needs_admin": "Для режима захвата RawSocket требуются права администратора",
-    "Rawsock_needs_admin_description": "Чтобы правильно управлять правилами брандмауэра и иметь возможность захватывать трафик из игры, режим RawSocket требует запуск TC в правах администратора. Вы можете закрыть его и запустить снова как администратор, чтобы исправить эту проблему, или выбрать один из вариантов ниже.",
-    "Switch_to_winpcap": "Переключиться в режим winpcap",
     "Disable_pcap": "Отключить захват пакетов",
-    "Install_npcap": "Npcap отсутствует в вашей системе",
-    "Install_npcap_description": "Для захвата пакетов в Teamcraft с исходным npcap режимом, необходимо установить npcap. Teamcraft может установить его для вас и перезапустить приложение, как только оно будет завершено.",
-    "Install_npcap_button": "Установить npcap и перезапустить Teamcraft",
     "Not_as_anonymous": "Захват пакетов не будет корректно работать как анонимный",
     "Not_as_anonymous_description": "Пожалуйста, зарегистрируйтесь, нажимая на метку \"Анонимный\" в правом верхнем углу и выбрав \"Зарегистрироваться\" или отключите захват пакетов внутри настроек.",
     "Status": "Состояние захвата пакетов",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "Packet capture failed to start",
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
-      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
+      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
