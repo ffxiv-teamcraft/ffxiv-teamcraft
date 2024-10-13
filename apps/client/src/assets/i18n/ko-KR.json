@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "가방 업데이트를 위해 위치를 변경(다른 지역으로 텔레포트하거나 건물에 입장) 해주세요. 이 팝업은 해당 작업이 완료되면 자동으로 닫힙니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #troubleshooting 채널에 고정된 메세지를 참고하세요.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다.",
-    "Possible_missing_firewall_rule": "패킷 캡쳐가 제대로 작동하지 않고 있습니다",
-    "Possible_missing_firewall_rule_description": "현재 사용하시는 PC의 방화벽 규칙에 패킷 캡쳐가 없기 때문에 수집된 소지품, 능력치, 장비 등의 데이터가 일부 누락되었습니다.",
-    "Possible_missing_firewall_rule_check": "새로운 지역으로 이동하셔도 패킷 캡쳐가 작동하지 않는다면 방화벽 규칙이 추가되지 않았거나 패킷 캡처가 알 수 없는 이유로 작동하지 않는 중입니다 (만약 이런 경우에는 팀크래프트 디스코드 #troubleshooting 채널을 통해 문의해주세요).",
-    "Rawsock_needs_admin": "RawSocket 캡쳐모드는 관리자 권한이 필요합니다",
-    "Rawsock_needs_admin_description": "방화벽 규칙과 패킷 캡쳐가 정상적으로 작동하기 위해서는 TC에 관리자 권한이 있어야 합니다. 창을 닫고 관리자 권한으로 재실행하여 문제를 해결하거나, 아래의 옵션 중에서 하나를 선택할 수 있습니다.",
-    "Switch_to_winpcap": "winpcap모드 전환",
     "Disable_pcap": "패킷 캡쳐 비활성화",
-    "Install_npcap": "Npcap이 현재 사용자 시스템에 설치되지 않았습니다",
-    "Install_npcap_description": "팀크래프트의 패킷 캡쳐를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
-    "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
     "Not_as_anonymous": "익명 상태에서는 패킷 캡쳐가 제대로 작동하지 않습니다",
     "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요",
     "Status": "패킷 캡쳐 상태",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "패킷 캡쳐를 시작하지 못했습니다",
     "RESTART_GAME": "패킷 캡쳐가 올바르게 종료되지 않았습니다",
     "GAME_RUNNING_AS_ADMIN": "게임에 엑세스할 수 없음",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요). <br> 만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.",
       "RESTART_GAME": "패킷 캡쳐가 올바르게 작동하도록 게임을 다시 시작하세요.",
-      "GAME_RUNNING_AS_ADMIN": "게임이 관리자 권한으로 실행 중이므로 게임을 관리자 권한 없이 다시 실행하시거나 팀크래프트를 관리자 권한으로 실행하세요."
+      "GAME_RUNNING_AS_ADMIN": "게임이 관리자 권한으로 실행 중이므로 게임을 관리자 권한 없이 다시 실행하시거나 팀크래프트를 관리자 권한으로 실행하세요.",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
