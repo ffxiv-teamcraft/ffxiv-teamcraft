@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容，操作完成后此提示会自动关闭。如上述操作无效，请查看 https://www.yuque.com/ffcafe/tc/debugpackets",
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。",
-    "Possible_missing_firewall_rule": "数据包捕获功能不可用",
-    "Possible_missing_firewall_rule_description": "Teamcraft只能捕获到一部分数据包，丢失了与物品栏、 统计、装备等相关的数据包，可能是由于您的 PC 上缺少防火墙规则。",
-    "Possible_missing_firewall_rule_check": "如果此消息不会在你传送到新区域后消失，可能是由于防火墙规则缺失或封包捕获因故无法工作。请加入 Discord 服务器，前往 #troubleshooting 频道解决。",
-    "Rawsock_needs_admin": "RawSocket 抓包模式需要管理员权限",
-    "Rawsock_needs_admin_description": "TC 需要管理员权限才能使用 RawSocket 抓包和设置防火墙规则。用管理员权限运行 TC，或者从下面选择一个选项：",
-    "Switch_to_winpcap": "切换至 WinPcap 模式",
     "Disable_pcap": "停用数据包捕获",
-    "Install_npcap": "您未安装 Npcap",
-    "Install_npcap_description": "为在默认的 Npcap 下使用 Teamcraft 的数据包捕获功能，您需要安装 Npcap。Teamcraft 可以帮你安装并在安装完成后自动重启本应用。",
-    "Install_npcap_button": "安装 Npcap 并重启 Teamcraft",
     "Not_as_anonymous": "在未登录状态下数据包捕获无法正常工作。",
     "Not_as_anonymous_description": "请在界面右上角“匿名”标签悬停，并点击“注册”或在设置内禁用数据包捕获功能。",
     "Status": "数据包捕获状态",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "数据包捕获启动失败",
     "RESTART_GAME": "数据包捕获未正确关闭",
     "GAME_RUNNING_AS_ADMIN": "无法访问游戏进程",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
       "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
-      "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。"
+      "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
