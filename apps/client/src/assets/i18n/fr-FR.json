@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette fenêtre se fermera automatiquement. Si le problème persiste, essayez de suivre le guide de dépannage de capture de paquets dans les messages épinglés de #troubleshooting sur le serveur Discord de Teamcraft.",
     "Outdated": "La capture de paquets ne fonctionne pas",
     "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour.",
-    "Possible_missing_firewall_rule": "La capture de paquets ne fonctionne pas correctement",
-    "Possible_missing_firewall_rule_description": "Teamcraft ne voit que certains des paquets et pas ceux liés aux inventaires, stats, gear, etc, cela peut être dû à une règle de pare-feu manquante sur votre PC.",
-    "Possible_missing_firewall_rule_check": "Si ce message ne disparaît pas après que vous vous soyez téléporté dans une nouvelle zone, soit la règle de pare-feu est manquante ou la capture de paquets ne fonctionne pas du tout pour une autre raison (si c'est le cas, rejoignez le serveur Discord et allez dans le salon #troubleshooting).",
-    "Rawsock_needs_admin": "Le mode de capture RawSocket nécessite des autorisations d'administration",
-    "Rawsock_needs_admin_description": "Afin de manipuler correctement les règles du pare-feu et de pouvoir capturer le trafic depuis votre jeu, le mode RawSocket nécessite que TC ait les autorisations d'administration. Vous pouvez le fermer et l'exécuter à nouveau en tant qu'administrateur pour résoudre ce problème ou choisir l'une des options ci-dessous.",
-    "Switch_to_winpcap": "Basculer en mode winpcap",
     "Disable_pcap": "Désactiver la capture de paquets",
-    "Install_npcap": "Npcap est manquant dans votre système",
-    "Install_npcap_description": "Afin d'avoir la capturer de paquets avec son mode npcap par défaut, vous devez installer npcap. Teamcraft peut l'installer pour vous et redémarrer l'application une fois terminé.",
-    "Install_npcap_button": "Installez npcap et redémarrez Teamcraft",
     "Not_as_anonymous": "La capture de paquets ne fonctionnera pas correctement en anonyme",
     "Not_as_anonymous_description": "Veuillez vous inscrire en survolant le nom \"Anonyme\" dans le coin supérieur droit et en cliquant sur \"Inscription\" ou en désactivant la capture de paquets dans les options.",
     "Status": "Statut de la capture de paquets",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "Échec du démarrage de la capture de paquets",
     "RESTART_GAME": "La capture de paquets n'a pas été arrêtée correctement",
     "GAME_RUNNING_AS_ADMIN": "Impossible d'accéder au processus du jeu",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "Une erreur inconnue s'est produite en essayant de démarrer la capture de paquets, veuillez le signaler dans le salon #troubleshooting sur Discord.",
       "GAME_NOT_RUNNING": "Vérifiez que le jeu est bien démarré et qu'il n'a pas été lancé en tant qu'administrateur (ou, dans ce cas, démarrez Teamcraft en tant qu'administrateur). <br>Si ce problème persiste, signalez le problème dans le salon #troubleshooting sur Discord avec une capture d'écran des messages précédents.",
       "RESTART_GAME": "Veuillez redémarrer le jeu pour pouvoir exécuter la capture de paquets correctement.",
-      "GAME_RUNNING_AS_ADMIN": "Le jeu est lancé en tant qu'administrateur, veuillez le redémarrer normalement ou redémarrer Teamcraft en tant qu'administrateur."
+      "GAME_RUNNING_AS_ADMIN": "Le jeu est lancé en tant qu'administrateur, veuillez le redémarrer normalement ou redémarrer Teamcraft en tant qu'administrateur.",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
