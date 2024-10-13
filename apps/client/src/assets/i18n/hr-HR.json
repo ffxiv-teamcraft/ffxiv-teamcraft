@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update.",
-    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
-    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if that's the case, join the Discord server and go to #troubleshooting channel).",
-    "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
-    "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
-    "Switch_to_winpcap": "Switch to winpcap mode",
     "Disable_pcap": "Disable packet capture",
-    "Install_npcap": "Npcap is missing from your system",
-    "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft",
     "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings.",
     "Status": "Packet capture status",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "Packet capture failed to start",
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
-      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
+      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
