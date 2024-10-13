@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.12...v11.3.13) (2024-10-13)
+
+
+### Features
+
+* **desktop:** add error message for packet capture tolling being blocked ([31a5432](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31a5432637a6045c0a90e87f667c8af06bcc85ed)), closes [#2926](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2926)
+
 ### [11.3.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.11...v11.3.12) (2024-10-11)
 
 

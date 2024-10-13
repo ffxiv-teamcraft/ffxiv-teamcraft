@@ -165,79 +165,91 @@ export class PacketCapture {
   }
 
   private async startGlobalPcap(region: Region): Promise<void> {
-    const { CaptureInterface, ErrorCodes } = await import('@ffxiv-teamcraft/pcap-ffxiv');
-    const options: Partial<CaptureInterfaceOptions> = {
-      region: region,
-      filter: (header, typeName: Message['type']) => {
-        if (header.sourceActor === header.targetActor) {
-          return PacketCapture.ACCEPTED_PACKETS.includes(typeName);
+    try {
+      const { CaptureInterface, ErrorCodes } = await import('@ffxiv-teamcraft/pcap-ffxiv');
+      const options: Partial<CaptureInterfaceOptions> = {
+        region: region,
+        filter: (header, typeName: Message['type']) => {
+          if (header.sourceActor === header.targetActor) {
+            return PacketCapture.ACCEPTED_PACKETS.includes(typeName);
+          }
+          return PacketCapture.PACKETS_FROM_OTHERS.includes(typeName);
+        },
+        logger: message => {
+          log[message.type || 'warn'](message.message);
+        },
+        name: 'FFXIV_Teamcraft'
+      };
+
+      if (!app.isPackaged) {
+        const localDataPath = this.getLocalDataPath();
+        if (localDataPath) {
+          options.localDataPath = localDataPath;
+          log.info('[pcap] Using localOpcodes:', localDataPath);
         }
-        return PacketCapture.PACKETS_FROM_OTHERS.includes(typeName);
-      },
-      logger: message => {
-        log[message.type || 'warn'](message.message);
-      },
-      name: 'FFXIV_Teamcraft'
-    };
-
-    if (!app.isPackaged) {
-      const localDataPath = this.getLocalDataPath();
-      if (localDataPath) {
-        options.localDataPath = localDataPath;
-        log.info('[pcap] Using localOpcodes:', localDataPath);
+      } else {
+        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion_6.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
       }
-    } else {
-      options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion_6.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
-    }
 
-    log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
-    this.captureInterface = new CaptureInterface(options);
-    this.captureInterface.on('error', err => {
-      this.mainWindow.win.webContents.send('pcap:status', 'error');
-      this.mainWindow.win.webContents.send('pcap:error:raw', {
-        message: err
+      log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
+      this.captureInterface = new CaptureInterface(options);
+      this.captureInterface.on('error', err => {
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error:raw', {
+          message: err
+        });
+        log.error(err);
       });
-      log.error(err);
-    });
-    this.captureInterface.on('stopped', () => {
-      this.mainWindow.win.webContents.send('pcap:status', 'stopped');
-    });
-    this.captureInterface.setMaxListeners(0);
-    this.captureInterface.on('message', (message) => {
-      if (this.options.verbose) {
-        log.log(JSON.stringify(message));
-      }
-      this.sendToRenderer(message);
-    });
-    this.captureInterface.on('ready', () => {
-      // Give it 200ms to make sure pipe is created
-      setTimeout(() => {
-        this.captureInterface.start()
-          .then(() => {
-            this.mainWindow.win.webContents.send('pcap:status', 'running');
-            log.info('Packet capture started');
-          })
-          .catch((errCode) => {
-            this.mainWindow.win.webContents.send('pcap:status', 'error');
-            log.error(`Couldn't start packet capture`);
-            log.error(ErrorCodes[errCode] || `CODE: ${errCode}`);
+      this.captureInterface.on('stopped', () => {
+        this.mainWindow.win.webContents.send('pcap:status', 'stopped');
+      });
+      this.captureInterface.setMaxListeners(0);
+      this.captureInterface.on('message', (message) => {
+        if (this.options.verbose) {
+          log.log(JSON.stringify(message));
+        }
+        this.sendToRenderer(message);
+      });
+      this.captureInterface.on('ready', () => {
+        // Give it 200ms to make sure pipe is created
+        setTimeout(() => {
+          this.captureInterface.start()
+            .then(() => {
+              this.mainWindow.win.webContents.send('pcap:status', 'running');
+              log.info('Packet capture started');
+            })
+            .catch((errCode) => {
+              this.mainWindow.win.webContents.send('pcap:status', 'error');
+              log.error(`Couldn't start packet capture`);
+              log.error(ErrorCodes[errCode] || `CODE: ${errCode}`);
 
-            if (ErrorCodes[errCode]) {
-              this.mainWindow.win.webContents.send('pcap:error', {
-                message: ErrorCodes[errCode]
-              });
-            } else if (errCode.toString().includes('ENOENT')) {
-              this.mainWindow.win.webContents.send('pcap:error', {
-                message: 'RESTART_GAME'
-              });
-            } else {
-              this.mainWindow.win.webContents.send('pcap:error', {
-                message: 'Default'
-              });
-            }
-          });
-      }, 200);
-    });
+              if (ErrorCodes[errCode]) {
+                this.mainWindow.win.webContents.send('pcap:error', {
+                  message: ErrorCodes[errCode]
+                });
+              } else if (errCode.toString().includes('ENOENT')) {
+                this.mainWindow.win.webContents.send('pcap:error', {
+                  message: 'RESTART_GAME'
+                });
+              } else {
+                this.mainWindow.win.webContents.send('pcap:error', {
+                  message: 'Default'
+                });
+              }
+            });
+        }, 200);
+      });
+    } catch (e) {
+      if (e.message.includes('dll-inject')) {
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error', {
+          message: "MISSING_INJECTOR"
+        });
+        log.error("[pcap] MISSING_INJECTOR");
+      } else {
+        log.error(e)
+      }
+    }
   }
 
 }
