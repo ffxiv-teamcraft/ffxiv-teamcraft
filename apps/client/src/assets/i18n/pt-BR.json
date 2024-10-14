@@ -209,7 +209,7 @@
     "Visibility": "Visibilidade",
     "Public": "Público",
     "Private": "Privado",
-    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "Pagination_text": "{{start}}-{{end}} de {{total}} itens",
     "And_X_more": "and {{amount}} more...",
     "items": "itens",
     "Empty_list": "Nada aqui para listar",
