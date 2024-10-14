@@ -1227,7 +1227,7 @@
         "Your_folders": "Suas pastas",
         "Favorite_folders": "Pastas favoritas",
         "Add_rotations": "Sem rotação",
-        "Open": "Open folder"
+        "Open": "Abrir pasta"
       }
     },
     "CATEGORY": {
@@ -1241,13 +1241,13 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your Profile page to configure it properly and set stats.",
+      "Job_not_configured": "Parece que você ainda não configurou este emprego ainda, vá para sua página de perfil para configurá-lo corretamente e definir estatísticas.",
       "Job_not_configured_anonymous": "Por favor, insira suas estatísticas para ter uma simulação ou entre com a sua conta",
       "Select_job": "Selecione um job",
       "Craftsmanship": "Craftsmanship",
       "Control": "Control",
       "Specialist": "Especialista",
-      "Splendorous": "Uses a splendorous tool",
+      "Splendorous": "Usa uma ferramenta esplendorosa",
       "Ingredients": "Ingredientes HQ",
       "Consumables": "Consumíveis",
       "Apply_stats": "Aplicar estatísticas",
@@ -1255,14 +1255,14 @@
       "Apply_foods": "Aplicar consumíveis",
       "Food": "Escolha um alimento",
       "Medicine": "Escolha um medicamento",
-      "Action": "Choose Free Company actions",
+      "Action": "Escolha ações de empresa grátis",
       "Save_on_profile": "Salvar no perfil",
       "Reset_set": "Redefinir estas estatísticas",
       "Save_consumables": "Salvar estes consumíveis como padrão",
       "No_food": "Sem comida",
       "No_medicine": "Nenhum remédio",
       "No_fc_buffs": "Sem buffs FC",
-      "Starting_quality": "Starting quality",
+      "Starting_quality": "Qualidade inicial",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -1271,55 +1271,55 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Ação insegura com modo seguro habilitado",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
+      "DURABILITY_REACHED_ZERO": "Durabilidade chegou a 0 antes do progresso chegar ao máximo",
       "NOT_ENOUGH_CP": "CP insuficiente",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
-      "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft",
-      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
+      "MISSING_LEVEL_REQUIREMENT": "Você não tem o nível necessário para fabricar este item.",
+      "NOT_SPECIALIST": "Rotação de Especialista, mas você não é especialista",
+      "MISSING_STATS_REQUIREMENT": "Você não tem as estatísticas mínimas necessárias para este artesanato",
+      "QUALITY_TOO_LOW": "A qualidade não atende à qualidade requerida da receita"
     },
     "ROTATION_TIPS": {
-      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
-      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
-      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs.",
-      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted"
+      "Use_observe_before_focused": "Você deve usar Observe antes da ação Focada na etapa {{index}} para obter uma taxa gratuita de 100% de sucesso.",
+      "Use_durability_restoration_later": "Você deve usar a ação de restauração de durabilidade na etapa {{index}} mais tarde, para evitar desperdiçar a restauração de durabilidade.",
+      "Do_not_overlap_buffs": "Você sobrepôs o buff aplicado na etapa {{overlappedIndex}} com o buff aplicado na etapa {{overlappingIndex}}, você deve atrasar o segundo, a fim de obter os benefícios máximos dos seus benefícios.",
+      "Use_more_quality_actions": "Você tem a durabilidade restante no final do item criado, provavelmente deveria usá-la para adicionar mais ações relacionadas à qualidade.",
+      "Use_prudent_touch_manipulation": "Como você é o nível 66+, você deve usar a Manipulação + combo Toque Prudente para obter ganhos de qualidade para obter a qualidade máxima benefício para aumentar a confiabilidade.",
+      "Use_rapid_synthesis_earlier": "Você não deve usar a Rapid Synthesis como ação finalizadora; colocá-la antes para poder lidar com a falha da ação é melhor para a confiabilidade da sua rotação.",
+      "Avoid_using_good_actions": "Evite usar ações que requerem o Bom estado na macro, pois elas não podem ser previstas"
     }
   },
   "PRICING": {
     "Expect_to_sell_everything": "Esperar vender tudo",
-    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
+    "Expect_to_sell_everything_explain": "Não inclui as sobras de itens de precrafts em seus gastos, pois eles serão revendidos",
     "Autofill_panel_prices": "Preencher preços com base nos preços do mercado",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
-    "Content_copied": "Content copied to your clipboard",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
-    "Copy_panel_as_text": "Copy this panel as text",
-    "Copy_panel_as_csv": "Copy this panel as CSV",
-    "Ignore_completed_items": "Exclude completed items",
-    "Price_to_craft": "Price to craft",
-    "Price_from_vendor": "Price from vendor",
-    "Last_update": "Last update"
+    "Autofill_panel_prices_your_server": "Preencha os preços com base nos preços do mercado (apenas no seu servidor)",
+    "Content_copied": "Conteúdo copiado para a área de transferências",
+    "Cheaper_at_vendor": "Mais barato se você comprar pelo NPC",
+    "Copy_panel_as_text": "Copiar este painel como texto",
+    "Copy_panel_as_csv": "Copiar este painel como texto",
+    "Ignore_completed_items": "Esconder linhas completadas",
+    "Price_to_craft": "Preço a ser fabricado",
+    "Price_from_vendor": "Preço do fornecedor",
+    "Last_update": "Última atualização"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
     "Levequest_name": "Nome da levequest",
-    "Level_range": "Level range",
+    "Level_range": "Intervalo de nível",
     "No_results": "Nenhuma levequest encontrada",
     "Add_to_list": "Adicionar os itens dessa levequest a uma lista",
     "Quantity": "Quantidade",
     "All_deliveries": "Todas as {{value}} entregas",
     "Compute_exp": "Mostrar impacto no xp",
-    "Global_exp": "Use global exp",
+    "Global_exp": "Usar exp global",
     "More_on_gamerescape": "Mais detalhes no gamerescape",
     "Deliver_to": "Entregar para {{placename}}",
-    "Hide_large": "Hide large leves",
-    "Road_to_buff": "Include \"road to XX\" buff",
+    "Hide_large": "Ocultar leves grandes",
+    "Road_to_buff": "Incluir o buff \"road to XX\"",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "Essa página permite que você procure por uma leve ou múltiplas leves para cria uma lista com o(s) resultado(s)",
-      "Second_line": "Select a job and input a level range. You'll get a listing of the corresponding leves that you can check and add to a list. Recipes will be automatically added to the selected list.",
+      "Second_line": "Selecione um job, insira um intervalo de nível, você receberá uma listagem das leves correspondentes que você pode verificar e adicionar a uma lista, as receitas serão automaticamente adicionadas à lista selecionada.",
       "Third_line": "Você também pode pesquisar por nome, caso você saiba o que está procurando."
     }
   },
@@ -1327,11 +1327,11 @@
     "Title": "Notificações",
     "List_comment_added": "Comentário postado na lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentário postado em {{itemName}}, lista {{listName}}: \"{{content}}\"",
-    "Db_comment": "New comment in db: \"{{comment}}\"",
-    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
-    "Blog_post": "New blog post: {{title}}",
+    "Db_comment": "Novo comentário no db: \"{{comment}}\"",
+    "Db_comment_reply": "Nova resposta a um de seus comentários: \"{{comment}}\"",
+    "Blog_post": "Nova postagem no blog: {{title}}",
     "Mark_all_as_read": "Marcar tudo como lido",
-    "No_notifications": "No notifications"
+    "No_notifications": "Sem notificações"
   },
   "TEAMS": {
     "Title": "Equipes",
@@ -1355,19 +1355,19 @@
     "No_anonymous_join": "Você precisa criar uma conta para poder participar de uma equipe",
     "Already_in_team": "Você já está nesta equipe",
     "Webhook_configuration": "Configurações do Webhook",
-    "Officer": "Officer",
-    "Promote_officer": "Promote to officer",
+    "Officer": "Oficial",
+    "Promote_officer": "Promover a Oficial",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** foi adicionado a **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** foi removido de **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcou {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** como aconteceu em **[{{totalNeeded}}]({{listName}})**.",
       "Webhook_setup_complete": "A equipe **{{teamName}}** será rastreada neste canal.",
       "List_added_notification": "A lista **[{{listName}}]({{listUrl}})** foi adicionada à equipe.",
       "List_removed_notification": "A lista **[{{listName}}]({{listUrl}})** foi removida da equipe.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** entrou na equipe!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** foi removido da equipe.",
       "Name_changed": "A equipe **{{oldName}}** foi renomeada para **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** foi atribuído a **[{{memberName}}]({{memberProfileUrl}})** em **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Membro Registrado",
@@ -1376,15 +1376,15 @@
       "ITEM_REMOVED": "Item removido",
       "LIST_ADDED": "Lista adicionada",
       "LIST_REMOVED": "Lista removida",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "Listar progresso de materiais",
+      "FINAL_LIST_PROGRESSION": "Progresso de itens finais da lista",
       "USER_ASSIGNMENT": "Atribuição do usuário",
-      "ITEM_COMPLETION": "Item completion",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_COMPLETION": "Itens concluídos",
+      "ITEM_PROGRESSION": "Progressão de Itens"
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Informações do mercado",
     "Error": "A API XIVAPI ou Companion está desligada, por favor aguarde um momento antes de tentar novamente.",
     "Amount": "Quantidade",
     "HQ": "HQ",
@@ -1392,9 +1392,9 @@
     "Unit_price": "Preço unitário",
     "History": "Histórico",
     "Purchase_date": "Data",
-    "More_on_universalis": "More details on Universalis",
-    "Server": "Server",
-    "Last_updated": "Last update"
+    "More_on_universalis": "Mais detalhes sobre Universalis",
+    "Server": "Servidor",
+    "Last_updated": "Última atualização"
   },
   "COMMENTS": {
     "Title": "Comentários"
