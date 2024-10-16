@@ -3086,13 +3086,13 @@
     "GAME_NOT_RUNNING": "数据包捕获启动失败",
     "RESTART_GAME": "数据包捕获未正确关闭",
     "GAME_RUNNING_AS_ADMIN": "无法访问游戏进程",
-    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
+    "MISSING_INJECTOR": "数据包捕获工具被杀毒软件阻止",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
       "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
       "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。",
-      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
+      "MISSING_INJECTOR": "数据包捕获工具丢失，极有可能因为误报病毒而被杀毒软件移除。 确保将Teamcraft的安装文件夹加入白名单并重新安装。"
     }
   },
   "ISLAND_SANCTUARY": {
