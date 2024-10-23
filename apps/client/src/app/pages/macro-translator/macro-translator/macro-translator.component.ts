@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Language } from '../../../core/data/language';
 import { I18nName } from '@ffxiv-teamcraft/types';
-import { zhActions } from '../../../core/data/sources/zh-actions';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -147,13 +146,6 @@ export class MacroTranslatorComponent {
       this.lazyData.getI18nEntry('craftActions', true)
     ]).pipe(
       map(([actions, craftActions]) => {
-        if (language === 'zh') {
-          const zhRow = zhActions.find((a) => a.zh === name);
-          if (zhRow !== undefined) {
-            name = zhRow.en;
-            language = 'en';
-          }
-        }
         let resultIndex = this.i18n.getIndexByName(craftActions, name, language, true);
         if (resultIndex === -1) {
           resultIndex = this.i18n.getIndexByName(actions, name, language, true);
@@ -167,10 +159,6 @@ export class MacroTranslatorComponent {
         const result: I18nName = craftActions[resultIndex] || actions[resultIndex];
         if (resultIndex === -1) {
           throw new Error(`Data row not found for crafting action ${name}`);
-        }
-        const zhResultRow = zhActions.find((a) => a.en === result.en);
-        if (zhResultRow !== undefined) {
-          result.zh = zhResultRow.zh;
         }
         return result;
       })
