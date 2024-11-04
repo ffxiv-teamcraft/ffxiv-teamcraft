@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.13...v11.3.14) (2024-11-04)
+
+
+### Features
+
+* **data:** update for cn patch-7.01 ([f48a311](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f48a311d3f8e8316276a7961498778b117fe09e3))
+
 ### [11.3.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.12...v11.3.13) (2024-10-13)
 
 

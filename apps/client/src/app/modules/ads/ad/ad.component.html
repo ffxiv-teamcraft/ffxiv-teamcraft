@@ -1,1 +1,4 @@
-<div [id]="slotId$ | async"></div>
+@if(slotId$ | async; as slotId){
+  <div [id]="slotId"></div>
+}
+
