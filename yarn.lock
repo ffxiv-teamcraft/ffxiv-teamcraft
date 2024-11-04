@@ -2968,22 +2968,22 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.1.tgz#b9da6a878a371829a0502c9b6c1c143ef6663f4d"
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
-"@ffxiv-teamcraft/dll-inject@0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.13.tgz#6f7f86eee0877c1c8c7643d2a36d21d1298d2a80"
-  integrity sha512-MEamC/BmKXWsUd4vUjRB0kh+eKlTwDLtPeOIf2z/J/NcgMcvoNAxyBwNvqCrC3NncOhzWjQU82dA+qA6DKetpA==
+"@ffxiv-teamcraft/dll-inject@0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.14.tgz#1961ddf6662541521e79b694df2cbf4b17aed320"
+  integrity sha512-b6kizFgGBwMw0flru5MI1sJg7WJd6Lzz0yveYyhnnhorYD0nfaolihTGya0hjsiUzO4Yyh4Za79EDUsSJAXRdg==
   dependencies:
     bindings "^1.5.0"
     cross-spawn "^5.1.0"
     nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.12.tgz#4800be42ff33f2c19b1861bab5d1998d3864e231"
-  integrity sha512-g9pxLnloRZE/TJgMmiTDgTjn/iwZgKJrPsRS/xfyehxRGbMSC6tE6EScVrOAJG1UAAGi/ABh5C4YU52myXd8HQ==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.13":
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.13.tgz#4ac11b8eb50486379364751da4fd177e44aab2eb"
+  integrity sha512-ga7OEpNvP4TmlIjhz6AuwgG2UV3y7AwwH29PrNRI6iEtsxCOu2rWOAR3PhbPjjw1yGBwyMFmrj6D9kTHDEczhA==
   dependencies:
-    "@ffxiv-teamcraft/dll-inject" "0.0.13"
+    "@ffxiv-teamcraft/dll-inject" "0.0.14"
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.5.11", "@ffxiv-teamcraft/simulator@^3.5.11":
   version "3.5.11"
