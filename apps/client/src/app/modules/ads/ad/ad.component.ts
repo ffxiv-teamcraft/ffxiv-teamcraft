@@ -1,10 +1,9 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { auditTime, delay, distinctUntilChanged, fromEvent, map, Observable, startWith, tap } from 'rxjs';
+import { auditTime, distinctUntilChanged, filter, fromEvent, map, Observable, startWith, take, tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AsyncPipe } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
 
 
 @Component({
@@ -26,11 +25,13 @@ export class AdComponent {
 
   constructor(private platform: PlatformService) {
     if (!this.platform.isOverlay()) {
+      (window as any).AdSlots = { cmd: [], renderOnFirstLoad: true, divCheck: false };
       this.#router.events.pipe(
         filter(e => e instanceof NavigationEnd)
       ).subscribe((e: NavigationEnd) => {
         (window as any).AdSlots.pageURL = e.url;
       });
+
       this.slotId$ = fromEvent(window, 'resize')
         .pipe(
           map(event => (event.currentTarget as any).innerWidth),
@@ -46,7 +47,6 @@ export class AdComponent {
           }),
           distinctUntilChanged(),
           takeUntilDestroyed(this.#destroyRef),
-          delay(2000),
           map((platform) => {
             switch (platform) {
               case 'mobile':
@@ -56,17 +56,17 @@ export class AdComponent {
               default:
                 return 'nn_lb1';
             }
-          }),
-          tap(() => {
-            (window as any).reloadAdSlots();
           })
         );
-      (window as any).AdSlots = { cmd: [], renderOnFirstLoad: false, divCheck: false }
-      const kumoEl = document.createElement('script');
-      kumoEl.async = true;
-      kumoEl.setAttribute('src', `https://kumo.network-n.com/dist/app.js`);
-      kumoEl.setAttribute('site', this.platform.isDesktop() ? `ffxiv-teamcraft` : `ffxiv-teamcraft-desktop-site`);
-      document.head.appendChild(kumoEl);
+      this.slotId$.pipe(
+        take(1)
+      ).subscribe(() => {
+        const kumoEl: HTMLScriptElement = document.createElement('script');
+        kumoEl.async = true;
+        kumoEl.setAttribute('src', `https://kumo.network-n.com/dist/app.js`);
+        kumoEl.setAttribute('site', this.platform.isDesktop() ? `ffxiv-teamcraft` : `ffxiv-teamcraft-desktop-site`);
+        document.head.appendChild(kumoEl);
+      });
     }
   }
 
