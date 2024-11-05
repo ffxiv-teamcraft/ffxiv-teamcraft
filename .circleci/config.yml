@@ -104,7 +104,7 @@ jobs:
           at: ~/
       - add_ssh_keys:
           fingerprints:
-            - "fe:16:5e:5a:4c:4a:3e:36:80:a7:13:5b:1f:64:7b:e0"
+            - "SHA256:h90Ta4Y6EdAV+L8lKqKc8u7MW0GxOObWnmQAcyJlpIo"
       - run:
           name: Deploying cdn to OVH server
           command: bash tools/cdn/deploy.sh
