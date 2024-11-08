@@ -2968,22 +2968,22 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.1.tgz#b9da6a878a371829a0502c9b6c1c143ef6663f4d"
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
-"@ffxiv-teamcraft/dll-inject@0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.14.tgz#1961ddf6662541521e79b694df2cbf4b17aed320"
-  integrity sha512-b6kizFgGBwMw0flru5MI1sJg7WJd6Lzz0yveYyhnnhorYD0nfaolihTGya0hjsiUzO4Yyh4Za79EDUsSJAXRdg==
+"@ffxiv-teamcraft/dll-inject@0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.15.tgz#8ca73e5bde69bc480b00d809ffc1d1cccb9b861a"
+  integrity sha512-K8uW9GbdXfGi5fihXLp3WvuDJO7X6t04rZ67A1xA6FlD7WjR7uNeuY41WyVP8pJL/eOnV/CEFnRDLaBPntHbMQ==
   dependencies:
     bindings "^1.5.0"
     cross-spawn "^5.1.0"
     nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.13.tgz#4ac11b8eb50486379364751da4fd177e44aab2eb"
-  integrity sha512-ga7OEpNvP4TmlIjhz6AuwgG2UV3y7AwwH29PrNRI6iEtsxCOu2rWOAR3PhbPjjw1yGBwyMFmrj6D9kTHDEczhA==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.14":
+  version "1.2.14"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.14.tgz#dae93235aadd6c68ba572c702d202c8a257c17e0"
+  integrity sha512-m0AtOxqJRdNngw9gcbg1waA7b1wLFs2BIyyexURZmgHMpvv0o2vTnY4XKwwhPRmaBWlzw5SYAHdKBrIFyEZZWA==
   dependencies:
-    "@ffxiv-teamcraft/dll-inject" "0.0.14"
+    "@ffxiv-teamcraft/dll-inject" "0.0.15"
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.5.11", "@ffxiv-teamcraft/simulator@^3.5.11":
   version "3.5.11"
@@ -10505,21 +10505,6 @@ electron-builder@^25.0.0:
     simple-update-notifier "2.0.0"
     yargs "^17.6.2"
 
-electron-fetch@^1.7.1:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/electron-fetch/-/electron-fetch-1.7.4.tgz#af975ab92a14798bfaa025f88dcd2e54a7b0b769"
-  integrity sha512-+fBLXEy4CJWQ5bz8dyaeSG1hD6JJ15kBZyj3eh24pIVrd3hLM47H/umffrdQfS6GZ0falF0g9JT9f3Rs6AVUhw==
-  dependencies:
-    encoding "^0.1.13"
-
-electron-google-analytics@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/electron-google-analytics/-/electron-google-analytics-1.0.2.tgz#98ac733e71afb7bd16f76bc03ceec677f7abff8f"
-  integrity sha512-6faXosDqgq4Ei58vYsMqh/0P3CQ/cZjGLEXBuIw53RU44A6F/98mLcouMaX5HvmtBzss0xuz9VbQqxG5GBFcJQ==
-  dependencies:
-    electron-fetch "^1.7.1"
-    uuid "^8.3.0"
-
 electron-log@^5.1.4:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-5.1.4.tgz#9b7ea4ae1167475f3c9babc5c3d94d54f46dd35a"
@@ -16719,13 +16704,6 @@ ngx-echarts@^17.2.0:
   dependencies:
     tslib "^2.3.0"
 
-ngx-google-analytics@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/ngx-google-analytics/-/ngx-google-analytics-14.0.1.tgz#aa5bef2a688b224f3ad6d1524cb473bfc912e253"
-  integrity sha512-PfOtnshSyq15EKevKlFW9IRgH+dTtPG4Q9HJYksuRNYDzjce0eqK3Bf6hz0tAZdyqbzTCyx5g+NgWBfpqQfb2w==
-  dependencies:
-    tslib "^2.4.0"
-
 ngx-markdown@^17.2.1:
   version "17.2.1"
   resolved "https://registry.yarnpkg.com/ngx-markdown/-/ngx-markdown-17.2.1.tgz#088bdd72114ff62beea7ea384cac2ef42ada68aa"
@@ -21809,7 +21787,7 @@ uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.0.0, uuid@^8.3.0, uuid@^8.3.2:
+uuid@^8.0.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
