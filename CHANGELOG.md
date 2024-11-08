@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.14...v11.3.15) (2024-11-08)
+
+
+### Bug Fixes
+
+* **desktop:** attempt to fix AV going mad at Teamcraft ([090725b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/090725ba30b7623eb5d275d1b6a94e3a4238d218))
+* update pcap injector for hopefully better AV behavior ([bd3cd96](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bd3cd96a273bcd38c0d529eba4ead8c458460d8c))
+
 ### [11.3.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.13...v11.3.14) (2024-11-04)
 
 
