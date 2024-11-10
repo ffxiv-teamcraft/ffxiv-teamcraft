@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.15...v11.3.16) (2024-11-10)
+
+
+### Bug Fixes
+
+* **desktop:** Correct build of dll-inject to avoid AV issue ([8494d1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8494d1f47842f587ae34dcab7f5697d0d4c1cdab))
+* **macro-translator:** remove outdated standalone chinese translation handling ([f538517](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5385177d8e74caf64ee5e321d77450068269936))
+
 ### [11.3.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.14...v11.3.15) (2024-11-08)
 
 
