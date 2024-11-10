@@ -1109,7 +1109,7 @@
     "Unsaved_changes": "まだ保存されていない変更があります。このページを離れる前に保存してください。保存しないと変更が失われます。",
     "Crafting_optimizer_code": "Crafting optimizerのコード[=ゲーム内の制作マクロ]",
     "Generated_macro": "ゲームのマクロ",
-    "Generate_ingame_macro": "ゲームのマクロを作ります",
+    "Generate_ingame_macro": "Convert to ingame macro",
     "Share_button_tooltip": "シェアリンクをコピーする",
     "Share_link_copied": "スキル回しのシェアリンクがクリップボードにコピーされました",
     "Persist": "この回しを保存する",
@@ -2063,16 +2063,7 @@
     "Please_update_inventory_popup": "持ち物を更新するには、エリアを変更してください（テレポまたは家に入って）。完了するとポップアップは閉じられます。 この問題が解決しない場合は、Teamcraft Discordサーバーでの#troubleshootingのピン留めメッセージでパケットキャプチャのトラブルシューティングガイドをお試しください。",
     "Outdated": "パケットキャプチャが動作していません",
     "Outdated_description": "あなたのバージョンのTeamcraftは現在のゲームバージョンで正しく動作していません。今後のアップデートで修正されます。",
-    "Possible_missing_firewall_rule": "パケットキャプチャが正しく動作していません",
-    "Possible_missing_firewall_rule_description": "現在使用するPCのファイアウォールのルールにパケットキャプチャがない故、収集された所持品、能力値、装備などのデータが一部欠けています。",
-    "Possible_missing_firewall_rule_check": "新しいエリアにテレポしてもこのメッセージが消えない場合は、ファイアウォールのルールが設定されていないかもしくはパケットキャプチャが別の理由で動作していません。後者の場合はDiscordサーバーに参加して、#troubleshooting チャンネルで報告してください。",
-    "Rawsock_needs_admin": "RawSocketキャプチャモードには管理者権限が必要です",
-    "Rawsock_needs_admin_description": "ファイアウォールのルールとパケットキャプチャが問題なく作動するには、TCに管理者権限が必要です。ウィンドウを閉じて管理者権限で実行するか、以下のオプションの中で１つを選ぶ事ができます",
-    "Switch_to_winpcap": "Winpcapモードに切り替える",
     "Disable_pcap": "パケットキャプチャを無効にする",
-    "Install_npcap": "Npcapがシステムから見つかりません。",
-    "Install_npcap_description": "デフォルトのnpcapモードでパケットキャプチャを利用するためにはnpcapのインストールが必要です。npcapのインストールとTeamcraftの再起動を行いますか？",
-    "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
     "Not_as_anonymous": "パケットキャプチャは匿名ユーザでは正しく動作しません",
     "Not_as_anonymous_description": "右上隅の「匿名」にカーソルを重ね、表示されたメニューの「登録」をクリックしてユーザ登録をするか、または設定内でパケットキャプチャを無効にしてください。",
     "Status": "パケットキャプチャの状態",
@@ -3095,11 +3086,13 @@
     "GAME_NOT_RUNNING": "パケットキャプチャの開始に失敗しました",
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
+    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
-      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
+      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
     }
   },
   "ISLAND_SANCTUARY": {
