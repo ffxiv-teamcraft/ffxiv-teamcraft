@@ -27,8 +27,9 @@
     "exp": 40500,
     "map": 9,
     "contentText": [
-      33305,
-      33300
+      9083612,
+      33300,
+      444
     ]
   },
   "2": {
@@ -59,10 +60,10 @@
     "exp": 24500,
     "map": 8,
     "contentText": [
-      1004,
       1003,
-      1004,
-      1000
+      1958540,
+      1000,
+      73
     ]
   },
   "3": {
@@ -93,10 +94,10 @@
     "exp": 30300,
     "map": 34,
     "contentText": [
-      2705,
       2704,
-      2705,
-      2700
+      2790145,
+      2700,
+      101
     ]
   },
   "4": {
@@ -127,10 +128,10 @@
     "exp": 23500,
     "map": 31,
     "contentText": [
-      2505,
       2504,
-      2505,
-      2500
+      3283219,
+      2500,
+      1206
     ]
   },
   "5": {
@@ -161,8 +162,9 @@
     "exp": 114700,
     "map": 38,
     "contentText": [
-      2903,
-      2900
+      3619405,
+      2900,
+      1532
     ]
   },
   "6": {
@@ -193,8 +195,9 @@
     "exp": 48800,
     "map": 48,
     "contentText": [
-      1103,
-      1100
+      3633039,
+      1100,
+      422
     ]
   },
   "7": {
@@ -225,8 +228,9 @@
     "exp": 34700,
     "map": 46,
     "contentText": [
-      2407,
-      2405
+      4097951,
+      2405,
+      1197
     ]
   },
   "8": {
@@ -257,8 +261,9 @@
     "exp": 59900,
     "map": 45,
     "contentText": [
-      2403,
-      2400
+      3998421,
+      2400,
+      1279
     ]
   },
   "9": {
@@ -289,8 +294,9 @@
     "exp": 69600,
     "map": 42,
     "contentText": [
-      3509,
-      3500
+      4064743,
+      3500,
+      1570
     ]
   },
   "10": {
@@ -321,8 +327,9 @@
     "exp": 135900,
     "map": 32,
     "contentText": [
-      2804,
-      2800
+      4177426,
+      2800,
+      1547
     ]
   },
   "11": {
@@ -353,8 +360,9 @@
     "exp": 94200,
     "map": 37,
     "contentText": [
-      4402,
-      4400
+      4239689,
+      4400,
+      1680
     ]
   },
   "12": {
@@ -385,8 +393,9 @@
     "exp": 84100,
     "map": 52,
     "contentText": [
-      3402,
-      3400
+      3690171,
+      3400,
+      1590
     ]
   },
   "13": {
@@ -417,8 +426,9 @@
     "exp": 99600,
     "map": 50,
     "contentText": [
-      2906,
-      2904
+      4229622,
+      2904,
+      1396
     ]
   },
   "14": {
@@ -449,8 +459,9 @@
     "exp": 135900,
     "map": 49,
     "contentText": [
-      4502,
-      4500
+      4246570,
+      4500,
+      1696
     ]
   },
   "15": {
@@ -481,7 +492,7 @@
     "exp": 135900,
     "map": 47,
     "contentText": [
-      33526,
+      9088363,
       33500
     ]
   },
@@ -513,8 +524,9 @@
     "exp": 135900,
     "map": 108,
     "contentText": [
-      4612,
-      4600
+      4378111,
+      4600,
+      2265
     ]
   },
   "18": {
@@ -545,8 +557,9 @@
     "exp": 135900,
     "map": 140,
     "contentText": [
-      4812,
-      4800
+      4481318,
+      4800,
+      2289
     ]
   },
   "19": {
@@ -577,8 +590,9 @@
     "exp": 135900,
     "map": 137,
     "contentText": [
-      5007,
-      5000
+      4497567,
+      5000,
+      2346
     ]
   },
   "20": {
@@ -609,10 +623,10 @@
     "exp": 135900,
     "map": 146,
     "contentText": [
-      5306,
       5305,
-      5308,
-      5300
+      4543710,
+      5300,
+      2547
     ]
   },
   "21": {
@@ -643,8 +657,9 @@
     "exp": 135900,
     "map": 145,
     "contentText": [
-      5116,
-      5100
+      4569373,
+      5100,
+      1197
     ]
   },
   "22": {
@@ -675,8 +690,9 @@
     "exp": 135900,
     "map": 151,
     "contentText": [
-      5406,
-      5400
+      4574827,
+      5400,
+      2564
     ]
   },
   "23": {
@@ -707,7 +723,7 @@
     "exp": 135900,
     "map": 168,
     "contentText": [
-      6005,
+      4685110,
       6000
     ]
   },
@@ -739,7 +755,7 @@
     "exp": 135900,
     "map": 165,
     "contentText": [
-      6414,
+      4660222,
       6400
     ]
   },
@@ -771,7 +787,7 @@
     "exp": 135900,
     "map": 157,
     "contentText": [
-      6106,
+      4616677,
       6100
     ]
   },
@@ -803,7 +819,7 @@
     "exp": 135900,
     "map": 182,
     "contentText": [
-      6507,
+      4877226,
       6500
     ]
   },
@@ -835,7 +851,7 @@
     "exp": 135900,
     "map": 174,
     "contentText": [
-      6804,
+      4725496,
       6800
     ]
   },
@@ -867,7 +883,7 @@
     "exp": 135900,
     "map": 169,
     "contentText": [
-      6617,
+      4878743,
       6600
     ]
   },
@@ -899,7 +915,7 @@
     "exp": 135900,
     "map": 189,
     "contentText": [
-      7309,
+      5018469,
       7300
     ]
   },
@@ -931,7 +947,7 @@
     "exp": 135900,
     "map": 188,
     "contentText": [
-      6719,
+      4898011,
       6700
     ]
   },
@@ -963,8 +979,9 @@
     "exp": 177600,
     "map": 241,
     "contentText": [
-      7704,
-      7700
+      5330512,
+      7700,
+      3930
     ]
   },
   "32": {
@@ -995,7 +1012,7 @@
     "exp": 135900,
     "map": 201,
     "contentText": [
-      7516,
+      5073636,
       7500
     ]
   },
@@ -1027,8 +1044,9 @@
     "exp": 191800,
     "map": 230,
     "contentText": [
-      9107,
-      9100
+      5614685,
+      9100,
+      3740
     ]
   },
   "34": {
@@ -1059,8 +1077,9 @@
     "exp": 171500,
     "map": 248,
     "contentText": [
-      8208,
-      8200
+      5578485,
+      8200,
+      3642
     ]
   },
   "35": {
@@ -1091,8 +1110,9 @@
     "exp": 191800,
     "map": 244,
     "contentText": [
-      8309,
-      8300
+      5615552,
+      8300,
+      3434
     ]
   },
   "36": {
@@ -1123,8 +1143,9 @@
     "exp": 152100,
     "map": 243,
     "contentText": [
-      8104,
-      8100
+      5653695,
+      8100,
+      3409
     ]
   },
   "37": {
@@ -1155,8 +1176,9 @@
     "exp": 158700,
     "map": 227,
     "contentText": [
-      8705,
-      8700
+      5777405,
+      8700,
+      3798
     ]
   },
   "38": {
@@ -1187,8 +1209,9 @@
     "exp": 191800,
     "map": 231,
     "contentText": [
-      8642,
-      8600
+      5783033,
+      8600,
+      3823
     ]
   },
   "39": {
@@ -1219,8 +1242,9 @@
     "exp": 165300,
     "map": 252,
     "contentText": [
-      8524,
-      8500
+      5724514,
+      8500,
+      3458
     ]
   },
   "40": {
@@ -1251,8 +1275,9 @@
     "exp": 191800,
     "map": 262,
     "contentText": [
-      9507,
-      9500
+      5963638,
+      9500,
+      4576
     ]
   },
   "41": {
@@ -1283,8 +1308,9 @@
     "exp": 191800,
     "map": 268,
     "contentText": [
-      9704,
-      9700
+      6034561,
+      9700,
+      4658
     ]
   },
   "42": {
@@ -1315,8 +1341,9 @@
     "exp": 191800,
     "map": 280,
     "contentText": [
-      10011,
-      10000
+      6159126,
+      10000,
+      4747
     ]
   },
   "43": {
@@ -1347,7 +1374,7 @@
     "exp": 191800,
     "map": 277,
     "contentText": [
-      9806,
+      6168797,
       9800
     ]
   },
@@ -1379,8 +1406,9 @@
     "exp": 191800,
     "map": 292,
     "contentText": [
-      12419,
-      12400
+      6258659,
+      12400,
+      4954
     ]
   },
   "45": {
@@ -1411,7 +1439,7 @@
     "exp": 191800,
     "map": 297,
     "contentText": [
-      12350,
+      6245779,
       12300
     ]
   },
@@ -1443,8 +1471,9 @@
     "exp": 191800,
     "map": 313,
     "contentText": [
-      13016,
-      13000
+      6399476,
+      13000,
+      5272
     ]
   },
   "47": {
@@ -1475,8 +1504,9 @@
     "exp": 191800,
     "map": 311,
     "contentText": [
-      13816,
-      13800
+      6331749,
+      13800,
+      5219
     ]
   },
   "48": {
@@ -1507,8 +1537,9 @@
     "exp": 191800,
     "map": 337,
     "contentText": [
-      14008,
-      14000
+      6562680,
+      14000,
+      5564
     ]
   },
   "49": {
@@ -1539,8 +1570,9 @@
     "exp": 191800,
     "map": 350,
     "contentText": [
-      14404,
-      14400
+      6610258,
+      14400,
+      5531
     ]
   },
   "50": {
@@ -1571,8 +1603,9 @@
     "exp": 283300,
     "map": 336,
     "contentText": [
-      14914,
-      14900
+      6526606,
+      14900,
+      6243
     ]
   },
   "51": {
@@ -1603,8 +1636,9 @@
     "exp": 417000,
     "map": 362,
     "contentText": [
-      14623,
-      14600
+      6797021,
+      14600,
+      6117
     ]
   },
   "52": {
@@ -1635,8 +1669,9 @@
     "exp": 250000,
     "map": 359,
     "contentText": [
-      14517,
-      14500
+      6793825,
+      14500,
+      6074
     ]
   },
   "53": {
@@ -1667,8 +1702,9 @@
     "exp": 317600,
     "map": 375,
     "contentText": [
-      14722,
-      14700
+      6797773,
+      14700,
+      6155
     ]
   },
   "54": {
@@ -1699,8 +1735,9 @@
     "exp": 353100,
     "map": 396,
     "contentText": [
-      16111,
-      16100
+      6881322,
+      16100,
+      6205
     ]
   },
   "55": {
@@ -1731,8 +1768,9 @@
     "exp": 389700,
     "map": 397,
     "contentText": [
-      15533,
-      15500
+      6828756,
+      15500,
+      6268
     ]
   },
   "56": {
@@ -1763,8 +1801,9 @@
     "exp": 417000,
     "map": 373,
     "contentText": [
-      17317,
-      17300
+      6879598,
+      17300,
+      6039
     ]
   },
   "57": {
@@ -1795,8 +1834,9 @@
     "exp": 417000,
     "map": 360,
     "contentText": [
-      16230,
-      16200
+      6881036,
+      16200,
+      6089
     ]
   },
   "58": {
@@ -1827,8 +1867,9 @@
     "exp": 417000,
     "map": 413,
     "contentText": [
-      17908,
-      17900
+      7042419,
+      17900,
+      6910
     ]
   },
   "59": {
@@ -1859,8 +1900,9 @@
     "exp": 417000,
     "map": 439,
     "contentText": [
-      18411,
-      18400
+      7167447,
+      18400,
+      6996
     ]
   },
   "60": {
@@ -1891,8 +1933,9 @@
     "exp": 417000,
     "map": 441,
     "contentText": [
-      18516,
-      18500
+      7170996,
+      18500,
+      7058
     ]
   },
   "61": {
@@ -1923,8 +1966,9 @@
     "exp": 417000,
     "map": 464,
     "contentText": [
-      19230,
-      19200
+      7335267,
+      19200,
+      7203
     ]
   },
   "62": {
@@ -1955,8 +1999,9 @@
     "exp": 417000,
     "map": 481,
     "contentText": [
-      19804,
-      19800
+      7403523,
+      19800,
+      7662
     ]
   },
   "63": {
@@ -1987,8 +2032,9 @@
     "exp": 417000,
     "map": 480,
     "contentText": [
-      19714,
-      19700
+      7558761,
+      19700,
+      7672
     ]
   },
   "64": {
@@ -2019,8 +2065,9 @@
     "exp": 417000,
     "map": 500,
     "contentText": [
-      20819,
-      20800
+      7705971,
+      20800,
+      7859
     ]
   },
   "65": {
@@ -2051,8 +2098,9 @@
     "exp": 606000,
     "map": 528,
     "contentText": [
-      21323,
-      21300
+      7814768,
+      21300,
+      8146
     ]
   },
   "66": {
@@ -2083,8 +2131,9 @@
     "exp": 668700,
     "map": 510,
     "contentText": [
-      21808,
-      21800
+      7881156,
+      21800,
+      8233
     ]
   },
   "67": {
@@ -2115,8 +2164,9 @@
     "exp": 855000,
     "map": 532,
     "contentText": [
-      21426,
-      21400
+      7886218,
+      21400,
+      8210
     ]
   },
   "68": {
@@ -2147,8 +2197,9 @@
     "exp": 855000,
     "map": 530,
     "contentText": [
-      21609,
-      21600
+      7917862,
+      21600,
+      8167
     ]
   },
   "69": {
@@ -2179,8 +2230,9 @@
     "exp": 734800,
     "map": 540,
     "contentText": [
-      21505,
-      21500
+      7903197,
+      21500,
+      257
     ]
   },
   "70": {
@@ -2211,8 +2263,9 @@
     "exp": 801300,
     "map": 536,
     "contentText": [
-      20414,
-      20400
+      7926262,
+      20400,
+      8262
     ]
   },
   "71": {
@@ -2243,8 +2296,9 @@
     "exp": 855000,
     "map": 538,
     "contentText": [
-      21707,
-      21700
+      7923123,
+      21700,
+      8273
     ]
   },
   "72": {
@@ -2275,7 +2329,7 @@
     "exp": 543500,
     "map": 544,
     "contentText": [
-      22107,
+      7919152,
       22100
     ]
   },
@@ -2307,8 +2361,9 @@
     "exp": 855000,
     "map": 567,
     "contentText": [
-      23440,
-      23400
+      8101435,
+      23400,
+      9046
     ]
   },
   "74": {
@@ -2339,8 +2394,9 @@
     "exp": 855000,
     "map": 585,
     "contentText": [
-      24117,
-      24100
+      8241592,
+      24100,
+      9264
     ]
   },
   "75": {
@@ -2371,7 +2427,7 @@
     "exp": 855000,
     "map": 592,
     "contentText": [
-      25042,
+      8366253,
       25000
     ]
   },
@@ -2403,7 +2459,7 @@
     "exp": 855000,
     "map": 627,
     "contentText": [
-      25943,
+      8532638,
       25900
     ]
   },
@@ -2435,7 +2491,7 @@
     "exp": 855000,
     "map": 666,
     "contentText": [
-      25129,
+      8638193,
       25100
     ]
   },
@@ -2467,7 +2523,7 @@
     "exp": 1707750,
     "map": 701,
     "contentText": [
-      27129,
+      8860015,
       27100
     ]
   },
@@ -2499,7 +2555,7 @@
     "exp": 3300000,
     "map": 716,
     "contentText": [
-      27032,
+      8805121,
       27000
     ]
   },
@@ -2513,7 +2569,7 @@
       "en": "From the ruins of the Garlean imperial palace rises the Tower of Babil, a monstrous edifice constructed by Fandaniel and Zenos's enthralled hordes. While its exact purpose has yet to be ascertained, it is here that the would-be orchestrators of the Final Days await the Warrior of Light, who now spearheads a daring mission to infiltrate the tower and vanquish the Telophoroi once and for all. ",
       "ja": "イルサバード派遣団と共に、帝都ガレマルドに足を踏み入れた「暁」の一行は、天高くそびえ立つ漆黒の巨塔を目にする。かつて皇帝の宮殿であり、世界に冠たる大帝国の中枢でもあった魔導城は、今や「バブイルの塔」と呼ばれるテロフォロイの拠点と成り果てていたのだ。終末を呼び込まんとするゼノス、そしてファダニエルらの凶行を阻止すべく、冒険者たちは潜入を決意する。今こそ魔導列車に乗り込み、塔の上層を目指せ！",
       "de": "Gemeinsam mit dem Ilsabard-Korps haben sich die Mitglieder des Bundes durch Garlemalds eisige Weiten gekämpft und stehen nun vor einem Turm, der dunkel und bedrohlich in den Himmel ragt: Der Turm von Babil. Gebaut von Hand der Telophoroi, die das Magitek-Schloss des Kaisers, einstiger Mittelpunkt des garleischen Reiches, in ihre neue Machtzentrale umgewandelt haben. Zenos und Fandaniel, die von hier aus das Ende der Welt einläuten wollen, muss Einhalt geboten werden.  Also beschließt ihr, mithilfe des Magitek-Zugs bis zur Spitze des Turmes vorzudringen!",
-      "fr": "Les Héritiers, accompagnés de la délégation d'Ilsabard, sont arrivés jusqu'à la capitale de Garlemald, où une étrange et inquiétante spire les a accueillis. Ce bâtiment, autrefois symbole de la prospérité de l'empire, est devenue la base des Télophores, qui l'ont baptisé la “tour de Babil”. Avec l'aide de vos amis, vous avez décidé d'infiltrer le bâtiment via le chemin de fer souterrain afin de mettre un terme aux machinations de Zenos et Fandaniel."
+      "fr": "Les Héritiers, accompagnés de la délégation d'Ilsabard, sont arrivés jusqu'à la capitale de Garlemald, où une étrange et inquiétante spire les a accueillis. Ce bâtiment, autrefois symbole de la prospérité de l'Empire, est devenu la base des Télophores, qui l'ont baptisé la “tour de Babil”. Avec l'aide de vos amis, vous avez décidé d'infiltrer le bâtiment via le chemin de fer souterrain afin de mettre un terme aux machinations de Zenos et Fandaniel."
     },
     "members": {
       "HealersPerParty": 1,
@@ -2531,7 +2587,7 @@
     "exp": 1932975,
     "map": 723,
     "contentText": [
-      30536,
+      8864036,
       30500
     ]
   },
@@ -2563,7 +2619,7 @@
     "exp": 2668050,
     "map": 719,
     "contentText": [
-      30127,
+      8870225,
       30100
     ]
   },
@@ -2595,7 +2651,7 @@
     "exp": 2413125,
     "map": 710,
     "contentText": [
-      30316,
+      8868570,
       30300
     ]
   },
@@ -2627,7 +2683,7 @@
     "exp": 2168100,
     "map": 739,
     "contentText": [
-      30212,
+      8804064,
       30200
     ]
   },
@@ -2659,7 +2715,7 @@
     "exp": 3300000,
     "map": 736,
     "contentText": [
-      30830,
+      8880083,
       30800
     ]
   },
@@ -2691,7 +2747,7 @@
     "exp": 3300000,
     "map": 706,
     "contentText": [
-      30611,
+      8872210,
       30600
     ]
   },
@@ -2723,7 +2779,7 @@
     "exp": 135900,
     "map": 56,
     "contentText": [
-      32921,
+      9058465,
       32900
     ]
   },
@@ -2755,7 +2811,7 @@
     "exp": 3300000,
     "map": 752,
     "contentText": [
-      32814,
+      9056889,
       32800
     ]
   },
@@ -2787,7 +2843,7 @@
     "exp": 3300000,
     "map": 768,
     "contentText": [
-      33929,
+      9305366,
       33900
     ]
   },
@@ -2819,7 +2875,7 @@
     "exp": 3300000,
     "map": 815,
     "contentText": [
-      35229,
+      9450513,
       35200
     ]
   },
@@ -2851,7 +2907,7 @@
     "exp": 3300000,
     "map": 831,
     "contentText": [
-      36605,
+      9802955,
       36600
     ]
   },
@@ -2883,7 +2939,7 @@
     "exp": 3300000,
     "map": 864,
     "contentText": [
-      37852,
+      10090430,
       37800
     ]
   },
@@ -2915,7 +2971,7 @@
     "exp": 4268880,
     "map": 902,
     "contentText": [
-      38125,
+      10148590,
       38100
     ]
   },
@@ -2947,7 +3003,7 @@
     "exp": 5856480,
     "map": 905,
     "contentText": [
-      38241,
+      10359416,
       38200
     ]
   },
@@ -2979,7 +3035,7 @@
     "exp": 3780000,
     "map": 897,
     "contentText": [
-      38420,
+      10386723,
       38400
     ]
   },
@@ -3011,7 +3067,7 @@
     "exp": 0,
     "map": 910,
     "contentText": [
-      38756,
+      10362048,
       38700
     ]
   },
@@ -3043,7 +3099,7 @@
     "exp": 4777920,
     "map": 915,
     "contentText": [
-      38614,
+      10358857,
       38600
     ]
   },
@@ -3056,7 +3112,7 @@
     "description": {
       "en": "Zoraal Ja retreats to the dome in Yyasulani, but not before laying siege to his home and slaying his own father. This foul deed cannot go unpunished, and so Wuk Lamat lays plans to pierce the dome and pursue him. To that end, the engineers of Xak Tural Railing refit their ceruleum-powered train christened the Dawnblazer, and after avoiding fire from Zoraal Ja's forces, successfully send it careening into the fortress bridging the dome with the outside world. With the path forward now open, the battle for Tuliyollal begins as you and your companions take your first bold steps into enemy territory.",
       "ja": "民を殺し、父を弑し、祖国トライヨラに宣戦布告したゾラージャを追い、ウクラマトと冒険者たち一行はヤースラニ荒野を覆う「ドーム」への侵入を決意する。<br>XTRR社の協力を得て青燐機関車を改造、爆弾列車「ドーンブレイザー号」を完成させた一行は、決死の覚悟で線路上に繋がる敵基地施設への突撃を敢行。その防備に文字通りに風穴を開けると、ドーム内に通じるであろう施設内部を目指す。夜明けを告げる青き炎を狼煙に、故郷を護るための戦いが今、始まる！",
-      "de": "Er mordete ihr Volk, ihren Vater und erklärte ihrem Land den Krieg. Doch Wuk Lamat wäre nicht die Krone des Mutes, wenn sie Zoraal Ja einfach gewähren ließe. Zusammen mit dir und euren Kameraden geht sie in die Offensive und beschließt, den Kampf in die Kuppel zu tragen. Mithilfe der Eisenbahnfanatiker von XTRR und Verbündeten aus ganz Tuliyollal gelingt euch der Bau eines wahren Bombenexpresses, der mit einem großen Knall ein riesiges Loch in die Befestigungen des Feindes reißt. Der Weg ins Innere der Kuppel steht euch somit nun offen. Aber verkünden die blauen Flammen entlang eures Pfades auch wirklich den Beginn der Morgendämmerung für Tuliyollal? Es liegt nun an dir, das Blatt zu wenden und es Zoraal Ja für seine Gräueltaten heimzuzahlen! ",
+      "de": "Er mordete ihr Volk, ihren Vater und erklärte ihrem Land den Krieg. Doch Wuk Lamat wäre nicht die Krone des Mutes, wenn sie Zoraal Ja einfach gewähren ließe. Zusammen mit dir und euren Kameraden geht sie in die Offensive und beschließt, den Kampf in die Kuppel zu tragen. Mithilfe der Eisenbahnfanatiker der Xak Tural Eisenbahngesellschaft und Verbündeten aus ganz Tuliyollal gelingt euch der Bau eines wahren Bombenexpresses, der mit einem großen Knall ein riesiges Loch in die Befestigungen des Feindes reißt. Der Weg ins Innere der Kuppel steht euch somit nun offen. Aber verkünden die blauen Flammen entlang eures Pfades auch wirklich den Beginn der Morgendämmerung für Tuliyollal? Es liegt nun an dir, das Blatt zu wenden und es Zoraal Ja für seine Gräueltaten heimzuzahlen! ",
       "fr": "Désireux de retrouver la trace de Zoraal Ja, après qu'il a attaqué Tuliyollal, tué son propre père et déclaré son intention d'envahir le Tural, vos compagnons et vous-même avez décidé de vous infiltrer dans le mystérieux dôme apparu au beau milieu de la Yyasulani. À l'aide de la locomotive de la compagnie de chemin de fer locale, renforcée et renommée pour l'occasion “l'Explaurore”, vous avez ouvert une brèche dans le rempart de la base ennemie qui doit vous permettre d'accéder au dôme. Frayez-vous un passage au forceps dans cette installation&nbsp;!"
     },
     "members": {
@@ -3075,7 +3131,7 @@
     "exp": 5307120,
     "map": 899,
     "contentText": [
-      38837,
+      10408302,
       38800
     ]
   },
@@ -3106,7 +3162,7 @@
     "exp": 0,
     "map": 900,
     "contentText": [
-      39407,
+      10437911,
       39400
     ]
   },
@@ -3137,8 +3193,39 @@
     "exp": 0,
     "map": 917,
     "contentText": [
-      38362,
+      10357733,
       38300
+    ]
+  },
+  "100": {
+    "id": 100,
+    "en": "Yuweyawata Field Station",
+    "ja": "廃地討究 ユウェヤーワータ",
+    "de": "Forschungsstation Yuweyawata",
+    "fr": "Le centre de recherche de Yuweyawata",
+    "description": {
+      "en": "Before the dome appeared, in the northern region of what is now Heritage Found, a Tonawawtan village was terrorized by a tural vidraal. Zoraal Ja himself led the Landsguard in an effort to quell the beast's boundless fury, yet while the First Promise returned in triumph, few know what became of the village and its people. In your search for clues as to the identity of Gulool Ja's mother, you learn that Zoraal Ja visited the region many times over the years, and that it may be home to a secret research facility. And so you and yours attempt to retrace the King of Resolve's steps and unearth a buried past...",
+      "ja": "ヘリテージファウンドの北部には、トナワータ族が住まう集落が存在した。そこはかつて、まだ一帯が障壁に覆われる前、トライヨラの第一王子ゾラージャが、勇連隊を率いてトラルヴィドラールと激戦を繰り広げた地でもあった。母について知りたいと願うグルージャは、冒険者たちとともに、かの地を訪れることに。知られざる武王の足跡を辿るべく、放棄された地を踏破せよ！",
+      "de": "Im Norden des Ewigen Erbes befand sich einst eine kleine friedliche Siedlung. Zu einer Zeit, als die Kuppel noch nicht über den Köpfen seiner Bewohner ragte, soll es sich dort zugetragen haben, dass Prinz Zoraal Ja, Kommandant der Landsgarde, mit einigen seiner Gefolgsleute einen Tural Vidraal zur Strecke brachte. Doch die von dir und deinen Freunden zusammengetragenen Hinweise zeigen, dass der blaugeschuppte Mamool Ja, selbst nachdem die Bestie besiegt war, jenes Fleckchen Erde regelmäßig frequentierte. Den Spuren seiner Mutter folgend treibt es nun auch den jungen Gulool Ja mit dir und deinen Freunden in den verlassenen Winkel Alexandrias, in der Hoffnung, dass ihn die Reise in die Vergangenheit mehr über ihren Verbleib offenbaren möge.",
+      "fr": "Au nord de L'Hoirie recouvrée se situe un hameau tonawawta, que le prince Zoraal Ja, alors capitaine de la Légion de l'Aurore, aurait sauvé de la menace d'un Tural vidraal. L'endroit est aujourd'hui abandonné, toutefois il abriterait en son sein encore bien des secrets. Accompagnez le petit Gulool Ja, en quête de réponses sur ses parents, aux confins du dôme, sur les traces de l'ancien Aurarque de la Force."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112584.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 690,
+    "sync": 100,
+    "exp": 0,
+    "map": 943,
+    "contentText": [
+      10878451,
+      40900
     ]
   },
   "5001": {
@@ -3164,8 +3251,8 @@
     "exp": 0,
     "map": 53,
     "contentText": [
-      10438,
-      10400
+      10400,
+      4739
     ]
   },
   "5002": {
@@ -3191,8 +3278,8 @@
     "exp": 0,
     "map": 231,
     "contentText": [
-      12521,
-      12500
+      12500,
+      3818
     ]
   },
   "5003": {
@@ -3218,8 +3305,8 @@
     "exp": 0,
     "map": 35,
     "contentText": [
-      13335,
-      13300
+      13300,
+      3818
     ]
   },
   "5004": {
@@ -3245,7 +3332,6 @@
     "exp": 0,
     "map": 357,
     "contentText": [
-      14230,
       14200
     ]
   },
@@ -3272,7 +3358,6 @@
     "exp": 0,
     "map": 411,
     "contentText": [
-      14822,
       14800
     ]
   },
@@ -3299,7 +3384,6 @@
     "exp": 0,
     "map": 14,
     "contentText": [
-      15025,
       15000
     ]
   },
@@ -3326,7 +3410,6 @@
     "exp": 0,
     "map": 299,
     "contentText": [
-      15421,
       15400
     ]
   },
@@ -3353,7 +3436,6 @@
     "exp": 0,
     "map": 372,
     "contentText": [
-      15257,
       15200
     ]
   },
@@ -3380,7 +3462,6 @@
     "exp": 0,
     "map": 95,
     "contentText": [
-      15331,
       15300
     ]
   },
@@ -3407,7 +3488,6 @@
     "exp": 0,
     "map": 211,
     "contentText": [
-      15625,
       15600
     ]
   },
@@ -3434,7 +3514,6 @@
     "exp": 0,
     "map": 370,
     "contentText": [
-      15857,
       15800
     ]
   },
@@ -3461,7 +3540,6 @@
     "exp": 0,
     "map": 371,
     "contentText": [
-      16016,
       16000
     ]
   },
@@ -3488,7 +3566,6 @@
     "exp": 0,
     "map": 51,
     "contentText": [
-      15715,
       15700
     ]
   },
@@ -3515,7 +3592,6 @@
     "exp": 0,
     "map": 282,
     "contentText": [
-      16608,
       16600
     ]
   },
@@ -3542,7 +3618,6 @@
     "exp": 0,
     "map": 372,
     "contentText": [
-      15930,
       15900
     ]
   },
@@ -3569,7 +3644,6 @@
     "exp": 0,
     "map": 372,
     "contentText": [
-      16705,
       16700
     ]
   },
@@ -3596,7 +3670,6 @@
     "exp": 0,
     "map": 369,
     "contentText": [
-      17039,
       17000
     ]
   },
@@ -3623,7 +3696,6 @@
     "exp": 0,
     "map": 14,
     "contentText": [
-      15115,
       15100
     ]
   },
@@ -3650,7 +3722,6 @@
     "exp": 0,
     "map": 214,
     "contentText": [
-      16426,
       16400
     ]
   },
@@ -3677,7 +3748,6 @@
     "exp": 0,
     "map": 368,
     "contentText": [
-      16520,
       16500
     ]
   },
@@ -3704,7 +3774,6 @@
     "exp": 0,
     "map": 375,
     "contentText": [
-      16811,
       16800
     ]
   },
@@ -3731,7 +3800,6 @@
     "exp": 0,
     "map": 372,
     "contentText": [
-      17109,
       17100
     ]
   },
@@ -3758,7 +3826,6 @@
     "exp": 0,
     "map": 389,
     "contentText": [
-      17440,
       17400
     ]
   },
@@ -3785,7 +3852,6 @@
     "exp": 0,
     "map": 417,
     "contentText": [
-      18341,
       18300
     ]
   },
@@ -3812,7 +3878,6 @@
     "exp": 0,
     "map": 478,
     "contentText": [
-      19620,
       19600
     ]
   },
@@ -3839,7 +3904,6 @@
     "exp": 0,
     "map": 372,
     "contentText": [
-      20339,
       20300
     ]
   },
@@ -3866,7 +3930,6 @@
     "exp": 0,
     "map": 39,
     "contentText": [
-      21112,
       21100
     ]
   },
@@ -3893,7 +3956,6 @@
     "exp": 0,
     "map": 500,
     "contentText": [
-      21239,
       21200
     ]
   },
@@ -3920,7 +3982,6 @@
     "exp": 0,
     "map": 556,
     "contentText": [
-      21949,
       21900
     ]
   },
@@ -3947,7 +4008,6 @@
     "exp": 0,
     "map": 495,
     "contentText": [
-      22340,
       22300
     ]
   },
@@ -3974,7 +4034,6 @@
     "exp": 0,
     "map": 493,
     "contentText": [
-      22763,
       22700
     ]
   },
@@ -4001,7 +4060,6 @@
     "exp": 0,
     "map": 553,
     "contentText": [
-      22679,
       22600
     ]
   },
@@ -4028,7 +4086,6 @@
     "exp": 0,
     "map": 493,
     "contentText": [
-      22539,
       22500
     ]
   },
@@ -4055,7 +4112,6 @@
     "exp": 0,
     "map": 495,
     "contentText": [
-      22944,
       22900
     ]
   },
@@ -4082,7 +4138,6 @@
     "exp": 0,
     "map": 577,
     "contentText": [
-      23832,
       23800
     ]
   },
@@ -4109,7 +4164,6 @@
     "exp": 0,
     "map": 576,
     "contentText": [
-      23948,
       23900
     ]
   },
@@ -4136,7 +4190,6 @@
     "exp": 0,
     "map": 600,
     "contentText": [
-      24391,
       24300
     ]
   },
@@ -4163,7 +4216,6 @@
     "exp": 0,
     "map": 598,
     "contentText": [
-      24244,
       24200
     ]
   },
@@ -4190,7 +4242,6 @@
     "exp": 0,
     "map": 618,
     "contentText": [
-      25233,
       25200
     ]
   },
@@ -4217,7 +4268,6 @@
     "exp": 0,
     "map": 618,
     "contentText": [
-      25315,
       25300
     ]
   },
@@ -4244,7 +4294,6 @@
     "exp": 0,
     "map": 496,
     "contentText": [
-      25753,
       25700
     ]
   },
@@ -4271,7 +4320,6 @@
     "exp": 0,
     "map": 403,
     "contentText": [
-      26328,
       26300
     ]
   },
@@ -4298,7 +4346,6 @@
     "exp": 0,
     "map": 655,
     "contentText": [
-      26511,
       26500
     ]
   },
@@ -4325,7 +4372,6 @@
     "exp": 0,
     "map": 167,
     "contentText": [
-      26854,
       26800
     ]
   },
@@ -4352,7 +4398,6 @@
     "exp": 0,
     "map": 750,
     "contentText": [
-      30439,
       30400
     ]
   },
@@ -4379,7 +4424,6 @@
     "exp": 0,
     "map": 700,
     "contentText": [
-      32414,
       32400
     ]
   },
@@ -4406,7 +4450,6 @@
     "exp": 0,
     "map": 746,
     "contentText": [
-      31215,
       31200
     ]
   },
@@ -4433,7 +4476,6 @@
     "exp": 0,
     "map": 31,
     "contentText": [
-      31434,
       31400
     ]
   },
@@ -4460,7 +4502,6 @@
     "exp": 0,
     "map": 745,
     "contentText": [
-      31530,
       31500
     ]
   },
@@ -4487,7 +4528,6 @@
     "exp": 0,
     "map": 4,
     "contentText": [
-      31334,
       31300
     ]
   },
@@ -4514,7 +4554,6 @@
     "exp": 0,
     "map": 745,
     "contentText": [
-      31663,
       31600
     ]
   },
@@ -4541,7 +4580,6 @@
     "exp": 0,
     "map": 268,
     "contentText": [
-      31745,
       31700
     ]
   },
@@ -4568,7 +4606,6 @@
     "exp": 0,
     "map": 52,
     "contentText": [
-      31823,
       31800
     ]
   },
@@ -4595,7 +4632,6 @@
     "exp": 0,
     "map": 251,
     "contentText": [
-      31019,
       31000
     ]
   },
@@ -4622,7 +4658,6 @@
     "exp": 0,
     "map": 243,
     "contentText": [
-      31907,
       31900
     ]
   },
@@ -4649,7 +4684,6 @@
     "exp": 0,
     "map": 212,
     "contentText": [
-      32039,
       32000
     ]
   },
@@ -4676,7 +4710,6 @@
     "exp": 0,
     "map": 464,
     "contentText": [
-      32320,
       32300
     ]
   },
@@ -4703,7 +4736,6 @@
     "exp": 0,
     "map": 368,
     "contentText": [
-      31127,
       31100
     ]
   },
@@ -4730,7 +4762,6 @@
     "exp": 0,
     "map": 726,
     "contentText": [
-      32733,
       32700
     ]
   },
@@ -4757,7 +4788,6 @@
     "exp": 0,
     "map": 20,
     "contentText": [
-      33429,
       33400
     ]
   },
@@ -4784,7 +4814,6 @@
     "exp": 0,
     "map": 764,
     "contentText": [
-      33713,
       33700
     ]
   },
@@ -4811,7 +4840,6 @@
     "exp": 0,
     "map": 769,
     "contentText": [
-      33132,
       33100
     ]
   },
@@ -4838,7 +4866,6 @@
     "exp": 0,
     "map": 186,
     "contentText": [
-      34842,
       34800
     ]
   },
@@ -4865,7 +4892,6 @@
     "exp": 0,
     "map": 726,
     "contentText": [
-      35342,
       35300
     ]
   },
@@ -4892,7 +4918,6 @@
     "exp": 0,
     "map": 697,
     "contentText": [
-      35533,
       35500
     ]
   },
@@ -4919,7 +4944,6 @@
     "exp": 0,
     "map": 76,
     "contentText": [
-      37918,
       37900
     ]
   },
@@ -4946,7 +4970,6 @@
     "exp": 0,
     "map": 831,
     "contentText": [
-      37750,
       37700
     ]
   },
@@ -4973,7 +4996,6 @@
     "exp": 0,
     "map": 931,
     "contentText": [
-      38519,
       38500
     ]
   },
@@ -4999,7 +5021,6 @@
     "exp": 0,
     "map": 859,
     "contentText": [
-      39230,
       39200
     ]
   },
@@ -5025,7 +5046,6 @@
     "exp": 0,
     "map": 859,
     "contentText": [
-      38929,
       38900
     ]
   },
@@ -5051,7 +5071,6 @@
     "exp": 0,
     "map": 45,
     "contentText": [
-      39335,
       39300
     ]
   },
@@ -5077,7 +5096,6 @@
     "exp": 0,
     "map": 21,
     "contentText": [
-      39533,
       39500
     ]
   },
@@ -5103,7 +5121,6 @@
     "exp": 0,
     "map": 375,
     "contentText": [
-      39032,
       39000
     ]
   },
@@ -5129,7 +5146,6 @@
     "exp": 0,
     "map": 941,
     "contentText": [
-      40013,
       40000
     ]
   },
@@ -5155,7 +5171,6 @@
     "exp": 0,
     "map": 856,
     "contentText": [
-      39755,
       39700
     ]
   },
@@ -5181,7 +5196,6 @@
     "exp": 0,
     "map": 417,
     "contentText": [
-      39939,
       39900
     ]
   },
@@ -5207,7 +5221,6 @@
     "exp": 0,
     "map": 940,
     "contentText": [
-      40093,
       40050
     ]
   },
@@ -5233,7 +5246,6 @@
     "exp": 0,
     "map": 825,
     "contentText": [
-      40137,
       40100
     ]
   },
@@ -5259,7 +5271,6 @@
     "exp": 0,
     "map": 23,
     "contentText": [
-      39624,
       39600
     ]
   },
@@ -5285,8 +5296,32 @@
     "exp": 0,
     "map": 215,
     "contentText": [
-      40544,
       40500
+    ]
+  },
+  "5081": {
+    "id": 5081,
+    "en": "The Warmth of Family",
+    "ja": "王の家族",
+    "de": "Ein Land, eine Familie",
+    "fr": "La famille de l'Aurarque",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 860,
+    "contentText": [
+      41000
     ]
   },
   "10001": {
@@ -5317,7 +5352,6 @@
     "exp": 0,
     "map": 15,
     "contentText": [
-      1411,
       1400
     ]
   },
@@ -5349,7 +5383,6 @@
     "exp": 0,
     "map": 4,
     "contentText": [
-      1506,
       1500
     ]
   },
@@ -5381,7 +5414,6 @@
     "exp": 0,
     "map": 20,
     "contentText": [
-      1619,
       1600
     ]
   },
@@ -5413,7 +5445,6 @@
     "exp": 0,
     "map": 21,
     "contentText": [
-      1715,
       1700
     ]
   },
@@ -5445,7 +5476,6 @@
     "exp": 0,
     "map": 5,
     "contentText": [
-      1811,
       1800
     ]
   },
@@ -5477,7 +5507,6 @@
     "exp": 0,
     "map": 6,
     "contentText": [
-      1915,
       1900
     ]
   },
@@ -5509,7 +5538,6 @@
     "exp": 0,
     "map": 6,
     "contentText": [
-      2009,
       2000
     ]
   },
@@ -5541,7 +5569,6 @@
     "exp": 0,
     "map": 4,
     "contentText": [
-      2109,
       2100
     ]
   },
@@ -5573,7 +5600,6 @@
     "exp": 0,
     "map": 19,
     "contentText": [
-      2213,
       2200
     ]
   },
@@ -5605,7 +5631,6 @@
     "exp": 0,
     "map": 16,
     "contentText": [
-      2314,
       2300
     ]
   },
@@ -5637,7 +5662,6 @@
     "exp": 0,
     "map": 53,
     "contentText": [
-      3013,
       3000
     ]
   },
@@ -5669,7 +5693,6 @@
     "exp": 0,
     "map": 53,
     "contentText": [
-      3117,
       3100
     ]
   },
@@ -5701,7 +5724,6 @@
     "exp": 0,
     "map": 25,
     "contentText": [
-      3221,
       3200
     ]
   },
@@ -5733,7 +5755,6 @@
     "exp": 0,
     "map": 25,
     "contentText": [
-      3322,
       3300
     ]
   },
@@ -5760,7 +5781,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      10542,
+      6215537,
       10500
     ]
   },
@@ -5787,7 +5808,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      10721,
+      6215537,
       10700
     ]
   },
@@ -5814,7 +5835,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      10806,
+      6215537,
       10800
     ]
   },
@@ -5841,7 +5862,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11014,
+      6215537,
       11000
     ]
   },
@@ -5868,7 +5889,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11110,
+      6215537,
       11100
     ]
   },
@@ -5895,7 +5916,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      10913,
+      6215537,
       10900
     ]
   },
@@ -5922,7 +5943,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11217,
+      6215537,
       11200
     ]
   },
@@ -5949,7 +5970,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11313,
+      6215537,
       11300
     ]
   },
@@ -5976,7 +5997,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11410,
+      6215537,
       11400
     ]
   },
@@ -6003,7 +6024,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11509,
+      6215537,
       11500
     ]
   },
@@ -6030,7 +6051,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11610,
+      6215537,
       11600
     ]
   },
@@ -6057,7 +6078,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11708,
+      6215537,
       11700
     ]
   },
@@ -6084,7 +6105,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11809,
+      6215537,
       11800
     ]
   },
@@ -6111,7 +6132,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      11909,
+      6215537,
       11900
     ]
   },
@@ -6138,7 +6159,7 @@
     "exp": 0,
     "map": 81,
     "contentText": [
-      12011,
+      6215537,
       12000
     ]
   },
@@ -6165,8 +6186,84 @@
     "exp": 0,
     "map": 18,
     "contentText": [
-      12130,
+      6229269,
       12100
+    ]
+  },
+  "15017": {
+    "id": 15017,
+    "en": "React to Attack Markers",
+    "ja": "マーカーが出る攻撃に対処しよう！",
+    "de": "Achte auf Attackenmarkierungen!",
+    "fr": "Réagir à des marquages",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061823.png",
+    "banner": "/i/112000/112141.png",
+    "gamePatch": 66,
+    "contentType": 20,
+    "levelReq": 49,
+    "ilvlReq": 0,
+    "sync": 49,
+    "exp": 0,
+    "map": 942,
+    "contentText": [
+      41100
+    ]
+  },
+  "15018": {
+    "id": 15018,
+    "en": "React to Floor Markers",
+    "ja": "地面に予兆が出る攻撃に対処しよう！",
+    "de": "Achte auf Geländemarkierungen!",
+    "fr": "Réagir à des indications au sol",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061823.png",
+    "banner": "/i/112000/112141.png",
+    "contentType": 20,
+    "levelReq": 49,
+    "ilvlReq": 0,
+    "sync": 49,
+    "exp": 0,
+    "map": 942,
+    "contentText": [
+      41200
+    ]
+  },
+  "15019": {
+    "id": 15019,
+    "en": "React to Advanced Visual Indicators",
+    "ja": "さまざまな攻撃に対処しよう！",
+    "de": "Stelle dich allerlei Angriffsmanövern!",
+    "fr": "Réagir à des mécaniques variées",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061823.png",
+    "banner": "/i/112000/112141.png",
+    "contentType": 20,
+    "levelReq": 49,
+    "ilvlReq": 0,
+    "sync": 49,
+    "exp": 0,
+    "map": 942,
+    "contentText": [
+      41300
     ]
   },
   "20001": {
@@ -6197,7 +6294,6 @@
     "exp": 0,
     "map": 35,
     "contentText": [
-      2605,
       2600
     ]
   },
@@ -6229,7 +6325,6 @@
     "exp": 0,
     "map": 33,
     "contentText": [
-      3811,
       3800
     ]
   },
@@ -6261,7 +6356,6 @@
     "exp": 0,
     "map": 39,
     "contentText": [
-      3705,
       3700
     ]
   },
@@ -6293,7 +6387,6 @@
     "exp": 0,
     "map": 401,
     "contentText": [
-      2605,
       2600
     ]
   },
@@ -6325,7 +6418,6 @@
     "exp": 0,
     "map": 403,
     "contentText": [
-      3811,
       3800
     ]
   },
@@ -6357,7 +6449,6 @@
     "exp": 0,
     "map": 402,
     "contentText": [
-      3705,
       3700
     ]
   },
@@ -6389,7 +6480,6 @@
     "exp": 0,
     "map": 401,
     "contentText": [
-      2605,
       2600
     ]
   },
@@ -6421,7 +6511,6 @@
     "exp": 0,
     "map": 403,
     "contentText": [
-      3805,
       3800
     ]
   },
@@ -6453,7 +6542,6 @@
     "exp": 0,
     "map": 402,
     "contentText": [
-      3705,
       3700
     ]
   },
@@ -6485,7 +6573,6 @@
     "exp": 0,
     "map": 36,
     "contentText": [
-      33809,
       33800
     ]
   },
@@ -6517,7 +6604,6 @@
     "exp": 0,
     "map": 36,
     "contentText": [
-      4906,
       4900
     ]
   },
@@ -6549,7 +6635,6 @@
     "exp": 0,
     "map": 143,
     "contentText": [
-      4050,
       4044
     ]
   },
@@ -6576,7 +6661,6 @@
     "exp": 0,
     "map": 838,
     "contentText": [
-      36814,
       36800
     ]
   },
@@ -6603,7 +6687,6 @@
     "exp": 0,
     "map": 489,
     "contentText": [
-      20715,
       20700
     ]
   },
@@ -6630,7 +6713,6 @@
     "exp": 0,
     "map": 556,
     "contentText": [
-      22017,
       22000
     ]
   },
@@ -6662,7 +6744,6 @@
     "exp": 0,
     "map": 147,
     "contentText": [
-      5205,
       5200
     ]
   },
@@ -6694,7 +6775,6 @@
     "exp": 0,
     "map": 147,
     "contentText": [
-      5207,
       5200
     ]
   },
@@ -6782,7 +6862,7 @@
     "exp": 0,
     "map": 144,
     "contentText": [
-      5513,
+      4630934,
       5501
     ]
   },
@@ -6814,7 +6894,6 @@
     "exp": 0,
     "map": 166,
     "contentText": [
-      6205,
       6200
     ]
   },
@@ -6846,7 +6925,6 @@
     "exp": 0,
     "map": 166,
     "contentText": [
-      6205,
       6200
     ]
   },
@@ -6878,7 +6956,6 @@
     "exp": 0,
     "map": 173,
     "contentText": [
-      7104,
       7100
     ]
   },
@@ -6910,7 +6987,6 @@
     "exp": 0,
     "map": 173,
     "contentText": [
-      7104,
       7100
     ]
   },
@@ -6942,7 +7018,6 @@
     "exp": 0,
     "map": 195,
     "contentText": [
-      7603,
       7600
     ]
   },
@@ -7002,7 +7077,6 @@
     "exp": 0,
     "map": 207,
     "contentText": [
-      7806,
       7800
     ]
   },
@@ -7034,7 +7108,6 @@
     "exp": 0,
     "map": 210,
     "contentText": [
-      7907,
       7900
     ]
   },
@@ -7066,7 +7139,6 @@
     "exp": 0,
     "map": 256,
     "contentText": [
-      8408,
       8400
     ]
   },
@@ -7098,7 +7170,6 @@
     "exp": 0,
     "map": 404,
     "contentText": [
-      8408,
       8400
     ]
   },
@@ -7130,7 +7201,6 @@
     "exp": 0,
     "map": 235,
     "contentText": [
-      9007,
       9000
     ]
   },
@@ -7162,7 +7232,6 @@
     "exp": 0,
     "map": 407,
     "contentText": [
-      9007,
       9000
     ]
   },
@@ -7194,7 +7263,6 @@
     "exp": 0,
     "map": 236,
     "contentText": [
-      8807,
       8800
     ]
   },
@@ -7226,7 +7294,6 @@
     "exp": 0,
     "map": 236,
     "contentText": [
-      8808,
       8800
     ]
   },
@@ -7258,7 +7325,6 @@
     "exp": 0,
     "map": 283,
     "contentText": [
-      9907,
       9900
     ]
   },
@@ -7290,7 +7356,6 @@
     "exp": 0,
     "map": 283,
     "contentText": [
-      9907,
       9900
     ]
   },
@@ -7322,7 +7387,6 @@
     "exp": 0,
     "map": 304,
     "contentText": [
-      12609,
       12600
     ]
   },
@@ -7354,7 +7418,6 @@
     "exp": 0,
     "map": 304,
     "contentText": [
-      12609,
       12600
     ]
   },
@@ -7386,7 +7449,6 @@
     "exp": 0,
     "map": 334,
     "contentText": [
-      13113,
       13100
     ]
   },
@@ -7418,7 +7480,6 @@
     "exp": 0,
     "map": 334,
     "contentText": [
-      13113,
       13100
     ]
   },
@@ -7450,7 +7511,6 @@
     "exp": 0,
     "map": 353,
     "contentText": [
-      14327,
       14300
     ]
   },
@@ -7482,7 +7542,6 @@
     "exp": 0,
     "map": 353,
     "contentText": [
-      14327,
       14300
     ]
   },
@@ -7514,7 +7573,6 @@
     "exp": 0,
     "map": 405,
     "contentText": [
-      16903,
       16900
     ]
   },
@@ -7546,7 +7604,6 @@
     "exp": 0,
     "map": 400,
     "contentText": [
-      17208,
       17200
     ]
   },
@@ -7578,7 +7635,6 @@
     "exp": 0,
     "map": 400,
     "contentText": [
-      17208,
       17200
     ]
   },
@@ -7610,7 +7666,6 @@
     "exp": 0,
     "map": 399,
     "contentText": [
-      16314,
       16300
     ]
   },
@@ -7642,7 +7697,6 @@
     "exp": 0,
     "map": 399,
     "contentText": [
-      16314,
       16300
     ]
   },
@@ -7674,7 +7728,6 @@
     "exp": 0,
     "map": 435,
     "contentText": [
-      16905,
       16900
     ]
   },
@@ -7706,7 +7759,6 @@
     "exp": 0,
     "map": 450,
     "contentText": [
-      18613,
       18600
     ]
   },
@@ -7738,7 +7790,6 @@
     "exp": 0,
     "map": 450,
     "contentText": [
-      18613,
       18600
     ]
   },
@@ -7826,7 +7877,6 @@
     "exp": 0,
     "map": 476,
     "contentText": [
-      19533,
       19500
     ]
   },
@@ -7839,7 +7889,7 @@
     "description": {
       "en": "Upon hearing of your final encounter with Yotsuyu─and the primal to whom she surrendered her will─the wandering minstrel composes a tanka tinged with sorrow. Had Yotsuyu been born in a different time, a different place, would she have lived a simple life unsullied by acts of violence and cruelty? Or were the seeds of villainy always there, their growth merely hastened by circumstance? These questions bring to mind Tsukuyomi's overwhelming malice, your memories now suffused by the tragedy of the minstrel's verse...",
       "ja": "『半月の　月下に咲きし　白き華<br>　影に呑まれて　夜見に散るなり』<br>夜神ツクヨミと化したヨツユの顛末を伝え聞いた異邦の詩人は、散った魂を想いながら、新たな短歌を詠んだ。それは、生きる時代が違えば、ありふれた人生を送っていたはずの女性が、怨念に呑まれて異形と化してしまったことへの悲しみが、強すぎるほどに込められていた。その悲嘆の歌を聴きながら、光の戦士は今、夜神ツクヨミとの戦いを追体験する。",
-      "de": "<i>„Im kalten Mondlicht<br>Fallen weiße Blüten still<br>auf finsteren Grund.“</i><br>Der Fahrende Sänger sieht in der zum Primae Tsukuyomi verwandelten Yotsuyu eine tragische Gestalt. Was wäre aus dem einsamen, hilflosen Mädchen geworden, wenn sie in einer liebevollen Familie aufgewachsen wäre? Seine traurige, mitfühlsame Dichtung, die zwischen den Zeilen auch Kritik an der domanischen Gesellschaft anklingen lässt, versetzt dich zurück in den Kampf gegen die Göttin der Nacht und des Mondes, brutaler und unbarmherziger als er je war.",
+      "de": "<i>Im kalten Mondlicht<br>Fallen weiße Blüten still<br>auf finsteren Grund.</i><br><br>Der Fahrende Sänger sieht in der zum Primae Tsukuyomi verwandelten Yotsuyu eine tragische Gestalt. Was wäre aus dem einsamen, hilflosen Mädchen geworden, wenn sie in einer liebevollen Familie aufgewachsen wäre? Seine traurige, mitfühlsame Dichtung, die zwischen den Zeilen auch Kritik an der domanischen Gesellschaft anklingen lässt, versetzt dich zurück in den Kampf gegen die Göttin der Nacht und des Mondes, brutaler und unbarmherziger als er je war.",
       "fr": "<i>Sous la demi-lune, une fleur couleur de givre, s'épanouit un soir.<br>Étouffée par les ténèbres, elle se flétrit avant l'aube.</i><br>Tel est le <i>tanka</i> que le ménestrel errant a composé après que vous lui avez raconté votre combat contre Tsukuyomi. Pour lui, Yotsuyu aurait pu s'épanouir, fût-elle née à une époque moins sombre, mais tristement, le destin voulut qu'elle se noie dans sa rancœur. Les paroles du ménestrel mettent en exergue ce sentiment alors que vous vous remémorez l'affrontement."
     },
     "members": {
@@ -7858,7 +7908,6 @@
     "exp": 0,
     "map": 476,
     "contentText": [
-      19533,
       19500
     ]
   },
@@ -7890,7 +7939,6 @@
     "exp": 0,
     "map": 503,
     "contentText": [
-      19915,
       19900
     ]
   },
@@ -7903,7 +7951,7 @@
     "description": {
       "en": "Ever eager to put his lyrical skills to the proof, the wandering minstrel has crafted yet another tanka, this time deriving inspiration from your pitched battle against the auspice Suzaku deep beneath Hells' Lid. Knowing full well the suggestive power of his words, you once more close your eyes and set your mind adrift in the memories of that day, augmented by his dramatic flair...",
       "ja": " 『夕間暮れ　己が焔に　影を見る<br>　千年の刻　想い募りて』<br>千年という長き刻に思いを馳せながら、異邦の詩人が新たに詠んだ短歌。それは、獣の身にありながら人に恋した瑞獣の想いを詠ったものであった。極僅かな言葉の内に込められた、朱雀への想いと無限の創造力が、聞く者の心に響き渡る。光の戦士は今、朱雀との征魂の儀式を追体験する。",
-      "de": "Abenddämmerung.<br>Schattentanzende Flammen.<br>Ewig die Liebe.<br><br>Inspiriert von einer Leidenschaft, die bereits über tausend Jahre währt, verfasst der Fahrende Sänger ein weiteres Tanka. Die tragische Geschichte eines Göttervogels, der einen Sterblichen liebt, blitzt auf in diesen Zeilen, die komprimiert auf das Wesentliche und beflügelt von grenzenloser Fantasie einen epochalen Kampf in den Herzen der Zuhörer entbrennen lassen.",
+      "de": "<i>Abenddämmerung.<br>Schattentanzende Flammen.<br>Ewig die Liebe.</i><br><br>Inspiriert von einer Leidenschaft, die bereits über tausend Jahre währt, verfasst der Fahrende Sänger ein weiteres Tanka. Die tragische Geschichte eines Göttervogels, der einen Sterblichen liebt, blitzt auf in diesen Zeilen, die komprimiert auf das Wesentliche und beflügelt von grenzenloser Fantasie einen epochalen Kampf in den Herzen der Zuhörer entbrennen lassen.",
       "fr": "<i>À la tombée de la nuit, l'oiseau au plumage de feu, chante sa tendre élégie,<br>Une douleur millénaire, aujourd'hui tombe en cendres.</i><br>Ce <i>tanka</i> du ménestrel errant évoque votre combat contre Suzaku à travers le prisme de la poésie orientale. Malgré sa brièveté, vous sentez ressurgir en vous, avec encore plus de force que dans votre souvenir, la passion tragique de l'Oiseau vermillon pour son bien-aimé."
     },
     "members": {
@@ -7922,7 +7970,6 @@
     "exp": 0,
     "map": 503,
     "contentText": [
-      19915,
       19900
     ]
   },
@@ -7954,7 +8001,6 @@
     "exp": 0,
     "map": 489,
     "contentText": [
-      20715,
       20700
     ]
   },
@@ -7986,7 +8032,6 @@
     "exp": 0,
     "map": 516,
     "contentText": [
-      21021,
       21000
     ]
   },
@@ -8018,7 +8063,6 @@
     "exp": 0,
     "map": 516,
     "contentText": [
-      21021,
       21000
     ]
   },
@@ -8050,7 +8094,6 @@
     "exp": 0,
     "map": 556,
     "contentText": [
-      22017,
       22000
     ]
   },
@@ -8082,7 +8125,6 @@
     "exp": 0,
     "map": 556,
     "contentText": [
-      22017,
       22000
     ]
   },
@@ -8114,7 +8156,6 @@
     "exp": 0,
     "map": 557,
     "contentText": [
-      22414,
       22400
     ]
   },
@@ -8146,7 +8187,6 @@
     "exp": 0,
     "map": 557,
     "contentText": [
-      22415,
       22400
     ]
   },
@@ -8178,7 +8218,6 @@
     "exp": 0,
     "map": 558,
     "contentText": [
-      23033,
       23000
     ]
   },
@@ -8210,7 +8249,6 @@
     "exp": 0,
     "map": 558,
     "contentText": [
-      23347,
       23300
     ]
   },
@@ -8242,7 +8280,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      24079,
       24050
     ]
   },
@@ -8274,7 +8311,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      24079,
       24050
     ]
   },
@@ -8306,7 +8342,6 @@
     "exp": 0,
     "map": 607,
     "contentText": [
-      24385,
       24300
     ]
   },
@@ -8338,7 +8373,6 @@
     "exp": 0,
     "map": 612,
     "contentText": [
-      25440,
       25400
     ]
   },
@@ -8370,7 +8404,6 @@
     "exp": 0,
     "map": 612,
     "contentText": [
-      25440,
       25400
     ]
   },
@@ -8402,7 +8435,6 @@
     "exp": 0,
     "map": 638,
     "contentText": [
-      25820,
       25800
     ]
   },
@@ -8434,7 +8466,6 @@
     "exp": 0,
     "map": 638,
     "contentText": [
-      25822,
       25800
     ]
   },
@@ -8466,7 +8497,6 @@
     "exp": 0,
     "map": 670,
     "contentText": [
-      26928,
       26900
     ]
   },
@@ -8498,7 +8528,6 @@
     "exp": 0,
     "map": 670,
     "contentText": [
-      26928,
       26900
     ]
   },
@@ -8530,7 +8559,6 @@
     "exp": 0,
     "map": 677,
     "contentText": [
-      29018,
       29000
     ]
   },
@@ -8562,7 +8590,6 @@
     "exp": 0,
     "map": 677,
     "contentText": [
-      29018,
       29000
     ]
   },
@@ -8594,7 +8621,6 @@
     "exp": 0,
     "map": 678,
     "contentText": [
-      30039,
       30000
     ]
   },
@@ -8626,7 +8652,6 @@
     "exp": 0,
     "map": 676,
     "contentText": [
-      28021,
       28000
     ]
   },
@@ -8658,7 +8683,6 @@
     "exp": 0,
     "map": 676,
     "contentText": [
-      28021,
       28000
     ]
   },
@@ -8690,7 +8714,6 @@
     "exp": 135900,
     "map": 763,
     "contentText": [
-      33235,
       33200
     ]
   },
@@ -8722,7 +8745,6 @@
     "exp": 0,
     "map": 678,
     "contentText": [
-      33617,
       33600
     ]
   },
@@ -8754,7 +8776,6 @@
     "exp": 0,
     "map": 802,
     "contentText": [
-      34526,
       34500
     ]
   },
@@ -8786,7 +8807,6 @@
     "exp": 0,
     "map": 802,
     "contentText": [
-      34526,
       34500
     ]
   },
@@ -8818,7 +8838,6 @@
     "exp": 0,
     "map": 823,
     "contentText": [
-      35729,
       35700
     ]
   },
@@ -8850,7 +8869,6 @@
     "exp": 0,
     "map": 823,
     "contentText": [
-      35729,
       35700
     ]
   },
@@ -8882,7 +8900,6 @@
     "exp": 0,
     "map": 838,
     "contentText": [
-      36814,
       36800
     ]
   },
@@ -8914,7 +8931,6 @@
     "exp": 0,
     "map": 830,
     "contentText": [
-      36721,
       36700
     ]
   },
@@ -8946,7 +8962,6 @@
     "exp": 0,
     "map": 830,
     "contentText": [
-      36721,
       36700
     ]
   },
@@ -8978,7 +8993,6 @@
     "exp": 0,
     "map": 894,
     "contentText": [
-      38032,
       38000
     ]
   },
@@ -9010,7 +9024,6 @@
     "exp": 0,
     "map": 894,
     "contentText": [
-      38032,
       38000
     ]
   },
@@ -9042,7 +9055,6 @@
     "exp": 0,
     "map": 925,
     "contentText": [
-      40812,
       40800
     ]
   },
@@ -9073,7 +9085,6 @@
     "exp": 0,
     "map": 925,
     "contentText": [
-      40812,
       40800
     ]
   },
@@ -9104,7 +9115,6 @@
     "exp": 0,
     "map": 928,
     "contentText": [
-      39838,
       39800
     ]
   },
@@ -9136,7 +9146,6 @@
     "exp": 0,
     "map": 929,
     "contentText": [
-      40423,
       40400
     ]
   },
@@ -9167,8 +9176,37 @@
     "exp": 0,
     "map": 929,
     "contentText": [
-      40423,
       40400
+    ]
+  },
+  "20099": {
+    "id": 20099,
+    "en": "The Minstrel’s Ballad: Sphene's Burden",
+    "ja": "極エターナルクイーン討滅戦",
+    "de": "Gok Tajaal - Ewige Königin",
+    "fr": "Interphos (extrême)",
+    "description": {
+      "en": "With harp cradled in his arms, the wandering minstrel sings a sorrowful song of a recreated queen. Helpless to defy the purpose she was given, this simulacrum sought to preserve the memories of her subjects by taking the lives of innocents in other reflections. Though she met her end by your hands, had she been further along her ill-fated path by the time of your confrontation, might she have proven unstoppable and gone on to wreak untold death and devastation? Such questions play on your mind as the minstrel's verse bears you away to a world of the imagination, where you once again come face-to-face with the dread entity known as Queen Eternal...",
+      "ja": "異邦の詩人は謳う。「永遠の務め」との信条を掲げ、魂なき記憶の民を護らんとした女王のことを。慈愛を受け継いだがゆえに袋小路へ入り込んでしまったシステムは、異なる世界から命を奪うことで黄金の未来を掴まんとした。その試みが進み、より多くの命を得ていたとしたら、果たして彼女が望んだ結末へと路は続いたのだろうか――。光の戦士は今、エターナルクイーンとの戦いを追体験する。",
+      "de": "Zärtliche Harmonien umgeben dich und führen ein in die Gefühlswelt einer Königin, so rein und pflichterfüllt, sie vergaß gar, sich selbst zu schätzen. So opferte sie sich für die seelenlosen Erinnerungen längst vergangener Existenzen und drohte, statt Liebe endlose Verzweiflung über die Welt zu bringen&nbsp;- alles zum Wohle ihres Volkes, so glaubte sie. Was wohl geschehen wäre, wenn sie mit dieser Missetat durchgekommen und ihre Seelenernte geglückt wäre? Hätte das Schicksal ihrem verzweifelten Verlangen nach Ewigkeit geantwortet? Je mehr du dich in solch Grübeleien vertiefst, desto tiefer saugen dich die Melodien des Sängers in ihren Bann, bis du dich der Ewigen Königin schließlich erneut gegenüberstehen siehst&nbsp;...",
+      "fr": "Bouleversé par le destin tragique de la reine Sphene qui, liée malgré elle à sa devise “Éternel devoir”, fut contrainte de protéger envers et contre tout ses précieux sujets, ou plutôt l'illusion qui en subsistait, le ménestrel errant a laissé libre cours à son inspiration. Que se serait-il passé si vous n'aviez pas mis fin à la course folle du système central de La Mémoire vivante et permis à une aurore dorée de se lever sur un monde enfin apaisé&nbsp;? Affrontez à nouveau la Reine Éternité dans une joute plus intense que jamais durant laquelle l'espace et la gravité ne répondent à aucune des loi que vous avez connues jusqu'ici."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112588.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 710,
+    "sync": 100,
+    "exp": 0,
+    "map": 928,
+    "contentText": [
+      41600
     ]
   },
   "25001": {
@@ -9194,7 +9232,7 @@
     "exp": 0,
     "map": 317,
     "contentText": [
-      12941,
+      6381330,
       12900
     ]
   },
@@ -9226,7 +9264,7 @@
     "exp": 0,
     "map": 451,
     "contentText": [
-      18739,
+      7186180,
       18700
     ]
   },
@@ -9253,7 +9291,7 @@
     "exp": 0,
     "map": 704,
     "contentText": [
-      30739,
+      8734194,
       30700
     ]
   },
@@ -9280,7 +9318,6 @@
     "exp": 0,
     "map": 295,
     "contentText": [
-      26600,
       26600
     ]
   },
@@ -9312,7 +9349,6 @@
     "exp": 0,
     "map": 295,
     "contentText": [
-      26600,
       26600
     ]
   },
@@ -9344,7 +9380,7 @@
     "exp": 135900,
     "map": 71,
     "contentText": [
-      4708,
+      4317125,
       4700
     ]
   },
@@ -9376,8 +9412,9 @@
     "exp": 0,
     "map": 57,
     "contentText": [
-      4101,
-      4100
+      4293363,
+      4100,
+      1466
     ]
   },
   "30003": {
@@ -9406,7 +9443,11 @@
     "ilvlReq": 73,
     "sync": 50,
     "exp": 0,
-    "map": 58
+    "map": 58,
+    "contentText": [
+      4294907,
+      1459
+    ]
   },
   "30004": {
     "id": 30004,
@@ -9436,7 +9477,7 @@
     "exp": 0,
     "map": 62,
     "contentText": [
-      4201,
+      4294864,
       4200
     ]
   },
@@ -9468,7 +9509,7 @@
     "exp": 0,
     "map": 59,
     "contentText": [
-      4300,
+      4374569,
       4300
     ]
   },
@@ -9498,7 +9539,11 @@
     "ilvlReq": 82,
     "sync": 50,
     "exp": 0,
-    "map": 60
+    "map": 60,
+    "contentText": [
+      4294951,
+      1482
+    ]
   },
   "30007": {
     "id": 30007,
@@ -9528,8 +9573,9 @@
     "exp": 0,
     "map": 148,
     "contentText": [
+      4616593,
       5600,
-      5600
+      2609
     ]
   },
   "30008": {
@@ -9560,8 +9606,9 @@
     "exp": 0,
     "map": 149,
     "contentText": [
+      4646974,
       5700,
-      5700
+      2610
     ]
   },
   "30009": {
@@ -9592,8 +9639,9 @@
     "exp": 0,
     "map": 65,
     "contentText": [
+      4649327,
       5800,
-      5800
+      2611
     ]
   },
   "30010": {
@@ -9624,8 +9672,8 @@
     "exp": 0,
     "map": 150,
     "contentText": [
-      5905,
-      5900
+      5900,
+      2612
     ]
   },
   "30011": {
@@ -9656,8 +9704,9 @@
     "exp": 135900,
     "map": 158,
     "contentText": [
-      6325,
-      6300
+      4723161,
+      6300,
+      2824
     ]
   },
   "30012": {
@@ -9688,8 +9737,9 @@
     "exp": 0,
     "map": 148,
     "contentText": [
+      4616593,
       5600,
-      5600
+      2609
     ]
   },
   "30013": {
@@ -9720,8 +9770,9 @@
     "exp": 0,
     "map": 149,
     "contentText": [
+      4646974,
       5700,
-      5700
+      2610
     ]
   },
   "30014": {
@@ -9752,8 +9803,9 @@
     "exp": 0,
     "map": 65,
     "contentText": [
+      4649327,
       5800,
-      5800
+      2611
     ]
   },
   "30015": {
@@ -9784,8 +9836,8 @@
     "exp": 0,
     "map": 150,
     "contentText": [
-      5905,
-      5900
+      5900,
+      2612
     ]
   },
   "30016": {
@@ -9816,8 +9868,9 @@
     "exp": 0,
     "map": 175,
     "contentText": [
+      4894217,
       6900,
-      6900
+      3192
     ]
   },
   "30017": {
@@ -9848,8 +9901,9 @@
     "exp": 0,
     "map": 176,
     "contentText": [
+      4895391,
       7000,
-      7000
+      3197
     ]
   },
   "30018": {
@@ -9878,7 +9932,10 @@
     "ilvlReq": 120,
     "sync": 50,
     "exp": 0,
-    "map": 177
+    "map": 177,
+    "contentText": [
+      3204
+    ]
   },
   "30019": {
     "id": 30019,
@@ -9908,8 +9965,8 @@
     "exp": 0,
     "map": 178,
     "contentText": [
-      7205,
-      7200
+      7200,
+      3210
     ]
   },
   "30020": {
@@ -9940,7 +9997,7 @@
     "exp": 135900,
     "map": 184,
     "contentText": [
-      7418,
+      5032239,
       7400
     ]
   },
@@ -9972,8 +10029,9 @@
     "exp": 174400,
     "map": 237,
     "contentText": [
-      9202,
-      9200
+      5787758,
+      9200,
+      3747
     ]
   },
   "30022": {
@@ -10004,7 +10062,7 @@
     "exp": 174400,
     "map": 238,
     "contentText": [
-      9308,
+      5787830,
       9300
     ]
   },
@@ -10036,8 +10094,9 @@
     "exp": 174400,
     "map": 239,
     "contentText": [
-      9401,
-      9400
+      5787952,
+      9400,
+      3765
     ]
   },
   "30024": {
@@ -10066,7 +10125,10 @@
     "ilvlReq": 170,
     "sync": 60,
     "exp": 174400,
-    "map": 240
+    "map": 240,
+    "contentText": [
+      3772
+    ]
   },
   "30025": {
     "id": 30025,
@@ -10096,8 +10158,9 @@
     "exp": 0,
     "map": 237,
     "contentText": [
-      9202,
-      9201
+      5911087,
+      9201,
+      3747
     ]
   },
   "30026": {
@@ -10128,7 +10191,7 @@
     "exp": 0,
     "map": 238,
     "contentText": [
-      9308,
+      5908675,
       9303
     ]
   },
@@ -10160,8 +10223,9 @@
     "exp": 0,
     "map": 239,
     "contentText": [
-      9401,
-      9400
+      5911896,
+      9400,
+      3765
     ]
   },
   "30028": {
@@ -10190,7 +10254,10 @@
     "ilvlReq": 205,
     "sync": 60,
     "exp": 0,
-    "map": 240
+    "map": 240,
+    "contentText": [
+      3772
+    ]
   },
   "30029": {
     "id": 30029,
@@ -10220,7 +10287,7 @@
     "exp": 191800,
     "map": 269,
     "contentText": [
-      9621,
+      5965023,
       9600
     ]
   },
@@ -10252,8 +10319,9 @@
     "exp": 174400,
     "map": 286,
     "contentText": [
-      10107,
-      10100
+      6177867,
+      10100,
+      4687
     ]
   },
   "30031": {
@@ -10284,8 +10352,9 @@
     "exp": 174400,
     "map": 287,
     "contentText": [
-      10209,
-      10200
+      6177897,
+      10200,
+      4706
     ]
   },
   "30032": {
@@ -10316,8 +10385,9 @@
     "exp": 174400,
     "map": 289,
     "contentText": [
-      10306,
-      10300
+      6177869,
+      10300,
+      3376
     ]
   },
   "30033": {
@@ -10348,8 +10418,8 @@
     "exp": 174400,
     "map": 290,
     "contentText": [
-      10615,
-      10600
+      10600,
+      4707
     ]
   },
   "30034": {
@@ -10380,8 +10450,9 @@
     "exp": 0,
     "map": 286,
     "contentText": [
-      10108,
-      10100
+      6184203,
+      10100,
+      4687
     ]
   },
   "30035": {
@@ -10412,8 +10483,9 @@
     "exp": 0,
     "map": 287,
     "contentText": [
-      10209,
-      10200
+      6184207,
+      10200,
+      4706
     ]
   },
   "30036": {
@@ -10444,8 +10516,9 @@
     "exp": 0,
     "map": 289,
     "contentText": [
-      10306,
-      10300
+      6184214,
+      10300,
+      3376
     ]
   },
   "30037": {
@@ -10476,8 +10549,8 @@
     "exp": 0,
     "map": 290,
     "contentText": [
-      10615,
-      10600
+      10600,
+      4707
     ]
   },
   "30038": {
@@ -10508,7 +10581,7 @@
     "exp": 191800,
     "map": 298,
     "contentText": [
-      12749,
+      6256395,
       12700
     ]
   },
@@ -10540,8 +10613,9 @@
     "exp": 174400,
     "map": 326,
     "contentText": [
-      13414,
-      13400
+      6526593,
+      13400,
+      5170
     ]
   },
   "30040": {
@@ -10572,8 +10646,9 @@
     "exp": 174400,
     "map": 328,
     "contentText": [
-      13507,
-      13500
+      6493954,
+      13500,
+      5180
     ]
   },
   "30041": {
@@ -10604,8 +10679,9 @@
     "exp": 174400,
     "map": 330,
     "contentText": [
-      13609,
-      13600
+      6531769,
+      13600,
+      5186
     ]
   },
   "30042": {
@@ -10636,8 +10712,8 @@
     "exp": 174400,
     "map": 332,
     "contentText": [
-      13717,
-      13700
+      13700,
+      5193
     ]
   },
   "30043": {
@@ -10668,8 +10744,9 @@
     "exp": 0,
     "map": 326,
     "contentText": [
-      13414,
-      13400
+      6480216,
+      13400,
+      5170
     ]
   },
   "30044": {
@@ -10700,8 +10777,9 @@
     "exp": 0,
     "map": 328,
     "contentText": [
-      13507,
-      13500
+      6493963,
+      13500,
+      5180
     ]
   },
   "30045": {
@@ -10732,8 +10810,9 @@
     "exp": 0,
     "map": 330,
     "contentText": [
-      13609,
-      13600
+      6485748,
+      13600,
+      5186
     ]
   },
   "30046": {
@@ -10764,8 +10843,8 @@
     "exp": 0,
     "map": 332,
     "contentText": [
-      13717,
-      13700
+      13700,
+      5193
     ]
   },
   "30047": {
@@ -10796,7 +10875,7 @@
     "exp": 191800,
     "map": 343,
     "contentText": [
-      14173,
+      6610728,
       14100
     ]
   },
@@ -10826,7 +10905,10 @@
     "ilvlReq": 295,
     "sync": 70,
     "exp": 417000,
-    "map": 390
+    "map": 390,
+    "contentText": [
+      5629
+    ]
   },
   "30050": {
     "id": 30050,
@@ -10857,7 +10939,7 @@
     "map": 391,
     "contentText": [
       17600,
-      17600
+      5631
     ]
   },
   "30051": {
@@ -10888,8 +10970,8 @@
     "exp": 417000,
     "map": 392,
     "contentText": [
-      17738,
-      17700
+      17700,
+      5633
     ]
   },
   "30052": {
@@ -10920,8 +11002,8 @@
     "exp": 417000,
     "map": 394,
     "contentText": [
-      17810,
-      17800
+      17800,
+      6052
     ]
   },
   "30053": {
@@ -10950,7 +11032,10 @@
     "ilvlReq": 310,
     "sync": 70,
     "exp": 0,
-    "map": 390
+    "map": 390,
+    "contentText": [
+      5629
+    ]
   },
   "30054": {
     "id": 30054,
@@ -10981,7 +11066,7 @@
     "map": 391,
     "contentText": [
       17600,
-      17600
+      5631
     ]
   },
   "30055": {
@@ -11012,8 +11097,8 @@
     "exp": 0,
     "map": 392,
     "contentText": [
-      17738,
-      17700
+      17700,
+      5633
     ]
   },
   "30056": {
@@ -11044,8 +11129,8 @@
     "exp": 0,
     "map": 394,
     "contentText": [
-      17822,
-      17800
+      17800,
+      6052
     ]
   },
   "30057": {
@@ -11076,7 +11161,6 @@
     "exp": 0,
     "map": 416,
     "contentText": [
-      18107,
       18100
     ]
   },
@@ -11108,7 +11192,7 @@
     "exp": 417000,
     "map": 422,
     "contentText": [
-      18078,
+      7069111,
       18000
     ]
   },
@@ -11140,8 +11224,8 @@
     "exp": 417000,
     "map": 446,
     "contentText": [
-      19101,
-      19100
+      19100,
+      7127
     ]
   },
   "30060": {
@@ -11172,8 +11256,8 @@
     "exp": 417000,
     "map": 447,
     "contentText": [
-      18912,
-      18900
+      18900,
+      7097
     ]
   },
   "30061": {
@@ -11204,8 +11288,8 @@
     "exp": 417000,
     "map": 448,
     "contentText": [
-      18807,
-      18800
+      18800,
+      7107
     ]
   },
   "30062": {
@@ -11236,8 +11320,8 @@
     "exp": 417000,
     "map": 449,
     "contentText": [
-      19020,
-      19000
+      19000,
+      7131
     ]
   },
   "30063": {
@@ -11268,8 +11352,8 @@
     "exp": 0,
     "map": 446,
     "contentText": [
-      19101,
-      19100
+      19100,
+      7127
     ]
   },
   "30064": {
@@ -11300,8 +11384,8 @@
     "exp": 0,
     "map": 447,
     "contentText": [
-      18912,
-      18900
+      18900,
+      7097
     ]
   },
   "30065": {
@@ -11332,8 +11416,8 @@
     "exp": 0,
     "map": 448,
     "contentText": [
-      18808,
-      18800
+      18800,
+      7107
     ]
   },
   "30066": {
@@ -11364,8 +11448,8 @@
     "exp": 0,
     "map": 449,
     "contentText": [
-      19020,
-      19000
+      19000,
+      7131
     ]
   },
   "30067": {
@@ -11396,7 +11480,6 @@
     "exp": 0,
     "map": 475,
     "contentText": [
-      19320,
       19300
     ]
   },
@@ -11428,7 +11511,7 @@
     "exp": 417000,
     "map": 470,
     "contentText": [
-      19468,
+      7359065,
       19400
     ]
   },
@@ -11460,8 +11543,8 @@
     "exp": 417000,
     "map": 485,
     "contentText": [
-      20007,
-      20000
+      20000,
+      7691
     ]
   },
   "30070": {
@@ -11492,8 +11575,8 @@
     "exp": 417000,
     "map": 501,
     "contentText": [
-      20507,
-      20500
+      20500,
+      7641
     ]
   },
   "30071": {
@@ -11524,8 +11607,8 @@
     "exp": 417000,
     "map": 486,
     "contentText": [
-      20130,
-      20100
+      20100,
+      7695
     ]
   },
   "30072": {
@@ -11556,8 +11639,8 @@
     "exp": 417000,
     "map": 502,
     "contentText": [
-      20624,
-      20600
+      20600,
+      7635
     ]
   },
   "30073": {
@@ -11588,8 +11671,8 @@
     "exp": 0,
     "map": 485,
     "contentText": [
-      20007,
-      20000
+      20000,
+      7691
     ]
   },
   "30074": {
@@ -11620,8 +11703,8 @@
     "exp": 0,
     "map": 501,
     "contentText": [
-      20507,
-      20500
+      20500,
+      7641
     ]
   },
   "30075": {
@@ -11652,8 +11735,8 @@
     "exp": 0,
     "map": 486,
     "contentText": [
-      20135,
-      20100
+      20100,
+      7695
     ]
   },
   "30076": {
@@ -11684,8 +11767,8 @@
     "exp": 0,
     "map": 502,
     "contentText": [
-      20624,
-      20600
+      20600,
+      7636
     ]
   },
   "30077": {
@@ -11716,7 +11799,7 @@
     "exp": 417000,
     "map": 512,
     "contentText": [
-      20999,
+      7724987,
       20900
     ]
   },
@@ -11748,7 +11831,6 @@
     "exp": 855000,
     "map": 559,
     "contentText": [
-      23200,
       23200
     ]
   },
@@ -11780,7 +11862,6 @@
     "exp": 0,
     "map": 559,
     "contentText": [
-      23200,
       23200
     ]
   },
@@ -11812,7 +11893,6 @@
     "exp": 855000,
     "map": 561,
     "contentText": [
-      22814,
       22800
     ]
   },
@@ -11844,7 +11924,6 @@
     "exp": 0,
     "map": 561,
     "contentText": [
-      22814,
       22800
     ]
   },
@@ -11876,7 +11955,6 @@
     "exp": 855000,
     "map": 560,
     "contentText": [
-      22211,
       22200
     ]
   },
@@ -11908,7 +11986,6 @@
     "exp": 0,
     "map": 560,
     "contentText": [
-      22211,
       22200
     ]
   },
@@ -11940,7 +12017,6 @@
     "exp": 855000,
     "map": 562,
     "contentText": [
-      23111,
       23100
     ]
   },
@@ -11972,7 +12048,6 @@
     "exp": 0,
     "map": 562,
     "contentText": [
-      23114,
       23100
     ]
   },
@@ -12004,7 +12079,6 @@
     "exp": 0,
     "map": 573,
     "contentText": [
-      24018,
       24000
     ]
   },
@@ -12036,7 +12110,7 @@
     "exp": 855000,
     "map": 569,
     "contentText": [
-      23611,
+      8127790,
       23500
     ]
   },
@@ -12068,7 +12142,6 @@
     "exp": 855000,
     "map": 589,
     "contentText": [
-      24420,
       24400
     ]
   },
@@ -12100,7 +12173,6 @@
     "exp": 0,
     "map": 589,
     "contentText": [
-      24420,
       24400
     ]
   },
@@ -12132,7 +12204,6 @@
     "exp": 855000,
     "map": 590,
     "contentText": [
-      24513,
       24500
     ]
   },
@@ -12164,7 +12235,6 @@
     "exp": 0,
     "map": 590,
     "contentText": [
-      24513,
       24500
     ]
   },
@@ -12196,7 +12266,6 @@
     "exp": 855000,
     "map": 591,
     "contentText": [
-      24609,
       24600
     ]
   },
@@ -12228,7 +12297,6 @@
     "exp": 0,
     "map": 591,
     "contentText": [
-      24609,
       24600
     ]
   },
@@ -12260,7 +12328,6 @@
     "exp": 855000,
     "map": 599,
     "contentText": [
-      24834,
       24800
     ]
   },
@@ -12292,7 +12359,6 @@
     "exp": 0,
     "map": 599,
     "contentText": [
-      24834,
       24804
     ]
   },
@@ -12324,7 +12390,7 @@
     "exp": 855000,
     "map": 608,
     "contentText": [
-      25564,
+      8351876,
       25500
     ]
   },
@@ -12356,7 +12422,6 @@
     "exp": 855000,
     "map": 631,
     "contentText": [
-      26109,
       26100
     ]
   },
@@ -12388,7 +12453,6 @@
     "exp": 0,
     "map": 631,
     "contentText": [
-      26109,
       26100
     ]
   },
@@ -12420,7 +12484,6 @@
     "exp": 855000,
     "map": 637,
     "contentText": [
-      26410,
       26400
     ]
   },
@@ -12452,7 +12515,6 @@
     "exp": 0,
     "map": 637,
     "contentText": [
-      26410,
       26400
     ]
   },
@@ -12484,7 +12546,6 @@
     "exp": 855000,
     "map": 656,
     "contentText": [
-      26015,
       26000
     ]
   },
@@ -12516,7 +12577,6 @@
     "exp": 0,
     "map": 656,
     "contentText": [
-      26015,
       26000
     ]
   },
@@ -12548,7 +12608,6 @@
     "exp": 855000,
     "map": 632,
     "contentText": [
-      25668,
       25600
     ]
   },
@@ -12580,7 +12639,6 @@
     "exp": 0,
     "map": 636,
     "contentText": [
-      25668,
       25600
     ]
   },
@@ -12612,7 +12670,7 @@
     "exp": 855000,
     "map": 659,
     "contentText": [
-      26780,
+      8661282,
       26700
     ]
   },
@@ -12644,7 +12702,6 @@
     "exp": 0,
     "map": 758,
     "contentText": [
-      32628,
       32600
     ]
   },
@@ -12676,7 +12733,6 @@
     "exp": 3300000,
     "map": 731,
     "contentText": [
-      32509,
       32500
     ]
   },
@@ -12708,7 +12764,6 @@
     "exp": 0,
     "map": 731,
     "contentText": [
-      32517,
       32500
     ]
   },
@@ -12740,7 +12795,6 @@
     "exp": 3300000,
     "map": 722,
     "contentText": [
-      32201,
       32200
     ]
   },
@@ -12772,7 +12826,6 @@
     "exp": 0,
     "map": 722,
     "contentText": [
-      32201,
       32200
     ]
   },
@@ -12804,7 +12857,6 @@
     "exp": 3300000,
     "map": 709,
     "contentText": [
-      32118,
       32100
     ]
   },
@@ -12836,7 +12888,6 @@
     "exp": 0,
     "map": 709,
     "contentText": [
-      32118,
       32100
     ]
   },
@@ -12868,7 +12919,6 @@
     "exp": 3300000,
     "map": 730,
     "contentText": [
-      30904,
       30901
     ]
   },
@@ -12900,7 +12950,6 @@
     "exp": 0,
     "map": 730,
     "contentText": [
-      30904,
       30901
     ]
   },
@@ -12932,7 +12981,7 @@
     "exp": 3300000,
     "map": 755,
     "contentText": [
-      33089,
+      9085561,
       33000
     ]
   },
@@ -12964,7 +13013,6 @@
     "exp": 3300000,
     "map": 807,
     "contentText": [
-      34900,
       34900
     ]
   },
@@ -12996,7 +13044,6 @@
     "exp": 0,
     "map": 807,
     "contentText": [
-      34900,
       34900
     ]
   },
@@ -13028,7 +13075,6 @@
     "exp": 3300000,
     "map": 792,
     "contentText": [
-      34617,
       34600
     ]
   },
@@ -13060,7 +13106,6 @@
     "exp": 0,
     "map": 792,
     "contentText": [
-      34618,
       34600
     ]
   },
@@ -13092,7 +13137,6 @@
     "exp": 3300000,
     "map": 771,
     "contentText": [
-      34709,
       34700
     ]
   },
@@ -13124,7 +13168,6 @@
     "exp": 0,
     "map": 771,
     "contentText": [
-      34709,
       34700
     ]
   },
@@ -13156,7 +13199,6 @@
     "exp": 3300000,
     "map": 808,
     "contentText": [
-      35033,
       35000
     ]
   },
@@ -13188,7 +13230,6 @@
     "exp": 0,
     "map": 808,
     "contentText": [
-      35033,
       35000
     ]
   },
@@ -13220,7 +13261,6 @@
     "exp": 0,
     "map": 821,
     "contentText": [
-      35837,
       35800
     ]
   },
@@ -13252,7 +13292,7 @@
     "exp": 3300000,
     "map": 811,
     "contentText": [
-      35173,
+      9453606,
       35100
     ]
   },
@@ -13284,7 +13324,6 @@
     "exp": 3300000,
     "map": 837,
     "contentText": [
-      36225,
       36200
     ]
   },
@@ -13316,7 +13355,6 @@
     "exp": 0,
     "map": 837,
     "contentText": [
-      36225,
       36200
     ]
   },
@@ -13348,7 +13386,6 @@
     "exp": 3300000,
     "map": 834,
     "contentText": [
-      37119,
       37100
     ]
   },
@@ -13380,7 +13417,6 @@
     "exp": 0,
     "map": 834,
     "contentText": [
-      37119,
       37100
     ]
   },
@@ -13412,7 +13448,6 @@
     "exp": 3300000,
     "map": 839,
     "contentText": [
-      37015,
       37000
     ]
   },
@@ -13444,7 +13479,6 @@
     "exp": 0,
     "map": 839,
     "contentText": [
-      37015,
       37000
     ]
   },
@@ -13476,7 +13510,6 @@
     "exp": 3300000,
     "map": 835,
     "contentText": [
-      36911,
       36900
     ]
   },
@@ -13508,7 +13541,6 @@
     "exp": 0,
     "map": 835,
     "contentText": [
-      36935,
       36900
     ]
   },
@@ -13540,7 +13572,7 @@
     "exp": 3300000,
     "map": 884,
     "contentText": [
-      34423,
+      10090366,
       34300
     ]
   },
@@ -13572,7 +13604,6 @@
     "exp": 0,
     "map": 927,
     "contentText": [
-      40622,
       40600
     ]
   },
@@ -13584,7 +13615,7 @@
     "fr": "Poids mi-lourds CCA - match 1 (sadique)",
     "description": {
       "en": "By his appropriately timed interjections, Gabbro's attention appears wholly rapt on you as you speak of your hair-raising bout with Black Cat─yet you cannot help but notice his curiously furrowed brow. How liberal does he intend to be with his depiction of the battle─what precisely does he see in his mind's eye? Intrigued by the possibilities, you begin to imagine the deadly clash anew... ",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13603,7 +13634,6 @@
     "exp": 0,
     "map": 927,
     "contentText": [
-      40622,
       40600
     ]
   },
@@ -13634,7 +13664,6 @@
     "exp": 0,
     "map": 923,
     "contentText": [
-      39129,
       39100
     ]
   },
@@ -13646,7 +13675,7 @@
     "fr": "Poids mi-lourds CCA - match 2 (sadique)",
     "description": {
       "en": "With her irresistible charms, your victory against Honey B. Lovely was hard-fought. Yet Gabbro's words linger in your mind: what if the sweet songstress revealed a side of herself more vile than you had ever imagined? How might the battle have gone then...?",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13665,7 +13694,6 @@
     "exp": 0,
     "map": 923,
     "contentText": [
-      39129,
       39100
     ]
   },
@@ -13696,7 +13724,6 @@
     "exp": 0,
     "map": 926,
     "contentText": [
-      40221,
       40200
     ]
   },
@@ -13708,7 +13735,7 @@
     "fr": "Poids mi-lourds CCA - match 3 (sadique)",
     "description": {
       "en": "Gabbro invites you to picture the Brute Bomber in a somehow even more degenerate light─one in which the now uncrowned champion would readily stoop to lower lows to seize victory. Surely, such an engagement would be more explosive than the last...",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13727,7 +13754,6 @@
     "exp": 0,
     "map": 926,
     "contentText": [
-      40221,
       40200
     ]
   },
@@ -13758,7 +13784,6 @@
     "exp": 0,
     "map": 924,
     "contentText": [
-      40337,
       40300
     ]
   },
@@ -13770,7 +13795,7 @@
     "fr": "Poids mi-lourds CCA - match 4 (sadique)",
     "description": {
       "en": "Your match against the neoteric witch came to an abrupt end when the former heavyweight fighter decided to flee─but what if she hadn't? Inspired by a muse of your own from Gabbro's words, your thoughts drift back to that imaginary city of her creation once more, where you envision an altogether novel struggle taking place...",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13789,8 +13814,38 @@
     "exp": 0,
     "map": 924,
     "contentText": [
-      40337,
       40300
+    ]
+  },
+  "30144": {
+    "id": 30144,
+    "en": "Jeuno: The First Walk",
+    "ja": "ジュノ：ザ・ファーストウォーク",
+    "de": "Jeuno: Die erste Etappe",
+    "fr": "Jeuno - La première perambulation",
+    "description": {
+      "en": "Strange happenings in Yak T'el have cast a pall of unease over the forest. After an armor-clad stranger was found unconscious in the Skydeep Cenote, bereft of memory, the shade of Gulool Ja Ja was spotted stalking the woods with a young girl. What appeared to be unrelated events take a turn when Bakool Ja Ja confronts the Dawnservant's shadowy impostor. The armor-clad stranger recognizes the girl as Prishe, a friend seemingly turned enemy, who retreats with Gulool Ja Ja's shade into the blinding light of an otherworldly rift. In search of answers, and to safeguard Tural, Bakool Ja Ja bids you join him as he follows the incongruous pair into the unknown.",
+      "ja": "記憶を失った冒険者らしき男性が現れたことを皮切りに、ヤクテル樹海にて立て続けに不可思議な事件が巻き起こる。何者かによって紡がれたグルージャジャの幻影による襲撃、そして、「プリッシュ」なる少女を伴った幻影は、謎めいた「光の柱」へと消えてしまう。<br>勇連隊の一員として、襲撃者たちを追うバクージャジャを援護するため、そして「プリッシュ」を友と呼ぶ男の求めに応じ、冒険者は光の向こう側を目指す。",
+      "de": "Ein Abenteurer, der bewusstlos im Himmelstiefen Cenote aufgefunden wurde und sich seit seinem Erwachen an nichts erinnern kann, ist nur der Anfang einer Reihe von rätselhaften Vorfällen, die sich im Wald von Yak T'el ereignen. Seit seinem Auftauchen folgt ein merkwürdiges Ereignis auf das nächste: Gulool Ja Jas besiegt geglaubtes Phantom erscheint plötzlich wieder und ist kämpferischer denn je zuvor, gefolgt von einem mysteriösen Mädchen namens Prishe, das dem Abenteurer mit Amnesie seltsam bekannt vorkommt. Auf der Suche nach Antworten betrittst du einen Dimensionsspalt, der ins Ungewisse führt ...",
+      "fr": "Un aventurier ayant perdu la mémoire a été retrouvé dans la forêt de Yak T'el par les Mamool Ja. Depuis son arrivée parmi eux s'enchaînent des événements tous plus étranges les uns que les autres&nbsp;: la réapparition miraculeuse d'une ombre de Gulool Ja Ja plus pugnace que jamais, suivie d'une mystérieuse jeune fille nommée Prishe qui semble familière à l'aventurier amnésique. Désireuse d'obtenir des réponses, vous pénétrez dans une faille interdimensionnelle avec l'inconnu pour seul horizon..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112585.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 695,
+    "sync": 100,
+    "exp": 0,
+    "map": 946,
+    "contentText": [
+      10963889,
+      41400
     ]
   },
   "35001": {
@@ -14506,7 +14561,6 @@
     "exp": 0,
     "map": 490,
     "contentText": [
-      26206,
       26200
     ]
   },
@@ -14533,7 +14587,6 @@
     "exp": 0,
     "map": 490,
     "contentText": [
-      37305,
       37300
     ]
   },
@@ -14565,7 +14618,7 @@
     "exp": 0,
     "map": 803,
     "contentText": [
-      34267,
+      9316979,
       34000
     ]
   },
@@ -14597,7 +14650,7 @@
     "exp": 0,
     "map": 843,
     "contentText": [
-      36506,
+      9747025,
       36300
     ]
   },
@@ -14629,7 +14682,7 @@
     "exp": 0,
     "map": 867,
     "contentText": [
-      37671,
+      10085277,
       37400
     ]
   },
@@ -14661,7 +14714,7 @@
     "exp": 0,
     "map": 804,
     "contentText": [
-      34272,
+      9358577,
       34000
     ]
   },
@@ -14693,7 +14746,7 @@
     "exp": 0,
     "map": 804,
     "contentText": [
-      34272,
+      9358577,
       34000
     ]
   },
@@ -14725,7 +14778,7 @@
     "exp": 0,
     "map": 851,
     "contentText": [
-      36502,
+      9903652,
       36300
     ]
   },
@@ -14757,7 +14810,7 @@
     "exp": 0,
     "map": 851,
     "contentText": [
-      36502,
+      9903652,
       36300
     ]
   },
@@ -14789,7 +14842,7 @@
     "exp": 0,
     "map": 875,
     "contentText": [
-      37647,
+      10092605,
       37400
     ]
   },
@@ -14821,7 +14874,7 @@
     "exp": 0,
     "map": 875,
     "contentText": [
-      37647,
+      10092605,
       37400
     ]
   },
@@ -15090,7 +15143,6 @@
     "exp": 0,
     "map": 822,
     "contentText": [
-      36105,
       36100
     ]
   },
@@ -15122,7 +15174,6 @@
     "exp": 0,
     "map": 822,
     "contentText": [
-      36105,
       36100
     ]
   },
@@ -15154,7 +15205,6 @@
     "exp": 0,
     "map": 822,
     "contentText": [
-      36105,
       36100
     ]
   },
@@ -15270,7 +15320,6 @@
     "exp": 0,
     "map": 167,
     "contentText": [
-      8910,
       8910
     ]
   },
@@ -15302,7 +15351,6 @@
     "exp": 0,
     "map": 242,
     "contentText": [
-      8900,
       8900
     ]
   },
@@ -15334,7 +15382,6 @@
     "exp": 0,
     "map": 296,
     "contentText": [
-      8902,
       8901
     ]
   },
@@ -15366,7 +15413,6 @@
     "exp": 0,
     "map": 568,
     "contentText": [
-      23701,
       23700
     ]
   },
@@ -15454,7 +15500,7 @@
     "exp": 0,
     "map": 315,
     "contentText": [
-      12810,
+      6289086,
       12800
     ]
   },
@@ -15481,7 +15527,7 @@
     "exp": 0,
     "map": 408,
     "contentText": [
-      12810,
+      6904141,
       12800
     ]
   },
@@ -15508,7 +15554,7 @@
     "exp": 0,
     "map": 409,
     "contentText": [
-      12810,
+      6904141,
       12800
     ]
   },
@@ -15535,7 +15581,6 @@
     "exp": 0,
     "map": 499,
     "contentText": [
-      12810,
       12800
     ]
   },
@@ -15562,7 +15607,7 @@
     "exp": 0,
     "map": 563,
     "contentText": [
-      12810,
+      7964022,
       12800
     ]
   },
@@ -15589,7 +15634,6 @@
     "exp": 0,
     "map": 640,
     "contentText": [
-      12810,
       12800
     ]
   },
@@ -15616,7 +15660,7 @@
     "exp": 0,
     "map": 729,
     "contentText": [
-      12810,
+      8858859,
       12800
     ]
   },
@@ -15643,7 +15687,6 @@
     "exp": 0,
     "map": 818,
     "contentText": [
-      12810,
       12800
     ]
   },
@@ -15670,7 +15713,7 @@
     "exp": 0,
     "map": 896,
     "contentText": [
-      12810,
+      10428243,
       12800
     ]
   },
@@ -15954,7 +15997,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      13903,
       13900
     ]
   },
@@ -16546,7 +16588,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      35603,
       35600
     ]
   },
@@ -16578,7 +16619,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      36002,
       36000
     ]
   },
@@ -16610,7 +16650,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      35904,
       35900
     ]
   },
@@ -16810,7 +16849,6 @@
     "exp": 0,
     "map": 0,
     "contentText": [
-      35408,
       35400
     ]
   },
@@ -17130,7 +17168,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17157,7 +17195,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17184,7 +17222,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17211,7 +17249,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17238,7 +17276,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17265,7 +17303,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17292,7 +17330,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17319,7 +17357,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17346,7 +17384,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17373,7 +17411,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17400,7 +17438,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17427,7 +17465,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      8303002,
       24900
     ]
   },
@@ -17454,7 +17492,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      9908417,
       24900
     ]
   },
@@ -17481,7 +17519,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      9908417,
       24900
     ]
   },
@@ -17508,7 +17546,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      9908417,
       24900
     ]
   },
@@ -17535,7 +17573,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      9908417,
       24900
     ]
   },
@@ -17562,7 +17600,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      9908417,
       24900
     ]
   },
@@ -17589,8 +17627,39 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      9908417,
       24900
+    ]
+  },
+  "64009": {
+    "id": 64009,
+    "en": "The Jade Stoa (Unreal)",
+    "ja": "幻白虎征魂戦",
+    "de": "Traumprüfung - Byakko",
+    "fr": "La Clairière de Jade (irréel)",
+    "description": {
+      "en": "The faux commander has a yen for a tale from his native Far East, which prompts you to call to mind the unbridled ferocity of Byakko, one of the Four Lords of legend. Revisit now your grueling encounter with the mighty auspice, and fight to lift the dark cloud that shrouds his heart ere you are overcome by his heavenly gales...",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは東方の瑞獣・白虎との嵐呼ぶ戦い。天つ風に呑まれるのが先か、心の暗雲を晴らすが先か。いま幻の激闘が語られる。",
+      "de": "Sotan findet, dass es schon viel zu lange her ist, seitdem er eine seiner wunderbaren Geschichten zum Besten gegeben hat. Diesmal erinnert er dich an den mächtigen Byakko und lässt die Flammen dieses schicksalsträchtigen Kampfes abermals auflodern.",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Byakko, le légendaire Tigre blanc, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112590.png",
+    "gamePatch": 91,
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 690,
+    "sync": 100,
+    "exp": 0,
+    "map": 450,
+    "contentText": [
+      18600
     ]
   }
 }

@@ -219,7 +219,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 5139,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -227,7 +227,7 @@
     "level": 34,
     "stars": 0,
     "itemId": 5138,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -235,7 +235,7 @@
     "level": 19,
     "stars": 0,
     "itemId": 5524,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -243,7 +243,7 @@
     "level": 44,
     "stars": 0,
     "itemId": 5143,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -251,7 +251,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 5439,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -259,7 +259,7 @@
     "level": 31,
     "stars": 0,
     "itemId": 5134,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -267,7 +267,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5118,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -275,7 +275,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 5135,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -283,7 +283,7 @@
     "level": 7,
     "stars": 0,
     "itemId": 5128,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -291,7 +291,7 @@
     "level": 39,
     "stars": 0,
     "itemId": 5168,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -299,7 +299,7 @@
     "level": 38,
     "stars": 0,
     "itemId": 5141,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -307,7 +307,7 @@
     "level": 37,
     "stars": 0,
     "itemId": 5144,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -315,7 +315,7 @@
     "level": 17,
     "stars": 0,
     "itemId": 5131,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -323,7 +323,7 @@
     "level": 24,
     "stars": 0,
     "itemId": 5491,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -331,7 +331,7 @@
     "level": 41,
     "stars": 0,
     "itemId": 5145,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -339,7 +339,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 5129,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -347,7 +347,7 @@
     "level": 36,
     "stars": 0,
     "itemId": 5142,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -355,7 +355,7 @@
     "level": 46,
     "stars": 0,
     "itemId": 5263,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -363,7 +363,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 5525,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -371,7 +371,7 @@
     "level": 17,
     "stars": 0,
     "itemId": 5132,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -379,7 +379,7 @@
     "level": 32,
     "stars": 0,
     "itemId": 5137,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -387,7 +387,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 5136,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -395,7 +395,7 @@
     "level": 16,
     "stars": 0,
     "itemId": 5130,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -403,7 +403,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 6199,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -411,7 +411,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5121,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -419,7 +419,7 @@
     "level": 7,
     "stars": 0,
     "itemId": 5133,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -427,7 +427,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 5140,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -435,7 +435,7 @@
     "level": 9,
     "stars": 0,
     "itemId": 5110,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -443,7 +443,7 @@
     "level": 49,
     "stars": 0,
     "itemId": 5458,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -451,7 +451,7 @@
     "level": 47,
     "stars": 0,
     "itemId": 5116,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -459,7 +459,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 5113,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -467,7 +467,7 @@
     "level": 8,
     "stars": 0,
     "itemId": 5433,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -475,7 +475,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 5124,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -483,7 +483,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 5432,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -491,7 +491,7 @@
     "level": 19,
     "stars": 0,
     "itemId": 5465,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -499,7 +499,7 @@
     "level": 6,
     "stars": 0,
     "itemId": 5107,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -507,7 +507,7 @@
     "level": 43,
     "stars": 0,
     "itemId": 5115,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -515,7 +515,7 @@
     "level": 3,
     "stars": 0,
     "itemId": 5488,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -523,7 +523,7 @@
     "level": 14,
     "stars": 0,
     "itemId": 5111,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -531,7 +531,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 5106,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -539,7 +539,7 @@
     "level": 28,
     "stars": 0,
     "itemId": 5125,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -547,7 +547,7 @@
     "level": 34,
     "stars": 0,
     "itemId": 5114,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -555,7 +555,7 @@
     "level": 42,
     "stars": 0,
     "itemId": 5272,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -563,7 +563,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5273,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -571,7 +571,7 @@
     "level": 22,
     "stars": 0,
     "itemId": 5270,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -579,7 +579,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 5526,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -587,7 +587,7 @@
     "level": 14,
     "stars": 0,
     "itemId": 5269,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -595,7 +595,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 5231,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -603,7 +603,7 @@
     "level": 26,
     "stars": 0,
     "itemId": 5528,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -611,7 +611,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 6152,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -619,7 +619,7 @@
     "level": 23,
     "stars": 0,
     "itemId": 5152,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -627,7 +627,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 5518,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -635,7 +635,7 @@
     "level": 27,
     "stars": 0,
     "itemId": 5523,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -643,7 +643,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 5228,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -651,7 +651,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 5157,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -659,7 +659,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5158,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -667,7 +667,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 5519,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -675,7 +675,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 5229,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -683,7 +683,7 @@
     "level": 21,
     "stars": 0,
     "itemId": 5155,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -691,7 +691,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 5268,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -699,7 +699,7 @@
     "level": 23,
     "stars": 0,
     "itemId": 5153,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -707,7 +707,7 @@
     "level": 24,
     "stars": 0,
     "itemId": 5154,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -715,7 +715,7 @@
     "level": 24,
     "stars": 0,
     "itemId": 5156,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -723,7 +723,7 @@
     "level": 29,
     "stars": 0,
     "itemId": 5527,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -731,7 +731,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 5271,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -739,7 +739,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 4842,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -747,7 +747,7 @@
     "level": 36,
     "stars": 0,
     "itemId": 4807,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -755,7 +755,7 @@
     "level": 9,
     "stars": 0,
     "itemId": 5402,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -763,7 +763,7 @@
     "level": 8,
     "stars": 0,
     "itemId": 5383,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -771,7 +771,7 @@
     "level": 2,
     "stars": 0,
     "itemId": 5050,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -779,7 +779,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 4813,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -787,7 +787,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5547,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -795,7 +795,7 @@
     "level": 21,
     "stars": 0,
     "itemId": 4806,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -803,7 +803,7 @@
     "level": 24,
     "stars": 0,
     "itemId": 5388,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -811,7 +811,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 5385,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -819,7 +819,7 @@
     "level": 31,
     "stars": 0,
     "itemId": 5409,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -827,7 +827,7 @@
     "level": 32,
     "stars": 0,
     "itemId": 5390,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -835,7 +835,7 @@
     "level": 9,
     "stars": 0,
     "itemId": 4803,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -843,7 +843,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 5352,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -851,7 +851,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 4831,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -859,7 +859,7 @@
     "level": 6,
     "stars": 0,
     "itemId": 5351,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -867,7 +867,7 @@
     "level": 17,
     "stars": 0,
     "itemId": 4811,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -875,7 +875,7 @@
     "level": 4,
     "stars": 0,
     "itemId": 4828,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -883,7 +883,7 @@
     "level": 42,
     "stars": 0,
     "itemId": 6146,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -891,7 +891,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5395,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -899,7 +899,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 5562,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -907,7 +907,7 @@
     "level": 14,
     "stars": 0,
     "itemId": 4805,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -915,7 +915,7 @@
     "level": 29,
     "stars": 0,
     "itemId": 5359,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -923,7 +923,7 @@
     "level": 6,
     "stars": 0,
     "itemId": 5534,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -931,7 +931,7 @@
     "level": 39,
     "stars": 0,
     "itemId": 4844,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -939,7 +939,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 4786,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -947,7 +947,7 @@
     "level": 23,
     "stars": 0,
     "itemId": 5535,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -955,7 +955,7 @@
     "level": 16,
     "stars": 0,
     "itemId": 4810,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -963,7 +963,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5537,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -971,7 +971,7 @@
     "level": 37,
     "stars": 0,
     "itemId": 5391,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -979,7 +979,7 @@
     "level": 44,
     "stars": 0,
     "itemId": 5536,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -987,7 +987,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 5396,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -995,7 +995,7 @@
     "level": 3,
     "stars": 0,
     "itemId": 5380,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1003,7 +1003,7 @@
     "level": 2,
     "stars": 0,
     "itemId": 5498,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1011,7 +1011,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 5405,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1019,7 +1019,7 @@
     "level": 19,
     "stars": 0,
     "itemId": 5386,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1027,7 +1027,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 5509,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1035,7 +1035,7 @@
     "level": 7,
     "stars": 0,
     "itemId": 4809,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1043,7 +1043,7 @@
     "level": 47,
     "stars": 0,
     "itemId": 5414,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1051,7 +1051,7 @@
     "level": 46,
     "stars": 0,
     "itemId": 5393,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1059,7 +1059,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 5516,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1067,7 +1067,7 @@
     "level": 38,
     "stars": 0,
     "itemId": 4793,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1075,7 +1075,7 @@
     "level": 23,
     "stars": 0,
     "itemId": 4835,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1083,7 +1083,7 @@
     "level": 32,
     "stars": 0,
     "itemId": 4790,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1091,7 +1091,7 @@
     "level": 27,
     "stars": 0,
     "itemId": 4788,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1099,7 +1099,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 4779,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1107,7 +1107,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 4804,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1115,7 +1115,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 5540,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1123,7 +1123,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 4829,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1131,7 +1131,7 @@
     "level": 24,
     "stars": 0,
     "itemId": 5542,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1139,7 +1139,7 @@
     "level": 16,
     "stars": 0,
     "itemId": 4834,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1147,7 +1147,7 @@
     "level": 19,
     "stars": 0,
     "itemId": 4796,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1155,7 +1155,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 5560,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1163,7 +1163,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 4778,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1171,7 +1171,7 @@
     "level": 41,
     "stars": 0,
     "itemId": 4845,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1179,7 +1179,7 @@
     "level": 48,
     "stars": 0,
     "itemId": 4846,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1187,7 +1187,7 @@
     "level": 26,
     "stars": 0,
     "itemId": 4822,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1195,7 +1195,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 4795,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1203,7 +1203,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 5538,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1211,7 +1211,7 @@
     "level": 39,
     "stars": 0,
     "itemId": 4792,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1219,7 +1219,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 4819,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1227,7 +1227,7 @@
     "level": 14,
     "stars": 0,
     "itemId": 4783,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1235,7 +1235,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 5054,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1243,7 +1243,7 @@
     "level": 39,
     "stars": 0,
     "itemId": 4841,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1251,7 +1251,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 5051,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1259,7 +1259,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 4843,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1267,7 +1267,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 4838,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1275,7 +1275,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5545,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1283,7 +1283,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5546,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1291,7 +1291,7 @@
     "level": 22,
     "stars": 0,
     "itemId": 6145,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1299,7 +1299,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 4781,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1307,7 +1307,7 @@
     "level": 24,
     "stars": 0,
     "itemId": 4836,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1315,7 +1315,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 4816,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1323,7 +1323,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 6148,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1331,7 +1331,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 4784,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1339,7 +1339,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 4818,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1347,7 +1347,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 6147,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1355,7 +1355,7 @@
     "level": 16,
     "stars": 0,
     "itemId": 4785,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1363,7 +1363,7 @@
     "level": 21,
     "stars": 0,
     "itemId": 4812,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1371,7 +1371,7 @@
     "level": 34,
     "stars": 0,
     "itemId": 5360,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1379,7 +1379,7 @@
     "level": 42,
     "stars": 0,
     "itemId": 5564,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1387,7 +1387,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 4800,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1395,7 +1395,7 @@
     "level": 14,
     "stars": 0,
     "itemId": 4830,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1403,7 +1403,7 @@
     "level": 36,
     "stars": 0,
     "itemId": 4814,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1411,7 +1411,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 5541,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1419,7 +1419,7 @@
     "level": 22,
     "stars": 0,
     "itemId": 4797,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1427,7 +1427,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 4787,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1435,7 +1435,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 5563,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1443,7 +1443,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 4798,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1451,7 +1451,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 4832,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1459,7 +1459,7 @@
     "level": 37,
     "stars": 0,
     "itemId": 4840,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1467,7 +1467,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 5543,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1475,7 +1475,7 @@
     "level": 28,
     "stars": 0,
     "itemId": 4789,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1483,7 +1483,7 @@
     "level": 32,
     "stars": 0,
     "itemId": 4837,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1491,7 +1491,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 6209,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1499,7 +1499,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 4821,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1507,7 +1507,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 5559,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1515,7 +1515,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 5341,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1523,7 +1523,7 @@
     "level": 49,
     "stars": 0,
     "itemId": 5055,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1531,7 +1531,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 4823,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1539,7 +1539,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 4782,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1547,7 +1547,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 5539,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1555,7 +1555,7 @@
     "level": 34,
     "stars": 0,
     "itemId": 4791,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1563,7 +1563,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 4780,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1571,7 +1571,7 @@
     "level": 17,
     "stars": 0,
     "itemId": 4820,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1579,7 +1579,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 4808,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1587,7 +1587,7 @@
     "level": 34,
     "stars": 0,
     "itemId": 4839,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1595,7 +1595,7 @@
     "level": 43,
     "stars": 0,
     "itemId": 4815,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1603,7 +1603,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 4777,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1611,7 +1611,7 @@
     "level": 31,
     "stars": 0,
     "itemId": 5346,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1619,7 +1619,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 4824,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1627,7 +1627,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 5350,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1635,7 +1635,7 @@
     "level": 14,
     "stars": 0,
     "itemId": 5343,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1643,7 +1643,7 @@
     "level": 12,
     "stars": 0,
     "itemId": 5342,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1651,7 +1651,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 7010,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1659,7 +1659,7 @@
     "level": 11,
     "stars": 0,
     "itemId": 5267,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1667,7 +1667,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 5513,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1675,7 +1675,7 @@
     "level": 17,
     "stars": 0,
     "itemId": 5230,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1683,7 +1683,7 @@
     "level": 31,
     "stars": 0,
     "itemId": 7008,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1691,7 +1691,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 5514,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1699,7 +1699,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 7011,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1707,7 +1707,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 7012,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1715,7 +1715,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 7029,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1723,7 +1723,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 7030,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1731,7 +1731,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 7031,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1811,7 +1811,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7724,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1883,7 +1883,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7733,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1891,7 +1891,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7734,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -1995,7 +1995,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7760,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2019,7 +2019,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7763,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2043,7 +2043,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7766,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2051,7 +2051,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7610,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2059,7 +2059,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7588,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2067,7 +2067,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7589,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2075,7 +2075,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5146,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2083,7 +2083,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 7611,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2091,7 +2091,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7590,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2099,7 +2099,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7591,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2107,7 +2107,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7592,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2115,7 +2115,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7593,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2123,7 +2123,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7594,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2131,7 +2131,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 7595,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2139,7 +2139,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 8030,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2147,7 +2147,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5147,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2155,7 +2155,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5148,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2163,7 +2163,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5149,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2171,7 +2171,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5150,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2179,7 +2179,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5151,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2187,7 +2187,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 8031,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2195,7 +2195,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 5365,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2203,7 +2203,7 @@
     "level": 50,
     "stars": 2,
     "itemId": 8024,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2211,7 +2211,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 5120,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2219,7 +2219,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 5394,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2227,7 +2227,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 9519,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2235,7 +2235,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 9518,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2251,7 +2251,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 10093,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2259,7 +2259,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 10096,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2283,7 +2283,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 10095,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2299,7 +2299,7 @@
     "level": 50,
     "stars": 1,
     "itemId": 10098,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2307,7 +2307,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 5521,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2315,7 +2315,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 5126,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2323,7 +2323,7 @@
     "level": 51,
     "stars": 0,
     "itemId": 12531,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2331,7 +2331,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 12551,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2347,7 +2347,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 12552,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2355,7 +2355,7 @@
     "level": 51,
     "stars": 0,
     "itemId": 12553,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2363,7 +2363,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 12631,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2371,7 +2371,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 12555,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2379,7 +2379,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 12554,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2395,7 +2395,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 12556,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2403,7 +2403,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 12532,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2411,7 +2411,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 12632,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2419,7 +2419,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12557,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2427,7 +2427,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 12558,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2443,7 +2443,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12539,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2451,7 +2451,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12533,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2459,7 +2459,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 12559,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2467,7 +2467,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12560,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2475,7 +2475,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 12538,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2483,7 +2483,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 5127,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2491,7 +2491,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 5108,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2499,7 +2499,7 @@
     "level": 51,
     "stars": 0,
     "itemId": 5109,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2507,7 +2507,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 5162,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2515,7 +2515,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 12941,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2523,7 +2523,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 5112,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2531,7 +2531,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 5161,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2539,7 +2539,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 12901,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2547,7 +2547,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 5214,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2555,7 +2555,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 5218,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2563,7 +2563,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 5117,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2571,7 +2571,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 5159,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2579,7 +2579,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12942,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2587,7 +2587,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12966,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2595,7 +2595,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12967,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2603,7 +2603,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12536,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2611,7 +2611,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12540,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2619,7 +2619,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12945,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2627,7 +2627,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 5226,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2635,7 +2635,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 5163,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2643,7 +2643,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 5160,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2651,7 +2651,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 5220,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2659,7 +2659,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 5224,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2667,7 +2667,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 5403,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2675,7 +2675,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 5384,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2683,7 +2683,7 @@
     "level": 51,
     "stars": 0,
     "itemId": 12597,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2691,7 +2691,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 12880,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2699,7 +2699,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 12883,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2715,7 +2715,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 12598,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2723,7 +2723,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 12578,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2731,7 +2731,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 12585,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2755,7 +2755,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 12885,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2763,7 +2763,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 12638,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2771,7 +2771,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 12887,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2779,7 +2779,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 12639,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2795,7 +2795,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12586,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2803,7 +2803,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12642,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2811,7 +2811,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12643,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2819,7 +2819,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12640,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2827,7 +2827,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12891,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2835,7 +2835,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 12641,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2843,7 +2843,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 12900,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2851,7 +2851,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 12896,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2859,7 +2859,7 @@
     "level": 51,
     "stars": 0,
     "itemId": 12899,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2867,7 +2867,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 12877,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2875,7 +2875,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 12882,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2883,7 +2883,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 12943,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2891,7 +2891,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 12884,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2899,7 +2899,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 12889,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2907,7 +2907,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 12968,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2915,7 +2915,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 12971,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2923,7 +2923,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12944,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2931,7 +2931,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 12897,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2939,7 +2939,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 12898,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2947,7 +2947,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12969,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2955,7 +2955,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 12972,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2963,7 +2963,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12634,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2971,7 +2971,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12587,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2979,7 +2979,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12902,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2987,7 +2987,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 4833,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -2995,7 +2995,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12903,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3003,7 +3003,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 12904,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3011,7 +3011,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 12970,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3019,7 +3019,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 12973,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3035,7 +3035,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 13759,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3043,7 +3043,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 13760,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3051,7 +3051,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 13761,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3059,7 +3059,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 13762,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3067,7 +3067,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 13763,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3075,7 +3075,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 13764,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3083,7 +3083,7 @@
     "level": 50,
     "stars": 3,
     "itemId": 13765,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3091,7 +3091,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 13767,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3099,7 +3099,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 13768,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3107,7 +3107,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14154,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3115,7 +3115,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14956,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3123,7 +3123,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14159,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3131,7 +3131,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14160,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3139,7 +3139,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14957,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3147,7 +3147,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14148,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3155,7 +3155,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14955,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3163,7 +3163,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14151,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3171,7 +3171,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 14190,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3179,7 +3179,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 15646,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3187,7 +3187,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 15647,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3195,7 +3195,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 15948,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3203,7 +3203,7 @@
     "level": 60,
     "stars": 1,
     "itemId": 15949,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3259,7 +3259,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 5392,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3267,7 +3267,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 16721,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3275,7 +3275,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 16722,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3283,7 +3283,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 16723,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3291,7 +3291,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 16724,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3299,7 +3299,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 16725,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3307,7 +3307,7 @@
     "level": 60,
     "stars": 3,
     "itemId": 16726,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3355,7 +3355,7 @@
     "level": 60,
     "stars": 2,
     "itemId": 19910,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3363,7 +3363,7 @@
     "level": 60,
     "stars": 2,
     "itemId": 19968,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3371,7 +3371,7 @@
     "level": 61,
     "stars": 0,
     "itemId": 19871,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3379,7 +3379,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 19969,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3387,7 +3387,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 19951,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3395,7 +3395,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 19872,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3403,7 +3403,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 19970,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3411,7 +3411,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 19953,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3419,7 +3419,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19971,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3427,7 +3427,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 20009,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3435,7 +3435,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19954,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3443,7 +3443,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19972,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3451,7 +3451,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 19957,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3459,7 +3459,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 19973,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3467,7 +3467,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 19958,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3475,7 +3475,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 19959,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3483,7 +3483,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 20011,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3491,7 +3491,7 @@
     "level": 61,
     "stars": 0,
     "itemId": 5232,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3499,7 +3499,7 @@
     "level": 61,
     "stars": 0,
     "itemId": 19950,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3507,7 +3507,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 20007,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3515,7 +3515,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 20006,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3523,7 +3523,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19952,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3531,7 +3531,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 20010,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3539,7 +3539,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 19955,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3547,7 +3547,7 @@
     "level": 69,
     "stars": 0,
     "itemId": 19956,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3555,7 +3555,7 @@
     "level": 69,
     "stars": 0,
     "itemId": 19907,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3563,7 +3563,7 @@
     "level": 61,
     "stars": 0,
     "itemId": 19936,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3571,7 +3571,7 @@
     "level": 61,
     "stars": 0,
     "itemId": 19851,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3579,7 +3579,7 @@
     "level": 61,
     "stars": 0,
     "itemId": 19930,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3587,7 +3587,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 19931,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3595,7 +3595,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 19908,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3603,7 +3603,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 5389,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3611,7 +3611,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 19860,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3619,7 +3619,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 19863,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3627,7 +3627,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19870,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3635,7 +3635,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 19869,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3643,7 +3643,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 19932,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3651,7 +3651,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 19933,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3659,7 +3659,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 19852,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3667,7 +3667,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 19934,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3675,7 +3675,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 19937,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3683,7 +3683,7 @@
     "level": 60,
     "stars": 2,
     "itemId": 19868,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3691,7 +3691,7 @@
     "level": 60,
     "stars": 2,
     "itemId": 19976,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3699,7 +3699,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 19850,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3707,7 +3707,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 19861,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3715,7 +3715,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 19881,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3723,7 +3723,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 19917,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3731,7 +3731,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 19979,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3739,7 +3739,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 19856,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3747,7 +3747,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 19859,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3755,7 +3755,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 19862,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3763,7 +3763,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 19879,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3771,7 +3771,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 19853,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3779,7 +3779,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 19864,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3787,7 +3787,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 19982,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3795,7 +3795,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19855,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3803,7 +3803,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19858,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3811,7 +3811,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19865,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3819,7 +3819,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19866,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3827,7 +3827,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19867,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3835,7 +3835,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 19916,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3843,7 +3843,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 20012,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3851,7 +3851,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 19880,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3859,7 +3859,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19857,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3867,7 +3867,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19911,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3875,7 +3875,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19912,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3883,7 +3883,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19913,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3891,7 +3891,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19914,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3899,7 +3899,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 19915,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3907,7 +3907,7 @@
     "level": 69,
     "stars": 0,
     "itemId": 19854,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3915,7 +3915,7 @@
     "level": 69,
     "stars": 0,
     "itemId": 19989,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3923,7 +3923,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 19918,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3931,7 +3931,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 19991,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3979,7 +3979,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 21085,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3987,7 +3987,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 21086,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -3995,7 +3995,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 22417,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4003,7 +4003,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 22418,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4011,7 +4011,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 22419,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4019,7 +4019,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 22420,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4027,7 +4027,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 23179,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4035,7 +4035,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 23180,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4043,7 +4043,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 23220,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4051,7 +4051,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 23221,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4099,7 +4099,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 24255,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4107,7 +4107,7 @@
     "level": 70,
     "stars": 3,
     "itemId": 24240,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4115,7 +4115,7 @@
     "level": 70,
     "stars": 3,
     "itemId": 24241,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4123,7 +4123,7 @@
     "level": 70,
     "stars": 3,
     "itemId": 24242,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4131,7 +4131,7 @@
     "level": 70,
     "stars": 3,
     "itemId": 24243,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4179,7 +4179,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 27726,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4187,7 +4187,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 27727,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4195,7 +4195,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 27697,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4203,7 +4203,7 @@
     "level": 73,
     "stars": 0,
     "itemId": 27968,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4211,7 +4211,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 27728,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4219,7 +4219,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 27698,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4227,7 +4227,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27776,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4235,7 +4235,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27729,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4243,7 +4243,7 @@
     "level": 77,
     "stars": 0,
     "itemId": 27701,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4251,7 +4251,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27805,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4259,7 +4259,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27806,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4267,7 +4267,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27782,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4275,7 +4275,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27730,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4283,7 +4283,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 27703,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4291,7 +4291,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 27731,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4299,7 +4299,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 27705,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4307,7 +4307,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 27704,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4315,7 +4315,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 27817,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4323,7 +4323,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 27954,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4331,7 +4331,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27801,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4339,7 +4339,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27696,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4347,7 +4347,7 @@
     "level": 75,
     "stars": 0,
     "itemId": 27699,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4355,7 +4355,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27803,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4363,7 +4363,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27700,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4371,7 +4371,7 @@
     "level": 79,
     "stars": 0,
     "itemId": 27702,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4379,7 +4379,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 27807,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4387,7 +4387,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27816,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4395,7 +4395,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27820,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4403,7 +4403,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27831,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4411,7 +4411,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27683,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4419,7 +4419,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 27684,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4427,7 +4427,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 27685,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4435,7 +4435,7 @@
     "level": 75,
     "stars": 0,
     "itemId": 27834,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4443,7 +4443,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27821,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4451,7 +4451,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27686,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4459,7 +4459,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27819,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4467,7 +4467,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 27687,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4475,7 +4475,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 27835,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4483,7 +4483,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 27688,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4491,7 +4491,7 @@
     "level": 70,
     "stars": 2,
     "itemId": 27827,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4499,7 +4499,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27825,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4507,7 +4507,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27747,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4515,7 +4515,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27818,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4523,7 +4523,7 @@
     "level": 71,
     "stars": 0,
     "itemId": 27823,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4531,7 +4531,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 27833,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4539,7 +4539,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 27824,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4547,7 +4547,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 27750,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4555,7 +4555,7 @@
     "level": 73,
     "stars": 0,
     "itemId": 27832,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4563,7 +4563,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 27836,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4571,7 +4571,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 27753,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4579,7 +4579,7 @@
     "level": 75,
     "stars": 0,
     "itemId": 27829,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4587,7 +4587,7 @@
     "level": 75,
     "stars": 0,
     "itemId": 27826,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4595,7 +4595,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27822,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4603,7 +4603,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27779,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4611,7 +4611,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27808,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4619,7 +4619,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 27809,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4627,7 +4627,7 @@
     "level": 77,
     "stars": 0,
     "itemId": 27780,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4635,7 +4635,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27837,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4643,7 +4643,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27830,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4651,7 +4651,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27783,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4659,7 +4659,7 @@
     "level": 79,
     "stars": 0,
     "itemId": 27784,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4667,7 +4667,7 @@
     "level": 79,
     "stars": 0,
     "itemId": 27785,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4675,7 +4675,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 27828,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4683,7 +4683,7 @@
     "level": 79,
     "stars": 0,
     "itemId": 27759,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4691,7 +4691,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 27810,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4699,7 +4699,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 27761,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4779,7 +4779,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 28717,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4787,7 +4787,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 28716,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4795,7 +4795,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29968,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4803,7 +4803,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29970,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4811,7 +4811,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29976,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4819,7 +4819,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29972,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4827,7 +4827,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29974,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4835,7 +4835,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29978,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4883,7 +4883,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 30485,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4891,7 +4891,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 30486,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4899,7 +4899,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 30591,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4907,7 +4907,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 30592,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4915,7 +4915,7 @@
     "level": 80,
     "stars": 3,
     "itemId": 32950,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4923,7 +4923,7 @@
     "level": 80,
     "stars": 3,
     "itemId": 32951,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4931,7 +4931,7 @@
     "level": 80,
     "stars": 3,
     "itemId": 32952,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4939,7 +4939,7 @@
     "level": 80,
     "stars": 3,
     "itemId": 32953,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4947,7 +4947,7 @@
     "level": 80,
     "stars": 3,
     "itemId": 32954,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4955,7 +4955,7 @@
     "level": 80,
     "stars": 3,
     "itemId": 32955,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4963,7 +4963,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 33147,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4971,7 +4971,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 33148,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4979,7 +4979,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 33149,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4987,7 +4987,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 33150,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -4995,7 +4995,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 33151,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5003,7 +5003,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 33152,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5011,7 +5011,7 @@
     "level": 70,
     "stars": 1,
     "itemId": 33153,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5051,7 +5051,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36174,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5059,7 +5059,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36084,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5067,7 +5067,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36163,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5075,7 +5075,7 @@
     "level": 85,
     "stars": 0,
     "itemId": 36164,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5083,7 +5083,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 36165,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5091,7 +5091,7 @@
     "level": 89,
     "stars": 0,
     "itemId": 36166,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5099,7 +5099,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 36286,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5107,7 +5107,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 36216,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 2990,
     "sublimeVariant": 0
   },
@@ -5115,7 +5115,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36162,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5123,7 +5123,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36180,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5131,7 +5131,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36175,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5139,7 +5139,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 36176,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5147,7 +5147,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 36241,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5155,7 +5155,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 36177,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5163,7 +5163,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 36181,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5171,7 +5171,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 36263,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5179,7 +5179,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 36178,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5187,7 +5187,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 36285,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5195,7 +5195,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 36215,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5203,7 +5203,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 36167,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 2990,
     "sublimeVariant": 0
   },
@@ -5211,7 +5211,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 36179,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 2990,
     "sublimeVariant": 0
   },
@@ -5219,7 +5219,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36190,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5227,7 +5227,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36191,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5235,7 +5235,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36086,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5243,7 +5243,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36087,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5251,7 +5251,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 36192,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5259,7 +5259,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 36193,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5267,7 +5267,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 36096,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5275,7 +5275,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 36095,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5283,7 +5283,7 @@
     "level": 89,
     "stars": 0,
     "itemId": 36194,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5291,7 +5291,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 36288,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5299,7 +5299,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 36214,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5307,7 +5307,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 36195,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 2990,
     "sublimeVariant": 0
   },
@@ -5315,7 +5315,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36202,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5323,7 +5323,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36083,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5331,7 +5331,7 @@
     "level": 81,
     "stars": 0,
     "itemId": 36088,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5339,7 +5339,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36085,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5347,7 +5347,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 36098,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5355,7 +5355,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 36091,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5363,7 +5363,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 36092,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5371,7 +5371,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 36204,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5379,7 +5379,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 36093,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5387,7 +5387,7 @@
     "level": 85,
     "stars": 0,
     "itemId": 36090,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5395,7 +5395,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 36205,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5403,7 +5403,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 36089,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5411,7 +5411,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 36094,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5419,7 +5419,7 @@
     "level": 89,
     "stars": 0,
     "itemId": 36206,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5427,7 +5427,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 36097,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5435,7 +5435,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 36287,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5443,7 +5443,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 36207,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 2990,
     "sublimeVariant": 0
   },
@@ -5451,7 +5451,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 36217,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 2990,
     "sublimeVariant": 0
   },
@@ -5491,7 +5491,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 37279,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3230,
     "sublimeVariant": 0
   },
@@ -5499,7 +5499,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 37278,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3230,
     "sublimeVariant": 0
   },
@@ -5547,7 +5547,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37691,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3700,
     "sublimeVariant": 37692
   },
@@ -5555,7 +5555,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37692,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3700,
     "sublimeVariant": 0,
     "sublimeOf": 37691
@@ -5564,7 +5564,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37694,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3700,
     "sublimeVariant": 37695
   },
@@ -5572,7 +5572,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37695,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3700,
     "sublimeVariant": 0,
     "sublimeOf": 37694
@@ -5581,7 +5581,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37817,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3600,
     "sublimeVariant": 0
   },
@@ -5589,7 +5589,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37820,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3600,
     "sublimeVariant": 0
   },
@@ -5597,7 +5597,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37822,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3600,
     "sublimeVariant": 0
   },
@@ -5605,7 +5605,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37818,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3600,
     "sublimeVariant": 0
   },
@@ -5613,7 +5613,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37819,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3600,
     "sublimeVariant": 0
   },
@@ -5621,7 +5621,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 37821,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3600,
     "sublimeVariant": 0
   },
@@ -5669,7 +5669,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 38937,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5677,7 +5677,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 38938,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5685,7 +5685,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 38934,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3625,
     "sublimeVariant": 0
   },
@@ -5693,7 +5693,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 38933,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3625,
     "sublimeVariant": 0
   },
@@ -5701,7 +5701,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39237,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 39238
   },
@@ -5709,7 +5709,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39238,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0,
     "sublimeOf": 39237
@@ -5718,7 +5718,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39234,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 39235
   },
@@ -5726,7 +5726,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39235,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0,
     "sublimeOf": 39234
@@ -5735,7 +5735,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39708,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0
   },
@@ -5743,7 +5743,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39706,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0
   },
@@ -5751,7 +5751,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39707,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0
   },
@@ -5759,7 +5759,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39705,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0
   },
@@ -5767,7 +5767,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39709,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0
   },
@@ -5775,7 +5775,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39710,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 3850,
     "sublimeVariant": 0
   },
@@ -5783,7 +5783,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39909,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 39910
   },
@@ -5791,7 +5791,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39910,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 0,
     "sublimeOf": 39909
@@ -5800,7 +5800,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39906,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 39907
   },
@@ -5808,7 +5808,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39907,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 0,
     "sublimeOf": 39906
@@ -5817,7 +5817,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41416,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 41417
   },
@@ -5825,7 +5825,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41417,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 0,
     "sublimeOf": 41416
@@ -5834,7 +5834,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41413,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 41414
   },
@@ -5842,7 +5842,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41414,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4000,
     "sublimeVariant": 0,
     "sublimeOf": 41413
@@ -5891,7 +5891,7 @@
     "level": 91,
     "stars": 0,
     "itemId": 43992,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5899,7 +5899,7 @@
     "level": 92,
     "stars": 0,
     "itemId": 44002,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5907,7 +5907,7 @@
     "level": 92,
     "stars": 0,
     "itemId": 43982,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5915,7 +5915,7 @@
     "level": 93,
     "stars": 0,
     "itemId": 44003,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5923,7 +5923,7 @@
     "level": 94,
     "stars": 0,
     "itemId": 43993,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5931,7 +5931,7 @@
     "level": 95,
     "stars": 0,
     "itemId": 43994,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5939,7 +5939,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 44004,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5947,7 +5947,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 44034,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5955,7 +5955,7 @@
     "level": 97,
     "stars": 0,
     "itemId": 43995,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5963,7 +5963,7 @@
     "level": 97,
     "stars": 0,
     "itemId": 44007,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5971,7 +5971,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 44006,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5979,7 +5979,7 @@
     "level": 99,
     "stars": 0,
     "itemId": 44005,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5987,7 +5987,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43996,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -5995,7 +5995,7 @@
     "level": 91,
     "stars": 0,
     "itemId": 44024,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6003,7 +6003,7 @@
     "level": 91,
     "stars": 0,
     "itemId": 44042,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6011,7 +6011,7 @@
     "level": 91,
     "stars": 0,
     "itemId": 43978,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6019,7 +6019,7 @@
     "level": 93,
     "stars": 0,
     "itemId": 44015,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6027,7 +6027,7 @@
     "level": 92,
     "stars": 0,
     "itemId": 43990,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6035,7 +6035,7 @@
     "level": 92,
     "stars": 0,
     "itemId": 43989,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6043,7 +6043,7 @@
     "level": 92,
     "stars": 0,
     "itemId": 44014,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6051,7 +6051,7 @@
     "level": 92,
     "stars": 0,
     "itemId": 43979,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6059,7 +6059,7 @@
     "level": 94,
     "stars": 0,
     "itemId": 44025,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6067,7 +6067,7 @@
     "level": 94,
     "stars": 0,
     "itemId": 44040,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6075,7 +6075,7 @@
     "level": 94,
     "stars": 0,
     "itemId": 43980,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6083,7 +6083,7 @@
     "level": 94,
     "stars": 0,
     "itemId": 43981,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6091,7 +6091,7 @@
     "level": 94,
     "stars": 0,
     "itemId": 43991,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6099,7 +6099,7 @@
     "level": 95,
     "stars": 0,
     "itemId": 44016,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6107,7 +6107,7 @@
     "level": 95,
     "stars": 0,
     "itemId": 43988,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6115,7 +6115,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 44026,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6123,7 +6123,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 43986,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6131,7 +6131,7 @@
     "level": 97,
     "stars": 0,
     "itemId": 44017,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6139,7 +6139,7 @@
     "level": 97,
     "stars": 0,
     "itemId": 44018,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6147,7 +6147,7 @@
     "level": 97,
     "stars": 0,
     "itemId": 44052,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6155,7 +6155,7 @@
     "level": 97,
     "stars": 0,
     "itemId": 43987,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6163,7 +6163,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 44028,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6171,7 +6171,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 43985,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6179,7 +6179,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 43984,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6187,7 +6187,7 @@
     "level": 99,
     "stars": 0,
     "itemId": 44043,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6195,7 +6195,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 44039,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6203,7 +6203,7 @@
     "level": 99,
     "stars": 0,
     "itemId": 44041,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6211,7 +6211,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43983,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6219,7 +6219,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 44139,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4480,
     "sublimeVariant": 0
   },
@@ -6227,7 +6227,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 44136,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4480,
     "sublimeVariant": 0
   },
@@ -6235,7 +6235,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 44135,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4480,
     "sublimeVariant": 0
   },
@@ -6243,7 +6243,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 44137,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4480,
     "sublimeVariant": 0
   },
@@ -6251,7 +6251,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 44140,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4480,
     "sublimeVariant": 0
   },
@@ -6259,7 +6259,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 44138,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 4480,
     "sublimeVariant": 0
   },
@@ -6267,7 +6267,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 43931,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6275,7 +6275,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43932,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6283,7 +6283,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 43933,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6291,15 +6291,31 @@
     "level": 100,
     "stars": 0,
     "itemId": 43934,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
+    "sublimeVariant": 0
+  },
+  "795": {
+    "level": 100,
+    "stars": 1,
+    "itemId": 44844,
+    "hidden": 1,
+    "perceptionReq": 4540,
+    "sublimeVariant": 0
+  },
+  "796": {
+    "level": 100,
+    "stars": 1,
+    "itemId": 44845,
+    "hidden": 1,
+    "perceptionReq": 4540,
     "sublimeVariant": 0
   },
   "10001": {
     "level": 4,
     "stars": 0,
     "itemId": 2000267,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6307,7 +6323,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000265,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6315,7 +6331,7 @@
     "level": 4,
     "stars": 0,
     "itemId": 2000270,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6323,7 +6339,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000268,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6331,7 +6347,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000271,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6339,7 +6355,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000273,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6347,7 +6363,7 @@
     "level": 8,
     "stars": 0,
     "itemId": 2000277,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6355,7 +6371,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000275,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6363,7 +6379,7 @@
     "level": 8,
     "stars": 0,
     "itemId": 2000280,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6371,7 +6387,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000278,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6379,7 +6395,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000281,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6387,7 +6403,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000283,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6395,7 +6411,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 2000287,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6403,7 +6419,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000285,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6411,7 +6427,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 2000288,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6419,7 +6435,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000268,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6427,7 +6443,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000289,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6435,7 +6451,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 2000293,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6443,7 +6459,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000291,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6451,7 +6467,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 2000295,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6459,7 +6475,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000294,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6467,7 +6483,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000296,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6475,7 +6491,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000298,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6483,7 +6499,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 2000308,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6491,7 +6507,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000303,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6499,7 +6515,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 2000302,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6507,7 +6523,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000300,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6515,7 +6531,7 @@
     "level": 23,
     "stars": 0,
     "itemId": 2000306,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6523,7 +6539,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000304,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6531,7 +6547,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000307,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6539,7 +6555,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000309,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6547,7 +6563,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000271,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6555,7 +6571,7 @@
     "level": 28,
     "stars": 0,
     "itemId": 2000316,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6563,7 +6579,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000311,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6571,7 +6587,7 @@
     "level": 28,
     "stars": 0,
     "itemId": 2000295,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6579,7 +6595,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000294,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6587,7 +6603,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000313,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6595,7 +6611,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000315,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6603,7 +6619,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000317,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6611,7 +6627,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000464,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6619,7 +6635,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 2000465,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6627,7 +6643,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000466,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6635,7 +6651,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000467,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6643,7 +6659,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000468,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6651,7 +6667,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000911,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6659,7 +6675,7 @@
     "level": 38,
     "stars": 0,
     "itemId": 2000912,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6667,7 +6683,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000913,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6675,7 +6691,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000914,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6683,7 +6699,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000915,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6691,7 +6707,7 @@
     "level": 38,
     "stars": 0,
     "itemId": 2000916,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6699,7 +6715,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000917,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6707,7 +6723,7 @@
     "level": 43,
     "stars": 0,
     "itemId": 2000918,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6715,7 +6731,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000919,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6723,7 +6739,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000920,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6731,7 +6747,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000921,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6739,7 +6755,7 @@
     "level": 43,
     "stars": 0,
     "itemId": 2000922,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6747,7 +6763,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000923,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6755,7 +6771,7 @@
     "level": 48,
     "stars": 0,
     "itemId": 2000924,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6763,7 +6779,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000925,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6771,7 +6787,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000926,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6779,7 +6795,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000927,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6787,7 +6803,7 @@
     "level": 48,
     "stars": 0,
     "itemId": 2000928,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6795,7 +6811,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000469,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6803,7 +6819,7 @@
     "level": 4,
     "stars": 0,
     "itemId": 2000470,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6811,7 +6827,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000471,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6819,7 +6835,7 @@
     "level": 4,
     "stars": 0,
     "itemId": 2000472,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6827,7 +6843,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000473,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6835,7 +6851,7 @@
     "level": 1,
     "stars": 0,
     "itemId": 2000474,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6843,7 +6859,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000475,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6851,7 +6867,7 @@
     "level": 8,
     "stars": 0,
     "itemId": 2000476,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6859,7 +6875,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000477,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6867,7 +6883,7 @@
     "level": 8,
     "stars": 0,
     "itemId": 2000478,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6875,7 +6891,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000479,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6883,7 +6899,7 @@
     "level": 5,
     "stars": 0,
     "itemId": 2000480,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6891,7 +6907,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000481,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6899,7 +6915,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 2000482,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6907,7 +6923,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000483,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6915,7 +6931,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 2000484,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6923,7 +6939,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000485,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6931,7 +6947,7 @@
     "level": 10,
     "stars": 0,
     "itemId": 2000486,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6939,7 +6955,7 @@
     "level": 13,
     "stars": 0,
     "itemId": 2000487,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6947,7 +6963,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000488,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6955,7 +6971,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 2000489,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6963,7 +6979,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000490,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6971,7 +6987,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000491,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6979,7 +6995,7 @@
     "level": 15,
     "stars": 0,
     "itemId": 2000492,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6987,7 +7003,7 @@
     "level": 18,
     "stars": 0,
     "itemId": 2000493,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -6995,7 +7011,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000494,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7003,7 +7019,7 @@
     "level": 23,
     "stars": 0,
     "itemId": 2000495,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7011,7 +7027,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000496,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7019,7 +7035,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000497,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7027,7 +7043,7 @@
     "level": 20,
     "stars": 0,
     "itemId": 2000498,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7035,7 +7051,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000499,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7043,7 +7059,7 @@
     "level": 28,
     "stars": 0,
     "itemId": 2000500,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7051,7 +7067,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000501,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7059,7 +7075,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000502,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7067,7 +7083,7 @@
     "level": 25,
     "stars": 0,
     "itemId": 2000503,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7075,7 +7091,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000504,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7083,7 +7099,7 @@
     "level": 33,
     "stars": 0,
     "itemId": 2000505,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7091,7 +7107,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000506,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7099,7 +7115,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000507,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7107,7 +7123,7 @@
     "level": 30,
     "stars": 0,
     "itemId": 2000508,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7115,7 +7131,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000893,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7123,7 +7139,7 @@
     "level": 38,
     "stars": 0,
     "itemId": 2000894,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7131,7 +7147,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000895,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7139,7 +7155,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000896,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7147,7 +7163,7 @@
     "level": 35,
     "stars": 0,
     "itemId": 2000897,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7155,7 +7171,7 @@
     "level": 38,
     "stars": 0,
     "itemId": 2000898,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7163,7 +7179,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000899,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7171,7 +7187,7 @@
     "level": 43,
     "stars": 0,
     "itemId": 2000900,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7179,7 +7195,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000901,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7187,7 +7203,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000902,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7195,7 +7211,7 @@
     "level": 40,
     "stars": 0,
     "itemId": 2000903,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7203,7 +7219,7 @@
     "level": 43,
     "stars": 0,
     "itemId": 2000904,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7211,7 +7227,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000905,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7219,7 +7235,7 @@
     "level": 48,
     "stars": 0,
     "itemId": 2000906,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7227,7 +7243,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000907,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7235,7 +7251,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000908,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7243,7 +7259,7 @@
     "level": 45,
     "stars": 0,
     "itemId": 2000909,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7251,7 +7267,7 @@
     "level": 48,
     "stars": 0,
     "itemId": 2000910,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7419,7 +7435,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 2001846,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7427,7 +7443,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 2001845,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7435,7 +7451,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 2001847,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7443,7 +7459,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 2001849,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7451,7 +7467,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 2001848,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7459,7 +7475,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 2001851,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7467,7 +7483,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 2001850,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7475,7 +7491,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 2001852,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7483,7 +7499,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 2001853,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7491,7 +7507,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 2001855,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7499,7 +7515,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 2001854,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7507,7 +7523,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 2001856,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7515,7 +7531,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 2001858,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7523,7 +7539,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 2001857,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7531,7 +7547,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 2001859,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7539,7 +7555,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 2001860,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7547,7 +7563,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 2001862,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7555,7 +7571,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 2001861,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7563,7 +7579,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 2001864,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7571,7 +7587,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2001863,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7579,7 +7595,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 2001865,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7587,7 +7603,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 2001867,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7595,7 +7611,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2001866,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7603,7 +7619,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 2001823,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7611,7 +7627,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 2001822,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7619,7 +7635,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 2001824,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7627,7 +7643,7 @@
     "level": 50,
     "stars": 0,
     "itemId": 2001826,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7635,7 +7651,7 @@
     "level": 53,
     "stars": 0,
     "itemId": 2001825,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7643,7 +7659,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 2001828,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7651,7 +7667,7 @@
     "level": 55,
     "stars": 0,
     "itemId": 2001827,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7659,7 +7675,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 2001829,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7667,7 +7683,7 @@
     "level": 52,
     "stars": 0,
     "itemId": 2001830,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7675,7 +7691,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 2001832,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7683,7 +7699,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 2001831,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7691,7 +7707,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 2001833,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7699,7 +7715,7 @@
     "level": 54,
     "stars": 0,
     "itemId": 2001835,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7707,7 +7723,7 @@
     "level": 57,
     "stars": 0,
     "itemId": 2001834,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7715,7 +7731,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 2001836,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7723,7 +7739,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 2001837,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7731,7 +7747,7 @@
     "level": 56,
     "stars": 0,
     "itemId": 2001839,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7739,7 +7755,7 @@
     "level": 59,
     "stars": 0,
     "itemId": 2001838,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7747,7 +7763,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 2001841,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7755,7 +7771,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2001840,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7763,7 +7779,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 2001842,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7771,7 +7787,7 @@
     "level": 58,
     "stars": 0,
     "itemId": 2001844,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7779,7 +7795,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2001843,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7787,7 +7803,7 @@
     "level": 91,
     "stars": 0,
     "itemId": 43917,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7795,7 +7811,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43918,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7803,7 +7819,7 @@
     "level": 93,
     "stars": 0,
     "itemId": 43919,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7811,7 +7827,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 43920,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7819,7 +7835,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 44233,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7827,7 +7843,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43921,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7835,7 +7851,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 43922,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7843,7 +7859,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 43923,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7851,7 +7867,7 @@
     "level": 91,
     "stars": 0,
     "itemId": 43924,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7859,7 +7875,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43925,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7867,7 +7883,7 @@
     "level": 93,
     "stars": 0,
     "itemId": 43926,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7875,7 +7891,7 @@
     "level": 96,
     "stars": 0,
     "itemId": 43927,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7883,7 +7899,7 @@
     "level": 98,
     "stars": 0,
     "itemId": 44234,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7891,7 +7907,7 @@
     "level": 100,
     "stars": 0,
     "itemId": 43928,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7899,7 +7915,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 43929,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7907,7 +7923,7 @@
     "level": 100,
     "stars": 1,
     "itemId": 43930,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7987,7 +8003,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2002120,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -7995,7 +8011,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 2002121,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8003,7 +8019,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2002122,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8011,7 +8027,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2002123,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8019,7 +8035,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 2002124,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8027,7 +8043,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 2002125,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8035,7 +8051,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 2002126,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8043,7 +8059,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 2002127,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8051,7 +8067,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 2002128,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8059,7 +8075,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 2002129,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8067,7 +8083,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 2002130,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8075,7 +8091,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 2002131,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8083,7 +8099,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 2002132,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8091,7 +8107,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 2002133,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8099,7 +8115,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 2002134,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8107,7 +8123,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 2002135,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8115,7 +8131,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 2002136,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8123,7 +8139,7 @@
     "level": 69,
     "stars": 0,
     "itemId": 2002137,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8131,7 +8147,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 2002138,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8139,7 +8155,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002139,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8147,7 +8163,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 2002140,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8155,7 +8171,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 2002141,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8163,7 +8179,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002142,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8171,7 +8187,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2002143,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8179,7 +8195,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 2002144,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8187,7 +8203,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2002145,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8195,7 +8211,7 @@
     "level": 60,
     "stars": 0,
     "itemId": 2002146,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8203,7 +8219,7 @@
     "level": 63,
     "stars": 0,
     "itemId": 2002147,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8211,7 +8227,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 2002148,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8219,7 +8235,7 @@
     "level": 65,
     "stars": 0,
     "itemId": 2002149,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8227,7 +8243,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 2002150,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8235,7 +8251,7 @@
     "level": 62,
     "stars": 0,
     "itemId": 2002151,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8243,7 +8259,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 2002152,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8251,7 +8267,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 2002153,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8259,7 +8275,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 2002154,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8267,7 +8283,7 @@
     "level": 64,
     "stars": 0,
     "itemId": 2002155,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8275,7 +8291,7 @@
     "level": 67,
     "stars": 0,
     "itemId": 2002156,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8283,7 +8299,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 2002157,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8291,7 +8307,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 2002158,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8299,7 +8315,7 @@
     "level": 66,
     "stars": 0,
     "itemId": 2002159,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8307,7 +8323,7 @@
     "level": 69,
     "stars": 0,
     "itemId": 2002160,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8315,7 +8331,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 2002161,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8323,7 +8339,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002162,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8331,7 +8347,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 2002163,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8339,7 +8355,7 @@
     "level": 68,
     "stars": 0,
     "itemId": 2002164,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8347,7 +8363,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002165,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8883,7 +8899,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002759,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8891,7 +8907,7 @@
     "level": 73,
     "stars": 0,
     "itemId": 2002760,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8899,7 +8915,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002761,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8907,7 +8923,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002762,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8915,7 +8931,7 @@
     "level": 73,
     "stars": 0,
     "itemId": 2002763,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8923,7 +8939,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 2002764,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8931,7 +8947,7 @@
     "level": 75,
     "stars": 0,
     "itemId": 2002765,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8939,7 +8955,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 2002766,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8947,7 +8963,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 2002767,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8955,7 +8971,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 2002768,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8963,7 +8979,7 @@
     "level": 77,
     "stars": 0,
     "itemId": 2002769,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8971,7 +8987,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 2002770,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8979,7 +8995,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 2002771,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8987,7 +9003,7 @@
     "level": 77,
     "stars": 0,
     "itemId": 2002772,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -8995,7 +9011,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 2002773,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9003,7 +9019,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 2002774,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9011,7 +9027,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 2002775,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9019,7 +9035,7 @@
     "level": 79,
     "stars": 0,
     "itemId": 2002776,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9027,7 +9043,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 2002777,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9035,7 +9051,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2002778,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9043,7 +9059,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 2002779,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9051,7 +9067,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 2002780,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9059,7 +9075,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2002781,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9067,7 +9083,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002782,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9075,7 +9091,7 @@
     "level": 73,
     "stars": 0,
     "itemId": 2002783,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9083,7 +9099,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002784,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9091,7 +9107,7 @@
     "level": 70,
     "stars": 0,
     "itemId": 2002785,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9099,7 +9115,7 @@
     "level": 73,
     "stars": 0,
     "itemId": 2002786,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9107,7 +9123,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 2002787,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9115,7 +9131,7 @@
     "level": 75,
     "stars": 0,
     "itemId": 2002788,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9123,7 +9139,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 2002789,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9131,7 +9147,7 @@
     "level": 72,
     "stars": 0,
     "itemId": 2002790,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9139,7 +9155,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 2002791,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9147,7 +9163,7 @@
     "level": 77,
     "stars": 0,
     "itemId": 2002792,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9155,7 +9171,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 2002793,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9163,7 +9179,7 @@
     "level": 74,
     "stars": 0,
     "itemId": 2002794,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9171,7 +9187,7 @@
     "level": 77,
     "stars": 0,
     "itemId": 2002795,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9179,7 +9195,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 2002796,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9187,7 +9203,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 2002797,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9195,7 +9211,7 @@
     "level": 76,
     "stars": 0,
     "itemId": 2002798,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9203,7 +9219,7 @@
     "level": 79,
     "stars": 0,
     "itemId": 2002799,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9211,7 +9227,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 2002800,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9219,7 +9235,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2002801,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9227,7 +9243,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 2002802,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9235,7 +9251,7 @@
     "level": 78,
     "stars": 0,
     "itemId": 2002803,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -9243,7 +9259,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2002804,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10435,7 +10451,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 29670,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10451,7 +10467,7 @@
     "level": 80,
     "stars": 1,
     "itemId": 29672,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10467,7 +10483,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29675,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10483,7 +10499,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 29677,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10499,7 +10515,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 31126,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10515,7 +10531,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 31128,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10531,7 +10547,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 31131,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -10547,7 +10563,7 @@
     "level": 80,
     "stars": 2,
     "itemId": 31133,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -11979,7 +11995,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2003131,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -11987,7 +12003,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 2003132,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -11995,7 +12011,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2003133,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12003,7 +12019,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2003134,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12011,7 +12027,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 2003135,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12019,7 +12035,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 2003136,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12027,7 +12043,7 @@
     "level": 85,
     "stars": 0,
     "itemId": 2003137,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12035,7 +12051,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 2003138,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12043,7 +12059,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 2003139,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12051,7 +12067,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 2003140,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12059,7 +12075,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 2003141,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12067,7 +12083,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 2003142,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12075,7 +12091,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 2003143,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12083,7 +12099,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 2003144,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12091,7 +12107,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 2003145,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12099,7 +12115,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 2003146,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12107,7 +12123,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 2003147,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12115,7 +12131,7 @@
     "level": 89,
     "stars": 0,
     "itemId": 2003148,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12123,7 +12139,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 2003149,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12131,7 +12147,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 2003150,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12139,7 +12155,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 2003151,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12147,7 +12163,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 2003152,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12155,7 +12171,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 2003153,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12163,7 +12179,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2003154,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12171,7 +12187,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 2003155,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12179,7 +12195,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2003156,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12187,7 +12203,7 @@
     "level": 80,
     "stars": 0,
     "itemId": 2003157,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12195,7 +12211,7 @@
     "level": 83,
     "stars": 0,
     "itemId": 2003158,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12203,7 +12219,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 2003159,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12211,7 +12227,7 @@
     "level": 85,
     "stars": 0,
     "itemId": 2003160,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12219,7 +12235,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 2003161,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12227,7 +12243,7 @@
     "level": 82,
     "stars": 0,
     "itemId": 2003162,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12235,7 +12251,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 2003163,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12243,7 +12259,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 2003164,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12251,7 +12267,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 2003165,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12259,7 +12275,7 @@
     "level": 84,
     "stars": 0,
     "itemId": 2003166,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12267,7 +12283,7 @@
     "level": 87,
     "stars": 0,
     "itemId": 2003167,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12275,7 +12291,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 2003168,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12283,7 +12299,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 2003169,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12291,7 +12307,7 @@
     "level": 86,
     "stars": 0,
     "itemId": 2003170,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12299,7 +12315,7 @@
     "level": 89,
     "stars": 0,
     "itemId": 2003171,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12307,7 +12323,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 2003172,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12315,7 +12331,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 2003173,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12323,7 +12339,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 2003174,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12331,7 +12347,7 @@
     "level": 88,
     "stars": 0,
     "itemId": 2003175,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12339,7 +12355,7 @@
     "level": 90,
     "stars": 0,
     "itemId": 2003176,
-    "hidden": 0,
+    "hidden": 1,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12931,7 +12947,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 38791,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12947,7 +12963,7 @@
     "level": 90,
     "stars": 1,
     "itemId": 38789,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12963,7 +12979,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 38797,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -12979,7 +12995,7 @@
     "level": 90,
     "stars": 2,
     "itemId": 38795,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13003,7 +13019,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39806,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13019,7 +13035,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39808,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13035,7 +13051,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39812,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13051,7 +13067,7 @@
     "level": 90,
     "stars": 3,
     "itemId": 39814,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13067,7 +13083,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41287,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13083,7 +13099,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41289,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13099,7 +13115,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41291,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
@@ -13115,7 +13131,7 @@
     "level": 90,
     "stars": 4,
     "itemId": 41293,
-    "hidden": 1,
+    "hidden": 0,
     "perceptionReq": 0,
     "sublimeVariant": 0
   },

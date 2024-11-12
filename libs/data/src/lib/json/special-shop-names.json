@@ -330,10 +330,10 @@
     "fr": ""
   },
   "1769544": {
-    "en": "Prize Exchange I",
-    "ja": "景品の交換（その1）",
-    "de": "Gewinne I",
-    "fr": "Lots (1)"
+    "en": "Prize Exchange (Weapons)",
+    "ja": "景品の交換（武器）",
+    "de": "Gewinne I (Waffen)",
+    "fr": "Lots (armes)"
   },
   "1769545": {
     "en": "Triple Triad Cards",
@@ -708,10 +708,10 @@
     "fr": "Pièces d'os blanc vanu vanu"
   },
   "1769633": {
-    "en": "Prize Exchange II",
-    "ja": "景品の交換（その2）",
-    "de": "Gewinne II",
-    "fr": "Lots (2)"
+    "en": "Prize Exchange (Gear)",
+    "ja": "景品の交換（防具）",
+    "de": "Gewinne II (Rüstungen)",
+    "fr": "Lots (équipements)"
   },
   "1769635": {
     "en": "Luminous Crystal Exchange",
@@ -6300,16 +6300,16 @@
     "fr": ""
   },
   "1770599": {
-    "en": "Prize Exchange III",
-    "ja": "景品の交換（その3）",
-    "de": "Gewinne III",
-    "fr": "Lots (3)"
+    "en": "Prize Exchange (Registrable Miscellany)",
+    "ja": "景品の交換（修得/登録系・その他）",
+    "de": "Gewinne (Erlernbar/Verschiedenes)",
+    "fr": "Lots (récompenses/divers)"
   },
   "1770600": {
-    "en": "Prize Exchange IV",
-    "ja": "景品の交換（その4）",
-    "de": "Gewinne IV",
-    "fr": "Lots (4)"
+    "en": "Prize Exchange (Music/Furnishings)",
+    "ja": "景品の交換（調度品・庭具・譜面）",
+    "de": "Gewinne (Orchestrion & Unterkünfte)",
+    "fr": "Lots (meubles/orchestrion)"
   },
   "1770601": {
     "en": "",
@@ -8044,5 +8044,119 @@
     "ja": "マテリア",
     "de": "Materia",
     "fr": "Matérias"
+  },
+  "1770890": {
+    "en": "Pelu Pelplume Exchange",
+    "ja": "ペルペル旅翼貨の取引",
+    "de": "Flügelmünzen",
+    "fr": "Échange de pluplumes pelupelu"
+  },
+  "1770891": {
+    "en": "Everkeep Certificates of Grade 1 Import (NQ Weapons)",
+    "ja": "エバーキープの手形G1との交換（武器NQ）",
+    "de": "Immerfried-Marken I (NQ-Waffen)",
+    "fr": "Avoirs de la Gardienne de l'Éternité I (armes QN)"
+  },
+  "1770892": {
+    "en": "Everkeep Certificates of Grade 1 Import (NQ Gear)",
+    "ja": "エバーキープの手形G1との交換（防具NQ）",
+    "de": "Immerfried-Marken I (NQ-Rüstung)",
+    "fr": "Avoirs de la Gardienne de l'Éternité I (pièces d'armure QN)"
+  },
+  "1770893": {
+    "en": "Everkeep Certificates of Grade 1 Import (NQ Accessories)",
+    "ja": "エバーキープの手形G1との交換（アクセサリーNQ）",
+    "de": "Immerfried-Marken I (NQ-Accessoires)",
+    "fr": "Avoirs de la Gardienne de l'Éternité I (accessoires QN)"
+  },
+  "1770894": {
+    "en": "Everkeep Certificates of Grade 1 Import (HQ Weapons)",
+    "ja": "エバーキープの手形G1との交換（武器HQ）",
+    "de": "Immerfried-Marken I (HQ-Waffen)",
+    "fr": "Avoirs de la Gardienne de l'Éternité I (armes HQ)"
+  },
+  "1770895": {
+    "en": "Everkeep Certificates of Grade 1 Import (HQ Gear)",
+    "ja": "エバーキープの手形G1との交換（防具HQ）",
+    "de": "Immerfried-Marken I (HQ-Rüstung)",
+    "fr": "Avoirs de la Gardienne de l'Éternité I (pièces d'armure HQ)"
+  },
+  "1770896": {
+    "en": "Everkeep Certificates of Grade 1 Import (HQ Accessories)",
+    "ja": "エバーキープの手形G1との交換（アクセサリーHQ）",
+    "de": "Immerfried-Marken I (HQ-Accessoires)",
+    "fr": "Avoirs de la Gardienne de l'Éternité I (accessoires HQ)"
+  },
+  "1770897": {
+    "en": "Augmented Archeo Kingdom Equipment (Weapons)",
+    "ja": "オールドキングダム強化装備の取引（武器）",
+    "de": "Modifizierte Altkönigreich-Ausrüstung (Waffen)",
+    "fr": "Amélioration d'armes de l'ancien royaume"
+  },
+  "1770898": {
+    "en": "Augmented Archeo Kingdom Equipment (Gear)",
+    "ja": "オールドキングダム強化装備の取引（防具）",
+    "de": "Modifizierte Altkönigreich-Ausrüstung (Rüstungen)",
+    "fr": "Amélioration de pièces d'armure de l'ancien royaume"
+  },
+  "1770899": {
+    "en": "Augmented Archeo Kingdom Equipment (Accessories)",
+    "ja": "オールドキングダム強化装備の取引（アクセサリー）",
+    "de": "Modifizierte Altkönigreich-Ausrüstung (Accessoires)",
+    "fr": "Amélioration d'accessoires de l'ancien royaume"
+  },
+  "1770900": {
+    "en": "Rain Exchange",
+    "ja": "強霊薬の取引",
+    "de": "Kondensat",
+    "fr": "Échange de lymphe quintessenciée"
+  },
+  "1770901": {
+    "en": "Totem Gear (The Interphos)",
+    "ja": "報酬装備の取引（エターナルクイーン）",
+    "de": "Ewige Königin-Ausrüstung",
+    "fr": "Équipements totémiques (Reine Éternité)"
+  },
+  "1770902": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770904": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770905": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770906": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770907": {
+    "en": "Purple Scrip Exchange (Lv. 80 Materials/Skysteel Prototype Augmentation)",
+    "ja": "紫貨の取引：Lv80～向け素材（スカイスチールツール強化）",
+    "de": "Violette Scheine (ab St. 80, Materialien & Verstärkung von Himmelsstahl-Werkzeugen)",
+    "fr": "Assignats mauves : matériaux pour outils de Cielacier (Nv ≧ 80)"
+  },
+  "1770908": {
+    "en": "Sheet Music Exchange",
+    "ja": "譜面の交換",
+    "de": "Orchestrion",
+    "fr": "Rouleaux d'orchestrion"
   }
 }

@@ -1371,7 +1371,7 @@
     "ItemLevelSync": 530,
     "ProperDungeon": 78,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 520,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1388,7 +1388,7 @@
     "ItemLevelSync": 530,
     "ProperDungeon": 78,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 525,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1405,7 +1405,7 @@
     "ItemLevelSync": 530,
     "ProperDungeon": 80,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 530,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1422,7 +1422,7 @@
     "ItemLevelSync": 533,
     "ProperDungeon": 80,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 533,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1439,7 +1439,7 @@
     "ItemLevelSync": 536,
     "ProperDungeon": 83,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 536,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1456,7 +1456,7 @@
     "ItemLevelSync": 539,
     "ProperDungeon": 83,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 539,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1473,7 +1473,7 @@
     "ItemLevelSync": 542,
     "ProperDungeon": 82,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 542,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1490,7 +1490,7 @@
     "ItemLevelSync": 545,
     "ProperDungeon": 82,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 545,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1507,7 +1507,7 @@
     "ItemLevelSync": 548,
     "ProperDungeon": 81,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 548,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 110
@@ -1524,7 +1524,7 @@
     "ItemLevelSync": 660,
     "ProperDungeon": 85,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 550,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1541,7 +1541,7 @@
     "ItemLevelSync": 660,
     "ProperDungeon": 94,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 650,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1558,7 +1558,7 @@
     "ItemLevelSync": 660,
     "ProperDungeon": 94,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 655,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1575,7 +1575,7 @@
     "ItemLevelSync": 660,
     "ProperDungeon": 92,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 660,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1592,7 +1592,7 @@
     "ItemLevelSync": 663,
     "ProperDungeon": 92,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 663,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1609,7 +1609,7 @@
     "ItemLevelSync": 666,
     "ProperDungeon": 96,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 666,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1626,7 +1626,7 @@
     "ItemLevelSync": 669,
     "ProperDungeon": 96,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 669,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1643,7 +1643,7 @@
     "ItemLevelSync": 672,
     "ProperDungeon": 97,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 672,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1660,7 +1660,7 @@
     "ItemLevelSync": 675,
     "ProperDungeon": 97,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 675,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1677,7 +1677,7 @@
     "ItemLevelSync": 678,
     "ProperDungeon": 93,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 678,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168
@@ -1694,7 +1694,7 @@
     "ItemLevelSync": 690,
     "ProperDungeon": 93,
     "ProperGuildOrder": 10013,
-    "CraftingLevel": 50,
+    "CraftingLevel": 680,
     "AdditionalActions": 10,
     "ApplyAction": 10,
     "QuestExpModifier": 168

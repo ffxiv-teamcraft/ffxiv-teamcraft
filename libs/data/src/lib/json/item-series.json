@@ -571,7 +571,7 @@
     ]
   },
   "4": {
-    "en": "Eastern Garb for Men",
+    "en": "Eastern Lord's Attire",
     "ja": "東方殿方装束",
     "de": "Fernöstliche Herrengewänder",
     "fr": "Tenue de seigneur oriental",
@@ -582,7 +582,7 @@
     ]
   },
   "5": {
-    "en": "Eastern Garb for Women",
+    "en": "Eastern Lady's Attire",
     "ja": "東方姫君装束",
     "de": "Fernöstliche Damengewänder",
     "fr": "Tenue de dame noble orientale",
@@ -593,7 +593,7 @@
     ]
   },
   "6": {
-    "en": "Far Eastern Attire for Men",
+    "en": "Far Eastern Patriarch's Attire",
     "ja": "東方警邏装束",
     "de": "Fernöstliche Herrenbekleidung",
     "fr": "Tenue de garde oriental",
@@ -604,7 +604,7 @@
     ]
   },
   "7": {
-    "en": "Far Eastern Attire for Women",
+    "en": "Far Eastern Matriarch's Attire",
     "ja": "東方女官装束",
     "de": "Fernöstliche Damenbekleidung",
     "fr": "Tenue de damoiselle orientale",

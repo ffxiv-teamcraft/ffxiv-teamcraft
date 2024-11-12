@@ -2079,6 +2079,46 @@
     "craftLevel": 0,
     "gatheringLevel": 0
   },
+  "1063": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1504,
+      1505,
+      1506,
+      1507,
+      1508,
+      1509,
+      1510,
+      1511
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
+  },
+  "1064": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1512,
+      1513,
+      1514,
+      1515,
+      1516,
+      1517,
+      1518,
+      1519
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
+  },
   "2000": {
     "name": {
       "en": "Coerthas",

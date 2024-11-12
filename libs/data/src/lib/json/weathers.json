@@ -1502,5 +1502,45 @@
       "de": "Gespenstisch",
       "fr": "Brume spectrale"
     }
+  },
+  "189": {
+    "name": {
+      "en": "Projection",
+      "ja": "仮想",
+      "de": "Virtuell",
+      "fr": "Virtuel"
+    }
+  },
+  "190": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "191": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "192": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "193": {
+    "name": {
+      "en": "Electrostatic Dust",
+      "ja": "魔塵",
+      "de": "Dünstig trüb",
+      "fr": "Malsain"
+    }
   }
 }

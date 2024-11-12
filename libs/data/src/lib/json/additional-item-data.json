@@ -186820,17 +186820,26 @@
   "30055": {
     "repair": 13,
     "desynth": 6558,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "30056": {
     "repair": 13,
     "desynth": 6559,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "30057": {
     "repair": 12,
     "desynth": 6560,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      1
+    ]
   },
   "30058": {
     "repair": 11,
@@ -225809,17 +225818,17 @@
   },
   "36487": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36488": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36489": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36490": {
@@ -225829,12 +225838,12 @@
   },
   "36491": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36492": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36493": {
@@ -225844,17 +225853,17 @@
   },
   "36494": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36495": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36496": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36497": {
@@ -225869,7 +225878,7 @@
   },
   "36499": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36500": {
@@ -225879,17 +225888,17 @@
   },
   "36501": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36502": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36503": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36504": {
@@ -225899,87 +225908,87 @@
   },
   "36505": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36506": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36507": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36508": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36509": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36510": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36511": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36512": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36513": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36514": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36515": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36516": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36517": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36518": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36519": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36520": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36521": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "36522": {
@@ -248657,22 +248666,22 @@
     "bpvSpecial": []
   },
   "40452": {
-    "repair": 0,
+    "repair": 11,
     "desynth": 0,
     "bpvSpecial": []
   },
   "40453": {
-    "repair": 0,
+    "repair": 13,
     "desynth": 0,
     "bpvSpecial": []
   },
   "40454": {
-    "repair": 0,
+    "repair": 13,
     "desynth": 0,
     "bpvSpecial": []
   },
   "40455": {
-    "repair": 0,
+    "repair": 12,
     "desynth": 0,
     "bpvSpecial": []
   },
@@ -263709,212 +263718,212 @@
   },
   "42773": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9336,
     "bpvSpecial": []
   },
   "42774": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42775": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42776": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42777": {
     "repair": 8,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42778": {
     "repair": 8,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42779": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42780": {
     "repair": 14,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42781": {
     "repair": 14,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42782": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42783": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42784": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42785": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42786": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42787": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42788": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42789": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42790": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42791": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42792": {
     "repair": 9,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42793": {
     "repair": 14,
-    "desynth": 0,
+    "desynth": 9337,
     "bpvSpecial": []
   },
   "42794": {
     "repair": 10,
-    "desynth": 0,
+    "desynth": 6374,
     "bpvSpecial": []
   },
   "42795": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42796": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42797": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42798": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42799": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42800": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42801": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42802": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42803": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42804": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42805": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42806": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42807": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42808": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42809": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42810": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42811": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42812": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42813": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42814": {
     "repair": 11,
-    "desynth": 0,
+    "desynth": 9338,
     "bpvSpecial": []
   },
   "42815": {
@@ -269965,22 +269974,22 @@
   },
   "43780": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43781": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43782": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43783": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43784": {
@@ -269990,42 +269999,42 @@
   },
   "43785": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43786": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43787": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43788": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43789": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43790": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43791": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43792": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43793": {
@@ -270035,32 +270044,32 @@
   },
   "43794": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43795": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43796": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43797": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43798": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43799": {
     "repair": 15,
-    "desynth": 7872,
+    "desynth": 7880,
     "bpvSpecial": []
   },
   "43800": {
@@ -272345,52 +272354,82 @@
   "44246": {
     "repair": 13,
     "desynth": 9302,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "44247": {
     "repair": 13,
     "desynth": 9303,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "44248": {
     "repair": 12,
     "desynth": 9304,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      1
+    ]
   },
   "44249": {
     "repair": 13,
     "desynth": 9305,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "44250": {
     "repair": 12,
     "desynth": 9306,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      1
+    ]
   },
   "44251": {
     "repair": 11,
     "desynth": 9307,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      1
+    ]
   },
   "44252": {
     "repair": 13,
     "desynth": 9308,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "44253": {
     "repair": 12,
     "desynth": 9309,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      1
+    ]
   },
   "44254": {
     "repair": 13,
     "desynth": 9310,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      2
+    ]
   },
   "44255": {
     "repair": 12,
     "desynth": 9311,
-    "bpvSpecial": []
+    "bpvSpecial": [
+      1,
+      1
+    ]
   },
   "44256": {
     "repair": 0,
@@ -272808,43 +272847,43 @@
     "bpvSpecial": []
   },
   "44339": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9341,
     "bpvSpecial": []
   },
   "44340": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9342,
     "bpvSpecial": []
   },
   "44341": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9343,
     "bpvSpecial": []
   },
   "44342": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9344,
     "bpvSpecial": []
   },
   "44343": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9345,
     "bpvSpecial": []
   },
   "44344": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9346,
     "bpvSpecial": []
   },
   "44345": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9347,
     "bpvSpecial": []
   },
   "44346": {
-    "repair": 0,
-    "desynth": 0,
+    "repair": 15,
+    "desynth": 9348,
     "bpvSpecial": []
   },
   "44347": {
@@ -273113,6 +273152,7336 @@
     "bpvSpecial": []
   },
   "44400": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44401": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44402": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44403": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44404": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44405": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44406": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44407": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44408": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44409": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44410": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44411": {
+    "repair": 9,
+    "desynth": 9472,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44412": {
+    "repair": 9,
+    "desynth": 9473,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44413": {
+    "repair": 9,
+    "desynth": 9474,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44414": {
+    "repair": 9,
+    "desynth": 9475,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44415": {
+    "repair": 9,
+    "desynth": 9476,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44416": {
+    "repair": 11,
+    "desynth": 9477,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44417": {
+    "repair": 10,
+    "desynth": 9478,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44418": {
+    "repair": 10,
+    "desynth": 9479,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44419": {
+    "repair": 9,
+    "desynth": 9480,
+    "bpvSpecial": [
+      186,
+      106,
+      27
+    ]
+  },
+  "44420": {
+    "repair": 9,
+    "desynth": 9481,
+    "bpvSpecial": [
+      186,
+      106,
+      27
+    ]
+  },
+  "44421": {
+    "repair": 8,
+    "desynth": 9482,
+    "bpvSpecial": [
+      186,
+      106,
+      27
+    ]
+  },
+  "44422": {
+    "repair": 9,
+    "desynth": 9483,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44423": {
+    "repair": 9,
+    "desynth": 9484,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44424": {
+    "repair": 9,
+    "desynth": 9485,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44425": {
+    "repair": 8,
+    "desynth": 9486,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44426": {
+    "repair": 9,
+    "desynth": 9487,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44427": {
+    "repair": 8,
+    "desynth": 9488,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44428": {
+    "repair": 9,
+    "desynth": 9489,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44429": {
+    "repair": 9,
+    "desynth": 9490,
+    "bpvSpecial": [
+      191,
+      99
+    ]
+  },
+  "44430": {
+    "repair": 9,
+    "desynth": 9491,
+    "bpvSpecial": [
+      106,
+      186
+    ]
+  },
+  "44431": {
+    "repair": 9,
+    "desynth": 9492,
+    "bpvSpecial": [
+      106,
+      186
+    ]
+  },
+  "44432": {
+    "repair": 11,
+    "desynth": 9493,
+    "bpvSpecial": [
+      37,
+      75,
+      59,
+      1
+    ]
+  },
+  "44433": {
+    "repair": 13,
+    "desynth": 9494,
+    "bpvSpecial": [
+      50,
+      100,
+      163,
+      59,
+      1
+    ]
+  },
+  "44434": {
+    "repair": 13,
+    "desynth": 9495,
+    "bpvSpecial": [
+      37,
+      75,
+      59,
+      1
+    ]
+  },
+  "44435": {
+    "repair": 13,
+    "desynth": 9496,
+    "bpvSpecial": [
+      50,
+      100,
+      59,
+      11
+    ]
+  },
+  "44436": {
+    "repair": 12,
+    "desynth": 9497,
+    "bpvSpecial": [
+      37,
+      75,
+      59,
+      11
+    ]
+  },
+  "44437": {
+    "repair": 11,
+    "desynth": 9498,
+    "bpvSpecial": [
+      37,
+      75,
+      106,
+      13
+    ]
+  },
+  "44438": {
+    "repair": 13,
+    "desynth": 9499,
+    "bpvSpecial": [
+      50,
+      100,
+      106,
+      54,
+      1,
+      21
+    ]
+  },
+  "44439": {
+    "repair": 12,
+    "desynth": 9500,
+    "bpvSpecial": [
+      37,
+      75,
+      80,
+      1,
+      13
+    ]
+  },
+  "44440": {
+    "repair": 13,
+    "desynth": 9501,
+    "bpvSpecial": [
+      50,
+      100,
+      54,
+      26,
+      1,
+      21
+    ]
+  },
+  "44441": {
+    "repair": 12,
+    "desynth": 9502,
+    "bpvSpecial": [
+      37,
+      75,
+      59,
+      5,
+      13
+    ]
+  },
+  "44442": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44443": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44444": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44445": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44446": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44447": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44448": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44449": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44450": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44451": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44452": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44453": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44454": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44455": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44456": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44457": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44458": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44459": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44460": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44461": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44462": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44463": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44464": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44465": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44466": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44467": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44468": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44469": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44470": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44471": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44472": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44473": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44474": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44475": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44476": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44477": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44478": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44479": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44480": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44481": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44482": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44483": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44484": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44485": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44486": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44487": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44488": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44489": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44490": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44491": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44492": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44493": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44494": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44495": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44496": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44497": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44498": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44499": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44500": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44501": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44502": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44503": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44504": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44505": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44506": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44507": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44508": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44509": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44510": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44511": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44512": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44513": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44514": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44515": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44516": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44517": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44518": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44519": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44520": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44521": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44522": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44523": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44524": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44525": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44526": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44527": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44528": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44529": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44530": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44531": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44532": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44533": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44534": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44535": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44536": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44537": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44538": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44539": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44540": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44541": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44542": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44543": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44544": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44545": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44546": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44547": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44548": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44549": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44550": {
+    "repair": 11,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44551": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44552": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44553": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44554": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44555": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44556": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44557": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44558": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44559": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44560": {
+    "repair": 11,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44561": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44562": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44563": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44564": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44565": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44566": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44567": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44568": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44569": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44570": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44571": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44572": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44573": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44574": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44575": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44576": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44577": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44578": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44579": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44580": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44581": {
+    "repair": 13,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44582": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44583": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44584": {
+    "repair": 12,
+    "desynth": 9339,
+    "bpvSpecial": []
+  },
+  "44585": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44586": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44587": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44588": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44589": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44590": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44591": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44592": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44593": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44594": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44595": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44596": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44597": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44598": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44599": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44600": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44601": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44602": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44603": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44604": {
+    "repair": 11,
+    "desynth": 9340,
+    "bpvSpecial": []
+  },
+  "44605": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44606": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44607": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44608": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44609": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44610": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44611": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44612": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44613": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44614": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44615": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44616": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44617": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44618": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44619": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44620": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44621": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44622": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44623": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44624": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44625": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44626": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44627": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44628": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44629": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44630": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44631": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44632": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44633": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44634": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44635": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44636": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44637": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44638": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44639": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44640": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44641": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44642": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44643": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44644": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44645": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44646": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44647": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44648": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44649": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44650": {
+    "repair": 13,
+    "desynth": 9435,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44651": {
+    "repair": 13,
+    "desynth": 9436,
+    "bpvSpecial": [
+      1,
+      2
+    ]
+  },
+  "44652": {
+    "repair": 13,
+    "desynth": 9437,
+    "bpvSpecial": [
+      1,
+      2
+    ]
+  },
+  "44653": {
+    "repair": 12,
+    "desynth": 9438,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44654": {
+    "repair": 13,
+    "desynth": 9439,
+    "bpvSpecial": [
+      1,
+      2
+    ]
+  },
+  "44655": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44656": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44657": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44658": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44659": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44660": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44661": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44662": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44663": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44664": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44665": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44666": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44667": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44668": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44669": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44670": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44671": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44672": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44673": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44674": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44675": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44676": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44677": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44678": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44679": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44680": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44681": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44682": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44683": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44684": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44685": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44686": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44687": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44688": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44689": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44690": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44691": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44692": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44693": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44694": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44695": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44696": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44697": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44698": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44699": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44700": {
+    "repair": 8,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44701": {
+    "repair": 8,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44702": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44703": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44704": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44705": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44706": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44707": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44708": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44709": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44710": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44711": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44712": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44713": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44714": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44715": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44716": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44717": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44718": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44719": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44720": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44721": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44722": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44723": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44724": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44725": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44726": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44727": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44728": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44729": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44730": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44731": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44732": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44733": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44734": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44735": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44736": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44737": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44738": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44739": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44740": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44741": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44742": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44743": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44744": {
+    "repair": 9,
+    "desynth": 9349,
+    "bpvSpecial": [
+      14,
+      7,
+      41,
+      43,
+      27,
+      19
+    ]
+  },
+  "44745": {
+    "repair": 9,
+    "desynth": 9350,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44746": {
+    "repair": 9,
+    "desynth": 9351,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44747": {
+    "repair": 8,
+    "desynth": 9352,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44748": {
+    "repair": 11,
+    "desynth": 9353,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44749": {
+    "repair": 8,
+    "desynth": 9354,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44750": {
+    "repair": 8,
+    "desynth": 9355,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44751": {
+    "repair": 14,
+    "desynth": 9356,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44752": {
+    "repair": 14,
+    "desynth": 9357,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44753": {
+    "repair": 11,
+    "desynth": 9358,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44754": {
+    "repair": 9,
+    "desynth": 9359,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44755": {
+    "repair": 9,
+    "desynth": 9360,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44756": {
+    "repair": 11,
+    "desynth": 9361,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44757": {
+    "repair": 9,
+    "desynth": 9362,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44758": {
+    "repair": 11,
+    "desynth": 9363,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44759": {
+    "repair": 9,
+    "desynth": 9364,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44760": {
+    "repair": 9,
+    "desynth": 9365,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44761": {
+    "repair": 9,
+    "desynth": 9366,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44762": {
+    "repair": 11,
+    "desynth": 9367,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44763": {
+    "repair": 9,
+    "desynth": 9368,
+    "bpvSpecial": [
+      14,
+      7,
+      58,
+      61,
+      38,
+      27
+    ]
+  },
+  "44764": {
+    "repair": 14,
+    "desynth": 9369,
+    "bpvSpecial": [
+      14,
+      14,
+      58,
+      55,
+      38,
+      27
+    ]
+  },
+  "44765": {
+    "repair": 10,
+    "desynth": 9370,
+    "bpvSpecial": [
+      185,
+      185,
+      17,
+      18,
+      11,
+      8
+    ]
+  },
+  "44766": {
+    "repair": 10,
+    "desynth": 9371,
+    "bpvSpecial": [
+      112,
+      112,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44767": {
+    "repair": 10,
+    "desynth": 9372,
+    "bpvSpecial": [
+      150,
+      150,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44768": {
+    "repair": 10,
+    "desynth": 9373,
+    "bpvSpecial": [
+      112,
+      112,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44769": {
+    "repair": 13,
+    "desynth": 9374,
+    "bpvSpecial": [
+      150,
+      150,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44770": {
+    "repair": 10,
+    "desynth": 9375,
+    "bpvSpecial": [
+      112,
+      112,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44771": {
+    "repair": 10,
+    "desynth": 9376,
+    "bpvSpecial": [
+      78,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44772": {
+    "repair": 10,
+    "desynth": 9377,
+    "bpvSpecial": [
+      105,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44773": {
+    "repair": 10,
+    "desynth": 9378,
+    "bpvSpecial": [
+      78,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44774": {
+    "repair": 13,
+    "desynth": 9379,
+    "bpvSpecial": [
+      105,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44775": {
+    "repair": 10,
+    "desynth": 9380,
+    "bpvSpecial": [
+      78,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44776": {
+    "repair": 8,
+    "desynth": 9381,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44777": {
+    "repair": 13,
+    "desynth": 9382,
+    "bpvSpecial": [
+      83,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44778": {
+    "repair": 12,
+    "desynth": 9383,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44779": {
+    "repair": 13,
+    "desynth": 9384,
+    "bpvSpecial": [
+      83,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44780": {
+    "repair": 12,
+    "desynth": 9385,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44781": {
+    "repair": 8,
+    "desynth": 9386,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44782": {
+    "repair": 13,
+    "desynth": 9387,
+    "bpvSpecial": [
+      83,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44783": {
+    "repair": 12,
+    "desynth": 9388,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44784": {
+    "repair": 13,
+    "desynth": 9389,
+    "bpvSpecial": [
+      83,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44785": {
+    "repair": 10,
+    "desynth": 9390,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44786": {
+    "repair": 8,
+    "desynth": 9391,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44787": {
+    "repair": 13,
+    "desynth": 9392,
+    "bpvSpecial": [
+      83,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44788": {
+    "repair": 12,
+    "desynth": 9393,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44789": {
+    "repair": 13,
+    "desynth": 9394,
+    "bpvSpecial": [
+      83,
+      83,
+      56,
+      59,
+      37,
+      26
+    ]
+  },
+  "44790": {
+    "repair": 10,
+    "desynth": 9395,
+    "bpvSpecial": [
+      62,
+      62,
+      35,
+      37,
+      23,
+      16
+    ]
+  },
+  "44791": {
+    "repair": 8,
+    "desynth": 9396,
+    "bpvSpecial": [
+      45,
+      78,
+      35,
+      33,
+      23,
+      16
+    ]
+  },
+  "44792": {
+    "repair": 13,
+    "desynth": 9397,
+    "bpvSpecial": [
+      60,
+      105,
+      56,
+      53,
+      37,
+      26
+    ]
+  },
+  "44793": {
+    "repair": 12,
+    "desynth": 9398,
+    "bpvSpecial": [
+      45,
+      78,
+      35,
+      33,
+      23,
+      16
+    ]
+  },
+  "44794": {
+    "repair": 13,
+    "desynth": 9399,
+    "bpvSpecial": [
+      60,
+      105,
+      56,
+      53,
+      37,
+      26
+    ]
+  },
+  "44795": {
+    "repair": 12,
+    "desynth": 9400,
+    "bpvSpecial": [
+      45,
+      78,
+      35,
+      33,
+      23,
+      16
+    ]
+  },
+  "44796": {
+    "repair": 8,
+    "desynth": 9401,
+    "bpvSpecial": [
+      45,
+      78,
+      35,
+      33,
+      23,
+      16
+    ]
+  },
+  "44797": {
+    "repair": 13,
+    "desynth": 9402,
+    "bpvSpecial": [
+      60,
+      105,
+      56,
+      53,
+      37,
+      26
+    ]
+  },
+  "44798": {
+    "repair": 12,
+    "desynth": 9403,
+    "bpvSpecial": [
+      45,
+      78,
+      35,
+      33,
+      23,
+      16
+    ]
+  },
+  "44799": {
+    "repair": 13,
+    "desynth": 9404,
+    "bpvSpecial": [
+      60,
+      105,
+      56,
+      53,
+      37,
+      26
+    ]
+  },
+  "44800": {
+    "repair": 12,
+    "desynth": 9405,
+    "bpvSpecial": [
+      45,
+      78,
+      35,
+      33,
+      23,
+      16
+    ]
+  },
+  "44801": {
+    "repair": 11,
+    "desynth": 9406,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44802": {
+    "repair": 11,
+    "desynth": 9407,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44803": {
+    "repair": 11,
+    "desynth": 9408,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44804": {
+    "repair": 11,
+    "desynth": 9409,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44805": {
+    "repair": 11,
+    "desynth": 9410,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44806": {
+    "repair": 12,
+    "desynth": 9411,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44807": {
+    "repair": 12,
+    "desynth": 9412,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44808": {
+    "repair": 12,
+    "desynth": 9413,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44809": {
+    "repair": 12,
+    "desynth": 9414,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44810": {
+    "repair": 12,
+    "desynth": 9415,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44811": {
+    "repair": 11,
+    "desynth": 9416,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44812": {
+    "repair": 11,
+    "desynth": 9417,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44813": {
+    "repair": 11,
+    "desynth": 9418,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44814": {
+    "repair": 11,
+    "desynth": 9419,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44815": {
+    "repair": 11,
+    "desynth": 9420,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44816": {
+    "repair": 11,
+    "desynth": 9421,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44817": {
+    "repair": 11,
+    "desynth": 9422,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44818": {
+    "repair": 11,
+    "desynth": 9423,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      29,
+      18,
+      13
+    ]
+  },
+  "44819": {
+    "repair": 11,
+    "desynth": 9424,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44820": {
+    "repair": 11,
+    "desynth": 9425,
+    "bpvSpecial": [
+      1,
+      1,
+      28,
+      26,
+      18,
+      13
+    ]
+  },
+  "44821": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44822": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44823": {
+    "repair": 14,
+    "desynth": 9426,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44824": {
+    "repair": 14,
+    "desynth": 9427,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44825": {
+    "repair": 14,
+    "desynth": 9428,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44826": {
+    "repair": 14,
+    "desynth": 9429,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44827": {
+    "repair": 14,
+    "desynth": 9430,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44828": {
+    "repair": 14,
+    "desynth": 9431,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44829": {
+    "repair": 14,
+    "desynth": 9432,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44830": {
+    "repair": 14,
+    "desynth": 9433,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44831": {
+    "repair": 14,
+    "desynth": 9434,
+    "bpvSpecial": [
+      1,
+      1
+    ]
+  },
+  "44832": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44833": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44834": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44835": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44836": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44837": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44838": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44839": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44840": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44841": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44842": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44843": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44844": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44845": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44846": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44847": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44848": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44849": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44850": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44851": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44852": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44853": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44854": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44855": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44856": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44857": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44858": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44859": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44860": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44861": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44862": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44863": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44864": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44865": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44866": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44867": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44868": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44869": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44870": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44871": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44872": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44873": {
+    "repair": 11,
+    "desynth": 9440,
+    "bpvSpecial": []
+  },
+  "44874": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44875": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44876": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44877": {
+    "repair": 13,
+    "desynth": 9441,
+    "bpvSpecial": []
+  },
+  "44878": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44879": {
+    "repair": 8,
+    "desynth": 9442,
+    "bpvSpecial": []
+  },
+  "44880": {
+    "repair": 12,
+    "desynth": 9443,
+    "bpvSpecial": []
+  },
+  "44881": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44882": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44883": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44884": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44885": {
+    "repair": 14,
+    "desynth": 9445,
+    "bpvSpecial": []
+  },
+  "44886": {
+    "repair": 8,
+    "desynth": 9444,
+    "bpvSpecial": []
+  },
+  "44887": {
+    "repair": 10,
+    "desynth": 9455,
+    "bpvSpecial": []
+  },
+  "44888": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44889": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44890": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44891": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44892": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44893": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44894": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44895": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44896": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44897": {
+    "repair": 8,
+    "desynth": 9446,
+    "bpvSpecial": []
+  },
+  "44898": {
+    "repair": 10,
+    "desynth": 9447,
+    "bpvSpecial": []
+  },
+  "44899": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44900": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44901": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44902": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44903": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44904": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44905": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44906": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44907": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44908": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44909": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44910": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44911": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44912": {
+    "repair": 8,
+    "desynth": 9449,
+    "bpvSpecial": []
+  },
+  "44913": {
+    "repair": 8,
+    "desynth": 9450,
+    "bpvSpecial": []
+  },
+  "44914": {
+    "repair": 13,
+    "desynth": 9451,
+    "bpvSpecial": []
+  },
+  "44915": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44916": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44917": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44918": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44919": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44920": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44921": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44922": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44923": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44924": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44925": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44926": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44927": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44928": {
+    "repair": 8,
+    "desynth": 9452,
+    "bpvSpecial": []
+  },
+  "44929": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44930": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44931": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44932": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44933": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44934": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44935": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44936": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44937": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44938": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44939": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44940": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44941": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44942": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44943": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44944": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44945": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44946": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44947": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44948": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44949": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44950": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44951": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44952": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44953": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44954": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44955": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44956": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44957": {
+    "repair": 13,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44958": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44959": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44960": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44961": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44962": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44963": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44964": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44965": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44966": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44967": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44968": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44969": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44970": {
+    "repair": 8,
+    "desynth": 9453,
+    "bpvSpecial": []
+  },
+  "44971": {
+    "repair": 8,
+    "desynth": 9454,
+    "bpvSpecial": []
+  },
+  "44972": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44973": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44974": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44975": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44976": {
+    "repair": 9,
+    "desynth": 9334,
+    "bpvSpecial": [
+      10,
+      5,
+      12,
+      12,
+      12,
+      8
+    ]
+  },
+  "44977": {
+    "repair": 9,
+    "desynth": 9456,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44978": {
+    "repair": 9,
+    "desynth": 9457,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44979": {
+    "repair": 9,
+    "desynth": 9458,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44980": {
+    "repair": 9,
+    "desynth": 9459,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44981": {
+    "repair": 9,
+    "desynth": 9460,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44982": {
+    "repair": 9,
+    "desynth": 9461,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44983": {
+    "repair": 9,
+    "desynth": 9462,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44984": {
+    "repair": 11,
+    "desynth": 9463,
+    "bpvSpecial": [
+      10,
+      10,
+      16,
+      15,
+      16,
+      12
+    ]
+  },
+  "44985": {
+    "repair": 11,
+    "desynth": 9464,
+    "bpvSpecial": [
+      10,
+      10,
+      16,
+      15,
+      16,
+      12
+    ]
+  },
+  "44986": {
+    "repair": 14,
+    "desynth": 9465,
+    "bpvSpecial": [
+      10,
+      10,
+      16,
+      15,
+      16,
+      12
+    ]
+  },
+  "44987": {
+    "repair": 14,
+    "desynth": 9466,
+    "bpvSpecial": [
+      10,
+      10,
+      16,
+      15,
+      16,
+      12
+    ]
+  },
+  "44988": {
+    "repair": 11,
+    "desynth": 9467,
+    "bpvSpecial": [
+      10,
+      10,
+      16,
+      15,
+      16,
+      12
+    ]
+  },
+  "44989": {
+    "repair": 9,
+    "desynth": 9468,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44990": {
+    "repair": 11,
+    "desynth": 9469,
+    "bpvSpecial": [
+      10,
+      10,
+      16,
+      15,
+      16,
+      12
+    ]
+  },
+  "44991": {
+    "repair": 9,
+    "desynth": 9470,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44992": {
+    "repair": 9,
+    "desynth": 9471,
+    "bpvSpecial": [
+      10,
+      5,
+      16,
+      17,
+      16,
+      12
+    ]
+  },
+  "44993": {
+    "repair": 10,
+    "desynth": 9335,
+    "bpvSpecial": [
+      87,
+      87,
+      4,
+      5,
+      4,
+      4
+    ]
+  },
+  "44994": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44995": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44996": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44997": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44998": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "44999": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45000": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45001": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45002": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45003": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45004": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45005": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45006": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45007": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45008": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45009": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45010": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45011": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45012": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45013": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45014": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45015": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45016": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45017": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45018": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45019": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45020": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45021": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45022": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45023": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45024": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45025": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45026": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45027": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45028": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45029": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45030": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45031": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45032": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45033": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45034": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45035": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45036": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45037": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45038": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45039": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45040": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45041": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45042": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45043": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45044": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45045": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45046": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45047": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45048": {
+    "repair": 12,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45049": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45050": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45051": {
+    "repair": 8,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45052": {
+    "repair": 8,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45053": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45054": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45055": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45056": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45057": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45058": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45059": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45060": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45061": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45062": {
+    "repair": 9,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45063": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45064": {
+    "repair": 8,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45065": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45066": {
+    "repair": 11,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45067": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45068": {
+    "repair": 10,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45069": {
+    "repair": 14,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45070": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45071": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45072": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45073": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45074": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45075": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45076": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45077": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45078": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45079": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45080": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45081": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45082": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45083": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45084": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45085": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45086": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45087": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45088": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45089": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45090": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45091": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45092": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45093": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45094": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45095": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45096": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45097": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45098": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45099": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45100": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45101": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45102": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45103": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45104": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45105": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45106": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45107": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45108": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45109": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45110": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45111": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45112": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45113": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45114": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45115": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45116": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45117": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45118": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45119": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45120": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45121": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45122": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45123": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45124": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45125": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45126": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45127": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45128": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45129": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45130": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45131": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45132": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45133": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45134": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45135": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45136": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45137": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45138": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45139": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45140": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45141": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45142": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45143": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45144": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45145": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45146": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45147": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45148": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45149": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45150": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45151": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45152": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45153": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45154": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45155": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45156": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45157": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45158": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45159": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45160": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45161": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45162": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45163": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45164": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45165": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45166": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45167": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45168": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45169": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45170": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45171": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45172": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45173": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45174": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45175": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45176": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45177": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45178": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45179": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45180": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45181": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45182": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45183": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45184": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45185": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45186": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45187": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45188": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45189": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45190": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45191": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45192": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45193": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45194": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45195": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45196": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45197": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45198": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45199": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45200": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45201": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45202": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45203": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45204": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45205": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45206": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45207": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45208": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45209": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45210": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45211": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45212": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45213": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45214": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45215": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45216": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45217": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45218": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45219": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45220": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45221": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45222": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45223": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45224": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45225": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45226": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45227": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45228": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45229": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45230": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45231": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45232": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45233": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45234": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45235": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45236": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45237": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45238": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45239": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45240": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45241": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45242": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45243": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45244": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45245": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45246": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45247": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45248": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45249": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45250": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45251": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45252": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45253": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45254": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45255": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45256": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45257": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45258": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45259": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45260": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45261": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45262": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45263": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45264": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45265": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45266": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45267": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45268": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45269": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45270": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45271": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45272": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45273": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45274": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45275": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45276": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45277": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45278": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45279": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45280": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45281": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45282": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45283": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45284": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45285": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45286": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45287": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45288": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45289": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45290": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45291": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45292": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45293": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45294": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45295": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45296": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45297": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45298": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45299": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45300": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45301": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45302": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45303": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45304": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45305": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45306": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45307": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45308": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45309": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45310": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45311": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45312": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45313": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45314": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45315": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45316": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45317": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45318": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45319": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45320": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45321": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45322": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45323": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45324": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45325": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45326": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45327": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45328": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45329": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45330": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45331": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45332": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45333": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45334": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45335": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45336": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45337": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45338": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45339": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45340": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45341": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45342": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45343": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45344": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45345": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45346": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45347": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45348": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45349": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45350": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45351": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45352": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45353": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45354": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45355": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45356": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45357": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45358": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45359": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45360": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45361": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45362": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45363": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45364": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45365": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45366": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45367": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45368": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45369": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45370": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45371": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45372": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45373": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45374": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45375": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45376": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45377": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45378": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45379": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45380": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45381": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45382": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45383": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45384": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45385": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45386": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45387": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45388": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45389": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45390": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45391": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45392": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45393": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45394": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45395": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45396": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45397": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45398": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45399": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45400": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45401": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45402": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45403": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45404": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45405": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45406": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45407": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45408": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45409": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45410": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45411": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45412": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45413": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45414": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45415": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45416": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45417": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45418": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45419": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45420": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45421": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45422": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45423": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45424": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45425": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45426": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45427": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45428": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45429": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45430": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45431": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45432": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45433": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45434": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45435": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45436": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45437": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45438": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45439": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45440": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45441": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45442": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45443": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45444": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45445": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45446": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45447": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45448": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45449": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45450": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45451": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45452": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45453": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45454": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45455": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45456": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45457": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45458": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45459": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45460": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45461": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45462": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45463": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45464": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45465": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45466": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45467": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45468": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45469": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45470": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45471": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45472": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45473": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45474": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45475": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45476": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45477": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45478": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45479": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45480": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45481": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45482": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45483": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45484": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45485": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45486": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45487": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45488": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45489": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45490": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45491": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45492": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45493": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45494": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45495": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45496": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45497": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45498": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45499": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45500": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45501": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45502": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45503": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45504": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45505": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45506": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45507": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45508": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45509": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45510": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45511": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45512": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45513": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45514": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45515": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45516": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45517": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45518": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45519": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45520": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45521": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45522": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45523": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45524": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45525": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45526": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45527": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45528": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45529": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45530": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45531": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45532": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45533": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45534": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45535": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45536": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45537": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45538": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45539": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45540": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45541": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45542": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45543": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45544": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45545": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45546": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45547": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45548": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45549": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45550": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45551": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45552": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45553": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45554": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45555": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45556": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45557": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45558": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45559": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45560": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45561": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45562": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45563": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45564": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45565": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45566": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45567": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45568": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45569": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45570": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45571": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45572": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45573": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45574": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45575": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45576": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45577": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45578": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45579": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45580": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45581": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45582": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45583": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45584": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45585": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45586": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45587": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45588": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45589": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45590": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45591": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45592": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45593": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45594": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45595": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45596": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45597": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45598": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45599": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45600": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45601": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45602": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45603": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45604": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45605": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45606": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45607": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45608": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45609": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45610": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45611": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45612": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45613": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45614": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45615": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45616": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45617": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45618": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45619": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45620": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45621": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45622": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45623": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45624": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45625": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45626": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45627": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45628": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45629": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45630": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45631": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45632": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45633": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45634": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45635": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45636": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45637": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45638": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45639": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45640": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45641": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45642": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45643": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45644": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45645": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45646": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45647": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45648": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45649": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45650": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45651": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45652": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45653": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45654": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45655": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45656": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45657": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45658": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45659": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45660": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45661": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45662": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45663": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45664": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45665": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45666": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45667": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45668": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45669": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45670": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45671": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45672": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45673": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45674": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45675": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45676": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45677": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45678": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45679": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45680": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45681": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45682": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45683": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45684": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45685": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45686": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45687": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45688": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45689": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45690": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45691": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45692": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45693": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45694": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45695": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45696": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45697": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45698": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45699": {
+    "repair": 0,
+    "desynth": 0,
+    "bpvSpecial": []
+  },
+  "45700": {
     "repair": 0,
     "desynth": 0,
     "bpvSpecial": []

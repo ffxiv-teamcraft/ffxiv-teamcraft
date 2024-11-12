@@ -25616,7 +25616,7 @@
     "en": "Scattered Supply Crate",
     "ja": "",
     "de": "Verstreute Frachtkiste",
-    "fr": "Caisse de marchandises éparpillée",
+    "fr": "Caisse de marchandises éparpillées",
     "icon": "/i/026000/026108.png"
   },
   "2003660": {
@@ -25956,13 +25956,174 @@
     "icon": ""
   },
   "2003708": {
+    "en": "Lush Green Reeds",
+    "ja": "",
+    "de": "Kräftige Schilfpflanze",
+    "fr": "Roseaux verdoyants",
+    "icon": "/i/025000/025035.png"
+  },
+  "2003709": {
+    "en": "Verification Key",
+    "ja": "",
+    "de": "Schlüsselkarte",
+    "fr": "Carte d'accès",
+    "icon": "/i/020000/020961.png"
+  },
+  "2003710": {
+    "en": "Mending Kit",
+    "ja": "",
+    "de": "Nähzeug",
+    "fr": "Outils de couture hhetsarro",
+    "icon": "/i/021000/021003.png"
+  },
+  "2003711": {
+    "en": "Fur Brush",
+    "ja": "",
+    "de": "Fellbürste",
+    "fr": "Brosse pour animaux",
+    "icon": "/i/023000/023719.png"
+  },
+  "2003712": {
+    "en": "Notes on a Mamool Ja Woman",
+    "ja": "",
+    "de": "Hinweis „Über den Verbleib der Mamool Ja“",
+    "fr": "Indice à propos d'une femme mamool ja",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003713": {
+    "en": "Notes on Zoraal Ja's Devoted",
+    "ja": "",
+    "de": "Hinweis „Über die Anhänger Zoraal Jas“",
+    "fr": "Indice à propos de Zoraal Ja",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003714": {
+    "en": "Notes on a Battle with a Tural Vidraal",
+    "ja": "",
+    "de": "Hinweis „Über die Bedrohung durch ein Ungeheuer“",
+    "fr": "Indice à propos du Tural vidraal",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003715": {
+    "en": "Turali Travel Agency Flyer",
+    "ja": "",
+    "de": "Agentur-Flugblatt",
+    "fr": "Dépliant de Tural Voyages",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003716": {
+    "en": "Souvenir Sack",
+    "ja": "",
+    "de": "Hanuhanu-Souvenirs",
+    "fr": "Sac de souvenirs",
+    "icon": "/i/025000/025979.png"
+  },
+  "2003717": {
+    "en": "Insect Repellent",
+    "ja": "",
+    "de": "Mittel gegen Alpakaflöhe",
+    "fr": "Insectifuge hanu hanu",
+    "icon": "/i/020000/020602.png"
+  },
+  "2003718": {
+    "en": "Misplaced Bag",
+    "ja": "",
+    "de": "Verlorene Tasche",
+    "fr": "Sac oublié",
+    "icon": "/i/025000/025979.png"
+  },
+  "2003719": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
     "icon": ""
   },
-  "2003709": {
+  "2003720": {
+    "en": "Survey Response",
+    "ja": "",
+    "de": "Umfragezettel",
+    "fr": "Note manuscrite",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003721": {
+    "en": "Nectar Extraction Device",
+    "ja": "",
+    "de": "Leeres Nektartöpfchen",
+    "fr": "Récolteur pelupelu",
+    "icon": "/i/026000/026108.png"
+  },
+  "2003722": {
+    "en": "Fragrant Nectar",
+    "ja": "",
+    "de": "Gefülltes Nektartöpfchen",
+    "fr": "Nectar parfumé",
+    "icon": "/i/022000/022670.png"
+  },
+  "2003723": {
+    "en": "Scrap Lumber",
+    "ja": "",
+    "de": "Holzteil",
+    "fr": "Débris d'escalier",
+    "icon": "/i/022000/022465.png"
+  },
+  "2003724": {
+    "en": "Bellyfiller Feed",
+    "ja": "",
+    "de": "Punutiy-Leckerchen",
+    "fr": "Miam-miam pour punutiy",
+    "icon": "/i/025000/025061.png"
+  },
+  "2003725": {
+    "en": "Cornflour Treat",
+    "ja": "",
+    "de": "Futtermais",
+    "fr": "Friandise pour punutiy",
+    "icon": "/i/027000/027008.png"
+  },
+  "2003726": {
+    "en": "Alpaca Escape Artist",
+    "ja": "",
+    "de": "Gerissener Ausreißer",
+    "fr": "Bébé alpaga",
+    "icon": "/i/059000/059909.png"
+  },
+  "2003727": {
+    "en": "Game Bird Whistle",
+    "ja": "",
+    "de": "Lockflöte",
+    "fr": "Appeau à oiseaux",
+    "icon": "/i/026000/026039.png"
+  },
+  "2003728": {
+    "en": "Fledgling of Ligaka Thigh",
+    "ja": "",
+    "de": "Keule eines Ligaka-Vogels",
+    "fr": "Tranche de cuisse de jeune oiseau de Ligaka",
+    "icon": "/i/025000/025155.png"
+  },
+  "2003729": {
+    "en": "Ihuyka Achiote",
+    "ja": "",
+    "de": "Ihuyka-Achote-Samen",
+    "fr": "Roucou ihuyka",
+    "icon": "/i/025000/025023.png"
+  },
+  "2003730": {
+    "en": "Hearty Packed Lunch",
+    "ja": "",
+    "de": "Essenspaket",
+    "fr": "Repas à emporter",
+    "icon": "/i/021000/021005.png"
+  },
+  "2003731": {
+    "en": "",
+    "ja": "",
+    "de": "Schirmmaterialien",
+    "fr": "",
+    "icon": "/i/021000/021003.png"
+  },
+  "2003732": {
     "en": "",
     "ja": "",
     "de": "",

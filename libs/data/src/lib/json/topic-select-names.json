@@ -856,5 +856,23 @@
     "ja": "「クレデンダム装備」の強化（ILv650→660）",
     "de": "Credendum-Ausrüstung (G.-St. 650 → 660)",
     "fr": "Amélioration d'équipements du credo (NvObj 650-660)"
+  },
+  "3276943": {
+    "en": "Purchase Augmented Archeo Kingdom Equipment (IL 710 → 720)",
+    "ja": "オールドキングダム装備の強化取引（ILv710→720）",
+    "de": "Modifizierte Altkönigreich-Ausrüstung (G.-St. 710 → 720)",
+    "fr": "Amélioration d'équipements de l'ancien royaume (NvObj 710-720)"
+  },
+  "3276944": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276945": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

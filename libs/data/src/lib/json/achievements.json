@@ -25292,7 +25292,7 @@
     "ja": "絶オメガ検証戦を完遂せし者",
     "de": "Fatale Testreihe",
     "fr": "Oblitérer Oméga",
-    "icon": "/i/064000/064855.png",
+    "icon": "/i/000000/000317.png",
     "itemReward": 0
   },
   "3163": {
@@ -28410,7 +28410,7 @@
   "3552": {
     "en": "Legends of the Hidden Treasure IV",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク4",
-    "de": "Jäger des verborgenen Schatzes VI",
+    "de": "Jäger des verborgenen Schatzes IV",
     "fr": "Visiteur du cénote Ja Ja Gural IV",
     "icon": "/i/000000/000116.png",
     "itemReward": 0
@@ -28645,6 +28645,294 @@
     "de": "Hier spielt die Musik VII",
     "fr": "Mélomane mécanique VII",
     "icon": "/i/025000/025945.png",
+    "itemReward": 0
+  },
+  "3582": {
+    "en": "Top Tier: Season Twelve",
+    "ja": "コンフリクトの王者：シーズン12",
+    "de": "Kristallkönig (12. Saison)",
+    "fr": "Roi du conflit : saison 12",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3583": {
+    "en": "Crystal in the Rough: Season Twelve",
+    "ja": "コンフリクトの勇者：シーズン12",
+    "de": "Kristallfürst (12. Saison)",
+    "fr": "Prince du conflit : saison 12",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3584": {
+    "en": "Ranked and Filed: Season Twelve",
+    "ja": "コンフリクトの入賞者：シーズン12",
+    "de": "Kristallkämpfer (12. Saison)",
+    "fr": "As du conflit : saison 12",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3585": {
+    "en": "Top Tier: Season Thirteen",
+    "ja": "コンフリクトの王者：シーズン13",
+    "de": "Kristallkönig (13. Saison)",
+    "fr": "Roi du conflit : saison 13",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3586": {
+    "en": "Crystal in the Rough: Season Thirteen",
+    "ja": "コンフリクトの勇者：シーズン13",
+    "de": "Kristallfürst (13. Saison)",
+    "fr": "Prince du conflit : saison 13",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3587": {
+    "en": "Ranked and Filed: Season Thirteen",
+    "ja": "コンフリクトの入賞者：シーズン13",
+    "de": "Kristallkämpfer (13. Saison)",
+    "fr": "As du conflit : saison 13",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3588": {
+    "en": "Pelu Proponent I",
+    "ja": "ペルペル族：ランク1",
+    "de": "Per du mit den Pelupelu I",
+    "fr": "Conseiller touristique I",
+    "icon": "/i/062000/062978.png",
+    "itemReward": 0
+  },
+  "3589": {
+    "en": "Pelu Proponent II",
+    "ja": "ペルペル族：ランク2",
+    "de": "Per du mit den Pelupelu II",
+    "fr": "Conseiller touristique II",
+    "icon": "/i/062000/062978.png",
+    "itemReward": 0
+  },
+  "3590": {
+    "en": "Pelu Proponent III",
+    "ja": "ペルペル族：ランク3",
+    "de": "Per du mit den Pelupelu III",
+    "fr": "Conseiller touristique III",
+    "icon": "/i/062000/062978.png",
+    "itemReward": 0
+  },
+  "3591": {
+    "en": "Extra-special Advisor",
+    "ja": "トラルトラベルアドバイザー",
+    "de": "Jaja-Sager",
+    "fr": "Tural Voyages Conseil",
+    "icon": "/i/062000/062978.png",
+    "itemReward": 0
+  },
+  "3592": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3593": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3594": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3595": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3596": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3597": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3598": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3599": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3600": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3601": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3602": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3603": {
+    "en": "Mapping the Realm: Yuweyawata Field Station",
+    "ja": "ユウェヤーワータを踏破せし者",
+    "de": "Kartograph: Yuweyawata",
+    "fr": "Cartographe du continent : Centre de recherche de Yuweyawata",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3604": {
+    "en": "Mapping the Realm: Jeuno: The First Walk",
+    "ja": "ジュノ：ザ・ファーストウォークを踏破せし者",
+    "de": "Kartograph: Jeuno: Die erste Etappe",
+    "fr": "Cartographe du continent : Jeuno - La première perambulation",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3605": {
+    "en": "Long Lived the Queen",
+    "ja": "永久なる女王を狩りし者",
+    "de": "Ender der Endlosigkeit",
+    "fr": "Rien n'est éternel",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3606": {
+    "en": "Home Away from Home",
+    "ja": "ジュノ：ザ・ファーストウォークを制覇せし者",
+    "de": "Jeuno: Die erste Etappe",
+    "fr": "Échos des premières aventures",
+    "icon": "/i/064000/064875.png",
+    "itemReward": 0
+  },
+  "3607": {
+    "en": "Crossroads",
+    "ja": "未知との邂逅",
+    "de": "Schicksalskreuzung",
+    "fr": "Retrouvailles inattendues",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3608": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3609": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3610": {
+    "en": "Go Big on the Trail I",
+    "ja": "黄金の太公望：ランク1",
+    "de": "Kapitalbeschaffung auf Tural I",
+    "fr": "Pêcheur de légendes éternel I",
+    "icon": "/i/001000/001102.png",
+    "itemReward": 0
+  },
+  "3611": {
+    "en": "Punch in Every Stall",
+    "ja": "ホッとあたたまるマーケット",
+    "de": "Strahlender Markt",
+    "fr": "Un marché chaleureux",
+    "icon": "/i/058000/058804.png",
+    "itemReward": 0
+  },
+  "3612": {
+    "en": "満開のブーケを一緒に",
+    "ja": "満開のブーケを一緒に",
+    "de": "満開のブーケを一緒に",
+    "fr": "満開のブーケを一緒に",
+    "icon": "/i/064000/064457.png",
+    "itemReward": 0
+  },
+  "3613": {
+    "en": "あなたの笑顔にお仕えします",
+    "ja": "あなたの笑顔にお仕えします",
+    "de": "Herzensdiener",
+    "fr": "Le prince de ces demoiselles",
+    "icon": "/i/057000/057182.png",
+    "itemReward": 0
+  },
+  "3614": {
+    "en": "傘が彩る雨模様",
+    "ja": "傘が彩る雨模様",
+    "de": "Mit Schirm und Charme",
+    "fr": "傘が彩る雨模様",
+    "icon": "/i/058000/058042.png",
+    "itemReward": 0
+  },
+  "3615": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3616": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3617": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
     "itemReward": 0
   }
 }

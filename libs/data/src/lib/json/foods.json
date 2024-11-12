@@ -11394,5 +11394,53 @@
       }
     },
     "itemFood": 661
+  },
+  {
+    "ID": 44842,
+    "LevelEquip": 1,
+    "LevelItem": 720,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 21,
+        "ValueHQ": 26,
+        "Max": 76,
+        "MaxHQ": 96
+      },
+      "Craftsmanship": {
+        "ID": 70,
+        "Relative": true,
+        "Value": 4,
+        "ValueHQ": 5,
+        "Max": 120,
+        "MaxHQ": 150
+      }
+    },
+    "itemFood": 671
+  },
+  {
+    "ID": 44843,
+    "LevelEquip": 1,
+    "LevelItem": 720,
+    "Bonuses": {
+      "Perception": {
+        "ID": 73,
+        "Relative": true,
+        "Value": 6,
+        "ValueHQ": 7,
+        "Max": 140,
+        "MaxHQ": 176
+      },
+      "Gathering": {
+        "ID": 72,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 672
   }
 ]

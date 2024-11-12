@@ -7724,7 +7724,7 @@
   "1288": {
     "en": "Skywatcher",
     "ja": "天気予報士",
-    "de": "Meteorologin",
+    "de": "Wettervorhersage",
     "fr": "Météorologue"
   },
   "1289": {
@@ -28518,10 +28518,10 @@
     "fr": "Tour du mu"
   },
   "4754": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Starlight Stalls",
+    "ja": "星芒マーケット",
+    "de": "Sternenlicht-Stände",
+    "fr": "Marché des étoiles"
   },
   "4755": {
     "en": "",
@@ -30032,7 +30032,7 @@
   "5006": {
     "en": "Throne of Abundance",
     "ja": "最終区画",
-    "de": "Thron der Fülle",
+    "de": "Prunkvolle Thronkammer",
     "fr": "Dernière salle"
   },
   "5007": {
@@ -30744,76 +30744,76 @@
     "fr": "Salle d'audience imaginée"
   },
   "5125": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Fold",
+    "ja": "ザ・フォールド",
+    "de": "Wolfspferch (The Fold)",
+    "fr": "La Louverie (The Fold)"
   },
   "5126": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Yuweyawata",
+    "ja": "ユウェヤーワータ",
+    "de": "Yuweyawata",
+    "fr": "Yuweyawata"
   },
   "5127": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Wawsatenyazeto",
+    "ja": "ワーサテニャデト",
+    "de": "Wawsatenyazeto",
+    "fr": "Wawsatenyazeto"
   },
   "5128": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Crystal Quarry",
+    "ja": "採石場跡",
+    "de": "Elektrobgrube ",
+    "fr": "Carrière de cristal"
   },
   "5129": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Soul Center",
+    "ja": "人魂管理室",
+    "de": "Seelenaufbewahrung",
+    "fr": "Centre de gestion des âmes"
   },
   "5130": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Dust Yoke",
+    "ja": "砂兎の封牢",
+    "de": "Gefängnis des Leporiden",
+    "fr": "Clapier tempétueux"
   },
   "5131": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dryland Shroud",
+    "ja": "冥漠の森",
+    "de": "Verschwommener Wald",
+    "fr": "Forêt du crépuscule"
   },
   "5132": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Yuweyawata Village",
+    "ja": "ユウェヤーワータ廃村",
+    "de": "Überreste Yuweyawatas",
+    "fr": "Ruines de Yuweyawata"
   },
   "5133": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Kanilokka Corpus",
+    "ja": "カニロッカ技研",
+    "de": "Kanilokkas Institut",
+    "fr": "Institut Kanilokka"
   },
   "5134": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Jackrabbit's Run",
+    "ja": "砂紋の戦野",
+    "de": "Versiegelte Sande",
+    "fr": "Furie de l'Oreillard"
   },
   "5135": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shrouded Laboratory",
+    "ja": "機密研究棟",
+    "de": "Abteilung für experimentelle Forschung EG",
+    "fr": "Laboratoire secret"
   },
   "5136": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bedrock",
+    "ja": "機密研究棟地下",
+    "de": "Abteilung für experimentelle Forschung U1",
+    "fr": "Sous-sol du laboratoire secret"
   },
   "5137": {
     "en": "",
@@ -30822,94 +30822,94 @@
     "fr": ""
   },
   "5138": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Jeuno: The First Walk",
+    "ja": "ジュノ：ザ・ファーストウォーク",
+    "de": "Jeuno: Die erste Etappe",
+    "fr": "Jeuno - La première perambulation"
   },
   "5139": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Jeuno",
+    "ja": "ジュノ下層",
+    "de": "Unter-Jeuno",
+    "fr": "Bas Jeuno"
   },
   "5140": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Boyahda Tree",
+    "ja": "ボヤーダ樹",
+    "de": "Boyahda-Baum",
+    "fr": "Arbre de Boyahda"
   },
   "5141": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ru'Aun Gardens",
+    "ja": "ル・オンの庭",
+    "de": "Ru'Aun-Gärten",
+    "fr": "Jardins de Ru'Aun"
   },
   "5142": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "La'Loff Amphitheater",
+    "ja": "ラ・ロフの劇場",
+    "de": "La'Loff-Amphitheater",
+    "fr": "Amphithéâtre de La'Loff"
   },
   "5143": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Castle Zvahl",
+    "ja": "ズヴァール城",
+    "de": "Zvahl-Schloss",
+    "fr": "Château Zvahl"
   },
   "5144": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Throne Room",
+    "ja": "王の間",
+    "de": "Thronsaal",
+    "fr": "Salle du trône"
   },
   "5145": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Jeuno",
+    "ja": "ジュノ下層",
+    "de": "Unter-Jeuno",
+    "fr": "Bas Jeuno"
   },
   "5146": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Boyahda Tree",
+    "ja": "ボヤーダ樹",
+    "de": "Boyahda-Baum",
+    "fr": "Arbre de Boyahda"
   },
   "5147": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ru'Aun Gardens",
+    "ja": "ル・オンの庭",
+    "de": "Ru'Aun-Gärten",
+    "fr": "Jardins de Ru'Aun"
   },
   "5148": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Castle Zvahl",
+    "ja": "ズヴァール城",
+    "de": "Zvahl-Schloss",
+    "fr": "Château Zvahl"
   },
   "5149": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Market Bridge",
+    "ja": "市場橋",
+    "de": "Marktbrücke",
+    "fr": "Pont du marché"
   },
   "5150": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Grand Dais",
+    "ja": "闘舞台",
+    "de": "Kampfplatz",
+    "fr": "Estrade des guerriers"
   },
   "5151": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dragon's Aery",
+    "ja": "龍のねぐら",
+    "de": "Drachen-Nest",
+    "fr": "Volière aux dragons"
   },
   "5152": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "La'Loff Amphitheater",
+    "ja": "ラ・ロフの劇場",
+    "de": "La'Loff-Amphitheater",
+    "fr": "Amphithéâtre de La'Loff"
   },
   "5153": {
     "en": "",
@@ -30918,10 +30918,10 @@
     "fr": ""
   },
   "5154": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Yuweyawata",
+    "ja": "ユウェヤーワータ",
+    "de": "Yuweyawata",
+    "fr": "Yuweyawata"
   },
   "5155": {
     "en": "",
