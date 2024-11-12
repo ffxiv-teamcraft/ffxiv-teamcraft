@@ -73114,7 +73114,7 @@
       "de": "Den Auftrag „Der mächtigste Schild“ abgeschlossen.",
       "ja": "クエスト「打倒！ シャルトフィット盗賊団」をコンプリートする",
       "fr": "Accomplir la quête “Mauvais cru pour Chalteaufite”.",
-      "zh": "完成任务“打倒！沙尔托菲特盗贼团”。"
+      "zh": "完成任务“打倒！沙尔托菲特盗贼团！”。"
     },
     "item": 0,
     "title": 0
@@ -74001,11 +74001,13 @@
     "de": "Jäger des verborgenen Schatzes I",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク1",
     "fr": "Visiteur du cénote Ja Ja Gural I",
+    "zh": "深入天坑1",
     "description": {
       "en": "Raid Cenote Ja Ja Gural.",
       "de": "1 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに初めて侵入する",
-      "fr": "Pénétrer 1 fois dans le cénote Ja Ja Gural."
+      "fr": "Pénétrer 1 fois dans le cénote Ja Ja Gural.",
+      "zh": "初次入侵加加财富天坑。"
     },
     "item": 0,
     "title": 749
@@ -74018,11 +74020,13 @@
     "de": "Jäger des verborgenen Schatzes II",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク2",
     "fr": "Visiteur du cénote Ja Ja Gural II",
+    "zh": "深入天坑2",
     "description": {
       "en": "Raid Cenote Ja Ja Gural 5 times.",
       "de": "5 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに累計5回侵入する",
-      "fr": "Pénétrer 5 fois dans le cénote Ja Ja Gural."
+      "fr": "Pénétrer 5 fois dans le cénote Ja Ja Gural.",
+      "zh": "累计入侵加加财富天坑5次。"
     },
     "item": 0,
     "title": 0
@@ -74035,11 +74039,13 @@
     "de": "Jäger des verborgenen Schatzes III",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク3",
     "fr": "Visiteur du cénote Ja Ja Gural III",
+    "zh": "深入天坑3",
     "description": {
       "en": "Raid Cenote Ja Ja Gural 10 times.",
       "de": "10 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに累計10回侵入する",
-      "fr": "Pénétrer 10 fois dans le cénote Ja Ja Gural."
+      "fr": "Pénétrer 10 fois dans le cénote Ja Ja Gural.",
+      "zh": "累计入侵加加财富天坑10次。"
     },
     "item": 0,
     "title": 0
@@ -74052,11 +74058,13 @@
     "de": "Jäger des verborgenen Schatzes IV",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク4",
     "fr": "Visiteur du cénote Ja Ja Gural IV",
+    "zh": "深入天坑4",
     "description": {
       "en": "Raid Cenote Ja Ja Gural 20 times.",
       "de": "20 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに累計20回侵入する",
-      "fr": "Pénétrer 20 fois dans le cénote Ja Ja Gural."
+      "fr": "Pénétrer 20 fois dans le cénote Ja Ja Gural.",
+      "zh": "累计入侵加加财富天坑20次。"
     },
     "item": 0,
     "title": 750
@@ -74069,11 +74077,13 @@
     "de": "Centnerweise Glück I",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク1",
     "fr": "Maître du cénote Ja Ja Gural I",
+    "zh": "称霸财富天坑1",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural.",
       "de": "1 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを初めて制覇する",
-      "fr": "Conquérir 1 fois le cénote Ja Ja Gural."
+      "fr": "Conquérir 1 fois le cénote Ja Ja Gural.",
+      "zh": "初次称霸加加财富天坑。"
     },
     "item": 0,
     "title": 0
@@ -74086,11 +74096,13 @@
     "de": "Centnerweise Glück II",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク2",
     "fr": "Maître du cénote Ja Ja Gural II",
+    "zh": "称霸财富天坑2",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural 5 times.",
       "de": "5 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを累計5回制覇する",
-      "fr": "Conquérir 5 fois le cénote Ja Ja Gural."
+      "fr": "Conquérir 5 fois le cénote Ja Ja Gural.",
+      "zh": "累计称霸加加财富天坑5次。"
     },
     "item": 0,
     "title": 0
@@ -74103,11 +74115,13 @@
     "de": "Centnerweise Glück III",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク3",
     "fr": "Maître du cénote Ja Ja Gural III",
+    "zh": "称霸财富天坑3",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural 10 times.",
       "de": "10 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを累計10回制覇する",
-      "fr": "Conquérir 10 fois le cénote Ja Ja Gural."
+      "fr": "Conquérir 10 fois le cénote Ja Ja Gural.",
+      "zh": "累计称霸加加财富天坑10次。"
     },
     "item": 0,
     "title": 0
@@ -74120,11 +74134,13 @@
     "de": "Centnerweise Glück IV",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク4",
     "fr": "Maître du cénote Ja Ja Gural IV",
+    "zh": "称霸财富天坑4",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural 20 times.",
       "de": "20 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを累計20回制覇する",
-      "fr": "Conquérir 20 fois le cénote Ja Ja Gural."
+      "fr": "Conquérir 20 fois le cénote Ja Ja Gural.",
+      "zh": "累计称霸加加财富天坑20次。"
     },
     "item": 0,
     "title": 751
@@ -74365,11 +74381,13 @@
     "de": "Elf magische Jahre",
     "ja": "ありがとう11周年！",
     "fr": "Tonnerre de Limsa Lominsa",
+    "zh": "扬帆起航的十一周年",
     "description": {
       "en": "Complete the quest “We Who Are About to Set Sail Salute You.”",
       "de": "Den Auftrag „Unter ein und demselben Himmel“ abgeschlossen.",
       "ja": "クエスト「新生祭と明日への花火」をコンプリートする",
-      "fr": "Accomplir la quête “Commémoration sous les lumières de l'avenir”."
+      "fr": "Accomplir la quête “Commémoration sous les lumières de l'avenir”.",
+      "zh": "完成任务“新生庆典与迈向明日的烟花”。"
     },
     "item": 0,
     "title": 0
@@ -74401,11 +74419,13 @@
     "de": "",
     "ja": "",
     "fr": "",
+    "zh": "赞美白色土龙大人",
     "description": {
       "en": "",
       "de": "",
       "ja": "",
-      "fr": ""
+      "fr": "",
+      "zh": "完成任务“巳蛇百问降神节”。"
     },
     "item": 0,
     "title": 0
@@ -74475,11 +74495,13 @@
     "de": "Episches Tor des Arkadion I",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク1",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion I",
+    "zh": "完全称霸登天斗技场轻量级1",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier (Savage).",
       "de": "Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 1 fois."
+      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 1 fois.",
+      "zh": "成功挑战阿卡狄亚零式登天斗技场。"
     },
     "item": 0,
     "title": 0
@@ -74492,11 +74514,13 @@
     "de": "Episches Tor des Arkadion II",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク2",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion II",
+    "zh": "完全称霸登天斗技场轻量级2",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を計5回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 5 fois."
+      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 5 fois.",
+      "zh": "累计成功挑战阿卡狄亚零式登天斗技场轻量级5次。"
     },
     "item": 0,
     "title": 0
@@ -74509,11 +74533,13 @@
     "de": "Episches Tor des Arkadion III",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク3",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion III",
+    "zh": "完全称霸登天斗技场轻量级3",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を計10回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 10 fois."
+      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 10 fois.",
+      "zh": "累计成功挑战阿卡狄亚零式登天斗技场轻量级10次。"
     },
     "item": 0,
     "title": 0
@@ -74597,7 +74623,7 @@
   "3582": {
     "id": 3582,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Top Tier: Season Twelve",
     "de": "Kristallkönig (12. Saison)",
     "ja": "コンフリクトの王者：シーズン12",
@@ -74614,7 +74640,7 @@
   "3583": {
     "id": 3583,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Crystal in the Rough: Season Twelve",
     "de": "Kristallfürst (12. Saison)",
     "ja": "コンフリクトの勇者：シーズン12",
@@ -74631,7 +74657,7 @@
   "3584": {
     "id": 3584,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Ranked and Filed: Season Twelve",
     "de": "Kristallkämpfer (12. Saison)",
     "ja": "コンフリクトの入賞者：シーズン12",
@@ -74648,7 +74674,7 @@
   "3585": {
     "id": 3585,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Top Tier: Season Thirteen",
     "de": "Kristallkönig (13. Saison)",
     "ja": "コンフリクトの王者：シーズン13",
@@ -74665,7 +74691,7 @@
   "3586": {
     "id": 3586,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Crystal in the Rough: Season Thirteen",
     "de": "Kristallfürst (13. Saison)",
     "ja": "コンフリクトの勇者：シーズン13",
@@ -74682,7 +74708,7 @@
   "3587": {
     "id": 3587,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Ranked and Filed: Season Thirteen",
     "de": "Kristallkämpfer (13. Saison)",
     "ja": "コンフリクトの入賞者：シーズン13",
@@ -74699,7 +74725,7 @@
   "3588": {
     "id": 3588,
     "icon": "/i/062000/062978.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Pelu Proponent I",
     "de": "Per du mit den Pelupelu I",
     "ja": "ペルペル族：ランク1",
@@ -74716,7 +74742,7 @@
   "3589": {
     "id": 3589,
     "icon": "/i/062000/062978.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Pelu Proponent II",
     "de": "Per du mit den Pelupelu II",
     "ja": "ペルペル族：ランク2",
@@ -74733,7 +74759,7 @@
   "3590": {
     "id": 3590,
     "icon": "/i/062000/062978.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Pelu Proponent III",
     "de": "Per du mit den Pelupelu III",
     "ja": "ペルペル族：ランク3",
@@ -74750,7 +74776,7 @@
   "3591": {
     "id": 3591,
     "icon": "/i/062000/062978.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Extra-special Advisor",
     "de": "Jaja-Sager",
     "ja": "トラルトラベルアドバイザー",
@@ -74954,7 +74980,7 @@
   "3603": {
     "id": 3603,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Mapping the Realm: Yuweyawata Field Station",
     "de": "Kartograph: Yuweyawata",
     "ja": "ユウェヤーワータを踏破せし者",
@@ -74971,7 +74997,7 @@
   "3604": {
     "id": 3604,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Mapping the Realm: Jeuno: The First Walk",
     "de": "Kartograph: Jeuno: Die erste Etappe",
     "ja": "ジュノ：ザ・ファーストウォークを踏破せし者",
@@ -74988,7 +75014,7 @@
   "3605": {
     "id": 3605,
     "icon": "/i/000000/000317.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Long Lived the Queen",
     "de": "Ender der Endlosigkeit",
     "ja": "永久なる女王を狩りし者",
@@ -75005,7 +75031,7 @@
   "3606": {
     "id": 3606,
     "icon": "/i/064000/064875.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Home Away from Home",
     "de": "Jeuno: Die erste Etappe",
     "ja": "ジュノ：ザ・ファーストウォークを制覇せし者",
@@ -75022,7 +75048,7 @@
   "3607": {
     "id": 3607,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Crossroads",
     "de": "Schicksalskreuzung",
     "ja": "未知との邂逅",
@@ -75073,7 +75099,7 @@
   "3610": {
     "id": 3610,
     "icon": "/i/001000/001102.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Go Big on the Trail I",
     "de": "Kapitalbeschaffung auf Tural I",
     "ja": "黄金の太公望：ランク1",
@@ -75090,7 +75116,7 @@
   "3611": {
     "id": 3611,
     "icon": "/i/058000/058804.png",
-    "patch": 1,
+    "patch": 98,
     "en": "Punch in Every Stall",
     "de": "Strahlender Markt",
     "ja": "ホッとあたたまるマーケット",
@@ -75107,7 +75133,7 @@
   "3612": {
     "id": 3612,
     "icon": "/i/064000/064457.png",
-    "patch": 1,
+    "patch": 98,
     "en": "満開のブーケを一緒に",
     "de": "満開のブーケを一緒に",
     "ja": "満開のブーケを一緒に",
@@ -75124,7 +75150,7 @@
   "3613": {
     "id": 3613,
     "icon": "/i/057000/057182.png",
-    "patch": 1,
+    "patch": 98,
     "en": "あなたの笑顔にお仕えします",
     "de": "Herzensdiener",
     "ja": "あなたの笑顔にお仕えします",
@@ -75141,7 +75167,7 @@
   "3614": {
     "id": 3614,
     "icon": "/i/058000/058042.png",
-    "patch": 1,
+    "patch": 98,
     "en": "傘が彩る雨模様",
     "de": "Mit Schirm und Charme",
     "ja": "傘が彩る雨模様",
