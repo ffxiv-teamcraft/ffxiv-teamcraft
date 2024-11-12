@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.17...v11.3.18) (2024-11-12)
+
+
+### Features
+
+* **data:** update for cn patch-7.05 ([f5166cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5166cc8e3ca43b7c9e7d22f392f90efb2579d07))
+* **db:** added patch data for search and exploration ([51a8ef1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51a8ef13778280e9d3cd12dab380a93c1799e071))
+
+
+### Bug Fixes
+
+* **simulator:** recipe progress and durability values ([64e1777](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64e1777b3d01f706324a3d1f50ea7c241d18f981))
+
 ### [11.3.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.16...v11.3.17) (2024-11-12)
 
 
