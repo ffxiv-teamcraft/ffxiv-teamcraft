@@ -2513,7 +2513,7 @@
       "en": "From the ruins of the Garlean imperial palace rises the Tower of Babil, a monstrous edifice constructed by Fandaniel and Zenos's enthralled hordes. While its exact purpose has yet to be ascertained, it is here that the would-be orchestrators of the Final Days await the Warrior of Light, who now spearheads a daring mission to infiltrate the tower and vanquish the Telophoroi once and for all. ",
       "ja": "イルサバード派遣団と共に、帝都ガレマルドに足を踏み入れた「暁」の一行は、天高くそびえ立つ漆黒の巨塔を目にする。かつて皇帝の宮殿であり、世界に冠たる大帝国の中枢でもあった魔導城は、今や「バブイルの塔」と呼ばれるテロフォロイの拠点と成り果てていたのだ。終末を呼び込まんとするゼノス、そしてファダニエルらの凶行を阻止すべく、冒険者たちは潜入を決意する。今こそ魔導列車に乗り込み、塔の上層を目指せ！",
       "de": "Gemeinsam mit dem Ilsabard-Korps haben sich die Mitglieder des Bundes durch Garlemalds eisige Weiten gekämpft und stehen nun vor einem Turm, der dunkel und bedrohlich in den Himmel ragt: Der Turm von Babil. Gebaut von Hand der Telophoroi, die das Magitek-Schloss des Kaisers, einstiger Mittelpunkt des garleischen Reiches, in ihre neue Machtzentrale umgewandelt haben. Zenos und Fandaniel, die von hier aus das Ende der Welt einläuten wollen, muss Einhalt geboten werden.  Also beschließt ihr, mithilfe des Magitek-Zugs bis zur Spitze des Turmes vorzudringen!",
-      "fr": "Les Héritiers, accompagnés de la délégation d'Ilsabard, sont arrivés jusqu'à la capitale de Garlemald, où une étrange et inquiétante spire les a accueillis. Ce bâtiment, autrefois symbole de la prospérité de l'empire, est devenue la base des Télophores, qui l'ont baptisé la “tour de Babil”. Avec l'aide de vos amis, vous avez décidé d'infiltrer le bâtiment via le chemin de fer souterrain afin de mettre un terme aux machinations de Zenos et Fandaniel."
+      "fr": "Les Héritiers, accompagnés de la délégation d'Ilsabard, sont arrivés jusqu'à la capitale de Garlemald, où une étrange et inquiétante spire les a accueillis. Ce bâtiment, autrefois symbole de la prospérité de l'Empire, est devenu la base des Télophores, qui l'ont baptisé la “tour de Babil”. Avec l'aide de vos amis, vous avez décidé d'infiltrer le bâtiment via le chemin de fer souterrain afin de mettre un terme aux machinations de Zenos et Fandaniel."
     },
     "members": {
       "HealersPerParty": 1,
@@ -3056,7 +3056,7 @@
     "description": {
       "en": "Zoraal Ja retreats to the dome in Yyasulani, but not before laying siege to his home and slaying his own father. This foul deed cannot go unpunished, and so Wuk Lamat lays plans to pierce the dome and pursue him. To that end, the engineers of Xak Tural Railing refit their ceruleum-powered train christened the Dawnblazer, and after avoiding fire from Zoraal Ja's forces, successfully send it careening into the fortress bridging the dome with the outside world. With the path forward now open, the battle for Tuliyollal begins as you and your companions take your first bold steps into enemy territory.",
       "ja": "民を殺し、父を弑し、祖国トライヨラに宣戦布告したゾラージャを追い、ウクラマトと冒険者たち一行はヤースラニ荒野を覆う「ドーム」への侵入を決意する。<br>XTRR社の協力を得て青燐機関車を改造、爆弾列車「ドーンブレイザー号」を完成させた一行は、決死の覚悟で線路上に繋がる敵基地施設への突撃を敢行。その防備に文字通りに風穴を開けると、ドーム内に通じるであろう施設内部を目指す。夜明けを告げる青き炎を狼煙に、故郷を護るための戦いが今、始まる！",
-      "de": "Er mordete ihr Volk, ihren Vater und erklärte ihrem Land den Krieg. Doch Wuk Lamat wäre nicht die Krone des Mutes, wenn sie Zoraal Ja einfach gewähren ließe. Zusammen mit dir und euren Kameraden geht sie in die Offensive und beschließt, den Kampf in die Kuppel zu tragen. Mithilfe der Eisenbahnfanatiker von XTRR und Verbündeten aus ganz Tuliyollal gelingt euch der Bau eines wahren Bombenexpresses, der mit einem großen Knall ein riesiges Loch in die Befestigungen des Feindes reißt. Der Weg ins Innere der Kuppel steht euch somit nun offen. Aber verkünden die blauen Flammen entlang eures Pfades auch wirklich den Beginn der Morgendämmerung für Tuliyollal? Es liegt nun an dir, das Blatt zu wenden und es Zoraal Ja für seine Gräueltaten heimzuzahlen! ",
+      "de": "Er mordete ihr Volk, ihren Vater und erklärte ihrem Land den Krieg. Doch Wuk Lamat wäre nicht die Krone des Mutes, wenn sie Zoraal Ja einfach gewähren ließe. Zusammen mit dir und euren Kameraden geht sie in die Offensive und beschließt, den Kampf in die Kuppel zu tragen. Mithilfe der Eisenbahnfanatiker der Xak Tural Eisenbahngesellschaft und Verbündeten aus ganz Tuliyollal gelingt euch der Bau eines wahren Bombenexpresses, der mit einem großen Knall ein riesiges Loch in die Befestigungen des Feindes reißt. Der Weg ins Innere der Kuppel steht euch somit nun offen. Aber verkünden die blauen Flammen entlang eures Pfades auch wirklich den Beginn der Morgendämmerung für Tuliyollal? Es liegt nun an dir, das Blatt zu wenden und es Zoraal Ja für seine Gräueltaten heimzuzahlen! ",
       "fr": "Désireux de retrouver la trace de Zoraal Ja, après qu'il a attaqué Tuliyollal, tué son propre père et déclaré son intention d'envahir le Tural, vos compagnons et vous-même avez décidé de vous infiltrer dans le mystérieux dôme apparu au beau milieu de la Yyasulani. À l'aide de la locomotive de la compagnie de chemin de fer locale, renforcée et renommée pour l'occasion “l'Explaurore”, vous avez ouvert une brèche dans le rempart de la base ennemie qui doit vous permettre d'accéder au dôme. Frayez-vous un passage au forceps dans cette installation&nbsp;!"
     },
     "members": {
@@ -3139,6 +3139,37 @@
     "contentText": [
       38362,
       38300
+    ]
+  },
+  "100": {
+    "id": 100,
+    "en": "Yuweyawata Field Station",
+    "ja": "廃地討究 ユウェヤーワータ",
+    "de": "Forschungsstation Yuweyawata",
+    "fr": "Le centre de recherche de Yuweyawata",
+    "description": {
+      "en": "Before the dome appeared, in the northern region of what is now Heritage Found, a Tonawawtan village was terrorized by a tural vidraal. Zoraal Ja himself led the Landsguard in an effort to quell the beast's boundless fury, yet while the First Promise returned in triumph, few know what became of the village and its people. In your search for clues as to the identity of Gulool Ja's mother, you learn that Zoraal Ja visited the region many times over the years, and that it may be home to a secret research facility. And so you and yours attempt to retrace the King of Resolve's steps and unearth a buried past...",
+      "ja": "ヘリテージファウンドの北部には、トナワータ族が住まう集落が存在した。そこはかつて、まだ一帯が障壁に覆われる前、トライヨラの第一王子ゾラージャが、勇連隊を率いてトラルヴィドラールと激戦を繰り広げた地でもあった。母について知りたいと願うグルージャは、冒険者たちとともに、かの地を訪れることに。知られざる武王の足跡を辿るべく、放棄された地を踏破せよ！",
+      "de": "Im Norden des Ewigen Erbes befand sich einst eine kleine friedliche Siedlung. Zu einer Zeit, als die Kuppel noch nicht über den Köpfen seiner Bewohner ragte, soll es sich dort zugetragen haben, dass Prinz Zoraal Ja, Kommandant der Landsgarde, mit einigen seiner Gefolgsleute einen Tural Vidraal zur Strecke brachte. Doch die von dir und deinen Freunden zusammengetragenen Hinweise zeigen, dass der blaugeschuppte Mamool Ja, selbst nachdem die Bestie besiegt war, jenes Fleckchen Erde regelmäßig frequentierte. Den Spuren seiner Mutter folgend treibt es nun auch den jungen Gulool Ja mit dir und deinen Freunden in den verlassenen Winkel Alexandrias, in der Hoffnung, dass ihn die Reise in die Vergangenheit mehr über ihren Verbleib offenbaren möge.",
+      "fr": "Au nord de L'Hoirie recouvrée se situe un hameau tonawawta, que le prince Zoraal Ja, alors capitaine de la Légion de l'Aurore, aurait sauvé de la menace d'un Tural vidraal. L'endroit est aujourd'hui abandonné, toutefois il abriterait en son sein encore bien des secrets. Accompagnez le petit Gulool Ja, en quête de réponses sur ses parents, aux confins du dôme, sur les traces de l'ancien Aurarque de la Force."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112584.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 690,
+    "sync": 100,
+    "exp": 0,
+    "map": 943,
+    "contentText": [
+      40922,
+      40900
     ]
   },
   "5001": {
@@ -5289,6 +5320,32 @@
       40500
     ]
   },
+  "5081": {
+    "id": 5081,
+    "en": "The Warmth of Family",
+    "ja": "王の家族",
+    "de": "Ein Land, eine Familie",
+    "fr": "La famille de l'Aurarque",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 860,
+    "contentText": [
+      41049,
+      41000
+    ]
+  },
   "10001": {
     "id": 10001,
     "en": "Basic Training: Enemy Parties",
@@ -6167,6 +6224,85 @@
     "contentText": [
       12130,
       12100
+    ]
+  },
+  "15017": {
+    "id": 15017,
+    "en": "React to Attack Markers",
+    "ja": "マーカーが出る攻撃に対処しよう！",
+    "de": "Achte auf Attackenmarkierungen!",
+    "fr": "Réagir à des marquages",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061823.png",
+    "banner": "/i/112000/112141.png",
+    "gamePatch": 66,
+    "contentType": 20,
+    "levelReq": 49,
+    "ilvlReq": 0,
+    "sync": 49,
+    "exp": 0,
+    "map": 942,
+    "contentText": [
+      41158,
+      41100
+    ]
+  },
+  "15018": {
+    "id": 15018,
+    "en": "React to Floor Markers",
+    "ja": "地面に予兆が出る攻撃に対処しよう！",
+    "de": "Achte auf Geländemarkierungen!",
+    "fr": "Réagir à des indications au sol",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061823.png",
+    "banner": "/i/112000/112141.png",
+    "contentType": 20,
+    "levelReq": 49,
+    "ilvlReq": 0,
+    "sync": 49,
+    "exp": 0,
+    "map": 942,
+    "contentText": [
+      41262,
+      41200
+    ]
+  },
+  "15019": {
+    "id": 15019,
+    "en": "React to Advanced Visual Indicators",
+    "ja": "さまざまな攻撃に対処しよう！",
+    "de": "Stelle dich allerlei Angriffsmanövern!",
+    "fr": "Réagir à des mécaniques variées",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061823.png",
+    "banner": "/i/112000/112141.png",
+    "contentType": 20,
+    "levelReq": 49,
+    "ilvlReq": 0,
+    "sync": 49,
+    "exp": 0,
+    "map": 942,
+    "contentText": [
+      41358,
+      41300
     ]
   },
   "20001": {
@@ -7839,7 +7975,7 @@
     "description": {
       "en": "Upon hearing of your final encounter with Yotsuyu─and the primal to whom she surrendered her will─the wandering minstrel composes a tanka tinged with sorrow. Had Yotsuyu been born in a different time, a different place, would she have lived a simple life unsullied by acts of violence and cruelty? Or were the seeds of villainy always there, their growth merely hastened by circumstance? These questions bring to mind Tsukuyomi's overwhelming malice, your memories now suffused by the tragedy of the minstrel's verse...",
       "ja": "『半月の　月下に咲きし　白き華<br>　影に呑まれて　夜見に散るなり』<br>夜神ツクヨミと化したヨツユの顛末を伝え聞いた異邦の詩人は、散った魂を想いながら、新たな短歌を詠んだ。それは、生きる時代が違えば、ありふれた人生を送っていたはずの女性が、怨念に呑まれて異形と化してしまったことへの悲しみが、強すぎるほどに込められていた。その悲嘆の歌を聴きながら、光の戦士は今、夜神ツクヨミとの戦いを追体験する。",
-      "de": "<i>„Im kalten Mondlicht<br>Fallen weiße Blüten still<br>auf finsteren Grund.“</i><br>Der Fahrende Sänger sieht in der zum Primae Tsukuyomi verwandelten Yotsuyu eine tragische Gestalt. Was wäre aus dem einsamen, hilflosen Mädchen geworden, wenn sie in einer liebevollen Familie aufgewachsen wäre? Seine traurige, mitfühlsame Dichtung, die zwischen den Zeilen auch Kritik an der domanischen Gesellschaft anklingen lässt, versetzt dich zurück in den Kampf gegen die Göttin der Nacht und des Mondes, brutaler und unbarmherziger als er je war.",
+      "de": "<i>Im kalten Mondlicht<br>Fallen weiße Blüten still<br>auf finsteren Grund.</i><br><br>Der Fahrende Sänger sieht in der zum Primae Tsukuyomi verwandelten Yotsuyu eine tragische Gestalt. Was wäre aus dem einsamen, hilflosen Mädchen geworden, wenn sie in einer liebevollen Familie aufgewachsen wäre? Seine traurige, mitfühlsame Dichtung, die zwischen den Zeilen auch Kritik an der domanischen Gesellschaft anklingen lässt, versetzt dich zurück in den Kampf gegen die Göttin der Nacht und des Mondes, brutaler und unbarmherziger als er je war.",
       "fr": "<i>Sous la demi-lune, une fleur couleur de givre, s'épanouit un soir.<br>Étouffée par les ténèbres, elle se flétrit avant l'aube.</i><br>Tel est le <i>tanka</i> que le ménestrel errant a composé après que vous lui avez raconté votre combat contre Tsukuyomi. Pour lui, Yotsuyu aurait pu s'épanouir, fût-elle née à une époque moins sombre, mais tristement, le destin voulut qu'elle se noie dans sa rancœur. Les paroles du ménestrel mettent en exergue ce sentiment alors que vous vous remémorez l'affrontement."
     },
     "members": {
@@ -7903,7 +8039,7 @@
     "description": {
       "en": "Ever eager to put his lyrical skills to the proof, the wandering minstrel has crafted yet another tanka, this time deriving inspiration from your pitched battle against the auspice Suzaku deep beneath Hells' Lid. Knowing full well the suggestive power of his words, you once more close your eyes and set your mind adrift in the memories of that day, augmented by his dramatic flair...",
       "ja": " 『夕間暮れ　己が焔に　影を見る<br>　千年の刻　想い募りて』<br>千年という長き刻に思いを馳せながら、異邦の詩人が新たに詠んだ短歌。それは、獣の身にありながら人に恋した瑞獣の想いを詠ったものであった。極僅かな言葉の内に込められた、朱雀への想いと無限の創造力が、聞く者の心に響き渡る。光の戦士は今、朱雀との征魂の儀式を追体験する。",
-      "de": "Abenddämmerung.<br>Schattentanzende Flammen.<br>Ewig die Liebe.<br><br>Inspiriert von einer Leidenschaft, die bereits über tausend Jahre währt, verfasst der Fahrende Sänger ein weiteres Tanka. Die tragische Geschichte eines Göttervogels, der einen Sterblichen liebt, blitzt auf in diesen Zeilen, die komprimiert auf das Wesentliche und beflügelt von grenzenloser Fantasie einen epochalen Kampf in den Herzen der Zuhörer entbrennen lassen.",
+      "de": "<i>Abenddämmerung.<br>Schattentanzende Flammen.<br>Ewig die Liebe.</i><br><br>Inspiriert von einer Leidenschaft, die bereits über tausend Jahre währt, verfasst der Fahrende Sänger ein weiteres Tanka. Die tragische Geschichte eines Göttervogels, der einen Sterblichen liebt, blitzt auf in diesen Zeilen, die komprimiert auf das Wesentliche und beflügelt von grenzenloser Fantasie einen epochalen Kampf in den Herzen der Zuhörer entbrennen lassen.",
       "fr": "<i>À la tombée de la nuit, l'oiseau au plumage de feu, chante sa tendre élégie,<br>Une douleur millénaire, aujourd'hui tombe en cendres.</i><br>Ce <i>tanka</i> du ménestrel errant évoque votre combat contre Suzaku à travers le prisme de la poésie orientale. Malgré sa brièveté, vous sentez ressurgir en vous, avec encore plus de force que dans votre souvenir, la passion tragique de l'Oiseau vermillon pour son bien-aimé."
     },
     "members": {
@@ -9169,6 +9305,37 @@
     "contentText": [
       40423,
       40400
+    ]
+  },
+  "20099": {
+    "id": 20099,
+    "en": "The Minstrel’s Ballad: Sphene's Burden",
+    "ja": "極エターナルクイーン討滅戦",
+    "de": "Gok Tajaal - Ewige Königin",
+    "fr": "Interphos (extrême)",
+    "description": {
+      "en": "With harp cradled in his arms, the wandering minstrel sings a sorrowful song of a recreated queen. Helpless to defy the purpose she was given, this simulacrum sought to preserve the memories of her subjects by taking the lives of innocents in other reflections. Though she met her end by your hands, had she been further along her ill-fated path by the time of your confrontation, might she have proven unstoppable and gone on to wreak untold death and devastation? Such questions play on your mind as the minstrel's verse bears you away to a world of the imagination, where you once again come face-to-face with the dread entity known as Queen Eternal...",
+      "ja": "異邦の詩人は謳う。「永遠の務め」との信条を掲げ、魂なき記憶の民を護らんとした女王のことを。慈愛を受け継いだがゆえに袋小路へ入り込んでしまったシステムは、異なる世界から命を奪うことで黄金の未来を掴まんとした。その試みが進み、より多くの命を得ていたとしたら、果たして彼女が望んだ結末へと路は続いたのだろうか――。光の戦士は今、エターナルクイーンとの戦いを追体験する。",
+      "de": "Zärtliche Harmonien umgeben dich und führen ein in die Gefühlswelt einer Königin, so rein und pflichterfüllt, sie vergaß gar, sich selbst zu schätzen. So opferte sie sich für die seelenlosen Erinnerungen längst vergangener Existenzen und drohte, statt Liebe endlose Verzweiflung über die Welt zu bringen&nbsp;- alles zum Wohle ihres Volkes, so glaubte sie. Was wohl geschehen wäre, wenn sie mit dieser Missetat durchgekommen und ihre Seelenernte geglückt wäre? Hätte das Schicksal ihrem verzweifelten Verlangen nach Ewigkeit geantwortet? Je mehr du dich in solch Grübeleien vertiefst, desto tiefer saugen dich die Melodien des Sängers in ihren Bann, bis du dich der Ewigen Königin schließlich erneut gegenüberstehen siehst&nbsp;...",
+      "fr": "Bouleversé par le destin tragique de la reine Sphene qui, liée malgré elle à sa devise “Éternel devoir”, fut contrainte de protéger envers et contre tout ses précieux sujets, ou plutôt l'illusion qui en subsistait, le ménestrel errant a laissé libre cours à son inspiration. Que se serait-il passé si vous n'aviez pas mis fin à la course folle du système central de La Mémoire vivante et permis à une aurore dorée de se lever sur un monde enfin apaisé&nbsp;? Affrontez à nouveau la Reine Éternité dans une joute plus intense que jamais durant laquelle l'espace et la gravité ne répondent à aucune des loi que vous avez connues jusqu'ici."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112588.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 710,
+    "sync": 100,
+    "exp": 0,
+    "map": 928,
+    "contentText": [
+      41626,
+      41600
     ]
   },
   "25001": {
@@ -13584,7 +13751,7 @@
     "fr": "Poids mi-lourds CCA - match 1 (sadique)",
     "description": {
       "en": "By his appropriately timed interjections, Gabbro's attention appears wholly rapt on you as you speak of your hair-raising bout with Black Cat─yet you cannot help but notice his curiously furrowed brow. How liberal does he intend to be with his depiction of the battle─what precisely does he see in his mind's eye? Intrigued by the possibilities, you begin to imagine the deadly clash anew... ",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13646,7 +13813,7 @@
     "fr": "Poids mi-lourds CCA - match 2 (sadique)",
     "description": {
       "en": "With her irresistible charms, your victory against Honey B. Lovely was hard-fought. Yet Gabbro's words linger in your mind: what if the sweet songstress revealed a side of herself more vile than you had ever imagined? How might the battle have gone then...?",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13708,7 +13875,7 @@
     "fr": "Poids mi-lourds CCA - match 3 (sadique)",
     "description": {
       "en": "Gabbro invites you to picture the Brute Bomber in a somehow even more degenerate light─one in which the now uncrowned champion would readily stoop to lower lows to seize victory. Surely, such an engagement would be more explosive than the last...",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13770,7 +13937,7 @@
     "fr": "Poids mi-lourds CCA - match 4 (sadique)",
     "description": {
       "en": "Your match against the neoteric witch came to an abrupt end when the former heavyweight fighter decided to flee─but what if she hadn't? Inspired by a muse of your own from Gabbro's words, your thoughts drift back to that imaginary city of her creation once more, where you envision an altogether novel struggle taking place...",
-      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガプロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガプロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はライトヘビー級で経験した激闘の数々を語って聞かせた。<br>ところが一流の漫画家であるガブロは、耳にしたままを作品にするのではなく、さらに激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるつもりだという。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
       "de": "Gabbro ist in ganz Lösung Neun für seine Bildergeschichten bekannt, für die er am liebsten die Kämpfe des Arkadions als Inspiration verwendet. Daher bittet er dich, ihm von deinen Erlebnissen in der Halbschwergewichtsliga zu berichten. Im eurem Gespräch erfährst du, dass Gabbro die Kämpfe nie unverändert in seine Geschichten übernimmt, sondern sie mit Fantasie und Kreativität ausschmückt, um sie noch spannender und intensiver darzustellen. Angeregt von seinen leidenschaftlichen Ideen spürst du, wie sich auch deine Gedanken auf Reisen begeben und Bilder malen, halb Realität und halb Fiktion&nbsp;...",
       "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids mi-lourds de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus captivants et titanesques. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
     },
@@ -13791,6 +13958,37 @@
     "contentText": [
       40337,
       40300
+    ]
+  },
+  "30144": {
+    "id": 30144,
+    "en": "Jeuno: The First Walk",
+    "ja": "ジュノ：ザ・ファーストウォーク",
+    "de": "Jeuno: Die erste Etappe",
+    "fr": "Jeuno - La première perambulation",
+    "description": {
+      "en": "Strange happenings in Yak T'el have cast a pall of unease over the forest. After an armor-clad stranger was found unconscious in the Skydeep Cenote, bereft of memory, the shade of Gulool Ja Ja was spotted stalking the woods with a young girl. What appeared to be unrelated events take a turn when Bakool Ja Ja confronts the Dawnservant's shadowy impostor. The armor-clad stranger recognizes the girl as Prishe, a friend seemingly turned enemy, who retreats with Gulool Ja Ja's shade into the blinding light of an otherworldly rift. In search of answers, and to safeguard Tural, Bakool Ja Ja bids you join him as he follows the incongruous pair into the unknown.",
+      "ja": "記憶を失った冒険者らしき男性が現れたことを皮切りに、ヤクテル樹海にて立て続けに不可思議な事件が巻き起こる。何者かによって紡がれたグルージャジャの幻影による襲撃、そして、「プリッシュ」なる少女を伴った幻影は、謎めいた「光の柱」へと消えてしまう。<br>勇連隊の一員として、襲撃者たちを追うバクージャジャを援護するため、そして「プリッシュ」を友と呼ぶ男の求めに応じ、冒険者は光の向こう側を目指す。",
+      "de": "Ein Abenteurer, der bewusstlos im Himmelstiefen Cenote aufgefunden wurde und sich seit seinem Erwachen an nichts erinnern kann, ist nur der Anfang einer Reihe von rätselhaften Vorfällen, die sich im Wald von Yak T'el ereignen. Seit seinem Auftauchen folgt ein merkwürdiges Ereignis auf das nächste: Gulool Ja Jas besiegt geglaubtes Phantom erscheint plötzlich wieder und ist kämpferischer denn je zuvor, gefolgt von einem mysteriösen Mädchen namens Prishe, das dem Abenteurer mit Amnesie seltsam bekannt vorkommt. Auf der Suche nach Antworten betrittst du einen Dimensionsspalt, der ins Ungewisse führt ...",
+      "fr": "Un aventurier ayant perdu la mémoire a été retrouvé dans la forêt de Yak T'el par les Mamool Ja. Depuis son arrivée parmi eux s'enchaînent des événements tous plus étranges les uns que les autres&nbsp;: la réapparition miraculeuse d'une ombre de Gulool Ja Ja plus pugnace que jamais, suivie d'une mystérieuse jeune fille nommée Prishe qui semble familière à l'aventurier amnésique. Désireuse d'obtenir des réponses, vous pénétrez dans une faille interdimensionnelle avec l'inconnu pour seul horizon..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112585.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 695,
+    "sync": 100,
+    "exp": 0,
+    "map": 946,
+    "contentText": [
+      41477,
+      41400
     ]
   },
   "35001": {
@@ -17591,6 +17789,38 @@
     "contentText": [
       24948,
       24900
+    ]
+  },
+  "64009": {
+    "id": 64009,
+    "en": "The Jade Stoa (Unreal)",
+    "ja": "幻白虎征魂戦",
+    "de": "Traumprüfung - Byakko",
+    "fr": "La Clairière de Jade (irréel)",
+    "description": {
+      "en": "The faux commander has a yen for a tale from his native Far East, which prompts you to call to mind the unbridled ferocity of Byakko, one of the Four Lords of legend. Revisit now your grueling encounter with the mighty auspice, and fight to lift the dark cloud that shrouds his heart ere you are overcome by his heavenly gales...",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは東方の瑞獣・白虎との嵐呼ぶ戦い。天つ風に呑まれるのが先か、心の暗雲を晴らすが先か。いま幻の激闘が語られる。",
+      "de": "Sotan findet, dass es schon viel zu lange her ist, seitdem er eine seiner wunderbaren Geschichten zum Besten gegeben hat. Diesmal erinnert er dich an den mächtigen Byakko und lässt die Flammen dieses schicksalsträchtigen Kampfes abermals auflodern.",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Byakko, le légendaire Tigre blanc, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112590.png",
+    "gamePatch": 91,
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 690,
+    "sync": 100,
+    "exp": 0,
+    "map": 450,
+    "contentText": [
+      18613,
+      18600
     ]
   }
 }

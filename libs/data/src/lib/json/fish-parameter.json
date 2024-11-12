@@ -17277,7 +17277,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17289,7 +17289,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17301,7 +17301,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17313,7 +17313,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43668": {
@@ -17324,7 +17324,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43669": {
@@ -17335,7 +17335,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43670": {
@@ -17346,7 +17346,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43671": {
@@ -17357,7 +17357,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43672": {
@@ -17368,7 +17368,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43673": {
@@ -17379,7 +17379,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43674": {
@@ -17390,7 +17390,7 @@
     "mapId": 855,
     "zoneId": 4504,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43675": {
@@ -17401,7 +17401,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17413,7 +17413,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17425,7 +17425,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17437,7 +17437,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17449,7 +17449,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17461,7 +17461,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17473,7 +17473,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17485,7 +17485,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17497,7 +17497,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 9
   },
@@ -17509,7 +17509,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17520,8 +17520,8 @@
     "icon": "/i/028000/028569.png",
     "mapId": 857,
     "zoneId": 4505,
-    "timed": 0,
-    "weathered": 2,
+    "timed": 1,
+    "weathered": 0,
     "stars": 1,
     "folklore": 43884,
     "recordType": 3
@@ -17534,7 +17534,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17546,7 +17546,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17558,7 +17558,7 @@
     "mapId": 857,
     "zoneId": 4505,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17570,7 +17570,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17582,7 +17582,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17594,7 +17594,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17606,7 +17606,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17618,7 +17618,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17630,7 +17630,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17642,7 +17642,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17654,7 +17654,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17666,7 +17666,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17678,7 +17678,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17690,7 +17690,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17702,7 +17702,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17714,7 +17714,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17726,7 +17726,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17738,7 +17738,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17750,7 +17750,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17762,7 +17762,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17774,7 +17774,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17786,7 +17786,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17798,7 +17798,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17810,7 +17810,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17822,7 +17822,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17834,7 +17834,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -17846,7 +17846,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17857,8 +17857,8 @@
     "icon": "/i/028000/028588.png",
     "mapId": 858,
     "zoneId": 4506,
-    "timed": 0,
-    "weathered": 2,
+    "timed": 1,
+    "weathered": 0,
     "stars": 1,
     "folklore": 43884,
     "recordType": 3
@@ -17871,7 +17871,7 @@
     "mapId": 858,
     "zoneId": 4506,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17883,7 +17883,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17895,7 +17895,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17907,7 +17907,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17919,7 +17919,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17931,7 +17931,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17943,7 +17943,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17955,7 +17955,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17967,7 +17967,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17979,7 +17979,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -17991,7 +17991,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18003,7 +18003,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18015,7 +18015,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18027,7 +18027,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18039,7 +18039,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18051,7 +18051,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18063,7 +18063,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18074,8 +18074,8 @@
     "icon": "/i/028000/028600.png",
     "mapId": 859,
     "zoneId": 4507,
-    "timed": 0,
-    "weathered": 2,
+    "timed": 1,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18087,7 +18087,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18099,7 +18099,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18111,7 +18111,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18123,7 +18123,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18135,7 +18135,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18147,7 +18147,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18159,7 +18159,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18171,7 +18171,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18183,7 +18183,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18195,7 +18195,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18207,7 +18207,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18219,7 +18219,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18231,7 +18231,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18243,7 +18243,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43746": {
@@ -18254,7 +18254,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43747": {
@@ -18265,7 +18265,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43748": {
@@ -18276,7 +18276,7 @@
     "mapId": 859,
     "zoneId": 4507,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0
   },
   "43749": {
@@ -18286,8 +18286,8 @@
     "icon": "/i/028000/028125.png",
     "mapId": 859,
     "zoneId": 4507,
-    "timed": 0,
-    "weathered": 2,
+    "timed": 1,
+    "weathered": 0,
     "stars": 1,
     "folklore": 43884
   },
@@ -18299,7 +18299,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18311,7 +18311,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18323,7 +18323,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18335,7 +18335,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18347,7 +18347,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18359,7 +18359,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18371,7 +18371,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18383,7 +18383,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18395,7 +18395,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18407,7 +18407,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18419,7 +18419,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18431,7 +18431,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18443,7 +18443,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 1,
     "folklore": 43885,
     "recordType": 5
@@ -18456,7 +18456,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18468,7 +18468,7 @@
     "mapId": 860,
     "zoneId": 4508,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 5
   },
@@ -18480,7 +18480,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18492,7 +18492,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18504,7 +18504,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18516,7 +18516,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18528,7 +18528,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18540,7 +18540,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18552,7 +18552,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18564,7 +18564,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18576,7 +18576,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18588,7 +18588,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18600,7 +18600,7 @@
     "mapId": 861,
     "zoneId": 4509,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 2
   },
@@ -18612,7 +18612,7 @@
     "mapId": 856,
     "zoneId": 4503,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18624,7 +18624,7 @@
     "mapId": 856,
     "zoneId": 4503,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18636,7 +18636,7 @@
     "mapId": 856,
     "zoneId": 4503,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18648,7 +18648,7 @@
     "mapId": 856,
     "zoneId": 4503,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18660,7 +18660,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18672,7 +18672,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18684,7 +18684,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18696,7 +18696,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18708,7 +18708,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18720,7 +18720,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18732,7 +18732,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18744,7 +18744,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18756,7 +18756,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 1
   },
@@ -18768,7 +18768,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 1
   },
@@ -18780,7 +18780,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 1
   },
@@ -18792,7 +18792,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 1
   },
@@ -18804,7 +18804,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 1,
     "folklore": 43886,
     "recordType": 1
@@ -18817,7 +18817,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 1
   },
@@ -18829,7 +18829,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 1
   },
@@ -18841,7 +18841,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 1,
     "stars": 1,
     "folklore": 43886,
     "recordType": 1
@@ -18854,7 +18854,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18866,7 +18866,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18878,7 +18878,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18890,7 +18890,7 @@
     "mapId": 862,
     "zoneId": 4510,
     "timed": 0,
-    "weathered": 2,
+    "weathered": 0,
     "stars": 0,
     "recordType": 3
   },
@@ -18953,6 +18953,122 @@
     "weathered": 0,
     "stars": 0,
     "recordType": 44
+  },
+  "44339": {
+    "id": 1423,
+    "itemId": 44339,
+    "level": 100,
+    "icon": "/i/028000/028661.png",
+    "mapId": 855,
+    "zoneId": 4504,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43884,
+    "recordType": 3
+  },
+  "44340": {
+    "id": 1424,
+    "itemId": 44340,
+    "level": 100,
+    "icon": "/i/029000/029940.png",
+    "mapId": 857,
+    "zoneId": 4505,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43884,
+    "recordType": 9
+  },
+  "44341": {
+    "id": 1425,
+    "itemId": 44341,
+    "level": 100,
+    "icon": "/i/028000/028662.png",
+    "mapId": 858,
+    "zoneId": 4506,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43884,
+    "recordType": 3
+  },
+  "44342": {
+    "id": 1427,
+    "itemId": 44342,
+    "level": 100,
+    "icon": "/i/028000/028132.png",
+    "mapId": 859,
+    "zoneId": 4507,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43884
+  },
+  "44343": {
+    "id": 1426,
+    "itemId": 44343,
+    "level": 100,
+    "icon": "/i/028000/028663.png",
+    "mapId": 859,
+    "zoneId": 4507,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43884,
+    "recordType": 3
+  },
+  "44344": {
+    "id": 1430,
+    "itemId": 44344,
+    "level": 100,
+    "icon": "/i/028000/028664.png",
+    "mapId": 856,
+    "zoneId": 4503,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43886,
+    "recordType": 3
+  },
+  "44345": {
+    "id": 1428,
+    "itemId": 44345,
+    "level": 100,
+    "icon": "/i/028000/028665.png",
+    "mapId": 860,
+    "zoneId": 4508,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43885,
+    "recordType": 2
+  },
+  "44346": {
+    "id": 1429,
+    "itemId": 44346,
+    "level": 100,
+    "icon": "/i/028000/028666.png",
+    "mapId": 861,
+    "zoneId": 4509,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43886,
+    "recordType": 2
+  },
+  "44347": {
+    "id": 1431,
+    "itemId": 44347,
+    "level": 100,
+    "icon": "/i/029000/029654.png",
+    "mapId": 860,
+    "zoneId": 4508,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 1,
+    "folklore": 43885,
+    "recordType": 5
   },
   "2001398": {
     "id": 15005,

@@ -4703,5 +4703,300 @@ export const mapIds = [
     "zone": 5121,
     "id": 941,
     "weatherRate": 0
+  },
+  {
+    "zone": 5125,
+    "id": 942,
+    "weatherRate": 0
+  },
+  {
+    "zone": 5126,
+    "id": 943,
+    "weatherRate": 86
+  },
+  {
+    "zone": 5126,
+    "id": 944,
+    "weatherRate": 86
+  },
+  {
+    "zone": 5126,
+    "id": 945,
+    "weatherRate": 86
+  },
+  {
+    "zone": 5138,
+    "id": 946,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5138,
+    "id": 947,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5138,
+    "id": 948,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5138,
+    "id": 949,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5138,
+    "id": 950,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5138,
+    "id": 951,
+    "weatherRate": 150
+  },
+  {
+    "zone": 0,
+    "id": 952,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 953,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 954,
+    "weatherRate": null
+  },
+  {
+    "zone": 5139,
+    "id": 955,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4754,
+    "id": 956,
+    "weatherRate": 27
+  },
+  {
+    "zone": 0,
+    "id": 957,
+    "weatherRate": null
+  },
+  {
+    "zone": 2950,
+    "id": 958,
+    "weatherRate": 0
+  },
+  {
+    "zone": 2950,
+    "id": 959,
+    "weatherRate": 0
+  },
+  {
+    "zone": 21,
+    "id": 960,
+    "weatherRate": 0
+  },
+  {
+    "zone": 21,
+    "id": 961,
+    "weatherRate": 0
+  },
+  {
+    "zone": 21,
+    "id": 962,
+    "weatherRate": 0
+  },
+  {
+    "zone": 20,
+    "id": 963,
+    "weatherRate": 0
+  },
+  {
+    "zone": 20,
+    "id": 964,
+    "weatherRate": 0
+  },
+  {
+    "zone": 20,
+    "id": 965,
+    "weatherRate": 0
+  },
+  {
+    "zone": 0,
+    "id": 966,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 967,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 968,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 969,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 970,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 971,
+    "weatherRate": null
+  },
+  {
+    "zone": 5154,
+    "id": 972,
+    "weatherRate": 167
+  },
+  {
+    "zone": 5154,
+    "id": 973,
+    "weatherRate": 167
+  },
+  {
+    "zone": 5154,
+    "id": 974,
+    "weatherRate": 167
+  },
+  {
+    "zone": 0,
+    "id": 975,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 976,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 977,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 978,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 979,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 980,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 981,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 982,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 983,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 984,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 985,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 986,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 987,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 988,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 989,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 990,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 991,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 992,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 993,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 994,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 995,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 996,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 997,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 998,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 999,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1000,
+    "weatherRate": null
   }
 ];

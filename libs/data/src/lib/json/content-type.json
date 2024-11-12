@@ -151,15 +151,15 @@
   },
   "26": {
     "en": "Eureka",
-    "ja": "エウレカ",
+    "ja": "禁断の地エウレカ",
     "de": "Eureka",
     "fr": "Eurêka"
   },
   "27": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Masked Carnivale",
+    "ja": "マスクカーニバル",
+    "de": "Große Maskerade",
+    "fr": "La Grande Mascarade"
   },
   "28": {
     "en": "Ultimate Raids",
@@ -168,10 +168,10 @@
     "fr": "Raids fatals"
   },
   "29": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Save the Queen",
+    "ja": "セイブ・ザ・クイーン",
+    "de": "Königinnenwache",
+    "fr": "Garde-la-Reine"
   },
   "30": {
     "en": "V&C Dungeon Finder",
@@ -210,9 +210,15 @@
     "fr": "JACTA"
   },
   "36": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Island Sanctuary",
+    "ja": "無人島開拓",
+    "de": "Inselparadies",
+    "fr": "Félicité insulaire"
+  },
+  "37": {
+    "en": "Chaotic Alliance Raid",
+    "ja": "滅アライアンスレイド",
+    "de": "Chaotische Allianz-Raids",
+    "fr": "Raids chaotiques"
   }
 }

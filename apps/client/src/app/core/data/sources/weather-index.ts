@@ -2623,6 +2623,11 @@ export const weatherIndex = {
       "weatherId": 2
     }
   ],
-  "167": [],
+  "167": [
+    {
+      "rate": 100,
+      "weatherId": 193
+    }
+  ],
   "168": []
 };

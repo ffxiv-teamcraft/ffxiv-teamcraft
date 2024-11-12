@@ -920,35 +920,355 @@
     "location": ""
   },
   "116": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Indigo Shallows",
+    "ja": "A　インディゴ・シャロウ",
+    "de": "Indigo-Untiefen (A)",
+    "fr": "Hauts-fonds indigo (A)",
     "id": 116,
-    "location": ""
+    "location": "A"
   },
   "117": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Voyagers' Reprieve",
+    "ja": "B　探検家の中継基地",
+    "de": "Relaisstation (B)",
+    "fr": "Base d'exploration intermédiaire (B)",
     "id": 117,
-    "location": ""
+    "location": "B"
   },
   "118": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "North Delphinium Seashelf",
+    "ja": "C　紺色海底棚北",
+    "de": "Kobaltmeer-Nord (C)",
+    "fr": "Nord des profondeurs de la Mer de cobalt (C)",
     "id": 118,
-    "location": ""
+    "location": "C"
   },
   "119": {
+    "en": "Rainbringer Rift",
+    "ja": "D　雨生みの海底谷",
+    "de": "Regenwiege-Furche (D)",
+    "fr": "Vallée sous-marine du Berceau des pluies (D)",
+    "id": 119,
+    "location": "D"
+  },
+  "120": {
+    "en": "South Indigo Deep 1",
+    "ja": "E　南蒼茫洋01",
+    "de": "Südlicher Indigo-Ozean 1 (E)",
+    "fr": "Océan Indigo méridional 1 (E)",
+    "id": 120,
+    "location": "E"
+  },
+  "121": {
+    "en": "the Central Blue",
+    "ja": "F　セントラルブルー",
+    "de": "Blaue Unendlichkeit (F)",
+    "fr": "Immensité bleue (F)",
+    "id": 121,
+    "location": "F"
+  },
+  "122": {
+    "en": "South Indigo Deep 2",
+    "ja": "G　南蒼茫洋02",
+    "de": "Südlicher Indigo-Ozean 2 (G)",
+    "fr": "Océan Indigo méridional 2 (G)",
+    "id": 122,
+    "location": "G"
+  },
+  "123": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 119,
+    "id": 123,
+    "location": ""
+  },
+  "124": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 124,
+    "location": ""
+  },
+  "125": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 125,
+    "location": ""
+  },
+  "126": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 126,
+    "location": ""
+  },
+  "127": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 127,
+    "location": ""
+  },
+  "128": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 128,
+    "location": ""
+  },
+  "129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 129,
+    "location": ""
+  },
+  "130": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 130,
+    "location": ""
+  },
+  "131": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 131,
+    "location": ""
+  },
+  "132": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 132,
+    "location": ""
+  },
+  "133": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 133,
+    "location": ""
+  },
+  "134": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 134,
+    "location": ""
+  },
+  "135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 135,
+    "location": ""
+  },
+  "136": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 136,
+    "location": ""
+  },
+  "137": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 137,
+    "location": ""
+  },
+  "138": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 138,
+    "location": ""
+  },
+  "139": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 139,
+    "location": ""
+  },
+  "140": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 140,
+    "location": ""
+  },
+  "141": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 141,
+    "location": ""
+  },
+  "142": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 142,
+    "location": ""
+  },
+  "143": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 143,
+    "location": ""
+  },
+  "144": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 144,
+    "location": ""
+  },
+  "145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 145,
+    "location": ""
+  },
+  "146": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 146,
+    "location": ""
+  },
+  "147": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 147,
+    "location": ""
+  },
+  "148": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 148,
+    "location": ""
+  },
+  "149": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 149,
+    "location": ""
+  },
+  "150": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 150,
+    "location": ""
+  },
+  "151": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 151,
+    "location": ""
+  },
+  "152": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 152,
+    "location": ""
+  },
+  "153": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 153,
+    "location": ""
+  },
+  "154": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 154,
+    "location": ""
+  },
+  "155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 155,
+    "location": ""
+  },
+  "156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 156,
+    "location": ""
+  },
+  "157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 157,
+    "location": ""
+  },
+  "158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 158,
+    "location": ""
+  },
+  "159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "id": 159,
     "location": ""
   }
 }

@@ -363,7 +363,7 @@
     "id": 46,
     "zone": 49,
     "name": "Halatali",
-    "territory": 162,
+    "territory": 1245,
     "scale": 200,
     "weatherRate": 0
   },
@@ -612,7 +612,7 @@
     "zone": 0,
     "name": "",
     "territory": null,
-    "scale": 100,
+    "scale": 0,
     "weatherRate": null
   },
   {
@@ -7526,5 +7526,477 @@
     "territory": 1234,
     "scale": 200,
     "weatherRate": 0
+  },
+  {
+    "id": 942,
+    "zone": 5125,
+    "name": "The Fold",
+    "territory": 1127,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 943,
+    "zone": 5126,
+    "name": "Yuweyawata",
+    "territory": 1242,
+    "scale": 200,
+    "weatherRate": 86
+  },
+  {
+    "id": 944,
+    "zone": 5126,
+    "name": "Yuweyawata",
+    "territory": 1242,
+    "scale": 200,
+    "weatherRate": 86
+  },
+  {
+    "id": 945,
+    "zone": 5126,
+    "name": "Yuweyawata",
+    "territory": 1242,
+    "scale": 200,
+    "weatherRate": 86
+  },
+  {
+    "id": 946,
+    "zone": 5138,
+    "name": "Jeuno: The First Walk",
+    "territory": 1248,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 947,
+    "zone": 5138,
+    "name": "Jeuno: The First Walk",
+    "territory": 1248,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 948,
+    "zone": 5138,
+    "name": "Jeuno: The First Walk",
+    "territory": 1248,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 949,
+    "zone": 5138,
+    "name": "Jeuno: The First Walk",
+    "territory": 1248,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 950,
+    "zone": 5138,
+    "name": "Jeuno: The First Walk",
+    "territory": 1248,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 951,
+    "zone": 5138,
+    "name": "Jeuno: The First Walk",
+    "territory": 1248,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 952,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 953,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 954,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 955,
+    "zone": 5139,
+    "name": "Lower Jeuno",
+    "territory": 1264,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 956,
+    "zone": 4754,
+    "name": "Starlight Stalls",
+    "territory": 1247,
+    "scale": 400,
+    "weatherRate": 27
+  },
+  {
+    "id": 957,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 958,
+    "zone": 2950,
+    "name": "Norvrandt",
+    "territory": 1249,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 959,
+    "zone": 2950,
+    "name": "Norvrandt",
+    "territory": 1249,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 960,
+    "zone": 21,
+    "name": "Eorzea",
+    "territory": 1250,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 961,
+    "zone": 21,
+    "name": "Eorzea",
+    "territory": 1250,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 962,
+    "zone": 21,
+    "name": "Eorzea",
+    "territory": 1250,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 963,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": 1251,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 964,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": 1251,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 965,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": 1251,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 966,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 967,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 968,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 969,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 970,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 971,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 972,
+    "zone": 5154,
+    "name": "Yuweyawata",
+    "territory": 1254,
+    "scale": 200,
+    "weatherRate": 167
+  },
+  {
+    "id": 973,
+    "zone": 5154,
+    "name": "Yuweyawata",
+    "territory": 1254,
+    "scale": 200,
+    "weatherRate": 167
+  },
+  {
+    "id": 974,
+    "zone": 5154,
+    "name": "Yuweyawata",
+    "territory": 1254,
+    "scale": 200,
+    "weatherRate": 167
+  },
+  {
+    "id": 975,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 976,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 977,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 978,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 979,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 980,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 981,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 982,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 983,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 984,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 985,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 986,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 987,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 988,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 989,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 990,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 991,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 992,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 993,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 994,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 995,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 996,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 997,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 998,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 999,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1000,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
   }
 ]

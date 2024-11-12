@@ -1723,6 +1723,13 @@
           "lvl": 100,
           "stars": 1,
           "hidden": 0
+        },
+        {
+          "itemId": 44845,
+          "ilvl": 700,
+          "lvl": 100,
+          "stars": 1,
+          "hidden": 0
         }
       ]
     }
@@ -7081,6 +7088,13 @@
       "items": [
         {
           "itemId": 44138,
+          "ilvl": 700,
+          "lvl": 100,
+          "stars": 1,
+          "hidden": 0
+        },
+        {
+          "itemId": 44844,
           "ilvl": 700,
           "lvl": 100,
           "stars": 1,

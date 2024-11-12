@@ -3439,8 +3439,8 @@
     "id": 217,
     "zoneid": 4503,
     "map": 856,
-    "x": 12.1,
-    "y": 14.47,
+    "x": 12.38,
+    "y": 14.37,
     "z": 0.08,
     "type": 0,
     "territory": 1186,
@@ -3655,6 +3655,21 @@
     "type": 1,
     "territory": 1188,
     "nameid": 4743,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 238,
+    "zoneid": 4506,
+    "map": 858,
+    "x": 37.26,
+    "y": 16.51,
+    "z": 0.12,
+    "type": 0,
+    "territory": 1188,
+    "nameid": 4595,
     "aethernetCoords": {
       "x": 0,
       "y": 0

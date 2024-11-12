@@ -34634,9 +34634,9 @@
     "ko": "고독한 도전자: 1단계",
     "zh": "孤独的挑战者1",
     "description": {
-      "en": "Clear the 1st through the 50th floors of the Palace of the Dead solo and record a score on floor 51 or below.",
-      "de": "Die 1. bis 50. Ebene des Palastes der Toten alleine erobert und in einer höheren Ebene als der 50. das Ergebnis erhalten. ",
-      "ja": "死者の宮殿にソロでB1から突入しB50より深い階層で、スコアを記録した",
+      "en": "Clear the 1st through the 50th floors of the Palace of the Dead solo and reach floor 51.",
+      "de": "Den Palast der Toten alleine auf der 1. Ebene betreten und bis zur 51. Ebene erkundet.",
+      "ja": "死者の宮殿にソロでB1から突入しB51に到達する",
       "fr": "Obtenir un score en solo dans le Palais des morts en commençant par le sous-sol 1 et en s'aventurant au-delà du sous-sol 50.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B50 이후에서 점수 기록",
       "zh": "单人从地下1层进入死者宫殿，并在通过地下50层后记录积分。"
@@ -34655,9 +34655,9 @@
     "ko": "고독한 도전자: 2단계",
     "zh": "孤独的挑战者2",
     "description": {
-      "en": "Clear the 1st through the 100th floors of the Palace of the Dead solo and record a score on floor 101 or below.",
-      "de": "Die 1. bis 100. Ebene des Palastes der Toten alleine erobert und in einer höheren Ebene als der 100. das Ergebnis erhalten.",
-      "ja": "死者の宮殿にソロでB1から突入しB100より深い階層で、スコアを記録した",
+      "en": "Clear the 1st through the 100th floors of the Palace of the Dead solo and reach floor 101.",
+      "de": "Den Palast der Toten alleine auf der 1. Ebene betreten und bis zur 101. Ebene erkundet.",
+      "ja": "死者の宮殿にソロでB1から突入しB101に到達する",
       "fr": "Obtenir un score en solo dans le Palais des morts en commençant par le sous-sol 1 et en s'aventurant au-delà du sous-sol 100.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B100 이후에서 점수 기록",
       "zh": "单人从地下1层进入死者宫殿，并在通过地下100层后记录积分。"
@@ -40745,7 +40745,7 @@
     "description": {
       "en": "Clear the 1st through the 200th floors of the Palace of the Dead solo.",
       "de": "Die 1. bis 200. Ebene des Palastes der Toten alleine erobert und tiefer in das Gewölbe vorgestoßen.",
-      "ja": "死者の宮殿にソロでB1から突入しB200に到達する",
+      "ja": "死者の宮殿にソロでB1から突入しB200まで攻略する",
       "fr": "Atteindre le 200e sous-sol du Palais des morts en solo en commençant par le 1er.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B200 도달",
       "zh": "单人从地下1层进入死者宫殿，并到达地下200层。"
@@ -42877,9 +42877,9 @@
     "ko": "고고한 도전자: 1단계",
     "zh": "孤高的挑战者1",
     "description": {
-      "en": "Clear the 1st through the 50th floors of Heaven-on-High solo and record a score on floor 51 or above.",
-      "de": "Die 1. bis 50. Ebene der Himmelssäule alleine erobert und in einer höheren Ebene als der 50. das Ergebnis erhalten. ",
-      "ja": "アメノミハシラにソロで1層から突入し50層より高い階層で、スコアを記録した",
+      "en": "Clear the 1st through the 50th floors of Heaven-on-High solo and reach floor 51.",
+      "de": "Die Himmelssäule alleine auf der 1. Ebene betreten und bis zur 51. Ebene erkundet.",
+      "ja": "アメノミハシラにソロで1層から突入し51層に到達する",
       "fr": "Obtenir un score en solo dans le Pilier des Cieux en commençant par le 1er étage et en s'aventurant au-delà du 50e.",
       "ko": "단독으로 천궁탑 1층에 진입하여 50층 이후에서 점수 기록",
       "zh": "单人从第1层进入天之御柱，并在通过第50层后记录积分。"
@@ -42899,8 +42899,8 @@
     "zh": "孤高的挑战者2",
     "description": {
       "en": "Clear the 1st through the 100th floors of Heaven-on-High solo.",
-      "de": "Die 1. bis 100. Ebene der Himmelssäule alleine erobert und in einer höheren Ebene als der 100. das Ergebnis erhalten.",
-      "ja": "アメノミハシラにソロで1層から突入し100層に到達する",
+      "de": "Die Himmelssäule alleine auf der 1. Ebene betreten und bis zur 101. Ebene erkundet.",
+      "ja": "アメノミハシラにソロで1層から突入し100層まで攻略する",
       "fr": "Atteindre le 100e étage du Pilier des Cieux en solo en commençant par le 1er.",
       "ko": "단독으로 천궁탑 1층에 진입하여 100층 도달",
       "zh": "单人从第1层进入天之御柱，并到达第100层。"
@@ -66120,7 +66120,7 @@
   },
   "3162": {
     "id": 3162,
-    "icon": "/i/064000/064855.png",
+    "icon": "/i/000000/000317.png",
     "patch": 87,
     "en": "Heart to Heartless",
     "de": "Fatale Testreihe",
@@ -66545,9 +66545,9 @@
     "ko": "숭고한 도전자: 1단계",
     "zh": "崇高的挑战者1",
     "description": {
-      "en": "Clear the 1st through the 50th floors of Eureka Orthos solo and record a score on floor 51 or below.",
-      "de": "Die 1. bis 50. Ebene von Eureka Orthos alleine erobert und in einer höheren Ebene als der 50. das Ergebnis erhalten. ",
-      "ja": "オルト・エウレカにソロでB1から突入しB50より深い階層で、スコアを記録した",
+      "en": "Clear the 1st through the 50th floors of Eureka Orthos solo and reach floor 51.",
+      "de": "Eureka Orthos alleine auf der 1. Ebene betreten und bis zur 51. Ebene erkundet.",
+      "ja": "オルト・エウレカにソロでB1から突入しB51に到達する",
       "fr": "Obtenir un score en solo dans Eurêka Orthos en commençant par le 1er sous-sol et en s'aventurant au-delà du 50e.",
       "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B50 이후에서 점수 기록",
       "zh": "单人从地下1层进入正统优雷卡，并在通过地下50层后记录积分。"
@@ -66568,7 +66568,7 @@
     "description": {
       "en": "Clear the 1st through the 100th floors of Eureka Orthos solo.",
       "de": "Eureka Orthos alleine auf der 1. Ebene betreten und bis zur 100. Ebene erkundet.",
-      "ja": "オルト・エウレカにソロでB1から突入しB100に到達する",
+      "ja": "オルト・エウレカにソロでB1から突入しB100まで攻略する",
       "fr": "Atteindre le 100e sous-sol en solo dans Eurêka Orthos en commençant par le 1er.",
       "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B100 도달",
       "zh": "单人从地下1层进入正统优雷卡，并到达地下100层。"
@@ -74237,7 +74237,7 @@
       "en": "Achieve shared FATE rank 4 in Shaaloani.",
       "de": "In Shaaloani FATE-Fortschritt Rang 4 erreicht.",
       "ja": "シャーローニ荒野のF.A.T.E.達成度をRANK4にする",
-      "fr": "Atteindre le rang 4 de réussite des ALÉA à Shaaloani.",
+      "fr": "Atteindre le rang 4 de réussite des ALÉA en Shaaloani.",
       "zh": "在夏劳尼荒野的危命任务完成度达到4级。"
     },
     "item": 0,
@@ -74418,11 +74418,13 @@
     "de": "Tor des Arkadion I",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク1",
     "fr": "Champion poids mi-lourds de l'Arcadion I",
+    "zh": "称霸登天斗技场轻量级1",
     "description": {
       "en": "Complete the quest “The Neoteric Witch” and AAC Light-heavyweight Tier.",
       "de": "Arkadion - Halbschwergewicht sowie den Auftrag „Die Hybrid-Hexe“ erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を攻略し、クエスト「次世代魔女」をコンプリートする",
-      "fr": "Conquérir la division poids mi-lourds CCA et accomplir la quête “L'Enchanteresse électrique”."
+      "fr": "Conquérir la division poids mi-lourds CCA et accomplir la quête “L'Enchanteresse électrique”.",
+      "zh": "成功挑战阿卡狄亚登天斗技场轻量级，完成任务“新时代魔女”。"
     },
     "item": 0,
     "title": 0
@@ -74435,11 +74437,13 @@
     "de": "Tor des Arkadion II",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク2",
     "fr": "Champion poids mi-lourds de l'Arcadion II",
+    "zh": "称霸登天斗技场轻量级2",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier 5 times.",
       "de": "5 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を計5回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA 5 fois."
+      "fr": "Conquérir la division poids mi-lourds CCA 5 fois.",
+      "zh": "累计成功挑战阿卡狄亚登天斗技场轻量级5次。"
     },
     "item": 0,
     "title": 0
@@ -74452,11 +74456,13 @@
     "de": "Tor des Arkadion III",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク3",
     "fr": "Champion poids mi-lourds de l'Arcadion III",
+    "zh": "称霸登天斗技场轻量级3",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier 10 times.",
       "de": "10 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を計10回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA 10 fois."
+      "fr": "Conquérir la division poids mi-lourds CCA 10 fois.",
+      "zh": "累计成功挑战阿卡狄亚登天斗技场轻量级10次。"
     },
     "item": 0,
     "title": 0
@@ -74584,6 +74590,618 @@
       "ja": "オーケストリオン譜面帳に、500種類の楽曲を登録する",
       "fr": "Ajouter 500 rouleaux différents à votre liste de morceaux pour orchestrion.",
       "zh": "在管弦乐琴乐谱集中加入累计500首乐曲。"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3582": {
+    "id": 3582,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Top Tier: Season Twelve",
+    "de": "Kristallkönig (12. Saison)",
+    "ja": "コンフリクトの王者：シーズン12",
+    "fr": "Roi du conflit : saison 12",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Twelve ranked #1.",
+      "de": "Die 12. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで1位になる",
+      "fr": "Terminer la saison 12 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 756
+  },
+  "3583": {
+    "id": 3583,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Crystal in the Rough: Season Twelve",
+    "de": "Kristallfürst (12. Saison)",
+    "ja": "コンフリクトの勇者：シーズン12",
+    "fr": "Prince du conflit : saison 12",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Twelve.",
+      "de": "Die 12. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 12 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 757
+  },
+  "3584": {
+    "id": 3584,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Ranked and Filed: Season Twelve",
+    "de": "Kristallkämpfer (12. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン12",
+    "fr": "As du conflit : saison 12",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Twelve. ",
+      "de": "Die 12. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで入賞する",
+      "fr": "Terminer la saison 12 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 758
+  },
+  "3585": {
+    "id": 3585,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Top Tier: Season Thirteen",
+    "de": "Kristallkönig (13. Saison)",
+    "ja": "コンフリクトの王者：シーズン13",
+    "fr": "Roi du conflit : saison 13",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Thirteen ranked #1.",
+      "de": "Die 13. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで1位になる",
+      "fr": "Terminer la saison 13 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 759
+  },
+  "3586": {
+    "id": 3586,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Crystal in the Rough: Season Thirteen",
+    "de": "Kristallfürst (13. Saison)",
+    "ja": "コンフリクトの勇者：シーズン13",
+    "fr": "Prince du conflit : saison 13",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Thirteen.",
+      "de": "Die 13. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 13 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 760
+  },
+  "3587": {
+    "id": 3587,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Ranked and Filed: Season Thirteen",
+    "de": "Kristallkämpfer (13. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン13",
+    "fr": "As du conflit : saison 13",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Thirteen. ",
+      "de": "Die 13. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで入賞する",
+      "fr": "Terminer la saison 13 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 761
+  },
+  "3588": {
+    "id": 3588,
+    "icon": "/i/062000/062978.png",
+    "patch": 1,
+    "en": "Pelu Proponent I",
+    "de": "Per du mit den Pelupelu I",
+    "ja": "ペルペル族：ランク1",
+    "fr": "Conseiller touristique I",
+    "description": {
+      "en": "Attain rank 3 reputation (friendly) with the Turali Travel Agency.",
+      "de": "Ein freundliches Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
+      "ja": "ペルペル族「トラル旅行公司」の友好関係をランク3「友好」にする",
+      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3589": {
+    "id": 3589,
+    "icon": "/i/062000/062978.png",
+    "patch": 1,
+    "en": "Pelu Proponent II",
+    "de": "Per du mit den Pelupelu II",
+    "ja": "ペルペル族：ランク2",
+    "fr": "Conseiller touristique II",
+    "description": {
+      "en": "Attain rank 4 reputation (trusted) with the Turali Travel Agency.",
+      "de": "Ein vertrautes Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
+      "ja": "ペルペル族「トラル旅行公司」の友好関係をランク4「信頼」にする",
+      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3590": {
+    "id": 3590,
+    "icon": "/i/062000/062978.png",
+    "patch": 1,
+    "en": "Pelu Proponent III",
+    "de": "Per du mit den Pelupelu III",
+    "ja": "ペルペル族：ランク3",
+    "fr": "Conseiller touristique III",
+    "description": {
+      "en": "Attain rank 6 reputation (honored) with the Turali Travel Agency.",
+      "de": "Ein geachtetes Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
+      "ja": "ペルペル族「トラル旅行公司」の友好関係をランク6「名誉」にする",
+      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3591": {
+    "id": 3591,
+    "icon": "/i/062000/062978.png",
+    "patch": 1,
+    "en": "Extra-special Advisor",
+    "de": "Jaja-Sager",
+    "ja": "トラルトラベルアドバイザー",
+    "fr": "Tural Voyages Conseil",
+    "description": {
+      "en": "Attain rank 7 reputation (sworn) with the Turali Travel Agency.",
+      "de": "Ein solidarisches Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
+      "ja": "ペルペル族「トラル旅行公司」の友好関係をランク7「誓約」にする",
+      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+    },
+    "item": 0,
+    "title": 762
+  },
+  "3592": {
+    "id": 3592,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3593": {
+    "id": 3593,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3594": {
+    "id": 3594,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3595": {
+    "id": 3595,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3596": {
+    "id": 3596,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3597": {
+    "id": 3597,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3598": {
+    "id": 3598,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3599": {
+    "id": 3599,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3600": {
+    "id": 3600,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3601": {
+    "id": 3601,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3602": {
+    "id": 3602,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3603": {
+    "id": 3603,
+    "icon": "/i/001000/001001.png",
+    "patch": 1,
+    "en": "Mapping the Realm: Yuweyawata Field Station",
+    "de": "Kartograph: Yuweyawata",
+    "ja": "ユウェヤーワータを踏破せし者",
+    "fr": "Cartographe du continent : Centre de recherche de Yuweyawata",
+    "description": {
+      "en": "Discover every location within Yuweyawata Field Station.",
+      "de": "Alle Orte in der Forschungsstation Yuweyawata erkundet.",
+      "ja": "ユウェヤーワータ（廃地討究）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du centre de recherche de Yuweyawata."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3604": {
+    "id": 3604,
+    "icon": "/i/001000/001001.png",
+    "patch": 1,
+    "en": "Mapping the Realm: Jeuno: The First Walk",
+    "de": "Kartograph: Jeuno: Die erste Etappe",
+    "ja": "ジュノ：ザ・ファーストウォークを踏破せし者",
+    "fr": "Cartographe du continent : Jeuno - La première perambulation",
+    "description": {
+      "en": "Discover every location within Jeuno: The First Walk.",
+      "de": "Alle Orte in Jeuno: Die erste Etappe erkundet.",
+      "ja": "ジュノ：ザ・ファーストウォークを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de Jeuno - La première perambulation."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3605": {
+    "id": 3605,
+    "icon": "/i/000000/000317.png",
+    "patch": 1,
+    "en": "Long Lived the Queen",
+    "de": "Ender der Endlosigkeit",
+    "ja": "永久なる女王を狩りし者",
+    "fr": "Rien n'est éternel",
+    "description": {
+      "en": "Defeat Queen Eternal in the Minstrel's Ballad: Sphene's Burden.",
+      "de": "Die Ewige Königin in Gok Tajaal - Ewige Königin bezwungen.",
+      "ja": "極エターナルクイーン討滅戦で、エターナルクイーンを討伐する",
+      "fr": "Vaincre la Reine Éternité dans le défi “Interphos (extrême)”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3606": {
+    "id": 3606,
+    "icon": "/i/064000/064875.png",
+    "patch": 1,
+    "en": "Home Away from Home",
+    "de": "Jeuno: Die erste Etappe",
+    "ja": "ジュノ：ザ・ファーストウォークを制覇せし者",
+    "fr": "Échos des premières aventures",
+    "description": {
+      "en": "Complete Jeuno: The First Walk.",
+      "de": "Jeuno: Die erste Etappe erfolgreich abgeschlossen.",
+      "ja": "ジュノ：ザ・ファーストウォークを攻略する",
+      "fr": "Finir Jeuno - La première perambulation."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3607": {
+    "id": 3607,
+    "icon": "/i/026000/026002.png",
+    "patch": 1,
+    "en": "Crossroads",
+    "de": "Schicksalskreuzung",
+    "ja": "未知との邂逅",
+    "fr": "Retrouvailles inattendues",
+    "description": {
+      "en": "Complete the main scenario quest “Crossroads.”",
+      "de": "Den Auftrag „An der Kreuzung des Schicksals“ des Hauptszenarios erfolgreich abgeschlossen.",
+      "ja": "クエスト「未知との邂逅」をコンプリートする",
+      "fr": "Accomplir la quête “Au seuil de l'inconnu”."
+    },
+    "item": 0,
+    "title": 765
+  },
+  "3608": {
+    "id": 3608,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3609": {
+    "id": 3609,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3610": {
+    "id": 3610,
+    "icon": "/i/001000/001102.png",
+    "patch": 1,
+    "en": "Go Big on the Trail I",
+    "de": "Kapitalbeschaffung auf Tural I",
+    "ja": "黄金の太公望：ランク1",
+    "fr": "Pêcheur de légendes éternel I",
+    "description": {
+      "en": "Catch 8 different varieties of big fish in areas explored during Dawntrail.",
+      "de": "8 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
+      "ja": "黄金のレガシーのエリアにいるヌシを8種類、釣り上げる",
+      "fr": "Pêcher 8 prises légendaires différentes dans les zones explorées lors de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3611": {
+    "id": 3611,
+    "icon": "/i/058000/058804.png",
+    "patch": 1,
+    "en": "Punch in Every Stall",
+    "de": "Strahlender Markt",
+    "ja": "ホッとあたたまるマーケット",
+    "fr": "Un marché chaleureux",
+    "description": {
+      "en": "Complete the quest “Spreading the Warmth and Cheer.”",
+      "de": "Den Auftrag „Wärme und Freude verbreiten“ abgeschlossen.",
+      "ja": "クエスト「星芒祭と小さな従者たち」をコンプリートする",
+      "fr": "Accomplir la quête “Les petits disciples du saint”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3612": {
+    "id": 3612,
+    "icon": "/i/064000/064457.png",
+    "patch": 1,
+    "en": "満開のブーケを一緒に",
+    "de": "満開のブーケを一緒に",
+    "ja": "満開のブーケを一緒に",
+    "fr": "満開のブーケを一緒に",
+    "description": {
+      "en": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
+      "de": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
+      "ja": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
+      "fr": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3613": {
+    "id": 3613,
+    "icon": "/i/057000/057182.png",
+    "patch": 1,
+    "en": "あなたの笑顔にお仕えします",
+    "de": "Herzensdiener",
+    "ja": "あなたの笑顔にお仕えします",
+    "fr": "Le prince de ces demoiselles",
+    "description": {
+      "en": "クエスト「プリンセスデーと執事王子のおもてなし」をコンプリートする",
+      "de": "Den Auftrag „Das Lied der Schwalbe“ abgeschlossen.",
+      "ja": "クエスト「プリンセスデーと執事王子のおもてなし」をコンプリートする",
+      "fr": "Accomplir la quête “Des débuts princiers”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3614": {
+    "id": 3614,
+    "icon": "/i/058000/058042.png",
+    "patch": 1,
+    "en": "傘が彩る雨模様",
+    "de": "Mit Schirm und Charme",
+    "ja": "傘が彩る雨模様",
+    "fr": "傘が彩る雨模様",
+    "description": {
+      "en": "クエスト「エッグハントと集う傘」をコンプリートする",
+      "de": "Den Auftrag „Einigkeit und Schirm und Eiheit“ abgeschlossen.",
+      "ja": "クエスト「エッグハントと集う傘」をコンプリートする",
+      "fr": "クエスト「エッグハントと集う傘」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3615": {
+    "id": 3615,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3616": {
+    "id": 3616,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3617": {
+    "id": 3617,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
     },
     "item": 0,
     "title": 0
