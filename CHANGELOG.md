@@ -7,7 +7,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **db:** 7.1 content update ([8527a53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8527a53d879786d45a669988fe11d80a4ae1319e))
 * **db:** 7.1 content update ([cd6d7b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd6d7b148848e52c7c26ff5a442cc3dfe1edcc57))
 
 ### [11.3.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.15...v11.3.16) (2024-11-10)
