@@ -52,7 +52,7 @@
     "Want_filters": "Brauchen Sie mehr Filter?",
     "Open_search": "Suchseite stattdessen öffnen",
     "Island_recipe": "Inselparadiesrezept",
-    "Ingesting_index": "Lese Inhalte für die neu gewählet Sprache ein, was nur wenige Sekunden dauern sollte..."
+    "Ingesting_index": "Lese Inhalte für die neu gewählte Sprache ein, was nur wenige Sekunden dauern sollte..."
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -3092,7 +3092,7 @@
       "GAME_NOT_RUNNING": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.",
       "RESTART_GAME": "Bitte starte das Spiel neu, um die Paketerfassung korrekt ausführen zu können.",
       "GAME_RUNNING_AS_ADMIN": "Das Spiel läuft als Admin. Bitte starte es entweder normal neu oder starte Teamcraft als Administrator neu.",
-      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
+      "MISSING_INJECTOR": "Die Werkzeuge zur Paketerfassung fehlen, wahrscheinlich wurde sie vom Antivirus wegen eines Falschalarms entfernt. Vergewissere dich, dass du den Installationsordner von Teamcraft auf der Whitelist hast und installiere sie neu."
     }
   },
   "ISLAND_SANCTUARY": {
@@ -3134,7 +3134,7 @@
       "Exclude_pasture_materials": "Weidematerial ausschließen",
       "Exclude_crop_materials": "Erntematerial ausschließen",
       "Display_item_metadata": "Kategorie und Herstellungszeit von Gegenständen in der Planung anzeigen",
-      "Groove_tooltip": "Groove at the end of the day",
+      "Groove_tooltip": "Groove am Ende des Tages",
       "Crafting_time": "Herstellungszeit",
       "Categories": "Kategorien",
       "No_planning": "Keine Planung verfügbar",
@@ -3209,7 +3209,7 @@
     "Contribution_per_passenger": "Beiträge pro Passagier",
     "Fishing_rate": "Fischfangrate",
     "Nothing_to_show": "Keine anzuzeigenden Beiträge",
-    "Terminus_tag": "Terminus",
+    "Terminus_tag": "Endstation",
     "Open_fishing_overlay": "Öffne Fischerei-Overlay",
     "Claim_conductor_role": "Leiterrolle beanspruchen",
     "Enter_conductor_token": "Leiter-Token eingeben",
@@ -3255,15 +3255,15 @@
     "Crafting_Rotation": "Handwerksrotation",
     "Gearsets": "Ausrüstungssets",
     "Crafting_Replays": "Crafting Replays",
-    "Allagan_Reports": "Allagan Reports",
+    "Allagan_Reports": "Allagische Meldungen",
     "Community_Lists": "Communitylisten",
     "Community_Rotations": "Community-Rotationen",
     "Commissions": "Meine Aufträge",
     "Archives": "Archive",
-    "Alarms": "Alarms",
-    "Gathering_Items": "Gathering Items",
+    "Alarms": "Alarme",
+    "Gathering_Items": "Sammelgegenstand-Suche",
     "Fish_Trains": "Fischzüge",
-    "Workshop": "Workshop",
+    "Workshop": "Werkstatt",
     "Animals": "Tiere",
     "Levequests": "Freibriefe",
     "Desynth_Guide": "Desyntheseleitfaden",
