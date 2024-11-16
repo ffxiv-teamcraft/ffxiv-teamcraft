@@ -1707,6 +1707,8 @@
       "Your_ranking": "你的排名",
       "Include_fisheyes_data": "包括使用鱼眼的数据",
       "Not_enough_data_points": "数据不足，无法生成图表",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1736,6 +1738,7 @@
         "Throw_etime": "抛竿时间(艾)",
         "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
+        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
@@ -1750,11 +1753,14 @@
       "Fish_per_bait": "不同钓饵的上钩概率",
       "Fish_per_tug": "不同咬饵的上钩概率",
       "Fish_per_hookset": "每次提钩获得的鱼",
-      "Include_misses": "包含提钩失败记录",
+      "Include_misses": "Misses",
       "Miss": "提钩失败",
       "Remove_this_bait": "移除该鱼饵",
       "Bait_removed": "钓饵已从该钓场移除",
-      "Position_unknown": "未知位置"
+      "Position_unknown": "未知位置",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "物品",
