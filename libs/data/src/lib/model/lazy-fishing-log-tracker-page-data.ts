@@ -85,6 +85,7 @@ export interface Predator {
 }
 
 export interface GatheringNode {
+  aLure?:            number;
   baits?:            Bait[];
   duration:          number;
   ephemeral:         boolean;
@@ -95,6 +96,7 @@ export interface GatheringNode {
   legendary:         boolean;
   level:             number;
   limited:           boolean;
+  mLure?:            number;
   map:               number;
   matchingItemId:    number;
   minGathering?:     number;
