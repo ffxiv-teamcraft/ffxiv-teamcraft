@@ -37,6 +37,8 @@ export interface GatheringNode {
   oceanFishingTime?: number;
   minGathering?: number;
   radius?: number;
+  aLure?: number;
+  mLure?: number;
 
   /**
    * Spearfishing stuff

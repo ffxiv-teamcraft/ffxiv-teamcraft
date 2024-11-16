@@ -14,6 +14,10 @@ interface FishIdSpotIdVariable {
 interface FishIdSpotIdMissesVariable {
   fishId?: number;
   spotId?: number;
+  aLureMin?: number;
+  aLureMax?: number;
+  mLureMin?: number;
+  mLureMax?: number;
   misses?: -2 | 1;
 }
 
@@ -92,17 +96,21 @@ interface FishBaitResult {
 @Injectable()
 export class BaitsPerFishPerSpotQuery extends Query<FishBaitResult, FishIdSpotIdMissesVariable> {
   public document = gql`
-    query BaitsPerFishPerSpotQuery($fishId: Int, $spotId: Int, $misses: Int) {
-      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId, _gt: $misses }, occurences: { _gt: 1 } }) {
+    query BaitsPerFishPerSpotQuery($fishId: Int, $spotId: Int, $misses: Int, $mLureMax: Int, $aLureMax: Int, $mLureMin: Int, $aLureMin: Int) {
+      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId, _gt: $misses }, aLure: { _gte: $aLureMin, _lte: $aLureMax }, mLure: { _gte: $mLureMin, _lte: $mLureMax }, occurences: { _gt: 1 } }) {
         itemId
         spot
         baitId
+        aLure
+        mLure
         occurences
       }
-      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId, _gt: $misses }, occurences: { _gt: 1 } }) {
+      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId, _gt: $misses }, aLure: { _gte: $aLureMin, _lte: $aLureMax }, mLure: { _gte: $mLureMin, _lte: $mLureMax }, occurences: { _gt: 1 } }) {
         itemId
         spot
         baitId
+        aLure
+        mLure
       }
     }
   `;
@@ -141,6 +149,31 @@ export class HooksetTugsPerFishPerSpotQuery extends Query<FishHooksetTugResult, 
         itemId
         spot
         tug
+        occurences
+      }
+    }
+  `;
+}
+
+
+
+interface FishLuresResult {
+  itemId: number,
+  spot: number,
+  aLure: number,
+  mLure: number,
+  occurences: number
+}
+
+@Injectable()
+export class LuresPerFishPerSpotQuery extends Query<{lures_per_fish_per_spot: FishLuresResult[]}, FishIdSpotIdVariable> {
+  public document = gql`
+    query LuresPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
+      lures_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
+        itemId
+        spot
+        aLure
+        mLure
         occurences
       }
     }

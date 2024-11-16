@@ -48,23 +48,23 @@
       <app-fishing-spot-available-fishes fxFlex="1 1 auto"></app-fishing-spot-available-fishes>
       <app-fishing-spot-hours fxFlex="100" [activeFish]="highlightedFish$ | async" (activeFishChange)="highlightedFish$.next($event)"></app-fishing-spot-hours>
       <app-fishing-spot-bait-datagrid
-        fxFlex="none"
+        fxFlex="1 1 auto"
         [activeFish]="highlightedFish$ | async"
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-bait-datagrid>
       <app-fishing-spot-weather-datagrid
-        fxFlex="none"
+        fxFlex="1 1 auto"
         [activeFish]="highlightedFish$ | async"
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-weather-datagrid>
       <div fxLayout="column" fxLayoutGap="10px">
         <app-fishing-spot-tug-datagrid
-          fxFlex="none"
+          fxFlex="1 1 auto"
           [activeFish]="highlightedFish$ | async"
           (activeFishChange)="highlightedFish$.next($event)"
         ></app-fishing-spot-tug-datagrid>
         <app-fishing-spot-hookset-datagrid
-          fxFlex="none"
+          fxFlex="1 1 auto"
           [activeFish]="highlightedFish$ | async"
           (activeFishChange)="highlightedFish$.next($event)"
         ></app-fishing-spot-hookset-datagrid>

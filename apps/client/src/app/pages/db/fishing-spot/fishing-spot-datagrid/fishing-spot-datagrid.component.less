@@ -1,10 +1,12 @@
 .grid-table {
   height: 100%;
+  width: 100%;
   border-bottom: 1px solid #444;
 
   .grid-cell {
     border: 1px solid #444;
     padding: 6px;
+    text-align: center;
 
     &.last {
       border-right: none;
@@ -16,6 +18,9 @@
 
     &.grid-sider {
       border-left: none;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
   }
 

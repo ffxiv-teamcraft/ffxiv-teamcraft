@@ -1,0 +1,46 @@
+<nz-card [nzTitle]="'DB.FISH.Lures' | translate" [nzLoading]="loading$ | async" class="no-graph">
+  <div fxLayout="column" fxLayoutGap="10px" class="card-content">
+    <div fxLayout="column" fxLayoutGap="5px">
+      @if(lures$ |async; as lures){
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="{{ 3972 | lazyRow:'statuses':'icon' | async | xivapiIcon }}" alt="" class="round-icon img-icon" />
+          <div>
+            <div>{{ 3972 | i18nRow:'statuses' | i18n }}</div>
+            <div>{{ lures.percentALure | number: '1.0-1' }}% ({{ lures.totalALure | number: '1.0-1' }})</div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+          <img src="{{ 3973 | lazyRow:'statuses':'icon' | async | xivapiIcon }}" alt="" class="round-icon img-icon" />
+          <div>
+            <div>{{ 3973 | i18nRow:'statuses' | i18n }}</div>
+            <div>{{ lures.percentMLure | number: '1.0-1' }}% ({{ lures.totalMLure | number: '1.0-1' }})</div>
+          </div>
+        </div>
+        <div>
+          <nz-divider></nz-divider>
+        </div>
+        @for (stack of [1,2,3]; track $index){
+          <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+            <img src="{{ 3972 | lazyRow:'statuses':'icon' | async | xivapiIcon }}" alt="" class="round-icon img-icon" />
+            <div>
+              <div>{{ 3972 | i18nRow:'statuses' | i18n }} ({{stack}})</div>
+              <div>{{ lures.aLurePercent[stack] | number: '1.0-1' }}% ({{ lures.aLure[stack] | number: '1.0-1' }})</div>
+            </div>
+          </div>
+        }
+        <div>
+          <nz-divider></nz-divider>
+        </div>
+        @for (stack of [1,2,3]; track $index){
+          <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+            <img src="{{ 3973 | lazyRow:'statuses':'icon' | async | xivapiIcon }}" alt="" class="round-icon img-icon" />
+            <div>
+              <div>{{ 3973 | i18nRow:'statuses' | i18n }} ({{stack}})</div>
+              <div>{{ lures.mLurePercent[stack] | number: '1.0-1' }}% ({{ lures.mLure[stack] | number: '1.0-1' }})</div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</nz-card>

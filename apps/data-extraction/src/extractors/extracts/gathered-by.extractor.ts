@@ -104,6 +104,8 @@ export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtr
             hookset: entry.hookset,
             tug: entry.tug,
             snagging: entry.snagging,
+            aLure: (entry as any).aLure,
+            mLure: (entry as any).mLure,
             baits: this.getBaitChain(entry.bait, spot, this.fishingSources),
             oceanFishingTime: entry.oceanFishingTime || null,
             minGathering: entry.minGathering

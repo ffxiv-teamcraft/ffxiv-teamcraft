@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { defer, map, Observable, shareReplay, switchMap } from 'rxjs';
+import { map, Observable, shareReplay, switchMap } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import {
   BaitsPerFishPerSpotQuery,
@@ -7,7 +7,7 @@ import {
   BiteTimesPerFishPerSpotQuery,
   EorzeaTimesPerFishPerSpotQuery,
   FishStatisticsPerFishPerSpotQuery,
-  HooksetTugsPerFishPerSpotQuery,
+  HooksetTugsPerFishPerSpotQuery, LuresPerFishPerSpotQuery,
   RankingPerFishQuery,
   SpotsPerFishQuery,
   WeathersPerFishPerSpotQuery
@@ -15,7 +15,6 @@ import {
 import { QueryOptionsAlone } from 'apollo-angular/types';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
-import { retry } from 'rxjs/operators';
 
 const qOpts: QueryOptionsAlone<any> = { fetchPolicy: 'network-only' };
 
@@ -30,6 +29,7 @@ export class FishDataService {
     private readonly etimeFishSpotQuery: EorzeaTimesPerFishPerSpotQuery,
     private readonly baitFishSpotQuery: BaitsPerFishPerSpotQuery,
     private readonly hooksFishSpotQuery: HooksetTugsPerFishPerSpotQuery,
+    private readonly luresFishSpotQuery: LuresPerFishPerSpotQuery,
     private readonly biteFishSpotQuery: BiteTimesPerFishPerSpotQuery,
     private readonly biteFishSpotBaitQuery: BiteTimesPerFishPerSpotPerBaitQuery,
     private readonly statFishSpotQuery: FishStatisticsPerFishPerSpotQuery,
@@ -66,10 +66,48 @@ export class FishDataService {
    * @param fishId The fish id to query for.
    * @param spotId The spot id to filter by.
    * @param showMisses should we include misses?
+   * @param lureFilter Ambitious or Modest lure filter
    * @returns An apollo result observable containing information about the baits used to catch a fish, and which fishes the given fish is (mooch) bait for.
    */
-  public getBaitMooches = (fishId?: number, spotId?: number, showMisses?: boolean) => {
-    return this.baitFishSpotQuery.fetch({ fishId, spotId, misses: showMisses ? -2 : 1 }, qOpts);
+  public getBaitMooches = (fishId?: number, spotId?: number, showMisses?: boolean, lureFilter?: {
+    prop: 'aLure' | 'mLure',
+    value: number,
+    excludeAll?: boolean
+  }) => {
+    const aLure = { min: -1, max: 9 };
+    const mLure = { min: -1, max: 9 };
+    if (lureFilter != null) {
+      if (lureFilter.excludeAll) {
+        aLure.max = 0;
+        mLure.max = 0;
+      } else if (lureFilter.prop === 'aLure') {
+        aLure.min = lureFilter.value;
+        aLure.max = lureFilter.value;
+      } else if (lureFilter.prop === 'mLure') {
+        mLure.min = lureFilter.value;
+        mLure.max = lureFilter.value;
+      }
+    }
+    return this.baitFishSpotQuery.fetch({
+      fishId,
+      spotId,
+      misses: showMisses ? -2 : 1,
+      aLureMin: aLure.min,
+      aLureMax: aLure.max,
+      mLureMin: mLure.min,
+      mLureMax: mLure.max
+    }, qOpts);
+  };
+
+  /**
+   * Creates an observable that contains information about the hooksets and tugs used to catch the given fish.
+   *
+   * @param fishId The fish id to query for.
+   * @param spotId The spot id to filter by.
+   * @returns An apollo result observable containing information about the hooksets and tugs used to catch the given fish.
+   */
+  public getLures = (fishId?: number, spotId?: number) => {
+    return this.luresFishSpotQuery.fetch({ fishId, spotId }, qOpts);
   };
 
   /**

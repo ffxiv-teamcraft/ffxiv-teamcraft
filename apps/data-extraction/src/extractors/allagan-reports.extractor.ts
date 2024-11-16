@@ -131,7 +131,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                     predators: report.data.predators,
                     oceanFishingTime: report.data.oceanFishingTime,
                     minGathering: report.data.minGathering || 0,
-                    video: report.data.fruityVideo || null
+                    video: report.data.fruityVideo || null,
+                    aLure: report.data.aLure,
+                    mLure: report.data.mLure
                   }, this.identity), false, !report.applied);
               }
             });

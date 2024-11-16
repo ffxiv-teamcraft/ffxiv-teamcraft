@@ -72,6 +72,7 @@ export interface Coords {
 }
 
 export interface GatheringNode {
+  aLure?:            number;
   baits?:            Bait[];
   base?:             number;
   duration:          number;
@@ -84,6 +85,7 @@ export interface GatheringNode {
   legendary:         boolean;
   level:             number;
   limited:           boolean;
+  mLure?:            number;
   map:               number;
   matchingItemId:    number;
   minGathering?:     number;

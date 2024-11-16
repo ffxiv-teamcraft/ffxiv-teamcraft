@@ -180,6 +180,12 @@
               {{'DB.FISH.Fruity_video' | translate}}:
               <a href="{{data.fruityVideo}}" target="_blank">{{data.fruityVideo}}</a>
             </div>
+            <div *ngIf="data.mLure">
+              {{3973 | i18nRow: 'statuses' | i18n}}: {{data.mLure}}
+            </div>
+            <div *ngIf="data.aLure">
+              {{3972 | i18nRow: 'statuses' | i18n}}: {{data.aLure}}
+            </div>
           </div>
         </div>
       </ng-container>

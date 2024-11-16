@@ -204,15 +204,6 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
             return this.notificationService.add(parentNotification);
           }
           return of(null);
-        }),
-        switchMap(() => {
-          // Monitor all new comments for now.
-          const notification = new DbItemCommentNotification(
-            comment.message,
-            comment.resourceId,
-            environment.production ? 'N9iJj4tdcBOQpxH7qGdrRxJpxa32' : 'QxjvpGIgGUdWG6nLbOP6RgoswSC2'
-          );
-          return this.notificationService.add(notification);
         })
       )
       .subscribe(() => {

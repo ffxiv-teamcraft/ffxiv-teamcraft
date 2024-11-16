@@ -216,6 +216,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     rarity: [null],
     spot: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
     hookset: [null],
+    lure: [null],
+    lureStacks: [0],
     tug: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
     bait: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
     spawn: [null],
@@ -689,7 +691,9 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           fruityVideo: formState.fruityVideo,
           predators: formState.predators,
           oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null,
-          minGathering: formState.minGathering
+          minGathering: formState.minGathering,
+          aLure: formState.lure === 3972 ? formState.lureStacks : 0,
+          mLure: formState.lure === 3973 ? formState.lureStacks : 0
         }, value => value !== undefined && value !== null && value !== ''));
     }
   }

@@ -120,7 +120,7 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    const throw$ = packets$.pipe(
+    const throw$ = merge(packets$.pipe(
       // TODO DT flag for KR/CN
       ofMessageType(this.settings.region === Region.Global ? 'eventPlay4' : 'eventPlay'),
       toIpcData(),
@@ -140,7 +140,12 @@ export class FishingReporter implements DataReporter {
           previousWeatherId
         };
       })
-    );
+    ), eventPlay$.pipe(
+      filter(p => {
+        return p.scene === 2;
+      }),
+      map(() => null)
+    ));
 
 
     const bite$ = eventPlay$.pipe(
@@ -199,11 +204,12 @@ export class FishingReporter implements DataReporter {
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
         /**
+         * 1111: Early hook
          * 1117: Ignored the fish
          * 1119: snap?
          * 1120: Fish left
          */
-        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 || rodAnimation.logMessage === 1117) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
+        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 || rodAnimation.logMessage === 1117 || rodAnimation.logMessage === 1111) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {

@@ -169,7 +169,7 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
           if (this.fixedEcho) {
             seNumber = this.echoSeNumber;
           } else {
-            seNumber = Math.min(this.echoSeNumber - 1 + this.macro.length, 16);
+            seNumber = Math.max(1, Math.min(this.echoSeNumber - 1 + this.macro.length, 16));
           }
           macroFragment.push(`/echo Macro #${this.macro.length} finished <se.${seNumber}>`);
           totalLength++;
@@ -180,7 +180,7 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
         if (this.fixedEcho) {
           seNumber = this.echoSeNumber;
         } else {
-          seNumber = Math.min(this.echoSeNumber + this.macro.length - 1, 16);
+          seNumber = Math.max(1, Math.min(this.echoSeNumber - 1 + this.macro.length, 16));
         }
         this.macro[this.macro.length - 1].push(`/echo ${this.macroCompletionMessage} <se.${seNumber}>`);
       }
