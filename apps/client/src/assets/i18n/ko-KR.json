@@ -1707,6 +1707,8 @@
       "Your_ranking": "당신의 순위",
       "Include_fisheyes_data": "물고기의 눈을 통계에 포함",
       "Not_enough_data_points": "데이터가 부족하여 해당 차트로 표시할 수 없음",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
@@ -1736,6 +1738,7 @@
         "Throw_etime": "낚싯대 던진 에오르제아 시각",
         "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
+        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
           "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 직업을 변경하여 해결하세요."
@@ -1750,11 +1753,14 @@
       "Fish_per_bait": "미끼당 물고기",
       "Fish_per_tug": "입질당 물고기",
       "Fish_per_hookset": "낚아채기당 물고기",
-      "Include_misses": "놓친 수 포함",
+      "Include_misses": "Misses",
       "Miss": "놓침",
       "Remove_this_bait": "해당 미끼 제거",
       "Bait_removed": "해당 낚시터에서 미끼 제거",
-      "Position_unknown": "알 수 없는 장소"
+      "Position_unknown": "알 수 없는 장소",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "아이템",
