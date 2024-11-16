@@ -53,7 +53,7 @@
     <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start center" fxLayoutAlign.lt-md="center center"
       fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
       @if(alarms$ | async; as alarms) {
-        @for(alarm of alarms; track alarm.id) {
+        @for(alarm of alarms; track $index) {
           <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups$ | async" (toggleAlarm)="toggleAlarm($event)"
                             (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
         }
