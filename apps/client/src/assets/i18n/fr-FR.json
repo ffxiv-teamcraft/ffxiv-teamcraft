@@ -1707,6 +1707,8 @@
       "Your_ranking": "Votre classement",
       "Include_fisheyes_data": "Inclure les rapports utilisant Yeux de poissons",
       "Not_enough_data_points": "Données insuffisantes pour afficher le graphique",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
@@ -1736,6 +1738,7 @@
         "Throw_etime": "Pêche à la ligne",
         "Ignored_spot": "Cet emplacement n'est pas supporté par l'outil de rapport, attendez-vous à des valeurs étranges.",
         "Ignored_spot_description": "Aucun de vos poissons capturés ne sera signalé par l'outil de rapport.",
+        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le souci.",
           "No_stats": "Aucune statistique détectée. Basculez à nouveau en Pêcheur pour corriger."
@@ -1750,11 +1753,14 @@
       "Fish_per_bait": "Poisson par appât",
       "Fish_per_tug": "Poisson par touche",
       "Fish_per_hookset": "Poisson par ferrage",
-      "Include_misses": "Inclure les ratés",
+      "Include_misses": "Misses",
       "Miss": "Raté",
       "Remove_this_bait": "Supprimer cet appât",
       "Bait_removed": "Appât retiré de ce point",
-      "Position_unknown": "Lieu inconnu"
+      "Position_unknown": "Lieu inconnu",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Objets",
