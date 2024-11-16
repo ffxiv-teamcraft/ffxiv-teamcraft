@@ -139,7 +139,7 @@ export class SearchExtractor extends AbstractExtractor {
             });
           } else {
             searchIndex.push({
-              id,
+              id: +id,
               ...baseSearchInfo,
               craftable: false,
               data: {
