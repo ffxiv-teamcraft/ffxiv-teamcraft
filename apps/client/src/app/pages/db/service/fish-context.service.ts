@@ -115,6 +115,11 @@ export class FishContextService {
 
   public readonly showMisses$ = new BehaviorSubject<boolean>(localStorage.getItem('db:fish:show-misses') !== 'false');
 
+  public readonly lureFilter$ = new BehaviorSubject<{
+    prop: 'aLure' | 'mLure',
+    value: number
+  } | null>(JSON.parse(localStorage.getItem('db:fish:lure-filter') || 'null'));
+
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
     filter((fishId) => fishId > 0),
@@ -158,6 +163,14 @@ export class FishContextService {
   /** An observable containing information about the hooksets used to catch the active fish. */
   public readonly hooksetsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(
     map(occurrenceResultMapper('hooksets', 'hookset')),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
+
+  /** An observable containing information about the lures used to catch the active fish. */
+  public readonly luresByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
+    switchMap(([fishId, spotId]) => this.data.getLures(fishId, spotId))
+  ).pipe(
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
@@ -305,10 +318,13 @@ export class FishContextService {
   );
 
   /** An observable containing the baits needed and mooches possible at the active spot. */
-  public readonly baitMoochesBySpot$ = combineLatest([this.spotId$, this.showMisses$]).pipe(
+  public readonly baitMoochesBySpot$ = combineLatest([this.spotId$, this.showMisses$, this.lureFilter$]).pipe(
     filter(([spotId]) => spotId > 0),
-    tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses?.toString())),
-    switchMap(([spotId, showMisses]) => this.data.getBaitMooches(undefined, spotId, showMisses))
+    tap(([, showMisses, lureFilter]) => {
+      localStorage.setItem('db:fish:show-misses', showMisses?.toString());
+      localStorage.setItem('db:fish:lure-filter', JSON.stringify(lureFilter));
+    }),
+    switchMap(([spotId, showMisses, lureFilter]) => this.data.getBaitMooches(undefined, spotId, showMisses, lureFilter))
   );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */

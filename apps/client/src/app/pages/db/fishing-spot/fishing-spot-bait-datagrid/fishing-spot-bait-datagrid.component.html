@@ -1,12 +1,26 @@
 <nz-card
   [nzTitle]="title"
-  class="expanded mw-300"
+  class="expanded mw-400"
   [nzLoading]="loading$ | async"
   [class.card-with-list]="!(loading$ | async)"
   >
   <ng-template #title>
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
       <div>{{'DB.FISHING_SPOT.Fish_per_bait' | translate}}</div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>
+          <nz-select [nzPlaceHolder]="'DB.FISHING_SPOT.Lure_filter' | translate" class="lure-filter" [ngModel]="lureFilter$ | async" (ngModelChange)="lureFilter$.next($event)">
+            <nz-option nzLabel="{{'DB.FISHING_SPOT.No_lure_filter' | translate}}" [nzValue]="null"></nz-option>
+            <nz-option nzLabel="{{'DB.FISHING_SPOT.Exclude_all_lures' | translate}}" [nzValue]="{excludeAll:  true}"></nz-option>
+            <nz-option nzLabel="{{3972 | i18nRow: 'statuses' | i18n}} 1" [nzValue]="{prop: 'aLure', value: 1}"></nz-option>
+            <nz-option nzLabel="{{3972 | i18nRow: 'statuses' | i18n}} 2" [nzValue]="{prop: 'aLure', value: 2}"></nz-option>
+            <nz-option nzLabel="{{3972 | i18nRow: 'statuses' | i18n}} 3" [nzValue]="{prop: 'aLure', value: 3}"></nz-option>
+            <nz-option nzLabel="{{3973 | i18nRow: 'statuses' | i18n}} 1" [nzValue]="{prop: 'mLure', value: 1}"></nz-option>
+            <nz-option nzLabel="{{3973 | i18nRow: 'statuses' | i18n}} 2" [nzValue]="{prop: 'mLure', value: 2}"></nz-option>
+            <nz-option nzLabel="{{3973 | i18nRow: 'statuses' | i18n}} 3" [nzValue]="{prop: 'mLure', value: 3}"></nz-option>
+          </nz-select>
+        </div>
+      </div>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>
           {{'DB.FISHING_SPOT.Include_misses' | translate}}

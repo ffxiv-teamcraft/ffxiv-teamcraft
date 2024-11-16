@@ -26208,7 +26208,9 @@
       "spawn": 20,
       "duration": 4,
       "minGathering": 0,
-      "video": "https://youtu.be/aCMuzj51IOM"
+      "video": "https://youtu.be/aCMuzj51IOM",
+      "aLure": 0,
+      "mLure": 1
     }
   ],
   "43686": [
@@ -27581,7 +27583,8 @@
         1,
         2
       ],
-      "minGathering": 3500
+      "minGathering": 3500,
+      "video": "https://youtu.be/9CqeUsfMqHA"
     }
   ],
   "44346": [

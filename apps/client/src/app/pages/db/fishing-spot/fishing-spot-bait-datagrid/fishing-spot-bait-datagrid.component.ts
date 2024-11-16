@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
 import { filter, first, map, switchMap } from 'rxjs/operators';
@@ -20,16 +20,19 @@ import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzOptionComponent, NzSelectComponent } from 'ng-zorro-antd/select';
+import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../../core/i18n.pipe';
 
 @Component({
-    selector: 'app-fishing-spot-bait-datagrid',
-    templateUrl: './fishing-spot-bait-datagrid.component.html',
-    styleUrls: [
-        './fishing-spot-bait-datagrid.component.less'
-    ],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule]
+  selector: 'app-fishing-spot-bait-datagrid',
+  templateUrl: './fishing-spot-bait-datagrid.component.html',
+  styleUrls: [
+    './fishing-spot-bait-datagrid.component.less'
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, NzSelectComponent, NzOptionComponent, I18nRowPipe, I18nPipe]
 })
 export class FishingSpotBaitDatagridComponent {
   @Input()
@@ -76,6 +79,8 @@ export class FishingSpotBaitDatagridComponent {
   );
 
   showMisses$ = this.fishCtx.showMisses$;
+
+  lureFilter$ = this.fishCtx.lureFilter$;
 
   public isAllaganChecker$ = this.authFacade.user$.pipe(
     map(user => user.allaganChecker || user.admin)

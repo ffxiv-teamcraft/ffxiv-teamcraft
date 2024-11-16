@@ -45,6 +45,14 @@
         <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
           src="./assets/icons/status/snagging.png">
         }
+      @if (node.mLure) {
+        <img [nzTooltipTitle]="3973 | i18nRow: 'statuses' | i18n" alt="" nz-tooltip
+             [src]="3973 | lazyRow:'statuses':'icon' | async | xivapiIcon"> >= {{node.mLure}}
+      }
+      @if (node.aLure) {
+        <img [nzTooltipTitle]="3972 | i18nRow: 'statuses' | i18n" alt="" nz-tooltip
+             [src]="3972 | lazyRow:'statuses':'icon' | async | xivapiIcon"> >= {{node.aLure}}
+      }
       </div>
       @if (node.folklore) {
         <div class="flex-row gap-5 align-center">
