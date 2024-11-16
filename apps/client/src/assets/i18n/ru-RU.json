@@ -1707,6 +1707,8 @@
       "Your_ranking": "Ваш рейтинг",
       "Include_fisheyes_data": "Включать отчеты с помощью Fish Eyes",
       "Not_enough_data_points": "Недостаточно данных для отображения диаграмм",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1736,6 +1738,7 @@
         "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
+        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "Не обнаружено наживки, смените наживку один раз.",
           "No_stats": "Параметры не обнаружены, переключитесь снова на рыбака."
@@ -1750,11 +1753,14 @@
       "Fish_per_bait": "Рыба за наживку",
       "Fish_per_tug": "Рыба за tug",
       "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Включать пропущенные",
+      "Include_misses": "Misses",
       "Miss": "Пропущено",
       "Remove_this_bait": "Убрать эту наживку",
       "Bait_removed": "Наживка удалена из этого места",
-      "Position_unknown": "Неизвестная локация"
+      "Position_unknown": "Неизвестная локация",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Предметы",
