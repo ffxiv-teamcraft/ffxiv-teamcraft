@@ -174,7 +174,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         // If it's fisher, add spearfishing gig
         requests.push(this.dataService.search('', SearchType.ITEM, [
           { name: 'id', value: 17726 }
-        ], ['ilvl', 'desc']).pipe(tap(console.log)));
+        ], ['ilvl', 'desc']));
       } else {
         requests.push(of([]));
       }
