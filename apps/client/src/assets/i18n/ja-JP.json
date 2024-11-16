@@ -1707,6 +1707,8 @@
       "Your_ranking": "あなたのランキング",
       "Include_fisheyes_data": "フィッシュアイを通計で含む",
       "Not_enough_data_points": "チャートを表示するための十分なデータがありません。",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
       "TUG": {
         "Light": "弱震(!)",
         "Medium": "強震(!!)",
@@ -1736,6 +1738,7 @@
         "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
+        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
@@ -1750,11 +1753,14 @@
       "Fish_per_bait": "餌ごとの魚",
       "Fish_per_tug": "当たりごとの魚",
       "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Include misses",
+      "Include_misses": "Misses",
       "Miss": "Miss",
       "Remove_this_bait": "Remove this bait",
       "Bait_removed": "Bait removed from this spot",
-      "Position_unknown": "Unknown location"
+      "Position_unknown": "Unknown location",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "アイテム",
