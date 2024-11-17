@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.18...v11.3.20) (2024-11-17)
+
+
+### Features
+
+* **db:** add lure data support everywhere ([369da7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/369da7b6ee29fd24fe26943e9763b3025b15ff79)), closes [#2908](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2908)
+* **submarines:** update max level  ([a61b0a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a61b0a099ff85b5214cec863ff40940659eb9109))
+
+
+### Bug Fixes
+
+* **db:** reduction source fixes ([6ef33cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ef33cd73c24dabda0951ff0c1d3b4e6437ad8d6))
+* **desktop:** better time tracking for early hooks ([6777905](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6777905fd8f88ce33db4ad5574d2fa5bce9d492c))
+* **desktop:** fishing reporter now sends data properly ([a3b6fde](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3b6fde010ac4060493dfd98530871255f08c99c))
+* **gearset:** properly include spearfishing gig to search results ([e19a545](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e19a545572765f14a0d421348ffaccbf7bdae777))
+* **list:** make mouse wheel directive active only on focus ([c0459dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0459dd81e056b5371e9cc7e940eeec01e9e1c23)), closes [#2921](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2921)
+* **rotations:** dragging rotations into empty root now works as expected ([98544d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98544d9f06f1f4e168471e19a53797a572878906))
+* **search:** fix wrong alarms on some fish and big allagan reports import ([77081ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77081ca73bfe4eca626977434370351591cdecd7))
+* **search:** Patch 7.1 search filter now working as expected ([4b71ef2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b71ef2a700395da0932b08f87d4dd98ba41bedc))
+* **simulator:** fix base quality formula missing fround ([869e1ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/869e1ee78c85d6f0adf572df3d3e26c6454cfa76))
+
 ### [11.3.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.18...v11.3.19) (2024-11-16)
 
 
