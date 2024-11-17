@@ -144,6 +144,7 @@ export class FishingReporter implements DataReporter {
       filter(p => {
         return p.scene === 2;
       }),
+      delay(1000),
       map(() => null)
     ));
 
