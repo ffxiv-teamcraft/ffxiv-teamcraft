@@ -120,7 +120,7 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    const throw$ = merge(packets$.pipe(
+    const throw$ = packets$.pipe(
       // TODO DT flag for KR/CN
       ofMessageType(this.settings.region === Region.Global ? 'eventPlay4' : 'eventPlay'),
       toIpcData(),
@@ -140,13 +140,7 @@ export class FishingReporter implements DataReporter {
           previousWeatherId
         };
       })
-    ), eventPlay$.pipe(
-      filter(p => {
-        return p.scene === 2;
-      }),
-      delay(1000),
-      map(() => null)
-    ));
+    );
 
 
     const bite$ = eventPlay$.pipe(
