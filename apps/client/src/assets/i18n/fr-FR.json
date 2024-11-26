@@ -122,6 +122,8 @@
   "Your_public_lists": "Vos listes communautaires",
   "Public_list": "Liste communautaire",
   "Profile": "Profil",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} pour le tout",
   "Discounts": "Remises",
   "Flat_discount": "Remise en gils",
@@ -1709,6 +1711,7 @@
       "Not_enough_data_points": "Données insuffisantes pour afficher le graphique",
       "Lure": "Lure",
       "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
@@ -1738,7 +1741,6 @@
         "Throw_etime": "Pêche à la ligne",
         "Ignored_spot": "Cet emplacement n'est pas supporté par l'outil de rapport, attendez-vous à des valeurs étranges.",
         "Ignored_spot_description": "Aucun de vos poissons capturés ne sera signalé par l'outil de rapport.",
-        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le souci.",
           "No_stats": "Aucune statistique détectée. Basculez à nouveau en Pêcheur pour corriger."
