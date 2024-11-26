@@ -122,6 +122,8 @@
   "Your_public_lists": "Ваши списки сообщества",
   "Public_list": "Список сообщества",
   "Profile": "Профиль",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} всего",
   "Discounts": "Скидка",
   "Flat_discount": "Сумма",
@@ -1709,6 +1711,7 @@
       "Not_enough_data_points": "Недостаточно данных для отображения диаграмм",
       "Lure": "Lure",
       "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1738,7 +1741,6 @@
         "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
-        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "Не обнаружено наживки, смените наживку один раз.",
           "No_stats": "Параметры не обнаружены, переключитесь снова на рыбака."
