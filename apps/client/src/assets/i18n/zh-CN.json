@@ -122,6 +122,8 @@
   "Your_public_lists": "您的共享清单",
   "Public_list": "共享清单",
   "Profile": "个人资料",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "一共 {{amount}} 个",
   "Discounts": "折扣",
   "Flat_discount": "金额",
@@ -1709,6 +1711,7 @@
       "Not_enough_data_points": "数据不足，无法生成图表",
       "Lure": "Lure",
       "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1738,7 +1741,6 @@
         "Throw_etime": "抛竿时间(艾)",
         "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
-        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
