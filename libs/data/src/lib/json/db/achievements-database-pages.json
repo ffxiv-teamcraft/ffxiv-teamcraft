@@ -75217,19 +75217,19 @@
   },
   "3617": {
     "id": 3617,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000317.png",
+    "patch": 99,
+    "en": "Alternative Destiny",
+    "de": "Du bist mein und ich bin dein",
+    "ja": "絶もうひとつの未来を見届けし者",
+    "fr": "Nous ne ferons plus qu'un",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bear witness to a different future for the Oracles of Light and Darkness.",
+      "de": "Die Schicksale des Orakels des Lichts und des Orakels der Dunkelheit vereinigt.",
+      "ja": "光と闇の巫女の運命を集約させる",
+      "fr": "Fusionner les destins des prêtresses de la Lumière et des Ténèbres."
     },
     "item": 0,
-    "title": 0
+    "title": 768
   }
 }

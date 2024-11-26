@@ -609,11 +609,11 @@
   },
   {
     "id": 77,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5137,
+    "name": "A Future Rewritten",
+    "territory": 1238,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 78,

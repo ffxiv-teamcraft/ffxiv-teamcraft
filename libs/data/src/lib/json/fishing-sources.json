@@ -27063,9 +27063,11 @@
       "spot": 321,
       "hookset": 1,
       "tug": 0,
-      "bait": 43853,
+      "bait": 43857,
       "minGathering": 0,
-      "video": "https://youtu.be/Te0bYY9_Pl8"
+      "video": "https://youtu.be/Te0bYY9_Pl8",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "43762": [
@@ -27557,6 +27559,24 @@
       "duration": 2,
       "minGathering": 3500,
       "video": "https://youtu.be/Is_j823nprs"
+    }
+  ],
+  "44341": [
+    {
+      "spot": 301,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 16,
+      "duration": 4,
+      "weathers": [
+        3,
+        4
+      ],
+      "minGathering": 3500,
+      "video": "https://youtu.be/425GuV3rLG4",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "44344": [

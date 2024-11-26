@@ -13960,6 +13960,37 @@
       40300
     ]
   },
+  "30143": {
+    "id": 30143,
+    "en": "Futures Rewritten (Ultimate)",
+    "ja": "絶もうひとつの未来",
+    "de": "Eine zweite Zukunft (fatal)",
+    "fr": "Avenirs réécrits (fatal)",
+    "description": {
+      "en": "Drawing upon his ever-fertile imagination, the wandering minstrel weaves his own interpretation of events surrounding the Flood of Light, the calamity that engulfed nigh the entirety of the First. From the cause of the Flood to the outcome of the struggles that followed, the man's evocative verse conjures up vivid images in your mind's eye─images of an alternate future that may have unfolded for Ryne, the young Oracle of Light...",
+      "ja": "異邦の詩人は紡ぐ。かつて第一世界を見舞った災厄「光の氾濫」にまつわる新説を。<br>かろうじて食い止められた氾濫の元凶が何であり、それは如何なる結末を辿ったのか……。過度に脚色された希望の詩を聞きながら、闇の戦士は今、光の巫女リーンを巡る「もうひとつの未来」を追体験する。",
+      "de": "Die Fantasie des fahrenden Sängers kennt bekanntermaßen keine Grenzen, vor allem dann nicht, wenn er eine Geschichte besonders berührend findet. Diesmal singen seine Saiten von der Flut des Lichts, die über den ersten Splitter hinwegwusch und das Schicksal der Welt und ihrer Bewohner für immer veränderte. Vor allem das Schicksal der jungen Ryne geht ihm nahe, das so eng mit der Zukunft ihrer Heimat verwoben ist. Was, wenn die Geschichte des Orakels des Lichts anders verlaufen wäre, so fragt er sich, und malt mit den Klängen seiner Verse eine zweite Zukunft&nbsp;...",
+      "fr": "Prenant comme point de départ le déluge de Lumière, la catastrophe qui a presque entièrement dévasté le premier reflet, le ménestrel errant retrace à sa manière le fil de l'histoire, des origines de la vague funeste aux moult turpitudes qui s'ensuivirent. Tandis qu'il déclame des vers au sens pour le moins équivoque, il vous vient à l'esprit un scénario non advenu, dans lequel Ryne, la prêtresse de la Lumière, est plus que jamais mise en péril..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061832.png",
+    "banner": "/i/112000/112587.png",
+    "contentType": 28,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 77,
+    "contentText": [
+      41861,
+      41800
+    ]
+  },
   "30144": {
     "id": 30144,
     "en": "Jeuno: The First Walk",
