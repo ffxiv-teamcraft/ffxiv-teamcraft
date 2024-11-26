@@ -122,6 +122,8 @@
   "Your_public_lists": "Uw communitylijsten",
   "Public_list": "communitylijst",
   "Profile": "Profiel",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} voor totaa;",
   "Discounts": "Korting",
   "Flat_discount": "Vast",
@@ -1709,6 +1711,7 @@
       "Not_enough_data_points": "Not enough data points to display this chart",
       "Lure": "Lure",
       "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1738,7 +1741,6 @@
         "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
-        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
