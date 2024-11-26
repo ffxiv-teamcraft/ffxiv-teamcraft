@@ -122,6 +122,8 @@
   "Your_public_lists": "나의 커뮤니티 목록",
   "Public_list": "목록 공개",
   "Profile": "프로필",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "총 {{amount}}개",
   "Discounts": "할인",
   "Flat_discount": "금액",
@@ -1709,6 +1711,7 @@
       "Not_enough_data_points": "데이터가 부족하여 해당 차트로 표시할 수 없음",
       "Lure": "Lure",
       "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
@@ -1738,7 +1741,6 @@
         "Throw_etime": "낚싯대 던진 에오르제아 시각",
         "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
-        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
           "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 직업을 변경하여 해결하세요."
