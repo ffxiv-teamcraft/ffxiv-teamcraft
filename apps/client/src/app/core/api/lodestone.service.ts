@@ -6,6 +6,9 @@ import { filter, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operat
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
 import { FreeCompany } from '@xivapi/nodestone';
+import { isEmpty } from 'lodash';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({ providedIn: 'root' })
 export class LodestoneService {
@@ -17,7 +20,8 @@ export class LodestoneService {
   private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
   constructor(private userService: UserService, private http: HttpClient,
-              private ipc: IpcService, private ngZone: NgZone) {
+              private ipc: IpcService, private ngZone: NgZone, private notification: NzNotificationService,
+              private translate: TranslateService) {
     if (!LodestoneService.INTERVAL) {
       LodestoneService.INTERVAL = interval(200).subscribe(() => {
         const subject = LodestoneService.QUEUE.shift();
@@ -75,6 +79,9 @@ export class LodestoneService {
       const dataSource$: Observable<Partial<CharacterResponse>> = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
       return dataSource$.pipe(
         map(res => {
+          if (isEmpty(res)) {
+            this.notification.error(this.translate.instant("Private_lodestone"), this.translate.instant("Private_lodestone_explain"))
+          }
           return {
             ...res,
             Character: {
@@ -91,7 +98,7 @@ export class LodestoneService {
   public getFreeCompanyFromLodestoneApi(id: string): Observable<Partial<FreeCompany>> {
     return this.ngZone.runOutsideAngular(() => {
       return this.http.get<FreeCompany>(`https://lodestone.ffxivteamcraft.com/FreeCompany/${id}`).pipe(
-        map((row: any)  => {
+        map((row: any) => {
           row.FreeCompany.avatar = [row.FreeCompany.CrestLayers.Bottom, row.FreeCompany.CrestLayers.MIDdle, row.FreeCompany.CrestLayers.Top];
           return row;
         })
