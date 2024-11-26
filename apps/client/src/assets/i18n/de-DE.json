@@ -122,6 +122,8 @@
   "Your_public_lists": "Deine Communitylisten",
   "Public_list": "Communityliste",
   "Profile": "Profil",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} insgesamt",
   "Discounts": "Ermäßigung",
   "Flat_discount": "Pauschal",
@@ -1709,6 +1711,7 @@
       "Not_enough_data_points": "Nicht genügend Datenpunkte, um dieses Diagramm anzuzeigen",
       "Lure": "Lure",
       "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -1738,7 +1741,6 @@
         "Throw_etime": "Line throw etime",
         "Ignored_spot": "Dieser Spot wird nicht unterstützt, vermutlich werden seltsame Werte angezeigt.",
         "Ignored_spot_description": "Keiner deiner gefangenen Fische wird durch den Reporter unterstützt.",
-        "Lures": "Lures",
         "ERRORS": {
           "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
           "No_stats": "Keine Attribute gefunden. Wechsel erneut zum Fischer, um dies zu beheben."
