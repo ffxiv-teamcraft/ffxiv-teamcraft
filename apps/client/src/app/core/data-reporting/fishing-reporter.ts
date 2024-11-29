@@ -121,8 +121,7 @@ export class FishingReporter implements DataReporter {
     });
 
     const throw$ = packets$.pipe(
-      // TODO DT flag for KR/CN
-      ofMessageType(this.settings.region === Region.Global ? 'eventPlay4' : 'eventPlay'),
+      ofMessageType('eventPlay4'),
       toIpcData(),
       filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
       delay(200),
