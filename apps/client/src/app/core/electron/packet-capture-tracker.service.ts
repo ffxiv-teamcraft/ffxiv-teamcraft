@@ -325,12 +325,7 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
-      if (this.settings.region === Region.Korea) {
-        const contentId = BigInt(packet.contentId.toString().replace(/^1801440/,"1801439"));
-        this.inventoryService.setContentId(contentId.toString(16).padStart(16, '0').toUpperCase());
-      } else {
-        this.inventoryService.setContentId(packet.contentId.toString(16).padStart(16, '0').toUpperCase());
-      }
+      this.inventoryService.setContentId(packet.contentId.toString(16).padStart(16, '0').toUpperCase());
     });
 
     this.ipc.freeCompanyId$.pipe(
