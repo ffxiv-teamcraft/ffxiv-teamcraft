@@ -22,7 +22,7 @@ import { PlatformService } from '../tools/platform.service';
 import { StatusEntry } from '../../modules/eorzea/status-entry';
 import { LazyStatus } from '@ffxiv-teamcraft/data/model/lazy-status';
 import { isEqual } from 'lodash';
-
+import { Region } from '@ffxiv-teamcraft/types';
 @Injectable({
   providedIn: 'root'
 })
@@ -325,7 +325,12 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
-      this.inventoryService.setContentId(packet.contentId.toString(16).padStart(16, '0').toUpperCase());
+      if (this.settings.region === Region.Korea) {
+        const contentId = BigInt(packet.contentId.toString().replace(/^1801440/,"1801439"));
+        this.inventoryService.setContentId(contentId.toString(16).padStart(16, '0').toUpperCase());
+      } else {
+        this.inventoryService.setContentId(packet.contentId.toString(16).padStart(16, '0').toUpperCase());
+      }
     });
 
     this.ipc.freeCompanyId$.pipe(
