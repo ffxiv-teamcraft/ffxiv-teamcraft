@@ -122,6 +122,8 @@
   "Your_public_lists": "Deine Communitylisten",
   "Public_list": "Communityliste",
   "Profile": "Profil",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} insgesamt",
   "Discounts": "Ermäßigung",
   "Flat_discount": "Pauschal",
@@ -1707,6 +1709,9 @@
       "Your_ranking": "Dein Rang",
       "Include_fisheyes_data": "Meldungen mit Fischaugen einbeziehen",
       "Not_enough_data_points": "Nicht genügend Datenpunkte, um dieses Diagramm anzuzeigen",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -1754,7 +1759,10 @@
       "Miss": "Fehlschlag",
       "Remove_this_bait": "Diesen Köder entfernen",
       "Bait_removed": "Köder entfernt für diesen Spot",
-      "Position_unknown": "Unbekannter Ort"
+      "Position_unknown": "Unbekannter Ort",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Gegenstände",
