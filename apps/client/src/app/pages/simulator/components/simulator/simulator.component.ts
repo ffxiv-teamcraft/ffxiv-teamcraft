@@ -14,7 +14,7 @@ import {
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, take } from 'rxjs';
 import {
   catchError,
-  debounceTime,
+  debounceTime, delay,
   distinctUntilChanged,
   distinctUntilKeyChanged,
   filter,
@@ -1029,6 +1029,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       this.loggedIn$,
       this.job$
     ]).pipe(
+      delay(500),
       map(([stats, bonuses, loggedIn, job]) => {
         const levels = loggedIn ? stats.levels : [80, 80, 80, 80, 80, 80, 80, 80];
         levels[(job || stats.jobId) - 8] = stats.level;
