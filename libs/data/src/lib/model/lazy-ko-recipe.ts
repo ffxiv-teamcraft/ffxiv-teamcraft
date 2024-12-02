@@ -19,7 +19,7 @@ export interface LazyKoRecipe {
   result:                 number;
   rlvl:                   number;
   stars:                  number;
-  suggestedControl:       number;
+  suggestedControl:       null;
   suggestedCraftsmanship: number;
   yields:                 number;
 }

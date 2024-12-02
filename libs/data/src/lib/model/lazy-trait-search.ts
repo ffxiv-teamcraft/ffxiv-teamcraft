@@ -6,7 +6,7 @@ export interface LazyTraitSearch {
   id:    number;
   ja:    string;
   job:   number;
-  ko?:   string;
+  ko:    string;
   lvl:   number;
   patch: number;
   zh:    string;
