@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.20...v11.3.21) (2024-12-02)
+
+
+### Features
+
+* **db:** 7.11 content update ([43858a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43858a7f7515d51ec3c618caf751dadaecdd8104))
+* **db:** allagan reports import ([7bc9d44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bc9d4467834b696ffce85ff86bc45d82a1ef1b1))
+* **db:** support for korean v7.0 update ([e8df3ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8df3ed46b2c7a766d3e2e230e07649329d570cf))
+* **profile:** add notification when lodestone profile is set to private ([c2e9440](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c2e94406c5eb71e5ce42268c5886591943fe9ff4))
+
+
+### Bug Fixes
+
+* **db:** fishing spot's bite time fish filter is now standalone ([e1f648d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1f648df3df9212bc81d86c65c1088f2a26ce3ba))
+* **db:** load mobs based on mapId ([1c50241](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c50241611e5150f485a3ad3a3f6d084c0cdd00f))
+* **desktop:** enable reporters for KR again ([c4e028c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4e028c3e6cbe4b8d8cb58f5852bd21d09fc159d))
+* **desktop:** fixed a bug that fails to track the character log in to KR ([bee7a63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bee7a63e1af6abdc117d23e3ce7aa5bb5e237b3e))
+* **desktop:** fixed strange contentId for KR ([3817b7f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3817b7fad465d40e1bc1982b1881d2a26fe4ab84))
+* **desktop:** small tweak to fishing reporter to revert previous changes ([faf9d02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/faf9d029a9bb8871474189503ab966a4bd09e147))
+* **fishing-overlay:** handle Rest properly ([3e6585d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e6585d6f81cf29bbef27880488b8031cd2ef755))
+* **fishing-train:** don't crash when train includes fish without data ([bc8d14d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc8d14d6a2bfeb26471aafdddcfc7b0193f019da))
+* **simulator:** don't overwrite set priority when saving its stats ([8e8f7d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e8f7d840c858d2fd6063cec15eaf7f3bfb41a15))
+* **simulator:** fix float precision issue on quality efficiency formula ([6698505](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6698505db286fb2a2d551c3ec5cdd33c94170c73))
+* **simulator:** possible fix for stats sometimes not loading ([5a276f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a276f350256e5d60e0e9c7574af18b4da9c10f4))
+
 ### [11.3.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.18...v11.3.20) (2024-11-17)
 
 
