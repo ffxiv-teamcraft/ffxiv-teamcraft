@@ -124,7 +124,7 @@ export class FishTrainComponent extends TeamcraftComponent {
             fish: train.fish.map(stop => {
               return {
                 ...stop,
-                node: getItemSource(getExtract(extracts, stop.id), DataType.GATHERED_BY)?.nodes[0]
+                node: getItemSource(getExtract(extracts, stop.id), DataType.GATHERED_BY)?.nodes?.[0]
               };
             })
           };

@@ -1,12 +1,12 @@
 <div *ngIf="fishTrain$ | async as fishTrain; else loadingTpl">
   <app-fullpage-message *ngIf="fishTrain.notFound">
-    {{'FISH_TRAIN.Not_found' | translate}}
+    {{ 'FISH_TRAIN.Not_found' | translate }}
   </app-fullpage-message>
   <div *ngIf="display$ | async as display">
 
     <ng-template #currentFishTpl>
       <div class="details-column" [class.overlay]="overlay">
-        <h3>{{'FISH_TRAIN.Current_fish' | translate}}</h3>
+        <h3>{{ 'FISH_TRAIN.Current_fish' | translate }}</h3>
         <nz-card [nzCover]="coverTpl" [nzActions]="[copyMacroTpl]" *ngIf="display.running; else trainNotRunningTpl">
           <nz-card-meta [nzTitle]="titleTpl" [nzAvatar]="avatarTpl" [nzDescription]="fishDescriptionTpl">
             <ng-template #avatarTpl>
@@ -25,32 +25,32 @@
               </div>
             </ng-template>
             <ng-template #fishDescriptionTpl>
-              {{display.current.node.map | mapName | i18n}} -
+              {{ display.current.node.map | mapName | i18n }} -
               <app-i18n-name content="places" [id]="display.current.node.zoneId"></app-i18n-name>
-              - X:{{display.current.node.x}} - Y:{{display.current.node.y}}
+              - X:{{ display.current.node.x }} - Y:{{ display.current.node.y }}
             </ng-template>
           </nz-card-meta>
           <nz-divider></nz-divider>
           <div nz-row>
             <div nz-col [nzSpan]="24" class="current-details-block">
-              <b>{{'FISH_TRAIN.Bait' | translate}}</b>
+              <b>{{ 'FISH_TRAIN.Bait' | translate }}</b>
               <span class="details-content"><app-fishing-bait [baits]="display.current.node.baits" flex="row" [iconWidth]="24"></app-fishing-bait></span>
             </div>
             <div nz-col [nzSpan]="12" class="current-details-block">
-              <b>{{'DB.FISH.Min_gathering' | translate}}</b><br>
-              <span class="details-content">{{display.current.node.minGathering || 0}}</span>
+              <b>{{ 'DB.FISH.Min_gathering' | translate }}</b><br>
+              <span class="details-content">{{ display.current.node.minGathering || 0 }}</span>
             </div>
             <div nz-col [nzSpan]="12" class="current-details-block">
-              <b>{{'DB.FISH.OVERLAY.Hookset' | translate}}</b><br>
+              <b>{{ 'DB.FISH.OVERLAY.Hookset' | translate }}</b><br>
               <span class="details-content flex-row gap-2 align-center">
                 <img [src]="display.current.node.hookset | hooksetActionId | actionIcon | xivapiIcon" alt="" class="hookset-icon">
                 <app-i18n-name content="actions" [id]="display.current.node.hookset | hooksetActionId"></app-i18n-name>
               </span>
             </div>
             <div nz-col [nzSpan]="12" class="current-details-block">
-              <b>{{'DB.FISH.OVERLAY.Tug' | translate}}</b><br>
+              <b>{{ 'DB.FISH.OVERLAY.Tug' | translate }}</b><br>
               <span class="details-content">
-                {{('DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][display.current.node.tug]) | translate}}
+                {{ ('DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][display.current.node.tug]) | translate }}
               </span>
             </div>
             <div nz-col [nzSpan]="12" class="current-details-block">
@@ -58,7 +58,7 @@
                 <app-i18n-name content="statuses" [id]="761"></app-i18n-name>
               </b><br>
               <span class="details-content">
-                {{(display.current.node.snagging ? 'Yes' : 'No') | translate}}
+                {{ (display.current.node.snagging ? 'Yes' : 'No') | translate }}
               </span>
             </div>
           </div>
@@ -68,17 +68,20 @@
                   nz-popover [nzPopoverTitle]="'FISH_TRAIN.Are_you_on_spot' | translate"
                   [nzPopoverContent]="popoverTpl"
                   [(nzPopoverVisible)]="macroPopoverShown"
-                  nzPopoverTrigger="click">{{'FISH_TRAIN.Copy_macro' | translate}}</button>
+                  nzPopoverTrigger="click">{{ 'FISH_TRAIN.Copy_macro' | translate }}
+          </button>
           <ng-template #popoverTpl>
             <nz-space>
               <button *nzSpaceItem nz-button nzSize="small" nzType="primary"
                       (click)="macroPopoverShown = false"
                       [clipboard]="getMacro"
-                      [clipboardFnArgs]="[display.current, 'Current_position_macro', true]">{{'Yes' | translate}}</button>
+                      [clipboardFnArgs]="[display.current, 'Current_position_macro', true]">{{ 'Yes' | translate }}
+              </button>
               <button *nzSpaceItem nz-button nzSize="small"
                       (click)="macroPopoverShown = false"
                       [clipboard]="getMacro"
-                      [clipboardFnArgs]="[display.current, 'Current_position_macro']">{{'No' | translate}}</button>
+                      [clipboardFnArgs]="[display.current, 'Current_position_macro']">{{ 'No' | translate }}
+              </button>
             </nz-space>
           </ng-template>
         </ng-template>
@@ -88,7 +91,7 @@
                    [markers]="[{x: display.current.node.x, y: display.current.node.y}]"></app-map>
         </ng-template>
         <ng-template #trainNotRunningTpl>
-          <app-fullpage-message>{{'FISH_TRAIN.Train_not_running' | translate}}</app-fullpage-message>
+          <app-fullpage-message>{{ 'FISH_TRAIN.Train_not_running' | translate }}</app-fullpage-message>
         </ng-template>
       </div>
     </ng-template>
@@ -98,7 +101,7 @@
         <nz-page-header-title>
           <div class="flex-row gap-5 align-center">
             <app-user-avatar *ngIf="fishTrain.conductor" [userId]="fishTrain.conductor" [width]="32" messageKey="FISH_TRAIN.Train_conductor"></app-user-avatar>
-            {{fishTrain.name || ('FISH_TRAIN.Details_title' | translate:{ id: fishTrain.$key })}}
+            {{ fishTrain.name || ('FISH_TRAIN.Details_title' | translate:{ id: fishTrain.$key }) }}
             <button nz-button *ngIf="display.isConductor"
                     (click)="renameTrain(fishTrain.$key, fishTrain.name)"
                     nzSize="small" nzShape="circle"
@@ -107,8 +110,9 @@
             </button>
           </div>
         </nz-page-header-title>
-        <nz-page-header-subtitle>{{'FISH_TRAIN.Departure' | translate:{ time: display.start | date:'short':null:settings.dateFormat } }}
-          , {{'FISH_TRAIN.Terminus' | translate:{ time: display.stop | date:'short':null:settings.dateFormat } }}</nz-page-header-subtitle>
+        <nz-page-header-subtitle>{{ 'FISH_TRAIN.Departure' | translate:{ time: display.start | date:'short':null:settings.dateFormat } }}
+          , {{ 'FISH_TRAIN.Terminus' | translate:{ time: display.stop | date:'short':null:settings.dateFormat } }}
+        </nz-page-header-subtitle>
         <nz-page-header-content>
           <div class="flex-row gap-5">
             <ng-container *ngIf="display.isConductor; else serverTpl">
@@ -122,50 +126,50 @@
             </ng-container>
             <ng-template #serverTpl>
               <nz-tag class="custom-tag" [style.border-color]="fishTrain.world ? 'var(--primary-color)' : '#f50'">
-                <span nz-icon nzType="global" nzTheme="outline"></span> {{'MARKETBOARD.Server' | translate}}:&nbsp;{{fishTrain.world || '???'}}
+                <span nz-icon nzType="global" nzTheme="outline"></span> {{ 'MARKETBOARD.Server' | translate }}:&nbsp;{{ fishTrain.world || '???' }}
               </nz-tag>
             </ng-template>
             <ng-container *ngIf="display.isConductor; else visibilityTpl">
-              {{'COMMON.Visibility' | translate}}:&nbsp;
+              {{ 'COMMON.Visibility' | translate }}:&nbsp;
               <nz-switch [(ngModel)]="fishTrain.public" (ngModelChange)="setPublicFlag(fishTrain.$key, $event)"
                          nzSize="small"
                          nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Visiblity_explain' | translate"
                          [nzCheckedChildren]="'COMMON.Public' | translate" [nzUnCheckedChildren]="'COMMON.Private' | translate"></nz-switch>
             </ng-container>
             <ng-template #visibilityTpl>
-              <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!display.public">{{'COMMON.Private' | translate}}</nz-tag>
-              <nz-tag class="custom-tag" [style.border-color]="'var(--primary-color)'" *ngIf="display.public">{{'COMMON.Public' | translate}}</nz-tag>
+              <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!display.public">{{ 'COMMON.Private' | translate }}</nz-tag>
+              <nz-tag class="custom-tag" [style.border-color]="'var(--primary-color)'" *ngIf="display.public">{{ 'COMMON.Public' | translate }}</nz-tag>
             </ng-template>
           </div>
         </nz-page-header-content>
         <nz-page-header-tags>
           <div class="flex-row gap-2 align-center">
-            <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="display.stopped">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
-            <nz-tag class="custom-tag" [style.border-color]="'var(--primary-color)'" *ngIf="display.running">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
-            <nz-tag *ngIf="display.waiting">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
+            <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="display.stopped">{{ 'FISH_TRAIN.Stopped' | translate }}</nz-tag>
+            <nz-tag class="custom-tag" [style.border-color]="'var(--primary-color)'" *ngIf="display.running">{{ 'FISH_TRAIN.Running' | translate }}</nz-tag>
+            <nz-tag *ngIf="display.waiting">{{ 'FISH_TRAIN.Waiting' | translate }}</nz-tag>
           </div>
         </nz-page-header-tags>
         <nz-page-header-extra>
           <div *ngIf="!display.stopped" class="flex-row gap-5">
             <a nz-button href="https://ff14fish.carbuncleplushy.com/trainpass?tcid={{fishTrain.$key}}" target="_blank">
-              {{'FISH_TRAIN.Open_in_carbuncleplushy' | translate}}
+              {{ 'FISH_TRAIN.Open_in_carbuncleplushy' | translate }}
             </a>
             <button nz-button nzType="primary" *ngIf="!fishTrain.conductor && fishTrain.conductorToken"
                     (click)="claimConductorRole(fishTrain.$key, fishTrain.conductorToken)">
-              <span nz-icon nzType="crown" nzTheme="outline"></span> {{'FISH_TRAIN.Claim_conductor_role' | translate}}
+              <span nz-icon nzType="crown" nzTheme="outline"></span> {{ 'FISH_TRAIN.Claim_conductor_role' | translate }}
             </button>
             <button nz-button nzType="primary" *ngIf="loggedIn$ | async" (click)="boardTrain(fishTrain.$key)">
-              <span nz-icon nzType="user-add" nzTheme="outline"></span> {{'FISH_TRAIN.Board_train' | translate}}
+              <span nz-icon nzType="user-add" nzTheme="outline"></span> {{ 'FISH_TRAIN.Board_train' | translate }}
             </button>
             <button nz-button nzDanger *ngIf="display.currentTrain?.$key === display.$key" (click)="leaveTrain(fishTrain.$key)">
-              <span nz-icon nzType="user-delete" nzTheme="outline"></span> {{'FISH_TRAIN.Leave_train' | translate}}
+              <span nz-icon nzType="user-delete" nzTheme="outline"></span> {{ 'FISH_TRAIN.Leave_train' | translate }}
             </button>
             <button nz-button nzType="primary" *ngIf="display.currentTrain && platform.isDesktop()" (click)="openFishingOverlay()">
-              <span nz-icon nzType="appstore" nzTheme="outline"></span> {{'FISH_TRAIN.Open_fishing_overlay' | translate}}
+              <span nz-icon nzType="appstore" nzTheme="outline"></span> {{ 'FISH_TRAIN.Open_fishing_overlay' | translate }}
             </button>
             <button nz-button nzDanger *ngIf="display.isConductor && !fishTrain.public && display.waiting"
                     nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteTrain(fishTrain.$key)">
-              <span nz-icon nzType="delete" nzTheme="outline"></span> {{'FISH_TRAIN.Delete_train' | translate}}
+              <span nz-icon nzType="delete" nzTheme="outline"></span> {{ 'FISH_TRAIN.Delete_train' | translate }}
             </button>
           </div>
         </nz-page-header-extra>
@@ -175,12 +179,12 @@
                   [nzMessage]="'FISH_TRAIN.Outdated' | translate" [nzDescription]="trainDescriptionTpl">
           <ng-template #trainDescriptionTpl>
             <ng-container *ngIf="display.isConductor">
-              {{'FISH_TRAIN.Outdated_description' | translate}}
+              {{ 'FISH_TRAIN.Outdated_description' | translate }}
               &nbsp;
-              <button nz-button nzType="primary" (click)="migrateTrain(fishTrain)">{{'FISH_TRAIN.Migrate' | translate}}</button>
+              <button nz-button nzType="primary" (click)="migrateTrain(fishTrain)">{{ 'FISH_TRAIN.Migrate' | translate }}</button>
             </ng-container>
             <ng-container *ngIf="!display.isConductor">
-              {{'FISH_TRAIN.Outdated_description_passenger' | translate}}
+              {{ 'FISH_TRAIN.Outdated_description_passenger' | translate }}
             </ng-container>
           </ng-template>
         </nz-alert>
@@ -190,7 +194,7 @@
         <div nz-col [nzSpan]="24" *ngIf="display.stopped | ifMobile: false">
           <nz-affix [nzOffsetTop]="10" nzTarget="#scroll-container">
             <div class="details-column" *ngIf="sliderData$ | async as sliderData">
-              <h3>{{'FISH_TRAIN.Time_travel' | translate}}</h3>
+              <h3>{{ 'FISH_TRAIN.Time_travel' | translate }}</h3>
               <div class="slider-container flex-row gap-20 align-start">
                 <div class="flex-auto slider">
                   <nz-slider [nzMin]="sliderData.min" [nzMax]="sliderData.max" [nzStep]="60000" [ngModel]="sliderData.value"
@@ -206,7 +210,7 @@
                       <span nz-icon nzType="pause" nzTheme="outline"></span>
                     </button>
                     <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Speed' | translate" (click)="changeSpeed()">
-                      x{{playSpeed$ | async}}
+                      x{{ playSpeed$ | async }}
                     </button>
                     <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Reset' | translate" (click)="stop()">
                       <span nz-icon nzType="reload" nzTheme="outline"></span>
@@ -219,7 +223,7 @@
         </div>
         <div nz-col [nzXs]="24" [nzXl]="(display.current && display.running) ? 12 : 24" [nzXXl]="6">
           <div class="details-column" [class.route]="display.stopped">
-            <h3>{{'FISH_TRAIN.Route' | translate}}</h3>
+            <h3>{{ 'FISH_TRAIN.Route' | translate }}</h3>
             <div class="steps-container">
               <nz-steps nzDirection="vertical" [nzCurrent]="display.currentIndex">
                 <nz-step *ngFor="let fish of display.stops;index as i;last as last;trackById"
@@ -234,11 +238,11 @@
                     <div class="flex-row gap-5">
                       <app-i18n-name content="items" [id]="fish.id"></app-i18n-name>
                       <div *ngIf="fish.start - display.time > 0; else leavingTpl">
-                        ({{'FISH_TRAIN.Departure_in' | translate: { time: ((fish.start - display.time) / 1000) | timer:true } }})
+                        ({{ 'FISH_TRAIN.Departure_in' | translate: { time: ((fish.start - display.time) / 1000) | timer:true } }})
                       </div>
                       <ng-template #leavingTpl>
                         <div *ngIf="fish.end - display.time > 0">
-                          ({{'FISH_TRAIN.Leaving_in' | translate: { time: ((fish.end - display.time) / 1000) | timer:true } }})
+                          ({{ 'FISH_TRAIN.Leaving_in' | translate: { time: ((fish.end - display.time) / 1000) | timer:true } }})
                         </div>
                       </ng-template>
                       <button nz-button nzSize="small"
@@ -249,46 +253,53 @@
                         <span nz-icon nzType="copy" nzTheme="outline"></span>
                       </button>
                       <div>
-                        <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'">{{'FISH_TRAIN.Terminus_tag' | translate}}</nz-tag>
+                        <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'">{{ 'FISH_TRAIN.Terminus_tag' | translate }}</nz-tag>
                       </div>
                     </div>
-                    <div *ngIf="fish.node.predators && fish.node.predators.length > 0" class="flex-row align-center gap-5">
-                      <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
-                           src="./assets/icons/status/predators.png">
-                      <div *ngFor="let predator of fish.node.predators" class="flex-row align-center gap-2">
-                        <div>{{predator.amount}}x</div>
-                        <app-item-icon [itemId]="predator.id" [width]="24"></app-item-icon>
+                    @if (fish.node) {
+                      <div *ngIf="fish.node.predators && fish.node.predators.length > 0" class="flex-row align-center gap-5">
+                        <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                             src="./assets/icons/status/predators.png">
+                        <div *ngFor="let predator of fish.node.predators" class="flex-row align-center gap-2">
+                          <div>{{ predator.amount }}x</div>
+                          <app-item-icon [itemId]="predator.id" [width]="24"></app-item-icon>
+                        </div>
                       </div>
-                    </div>
+                    }
                   </ng-template>
                   <ng-template #subtitleTpl>
-                    <app-map-position flex="row wrap" [mapId]="fish.node.map"
-                                      [marker]="fish.node" showMapName="true"></app-map-position>
+                    @if (fish.node) {
+                      <app-map-position flex="row wrap" [mapId]="fish.node.map"
+                                        [marker]="fish.node" showMapName="true"></app-map-position>
+                    }
                   </ng-template>
                   <ng-template #descriptionTpl>
-                    <app-fishing-bait [baits]="fish.node.baits" flex="row" [iconWidth]="24"></app-fishing-bait>
-                    <div class="slap-suggestion">
-                      <div class="flex-row gap-2 align-center"
-                           *ngIf="display.isConductor && display.currentIndex <= i && !display.stopped;else passengerSlapTpl">
-                        <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
-                        <nz-select [(ngModel)]="fish.slap" (ngModelChange)="setSlap(fishTrain, fish, $event)"
-                                   nzSize="small" class="slap-select" [nzPlaceHolder]="'FISH_TRAIN.Select_slap' | translate">
-                          <ng-container *ngFor="let target of fish.node.items">
-                            <nz-option *ngIf="target !== fish.id" [nzValue]="target" [nzLabel]="target | itemName | i18n"></nz-option>
-                          </ng-container>
-                        </nz-select>
-                      </div>
-
-                      <ng-template #passengerSlapTpl>
-                        <div class="flex-row gap-5" *ngIf="fish.slap">
-                          <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon passenger" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
-                          <div class="flex-row gap-2 align-center">
-                            <app-item-icon [width]="24" [itemId]="fish.slap"></app-item-icon>
-                            <app-i18n-name content="items" [id]="fish.slap"></app-i18n-name>
-                          </div>
+                    @if (fish.node) {
+                      <app-fishing-bait [baits]="fish.node.baits" flex="row" [iconWidth]="24"></app-fishing-bait>
+                      <div class="slap-suggestion">
+                        <div class="flex-row gap-2 align-center"
+                             *ngIf="display.isConductor && display.currentIndex <= i && !display.stopped;else passengerSlapTpl">
+                          <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
+                          <nz-select [(ngModel)]="fish.slap" (ngModelChange)="setSlap(fishTrain, fish, $event)"
+                                     nzSize="small" class="slap-select" [nzPlaceHolder]="'FISH_TRAIN.Select_slap' | translate">
+                            <ng-container *ngFor="let target of fish.node.items">
+                              <nz-option *ngIf="target !== fish.id" [nzValue]="target" [nzLabel]="target | itemName | i18n"></nz-option>
+                            </ng-container>
+                          </nz-select>
                         </div>
-                      </ng-template>
-                    </div>
+
+                        <ng-template #passengerSlapTpl>
+                          <div class="flex-row gap-5" *ngIf="fish.slap">
+                            <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon passenger" nz-tooltip
+                                 [nzTooltipTitle]="4595 | actionName | i18n">
+                            <div class="flex-row gap-2 align-center">
+                              <app-item-icon [width]="24" [itemId]="fish.slap"></app-item-icon>
+                              <app-i18n-name content="items" [id]="fish.slap"></app-i18n-name>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </div>
+                    }
                   </ng-template>
                 </nz-step>
                 <nz-step *ngIf="display.running"
@@ -305,7 +316,7 @@
         </div>
         <div nz-col [nzXs]="24" [nzXXl]="(display.current && display.running) ? 12 : 18">
           <div class="details-column stats">
-            <h3>{{'FISH_TRAIN.Stats' | translate}}</h3>
+            <h3>{{ 'FISH_TRAIN.Stats' | translate }}</h3>
             <nz-row>
               <nz-col [nzXs]="12" [nzSm]="6">
                 <nz-statistic [nzValue]="display.passengers.length" [nzTitle]="'FISH_TRAIN.Passengers' | translate"></nz-statistic>
@@ -315,9 +326,9 @@
               </nz-col>
               <nz-col [nzXs]="12" [nzSm]="6">
                 <nz-statistic nzSuffix="%" [nzValue]="display.accuracy" [nzTitle]="accuracyTitleTpl">
-                  <ng-template #accuracyTitleTpl>{{'FISH_TRAIN.Accuracy' | translate}}&nbsp;<span nz-icon nzType="info-circle" nzTheme="outline"
-                                                                                                  nz-tooltip
-                                                                                                  [nzTooltipTitle]="'FISH_TRAIN.Accuracy_explain' | translate"></span>
+                  <ng-template #accuracyTitleTpl>{{ 'FISH_TRAIN.Accuracy' | translate }}&nbsp;<span nz-icon nzType="info-circle" nzTheme="outline"
+                                                                                                    nz-tooltip
+                                                                                                    [nzTooltipTitle]="'FISH_TRAIN.Accuracy_explain' | translate"></span>
                   </ng-template>
                 </nz-statistic>
               </nz-col>
@@ -332,19 +343,19 @@
         </div>
         <div nz-col [nzXl]="24" [nzXXl]="12" *ngIf="true | ifMobile: false">
           <div class="details-column stats">
-            <h3>{{'FISH_TRAIN.Fish_breakdown' | translate}}</h3>
+            <h3>{{ 'FISH_TRAIN.Fish_breakdown' | translate }}</h3>
             <app-fish-breakdown [train]="display" [reports]="display.reports"></app-fish-breakdown>
           </div>
         </div>
         <div nz-col [nzXl]="24" [nzXXl]="12" *ngIf="true | ifMobile: false">
           <div class="details-column stats">
-            <h3>{{'FISH_TRAIN.Bait_breakdown' | translate}}</h3>
+            <h3>{{ 'FISH_TRAIN.Bait_breakdown' | translate }}</h3>
             <app-bait-breakdown [reports]="display.reports"></app-bait-breakdown>
           </div>
         </div>
         <div nz-col [nzSpan]="24" *ngIf="true | ifMobile: false">
           <div class="details-column stats">
-            <h3>{{'FISH_TRAIN.Fish_size_chart' | translate}}</h3>
+            <h3>{{ 'FISH_TRAIN.Fish_size_chart' | translate }}</h3>
             <app-fish-size-chart [train]="display" [reports]="display.reports"></app-fish-size-chart>
           </div>
         </div>
