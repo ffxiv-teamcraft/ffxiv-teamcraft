@@ -822,18 +822,28 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   saveSet(): void {
-    const rawForm = this.statsForm.getRawValue();
-    const set: GearSet = {
-      jobId: rawForm.job,
-      level: rawForm.level,
-      control: rawForm.control,
-      craftsmanship: rawForm.craftsmanship,
-      cp: rawForm.cp,
-      specialist: rawForm.specialist,
-      splendorous: rawForm.splendorous
-    };
-    this.authFacade.saveSet(set);
-    this.savedSet = true;
+    this.authFacade.gearSets$.pipe(
+      first(),
+      map(sets => {
+        const rawForm = this.statsForm.getRawValue();
+        const set: GearSet = {
+          jobId: rawForm.job,
+          level: rawForm.level,
+          control: rawForm.control,
+          craftsmanship: rawForm.craftsmanship,
+          cp: rawForm.cp,
+          specialist: rawForm.specialist,
+          splendorous: rawForm.splendorous
+        };
+        return {
+          ...(sets.find(currentSet => currentSet.jobId === set.jobId) || {}),
+          ...set
+        }
+      })
+    ).subscribe(updatedSet => {
+      this.authFacade.saveSet(updatedSet);
+      this.savedSet = true;
+    })
   }
 
   saveDefaultConsumables(): void {
