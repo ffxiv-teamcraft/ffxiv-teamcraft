@@ -117,7 +117,7 @@
     "ko": "침묵을 무효화하는 상태."
   },
   "41": {
-    "ko": "제작설비의 도움을 받은 상태. 레벨 80 이하 제작자의 CP 최대치가 증가한다."
+    "ko": "제작설비의 도움을 받은 상태. 레벨 90 이하 제작자의 CP 최대치가 증가한다."
   },
   "42": {
     "ko": "자신의 한계를 넘어선 상태. 최대 HP와 주는 피해량이 증가하고, 자신이 주는 HP 회복 효과가 향상된다."
@@ -378,7 +378,7 @@
     "ko": "적개심 상승이 억제된 상태."
   },
   "128": {
-    "ko": "다음에 사용하는 무기 기술의 공격 횟수가 증가하는 상태."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>그림자 화살<Else/>일제 사격</If><Else/>일제 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>은 3발만큼의 피해를 주며, <If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>그림자 화살<Else/>일제 사격</If><Else/>일제 사격</If>은 위력이 증가합니다."
   },
   "129": {
     "ko": "바람속성 피해로 HP가 서서히 줄어드는 상태."
@@ -3483,7 +3483,7 @@
     "ko": "마법 공격으로 받는 피해량이 감소하는 상태."
   },
   "1191": {
-    "ko": "받는 피해량이 감소하는 상태."
+    "ko": "받는 피해량이 감소<If(GreaterThanOrEqualTo(PlayerParameter(72),94))><If(Equal(PlayerParameter(68),1))>하고, 자신이 받는 HP 회복 효과가 증가하는 상태.<Else/><If(Equal(PlayerParameter(68),19))>하고, 자신이 받는 HP 회복 효과가 증가하는 상태.<Else/><If(Equal(PlayerParameter(68),3))>하고, 자신이 받는 HP 회복 효과가 증가하는 상태.<Else/><If(Equal(PlayerParameter(68),21))>하고, 자신이 받는 HP 회복 효과가 증가하는 상태.<Else/><If(Equal(PlayerParameter(68),32))>하고, 자신이 받는 HP 회복 효과가 증가하는 상태.<Else/><If(Equal(PlayerParameter(68),37))>하고, 자신이 받는 HP 회복 효과가 증가하는 상태.<Else/>하는 상태.</If></If></If></If></If></If><Else/>하는 상태.</If>"
   },
   "1192": {
     "ko": "받는 회복마법의 HP 회복 효과가 향상된 상태."
@@ -3567,7 +3567,7 @@
     "ko": "받는 피해량이 일부 감소하는 상태."
   },
   "1219": {
-    "ko": "백마도사의 '대사면'으로 HP를 회복할 수 있는 상태. "
+    "ko": "이 상태를 부여한 백마도사가 시전하는 일부 회복마법의 회복 효과를 받으면, 자신의 HP가 추가로 회복되는 상태."
   },
   "1220": {
     "ko": "HP가 일정 이하가 되거나 지속시간이 끝나면 회복이 발동하는 상태."
@@ -3765,10 +3765,10 @@
     "ko": "적에게 포획된 상태. 아무 행동도 할 수 없으며, HP가 서서히 줄어든다."
   },
   "1288": {
-    "ko": "돌발 임무 보수로 받는 경험치가 증가하는 상태."
+    "ko": "일부 돌발 임무에서 받는 경험치 등의 보상이 증가한 상태."
   },
   "1289": {
-    "ko": "돌발 임무 보수로 받는 경험치가 증가하는 상태."
+    "ko": "일부 돌발 임무에서 받는 경험치 등의 보상이 증가한 상태."
   },
   "1290": {
     "ko": "락슈미 에테르를 연소시킨 상태. 특정 공격으로 받는 피해를 감소시키거나, HP 회복 효과로 변환할 수 있다."
@@ -4134,7 +4134,7 @@
     "ko": "미의 신 락슈미가 변덕을 부리는 상태."
   },
   "1411": {
-    "ko": "80레벨 미만일 때 얻는 경험치가 크게 증가하는 상태."
+    "ko": "90레벨 미만일 때 얻는 경험치가 크게 증가하는 상태."
   },
   "1412": {
     "ko": "받는 피해량이 증가하는 상태."
@@ -5577,10 +5577,10 @@
     "ko": "HP가 서서히 줄어드는 상태."
   },
   "1896": {
-    "ko": "고무격려책, 사기고양책, 불요불굴책, 심모원려책 중 하나를 시전하면, MP와 에테르 순환을 소비하지 않으며 반드시 극대화되는 상태."
+    "ko": "고무격려책, <If(Equal(PlayerParameter(68),28))><If(GreaterThanOrEqualTo(PlayerParameter(72),96))>의기왕성책<Else/>사기고양책</If><Else/>사기고양책</If>, 불요불굴책, 심모원려책 중 하나를 시전하면, MP와 에테르 순환을 소비하지 않으며 반드시 극대화되는 상태."
   },
   "1897": {
-    "ko": "섬멸이 혼돈 회오리로 변화한 상태.\n'내면의 혼돈' 특성을 습득하면 참수가 내면의 혼돈으로 변화한다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 충분히 축적되면, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>섬멸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>혼돈 회오리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화하는 상태.\n'내면의 혼돈'을 습득하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>참수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>도 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내면의 혼돈<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화한다."
   },
   "1898": {
     "ko": "받는 피해량이 일부 감소하는 상태."
@@ -5595,7 +5595,7 @@
     "ko": "받는 피해량이 감소하는 상태."
   },
   "1902": {
-    "ko": "회한의 검을 시전할 수 있는 상태."
+    "ko": "회한의 검을 실행할 수 있는 상태."
   },
   "1903": {
     "ko": "환영으로 만들어진 존재."
@@ -5802,7 +5802,7 @@
     "ko": "마법 공격으로 주는 피해량이 증가한 상태."
   },
   "1972": {
-    "ko": "흑혈을 소비하지 않고 피보라와 종지부를 사용할 수 있는 상태."
+    "ko": "흑혈을 소비하지 않고 피보라와 종지부를 실행할 수 있으며, 명중하면 자신의 MP가 회복되는 상태."
   },
   "1973": {
     "ko": "번개속성 저항이 크게 떨어진 상태."
@@ -5859,10 +5859,10 @@
     "ko": "받는 피해가 크게 감소하는 대신에 행동불능이 된 상태."
   },
   "1991": {
-    "ko": "회한의 검을 시전할 수 있는 상태."
+    "ko": "회한의 검을 실행할 수 있는 상태."
   },
   "1992": {
-    "ko": "혼돈 회오리를 시전할 수 있는 상태."
+    "ko": "혼돈 회오리를 실행할 수 있는 상태."
   },
   "1993": {
     "ko": "일정량의 피해를 무효화하는 상태."
@@ -7593,10 +7593,10 @@
     "ko": "상대방 전력이 적어 방심한 상태. 받는 피해량이 증가한다."
   },
   "2604": {
-    "ko": "공격 마법을 시전하면 심각인 대상에게 HP 회복 효과가 발동되는 상태."
+    "ko": "공격 마법이 명중하면 심각인 대상에게 HP 회복 효과가 발동되는 상태."
   },
   "2605": {
-    "ko": "이 상태를 부여한 현자가 공격 마법을 시전하면 자신에게 HP 회복 효과가 발동되는 상태."
+    "ko": "이 상태를 부여한 현자의 공격 마법이 명중하면 자신에게 HP 회복 효과가 발동되는 상태."
   },
   "2606": {
     "ko": "자신의 일부 기술이 변화한 상태."
@@ -7836,10 +7836,10 @@
     "ko": "자동 공격 주기가 단축된 상태."
   },
   "2688": {
-    "ko": "<If(Equal(PlayerParameter(68),31))><If(GreaterThanOrEqualTo(PlayerParameter(72),35))>일부 무기 기술의 위력이 증가하고 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>과열<UIGlow>01</UIGlow><UIForeground>01</UIForeground><If(Equal(PlayerParameter(68),31))><If(GreaterThanOrEqualTo(PlayerParameter(72),52))> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>자동 석궁<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/></If><Else/></If>을 실행할 수 있는 상태.<Else/>일부 무기 기술의 위력이 증가하는 상태.</If><Else/>일부 무기 기술의 위력이 증가하는 상태.</If>"
+    "ko": "<If(Equal(PlayerParameter(68),31))><If(GreaterThanOrEqualTo(PlayerParameter(72),35))>일부 무기 기술의 위력이 증가하고 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),31))><If(GreaterThanOrEqualTo(PlayerParameter(72),68))>맹염탄<Else/>열기 분사</If><Else/>열기 분사</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground><If(Equal(PlayerParameter(68),31))><If(GreaterThanOrEqualTo(PlayerParameter(72),52))> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>자동 석궁<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/></If><Else/></If>을 실행할 수 있는 상태.<Else/>일부 무기 기술의 위력이 증가하는 상태.</If><Else/>일부 무기 기술의 위력이 증가하는 상태.</If>"
   },
   "2689": {
-    "ko": "다음에 실행하는 육도윤회의 위력이 증가하는 상태."
+    "ko": "다음에 실행하는 <If(Equal(PlayerParameter(68),30))><If(GreaterThanOrEqualTo(PlayerParameter(72),96))>시생멸법 또는 <Else/></If><Else/></If>육도윤회의 위력이 증가하는 상태."
   },
   "2690": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>월영뇌수조<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>월영뇌수아<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 를 실행할 수 있는 상태."
@@ -8274,7 +8274,7 @@
     "ko": "마법 장벽이 일정량의 피해를 막아주는 상태."
   },
   "2845": {
-    "ko": "다음에 사용하는 갈고리낫을 시전 시간 없이 실행할 수 있는 상태."
+    "ko": "다음에 사용하는 갈고리낫을 시전 시간 없이 실행할 수 있는 상태.\n또한 갈고리낫을 실행하면 지옥 입장과 지옥 퇴장의 재사용 대기 시간이 단축된다."
   },
   "2846": {
     "ko": "다음에 시전할 기술을 기억하는 상태."
@@ -8373,7 +8373,7 @@
     "ko": "자신을 향한 적의 적개심이 상승하는 상태."
   },
   "2880": {
-    "ko": "毒に冒された状態。ＨＰが徐々に失われる。"
+    "ko": "독에 중독된 상태. HP가 서서히 줄어든다."
   },
   "2882": {
     "ko": "受ける物理ダメージが増加する状態。"
@@ -9491,6 +9491,9 @@
   "3287": {
     "ko": "몸이 얼어붙어 행동이 불가능하고, HP가 서서히 줄어드는 상태."
   },
+  "3288": {
+    "ko": "무속성 피해로 HP가 서서히 줄어드는 상태."
+  },
   "3290": {
     "ko": "'저주의 포효'에 따른 뒤울림이 몸속에 남은 상태. 지속시간이 끝나면 폭발을 일으킨다."
   },
@@ -9553,6 +9556,9 @@
   },
   "3311": {
     "ko": "마법각인이 이중으로 새겨진 상태. 효과가 끝나면 주위에 마법이 발동하고, 그 자리에 시한 마법진이 설치된다."
+  },
+  "3312": {
+    "ko": "한계를 초월하는 힘을 끌어내 신체 조직에 과부하가 걸린 상태. HP가 서서히 줄어든다."
   },
   "3313": {
     "ko": "다음에 실행하는 기술이 변화하는 상태."
@@ -9997,6 +10003,15 @@
   },
   "3477": {
     "ko": "루비칸테의 저주에 걸린 상태. 효과가 끝날 때 요마불 구속 상태가 된다."
+  },
+  "3479": {
+    "ko": "몸이 얼어붙어 행동이 불가능하고, HP가 서서히 줄어드는 상태."
+  },
+  "3480": {
+    "ko": "몸이 얼어붙어 행동이 불가능하고, HP가 서서히 줄어드는 상태."
+  },
+  "3481": {
+    "ko": "몸이 얼어붙어 행동이 불가능하고, HP가 서서히 줄어드는 상태."
   },
   "3483": {
     "ko": "루비칸테의 저주에 걸린 상태. 효과가 끝날 때 대폭발을 일으킨다."
@@ -10457,6 +10472,105 @@
   "3644": {
     "ko": "전방 직선 범위 안의 대상에게 지속 피해를 주는 상태."
   },
+  "3645": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 셋: 측격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3646": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 셋: 측열<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3647": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 셋: 후격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3648": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 셋: 후열<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3649": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>큰송곳니 셋: 난격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3650": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>큰송곳니 셋: 난열<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3657": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>쌍아연격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3658": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>쌍아난격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3659": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>쌍아연섬<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3660": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>쌍아난섬<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3665": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>날뱀 연미격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3666": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>날뱀 난미격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
+  "3667": {
+    "ko": "시전자에게 받는 피해량이 증가하는 상태."
+  },
+  "3668": {
+    "ko": "적에게 주는 피해량이 증가하는 상태."
+  },
+  "3669": {
+    "ko": "자동 공격 주기, 무기 기술 및 마법 시전 시간과 재사용 대기 시간이 줄어든 상태."
+  },
+  "3670": {
+    "ko": "조상령에 빙의한 상태."
+  },
+  "3671": {
+    "ko": "영력을 소비하지 않고 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>조상령 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3672": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 하나: 교상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>큰송곳니 하나: 교상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가한 상태."
+  },
+  "3674": {
+    "ko": "색마법의 성질이 변화한 상태."
+  },
+  "3675": {
+    "ko": "그린, 옐로 마법을 실행할 수 있는 상태."
+  },
+  "3676": {
+    "ko": "블루, 마젠타 마법을 실행할 수 있는 상태."
+  },
+  "3679": {
+    "ko": "다음에 실행하는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>무지개 빛방울<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 재사용 대기 시간이 단축되며, 시전 시간 없이 실행할 수 있는 상태."
+  },
+  "3680": {
+    "ko": "망치 콤보를 실행할 수 있는 상태."
+  },
+  "3681": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>별무리 프리즘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3683": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3684": {
+    "ko": "이동 속도가 향상된 상태."
+  },
+  "3685": {
+    "ko": "적에게 주는 피해량이 증가하는 상태."
+  },
+  "3686": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3687": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3688": {
+    "ko": "하늘 구현으로 공간예술을 구성한 상태."
+  },
+  "3689": {
+    "ko": "하늘 구현 공간 안에 있음으로써, 마법 시전 시간과 재사용 대기 시간이 줄어든 상태."
+  },
+  "3690": {
+    "ko": "팔레트를 소비하지 않고 색빼기를 실행할 수 있는 상태."
+  },
+  "3691": {
+    "ko": "하얀색 물감이 1단계만 검은색 물감으로 변화한 상태."
+  },
   "3692": {
     "ko": "독에 중독되어 HP가 서서히 줄어들고, 받는 HP 회복 효과가 떨어진 상태."
   },
@@ -10685,6 +10799,9 @@
   "3771": {
     "ko": "염영이 타올라 활성화된 상태."
   },
+  "3772": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 하나: 열상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>큰송곳니 하나: 열상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 증가하는 상태."
+  },
   "3776": {
     "ko": "이동이 불가능한 상태."
   },
@@ -10730,8 +10847,8 @@
   "3794": {
     "ko": "어둠의 힘에 잠식당한 상태. 지속시간이 끝나면 집중 폭발을 일으킨다."
   },
-  "3795": {
-    "ko": "無属性ダメージにより、ＨＰが徐々に失われる状態。"
+  "3796": {
+    "ko": "심하게 흔들린 상태. 일정 수 중첩되면 뇌진탕 상태가 된다."
   },
   "3797": {
     "ko": "물속성 피해로 HP가 서서히 줄어드는 상태."
@@ -10742,13 +10859,787 @@
   "3799": {
     "ko": "전기를 띤 상태. 효과가 끝날 때 방전하며 주위에 번개속성 피해를 준다."
   },
+  "3801": {
+    "ko": "눈에 마력이 깃든 상태. 특정 행동을 하면 '맹금류의 눈'이 발동한다."
+  },
   "3802": {
     "ko": "가속도 폭탄이 부착된 상태. 효과가 끝나는 시점에 움직이면 폭발한다."
+  },
+  "3803": {
+    "ko": "아폴리온의 날개가 강화된 상태."
+  },
+  "3804": {
+    "ko": "아폴리온의 낫이 강화된 상태."
+  },
+  "3805": {
+    "ko": "분노에 차, 적에게 주는 피해량이 증가하는 상태."
+  },
+  "3806": {
+    "ko": "졸음보의 춤으로 활성화된 상태."
+  },
+  "3807": {
+    "ko": "졸음보의 춤으로 활성화된 상태."
+  },
+  "3809": {
+    "ko": "몸에 결정이 붙어 이동할 수 없는 상태. 지속시간이 끝나면 '결정 부착[강]'으로 변화한다."
+  },
+  "3810": {
+    "ko": "몸에 결정이 붙어 이동할 수 없으며, 모든 행동이 지연되는 상태. 지속시간이 끝나면 결정화 상태가 된다."
+  },
+  "3811": {
+    "ko": "몸이 결정에 뒤덮여 움직일 수 없는 상태. 지속시간이 끝나면 전투불능이 된다."
+  },
+  "3812": {
+    "ko": "성급한 손길이 대담한 손길로 변화한 상태."
+  },
+  "3813": {
+    "ko": "1회에 한해, 내구도가 소비되지 않는 상태."
+  },
+  "3814": {
+    "ko": "중력이 흐트러져 허공에 뜬 상태."
+  },
+  "3815": {
+    "ko": "절대 권력의 영향을 받은 상태. 지속시간이 끝나면 주위에 석화의 빛을 내뿜는다."
+  },
+  "3817": {
+    "ko": "불속성 마력에 휘감긴 상태. 지속시간이 끝나면 화염의 재난이 발동한다."
+  },
+  "3818": {
+    "ko": "불속성 마력에 휘감긴 상태. 지속시간이 끝나면 화염의 재난이 연속으로 발동한다."
+  },
+  "3819": {
+    "ko": "불속성 마력에 휘감긴 상태. 지속시간이 끝나면 화염의 재난이 발동한다."
+  },
+  "3820": {
+    "ko": "얼음속성 마력에 휘감긴 상태. 지속시간이 끝나면 지면에 얼음 덩어리가 생긴다."
+  },
+  "3821": {
+    "ko": "얼음속성 마력에 휘감긴 상태. 지속시간이 끝나면 얼음의 재난이 발동한다."
+  },
+  "3822": {
+    "ko": "얼음속성 마력에 휘감긴 상태. 지속시간이 끝나면 냉각 상태가 되고, 냉각 상태가 끝날 때까지 계속 움직이지 않으면 빙결 상태가 된다."
+  },
+  "3823": {
+    "ko": "번개속성 마력에 휘감긴 상태. 지속시간이 끝나면 번개의 재난이 발동한다."
+  },
+  "3824": {
+    "ko": "번개속성 마력에 휘감긴 상태. 지속시간이 끝나면 번개의 재난이 발동한다."
+  },
+  "3825": {
+    "ko": "저주를 받아 지속시간이 끝나면 전투불능이 되는 상태."
+  },
+  "3826": {
+    "ko": "불속성 피해로 HP가 서서히 줄어드는 상태."
+  },
+  "3827": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>염원의 검<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3828": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장송의 검<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3829": {
+    "ko": "받는 피해량이 감소하는 상태."
+  },
+  "3830": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3831": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>명예의 검<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3832": {
+    "ko": "받는 피해량이 감소하고, 물리 공격을 받으면 적에게 반격 피해를 주는 상태.\n공격을 받거나 지속시간이 끝나면 지속 회복 효과가 부여된다."
+  },
+  "3833": {
+    "ko": "원초의 고동이 축적된 상태. 3중첩이 되면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 격진 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화한다."
+  },
+  "3834": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초적 파멸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3835": {
+    "ko": "받는 피해량이 감소하는 상태."
+  },
+  "3836": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>붉은 열광<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>관통형<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3837": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>경멸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3838": {
+    "ko": "최대 HP가 증가하고, 받는 피해량이 감소하는 상태."
+  },
+  "3839": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>운명의 낙인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3840": {
+    "ko": "심장 콤보를 실행할 수 있는 상태."
+  },
+  "3841": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>금강주천<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3842": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>절공권<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3843": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>건곤투기탄<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3844": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>나스트론드<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3845": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>용의 비상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3846": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천체 관통<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3847": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>꿰뚫는 검격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3848": {
+    "ko": "은신하지 않아도 '은신술'이 필요한 기술을 실행할 수 있는 상태."
+  },
+  "3849": {
+    "ko": "받는 피해량이 증가하는 상태."
+  },
+  "3850": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>비기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3851": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천리인도<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3852": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>제비반전<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3853": {
+    "ko": "받는 피해량이 감소하는 상태."
+  },
+  "3854": {
+    "ko": "받는 피해량이 감소하고, 지속적으로 HP가 회복되는 상태."
+  },
+  "3855": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>잔심<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3856": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천하오검<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천도오검<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>난설월화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천도설월화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화하는 상태."
+  },
+  "3857": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>제물 희생<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3858": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>효수형 집행<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>교수형 집행<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>참수형 집행<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3859": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>합일<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>완전체 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화하는 상태."
+  },
+  "3860": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>완전체<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3861": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>그림자 화살<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/><If(GreaterThanOrEqualTo(PlayerParameter(72),25))><If(Equal(PlayerParameter(68),5))>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>일제 사격<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/><If(Equal(PlayerParameter(68),23))>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>일제 사격<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/></If></If><Else/></If></If><Else/><If(GreaterThanOrEqualTo(PlayerParameter(72),25))><If(Equal(PlayerParameter(68),5))>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>일제 사격<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/><If(Equal(PlayerParameter(68),23))>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>일제 사격<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/></If></If><Else/></If></If>을 실행할 수 있는 상태."
+  },
+  "3862": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>공명 화살<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3863": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>빛신의 앙코르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3864": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>과충전<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3865": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>굴삭기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3866": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>전탄발사<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3867": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마지막 춤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3868": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마무리 동작<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3869": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>새벽의 춤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3870": {
+    "ko": "선더 계열 마법을 실행할 수 있는 상태."
+  },
+  "3871": {
+    "ko": "번개속성 피해로 HP가 서서히 줄어드는 상태."
+  },
+  "3872": {
+    "ko": "번개속성 피해로 HP가 서서히 줄어드는 상태."
+  },
+  "3873": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>타오르는 불꽃<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3874": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>태양의 빛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3875": {
+    "ko": "마법검 콤보를 실행할 수 있는 상태."
+  },
+  "3876": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>회오리 찔레<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3877": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>노블 임팩트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3878": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>적색 광채<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3879": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>글레어쟈<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3880": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3881": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>신성한 손길<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3882": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>매복지독<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3883": {
+    "ko": "HP가 서서히 줄어드는 상태."
+  },
+  "3884": {
+    "ko": "자신과 주위 파티원의 HP가 지속적으로 회복되는 상태."
+  },
+  "3885": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3886": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>음속 파괴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3887": {
+    "ko": "적에게 주는 피해량이 증가하는 상태."
+  },
+  "3888": {
+    "ko": "받는 HP 회복 효과가 향상되는 상태."
+  },
+  "3889": {
+    "ko": "적에게 주는 피해량이 증가하는 상태."
+  },
+  "3890": {
+    "ko": "받는 피해량이 감소하는 상태."
+  },
+  "3891": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3892": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3893": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>신탁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3894": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3895": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>태양궁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3896": {
+    "ko": "받는 피해량이 감소하는 상태."
+  },
+  "3897": {
+    "ko": "HP가 서서히 줄어드는 상태."
+  },
+  "3898": {
+    "ko": "회복마법 회복량이 증가한 상태."
+  },
+  "3899": {
+    "ko": "이 상태를 부여한 현자의 마법이 명중하면 자신에게 HP 회복 효과가 발동되는 상태."
+  },
+  "3900": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3901": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 격진<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "3902": {
+    "ko": "HP가 일정량 미만이거나 지속시간이 끝나면 회복이 발동하는 상태."
+  },
+  "3903": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3904": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3905": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레무르 수의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행할 수 있는 상태."
+  },
+  "3906": {
+    "ko": "시전자에게 받는 피해량이 증가하는 상태."
+  },
+  "3907": {
+    "ko": "다음에 낚이는 월척의 크기가 커질 확률이 증가한 상태."
+  },
+  "3908": {
+    "ko": "넉다운된 상태. 이동하거나 기술을 실행할 수 없다."
+  },
+  "3909": {
+    "ko": "심신상실로 인하여 손가락 커서가 가리키는 방향을 따라 움직이게 되는 상태."
+  },
+  "3910": {
+    "ko": "'신중한 순화'의 추가 효과 발생률이 2배가 된 상태."
+  },
+  "3911": {
+    "ko": "'대담한 순화'의 소장 가치 상승량과 '신중한 순화'의 추가 효과 발생률이 증가한 상태."
+  },
+  "3912": {
+    "ko": "결의를 가슴에 품고 고양된 상태.\n주는 피해량이 증가한다."
+  },
+  "3914": {
+    "ko": "투지가 불타올라, 주는 피해량이 증가하고 HP가 서서히 회복되는 상태."
   },
   "3938": {
     "ko": "다음에 발동하는 공격의 회전각이 3배로 증가하는 상태."
   },
   "3939": {
     "ko": "다음에 발동하는 공격의 회전각이 5배로 증가하는 상태."
+  },
+  "3940": {
+    "ko": "몸에 지효성 독이 퍼지고 있는 상태. 지속시간이 끝나면 행동할 수 없게 된다."
+  },
+  "3941": {
+    "ko": "의식이 후방으로 향한 상태."
+  },
+  "3945": {
+    "ko": "적에게 주는 피해량이 감소하는 상태."
+  },
+  "3946": {
+    "ko": "일부를 제외한 대부분의 피해를 무효화하는 상태."
+  },
+  "3948": {
+    "ko": "멋진 머리로 변하여 이동 속도가 느려진 상태. 기술을 실행할 수 없다."
+  },
+  "3949": {
+    "ko": "영체가 되어 장애물을 통과할 수 있으나, 특정 공격에 큰 피해를 받는 상태."
+  },
+  "3950": {
+    "ko": "사람들에게 민폐를 끼치는 상태. 둥글날개가 사용한 특정 공격을 자신도 발동한다."
+  },
+  "3951": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3952": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3954": {
+    "ko": "대지처럼 흔들림 없는 결의로 받는 피해량이 감소하는 상태."
+  },
+  "3955": {
+    "ko": "대지의 자애를 받아 받는 피해량이 감소하는 상태."
+  },
+  "3956": {
+    "ko": "자신이 사용하는 일부 기술이 변화한 상태."
+  },
+  "3957": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3958": {
+    "ko": "초약을 먹고 근력이 증가한 상태. 신체 능력이 크게 강화된다."
+  },
+  "3959": {
+    "ko": "초약을 먹고 집중력이 향상된 상태. 공격을 받아도 마법 시전이 중단되지 않는다."
+  },
+  "3960": {
+    "ko": "초약을 먹고 마력이 증가한 상태. MP가 연속으로 회복된다."
+  },
+  "3961": {
+    "ko": "기분이 고조된 상태."
+  },
+  "3962": {
+    "ko": "초약의 부작용이 생긴 상태."
+  },
+  "3963": {
+    "ko": "몸이 마비되어 잠깐씩 행동할 수 없는 상태."
+  },
+  "3964": {
+    "ko": "적에게 주는 피해량이 감소하는 상태."
+  },
+  "3965": {
+    "ko": "회복마법으로 받는 HP 회복 효과가 떨어진 상태."
+  },
+  "3966": {
+    "ko": "무속성 피해로 HP가 서서히 줄어드는 상태."
+  },
+  "3967": {
+    "ko": "받는 HP 회복 효과가 감소하는 상태."
+  },
+  "3968": {
+    "ko": "본 대상을 다른 것으로 인식하는 상태."
+  },
+  "3969": {
+    "ko": "본 대상을 다른 것으로 인식하는 상태."
+  },
+  "3972": {
+    "ko": "대형 물고기가 잘 걸리는 상태.\n중첩될수록 대형 물고기가 걸릴 확률이 올라간다.\n3중첩이 되면 '거대한 루어'를 사용할 수 없다."
+  },
+  "3973": {
+    "ko": "소형 물고기가 잘 걸리는 상태.\n중첩될수록 소형 물고기가 걸릴 확률이 올라간다.\n3중첩이 되면 '소박한 루어'를 사용할 수 없다."
+  },
+  "3974": {
+    "ko": "중력을 거슬러 허공에 뜬 상태."
+  },
+  "3975": {
+    "ko": "적에게 주는 피해량이 증가하는 상태."
+  },
+  "3976": {
+    "ko": "HP가 서서히 줄어드는 상태."
+  },
+  "3977": {
+    "ko": "연속된 방전 현상의 마지막에 십자 모양으로 방전하는 상태."
+  },
+  "3978": {
+    "ko": "연속된 방전 현상의 마지막에 교차 모양으로 방전하는 상태."
+  },
+  "3979": {
+    "ko": "번개기운을 축적하여, 중첩된 만큼 방전할 수 있는 상태."
+  },
+  "3980": {
+    "ko": "번개기운 때문에 마비되어 움직일 수 없는 상태. 특정 번개속성 공격을 받으면 받는 피해량이 크게 증가한다."
+  },
+  "3981": {
+    "ko": "독에 중독된 상태. HP가 서서히 줄어든다."
+  },
+  "3982": {
+    "ko": "독에 중독된 상태. HP가 서서히 줄어든다."
+  },
+  "3983": {
+    "ko": "넉다운된 상태. 이동하거나 기술을 실행할 수 없다."
+  },
+  "3984": {
+    "ko": "회복마법 회복량이 증가한 상태."
+  },
+  "3985": {
+    "ko": "받는 피해량이 감소하는 상태."
+  },
+  "3986": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3987": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "3988": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "3989": {
+    "ko": "시전자가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>소우주<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행하면 HP 회복 효과가 발동하는 상태."
+  },
+  "3990": {
+    "ko": "「1」のカードを引いた状態。"
+  },
+  "3991": {
+    "ko": "「2」のカードを引いた状態。"
+  },
+  "3992": {
+    "ko": "「3」のカードを引いた状態。"
+  },
+  "3993": {
+    "ko": "「4」のカードを引いた状態。"
+  },
+  "3994": {
+    "ko": "「5」のカードを引いた状態。"
+  },
+  "3995": {
+    "ko": "「6」のカードを引いた状態。"
+  },
+  "3996": {
+    "ko": "공 위에 올라탄 상태."
+  },
+  "4009": {
+    "ko": "일련의 행동을 역순으로 실행하려고 하는 상태."
+  },
+  "4010": {
+    "ko": "눈동자를 보지 않은 자에게 저주를 거는 상태."
+  },
+  "4011": {
+    "ko": "작열파가 발생할 것이라는 일기예보를 한 상태. 특정 행동을 한 후에 불속성 마법을 실행한다."
+  },
+  "4012": {
+    "ko": "번개파동이 발생할 것이라는 일기예보를 한 상태. 특정 행동을 한 후에 번개속성 마법을 실행한다."
+  },
+  "4013": {
+    "ko": "폭풍이 불 것이라는 일기예보를 한 상태. 특정 행동을 한 후에 바람속성 마법을 실행한다."
+  },
+  "4014": {
+    "ko": "눈보라가 칠 것이라는 일기예보를 한 상태. 특정 행동을 한 후에 얼음속성 마법을 실행한다."
+  },
+  "4029": {
+    "ko": "좌회전해서 연속 공격을 할 준비를 취한 상태."
+  },
+  "4030": {
+    "ko": "우회전해서 연속 공격을 할 준비를 취한 상태."
+  },
+  "4031": {
+    "ko": "좌회전해서 연속 공격을 할 준비를 취한 상태."
+  },
+  "4032": {
+    "ko": "우회전해서 연속 공격을 할 준비를 취한 상태."
+  },
+  "4033": {
+    "ko": "세토쟈의 응원을 받고 의욕이 넘치는 상태."
+  },
+  "4034": {
+    "ko": "견고한 마법 장벽에 보호받는 상태."
+  },
+  "4035": {
+    "ko": "균열 생긴 마법 장벽에 보호받는 상태."
+  },
+  "4036": {
+    "ko": "마법 장벽에 균열이 생긴 상태. 오른쪽에서 공격받으면 큰 피해를 입는다."
+  },
+  "4037": {
+    "ko": "마법 장벽에 균열이 생긴 상태. 왼쪽에서 공격받으면 큰 피해를 입는다."
+  },
+  "4038": {
+    "ko": "마법 장벽에 균열이 생긴 상태. 앞쪽에서 공격받으면 큰 피해를 입는다."
+  },
+  "4039": {
+    "ko": "마법 장벽에 균열이 생긴 상태. 뒤쪽에서 공격받으면 큰 피해를 입는다."
+  },
+  "4040": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "4041": {
+    "ko": "아제마의 균형 카드를 뽑은 상태."
+  },
+  "4042": {
+    "ko": "세계수의 줄기 카드를 뽑은 상태."
+  },
+  "4043": {
+    "ko": "오쉬온의 화살 카드를 뽑은 상태."
+  },
+  "4044": {
+    "ko": "할로네의 창 카드를 뽑은 상태."
+  },
+  "4045": {
+    "ko": "살리아크의 물병 카드를 뽑은 상태."
+  },
+  "4046": {
+    "ko": "비레고의 탑 카드를 뽑은 상태."
+  },
+  "4047": {
+    "ko": "조라쟈의 의지가 투영된 상태. 특정 에테르에 닿으면 자신의 몸에서 조라쟈의 공격이 발동한다."
+  },
+  "4064": {
+    "ko": "제 실력을 발휘해 말이 빨라진 상태."
+  },
+  "4065": {
+    "ko": "제기의 힘 때문에 깊은 잠에 빠진 상태."
+  },
+  "4066": {
+    "ko": "제기의 힘 때문에 깊은 잠에 빠진 상태."
+  },
+  "4067": {
+    "ko": "텐토와의 방어벽 덕분에 잠들지 않는 상태."
+  },
+  "4068": {
+    "ko": "무속성 피해로 HP가 서서히 줄어드는 상태."
+  },
+  "4071": {
+    "ko": "[+] 자력을 띤 상태."
+  },
+  "4072": {
+    "ko": "[-] 자력을 띤 상태."
+  },
+  "4073": {
+    "ko": "눈보라가 친다는 예보를 작열파가 발생한다는 예보로 정정한 상태. 특정 행동을 한 후에 불속성 마법을 실행한다."
+  },
+  "4074": {
+    "ko": "폭풍이 분다는 예보를 눈보라가 친다는 예보로 정정한 상태. 특정 행동을 한 후에 얼음속성 마법을 실행한다."
+  },
+  "4075": {
+    "ko": "작열파가 발생한다는 예보를 번개파동이 발생한다는 예보로 정정한 상태. 특정 행동을 한 후에 번개속성 마법을 실행한다."
+  },
+  "4076": {
+    "ko": "번개파동이 발생한다는 예보를 폭풍이 분다는 예보로 정정한 상태. 특정 행동을 한 후에 바람속성 마법을 실행한다."
+  },
+  "4094": {
+    "ko": "조상령에 빙의된 상태."
+  },
+  "4095": {
+    "ko": "다음 무기 기술로 주는 피해량이 증가하는 상태."
+  },
+  "4096": {
+    "ko": "움직일 수 없지만, 받는 피해량이 감소하고 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>정화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 해제 가능한 상태 이상 및 밀쳐내기, 끌어당기기를 무효화하는 상태."
+  },
+  "4097": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "4098": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>뱀비늘 공격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>뱀비늘 혈격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화한 상태."
+  },
+  "4099": {
+    "ko": "시전자에게 받는 피해량이 증가하는 상태."
+  },
+  "4100": {
+    "ko": "그린, 옐로 마법을 시전할 수 있는 상태."
+  },
+  "4101": {
+    "ko": "블루, 마젠타 마법을 시전할 수 있는 상태."
+  },
+  "4102": {
+    "ko": "색마법의 성질이 변화한 상태."
+  },
+  "4103": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>모그리 격류<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 시전할 수 있는 상태."
+  },
+  "4104": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마딘의 응징<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 시전할 수 있는 상태."
+  },
+  "4105": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>폼폼 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4106": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>날개 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4107": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>발톱 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4108": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4109": {
+    "ko": "적에게 주는 피해량이 증가하고 자신이 주는 HP 회복 효과가 향상된 상태."
+  },
+  "4110": {
+    "ko": "마법 시전 시간과 재사용 대기 시간이 단축되며, 이동 속도가 향상된 상태."
+  },
+  "4111": {
+    "ko": "받는 피해량이 증가하고, 받는 HP 회복 효과가 감소하는 상태."
+  },
+  "4112": {
+    "ko": "HP가 서서히 줄어드는 상태."
+  },
+  "4113": {
+    "ko": "이동 속도가 향상된 상태."
+  },
+  "4114": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "4115": {
+    "ko": "받는 피해량이 일부 감소하는 상태."
+  },
+  "4116": {
+    "ko": "초코보 방벽을 그린 상태."
+  },
+  "4117": {
+    "ko": "받는 피해량이 감소하고, 받는 HP 회복 효과가 증가하는 상태."
+  },
+  "4118": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>별무리 프리즘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4119": {
+    "ko": "지속적으로 HP가 회복되는 상태."
+  },
+  "4120": {
+    "ko": "적에게 주는 피해량이 증가하는 상태."
+  },
+  "4121": {
+    "ko": "무기 기술 재사용 대기 시간이 줄어든 상태."
+  },
+  "4122": {
+    "ko": "발리가르만다의 불꽃에 불타는 상태. HP가 서서히 줄어들고, 받는 피해량이 증가한다.\n이 불꽃은 발리가르만다가 쓰러지기 전에는 꺼지지 않는다."
+  },
+  "4123": {
+    "ko": "공격에 HP 흡수 효과가 부여된 상태."
+  },
+  "4124": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>폼폼 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4125": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>날개 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4126": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>발톱 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4127": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4128": {
+    "ko": "제기의 힘을 이용해 다른 사람에 의태한 상태."
+  },
+  "4129": {
+    "ko": "우크라마트의 결의에 힘을 얻어, 자신의 한계를 초월한 상태."
+  },
+  "4130": {
+    "ko": "절대 권력의 영향을 받은 상태. 효과가 끝나는 시점에 움직이면 폭발한다."
+  },
+  "4132": {
+    "ko": "넉다운된 상태. 이동하거나 기술을 실행할 수 없다."
+  },
+  "4133": {
+    "ko": "자동 공격 주기, 무기 기술 및 마법 시전 시간과 재사용 대기 시간이 줄어든 상태."
+  },
+  "4134": {
+    "ko": "다음 공격에 영향을 주는 특수한 자세를 취한 상태."
+  },
+  "4135": {
+    "ko": "●直前に実行した攻撃を思い出し、記憶している状態。"
+  },
+  "4136": {
+    "ko": "속성 에테르를 체내에 축적하여, 공격을 받으면 방출하는 상태."
+  },
+  "4139": {
+    "ko": "영체로 변신하여 장애물을 통과할 수 있으나, 특정 공격을 받으면 큰 피해를 입는 상태."
+  },
+  "4140": {
+    "ko": "서서히 열이 오르는 상태. 효과가 끝날 때 열병 상태가 된다."
+  },
+  "4141": {
+    "ko": "열지배에 의하여 열이 오르는 상태. 효과가 끝날 때 열병 상태가 된다."
+  },
+  "4142": {
+    "ko": "열지배에 의하여 몸이 얼어붙는 상태. 효과가 끝날 때 냉각 상태가 된다."
+  },
+  "4144": {
+    "ko": "가속도 폭탄이 부착된 상태. 효과가 끝나는 시점에 움직이면 폭발한다."
+  },
+  "4147": {
+    "ko": "분노에 차, 적에게 주는 피해량이 증가하는 상태. 가까이 있는 플레이어를 마구잡이로 공격한다."
+  },
+  "4148": {
+    "ko": "분노에 차, 적에게 주는 피해량이 증가하는 상태. 멀리 있는 플레이어를 마구잡이로 공격한다."
+  },
+  "4150": {
+    "ko": "몸이 얼어붙어 행동이 불가능하고, HP가 서서히 줄어드는 상태."
+  },
+  "4151": {
+    "ko": "다음 공격을 왼쪽을 향해 실행하는 상태."
+  },
+  "4152": {
+    "ko": "다음 공격을 오른쪽을 향해 실행하는 상태."
+  },
+  "4153": {
+    "ko": "다음 공격을 앞쪽을 향해 실행하는 상태."
+  },
+  "4154": {
+    "ko": "다음 공격을 뒤쪽을 향해 실행하는 상태."
+  },
+  "4155": {
+    "ko": "다음 공격을 왼쪽을 향해 실행하는 상태."
+  },
+  "4156": {
+    "ko": "다음 공격을 오른쪽을 향해 실행하는 상태."
+  },
+  "4168": {
+    "ko": "받는 피해량이 감소하는 상태.\n또한 자신이 받는 HP 회복 효과가 증가한다."
+  },
+  "4169": {
+    "ko": "받는 피해량이 감소하는 상태.\n또한 자신이 받는 HP 회복 효과가 증가한다."
+  },
+  "4170": {
+    "ko": "받는 피해량이 감소하고, 물리 공격을 받으면 적에게 반격 피해를 주는 상태."
+  },
+  "4216": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>제비반전<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4217": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>제비반전<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
+  },
+  "4218": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>제비반전<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있는 상태."
   }
 }
