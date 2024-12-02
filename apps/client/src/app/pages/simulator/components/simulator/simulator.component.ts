@@ -838,12 +838,12 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
         return {
           ...(sets.find(currentSet => currentSet.jobId === set.jobId) || {}),
           ...set
-        }
+        };
       })
     ).subscribe(updatedSet => {
       this.authFacade.saveSet(updatedSet);
       this.savedSet = true;
-    })
+    });
   }
 
   saveDefaultConsumables(): void {
@@ -1031,7 +1031,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     ]).pipe(
       delay(500),
       map(([stats, bonuses, loggedIn, job]) => {
-        const levels = loggedIn ? stats.levels : [80, 80, 80, 80, 80, 80, 80, 80];
+        const levels = loggedIn ? stats.levels : new Array(8).fill(100);
         levels[(job || stats.jobId) - 8] = stats.level;
         return new this.simulator.CrafterStats(
           job || stats.jobId,
