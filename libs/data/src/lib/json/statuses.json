@@ -20504,7 +20504,7 @@
     "maxStacks": 19,
     "description": {
       "en": "Overcome with the battle high, increasing damage dealt and potency of HP restoration actions. Effect is nullified when piloting warmachina.",
-      "de": "Von der eigenen Kampfleistung beflügelt. Ausgeteilter Schaden und erhaltene Heileffekte sind erhöht. Wird beim Aufsitzen auf eine Kriegsmaschine wirkungslos.",
+      "de": "Von der eigenen Kampfleistung beflügelt. Ausgeteilter Schaden und Wirkung von Heilmagie sind erhöht. Wird beim Aufsitzen auf eine Kriegsmaschine wirkungslos.",
       "ja": "戦果を挙げ、テンションが上がった状態。与ダメージと自身からのＨＰ回復効果が上昇する。機工兵器搭乗中は無効化される。",
       "fr": "L'état de tension est accru suite à un fait d'arme au cours de la bataille. Les dégâts infligés et la récupération de PV sont augmentés et l'adrénaline monte plus rapidement. Cet état est désactivé à bord d'une machine de guerre."
     }
@@ -31522,7 +31522,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Your body is encased in ice, preventing action.",
-      "de": "In Eis eingeschlossen. Keine Handlungen möglich und erleidet schrittweise Schaden.",
+      "de": "Steif gefroren und handlungsunfähig.",
       "ja": "身体が凍り付き、行動できなくなった状態。",
       "fr": "Le corps est entièrement gelé, rendant toute action impossible."
     }
@@ -42470,7 +42470,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Able to execute <span style=\"color:#ff7b1a\">Shadowbringer</span> without consuming HP.",
-      "de": "<span style=\"color:#ffbfff\">Blutvergießen</span> kann ohne LP-Kosten ausgeführt werden.",
+      "de": "<span style=\"color:#ffbfff\">Schattenbringer</span> kann ohne LP-Kosten ausgeführt werden.",
       "ja": "ＨＰを消費することなくシャドウブリンガーを実行できる状態。",
       "fr": "Porteur d'ombre peut être lancé sans consommer de PV."
     }
@@ -43464,7 +43464,7 @@
     "maxStacks": 3,
     "description": {
       "en": "Damage dealt and potency of HP restoration actions are increased.",
-      "de": "Ausgeteilter Schaden und erhaltene Heileffekte sind erhöht.",
+      "de": "Ausgeteilter Schaden und Wirkung von Heilmagie sind erhöht.",
       "ja": "与ダメージと自身からのＨＰ回復効果が上昇する状態。",
       "fr": "Les dégâts infligés et la puissance des effets curatifs prodigués sont augmentés."
     }
@@ -43478,7 +43478,7 @@
     "maxStacks": 3,
     "description": {
       "en": "Damage dealt and potency of all HP restoration actions are reduced.",
-      "de": "Ausgeteilter Schaden und erhaltene Heileffekte sind verringert.",
+      "de": "Ausgeteilter Schaden und Wirkung von Heilmagie sind verringert.",
       "ja": "与ダメージと自身からのＨＰ回復効果が低下した状態。",
       "fr": "Les dégâts infligés et la puissance des effets curatifs prodigués sont réduits."
     }
@@ -44080,7 +44080,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Able to execute <span style=\"color:#ff7b1a\">Heat Blast</span>. Movement speed is also increased.",
-      "de": "<span style=\"color:#ffbfff\">Hitzeschuss</span> kann ausgeführt werden und Bewegungsgeschwindigkeit ist erhöht.",
+      "de": "<span style=\"color:#ffbfff\">Brandschuss</span> kann ausgeführt werden und Bewegungsgeschwindigkeit ist erhöht.",
       "ja": "ヒートブラストを実行できる状態。さらに移動速度が上昇する。",
       "fr": "Pyro-explosion peut être lancée. De plus, la vitesse de déplacement est augmentée."
     }
@@ -44404,7 +44404,7 @@
       "en": "Weaponskill or <span style=\"color:#ff7b1a\">Meteodrive</span> damage taken from the monk who applied this effect will trigger an additional damage effect.",
       "de": "Erleidet zusätzlichen Schaden durch Waffenfertigkeiten vom Verursacher dieses Status.",
       "ja": "この効果を付与したプレイヤーからウェポンスキルによる攻撃を受けると、追加ダメージを受ける状態。",
-      "fr": "Les dégâts de techniques d'arme reçus du joueur ayant créé l'effet sont augmentés."
+      "fr": "La prochaine technique d'arme reçue du joueur ayant créé l'effet inflige des dégâts supplémentaires."
     }
   },
   "3173": {
@@ -45060,7 +45060,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Frozen solid and unable to execute actions.",
-      "de": "In Eis eingeschlossen. Keine Handlungen möglich und erleidet schrittweise Schaden.",
+      "de": "Steif gefroren und handlungsunfähig.",
       "ja": "身体が凍り付き、行動できなくなった状態。",
       "fr": "Le corps est entièrement gelé, rendant toute action impossible."
     }
@@ -45668,31 +45668,31 @@
     }
   },
   "3263": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wyrmclaw",
+    "de": "Krallen des heiligen Drachen",
+    "ja": "聖竜の爪",
+    "fr": "Griffes du Dragon divin",
+    "icon": "/i/215000/215241.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Shredded by draconic talons. KO will occur when countdown reaches 0.",
+      "de": "Wenn der Zähler null erreicht, tritt Kampfunfähigkeit ein.",
+      "ja": "聖竜の爪を受けた状態。カウント0で戦闘不能に陥る。",
+      "fr": "Un assaut des griffes du Dragon divin a été subi. Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "3264": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wyrmfang",
+    "de": "Reißzähne des heiligen Drachen",
+    "ja": "聖竜の牙",
+    "fr": "Crocs du Dragon divin",
+    "icon": "/i/215000/215242.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Torn by draconic teeth. KO will occur when countdown reaches 0.",
+      "de": "Wenn der Zähler null erreicht, tritt Kampfunfähigkeit ein.",
+      "ja": "聖竜の牙を受けた状態。カウント0で戦闘不能に陥る。",
+      "fr": "Un assaut des crocs du Dragon divin a été subi. Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "3265": {
@@ -58184,143 +58184,143 @@
     }
   },
   "4157": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4157_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4157_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4157_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4157_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214227.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4157_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4157_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4157_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4157_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4158": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4158_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4158_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4158_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4158_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214228.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4158_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4158_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4158_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4158_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4159": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4159_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4159_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4159_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4159_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214229.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4159_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4159_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4159_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4159_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4160": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4160_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4160_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4160_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4160_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214230.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4160_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4160_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4160_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4160_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4161": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4161_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4161_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4161_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4161_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214231.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4161_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4161_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4161_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4161_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4162": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Physical Vulnerability Up",
+    "de": "Erhöhte physische Verwundbarkeit",
+    "ja": "被物理ダメージ増加",
+    "fr": "Vulnérabilité physique augmentée",
+    "icon": "/i/215000/215053.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage taken is increased.",
+      "de": "Erlittener physischer Schaden ist erhöht.",
+      "ja": "受ける物理ダメージが増加する状態。",
+      "fr": "Les dégâts physiques reçus sont augmentés."
     }
   },
   "4163": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Stun",
+    "de": "Betäubung",
+    "ja": "スタン",
+    "fr": "Étourdissement",
+    "icon": "/i/215000/215004.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to execute actions.",
+      "de": "Ist handlungsunfähig.",
+      "ja": "行動できなくなった状態。",
+      "fr": "Toute action est impossible."
     }
   },
   "4164": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Light Resistance Down II",
+    "de": "Lichtresistenz - (stark)",
+    "ja": "光属性耐性低下［強］",
+    "fr": "Résistance à la Lumière réduite+",
+    "icon": "/i/214000/214232.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Light resistance is significantly reduced.",
+      "de": "Lichtresistenz ist stark verringert.",
+      "ja": "光属性に対する耐性が著しく低下した状態。",
+      "fr": "La résistance à l'élément Lumière est considérablement réduite."
     }
   },
   "4165": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4165_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4165_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4165_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4165_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214233.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4165_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4165_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4165_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4165_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4166": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4166_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4166_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4166_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4166_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214234.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4166_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4166_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4166_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4166_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4167": {
@@ -58380,31 +58380,31 @@
     }
   },
   "4171": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4171_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4171_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4171_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4171_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214235.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4171_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4171_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4171_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4171_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4172": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4172_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4172_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4172_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4172_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214236.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4172_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4172_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4172_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4172_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4173": {
@@ -58422,17 +58422,17 @@
     }
   },
   "4174": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Spell-in-Waiting: Quietus",
+    "de": "Verzögerung: Quietus",
+    "ja": "ディレイスペル：クワイタス",
+    "fr": "Sort déphasé&nbsp;: Quietus",
+    "icon": "/i/215000/215341.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Designated target of <span style=\"color:#ff7b1a\">Quietus</span>, which will activate when this effect expires.",
+      "de": "Mit verzögertem <span style=\"color:#ffbfff\">Quietus</span> belegt. Der Zauber wird mit dem Ende dieses Effekts ausgelöst.",
+      "ja": "発動が遅延したクワイタスの標的となっている状態。効果終了時に、クワイタスが発動する。",
+      "fr": "Quietus est retardé et sera lancé sur cette cible à la fin de cet effet."
     }
   },
   "4175": {
@@ -58898,17 +58898,17 @@
     }
   },
   "4208": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Spell-in-Waiting: Return",
+    "de": "Verzögerung: Rückführung",
+    "ja": "ディレイスペル：リターン",
+    "fr": "Sort déphasé&nbsp;: Retour",
+    "icon": "/i/215000/215313.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Designated target of <span style=\"color:#ff7b1a\">Return</span>, which will activate when this effect expires.",
+      "de": "Mit verzögertem <span style=\"color:#ffbfff\">Rückführung</span> belegt. Der Zauber wird mit dem Ende dieses Effekts ausgelöst.",
+      "ja": "発動が遅延したリターンの標的となっている状態。効果終了時に、リターンが発動する。",
+      "fr": "Retour est retardé et sera lancé sur cette cible à la fin de cet effet."
     }
   },
   "4209": {
@@ -60026,7 +60026,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Able to execute <span style=\"color:#ff7b1a\">Comeuppance</span> while under the effect of <span style=\"color:#ffff66\">Blackblood</span>.",
-      "de": "Gemeinsam mit <span style=\"color:#ffff66\">Schwarzblut</span> kann <span style=\"color:#ffbfff\">Blutrache</span> ausgeführt werden.",
+      "de": "Gemeinsam mit <span style=\"color:#ffff66\">Schwarzes Blut</span> kann <span style=\"color:#ffbfff\">Blutrache</span> ausgeführt werden.",
       "ja": "ブラックブラッドと組み合わせることで、カマパンスを実行できる状態。",
       "fr": "Grâce à l'effet combiné de Sang noir, Punition réciproque peut être lancée."
     }
@@ -60040,7 +60040,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Able to execute <span style=\"color:#ff7b1a\">Torcleaver</span> while under the effect of <span style=\"color:#ffff66\">Blackblood</span>.",
-      "de": "Gemeinsam mit <span style=\"color:#ffff66\">Schwarzblut</span> kann <span style=\"color:#ffbfff\">Torspalter</span> ausgeführt werden.",
+      "de": "Gemeinsam mit <span style=\"color:#ffff66\">Schwarzes Blut</span> kann <span style=\"color:#ffbfff\">Torspalter</span> ausgeführt werden.",
       "ja": "ブラックブラッドと組み合わせることで、トアクリーバーを実行できる状態。",
       "fr": "Grâce à l'effet combiné de Sang noir, Brise-montagne peut être lancé."
     }
@@ -61194,31 +61194,31 @@
     }
   },
   "4372": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Mark of Mortality",
+    "de": "Todessiegel",
+    "ja": "死の刻印",
+    "fr": "Marque de mort",
+    "icon": "/i/219000/219421.png",
+    "maxStacks": 2,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Branded with a mark of mortality. Damage dealt is reduced. Too many stacks will result in KO.",
+      "de": "Mit tödlicher Siegelmagie verflucht. Ausgeteilter Schaden ist verringert. Bei Erreichen einer bestimmten Anzahl von Stapeln tritt Kampfunfähigkeit ein.",
+      "ja": "死の刻印を刻まれた状態。与ダメージが低下し、スタック数が増えると戦闘不能状態になる。",
+      "fr": "Le corps est marqué d'un sceau funeste. Les dégâts infligés sont réduits, et l'effet rend inconscient s'il est accumulé un certain nombre de fois."
     }
   },
   "4373": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Spell-in-Waiting Refrain",
+    "de": "Inkantatische Verzögerung",
+    "ja": "ディレイスペル・リフレイン",
+    "fr": "Déphasage incantatoire",
+    "icon": "/i/214000/214189.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The next spell cast will activate in stages after a delay.",
+      "de": "Der nächste Zauber wird in mehreren Stufen und verzögert ausgeführt.",
+      "ja": "次に唱える魔法の発動を、複数段階に分割して遅延させる状態。",
+      "fr": "Le prochain sort sera lancé en plusieurs fois, et ainsi retardé."
     }
   },
   "4374": {
@@ -61348,17 +61348,17 @@
     }
   },
   "4383": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fire Resistance Down II",
+    "de": "Feuerresistenz - (stark)",
+    "ja": "火属性耐性低下［強］",
+    "fr": "Résistance au feu réduite+",
+    "icon": "/i/215000/215595.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire resistance is significantly reduced.",
+      "de": "Resistenz gegen Feuer ist stark verringert.",
+      "ja": "火属性に対する耐性が著しく低下した状態。",
+      "fr": "La résistance à l'élément feu est considérablement réduite."
     }
   },
   "4384": {
@@ -62090,17 +62090,17 @@
     }
   },
   "4436": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vulnerability Down",
+    "de": "Verringerte Verwundbarkeit",
+    "ja": "被ダメージ低下",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/i/215000/215021.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージが軽減される状態。",
+      "fr": "Les dégâts reçus sont réduits."
     }
   },
   "4437": {

@@ -380,9 +380,9 @@ export const mapIds = [
     "weatherRate": 155
   },
   {
-    "zone": 0,
+    "zone": 5137,
     "id": 77,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
     "zone": 354,

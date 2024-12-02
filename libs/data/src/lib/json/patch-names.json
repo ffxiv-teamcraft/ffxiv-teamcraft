@@ -1246,5 +1246,18 @@
     "ko": "Patch 7.1",
     "zh": "Patch 7.1",
     "version": "7.1"
+  },
+  "99": {
+    "id": 99,
+    "banner": null,
+    "ex": 5,
+    "release": 1732606637,
+    "en": "Patch 7.11",
+    "de": "Patch 7.11",
+    "ja": "Patch 7.11",
+    "fr": "Patch 7.11",
+    "ko": "Patch 7.11",
+    "zh": "Patch 7.11",
+    "version": "7.11"
   }
 }

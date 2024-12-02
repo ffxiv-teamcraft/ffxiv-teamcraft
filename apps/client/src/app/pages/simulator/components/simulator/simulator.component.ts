@@ -14,7 +14,7 @@ import {
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, take } from 'rxjs';
 import {
   catchError,
-  debounceTime,
+  debounceTime, delay,
   distinctUntilChanged,
   distinctUntilKeyChanged,
   filter,
@@ -822,18 +822,28 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   saveSet(): void {
-    const rawForm = this.statsForm.getRawValue();
-    const set: GearSet = {
-      jobId: rawForm.job,
-      level: rawForm.level,
-      control: rawForm.control,
-      craftsmanship: rawForm.craftsmanship,
-      cp: rawForm.cp,
-      specialist: rawForm.specialist,
-      splendorous: rawForm.splendorous
-    };
-    this.authFacade.saveSet(set);
-    this.savedSet = true;
+    this.authFacade.gearSets$.pipe(
+      first(),
+      map(sets => {
+        const rawForm = this.statsForm.getRawValue();
+        const set: GearSet = {
+          jobId: rawForm.job,
+          level: rawForm.level,
+          control: rawForm.control,
+          craftsmanship: rawForm.craftsmanship,
+          cp: rawForm.cp,
+          specialist: rawForm.specialist,
+          splendorous: rawForm.splendorous
+        };
+        return {
+          ...(sets.find(currentSet => currentSet.jobId === set.jobId) || {}),
+          ...set
+        };
+      })
+    ).subscribe(updatedSet => {
+      this.authFacade.saveSet(updatedSet);
+      this.savedSet = true;
+    });
   }
 
   saveDefaultConsumables(): void {
@@ -1019,8 +1029,9 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       this.loggedIn$,
       this.job$
     ]).pipe(
+      delay(500),
       map(([stats, bonuses, loggedIn, job]) => {
-        const levels = loggedIn ? stats.levels : [80, 80, 80, 80, 80, 80, 80, 80];
+        const levels = loggedIn ? stats.levels : new Array(8).fill(100);
         levels[(job || stats.jobId) - 8] = stats.level;
         return new this.simulator.CrafterStats(
           job || stats.jobId,

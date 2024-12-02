@@ -26210,7 +26210,7 @@
       "minGathering": 0,
       "video": "https://youtu.be/aCMuzj51IOM",
       "aLure": 0,
-      "mLure": 1
+      "mLure": 2
     }
   ],
   "43686": [
@@ -27063,9 +27063,11 @@
       "spot": 321,
       "hookset": 1,
       "tug": 0,
-      "bait": 43853,
+      "bait": 43857,
       "minGathering": 0,
-      "video": "https://youtu.be/Te0bYY9_Pl8"
+      "video": "https://youtu.be/Te0bYY9_Pl8",
+      "aLure": 1,
+      "mLure": 0
     }
   ],
   "43762": [
@@ -27074,7 +27076,9 @@
       "hookset": 2,
       "tug": 2,
       "bait": 43857,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 3
     }
   ],
   "43763": [
@@ -27227,7 +27231,9 @@
       "tug": 0,
       "bait": 43855,
       "minGathering": 0,
-      "video": "https://youtu.be/Jk0NOIwX4eI"
+      "video": "https://youtu.be/Jk0NOIwX4eI",
+      "aLure": 1,
+      "mLure": 0
     }
   ],
   "43776": [
@@ -27337,7 +27343,9 @@
       "tug": 0,
       "bait": 43858,
       "minGathering": 0,
-      "video": "https://youtu.be/-FPDr-CMMMM"
+      "video": "https://youtu.be/-FPDr-CMMMM",
+      "aLure": 2,
+      "mLure": 0
     }
   ],
   "43785": [
@@ -27456,7 +27464,9 @@
         3
       ],
       "minGathering": 0,
-      "video": "https://youtu.be/6Dih5jNWcaY"
+      "video": "https://youtu.be/6Dih5jNWcaY",
+      "aLure": 2,
+      "mLure": 0
     }
   ],
   "43796": [
@@ -27556,7 +27566,54 @@
       "spawn": 12,
       "duration": 2,
       "minGathering": 3500,
-      "video": "https://youtu.be/Is_j823nprs"
+      "video": "https://youtu.be/Is_j823nprs",
+      "aLure": 0,
+      "mLure": 1
+    }
+  ],
+  "44341": [
+    {
+      "spot": 301,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 16,
+      "duration": 4,
+      "weathers": [
+        3,
+        4
+      ],
+      "minGathering": 3500,
+      "video": "https://youtu.be/425GuV3rLG4",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "44342": [
+    {
+      "spot": 318,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43747,
+      "spawn": 20,
+      "duration": 4,
+      "minGathering": 3500,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "44343": [
+    {
+      "spot": 308,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "weathers": [
+        1
+      ],
+      "minGathering": 3500,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "44344": [
@@ -27595,7 +27652,9 @@
       "bait": 43858,
       "spawn": 9,
       "duration": 2,
-      "minGathering": 3500
+      "minGathering": 3500,
+      "aLure": 2,
+      "mLure": 0
     }
   ],
   "44347": [

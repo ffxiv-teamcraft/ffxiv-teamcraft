@@ -55,21 +55,21 @@ export class FishLuresComponent {
         }
       });
       return {
-        percentALure: 100 * totalALure / totalLures,
+        percentALure: 100 * totalALure / (totalLures || 1),
         totalALure,
-        percentMLure: 100 * totalMLure / totalLures,
+        percentMLure: 100 * totalMLure / (totalLures || 1),
         totalMLure,
         aLure: aLureData,
         aLurePercent: {
-          1: 100 * aLureData[1] / totalLures,
-          2: 100 * aLureData[2] / totalLures,
-          3: 100 * aLureData[3] / totalLures
+          1: 100 * aLureData[1] / (totalLures || 1),
+          2: 100 * aLureData[2] / (totalLures || 1),
+          3: 100 * aLureData[3] / (totalLures || 1)
         },
         mLure: mLureData,
         mLurePercent: {
-          1: 100 * mLureData[1] / totalLures,
-          2: 100 * mLureData[2] / totalLures,
-          3: 100 * mLureData[3] / totalLures
+          1: 100 * mLureData[1] / (totalLures || 1),
+          2: 100 * mLureData[2] / (totalLures || 1),
+          3: 100 * mLureData[3] / (totalLures || 1)
         }
       };
     })

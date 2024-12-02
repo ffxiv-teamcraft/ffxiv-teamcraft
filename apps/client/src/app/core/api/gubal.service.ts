@@ -26,7 +26,7 @@ export class GubalService {
   }
 
   public init(): void {
-    if (this.platform.isDesktop() && this.envService.gameVersion >= 7) {
+    if (this.platform.isDesktop()) {
       combineLatest(this.reporters.map(reporter => {
         return reporter.getDataReports(this.ipc.packets$).pipe(
           debounceTime(500),

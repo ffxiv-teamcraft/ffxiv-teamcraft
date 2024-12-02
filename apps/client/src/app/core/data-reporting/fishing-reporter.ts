@@ -120,9 +120,8 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    const throw$ = merge(packets$.pipe(
-      // TODO DT flag for KR/CN
-      ofMessageType(this.settings.region === Region.Global ? 'eventPlay4' : 'eventPlay'),
+    const throw$ = packets$.pipe(
+      ofMessageType('eventPlay4'),
       toIpcData(),
       filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
       delay(200),
@@ -140,13 +139,7 @@ export class FishingReporter implements DataReporter {
           previousWeatherId
         };
       })
-    ), eventPlay$.pipe(
-      filter(p => {
-        return p.scene === 2;
-      }),
-      delay(1000),
-      map(() => null)
-    ));
+    );
 
 
     const bite$ = eventPlay$.pipe(
@@ -205,12 +198,10 @@ export class FishingReporter implements DataReporter {
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
         /**
-         * 1111: Early hook
-         * 1117: Ignored the fish
          * 1119: snap?
          * 1120: Fish left
          */
-        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 || rodAnimation.logMessage === 1117 || rodAnimation.logMessage === 1111) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
+        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 ) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {
@@ -221,10 +212,39 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    const resetFromLogMessage$ = packets$.pipe(
+      ofMessageType('systemLogMessage'),
+      toIpcData(),
+      map(packet => {
+        return {
+          logMessage: packet.param1,
+          timestamp: Date.now()
+        };
+      }),
+      filter(rodAnimation => {
+        /**
+         * 1111: Early hook
+         * 1117: Ignored the fish
+         */
+        return rodAnimation.logMessage === 1111 || rodAnimation.logMessage === 1117
+      }),
+      map(() => true)
+    );
+
+    const resetFromAction$ = packets$.pipe(
+      ofMessageType('eventPlay4'),
+      toIpcData(),
+      // 271 = fishing idle
+      filter(packet => packet.eventId === 0x150001 && packet.params[0] === 271)
+    );
+
+    const reset$ = merge(resetFromLogMessage$, resetFromAction$);
+
     const resetMooch$ = merge(packets$.pipe(
         ofMessageType('actorControlSelf', 'fishingBaitMsg')
       ),
       misses$,
+      reset$,
       fishCaught$.pipe(debounceTime(750))
     ).pipe(
       map(() => null)
@@ -233,6 +253,7 @@ export class FishingReporter implements DataReporter {
     const mooch$ = merge(moochSelection$, resetMooch$);
 
     const hookset$ = actionTimeline$.pipe(
+      filter(key => key !== 'fishing/idle'),
       map(key => {
         if (key.indexOf('strong') > -1) {
           return Hookset.POWERFUL;
@@ -312,6 +333,8 @@ export class FishingReporter implements DataReporter {
         wrongSpot: spot && train && getFishTrainStatus(train) === FishTrainStatus.RUNNING && trainSpotId !== spot?.id
       });
     });
+
+    reset$.subscribe(() => this.setState({throwData: null}))
 
     return merge(misses$, fishCaught$).pipe(
       withLatestFrom(isFishing$),

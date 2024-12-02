@@ -328,7 +328,9 @@ export class FishContextService {
   );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
-  public readonly baitsBySpot$: Observable<OccurrencesResult> = this.baitMoochesBySpot$.pipe(
+  public readonly baitsBySpot$: Observable<OccurrencesResult> = combineLatest([this.spotId$, this.showMisses$]).pipe(
+    filter(([spotId]) => spotId > 0),
+    switchMap(([spotId, showMisses]) => this.data.getBaitMooches(undefined, spotId, showMisses)),
     map(res => {
       return {
         ...res,

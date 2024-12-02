@@ -22,7 +22,7 @@ import { PlatformService } from '../tools/platform.service';
 import { StatusEntry } from '../../modules/eorzea/status-entry';
 import { LazyStatus } from '@ffxiv-teamcraft/data/model/lazy-status';
 import { isEqual } from 'lodash';
-
+import { Region } from '@ffxiv-teamcraft/types';
 @Injectable({
   providedIn: 'root'
 })

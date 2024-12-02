@@ -324,13 +324,13 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getMobs(placeNameId: number): Observable<MapRelatedElement[]> {
+  private getMobs(mapId: number): Observable<MapRelatedElement[]> {
     return this.lazyData.getEntry('monsters').pipe(
       map(monsters => {
         return [].concat.apply([], Object.keys(monsters)
           .map(key => {
             const monster = monsters[key];
-            monster.positions = cloneDeep(monster.positions).filter(p => p.zoneid === placeNameId);
+            monster.positions = cloneDeep(monster.positions).filter(p => p.map === mapId);
             return { id: +key, ...monster };
           })
           .filter(monster => {
