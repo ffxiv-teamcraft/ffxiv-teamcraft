@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { filter } from 'rxjs/operators';
@@ -18,6 +18,10 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import { FlexModule } from '@angular/flex-layout/flex';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { combineLatest, map } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-gearset-row',
@@ -25,7 +29,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./gearset-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTagModule, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTagModule, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule, AsyncPipe]
 })
 export class GearsetRowComponent {
 
@@ -34,6 +38,12 @@ export class GearsetRowComponent {
 
   @Input()
   userId: string;
+
+  authFacade = inject(AuthFacade);
+
+  usedInGuides$ = combineLatest([observeInput(this, 'gearset'), this.authFacade.user$.pipe(map(user => user.editor))]).pipe(
+    map(([gearset, userIsEditor]) => userIsEditor && gearset.usedInGuides?.length > 0)
+  )
 
   constructor(private gearsetsFacade: GearsetsFacade, private translate: TranslateService,
               private dialog: NzModalService, private linkTools: LinkToolsService) {

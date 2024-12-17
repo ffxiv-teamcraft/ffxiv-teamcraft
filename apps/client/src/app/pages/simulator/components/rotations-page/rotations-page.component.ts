@@ -3,7 +3,7 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { debounceTime, filter, first, map, tap } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { AuthFacade } from '../../../../+state/auth.facade';
 import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { RotationFolderPanelComponent } from '../rotation-folder-panel/rotation-folder-panel.component';
 import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
-import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
 import { AsyncPipe } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -26,12 +26,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-rotations-page',
-    templateUrl: './rotations-page.component.html',
-    styleUrls: ['./rotations-page.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, CdkDropList, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
+  selector: 'app-rotations-page',
+  templateUrl: './rotations-page.component.html',
+  styleUrls: ['./rotations-page.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, CdkDropList, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class RotationsPageComponent {
 
@@ -39,51 +39,59 @@ export class RotationsPageComponent {
 
   public rotations$: Observable<CraftingRotation[]>;
 
-  public rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
+  public rotationFoldersDisplay$: Observable<{
+    folder: CraftingRotationsFolder,
+    rotations: CraftingRotation[]
+  }[]> = combineLatest([this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$]).pipe(
+    tap(([folders, rotations]) => {
+      const fixedFolders = folders
+        .filter(folder => folder.$key !== undefined)
+        .map(folder => {
+          return {
+            folder: folder,
+            rotations: folder.rotationIds
+              .filter(id => rotations.find(r => r.$key === id) !== undefined)
+          };
+        })
+        .filter(entry => entry.rotations.length < entry.folder.rotationIds.length);
+      fixedFolders.forEach(entry => {
+        entry.folder.rotationIds = entry.rotations;
+        this.foldersFacade.updateFolder(entry.folder);
+      });
+    }),
+    map(([folders, rotations]) => {
+      return folders
+        .filter(folder => folder.$key !== undefined)
+        .map(folder => {
+          return {
+            folder: folder,
+            rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
+              .filter(r => r !== undefined)
+              .map(rotation => {
+                rotation.folderId = folder.$key;
+                return rotation;
+              })
+          };
+        });
+    }),
+    // Wrong order because of undefined rotations !!
+    map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
+  );
 
   public favoriteRotationsFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
 
   public user$ = this.authFacade.user$;
 
+  public cdkConnections$ = this.rotationFoldersDisplay$.pipe(
+    map(folders => {
+      return folders.map((f, i) => `folder-rotations-group-${i}`);
+    })
+  );
+
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
               private foldersFacade: RotationFoldersFacade, private guidesService: GuidesService,
               private message: NzMessageService, private authFacade: AuthFacade) {
     this.rotationsFacade.loadMyRotations();
-    this.rotationFoldersDisplay$ = combineLatest([this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$]).pipe(
-      tap(([folders, rotations]) => {
-        const fixedFolders = folders
-          .filter(folder => folder.$key !== undefined)
-          .map(folder => {
-            return {
-              folder: folder,
-              rotations: folder.rotationIds
-                .filter(id => rotations.find(r => r.$key === id) !== undefined)
-            };
-          })
-          .filter(entry => entry.rotations.length < entry.folder.rotationIds.length);
-        fixedFolders.forEach(entry => {
-          entry.folder.rotationIds = entry.rotations;
-          this.foldersFacade.updateFolder(entry.folder);
-        });
-      }),
-      map(([folders, rotations]) => {
-        return folders
-          .filter(folder => folder.$key !== undefined)
-          .map(folder => {
-            return {
-              folder: folder,
-              rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
-                .filter(r => r !== undefined)
-                .map(rotation => {
-                  rotation.folderId = folder.$key;
-                  return rotation;
-                })
-            };
-          });
-      }),
-      // Wrong order because of undefined rotations !!
-      map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
-    );
 
     this.favoriteRotationsFoldersDisplay$ = this.foldersFacade.favoriteRotationFolders$.pipe(
       map((folders) => {

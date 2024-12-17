@@ -3019,10 +3019,10 @@
     nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.14":
-  version "1.2.14"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.14.tgz#dae93235aadd6c68ba572c702d202c8a257c17e0"
-  integrity sha512-m0AtOxqJRdNngw9gcbg1waA7b1wLFs2BIyyexURZmgHMpvv0o2vTnY4XKwwhPRmaBWlzw5SYAHdKBrIFyEZZWA==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.15":
+  version "1.2.15"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.15.tgz#87ba2176d9a9c5bcf059f0e10e1d4ba50e5e7822"
+  integrity sha512-WZ8speZh0+SICvT9Irgh80qEndPT1/9PAIcUJzhxIxW7QExsJT7aNrMgF7sGuLHzT+d31I6DAtWNt2lE80lwfw==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.15"
 

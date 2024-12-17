@@ -40,6 +40,7 @@ export enum Icon {
   I061000061832PNG = "/i/061000/061832.png",
   I061000061836PNG = "/i/061000/061836.png",
   I061000061846PNG = "/i/061000/061846.png",
+  I061000061850PNG = "/i/061000/061850.png",
 }
 
 export interface Members {

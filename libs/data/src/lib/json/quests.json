@@ -29866,7 +29866,7 @@
   },
   "67313": {
     "name": {
-      "en": "First Impressions",
+      "en": "First Impressions Last",
       "ja": "相方を探して",
       "de": "Nichts für Zartbesaitete",
       "fr": "Partenaire particulier"
@@ -87875,12 +87875,19 @@
   },
   "70503": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Appreciated Value",
+      "ja": "ワチュメキメキ大感謝祭",
+      "de": "Das Wachumeqimeqi-Dankesspektakel",
+      "fr": "La grande foire aux mille mercis"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062523.png",
+    "rewards": [
+      {
+        "id": 44972,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101300.png"
   },
   "70504": {
     "name": {
@@ -90660,12 +90667,19 @@
   },
   "70722": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Heavensssturn Trivia",
+      "ja": "問答巡りと降神祭",
+      "de": "Schlüpfrige Himmelswende",
+      "fr": "Le quiz de la transition"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080134.png",
+    "rewards": [
+      {
+        "id": 41472,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101372.png"
   },
   "70723": {
     "name": {
@@ -90720,12 +90734,13 @@
   },
   "70728": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Case of the Displaced Inspector",
+      "ja": "事件屋の行方",
+      "de": "Hartgekocht",
+      "fr": "Dur comme un œuf"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101374.png"
   },
   "70729": {
     "name": {
@@ -91363,47 +91378,53 @@
   },
   "70775": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Laying New Tracks",
+      "ja": "お得意様ニトウィケ",
+      "de": "Neue Schienen braucht das Land",
+      "fr": "Nitowikwe et ses commandes spéciales"
     },
     "icon": "/i/071000/071221.png"
   },
   "70776": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Weight of a Train",
+      "ja": "大陸横断鉄道の夢へ向かって！",
+      "de": "Schwer wiegt die Lok",
+      "fr": "Pour une voie ferrée transcontinentale&nbsp;!"
     },
     "icon": "/i/071000/071221.png"
   },
   "70777": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "His Heart Blazes On",
+      "ja": "迸るダーピャの熱意",
+      "de": "Mit Kohle im Herzen",
+      "fr": "La ferveur de Zawpya"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 44660,
+        "amount": 1
+      }
+    ]
   },
   "70778": {
     "name": {
-      "en": "エッグハントと宙を漂う飾りタマゴ",
+      "en": "In Pursuit of Eggcellence",
       "ja": "エッグハントと宙を漂う飾りタマゴ",
       "de": "Ei, ei, ei, was seh' ich da ...?",
-      "fr": "エッグハントと宙を漂う飾りタマゴ"
+      "fr": "Faute de Prœufs..."
     },
     "icon": "/i/080000/080110.png",
     "banner": "/i/101000/101375.png"
   },
   "70779": {
     "name": {
-      "en": "エッグハントと集う傘",
+      "en": "Eggceeding Expectations",
       "ja": "エッグハントと集う傘",
       "de": "Einigkeit und Schirm und Eiheit",
-      "fr": "エッグハントと集う傘"
+      "fr": "Les parapluies de Gridania"
     },
     "icon": "/i/080000/080110.png",
     "rewards": [
@@ -91553,8 +91574,8 @@
     "name": {
       "en": "I Promise You a Rose Garden",
       "ja": "ヴァレンティオンデーと愛の薔薇",
-      "de": "ヴァレンティオンデーと愛の薔薇",
-      "fr": "ヴァレンティオンデーと愛の薔薇"
+      "de": "So wie die Rosen blühen",
+      "fr": "La rose de la Valention"
     },
     "icon": "/i/080000/080108.png",
     "banner": "/i/101000/101394.png"

@@ -74679,18 +74679,18 @@
   },
   "3571": {
     "id": 3571,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/059000/059892.png",
+    "patch": 100,
+    "en": "Great White Serpent of Squidge",
+    "de": "Weiße Schlangen bringen Glück",
+    "ja": "讃えよ白ツチノコ様",
+    "fr": "Ô vénérable tsuchinoko blanc, entends mes prières",
     "zh": "赞美白色土龙大人",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": "",
+      "en": "Complete the quest “Heavensssturn Trivia.”",
+      "de": "Den Auftrag „Schlüpfrige Himmelswende“ abgeschlossen.",
+      "ja": "クエスト「問答巡りと降神祭」をコンプリートする",
+      "fr": "Accomplir la quête “Le quiz de la transition”.",
       "zh": "完成任务“巳蛇百问降神节”。"
     },
     "item": 0,
@@ -75066,190 +75066,190 @@
   },
   "3592": {
     "id": 3592,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/025000/025507.png",
+    "patch": 100,
+    "en": "Satisfaction Guaranteed: Nitowikwe I",
+    "de": "Eine Schippe drauf I",
+    "ja": "ニトウィケ：ランク1",
+    "fr": "Train-train quotidien I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve a satisfaction level of 1 with Nitowikwe.",
+      "de": "Zufriedenheitsrang 1 bei Nitowikwe erlangt.",
+      "ja": "ニトウィケの信頼ランクを1にする",
+      "fr": "Atteindre le rang 1 de satisfaction auprès de Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3593": {
     "id": 3593,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/025000/025507.png",
+    "patch": 100,
+    "en": "Satisfaction Guaranteed: Nitowikwe II",
+    "de": "Eine Schippe drauf II",
+    "ja": "ニトウィケ：ランク2",
+    "fr": "Train-train quotidien II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve a satisfaction level of 2 with Nitowikwe.",
+      "de": "Zufriedenheitsrang 2 bei Nitowikwe erlangt.",
+      "ja": "ニトウィケの信頼ランクを2にする",
+      "fr": "Atteindre le rang 2 de satisfaction auprès de Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3594": {
     "id": 3594,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/025000/025507.png",
+    "patch": 100,
+    "en": "Satisfaction Guaranteed: Nitowikwe III",
+    "de": "Eine Schippe drauf III",
+    "ja": "ニトウィケ：ランク3",
+    "fr": "Train-train quotidien III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve a satisfaction level of 3 with Nitowikwe.",
+      "de": "Zufriedenheitsrang 3 bei Nitowikwe erlangt.",
+      "ja": "ニトウィケの信頼ランクを3にする",
+      "fr": "Atteindre le rang 3 de satisfaction auprès de Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3595": {
     "id": 3595,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/025000/025507.png",
+    "patch": 100,
+    "en": "Satisfaction Guaranteed: Nitowikwe IV",
+    "de": "Eine Schippe drauf IV",
+    "ja": "ニトウィケ：ランク4",
+    "fr": "Train-train quotidien IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve a satisfaction level of 4 with Nitowikwe.",
+      "de": "Zufriedenheitsrang 4 bei Nitowikwe erlangt.",
+      "ja": "ニトウィケの信頼ランクを4にする",
+      "fr": "Atteindre le rang 4 de satisfaction auprès de Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3596": {
     "id": 3596,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/025000/025507.png",
+    "patch": 100,
+    "en": "Satisfaction Guaranteed: Nitowikwe V",
+    "de": "Eine Schippe drauf V",
+    "ja": "ニトウィケ：ランク5",
+    "fr": "Train-train quotidien V",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve a satisfaction level of 5 with Nitowikwe.",
+      "de": "Zufriedenheitsrang 5 bei Nitowikwe erlangt.",
+      "ja": "ニトウィケの信頼ランクを5にする",
+      "fr": "Atteindre le rang 5 de satisfaction auprès de Nitowikwe."
     },
     "item": 0,
-    "title": 0
+    "title": 763
   },
   "3597": {
     "id": 3597,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026551.png",
+    "patch": 100,
+    "en": "The Customer Is Always Right: Nitowikwe I",
+    "de": "Transkontinentale Träume I",
+    "ja": "ニトウィケの得意先：ランク1",
+    "fr": "Fournisseur officiel de Nitowikwe I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deliver 36 collectables to Nitowikwe.",
+      "de": "Nitowikwe 36 Sammlerstücke geliefert.",
+      "ja": "ニトウィケに収集品を計36回納品する",
+      "fr": "Échanger 36 objets collectionnables à Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3598": {
     "id": 3598,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026551.png",
+    "patch": 100,
+    "en": "The Customer Is Always Right: Nitowikwe II",
+    "de": "Transkontinentale Träume II",
+    "ja": "ニトウィケの得意先：ランク2",
+    "fr": "Fournisseur officiel de Nitowikwe II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deliver 48 collectables to Nitowikwe.",
+      "de": "Nitowikwe 48 Sammlerstücke geliefert.",
+      "ja": "ニトウィケに収集品を計48回納品する",
+      "fr": "Échanger 48 objets collectionnables à Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3599": {
     "id": 3599,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026551.png",
+    "patch": 100,
+    "en": "The Customer Is Always Right: Nitowikwe III",
+    "de": "Transkontinentale Träume III",
+    "ja": "ニトウィケの得意先：ランク3",
+    "fr": "Fournisseur officiel de Nitowikwe III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deliver 60 collectables to Nitowikwe.",
+      "de": "Nitowikwe 60 Sammlerstücke geliefert.",
+      "ja": "ニトウィケに収集品を計60回納品する",
+      "fr": "Échanger 60 objets collectionnables à Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3600": {
     "id": 3600,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026551.png",
+    "patch": 100,
+    "en": "The Customer Is Always Right: Nitowikwe IV",
+    "de": "Transkontinentale Träume IV",
+    "ja": "ニトウィケの得意先：ランク4",
+    "fr": "Fournisseur officiel de Nitowikwe IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deliver 90 collectables to Nitowikwe.",
+      "de": "Nitowikwe 90 Sammlerstücke geliefert.",
+      "ja": "ニトウィケに収集品を計90回納品する",
+      "fr": "Échanger 90 objets collectionnables à Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3601": {
     "id": 3601,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026551.png",
+    "patch": 100,
+    "en": "The Customer Is Always Right: Nitowikwe V",
+    "de": "Transkontinentale Träume V",
+    "ja": "ニトウィケの得意先：ランク5",
+    "fr": "Fournisseur officiel de Nitowikwe V",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deliver 120 collectables to Nitowikwe.",
+      "de": "Nitowikwe 120 Sammlerstücke geliefert.",
+      "ja": "ニトウィケに収集品を計120回納品する",
+      "fr": "Échanger 120 objets collectionnables à Nitowikwe."
     },
     "item": 0,
     "title": 0
   },
   "3602": {
     "id": 3602,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026551.png",
+    "patch": 100,
+    "en": "The Customer Is Always Right: Nitowikwe VI",
+    "de": "Transkontinentale Träume VI",
+    "ja": "ニトウィケの得意先：ランク6",
+    "fr": "Fournisseur officiel de Nitowikwe VI",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deliver 150 collectables to Nitowikwe.",
+      "de": "Nitowikwe 150 Sammlerstücke geliefert.",
+      "ja": "ニトウィケに収集品を計150回納品する",
+      "fr": "Échanger 150 objets collectionnables à Nitowikwe."
     },
     "item": 0,
-    "title": 0
+    "title": 764
   },
   "3603": {
     "id": 3603,
@@ -75355,20 +75355,20 @@
   },
   "3609": {
     "id": 3609,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/001000/001901.png",
+    "patch": 100,
+    "en": "Trade and True",
+    "de": "Wachumeqimeqi sagt Dankeschön",
+    "ja": "みんなでワチュメキメキ！",
+    "fr": "On est tous un peu Wachumeqimeqi",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Appreciated Value.”",
+      "de": "Den Auftrag „Das Wachumeqimeqi-Dankesspektakel“ abgeschlossen.",
+      "ja": "クエスト「ワチュメキメキ大感謝祭」をコンプリートする",
+      "fr": "Accomplir la quête “La grande foire aux mille mercis”."
     },
     "item": 0,
-    "title": 0
+    "title": 767
   },
   "3610": {
     "id": 3610,
@@ -75408,15 +75408,15 @@
     "id": 3612,
     "icon": "/i/064000/064457.png",
     "patch": 98,
-    "en": "満開のブーケを一緒に",
-    "de": "満開のブーケを一緒に",
+    "en": "Snowdrops on Roses",
+    "de": "Die Sprache der Blumen",
     "ja": "満開のブーケを一緒に",
-    "fr": "満開のブーケを一緒に",
+    "fr": "Né sous le destin de la rose",
     "description": {
-      "en": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
-      "de": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
+      "en": "Complete the quest “I Promise You a Rose Garden.”",
+      "de": "Den Auftrag „So wie die Rosen blühen“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
-      "fr": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする"
+      "fr": "Accomplir la quête “'La rose de la Valention”."
     },
     "item": 0,
     "title": 0
@@ -75425,12 +75425,12 @@
     "id": 3613,
     "icon": "/i/057000/057182.png",
     "patch": 98,
-    "en": "あなたの笑顔にお仕えします",
+    "en": "I Wanna Be Your Pop Star",
     "de": "Herzensdiener",
     "ja": "あなたの笑顔にお仕えします",
     "fr": "Le prince de ces demoiselles",
     "description": {
-      "en": "クエスト「プリンセスデーと執事王子のおもてなし」をコンプリートする",
+      "en": "Complete the quest “A Princely Debut.”",
       "de": "Den Auftrag „Das Lied der Schwalbe“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーと執事王子のおもてなし」をコンプリートする",
       "fr": "Accomplir la quête “Des débuts princiers”."
@@ -75442,15 +75442,15 @@
     "id": 3614,
     "icon": "/i/058000/058042.png",
     "patch": 98,
-    "en": "傘が彩る雨模様",
+    "en": "Problem Parasolved",
     "de": "Mit Schirm und Charme",
     "ja": "傘が彩る雨模様",
-    "fr": "傘が彩る雨模様",
+    "fr": "Sortir sa coquille",
     "description": {
-      "en": "クエスト「エッグハントと集う傘」をコンプリートする",
+      "en": "Complete the quest “Eggceeding Expectations.”",
       "de": "Den Auftrag „Einigkeit und Schirm und Eiheit“ abgeschlossen.",
       "ja": "クエスト「エッグハントと集う傘」をコンプリートする",
-      "fr": "クエスト「エッグハントと集う傘」をコンプリートする"
+      "fr": "Accomplir la quête “Les parapluies de Gridania”."
     },
     "item": 0,
     "title": 0
@@ -75474,17 +75474,17 @@
   },
   "3616": {
     "id": 3616,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/064000/064893.png",
+    "patch": 100,
+    "en": "Cloud Strife",
+    "de": "Heiter bis wolkig",
+    "ja": "暗闇の雲を晴らしし者",
+    "fr": "Nuage dissipé",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat the Cloud of Darkness in the Cloud of Darkness (Chaotic).",
+      "de": "Die Wolke der Dunkelheit in „Die Wolke der Dunkelheit (chaotisch)“ besiegt.",
+      "ja": "滅暗闇の雲激闘戦で、暗闇の雲を討伐する",
+      "fr": "Vaincre le Nuage de Ténèbres dans le raid “La Tour de Ténèbres (chaotique)”."
     },
     "item": 0,
     "title": 0

@@ -126,6 +126,7 @@ export class GearsetsFacade {
     Object.assign(clone, gearset);
     delete clone.$key;
     delete clone.authorId;
+    clone.usedInGuides = [];
     this.createGearset(clone);
   }
 

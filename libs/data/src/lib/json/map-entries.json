@@ -7609,27 +7609,27 @@
   },
   {
     "id": 952,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 1436,
+    "name": "Sphere of Naught",
+    "territory": 1241,
+    "scale": 400,
+    "weatherRate": 28
   },
   {
     "id": 953,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 1436,
+    "name": "Sphere of Naught",
+    "territory": 1241,
+    "scale": 400,
+    "weatherRate": 28
   },
   {
     "id": 954,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 1436,
+    "name": "Sphere of Naught",
+    "territory": 1241,
+    "scale": 400,
+    "weatherRate": 28
   },
   {
     "id": 955,

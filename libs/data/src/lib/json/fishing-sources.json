@@ -26050,8 +26050,10 @@
       "spot": 295,
       "hookset": 2,
       "tug": 2,
-      "bait": 43850,
-      "minGathering": 0
+      "bait": 43856,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "43669": [
