@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.21...v11.3.22) (2024-12-17)
+
+
+### Features
+
+* **db:** 7.15 content update ([33a104c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33a104cf9c61d9ce4c330616dcb13f132657e2e2))
+
+
+### Bug Fixes
+
+* **desktop:** packet structures for KR 7.0 ([54b101e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54b101e4f01c86275a8e18dd7b241743d4c0562d))
+* **desktop:** update title for inventory page ([c1f9b37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1f9b370254a138aee32d87b80ea2c86fe40d5c9))
+* **gearset:** don't copy guide flags over ([51f8c46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51f8c463f5e47c7c8266021a87d767770ccd6391))
+* **rotations:** better folder dnd logic ([625e894](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/625e894991194fbbe2cf0ab8d55120629774650f))
+
 ### [11.3.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.20...v11.3.21) (2024-12-02)
 
 
