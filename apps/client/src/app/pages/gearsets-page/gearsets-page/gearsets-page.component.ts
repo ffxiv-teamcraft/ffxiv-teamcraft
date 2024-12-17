@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd/modal';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable } from 'rxjs';
@@ -9,31 +8,31 @@ import { FoldersFacade, TreeFolderDisplay } from '../../../modules/folders/+stat
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
-import { CdkDrag, moveItemInArray, CdkDropList } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { debounceTime, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { uniq } from 'lodash';
 import { GuidesService } from '../../../core/database/guides.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FolderComponent } from '../../../modules/folders/folder/folder.component';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gearset-row.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-    selector: 'app-gearsets-page',
-    templateUrl: './gearsets-page.component.html',
-    styleUrls: ['./gearsets-page.component.less'],
-    standalone: true,
-    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, GearsetRowComponent, NzDividerModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule]
+  selector: 'app-gearsets-page',
+  templateUrl: './gearsets-page.component.html',
+  styleUrls: ['./gearsets-page.component.less'],
+  standalone: true,
+  imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, GearsetRowComponent, NzDividerModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule]
 })
 export class GearsetsPageComponent extends TeamcraftComponent implements OnInit {
 
@@ -51,7 +50,7 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
 
   public user$ = this.authFacade.user$;
 
-  constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade,
+  constructor(private gearsetsFacade: GearsetsFacade,
               private authFacade: AuthFacade, private ipc: IpcService,
               private foldersFacade: FoldersFacade, private guidesService: GuidesService,
               private message: NzMessageService, private translate: TranslateService) {

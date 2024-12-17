@@ -21,7 +21,10 @@ const routes: Routes = [
   {
     path: '',
     component: InventoryComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Inventory'
+    }
   }
 ];
 
