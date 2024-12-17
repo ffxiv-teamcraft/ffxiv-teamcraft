@@ -7,7 +7,7 @@
             (cdkDropListDropped)="onCraftingRotationDrop($event)"
             (cdkDropListExited)="removeCraftingRotation($event.item.data)"
             [cdkDropListConnectedTo]="['rotations-group']"
-            cdkDropList id="folder-rotations-group"
+            cdkDropList id="folder-rotations-group-{{index}}"
             class="rotations-container"
             fxLayout="column" fxLayoutGap="5px">
             @for (rotation of rotations; track trackByCraftingRotation($index, rotation)) {

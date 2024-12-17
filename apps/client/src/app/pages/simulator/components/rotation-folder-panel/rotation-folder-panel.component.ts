@@ -48,6 +48,9 @@ export class RotationFolderPanelComponent {
   @Input()
   rotations: CraftingRotation[] = [];
 
+  @Input()
+  index: number;
+
   public user$ = this.authFacade.user$;
 
   public customLink$: Observable<CustomLink>;
