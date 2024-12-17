@@ -1324,6 +1324,20 @@
           "hidden": 0
         },
         {
+          "itemId": 44850,
+          "ilvl": 645,
+          "lvl": 91,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 44851,
+          "ilvl": 645,
+          "lvl": 91,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
           "itemId": 44002,
           "ilvl": 650,
           "lvl": 92,
@@ -1331,7 +1345,21 @@
           "hidden": 0
         },
         {
+          "itemId": 44852,
+          "ilvl": 650,
+          "lvl": 92,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
           "itemId": 44003,
+          "ilvl": 655,
+          "lvl": 93,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 44854,
           "ilvl": 655,
           "lvl": 93,
           "stars": 0,
@@ -2848,6 +2876,13 @@
           "lvl": 92,
           "stars": 0,
           "hidden": 0
+        },
+        {
+          "itemId": 44853,
+          "ilvl": 650,
+          "lvl": 92,
+          "stars": 0,
+          "hidden": 0
         }
       ]
     },
@@ -4249,8 +4284,15 @@
     },
     {
       "id": 98,
-      "startLevel": 92,
+      "startLevel": 91,
       "items": [
+        {
+          "itemId": 44851,
+          "ilvl": 645,
+          "lvl": 91,
+          "stars": 0,
+          "hidden": 0
+        },
         {
           "itemId": 43990,
           "ilvl": 650,
@@ -4274,6 +4316,13 @@
         },
         {
           "itemId": 44015,
+          "ilvl": 655,
+          "lvl": 93,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 44854,
           "ilvl": 655,
           "lvl": 93,
           "stars": 0,
@@ -6740,7 +6789,28 @@
           "hidden": 0
         },
         {
+          "itemId": 44850,
+          "ilvl": 645,
+          "lvl": 91,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
           "itemId": 43989,
+          "ilvl": 650,
+          "lvl": 92,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 44852,
+          "ilvl": 650,
+          "lvl": 92,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 44853,
           "ilvl": 650,
           "lvl": 92,
           "stars": 0,

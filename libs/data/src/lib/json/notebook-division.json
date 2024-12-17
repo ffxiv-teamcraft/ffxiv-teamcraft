@@ -2081,10 +2081,10 @@
   },
   "1063": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nitowikwe",
+      "ja": "ニトウィケ",
+      "de": "Nitowikwe",
+      "fr": "Nitowikwe"
     },
     "pages": [
       1504,
@@ -2096,8 +2096,8 @@
       1510,
       1511
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 90,
+    "gatheringLevel": 255
   },
   "1064": {
     "name": {

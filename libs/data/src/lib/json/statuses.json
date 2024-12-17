@@ -33412,7 +33412,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Cursed to become a fell minion, unleashing <span style=\"color:#ff7b1a\">Particle Beam</span> when this effect expires.",
-      "de": "Verflucht, zu einem tödlichen Begleiter zu werden. Am Ende dieses Effekts wird <span style=\"color:#ffff66\">Partikelstrahl</span> ausgelöst.",
+      "de": "Verflucht, zu einem tödlichen Begleiter zu werden. Am Ende dieses Effekts wird <span style=\"color:#ffbfff\">Partikelstrahl</span> ausgelöst.",
       "ja": "波動の呪詛をかけられた状態。効果終了時に身体を乗っ取られ、波動砲を放ってしまう。",
       "fr": "Un maléfice a été reçu, qui provoquera un tir de faisceau de particules à la fin de l'effet."
     }
@@ -45102,7 +45102,7 @@
     "maxStacks": 5,
     "description": {
       "en": "<span style=\"color:#ff7b1a\">Fire</span> is upgraded to <span style=\"color:#ff7b1a\">Flare</span> and <span style=\"color:#ff7b1a\">Blizzard</span> is upgraded to <span style=\"color:#ff7b1a\">Freeze</span>.",
-      "de": " <span style=\"color:#ffbfff\">Feuer</span> ändert sich zu <span style=\"color:#ffbfff\">Flare</span> und <span style=\"color:#ffbfff\">Eis</span> zu <span style=\"color:#ffbfff\">Einfrieren</span>.",
+      "de": "<span style=\"color:#ffbfff\">Feuer</span> ändert sich zu <span style=\"color:#ffbfff\">Flare</span> und <span style=\"color:#ffbfff\">Eis</span> zu <span style=\"color:#ffbfff\">Einfrieren</span>.",
       "ja": "ファイアがフレアに変化し、ブリザドがフリーズに変化する状態。",
       "fr": "Feu devient Brasier et Glace devient Gel."
     }
@@ -58464,87 +58464,87 @@
     }
   },
   "4177": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4177_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4177_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4177_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4177_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214238.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4177_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4177_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4177_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4177_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4178": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4178_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4178_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4178_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4178_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214239.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4178_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4178_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4178_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4178_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4179": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Veil of Darkness",
+    "de": "Schleier der Finsternis",
+    "ja": "闇のヴェール",
+    "fr": "Voile de Ténèbres",
+    "icon": "/i/214000/214240.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Accumulating magic in cumulus shroud.",
+      "de": "Schwarze Wolken umhüllen den Körper und speichern arkane Energie.",
+      "ja": "暗雲を身にまとい、魔力を蓄えている状態。",
+      "fr": "Un voile de Ténèbres entoure le corps, concentrant l'énergie magique."
     }
   },
   "4180": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4180_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4180_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4180_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4180_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214241.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4180_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4180_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4180_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4180_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4181": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4181_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4181_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4181_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4181_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214242.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4181_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4181_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4181_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4181_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4182": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "_rsv_4182_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_4182_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_4182_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_4182_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/214000/214243.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "_rsv_4182_-1_1_1_0_S74CFC3B0_E74CFC3B0",
+      "de": "_rsv_4182_-1_2_1_0_S74CFC3B0_E74CFC3B0",
+      "ja": "_rsv_4182_-1_0_1_0_S74CFC3B0_E74CFC3B0",
+      "fr": "_rsv_4182_-1_3_1_0_S74CFC3B0_E74CFC3B0"
     }
   },
   "4183": {
@@ -58660,17 +58660,17 @@
     }
   },
   "4191": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Rehabilitation",
+    "de": "Rehabilitation",
+    "ja": "徐々にＨＰ回復",
+    "fr": "Recouvrement",
+    "icon": "/i/217000/217521.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "連続してＨＰが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "4192": {
@@ -61236,17 +61236,17 @@
     }
   },
   "4375": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Vulnerability Up",
+    "de": "Erhöhte Verwundbarkeit",
+    "ja": "被ダメージ上昇",
+    "fr": "Vulnérabilité augmentée",
+    "icon": "/i/217000/217101.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is increased.",
+      "de": "Erlittener Schaden ist erhöht.",
+      "ja": "受けるダメージが増加する状態。",
+      "fr": "Les dégâts reçus sont augmentés."
     }
   },
   "4376": {
@@ -61390,17 +61390,17 @@
     }
   },
   "4386": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Lightning Resistance Down",
+    "de": "Blitzresistenz -",
+    "ja": "雷属性耐性低下",
+    "fr": "Résistance à la foudre réduite",
+    "icon": "/i/217000/217741.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Lightning resistance is reduced.",
+      "de": "Blitzresistenz ist verringert.",
+      "ja": "雷属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément foudre est réduite."
     }
   },
   "4387": {

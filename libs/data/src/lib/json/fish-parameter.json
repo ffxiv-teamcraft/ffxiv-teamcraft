@@ -18954,6 +18954,65 @@
     "stars": 0,
     "recordType": 44
   },
+  "44334": {
+    "id": 1432,
+    "itemId": 44334,
+    "level": 91,
+    "icon": "/i/029000/029242.png",
+    "mapId": 858,
+    "zoneId": 4506,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 3
+  },
+  "44335": {
+    "id": 1433,
+    "itemId": 44335,
+    "level": 91,
+    "icon": "/i/029000/029316.png",
+    "mapId": 859,
+    "zoneId": 4507,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 3
+  },
+  "44336": {
+    "id": 1434,
+    "itemId": 44336,
+    "level": 92,
+    "icon": "/i/029000/029153.png",
+    "mapId": 855,
+    "zoneId": 4504,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "44337": {
+    "id": 1435,
+    "itemId": 44337,
+    "level": 92,
+    "icon": "/i/028000/028667.png",
+    "mapId": 858,
+    "zoneId": 4506,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 2
+  },
+  "44338": {
+    "id": 1436,
+    "itemId": 44338,
+    "level": 93,
+    "icon": "/i/029000/029015.png",
+    "mapId": 859,
+    "zoneId": 4507,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 3
+  },
   "44339": {
     "id": 1423,
     "itemId": 44339,

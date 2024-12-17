@@ -9307,9 +9307,40 @@
       40400
     ]
   },
+  "20098": {
+    "id": 20098,
+    "en": "The Cloud of Darkness (Chaotic)",
+    "ja": "滅暗闇の雲激闘戦",
+    "de": "Die Wolke der Dunkelheit (chaotisch)",
+    "fr": "La Tour de Ténèbres (chaotique)",
+    "description": {
+      "en": "Strumming wistful chords upon his harp, the wandering minstrel sings a ballad of a dread voidsent queen who sought to engulf all in Darkness as part of an unholy pact with Emperor Xande. Thanks to your comrades' valiant sacrifice, you succeeded in vanquishing the being in her Lightless domain...but what might have happened had there been none at your side in whom flowed the royal blood of Allag? Could you have withstood the might of a further empowered Cloud of Darkness? Such possibilities play on your mind as the minstrel's evocative verse brings his wild imaginings to vivid life...",
+      "ja": "異邦の詩人は謳う。闇より深き闇の底、すべてを無に還さんとした存在のことを。暗闇の雲――それはアラグの初代皇帝と契約を結びし魔王級の大妖異。冒険者はかつて闇の世界でかの魔王と対峙し、ウネやドーガの犠牲で辛くも原初世界へと帰還することができた。だが、もしもあのとき、彼らや皇血の継承者がいなかったなら？　さらなる力で襲い来る魔王を前に抗うことができたのだろうか……。光の戦士は今、暗闇の雲との戦いを追体験する。",
+      "de": "Die Saiten des Fahrenden Sängers singen von einer Dunkelheit, die finsterer ist als jede Schwärze und kälter gar als der Tod. Sie singen von der Wolke der Dunkelheit, der grausamen Herrscherin des Nichts, die einst mit dem allagischen Kaiser einen Pakt schloss und Eorzea zu verschlingen drohte. Dieser Schreckgestalt stellte sich auch die Kriegerin des Lichts und triumphierte&nbsp;- vor allem dank des tapferen Opfers durch Unei und Doga.<br>Doch nun fragt sich der nachdenkliche Poet, was das Schicksal für die Welt ohne das kaiserliche Blut Uneis und Dogas bereitgehalten hätte? Mit welcher schaurigen Macht hätte es die Kriegerin des Lichts dann zu tun bekommen?",
+      "fr": "Un frisson remonte le long de votre échine alors que le ménestrel errant entonne une sombre mélopée. Instinctivement, vous savez qu'elle est dédiée à une entité qui n'aurait jamais dû émerger des abysses où elle résidait&nbsp;: le Nuage de Ténèbres. Vous vous remémorez le pacte impie qu'elle avait conclu avec le premier empereur d'Allag, mais surtout le noble sacrifice d'Unéi et Doga pour vous permettre de retourner dans le monde primitif. Le souffle court, vous vous prenez à imaginer l'âpre combat que vous auriez dû mener sans vos compagnons ou un héritier de la lignée impériale à vos côtés. La Guerrière de la Lumière aurait-elle triomphé de cette abomination du néant, plus puissante que jamais&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061850.png",
+    "banner": "/i/112000/112586.png",
+    "contentType": 37,
+    "levelReq": 100,
+    "ilvlReq": 710,
+    "sync": 100,
+    "exp": 0,
+    "map": 952,
+    "contentText": [
+      41715,
+      41700
+    ]
+  },
   "20099": {
     "id": 20099,
-    "en": "The Minstrel’s Ballad: Sphene's Burden",
+    "en": "The Minstrel's Ballad: Sphene's Burden",
     "ja": "極エターナルクイーン討滅戦",
     "de": "Gok Tajaal - Ewige Königin",
     "fr": "Interphos (extrême)",
