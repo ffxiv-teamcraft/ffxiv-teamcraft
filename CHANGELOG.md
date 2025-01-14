@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.22...v11.3.23) (2025-01-14)
+
+
+### Features
+
+* **db:** KR 7.05 data import + allagan reports ([44327de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44327dec66a3e4b6f9bffe9cefd43c86342c64bf))
+* **db:** support for korean  v7.01 update ([216a9de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/216a9de25fa8d17ed6a9c9e754153e8fa3993c3f))
+* **db:** support for korean v7.05 update ([0080e36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0080e3607bb7e17323837a33dafdd63ca980eb09))
+
 ### [11.3.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.21...v11.3.22) (2024-12-17)
 
 
