@@ -74241,12 +74241,14 @@
     "de": "Jäger des verborgenen Schatzes I",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク1",
     "fr": "Visiteur du cénote Ja Ja Gural I",
+    "ko": "세노테 쟈쟈구랄에 침입한 자: 1단계",
     "zh": "深入天坑1",
     "description": {
       "en": "Raid Cenote Ja Ja Gural.",
       "de": "1 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに初めて侵入する",
       "fr": "Pénétrer 1 fois dans le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 1회 침입",
       "zh": "初次入侵加加财富天坑。"
     },
     "item": 0,
@@ -74260,12 +74262,14 @@
     "de": "Jäger des verborgenen Schatzes II",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク2",
     "fr": "Visiteur du cénote Ja Ja Gural II",
+    "ko": "세노테 쟈쟈구랄에 침입한 자: 2단계",
     "zh": "深入天坑2",
     "description": {
       "en": "Raid Cenote Ja Ja Gural 5 times.",
       "de": "5 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに累計5回侵入する",
       "fr": "Pénétrer 5 fois dans le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 5회 침입",
       "zh": "累计入侵加加财富天坑5次。"
     },
     "item": 0,
@@ -74279,12 +74283,14 @@
     "de": "Jäger des verborgenen Schatzes III",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク3",
     "fr": "Visiteur du cénote Ja Ja Gural III",
+    "ko": "세노테 쟈쟈구랄에 침입한 자: 3단계",
     "zh": "深入天坑3",
     "description": {
       "en": "Raid Cenote Ja Ja Gural 10 times.",
       "de": "10 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに累計10回侵入する",
       "fr": "Pénétrer 10 fois dans le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 10회 침입",
       "zh": "累计入侵加加财富天坑10次。"
     },
     "item": 0,
@@ -74298,12 +74304,14 @@
     "de": "Jäger des verborgenen Schatzes IV",
     "ja": "セノーテ・ジャジャグラルに侵入せし者：ランク4",
     "fr": "Visiteur du cénote Ja Ja Gural IV",
+    "ko": "세노테 쟈쟈구랄에 침입한 자: 4단계",
     "zh": "深入天坑4",
     "description": {
       "en": "Raid Cenote Ja Ja Gural 20 times.",
       "de": "20 Mal den Cenote Ja Ja Gural betreten.",
       "ja": "宝物庫 セノーテ・ジャジャグラルに累計20回侵入する",
       "fr": "Pénétrer 20 fois dans le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 20회 침입",
       "zh": "累计入侵加加财富天坑20次。"
     },
     "item": 0,
@@ -74317,12 +74325,14 @@
     "de": "Centnerweise Glück I",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク1",
     "fr": "Maître du cénote Ja Ja Gural I",
+    "ko": "세노테 쟈쟈구랄을 제패한 자: 1단계",
     "zh": "称霸财富天坑1",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural.",
       "de": "1 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを初めて制覇する",
       "fr": "Conquérir 1 fois le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 1회 완료",
       "zh": "初次称霸加加财富天坑。"
     },
     "item": 0,
@@ -74336,12 +74346,14 @@
     "de": "Centnerweise Glück II",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク2",
     "fr": "Maître du cénote Ja Ja Gural II",
+    "ko": "세노테 쟈쟈구랄을 제패한 자: 2단계",
     "zh": "称霸财富天坑2",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural 5 times.",
       "de": "5 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを累計5回制覇する",
       "fr": "Conquérir 5 fois le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 5회 완료",
       "zh": "累计称霸加加财富天坑5次。"
     },
     "item": 0,
@@ -74355,12 +74367,14 @@
     "de": "Centnerweise Glück III",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク3",
     "fr": "Maître du cénote Ja Ja Gural III",
+    "ko": "세노테 쟈쟈구랄을 제패한 자: 3단계",
     "zh": "称霸财富天坑3",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural 10 times.",
       "de": "10 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを累計10回制覇する",
       "fr": "Conquérir 10 fois le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 10회 완료",
       "zh": "累计称霸加加财富天坑10次。"
     },
     "item": 0,
@@ -74374,12 +74388,14 @@
     "de": "Centnerweise Glück IV",
     "ja": "セノーテ・ジャジャグラルの覇者：ランク4",
     "fr": "Maître du cénote Ja Ja Gural IV",
+    "ko": "세노테 쟈쟈구랄을 제패한 자: 4단계",
     "zh": "称霸财富天坑4",
     "description": {
       "en": "Raid the final platform in Cenote Ja Ja Gural 20 times.",
       "de": "20 Mal den Cenote Ja Ja Gural abgeschlossen.",
       "ja": "宝物庫 セノーテ・ジャジャグラルを累計20回制覇する",
       "fr": "Conquérir 20 fois le cénote Ja Ja Gural.",
+      "ko": "보물고 세노테 쟈쟈구랄 20회 완료",
       "zh": "累计称霸加加财富天坑20次。"
     },
     "item": 0,
@@ -74645,12 +74661,14 @@
     "de": "Elf magische Jahre",
     "ja": "ありがとう11周年！",
     "fr": "Tonnerre de Limsa Lominsa",
+    "ko": "11주년 고맙습니다!",
     "zh": "扬帆起航的十一周年",
     "description": {
       "en": "Complete the quest “We Who Are About to Set Sail Salute You.”",
       "de": "Den Auftrag „Unter ein und demselben Himmel“ abgeschlossen.",
       "ja": "クエスト「新生祭と明日への花火」をコンプリートする",
       "fr": "Accomplir la quête “Commémoration sous les lumières de l'avenir”.",
+      "ko": "퀘스트 '신생제와 내일을 향해 쏘아올리는 불꽃' 완료",
       "zh": "完成任务“新生庆典与迈向明日的烟花”。"
     },
     "item": 0,
@@ -74685,12 +74703,14 @@
     "de": "Weiße Schlangen bringen Glück",
     "ja": "讃えよ白ツチノコ様",
     "fr": "Ô vénérable tsuchinoko blanc, entends mes prières",
+    "ko": "찬양하라, 흰 츠치노코 님",
     "zh": "赞美白色土龙大人",
     "description": {
       "en": "Complete the quest “Heavensssturn Trivia.”",
       "de": "Den Auftrag „Schlüpfrige Himmelswende“ abgeschlossen.",
       "ja": "クエスト「問答巡りと降神祭」をコンプリートする",
       "fr": "Accomplir la quête “Le quiz de la transition”.",
+      "ko": "퀘스트 '문답 순례와 강신제' 완료",
       "zh": "完成任务“巳蛇百问降神节”。"
     },
     "item": 0,
@@ -74704,12 +74724,14 @@
     "de": "Tor des Arkadion I",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク1",
     "fr": "Champion poids mi-lourds de l'Arcadion I",
+    "ko": "아르카디아 라이트헤비급을 제패한 자: 1단계",
     "zh": "称霸登天斗技场轻量级1",
     "description": {
       "en": "Complete the quest “The Neoteric Witch” and AAC Light-heavyweight Tier.",
       "de": "Arkadion - Halbschwergewicht sowie den Auftrag „Die Hybrid-Hexe“ erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を攻略し、クエスト「次世代魔女」をコンプリートする",
       "fr": "Conquérir la division poids mi-lourds CCA et accomplir la quête “L'Enchanteresse électrique”.",
+      "ko": "아르카디아 선수권: 라이트헤비급을 완료하고, 퀘스트 '차세대 마녀' 완료",
       "zh": "成功挑战阿卡狄亚登天斗技场轻量级，完成任务“新时代魔女”。"
     },
     "item": 0,
@@ -74723,12 +74745,14 @@
     "de": "Tor des Arkadion II",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク2",
     "fr": "Champion poids mi-lourds de l'Arcadion II",
+    "ko": "아르카디아 라이트헤비급을 제패한 자: 2단계",
     "zh": "称霸登天斗技场轻量级2",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier 5 times.",
       "de": "5 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を計5回攻略する",
       "fr": "Conquérir la division poids mi-lourds CCA 5 fois.",
+      "ko": "아르카디아 선수권: 라이트헤비급 5회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场轻量级5次。"
     },
     "item": 0,
@@ -74742,12 +74766,14 @@
     "de": "Tor des Arkadion III",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク3",
     "fr": "Champion poids mi-lourds de l'Arcadion III",
+    "ko": "아르카디아 라이트헤비급을 제패한 자: 3단계",
     "zh": "称霸登天斗技场轻量级3",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier 10 times.",
       "de": "10 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を計10回攻略する",
       "fr": "Conquérir la division poids mi-lourds CCA 10 fois.",
+      "ko": "아르카디아 선수권: 라이트헤비급 10회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场轻量级10次。"
     },
     "item": 0,
@@ -74761,12 +74787,14 @@
     "de": "Episches Tor des Arkadion I",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク1",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion I",
+    "ko": "아르카디아 라이트헤비급을 완벽히 제패한 자: 1단계",
     "zh": "完全称霸登天斗技场轻量级1",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier (Savage).",
       "de": "Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を攻略する",
       "fr": "Conquérir la division poids mi-lourds CCA (sadique) 1 fois.",
+      "ko": "아르카디아 선수권: 라이트헤비급(영웅) 완료",
       "zh": "成功挑战阿卡狄亚零式登天斗技场。"
     },
     "item": 0,
@@ -74780,12 +74808,14 @@
     "de": "Episches Tor des Arkadion II",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク2",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion II",
+    "ko": "아르카디아 라이트헤비급을 완벽히 제패한 자: 2단계",
     "zh": "完全称霸登天斗技场轻量级2",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を計5回攻略する",
       "fr": "Conquérir la division poids mi-lourds CCA (sadique) 5 fois.",
+      "ko": "아르카디아 선수권: 라이트헤비급(영웅) 5회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场轻量级5次。"
     },
     "item": 0,
@@ -74799,12 +74829,14 @@
     "de": "Episches Tor des Arkadion III",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク3",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion III",
+    "ko": "아르카디아 라이트헤비급을 완벽히 제패한 자: 3단계",
     "zh": "完全称霸登天斗技场轻量级3",
     "description": {
       "en": "Complete AAC Light-heavyweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を計10回攻略する",
       "fr": "Conquérir la division poids mi-lourds CCA (sadique) 10 fois.",
+      "ko": "아르카디아 선수권: 라이트헤비급(영웅) 10회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场轻量级10次。"
     },
     "item": 0,

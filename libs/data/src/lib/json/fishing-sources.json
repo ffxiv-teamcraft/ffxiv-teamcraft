@@ -1135,28 +1135,34 @@
   ],
   "4891": [
     {
-      "spot": 51,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2619,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
       "spot": 52,
       "hookset": 1,
       "tug": 0,
-      "bait": 2619,
+      "bait": 2613,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    },
+    {
+      "spot": 51,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 2616,
+      "snagging": false,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     },
     {
       "spot": 104,
       "hookset": 1,
       "tug": 0,
-      "bait": 2619,
+      "bait": 2613,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "4892": [
@@ -22533,7 +22539,9 @@
       ],
       "snagging": false,
       "minGathering": 2250,
-      "video": "https://youtu.be/bX9eOTayZBA?si=j7rnepg6ja4Qwzs5"
+      "video": "https://youtu.be/ZVajUnkouKs",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "33243": [
@@ -27545,6 +27553,61 @@
       "bait": 43857,
       "minGathering": 0,
       "video": "https://youtu.be/C15qECLEaT0"
+    }
+  ],
+  "44334": [
+    {
+      "spot": 300,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "44335": [
+    {
+      "spot": 310,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "44336": [
+    {
+      "spot": 295,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "44337": [
+    {
+      "spot": 306,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "44338": [
+    {
+      "spot": 317,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "44339": [
