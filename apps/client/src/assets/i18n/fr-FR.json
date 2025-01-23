@@ -1467,7 +1467,7 @@
     "Log_in_to_track": "Connectez-vous pour être en mesure de suivre la réalisation de votre carnet de recette",
     "Logs_import_done": "Vos logs ont été importés avec succès",
     "Crafting_log": "Logs de craft",
-    "Gathering_log": "Logs de récolte (incluant la pêche)",
+    "Gathering_log": "Gathering log (excluding fishing)",
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
     "IMPORT": {
       "Data_loading": "Préchargement des données",
