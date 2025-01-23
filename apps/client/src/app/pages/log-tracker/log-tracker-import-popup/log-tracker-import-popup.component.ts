@@ -98,13 +98,9 @@ export class LogTrackerImportPopupComponent {
         this.#ipc.packets$.pipe(
           ofMessageType('gatheringLog'),
           toIpcData()
-        ),
-        this.#ipc.packets$.pipe(
-          ofMessageType('playerSetup'),
-          toIpcData()
         )
       ]).pipe(
-        map(([{ log: craftingLog }, { log: gatheringLog }, { fishingGuideMask: fishingLog }]) => {
+        map(([{ log: craftingLog }, { log: gatheringLog }]) => {
           const logTracking = new LogTracking();
           // Gathering log
           Object.keys(gatheringItems).forEach(key => {
@@ -121,12 +117,6 @@ export class LogTrackerImportPopupComponent {
               logTracking.crafting.push(+recipe.id);
             }
           });
-          // Fishing log (not spearfishing)
-          Object.values(fishParameter).forEach(({ id, itemId }) => {
-            if (this.isPlayerSetupEntryDone(fishingLog, id)) {
-              logTracking.gathering.push(itemId);
-            }
-          });
           return logTracking;
         })
       );
@@ -137,9 +127,10 @@ export class LogTrackerImportPopupComponent {
   diff$ = combineLatest([
     this.currentLog$.pipe(first()),
     this.logs$,
-    this.#lazyData.getEntry('recipes')
+    this.#lazyData.getEntry('recipes'),
+    this.#lazyData.getEntry('fishes')
   ]).pipe(
-    map(([current, imported, recipes]) => {
+    map(([current, imported, recipes,  fishes]) => {
       return {
         additions: {
           crafting: imported.crafting.filter(id => !current.crafting.includes(id)).map(id => {
@@ -161,7 +152,7 @@ export class LogTrackerImportPopupComponent {
             }
             return a.job - b.job;
           }),
-          gathering: current.gathering.filter(id => !imported.gathering.includes(id))
+          gathering: current.gathering.filter(id => !imported.gathering.includes(id) && !fishes.includes(id))
         }
       };
     })
