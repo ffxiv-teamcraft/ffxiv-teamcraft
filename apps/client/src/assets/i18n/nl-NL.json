@@ -1467,7 +1467,7 @@
     "Log_in_to_track": "Log in to be able to track your Log Tracker completion",
     "Logs_import_done": "Your logs have been imported successfully",
     "Crafting_log": "Crafting log",
-    "Gathering_log": "Gathering log (including fishing)",
+    "Gathering_log": "Gathering log (excluding fishing)",
     "Import_using_pcap": "Import using packet capture",
     "IMPORT": {
       "Data_loading": "Data preloading",
