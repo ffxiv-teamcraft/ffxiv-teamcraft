@@ -7439,19 +7439,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 100,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 120,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 150,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7469,19 +7469,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 130,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 143,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 156,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7499,19 +7499,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 121,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 133,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 146,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7529,19 +7529,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 170,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 187,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 204,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7559,19 +7559,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 181,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 199,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 217,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7589,19 +7589,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 129,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 142,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 155,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7619,19 +7619,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 345,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 380,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 414,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7649,19 +7649,19 @@
     "base": {
       "quantity": 1,
       "rating": 360,
-      "exp": 263,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 540,
-      "exp": 289,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 720,
-      "exp": 316,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7679,19 +7679,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 66,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 72,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 79,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7709,19 +7709,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 360,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 396,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 432,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7739,19 +7739,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 92,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 101,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 110,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7769,19 +7769,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 163,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 179,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 195,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7799,19 +7799,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 170,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 187,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 204,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7829,19 +7829,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 198,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 218,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 238,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7859,19 +7859,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 345,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 380,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 414,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -7889,19 +7889,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 360,
+      "exp": 0,
       "scrip": 2
     },
     "mid": {
       "quantity": 1,
       "rating": 600,
-      "exp": 396,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 800,
-      "exp": 432,
+      "exp": 0,
       "scrip": 5
     }
   },
@@ -9215,19 +9215,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 150,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 165,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 180,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9245,19 +9245,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 300,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 330,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 360,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9275,19 +9275,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 47,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 52,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 57,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9305,19 +9305,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 345,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 380,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 414,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9335,19 +9335,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 176,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 194,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 212,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9365,19 +9365,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 231,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 254,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 277,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9395,19 +9395,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 203,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 223,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 243,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9425,19 +9425,19 @@
     "base": {
       "quantity": 1,
       "rating": 470,
-      "exp": 193,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
-      "exp": 212,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 231,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -9455,19 +9455,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 184,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 700,
-      "exp": 202,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 221,
+      "exp": 0,
       "scrip": 7
     }
   },
@@ -9485,19 +9485,19 @@
     "base": {
       "quantity": 1,
       "rating": 400,
-      "exp": 326,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 700,
-      "exp": 358,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 391,
+      "exp": 0,
       "scrip": 7
     }
   },
@@ -9515,19 +9515,19 @@
     "base": {
       "quantity": 1,
       "rating": 126,
-      "exp": 189,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 296,
-      "exp": 208,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 305,
-      "exp": 227,
+      "exp": 0,
       "scrip": 4
     }
   },
@@ -9545,19 +9545,19 @@
     "base": {
       "quantity": 1,
       "rating": 62,
-      "exp": 113,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 147,
-      "exp": 124,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 152,
-      "exp": 135,
+      "exp": 0,
       "scrip": 4
     }
   },
@@ -11951,19 +11951,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 116,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 127,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 139,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -11981,19 +11981,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 278,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 305,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 333,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12011,19 +12011,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 297,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 326,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 356,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12041,19 +12041,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 80,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 88,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 96,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12071,19 +12071,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 82,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 90,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 99,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12101,19 +12101,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 146,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 160,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 175,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12131,19 +12131,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 77,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 85,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 93,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12161,19 +12161,19 @@
     "base": {
       "quantity": 1,
       "rating": 6300,
-      "exp": 50,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7500,
-      "exp": 55,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 60,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12191,19 +12191,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 128,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 141,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 154,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12221,19 +12221,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 218,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 240,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 262,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12251,19 +12251,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 220,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 242,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 264,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12281,19 +12281,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 84,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 92,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 101,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12311,19 +12311,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 70,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 77,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 84,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12341,19 +12341,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 121,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 133,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 146,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12371,19 +12371,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 150,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 165,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 180,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12401,19 +12401,19 @@
     "base": {
       "quantity": 1,
       "rating": 6500,
-      "exp": 95,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 7800,
-      "exp": 105,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 114,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12431,19 +12431,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 305,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 336,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 366,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12461,19 +12461,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 146,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 161,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 175,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12491,19 +12491,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 67,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 74,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 80,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12521,19 +12521,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 137,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 151,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 164,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12551,19 +12551,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 127,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 139,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 152,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12581,19 +12581,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 120,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 132,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 143,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12611,19 +12611,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 63,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 69,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 75,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -12641,19 +12641,19 @@
     "base": {
       "quantity": 1,
       "rating": 7000,
-      "exp": 85,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 8500,
-      "exp": 94,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 102,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14471,19 +14471,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 116,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 127,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 139,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14501,19 +14501,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 278,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 305,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 333,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14531,19 +14531,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 297,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 326,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 356,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14561,19 +14561,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 80,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 88,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 96,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14591,19 +14591,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 82,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 90,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 99,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14621,19 +14621,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 146,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 160,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 175,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14651,19 +14651,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 77,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 85,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 93,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14681,19 +14681,19 @@
     "base": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 50,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1420,
-      "exp": 55,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 60,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14711,19 +14711,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 128,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 141,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 154,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14741,19 +14741,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 218,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 240,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 262,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14771,19 +14771,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 220,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 242,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 264,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14801,19 +14801,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 84,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 92,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 101,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14831,19 +14831,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 70,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 77,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 84,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14861,19 +14861,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 121,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 133,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 146,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14891,19 +14891,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 150,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 165,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 180,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14921,19 +14921,19 @@
     "base": {
       "quantity": 1,
       "rating": 1230,
-      "exp": 95,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1480,
-      "exp": 105,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 114,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14951,19 +14951,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 305,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 336,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 366,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -14981,19 +14981,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 146,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 161,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 175,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -15011,19 +15011,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 67,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 74,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 80,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -15041,19 +15041,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 137,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 151,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 164,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -15071,19 +15071,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 127,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 139,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 152,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -15101,19 +15101,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 120,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 132,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 143,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -15131,19 +15131,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 63,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 69,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 75,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -15161,19 +15161,19 @@
     "base": {
       "quantity": 1,
       "rating": 1330,
-      "exp": 85,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1610,
-      "exp": 94,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 102,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16031,19 +16031,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 75,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 83,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 90,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16061,19 +16061,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 78,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 85,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 93,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16091,19 +16091,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 85,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 94,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 102,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16121,19 +16121,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 71,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 78,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 85,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16151,19 +16151,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 67,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 74,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 80,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16181,19 +16181,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 63,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 70,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 76,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16211,19 +16211,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 60,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 66,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 72,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16241,19 +16241,19 @@
     "base": {
       "quantity": 1,
       "rating": 540,
-      "exp": 109,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 900,
-      "exp": 120,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 131,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16271,19 +16271,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 70,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 77,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 84,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16301,19 +16301,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 102,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 112,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 122,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16331,19 +16331,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 94,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 103,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 112,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16361,19 +16361,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 102,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 112,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 122,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16421,19 +16421,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 173,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 190,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 207,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16451,19 +16451,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 250,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 275,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 300,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16481,19 +16481,19 @@
     "base": {
       "quantity": 1,
       "rating": 660,
-      "exp": 322,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1100,
-      "exp": 354,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 386,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16511,19 +16511,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 353,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 388,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 423,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16541,19 +16541,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 235,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 258,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 282,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16571,19 +16571,19 @@
     "base": {
       "quantity": 1,
       "rating": 47,
-      "exp": 188,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 110,
-      "exp": 206,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 225,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -16601,19 +16601,19 @@
     "base": {
       "quantity": 1,
       "rating": 283,
-      "exp": 197,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 665,
-      "exp": 216,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 236,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -16631,19 +16631,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 299,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 328,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 358,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16661,19 +16661,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 599,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 658,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 718,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16691,19 +16691,19 @@
     "base": {
       "quantity": 1,
       "rating": 9,
-      "exp": 316,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 21,
-      "exp": 347,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 379,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -16721,19 +16721,19 @@
     "base": {
       "quantity": 1,
       "rating": 425,
-      "exp": 346,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 998,
-      "exp": 380,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 415,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -16751,19 +16751,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 353,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 388,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 423,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16781,19 +16781,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 455,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 500,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 546,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16811,19 +16811,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 158,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 173,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 189,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16841,19 +16841,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 233,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 256,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 279,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16871,19 +16871,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 477,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 524,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 572,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16901,19 +16901,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 479,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 526,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 574,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16931,19 +16931,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 526,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 578,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 631,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16961,19 +16961,19 @@
     "base": {
       "quantity": 1,
       "rating": 720,
-      "exp": 537,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 590,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 644,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -16991,19 +16991,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 557,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 612,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 668,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17021,19 +17021,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 406,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 446,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 487,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17051,19 +17051,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 455,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 500,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 546,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17081,19 +17081,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 557,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 612,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 668,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17111,19 +17111,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 188,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 206,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 225,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17141,19 +17141,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 230,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 253,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 276,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17171,19 +17171,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 286,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 314,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 343,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17201,19 +17201,19 @@
     "base": {
       "quantity": 1,
       "rating": 780,
-      "exp": 455,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1300,
-      "exp": 500,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 546,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17231,19 +17231,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 541,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 595,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 649,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17261,19 +17261,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 557,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 612,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 668,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17291,19 +17291,19 @@
     "base": {
       "quantity": 1,
       "rating": 82,
-      "exp": 104,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 193,
-      "exp": 114,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 124,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17321,19 +17321,19 @@
     "base": {
       "quantity": 1,
       "rating": 322,
-      "exp": 141,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 758,
-      "exp": 155,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 169,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17351,19 +17351,19 @@
     "base": {
       "quantity": 1,
       "rating": 580,
-      "exp": 353,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 388,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 423,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17381,19 +17381,19 @@
     "base": {
       "quantity": 1,
       "rating": 580,
-      "exp": 465,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 511,
+      "exp": 0,
       "scrip": 3
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 558,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17411,19 +17411,19 @@
     "base": {
       "quantity": 1,
       "rating": 94,
-      "exp": 557,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 220,
-      "exp": 612,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 668,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17441,19 +17441,19 @@
     "base": {
       "quantity": 1,
       "rating": 47,
-      "exp": 222,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 110,
-      "exp": 244,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 266,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17471,19 +17471,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 323,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 355,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 387,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17501,19 +17501,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 455,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 500,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 546,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17531,19 +17531,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 679,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 746,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 814,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17561,19 +17561,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 92,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 101,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 110,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17591,19 +17591,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 283,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 311,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 339,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17621,19 +17621,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 417,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 458,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 500,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17651,19 +17651,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 455,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 500,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 546,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17681,19 +17681,19 @@
     "base": {
       "quantity": 1,
       "rating": 750,
-      "exp": 557,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1125,
-      "exp": 612,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1500,
-      "exp": 668,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17711,19 +17711,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 762,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 838,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 914,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17741,19 +17741,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 184,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 202,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 220,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17771,19 +17771,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 417,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 458,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 500,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17801,19 +17801,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 762,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 838,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 914,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17831,19 +17831,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 168,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 184,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 201,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17861,19 +17861,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 225,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 247,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 270,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17891,19 +17891,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 455,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 500,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 546,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17921,19 +17921,19 @@
     "base": {
       "quantity": 1,
       "rating": 800,
-      "exp": 462,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1200,
-      "exp": 508,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 1600,
-      "exp": 554,
+      "exp": 0,
       "scrip": 3
     }
   },
@@ -17951,19 +17951,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 762,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 838,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 914,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -17981,19 +17981,19 @@
     "base": {
       "quantity": 1,
       "rating": 570,
-      "exp": 143,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 157,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 171,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -18011,19 +18011,19 @@
     "base": {
       "quantity": 1,
       "rating": 580,
-      "exp": 239,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 262,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 286,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -18041,19 +18041,19 @@
     "base": {
       "quantity": 1,
       "rating": 580,
-      "exp": 323,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1000,
-      "exp": 355,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 387,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -18071,19 +18071,19 @@
     "base": {
       "quantity": 1,
       "rating": 501,
-      "exp": 181,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 1177,
-      "exp": 199,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 217,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -18101,19 +18101,19 @@
     "base": {
       "quantity": 1,
       "rating": 501,
-      "exp": 197,
+      "exp": 0,
       "scrip": 3
     },
     "mid": {
       "quantity": 1,
       "rating": 1177,
-      "exp": 216,
+      "exp": 0,
       "scrip": 4
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 236,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -18131,19 +18131,19 @@
     "base": {
       "quantity": 1,
       "rating": 9,
-      "exp": 417,
+      "exp": 0,
       "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 21,
-      "exp": 458,
+      "exp": 0,
       "scrip": 2
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 500,
+      "exp": 0,
       "scrip": 0
     }
   },
@@ -18161,19 +18161,19 @@
     "base": {
       "quantity": 1,
       "rating": 384,
-      "exp": 451,
+      "exp": 0,
       "scrip": 3
     },
     "mid": {
       "quantity": 1,
       "rating": 902,
-      "exp": 496,
+      "exp": 0,
       "scrip": 4
     },
     "high": {
       "quantity": 1,
       "rating": 0,
-      "exp": 541,
+      "exp": 0,
       "scrip": 0
     }
   },
