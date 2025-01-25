@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.23...v11.3.24) (2025-01-25)
+
+
+### Features
+
+* **patreon:** add Ton'kha Truck in loading screen supporters ([7f0abc1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7f0abc114be856a66e3575715d09ea166f5344d4))
+
+
+### Bug Fixes
+
+* **collectables:** connoisseur items should no longer give exp ([20c3a6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20c3a6ce5565851053374088e168ff866386d2dc))
+* **layout:** level sort should now use rlvl for recipes ([5bbcb72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5bbcb72c52d4dee0bf62d9daa7cd974247b7cedf))
+* **log-tracker:** import will now ignore all fish to prevent data corruption ([6b98fbe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b98fbefddbf396713e831d32f1a6faf5067f8dc))
+* **simulator:** fix quality rounding on hybrid actions ([82df290](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82df290a485b33154a38b7480829efc70f0b877b))
+* **treasures:** display offset fix ([0565e66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0565e66b2bda2a3e16be1aecd04d9a10a0bbfe61))
+
 ### [11.3.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.22...v11.3.23) (2025-01-14)
 
 
