@@ -68,7 +68,8 @@ const patrons = [
   'Melodia',
   'Seyna Renbatal (Zodiark)',
   'Raraputin Susuputin',
-  'Auri Miyumi'
+  'Auri Miyumi',
+  'Ton\'kha Truck'
 ];
 
 const gifs = [

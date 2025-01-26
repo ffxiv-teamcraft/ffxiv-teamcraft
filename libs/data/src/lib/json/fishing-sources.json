@@ -27164,8 +27164,10 @@
       "spot": 324,
       "hookset": 1,
       "tug": 0,
-      "bait": 43858,
-      "minGathering": 0
+      "bait": 43855,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "43770": [
