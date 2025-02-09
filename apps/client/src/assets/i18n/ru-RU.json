@@ -122,6 +122,8 @@
   "Your_public_lists": "Ваши списки сообщества",
   "Public_list": "Список сообщества",
   "Profile": "Профиль",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} всего",
   "Discounts": "Скидка",
   "Flat_discount": "Сумма",
@@ -1465,7 +1467,7 @@
     "Log_in_to_track": "Войдите, чтобы иметь возможность отслеживать завершенность журнала",
     "Logs_import_done": "Your logs have been imported successfully",
     "Crafting_log": "Crafting log",
-    "Gathering_log": "Gathering log (including fishing)",
+    "Gathering_log": "Gathering log (excluding fishing)",
     "Import_using_pcap": "Import using packet capture",
     "IMPORT": {
       "Data_loading": "Data preloading",
@@ -1707,6 +1709,9 @@
       "Your_ranking": "Ваш рейтинг",
       "Include_fisheyes_data": "Включать отчеты с помощью Fish Eyes",
       "Not_enough_data_points": "Недостаточно данных для отображения диаграмм",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1750,11 +1755,14 @@
       "Fish_per_bait": "Рыба за наживку",
       "Fish_per_tug": "Рыба за tug",
       "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Включать пропущенные",
+      "Include_misses": "Misses",
       "Miss": "Пропущено",
       "Remove_this_bait": "Убрать эту наживку",
       "Bait_removed": "Наживка удалена из этого места",
-      "Position_unknown": "Неизвестная локация"
+      "Position_unknown": "Неизвестная локация",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Предметы",
@@ -3280,6 +3288,7 @@
     "Food_Picker": "Food Picker",
     "Reminders": "Reminders",
     "About": "About",
-    "Fish_Train": "Fish Train"
+    "Fish_Train": "Fish Train",
+    "Inventory": "Inventory"
   }
 }

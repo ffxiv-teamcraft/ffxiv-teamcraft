@@ -122,6 +122,8 @@
   "Your_public_lists": "Deine Communitylisten",
   "Public_list": "Communityliste",
   "Profile": "Profil",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} insgesamt",
   "Discounts": "Ermäßigung",
   "Flat_discount": "Pauschal",
@@ -1465,7 +1467,7 @@
     "Log_in_to_track": "Logge dich ein, um die Vervollständigung des Notizbuchs verfolgen zu können",
     "Logs_import_done": "Deine Einträge wurden erfolgreich importiert",
     "Crafting_log": "Handwerker-Notizbuch",
-    "Gathering_log": "Sammler-Notizbuch (inklusive Fische)",
+    "Gathering_log": "Gathering log (excluding fishing)",
     "Import_using_pcap": "Durch Paketerfassung importieren",
     "IMPORT": {
       "Data_loading": "Daten vorladen",
@@ -1707,6 +1709,9 @@
       "Your_ranking": "Dein Rang",
       "Include_fisheyes_data": "Meldungen mit Fischaugen einbeziehen",
       "Not_enough_data_points": "Nicht genügend Datenpunkte, um dieses Diagramm anzuzeigen",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -1754,7 +1759,10 @@
       "Miss": "Fehlschlag",
       "Remove_this_bait": "Diesen Köder entfernen",
       "Bait_removed": "Köder entfernt für diesen Spot",
-      "Position_unknown": "Unbekannter Ort"
+      "Position_unknown": "Unbekannter Ort",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Gegenstände",
@@ -3280,6 +3288,7 @@
     "Food_Picker": "Essens-Wähler",
     "Reminders": "Erinnerungen",
     "About": "Über uns",
-    "Fish_Train": "Fish Train"
+    "Fish_Train": "Fish Train",
+    "Inventory": "Inventory"
   }
 }
