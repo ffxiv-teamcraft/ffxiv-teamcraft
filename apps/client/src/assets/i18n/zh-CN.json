@@ -1467,7 +1467,7 @@
     "Log_in_to_track": "登录以使用捕鱼日志记录",
     "Logs_import_done": "已成功导入笔记！",
     "Crafting_log": "制作笔记",
-    "Gathering_log": "Gathering log (excluding fishing)",
+    "Gathering_log": "采集笔记（不包括钓鱼笔记）",
     "Import_using_pcap": "使用数据包捕获导入",
     "IMPORT": {
       "Data_loading": "数据预加载",
