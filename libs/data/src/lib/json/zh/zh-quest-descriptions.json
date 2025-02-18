@@ -10182,7 +10182,7 @@
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n络尾聚落的斯维因好像想将护身符物归原主。"
   },
   "69048": {
-    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n努贝依旧矿山的希尔马希望想为油灯添油。"
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n努贝依旧矿山的希尔马想为油灯添油。"
   },
   "69049": {
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n努贝依旧矿山的精神的少年好像想要打倒诺姆。"
@@ -14760,7 +14760,7 @@
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的库洛加希望冒险者能了解关于双头雕像的事。"
   },
   "70637": {
-    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的莉涅加有事想找为城镇的转变带来了契机的冒险者。"
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的莉涅加有事想找为村子的转变带来了契机的冒险者。"
   },
   "70638": {
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n玛穆克的高提加正在对守护玛穆克的雕像表达敬意。"
@@ -14883,7 +14883,7 @@
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的基特夸希望冒险者能继续为工作上的事提供帮助。"
   },
   "70678": {
-    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n图莱尤拉关门的基特夸希望冒险者再次帮忙回收财物。"
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n图莱尤拉关门的基特夸希望冒险者再次帮忙收回欠款。"
   },
   "70679": {
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萨塔伊驿镇的基特夸有事想让冒险者帮忙传达给托恩佐黑。"
@@ -15003,7 +15003,7 @@
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n风途园圃的喜爱花草的少年一副喘不上气的样子。"
   },
   "70718": {
-    "zh": "※本任务是特定期间内的任务。\n\n舰尾楼的红莲节执行委员玛雅尔·莫雅尔想要告诉冒险者红莲节已经开始的消息。"
+    "zh": " ※本任务是特定期间内的任务。\n\n舰尾楼的红莲节执行委员玛雅尔·莫雅尔想要告诉冒险者红莲节已经开始的消息。"
   },
   "70719": {
     "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的红莲节执行委员博德富安想抓住逃跑的仙人刺。"
@@ -15019,5 +15019,164 @@
   },
   "70723": {
     "zh": "来生回廊的可疑的药商想让冒险者帮忙送药。"
+  },
+  "70729": {
+    "zh": "海岸鸟群市场中穿蓝色衣服的佩鲁佩鲁族似乎在思考着什么。"
+  },
+  "70730": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n水果码头的利普露看起来干劲十足。"
+  },
+  "70731": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n水果码头的利普露看起来很开心。"
+  },
+  "70732": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n水果码头的利普露似乎在烦恼着什么。"
+  },
+  "70733": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n水果码头的利普露似乎有些开心。"
+  },
+  "70734": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n水果码头的利普露似乎有话要对冒险者说。"
+  },
+  "70735": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想为旅行公司做宣传。"
+  },
+  "70736": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在发愁土特产的事。"
+  },
+  "70737": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n袭击人的魔物让水果码头的玉毕利十分烦恼。"
+  },
+  "70738": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利似乎很在意哈努族。"
+  },
+  "70739": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利有些在意羊驼的健康状况。"
+  },
+  "70740": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在担心去进货还没回来的同伴。"
+  },
+  "70741": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在为哈努族寻找练习做向导的帮手。"
+  },
+  "70742": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在忧心客人的行李。"
+  },
+  "70743": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利非常担心遇到了魔物的客人。"
+  },
+  "70744": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想做一次游客的意见调查。"
+  },
+  "70745": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想推荐游客体验农业活动。"
+  },
+  "70746": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者展示战斗技巧。"
+  },
+  "70747": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想制作驱赶魔物的熏香。"
+  },
+  "70748": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想找人去无翼姐弟的大阶台捡一些边角料。"
+  },
+  "70749": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在头疼路上的魔物。"
+  },
+  "70750": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想让冒险者尝试新的观光计划。"
+  },
+  "70751": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利希望冒险者能和海牛一起工作。"
+  },
+  "70752": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者讨伐污染水源的魔物。"
+  },
+  "70753": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在思考海牛的食欲变旺盛的事。"
+  },
+  "70754": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在思考新的观光体验企划。"
+  },
+  "70755": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在为逃跑的小羊驼头疼。"
+  },
+  "70756": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者去瓦克萨的食堂帮忙。"
+  },
+  "70757": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利有事想问瓦克萨的同伴。"
+  },
+  "70758": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利正在等待货物送达。"
+  },
+  "70759": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者去帮帮瓦克萨。"
+  },
+  "70760": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者帮助工作人员。"
+  },
+  "70761": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者摘一些香料。"
+  },
+  "70762": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n水果码头的玉毕利想请冒险者帮羊驼玩水。"
+  },
+  "70763": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的阿姆·加兰基似乎正在发愁。"
+  },
+  "70764": {
+    "zh": "※本任务是特定期间内的任务。\n\n星芒市场的索莉娜干劲十足。"
+  },
+  "70769": {
+    "zh": "以太之光广场附近的霍比格族使者似乎在寻找冒险者。"
+  },
+  "70770": {
+    "zh": "朱诺下层的普利修想要确认状况。"
+  },
+  "70771": {
+    "zh": "朱诺下层的阿尔夏尔正在关心普利修。"
+  },
+  "70772": {
+    "zh": "缇姨家的塔可饼前的巴库加加正打算前往朱诺下层。"
+  },
+  "70773": {
+    "zh": "※本任务是特定期间内的任务。\n\n红玉大路国际市场的管家之王正在准备女儿节的新活动计划。"
+  },
+  "70774": {
+    "zh": "※本任务是特定期间内的任务。\n\n黄金广场的的皮科正在考虑初次登台时具体要做什么。"
+  },
+  "70778": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的吉莉·阿里亚珀想要对活动进行说明。"
+  },
+  "70779": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的吉莉·阿里亚珀正在等待诺诺塔的归来。"
+  },
+  "70780": {
+    "zh": "船头小屋的波尔·乌鲁可有话要对冒险者说。"
+  },
+  "70781": {
+    "zh": "后房的古鲁加想要外出领取花束。"
+  },
+  "70782": {
+    "zh": "锦砖咖啡的古·拉哈·提亚正在思考如何展开调查。"
+  },
+  "70783": {
+    "zh": "灵魂管理室的可露儿想要展开搜查。"
+  },
+  "70784": {
+    "zh": "后房的吉奥德很在意一件事情。"
+  },
+  "70785": {
+    "zh": "美花黑泽恩的柯纳似乎迷上了照顾犎牛。"
+  },
+  "70786": {
+    "zh": "夏劳尼荒野的乌克·拉玛特有些在意后房的情况。"
+  },
+  "70787": {
+    "zh": "※本クエストは、期間限定のクエストとなります。\n\nミィ・ケット野外音楽堂のアストリドは、手伝ってほしいことがあるようだ。"
+  },
+  "70788": {
+    "zh": "七贤人庭园的中原之民研究员正在环顾四周。"
   }
 }
