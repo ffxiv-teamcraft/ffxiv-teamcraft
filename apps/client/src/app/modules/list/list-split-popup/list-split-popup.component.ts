@@ -68,7 +68,21 @@ export class ListSplitPopupComponent extends DialogComponent {
           this.list.finalItems = this.list.finalItems.filter(row => !this.selectedItems.includes(row.id));
           return this.listManager.upgradeList(ListController.updateEtag(ListController.clean(this.list))).pipe(
             first(),
-            tap(res => this.listsFacade.updateList(res))
+            tap(res => {
+              this.list.items.forEach(item => {
+                const resItem = res.items.find(i => i.id === item.id);
+                if (item.forceRequiredHQ && resItem) {
+                  resItem.forceRequiredHQ = true;
+                }
+              });
+              this.list.finalItems.forEach(item => {
+                const resItem = res.finalItems.find(i => i.id === item.id);
+                if (item.forceRequiredHQ && resItem) {
+                  resItem.forceRequiredHQ = true;
+                }
+              });
+              this.listsFacade.updateList(res);
+            })
           );
         }
         return of(null);
