@@ -242,17 +242,9 @@ export class MetricsComponent extends TeamcraftPageComponent {
     this.editedLayout = layout;
   }
 
-  trackByColumn(index: number): number {
-    return index;
-  }
-
   trackByRow(index: number, row: MetricsDisplayEntry): string {
     const { data, ...structure } = row;
     return JSON.stringify(structure);
-  }
-
-  trackByEditorRow(index: number, row: MetricsDisplayEntry): number {
-    return index;
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

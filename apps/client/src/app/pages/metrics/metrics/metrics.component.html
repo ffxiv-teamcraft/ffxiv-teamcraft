@@ -66,7 +66,7 @@
     }
     @if (editMode) {
       <div fxLayout="row" fxLayoutGap="10px" cdkDropListGroup>
-        @for (column of editedLayout.grid; track trackByColumn(columnIndex, column); let columnIndex = $index) {
+        @for (column of editedLayout.grid; track columnIndex; let columnIndex = $index) {
           <div
             fxFlex="1 1 {{100 / editedLayout.grid.length}}%"
             class="metrics-column">
@@ -81,7 +81,7 @@
               fxLayout="column" fxLayoutGap="10px"
               [cdkDropListData]="column"
               (cdkDropListDropped)="moveEntry(editedLayout, columnIndex, $event)">
-              @for (row of column; track trackByEditorRow(rowIndex, row); let rowIndex = $index) {
+              @for (row of column; track rowIndex; let rowIndex = $index) {
                 <div>
                   <app-metrics-display-editor [(entry)]="editedLayout.grid[columnIndex][rowIndex]"
                     (removeEntry)="deleteEntry(editedLayout, columnIndex, rowIndex)"

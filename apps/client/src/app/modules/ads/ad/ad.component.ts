@@ -34,7 +34,7 @@ export class AdComponent {
 
       this.slotId$ = fromEvent(window, 'resize')
         .pipe(
-          map(event => (event.currentTarget as any).innerWidth),
+          map(event => (event.currentTarget as any)?.innerWidth),
           startWith(window.innerWidth),
           auditTime(1000),
           map(width => {

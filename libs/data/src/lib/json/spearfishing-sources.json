@@ -1693,7 +1693,7 @@
   ],
   "43813": [
     {
-      "speed": 5,
+      "speed": 4,
       "shadowSize": 2
     }
   ],
@@ -1753,7 +1753,7 @@
   ],
   "43822": [
     {
-      "speed": 3,
+      "speed": 5,
       "shadowSize": 2,
       "predators": [
         {

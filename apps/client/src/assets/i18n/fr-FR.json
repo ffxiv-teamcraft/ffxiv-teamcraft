@@ -122,6 +122,8 @@
   "Your_public_lists": "Vos listes communautaires",
   "Public_list": "Liste communautaire",
   "Profile": "Profil",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} pour le tout",
   "Discounts": "Remises",
   "Flat_discount": "Remise en gils",
@@ -1465,7 +1467,7 @@
     "Log_in_to_track": "Connectez-vous pour être en mesure de suivre la réalisation de votre carnet de recette",
     "Logs_import_done": "Vos logs ont été importés avec succès",
     "Crafting_log": "Logs de craft",
-    "Gathering_log": "Logs de récolte (incluant la pêche)",
+    "Gathering_log": "Gathering log (excluding fishing)",
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
     "IMPORT": {
       "Data_loading": "Préchargement des données",
@@ -1707,6 +1709,9 @@
       "Your_ranking": "Votre classement",
       "Include_fisheyes_data": "Inclure les rapports utilisant Yeux de poissons",
       "Not_enough_data_points": "Données insuffisantes pour afficher le graphique",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
@@ -1750,11 +1755,14 @@
       "Fish_per_bait": "Poisson par appât",
       "Fish_per_tug": "Poisson par touche",
       "Fish_per_hookset": "Poisson par ferrage",
-      "Include_misses": "Inclure les ratés",
+      "Include_misses": "Misses",
       "Miss": "Raté",
       "Remove_this_bait": "Supprimer cet appât",
       "Bait_removed": "Appât retiré de ce point",
-      "Position_unknown": "Lieu inconnu"
+      "Position_unknown": "Lieu inconnu",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Objets",
@@ -3280,6 +3288,7 @@
     "Food_Picker": "Sélecteur de nourriture",
     "Reminders": "Rappels",
     "About": "À propos",
-    "Fish_Train": "Train de pêche"
+    "Fish_Train": "Train de pêche",
+    "Inventory": "Inventory"
   }
 }

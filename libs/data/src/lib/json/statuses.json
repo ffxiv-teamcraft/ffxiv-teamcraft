@@ -43548,7 +43548,7 @@
     "maxStacks": 3,
     "description": {
       "en": "Stacks are consumed to restore the <span style=\"color:#ff7b1a\">Haima</span> barrier each time it is absorbed. Grants a healing effect when duration expires, its potency based on the number of remaining stacks.",
-      "de": "Bei Verbrauch eines Stapels wird die durch <span style=\"color:#ffbfff\">Haima</span> gewährte Barriere erneuert. Bei Ablauf der Wirkungsdauer werden LP regeneriert, je nach übriger Stapelzahl.",
+      "de": "Bei Verbrauch eines Stapels wird die durch <span style=\"color:#ffbfff\">Pneuma</span> gewährte Barriere erneuert. Bei Ablauf der Wirkungsdauer werden LP regeneriert, je nach übriger Stapelzahl.",
       "ja": "「ハイマ」が解除されるとスタックを消費して「ハイマ」を付与する状態。効果時間が経過すると自身のＨＰを回復する。残スタック数が多いほど回復力が上昇する。",
       "fr": "Quand la barrière de Haima a absorbé son montant de dégâts, Haimatinon en applique une nouvelle en échange d'un degré. Haimatinon restaure des PV en fonction des degrés restants lorsqu'il prend fin."
     }
@@ -59136,17 +59136,17 @@
     }
   },
   "4225": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ice Aegis",
+    "de": "Ägide des Eises",
+    "ja": "守護氷陣",
+    "fr": "Égide de glace",
+    "icon": "/i/212000/212513.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sheltered by Tentoawa's shield. Damage taken is reduced.",
+      "de": "Erlittener Schaden ist dank Tentoawas Schild verringert.",
+      "ja": "テントーワのシールドにより、受けるダメージの一部が軽減される状態。",
+      "fr": "Les dégâts reçus sont réduits grâce au bouclier de Tentoawa."
     }
   },
   "4226": {
@@ -62034,17 +62034,17 @@
     }
   },
   "4432": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Shining Encouragement",
+    "de": "Sonnenschein",
+    "ja": "おうえん",
+    "fr": "Encouragements",
+    "icon": "/i/214000/214207.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Spurred on by Ceetol Ja's heartfelt support.",
+      "de": "Voller Eifer und von Ceetol Ja angefeuert.",
+      "ja": "セートジャに応援され、やる気が満ちた状態。",
+      "fr": "La motivation est à son maximum grâce aux encouragements de Ceetol Ja."
     }
   },
   "4433": {

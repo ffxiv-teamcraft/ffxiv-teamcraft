@@ -28,8 +28,10 @@
                 nzSize="small" nzType="primary">
           <i nz-icon nzType="plus"></i>
         </button>
-        <button (click)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1"
+        <button (nzOnConfirm)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1"
                 [nzTooltipTitle]="'PROFILE.Remove_character' | translate" nz-button nz-tooltip
+                nz-popconfirm
+                [nzPopconfirmTitle]="'Confirmation' | translate"
                 nzShape="circle"
                 nzSize="small"
                 nzDanger>
