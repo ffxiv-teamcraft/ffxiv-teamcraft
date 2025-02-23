@@ -122,6 +122,8 @@
   "Your_public_lists": "Sus listas comunitarias",
   "Public_list": "Lista Comunitaria",
   "Profile": "Perfil",
+  "Private_lodestone": "Your character is set to private on the lodestone",
+  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
   "X_for_total": "{{amount}} para el total",
   "Discounts": "Descuento",
   "Flat_discount": "Absoluto",
@@ -1465,7 +1467,7 @@
     "Log_in_to_track": "Log in to be able to track your Log Tracker completion",
     "Logs_import_done": "Your logs have been imported successfully",
     "Crafting_log": "Crafting log",
-    "Gathering_log": "Gathering log (including fishing)",
+    "Gathering_log": "Gathering log (excluding fishing)",
     "Import_using_pcap": "Import using packet capture",
     "IMPORT": {
       "Data_loading": "Data preloading",
@@ -1707,6 +1709,9 @@
       "Your_ranking": "Su clasificación",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
+      "Lure": "Lure",
+      "Lure_stacks": "Min. stacks",
+      "Lures": "Lures",
       "TUG": {
         "Light": "Liviano (!)",
         "Medium": "Mediano (!!)",
@@ -1750,11 +1755,14 @@
       "Fish_per_bait": "Pesces por cebo",
       "Fish_per_tug": "Peces por jalón",
       "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Include misses",
+      "Include_misses": "Misses",
       "Miss": "Miss",
       "Remove_this_bait": "Remove this bait",
       "Bait_removed": "Bait removed from this spot",
-      "Position_unknown": "Unknown location"
+      "Position_unknown": "Unknown location",
+      "No_lure_filter": "No lure filter",
+      "Exclude_all_lures": "Exclude lures",
+      "Lure_filter": "Lure filter"
     },
     "NODE": {
       "Items": "Artículos",
@@ -3280,6 +3288,7 @@
     "Food_Picker": "Food Picker",
     "Reminders": "Reminders",
     "About": "About",
-    "Fish_Train": "Fish Train"
+    "Fish_Train": "Fish Train",
+    "Inventory": "Inventory"
   }
 }
