@@ -21,7 +21,7 @@ export class WidthBreakpointsPipe<T> implements PipeTransform {
       this.sub = fromEvent(window, 'resize')
         .pipe(
           auditTime(100),
-          map(event => (event.currentTarget as any).innerWidth),
+          map(event => (event.currentTarget as any)?.innerWidth),
           startWith(window.innerWidth),
           map(width => {
             const matchingKey = keys.find(key => key > width);
