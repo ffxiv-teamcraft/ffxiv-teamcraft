@@ -30,12 +30,12 @@ import { AsyncPipe } from '@angular/common';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
-    selector: 'app-list-aggregate',
-    templateUrl: './list-aggregate.component.html',
-    styleUrls: ['./list-aggregate.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzPageHeaderModule, NzButtonModule, NzIconModule, NzRadioModule, FormsModule, NzInputModule, NzSelectModule, NzWaveModule, NzDropDownModule, NzMenuModule, RouterLink, NzAlertModule, ListDetailsPanelComponent, AsyncPipe, TranslateModule, EncodeUriComponentPipe]
+  selector: 'app-list-aggregate',
+  templateUrl: './list-aggregate.component.html',
+  styleUrls: ['./list-aggregate.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzPageHeaderModule, NzButtonModule, NzIconModule, NzRadioModule, FormsModule, NzInputModule, NzSelectModule, NzWaveModule, NzDropDownModule, NzMenuModule, RouterLink, NzAlertModule, ListDetailsPanelComponent, AsyncPipe, TranslateModule, EncodeUriComponentPipe]
 })
 export class ListAggregateComponent {
 
@@ -105,6 +105,11 @@ export class ListAggregateComponent {
         map(lists => {
           return lists.filter(l => {
             return keys.includes(l.$key);
+          }).sort((a, b) => {
+            if (a.index === b.index) {
+              return a.name.localeCompare(b.name);
+            }
+            return a.index - b.index;
           });
         })
       );
