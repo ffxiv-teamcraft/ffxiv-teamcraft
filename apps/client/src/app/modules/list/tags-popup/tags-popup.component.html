@@ -9,7 +9,7 @@
     </nz-select>
     <div fxLayout="row" fxLayoutGap="5px">
       <button (click)="confirm(listDetails)" nz-button nzType="primary">{{'Confirm' | translate}}</button>
-      <button (click)="cancel()" nz-button>{{'Cancel' | translate}}</button>
+      <button (click)="cancel(listDetails)" nz-button>{{'Cancel' | translate}}</button>
     </div>
   </div>
 } @else {

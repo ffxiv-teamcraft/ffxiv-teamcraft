@@ -32,9 +32,12 @@ export class TagsPopupComponent extends DialogComponent implements OnInit {
 
   tags: any[] = [];
 
+  tagsBackup: ListTag[] = [];
+
   constructor(private modalRef: NzModalRef, private listsFacade: ListsFacade) {
     super();
     this.patchData();
+    this.tagsBackup = this.list.tags;
   }
 
   confirm(list: List): void {
@@ -43,7 +46,8 @@ export class TagsPopupComponent extends DialogComponent implements OnInit {
     this.modalRef.close();
   }
 
-  cancel(): void {
+  cancel(list: List): void {
+    list.tags = this.tagsBackup;
     this.modalRef.close();
   }
 
