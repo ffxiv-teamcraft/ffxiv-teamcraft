@@ -24470,15 +24470,6 @@
       "minGathering": 0
     }
   ],
-  "38327": [
-    {
-      "spot": 117,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 36588,
-      "minGathering": 0
-    }
-  ],
   "38328": [
     {
       "spot": 282,
@@ -27621,7 +27612,10 @@
       "weathers": [
         4
       ],
-      "minGathering": 3500
+      "minGathering": 3500,
+      "video": "https://youtu.be/nXuQIIlaR8s",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "44340": [

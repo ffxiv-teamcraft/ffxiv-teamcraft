@@ -7649,11 +7649,11 @@
   },
   {
     "id": 957,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4755,
+    "name": "Hall of the Unbound",
+    "territory": 1255,
+    "scale": 800,
+    "weatherRate": 0
   },
   {
     "id": 958,
@@ -7721,11 +7721,11 @@
   },
   {
     "id": 966,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4526,
+    "name": "Zorgor the Boundless",
+    "territory": 1246,
+    "scale": 100,
+    "weatherRate": 0
   },
   {
     "id": 967,

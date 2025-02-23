@@ -90698,39 +90698,49 @@
   },
   "70724": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Picking Up the Torch",
+      "ja": "2期生オーディションの真相",
+      "de": "Führungskräfte gesucht",
+      "fr": "La deuxième vague d'Affranchis"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062522.png",
+    "banner": "/i/101000/101373.png"
   },
   "70725": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Imposing Views",
+      "ja": "縛られざる者",
+      "de": "Beeindruckende Ansichten",
+      "fr": "Affranchie jusqu'au bout des talons"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062522.png",
+    "banner": "/i/101000/101373.png"
   },
   "70726": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Enforcing Freedom",
+      "ja": "祭器が結んだ縁",
+      "de": "Freiheit um jeden Preis",
+      "fr": "L'affranchissement des uns, la liberté des autres"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062522.png",
+    "banner": "/i/101000/101373.png"
   },
   "70727": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bar the Passage",
+      "ja": "決戦、ゾーゴー永結橋",
+      "de": "Kampf an Zorgor der Weiten",
+      "fr": "Pour s'affranchir de la tyrannie, tout s'appelle vertu"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062522.png",
+    "rewards": [
+      {
+        "id": 45018,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101373.png"
   },
   "70728": {
     "name": {

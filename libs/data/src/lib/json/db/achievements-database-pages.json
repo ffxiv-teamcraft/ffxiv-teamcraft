@@ -10704,7 +10704,7 @@
       "ja": "過属性クラスターを入手する",
       "fr": "Obtenir un agrégat surchargé.",
       "ko": "과속성 클러스터 입수",
-      "zh": "获得过属性晶簇"
+      "zh": "获得过属性晶簇。"
     },
     "item": 0,
     "title": 88
@@ -23688,7 +23688,7 @@
       "ja": "フロントラインにて、黒渦団、双蛇党、不滅隊のいずれかひとつの部隊で、200回勝利する",
       "fr": "Remporter 200 victoires au Front avec l'une des trois grandes compagnies.",
       "ko": "동일 총사령부 소속으로 전장 200회 승리",
-      "zh": "加入纷争前线的黑涡团、双蛇党、恒辉队任一部队并取得200次胜利。"
+      "zh": "加入纷争前线的黑涡团、双蛇党、恒辉队任一军队并取得200次胜利。"
     },
     "item": 10081,
     "title": 0
@@ -25137,7 +25137,7 @@
       "ja": "フロントラインにて、黒渦団、双蛇党、不滅隊のいずれかひとつの部隊で、300回勝利する",
       "fr": "Remporter 300 victoires au Front avec l'une des trois grandes compagnies.",
       "ko": "동일 총사령부 소속으로 전장 300회 승리",
-      "zh": "加入纷争前线的黑涡团、双蛇党、恒辉队任一部队并取得300次胜利。"
+      "zh": "加入纷争前线的黑涡团、双蛇党、恒辉队任一军队并取得300次胜利。"
     },
     "item": 0,
     "title": 0
@@ -28490,7 +28490,7 @@
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊のいずれかの部隊で、初めて勝利する",
       "fr": "Remporter 1 victoire avec l'une des trois grandes compagnies au Rocher des tréfonds.",
       "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대 중 하나로 처음으로 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在尘封秘岩取得胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得胜利。"
     },
     "item": 12513,
     "title": 0
@@ -28511,7 +28511,7 @@
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計10回勝利する",
       "fr": "Remporter 10 victoires au Rocher des tréfonds.",
       "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 10회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在尘封秘岩取得10次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得10次胜利。"
     },
     "item": 12517,
     "title": 0
@@ -28532,7 +28532,7 @@
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計30回勝利する",
       "fr": "Remporter 30 victoires au Rocher des tréfonds.",
       "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 30회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在尘封秘岩取得30次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得30次胜利。"
     },
     "item": 12515,
     "title": 0
@@ -28553,7 +28553,7 @@
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計50回勝利する",
       "fr": "Remporter 50 victoires au Rocher des tréfonds.",
       "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 50회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在尘封秘岩取得50次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得50次胜利。"
     },
     "item": 12516,
     "title": 0
@@ -28574,7 +28574,7 @@
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計100回勝利する",
       "fr": "Remporter 100 victoires au Rocher des tréfonds.",
       "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 100회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在尘封秘岩取得100次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得100次胜利。"
     },
     "item": 12514,
     "title": 0
@@ -28595,7 +28595,7 @@
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計300回勝利する",
       "fr": "Remporter 300 victoires au Rocher des tréfonds.",
       "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 300회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在尘封秘岩取得300次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得300次胜利。"
     },
     "item": 0,
     "title": 0
@@ -32539,7 +32539,7 @@
       "ja": "フィールド・オブ・グローリーにて、黒渦団、双蛇党、不滅隊のいずれかの部隊で、初めて勝利する",
       "fr": "Remporter 1 victoire avec l'une des trois grandes compagnies aux Champs de la Gloire.",
       "ko": "영광의 평원에서 흑와단, 쌍사당, 불멸대 중 하나로 1회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在荣誉野取得胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在荣誉野取得胜利。"
     },
     "item": 0,
     "title": 0
@@ -32560,7 +32560,7 @@
       "ja": "フィールド・オブ・グローリーにて、黒渦団、双蛇党、不滅隊で、累計10回勝利する",
       "fr": "Remporter 10 victoires aux Champs de la Gloire.",
       "ko": "영광의 평원에서 흑와단, 쌍사당, 불멸대 중 하나로 총 10회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在荣誉野取得10次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在荣誉野取得10次胜利。"
     },
     "item": 0,
     "title": 0
@@ -32581,7 +32581,7 @@
       "ja": "フィールド・オブ・グローリーにて、黒渦団、双蛇党、不滅隊で、累計30回勝利する",
       "fr": "Remporter 30 victoires aux Champs de la Gloire.",
       "ko": "영광의 평원에서 흑와단, 쌍사당, 불멸대 중 하나로 총 30회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在荣誉野取得30次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在荣誉野取得30次胜利。"
     },
     "item": 0,
     "title": 0
@@ -32602,7 +32602,7 @@
       "ja": "フィールド・オブ・グローリーにて、黒渦団、双蛇党、不滅隊で、累計50回勝利する",
       "fr": "Remporter 50 victoires aux Champs de la Gloire.",
       "ko": "영광의 평원에서 흑와단, 쌍사당, 불멸대 중 하나로 총 50회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在荣誉野取得50次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在荣誉野取得50次胜利。"
     },
     "item": 0,
     "title": 0
@@ -32623,7 +32623,7 @@
       "ja": "フィールド・オブ・グローリーにて、黒渦団、双蛇党、不滅隊で、累計100回勝利する",
       "fr": "Remporter 100 victoires aux Champs de la Gloire.",
       "ko": "영광의 평원에서 흑와단, 쌍사당, 불멸대 중 하나로 총 100회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在荣誉野取得100次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在荣誉野取得100次胜利。"
     },
     "item": 15932,
     "title": 0
@@ -32644,7 +32644,7 @@
       "ja": "フィールド・オブ・グローリーにて、黒渦団、双蛇党、不滅隊で、累計300回勝利する",
       "fr": "Remporter 300 victoires aux Champs de la Gloire.",
       "ko": "영광의 평원에서 흑와단, 쌍사당, 불멸대 중 하나로 총 300회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在荣誉野取得300次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在荣誉野取得300次胜利。"
     },
     "item": 0,
     "title": 313
@@ -34639,7 +34639,7 @@
       "ja": "死者の宮殿にソロでB1から突入しB51に到達する",
       "fr": "Obtenir un score en solo dans le Palais des morts en commençant par le sous-sol 1 et en s'aventurant au-delà du sous-sol 50.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B50 이후에서 점수 기록",
-      "zh": "单人从地下1层进入死者宫殿，并在通过地下50层后记录积分。"
+      "zh": "单人从地下1层进入死者宫殿，并到达地下51层。"
     },
     "item": 0,
     "title": 0
@@ -34660,7 +34660,7 @@
       "ja": "死者の宮殿にソロでB1から突入しB101に到達する",
       "fr": "Obtenir un score en solo dans le Palais des morts en commençant par le sous-sol 1 et en s'aventurant au-delà du sous-sol 100.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B100 이후에서 점수 기록",
-      "zh": "单人从地下1层进入死者宫殿，并在通过地下100层后记录积分。"
+      "zh": "单人从地下1层进入死者宫殿，并到达地下101层。"
     },
     "item": 0,
     "title": 321
@@ -40748,7 +40748,7 @@
       "ja": "死者の宮殿にソロでB1から突入しB200まで攻略する",
       "fr": "Atteindre le 200e sous-sol du Palais des morts en solo en commençant par le 1er.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B200 도달",
-      "zh": "单人从地下1层进入死者宫殿，并到达地下200层。"
+      "zh": "单人从地下1层进入死者宫殿，并通过地下200层。"
     },
     "item": 0,
     "title": 246
@@ -42882,7 +42882,7 @@
       "ja": "アメノミハシラにソロで1層から突入し51層に到達する",
       "fr": "Obtenir un score en solo dans le Pilier des Cieux en commençant par le 1er étage et en s'aventurant au-delà du 50e.",
       "ko": "단독으로 천궁탑 1층에 진입하여 50층 이후에서 점수 기록",
-      "zh": "单人从第1层进入天之御柱，并在通过第50层后记录积分。"
+      "zh": "单人从第1层进入天之御柱，并到达第51层。"
     },
     "item": 0,
     "title": 0
@@ -42903,7 +42903,7 @@
       "ja": "アメノミハシラにソロで1層から突入し100層まで攻略する",
       "fr": "Atteindre le 100e étage du Pilier des Cieux en solo en commençant par le 1er.",
       "ko": "단독으로 천궁탑 1층에 진입하여 100층 도달",
-      "zh": "单人从第1层进入天之御柱，并到达第100层。"
+      "zh": "单人从第1层进入天之御柱，并通过第100层。"
     },
     "item": 0,
     "title": 387
@@ -51749,7 +51749,7 @@
       "ja": "オンサル・ハカイルにて、黒渦団、双蛇党、不滅隊のいずれかの部隊で、初めて勝利する",
       "fr": "Remporter 1 victoire avec l'une des trois grandes compagnies à Onsal Hakair.",
       "ko": "온살 하카이르에서 흑와단, 쌍사당, 불멸대 중 하나로 1회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在昂萨哈凯尔取得胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在昂萨哈凯尔取得胜利。"
     },
     "item": 0,
     "title": 0
@@ -51770,7 +51770,7 @@
       "ja": "オンサル・ハカイルにて、黒渦団、双蛇党、不滅隊で、累計10回勝利する",
       "fr": "Remporter 10 victoires à Onsal Hakair.",
       "ko": "온살 하카이르에서 흑와단, 쌍사당, 불멸대 중 하나로 총 10회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在昂萨哈凯尔取得10次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在昂萨哈凯尔取得10次胜利。"
     },
     "item": 0,
     "title": 0
@@ -51791,7 +51791,7 @@
       "ja": "オンサル・ハカイルにて、黒渦団、双蛇党、不滅隊で、累計30回勝利する",
       "fr": "Remporter 30 victoires à Onsal Hakair.",
       "ko": "온살 하카이르에서 흑와단, 쌍사당, 불멸대 중 하나로 총 30회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在昂萨哈凯尔取得30次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在昂萨哈凯尔取得30次胜利。"
     },
     "item": 0,
     "title": 0
@@ -51812,7 +51812,7 @@
       "ja": "オンサル・ハカイルにて、黒渦団、双蛇党、不滅隊で、累計50回勝利する",
       "fr": "Remporter 50 victoires à Onsal Hakair.",
       "ko": "온살 하카이르에서 흑와단, 쌍사당, 불멸대 중 하나로 총 50회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在昂萨哈凯尔取得50次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在昂萨哈凯尔取得50次胜利。"
     },
     "item": 0,
     "title": 0
@@ -51833,7 +51833,7 @@
       "ja": "オンサル・ハカイルにて、黒渦団、双蛇党、不滅隊で、累計100回勝利する",
       "fr": "Remporter 100 victoires à Onsal Hakair.",
       "ko": "온살 하카이르에서 흑와단, 쌍사당, 불멸대 중 하나로 총 100회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在昂萨哈凯尔取得100次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在昂萨哈凯尔取得100次胜利。"
     },
     "item": 28120,
     "title": 0
@@ -51854,7 +51854,7 @@
       "ja": "オンサル・ハカイルにて、黒渦団、双蛇党、不滅隊で、累計300回勝利する",
       "fr": "Remporter 300 victoires à Onsal Hakair.",
       "ko": "온살 하카이르에서 흑와단, 쌍사당, 불멸대 중 하나로 총 300회 승리",
-      "zh": "加入黑涡团、双蛇党、恒辉队中的任一部队并在昂萨哈凯尔取得300次胜利。"
+      "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在昂萨哈凯尔取得300次胜利。"
     },
     "item": 0,
     "title": 486
@@ -66550,7 +66550,7 @@
       "ja": "オルト・エウレカにソロでB1から突入しB51に到達する",
       "fr": "Obtenir un score en solo dans Eurêka Orthos en commençant par le 1er sous-sol et en s'aventurant au-delà du 50e.",
       "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B50 이후에서 점수 기록",
-      "zh": "单人从地下1层进入正统优雷卡，并在通过地下50层后记录积分。"
+      "zh": "单人从地下1层进入正统优雷卡，并到达地下51层。"
     },
     "item": 0,
     "title": 0
@@ -66571,7 +66571,7 @@
       "ja": "オルト・エウレカにソロでB1から突入しB100まで攻略する",
       "fr": "Atteindre le 100e sous-sol en solo dans Eurêka Orthos en commençant par le 1er.",
       "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B100 도달",
-      "zh": "单人从地下1层进入正统优雷卡，并到达地下100层。"
+      "zh": "单人从地下1层进入正统优雷卡，并通过地下100层。"
     },
     "item": 0,
     "title": 663
@@ -74934,11 +74934,13 @@
     "de": "Kristallkönig (12. Saison)",
     "ja": "コンフリクトの王者：シーズン12",
     "fr": "Roi du conflit : saison 12",
+    "zh": "冲突的王者第12赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Twelve ranked #1.",
       "de": "Die 12. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで1位になる",
-      "fr": "Terminer la saison 12 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 12 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第12赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 756
@@ -74951,11 +74953,13 @@
     "de": "Kristallfürst (12. Saison)",
     "ja": "コンフリクトの勇者：シーズン12",
     "fr": "Prince du conflit : saison 12",
+    "zh": "冲突的勇者第12赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Twelve.",
       "de": "Die 12. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 12 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 12 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第12赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 757
@@ -74968,11 +74972,13 @@
     "de": "Kristallkämpfer (12. Saison)",
     "ja": "コンフリクトの入賞者：シーズン12",
     "fr": "As du conflit : saison 12",
+    "zh": "冲突的获奖者第12赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Twelve. ",
       "de": "Die 12. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで入賞する",
-      "fr": "Terminer la saison 12 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 12 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第12赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 758
@@ -74985,11 +74991,13 @@
     "de": "Kristallkönig (13. Saison)",
     "ja": "コンフリクトの王者：シーズン13",
     "fr": "Roi du conflit : saison 13",
+    "zh": "冲突的王者第13赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Thirteen ranked #1.",
       "de": "Die 13. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで1位になる",
-      "fr": "Terminer la saison 13 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 13 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第13赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 759
@@ -75002,11 +75010,13 @@
     "de": "Kristallfürst (13. Saison)",
     "ja": "コンフリクトの勇者：シーズン13",
     "fr": "Prince du conflit : saison 13",
+    "zh": "冲突的勇者第13赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Thirteen.",
       "de": "Die 13. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 13 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 13 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第13赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 760
@@ -75019,11 +75029,13 @@
     "de": "Kristallkämpfer (13. Saison)",
     "ja": "コンフリクトの入賞者：シーズン13",
     "fr": "As du conflit : saison 13",
+    "zh": "冲突的获奖者第13赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Thirteen. ",
       "de": "Die 13. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで入賞する",
-      "fr": "Terminer la saison 13 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 13 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第13赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 761
@@ -75036,11 +75048,13 @@
     "de": "Per du mit den Pelupelu I",
     "ja": "ペルペル族：ランク1",
     "fr": "Conseiller touristique I",
+    "zh": "图拉尔旅行公司1",
     "description": {
       "en": "Attain rank 3 reputation (friendly) with the Turali Travel Agency.",
       "de": "Ein freundliches Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク3「友好」にする",
-      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达3级“友好”。"
     },
     "item": 0,
     "title": 0
@@ -75053,11 +75067,13 @@
     "de": "Per du mit den Pelupelu II",
     "ja": "ペルペル族：ランク2",
     "fr": "Conseiller touristique II",
+    "zh": "图拉尔旅行公司2",
     "description": {
       "en": "Attain rank 4 reputation (trusted) with the Turali Travel Agency.",
       "de": "Ein vertrautes Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク4「信頼」にする",
-      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达4级“信赖”。"
     },
     "item": 0,
     "title": 0
@@ -75070,11 +75086,13 @@
     "de": "Per du mit den Pelupelu III",
     "ja": "ペルペル族：ランク3",
     "fr": "Conseiller touristique III",
+    "zh": "图拉尔旅行公司3",
     "description": {
       "en": "Attain rank 6 reputation (honored) with the Turali Travel Agency.",
       "de": "Ein geachtetes Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク6「名誉」にする",
-      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达6级“名誉”。"
     },
     "item": 0,
     "title": 0
@@ -75087,11 +75105,13 @@
     "de": "Jaja-Sager",
     "ja": "トラルトラベルアドバイザー",
     "fr": "Tural Voyages Conseil",
+    "zh": "图拉尔旅行公司特别顾问",
     "description": {
       "en": "Attain rank 7 reputation (sworn) with the Turali Travel Agency.",
       "de": "Ein solidarisches Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク7「誓約」にする",
-      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des Pelupelu de l'agence Tural Voyages."
+      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达7级“誓约”。"
     },
     "item": 0,
     "title": 762
@@ -75291,11 +75311,13 @@
     "de": "Kartograph: Yuweyawata",
     "ja": "ユウェヤーワータを踏破せし者",
     "fr": "Cartographe du continent : Centre de recherche de Yuweyawata",
+    "zh": "踏遍玉韦亚瓦塔实验站",
     "description": {
       "en": "Discover every location within Yuweyawata Field Station.",
       "de": "Alle Orte in der Forschungsstation Yuweyawata erkundet.",
       "ja": "ユウェヤーワータ（廃地討究）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du centre de recherche de Yuweyawata."
+      "fr": "Découvrir toute la carte du centre de recherche de Yuweyawata.",
+      "zh": "成功探索玉韦亚瓦塔实验站的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -75308,11 +75330,13 @@
     "de": "Kartograph: Jeuno: Die erste Etappe",
     "ja": "ジュノ：ザ・ファーストウォークを踏破せし者",
     "fr": "Cartographe du continent : Jeuno - La première perambulation",
+    "zh": "踏遍朱诺：第一巡行",
     "description": {
       "en": "Discover every location within Jeuno: The First Walk.",
       "de": "Alle Orte in Jeuno: Die erste Etappe erkundet.",
       "ja": "ジュノ：ザ・ファーストウォークを踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte de Jeuno - La première perambulation."
+      "fr": "Découvrir toute la carte de Jeuno - La première perambulation.",
+      "zh": "成功探索朱诺：第一巡行的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -75325,11 +75349,13 @@
     "de": "Ender der Endlosigkeit",
     "ja": "永久なる女王を狩りし者",
     "fr": "Rien n'est éternel",
+    "zh": "永恒的弑君者",
     "description": {
       "en": "Defeat Queen Eternal in the Minstrel's Ballad: Sphene's Burden.",
       "de": "Die Ewige Königin in Gok Tajaal - Ewige Königin bezwungen.",
       "ja": "極エターナルクイーン討滅戦で、エターナルクイーンを討伐する",
-      "fr": "Vaincre la Reine Éternité dans le défi “Interphos (extrême)”."
+      "fr": "Vaincre la Reine Éternité dans le défi “Interphos (extrême)”.",
+      "zh": "在永恒女王忆想歼灭战中战胜永恒女王。"
     },
     "item": 0,
     "title": 0
@@ -75342,11 +75368,13 @@
     "de": "Jeuno: Die erste Etappe",
     "ja": "ジュノ：ザ・ファーストウォークを制覇せし者",
     "fr": "Échos des premières aventures",
+    "zh": "称霸朱诺：第一巡行",
     "description": {
       "en": "Complete Jeuno: The First Walk.",
       "de": "Jeuno: Die erste Etappe erfolgreich abgeschlossen.",
       "ja": "ジュノ：ザ・ファーストウォークを攻略する",
-      "fr": "Finir Jeuno - La première perambulation."
+      "fr": "Finir Jeuno - La première perambulation.",
+      "zh": "成功挑战朱诺：第一巡行。"
     },
     "item": 0,
     "title": 0
@@ -75359,31 +75387,33 @@
     "de": "Schicksalskreuzung",
     "ja": "未知との邂逅",
     "fr": "Retrouvailles inattendues",
+    "zh": "与未知邂逅",
     "description": {
       "en": "Complete the main scenario quest “Crossroads.”",
       "de": "Den Auftrag „An der Kreuzung des Schicksals“ des Hauptszenarios erfolgreich abgeschlossen.",
       "ja": "クエスト「未知との邂逅」をコンプリートする",
-      "fr": "Accomplir la quête “Au seuil de l'inconnu”."
+      "fr": "Accomplir la quête “Au seuil de l'inconnu”.",
+      "zh": "完成任务“与未知邂逅”。"
     },
     "item": 0,
     "title": 765
   },
   "3608": {
     "id": 3608,
-    "icon": "",
+    "icon": "/i/002000/002698.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Passage Rebound",
+    "de": "Freigeist für immer!",
+    "ja": "「自由の扉」よ、永遠に",
+    "fr": "Affranchis sans frontières",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Bar the Passage.”",
+      "de": "Den Auftrag „Kampf an Zorgor der Weiten“ abgeschlossen.",
+      "ja": "クエスト「決戦、ゾーゴー永結橋」をコンプリートする",
+      "fr": "Accomplir la quête “Pour s'affranchir de la tyrannie, tout s'appelle vertu”."
     },
     "item": 0,
-    "title": 0
+    "title": 766
   },
   "3609": {
     "id": 3609,
@@ -75410,11 +75440,13 @@
     "de": "Kapitalbeschaffung auf Tural I",
     "ja": "黄金の太公望：ランク1",
     "fr": "Pêcheur de légendes éternel I",
+    "zh": "金曦太公1",
     "description": {
       "en": "Catch 8 different varieties of big fish in areas explored during Dawntrail.",
       "de": "8 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
       "ja": "黄金のレガシーのエリアにいるヌシを8種類、釣り上げる",
-      "fr": "Pêcher 8 prises légendaires différentes dans les zones explorées lors de Dawntrail."
+      "fr": "Pêcher 8 prises légendaires différentes dans les zones explorées lors de Dawntrail.",
+      "zh": "在金曦区域钓上8种钓场之王。"
     },
     "item": 0,
     "title": 0
@@ -75427,11 +75459,13 @@
     "de": "Strahlender Markt",
     "ja": "ホッとあたたまるマーケット",
     "fr": "Un marché chaleureux",
+    "zh": "温暖人心的市场",
     "description": {
       "en": "Complete the quest “Spreading the Warmth and Cheer.”",
       "de": "Den Auftrag „Wärme und Freude verbreiten“ abgeschlossen.",
       "ja": "クエスト「星芒祭と小さな従者たち」をコンプリートする",
-      "fr": "Accomplir la quête “Les petits disciples du saint”."
+      "fr": "Accomplir la quête “Les petits disciples du saint”.",
+      "zh": "完成任务“星光闪耀的小圣人”。"
     },
     "item": 0,
     "title": 0
@@ -75444,11 +75478,13 @@
     "de": "Die Sprache der Blumen",
     "ja": "満開のブーケを一緒に",
     "fr": "Né sous le destin de la rose",
+    "zh": "为你钟情",
     "description": {
       "en": "Complete the quest “I Promise You a Rose Garden.”",
       "de": "Den Auftrag „So wie die Rosen blühen“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
-      "fr": "Accomplir la quête “'La rose de la Valention”."
+      "fr": "Accomplir la quête “'La rose de la Valention”.",
+      "zh": "完成任务“ヴァレンティオンデーと愛の薔薇[暂]”。"
     },
     "item": 0,
     "title": 0
@@ -75461,11 +75497,13 @@
     "de": "Herzensdiener",
     "ja": "あなたの笑顔にお仕えします",
     "fr": "Le prince de ces demoiselles",
+    "zh": "愿为你的笑容效劳",
     "description": {
       "en": "Complete the quest “A Princely Debut.”",
       "de": "Den Auftrag „Das Lied der Schwalbe“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーと執事王子のおもてなし」をコンプリートする",
-      "fr": "Accomplir la quête “Des débuts princiers”."
+      "fr": "Accomplir la quête “Des débuts princiers”.",
+      "zh": "完成任务“プリンセスデーと執事王子のおもてなし[暂]”。"
     },
     "item": 0,
     "title": 0
@@ -75478,11 +75516,13 @@
     "de": "Mit Schirm und Charme",
     "ja": "傘が彩る雨模様",
     "fr": "Sortir sa coquille",
+    "zh": "点缀雨天的彩蛋之伞",
     "description": {
       "en": "Complete the quest “Eggceeding Expectations.”",
       "de": "Den Auftrag „Einigkeit und Schirm und Eiheit“ abgeschlossen.",
       "ja": "クエスト「エッグハントと集う傘」をコンプリートする",
-      "fr": "Accomplir la quête “Les parapluies de Gridania”."
+      "fr": "Accomplir la quête “Les parapluies de Gridania”.",
+      "zh": "完成任务“エッグハントと集う傘[暂]”。"
     },
     "item": 0,
     "title": 0

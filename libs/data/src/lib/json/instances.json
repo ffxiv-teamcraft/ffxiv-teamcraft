@@ -5346,6 +5346,32 @@
       41000
     ]
   },
+  "5082": {
+    "id": 5082,
+    "en": "Bar the Passage",
+    "ja": "決戦、ゾーゴー永結橋",
+    "de": "Kampf an Zorgor der Weiten",
+    "fr": "Pour s'affranchir de la tyrannie, tout s'appelle vertu",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 966,
+    "contentText": [
+      38690,
+      38615
+    ]
+  },
   "10001": {
     "id": 10001,
     "en": "Basic Training: Enemy Parties",

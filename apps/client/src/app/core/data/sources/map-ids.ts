@@ -4780,9 +4780,9 @@ export const mapIds = [
     "weatherRate": 27
   },
   {
-    "zone": 0,
+    "zone": 4755,
     "id": 957,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
     "zone": 2950,
@@ -4825,9 +4825,9 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 4526,
     "id": 966,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
     "zone": 0,
