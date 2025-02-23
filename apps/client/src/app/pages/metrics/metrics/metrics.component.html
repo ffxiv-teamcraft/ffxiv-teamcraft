@@ -99,7 +99,7 @@
       </div>
     } @else {
       <div fxLayout="row" fxLayoutGap="10px">
-        @for (column of display.grid; track trackByColumn($index, column)) {
+        @for (column of display.grid; track $index) {
           <div
             fxFlex="1 1 {{100 / display.grid.length}}%"
             class="metrics-column">

@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.24...v11.3.26) (2025-02-23)
+
+
+### Features
+
+* **community-lists:** enter in search field now triggers search ([bf95ce1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf95ce1c60ccff3895298cf4623eb5b70c0ff996)), closes [#2981](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2981)
+* **data:** update for cn patch-7.1 ([b98c898](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b98c8982a4aa1dc4c9a1655bb83074d1afa6631c))
+* **db:** db import including allagan reports ([b19fb42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b19fb420fabd5b5e564d92e68ec759dd46878756))
+* **profile:** add confirm popup when deleting a character ([8ff6873](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8ff68737efa8a540340a79fdb3e345cffcf0e60e)), closes [#2982](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2982)
+
+
+### Bug Fixes
+
+* **list-aggregate:** order by list index and default on name compare ([2d5e6e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d5e6e1643f2a9ffe426ce0bf9686e86102b589f)), closes [#2983](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2983)
+* **list:** preserve HQ requirement when cloning lists ([769d815](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/769d815759dd542c8468343bc501cd632752c9a6)), closes [#2979](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2979)
+* **list:** reset tags on edit popup closed with cancel ([22392e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22392e3920e8b6423cd823f29e5e47dfbcf14603)), closes [#2975](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2975)
+* **metrics-dashboard:** page not loading hotfix ([7fd98a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7fd98a80c06f4ac2e3d369bf9bf48dff04d69313))
+* **metrics:** window title assignment ([37f699b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37f699b7b8f8feff1bae89204ac202016dc16a54)), closes [#2973](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2973)
+
 ### [11.3.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.24...v11.3.25) (2025-02-23)
 
 
