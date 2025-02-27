@@ -122,8 +122,8 @@
   "Your_public_lists": "Deine Communitylisten",
   "Public_list": "Communityliste",
   "Profile": "Profil",
-  "Private_lodestone": "Your character is set to private on the lodestone",
-  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
+  "Private_lodestone": "Dein Charakter ist im Losdestone auf privat gestellt",
+  "Private_lodestone_explain": "Bitte setze es auf öffentlich, zumindest das Hauptprofil, damit Teamcraft es nutzen kann.",
   "X_for_total": "{{amount}} insgesamt",
   "Discounts": "Ermäßigung",
   "Flat_discount": "Pauschal",
@@ -3289,6 +3289,6 @@
     "Reminders": "Erinnerungen",
     "About": "Über uns",
     "Fish_Train": "Fish Train",
-    "Inventory": "Inventory"
+    "Inventory": "Inventar"
   }
 }
