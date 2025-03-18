@@ -1492,9 +1492,11 @@
       "spot": 52,
       "hookset": 1,
       "tug": 0,
-      "bait": 4869,
+      "bait": 4898,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     },
     {
       "spot": 62,
@@ -7409,7 +7411,10 @@
         2
       ],
       "snagging": false,
-      "minGathering": 290
+      "minGathering": 290,
+      "video": "https://youtu.be/I66f6D_VYYo",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7902": [
