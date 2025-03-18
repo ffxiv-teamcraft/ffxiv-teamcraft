@@ -34638,7 +34638,7 @@
       "de": "Den Palast der Toten alleine auf der 1. Ebene betreten und bis zur 51. Ebene erkundet.",
       "ja": "死者の宮殿にソロでB1から突入しB51に到達する",
       "fr": "Obtenir un score en solo dans le Palais des morts en commençant par le sous-sol 1 et en s'aventurant au-delà du sous-sol 50.",
-      "ko": "단독으로 망자의 궁전 B1에 진입하여 B50 이후에서 점수 기록",
+      "ko": "단독으로 망자의 궁전 B1에 진입하여 B51 도달",
       "zh": "单人从地下1层进入死者宫殿，并到达地下51层。"
     },
     "item": 0,
@@ -34659,7 +34659,7 @@
       "de": "Den Palast der Toten alleine auf der 1. Ebene betreten und bis zur 101. Ebene erkundet.",
       "ja": "死者の宮殿にソロでB1から突入しB101に到達する",
       "fr": "Obtenir un score en solo dans le Palais des morts en commençant par le sous-sol 1 et en s'aventurant au-delà du sous-sol 100.",
-      "ko": "단독으로 망자의 궁전 B1에 진입하여 B100 이후에서 점수 기록",
+      "ko": "단독으로 망자의 궁전 B1에 진입하여 B101 도달",
       "zh": "单人从地下1层进入死者宫殿，并到达地下101层。"
     },
     "item": 0,
@@ -40747,7 +40747,7 @@
       "de": "Die 1. bis 200. Ebene des Palastes der Toten alleine erobert und tiefer in das Gewölbe vorgestoßen.",
       "ja": "死者の宮殿にソロでB1から突入しB200まで攻略する",
       "fr": "Atteindre le 200e sous-sol du Palais des morts en solo en commençant par le 1er.",
-      "ko": "단독으로 망자의 궁전 B1에 진입하여 B200 도달",
+      "ko": "단독으로 망자의 궁전 B1에 진입하여 B200 완료",
       "zh": "单人从地下1层进入死者宫殿，并通过地下200层。"
     },
     "item": 0,
@@ -42881,7 +42881,7 @@
       "de": "Die Himmelssäule alleine auf der 1. Ebene betreten und bis zur 51. Ebene erkundet.",
       "ja": "アメノミハシラにソロで1層から突入し51層に到達する",
       "fr": "Obtenir un score en solo dans le Pilier des Cieux en commençant par le 1er étage et en s'aventurant au-delà du 50e.",
-      "ko": "단독으로 천궁탑 1층에 진입하여 50층 이후에서 점수 기록",
+      "ko": "단독으로 천궁탑 1층에 진입하여 51층 도달",
       "zh": "单人从第1层进入天之御柱，并到达第51层。"
     },
     "item": 0,
@@ -42902,7 +42902,7 @@
       "de": "Die Himmelssäule alleine auf der 1. Ebene betreten und bis zur 101. Ebene erkundet.",
       "ja": "アメノミハシラにソロで1層から突入し100層まで攻略する",
       "fr": "Atteindre le 100e étage du Pilier des Cieux en solo en commençant par le 1er.",
-      "ko": "단독으로 천궁탑 1층에 진입하여 100층 도달",
+      "ko": "단독으로 천궁탑 1층에 진입하여 100층 완료",
       "zh": "单人从第1层进入天之御柱，并通过第100层。"
     },
     "item": 0,
@@ -66549,7 +66549,7 @@
       "de": "Eureka Orthos alleine auf der 1. Ebene betreten und bis zur 51. Ebene erkundet.",
       "ja": "オルト・エウレカにソロでB1から突入しB51に到達する",
       "fr": "Obtenir un score en solo dans Eurêka Orthos en commençant par le 1er sous-sol et en s'aventurant au-delà du 50e.",
-      "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B50 이후에서 점수 기록",
+      "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B51 도달",
       "zh": "单人从地下1层进入正统优雷卡，并到达地下51层。"
     },
     "item": 0,
@@ -66570,7 +66570,7 @@
       "de": "Eureka Orthos alleine auf der 1. Ebene betreten und bis zur 100. Ebene erkundet.",
       "ja": "オルト・エウレカにソロでB1から突入しB100まで攻略する",
       "fr": "Atteindre le 100e sous-sol en solo dans Eurêka Orthos en commençant par le 1er.",
-      "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B100 도달",
+      "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B100 완료",
       "zh": "单人从地下1层进入正统优雷卡，并通过地下100层。"
     },
     "item": 0,
@@ -74934,12 +74934,14 @@
     "de": "Kristallkönig (12. Saison)",
     "ja": "コンフリクトの王者：シーズン12",
     "fr": "Roi du conflit : saison 12",
+    "ko": "컨플릭트의 제왕: 시즌 12",
     "zh": "冲突的王者第12赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Twelve ranked #1.",
       "de": "Die 12. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで1位になる",
       "fr": "Terminer la saison 12 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 12에서 1위 입상",
       "zh": "在水晶冲突的第12赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -74953,12 +74955,14 @@
     "de": "Kristallfürst (12. Saison)",
     "ja": "コンフリクトの勇者：シーズン12",
     "fr": "Prince du conflit : saison 12",
+    "ko": "컨플릭트의 용자: 시즌 12",
     "zh": "冲突的勇者第12赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Twelve.",
       "de": "Die 12. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで上位に入賞する",
       "fr": "Terminer la saison 12 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 12에서 상위 랭킹에 입상",
       "zh": "在水晶冲突的第12赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -74972,12 +74976,14 @@
     "de": "Kristallkämpfer (12. Saison)",
     "ja": "コンフリクトの入賞者：シーズン12",
     "fr": "As du conflit : saison 12",
+    "ko": "컨플릭트의 입상자: 시즌 12",
     "zh": "冲突的获奖者第12赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Twelve. ",
       "de": "Die 12. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン12にて、ランキングで入賞する",
       "fr": "Terminer la saison 12 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 12에서 랭킹에 입상",
       "zh": "在水晶冲突的第12赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -74991,12 +74997,14 @@
     "de": "Kristallkönig (13. Saison)",
     "ja": "コンフリクトの王者：シーズン13",
     "fr": "Roi du conflit : saison 13",
+    "ko": "컨플릭트의 제왕: 시즌 13",
     "zh": "冲突的王者第13赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Thirteen ranked #1.",
       "de": "Die 13. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで1位になる",
       "fr": "Terminer la saison 13 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 13에서 1위 입상",
       "zh": "在水晶冲突的第13赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -75010,12 +75018,14 @@
     "de": "Kristallfürst (13. Saison)",
     "ja": "コンフリクトの勇者：シーズン13",
     "fr": "Prince du conflit : saison 13",
+    "ko": "컨플릭트의 용자: 시즌 13",
     "zh": "冲突的勇者第13赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Thirteen.",
       "de": "Die 13. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで上位に入賞する",
       "fr": "Terminer la saison 13 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 13에서 상위 랭킹에 입상",
       "zh": "在水晶冲突的第13赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -75029,12 +75039,14 @@
     "de": "Kristallkämpfer (13. Saison)",
     "ja": "コンフリクトの入賞者：シーズン13",
     "fr": "As du conflit : saison 13",
+    "ko": "컨플릭트의 입상자: 시즌 13",
     "zh": "冲突的获奖者第13赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Thirteen. ",
       "de": "Die 13. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン13にて、ランキングで入賞する",
       "fr": "Terminer la saison 13 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 13에서 랭킹에 입상",
       "zh": "在水晶冲突的第13赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -75048,12 +75060,14 @@
     "de": "Per du mit den Pelupelu I",
     "ja": "ペルペル族：ランク1",
     "fr": "Conseiller touristique I",
+    "ko": "펠루펠루족: 1단계",
     "zh": "图拉尔旅行公司1",
     "description": {
       "en": "Attain rank 3 reputation (friendly) with the Turali Travel Agency.",
       "de": "Ein freundliches Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク3「友好」にする",
       "fr": "Atteindre le rang 3 (Ami) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "ko": "펠루펠루족 '투랄 여행사'의 우호 관계 3단계 '우호' 달성",
       "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达3级“友好”。"
     },
     "item": 0,
@@ -75067,12 +75081,14 @@
     "de": "Per du mit den Pelupelu II",
     "ja": "ペルペル族：ランク2",
     "fr": "Conseiller touristique II",
+    "ko": "펠루펠루족: 2단계",
     "zh": "图拉尔旅行公司2",
     "description": {
       "en": "Attain rank 4 reputation (trusted) with the Turali Travel Agency.",
       "de": "Ein vertrautes Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク4「信頼」にする",
       "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "ko": "펠루펠루족 '투랄 여행사'의 우호 관계 4단계 '신뢰' 달성",
       "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达4级“信赖”。"
     },
     "item": 0,
@@ -75086,12 +75102,14 @@
     "de": "Per du mit den Pelupelu III",
     "ja": "ペルペル族：ランク3",
     "fr": "Conseiller touristique III",
+    "ko": "펠루펠루족: 3단계",
     "zh": "图拉尔旅行公司3",
     "description": {
       "en": "Attain rank 6 reputation (honored) with the Turali Travel Agency.",
       "de": "Ein geachtetes Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク6「名誉」にする",
       "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "ko": "펠루펠루족 '투랄 여행사'의 우호 관계 6단계 '명예' 달성",
       "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达6级“名誉”。"
     },
     "item": 0,
@@ -75105,12 +75123,14 @@
     "de": "Jaja-Sager",
     "ja": "トラルトラベルアドバイザー",
     "fr": "Tural Voyages Conseil",
+    "ko": "투랄 여행사 특별 고문",
     "zh": "图拉尔旅行公司特别顾问",
     "description": {
       "en": "Attain rank 7 reputation (sworn) with the Turali Travel Agency.",
       "de": "Ein solidarisches Verhältnis zu den Pelupelu der Reiseagentur Tural erworben.",
       "ja": "ペルペル族「トラル旅行公司」の友好関係をランク7「誓約」にする",
       "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des Pelupelu de l'agence Tural Voyages.",
+      "ko": "펠루펠루족 '투랄 여행사'의 우호 관계 7단계 '서약' 달성",
       "zh": "与佩鲁佩鲁族的“图拉尔旅行公司”之间的关系程度到达7级“誓约”。"
     },
     "item": 0,
@@ -75311,12 +75331,14 @@
     "de": "Kartograph: Yuweyawata",
     "ja": "ユウェヤーワータを踏破せし者",
     "fr": "Cartographe du continent : Centre de recherche de Yuweyawata",
+    "ko": "유웨야와타 탐험가",
     "zh": "踏遍玉韦亚瓦塔实验站",
     "description": {
       "en": "Discover every location within Yuweyawata Field Station.",
       "de": "Alle Orte in der Forschungsstation Yuweyawata erkundet.",
       "ja": "ユウェヤーワータ（廃地討究）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte du centre de recherche de Yuweyawata.",
+      "ko": "유웨야와타를 탐험하여 모든 지역 발견",
       "zh": "成功探索玉韦亚瓦塔实验站的所有地区。"
     },
     "item": 0,
@@ -75330,12 +75352,14 @@
     "de": "Kartograph: Jeuno: Die erste Etappe",
     "ja": "ジュノ：ザ・ファーストウォークを踏破せし者",
     "fr": "Cartographe du continent : Jeuno - La première perambulation",
+    "ko": "쥬노: 첫 번째 반향세계 탐험가",
     "zh": "踏遍朱诺：第一巡行",
     "description": {
       "en": "Discover every location within Jeuno: The First Walk.",
       "de": "Alle Orte in Jeuno: Die erste Etappe erkundet.",
       "ja": "ジュノ：ザ・ファーストウォークを踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de Jeuno - La première perambulation.",
+      "ko": "쥬노: 첫 번째 반향세계를 탐험하여 모든 지역 발견",
       "zh": "成功探索朱诺：第一巡行的所有地区。"
     },
     "item": 0,
@@ -75349,12 +75373,14 @@
     "de": "Ender der Endlosigkeit",
     "ja": "永久なる女王を狩りし者",
     "fr": "Rien n'est éternel",
+    "ko": "영원한 여왕을 쓰러뜨린 자",
     "zh": "永恒的弑君者",
     "description": {
       "en": "Defeat Queen Eternal in the Minstrel's Ballad: Sphene's Burden.",
       "de": "Die Ewige Königin in Gok Tajaal - Ewige Königin bezwungen.",
       "ja": "極エターナルクイーン討滅戦で、エターナルクイーンを討伐する",
       "fr": "Vaincre la Reine Éternité dans le défi “Interphos (extrême)”.",
+      "ko": "극 이터널 퀸 토벌전에서 이터널 퀸 처치",
       "zh": "在永恒女王忆想歼灭战中战胜永恒女王。"
     },
     "item": 0,
@@ -75368,12 +75394,14 @@
     "de": "Jeuno: Die erste Etappe",
     "ja": "ジュノ：ザ・ファーストウォークを制覇せし者",
     "fr": "Échos des premières aventures",
+    "ko": "쥬노: 첫 번째 반향세계를 제패한 자",
     "zh": "称霸朱诺：第一巡行",
     "description": {
       "en": "Complete Jeuno: The First Walk.",
       "de": "Jeuno: Die erste Etappe erfolgreich abgeschlossen.",
       "ja": "ジュノ：ザ・ファーストウォークを攻略する",
       "fr": "Finir Jeuno - La première perambulation.",
+      "ko": "쥬노: 첫 번째 반향세계 완료",
       "zh": "成功挑战朱诺：第一巡行。"
     },
     "item": 0,
@@ -75387,12 +75415,14 @@
     "de": "Schicksalskreuzung",
     "ja": "未知との邂逅",
     "fr": "Retrouvailles inattendues",
+    "ko": "미지와의 해후",
     "zh": "与未知邂逅",
     "description": {
       "en": "Complete the main scenario quest “Crossroads.”",
       "de": "Den Auftrag „An der Kreuzung des Schicksals“ des Hauptszenarios erfolgreich abgeschlossen.",
       "ja": "クエスト「未知との邂逅」をコンプリートする",
       "fr": "Accomplir la quête “Au seuil de l'inconnu”.",
+      "ko": "퀘스트 '미지와의 해후' 완료",
       "zh": "完成任务“与未知邂逅”。"
     },
     "item": 0,
@@ -75440,12 +75470,14 @@
     "de": "Kapitalbeschaffung auf Tural I",
     "ja": "黄金の太公望：ランク1",
     "fr": "Pêcheur de légendes éternel I",
+    "ko": "황금의 강태공: 1단계",
     "zh": "金曦太公1",
     "description": {
       "en": "Catch 8 different varieties of big fish in areas explored during Dawntrail.",
       "de": "8 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
       "ja": "黄金のレガシーのエリアにいるヌシを8種類、釣り上げる",
       "fr": "Pêcher 8 prises légendaires différentes dans les zones explorées lors de Dawntrail.",
+      "ko": "황금의 유산 지역의 터주 8종류 낚기",
       "zh": "在金曦区域钓上8种钓场之王。"
     },
     "item": 0,
@@ -75459,12 +75491,14 @@
     "de": "Strahlender Markt",
     "ja": "ホッとあたたまるマーケット",
     "fr": "Un marché chaleureux",
+    "ko": "마음이 따뜻해지는 시장",
     "zh": "温暖人心的市场",
     "description": {
       "en": "Complete the quest “Spreading the Warmth and Cheer.”",
       "de": "Den Auftrag „Wärme und Freude verbreiten“ abgeschlossen.",
       "ja": "クエスト「星芒祭と小さな従者たち」をコンプリートする",
       "fr": "Accomplir la quête “Les petits disciples du saint”.",
+      "ko": "퀘스트 '별빛축제와 작은 수행원들' 완료",
       "zh": "完成任务“星光闪耀的小圣人”。"
     },
     "item": 0,
@@ -75478,13 +75512,15 @@
     "de": "Die Sprache der Blumen",
     "ja": "満開のブーケを一緒に",
     "fr": "Né sous le destin de la rose",
+    "ko": "활짝 핀 꽃다발을, 당신과 함께",
     "zh": "为你钟情",
     "description": {
       "en": "Complete the quest “I Promise You a Rose Garden.”",
       "de": "Den Auftrag „So wie die Rosen blühen“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーと愛の薔薇」をコンプリートする",
       "fr": "Accomplir la quête “'La rose de la Valention”.",
-      "zh": "完成任务“ヴァレンティオンデーと愛の薔薇[暂]”。"
+      "ko": "퀘스트 '발렌티온데이와 사랑의 장미' 완료",
+      "zh": "完成任务“恋人节与爱之蔷薇”。"
     },
     "item": 0,
     "title": 0
@@ -75497,13 +75533,15 @@
     "de": "Herzensdiener",
     "ja": "あなたの笑顔にお仕えします",
     "fr": "Le prince de ces demoiselles",
+    "ko": "당신의 미소를 위해서라면",
     "zh": "愿为你的笑容效劳",
     "description": {
       "en": "Complete the quest “A Princely Debut.”",
       "de": "Den Auftrag „Das Lied der Schwalbe“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーと執事王子のおもてなし」をコンプリートする",
       "fr": "Accomplir la quête “Des débuts princiers”.",
-      "zh": "完成任务“プリンセスデーと執事王子のおもてなし[暂]”。"
+      "ko": "퀘스트 '프린세스데이와 집사왕자의 공연' 완료",
+      "zh": "完成任务“女儿节与管家王子的招待”。"
     },
     "item": 0,
     "title": 0
@@ -75516,13 +75554,15 @@
     "de": "Mit Schirm und Charme",
     "ja": "傘が彩る雨模様",
     "fr": "Sortir sa coquille",
+    "ko": "우산으로 수놓은 흐린 하늘",
     "zh": "点缀雨天的彩蛋之伞",
     "description": {
       "en": "Complete the quest “Eggceeding Expectations.”",
       "de": "Den Auftrag „Einigkeit und Schirm und Eiheit“ abgeschlossen.",
       "ja": "クエスト「エッグハントと集う傘」をコンプリートする",
       "fr": "Accomplir la quête “Les parapluies de Gridania”.",
-      "zh": "完成任务“エッグハントと集う傘[暂]”。"
+      "ko": "퀘스트 '알 사냥 축제와 모이는 우산' 완료",
+      "zh": "完成任务“彩蛋狩猎与聚在一起的伞”。"
     },
     "item": 0,
     "title": 0
@@ -75569,11 +75609,13 @@
     "de": "Du bist mein und ich bin dein",
     "ja": "絶もうひとつの未来を見届けし者",
     "fr": "Nous ne ferons plus qu'un",
+    "zh": "征服绝境·另一个未来",
     "description": {
       "en": "Bear witness to a different future for the Oracles of Light and Darkness.",
       "de": "Die Schicksale des Orakels des Lichts und des Orakels der Dunkelheit vereinigt.",
       "ja": "光と闇の巫女の運命を集約させる",
-      "fr": "Fusionner les destins des prêtresses de la Lumière et des Ténèbres."
+      "fr": "Fusionner les destins des prêtresses de la Lumière et des Ténèbres.",
+      "zh": "在光暗未来绝境战中收束光之巫女与暗之巫女的命运。"
     },
     "item": 0,
     "title": 768

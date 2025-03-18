@@ -44063,12 +44063,12 @@
     "ja": "ヒート",
     "fr": "Chaleur",
     "icon": "/i/218000/218066.png",
-    "maxStacks": 5,
+    "maxStacks": 4,
     "description": {
-      "en": "Firearm is generating heat. Becomes <span style=\"color:#ffff66\">Overheated</span> when 5 stacks are accumulated.",
-      "de": "Sammelt <span style=\"color:#ffff66\">Hitze</span>. Ändert sich bei 5 Stapeln zu <span style=\"color:#ffff66\">Überhitzung</span>.",
-      "ja": "ヒートが上昇している状態。5スタック付与されると「オーバーヒート」に変化する。",
-      "fr": "Enclenche Surchauffe au bout du 5e degré de Chaleur."
+      "en": "Firearm is generating heat. Becomes <span style=\"color:#ffff66\">Overheated</span> when 4 stacks are accumulated.",
+      "de": "Sammelt <span style=\"color:#ffff66\">Hitze</span>. Ändert sich bei 4 Stapeln zu <span style=\"color:#ffff66\">Überhitzung</span>.",
+      "ja": "ヒートが上昇している状態。4スタック付与されると「オーバーヒート」に変化する。",
+      "fr": "Enclenche Surchauffe au bout du 4e degré de Chaleur."
     }
   },
   "3149": {
