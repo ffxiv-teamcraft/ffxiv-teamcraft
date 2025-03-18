@@ -25,6 +25,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
+import { NzFlexDirective } from 'ng-zorro-antd/flex';
 
 interface FeatureEntry {
   link: string;
@@ -38,7 +39,7 @@ interface FeatureEntry {
     templateUrl: './search-intro.component.html',
     styleUrls: ['./search-intro.component.less'],
     standalone: true,
-    imports: [NzDividerModule, NzGridModule, NzButtonModule, NzIconModule, NzWaveModule, NzCardModule, NzListModule, PirschEventDirective, RouterLink, NzTypographyModule, AsyncPipe, DecimalPipe, TranslateModule]
+    imports: [NzDividerModule, NzGridModule, NzButtonModule, NzIconModule, NzWaveModule, NzCardModule, NzListModule, PirschEventDirective, RouterLink, NzTypographyModule, AsyncPipe, DecimalPipe, TranslateModule, NzFlexDirective]
 })
 export class SearchIntroComponent {
 
@@ -70,15 +71,6 @@ export class SearchIntroComponent {
       icon: {
         type: SidebarIconType.COMPANION_SVG,
         content: this.sanitizer.bypassSecurityTrustHtml('&#xF239;')
-      }
-    },
-    {
-      link: '/island-workshop',
-      title: 'SIDEBAR.Island_Sanctuary',
-      description: 'Island_sanctuary',
-      icon: {
-        type: SidebarIconType.ANTD_ICONFONT,
-        content: 'icon-tree'
       }
     }
   ];

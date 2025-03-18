@@ -49,7 +49,7 @@
 
   </div>
   <div class="flex-auto" nz-row [nzGutter]="[10, 10]">
-    <div nz-col [nzMd]="24" [nzXXl]="16">
+    <div nz-col [nzMd]="24" [nzXXl]="8">
       <nz-card [nzTitle]="'SEARCH_INTRO.Features_header' | translate">
 
         <nz-list [nzDataSource]="features" [nzRenderItem]="featureRow"
@@ -88,6 +88,25 @@
             </nz-list-item>
           </ng-template>
         </nz-list>
+      </nz-card>
+    </div>
+    <div nz-col [nzMd]="24" [nzXXl]="8">
+      <nz-card [nzCover]="teamcrafterCoverRef" class="teamcrafter-card">
+        <ng-template #teamcrafterCoverRef>
+          <a href="https://store.steampowered.com/app/3405680/Teamcrafter/" target="_blank">
+            <img src="./assets/teamcrafter/wishlist.png"
+                 class="teamcrafter-cover"
+                 alt="">
+          </a>
+        </ng-template>
+        <h2>{{ 'TEAMCRAFTER.Teamcrafter_description' | translate }}</h2>
+        <p>{{ 'TEAMCRAFTER.Teamcrafter_description_text' | translate }}</p>
+        <p>{{ 'TEAMCRAFTER.Teamcrafter_description_text_part2' | translate }}</p>
+        <div nz-flex nzJustify="center">
+          <a href="https://www.kickstarter.com/projects/teamcraftstudios/teamcrafter?ref=8gts0d" target="_blank">
+            <img src="./assets/teamcrafter/kickstarter-logo-green.png" alt="Follow us on Kickstarter" class="ks-logo">
+          </a>
+        </div>
       </nz-card>
     </div>
     <div nz-col [nzMd]="24" [nzXXl]="8">

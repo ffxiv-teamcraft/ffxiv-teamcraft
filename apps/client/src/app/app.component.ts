@@ -8,7 +8,7 @@ import {
   Injector,
   OnInit,
   PLATFORM_ID,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
@@ -183,6 +183,8 @@ export class AppComponent implements OnInit {
   public showDesktopTip = localStorage.getItem('desktop-tip-closed') !== 'true';
 
   public showSupporterIssueBanner = localStorage.getItem('show-supporter-issue-closed') !== 'true';
+
+  public showTeamcrafterBanner = localStorage.getItem('hide-teamcrafter') !== 'true';
 
   UpdaterStatus = UpdaterStatus;
 
@@ -866,6 +868,11 @@ export class AppComponent implements OnInit {
   hideChildWindowTip(): void {
     this.showChildWindowTip = false;
     localStorage.setItem('child-window-tip-closed', 'true');
+  }
+
+  hideTeamcrafterBanner(): void {
+    this.showTeamcrafterBanner = false;
+    localStorage.setItem('hide-teamcrafter', 'true');
   }
 
   hideDesktopTip(): void {
