@@ -24,6 +24,11 @@ import { NzOptionComponent, NzSelectComponent } from 'ng-zorro-antd/select';
 import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 
+type Lure = {
+  prop: 'aLure' | 'mLure',
+  value: number
+};
+
 @Component({
   selector: 'app-fishing-spot-bait-datagrid',
   templateUrl: './fishing-spot-bait-datagrid.component.html',
@@ -85,6 +90,8 @@ export class FishingSpotBaitDatagridComponent {
   public isAllaganChecker$ = this.authFacade.user$.pipe(
     map(user => user.allaganChecker || user.admin)
   );
+
+  compareLures = (a: Lure | null, b: Lure | null) => a?.prop === b?.prop && a?.value === b?.value;
 
   constructor(
     private readonly fishCtx: FishContextService,

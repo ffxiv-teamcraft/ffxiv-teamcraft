@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.27...v11.3.28) (2025-03-19)
+
+
+### Features
+
+* introducing Teamcrafter to the Teamcraft users ! ([0dbaa45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0dbaa4508b4182f9abc0f0949aa1178af28ae667))
+
+
+### Bug Fixes
+
+* **db:** lure filter persistence fix ([176a88d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/176a88dfd5ffe1eed040b1a0b0d05a4601b09dfd))
+* **db:** search index update ([89a4a4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89a4a4cfee7867e9f04411b540a0067557df3a4f))
+* **pcap:** KR retainer name offset ([b364176](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b364176d536fed7c8c7d7224bf4ee1f9ad755213)), closes [#3003](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3003)
+
 ### [11.3.27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.26...v11.3.27) (2025-03-18)
 
 
