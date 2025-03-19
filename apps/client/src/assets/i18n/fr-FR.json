@@ -3290,5 +3290,13 @@
     "About": "À propos",
     "Fish_Train": "Train de pêche",
     "Inventory": "Inventory"
+  },
+  "TEAMCRAFTER": {
+    "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
+    "Teamcrafter_description_banner": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering made by the creator of Teamcraft !",
+    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy !",
+    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to you ! Please consider following it on Kickstarter and adding it to your Steam wishlist, it's a huge help for me.",
+    "Wishlist": "Wishlist on Steam",
+    "Follow_KS": "Follow on Kickstarter"
   }
 }
