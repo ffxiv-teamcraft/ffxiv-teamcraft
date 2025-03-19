@@ -9,7 +9,7 @@
       <div>{{'DB.FISHING_SPOT.Fish_per_bait' | translate}}</div>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>
-          <nz-select [nzPlaceHolder]="'DB.FISHING_SPOT.Lure_filter' | translate" class="lure-filter" [ngModel]="lureFilter$ | async" (ngModelChange)="lureFilter$.next($event)">
+          <nz-select [nzPlaceHolder]="'DB.FISHING_SPOT.Lure_filter' | translate" class="lure-filter" [ngModel]="lureFilter$ | async" (ngModelChange)="lureFilter$.next($event)" [compareWith]="compareLures">
             <nz-option nzLabel="{{'DB.FISHING_SPOT.No_lure_filter' | translate}}" [nzValue]="null"></nz-option>
             <nz-option nzLabel="{{'DB.FISHING_SPOT.Exclude_all_lures' | translate}}" [nzValue]="{excludeAll:  true}"></nz-option>
             <nz-option nzLabel="{{3972 | i18nRow: 'statuses' | i18n}} 1" [nzValue]="{prop: 'aLure', value: 1}"></nz-option>
