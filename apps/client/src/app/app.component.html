@@ -414,8 +414,8 @@
               <nz-alert nzBanner nzShowIcon nzType="info" [nzMessage]="'TEAMCRAFTER.Teamcrafter_description_banner' | translate" [nzAction]="ksActionTpl" nzCloseable (nzOnClose)="hideTeamcrafterBanner()">
                 <ng-template #ksActionTpl>
                   <nz-space nzDirection="horizontal">
-                    <a *nzSpaceItem nz-button nzSize="small" nzType="primary" href="https://store.steampowered.com/app/3405680/Teamcrafter/" target="_blank">{{'TEAMCRAFTER.Wishlist' | translate}}</a>
-                    <a *nzSpaceItem nz-button nzSize="small" nzType="primary" href="https://www.kickstarter.com/projects/teamcraftstudios/teamcrafter?ref=8gts0d" target="_blank">{{'TEAMCRAFTER.Follow_KS' | translate}}</a>
+                    <a *nzSpaceItem nz-button nzSize="small" nzType="primary" href="https://store.steampowered.com/app/3405680/Teamcrafter/" pirschEvent="Banner Steam click" target="_blank">{{'TEAMCRAFTER.Wishlist' | translate}}</a>
+                    <a *nzSpaceItem nz-button nzSize="small" nzType="primary" href="https://www.kickstarter.com/projects/teamcraftstudios/teamcrafter?ref=8gts0d" pirschEvent="Banner KS click" target="_blank">{{'TEAMCRAFTER.Follow_KS' | translate}}</a>
                   </nz-space>
                 </ng-template>
               </nz-alert>
