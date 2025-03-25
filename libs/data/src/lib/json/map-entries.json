@@ -6273,7 +6273,7 @@
   },
   {
     "id": 785,
-    "zone": 4035,
+    "zone": 4154,
     "name": "Alzadaal's Legacy",
     "territory": 1056,
     "scale": 200,
@@ -6601,7 +6601,7 @@
   },
   {
     "id": 826,
-    "zone": 4295,
+    "zone": 4270,
     "name": "Lapis Manalis",
     "territory": 1119,
     "scale": 200,
@@ -6609,7 +6609,7 @@
   },
   {
     "id": 827,
-    "zone": 4295,
+    "zone": 4270,
     "name": "Lapis Manalis",
     "territory": 1119,
     "scale": 200,
@@ -6617,7 +6617,7 @@
   },
   {
     "id": 828,
-    "zone": 4295,
+    "zone": 4270,
     "name": "Lapis Manalis",
     "territory": 1119,
     "scale": 200,
@@ -6625,7 +6625,7 @@
   },
   {
     "id": 829,
-    "zone": 4295,
+    "zone": 4270,
     "name": "Lapis Manalis",
     "territory": 1119,
     "scale": 200,
@@ -7921,70 +7921,102 @@
   },
   {
     "id": 991,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5175,
+    "name": "Rebel Ring",
+    "territory": 1258,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 992,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5176,
+    "name": "Groovy Ring",
+    "territory": 1256,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 993,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5177,
+    "name": "Hunter's Ring",
+    "territory": 1262,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 994,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5178,
+    "name": "Hunting Ground",
+    "territory": 1262,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 995,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5156,
+    "name": "The Underkeep",
+    "territory": 1266,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 996,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5156,
+    "name": "The Underkeep",
+    "territory": 1266,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 997,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5156,
+    "name": "The Underkeep",
+    "territory": 1266,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 998,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5156,
+    "name": "The Underkeep",
+    "territory": 1266,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 999,
+    "zone": 5156,
+    "name": "The Underkeep",
+    "territory": 1266,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1000,
+    "zone": 5155,
+    "name": "Demolition Site",
+    "territory": 1260,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1001,
+    "zone": 5155,
+    "name": "Demolition Site",
+    "territory": 1260,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1002,
+    "zone": 5155,
+    "name": "Demolition Site",
+    "territory": 1260,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1003,
     "zone": 0,
     "name": "",
     "territory": null,
@@ -7992,11 +8024,235 @@
     "weatherRate": null
   },
   {
-    "id": 1000,
+    "id": 1004,
     "zone": 0,
     "name": "",
     "territory": null,
     "scale": 0,
     "weatherRate": null
+  },
+  {
+    "id": 1005,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1006,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1007,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1008,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1009,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1010,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1011,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1012,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1013,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1014,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1015,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1016,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1017,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1018,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1019,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1020,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1021,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1022,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1023,
+    "zone": 4759,
+    "name": "Break Room",
+    "territory": 1268,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1024,
+    "zone": 4760,
+    "name": "Throne Room",
+    "territory": 1274,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1025,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1026,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1027,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1028,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1029,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1030,
+    "zone": 5153,
+    "name": "Recollection",
+    "territory": 1270,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1031,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1032,
+    "zone": 5177,
+    "name": "Hunter's Ring",
+    "territory": 1262,
+    "scale": 400,
+    "weatherRate": 0
   }
 ]

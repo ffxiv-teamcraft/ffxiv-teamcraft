@@ -425,11 +425,11 @@ export const stats = [
   },
   {
     "id": 54,
-    "en": "Refresh",
-    "de": "Erfrischen",
-    "ja": "リフレシュ",
-    "fr": "Recharge",
-    "filterName": "Refresh"
+    "en": "Special Attribute",
+    "de": "Spezialattribut",
+    "ja": "特殊補正",
+    "fr": "Bonus spécial",
+    "filterName": "SpecialAttribute"
   },
   {
     "id": 55,

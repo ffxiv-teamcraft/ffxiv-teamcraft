@@ -3017,7 +3017,7 @@
   },
   "96": {
     "id": 96,
-    "en": "The Skydeep Cenote",
+    "en": "the Skydeep Cenote",
     "ja": "遺産踏査 天深きセノーテ",
     "de": "Himmelstiefer Cenote",
     "fr": "Le cénote des Cieux infinis",
@@ -3170,6 +3170,37 @@
     "contentText": [
       40922,
       40900
+    ]
+  },
+  "101": {
+    "id": 101,
+    "en": "the Underkeep",
+    "ja": "王城旧跡 アンダーキープ",
+    "de": "Unterfried-Ruinen",
+    "fr": "La Gardienne de l'Immémorial",
+    "description": {
+      "en": "In the waning days of the old kingdom, the people of Alexandria sought a way to survive as their home sank beneath the earth. They built a towering structure that enveloped the royal castle itself, and as the long years came and went, Everkeep grew to soaring heights. Yet some whisper that the castle has withstood the ravages of time, and in the city's foundation endures as a symbol of bygone glory. From within those timeworn depths Calyx sends his transmissions, and you must delve into Alexandria's past to ascertain their source.",
+      "ja": "旧王国時代末期のこと、アレクサンドリアの人々は王城を覆うようにして天高き塔を築いた。沈みゆく世界に抗い、生き延びるために。かくして長き月日を経た今なお、エバーキープの基礎区画には、かつての王国の象徴たる「アレクサンドリア城」が眠っているという。<br>そんな旧跡に、カリュクスによる通信の発信源があるらしい。手招くような痕跡を辿って、冒険者たちは深き地の底へと足を踏み入れる。",
+      "de": "Als das alte Königreich Alexandria im Untergang begriffen war, erbauten seine Bewohner auf dem Fundament der Burgstadt einen großen Turm, um ihr Überleben zu sichern und sich einen neuen Lebensraum zu erschaffen: den Immerfried. So verbergen sich auch nach mehreren Jahrhunderten im Sockel des Giganten noch immer die Ruinen der königlichen Burg Alexandria, die einst das stolze Symbol des Landes war. Dort soll Calyx ein geheimes Terminal versteckt haben, von wo aus er seine Übertragungen sendet. Um der Quelle der Signale auf die Spur zu kommen, müsst ihr tief in die Vergangenheit Alexandrias eintauchen und jeden Winkel der alten Ruinen erkunden.",
+      "fr": "Au cœur d'un monde menacé de ruine, les Alexandrins d'autrefois avaient osé braver les éléments dans l'espoir de perdurer. Ils avaient donc érigé une tour gigantesque autour de leur château, lui permettant de traverser les âges dans le périmètre structurel de la Gardienne de l'Éternité. C'est dans ce lieu chargé d'histoire que Calyx aurait caché un terminal à l'origine de son signal. Bien que cette piste vous semble trop évidente, vous vous apprêtez à explorer tous les recoins de cette forteresse séculaire, aux côtés de vos fidèles compagnons."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112592.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 705,
+    "sync": 100,
+    "exp": 0,
+    "map": 995,
+    "contentText": [
+      42132,
+      42100
     ]
   },
   "5001": {
@@ -9395,6 +9426,68 @@
       41600
     ]
   },
+  "20100": {
+    "id": 20100,
+    "en": "Recollection",
+    "ja": "ゼレニア討滅戦",
+    "de": "Zel Tajaal - Zelenia",
+    "fr": "Le Sanctuaire du Serment",
+    "description": {
+      "en": "Calyx's trail has led you to Alexandria's castle and into a wicked trap. Seeking to take more precise measurements of your strength, Calyx pits you against a mechanical guardian forged from Sphene's memories of Zelenia, the second-in-command of the royal knights. The queen implores you to lay this affront to her dear friend's honor to rest. Make ready to test your mettle against one of Alexandria's finest blades!",
+      "ja": "カリュクスの残した手掛かりを追い、エバーキープ地下に佇むアレクサンドリア城へと到達した冒険者たち。しかし、城内の探索中に冒険者とスフェーンだけが玉座の間へと転移させられてしまう。待ち受けていたのはカリュクスとシミュラント、そしてスフェーンの記憶をもとに造られた守護機構「ゼレニア」だった。大切な臣下との思い出を利用されたことに憤るスフェーンは、守護機構の破壊を冒険者に懇願する。その切なる願いに応え、ゼレニアを討滅せよ！",
+      "de": "Calyx' Spur führt euch zur Burg Alexandria, doch kurz nachdem ihr die alten Hallen betreten habt, tappst du in eine hinterlistige Falle. Zusammen mit Sphene wirst du in den Thronsaal katapultiert, wo Calyx und die Simulantin bereits auf euch warten. Um deine Stärke präziser messen zu können, lässt Calyx dich gegen eine mechanische Wächterin antreten, die aus Sphenes Erinnerungen an Zelenia, die ehemalige Vizekommandantin des königlichen Ritterordens und treue Begleiterin Sphenes, erschaffen wurde. Dieser Missbrauch der Erinnerungen an ihre gute Freundin empört Sphene zutiefst und sie bittet dich inständig darum, die Maschine zu zerstören und Zelenias Ehre wiederherzustellen. Mach dich bereit, dich mit einer der tapfersten Kriegerinnen Alexandrias zu messen!",
+      "fr": "Les traces de Calyx vous ont menée jusqu'au fin fond de l'ancien château d'Alexandrie. Durant votre exploration, Sphene ainsi que vous-même avez été téléportées de force dans la salle du trône. Calyx et Simulacre vous y attendaient de pied ferme, accompagnés de “Zelenia”, une gardienne mécanique créée à partir des souvenirs de Sphene. Révoltée par cet affront à la mémoire de la chevalière, Sphene vous a implorée de détruire cette abomination. Exaucez le souhait de votre amie et libérez ce spectre du passé de son serment séculaire&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112595.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 715,
+    "sync": 100,
+    "exp": 0,
+    "map": 1030,
+    "contentText": [
+      42338,
+      42300
+    ]
+  },
+  "20101": {
+    "id": 20101,
+    "en": "Recollection (Extreme)",
+    "ja": "極ゼレニア討滅戦",
+    "de": "Gok Tajaal - Zelenia",
+    "fr": "Le Sanctuaire du Serment (extrême)",
+    "description": {
+      "en": "Once more the wandering minstrel weaves a tale with his musical talents, this time an ode to a stalwart knight who served with distinction beneath thunderous skies. With peerless skills and formidable magicks she defended the throne, yet as the queen was barred from the battlefield, she never spied Zelenia's cold, merciless gaze, nor glimpsed the raging fury that burned within her breast. What would this simulacrum born of the queen's memories become had Sphene possessed firsthand knowledge of the warrior's unbridled ferocity? As the ballad fills your ears, a vision of this daunting foe begins to take shape...",
+      "ja": "異邦の詩人は謳う。雷鳴轟く混乱の世にあって、貴き主君を護る剣であり続けた騎士の姿を。冴えわたる剣技も、迸る魔法も、すべては王を護らんがために振るわれた。ゆえにこそ、その背を見つめていた王の記憶には、対峙する者へと注ぐ冷ややかな眼差しも、燃え盛るほどの憤怒も、刻まれなかったのかもしれない。欠落していた激情が補完されたとき、その記憶より造られし守護機構の力はいかほどのものになるのか――。光の戦士は今、ゼレニアとの戦いを追体験する。",
+      "de": "Der Fahrende Sänger besingt die Heldentaten der tugendhaften Ritterin Zelenia, die selbst auf den grausamsten Schlachtfeldern ihren Treueschwur in Ehren hielt. Für Königin Sphene, die unter ihrem Schutz stand, war sie eine tapfere und treue Begleiterin, die mit blitzschnellen Schlägen und tödlicher Magie jeglichen Bedrohungen trotzte. Doch wer sich ihr widersetzte, war ihrem eisigen Blick und ihrem rasenden Zorn schutzlos ausgesetzt. Während du der Ballade des Fahrenden Sängers lauschst, fragst du dich, wie wohl euer Kampf ausgegangen wäre, wenn die Erinnerungen der Königin auch diese dunkle Seite von Zelenias Persönlichkeit enthalten hätte. In deiner Vorstellung nimmt die Vision dieser furchteinflößenden Gegnerin langsam Gestalt an&nbsp;...",
+      "fr": "Le ménestrel chante les faits d'armes d'une noble chevalière qui a honoré son serment d'allégeance sur des champs de bataille dardés d'éclairs. Ses seigneurs l'ont vue allier escrime et magie pour se dresser avec courage et vaillance face à l'adversité. Toutefois, ceux qui s'opposaient à elle devaient affronter son regard glacial et subir les affres de sa colère. Si les souvenirs de la reine contenaient également cette autre facette de sa personnalité, comment se serait terminé votre combat contre la gardienne mécanique&nbsp;? Affrontez à nouveau Zelenia, cette fois au sommet de sa rage."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112596.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 730,
+    "sync": 100,
+    "exp": 0,
+    "map": 1030,
+    "contentText": [
+      42339,
+      42300
+    ]
+  },
   "25001": {
     "id": 25001,
     "en": "the Haunted Manor",
@@ -13841,7 +13934,7 @@
       "en": "Having bested Black Cat, you prepare to face your second opponent─Honey B. Lovely. With the pheromones of a queen bee and the charm of a songstress, she enthralls her foes before finishing them with deadly venom. If you are to resist her charms, you must steel yourself for a captivating confrontation...",
       "ja": "ブラックキャットをリングに沈め、見事に初戦を白星で飾った冒険者。次なる相手は劇毒を有する蜂の魂を注入した闘士――劇毒の愛「ハニー・Ｂ・ラブリー」。<br>アイドル的な愛らしさとフェロモンを以て、相手を魅了してくるという彼女を倒し、アルカディアに生身の挑戦者の名を轟かせよう！",
       "de": "Du konntest deinen Debütkampf mit einem glorreichen Sieg gegen die Klaue der Dunkelheit krönen, doch deine nächste Gegnerin steht schon bereit: Suzie Summ Honigsüß, die Toxische Liebe. Ihr natürlicher Charme ist bereits gefährlich genug, doch gemeinsam mit ihrem Bienengift und anziehenden Pheromonen, welche sie als verwandelte Bienenkönigin zu nutzen weiß, kann kaum jemand ihrem Bann entfliehen. Stähle dein Herz für einen honigsüßen Todeskampf!",
-      "fr": "Votre victoire contre Black Cat lors de votre tout premier match de la division poids mi-lourds de l'Arcadion vous a donné le droit d'affronter votre prochain adversaire&nbsp;: la charmante et non moins piquante Honey B. Lovely. Prenez garde à cette idole du public, dont l'arsenal mêle des phéromones envoûtantes au poison de l'abeille reine dont elle tire ses pouvoirs&nbsp;!"
+      "fr": "Votre victoire contre Black Cat lors de votre tout premier match de la catégorie poids mi-lourds de l'Arcadion vous a donné le droit d'affronter votre prochain adversaire&nbsp;: la charmante et non moins piquante Honey B. Lovely. Prenez garde à cette idole du public, dont l'arsenal mêle des phéromones envoûtantes au poison de l'abeille reine dont elle tire ses pouvoirs&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
@@ -13903,7 +13996,7 @@
       "en": "The time has come for your title match against the Brute Bomber, who wields the explosive power of the bomb king. Yet he did not become champion by playing by the rules, and if you are to bring this despised heel low, you must be prepared to face all that he may bring to bear.",
       "ja": "ハニー・Ｂ・ラブリーに勝利し、観客たちの熱い注目を浴びた冒険者。次に立ちはだかるのは炎の魔物「ボムキング」の魂を注入した闘士――爆ぜる悪意「ブルートボンバー」。<br>卑怯千万、極悪非道なラフファイトで有名だという、ライトヘビー級の現王者を討ち果たし、新たな王者を目指そう！",
       "de": "Du konntest Suzie Summ Honigsüß und ihren gefährlichen Verlockungen widerstehen und dir somit das Anrecht erkämpfen, dich dem Titelverteidiger des Halbschwergewichts stellen zu dürfen: Brutalo Bomber, die Bombastische Boshaftigkeit. Dieser ist nicht nur bekannt für die Explosionen, welche seine „Königsbomber“-Seele erzeugen kann, sondern ebenfalls dafür, jegliche Regeln des Arkadion zu ignorieren und mit hinterhältigen Mitteln zu kämpfen. Mach dich bereit und zeig den Leuten, wie eine wahre Titelverteidigerin aussieht!",
-      "fr": "Grâce à votre triomphe sur Honey B. Lovely, vous êtes en mesure d'affronter le champion de la division des poids mi-lourds&nbsp;: Brute Bomber. Méfiez-vous toutefois, car ce combattant explosif, qui décuple ses forces en faisant appel à l'âme du roi bombo, est tristement célèbre pour les coups bas et les infractions au règlement qu'il commet pour prendre l'avantage sur ses adversaires&nbsp;! Saurez-vous lui ravir son titre de champion&nbsp;?"
+      "fr": "Grâce à votre triomphe sur Honey B. Lovely, vous êtes en mesure d'affronter le champion de la catégorie des poids mi-lourds&nbsp;: Brute Bomber. Méfiez-vous toutefois, car ce combattant explosif, qui décuple ses forces en faisant appel à l'âme du roi bombo, est tristement célèbre pour les coups bas et les infractions au règlement qu'il commet pour prendre l'avantage sur ses adversaires&nbsp;! Saurez-vous lui ravir son titre de champion&nbsp;?"
     },
     "members": {
       "HealersPerParty": 2,
@@ -13965,7 +14058,7 @@
       "en": "In the midst of your crowning ceremony, you are challenged by none other than the electrifying Wicked Thunder, sister of Yaana and former heavyweight fighter of fame. The Ascension Arcadia president has authorized a special exhibition match for this thunderous clash, and now the realm waits with bated breath, wondering who will emerge victorious: the unstoppable upstart, or the neoteric witch?",
       "ja": "ブルートボンバーとの激闘を制し、見事、ライトヘビー級王者となった冒険者。その初戴冠セレモニーに、想定外の乱入者が現れる。次世代魔女「ウィケッドサンダー」――かつて闘技界を席巻しながらも、謎の失踪を遂げていた人物だ。しかも驚くべきことに彼女は、公衆の面前で冒険者に宣戦布告を行う。<br>この異常事態に対し、アルカディアのオーナーは特別試合のマッチメイクを提案。新王者たる冒険者は、元ヘビー級の闘士だという彼女の挑戦を退けることができるのか！？",
       "de": "Du konntest Brutalo Bomber bezwingen und dich erfolgreich an die Spitze des Halbschwergewichts kämpfen. Deine Krönungszeremonie wird jedoch von einem unerwarteten Gast gesprengt. Die ehemalige Superschwergewichtskämpferin Tosender Donner, welche bisher spurlos verschwunden war, taucht plötzlich wieder auf und fordert dich zu einem Kampf heraus, mit deiner Seele als Einsatz. Als hätten sich die Ereignisse nicht schon genug überschlagen, erhallt dann die Stimme des Arkadion-Präsidenten und genehmigt den Sonderkampf. Kannst du dich als frischgebackene Titelverteidigerin des Halbschwergewichts gegen die Hybrid-Hexe durchsetzen?",
-      "fr": "Votre victoire contre Brute Bomber vous a permis de vous hisser au sommet de la division des poids mi-lourds. Toutefois, la cérémonie de remise de votre titre a été interrompue par l'intervention inattendue de Wicked Thunder, une ancienne combattante poids lourds qui avait disparu, laquelle vous a lancé un défi et déclaré vouloir votre âme. Le propriétaire de l'Arcadion ayant donné son feu vert pour ce match, préparez-vous à affronter celle que l'on surnomme l'Enchanteresse électrique&nbsp;!"
+      "fr": "Votre victoire contre Brute Bomber vous a permis de vous hisser au sommet de la catégorie des poids mi-lourds. Toutefois, la cérémonie de remise de votre titre a été interrompue par l'intervention inattendue de Wicked Thunder, une ancienne combattante poids lourds qui avait disparu, laquelle vous a lancé un défi et déclaré vouloir votre âme. Le propriétaire de l'Arcadion ayant donné son feu vert pour ce match, préparez-vous à affronter celle que l'on surnomme l'Enchanteresse électrique&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
@@ -14077,6 +14170,254 @@
     "contentText": [
       41477,
       41400
+    ]
+  },
+  "30145": {
+    "id": 30145,
+    "en": "AAC Cruiserweight M1",
+    "ja": "至天の座アルカディア：クルーザー級1",
+    "de": "Arkadion - Schwergewicht R1",
+    "fr": "Poids lourds-légers CCA - match 1",
+    "description": {
+      "en": "The first opponent of your cruiserweight campaign is to be the shameless playboy of Solution Nine, Dancing Green. Wielding the soul of a terrible toad, he prefers to engage his opponents in duels of dance, using his heightened abilities to command the dance floor. If you are to claim victory, you shall need more than might and magic─indeed, you shall need a sense of rhythm.",
+      "ja": "闘技ショー「アルカディア」に参戦するや、またたく間にライトヘビー級を制した冒険者は、次なる階級「クルーザー級」に挑むことに。その初戦の相手となるのは、トードの魂を注入して、ダンスをしながら闘うという異色の存在――パーティー野郎「ダンシング・グリーン」。<br>この戦いを制することで、より扱う魂のグレードが高い階級においても「生身の挑戦者」が通用することを証明しよう！",
+      "de": "Du hast dich erfolgreich durch das Halbschwergewicht des Arkadions gekämpft und bist deinem Ziel, an der Spitze des Kampfturniers zu stehen und so die Kämpfer vor Seelenzerfall zu schützen, einen guten Schritt näher gekommen. Kaum erholst du dich von den bisherigen Strapazen, läutet die Glocke auch schon das Schwergewicht ein. Dein erster Gegner der nächsten Liga ist Springhis Khan, das professionelle Partytier. Bei diesem mit einer Froschseele verstärkten Feierbiest wird dir keine andere Wahl bleiben, als ebenfalls unter den Scheinwerfern seines Rings das Tanzbein zu schwingen!",
+      "fr": "Après avoir croisé le fer contre les combattants des poids mi-lourds, vous vous êtes hissée au sommet de la catégorie. Cependant, votre ascension au sein du Championnat Céleste de l'Arcadion est loin d'être terminée, et vous allez devoir désormais affronter les poids lourds-légers. Votre premier duel sera contre Dancing Green, l'increvable fêtard qui utilise l'âme d'un crapaud et se bat en dansant. À vous de prouver que, même sans régulateur, vous pouvez rivaliser contre les meilleurs."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112597.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 715,
+    "sync": 100,
+    "exp": 0,
+    "map": 992,
+    "contentText": [
+      42425,
+      42400
+    ]
+  },
+  "30146": {
+    "id": 30146,
+    "en": "AAC Cruiserweight M1 (Savage)",
+    "ja": "至天の座アルカディア零式：クルーザー級1",
+    "de": "Arkadion - Schwergewicht R1 (episch)",
+    "fr": "Poids lourds-légers CCA - match 1 (sadique)",
+    "description": {
+      "en": "Once more you have shared your firsthand account of your matches with Gabbro, Solution Nine's acclaimed cartoonist, and once more you cannot help but picture the spectacles he describes. Indeed, how might your battle against Dancing Green have turned out if the night had reached an even higher fever pitch?",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はクルーザー級で経験した熱戦の数々を語って聞かせた。<br>一流の漫画家であるガブロは、またも話を激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるそうだ。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro hat deine Kämpfe im Schwergewicht mit Begeisterung verfolgt und kann es kaum erwarten, sich mit Stift und Papier an die Arbeit zu machen und deine Erlebnisse als Bildergeschichte umzusetzen. Als Künstler lässt er es sich selbstverständlich nicht nehmen, deine Erzählungen hier und da etwas auszuschmücken und die besten Momente noch intensiver darzustellen. Während du seinen Ideen lauschst, werden deine Gedanken auf eine Reise geschickt, in eine Welt zwischen Fiktion und Realität, in der der Weg zur Schwergewichtsmeisterin um einiges steiler ist&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids lourds-légers de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus palpitants et démesurés. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112598.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 730,
+    "sync": 100,
+    "exp": 0,
+    "map": 992,
+    "contentText": [
+      42425,
+      42400
+    ]
+  },
+  "30147": {
+    "id": 30147,
+    "en": "AAC Cruiserweight M2",
+    "ja": "至天の座アルカディア：クルーザー級2",
+    "de": "Arkadion - Schwergewicht R2",
+    "fr": "Poids lourds-légers CCA - match 2",
+    "description": {
+      "en": "Following your triumph over Dancing Green, you now prepare to engage your next opponent, Sugar Riot. A rebellious artist who utilizes the soul of a pudding, she manifests her imaginings with an augmented palette, devastating her foes with beautiful brutality. One can only wonder, in the art of war, will the unstoppable upstart be able to keep up with this visionary?",
+      "ja": "ダンシング・グリーンとの熱戦に勝利した冒険者。次なる相手はプリンの魂を注入し、描いた絵を具現化させる闘士――リングはアトリエ「シュガーライオット」。<br>闘いを芸術表現と捉えているという彼女を倒し、クルーザー級王者への階段を駆け上がろう！",
+      "de": "Nach einer wilden Party mit Springhis Khan wartet nun deine nächste Gegnerin auf dich - Zuckerschock, die Künstlerin des Rings. Mithilfe der Seele eines Puddings ist es der kleinen Milala möglich, spezielle Farben herzustellen, die ihren Gemälden Leben einhauchen kann. Der Weg zur Schwergewichtsmeisterin bleibt steil und schwer, doch aufgeben kommt nicht in Frage!",
+      "fr": "Vous avez triomphé de votre duel endiablé contre Dancing Green. Votre prochain adversaire est une artiste capable de transformer son ring en atelier et donner vie à ses créations&nbsp;: Sugar Riot&nbsp;! Il vous faudra remporter la victoire si vous voulez vous mesurer au champion de la catégorie&nbsp;! "
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112599.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 715,
+    "sync": 100,
+    "exp": 0,
+    "map": 991,
+    "contentText": [
+      42227,
+      42200
+    ]
+  },
+  "30148": {
+    "id": 30148,
+    "en": "AAC Cruiserweight M2 (Savage)",
+    "ja": "至天の座アルカディア零式：クルーザー級2",
+    "de": "Arkadion - Schwergewicht R2 (episch)",
+    "fr": "Poids lourds-légers CCA - match 2 (sadique)",
+    "description": {
+      "en": "Your bout against Sugar Riot exposed you to the power of her creativity unleashed. Now you wonder, if she had let her art truly run rampant, what manner of creations might she have revealed?",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はクルーザー級で経験した熱戦の数々を語って聞かせた。<br>一流の漫画家であるガブロは、またも話を激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるそうだ。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro hat deine Kämpfe im Schwergewicht mit Begeisterung verfolgt und kann es kaum erwarten, sich mit Stift und Papier an die Arbeit zu machen und deine Erlebnisse als Bildergeschichte umzusetzen. Als Künstler lässt er es sich selbstverständlich nicht nehmen, deine Erzählungen hier und da etwas auszuschmücken und die besten Momente noch intensiver darzustellen. Während du seinen Ideen lauschst, werden deine Gedanken auf eine Reise geschickt, in eine Welt zwischen Fiktion und Realität, in der der Weg zur Schwergewichtsmeisterin um einiges steiler ist&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids lourds-légers de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus palpitants et démesurés. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112600.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 735,
+    "sync": 100,
+    "exp": 0,
+    "map": 991,
+    "contentText": [
+      42227,
+      42200
+    ]
+  },
+  "30149": {
+    "id": 30149,
+    "en": "AAC Cruiserweight M3",
+    "ja": "至天の座アルカディア：クルーザー級3",
+    "de": "Arkadion - Schwergewicht R3",
+    "fr": "Poids lourds-légers CCA - match 3",
+    "description": {
+      "en": "The president's “script” has culminated in a grudge match between you and the Brute Bomber, who has recklessly injected himself with multiple feral souls. Now an abomination, the only way to save the reviled heel is to stop him forcefully through battle. For his sake, this is a fight you cannot afford to lose.",
+      "ja": "アルカディアを支配するオーナーの策略により、突如として冒険者対ブルートボンバーの場外戦がマッチメイクされた。しかも、リベンジに燃える反則王は違法な魂資源に手を出し、強引に複数の魔物の魂を注入。もはや人の姿をなしていない憎悪の権化、「ブルートアボミネーター」と化してしまう。<br>彼を魂蝕症から救うには、試合の場で倒して落ち着かせるほかない。第八層建設区域に向かい、決死のリベンジマッチに挑もう！",
+      "de": "Kaum hast du dir das Recht erkämpft, den Schwergewichtsmeister im Titelkampf herauszufordern, überschlagen sich die Ereignisse. Der Präsident des Arkadions nutzt Brutalo Bombers Vertrauen in ihn aus und erlaubt ihm einen Revanchekampf gegen dich. Als Bedingung muss der ehemalige Halbschwergewichtsmeister jedoch mehrere Bestienseelen gleichzeitig verwenden, um eine richtige Chance gegen dich zu haben. Überwältigt von Rachegelüsten kommt die bombastische Boshaftigkeit dieser Bitte nur zu gerne nach und verwandelt sich in ein kaum wiedererkennbares Ungetüm, den Brutalo Biestinator. Wenn es noch irgendeine Hoffnung gibt, den Kämpfer vor einem Tod durch Seelenzerfall zu bewahren, dann nur, wenn es dir gelingen sollte, ihn hier und jetzt zu besiegen und wieder zu beruhigen.",
+      "fr": "L'énigmatique propriétaire de l'Arcadion a manipulé Brute Bomber en lui offrant une chance de vous affronter à nouveau. L'ancien champion a subtilisé plusieurs âmes de créatures et les a utilisées en même temps pour se transformer en une horrible chimère&nbsp;: Brute Bombinator. Pour sauver le combattant des affres de la psychodiabrose, vous devez à tout prix l'arrêter avant qu'il ne soit trop tard&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112601.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 715,
+    "sync": 100,
+    "exp": 0,
+    "map": 1000,
+    "contentText": [
+      42016,
+      42000
+    ]
+  },
+  "30150": {
+    "id": 30150,
+    "en": "AAC Cruiserweight M3 (Savage)",
+    "ja": "至天の座アルカディア零式：クルーザー級3",
+    "de": "Arkadion - Schwergewicht R3 (episch)",
+    "fr": "Poids lourds-légers CCA - match 3 (sadique)",
+    "description": {
+      "en": "It seems the devastation wrought by the Brute Abombinator in your battle was not quite enough to satisfy Gabbro─at least not for the purposes of his cartoons. Having invited you to imagine your rival fighting with even greater savagery, you follow the train of thought to its end...",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はクルーザー級で経験した熱戦の数々を語って聞かせた。<br>一流の漫画家であるガブロは、またも話を激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるそうだ。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro hat deine Kämpfe im Schwergewicht mit Begeisterung verfolgt und kann es kaum erwarten, sich mit Stift und Papier an die Arbeit zu machen und deine Erlebnisse als Bildergeschichte umzusetzen. Als Künstler lässt er es sich selbstverständlich nicht nehmen, deine Erzählungen hier und da etwas auszuschmücken und die besten Momente noch intensiver darzustellen. Während du seinen Ideen lauschst, werden deine Gedanken auf eine Reise geschickt, in eine Welt zwischen Fiktion und Realität, in der der Weg zur Schwergewichtsmeisterin um einiges steiler ist&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids lourds-légers de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus palpitants et démesurés. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112602.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 740,
+    "sync": 100,
+    "exp": 0,
+    "map": 1000,
+    "contentText": [
+      42016,
+      42000
+    ]
+  },
+  "30151": {
+    "id": 30151,
+    "en": "AAC Cruiserweight M4",
+    "ja": "至天の座アルカディア：クルーザー級4",
+    "de": "Arkadion - Schwergewicht R4",
+    "fr": "Poids lourds-légers CCA - match 4",
+    "description": {
+      "en": "You have climbed the ranks of the cruiserweight tier to reach the title match, and the stakes could not be higher. With that which gives your lives' purpose on the line, the match between the unenhanced warrior and the Howling Blade has all of Alexandria on the edge of their seats. It is time to see once and for all who will come out on top: the lone wolf, or the undefeated upstart? ",
+      "ja": "冒険者との場外戦で敗れ、ブルートボンバーは魂蝕症によって朽ち果てた。その親友であるクルーザー級王者の「ハウリングブレード」は、己が魂蝕症を患っていることを知っても、死ぬことを覚悟で闘士を続けると語った。彼を救うためには、試合で打ち負かして闘士を引退させなければならない――。<br>今こそ、生身の挑戦者たる冒険者がクルーザー級王者の座を奪い、外から来たゲームチェンジャーの異名を轟かせよう！",
+      "de": "Trauert Heulende Klinge zwar um seinen verstorbenen Freund Brutalo Bomber, so ändert diese Tragödie nichts an der Überzeugung des Schwergewichtsmeisters, bis zu seinem eigenen Tod weiter im Arkadion kämpfen zu wollen. Um den Kämpfer vor sich selbst zu schützen, wendest du eine List an, um ihn öffentlich eine Wette eingehen zu lassen, dass er bei einer Niederlage gegen dich den Ring verlassen muss. Somit steht nun der alles entscheidende Kampf des Schwergewichts bevor, bei dem beide Seiten ihren Lebenssinn aufs Spiel setzen.",
+      "fr": "Vous voilà en face du champion de la catégorie poids lourds-léger. Après la mort de son ami, Howling Blade vous a confié qu'il avait accepté son funeste destin et qu'il combattrait jusqu'à son dernier souffle. Dans une ultime tentative de le sauver du mal qui le ronge, vous l'avez forcé à mettre non seulement son titre, mais aussi sa carrière en jeu lors de votre duel. Qui l'emportera entre le loup solitaire et le challenger sans régulateur&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112603.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 715,
+    "sync": 100,
+    "exp": 0,
+    "map": 993,
+    "contentText": [
+      41935,
+      41900
+    ]
+  },
+  "30152": {
+    "id": 30152,
+    "en": "AAC Cruiserweight M4 (Savage)",
+    "ja": "至天の座アルカディア零式：クルーザー級4",
+    "de": "Arkadion - Schwergewicht R4 (episch)",
+    "fr": "Poids lourds-légers CCA - match 4 (sadique)",
+    "description": {
+      "en": "Gabbro's words have sparked your imagination, inspiring you to envision your title match against the Howling Blade in new ways. Had he brought the full might of Fenrir to bear, the lone wolf's formidable strength would have reached greater heights still. How might you have fared if the battle continued to rage on...?",
+      "ja": "アルカディアを題材に漫画を描いているというガブロ。彼からの取材を受け、冒険者はクルーザー級で経験した熱戦の数々を語って聞かせた。<br>一流の漫画家であるガブロは、またも話を激しく誇張し、ときに大胆に脚色して手に汗握る傑作に仕立て上げるそうだ。冒険者は、ガブロの構想を聞き、事実とフィクションの狭間に幻想を垣間見る……。",
+      "de": "Gabbro hat deine Kämpfe im Schwergewicht mit Begeisterung verfolgt und kann es kaum erwarten, sich mit Stift und Papier an die Arbeit zu machen und deine Erlebnisse als Bildergeschichte umzusetzen. Als Künstler lässt er es sich selbstverständlich nicht nehmen, deine Erzählungen hier und da etwas auszuschmücken und die besten Momente noch intensiver darzustellen. Während du seinen Ideen lauschst, werden deine Gedanken auf eine Reise geschickt, in eine Welt zwischen Fiktion und Realität, in der der Weg zur Schwergewichtsmeisterin um einiges steiler ist&nbsp;...",
+      "fr": "Désireux de retranscrire votre ascension dans la catégorie des poids lourds-légers de l'Arcadion, Gabbro vous a demandé de lui faire le récit de vos combats dans l'arène et en a profité pour y ajouter quelques éléments nouveaux afin de rendre vos matchs encore plus palpitants et démesurés. Tandis que vous écoutez ses idées, vous vous voyez à nouveau dans le ring face à un adversaire devenu plus coriace&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112604.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 740,
+    "sync": 100,
+    "exp": 0,
+    "map": 993,
+    "contentText": [
+      41935,
+      41900
     ]
   },
   "35001": {
@@ -15556,7 +15897,7 @@
     "exp": 0,
     "map": 167,
     "contentText": [
-      8910,
+      8912,
       8910
     ]
   },
@@ -17879,17 +18220,17 @@
       24900
     ]
   },
-  "64009": {
-    "id": 64009,
-    "en": "The Jade Stoa (Unreal)",
-    "ja": "幻白虎征魂戦",
-    "de": "Traumprüfung - Byakko",
-    "fr": "La Clairière de Jade (irréel)",
+  "64010": {
+    "id": 64010,
+    "en": "Hells' Kier (Unreal)",
+    "ja": "幻朱雀征魂戦",
+    "de": "Traumprüfung - Suzaku",
+    "fr": "Le Nid des Lamentations (irréel)",
     "description": {
-      "en": "The faux commander has a yen for a tale from his native Far East, which prompts you to call to mind the unbridled ferocity of Byakko, one of the Four Lords of legend. Revisit now your grueling encounter with the mighty auspice, and fight to lift the dark cloud that shrouds his heart ere you are overcome by his heavenly gales...",
-      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは東方の瑞獣・白虎との嵐呼ぶ戦い。天つ風に呑まれるのが先か、心の暗雲を晴らすが先か。いま幻の激闘が語られる。",
-      "de": "Sotan findet, dass es schon viel zu lange her ist, seitdem er eine seiner wunderbaren Geschichten zum Besten gegeben hat. Diesmal erinnert er dich an den mächtigen Byakko und lässt die Flammen dieses schicksalsträchtigen Kampfes abermals auflodern.",
-      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Byakko, le légendaire Tigre blanc, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
+      "en": "The faux commander asks you to regale him with a tale of fiery passion and heartbreak, which soon calls to mind your harrowing encounter with the auspice Suzaku, master of flames and resurrection. You stoke the memories of that battle into a fierce fire, reigniting your struggle to return the great auspice to her senses ere you succumb to her mournful melody.",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは東方の瑞獣・朱雀が彩る焔と音の大舞台。正気に戻すのが先か、正気ごと蹴り飛ばされるのが先か。いま幻の激闘が語られる。",
+      "de": "Der silberzüngige Sotan bittet dich diesmal um eine ganz besondere Geschichte&nbsp;- eine von feuriger Liebe und dem bitteren Schmerz eines gebrochenen Herzens. Natürlich geht es dabei um niemand anderen als Suzaku und du tauchst ein weiteres Mal in das lodernde Flammenmeer, das sie zu beherrschen weiß, während süße Klänge deine Sinne betören.",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Suzaku, l'oiseau de feu immortel, vous revient en mémoire... Terrassez-la afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
@@ -17898,17 +18239,16 @@
       "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112590.png",
-    "gamePatch": 91,
+    "banner": "/i/112000/112594.png",
     "contentType": 4,
     "levelReq": 100,
     "ilvlReq": 690,
     "sync": 100,
     "exp": 0,
-    "map": 450,
+    "map": 503,
     "contentText": [
-      18613,
-      18600
+      19915,
+      19900
     ]
   }
 }

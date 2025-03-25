@@ -166,7 +166,7 @@
     "@kaiu/ng-serializer": "^2.0.0",
     "@kaiu/serializer": "^1.4.0",
     "@kobold/core": "^0.0.2",
-    "@kobold/excel": "^0.0.6",
+    "@kobold/excel": "^0.0.8",
     "@kobold/xiv": "^0.0.2",
     "@nestjs/common": "^10.3.5",
     "@nestjs/core": "10.3.5",

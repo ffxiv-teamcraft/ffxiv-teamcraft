@@ -963,7 +963,7 @@
     "en": "the Central Blue",
     "ja": "F　セントラルブルー",
     "de": "Blaue Unendlichkeit (F)",
-    "fr": "Immensité bleue (F)",
+    "fr": "Infinité bleue (F)",
     "id": 121,
     "location": "F"
   },
@@ -976,52 +976,52 @@
     "location": "G"
   },
   "123": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Talon",
+    "ja": "H　鉤爪島",
+    "de": "Kralleninsel (H)",
+    "fr": "Île des serres (H)",
     "id": 123,
-    "location": ""
+    "location": "H"
   },
   "124": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Southern Central Blue",
+    "ja": "I　セントラルブルー南",
+    "de": "Blaue Unendlichkeit Süd (I)",
+    "fr": "Sud de L'Infinité bleue (I)",
     "id": 124,
-    "location": ""
+    "location": "I"
   },
   "125": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "South Indigo Deep 3",
+    "ja": "J　南蒼茫洋03",
+    "de": "Südlicher Indigo-Ozean 3 (J)",
+    "fr": "Océan Indigo méridional 3 (J)",
     "id": 125,
-    "location": ""
+    "location": "J"
   },
   "126": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Talonspoint Depths",
+    "ja": "K　鉤爪島沖合",
+    "de": "Krallentiefen (K)",
+    "fr": "Large de l'île des serres (K)",
     "id": 126,
-    "location": ""
+    "location": "K"
   },
   "127": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Saltfarer's Eye",
+    "ja": "L　碧眼島",
+    "de": "Insel des Blauauges (L)",
+    "fr": "Île de l'iris aigue-marine (L)",
     "id": 127,
-    "location": ""
+    "location": "L"
   },
   "128": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Startail Shallows",
+    "ja": "M　星削水道浅部",
+    "de": "Sternenschweif-Untiefen (M)",
+    "fr": "Bas-fonds des Étoiles ciselées (M)",
     "id": 128,
-    "location": ""
+    "location": "M"
   },
   "129": {
     "en": "",

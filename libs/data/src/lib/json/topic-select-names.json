@@ -600,16 +600,16 @@
     "fr": "Amélioration de pièces d'équipement de diadoque (NvObj 640 → 650)"
   },
   "3276900": {
-    "en": "「ライトヘビー・アルカディアン装備」の強化（ILv720→730）",
-    "ja": "「ライトヘビー・アルカディアン装備」の強化（ILv720→730）",
-    "de": "「ライトヘビー・アルカディアン装備」の強化（ILv720→730）",
-    "fr": "「ライトヘビー・アルカディアン装備」の強化（ILv720→730）"
+    "en": "Quetzalli Gear Augmentation (IL 730)",
+    "ja": "「ケーツハリー装備」の強化（ILv720→730）",
+    "de": "Quetzalli-Ausrüstung (G.-St. 720 → 730)",
+    "fr": "Amélioration d'équipements de Kixaihih (NvObj 720-730)"
   },
   "3276901": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Historia Gear Augmentation (IL 760)",
+    "ja": "「キングダムテール装備」の強化（ILv750→760）",
+    "de": "Königreichschroniken-Ausrüstung (G.-St. 750 → 760)",
+    "fr": "Amélioration d'équipements du roman royal (NvObj 750-760)"
   },
   "3276902": {
     "en": "",
@@ -630,16 +630,16 @@
     "fr": "Registres des poids mi-lourds (NvObj 730-735)"
   },
   "3276905": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cruiserweight Hologear Exchange (IL 740)",
+    "ja": "ホログラム装備【クルーザー級】の取引（ILv740）",
+    "de": "Hologramm-Ausrüstung des Schwergewichts (G.-St. 740)",
+    "fr": "Équipements holographiques des poids lourds-légers (NvObj 740)"
   },
   "3276906": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "AAC Illustrated: CW Edition Exchange (IL 760-765)",
+    "ja": "クルーザー級の断章の取引（ILv760～765）",
+    "de": "Schwergewichts-Kodizes (G.-St. 760/765)",
+    "fr": "Registres des poids lourds-légers (NvObj 760-765)"
   },
   "3276907": {
     "en": "",
@@ -870,6 +870,42 @@
     "fr": ""
   },
   "3276945": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276946": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276947": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276948": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276949": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276950": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276951": {
     "en": "",
     "ja": "",
     "de": "",

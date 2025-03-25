@@ -4164,10 +4164,10 @@
     binary-parser "^1.6.2"
     fast-glob "^3.2.2"
 
-"@kobold/excel@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@kobold/excel/-/excel-0.0.6.tgz#d0f9bc493b05d90cf0ea373c678536dab16486c5"
-  integrity sha512-FFhLPuyGRS7aVUzspMapVpceuj3B8DIfNsw7FiImaKV2V1RMUk2aEMjvU7Z1usJ2xrAUQyp5itFzCXVKz5OHzg==
+"@kobold/excel@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@kobold/excel/-/excel-0.0.8.tgz#db873fd964a63389c3b3a5c8263282eb945b4d21"
+  integrity sha512-F8IUGiDpO/451IXsa5AMGsBka/cbp8Nzmw5OJxmZF+k8CIHtNtKycwavImP208g/Z95PNkQxRJOpNNTlOZBQvg==
   dependencies:
     "@babel/runtime-corejs3" "^7.9.2"
     "@types/binary-parser" "^1.5.0"
@@ -22433,6 +22433,7 @@ wordwrapjs@^4.0.0:
     typical "^5.2.0"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==

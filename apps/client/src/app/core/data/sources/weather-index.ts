@@ -2629,5 +2629,44 @@ export const weatherIndex = {
       "weatherId": 193
     }
   ],
-  "168": []
+  "168": [
+    {
+      "rate": 10,
+      "weatherId": 1
+    },
+    {
+      "rate": 55,
+      "weatherId": 2
+    },
+    {
+      "rate": 70,
+      "weatherId": 3
+    },
+    {
+      "rate": 80,
+      "weatherId": 7
+    },
+    {
+      "rate": 95,
+      "weatherId": 190
+    },
+    {
+      "rate": 100,
+      "weatherId": 191
+    }
+  ],
+  "169": [
+    {
+      "rate": 15,
+      "weatherId": 148
+    },
+    {
+      "rate": 85,
+      "weatherId": 2
+    },
+    {
+      "rate": 100,
+      "weatherId": 49
+    }
+  ]
 };

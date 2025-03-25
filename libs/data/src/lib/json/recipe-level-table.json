@@ -4212,16 +4212,16 @@
     "qualityModifier": 75
   },
   "702": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "703": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "704": {
     "progressDivider": 170,
@@ -4332,16 +4332,16 @@
     "qualityModifier": 75
   },
   "722": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "723": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "724": {
     "progressDivider": 170,
@@ -4363,9 +4363,9 @@
   },
   "727": {
     "progressDivider": 170,
-    "progressModifier": 90,
+    "progressModifier": 100,
     "qualityDivider": 150,
-    "qualityModifier": 75
+    "qualityModifier": 100
   },
   "728": {
     "progressDivider": 170,
@@ -4452,46 +4452,46 @@
     "qualityModifier": 75
   },
   "742": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "743": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "744": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "745": {
     "progressDivider": 170,
-    "progressModifier": 90,
+    "progressModifier": 100,
     "qualityDivider": 150,
-    "qualityModifier": 75
+    "qualityModifier": 100
   },
   "746": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "747": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "748": {
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "749": {
     "progressDivider": 170,
