@@ -6526,5 +6526,41 @@
     "ja": "デヴォーションクラム",
     "de": "Andachtsmuschel",
     "fr": "Palourde de la Dévotion"
+  },
+  "1096": {
+    "en": "Turali Alumen",
+    "ja": "トラルアルメン",
+    "de": "Turalalaun-Klumpen",
+    "fr": "Alun turalien"
+  },
+  "1097": {
+    "en": "Fine Silver Ore",
+    "ja": "真銀鉱",
+    "de": "Feinsilbererzklumpen",
+    "fr": "Minerai de fer argenté"
+  },
+  "1098": {
+    "en": "Harmonite Ore",
+    "ja": "混鉄鉱",
+    "de": "Harmoniterzklumpen",
+    "fr": "Minerai de fer composite"
+  },
+  "1099": {
+    "en": "Ipe Log",
+    "ja": "イペー原木",
+    "de": "Ipe-Holzscheit",
+    "fr": "Rondin d'ipe"
+  },
+  "1100": {
+    "en": "Nopaliflower",
+    "ja": "ノパルフラワー",
+    "de": "Nopalblüte",
+    "fr": "Fleur de pampa"
+  },
+  "1101": {
+    "en": "Blackseed Cotton Boll",
+    "ja": "海島綿",
+    "de": "Schwarzbaumwoll-Samenkapsel",
+    "fr": "Fleur de coton des îles"
   }
 }

@@ -6351,6 +6351,54 @@
     "perceptionReq": 0,
     "sublimeVariant": 0
   },
+  "802": {
+    "level": 100,
+    "stars": 2,
+    "itemId": 45968,
+    "hidden": 0,
+    "perceptionReq": 4740,
+    "sublimeVariant": 0
+  },
+  "803": {
+    "level": 100,
+    "stars": 2,
+    "itemId": 45969,
+    "hidden": 0,
+    "perceptionReq": 4740,
+    "sublimeVariant": 0
+  },
+  "804": {
+    "level": 100,
+    "stars": 2,
+    "itemId": 45970,
+    "hidden": 0,
+    "perceptionReq": 4740,
+    "sublimeVariant": 0
+  },
+  "805": {
+    "level": 100,
+    "stars": 2,
+    "itemId": 45971,
+    "hidden": 0,
+    "perceptionReq": 4740,
+    "sublimeVariant": 0
+  },
+  "806": {
+    "level": 100,
+    "stars": 2,
+    "itemId": 45972,
+    "hidden": 0,
+    "perceptionReq": 4740,
+    "sublimeVariant": 0
+  },
+  "807": {
+    "level": 100,
+    "stars": 2,
+    "itemId": 45973,
+    "hidden": 0,
+    "perceptionReq": 4740,
+    "sublimeVariant": 0
+  },
   "10001": {
     "level": 4,
     "stars": 0,

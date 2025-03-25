@@ -8158,5 +8158,263 @@
     "ja": "譜面の交換",
     "de": "Orchestrion",
     "fr": "Rouleaux d'orchestrion"
+  },
+  "1770909": {
+    "en": "Neo Kingdom Gear (DoW, IL 700)",
+    "ja": "「ネオキングダム装備」の取引（ILv700ファイター装備）",
+    "de": "Neo-Königreich-Ausrüstung (Krieger, G.-St. 700)",
+    "fr": "Équipements du néo-royaume (guerre - NvObj 700)"
+  },
+  "1770910": {
+    "en": "Neo Kingdom Gear (DoM, IL 700)",
+    "ja": "「ネオキングダム装備」の取引（ILv700ソーサラー装備）",
+    "de": "Neo-Königreich-Ausrüstung (Magier, G.-St. 700)",
+    "fr": "Équipements du néo-royaume (magie - NvObj 700)"
+  },
+  "1770911": {
+    "en": "Allagan Tomestones of Mathematics (DoW, IL 750)",
+    "ja": "アラガントームストーン:数理の取引（ILv750ファイター装備）",
+    "de": "Allagische Steine der Mathematik (Krieger, G.-St. 750)",
+    "fr": "Mémoquartz allagois mathématiques (guerre - NvObj 750)"
+  },
+  "1770912": {
+    "en": "Allagan Tomestones of Mathematics (DoM, IL 750)",
+    "ja": "アラガントームストーン:数理の取引（ILv750ソーサラー装備）",
+    "de": "Allagische Steine der Mathematik (Magier, G.-St. 750)",
+    "fr": "Mémoquartz allagois mathématiques (magie - NvObj 750)"
+  },
+  "1770913": {
+    "en": "Allagan Tomestones of Mathematics (IL 750 Weapons)",
+    "ja": "アラガントームストーン:数理の取引（ILv750武器）",
+    "de": "Allagische Steine der Mathematik (Waffen, G.-St. 750)",
+    "fr": "Mémoquartz allagois mathématiques (armes - NvObj 750)"
+  },
+  "1770914": {
+    "en": "Historia Gear Augmentation (DoW) I",
+    "ja": "「キングダムテール装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Königreichschroniken-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements du roman royal (guerre 1)"
+  },
+  "1770915": {
+    "en": "Historia Gear Augmentation (DoW) II",
+    "ja": "「キングダムテール装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Königreichschroniken-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements du roman royal (guerre 2)"
+  },
+  "1770916": {
+    "en": "Historia Gear Augmentation (DoM)",
+    "ja": "「キングダムテール装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Königreichschroniken-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements du roman royal (magie)"
+  },
+  "1770917": {
+    "en": "Cruiserweight Hologear Exchange (DoW) I",
+    "ja": "ホログラム装備【クルーザー級】の取引（ファイターその1）",
+    "de": "Hologramm-Ausrüstung, Schwergewicht (Krieger I)",
+    "fr": "Équipements holographiques des poids lourds-légers (guerre 1)"
+  },
+  "1770918": {
+    "en": "Cruiserweight Hologear Exchange (DoW) II",
+    "ja": "ホログラム装備【クルーザー級】の取引（ファイターその2）",
+    "de": "Hologramm-Ausrüstung, Schwergewicht (Krieger II)",
+    "fr": "Équipements holographiques des poids lourds-légers (guerre 2)"
+  },
+  "1770919": {
+    "en": "Cruiserweight Hologear Exchange (DoM)",
+    "ja": "ホログラム装備【クルーザー級】の取引（ソーサラー）",
+    "de": "Hologramm-Ausrüstung, Schwergewicht (Magier)",
+    "fr": "Équipements holographiques des poids lourds-légers (magie)"
+  },
+  "1770920": {
+    "en": "AAC Illustrated: CW Edition Exchange (DoW) I",
+    "ja": "クルーザー級の断章の取引（ファイターその1）",
+    "de": "Schwergewichts-Kodizes (Krieger I)",
+    "fr": "Registres des poids lourds-légers (guerre 1)"
+  },
+  "1770921": {
+    "en": "AAC Illustrated: CW Edition Exchange (DoW) II",
+    "ja": "クルーザー級の断章の取引（ファイターその2）",
+    "de": "Schwergewichts-Kodizes (Krieger II)",
+    "fr": "Registres des poids lourds-légers (guerre 2)"
+  },
+  "1770922": {
+    "en": "AAC Illustrated: CW Edition Exchange (DoM)",
+    "ja": "クルーザー級の断章の取引（ソーサラー）",
+    "de": "Schwergewichts-Kodizes (Magier)",
+    "fr": "Registres des poids lourds-légers (magie)"
+  },
+  "1770923": {
+    "en": "Totem Gear (Zelenia)",
+    "ja": "報酬装備の取引（ゼレニア）",
+    "de": "Zelenia-Ausrüstung",
+    "fr": "Équipements totémiques (Zelenia)"
+  },
+  "1770924": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770925": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770926": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770927": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770928": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770929": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770930": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770931": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770932": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770933": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770934": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770935": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770936": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770937": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770938": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770939": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770940": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770941": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770942": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770943": {
+    "en": "Orange Scrip Exchange (Lv. 100/IL 720)",
+    "ja": "橙貨の取引：Lv100～向け【ILv720】",
+    "de": "Orange Scheine (ab St. 100) [G.-St. 720]",
+    "fr": "Assignats orange (Nv ≧ 100) [NvObj 720]"
+  },
+  "1770944": {
+    "en": "Orange Scrip Exchange (Lv. 100/IL 720)",
+    "ja": "橙貨の取引：Lv100～向け【ILv720】",
+    "de": "Orange Scheine (ab St. 100) [G.-St. 720]",
+    "fr": "Assignats orange (Nv ≧ 100) [NvObj 720]"
+  },
+  "1770945": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770946": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770947": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770948": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770949": {
+    "en": "Seasonal Event Prizes (Weapons)",
+    "ja": "シーズナルイベント報酬の交換（武器）",
+    "de": "Saisonale Gegenstände (Waffen)",
+    "fr": "Récompenses d'événements saisonniers (armes)"
+  },
+  "1770950": {
+    "en": "Seasonal Event Prizes (Gear)",
+    "ja": "シーズナルイベント報酬の交換（防具）",
+    "de": "Saisonale Gegenstände (Ausrüstung)",
+    "fr": "Récompenses d'événements saisonniers (armure)"
+  },
+  "1770951": {
+    "en": "Seasonal Event Prizes (Other)",
+    "ja": "シーズナルイベント報酬の交換（その他）",
+    "de": "Saisonale Gegenstände (Anderes)",
+    "fr": "Récompenses d'événements saisonniers (divers)"
   }
 }

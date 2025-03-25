@@ -1272,5 +1272,18 @@
     "ko": "Patch 7.15",
     "zh": "Patch 7.15",
     "version": "7.15"
+  },
+  "101": {
+    "id": 101,
+    "banner": null,
+    "ex": 5,
+    "release": 1742886613,
+    "en": "Patch 7.2",
+    "de": "Patch 7.2",
+    "ja": "Patch 7.2",
+    "fr": "Patch 7.2",
+    "ko": "Patch 7.2",
+    "zh": "Patch 7.2",
+    "version": "7.2"
   }
 }

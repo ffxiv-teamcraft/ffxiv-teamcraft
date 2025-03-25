@@ -192,16 +192,16 @@
     "fr": "Échos de Vana'diel"
   },
   "33": {
-    "en": "Main Quests",
-    "ja": "ストーリークエスト",
-    "de": "Hauptaufträge",
-    "fr": "Histoire principale"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "34": {
-    "en": "Daily Quests",
-    "ja": "デイリークエスト",
-    "de": "Nebenaufträge",
-    "fr": "Quêtes quotidiennes"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "35": {
     "en": "Main Quests",
@@ -408,1072 +408,1072 @@
     "fr": "Quêtes quotidiennes"
   },
   "69": {
+    "en": "Main Quests",
+    "ja": "ストーリークエスト",
+    "de": "Hauptaufträge",
+    "fr": "Histoire principale"
+  },
+  "70": {
+    "en": "Daily Quests",
+    "ja": "デイリークエスト",
+    "de": "Nebenaufträge",
+    "fr": "Quêtes quotidiennes"
+  },
+  "71": {
     "en": "A Realm Reborn Allied Society Quests",
     "ja": "友好部族エクストラストーリー",
     "de": "Freundesvölker (A Realm Reborn)",
     "fr": "Quêtes des peuples alliés"
   },
-  "70": {
+  "72": {
     "en": "Heavensward Allied Society Quests",
     "ja": "友好部族エクストラストーリー 蒼天編",
     "de": "Freundesvölker (Heavensward)",
     "fr": "Quêtes des peuples alliés (Heavensward)"
   },
-  "71": {
+  "73": {
     "en": "Stormblood Allied Society Quests",
     "ja": "友好部族エクストラストーリー 紅蓮編",
     "de": "Freundesvölker (Stormblood)",
     "fr": "Quêtes des peuples alliés (Stormblood)"
   },
-  "72": {
+  "74": {
     "en": "Endwalker Allied Society Quests",
     "ja": "友好部族エクストラストーリー 暁月編",
     "de": "Freundesvölker (Endwalker)",
     "fr": "Quêtes des peuples alliés (Endwalker)"
   },
-  "73": {
+  "75": {
     "en": "Tales of the Dragonsong War",
     "ja": "竜詩戦争 番外編",
     "de": "Drachenkrieg (Epilog)",
     "fr": "Guerre du chant des dragons - Réminiscences"
   },
-  "74": {
+  "76": {
     "en": "Tales from the Shadows",
     "ja": "暁の帰還 番外編",
     "de": "Die Heimkehr der Exegeten (Epilog)",
     "fr": "Sur le chemin du retour des Héritiers"
   },
-  "75": {
+  "77": {
     "en": "Tales of Newfound Adventure",
     "ja": "新たなる冒険 番外編",
     "de": "Neu entdecktes Abenteuer (Epilog)",
     "fr": "Sur la route d'une nouvelle aventure"
   },
-  "76": {
+  "78": {
     "en": "Hildibrand Adventures",
     "ja": "ヒルディブランド",
     "de": "Hildibrands Fälle",
     "fr": "Hildibrand, gentilhomme détective"
   },
-  "77": {
+  "79": {
     "en": "Further Hildibrand Adventures",
     "ja": "ヒルディブランド 蒼天編",
     "de": "Hildibrands Fälle (Heavensward)",
     "fr": "Hildibrand, gentilhomme détective (Heavensward)"
   },
-  "78": {
+  "80": {
     "en": "Even Further Hildibrand Adventures",
     "ja": "ヒルディブランド 紅蓮編",
     "de": "Hildibrands Fälle (Stormblood)",
     "fr": "Hildibrand, gentilhomme détective (Stormblood)"
   },
-  "79": {
+  "81": {
     "en": "Somehow Further Hildibrand Adventures",
     "ja": "帰ってきたヒルディブランド",
     "de": "Hildibrands Rückkehr",
     "fr": "Hildibrand, le retour"
   },
-  "80": {
+  "82": {
     "en": "Manderville Weapons",
     "ja": "マンダヴィルウェポン",
     "de": "Manderville-Waffen",
     "fr": "Armes des Manderville"
   },
-  "81": {
+  "83": {
     "en": "Inconceivably Further Hildibrand Adventures",
     "ja": "帰ってきたヒルディブランド 黄金編",
     "de": "Hildibrands Rückkehr (Dawntrail)",
     "fr": "Hildibrand, le retour (Dawntrail)"
   },
-  "82": {
+  "84": {
     "en": "Zodiac Weapons",
     "ja": "ゾディアックウェポン",
     "de": "Zodiak-Waffen",
     "fr": "Armes du zodiaque"
   },
-  "83": {
+  "85": {
     "en": "Anima Weapons",
     "ja": "アニマウェポン",
     "de": "Anima-Waffen",
     "fr": "Armes anima"
   },
-  "84": {
+  "86": {
     "en": "The Forbidden Land, Eureka",
     "ja": "禁断の地 エウレカ",
     "de": "Das Verbotene Land Eureka",
     "fr": "La terre interdite d'Eurêka"
   },
-  "85": {
+  "87": {
     "en": "Resistance Weapons",
     "ja": "セイブ・ザ・クイーン",
     "de": "Königinnenwache",
     "fr": "Garde-la-Reine"
   },
-  "86": {
+  "88": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "89": {
     "en": "Tales from the Calamity",
     "ja": "第七霊災回顧録",
     "de": "Annalen der Siebten Katastrophe",
     "fr": "Mémoires du septième fléau"
   },
-  "87": {
+  "90": {
     "en": "Delivery Moogle Quests",
     "ja": "レターモーグリ",
     "de": "Mogry-Post",
     "fr": "Quêtes du Mog postier"
   },
-  "88": {
+  "91": {
     "en": "Scholasticate Quests",
     "ja": "聖アンダリム神学院記",
     "de": "Sankt Endalim-Theologikum",
     "fr": "Scolasticat Saint-Endalim"
   },
-  "89": {
+  "92": {
     "en": "Void Quests",
     "ja": "ヴォイド再生計画",
     "de": "Das Schicksal des Nichts",
     "fr": "L'appel du néant"
   },
-  "90": {
+  "93": {
     "en": "Tataru's Grand Endeavor",
     "ja": "タタルの大繁盛商店",
     "de": "Tatarus Wohlstandsmanufaktur",
     "fr": "La Tarufacture de Tataru"
   },
-  "91": {
+  "94": {
     "en": "Doman Adventurers' Guild Quests",
     "ja": "ドマ冒険者団",
     "de": "Abenteurer von Doma",
     "fr": "Clan des aventuriers de Doma"
   },
-  "92": {
+  "95": {
     "en": "Doman Reconstruction Quests",
     "ja": "ドマ町人地復興記",
     "de": "Wiederaufbau der Enklave",
     "fr": "Reconstruction du quartier enclavé"
   },
-  "93": {
+  "96": {
     "en": "Ishgardian Restoration Main Quests",
     "ja": "イシュガルド復興：ストーリークエスト",
     "de": "Hauptaufträge Wiederaufbau Ishgards",
     "fr": "Reconstruction d'Ishgard"
   },
-  "94": {
+  "97": {
     "en": "Ishgardian Restoration Sidequests",
     "ja": "イシュガルド復興：サブクエスト",
     "de": "Nebenaufträge Wiederaufbau Ishgards",
     "fr": "Reconstruction d'Ishgard : quêtes annexes"
   },
-  "95": {
+  "98": {
     "en": "Splendorous Tools",
     "ja": "モーエンツール",
     "de": "Mowen-Werkzeuge",
     "fr": "Outils des merveilles"
   },
-  "96": {
+  "99": {
     "en": "Palace of the Dead",
     "ja": "死者の宮殿",
     "de": "Palast der Toten",
     "fr": "Le Palais des morts"
   },
-  "97": {
+  "100": {
     "en": "Heaven-on-High",
     "ja": "アメノミハシラ",
     "de": "Himmelssäule",
     "fr": "Le Pilier des Cieux"
   },
-  "98": {
+  "101": {
     "en": "Eureka Orthos",
     "ja": "オルト・エウレカ",
     "de": "Eureka Orthos",
     "fr": "Eurêka Orthos"
   },
-  "99": {
+  "102": {
     "en": "Island Sanctuary Quests",
     "ja": "無人島開拓記",
     "de": "Das Inselparadies",
     "fr": "Quêtes de la Félicité insulaire"
   },
-  "100": {
+  "103": {
     "en": "Variant Dungeons",
     "ja": "ヴァリアントダンジョン",
     "de": "Unstete Gewölbe",
     "fr": "Donjons à embranchements"
   },
-  "101": {
+  "104": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "105": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "106": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "107": {
     "en": "La Noscean Sidequests",
     "ja": "サブクエスト：ラノシア",
     "de": "Nebenaufträge La Noscea",
     "fr": "Noscea"
   },
-  "102": {
+  "108": {
     "en": "Gridanian Sidequests",
     "ja": "サブクエスト：黒衣森",
     "de": "Nebenaufträge Finsterwald",
     "fr": "Sombrelinceul"
   },
-  "103": {
+  "109": {
     "en": "Ul'dahn Sidequests",
     "ja": "サブクエスト：ザナラーン",
     "de": "Nebenaufträge Thanalan",
     "fr": "Thanalan"
   },
-  "104": {
+  "110": {
     "en": "Coerthan Sidequests",
     "ja": "サブクエスト：クルザス",
     "de": "Nebenaufträge Coerthas",
     "fr": "Coerthas"
   },
-  "105": {
+  "111": {
     "en": "Mor Dhonan Sidequests",
     "ja": "サブクエスト：モードゥナ",
     "de": "Nebenaufträge Mor Dhona",
     "fr": "Mor Dhona"
   },
-  "106": {
+  "112": {
     "en": "Ishgardian Sidequests",
     "ja": "サブクエスト：イシュガルド",
     "de": "Nebenaufträge Ishgard",
     "fr": "Ishgard"
   },
-  "107": {
+  "113": {
     "en": "Abalathian Sidequests",
     "ja": "サブクエスト：アバラシア雲海",
     "de": "Nebenaufträge Abalathia",
     "fr": "Abalathia"
   },
-  "108": {
+  "114": {
     "en": "Dravanian Forelands Sidequests",
     "ja": "サブクエスト：高地ドラヴァニア",
     "de": "Nebenaufträge Dravanisches Vorland",
     "fr": "Avant-pays dravanien"
   },
-  "109": {
+  "115": {
     "en": "Dravanian Hinterlands Sidequests",
     "ja": "サブクエスト：低地ドラヴァニア",
     "de": "Nebenaufträge Dravanisches Hinterland",
     "fr": "Arrière-pays dravanien"
   },
-  "110": {
+  "116": {
     "en": "Churning Mists Sidequests",
     "ja": "サブクエスト：ドラヴァニア雲海",
     "de": "Nebenaufträge Wallende Nebel",
     "fr": "Écume des cieux de Dravania"
   },
-  "111": {
+  "117": {
     "en": "Idyllshire Sidequests",
     "ja": "サブクエスト：イディルシャイア",
     "de": "Nebenaufträge Frohehalde",
     "fr": "Idyllée"
   },
-  "112": {
+  "118": {
     "en": "Azys Lla Sidequests",
     "ja": "サブクエスト：アジス・ラー",
     "de": "Nebenaufträge Azys Lla",
     "fr": "Azys Lla"
   },
-  "113": {
+  "119": {
     "en": "Rhalgr's Reach Sidequests",
     "ja": "サブクエスト：ラールガーズリーチ",
     "de": "Nebenaufträge Rhalgrs Wacht",
     "fr": "L'Étendue de Rhalgr"
   },
-  "114": {
+  "120": {
     "en": "Fringes Sidequests",
     "ja": "サブクエスト：ギラバニア辺境地帯",
     "de": "Nebenaufträge Grenzland",
     "fr": "Les Marges"
   },
-  "115": {
+  "121": {
     "en": "Peaks Sidequests",
     "ja": "サブクエスト：ギラバニア山岳地帯",
     "de": "Nebenaufträge Zinnen",
     "fr": "Les Pics"
   },
-  "116": {
+  "122": {
     "en": "Lochs Sidequests",
     "ja": "サブクエスト：ギラバニア湖畔地帯",
     "de": "Nebenaufträge Fenn",
     "fr": "Les Lacs"
   },
-  "117": {
+  "123": {
     "en": "Kugane Sidequests",
     "ja": "サブクエスト：クガネ",
     "de": "Nebenaufträge Kugane",
     "fr": "Kugane"
   },
-  "118": {
+  "124": {
     "en": "Ruby Sea Sidequests",
     "ja": "サブクエスト：紅玉海",
     "de": "Nebenaufträge Rubinsee",
     "fr": "Mer de Rubis"
   },
-  "119": {
+  "125": {
     "en": "Yanxia Sidequests",
     "ja": "サブクエスト：ヤンサ",
     "de": "Nebenaufträge Yanxia",
     "fr": "Yanxia"
   },
-  "120": {
+  "126": {
     "en": "Azim Steppe Sidequests",
     "ja": "サブクエスト：アジムステップ",
     "de": "Nebenaufträge Azim-Steppe",
     "fr": "Steppe d'Azim"
   },
-  "121": {
+  "127": {
     "en": "Crystarium Sidequests",
     "ja": "サブクエスト：クリスタリウム",
     "de": "Nebenaufträge Crystarium",
     "fr": "Cristarium"
   },
-  "122": {
+  "128": {
     "en": "Eulmore Sidequests",
     "ja": "サブクエスト：ユールモア",
     "de": "Nebenaufträge Eulmore",
     "fr": "Eulmore"
   },
-  "123": {
+  "129": {
     "en": "Lakeland Sidequests",
     "ja": "サブクエスト：レイクランド",
     "de": "Nebenaufträge Seenland",
     "fr": "Grand-Lac"
   },
-  "124": {
+  "130": {
     "en": "Kholusia Sidequests",
     "ja": "サブクエスト：コルシア島",
     "de": "Nebenaufträge Kholusia",
     "fr": "Kholusia"
   },
-  "125": {
+  "131": {
     "en": "Amh Araeng Sidequests",
     "ja": "サブクエスト：アム・アレーン",
     "de": "Nebenaufträge Amh Araeng",
     "fr": "Amh Araeng"
   },
-  "126": {
+  "132": {
     "en": "Il Mheg Sidequests",
     "ja": "サブクエスト：イル・メグ",
     "de": "Nebenaufträge Il Mheg",
     "fr": "Il Mheg"
   },
-  "127": {
+  "133": {
     "en": "Rak'tika Sidequests",
     "ja": "サブクエスト：ラケティカ大森林",
     "de": "Nebenaufträge Rak'tika",
     "fr": "Rak'tika"
   },
-  "128": {
+  "134": {
     "en": "Tempest Sidequests",
     "ja": "サブクエスト：テンペスト",
     "de": "Nebenaufträge Tempest",
     "fr": "La Tempête"
   },
-  "129": {
+  "135": {
     "en": "Old Sharlayan Sidequests",
     "ja": "サブクエスト：オールド・シャーレアン",
     "de": "Nebenaufträge Alt-Sharlayan",
     "fr": "Vieille Sharlayan"
   },
-  "130": {
+  "136": {
     "en": "Radz-at-Han Sidequests",
     "ja": "サブクエスト：ラザハン",
     "de": "Nebenaufträge Radz-at-Han",
     "fr": "Radz-at-Han"
   },
-  "131": {
+  "137": {
     "en": "Labyrinthos Sidequests",
     "ja": "サブクエスト：ラヴィリンソス",
     "de": "Nebenaufträge Labyrinthos",
     "fr": "Le Labyrinthos"
   },
-  "132": {
+  "138": {
     "en": "Thavnairian Sidequests",
     "ja": "サブクエスト：サベネア島",
     "de": "Nebenaufträge Thavnair",
     "fr": "Thavnair"
   },
-  "133": {
+  "139": {
     "en": "Garlean Sidequests",
     "ja": "サブクエスト：ガレマルド",
     "de": "Nebenaufträge Garlemald",
     "fr": "Garlemald"
   },
-  "134": {
+  "140": {
     "en": "Mare Lamentorum Sidequests",
     "ja": "サブクエスト：嘆きの海",
     "de": "Nebenaufträge Mare Lamentorum",
     "fr": "Mare Lamentorum"
   },
-  "135": {
+  "141": {
     "en": "Elpis Sidequests",
     "ja": "サブクエスト：エルピス",
     "de": "Nebenaufträge Elpis",
     "fr": "Elpis"
   },
-  "136": {
+  "142": {
     "en": "Ultima Thule Sidequests",
     "ja": "サブクエスト：ウルティマ・トゥーレ",
     "de": "Nebenaufträge Ultima Thule",
     "fr": "Ultima Thulé"
   },
-  "137": {
+  "143": {
     "en": "Tuliyollal Sidequests",
     "ja": "サブクエスト：トライヨラ",
     "de": "Nebenaufträge Tuliyollal",
     "fr": "Tuliyollal"
   },
-  "138": {
+  "144": {
     "en": "Urqopacha Sidequests",
     "ja": "サブクエスト：オルコ・パチャ",
     "de": "Nebenaufträge Urqopacha",
     "fr": "Urqopacha"
   },
-  "139": {
+  "145": {
     "en": "Kozama'uka Sidequests",
     "ja": "サブクエスト：コザマル・カ",
     "de": "Nebenaufträge Kozama'uka",
     "fr": "Kozama'uka"
   },
-  "140": {
+  "146": {
     "en": "Yak T'el Sidequests",
     "ja": "サブクエスト：ヤクテル樹海",
     "de": "Nebenaufträge Yak T'el",
     "fr": "Yak T'el"
   },
-  "141": {
+  "147": {
     "en": "Shaaloani Sidequests",
     "ja": "サブクエスト：シャーローニ荒野",
     "de": "Nebenaufträge Shaaloani",
     "fr": "Shaaloani"
   },
-  "142": {
+  "148": {
     "en": "Heritage Found Sidequests",
     "ja": "サブクエスト：ヘリテージファウンド",
     "de": "Nebenaufträge Ewiges Erbe",
     "fr": "L'Hoirie recouvrée"
   },
-  "143": {
+  "149": {
     "en": "Solution Nine Sidequests",
     "ja": "サブクエスト：ソリューション・ナイン",
     "de": "Nebenaufträge Lösung Neun",
     "fr": "Solution Neuf"
   },
-  "144": {
+  "150": {
     "en": "Living Memory Sidequests",
     "ja": "サブクエスト：リビング・メモリー",
     "de": "Nebenaufträge Lebende Erinnerung",
     "fr": "La Mémoire vivante"
   },
-  "145": {
+  "151": {
     "en": "Gladiator Quests",
     "ja": "剣術士クエスト",
     "de": "Gildenaufträge der Gladiatoren",
     "fr": "Quêtes de gladiateur"
   },
-  "146": {
+  "152": {
     "en": "Pugilist Quests",
     "ja": "格闘士クエスト",
     "de": "Gildenaufträge der Faustkämpfer",
     "fr": "Quêtes de pugiliste"
   },
-  "147": {
+  "153": {
     "en": "Marauder Quests",
     "ja": "斧術士クエスト",
     "de": "Gildenaufträge der Marodeure",
     "fr": "Quêtes de maraudeur"
   },
-  "148": {
+  "154": {
     "en": "Lancer Quests",
     "ja": "槍術士クエスト",
     "de": "Gildenaufträge der Pikeniere",
     "fr": "Quêtes de maître d'hast"
   },
-  "149": {
+  "155": {
     "en": "Archer Quests",
     "ja": "弓術士クエスト",
     "de": "Gildenaufträge der Waldläufer",
     "fr": "Quêtes d'archer"
   },
-  "150": {
+  "156": {
     "en": "Rogue Quests",
     "ja": "双剣士クエスト",
     "de": "Gildenaufträge der Schurken",
     "fr": "Quêtes de surineur"
   },
-  "151": {
+  "157": {
     "en": "Conjurer Quests",
     "ja": "幻術士クエスト",
     "de": "Gildenaufträge der Druiden",
     "fr": "Quêtes d'élémentaliste"
   },
-  "152": {
+  "158": {
     "en": "Thaumaturge Quests",
     "ja": "呪術士クエスト",
     "de": "Gildenaufträge der Thaumaturgen",
     "fr": "Quêtes d'occultiste"
   },
-  "153": {
+  "159": {
     "en": "Arcanist Quests",
     "ja": "巴術士クエスト",
     "de": "Gildenaufträge der Hermetiker",
     "fr": "Quêtes d'arcaniste"
   },
-  "154": {
+  "160": {
     "en": "Carpenter Quests",
     "ja": "木工師クエスト",
     "de": "Gildenaufträge der Zimmerer",
     "fr": "Quêtes de menuisier"
   },
-  "155": {
+  "161": {
     "en": "Blacksmith Quests",
     "ja": "鍛冶師クエスト",
     "de": "Gildenaufträge der Grobschmiede",
     "fr": "Quêtes de forgeron"
   },
-  "156": {
+  "162": {
     "en": "Armorer Quests",
     "ja": "甲冑師クエスト",
     "de": "Gildenaufträge der Plattner",
     "fr": "Quêtes d'armurier"
   },
-  "157": {
+  "163": {
     "en": "Goldsmith Quests",
     "ja": "彫金師クエスト",
     "de": "Gildenaufträge der Goldschmiede",
     "fr": "Quêtes d'orfèvre"
   },
-  "158": {
+  "164": {
     "en": "Leatherworker Quests",
     "ja": "革細工師クエスト",
     "de": "Gildenaufträge der Gerber",
     "fr": "Quêtes de tanneur"
   },
-  "159": {
+  "165": {
     "en": "Weaver Quests",
     "ja": "裁縫師クエスト",
     "de": "Gildenaufträge der Weber",
     "fr": "Quêtes de couturier"
   },
-  "160": {
+  "166": {
     "en": "Alchemist Quests",
     "ja": "錬金術師クエスト",
     "de": "Gildenaufträge der Alchemisten",
     "fr": "Quêtes d'alchimiste"
   },
-  "161": {
+  "167": {
     "en": "Culinarian Quests",
     "ja": "調理師クエスト",
     "de": "Gildenaufträge der Gourmets",
     "fr": "Quêtes de cuisinier"
   },
-  "162": {
+  "168": {
     "en": "Miner Quests",
     "ja": "採掘師クエスト",
     "de": "Gildenaufträge der Minenarbeiter",
     "fr": "Quêtes de mineur"
   },
-  "163": {
+  "169": {
     "en": "Botanist Quests",
     "ja": "園芸師クエスト",
     "de": "Gildenaufträge der Gärtner",
     "fr": "Quêtes de botaniste"
   },
-  "164": {
+  "170": {
     "en": "Fisher Quests",
     "ja": "漁師クエスト",
     "de": "Gildenaufträge der Fischer",
     "fr": "Quêtes de pêcheur"
   },
-  "165": {
+  "171": {
     "en": "Paladin Quests",
     "ja": "ナイトクエスト",
     "de": "Paladin-Jobaufträge",
     "fr": "Quêtes de paladin"
   },
-  "166": {
+  "172": {
     "en": "Monk Quests",
     "ja": "モンククエスト",
     "de": "Mönch-Jobaufträge",
     "fr": "Quêtes de moine"
   },
-  "167": {
+  "173": {
     "en": "Warrior Quests",
     "ja": "戦士クエスト",
     "de": "Krieger-Jobaufträge",
     "fr": "Quêtes de guerrier"
   },
-  "168": {
+  "174": {
     "en": "Dragoon Quests",
     "ja": "竜騎士クエスト",
     "de": "Dragoon-Jobaufträge",
     "fr": "Quêtes de chevalier dragon"
   },
-  "169": {
+  "175": {
     "en": "Bard Quests",
     "ja": "吟遊詩人クエスト",
     "de": "Barden-Jobaufträge",
     "fr": "Quêtes de barde"
   },
-  "170": {
+  "176": {
     "en": "Ninja Quests",
     "ja": "忍者クエスト",
     "de": "Ninja-Jobaufträge",
     "fr": "Quêtes de ninja"
   },
-  "171": {
+  "177": {
     "en": "White Mage Quests",
     "ja": "白魔道士クエスト",
     "de": "Weißmagier-Jobaufträge",
     "fr": "Quêtes de mage blanc"
   },
-  "172": {
+  "178": {
     "en": "Black Mage Quests",
     "ja": "黒魔道士クエスト",
     "de": "Schwarzmagier-Jobaufträge",
     "fr": "Quêtes de mage noir"
   },
-  "173": {
+  "179": {
     "en": "Summoner Quests",
     "ja": "召喚士クエスト",
     "de": "Beschwörer-Jobaufträge",
     "fr": "Quêtes d'invocateur"
   },
-  "174": {
+  "180": {
     "en": "Scholar Quests",
     "ja": "学者クエスト",
     "de": "Gelehrten-Jobaufträge",
     "fr": "Quêtes d'érudit"
   },
-  "175": {
+  "181": {
     "en": "Dark Knight Quests",
     "ja": "暗黒騎士クエスト",
     "de": "Dunkelritter-Jobaufträge",
     "fr": "Quêtes de chevalier noir"
   },
-  "176": {
+  "182": {
     "en": "Machinist Quests",
     "ja": "機工士クエスト",
     "de": "Maschinisten-Jobaufträge",
     "fr": "Quêtes de machiniste"
   },
-  "177": {
+  "183": {
     "en": "Astrologian Quests",
     "ja": "占星術師クエスト",
     "de": "Astrologen-Jobaufträge",
     "fr": "Quêtes d'astromancien"
   },
-  "178": {
+  "184": {
     "en": "Samurai Quests",
     "ja": "侍クエスト",
     "de": "Samurai-Jobaufträge",
     "fr": "Quêtes de samouraï"
   },
-  "179": {
+  "185": {
     "en": "Red Mage Quests",
     "ja": "赤魔道士クエスト",
     "de": "Rotmagier-Jobaufträge",
     "fr": "Quêtes de mage rouge"
   },
-  "180": {
+  "186": {
     "en": "Gunbreaker Quests",
     "ja": "ガンブレイカークエスト",
     "de": "Revolverklingen-Jobaufträge",
     "fr": "Quêtes de pistosabreur"
   },
-  "181": {
+  "187": {
     "en": "Dancer Quests",
     "ja": "踊り子クエスト",
     "de": "Tänzer-Jobaufträge",
     "fr": "Quêtes de danseur"
   },
-  "182": {
+  "188": {
     "en": "Sage Quests",
     "ja": "賢者クエスト",
     "de": "Weiser-Jobaufträge",
     "fr": "Quêtes de sage"
   },
-  "183": {
+  "189": {
     "en": "Reaper Quests",
     "ja": "リーパークエスト",
     "de": "Schnitter-Jobaufträge",
     "fr": "Quêtes de faucheur"
   },
-  "184": {
+  "190": {
     "en": "Viper Quests",
     "ja": "ヴァイパークエスト",
     "de": "Viper-Jobaufträge",
     "fr": "Quêtes de rôdeur vipère"
   },
-  "185": {
+  "191": {
     "en": "Pictomancer Quests",
     "ja": "ピクトマンサークエスト",
     "de": "Piktomanten-Jobaufträge",
     "fr": "Quêtes de pictomancien"
   },
-  "186": {
+  "192": {
     "en": "Blue Mage Quests",
     "ja": "青魔道士クエスト",
     "de": "Blaumagier-Jobaufträge",
     "fr": "Quêtes de mage bleu"
   },
-  "187": {
+  "193": {
     "en": "Facet of Forging Quests",
     "ja": "錬鉄科クエスト",
     "de": "Lieferaufträge: Schwarzeisen-Schmiede",
     "fr": "Quêtes des métallurgistes"
   },
-  "188": {
+  "194": {
     "en": "Facet of Crafting Quests",
     "ja": "手工科クエスト",
     "de": "Lieferaufträge: Erinnerungswerkstatt",
     "fr": "Quêtes des façonniers"
   },
-  "189": {
+  "195": {
     "en": "Facet of Nourishing Quests",
     "ja": "食薬科クエスト",
     "de": "Lieferaufträge: Kräuter, Düfte & Aromen",
     "fr": "Quêtes des préparateurs"
   },
-  "190": {
+  "196": {
     "en": "Facet of Gathering Quests",
     "ja": "調達科クエスト",
     "de": "Lieferaufträge: Materialbeschaffung ",
     "fr": "Quêtes des naturalistes"
   },
-  "191": {
+  "197": {
     "en": "Facet of Fishing Quests",
     "ja": "漁業科クエスト",
     "de": "Lieferaufträge: Fischerei",
     "fr": "Quêtes des pêcheurs"
   },
-  "192": {
+  "198": {
     "en": "Crystalline Mean Quests",
     "ja": "ミーン工芸館エクストラストーリー",
-    "de": "Manufaktur der Gesellschaft: Abschluss",
+    "de": "Manufaktur der Gesellschaft",
     "fr": "Quêtes de la halle du Juste"
   },
-  "193": {
+  "199": {
     "en": "Faculty of Archaeology Quests",
     "ja": "考古学部クエスト",
     "de": "Aufträge des Archäologischen Instituts",
     "fr": "Quêtes du département d'archéologie"
   },
-  "194": {
+  "200": {
     "en": "Faculty of Astronomy Quests",
     "ja": "天文学部クエスト",
     "de": "Aufträge des Astronomischen Instituts",
     "fr": "Quêtes du département d'astronomie"
   },
-  "195": {
+  "201": {
     "en": "Faculty of Medicine Quests",
     "ja": "医学部クエスト",
     "de": "Aufträge des Medizinischen Instituts",
     "fr": "Quêtes du département de médecine"
   },
-  "196": {
+  "202": {
     "en": "Faculty of Anthropology Quests",
     "ja": "文化学部クエスト",
     "de": "Aufträge des Kulturwissenschaftlichen Instituts",
     "fr": "Quêtes du département d'anthropologie "
   },
-  "197": {
+  "203": {
     "en": "Faculty of Aetherology Quests",
     "ja": "エーテル学部クエスト",
     "de": "Aufträge des Ätherologischen Instituts",
     "fr": "Quêtes du département d'éthérologie"
   },
-  "198": {
+  "204": {
     "en": "Studium Quests",
     "ja": "魔法大学エクストラストーリー",
-    "de": "Magieakademie: Abschluss",
+    "de": "Magieakademie",
     "fr": "Quêtes de l'académie de magie de Sharlayan"
   },
-  "199": {
+  "205": {
     "en": "XRral Soj Metalwares Quests",
     "ja": "金荒物屋クエスト",
     "de": "Aufträge von XRral Soj Metallwaren",
     "fr": "Quêtes de la quincaillerie de Rral Soj"
   },
-  "200": {
+  "206": {
     "en": "Epistles by Pameka Quests",
     "ja": "筆記工房クエスト",
     "de": "Aufträge von Pamekas Briefwerkstatt",
     "fr": "Quêtes du scriptorium de Pameka"
   },
-  "201": {
+  "207": {
     "en": "Xeerol Ja Juicecraft Quests",
     "ja": "ジュースクラフトクエスト",
     "de": "Aufträge von Xeerol Jas Safterei",
     "fr": "Quêtes du bar à jus de Xeerol Ja"
   },
-  "202": {
+  "208": {
     "en": "Shunye's Apothecary Quests",
     "ja": "アポサカリークエスト",
     "de": "Aufträge von Shunyes Apotheke",
     "fr": "Quêtes de la pharmacie de Shunye"
   },
-  "203": {
+  "209": {
     "en": "Fish Fancies Donuhanu Quests",
     "ja": "魚道楽クエスト",
     "de": "Aufträge von Donuhanus Fabelhaften Fischen",
     "fr": "Quêtes de la poissonnerie de Donuhanu"
   },
-  "204": {
+  "210": {
     "en": "Wachumeqimeqi Quests",
     "ja": "万貨街エクストラストーリー",
     "de": "Markt von Wachumeqimeqi",
     "fr": "Quêtes du bazar aux Mille Perles"
   },
-  "205": {
+  "211": {
     "en": "Tank Role Quests (Shadowbringers)",
     "ja": "TANKロールクエスト 漆黒編",
     "de": "Rollenaufträge (Shadowbringers): Verteidiger",
     "fr": "Quêtes de tank (Shadowbringers)"
   },
-  "206": {
+  "212": {
     "en": "Healer Role Quests (Shadowbringers)",
     "ja": "HEALERロールクエスト 漆黒編",
     "de": "Rollenaufträge (Shadowbringers): Heiler",
     "fr": "Quêtes de soigneur (Shadowbringers)"
   },
-  "207": {
+  "213": {
     "en": "Physical DPS Role Quests (Shadowbringers)",
     "ja": "ファイター系DPSロールクエスト 漆黒編",
     "de": "Rollenaufträge (Shadowbringers): Phys. Angreifer",
     "fr": "Quêtes de DPS physique (Shadowbringers)"
   },
-  "208": {
+  "214": {
     "en": "Magical Ranged DPS Role Quests (Shadowbringers)",
     "ja": "ソーサラー系DPSロールクエスト 漆黒編",
     "de": "Rollenaufträge (Shadowbringers): Mag. Angreifer",
     "fr": "Quêtes de DPS magique (Shadowbringers)"
   },
-  "209": {
+  "215": {
     "en": "Role Quests (Shadowbringers)",
     "ja": "ロールエクストラストーリー 漆黒編",
     "de": "Rollenaufträge (Shadowbringers): Abschluss",
     "fr": "Quêtes de rôle (Shadowbringers)"
   },
-  "210": {
+  "216": {
     "en": "Tank Role Quests (Endwalker)",
     "ja": "TANKロールクエスト 暁月編",
     "de": "Rollenaufträge (Endwalker): Verteidiger",
     "fr": "Quêtes de tank (Endwalker)"
   },
-  "211": {
+  "217": {
     "en": "Healer Role Quests (Endwalker)",
     "ja": "HEALERロールクエスト 暁月編",
     "de": "Rollenaufträge (Endwalker): Heiler",
     "fr": "Quêtes de soigneur (Endwalker)"
   },
-  "212": {
+  "218": {
     "en": "Melee DPS Role Quests (Endwalker)",
     "ja": "近接物理DPSロールクエスト 暁月編",
     "de": "Rollenaufträge (Endwalker): Nahkämpfer",
     "fr": "Quêtes de DPS physique de mêlée (Endwalker)"
   },
-  "213": {
+  "219": {
     "en": "Physical Ranged DPS Role Quests (Endwalker)",
     "ja": "遠隔物理DPSロールクエスト 暁月編",
     "de": "Rollenaufträge (Endwalker): Phy. Fernkämpfer",
     "fr": "Quêtes de DPS physique à distance (Endwalker)"
   },
-  "214": {
+  "220": {
     "en": "Magical Ranged DPS Role Quests (Endwalker)",
     "ja": "遠隔魔法DPSロールクエスト 暁月編",
     "de": "Rollenaufträge (Endwalker): Mag. Fernkämpfer",
     "fr": "Quêtes de DPS magique (Endwalker)"
   },
-  "215": {
+  "221": {
     "en": "Role Quests (Endwalker)",
     "ja": "ロールエクストラストーリー 暁月編",
     "de": "Rollenaufträge (Endwalker): Abschluss",
     "fr": "Quêtes de rôle (Endwalker)"
   },
-  "216": {
+  "222": {
     "en": "Tank Role Quests (Dawntrail)",
     "ja": "TANKロールクエスト 黄金編",
     "de": "Rollenaufträge (Dawntrail): Verteidiger",
     "fr": "Quêtes de tank (Dawntrail)"
   },
-  "217": {
+  "223": {
     "en": "Healer Role Quests (Dawntrail)",
     "ja": "HEALERロールクエスト 黄金編",
     "de": "Rollenaufträge (Dawntrail): Heiler",
     "fr": "Quêtes de soigneur (Dawntrail)"
   },
-  "218": {
+  "224": {
     "en": "Melee DPS Role Quests (Dawntrail)",
     "ja": "近接物理DPSロールクエスト 黄金編",
     "de": "Rollenaufträge (Dawntrail): Nahkämpfer",
     "fr": "Quêtes de DPS physique de mêlée (Dawntrail)"
   },
-  "219": {
+  "225": {
     "en": "Physical Ranged DPS Role Quests (Dawntrail)",
     "ja": "遠隔物理DPSロールクエスト 黄金編",
     "de": "Rollenaufträge (Dawntrail): Phy. Fernkämpfer",
     "fr": "Quêtes de DPS physique à distance (Dawntrail)"
   },
-  "220": {
+  "226": {
     "en": "Magical Ranged DPS Role Quests (Dawntrail)",
     "ja": "遠隔魔法DPSロールクエスト 黄金編",
     "de": "Rollenaufträge (Dawntrail): Mag. Fernkämpfer",
     "fr": "Quêtes de DPS magique (Dawntrail)"
   },
-  "221": {
+  "227": {
     "en": "Role Quests (Dawntrail)",
     "ja": "ロールエクストラストーリー 黄金編",
     "de": "Rollenaufträge (Dawntrail)",
     "fr": "Quêtes de rôle (Dawntrail)"
   },
-  "222": {
+  "228": {
     "en": "Maelstrom Quests",
     "ja": "黒渦団クエスト",
     "de": "Aufträge des Mahlstroms",
     "fr": "Quêtes du Maelstrom"
   },
-  "223": {
+  "229": {
     "en": "Order of the Twin Adder Quests",
     "ja": "双蛇党クエスト",
     "de": "Aufträge der Bruderschaft der Morgenviper",
     "fr": "Quêtes de l'ordre des Deux Vipères"
   },
-  "224": {
+  "230": {
     "en": "Immortal Flames Quests",
     "ja": "不滅隊クエスト",
     "de": "Aufträge der Legion der Unsterblichen",
     "fr": "Quêtes des Immortels"
   },
-  "225": {
+  "231": {
     "en": "Seasonal Events",
     "ja": "シーズナルクエスト",
     "de": "Saisonale Aufträge",
     "fr": "Événements saisonniers"
   },
-  "226": {
+  "232": {
     "en": "Heavensturn Events",
     "ja": "降神祭",
     "de": "Himmelswende",
     "fr": "Fête de la transition"
   },
-  "227": {
+  "233": {
     "en": "Eastern Duties",
     "ja": "CHS／KO専用",
     "de": "Prüfungen des Ostens",
     "fr": "Quêtes orientales"
   },
-  "228": {
+  "234": {
     "en": "Valentione's Day Events",
     "ja": "ヴァレンティオンデー",
     "de": "Valentiontag",
     "fr": "Valention"
   },
-  "229": {
+  "235": {
     "en": "Valentione's & Little Ladies' Day Events",
     "ja": "ヴァレンティオン＆プリンセスデー",
     "de": "Valention- und Prinzessinnentag",
     "fr": "Valention & fête des demoiselles"
   },
-  "230": {
+  "236": {
     "en": "Little Ladies' Day Events",
     "ja": "プリンセスデー",
     "de": "Prinzessinnentag",
     "fr": "Fête des demoiselles"
   },
-  "231": {
+  "237": {
     "en": "Little Ladies' & Hatching-tide Events",
     "ja": "プリンセスデー＆エッグハント",
     "de": "Prinzessinnentag und Wundereiersuche",
     "fr": "Fête des demoiselles & chasse aux Prœufs"
   },
-  "232": {
+  "238": {
     "en": "Hatching-tide Events",
     "ja": "エッグハント",
     "de": "Wundereiersuche",
     "fr": "Chasse aux Prœufs"
   },
-  "233": {
+  "239": {
     "en": "Gold Saucer Festivities",
     "ja": "ゴールドソーサー・フェスティバル",
     "de": "Gold Saucer-Festival",
     "fr": "Festival du Gold Saucer"
   },
-  "234": {
+  "240": {
     "en": "Moonfire Faire Events",
     "ja": "紅蓮祭",
     "de": "Feuermond-Reigen",
     "fr": "Feux de la Mort"
   },
-  "235": {
+  "241": {
     "en": "Rising Events",
     "ja": "新生祭",
     "de": "Fest der Wiedergeburt",
     "fr": "Fête de la Commémoration"
   },
-  "236": {
+  "242": {
     "en": "All Saints' Wake Events",
     "ja": "守護天節",
     "de": "Allerschutzheiligen",
     "fr": "Veillée des saints"
   },
-  "237": {
+  "243": {
     "en": "Starlight Celebration Events",
     "ja": "星芒祭",
     "de": "Sternenlichtfest",
     "fr": "Fête des étoiles"
   },
-  "238": {
+  "244": {
     "en": "Other Seasonal Events",
     "ja": "その他シーズナルイベント",
     "de": "Andere saisonale Ereignisse",
     "fr": "Autres événements"
   },
-  "239": {
+  "245": {
     "en": "Special Quests",
     "ja": "スペシャルクエスト",
     "de": "Spezial-Aufträge",
     "fr": "Quêtes spéciales"
   },
-  "240": {
+  "246": {
     "en": "Collaboration Quests",
     "ja": "来訪者クエスト",
     "de": "Besuch aus anderen Welten",
     "fr": "Visiteurs d'autres univers"
-  },
-  "241": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "242": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "243": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "244": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "245": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "246": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
   },
   "247": {
     "en": "",
@@ -1548,274 +1548,274 @@
     "fr": ""
   },
   "259": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "260": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "261": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "264": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "265": {
     "en": "Battlecraft Levequests",
     "ja": "傭兵リーヴ",
     "de": "Gefechtserlasse",
     "fr": "Mandats de mercenariat"
   },
-  "260": {
+  "266": {
     "en": "Carpenter Levequests",
     "ja": "木工師リーヴ",
     "de": "Zimmerer-Fertigungserlasse",
     "fr": "Mandats de menuisier"
   },
-  "261": {
+  "267": {
     "en": "Blacksmith Levequests",
     "ja": "鍛冶師リーヴ",
     "de": "Grobschmied-Fertigungserlasse",
     "fr": "Mandats de forgeron"
   },
-  "262": {
+  "268": {
     "en": "Armorer Levequests",
     "ja": "甲冑師リーヴ",
     "de": "Plattner-Fertigungserlasse",
     "fr": "Mandats d'armurier"
   },
-  "263": {
+  "269": {
     "en": "Goldsmith Levequests",
     "ja": "彫金師リーヴ",
     "de": "Goldschmied-Fertigungserlasse",
     "fr": "Mandats d'orfèvre"
   },
-  "264": {
+  "270": {
     "en": "Leatherworker Levequests",
     "ja": "革細工師リーヴ",
     "de": "Gerber-Fertigungserlasse",
     "fr": "Mandats de tanneur"
   },
-  "265": {
+  "271": {
     "en": "Weaver Levequests",
     "ja": "裁縫師リーヴ",
     "de": "Weber-Fertigungserlasse",
     "fr": "Mandats de couturier"
   },
-  "266": {
+  "272": {
     "en": "Alchemist Levequests",
     "ja": "錬金術師リーヴ",
     "de": "Alchemisten-Fertigungserlasse",
     "fr": "Mandats d'alchimiste"
   },
-  "267": {
+  "273": {
     "en": "Culinarian Levequests",
     "ja": "調理師リーヴ",
     "de": "Gourmet-Fertigungserlasse",
     "fr": "Mandats de cuisinier"
   },
-  "268": {
+  "274": {
     "en": "Miner Levequests",
     "ja": "採掘師リーヴ",
     "de": "Minenarbeiter-Sammelerlasse",
     "fr": "Mandats de mineur"
   },
-  "269": {
+  "275": {
     "en": "Botanist Levequests",
     "ja": "園芸師リーヴ",
     "de": "Gärtner-Sammelerlasse",
     "fr": "Mandats de botaniste"
   },
-  "270": {
+  "276": {
     "en": "Fisher Levequests",
     "ja": "漁師リーヴ",
     "de": "Fischer-Sammelerlasse",
     "fr": "Mandats de pêcheur"
   },
-  "271": {
+  "277": {
     "en": "Maelstrom Levequests",
     "ja": "黒渦団リーヴ",
     "de": "Mahlstrom-Staatserlasse",
     "fr": "Mandats du Maelstrom"
   },
-  "272": {
+  "278": {
     "en": "Order of the Twin Adder Levequests",
     "ja": "双蛇党リーヴ",
     "de": "Bruderschaft-Staatserlasse",
     "fr": "Mandats de l'ordre des Deux Vipères"
   },
-  "273": {
+  "279": {
     "en": "Immortal Flames Levequests",
     "ja": "不滅隊リーヴ",
     "de": "Legion-Staatserlasse",
     "fr": "Mandats des Immortels"
   },
-  "274": {
-    "en": "Instanced Dungeons",
-    "ja": "ダンジョン",
-    "de": "Dungeons",
-    "fr": "Donjons"
-  },
-  "275": {
-    "en": "Instanced Raids",
-    "ja": "レイド",
-    "de": "Instanziierte Raids",
-    "fr": "Raids"
-  },
-  "276": {
-    "en": "Trials",
-    "ja": "討伐・討滅戦",
-    "de": "Prüfungen",
-    "fr": "Défis"
-  },
-  "277": {
-    "en": "Instanced Dungeons",
-    "ja": "ダンジョン",
-    "de": "Dungeons",
-    "fr": "Donjons"
-  },
-  "278": {
-    "en": "Instanced Raids",
-    "ja": "レイド",
-    "de": "Instanziierte Raids",
-    "fr": "Raids"
-  },
-  "279": {
-    "en": "Trials",
-    "ja": "討伐・討滅戦",
-    "de": "Prüfungen",
-    "fr": "Défis"
-  },
   "280": {
-    "en": "Deep Dungeons",
-    "ja": "ディープダンジョン",
-    "de": "Tiefe Gewölbe",
-    "fr": "Donjons sans fond"
+    "en": "Instanced Dungeons",
+    "ja": "ダンジョン",
+    "de": "Dungeons",
+    "fr": "Donjons"
   },
   "281": {
-    "en": "Instanced Dungeons",
-    "ja": "ダンジョン",
-    "de": "Dungeons",
-    "fr": "Donjons"
-  },
-  "282": {
     "en": "Instanced Raids",
     "ja": "レイド",
     "de": "Instanziierte Raids",
     "fr": "Raids"
   },
-  "283": {
+  "282": {
     "en": "Trials",
     "ja": "討伐・討滅戦",
     "de": "Prüfungen",
     "fr": "Défis"
   },
+  "283": {
+    "en": "Instanced Dungeons",
+    "ja": "ダンジョン",
+    "de": "Dungeons",
+    "fr": "Donjons"
+  },
   "284": {
+    "en": "Instanced Raids",
+    "ja": "レイド",
+    "de": "Instanziierte Raids",
+    "fr": "Raids"
+  },
+  "285": {
+    "en": "Trials",
+    "ja": "討伐・討滅戦",
+    "de": "Prüfungen",
+    "fr": "Défis"
+  },
+  "286": {
     "en": "Deep Dungeons",
     "ja": "ディープダンジョン",
     "de": "Tiefe Gewölbe",
     "fr": "Donjons sans fond"
   },
-  "285": {
+  "287": {
+    "en": "Instanced Dungeons",
+    "ja": "ダンジョン",
+    "de": "Dungeons",
+    "fr": "Donjons"
+  },
+  "288": {
+    "en": "Instanced Raids",
+    "ja": "レイド",
+    "de": "Instanziierte Raids",
+    "fr": "Raids"
+  },
+  "289": {
+    "en": "Trials",
+    "ja": "討伐・討滅戦",
+    "de": "Prüfungen",
+    "fr": "Défis"
+  },
+  "290": {
+    "en": "Deep Dungeons",
+    "ja": "ディープダンジョン",
+    "de": "Tiefe Gewölbe",
+    "fr": "Donjons sans fond"
+  },
+  "291": {
     "en": "Eureka Expedition Quests",
     "ja": "禁断の地 エウレカ",
     "de": "Eureka",
     "fr": "La terre interdite d'Eurêka"
   },
-  "286": {
+  "292": {
     "en": "Instanced Dungeons",
     "ja": "ダンジョン",
     "de": "Dungeons",
     "fr": "Donjons"
   },
-  "287": {
+  "293": {
     "en": "Instanced Raids",
     "ja": "レイド",
     "de": "Instanziierte Raids",
     "fr": "Raids"
   },
-  "288": {
+  "294": {
     "en": "Trials",
     "ja": "討伐・討滅戦",
     "de": "Prüfungen",
     "fr": "Défis"
   },
-  "289": {
+  "295": {
     "en": "Save the Queen: Blades of Gunnhildr",
     "ja": "セイブ・ザ・クイーン",
     "de": "Die Königinnenwache",
     "fr": "Garde-la-Reine"
   },
-  "290": {
+  "296": {
     "en": "Instanced Dungeons",
     "ja": "ダンジョン",
     "de": "Dungeons",
     "fr": "Donjons"
   },
-  "291": {
+  "297": {
     "en": "Instanced Raids",
     "ja": "レイド",
     "de": "Instanziierte Raids",
     "fr": "Raids"
   },
-  "292": {
+  "298": {
     "en": "Trials",
     "ja": "討伐・討滅戦",
     "de": "Prüfungen",
     "fr": "Défis"
   },
-  "293": {
+  "299": {
     "en": "Deep Dungeons",
     "ja": "ディープダンジョン",
     "de": "Tiefe Gewölbe",
     "fr": "Donjons sans fond"
   },
-  "294": {
+  "300": {
     "en": "Criterion Dungeons",
     "ja": "ヴァリアント・アナザーダンジョン",
     "de": "Kuriose Gewölbe",
     "fr": "Donjons alternatifs"
   },
-  "295": {
+  "301": {
     "en": "Instanced Dungeons",
     "ja": "ダンジョン",
     "de": "Dungeons",
     "fr": "Donjons"
   },
-  "296": {
+  "302": {
     "en": "Instanced Raids",
     "ja": "レイド",
     "de": "Instanziierte Raids",
     "fr": "Raids"
   },
-  "297": {
+  "303": {
     "en": "Trials",
     "ja": "討伐・討滅戦",
     "de": "Prüfungen",
     "fr": "Défis"
-  },
-  "298": {
-    "en": "Guildhests",
-    "ja": "ギルドオーダー",
-    "de": "Gildengeheiße",
-    "fr": "Opérations de guilde"
-  },
-  "299": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "300": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "301": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "302": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "303": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
   },
   "304": {
     "en": "",
@@ -1824,10 +1824,10 @@
     "fr": ""
   },
   "305": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Guildhests",
+    "ja": "ギルドオーダー",
+    "de": "Gildengeheiße",
+    "fr": "Opérations de guilde"
   },
   "306": {
     "en": "",
@@ -1986,30 +1986,66 @@
     "fr": ""
   },
   "332": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "333": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "334": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "335": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "336": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "337": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "338": {
     "en": "Legacy Main Scenario Quests",
     "ja": "メインクエスト：レガシー",
     "de": "Hauptszenario - 6. Ära des Lichts",
     "fr": "Épopée"
   },
-  "333": {
+  "339": {
     "en": "Legacy Sidequests",
     "ja": "サブクエスト：レガシー",
     "de": "Nebenaufträge - 6. Ära des Lichts",
     "fr": "Quêtes annexes"
   },
-  "334": {
+  "340": {
     "en": "Legacy Class Quests",
     "ja": "クラスクエスト：レガシー",
     "de": "Gildenaufträge - 6. Ära des Lichts",
     "fr": "Quêtes de classe"
   },
-  "335": {
+  "341": {
     "en": "Legacy Job Quests",
     "ja": "ジョブクエスト：レガシー",
     "de": "Jobaufträge - 6. Ära des Lichts",
     "fr": "Quêtes de job"
   },
-  "336": {
+  "342": {
     "en": "Legacy Grand Company Quests",
     "ja": "グランドカンパニークエスト：レガシー",
     "de": "Staatliche Gesellschaften - 6. Ära des Lichts",

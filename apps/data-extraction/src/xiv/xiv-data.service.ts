@@ -23,7 +23,7 @@ export class XivDataService {
 
   private readonly EXDSchemaPath = process.env.EXD_SCHEMA_PATH || 'G:\\WebstormProjects\\EXDSchema';
 
-  private readonly EXDParser = new ExdYamlParser(this.EXDSchemaPath, 'latest');
+  private readonly EXDParser = new ExdYamlParser(this.EXDSchemaPath);
 
   private definitionsCache: Record<string, EXDSchema> = {};
 

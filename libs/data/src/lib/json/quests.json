@@ -31440,7 +31440,7 @@
   },
   "67417": {
     "name": {
-      "en": "Cleaning House",
+      "en": "Scouting and Maiming",
       "ja": "討伐代行",
       "de": "Drachenjagd für die Forscher",
       "fr": "Leur dame des éclaireurs"
@@ -75918,7 +75918,7 @@
     "name": {
       "en": "Fashion Face-off",
       "ja": "プリンセスデーとファッションコンテスト",
-      "de": "Der Prinzessinenfest-Modewettbewerb",
+      "de": "Der Prinzessinnenfest-Modewettbewerb",
       "fr": "Le défilé des demoiselles"
     },
     "icon": "/i/080000/080109.png",
@@ -75934,7 +75934,7 @@
     "name": {
       "en": "A Stylish Transformation",
       "ja": "プリンセスデーに華麗な様変わり",
-      "de": "Modisches Prinzessinenfest",
+      "de": "Modisches Prinzessinnenfest",
       "fr": "Nouveau look pour une nouvelle fête"
     },
     "icon": "/i/080000/080109.png",
@@ -87588,7 +87588,7 @@
       "en": "The Taste of Family",
       "ja": "味がしなくたって、あなたがいれば",
       "de": "Eisbrecher im Becher",
-      "fr": "La saveur du cœur "
+      "fr": "La saveur du cœur"
     },
     "icon": "/i/071000/071201.png",
     "rewards": [
@@ -88487,7 +88487,7 @@
       "en": "Hunting the Hunter",
       "ja": "トラル大陸のモブハント（上級）",
       "de": "Hohe Jagd auf Tural 3",
-      "fr": "La chasseuse de Solution Neuf"
+      "fr": "La chasseuse des plaines"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -91132,7 +91132,7 @@
       "en": " Bird Meat's Back on the Menu",
       "ja": " 用立てたいのです、美味しい鳥肉を！",
       "de": " Saftige Keulen",
-      "fr": " Bon à s'en lècher les doigts"
+      "fr": " Bon à s'en lécher les doigts"
     },
     "icon": "/i/071000/071221.png",
     "rewards": [
@@ -91207,7 +91207,7 @@
       "en": " Seasoned Adventurer",
       "ja": " 足りないんですよ、スパイスが！",
       "de": " Auftrag mit Würze",
-      "fr": " À court de roucou "
+      "fr": " À court de roucou"
     },
     "icon": "/i/071000/071221.png",
     "rewards": [
@@ -91609,5 +91609,867 @@
       }
     ],
     "banner": "/i/101000/101393.png"
+  },
+  "70789": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70790": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70791": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70792": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70793": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70794": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70795": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70796": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70797": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70798": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70799": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70800": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70801": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70802": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70803": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70804": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70805": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70806": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70807": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70808": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70809": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70810": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70811": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70812": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70813": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70814": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70815": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70816": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70817": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70818": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70819": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70820": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70821": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70822": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70823": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70824": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70825": {
+    "name": {
+      "en": "Souls under Siege",
+      "ja": "魂を蝕む病",
+      "de": "Zerfressene Seelen",
+      "fr": "Le mal rongeur d'âme"
+    },
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101399.png"
+  },
+  "70826": {
+    "name": {
+      "en": "The Dancing King",
+      "ja": "パーティー野郎",
+      "de": "Das professionelle Partytier",
+      "fr": "Sous les éclairs des stroboscopes"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41768,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112597.png"
+  },
+  "70827": {
+    "name": {
+      "en": "Art at War",
+      "ja": "リングはアトリエ",
+      "de": "Künstlerin des Rings",
+      "fr": "Les joies de la peinture"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41769,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112599.png"
+  },
+  "70828": {
+    "name": {
+      "en": "Twisted Vengeance",
+      "ja": "反則王のリベンジ",
+      "de": "Die Rache des Regelbrechers",
+      "fr": "La revanche du roi de la triche"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41761,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112601.png"
+  },
+  "70829": {
+    "name": {
+      "en": "Family Matters",
+      "ja": "黒猫と魔女",
+      "de": "Kein Weg zurück",
+      "fr": "Dispute en famille"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41757,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/101000/101400.png"
+  },
+  "70830": {
+    "name": {
+      "en": "The Lone Wolf",
+      "ja": "孤高の狼",
+      "de": "Stolzer Wolf",
+      "fr": "Le loup solitaire"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      },
+      {
+        "id": 41768,
+        "amount": 3
+      },
+      {
+        "id": 41769,
+        "amount": 3
+      },
+      {
+        "id": 41761,
+        "amount": 3
+      },
+      {
+        "id": 41757,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112603.png"
+  },
+  "70831": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70832": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70833": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70834": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70835": {
+    "name": {
+      "en": "A Glimmer of the Past",
+      "ja": "過去より届いた輝き",
+      "de": "Glanz der Vergangenheit",
+      "fr": "Un éclat du passé"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 44104,
+        "amount": 2
+      },
+      {
+        "id": 44098,
+        "amount": 2
+      },
+      {
+        "id": 44087,
+        "amount": 2
+      },
+      {
+        "id": 44090,
+        "amount": 2
+      },
+      {
+        "id": 27994,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101412.png"
+  },
+  "70836": {
+    "name": {
+      "en": "Memories of a Bygone Age",
+      "ja": "遠ざかる思い出",
+      "de": "Erinnerungen aus längst vergangenen Zeiten",
+      "fr": "Des souvenirs bien trop lointains"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70837": {
+    "name": {
+      "en": "In Search of Meaning",
+      "ja": "今ここに在る意味",
+      "de": "Symbol der Verbindung",
+      "fr": "Retrouver sa place"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41757,
+        "amount": 1
+      },
+      {
+        "id": 41761,
+        "amount": 1
+      },
+      {
+        "id": 41768,
+        "amount": 1
+      },
+      {
+        "id": 41769,
+        "amount": 1
+      }
+    ]
+  },
+  "70838": {
+    "name": {
+      "en": "A Jewel Shattered",
+      "ja": "砕かれた輝石",
+      "de": "Ein gebrochenes Juwel",
+      "fr": "Un joyau brisé"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70839": {
+    "name": {
+      "en": "The Meeting",
+      "ja": "作戦会議",
+      "de": "Die Zusammenkunft",
+      "fr": "La réunion"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 44104,
+        "amount": 2
+      },
+      {
+        "id": 44098,
+        "amount": 2
+      },
+      {
+        "id": 44087,
+        "amount": 2
+      },
+      {
+        "id": 44090,
+        "amount": 2
+      },
+      {
+        "id": 27994,
+        "amount": 1
+      }
+    ]
+  },
+  "70840": {
+    "name": {
+      "en": "Descent to the Foundation",
+      "ja": "決行",
+      "de": "Aufbruch zum Sockel",
+      "fr": "Départ pour les fondations"
+    },
+    "icon": "/i/071000/071201.png",
+    "banner": "/i/112000/112592.png"
+  },
+  "70841": {
+    "name": {
+      "en": "Shared Paths",
+      "ja": "ふたりが繋ぐ軌跡",
+      "de": "Alte Pfade, neue Wege",
+      "fr": "Une seconde chance"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70842": {
+    "name": {
+      "en": "Seekers of Eternity",
+      "ja": "永久の探求者",
+      "de": "Auf der Suche nach Endlosigkeit",
+      "fr": "Explorateurs de l'éternité"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101413.png"
+  },
+  "70843": {
+    "name": {
+      "en": "When Death Comes to Dinner",
+      "ja": "はらへり旅情：再会篇",
+      "de": "Des Hungers scharfe Klinge",
+      "fr": "Retrouvailles avec sire Épidemaïs"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 44491,
+        "amount": 1
+      },
+      {
+        "id": 44104,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101411.png"
+  },
+  "70844": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70845": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70846": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70847": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70848": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70849": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70850": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70851": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70852": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70853": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70854": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70855": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70856": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70857": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70858": {
+    "name": {
+      "en": "Royal Rumblings",
+      "ja": "ゴールドソーサーとキングの噂",
+      "de": "Der falsche König",
+      "fr": "Le Roi singé"
+    },
+    "icon": "/i/080000/080116.png",
+    "rewards": [
+      {
+        "id": 48004,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101407.png"
+  },
+  "70859": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70860": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70861": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
   }
 }

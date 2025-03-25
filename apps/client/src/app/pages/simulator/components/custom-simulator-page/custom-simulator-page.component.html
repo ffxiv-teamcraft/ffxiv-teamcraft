@@ -38,6 +38,34 @@
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
+          <nz-form-label nzFor="progressDivider">progressDivider</nz-form-label>
+          <nz-form-control>
+            <nz-input-number mouseWheel formControlName="progressDivider" id="progressDivider" name="progressDivider" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('progressDivider', 1)" (mouseWheelDown)="adjust('progressDivider', -1)"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="progressModifier">progressModifier</nz-form-label>
+          <nz-form-control>
+            <nz-input-number mouseWheel formControlName="progressModifier" id="progressModifier" name="progressModifier" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('progressModifier', 1)" (mouseWheelDown)="adjust('progressModifier', -1)"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="qualityDivider">qualityDivider</nz-form-label>
+          <nz-form-control>
+            <nz-input-number mouseWheel formControlName="qualityDivider" id="qualityDivider" name="qualityDivider" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('qualityDivider', 1)" (mouseWheelDown)="adjust('qualityDivider', -1)"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="qualityModifier">qualityModifier</nz-form-label>
+          <nz-form-control>
+            <nz-input-number mouseWheel formControlName="qualityModifier" id="qualityModifier" name="qualityModifier" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('qualityModifier', 1)" (mouseWheelDown)="adjust('qualityModifier', -1)"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
           <nz-form-label nzFor="expert">Expert</nz-form-label>
           <nz-form-control>
             <label nz-checkbox formControlName="expert" id="expert" name="expert"></label>

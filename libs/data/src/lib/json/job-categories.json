@@ -1304,14 +1304,15 @@
     ]
   },
   "89": {
-    "en": "BLM SMN RDM",
-    "ja": "黒魔道士 召喚士 赤魔道士",
-    "de": "SMA BSW RMA",
-    "fr": "MNO INV MRG",
+    "en": "BLM SMN RDM PCT",
+    "ja": "黒魔道士 召喚士 赤魔道士 ピクトマンサー",
+    "de": "SMA BSW RMA PKT",
+    "fr": "MNO INV MRG PIC",
     "jobs": [
       "BLM",
       "SMN",
-      "RDM"
+      "RDM",
+      "PCT"
     ]
   },
   "90": {
@@ -3202,6 +3203,13 @@
     ]
   },
   "200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "jobs": []
+  },
+  "201": {
     "en": "",
     "ja": "",
     "de": "",

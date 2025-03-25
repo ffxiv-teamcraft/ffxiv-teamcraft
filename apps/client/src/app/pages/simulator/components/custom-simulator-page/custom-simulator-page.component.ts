@@ -58,7 +58,11 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
       progress: [6600, [Validators.min(1), Validators.required]],
       quality: [12000, [Validators.min(1), Validators.required]],
       durability: [80, [Validators.min(1), Validators.required]],
-      expert: [false]
+      expert: [false],
+      progressDivider: [170],
+      progressModifier: [90],
+      qualityDivider: [150],
+      qualityModifier: [75]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
       filter(rotation => {
@@ -68,7 +72,6 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         return rotation.recipe;
       })
     );
-
     const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
         rlvl: 690,
@@ -76,7 +79,12 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         progress: 6600,
         quality: 12000,
         durability: 80,
-        expert: false
+        expert: false,
+        progressDivider: 170,
+        progressModifier: 90,
+        qualityDivider: 150,
+        qualityModifier: 75
+
       }),
       map(form => {
         return {
@@ -85,7 +93,11 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
           durability: form.durability,
           quality: form.quality,
           progress: form.progress,
-          expert: form.expert
+          expert: form.expert,
+          progressDivider: form.progressDivider,
+          progressModifier: form.progressModifier,
+          qualityDivider: form.qualityDivider,
+          qualityModifier: form.qualityModifier
         };
       })
     );
@@ -93,17 +105,7 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
     this.recipe$ = merge(recipeFromForm$, recipeFromRotation$).pipe(
       map(recipe => {
         (recipe as Craft).conditionsFlag = recipe.expert ? 511 : 15;
-        return recipe;
-      }),
-      switchMap(recipe => {
-        return this.lazyData.getRow('recipeLevelTable', recipe.rlvl).pipe(
-          map(rlt => {
-            return <Craft>{
-              ...recipe,
-              ...rlt
-            };
-          })
-        );
+        return recipe as Craft;
       }),
       tap(recipe => {
         this.recipeForm.patchValue({
@@ -112,7 +114,11 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
           progress: recipe.progress,
           quality: recipe.quality,
           durability: recipe.durability,
-          expert: recipe.expert
+          expert: recipe.expert,
+          progressDivider: recipe.progressDivider,
+          progressModifier: recipe.progressModifier,
+          qualityDivider: recipe.qualityDivider,
+          qualityModifier: recipe.qualityModifier
         }, { emitEvent: false });
       })
     );

@@ -18513,9 +18513,9 @@
     "spawns": [],
     "duration": 0,
     "zoneid": 0,
-    "radius": 29,
-    "x": 12.42,
-    "y": 18.57,
+    "radius": 27,
+    "x": 12.43,
+    "y": 18.56,
     "z": 0,
     "map": 0
   },
@@ -18592,8 +18592,8 @@
     "duration": 0,
     "zoneid": 0,
     "radius": 41,
-    "x": 22.32,
-    "y": 18.81,
+    "x": 22.31,
+    "y": 18.82,
     "z": 0,
     "map": 0
   },
@@ -20580,9 +20580,9 @@
     "spawns": [],
     "duration": 0,
     "zoneid": 4617,
-    "radius": 145,
-    "x": 11.94,
-    "y": 19.53,
+    "radius": 108,
+    "x": 12.69,
+    "y": 19.42,
     "z": 0,
     "map": 859
   },
@@ -20623,9 +20623,9 @@
     "spawns": [],
     "duration": 0,
     "zoneid": 4608,
-    "radius": 187,
-    "x": 13.21,
-    "y": 10.34,
+    "radius": 190,
+    "x": 13.26,
+    "y": 10.2,
     "z": 0,
     "map": 859
   },
@@ -20811,9 +20811,9 @@
     "spawns": [],
     "duration": 0,
     "zoneid": 4610,
-    "radius": 146,
-    "x": 20.13,
-    "y": 24.44,
+    "radius": 154,
+    "x": 20.75,
+    "y": 21.53,
     "z": 0,
     "map": 859
   },
@@ -20997,9 +20997,9 @@
     "spawns": [],
     "duration": 0,
     "zoneid": 4608,
-    "radius": 166,
+    "radius": 159,
     "x": 19.27,
-    "y": 11.91,
+    "y": 11.81,
     "z": 0,
     "map": 859
   },
@@ -21865,9 +21865,9 @@
     "spawns": [],
     "duration": 0,
     "zoneid": 4610,
-    "radius": 157,
-    "x": 19.53,
-    "y": 34.52,
+    "radius": 118,
+    "x": 19.86,
+    "y": 34.77,
     "z": 0,
     "map": 859
   },
@@ -22187,6 +22187,639 @@
     "type": 0
   },
   "1100": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1101": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1102": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1103": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1104": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1105": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1106": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1107": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1108": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1109": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1110": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1111": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1112": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1113": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1114": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1115": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1116": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1117": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1118": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1119": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1120": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1121": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1122": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1123": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1124": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1125": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1126": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1127": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1128": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1129": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1130": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1131": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1132": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1133": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1134": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1135": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1136": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1137": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1138": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1139": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1140": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1141": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1142": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1143": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1144": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1145": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1146": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1147": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1148": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1149": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1150": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1151": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1152": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1153": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1154": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1155": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1156": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1157": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1158": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1159": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1160": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1161": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1162": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1163": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1164": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1165": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1166": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1167": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1168": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1169": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1170": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1171": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1172": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1173": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1174": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1175": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1176": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1177": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1178": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1179": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1180": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1181": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1182": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1183": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1184": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1185": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1186": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1187": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1188": {
+    "items": [
+      45970
+    ],
+    "limited": true,
+    "level": 100,
+    "type": 1,
+    "base": 1188,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      8,
+      20
+    ],
+    "duration": 120,
+    "zoneid": 4575,
+    "radius": 10,
+    "x": 12.03,
+    "y": 17.62,
+    "z": 0,
+    "map": 858,
+    "folklore": 43878
+  },
+  "1189": {
+    "items": [
+      45969
+    ],
+    "limited": true,
+    "level": 100,
+    "type": 0,
+    "base": 1189,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      10,
+      22
+    ],
+    "duration": 120,
+    "zoneid": 4611,
+    "radius": 20,
+    "x": 17.95,
+    "y": 36.95,
+    "z": 0,
+    "map": 859,
+    "folklore": 43878
+  },
+  "1190": {
+    "items": [
+      45973
+    ],
+    "limited": true,
+    "level": 100,
+    "type": 1,
+    "base": 1190,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      2,
+      14
+    ],
+    "duration": 120,
+    "zoneid": 4675,
+    "radius": 16,
+    "x": 14.02,
+    "y": 16.84,
+    "z": 0,
+    "map": 861,
+    "folklore": 43880
+  },
+  "1191": {
+    "items": [
+      45968
+    ],
+    "limited": true,
+    "level": 100,
+    "type": 2,
+    "base": 1191,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      0,
+      12
+    ],
+    "duration": 120,
+    "zoneid": 4609,
+    "radius": 111,
+    "x": 35.77,
+    "y": 22.34,
+    "z": 0,
+    "map": 859,
+    "folklore": 43881
+  },
+  "1192": {
+    "items": [
+      45971
+    ],
+    "limited": true,
+    "level": 100,
+    "type": 3,
+    "base": 1192,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      4,
+      16
+    ],
+    "duration": 120,
+    "zoneid": 4657,
+    "radius": 11,
+    "x": 34.99,
+    "y": 16.27,
+    "z": 0,
+    "map": 860,
+    "folklore": 43882
+  },
+  "1193": {
+    "items": [
+      45972
+    ],
+    "limited": true,
+    "level": 100,
+    "type": 2,
+    "base": 1193,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      6,
+      18
+    ],
+    "duration": 120,
+    "zoneid": 4674,
+    "radius": 1,
+    "x": 34.24,
+    "y": 20.65,
+    "z": 0,
+    "map": 861,
+    "folklore": 43883
+  },
+  "1194": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1195": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1196": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1197": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1198": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1199": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1200": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1201": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1202": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1203": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1204": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "1205": {
     "items": [],
     "level": 0,
     "type": 0
