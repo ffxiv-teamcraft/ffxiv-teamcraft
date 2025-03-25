@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.28...v11.3.29) (2025-03-25)
+
+
+### Features
+
+* **db:** support for Global 7.2 ([8ac6cfa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8ac6cfafe1da02d7b322248260b4bd5010c17172))
+* **simulator:** add modifier and divider values to custom sim ([d84cc60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d84cc600a3277a034b15d912edbf79bc7d223a63))
+
 ### [11.3.28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.27...v11.3.28) (2025-03-19)
 
 
