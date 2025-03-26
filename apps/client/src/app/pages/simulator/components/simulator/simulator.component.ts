@@ -462,6 +462,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   resetToSavedRotation(rotation: CraftingRotation): void {
     this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+    this.unsavedChanges$.next(rotation);
     this.dirty = false;
     this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
   }
