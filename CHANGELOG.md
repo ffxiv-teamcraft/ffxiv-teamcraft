@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.29...v11.3.30) (2025-03-30)
+
+
+### Bug Fixes
+
+* **db:** fix wrong tomestones in trades and log tracking issues ([f4aabd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4aabd0f3075f0733d4df7bc00ecbc3d776777a0))
+* **db:** lure filters are now properly compared in select ([846a788](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/846a788a74a519ac3031851dc194911ac71edb7c))
+* **desktop:** packet capture fixes for Global 7.2 ([ce83d6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce83d6c6646e0ba55eacbe8d872369bbd0f98ea3))
+* **profile:** add new masterbooks to popup ([117acdd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/117acdd367b99055bf4e2db3a0c2587ff0dc9684))
+* **simulator:** apply rotation name on reset ([f278bb1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f278bb16c596d1bdf7dab84ef71c10fa5af708b3))
+* **simulator:** fix wrong rounding in base progression formula ([5d143d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d143d81c5451fc94213d0087322a189406710cf))
+
 ### [11.3.29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.28...v11.3.29) (2025-03-25)
 
 
