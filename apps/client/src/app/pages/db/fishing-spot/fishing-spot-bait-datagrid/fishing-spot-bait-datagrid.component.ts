@@ -26,7 +26,8 @@ import { I18nPipe } from '../../../../core/i18n.pipe';
 
 type Lure = {
   prop: 'aLure' | 'mLure',
-  value: number
+  value: number,
+  excludeAll?: boolean
 };
 
 @Component({
@@ -91,7 +92,7 @@ export class FishingSpotBaitDatagridComponent {
     map(user => user.allaganChecker || user.admin)
   );
 
-  compareLures = (a: Lure | null, b: Lure | null) => a?.prop === b?.prop && a?.value === b?.value;
+  compareLures = (a: Lure | null, b: Lure | null) => a?.excludeAll === b?.excludeAll && a?.prop === b?.prop && a?.value === b?.value;
 
   constructor(
     private readonly fishCtx: FishContextService,
