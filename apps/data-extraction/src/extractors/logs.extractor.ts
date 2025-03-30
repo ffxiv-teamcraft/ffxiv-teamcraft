@@ -84,16 +84,11 @@ export class LogsExtractor extends AbstractExtractor {
                 ][row.index - 2010][index] || -1;
               } else if (row.index >= 2015 && row.index <= 2017) {
                 // DT folklores
-                /**
-                 * 2015: Yok Tural
-                 * 2016: Xak Tural
-                 * 2017: Alexandria
-                 */
                 // Quarrying, Mining, Logging, Harvesting
                 return {
-                  2015: [2037, 2038, -1, -1],
-                  2016: [2040, -1, 2042, -1],
-                  2017: [2044, -1, -1, 2047],
+                  2015: [2036, 2037, 2038, -1], //Yok Tural
+                  2016: [2040, -1, 2042, 2043], //Xak Tural
+                  2017: [2044, 2045, 2046, 2047], // Alexandria
                 }[row.index][index] || -1;
               } else if ([2006, 2007, 2008, 2009].includes(row.index)) {
                 return -1;

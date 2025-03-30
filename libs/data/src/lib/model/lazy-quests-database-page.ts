@@ -2,7 +2,7 @@ export interface LazyQuestsDatabasePage {
   action?:       number;
   banner?:       string;
   beastRank:     number;
-  chainLength?:  number;
+  chainLength:   number;
   de:            string;
   description:   Description;
   en:            string;

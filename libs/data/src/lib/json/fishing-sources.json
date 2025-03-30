@@ -27732,5 +27732,49 @@
       "minGathering": 0,
       "video": "https://youtu.be/8WvNH-MnRUc"
     }
+  ],
+  "47991": [
+    {
+      "spot": 309,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 10,
+      "duration": 2,
+      "minGathering": 4040,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "47992": [
+    {
+      "spot": 310,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "weathers": [
+        3,
+        4
+      ],
+      "minGathering": 4040,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "47995": [
+    {
+      "spot": 328,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 16,
+      "duration": 2,
+      "weathers": [
+        2
+      ],
+      "minGathering": 4040,
+      "aLure": 3,
+      "mLure": 0
+    }
   ]
 }

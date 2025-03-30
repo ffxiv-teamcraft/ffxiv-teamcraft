@@ -32,7 +32,7 @@ export class StaticData {
 
   public static readonly TOMESTONES = {
     '1': 28, // Legacy (poetics)
-    '2': 46, // Current unlimited
-    '3': 47 // Current limited
+    '2': 47, // Current unlimited
+    '3': 48 // Current limited
   };
 }

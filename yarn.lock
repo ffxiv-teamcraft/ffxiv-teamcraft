@@ -3019,17 +3019,17 @@
     nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.16":
-  version "1.2.16"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.16.tgz#11fbaccc25fdfb227926a22111098e426876f350"
-  integrity sha512-rf+bAZeG53w2ukUb8L/keTL1B2gDI4SCRoCCzAdSxO5UyeUue6EqHNmpQfX+N1D/3M/b2Kk7gqIQF6jTyzX7Hg==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.17":
+  version "1.2.17"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.17.tgz#3e0e53e6576b13b63977a6b5109f71b6b27554da"
+  integrity sha512-LGOmad3rs2J5JRKxxzG/W3MJwrFDO4kiVHAPiYvv8ktpR2ayB809SVgRHfG1xYmlCjOrXpee5IakJrRVZI3ncg==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.15"
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.5.14", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.5.14", "@ffxiv-teamcraft/simulator@^3.5.14":
-  version "3.5.14"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.5.14.tgz#c860614a3122cc4f51f03fc082a0d8c213df87c0"
-  integrity sha512-r1Ob0iYItNitlSpkvDcTGNpayZB45yniCtahbPq/JJH6iKFuifNo+ufxmu6zjWRIqj/0Eijldk5sfpQyJXH1rA==
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.5.15", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.5.15", "@ffxiv-teamcraft/simulator@^3.5.15":
+  version "3.5.15"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.5.15.tgz#2ddd64b2e793ca45964d302116380f55cfdd6120"
+  integrity sha512-vbSyxUdiowZDsA2BA6TAKH9kLsfG3kS1gv0N6TN2yx6yAts3wEWe19Dmiisld3UJC61LD1R/xoZDxX1pnkB+kQ==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
