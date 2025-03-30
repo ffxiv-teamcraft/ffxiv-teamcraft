@@ -117,8 +117,9 @@ export class FishContextService {
 
   public readonly lureFilter$ = new BehaviorSubject<{
     prop: 'aLure' | 'mLure',
-    value: number
-  } | null>(JSON.parse(localStorage.getItem('db:fish:lure-filter') || 'null'));
+    value: number,
+    excludeAll?: boolean
+  }| null>(JSON.parse(localStorage.getItem('db:fish:lure-filter') || 'null'));
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
