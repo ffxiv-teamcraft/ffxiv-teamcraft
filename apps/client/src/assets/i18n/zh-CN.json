@@ -25,6 +25,7 @@
   "Check_guides": "查阅我们的指南",
   "Guides_links": "TC引导手册",
   "Db_ban": "由于您之前在数据库评论的活动，您当前没有发表评论的权限。如果您对此有任何意见，请到Discord联系Miu#1568。",
+  "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -628,6 +629,8 @@
     "Characters": "角色",
     "Missing_character": "角色不存在",
     "Missing_character_description": "此角色不再存在，请从您的个人资料中删除它。",
+    "Delete_account": "Delete my account",
+    "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
     "VERIFICATION": {
       "Button": "验证",
       "Title": "角色验证",
