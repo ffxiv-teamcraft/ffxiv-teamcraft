@@ -1,3 +1,7 @@
+@if(isForSensitiveOperation){
+  <nz-alert nzMessage="{{'Sensitive_operation' | translate}}"
+  nzType="info"></nz-alert>&nbsp;
+}
 <form (ngSubmit)="login()" [formGroup]="form" nz-form>
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>{{'Email_enter' | translate}}</nz-form-label>

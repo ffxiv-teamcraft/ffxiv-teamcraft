@@ -161,10 +161,12 @@ export class LogTrackerImportPopupComponent {
   trackByRecipe = (recipe) => recipe.id;
 
   protected saveLogs(log: LogTracking): void {
-    this.#auth.user$.pipe(
+    this.#auth.logTracking$.pipe(
       first(),
-      switchMap(user => {
-        return this.#logTrackingService.set(`${user.$key}:${user.defaultLodestoneId?.toString()}`, log);
+      switchMap(current => {
+        current.crafting = [...current.crafting, ...log.crafting];
+        current.gathering = [...current.gathering, ...log.gathering];
+        return this.#logTrackingService.set(current.$key, current);
       })
     ).subscribe(() => {
       this.#message.success(this.#translate.instant('LOG_TRACKER.Logs_import_done'));

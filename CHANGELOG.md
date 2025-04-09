@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.30...v11.3.31) (2025-04-09)
+
+
+### Features
+
+* **profile:** you can now delete your account from the profile editor ([9aeb8fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9aeb8fa07fe0536535f1792a63b9f527cbfb8686))
+
+
+### Bug Fixes
+
+* **desktop:** update deucalion to prevent conflicts with iinact ([bbe440f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bbe440f36a6d69f1ad5d037e823e1a435af7728d))
+* **log-tracker:** avoid deletion when importing from pcap ([5ca2a98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ca2a9852bcad3f4d9767822cc0305d6fd37efca))
+* **simulator:** add missing flooring after progress efficiency fround ([936626b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/936626bc2326712c78e4a23336cded8e41e8ac62))
+
 ### [11.3.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.29...v11.3.30) (2025-03-30)
 
 

@@ -28,6 +28,8 @@ export class LoginPopupComponent extends DialogComponent {
 
   errorMessageCode: string;
 
+  isForSensitiveOperation = false;
+
   constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private modalRef: NzModalRef, public platform: PlatformService,
               private message: NzMessageService, private translate: TranslateService) {

@@ -26,7 +26,6 @@ import {
   VerifyCharacter
 } from './auth.actions';
 import { catchError, delay, distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -41,7 +40,6 @@ import { Character } from '@xivapi/angular-client';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
-import { LogTrackingService } from '../core/database/log-tracking.service';
 import { LodestoneService } from '../core/api/lodestone.service';
 import { isEqual } from 'lodash';
 import {
@@ -58,6 +56,8 @@ import { Functions, httpsCallable } from '@angular/fire/functions';
 import { lazyLoaded } from '../core/rxjs/lazy-loaded';
 import { isFoundAndDefined } from '../core/rxjs/is-found-and-defined';
 import { IdTokenResult } from '@firebase/auth';
+import { UserService } from '../core/database/user.service';
+import { LoginPopupComponent } from '../core/auth/login-popup/login-popup.component';
 
 @Injectable({
   providedIn: 'root'
@@ -255,7 +255,7 @@ export class AuthFacade {
   );
 
   constructor(private store: Store<{ auth: AuthState }>, private auth: Auth,
-              private ipc: IpcService,
+              private ipc: IpcService, private userService: UserService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService, private fns: Functions,
               private characterService: LodestoneService) {
@@ -401,5 +401,37 @@ export class AuthFacade {
         );
       })
     );
+  }
+
+  deleteAccount(): Observable<void> {
+    return this.dialog
+      .create({
+        nzTitle: this.translate.instant('Login'),
+        nzContent: LoginPopupComponent,
+        nzFooter: null,
+        nzData: {
+          isForSensitiveOperation: true
+        },
+      })
+      .afterClose
+      .pipe(
+        filter((res) => res === true),
+        first(),
+        switchMap(() => {
+          return this.user$.pipe(
+            first(),
+            switchMap(user => {
+              return combineLatest([
+                from(this.auth.currentUser.delete()),
+                this.userService.remove(user.$key),
+              ])
+            }),
+            tap(() => {
+              this.store.dispatch(new Logout());
+            }),
+            map(() => void 0)
+          );
+        }),
+      );
   }
 }
