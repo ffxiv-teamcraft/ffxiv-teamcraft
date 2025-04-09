@@ -168,6 +168,16 @@
             </nz-card>
           </div>
         </ng-container>
+
+        <div nz-col nzXs="24">
+          <nz-card [nzTitle]="dangerZoneTitleTpl">
+            <ng-template #dangerZoneTitleTpl>
+              <label nz-icon nzType="warning" nzTheme="outline"></label>&nbsp;
+              <span>{{'PROFILE.Danger_zone' | translate}}</span>
+            </ng-template>
+            <button nz-button nzBlock nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteAccount()">{{'PROFILE.Delete_account' | translate}}</button>
+          </nz-card>
+        </div>
       </ng-container>
     </div>
   </div>

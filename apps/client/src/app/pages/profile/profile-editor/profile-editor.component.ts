@@ -24,7 +24,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -85,7 +85,7 @@ export class ProfileEditorComponent {
   private statsReloader$ = new BehaviorSubject(null);
 
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
-              private userPicker: UserPickerService, public ipc: IpcService, private cdr: ChangeDetectorRef) {
+              private userPicker: UserPickerService, public ipc: IpcService, private router: Router) {
   }
 
   saveSet(set: TeamcraftGearsetStats): void {
@@ -169,6 +169,18 @@ export class ProfileEditorComponent {
 
   setDefaultCharacter(lodestoneId: number): void {
     this.authFacade.setDefaultCharacter(lodestoneId);
+  }
+
+  deleteAccount():void {
+    this.dialog.confirm({
+      nzTitle: this.translate.instant('PROFILE.Delete_account'),
+      nzContent: this.translate.instant('PROFILE.Delete_account_confirmation'),
+      nzOnOk: () => {
+        this.authFacade.deleteAccount().subscribe(() => {
+          this.router.navigate(['/']);
+        });
+      }
+    });
   }
 
 }
