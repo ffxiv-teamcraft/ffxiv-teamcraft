@@ -25,6 +25,7 @@
   "Check_guides": "팀크래프트 가이드 보기",
   "Guides_links": "팀크래프트 가이드",
   "Db_ban": "이전에 작성한 데이터베이스 코멘트로 인하여 코멘트 권한이 제한된 상태입니다. 만약 제한에 대한 이의제기가 있는 경우에는 디스코드 Miu#1568 에게 DM을 주세요.",
+  "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -628,6 +629,8 @@
     "Characters": "캐릭터",
     "Missing_character": "캐릭터 정보 없음",
     "Missing_character_description": "캐릭터 정보가 더 이상 유효하지 않습니다. 프로필에서 캐릭터 정보를 삭제해주세요.",
+    "Delete_account": "Delete my account",
+    "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
     "VERIFICATION": {
       "Button": "인증",
       "Title": "캐릭터 인증",

@@ -25,6 +25,7 @@
   "Check_guides": "Посмотрите наши руководства",
   "Guides_links": "Руоководства Teamcraft",
   "Db_ban": "У вас нет прав на публикацию комментариев в базе данных из-за вашей предыдущей активности. Если вы хотите обсудить этот бан, напишите Miu#1568 в Discord.",
+  "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -628,6 +629,8 @@
     "Characters": "Персонажи",
     "Missing_character": "Missing character",
     "Missing_character_description": "Этот персонаж больше не существует, пожалуйста, удалите его из вашего профиля.",
+    "Delete_account": "Delete my account",
+    "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
     "VERIFICATION": {
       "Button": "Подтвердить",
       "Title": "Подтверждение персонажа",
