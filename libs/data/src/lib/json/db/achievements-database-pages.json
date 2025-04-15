@@ -75609,12 +75609,14 @@
     "de": "Du bist mein und ich bin dein",
     "ja": "絶もうひとつの未来を見届けし者",
     "fr": "Nous ne ferons plus qu'un",
+    "ko": "절 또 하나의 미래를 지켜본 자",
     "zh": "征服绝境·另一个未来",
     "description": {
       "en": "Bear witness to a different future for the Oracles of Light and Darkness.",
       "de": "Die Schicksale des Orakels des Lichts und des Orakels der Dunkelheit vereinigt.",
       "ja": "光と闇の巫女の運命を集約させる",
       "fr": "Fusionner les destins des prêtresses de la Lumière et des Ténèbres.",
+      "ko": "빛과 어둠의 무녀의 모든 운명을 목도",
       "zh": "在光暗未来绝境战中收束光之巫女与暗之巫女的命运。"
     },
     "item": 0,
