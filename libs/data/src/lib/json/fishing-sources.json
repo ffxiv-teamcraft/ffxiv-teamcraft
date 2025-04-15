@@ -27733,6 +27733,56 @@
       "video": "https://youtu.be/8WvNH-MnRUc"
     }
   ],
+  "47988": [
+    {
+      "spot": 295,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43859,
+      "spawn": 5,
+      "duration": 2,
+      "minGathering": 4040,
+      "video": "https://youtu.be/ZLpJ-_KpmtU",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "47989": [
+    {
+      "spot": 300,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43691,
+      "spawn": 12,
+      "duration": 2,
+      "weathers": [
+        1
+      ],
+      "minGathering": 4040,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "47990": [
+    {
+      "spot": 302,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 0,
+      "duration": 4,
+      "weathers": [
+        3
+      ],
+      "weathersFrom": [
+        2
+      ],
+      "minGathering": 4040,
+      "video": "https://youtu.be/llxqbaqif_o",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "47991": [
     {
       "spot": 309,
@@ -27742,6 +27792,7 @@
       "spawn": 10,
       "duration": 2,
       "minGathering": 4040,
+      "video": "https://youtu.be/NZdPyKqqfSU",
       "aLure": 0,
       "mLure": 0
     }
@@ -27755,6 +27806,41 @@
       "weathers": [
         3,
         4
+      ],
+      "minGathering": 4040,
+      "video": "https://youtu.be/kBDCZqRnRXY",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "47993": [
+    {
+      "spot": 320,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43751,
+      "spawn": 20,
+      "duration": 4,
+      "weathers": [
+        11
+      ],
+      "weathersFrom": [
+        2
+      ],
+      "minGathering": 4040,
+      "video": "https://youtu.be/kJQ0Rt6Zo8A",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "47994": [
+    {
+      "spot": 325,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "weathers": [
+        7
       ],
       "minGathering": 4040,
       "aLure": 0,
@@ -27773,7 +27859,8 @@
         2
       ],
       "minGathering": 4040,
-      "aLure": 3,
+      "video": "https://youtu.be/gOlnVM35azo",
+      "aLure": 0,
       "mLure": 0
     }
   ]
