@@ -1545,34 +1545,34 @@
   },
   "194": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Meteor Showers",
+      "ja": "流星",
+      "de": "Meteoritenschauer",
+      "fr": "Pluie de météorites"
     }
   },
   "195": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Meteor Showers",
+      "ja": "流星",
+      "de": "Meteoritenschauer",
+      "fr": "Pluie de météorites"
     }
   },
   "196": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Astromagnetic Storms",
+      "ja": "磁気嵐",
+      "de": "Magnetsturm",
+      "fr": "Tempête magnétique"
     }
   },
   "197": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sporing Mist",
+      "ja": "胞子霧",
+      "de": "Sporennebel",
+      "fr": "Nuages de spores"
     }
   }
 }

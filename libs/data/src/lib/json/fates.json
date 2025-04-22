@@ -42689,513 +42689,513 @@
   },
   "1978": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Base Camp Alpha Expansion",
+      "ja": "第一次基地拡張計画",
+      "de": "Mondtor-Station: Erweiterung I",
+      "fr": "Premier agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Moongate Hub facilities are ready for expansion. Report to the construction site, remove any obstacles, and tend to any pending tasks.",
+      "ja": "ムーンゲート基地の施設拡充のため<br>周辺の障害物を除去し、建築地点にて施工を行え",
+      "de": "Die Mondtor-Station soll erweitert werden.<br>Entferne mögliche Hindernisse in der Umgebung und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station sélénienne a commencé. Nettoyez les alentours des obstacles éventuels et participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11559950
   },
   "1979": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoliner Alpha Construction Support",
+      "ja": "第一次コスモライナー敷設支援",
+      "de": "Kosmozapper: Bauunterstützung I",
+      "fr": "Mise en place du premier réseau de cosmo-navettes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates Cosmoliner construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Kosmozapper-Netz wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11559979
   },
   "1980": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Habitation Module Construction Support",
+      "ja": "居住モジュール設置支援",
+      "de": "Habitationsmodul: Bauunterstützung I",
+      "fr": "Installation des modules d'habitation"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates habitation module construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Habitationsmodul wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11559997
   },
   "1981": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoport Alpha Maintenance Support",
+      "ja": "第一次コスモポート整備支援",
+      "de": "Kosmoport: Bauunterstützung I",
+      "fr": "Premier aménagement du cosmoport"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates cosmoport maintenance. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Kosmoport wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560014
   },
   "1982": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Alpha Expansion",
+      "ja": "第一次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung I",
+      "fr": "Premier agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560031
   },
   "1983": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tunnel Project Alpha Excavation",
+      "ja": "第一次トンネル掘削工事",
+      "de": "Tunnel: Aushubarbeiten I",
+      "fr": "Première excavation du tunnel"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Excavate the proposed tunnel site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "トンネル開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Tunnel will gegraben werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour percer un tunnel a commencé. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560048
   },
   "1984": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tunnel Project Beta Excavation",
+      "ja": "第二次トンネル掘削工事",
+      "de": "Tunnel: Aushubarbeiten II",
+      "fr": "Seconde excavation du tunnel"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Excavate the proposed tunnel site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "トンネル開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Tunnel will gegraben werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour percer un tunnel se poursuit. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560065
   },
   "1985": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Base Camp Beta Expansion",
+      "ja": "第二次基地拡張計画",
+      "de": "Mondtor-Station: Erweiterung II",
+      "fr": "Second agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Moongate Hub facilities are ready for expansion. Report to the construction site, remove any obstacles, and tend to any pending tasks.",
+      "ja": "ムーンゲート基地の施設拡充のため<br>周辺の障害物を除去し、建築地点にて施工を行え",
+      "de": "Die Mondtor-Station soll erweitert werden.<br>Entferne mögliche Hindernisse in der Umgebung und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station sélénienne se poursuit. Nettoyez les alentours des obstacles éventuels et participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560082
   },
   "1986": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Energization Expansion Support",
+      "ja": "エネルギー設備拡充支援",
+      "de": "Energisierungswerke: Erweiterung",
+      "fr": "Expansion des infrastructures énergétiques"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates energization expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Energisierungswerken wird Unterstützung benötigt. Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560099
   },
   "1987": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hydrofication Expansion Support",
+      "ja": "給水設備拡充支援",
+      "de": "Hydrofizierungswerke: Erweiterung",
+      "fr": "Expansion des infrastructures de distribution d'eau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitate hydrofication expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Hydrofizierungswerken wird Unterstützung benötigt. Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560116
   },
   "1988": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Beta Expansion",
+      "ja": "第二次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung II",
+      "fr": "Second agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560133
   },
   "1989": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoport Beta Maintenance",
+      "ja": "第二次コスモポート整備作業",
+      "de": "Kosmoport: Bauunterstützung II",
+      "fr": "Second aménagement du cosmoport"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The cosmoport is in need of maintenance. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>コスモポートのアップグレードを行え",
+      "de": "Bau den Kosmoport aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le cosmoport."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560150
   },
   "1990": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nadir Lift Site Preparation",
+      "ja": "第一次リフト用地整備",
+      "de": "Lift: Vorbereitungsarbeiten I",
+      "fr": "Première préparation du site pour l'ascenseur"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To prepare for construction of the nadir lift, excavate the proposed site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "リフト開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Lift will errichtet werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour la mise en place d'un ascenseur a commencé. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560167
   },
   "1991": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nadir Lift Beta Site Preparation",
+      "ja": "第二次リフト用地整備",
+      "de": "Lift: Vorbereitungsarbeiten II",
+      "fr": "Seconde préparation du site pour l'ascenseur"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To prepare for construction of the nadir lift, excavate the proposed site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "リフト開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Lift will errichtet werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour la mise en place d'un ascenseur se poursuit. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560184
   },
   "1992": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Base Camp Facility Expansion",
+      "ja": "基地総合設備拡充工事",
+      "de": "Expansion der Stationsstrukturen",
+      "fr": "Agrandissement général des installations"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Moongate Hub facilities are ready for expansion. Report to the construction site and aid in the effort.",
+      "ja": "ムーンゲート基地の施設拡充のため<br>建築地点にて施工を行え",
+      "de": "Die Gebäudestrukturen der Mondtor-Station expandieren. Führe an den entsprechenden Stellen Bauarbeiten durch.",
+      "fr": "Le chantier pour l'agrandissement de la station sélénienne entre dans sa phase finale. Nettoyez les alentours des obstacles éventuels et participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560201
   },
   "1993": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Base Camp Alpha Expansion",
+      "ja": "第一次基地拡張計画",
+      "de": "Mondtor-Station: Erweiterung I",
+      "fr": "Premier agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Moongate Hub facilities are ready for expansion. Report to the construction site, remove any obstacles, and tend to any pending tasks.",
+      "ja": "ムーンゲート基地の施設拡充のため<br>周辺の障害物を除去し、建築地点にて施工を行え",
+      "de": "Die Mondtor-Station soll erweitert werden.<br>Entferne mögliche Hindernisse in der Umgebung und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station sélénienne a commencé. Nettoyez les alentours des obstacles éventuels et participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11559950
   },
   "1994": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoliner Alpha Construction Support",
+      "ja": "第一次コスモライナー敷設支援",
+      "de": "Kosmozapper: Bauunterstützung I",
+      "fr": "Mise en place du premier réseau de cosmo-navettes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates Cosmoliner construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Kosmozapper-Netz wird Unterstützung benötigt.<br>Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11559979
   },
   "1995": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Habitation Module Construction Support",
+      "ja": "居住モジュール設置支援",
+      "de": "Habitationsmodul: Bauunterstützung I",
+      "fr": "Installation des modules d'habitation"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates habitation module construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Habitationsmodul wird Unterstützung benötigt.<br>Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11559997
   },
   "1996": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoport Alpha Maintenance Support",
+      "ja": "第一次コスモポート整備支援",
+      "de": "Kosmoport: Bauunterstützung I",
+      "fr": "Premier aménagement du cosmoport"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates cosmoport maintenance. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Kosmoport wird Unterstützung benötigt.<br>Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560014
   },
   "1997": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Alpha Expansion",
+      "ja": "第一次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung I",
+      "fr": "Premier agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560031
   },
   "1998": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tunnel Project Alpha Excavation",
+      "ja": "第一次トンネル掘削工事",
+      "de": "Tunnel: Aushubarbeiten I",
+      "fr": "Première excavation du tunnel"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Excavate the proposed tunnel site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "トンネル開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Tunnel will gegraben werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour percer un tunnel a commencé. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560048
   },
   "1999": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tunnel Project Beta Excavation",
+      "ja": "第二次トンネル掘削工事",
+      "de": "Tunnel: Aushubarbeiten II",
+      "fr": "Seconde excavation du tunnel"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Excavate the proposed tunnel site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "トンネル開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Tunnel will gegraben werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour percer un tunnel se poursuit. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560065
   },
   "2000": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Base Camp Beta Expansion",
+      "ja": "第二次基地拡張計画",
+      "de": "Mondtor-Station: Erweiterung II",
+      "fr": "Second agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Moongate Hub facilities are ready for expansion. Report to the construction site, remove any obstacles, and tend to any pending tasks.",
+      "ja": "ムーンゲート基地の施設拡充のため<br>周辺の障害物を除去し、建築地点にて施工を行え",
+      "de": "Die Mondtor-Station soll erweitert werden.<br>Entferne mögliche Hindernisse in der Umgebung und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station sélénienne se poursuit. Nettoyez les alentours des obstacles éventuels et participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560082
   },
   "2001": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Energization Expansion Support",
+      "ja": "エネルギー設備拡充支援",
+      "de": "Energisierungswerke: Erweiterung",
+      "fr": "Expansion des infrastructures énergétiques"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates energization expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Energisierungswerken wird Unterstützung benötigt.<br>Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560099
   },
   "2002": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hydrofication Expansion Support",
+      "ja": "給水設備拡充支援",
+      "de": "Hydrofizierungswerke: Erweiterung",
+      "fr": "Expansion des infrastructures de distribution d'eau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates hydrofication expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Hydrofizierungswerken wird Unterstützung benötigt.<br>Fülle die Energievorräte der Minimechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560116
   },
   "2003": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Beta Expansion",
+      "ja": "第二次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung II",
+      "fr": "Second agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560133
   },
   "2004": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoport Beta Maintenance",
+      "ja": "第二次コスモポート整備作業",
+      "de": "Kosmoport: Bauunterstützung II",
+      "fr": "Second aménagement du cosmoport"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The cosmoport is in need of maintenance. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>コスモポートのアップグレードを行え",
+      "de": "Bau den Kosmoport aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le cosmoport."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560150
   },
   "2005": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nadir Lift Site Preparation",
+      "ja": "第一次リフト用地整備",
+      "de": "Lift: Vorbereitungsarbeiten I",
+      "fr": "Première préparation du site pour l'ascenseur"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To prepare for construction of the nadir lift, excavate the proposed site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "リフト開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Lift will errichtet werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour la mise en place d'un ascenseur a commencé. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560167
   },
   "2006": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nadir Lift Beta Site Preparation",
+      "ja": "第二次リフト用地整備",
+      "de": "Lift: Vorbereitungsarbeiten II",
+      "fr": "Seconde préparation du site pour l'ascenseur"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To prepare for construction of the nadir lift, excavate the proposed site, collect the resultant debris, then transport it to the disposal site.",
+      "ja": "リフト開通予定地点で掘削作業を行い<br>掘り出した月面掘削の土砂を回収して<br>集積場まで運搬せよ",
+      "de": "Ein Lift will errichtet werden.<br>Sammle die abgetragene Erde auf und entlade sie am Abladeplatz.",
+      "fr": "Le chantier d'excavation pour la mise en place d'un ascenseur se poursuit. Forez la roche, récupérez les gravats lunaires et apportez-les jusqu'aux dépôts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560184
   },
   "2007": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Base Camp Facility Expansion",
+      "ja": "基地総合設備拡充工事",
+      "de": "Expansion der Stationsstrukturen",
+      "fr": "Agrandissement général des installations"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Moongate Hub facilities are ready for expansion. Report to the construction site and aid in the effort.",
+      "ja": "ムーンゲート基地の施設拡充のため<br>建築地点にて施工を行え",
+      "de": "Die Gebäudestrukturen der Mondtor-Station expandieren.<br>Lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station sélénienne entre dans sa phase finale. Nettoyez les alentours des obstacles éventuels et participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11560201
   },
   "2008": {
     "name": {

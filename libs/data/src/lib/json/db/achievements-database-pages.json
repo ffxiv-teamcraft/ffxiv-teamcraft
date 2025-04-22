@@ -75780,7 +75780,7 @@
     "icon": "/i/002000/002981.png",
     "patch": 101,
     "en": "Cruising at the Apex I",
-    "de": "Stufen des Arkadion I",
+    "de": "Stufen des Arkadions I",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク1",
     "fr": "Champion poids lourds-légers de l'Arcadion I",
     "description": {
@@ -75797,7 +75797,7 @@
     "icon": "/i/002000/002981.png",
     "patch": 101,
     "en": "Cruising at the Apex II",
-    "de": "Stufen des Arkadion II",
+    "de": "Stufen des Arkadions II",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク2",
     "fr": "Champion poids lourds-légers de l'Arcadion II",
     "description": {
@@ -75814,7 +75814,7 @@
     "icon": "/i/002000/002981.png",
     "patch": 101,
     "en": "Cruising at the Apex III",
-    "de": "Stufen des Arkadion III",
+    "de": "Stufen des Arkadions III",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク3",
     "fr": "Champion poids lourds-légers de l'Arcadion III",
     "description": {
@@ -75831,7 +75831,7 @@
     "icon": "/i/002000/002981.png",
     "patch": 101,
     "en": "Cruising at the Savage Apex I",
-    "de": "Epische Stufen des Arkadion I",
+    "de": "Epische Stufen des Arkadions I",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク1",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion I",
     "description": {
@@ -75848,7 +75848,7 @@
     "icon": "/i/002000/002981.png",
     "patch": 101,
     "en": "Cruising at the Savage Apex II",
-    "de": "Epische Stufen des Arkadion II",
+    "de": "Epische Stufen des Arkadions II",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク2",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion II",
     "description": {
@@ -75865,7 +75865,7 @@
     "icon": "/i/002000/002981.png",
     "patch": 101,
     "en": "Cruising at the Savage Apex III",
-    "de": "Epische Stufen des Arkadion III",
+    "de": "Epische Stufen des Arkadions III",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク3",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion III",
     "description": {
@@ -76848,904 +76848,904 @@
   },
   "3690": {
     "id": 3690,
-    "icon": "",
+    "icon": "/i/064000/064875.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "One Giant Hop",
+    "de": "Lunarer Erkundungsmeister",
+    "ja": "月面のマスターエクスプローラー",
+    "fr": "Explorateur sélénien aguerri",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Successfully complete all stellar missions in Sinus Ardorum with the highest rating possible.",
+      "de": "Alle Stellarmissionen auf dem Mond mit der höchsten Wertung abgeschlossen.",
+      "ja": "焦がれの入江のコスモミッションを、すべて最高評価でコンプリートする",
+      "fr": "Terminer toutes les missions cosmiques de Sinus Ardorum avec la meilleure évaluation possible."
     },
     "item": 0,
-    "title": 0
+    "title": 781
   },
   "3691": {
     "id": 3691,
-    "icon": "",
+    "icon": "/i/039000/039013.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Saw",
+    "de": "Kosmo-Werkzeug: Kosmo-Säge",
+    "ja": "コスモツール：コスモ・ソー",
+    "fr": "Outil cosmique : scie cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic saw.",
+      "de": "Eine Kosmo-Säge erlangt.",
+      "ja": "コスモ・ソーを入手する",
+      "fr": "Obtenir la scie cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3692": {
     "id": 3692,
-    "icon": "",
+    "icon": "/i/039000/039112.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Cross-pein Hammer",
+    "de": "Kosmo-Werkzeug: Kosmo-Kreuzschlaghammer",
+    "ja": "コスモツール：コスモ・クロスペインハンマー",
+    "fr": "Outil cosmique : marteau à panne croisée cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic cross-pein hammer.",
+      "de": "Einen Kosmo-Kreuzschlaghammer erlangt.",
+      "ja": "コスモ・クロスペインハンマーを入手する",
+      "fr": "Obtenir le marteau à panne croisée cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3693": {
     "id": 3693,
-    "icon": "",
+    "icon": "/i/039000/039212.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Raising Hammer",
+    "de": "Kosmo-Werkzeug: Kosmo-Schlichthammer",
+    "ja": "コスモツール：コスモ・レイジングハンマー",
+    "fr": "Outil cosmique : marteau de batteur cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic raising hammer.",
+      "de": "Einen Kosmo-Schlichthammer erlangt.",
+      "ja": "コスモ・レイジングハンマーを入手する",
+      "fr": "Obtenir le marteau de batteur cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3694": {
     "id": 3694,
-    "icon": "",
+    "icon": "/i/039000/039311.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Mallet",
+    "de": "Kosmo-Werkzeug: Kosmo-Fäustel",
+    "ja": "コスモツール：コスモ・マレット",
+    "fr": "Outil cosmique : massette cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic mallet.",
+      "de": "Einen Kosmo-Fäustel erlangt.",
+      "ja": "コスモ・マレットを入手する",
+      "fr": "Obtenir la massette cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3695": {
     "id": 3695,
-    "icon": "",
+    "icon": "/i/039000/039412.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Round Knife",
+    "de": "Kosmo-Werkzeug: Kosmo-Rundmesser",
+    "ja": "コスモツール：コスモ・ラウンドナイフ",
+    "fr": "Outil cosmique : couteau arrondi cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic round knife.",
+      "de": "Ein Kosmo-Rundmesser erlangt.",
+      "ja": "コスモ・ラウンドナイフを入手する",
+      "fr": "Obtenir le couteau arrondi cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3696": {
     "id": 3696,
-    "icon": "",
+    "icon": "/i/039000/039512.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Needle",
+    "de": "Kosmo-Werkzeug: Kosmo-Nadel",
+    "ja": "コスモツール：コスモ・ニードル",
+    "fr": "Outil cosmique : aiguille cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic needle.",
+      "de": "Eine Kosmo-Nadel erlangt.",
+      "ja": "コスモ・ニードルを入手する",
+      "fr": "Obtenir l'aiguille cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3697": {
     "id": 3697,
-    "icon": "",
+    "icon": "/i/039000/039611.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Alembic",
+    "de": "Kosmo-Werkzeug: Kosmo-Destillierkolben",
+    "ja": "コスモツール：コスモ・アレンビック",
+    "fr": "Outil cosmique : alambic cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic alembic.",
+      "de": "Einen Kosmo-Destillierkolben erlangt.",
+      "ja": "コスモ・アレンビックを入手する",
+      "fr": "Obtenir l'alambic cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3698": {
     "id": 3698,
-    "icon": "",
+    "icon": "/i/039000/039714.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Frypan",
+    "de": "Kosmo-Werkzeug: Kosmo-Bratpfanne",
+    "ja": "コスモツール：コスモ・フライパン",
+    "fr": "Outil cosmique : poêle à frire cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic frypan.",
+      "de": "Eine Kosmo-Bratpfanne erlangt.",
+      "ja": "コスモ・フライパンを入手する",
+      "fr": "Obtenir la poêle à frire cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3699": {
     "id": 3699,
-    "icon": "",
+    "icon": "/i/038000/038314.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Pickaxe",
+    "de": "Kosmo-Werkzeug: Kosmo-Spitzhacke",
+    "ja": "コスモツール：コスモ・ピック",
+    "fr": "Outil cosmique : pioche cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic pickaxe.",
+      "de": "Eine Kosmo-Spitzhacke erlangt.",
+      "ja": "コスモ・ピックを入手する",
+      "fr": "Obtenir la pioche cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3700": {
     "id": 3700,
-    "icon": "",
+    "icon": "/i/038000/038412.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Hatchet",
+    "de": "Kosmo-Werkzeug: Kosmo-Handbeil",
+    "ja": "コスモツール：コスモ・ハチェット",
+    "fr": "Outil cosmique : hachette cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic hatchet.",
+      "de": "Ein Kosmo-Handbeil erlangt.",
+      "ja": "コスモ・ハチェットを入手する",
+      "fr": "Obtenir la hachette cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3701": {
     "id": 3701,
-    "icon": "",
+    "icon": "/i/038000/038515.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "R&D: Cosmic Fishing Rod",
+    "de": "Kosmo-Werkzeug: Kosmo-Angelrute",
+    "ja": "コスモツール：コスモ・フィッシングロッド",
+    "fr": "Outil cosmique : canne à pêche cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a cosmic fishing rod.",
+      "de": "Eine Kosmo-Angelrute erlangt.",
+      "ja": "コスモ・フィッシングロッドを入手する",
+      "fr": "Obtenir la canne à pêche cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3702": {
     "id": 3702,
-    "icon": "",
+    "icon": "/i/001000/001503.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Carpentry I",
+    "de": "Zimmerer der unendlichen Weiten I",
+    "ja": "星渡る木工師：ランク1",
+    "fr": "Menuisier du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a carpenter.",
+      "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、木工師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que menuisier."
     },
     "item": 0,
     "title": 0
   },
   "3703": {
     "id": 3703,
-    "icon": "",
+    "icon": "/i/001000/001503.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Carpentry II",
+    "de": "Zimmerer der unendlichen Weiten II",
+    "ja": "星渡る木工師：ランク2",
+    "fr": "Menuisier du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a carpenter.",
+      "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、木工師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que menuisier."
     },
     "item": 0,
     "title": 0
   },
   "3704": {
     "id": 3704,
-    "icon": "",
+    "icon": "/i/001000/001503.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Hammering with the Stars",
+    "de": "Zimmerer der unendlichen Weiten III",
+    "ja": "星渡る木工マスター",
+    "fr": "Maître menuisier du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a carpenter.",
+      "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、木工師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que menuisier."
     },
     "item": 0,
-    "title": 0
+    "title": 782
   },
   "3705": {
     "id": 3705,
-    "icon": "",
+    "icon": "/i/001000/001553.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Smithing I",
+    "de": "Grobschmied der unendlichen Weiten I",
+    "ja": "星渡る鍛冶師：ランク1",
+    "fr": "Forgeron du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a blacksmith.",
+      "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que forgeron."
     },
     "item": 0,
     "title": 0
   },
   "3706": {
     "id": 3706,
-    "icon": "",
+    "icon": "/i/001000/001553.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Smithing I",
+    "de": "Grobschmied der unendlichen Weiten II",
+    "ja": "星渡る鍛冶師：ランク2",
+    "fr": "Forgeron du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a blacksmith.",
+      "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que forgeron."
     },
     "item": 0,
     "title": 0
   },
   "3707": {
     "id": 3707,
-    "icon": "",
+    "icon": "/i/001000/001553.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Smithing with the Stars",
+    "de": "Grobschmied der unendlichen Weiten III",
+    "ja": "星渡る鍛冶マスター",
+    "fr": "Maître forgeron du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a blacksmith.",
+      "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que forgeron."
     },
     "item": 0,
-    "title": 0
+    "title": 783
   },
   "3708": {
     "id": 3708,
-    "icon": "",
+    "icon": "/i/001000/001603.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Forgery I",
+    "de": "Plattner der unendlichen Weiten I",
+    "ja": "星渡る甲冑師：ランク1",
+    "fr": "Armurier du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as an armorer.",
+      "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'armurier."
     },
     "item": 0,
     "title": 0
   },
   "3709": {
     "id": 3709,
-    "icon": "",
+    "icon": "/i/001000/001603.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Forgery I",
+    "de": "Plattner der unendlichen Weiten II",
+    "ja": "星渡る甲冑師：ランク2",
+    "fr": "Armurier du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as an armorer.",
+      "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'armurier."
     },
     "item": 0,
     "title": 0
   },
   "3710": {
     "id": 3710,
-    "icon": "",
+    "icon": "/i/001000/001603.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Forging with the Stars",
+    "de": "Plattner der unendlichen Weiten III",
+    "ja": "星渡る甲冑マスター",
+    "fr": "Maître armurier du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as an armorer.",
+      "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'armurier."
     },
     "item": 0,
-    "title": 0
+    "title": 784
   },
   "3711": {
     "id": 3711,
-    "icon": "",
+    "icon": "/i/001000/001653.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Metallurgy I",
+    "de": "Goldschmied der unendlichen Weiten I",
+    "ja": "星渡る彫金師：ランク1",
+    "fr": "Orfèvre du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a goldsmith.",
+      "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'orfèvre."
     },
     "item": 0,
     "title": 0
   },
   "3712": {
     "id": 3712,
-    "icon": "",
+    "icon": "/i/001000/001653.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Metallurgy II",
+    "de": "Goldschmied der unendlichen Weiten II",
+    "ja": "星渡る彫金師：ランク2",
+    "fr": "Orfèvre du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a goldsmith.",
+      "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'orfèvre."
     },
     "item": 0,
     "title": 0
   },
   "3713": {
     "id": 3713,
-    "icon": "",
+    "icon": "/i/001000/001653.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Goldsmithing with the Stars",
+    "de": "Goldschmied der unendlichen Weiten III",
+    "ja": "星渡る彫金マスター",
+    "fr": "Maître orfèvre du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a goldsmith.",
+      "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'orfèvre."
     },
     "item": 0,
-    "title": 0
+    "title": 785
   },
   "3714": {
     "id": 3714,
-    "icon": "",
+    "icon": "/i/001000/001703.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Tanning I ",
+    "de": "Gerber der unendlichen Weiten I",
+    "ja": "星渡る革細工師：ランク1",
+    "fr": "Tanneur du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a leatherworker.",
+      "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que tanneur."
     },
     "item": 0,
     "title": 0
   },
   "3715": {
     "id": 3715,
-    "icon": "",
+    "icon": "/i/001000/001703.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Tanning II",
+    "de": "Gerber der unendlichen Weiten II",
+    "ja": "星渡る革細工師：ランク2",
+    "fr": "Tanneur du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a leatherworker.",
+      "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que tanneur."
     },
     "item": 0,
     "title": 0
   },
   "3716": {
     "id": 3716,
-    "icon": "",
+    "icon": "/i/001000/001703.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Tanning with the Stars",
+    "de": "Gerber der unendlichen Weiten III",
+    "ja": "星渡る革細工マスター",
+    "fr": "Maître tanneur du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a leatherworker.",
+      "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que tanneur."
     },
     "item": 0,
-    "title": 0
+    "title": 786
   },
   "3717": {
     "id": 3717,
-    "icon": "",
+    "icon": "/i/001000/001753.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Stitchery I",
+    "de": "Weber der unendlichen Weiten I",
+    "ja": "星渡る裁縫師：ランク1",
+    "fr": "Couturier du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a weaver.",
+      "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que couturier."
     },
     "item": 0,
     "title": 0
   },
   "3718": {
     "id": 3718,
-    "icon": "",
+    "icon": "/i/001000/001753.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Stitchery II",
+    "de": "Weber der unendlichen Weiten II",
+    "ja": "星渡る裁縫師：ランク2",
+    "fr": "Couturier du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a weaver.",
+      "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que couturier."
     },
     "item": 0,
     "title": 0
   },
   "3719": {
     "id": 3719,
-    "icon": "",
+    "icon": "/i/001000/001753.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Stitching with the Stars",
+    "de": "Weber der unendlichen Weiten III",
+    "ja": "星渡る裁縫マスター",
+    "fr": "Maître couturier du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a weaver.",
+      "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que couturier."
     },
     "item": 0,
-    "title": 0
+    "title": 787
   },
   "3720": {
     "id": 3720,
-    "icon": "",
+    "icon": "/i/001000/001803.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Science I",
+    "de": "Alchemist der unendlichen Weiten I",
+    "ja": "星渡る錬金術師：ランク1",
+    "fr": "Alchimiste du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as an alchemist.",
+      "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'alchimiste."
     },
     "item": 0,
     "title": 0
   },
   "3721": {
     "id": 3721,
-    "icon": "",
+    "icon": "/i/001000/001803.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Science II",
+    "de": "Alchemist der unendlichen Weiten II",
+    "ja": "星渡る錬金術師：ランク2",
+    "fr": "Alchimiste du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as an alchemist.",
+      "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'alchimiste."
     },
     "item": 0,
     "title": 0
   },
   "3722": {
     "id": 3722,
-    "icon": "",
+    "icon": "/i/001000/001803.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Distilling with the Stars",
+    "de": "Alchemist der unendlichen Weiten III",
+    "ja": "星渡る錬金術マスター",
+    "fr": "Maître alchimiste du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as an alchemist.",
+      "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'alchimiste."
     },
     "item": 0,
-    "title": 0
+    "title": 788
   },
   "3723": {
     "id": 3723,
-    "icon": "",
+    "icon": "/i/001000/001853.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Seasoning I",
+    "de": "Gourmet der unendlichen Weiten I",
+    "ja": "星渡る調理師：ランク1",
+    "fr": "Cuisinier du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a culinarian.",
+      "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、調理師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que cuisinier."
     },
     "item": 0,
     "title": 0
   },
   "3724": {
     "id": 3724,
-    "icon": "",
+    "icon": "/i/001000/001853.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Seasoning II",
+    "de": "Gourmet der unendlichen Weiten II",
+    "ja": "星渡る調理師：ランク2",
+    "fr": "Cuisinier du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a culinarian.",
+      "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、調理師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que cuisinier."
     },
     "item": 0,
     "title": 0
   },
   "3725": {
     "id": 3725,
-    "icon": "",
+    "icon": "/i/001000/001853.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cooking with the Stars",
+    "de": "Gourmet der unendlichen Weiten III",
+    "ja": "星渡る調理マスター",
+    "fr": "Maître cuisinier du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a culinarian.",
+      "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、調理師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que cuisinier."
     },
     "item": 0,
-    "title": 0
+    "title": 789
   },
   "3726": {
     "id": 3726,
-    "icon": "",
+    "icon": "/i/001000/001021.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Geology I",
+    "de": "Minenarbeiter der unendlichen Weiten I",
+    "ja": "星渡る採掘師：ランク1",
+    "fr": "Mineur du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a miner.",
+      "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que mineur."
     },
     "item": 0,
     "title": 0
   },
   "3727": {
     "id": 3727,
-    "icon": "",
+    "icon": "/i/001000/001021.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Geology II",
+    "de": "Minenarbeiter der unendlichen Weiten II",
+    "ja": "星渡る採掘師：ランク2",
+    "fr": "Mineur du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a miner.",
+      "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que mineur."
     },
     "item": 0,
     "title": 0
   },
   "3728": {
     "id": 3728,
-    "icon": "",
+    "icon": "/i/001000/001021.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Mining with the Stars",
+    "de": "Minenarbeiter der unendlichen Weiten III",
+    "ja": "星渡る採掘マスター",
+    "fr": "Maître mineur du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a miner.",
+      "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que mineur."
     },
     "item": 0,
-    "title": 0
+    "title": 790
   },
   "3729": {
     "id": 3729,
-    "icon": "",
+    "icon": "/i/001000/001071.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Botany I",
+    "de": "Gärtner der unendlichen Weiten I",
+    "ja": "星渡る園芸師：ランク1",
+    "fr": "Botaniste du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a botanist.",
+      "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que botaniste."
     },
     "item": 0,
     "title": 0
   },
   "3730": {
     "id": 3730,
-    "icon": "",
+    "icon": "/i/001000/001071.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Botany II",
+    "de": "Gärtner der unendlichen Weiten II",
+    "ja": "星渡る園芸師：ランク2",
+    "fr": "Botaniste du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a botanist.",
+      "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que botaniste."
     },
     "item": 0,
     "title": 0
   },
   "3731": {
     "id": 3731,
-    "icon": "",
+    "icon": "/i/001000/001071.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Gardening with the Stars",
+    "de": "Gärtner der unendlichen Weiten III",
+    "ja": "星渡る園芸マスター",
+    "fr": "Maître botaniste du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a botanist.",
+      "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que botaniste."
     },
     "item": 0,
-    "title": 0
+    "title": 791
   },
   "3732": {
     "id": 3732,
-    "icon": "",
+    "icon": "/i/001000/001126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Ichthyology I",
+    "de": "Fischer der unendlichen Weiten I",
+    "ja": "星渡る漁師：ランク1",
+    "fr": "Pêcheur du cosmos I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points as a fisher.",
+      "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、漁師で技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que pêcheur."
     },
     "item": 0,
     "title": 0
   },
   "3733": {
     "id": 3733,
-    "icon": "",
+    "icon": "/i/001000/001126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rocket Ichthyology II",
+    "de": "Fischer der unendlichen Weiten II",
+    "ja": "星渡る漁師：ランク2",
+    "fr": "Pêcheur du cosmos II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 150,000 points as a fisher.",
+      "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 150.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、漁師で技巧点を150,000点獲得する",
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que pêcheur."
     },
     "item": 0,
     "title": 0
   },
   "3734": {
     "id": 3734,
-    "icon": "",
+    "icon": "/i/001000/001126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Fishing with the Stars",
+    "de": "Fischer der unendlichen Weiten III",
+    "ja": "星渡る漁師マスター",
+    "fr": "Maître pêcheur du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as a fisher.",
+      "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、漁師で技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que pêcheur."
     },
     "item": 0,
-    "title": 0
+    "title": 792
   },
   "3735": {
     "id": 3735,
-    "icon": "",
+    "icon": "/i/001000/001986.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Crafting in Spaaace",
+    "de": "Handwerksmeister der unendlichen Weiten",
+    "ja": "星渡る製作マスター",
+    "fr": "Maître artisan du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points with any Disciple of the Hand.",
+      "de": "Bei der Kosmo-Erkundung als Handwerker eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、いずれかのクラフタークラスで技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'artisan."
     },
     "item": 0,
     "title": 0
   },
   "3736": {
     "id": 3736,
-    "icon": "",
+    "icon": "/i/001000/001019.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Gathering in Spaaace",
+    "de": "Sammlermeister der unendlichen Weiten",
+    "ja": "星渡る採集マスター",
+    "fr": "Maître récolteur du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 50,000 points with any Disciple of the Land.",
+      "de": "Bei der Kosmo-Erkundung als Sammler eine Wertung von mindestens 50.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、いずれかのギャザラークラスで技巧点を50,000点獲得する",
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que récolteur."
     },
     "item": 0,
     "title": 0
   },
   "3737": {
     "id": 3737,
-    "icon": "",
+    "icon": "/i/001000/001982.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Star Crafter",
+    "de": "Handwerkskönig der unendlichen Weiten",
+    "ja": "星渡る製作王",
+    "fr": "Artisan en chef du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Hand.",
+      "de": "Bei der Kosmo-Erkundung in allen Handwerkerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、全てのクラフタークラスで技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat."
     },
     "item": 0,
-    "title": 0
+    "title": 793
   },
   "3738": {
     "id": 3738,
-    "icon": "",
+    "icon": "/i/001000/001029.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Star Gatherer",
+    "de": "Sammlerkönig  der unendlichen Weiten",
+    "ja": "星渡る採集王",
+    "fr": "Récolteur en chef du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Land.",
+      "de": "Bei der Kosmo-Erkundung in allen Sammlerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、全てのギャザラークラスで技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes de récolte."
     },
     "item": 0,
-    "title": 0
+    "title": 794
   },
   "3739": {
     "id": 3739,
-    "icon": "",
+    "icon": "/i/001000/001955.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Out of This World",
+    "de": "Außerordentliche Kraft der unendlichen Weiten",
+    "ja": "星渡る探索王",
+    "fr": "Grand explorateur du cosmos",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Hand and Land.",
+      "de": "Bei der Kosmo-Erkundung in allen Handwerker- und Sammlerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
+      "ja": "コスモエクスプローラーにおいて、全てのクラフター・ギャザラークラスで技巧点を500,000点獲得する",
+      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat et de récolte."
     },
-    "item": 0,
+    "item": 48232,
     "title": 0
   },
   "3740": {
     "id": 3740,
-    "icon": "",
+    "icon": "/i/001000/001904.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Just One More Spin I",
+    "de": "Das Glück der Sterne I",
+    "ja": "コスモフォーチュンに導かれし者：ランク1",
+    "fr": "Une chance cosmique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Draw 10 cosmic fortunes.",
+      "de": "10 Mal am Kosmo-Glück versucht.",
+      "ja": "コスモフォーチュンに10回挑戦する",
+      "fr": "Jouer 10 fois à la Roue de la fortune cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3741": {
     "id": 3741,
-    "icon": "",
+    "icon": "/i/001000/001904.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Just One More Spin II",
+    "de": "Das Glück der Sterne II",
+    "ja": "コスモフォーチュンに導かれし者：ランク2",
+    "fr": "Une chance stellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Draw 100 cosmic fortunes.",
+      "de": "100 Mal am Kosmo-Glück versucht.",
+      "ja": "コスモフォーチュンに100回挑戦する",
+      "fr": "Jouer 100 fois à la Roue de la fortune cosmique."
     },
     "item": 0,
     "title": 0
   },
   "3742": {
     "id": 3742,
-    "icon": "",
+    "icon": "/i/001000/001904.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Just One More Spin III",
+    "de": "Das Glück der Sterne III",
+    "ja": "コスモフォーチュンに導かれし者：ランク3",
+    "fr": "Une chance galactique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Draw 1,000 cosmic fortunes.",
+      "de": "1000 Mal am Kosmo-Glück versucht.",
+      "ja": "コスモフォーチュンに1,000回挑戦する",
+      "fr": "Jouer 1000 fois à la Roue de la fortune cosmique."
     },
     "item": 0,
-    "title": 0
+    "title": 795
   },
   "3743": {
     "id": 3743,

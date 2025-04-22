@@ -27742,7 +27742,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Attacks generate HP equal to the amount of physical damage dealt.",
-      "de": "Ein Teil des ausgeteilten physischen Schadens wird in LP umgewandelt.",
+      "de": "Der ausgeteilte physische Schaden wird in LP umgewandelt.",
       "ja": "物理攻撃にＨＰ吸収効果が付与された状態。",
       "fr": "Les attaques physiques absorbent des PV."
     }
@@ -55394,7 +55394,7 @@
       "en": "Regenerating HP over time.",
       "de": "Regeneriert schrittweise LP.",
       "ja": "連続してＨＰが回復している状態。",
-      "fr": "Certaines actions sont remplacées."
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "3958": {
@@ -59066,17 +59066,17 @@
     }
   },
   "4220": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Material Miracle",
+    "de": "Wundermaterial",
+    "ja": "ミラクルマテリアル",
+    "fr": "Miracle de la matière",
+    "icon": "/i/216000/216254.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Next material condition will be <span style=\"color:#ffffff\">Good</span>, <span style=\"color:#ffffff\">Sturdy</span>, <span style=\"color:#ffffff\">Centered</span>, <span style=\"color:#ffffff\">Pliant</span>, <span style=\"color:#ffffff\">Primed</span>, or <span style=\"color:#ffffff\">Malleable</span>.",
+      "de": "Der Materialzustand wird zu „Gut“, „Robust“, „Stabil“, „Ergiebig“, „Präpariert“ oder „Formbar“.",
+      "ja": "製作の状態が「高品質」「頑丈」「安定」「高能率」「長持続」「高進捗」のいずれかに変化する状態。",
+      "fr": "L'état de la synthèse devient bon, robuste, stable, modulable, apprêté ou malléable."
     }
   },
   "4221": {
@@ -59206,17 +59206,17 @@
     }
   },
   "4230": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ground Support",
+    "de": "Bodenunterstützung",
+    "ja": "サポーター参加",
+    "fr": "Assistant",
+    "icon": "/i/216000/216241.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Participating in this operation as ground support.",
+      "de": "Nimmt als Bodenunterstützung an einem Mecha-Einsatz teil.",
+      "ja": "メカオペレーションにサポーターとして参加している状態。",
+      "fr": "Participe à une intervention mécanique en tant qu'assistante."
     }
   },
   "4231": {
@@ -61558,17 +61558,17 @@
     }
   },
   "4398": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Stellar Sprint",
+    "de": "Kosmo-Sprint",
+    "ja": "コスモスプリント",
+    "fr": "Cosmosprint",
+    "icon": "/i/210000/210101.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "4399": {
@@ -61656,17 +61656,17 @@
     }
   },
   "4405": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Carrot Power",
+    "de": "Aufgerüstet",
+    "ja": "エンパワーメント",
+    "fr": "Gain de puissance",
+    "icon": "/i/215000/215589.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Hypercarrot Cannon is primed for use.",
+      "de": "<span style=\"color:#ffffff\">Schweres Karottengeschütz</span> kann ausgeführt werden.",
+      "ja": "ハイ・キャロットキャノンが使用できる状態",
+      "fr": "Le Super carotto-canon peut être utilisé."
     }
   },
   "4406": {
@@ -61712,17 +61712,17 @@
     }
   },
   "4409": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Star Contributor",
+    "de": "Auszeichnung für Außerordentliches",
+    "ja": "最優秀貢献者の証",
+    "fr": "Marque de contributeur exemplaire",
+    "icon": "/i/216000/216255.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bearing proof of exceptional contributions made during a period of cosmic exploration. In effect only when playing as a Disciple of the Hand or Land.",
+      "de": "Bezeugt die höchste Projektleistung am Ende des Projektdatenaufzeichnungsintervalls. Nur für Handwerker und Sammler gültig.",
+      "ja": "集計対象期間に、最優秀貢献者に選ばれたことを証明する。クラフター・ギャザラーでのみ有効。",
+      "fr": "Prouve l'obtention du titre de contributeur exemplaire sur une période donnée. Artisans et récolteurs uniquement."
     }
   },
   "4410": {
@@ -63168,17 +63168,17 @@
     }
   },
   "4513": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Now Boarding",
+    "de": "Pilotenaussendung",
+    "ja": "パイロット転送中",
+    "fr": "Transfert de pilote",
+    "icon": "/i/215000/215765.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Pilot is being transferred to the appropriate operational mech.",
+      "de": "Wird als Pilot zum Einsatzgebiet eines Mecha-Einsatzes geschickt.",
+      "ja": "メカオペレーションのパイロットを転送している状態。",
+      "fr": "Le pilote est transféré automatiquement."
     }
   },
   "4514": {

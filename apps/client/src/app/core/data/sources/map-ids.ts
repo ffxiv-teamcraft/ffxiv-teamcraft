@@ -5010,104 +5010,104 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1003,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1004,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1005,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1006,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1007,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1008,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1009,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1010,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1011,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1012,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1013,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1014,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1015,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1016,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1017,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1018,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1019,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1020,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1021,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1022,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
     "zone": 4759,
@@ -5150,9 +5150,9 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 5219,
     "id": 1031,
-    "weatherRate": null
+    "weatherRate": 169
   },
   {
     "zone": 5177,

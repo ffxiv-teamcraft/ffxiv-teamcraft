@@ -23660,18 +23660,18 @@
     "icon": "/i/026000/026181.png"
   },
   "2003380": {
-    "en": "",
+    "en": "Forgotten Crew Uniform",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Galaktastisches Kosmoanzug-Set",
+    "fr": "Tenue d'équipage neuve",
+    "icon": "/i/026000/026111.png"
   },
   "2003381": {
-    "en": "",
+    "en": "Mumukko's Mystery Box",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Mysteriöse Kiste",
+    "fr": "Colis de Mumukko",
+    "icon": "/i/026000/026108.png"
   },
   "2003382": {
     "en": "Agavoides Young",
@@ -26180,32 +26180,32 @@
     "icon": "/i/026000/026108.png"
   },
   "2003740": {
-    "en": "",
+    "en": "Raw Material",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Baumaterial",
+    "fr": "Matériau",
+    "icon": "/i/020000/020802.png"
   },
   "2003741": {
-    "en": "",
+    "en": "Processed Material",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Veredeltes Baumaterial",
+    "fr": "Produit manufacturé",
+    "icon": "/i/020000/020952.png"
   },
   "2003742": {
-    "en": "",
+    "en": "Drained Battery Pack",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Leerer Energievorrat",
+    "fr": "Réservoir d'énergie vide",
+    "icon": "/i/023000/023553.png"
   },
   "2003743": {
-    "en": "",
+    "en": "Charged Battery Pack",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Rappelvoller Energievorrat",
+    "fr": "Réservoir d'énergie plein",
+    "icon": "/i/023000/023553.png"
   },
   "2003744": {
     "en": "",

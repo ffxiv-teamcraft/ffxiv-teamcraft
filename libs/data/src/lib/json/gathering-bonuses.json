@@ -5028,13 +5028,13 @@
     }
   },
   "319": {
-    "value": 15,
-    "conditionValue": 1,
+    "value": 30,
+    "conditionValue": 240,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de récolte supp. +{{value}}% (↑)"
     },
     "condition": {
       "en": "Perception ≥ {{value}}",
@@ -5045,115 +5045,43 @@
   },
   "320": {
     "value": 30,
-    "conditionValue": 1,
+    "conditionValue": 235,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
     }
   },
   "321": {
-    "value": 15,
-    "conditionValue": 1,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "322": {
-    "value": 30,
-    "conditionValue": 1,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "323": {
-    "value": 15,
-    "conditionValue": 1,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "324": {
-    "value": 30,
-    "conditionValue": 1,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "325": {
-    "value": 15,
-    "conditionValue": 1,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "326": {
-    "value": 30,
-    "conditionValue": 1,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chances de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "327": {
     "value": 20,
@@ -6100,8 +6028,8 @@
     }
   },
   "386": {
-    "value": 75,
-    "conditionValue": 2930,
+    "value": 140,
+    "conditionValue": 2500,
     "bonus": {
       "en": " Collectability +{{value}}",
       "de": "Sammlerwert +{{value}}",
@@ -6116,16 +6044,52 @@
     }
   },
   "387": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 2400,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "388": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 10,
+    "conditionValue": 4550,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "389": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 10,
+    "conditionValue": 4750,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "390": {
     "value": 1,
@@ -6208,16 +6172,52 @@
     }
   },
   "395": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 240,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de récolte supp. +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Perception ≥ {{value}}",
+      "de": "Expertise min. {{value}}",
+      "ja": "技術力 {{value}}以上",
+      "fr": "Savoir-faire ≧ {{value}}"
+    }
   },
   "396": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 2400,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de récolte supp. +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Perception ≥ {{value}}",
+      "de": "Expertise min. {{value}}",
+      "ja": "技術力 {{value}}以上",
+      "fr": "Savoir-faire ≧ {{value}}"
+    }
   },
   "397": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 235,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "398": {
     "value": 1,
@@ -9332,20 +9332,68 @@
     }
   },
   "600": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 70,
+    "conditionValue": 5090,
+    "bonus": {
+      "en": " Collectability +{{value}}",
+      "de": "Sammlerwert +{{value}}",
+      "ja": "収集価値＋{{value}}",
+      "fr": " Valeur de collection + {{value}}"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "601": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 10,
+    "conditionValue": 5090,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "602": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 15,
+    "conditionValue": 5090,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +{{value}}%",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
+      "ja": "獲得数ボーナス発生率＋{{value}}%",
+      "fr": " Chances de récolte supp. +{{value}}%"
+    },
+    "condition": {
+      "en": "Perception ≥ {{value}}",
+      "de": "Expertise min. {{value}}",
+      "ja": "技術力 {{value}}以上",
+      "fr": "Savoir-faire ≧ {{value}}"
+    }
   },
   "603": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 5090,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +{{value}}%",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
+      "ja": "獲得数ボーナス発生率＋{{value}}%",
+      "fr": " Chances de récolte supp. +{{value}}%"
+    },
+    "condition": {
+      "en": "Perception ≥ {{value}}",
+      "de": "Expertise min. {{value}}",
+      "ja": "技術力 {{value}}以上",
+      "fr": "Savoir-faire ≧ {{value}}"
+    }
   },
   "604": {
     "value": 0,
