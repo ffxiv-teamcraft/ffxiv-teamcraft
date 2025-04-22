@@ -25,6 +25,7 @@
   "Check_guides": "查阅我们的指南",
   "Guides_links": "TC引导手册",
   "Db_ban": "由于您之前在数据库评论的活动，您当前没有发表评论的权限。如果您对此有任何意见，请到Discord联系Miu#1568。",
+  "Sensitive_operation": "您正在进行的操作需要重新登录以确认是您本人在执行操作。请重新登录。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -628,6 +629,8 @@
     "Characters": "角色",
     "Missing_character": "角色不存在",
     "Missing_character_description": "此角色不再存在，请从您的个人资料中删除它。",
+    "Delete_account": "删除我的账号",
+    "Delete_account_confirmation": "此操作无法撤消，并将删除您的帐户以及您的个人资料，您的清单，手法和配装将仍然存在，但将链接到一个不存在的账号资料上。",
     "VERIFICATION": {
       "Button": "验证",
       "Title": "角色验证",
@@ -3292,10 +3295,10 @@
     "Inventory": "物品栏"
   },
   "TEAMCRAFTER": {
-    "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
-    "Teamcrafter_description_banner": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering made by the creator of Teamcraft !",
-    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy !",
-    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to you ! Please consider following it on Kickstarter and adding it to your Steam wishlist, it's a huge help for me.",
+    "Teamcrafter_description": "隆重介绍 Teamcrafter ：一款注重于制作和采集的 roguelike 游戏",
+    "Teamcrafter_description_banner": "隆重介绍 Teamcrafter ：一款注重于制作和采集的 roguelike 游戏，由 Teamcraft 的开发者打造！",
+    "Teamcrafter_description_text": "你喜欢和凶猛的怪物战斗吗？冒着生命危险去救陌生人？不，你一定是疯了！",
+    "Teamcrafter_description_text_part2": "Teamcrafter 是我实现儿时梦想的作品，感谢社区，感谢你！请考虑在 Kickstarter 上关注它并将其添加到您的 Steam 愿望清单中，这对我来说是一个巨大的帮助。",
     "Wishlist": "Wishlist on Steam",
     "Follow_KS": "Follow on Kickstarter"
   }
