@@ -25,6 +25,7 @@
   "Check_guides": "Consultez nos guides (en anglais)",
   "Guides_links": "Guides Teamcraft",
   "Db_ban": "Vous n'avez pas la permission de poster des commentaires sur la base de données en raison de votre activité précédente dans les commentaires de la base de données. Si vous souhaitez discuter de ce ban, veuillez DM Miu#1568 sur Discord.",
+  "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -122,8 +123,8 @@
   "Your_public_lists": "Vos listes communautaires",
   "Public_list": "Liste communautaire",
   "Profile": "Profil",
-  "Private_lodestone": "Your character is set to private on the lodestone",
-  "Private_lodestone_explain": "Please make it visible to the public, at least its main profile, for Teamcraft to be able to use it.",
+  "Private_lodestone": "Votre personnage est privé sur le Lodestone",
+  "Private_lodestone_explain": "Veuillez rendre public au moins le profil principal, pour que Teamcraft puisse y accéder.",
   "X_for_total": "{{amount}} pour le tout",
   "Discounts": "Remises",
   "Flat_discount": "Remise en gils",
@@ -628,6 +629,8 @@
     "Characters": "Personnages",
     "Missing_character": "Personnage manquant",
     "Missing_character_description": "Ce personnage n'existe plus, veuillez le supprimer de votre profil.",
+    "Delete_account": "Delete my account",
+    "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
     "VERIFICATION": {
       "Button": "Vérifier",
       "Title": "Vérification de personnage",
@@ -1467,7 +1470,7 @@
     "Log_in_to_track": "Connectez-vous pour être en mesure de suivre la réalisation de votre carnet de recette",
     "Logs_import_done": "Vos logs ont été importés avec succès",
     "Crafting_log": "Logs de craft",
-    "Gathering_log": "Gathering log (excluding fishing)",
+    "Gathering_log": "Logs de récolte (excluant la pêche)",
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
     "IMPORT": {
       "Data_loading": "Préchargement des données",
@@ -1678,8 +1681,8 @@
       "Fruity_video_description": "Lien vers la \"Vidéo comment attraper\" de Fruity Snacks pour ce poisson",
       "Hour": "Heure du jour",
       "Etime": "Heure éorzéenne",
-      "Misses_popup_title": "Ratés sur ce spot",
-      "Show_misses": "Afficher les echecs",
+      "Misses_popup_title": "Manqués sur ce spot",
+      "Show_misses": "Afficher les manqués",
       "Baits": "Appât utilisé",
       "Hookset_and_tug": "Ferrages et touches",
       "Weathers": "Météo",
@@ -1709,9 +1712,9 @@
       "Your_ranking": "Votre classement",
       "Include_fisheyes_data": "Inclure les rapports utilisant Yeux de poissons",
       "Not_enough_data_points": "Données insuffisantes pour afficher le graphique",
-      "Lure": "Lure",
-      "Lure_stacks": "Min. stacks",
-      "Lures": "Lures",
+      "Lure": "Leurre",
+      "Lure_stacks": "Cumuls min",
+      "Lures": "Leurres",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
@@ -1755,14 +1758,14 @@
       "Fish_per_bait": "Poisson par appât",
       "Fish_per_tug": "Poisson par touche",
       "Fish_per_hookset": "Poisson par ferrage",
-      "Include_misses": "Misses",
+      "Include_misses": "Manqués",
       "Miss": "Raté",
       "Remove_this_bait": "Supprimer cet appât",
       "Bait_removed": "Appât retiré de ce point",
       "Position_unknown": "Lieu inconnu",
-      "No_lure_filter": "No lure filter",
-      "Exclude_all_lures": "Exclude lures",
-      "Lure_filter": "Lure filter"
+      "No_lure_filter": "Inclure les leurres",
+      "Exclude_all_lures": "Exclure les leurres",
+      "Lure_filter": "Leurre"
     },
     "NODE": {
       "Items": "Objets",
@@ -3094,13 +3097,13 @@
     "GAME_NOT_RUNNING": "Échec du démarrage de la capture de paquets",
     "RESTART_GAME": "La capture de paquets n'a pas été arrêtée correctement",
     "GAME_RUNNING_AS_ADMIN": "Impossible d'accéder au processus du jeu",
-    "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
+    "MISSING_INJECTOR": "L'outil de capture de paquets est bloqué par votre antivirus",
     "DESCRIPTION": {
       "Default": "Une erreur inconnue s'est produite en essayant de démarrer la capture de paquets, veuillez le signaler dans le salon #troubleshooting sur Discord.",
       "GAME_NOT_RUNNING": "Vérifiez que le jeu est bien démarré et qu'il n'a pas été lancé en tant qu'administrateur (ou, dans ce cas, démarrez Teamcraft en tant qu'administrateur). <br>Si ce problème persiste, signalez le problème dans le salon #troubleshooting sur Discord avec une capture d'écran des messages précédents.",
       "RESTART_GAME": "Veuillez redémarrer le jeu pour pouvoir exécuter la capture de paquets correctement.",
       "GAME_RUNNING_AS_ADMIN": "Le jeu est lancé en tant qu'administrateur, veuillez le redémarrer normalement ou redémarrer Teamcraft en tant qu'administrateur.",
-      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
+      "MISSING_INJECTOR": "L'outil de capture de paquets est manquant, probablement supprimé par votre antivirus à cause d'un faux positif, assurez-vous d'en exclure le dossier d'installation de Teamcraft et de le réinstaller."
     }
   },
   "ISLAND_SANCTUARY": {
@@ -3289,14 +3292,14 @@
     "Reminders": "Rappels",
     "About": "À propos",
     "Fish_Train": "Train de pêche",
-    "Inventory": "Inventory"
+    "Inventory": "Inventaire"
   },
   "TEAMCRAFTER": {
-    "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
-    "Teamcrafter_description_banner": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering made by the creator of Teamcraft !",
-    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy !",
-    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to you ! Please consider following it on Kickstarter and adding it to your Steam wishlist, it's a huge help for me.",
-    "Wishlist": "Wishlist on Steam",
-    "Follow_KS": "Follow on Kickstarter"
+    "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",
+    "Teamcrafter_description_banner": "Teamcraft : un jeu roguelike axé sur l'artisanat et la collecte par le créateur de Teamcraft !",
+    "Teamcrafter_description_text": "« Vous aimez combattre de féroces monstres ? Risquer votre vie pour sauver des étrangers ?\nBien sûr que non, vous n'êtes pas fou ! »",
+    "Teamcrafter_description_text_part2": "Teamcrafter, c'est moi qui réalise un rêve d'enfance grâce à la communauté, grâce à vous ! Le suivre sur Kickstarter et l'ajouter à votre liste de souhaits sur Steam serait une aide énorme pour moi.",
+    "Wishlist": "Voir sur Steam",
+    "Follow_KS": "Voir sur Kickstarter"
   }
 }

@@ -58238,13 +58238,13 @@
   "9707": {
     "en": "Fatebreaker",
     "ja": "フェイトブレイカー",
-    "de": "fusioniert[a] Ascian",
+    "de": "Bann[p] der Hoffnung",
     "fr": "Sabreur de destins"
   },
   "9708": {
     "en": "Fatebreaker's image",
     "ja": "フェイトブレイカーの幻影",
-    "de": "Abbild[p] des fusionierten Ascians",
+    "de": "Abbild[p] des Banns der Hoffnung",
     "fr": "double du Sabreur de destins"
   },
   "9709": {
@@ -83148,10 +83148,10 @@
     "fr": ""
   },
   "13859": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Commandingway",
+    "ja": "コマンディングウェイ",
+    "de": "Commandingway",
+    "fr": "Commandingway"
   },
   "13860": {
     "en": "roseblood drop",
@@ -83744,7 +83744,7 @@
   "13958": {
     "en": "clockwork oppressor",
     "ja": "クロックワーク・オプレッサー",
-    "de": "Aufzieh-Unterdrücker",
+    "de": "Uhrwerk-Unterdrücker",
     "fr": "oppresseur mécanique"
   },
   "13959": {
@@ -83760,10 +83760,10 @@
     "fr": ""
   },
   "13961": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "micro rover",
+    "ja": "ミニミニローダー",
+    "de": "Mini-Minimecha",
+    "fr": "mini-ouvrier cosmique"
   },
   "13962": {
     "en": "",

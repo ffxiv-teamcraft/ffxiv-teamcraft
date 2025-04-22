@@ -91612,21 +91612,29 @@
   },
   "70789": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Cosmic Homecoming",
+      "ja": "再会と、新たな計画！",
+      "de": "Ein Projekt bis in die Unendlichkeit",
+      "fr": "Un projet d'envergure cosmique"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48750,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101408.png"
   },
   "70790": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Passion, Thy Name Is Ardorum",
+      "ja": "未知待つ宙へ焦がれて",
+      "de": "Benennen und benennen lassen",
+      "fr": "Des étoiles plein les yeux, des noms plein la tête"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101409.png"
   },
   "70791": {
     "name": {
@@ -92447,19 +92455,20 @@
   },
   "70859": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Manager's Patience",
+      "ja": "プロジェクトマネージャーの小粋なお仕事",
+      "de": "Mondtrotteljagd",
+      "fr": "Le courroux de la gestionnaire"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101410.png"
   },
   "70860": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Manager's Persistence",
+      "ja": "プロジェクトマネージャーの周到なお仕事",
+      "de": "Mondhasenjagd",
+      "fr": "L'obstination de la gestionnaire"
     },
     "icon": "/i/071000/071221.png"
   },
