@@ -1504,62 +1504,62 @@
     "Rename_folder": "Rename folder",
     "Import_items": "Import custom items",
     "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Details": "Detalhes do 'item'",
+    "Export_item": "Exportar 'item'",
+    "Export_items": "Exportar múltiplos itens",
+    "Add_to_list": "Adicionar a uma lista",
+    "No_items": "Você não tem itens personalizados",
     "DETAILS": {
-      "Level": "Level",
-      "None": "none",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Level": "Nível",
+      "None": "nenhum",
+      "Stars": "Estrelas",
+      "Requirements": "Requisitos",
+      "Add_requirement": "Adicionar requisito",
+      "Yields": "Rendimentos",
+      "Name": "Nome",
+      "ID": "ID do 'Item'",
       "CRAFT": {
-        "Title": "Crafted by",
+        "Title": "Craftado por",
         "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "Você não tem os requerimentos necessários para este item. Isso significa que você está craftando com 0 ingredientes."
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
+        "Title": "Coletado por",
+        "Type": "Tipo de nó",
         "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Slot": "Espaço"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "Alarmes"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "Comerciantes",
+        "Npc_name": "Nome do NPC",
+        "Price": "Preço",
+        "Delete_vendor": "Excluir comerciante"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Title": "NPCs de troca",
+        "Npc_name": "Nome do NPC",
+        "Shop_name": "Nome da loja",
+        "Delete_trade": "Excluir comércio",
+        "Trade_details": "Detalhes da Troca",
+        "Add_currency": "Adicionar uma moeda"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "Reduzido de"
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "Encontrar um NPC",
+      "Npc_name": "Nome do NPC"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
+      "Corrupted_file": "Arquivo de importação está corrompido ou no formato errado",
+      "Drag_or_click": "Arraste o arquivo aqui ou clique para selecioná-lo",
+      "Format": "Formato",
+      "Folder": "Pasta",
+      "No_folder": "Nenhuma pasta",
       "Parsing_file": "Analisando conteúdo do arquivo…",
       "Saving_items": "Salvando itens ({{done}}/{{todo}})"
     }
@@ -1622,17 +1622,17 @@
     "More_on_attt_npc": "Veja mais detalhes sobre este NPC em Outro Triplo de Rastreador Triplo",
     "Triple_triad_pack": "Pacote de cartão Triplo Triad",
     "Dungeons": "Masmorras/Provações",
-    "Used_for_trades": "Trades",
-    "Can_contain_items": "Can contain items",
-    "Open_in_db": "View details inside the database",
-    "Team_size": "Team size",
-    "Time": "Duration",
-    "Min_level": "Level min.",
-    "Min_ilevel": "ilvl min.",
-    "Sync_to": "Level max.",
-    "Exp": "Exp",
-    "Week_restriction": "Weekly restriction",
-    "Fights": "Fights",
+    "Used_for_trades": "Trocas",
+    "Can_contain_items": "Pode conter itens",
+    "Open_in_db": "Ver detalhes no banco de dados",
+    "Team_size": "Tamanho da equipe",
+    "Time": "Duração",
+    "Min_level": "Min. Nível",
+    "Min_ilevel": "Mín. ilvl.",
+    "Sync_to": "Nível máx.",
+    "Exp": "Experiência",
+    "Week_restriction": "Restrição semanal",
+    "Fights": "Combates",
     "Instance_details": "Instance details",
     "Instance_rewards": "Rewards",
     "Unlocked_by": "Unlocked by",
