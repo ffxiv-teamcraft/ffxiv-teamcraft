@@ -73577,7 +73577,7 @@
       "ja": "イフイカ・トゥム（濁流遡上）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de la Remontée de l'Ihuykatumu.",
       "ko": "이후이카 투무를 탐험하여 모든 지역 발견",
-      "zh": "成功探索生息河岸的所有地区。"
+      "zh": "成功探索生息河岸（丛林竞流）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73598,7 +73598,7 @@
       "ja": "ウォーコー・ゾーモー（山嶺登頂）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de Worqor Zormor.",
       "ko": "워코 조모를 탐험하여 모든 지역 발견",
-      "zh": "成功探索沃刻佐莫山的所有地区。"
+      "zh": "成功探索沃刻佐莫山（通天绝壁）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73619,7 +73619,7 @@
       "ja": "天深きセノーテ（遺産踏査）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte du cénote des Cieux infinis.",
       "ko": "하늘심연 세노테를 탐험하여 모든 지역 발견",
-      "zh": "成功探索深空天坑的所有地区。"
+      "zh": "成功探索深空天坑（神圣禁地）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73640,7 +73640,7 @@
       "ja": "ヴァンガード（外征前哨）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de L'Avant-garde.",
       "ko": "뱅가드를 탐험하여 모든 지역 발견",
-      "zh": "成功探索先锋营的所有地区。"
+      "zh": "成功探索先锋营（前哨基地）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73661,7 +73661,7 @@
       "ja": "オリジェニクス（魂魄工廠）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de l'Origenèse.",
       "ko": "오리제닉스를 탐험하여 모든 지역 발견",
-      "zh": "成功探索创生设施的所有地区。"
+      "zh": "成功探索创生设施（魂魄工厂）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73682,7 +73682,7 @@
       "ja": "アレクサンドリア（記憶幻想）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte d'Alexandrie.",
       "ko": "알렉산드리아를 탐험하여 모든 지역 발견",
-      "zh": "成功探索亚历山德里亚的所有地区。"
+      "zh": "成功探索亚历山德里亚（忆中金曦）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73703,7 +73703,7 @@
       "ja": "サボテンダーバレー（荒野秘境）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de la vallée des Pampas.",
       "ko": "사보텐더 계곡을 탐험하여 모든 지역 발견",
-      "zh": "成功探索仙人刺谷的所有地区。"
+      "zh": "成功探索仙人刺谷（荒野秘境）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -73724,7 +73724,7 @@
       "ja": "ストレイバロー（悪夢遊園）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte du Parc-aux-Errants.",
       "ko": "헤매는 성을 탐험하여 모든 지역 발견",
-      "zh": "成功探索迷途鬼区的所有地区。"
+      "zh": "成功探索迷途鬼区（噩梦乐园）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -74795,7 +74795,7 @@
       "ja": "至天の座アルカディア零式：ライトヘビー級を攻略する",
       "fr": "Conquérir la division poids mi-lourds CCA (sadique) 1 fois.",
       "ko": "아르카디아 선수권: 라이트헤비급(영웅) 완료",
-      "zh": "成功挑战阿卡狄亚零式登天斗技场。"
+      "zh": "成功挑战阿卡狄亚零式登天斗技场轻量级。"
     },
     "item": 0,
     "title": 0
@@ -75144,11 +75144,13 @@
     "de": "Eine Schippe drauf I",
     "ja": "ニトウィケ：ランク1",
     "fr": "Train-train quotidien I",
+    "zh": "尼托维凯的信任1",
     "description": {
       "en": "Achieve a satisfaction level of 1 with Nitowikwe.",
       "de": "Zufriedenheitsrang 1 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを1にする",
-      "fr": "Atteindre le rang 1 de satisfaction auprès de Nitowikwe."
+      "fr": "Atteindre le rang 1 de satisfaction auprès de Nitowikwe.",
+      "zh": "尼托维凯的信赖等级达到1级。"
     },
     "item": 0,
     "title": 0
@@ -75161,11 +75163,13 @@
     "de": "Eine Schippe drauf II",
     "ja": "ニトウィケ：ランク2",
     "fr": "Train-train quotidien II",
+    "zh": "尼托维凯的信任2",
     "description": {
       "en": "Achieve a satisfaction level of 2 with Nitowikwe.",
       "de": "Zufriedenheitsrang 2 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを2にする",
-      "fr": "Atteindre le rang 2 de satisfaction auprès de Nitowikwe."
+      "fr": "Atteindre le rang 2 de satisfaction auprès de Nitowikwe.",
+      "zh": "尼托维凯的信赖等级达到2级。"
     },
     "item": 0,
     "title": 0
@@ -75178,11 +75182,13 @@
     "de": "Eine Schippe drauf III",
     "ja": "ニトウィケ：ランク3",
     "fr": "Train-train quotidien III",
+    "zh": "尼托维凯的信任3",
     "description": {
       "en": "Achieve a satisfaction level of 3 with Nitowikwe.",
       "de": "Zufriedenheitsrang 3 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを3にする",
-      "fr": "Atteindre le rang 3 de satisfaction auprès de Nitowikwe."
+      "fr": "Atteindre le rang 3 de satisfaction auprès de Nitowikwe.",
+      "zh": "尼托维凯的信赖等级达到3级。"
     },
     "item": 0,
     "title": 0
@@ -75195,11 +75201,13 @@
     "de": "Eine Schippe drauf IV",
     "ja": "ニトウィケ：ランク4",
     "fr": "Train-train quotidien IV",
+    "zh": "尼托维凯的信任4",
     "description": {
       "en": "Achieve a satisfaction level of 4 with Nitowikwe.",
       "de": "Zufriedenheitsrang 4 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを4にする",
-      "fr": "Atteindre le rang 4 de satisfaction auprès de Nitowikwe."
+      "fr": "Atteindre le rang 4 de satisfaction auprès de Nitowikwe.",
+      "zh": "尼托维凯的信赖等级达到4级。"
     },
     "item": 0,
     "title": 0
@@ -75212,11 +75220,13 @@
     "de": "Eine Schippe drauf V",
     "ja": "ニトウィケ：ランク5",
     "fr": "Train-train quotidien V",
+    "zh": "尼托维凯的信任5",
     "description": {
       "en": "Achieve a satisfaction level of 5 with Nitowikwe.",
       "de": "Zufriedenheitsrang 5 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを5にする",
-      "fr": "Atteindre le rang 5 de satisfaction auprès de Nitowikwe."
+      "fr": "Atteindre le rang 5 de satisfaction auprès de Nitowikwe.",
+      "zh": "尼托维凯的信赖等级达到5级。"
     },
     "item": 0,
     "title": 763
@@ -75229,11 +75239,13 @@
     "de": "Transkontinentale Träume I",
     "ja": "ニトウィケの得意先：ランク1",
     "fr": "Fournisseur officiel de Nitowikwe I",
+    "zh": "尼托维凯的老主顾1",
     "description": {
       "en": "Deliver 36 collectables to Nitowikwe.",
       "de": "Nitowikwe 36 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計36回納品する",
-      "fr": "Échanger 36 objets collectionnables à Nitowikwe."
+      "fr": "Échanger 36 objets collectionnables à Nitowikwe.",
+      "zh": "在尼托维凯处累计交纳收藏品36次。"
     },
     "item": 0,
     "title": 0
@@ -75246,11 +75258,13 @@
     "de": "Transkontinentale Träume II",
     "ja": "ニトウィケの得意先：ランク2",
     "fr": "Fournisseur officiel de Nitowikwe II",
+    "zh": "尼托维凯的老主顾2",
     "description": {
       "en": "Deliver 48 collectables to Nitowikwe.",
       "de": "Nitowikwe 48 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計48回納品する",
-      "fr": "Échanger 48 objets collectionnables à Nitowikwe."
+      "fr": "Échanger 48 objets collectionnables à Nitowikwe.",
+      "zh": "在尼托维凯处累计交纳收藏品48次。"
     },
     "item": 0,
     "title": 0
@@ -75263,11 +75277,13 @@
     "de": "Transkontinentale Träume III",
     "ja": "ニトウィケの得意先：ランク3",
     "fr": "Fournisseur officiel de Nitowikwe III",
+    "zh": "尼托维凯的老主顾3",
     "description": {
       "en": "Deliver 60 collectables to Nitowikwe.",
       "de": "Nitowikwe 60 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計60回納品する",
-      "fr": "Échanger 60 objets collectionnables à Nitowikwe."
+      "fr": "Échanger 60 objets collectionnables à Nitowikwe.",
+      "zh": "在尼托维凯处累计交纳收藏品60次。"
     },
     "item": 0,
     "title": 0
@@ -75280,11 +75296,13 @@
     "de": "Transkontinentale Träume IV",
     "ja": "ニトウィケの得意先：ランク4",
     "fr": "Fournisseur officiel de Nitowikwe IV",
+    "zh": "尼托维凯的老主顾4",
     "description": {
       "en": "Deliver 90 collectables to Nitowikwe.",
       "de": "Nitowikwe 90 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計90回納品する",
-      "fr": "Échanger 90 objets collectionnables à Nitowikwe."
+      "fr": "Échanger 90 objets collectionnables à Nitowikwe.",
+      "zh": "在尼托维凯处累计交纳收藏品90次。"
     },
     "item": 0,
     "title": 0
@@ -75297,11 +75315,13 @@
     "de": "Transkontinentale Träume V",
     "ja": "ニトウィケの得意先：ランク5",
     "fr": "Fournisseur officiel de Nitowikwe V",
+    "zh": "尼托维凯的老主顾5",
     "description": {
       "en": "Deliver 120 collectables to Nitowikwe.",
       "de": "Nitowikwe 120 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計120回納品する",
-      "fr": "Échanger 120 objets collectionnables à Nitowikwe."
+      "fr": "Échanger 120 objets collectionnables à Nitowikwe.",
+      "zh": "在尼托维凯处累计交纳收藏品120次。"
     },
     "item": 0,
     "title": 0
@@ -75314,11 +75334,13 @@
     "de": "Transkontinentale Träume VI",
     "ja": "ニトウィケの得意先：ランク6",
     "fr": "Fournisseur officiel de Nitowikwe VI",
+    "zh": "尼托维凯的老主顾6",
     "description": {
       "en": "Deliver 150 collectables to Nitowikwe.",
       "de": "Nitowikwe 150 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計150回納品する",
-      "fr": "Échanger 150 objets collectionnables à Nitowikwe."
+      "fr": "Échanger 150 objets collectionnables à Nitowikwe.",
+      "zh": "在尼托维凯处累计交纳收藏品150次。"
     },
     "item": 0,
     "title": 764
@@ -75339,7 +75361,7 @@
       "ja": "ユウェヤーワータ（廃地討究）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte du centre de recherche de Yuweyawata.",
       "ko": "유웨야와타를 탐험하여 모든 지역 발견",
-      "zh": "成功探索玉韦亚瓦塔实验站的所有地区。"
+      "zh": "成功探索玉韦亚瓦塔实验站（废弃据点）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -75436,11 +75458,13 @@
     "de": "Freigeist für immer!",
     "ja": "「自由の扉」よ、永遠に",
     "fr": "Affranchis sans frontières",
+    "zh": "关上自由之门",
     "description": {
       "en": "Complete the quest “Bar the Passage.”",
       "de": "Den Auftrag „Kampf an Zorgor der Weiten“ abgeschlossen.",
       "ja": "クエスト「決戦、ゾーゴー永結橋」をコンプリートする",
-      "fr": "Accomplir la quête “Pour s'affranchir de la tyrannie, tout s'appelle vertu”."
+      "fr": "Accomplir la quête “Pour s'affranchir de la tyrannie, tout s'appelle vertu”.",
+      "zh": "完成任务“决战！佐戈永结桥”。"
     },
     "item": 0,
     "title": 766
@@ -75453,11 +75477,13 @@
     "de": "Wachumeqimeqi sagt Dankeschön",
     "ja": "みんなでワチュメキメキ！",
     "fr": "On est tous un peu Wachumeqimeqi",
+    "zh": "把你的心我的心串一串",
     "description": {
       "en": "Complete the quest “Appreciated Value.”",
       "de": "Den Auftrag „Das Wachumeqimeqi-Dankesspektakel“ abgeschlossen.",
       "ja": "クエスト「ワチュメキメキ大感謝祭」をコンプリートする",
-      "fr": "Accomplir la quête “La grande foire aux mille mercis”."
+      "fr": "Accomplir la quête “La grande foire aux mille mercis”.",
+      "zh": "完成任务“珠串万货街感恩大酬宾”。"
     },
     "item": 0,
     "title": 767
@@ -75592,11 +75618,13 @@
     "de": "Heiter bis wolkig",
     "ja": "暗闇の雲を晴らしし者",
     "fr": "Nuage dissipé",
+    "zh": "祓暗的诛云者",
     "description": {
       "en": "Defeat the Cloud of Darkness in the Cloud of Darkness (Chaotic).",
       "de": "Die Wolke der Dunkelheit in „Die Wolke der Dunkelheit (chaotisch)“ besiegt.",
       "ja": "滅暗闇の雲激闘戦で、暗闇の雲を討伐する",
-      "fr": "Vaincre le Nuage de Ténèbres dans le raid “La Tour de Ténèbres (chaotique)”."
+      "fr": "Vaincre le Nuage de Ténèbres dans le raid “La Tour de Ténèbres (chaotique)”.",
+      "zh": "在暗黑之云诛灭战中战胜暗黑之云。"
     },
     "item": 0,
     "title": 0
@@ -76849,7 +76877,7 @@
   "3690": {
     "id": 3690,
     "icon": "/i/064000/064875.png",
-    "patch": 1,
+    "patch": 102,
     "en": "One Giant Hop",
     "de": "Lunarer Erkundungsmeister",
     "ja": "月面のマスターエクスプローラー",
@@ -76866,7 +76894,7 @@
   "3691": {
     "id": 3691,
     "icon": "/i/039000/039013.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Saw",
     "de": "Kosmo-Werkzeug: Kosmo-Säge",
     "ja": "コスモツール：コスモ・ソー",
@@ -76883,7 +76911,7 @@
   "3692": {
     "id": 3692,
     "icon": "/i/039000/039112.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Cross-pein Hammer",
     "de": "Kosmo-Werkzeug: Kosmo-Kreuzschlaghammer",
     "ja": "コスモツール：コスモ・クロスペインハンマー",
@@ -76900,7 +76928,7 @@
   "3693": {
     "id": 3693,
     "icon": "/i/039000/039212.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Raising Hammer",
     "de": "Kosmo-Werkzeug: Kosmo-Schlichthammer",
     "ja": "コスモツール：コスモ・レイジングハンマー",
@@ -76917,7 +76945,7 @@
   "3694": {
     "id": 3694,
     "icon": "/i/039000/039311.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Mallet",
     "de": "Kosmo-Werkzeug: Kosmo-Fäustel",
     "ja": "コスモツール：コスモ・マレット",
@@ -76934,7 +76962,7 @@
   "3695": {
     "id": 3695,
     "icon": "/i/039000/039412.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Round Knife",
     "de": "Kosmo-Werkzeug: Kosmo-Rundmesser",
     "ja": "コスモツール：コスモ・ラウンドナイフ",
@@ -76951,7 +76979,7 @@
   "3696": {
     "id": 3696,
     "icon": "/i/039000/039512.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Needle",
     "de": "Kosmo-Werkzeug: Kosmo-Nadel",
     "ja": "コスモツール：コスモ・ニードル",
@@ -76968,7 +76996,7 @@
   "3697": {
     "id": 3697,
     "icon": "/i/039000/039611.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Alembic",
     "de": "Kosmo-Werkzeug: Kosmo-Destillierkolben",
     "ja": "コスモツール：コスモ・アレンビック",
@@ -76985,7 +77013,7 @@
   "3698": {
     "id": 3698,
     "icon": "/i/039000/039714.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Frypan",
     "de": "Kosmo-Werkzeug: Kosmo-Bratpfanne",
     "ja": "コスモツール：コスモ・フライパン",
@@ -77002,7 +77030,7 @@
   "3699": {
     "id": 3699,
     "icon": "/i/038000/038314.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Pickaxe",
     "de": "Kosmo-Werkzeug: Kosmo-Spitzhacke",
     "ja": "コスモツール：コスモ・ピック",
@@ -77019,7 +77047,7 @@
   "3700": {
     "id": 3700,
     "icon": "/i/038000/038412.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Hatchet",
     "de": "Kosmo-Werkzeug: Kosmo-Handbeil",
     "ja": "コスモツール：コスモ・ハチェット",
@@ -77036,7 +77064,7 @@
   "3701": {
     "id": 3701,
     "icon": "/i/038000/038515.png",
-    "patch": 1,
+    "patch": 102,
     "en": "R&D: Cosmic Fishing Rod",
     "de": "Kosmo-Werkzeug: Kosmo-Angelrute",
     "ja": "コスモツール：コスモ・フィッシングロッド",
@@ -77053,7 +77081,7 @@
   "3702": {
     "id": 3702,
     "icon": "/i/001000/001503.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Carpentry I",
     "de": "Zimmerer der unendlichen Weiten I",
     "ja": "星渡る木工師：ランク1",
@@ -77070,7 +77098,7 @@
   "3703": {
     "id": 3703,
     "icon": "/i/001000/001503.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Carpentry II",
     "de": "Zimmerer der unendlichen Weiten II",
     "ja": "星渡る木工師：ランク2",
@@ -77087,7 +77115,7 @@
   "3704": {
     "id": 3704,
     "icon": "/i/001000/001503.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Hammering with the Stars",
     "de": "Zimmerer der unendlichen Weiten III",
     "ja": "星渡る木工マスター",
@@ -77104,7 +77132,7 @@
   "3705": {
     "id": 3705,
     "icon": "/i/001000/001553.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Smithing I",
     "de": "Grobschmied der unendlichen Weiten I",
     "ja": "星渡る鍛冶師：ランク1",
@@ -77121,7 +77149,7 @@
   "3706": {
     "id": 3706,
     "icon": "/i/001000/001553.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Smithing I",
     "de": "Grobschmied der unendlichen Weiten II",
     "ja": "星渡る鍛冶師：ランク2",
@@ -77138,7 +77166,7 @@
   "3707": {
     "id": 3707,
     "icon": "/i/001000/001553.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Smithing with the Stars",
     "de": "Grobschmied der unendlichen Weiten III",
     "ja": "星渡る鍛冶マスター",
@@ -77155,7 +77183,7 @@
   "3708": {
     "id": 3708,
     "icon": "/i/001000/001603.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Forgery I",
     "de": "Plattner der unendlichen Weiten I",
     "ja": "星渡る甲冑師：ランク1",
@@ -77172,7 +77200,7 @@
   "3709": {
     "id": 3709,
     "icon": "/i/001000/001603.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Forgery I",
     "de": "Plattner der unendlichen Weiten II",
     "ja": "星渡る甲冑師：ランク2",
@@ -77189,7 +77217,7 @@
   "3710": {
     "id": 3710,
     "icon": "/i/001000/001603.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Forging with the Stars",
     "de": "Plattner der unendlichen Weiten III",
     "ja": "星渡る甲冑マスター",
@@ -77206,7 +77234,7 @@
   "3711": {
     "id": 3711,
     "icon": "/i/001000/001653.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Metallurgy I",
     "de": "Goldschmied der unendlichen Weiten I",
     "ja": "星渡る彫金師：ランク1",
@@ -77223,7 +77251,7 @@
   "3712": {
     "id": 3712,
     "icon": "/i/001000/001653.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Metallurgy II",
     "de": "Goldschmied der unendlichen Weiten II",
     "ja": "星渡る彫金師：ランク2",
@@ -77240,7 +77268,7 @@
   "3713": {
     "id": 3713,
     "icon": "/i/001000/001653.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Goldsmithing with the Stars",
     "de": "Goldschmied der unendlichen Weiten III",
     "ja": "星渡る彫金マスター",
@@ -77257,7 +77285,7 @@
   "3714": {
     "id": 3714,
     "icon": "/i/001000/001703.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Tanning I ",
     "de": "Gerber der unendlichen Weiten I",
     "ja": "星渡る革細工師：ランク1",
@@ -77274,7 +77302,7 @@
   "3715": {
     "id": 3715,
     "icon": "/i/001000/001703.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Tanning II",
     "de": "Gerber der unendlichen Weiten II",
     "ja": "星渡る革細工師：ランク2",
@@ -77291,7 +77319,7 @@
   "3716": {
     "id": 3716,
     "icon": "/i/001000/001703.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Tanning with the Stars",
     "de": "Gerber der unendlichen Weiten III",
     "ja": "星渡る革細工マスター",
@@ -77308,7 +77336,7 @@
   "3717": {
     "id": 3717,
     "icon": "/i/001000/001753.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Stitchery I",
     "de": "Weber der unendlichen Weiten I",
     "ja": "星渡る裁縫師：ランク1",
@@ -77325,7 +77353,7 @@
   "3718": {
     "id": 3718,
     "icon": "/i/001000/001753.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Stitchery II",
     "de": "Weber der unendlichen Weiten II",
     "ja": "星渡る裁縫師：ランク2",
@@ -77342,7 +77370,7 @@
   "3719": {
     "id": 3719,
     "icon": "/i/001000/001753.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Stitching with the Stars",
     "de": "Weber der unendlichen Weiten III",
     "ja": "星渡る裁縫マスター",
@@ -77359,7 +77387,7 @@
   "3720": {
     "id": 3720,
     "icon": "/i/001000/001803.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Science I",
     "de": "Alchemist der unendlichen Weiten I",
     "ja": "星渡る錬金術師：ランク1",
@@ -77376,7 +77404,7 @@
   "3721": {
     "id": 3721,
     "icon": "/i/001000/001803.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Science II",
     "de": "Alchemist der unendlichen Weiten II",
     "ja": "星渡る錬金術師：ランク2",
@@ -77393,7 +77421,7 @@
   "3722": {
     "id": 3722,
     "icon": "/i/001000/001803.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Distilling with the Stars",
     "de": "Alchemist der unendlichen Weiten III",
     "ja": "星渡る錬金術マスター",
@@ -77410,7 +77438,7 @@
   "3723": {
     "id": 3723,
     "icon": "/i/001000/001853.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Seasoning I",
     "de": "Gourmet der unendlichen Weiten I",
     "ja": "星渡る調理師：ランク1",
@@ -77427,7 +77455,7 @@
   "3724": {
     "id": 3724,
     "icon": "/i/001000/001853.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Seasoning II",
     "de": "Gourmet der unendlichen Weiten II",
     "ja": "星渡る調理師：ランク2",
@@ -77444,7 +77472,7 @@
   "3725": {
     "id": 3725,
     "icon": "/i/001000/001853.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Cooking with the Stars",
     "de": "Gourmet der unendlichen Weiten III",
     "ja": "星渡る調理マスター",
@@ -77461,7 +77489,7 @@
   "3726": {
     "id": 3726,
     "icon": "/i/001000/001021.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Geology I",
     "de": "Minenarbeiter der unendlichen Weiten I",
     "ja": "星渡る採掘師：ランク1",
@@ -77478,7 +77506,7 @@
   "3727": {
     "id": 3727,
     "icon": "/i/001000/001021.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Geology II",
     "de": "Minenarbeiter der unendlichen Weiten II",
     "ja": "星渡る採掘師：ランク2",
@@ -77495,7 +77523,7 @@
   "3728": {
     "id": 3728,
     "icon": "/i/001000/001021.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Mining with the Stars",
     "de": "Minenarbeiter der unendlichen Weiten III",
     "ja": "星渡る採掘マスター",
@@ -77512,7 +77540,7 @@
   "3729": {
     "id": 3729,
     "icon": "/i/001000/001071.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Botany I",
     "de": "Gärtner der unendlichen Weiten I",
     "ja": "星渡る園芸師：ランク1",
@@ -77529,7 +77557,7 @@
   "3730": {
     "id": 3730,
     "icon": "/i/001000/001071.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Botany II",
     "de": "Gärtner der unendlichen Weiten II",
     "ja": "星渡る園芸師：ランク2",
@@ -77546,7 +77574,7 @@
   "3731": {
     "id": 3731,
     "icon": "/i/001000/001071.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Gardening with the Stars",
     "de": "Gärtner der unendlichen Weiten III",
     "ja": "星渡る園芸マスター",
@@ -77563,7 +77591,7 @@
   "3732": {
     "id": 3732,
     "icon": "/i/001000/001126.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Ichthyology I",
     "de": "Fischer der unendlichen Weiten I",
     "ja": "星渡る漁師：ランク1",
@@ -77580,7 +77608,7 @@
   "3733": {
     "id": 3733,
     "icon": "/i/001000/001126.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Rocket Ichthyology II",
     "de": "Fischer der unendlichen Weiten II",
     "ja": "星渡る漁師：ランク2",
@@ -77597,7 +77625,7 @@
   "3734": {
     "id": 3734,
     "icon": "/i/001000/001126.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Fishing with the Stars",
     "de": "Fischer der unendlichen Weiten III",
     "ja": "星渡る漁師マスター",
@@ -77614,7 +77642,7 @@
   "3735": {
     "id": 3735,
     "icon": "/i/001000/001986.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Crafting in Spaaace",
     "de": "Handwerksmeister der unendlichen Weiten",
     "ja": "星渡る製作マスター",
@@ -77631,7 +77659,7 @@
   "3736": {
     "id": 3736,
     "icon": "/i/001000/001019.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Gathering in Spaaace",
     "de": "Sammlermeister der unendlichen Weiten",
     "ja": "星渡る採集マスター",
@@ -77648,7 +77676,7 @@
   "3737": {
     "id": 3737,
     "icon": "/i/001000/001982.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Star Crafter",
     "de": "Handwerkskönig der unendlichen Weiten",
     "ja": "星渡る製作王",
@@ -77665,7 +77693,7 @@
   "3738": {
     "id": 3738,
     "icon": "/i/001000/001029.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Star Gatherer",
     "de": "Sammlerkönig  der unendlichen Weiten",
     "ja": "星渡る採集王",
@@ -77682,7 +77710,7 @@
   "3739": {
     "id": 3739,
     "icon": "/i/001000/001955.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Out of This World",
     "de": "Außerordentliche Kraft der unendlichen Weiten",
     "ja": "星渡る探索王",
@@ -77699,7 +77727,7 @@
   "3740": {
     "id": 3740,
     "icon": "/i/001000/001904.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Just One More Spin I",
     "de": "Das Glück der Sterne I",
     "ja": "コスモフォーチュンに導かれし者：ランク1",
@@ -77716,7 +77744,7 @@
   "3741": {
     "id": 3741,
     "icon": "/i/001000/001904.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Just One More Spin II",
     "de": "Das Glück der Sterne II",
     "ja": "コスモフォーチュンに導かれし者：ランク2",
@@ -77733,7 +77761,7 @@
   "3742": {
     "id": 3742,
     "icon": "/i/001000/001904.png",
-    "patch": 1,
+    "patch": 102,
     "en": "Just One More Spin III",
     "de": "Das Glück der Sterne III",
     "ja": "コスモフォーチュンに導かれし者：ランク3",
