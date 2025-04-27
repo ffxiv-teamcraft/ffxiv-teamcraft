@@ -25,7 +25,7 @@
   "Check_guides": "Consultez nos guides (en anglais)",
   "Guides_links": "Guides Teamcraft",
   "Db_ban": "Vous n'avez pas la permission de poster des commentaires sur la base de données en raison de votre activité précédente dans les commentaires de la base de données. Si vous souhaitez discuter de ce ban, veuillez DM Miu#1568 sur Discord.",
-  "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
+  "Sensitive_operation": "L'opération que vous effectuez nécessite que vous vous connectiez à nouveau pour la confirmer. Veuillez vous reconnecter.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -629,8 +629,8 @@
     "Characters": "Personnages",
     "Missing_character": "Personnage manquant",
     "Missing_character_description": "Ce personnage n'existe plus, veuillez le supprimer de votre profil.",
-    "Delete_account": "Delete my account",
-    "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
+    "Delete_account": "Supprimer mon compte",
+    "Delete_account_confirmation": "Cela ne peut pas être annulé et supprimera votre compte ainsi que votre profil, vos listes, vos rotations et vos tenues existeront toujours mais seront liées à un profil inexistant.",
     "VERIFICATION": {
       "Button": "Vérifier",
       "Title": "Vérification de personnage",
