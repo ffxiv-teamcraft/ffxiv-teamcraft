@@ -50,7 +50,7 @@ import {
   signInWithEmailAndPassword,
   updateEmail,
   User,
-  UserCredential
+  UserCredential, verifyBeforeUpdateEmail
 } from '@angular/fire/auth';
 import { Functions, httpsCallable } from '@angular/fire/functions';
 import { lazyLoaded } from '../core/rxjs/lazy-loaded';
@@ -284,7 +284,9 @@ export class AuthFacade {
   }
 
   changeEmail(newEmail: string): Observable<void> {
-    return from(updateEmail(this.auth.currentUser, newEmail));
+    return from(
+      verifyBeforeUpdateEmail(this.auth.currentUser, newEmail)
+    );
   }
 
   public addCharacter(useAsDefault = false, disableClose = false): void {
