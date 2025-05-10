@@ -41,7 +41,7 @@ export class CraftingReplayRowComponent {
   userId: string;
 
   constructor(private craftingReplayFacade: CraftingReplayFacade, public translate: TranslateService,
-              private message: NzMessageService, private dialog: NzModalService, public settings: SettingsService) {
+              private dialog: NzModalService, public settings: SettingsService) {
   }
 
   get permissionLevel(): PermissionLevel {

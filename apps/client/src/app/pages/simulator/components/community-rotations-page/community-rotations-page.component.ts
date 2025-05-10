@@ -226,7 +226,7 @@ export class CommunityRotationsPageComponent {
 
   private filters$: Observable<CommunityRotationFilters>;
 
-  constructor(private rotationsFacade: RotationsFacade, private rotationsService: CraftingRotationService,
+  constructor(private rotationsService: CraftingRotationService,
               private authFacade: AuthFacade, route: ActivatedRoute, router: Router) {
     this.tags = Object.keys(RotationTag).map(key => {
       return {

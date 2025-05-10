@@ -245,7 +245,7 @@ export const lazyFilesList = {
   },
   'gubalBnpcsIndex': {
     'fileName': 'gubal-bnpcs-index.json',
-    'hashedFileName': 'gubal-bnpcs-index.f3c822ab354ee803e8280ecda06dc597a7766a36.json'
+    'hashedFileName': 'gubal-bnpcs-index.ae897d169f196bb9714a0c534c8ee56a42c9f284.json'
   },
   'hqFlags': {
     'fileName': 'hq-flags.json',
@@ -345,7 +345,7 @@ export const lazyFilesList = {
   },
   'itemPatch': {
     'fileName': 'item-patch.json',
-    'hashedFileName': 'item-patch.38fd3eff4de3589ec10af312dccb7b61b1cdddc6.json'
+    'hashedFileName': 'item-patch.81255771b98a3f82dffc7303ac3c3a86cc4dae74.json'
   },
   'itemSearch': {
     'fileName': 'item-search.index',
@@ -449,7 +449,7 @@ export const lazyFilesList = {
   },
   'monsters': {
     'fileName': 'monsters.json',
-    'hashedFileName': 'monsters.9b9b5a3e0e6c22d6fd843cc6a91b770f8f5b488f.json'
+    'hashedFileName': 'monsters.099061a083e3e4b991a985d7939625f726753aea.json'
   },
   'nodes': {
     'fileName': 'nodes.json',
@@ -477,11 +477,11 @@ export const lazyFilesList = {
   },
   'patchContent': {
     'fileName': 'patch-content.json',
-    'hashedFileName': 'patch-content.99a2485d1e93dda4282f6152e733fd02efbc4ca0.json'
+    'hashedFileName': 'patch-content.2cc64d0ef1170872adfa880f57a3c98c318a57e3.json'
   },
   'patchNames': {
     'fileName': 'patch-names.json',
-    'hashedFileName': 'patch-names.d42d579bc2282ddb6f1bbe1f448124ebf0c744b2.json'
+    'hashedFileName': 'patch-names.c54f97caa1dd131f2518a8bec764e067b7063dd1.json'
   },
   'places': {
     'fileName': 'places.json',
@@ -517,11 +517,11 @@ export const lazyFilesList = {
   },
   'recipesPerItem': {
     'fileName': 'recipes-per-item.json',
-    'hashedFileName': 'recipes-per-item.1da721ca1166e6a955652a8f76f421c134360fd0.json'
+    'hashedFileName': 'recipes-per-item.8071a85605a2eeaf913c6858a31b393317dca496.json'
   },
   'recipes': {
     'fileName': 'recipes.json',
-    'hashedFileName': 'recipes.6c4238cd591bf4133780a7b7d571e011ed0d80d6.json'
+    'hashedFileName': 'recipes.8cd2a3b6a16980b11f4c27f0b3ca5e7fb38c525e.json'
   },
   'reduction': {
     'fileName': 'reduction.json',
@@ -677,31 +677,31 @@ export const lazyFilesList = {
   },
   'achievementsDatabasePages': {
     'fileName': 'db/achievements-database-pages.json',
-    'hashedFileName': 'db/achievements-database-pages.c87477d134bab57291e045ceedee078757a5a204.json'
+    'hashedFileName': 'db/achievements-database-pages.6ed82e88666f30607dc881c45c4a999bf6e872c9.json'
   },
   'actionsDatabasePages': {
     'fileName': 'db/actions-database-pages.json',
-    'hashedFileName': 'db/actions-database-pages.f0c15a4e0b4676c56bb823e481014ae0be19dca8.json'
+    'hashedFileName': 'db/actions-database-pages.acd15e7d84c37c5a7e2073ab88979c5624d22d9a.json'
   },
   'fatesDatabasePages': {
     'fileName': 'db/fates-database-pages.json',
-    'hashedFileName': 'db/fates-database-pages.9c6f95233ff754bff788cd60ee078ab792813880.json'
+    'hashedFileName': 'db/fates-database-pages.bee91c0f0fb534827a304655edb0a4804cf6dc3e.json'
   },
   'fishingSpotsDatabasePages': {
     'fileName': 'db/fishing-spots-database-pages.json',
-    'hashedFileName': 'db/fishing-spots-database-pages.01be7bb4cfac4600fe526306f011597bca9fdfb5.json'
+    'hashedFileName': 'db/fishing-spots-database-pages.ffbac96d493eaeb0b112f1f173cfa5ac4af13192.json'
   },
   'itemsDatabasePages': {
     'fileName': 'db/items-database-pages.json',
-    'hashedFileName': 'db/items-database-pages.7d282bc2fc5487b1cfdbc4ea075c5b930dd68911.json'
+    'hashedFileName': 'db/items-database-pages.51ecb2e529b19944d66da7deb29e71cf33fe9b99.json'
   },
   'levesDatabasePages': {
     'fileName': 'db/leves-database-pages.json',
-    'hashedFileName': 'db/leves-database-pages.099905b13081c14b4b83a1fd6d5cdd601ee52783.json'
+    'hashedFileName': 'db/leves-database-pages.fa29f27a625484a7966c7d655c737379c8818446.json'
   },
   'mobsDatabasePages': {
     'fileName': 'db/mobs-database-pages.json',
-    'hashedFileName': 'db/mobs-database-pages.5ba2fce6b1bae3bb3ef5a0efc5abd1b5d7f46f5b.json'
+    'hashedFileName': 'db/mobs-database-pages.d4ff99fd56aad19bfae28e5bdc70f8ce896e684a.json'
   },
   'nodesDatabasePages': {
     'fileName': 'db/nodes-database-pages.json',
@@ -709,7 +709,7 @@ export const lazyFilesList = {
   },
   'npcsDatabasePages': {
     'fileName': 'db/npcs-database-pages.json',
-    'hashedFileName': 'db/npcs-database-pages.e81ad06a72c551f7492521a7da1dbe0834719991.json'
+    'hashedFileName': 'db/npcs-database-pages.e2e30efbe1696ace513e957fcf35502fb7e5b07d.json'
   },
   'questsDatabasePages': {
     'fileName': 'db/quests-database-pages.json',
@@ -721,7 +721,7 @@ export const lazyFilesList = {
   },
   'statusesDatabasePages': {
     'fileName': 'db/statuses-database-pages.json',
-    'hashedFileName': 'db/statuses-database-pages.c7edfc33a8d8f8aa80931c8cf990f1333b99474b.json'
+    'hashedFileName': 'db/statuses-database-pages.f77d8d1efd65a1d6446c2e3c12f0425e84525166.json'
   },
   'traitsDatabasePages': {
     'fileName': 'db/traits-database-pages.json',
