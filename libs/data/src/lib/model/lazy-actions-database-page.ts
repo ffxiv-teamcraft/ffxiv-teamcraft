@@ -39,18 +39,8 @@ export interface Description {
 }
 
 export interface ProcStatus {
-  icon: Icon;
+  icon: string;
   id:   number;
-}
-
-export enum Icon {
-  I210000210365PNG = "/i/210000/210365.png",
-  I210000210410PNG = "/i/210000/210410.png",
-  I210000210460PNG = "/i/210000/210460.png",
-  I210000210461PNG = "/i/210000/210461.png",
-  I212000212579PNG = "/i/212000/212579.png",
-  I212000212590PNG = "/i/212000/212590.png",
-  I213000213758PNG = "/i/213000/213758.png",
 }
 
 export interface Target {
