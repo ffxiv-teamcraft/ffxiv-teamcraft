@@ -18,7 +18,7 @@
       },
       {
         "source": "/ads.txt",
-        "destination": "https://kumo.network-n.com/adstxt/?domain=ffxivteamcraft.com",
+        "destination": "https://config.playwire.com/dyn_ads/1024627/73498/ads.txt",
         "type": 301
       }
     ],
