@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.33...v11.3.34) (2025-05-10)
+
+
+### Features
+
+* **community-rotations:** add cosmic exploration durability filters ([e2fab18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2fab184d5ba5d03c17c08629b534d4f6e8fdeda))
+
+
+### Bug Fixes
+
+* **account:** verify new email before updating to allow the change to happen ([c527d51](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c527d5151a264ae00f0372321dcf90e935a690f2)), closes [#2918](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2918)
+* **ads:** switch provider for better ads filtering ([f9e770c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9e770c349070f8bbb5e6540a593fffbfd32d054))
+* **crafting-replay:** add Material Miracle action ([8b739b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b739b82a455db7fee9426fdf48b5c3bb9a6d6d0))
+* **db:** add patch content data for 7.21 ([755e05d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/755e05dd475fc06020d0d7f5e7f5951a1a6cbdce))
+* **db:** take recipe yield into account for island recipes ([6afe657](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6afe657c75674501dcfcdd3d576316075e1e43af))
+
 ### [11.3.33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.32...v11.3.33) (2025-04-22)
 
 
