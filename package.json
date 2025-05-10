@@ -65,6 +65,7 @@
     "release:prod": "git push --follow-tags origin master",
     "release:beta": "yarn standard-version --prerelease beta && git push --follow-tags origin beta",
     "test": "jest",
+    "reset": "nx reset",
     "lint": "nx lint",
     "commitmsg": "validate-commit-msg",
     "prerelease": "npm test",

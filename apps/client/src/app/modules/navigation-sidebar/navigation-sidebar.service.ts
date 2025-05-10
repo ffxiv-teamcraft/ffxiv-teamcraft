@@ -426,7 +426,15 @@ export class NavigationSidebarService {
                 content: 'hourglass'
               },
               link: '/reset-timers'
-            }
+            },
+            {
+              name: 'Cosmic Intervention',
+              icon: {
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE906;')
+              },
+              link: '/cosmic-intervention'
+            },
           ]
         }
       ];

@@ -52,6 +52,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/treasure-finder/treasure-finder.module').then(m => m.TreasureFinderModule)
   },
   {
+    path: 'cosmic-intervention',
+    loadChildren: () => import('./pages/cosmic-intervention/cosmic-intervention.module').then(m => m.CosmicInterventionModule)
+  },
+  {
     path: 'levequests',
     loadChildren: () => import('./pages/levequests/levequests.module').then(m => m.LevequestsModule)
   },
