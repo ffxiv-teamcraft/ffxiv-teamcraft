@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.34...v11.3.35) (2025-05-27)
+
+
+### Features
+
+* **db:** allagan reports import ([58c6e11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/58c6e11b9dac547efdceb6f7f1c4a3e7853e3dd0))
+* **db:** Global 7.25 update content ([62934ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62934ea57e81809898c5e56b63867acd8a7a2100))
+* **db:** support for korean v7.15 update ([aaa9de2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aaa9de20041713b88c09ec66e5ecee7654282b97))
+* **submarine:** update max level ([716284e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/716284ecf844feaf4b1495d781a615a2c75b3dc3))
+
+
+### Bug Fixes
+
+* **submarine:** update max level ([f78ca8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f78ca8d29053e28c94a5cad79ced3dee02c65c42))
+
 ### [11.3.34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.33...v11.3.34) (2025-05-10)
 
 
