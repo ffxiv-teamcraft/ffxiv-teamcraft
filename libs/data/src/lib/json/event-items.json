@@ -23072,11 +23072,11 @@
     "icon": ""
   },
   "2003296": {
-    "en": "",
+    "en": "Magical Elixir",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Magisches Elixier",
+    "fr": "Élixir magique",
+    "icon": "/i/020000/020624.png"
   },
   "2003297": {
     "en": "Nymeia Lily Bulb",
@@ -26033,11 +26033,11 @@
     "icon": "/i/025000/025979.png"
   },
   "2003719": {
-    "en": "",
+    "en": "Notes on Crescent Garula",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Notiz über Garulas",
+    "fr": "Note sur les garula de Lunule",
+    "icon": "/i/026000/026572.png"
   },
   "2003720": {
     "en": "Survey Response",
@@ -26131,39 +26131,39 @@
     "icon": "/i/052000/052546.png"
   },
   "2003733": {
-    "en": "",
+    "en": "Starship Illustration",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "UFO-Zeichnung",
+    "fr": "Coupure de journal",
+    "icon": "/i/026000/026151.png"
   },
   "2003734": {
-    "en": "",
+    "en": "Aether-imbued Stone ",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Äthererfüllter Festungsstein",
+    "fr": "Échantillon de la Forteresse perdue",
+    "icon": "/i/021000/021487.png"
   },
   "2003735": {
-    "en": "",
+    "en": "Aether-imbued Stone ",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Äthererfüllter Zufluchtsstein",
+    "fr": "Échantillon du Refuge du Vagabond",
+    "icon": "/i/021000/021252.png"
   },
   "2003736": {
-    "en": "",
+    "en": "Aether-imbued Stone ",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Äthererfüllter Grottenstein",
+    "fr": "Échantillon des Cavernes de cristal",
+    "icon": "/i/021000/021455.png"
   },
   "2003737": {
-    "en": "",
+    "en": "Aether-imbued Stone ",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Äthererfüllter Schemenstein",
+    "fr": "Échantillon de la Cité des Interdits",
+    "icon": "/i/021000/021251.png"
   },
   "2003738": {
     "en": "",
@@ -26257,67 +26257,67 @@
     "icon": "/i/027000/027672.png"
   },
   "2003751": {
-    "en": "",
+    "en": "Notes on Crescent Flying Lizards",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Notiz über Flugechsen",
+    "fr": "Note sur les lézards volants de Lunule",
+    "icon": "/i/026000/026572.png"
   },
   "2003752": {
-    "en": "",
+    "en": "Notes on Crescent Bandersnatches",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Notiz über Bandersnatche",
+    "fr": "Note sur les bandersnatchs de Lunule",
+    "icon": "/i/026000/026572.png"
   },
   "2003753": {
-    "en": "",
+    "en": "Wivre Leavings",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Wivren-Dung",
+    "fr": "Crottin de wivre",
+    "icon": "/i/027000/027501.png"
   },
   "2003754": {
-    "en": "",
+    "en": "Gok Golma Vegetables",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Gemüseauswahl",
+    "fr": "Légumes de Gok Golma",
+    "icon": "/i/026000/026110.png"
   },
   "2003755": {
-    "en": "",
+    "en": "Choice Meats",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Fleischspezialitäten",
+    "fr": "Viande de gibier",
+    "icon": "/i/026000/026111.png"
   },
   "2003756": {
-    "en": "",
+    "en": "Najool Stems",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Najool-Stängel",
+    "fr": "Tiges de najool",
+    "icon": "/i/026000/026110.png"
   },
   "2003757": {
-    "en": "",
+    "en": "Herbal Compress",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Mamook-Wickel",
+    "fr": "Compresse spéciale de Mamook",
+    "icon": "/i/026000/026127.png"
   },
   "2003758": {
-    "en": "",
+    "en": "Ripened Branchberry",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Pralle Zweigträger-Frucht",
+    "fr": "Fruit de sylveplume",
+    "icon": "/i/025000/025331.png"
   },
   "2003759": {
-    "en": "",
+    "en": "Fresh Produce",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Frisches Gemüse",
+    "fr": "Panier de légumes frais",
+    "icon": "/i/027000/027551.png"
   },
   "2003760": {
     "en": "",

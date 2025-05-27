@@ -12,6 +12,10 @@ export class MappyExtractor extends AbstractExtractor {
 
     combineLatest([mapData$, mapDiscoveryIndexes$])
       .subscribe(([mapData, mapDiscoveryIndexes]) => {
+        if(!mapData) {
+          this.done();
+          return;
+        }
         mapData
           .sort((a, b) => {
             return a.Added - b.Added;

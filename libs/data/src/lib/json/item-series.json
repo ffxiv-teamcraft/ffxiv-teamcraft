@@ -571,9 +571,9 @@
     ]
   },
   "4": {
-    "en": "Eastern Lord's Attire",
+    "en": "Far Eastern Lord's Attire",
     "ja": "東方殿方装束",
-    "de": "Fernöstliche Herrengewänder",
+    "de": "Fernöstliches Herrengewand",
     "fr": "Tenue de seigneur oriental",
     "items": [
       14854,
@@ -582,9 +582,9 @@
     ]
   },
   "5": {
-    "en": "Eastern Lady's Attire",
+    "en": "Far Eastern Lady's Attire",
     "ja": "東方姫君装束",
-    "de": "Fernöstliche Damengewänder",
+    "de": "Fernöstliches Damengewand",
     "fr": "Tenue de dame noble orientale",
     "items": [
       14857,
@@ -615,7 +615,7 @@
     ]
   },
   "8": {
-    "en": "Exclusive Eastern Journey Attire",
+    "en": "Ex. Far Eastern Journey Attire",
     "ja": "イースタンEXアタイア",
     "de": "Exklusive fernöstliche Reisekleidung",
     "fr": "Tenue du Voyage en Orient spéciale",
@@ -656,7 +656,7 @@
   "11": {
     "en": "Nezha Lord's Attire",
     "ja": "ナタ殿方装束",
-    "de": "Bekleidung des Nezha-Herren",
+    "de": "Bekleidung des Nezha-Herrn",
     "fr": "Tenue de seigneur de Nezha",
     "items": [
       20479,

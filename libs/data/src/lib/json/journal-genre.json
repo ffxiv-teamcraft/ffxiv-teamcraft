@@ -192,16 +192,16 @@
     "fr": "Échos de Vana'diel"
   },
   "33": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Main Quests",
+    "ja": "ストーリークエスト",
+    "de": "Hauptaufträge",
+    "fr": "Histoire principale"
   },
   "34": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Daily Quests",
+    "ja": "デイリークエスト",
+    "de": "Nebenaufträge",
+    "fr": "Quêtes quotidiennes"
   },
   "35": {
     "en": "Main Quests",
@@ -522,10 +522,10 @@
     "fr": "Garde-la-Reine"
   },
   "88": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Weapons",
+    "ja": "ファントムウェポン",
+    "de": "Phantomwaffen",
+    "fr": "Armes fantômes"
   },
   "89": {
     "en": "Tales from the Calamity",
@@ -630,10 +630,10 @@
     "fr": "Exploration cosmique : quêtes annexes"
   },
   "106": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Occult Crescent",
+    "ja": "蜃気楼の島 クレセントアイル",
+    "de": "Kreszentia ",
+    "fr": "Île de Lunule"
   },
   "107": {
     "en": "La Noscean Sidequests",
@@ -1818,10 +1818,10 @@
     "fr": "Défis"
   },
   "304": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Occult Crescent",
+    "ja": "蜃気楼の島 クレセントアイル",
+    "de": "Kreszentia",
+    "fr": "Île de Lunule"
   },
   "305": {
     "en": "Guildhests",

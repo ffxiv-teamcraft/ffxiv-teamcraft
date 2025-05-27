@@ -4626,10 +4626,10 @@
     "fr": "Parcours conflictuel"
   },
   "772": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Of the Shining Scale",
+    "ja": "of the Shining Scale",
+    "de": "Bauer",
+    "fr": "Agriculteur, ja"
   },
   "773": {
     "en": "Seeker of Eternity",
@@ -4638,46 +4638,46 @@
     "fr": "Explorateur de l'éternité"
   },
   "774": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Random Encounter",
+    "ja": "Random Encounter",
+    "de": "Zufallsbegegnung",
+    "fr": "Belligérant critique"
   },
   "775": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Knower of Fates",
+    "ja": "Knower of Fates",
+    "de": "Fatale Wissbegier",
+    "fr": "Amateur d'aléatoire"
   },
   "776": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Infamy of Blood",
+    "ja": "Infamy of Blood",
+    "de": "Wächter des Blutes",
+    "fr": "Forte tête de la Tour"
   },
   "777": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dead Man's Tale",
+    "ja": "Dead Man‘s Tale",
+    "de": "auf des toten Manns Kiste",
+    "fr": "Secouriste fantôme"
   },
   "778": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "King Among Castaways",
+    "ja": "King Among Castaways",
+    "de": "schiffbrüchiger Schatzsucher",
+    "fr": "Trésorier du croissant"
   },
   "779": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Persistent Pal",
+    "ja": "Persistent Pal",
+    "de": "Bettelkönig",
+    "fr": "Pote persistant"
   },
   "780": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bunny-blessed",
+    "ja": "Bunny-blessed",
+    "de": "Hasenpfote",
+    "fr": "Carotteur du bonheur"
   },
   "781": {
     "en": "Ready for Liftoff",
@@ -4768,5 +4768,11 @@
     "ja": "Wisher upon Stars",
     "de": "des Sternenglücks",
     "fr": "Béni par les étoiles"
+  },
+  "796": {
+    "en": "Overemployed",
+    "ja": "Overemployed",
+    "de": "Tausendsassa",
+    "fr": "Grand maître fantôme"
   }
 }
