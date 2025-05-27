@@ -75703,71 +75703,71 @@
   },
   "3621": {
     "id": 3621,
-    "icon": "",
+    "icon": "/i/062000/062979.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Eat Your Vegetables I",
+    "de": "Iss dein Gemüse I",
+    "ja": "マムージャ族：ランク1",
+    "fr": "À la mode de Mamook I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 3 reputation (friendly) with the farmers of Gok Golma.",
+      "de": "Ein freundliches Verhältnis zu den Bauern von Gok Golma erworben.",
+      "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク3「友好」にする",
+      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des fermiers de Gok Golma."
     },
     "item": 0,
     "title": 0
   },
   "3622": {
     "id": 3622,
-    "icon": "",
+    "icon": "/i/062000/062979.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Eat Your Vegetables II",
+    "de": "Iss dein Gemüse II",
+    "ja": "マムージャ族：ランク2",
+    "fr": "À la mode de Mamook II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 4 reputation (trusted) with the farmers of Gok Golma.",
+      "de": "Ein vertrautes Verhältnis zu den Bauern von Gok Golma erworben.",
+      "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク4「信頼」にする",
+      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des fermiers de Gok Golma."
     },
     "item": 0,
     "title": 0
   },
   "3623": {
     "id": 3623,
-    "icon": "",
+    "icon": "/i/062000/062979.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Eat Your Vegetables III",
+    "de": "Iss dein Gemüse III",
+    "ja": "マムージャ族：ランク3",
+    "fr": "À la mode de Mamook III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 6 reputation (honored) with the farmers of Gok Golma.",
+      "de": "Ein geachtetes Verhältnis zu den Bauern von Gok Golma erworben.",
+      "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク6「名誉」にする",
+      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des fermiers de Gok Golma."
     },
     "item": 0,
     "title": 0
   },
   "3624": {
     "id": 3624,
-    "icon": "",
+    "icon": "/i/062000/062979.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Harvest of Hope",
+    "de": "Hoffnungsvolle Ernte",
+    "ja": "樹海の農学者",
+    "fr": "Le champ bleu",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 7 reputation (sworn) with the farmers of Gok Golma.",
+      "de": "Ein solidarisches Verhältnis zu den Bauern von Gok Golma erworben.",
+      "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク7「誓約」にする",
+      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des fermiers de Gok Golma."
     },
     "item": 0,
-    "title": 0
+    "title": 772
   },
   "3625": {
     "id": 3625,
@@ -75924,17 +75924,17 @@
   },
   "3634": {
     "id": 3634,
-    "icon": "",
+    "icon": "/i/026000/026002.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Highly Crescentialed",
+    "de": "Spurensuche auf Kreszentia",
+    "ja": "夢幻の島に記憶を求めて",
+    "fr": "Au sud, rien de nouveau",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Mysteries Abide.”",
+      "de": "Den Auftrag „Insistente Illusion“ abgeschlossen.",
+      "ja": "クエスト「蜃気楼、いまだ消えず」をコンプリートする",
+      "fr": "Accomplir la quête “Le mystère reste entier”."
     },
     "item": 0,
     "title": 0
@@ -75958,17 +75958,17 @@
   },
   "3636": {
     "id": 3636,
-    "icon": "",
+    "icon": "/i/057000/057245.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Uniformly Guarded",
+    "de": "Läufer der Wellen",
+    "ja": "クイーン・ラミンの守護者",
+    "fr": "Croisière à haut risque",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Dressed to Protect.”",
+      "de": "Den Auftrag „Auf Wellen laufen“ abgeschlossen.",
+      "ja": "クエスト「紅蓮祭と海の守護者」をコンプリートする",
+      "fr": "Accomplir la quête “Alerte à Costa del Sol”."
     },
     "item": 0,
     "title": 0
@@ -75992,887 +75992,887 @@
   },
   "3638": {
     "id": 3638,
-    "icon": "",
+    "icon": "/i/030000/030694.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Sword & Kite Shield Penumbrae",
+    "de": "Wie von Geisterhand: Phantomschwert Penumbrae und Phantom-Drachenschild Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ソード＆ファントムペンアンブレー・カイトシールド",
+    "fr": "Armes fantômes : épée fantôme penumbra et écu mandorle fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom sword penumbrae and phantom kite shield penumbrae.",
+      "de": "Das Phantomschwert Penumbrae und den Phantom-Drachenschild Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ソード＆ファントムペンアンブレー・カイトシールドを入手する",
+      "fr": "Obtenir l'épée fantôme penumbra et l'écu mandorle fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3639": {
     "id": 3639,
-    "icon": "",
+    "icon": "/i/031000/031268.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Bardiche Penumbrae",
+    "de": "Wie von Geisterhand: Phantomberdysch Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・バルディッシュ",
+    "fr": "Armes fantômes : bardiche fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom bardiche penumbrae.",
+      "de": "Die Phantomberdysch Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・バルディッシュを入手する",
+      "fr": "Obtenir la bardiche fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3640": {
     "id": 3640,
-    "icon": "",
+    "icon": "/i/034000/034023.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Guillotine Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Guillotine Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ディバイダー",
+    "fr": "Armes fantômes : fendoir fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom guillotine penumbrae.",
+      "de": "Die Phantom-Guillotine Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ディバイダーを入手する",
+      "fr": "Obtenir le fendoir fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3641": {
     "id": 3641,
-    "icon": "",
+    "icon": "/i/036000/036114.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Bayonet Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Bajonett Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・バヨネット",
+    "fr": "Armes fantômes : baïonnette fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom bayonet penumbrae.",
+      "de": "Das Phantom-Bajonett Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・バヨネットを入手する",
+      "fr": "Obtenir la baïonnette fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3642": {
     "id": 3642,
-    "icon": "",
+    "icon": "/i/031000/031670.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Spear Penumbrae",
+    "de": "Wie von Geisterhand: Phantomspeer Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・スピア",
+    "fr": "Armes fantômes : hast fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom spear penumbrae.",
+      "de": "Den Phantomspeer Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・スピアを入手する",
+      "fr": "Obtenir l'hast fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3643": {
     "id": 3643,
-    "icon": "",
+    "icon": "/i/030000/030858.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Knuckles Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Schlagringe Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ナックル",
+    "fr": "Armes fantômes : poings fantômes penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom knuckles penumbrae.",
+      "de": "Die Phantom-Schlagringe Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ナックルを入手する",
+      "fr": "Obtenir les poings fantômes penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3644": {
     "id": 3644,
-    "icon": "",
+    "icon": "/i/033000/033644.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Cleavers Penumbrae",
+    "de": "Wie von Geisterhand: Phantomspalter Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・クリーバー",
+    "fr": "Armes fantômes : couperets fantômes penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom cleavers penumbrae.",
+      "de": "Den Phantomspalter Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・クリーバーを入手する",
+      "fr": "Obtenir les couperets fantômes penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3645": {
     "id": 3645,
-    "icon": "",
+    "icon": "/i/037000/037447.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Twinfangs Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Zwillingsfänge Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ツインファング",
+    "fr": "Armes fantômes : crochets fantômes penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom twinfangs penumbrae.",
+      "de": "Die Phantom-Zwillingsfänge Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ツインファングを入手する",
+      "fr": "Obtenir les crochets fantômes penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3646": {
     "id": 3646,
-    "icon": "",
+    "icon": "/i/036000/036572.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Blade Penumbrae",
+    "de": "Wie von Geisterhand: Phantomklinge Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ブレード",
+    "fr": "Armes fantômes : lame fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom blade penumbrae.",
+      "de": "Die Phantomklinge Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ブレードを入手する",
+      "fr": "Obtenir la lame fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3647": {
     "id": 3647,
-    "icon": "",
+    "icon": "/i/037000/037284.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: War Scythe Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Kriegssense Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ウォーサイズ",
+    "fr": "Armes fantômes : faux de guerre fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom war scythe penumbrae.",
+      "de": "Die Phantom-Kriegssense Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ウォーサイズを入手する",
+      "fr": "Obtenir la faux de guerre fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3648": {
     "id": 3648,
-    "icon": "",
+    "icon": "/i/032000/032058.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Harp Bow Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Harfenbogen Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ハープボウ",
+    "fr": "Armes fantômes : arc-harpe fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom harp bow penumbrae.",
+      "de": "Den Phantom-Harfenbogen Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ハープボウを入手する",
+      "fr": "Obtenir l'arc-harpe fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3649": {
     "id": 3649,
-    "icon": "",
+    "icon": "/i/034000/034517.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Arquebus Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Hakenbüchse Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・アークウィバス",
+    "fr": "Armes fantômes : arquebuse fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom arquebus penumbrae.",
+      "de": "Die Phantom-Hakenbüchse Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・アークウィバスを入手する",
+      "fr": "Obtenir l'arquebuse fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3650": {
     "id": 3650,
-    "icon": "",
+    "icon": "/i/036000/036313.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Terpna Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Terpna Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・テルプナ",
+    "fr": "Armes fantômes : terpna fantômes penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom terpna penumbrae.",
+      "de": "Die Phantom-Terpna Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・テルプナを入手する",
+      "fr": "Obtenir les terpna fantômes penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3651": {
     "id": 3651,
-    "icon": "",
+    "icon": "/i/032000/032904.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Staff Penumbrae",
+    "de": "Wie von Geisterhand: Phantomstab Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・スタッフ",
+    "fr": "Armes fantômes : bâton fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom staff penumbrae.",
+      "de": "Den Phantomstab Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・スタッフを入手する",
+      "fr": "Obtenir le bâton fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3652": {
     "id": 3652,
-    "icon": "",
+    "icon": "/i/037000/037838.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Index Penumbrae",
+    "de": "Wie von Geisterhand: Phantomindex Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・インデックス",
+    "fr": "Armes fantômes : index fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom index penumbrae.",
+      "de": "Den Phantomindex Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・インデックスを入手する",
+      "fr": "Obtenir l'index fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3653": {
     "id": 3653,
-    "icon": "",
+    "icon": "/i/036000/036871.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Rapier Penumbrae",
+    "de": "Wie von Geisterhand: Phantomrapier Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・レイピア",
+    "fr": "Armes fantômes : rapière fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom rapier penumbrae.",
+      "de": "Den Phantomrapier Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・レイピアを入手する",
+      "fr": "Obtenir la rapière fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3654": {
     "id": 3654,
-    "icon": "",
+    "icon": "/i/037000/037657.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Flat Brush Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Flachpinsel Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・フラットブラシ",
+    "fr": "Armes fantômes : pinceau plat fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom flat brush penumbrae.",
+      "de": "Den Phantom-Flachpinsel Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・フラットブラシを入手する",
+      "fr": "Obtenir le pinceau plat fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3655": {
     "id": 3655,
-    "icon": "",
+    "icon": "/i/032000/032489.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Crook Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Hirtenstock Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・クルーク",
+    "fr": "Armes fantômes : crosse fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom crook penumbrae.",
+      "de": "Den Phantom-Hirtenstock Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・クルークを入手する",
+      "fr": "Obtenir la crosse fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3656": {
     "id": 3656,
-    "icon": "",
+    "icon": "/i/037000/037839.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Codex Penumbrae",
+    "de": "Wie von Geisterhand: Phantomkodex Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・コーデックス",
+    "fr": "Armes fantômes : codex fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom codex penumbrae.",
+      "de": "Den Phantomkodex Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・コーデックスを入手する",
+      "fr": "Obtenir le codex fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3657": {
     "id": 3657,
-    "icon": "",
+    "icon": "/i/034000/034716.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Star Globe Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Sternenglobus Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・スターグローブ",
+    "fr": "Armes fantômes : globe céleste fantôme penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom star globe penumbrae.",
+      "de": "Den Phantom-Sternenglobus Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・スターグローブを入手する",
+      "fr": "Obtenir le globe céleste fantôme penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3658": {
     "id": 3658,
-    "icon": "",
+    "icon": "/i/037000/037080.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Might Phantastick: Pendulums Penumbrae",
+    "de": "Wie von Geisterhand: Phantom-Perpendikel Penumbrae",
+    "ja": "ファントムウェポン：ファントムペンアンブレー・ペンデュラム",
+    "fr": "Armes fantômes : pendules fantômes penumbra",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain an array of phantom pendulums penumbrae.",
+      "de": "Die Phantom-Perpendikel Penumbrae erhalten.",
+      "ja": "ファントムペンアンブレー・ペンデュラムを入手する",
+      "fr": "Obtenir les pendules fantômes penumbra."
     },
     "item": 0,
     "title": 0
   },
   "3659": {
     "id": 3659,
-    "icon": "",
+    "icon": "/i/026000/026184.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Observing the Occult",
+    "de": "Kreszenter Chronist",
+    "ja": "三日月島の記録員",
+    "fr": "Archiviste du croissant",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unlock all entries in the Occult Record pertaining to the South Horn.",
+      "de": "Alle Einträge der Kreszentia-Chronik des südlichen Kreszentia freigeschaltet.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編における三日月島探査記録帳の全項目を開示する",
+      "fr": "Remplir toutes les entrées du calepin du croissant sur l'île de Lunule méridionale."
     },
     "item": 0,
     "title": 0
   },
   "3660": {
     "id": 3660,
-    "icon": "",
+    "icon": "/i/064000/064836.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Thinking I",
+    "de": "Herrschaft des Halbmonds I",
+    "ja": "孤島の君臨者：ランク1",
+    "fr": "Décennale critique I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 10 critical encounters on the Occult Crescent.",
+      "de": "10 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを10回コンプリートする",
+      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3661": {
     "id": 3661,
-    "icon": "",
+    "icon": "/i/064000/064836.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Thinking II",
+    "de": "Herrschaft des Halbmonds II",
+    "ja": "孤島の君臨者：ランク2",
+    "fr": "Décennale critique II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 50 critical encounters on the Occult Crescent.",
+      "de": "50 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを50回コンプリートする",
+      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3662": {
     "id": 3662,
-    "icon": "",
+    "icon": "/i/064000/064836.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Thinking III",
+    "de": "Herrschaft des Halbmonds III",
+    "ja": "孤島の君臨者：ランク3",
+    "fr": "Décennale critique III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 100 critical encounters on the Occult Crescent.",
+      "de": "100 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを100回コンプリートする",
+      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3663": {
     "id": 3663,
-    "icon": "",
+    "icon": "/i/064000/064836.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Thinking IV",
+    "de": "Herrschaft des Halbmonds IV",
+    "ja": "孤島の君臨者：ランク4",
+    "fr": "Décennale critique IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 500 critical encounters on the Occult Crescent.",
+      "de": "500 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを500回コンプリートする",
+      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule."
     },
     "item": 0,
-    "title": 0
+    "title": 774
   },
   "3664": {
     "id": 3664,
-    "icon": "",
+    "icon": "/i/003000/003126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Erudition I",
+    "de": "Krone des Wissens I",
+    "ja": "知見者の高み：ランク1",
+    "fr": "À la poursuite du savoir insulaire I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 10 FATEs on the Occult Crescent.",
+      "de": "10 FATEs auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を10回コンプリートする",
+      "fr": "Accomplir 10 ALÉA sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3665": {
     "id": 3665,
-    "icon": "",
+    "icon": "/i/003000/003126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Erudition II",
+    "de": "Krone des Wissens II",
+    "ja": "知見者の高み：ランク2",
+    "fr": "À la poursuite du savoir insulaire II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 50 FATEs on the Occult Crescent.",
+      "de": "50 FATEs auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を50回コンプリートする",
+      "fr": "Accomplir 50 ALÉA sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3666": {
     "id": 3666,
-    "icon": "",
+    "icon": "/i/003000/003126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Erudition III",
+    "de": "Krone des Wissens III",
+    "ja": "知見者の高み：ランク3",
+    "fr": "À la poursuite du savoir insulaire III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 100 FATEs on the Occult Crescent.",
+      "de": "100 FATEs auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を100回コンプリートする",
+      "fr": "Accomplir 100 ALÉA sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3667": {
     "id": 3667,
-    "icon": "",
+    "icon": "/i/003000/003126.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Erudition IV",
+    "de": "Krone des Wissens IV",
+    "ja": "知見者の高み：ランク4",
+    "fr": "À la poursuite du savoir insulaire IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 500 FATEs on the Occult Crescent.",
+      "de": "500 FATEs auf Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を500回コンプリートする",
+      "fr": "Accomplir 500 ALÉA sur l'île de Lunule."
     },
     "item": 0,
-    "title": 0
+    "title": 775
   },
   "3668": {
     "id": 3668,
-    "icon": "",
+    "icon": "/i/064000/064563.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Fork to Be Reckoned With I",
+    "de": "Blut geleckt I",
+    "ja": "力の塔を制覇せし者：ランク1",
+    "fr": "Tour de force I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Blood for the first time.",
+      "de": "1 Mal den Fork-Turm - Blut erobert.",
+      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を初めて攻略する",
+      "fr": "Finir la Tour fourchue de la Force."
     },
-    "item": 0,
+    "item": 47978,
     "title": 0
   },
   "3669": {
     "id": 3669,
-    "icon": "",
+    "icon": "/i/064000/064563.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Fork to Be Reckoned With II",
+    "de": "Blut geleckt II",
+    "ja": "力の塔を制覇せし者：ランク2",
+    "fr": "Tour de force II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Blood 10 times.",
+      "de": "10 Mal den Fork-Turm - Blut erobert.",
+      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計10回攻略する",
+      "fr": "Finir 10 fois la Tour fourchue de la Force."
     },
     "item": 0,
     "title": 0
   },
   "3670": {
     "id": 3670,
-    "icon": "",
+    "icon": "/i/064000/064563.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Fork to Be Reckoned With III",
+    "de": "Blut geleckt III",
+    "ja": "力の塔を制覇せし者：ランク3",
+    "fr": "Tour de force III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Blood 50 times.",
+      "de": "50 Mal den Fork-Turm - Blut erobert.",
+      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計50回攻略する",
+      "fr": "Finir 50 fois la Tour fourchue de la Force."
     },
     "item": 0,
     "title": 0
   },
   "3671": {
     "id": 3671,
-    "icon": "",
+    "icon": "/i/064000/064563.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Fork to Be Reckoned With IV",
+    "de": "Blut geleckt IV",
+    "ja": "力の塔を制覇せし者：ランク4",
+    "fr": "Tour de force IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Blood 100 times.",
+      "de": "100 Mal den Fork-Turm - Blut erobert.",
+      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計100回攻略する",
+      "fr": "Finir 100 fois la Tour fourchue de la Force."
     },
     "item": 0,
-    "title": 0
+    "title": 776
   },
   "3672": {
     "id": 3672,
-    "icon": "",
+    "icon": "/i/064000/064556.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Magic Is the Best Medicine I",
+    "de": "Kreszentias Kerub I",
+    "ja": "三角海域の船医：ランク1",
+    "fr": "Défibrilateur du croissant I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrect another player on the Occult Crescent 10 times.",
+      "de": "10 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを10回蘇生する",
+      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3673": {
     "id": 3673,
-    "icon": "",
+    "icon": "/i/064000/064556.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Magic Is the Best Medicine II",
+    "de": "Kreszentias Kerub II",
+    "ja": "三角海域の船医：ランク2",
+    "fr": "Défibrilateur du croissant II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrect another player on the Occult Crescent 100 times.",
+      "de": "100 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを100回蘇生する",
+      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3674": {
     "id": 3674,
-    "icon": "",
+    "icon": "/i/064000/064556.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Magic Is the Best Medicine III",
+    "de": "Kreszentias Kerub III",
+    "ja": "三角海域の船医：ランク3",
+    "fr": "Défibrilateur du croissant III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrect another player on the Occult Crescent 500 times.",
+      "de": "500 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを500回蘇生する",
+      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule."
     },
     "item": 0,
-    "title": 0
+    "title": 777
   },
   "3675": {
     "id": 3675,
-    "icon": "",
+    "icon": "/i/064000/064571.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantomastery I",
+    "de": "Meister der Phantome I",
+    "ja": "サポートジョブマスター：ランク1",
+    "fr": "Maître fantôme I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Master 1 phantom job.",
+      "de": "1 Phantomjob gemeistert.",
+      "ja": "サポートジョブを1種類マスターする",
+      "fr": "Maîtriser 1 job de soutien."
     },
     "item": 0,
     "title": 0
   },
   "3676": {
     "id": 3676,
-    "icon": "",
+    "icon": "/i/064000/064571.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantomastery II",
+    "de": "Meister der Phantome II",
+    "ja": "サポートジョブマスター：ランク2",
+    "fr": "Maître fantôme II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Master 5 phantom jobs.",
+      "de": "5 Phantomjobs gemeistert.",
+      "ja": "サポートジョブを5種類マスターする",
+      "fr": "Maîtriser 5 jobs de soutien."
     },
     "item": 0,
     "title": 0
   },
   "3677": {
     "id": 3677,
-    "icon": "",
+    "icon": "/i/064000/064571.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantomastery III",
+    "de": "Meister der Phantome III",
+    "ja": "サポートジョブマスター：ランク3",
+    "fr": "Maître fantôme III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Master 10 phantom jobs.",
+      "de": "10 Phantomjobs gemeistert.",
+      "ja": "サポートジョブを10種類マスターする",
+      "fr": "Maîtriser 10 jobs de soutien."
     },
     "item": 0,
-    "title": 0
+    "title": 796
   },
   "3678": {
     "id": 3678,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Horns of Plenty I",
+    "de": "Das Dreieck der Schätze I",
+    "ja": "絶海の宝物王：ランク1",
+    "fr": "Le Triangle aux trésors I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 10 treasure coffers found during your excursions on the Occult Crescent.",
+      "de": "10 Schatztruhen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を10回開ける",
+      "fr": "Ouvrir 10 coffres au trésor sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3679": {
     "id": 3679,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Horns of Plenty II",
+    "de": "Das Dreieck der Schätze II",
+    "ja": "絶海の宝物王：ランク2",
+    "fr": "Le Triangle aux trésors II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 100 treasure coffers found during your excursions on the Occult Crescent.",
+      "de": "100 Schatztruhen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を100回開ける",
+      "fr": "Ouvrir 100 coffres au trésor sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3680": {
     "id": 3680,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Horns of Plenty III",
+    "de": "Das Dreieck der Schätze III",
+    "ja": "絶海の宝物王：ランク3",
+    "fr": "Le Triangle aux trésors III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 1,000 treasure coffers found during your excursions on the Occult Crescent.",
+      "de": "1.000 Schatztruhen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を1,000回開ける",
+      "fr": "Ouvrir 1 000 coffres au trésor sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3681": {
     "id": 3681,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Horns of Plenty IV",
+    "de": "Das Dreieck der Schätze IV",
+    "ja": "絶海の宝物王：ランク4",
+    "fr": "Le Triangle aux trésors IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 5,000 treasure coffers found during your excursions on the Occult Crescent.",
+      "de": "5.000 Schatztruhen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を5,000回開ける",
+      "fr": "Ouvrir 5 000 coffres au trésor sur l'île de Lunule."
     },
     "item": 0,
-    "title": 0
+    "title": 778
   },
   "3682": {
     "id": 3682,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "In Pot Pursuit I",
+    "de": "Potenter Pott I",
+    "ja": "ポットの導き：ランク1",
+    "fr": "Fortune du pot I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 10 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
+      "de": "10 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を10回開ける",
+      "fr": "Ouvrir 10 coffres de pot persistant sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3683": {
     "id": 3683,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "In Pot Pursuit II",
+    "de": "Potenter Pott II",
+    "ja": "ポットの導き：ランク2",
+    "fr": "Fortune du pot II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 50 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
+      "de": "50 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を50回開ける",
+      "fr": "Ouvrir 50 coffres de pot persistant sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3684": {
     "id": 3684,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "In Pot Pursuit III",
+    "de": "Potenter Pott III",
+    "ja": "ポットの導き：ランク3",
+    "fr": "Fortune du pot III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 200 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
+      "de": "200 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を200回開ける",
+      "fr": "Ouvrir 200 coffres de pot persistant sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3685": {
     "id": 3685,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "In Pot Pursuit IV",
+    "de": "Potenter Pott IV",
+    "ja": "ポットの導き：ランク4",
+    "fr": "Fortune du pot IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 1,000 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
+      "de": "1.000 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を1,000回開ける",
+      "fr": "Ouvrir 1 000 coffres de pot persistant sur l'île de Lunule."
     },
     "item": 0,
-    "title": 0
+    "title": 779
   },
   "3686": {
     "id": 3686,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Where Rabbits Roam I",
+    "de": "Jede Menge Möhrchen I",
+    "ja": "フォーチュンカロットの導き：ランク1",
+    "fr": "Carotte sans bâton I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 10 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
+      "de": "10 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を10回開ける",
+      "fr": "Ouvrir 10 coffres de lapin du bonheur sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3687": {
     "id": 3687,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Where Rabbits Roam II",
+    "de": "Jede Menge Möhrchen II",
+    "ja": "フォーチュンカロットの導き：ランク2",
+    "fr": "Carotte sans bâton II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 50 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
+      "de": "50 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を50回開ける",
+      "fr": "Ouvrir 50 coffres de lapin du bonheur sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3688": {
     "id": 3688,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Where Rabbits Roam III",
+    "de": "Jede Menge Möhrchen III",
+    "ja": "フォーチュンカロットの導き：ランク3",
+    "fr": "Carotte sans bâton III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 200 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
+      "de": "200 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を200回開ける",
+      "fr": "Ouvrir 200 coffres de lapin du bonheur sur l'île de Lunule."
     },
     "item": 0,
     "title": 0
   },
   "3689": {
     "id": 3689,
-    "icon": "",
+    "icon": "/i/000000/000115.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Where Rabbits Roam IV",
+    "de": "Jede Menge Möhrchen IV",
+    "ja": "フォーチュンカロットの導き：ランク4",
+    "fr": "Carotte sans bâton IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Open 1,000 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
+      "de": "1.000 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
+      "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を1,000回開ける",
+      "fr": "Ouvrir 1 000 coffres de lapin du bonheur sur l'île de Lunule."
     },
     "item": 0,
-    "title": 0
+    "title": 780
   },
   "3690": {
     "id": 3690,
@@ -77150,7 +77150,7 @@
     "id": 3706,
     "icon": "/i/001000/001553.png",
     "patch": 102,
-    "en": "Rocket Smithing I",
+    "en": "Rocket Smithing II",
     "de": "Grobschmied der unendlichen Weiten II",
     "ja": "星渡る鍛冶師：ランク2",
     "fr": "Forgeron du cosmos II",
@@ -77201,7 +77201,7 @@
     "id": 3709,
     "icon": "/i/001000/001603.png",
     "patch": 102,
-    "en": "Rocket Forgery I",
+    "en": "Rocket Forgery II",
     "de": "Plattner der unendlichen Weiten II",
     "ja": "星渡る甲冑師：ランク2",
     "fr": "Armurier du cosmos II",
@@ -77695,7 +77695,7 @@
     "icon": "/i/001000/001029.png",
     "patch": 102,
     "en": "Star Gatherer",
-    "de": "Sammlerkönig  der unendlichen Weiten",
+    "de": "Sammlerkönig der unendlichen Weiten",
     "ja": "星渡る採集王",
     "fr": "Récolteur en chef du cosmos",
     "description": {
@@ -77770,24 +77770,24 @@
       "en": "Draw 1,000 cosmic fortunes.",
       "de": "1000 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに1,000回挑戦する",
-      "fr": "Jouer 1000 fois à la Roue de la fortune cosmique."
+      "fr": "Jouer 1 000 fois à la Roue de la fortune cosmique."
     },
     "item": 0,
     "title": 795
   },
   "3743": {
     "id": 3743,
-    "icon": "",
+    "icon": "/i/001000/001001.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Mapping the Realm: The Occult Crescent: South Horn",
+    "de": "Kartograph: Südliches Kreszentia",
+    "ja": "三日月島南部を踏破せし者",
+    "fr": "Cartographe du continent : Île de Lunule méridionale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Discover every location on the Occult Crescent: South Horn.",
+      "de": "Alle Orte im südlichen Kreszentia erkundet.",
+      "ja": "三日月島南部を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de l'île de Lunule méridionale."
     },
     "item": 0,
     "title": 0

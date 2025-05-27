@@ -42417,190 +42417,190 @@
   },
   "1962": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Rough Waters",
+      "ja": "波起こしの海魔「ナンム」",
+      "de": "Die Wogen glätten",
+      "fr": "Défi&nbsp;: pas de vagues"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "With the ocean waves at its beck and call, Nammu has long been the scourge of sailors in the region. Its extermination would do much to ensure safer trade routes and calm waters.",
+      "ja": "波を操り船の進路を惑わす<br>忌むべき妖異が現れた<br>波起こしの海魔、ナンムを倒せ",
+      "de": "Die Nichtsgesandte Nammu erstickt mit ihren wellenschlagenden Kräften jeden Versuch, die Insel per Schiff zu erreichen, im dunklen Blau des Dreiecks des Todes. Sie muss erlegt werden.",
+      "fr": "Nammu est une créature du néant particulièrement détestable, qui passe son temps à dérouter les navires grâce à sa faculté de contrôler les marées. Expédiez-la six fulms sous terre."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11125598
   },
   "1963": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Golden Guardian",
+      "ja": "金色の怪石「ゴールデンブロックス」",
+      "de": "Brocken statt Barren",
+      "fr": "Défi&nbsp;: tombe vingt-quatre carats"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Engraved with runes of ancient power, the gilded headstone has come to life to drive away the intruders. Only by reducing it to rubble can safe passage be secured.",
+      "ja": "古の魔法が刻まれた石板が<br>侵入者排除のため動き出した<br>金色の怪石「ゴールデンブロックス」を倒せ",
+      "de": "Der güldene Schein der magischen Steinplatte „ゴールデンブロックス“ weist ihr den Weg zu unerwünschten Inselbesuchern, die sie dann geschwinde beseitigt. Stelle dich ゴールデンブロックス macht, ehe dich das gleiche Schicksal erwartet.",
+      "fr": "Une pierre tombale gravée de symboles magiques s'est soudainement animée pour repousser les intrus. Défendez-vous contre ce curieux adversaire."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11126705
   },
   "1964": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "King of the Crescent",
+      "ja": "悲鳴の蒐集者「ロプロス」",
+      "de": "Geißel Kreszentias",
+      "fr": "Défi&nbsp;: la bête sadique"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "All the beasts and familiars of the Occult Crescent fear the Ropross, its presence marked ever by the final screams of its victims. What group of brave explorers will end its reign of terror once and for all?",
+      "ja": "島の使い魔や獣を切り裂いて遊ぶ<br>残忍な魔獣が現れた<br>悲鳴の蒐集者、ロプロスを倒せ",
+      "de": "Die Bestie namens „Ropross“ ist eine Geißel für alle magischen Wesen der Insel, findet sie doch Freude an ihren Qualen. Beseitige sie zum Wohle des Inselfriedens.",
+      "fr": "Ropross est une chimère ailée qui se plaît à déchiqueter les familiers et animaux de l'île juste pour le plaisir. Mettez un terme à son règne sadique."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 10994975
   },
   "1965": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Winged Terror",
+      "ja": "甲板の掃除人「巨大鳥」",
+      "de": "Dämonenvogel am Spieß",
+      "fr": "Défi&nbsp;: je fus zu"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Every sailor in the Indigo Deep keeps watch for the massive bird which stalks the skies overhead. It has made a meal of more than one hapless crew─yet occasionally, even the deadliest predators bite off more than they can chew.",
+      "ja": "蒼茫洋を征く船を見境なく襲い<br>乗組員を食い漁る怪鳥が現れた<br>甲板の掃除人、巨大鳥を倒せ",
+      "de": "Ein dämonischer Vogel gewaltigen Ausmaßes soll Männer und Frauen der Indigotiefen auf seine Speisekarte gesetzt haben. Bereite Roch das Ende, das er verdient.",
+      "fr": "Votre route a croisé celle d'un oiseau géant connu pour avoir attaqué de nombreux navires voguant sur l'océan indigo et dévoré leurs équipages. Éliminez celui que l'on surnomme la “terreur des bastingages”."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 10966790
   },
   "1966": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An Unending Duty",
+      "ja": "神罰の石獣「シジフォス」",
+      "de": "Los, Sisyphos, Donnerblitz!",
+      "fr": "Défi&nbsp;: pierre de tonnerre"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Deep within crystalline caves, a great stone beast has awoken from its slumber. Wreathed in lightning, it dispenses divine judgment upon any who would stand before it.",
+      "ja": "身体に雷をまとう黒き石獣が<br>水晶の洞窟内で目を覚ました<br>神罰の石獣、シジフォスを倒せ",
+      "de": "Das schwarze Steingrauen, Sisyphos, verfügt nicht nur über die Macht der Blitze sondern ist jüngst auch aus seinem Schlummer erwacht. EIne Gefahr für die gesamte Insel!",
+      "fr": "Au cœur des Cavernes de cristal s'est éveillé un monstre de pierre dont le corps est parcouru d'éclairs. Venez à bout de Sisyphos, le châtieur céleste."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11139552
   },
   "1967": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Brain Drain",
+      "ja": "進化せし怪蛇「アドバンスドエイビス」",
+      "de": "Aspho ... asphy ... scheintot!",
+      "fr": "Défi&nbsp;: le poison de l'évolution"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The potent toxins within this creature's body turn living organisms into mindless servants, bound to their master's whims. It must be dealt with before the entire island falls under its thrall.",
+      "ja": "体内生成した毒素で<br>生物を仮死化して操る飛蛇が現れた<br>進化せし怪蛇、アドバンスドエイビスを倒せ",
+      "de": "Mithilfe seines körpereigenen Giftes soll der entwickelte Avis seine Opfer asphyktisch werden lassen und fernsteuern können. Nicht auszudenken, was das für die Fauna der Insel bedeuten könnte!",
+      "fr": "Le corps de l'eibis évolué sécrète un venin capable de zombifier n'importe quel être vivant. Empêchez cette néfaste créature de nuire davantage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11139602
   },
   "1968": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Delicate Balance",
+      "ja": "湿度の狩手「ディヒューミディファイア」",
+      "de": "Kampf um Leben und Schweiß",
+      "fr": "Défi&nbsp;: humidité zéro"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "While the fiery familiars of the island are tasked with regulating the temperatures of their surroundings, there are times when they become overzealous in their duties. Their flames must be extinguished ere they give rise to an inferno.",
+      "ja": "湿度管理を使命とする<br>燃え盛る使い魔が現れた<br>湿度の狩手、ディヒューミディファイアを倒せ",
+      "de": "Ein Familiar mit der Macht, die Luftfeuchtigkeit nach seinem Willen zu kontrollieren: ディヒューミディファイア. Wird er nicht besiegt, nimmt das Schwitzen kein Ende!",
+      "fr": "Un flamboyant familier créé dans le but de réguler la température ambiante a fait son apparition. Éteignez les flammes du déshumidificateur."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 10964466
   },
   "1969": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sworn to Soil",
+      "ja": "土壌の守り手「マッドマッド」",
+      "de": "Kampf um Leben und Boden unter den Füßen",
+      "fr": "Défi&nbsp;: rester de boue"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The soil of the Occult Crescent must be carefully managed, and this pungent familiar has been tasked with the job. Anyone who gets in the way of its dirty work will face the full fury of the earth.",
+      "ja": "土壌管理を使命とする<br>匂い立つ使い魔が現れた<br>土壌の守り手、マッドマッドを倒せ",
+      "de": "Ein Familiar mit der Macht, den Boden nach seinem Willen zu kontrollieren: Schlickschlamm. Wird er nicht besiegt, ist niemand auf dieser Insel sicher!",
+      "fr": "Vous êtes tombée nez à nez avec un tas de boue malodorant, en réalité un familier chargé de contrôler les sols de l'île. Vainquez-le en évitant de finir embourbée."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 10965716
   },
   "1970": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Prying Eye",
+      "ja": "監視の瞳「アイルオブザーバー」",
+      "de": "Wächter des Lebens",
+      "fr": "Défi&nbsp;: un œil sur l'île"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "What better to keep watch over the natural balance of things than an ahriman? Its eye sees all, and now it spies adventurers who threaten to trample upon the carefully maintained order.",
+      "ja": "生態バランスの監視を使命とする<br>アーリマン型の妖異が現れた<br>監視の瞳、アイルオブザーバーを倒せ",
+      "de": "Ein Ahriman, der über das Gleichgewicht des Ökosystems wacht: der Inselbeobachter. Du musst dich ihm annehmen, wenn wir seinem starren Blick entkommen wollen.",
+      "fr": "L'insulobservateur est une créature du néant cousine de l'ahriman dont la mission est de surveiller l'équilibre écologique de l'île. Évitez son regard et abattez-le."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11476225
   },
   "1971": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fatal Allure",
+      "ja": "美しき呪殺者「イグゼクレーター」",
+      "de": "Tückische Schönheit",
+      "fr": "Défi&nbsp;: la belle mort"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "With fiery magicks, this winged creature renders its final verdict upon the living, draining their vital energy for its own. While its eerie beauty and deadly grace are enchanting to behold, it cannot be allowed to roam free.",
+      "ja": "火球の呪術によって敵対者の命を弄ぶ<br>恐るべきサキュバス型妖異が現れた<br>美しき呪殺者、イグゼクレーターを倒せ",
+      "de": "Mit seiner feurigen Magie entzieht das Sukkubus -ähnliche Wesen namens „イグゼクレーター“ seinen Opfern ihre Lebensenergie. So schön es auch anzuschauen ist, eine Gefahr stellt es trotzdem dar.",
+      "fr": "Créature du néant proche de la succube, la bourrelle utilise sa magie de feu pour calciner ses victimes. Venez à bout de cette sinistre exécutrice."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11476226
   },
   "1972": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Serving Darkness",
+      "ja": "命の収奪者「ライフギャザラー」",
+      "de": "Seelen sammeln für den bösen Zweck",
+      "fr": "Défi&nbsp;: collecte mortelle"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Lifereaper strikes at the living, hoarding their aether to sate the hunger of its gluttonous kin. This dark harvest can be suffered no longer.",
+      "ja": "凶悪な使い魔が、同胞の動力となる<br>エーテルを集めようと生者を襲っている<br>命の収奪者、ライフギャザラーを倒せ",
+      "de": "Ein gewiefter Familiar greift alles und jeden an, um an Äther für seine Kameraden zu gelangen: der Seelensammler. Bereite dem Schrecken ein Ende, oder die Insel wird schon bald von einer Heerschar finsterer Magiewesen überrannt.",
+      "fr": "Un familier malfaisant s'en prend aux êtres vivants et aspire leur éther pour sans cesse se renforcer. Terrassez cette menace ambulante."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 1,
+    "location": 11196705
   },
   "1973": {
     "name": {
@@ -42616,7 +42616,7 @@
       "fr": ""
     },
     "icon": "",
-    "level": 0,
+    "level": 1,
     "location": 0
   },
   "1974": {
@@ -42633,7 +42633,7 @@
       "fr": ""
     },
     "icon": "",
-    "level": 0,
+    "level": 1,
     "location": 0
   },
   "1975": {
@@ -42650,42 +42650,42 @@
       "fr": ""
     },
     "icon": "",
-    "level": 0,
+    "level": 1,
     "location": 0
   },
   "1976": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Persistent Pots",
+      "ja": "しあわせのマジックポット",
+      "de": "Freude im Pott",
+      "fr": "Pas de pot pour les pots"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A group of magic pots has earned the ire of the island's beasts with their incessant pleas for elixirs. The beleaguered things appear to be in dire need of rescue...surely they'll have learned their lesson after this.",
+      "ja": "しつこくエリクサーをねだったことで<br>島の魔物の怒りを買ったマジックポットを見つけた<br>魔物たちを倒し、マジックポットを助けろ",
+      "de": "Die Wunderpotts scheinen ihre Gier nach Elixieren an das falsche Klientel gerichtet zu haben und befinden sich nun in Lebensgefahr. Besiege die Bestien und rette die dusseligen Behältnisse vor einem jähen Ende als Scherbenhaufen.",
+      "fr": "À force de réclamer des élixirs à tort et à travers, des pots magiques se sont attiré les foudres des autres monstres de l'île. Venez leur en aide avant qu'ils ne se fassent dévorer."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060958.png",
+    "level": 1,
+    "location": 11191083
   },
   "1977": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pleading Pots",
+      "ja": "カチカチのマジックポット",
+      "de": "Wunder im Pott",
+      "fr": "Mauvais œil pour les pots"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "It seems the magic pots are loath to learn from their mistakes, as they have once again followed their greed for elixirs into trouble. The pitiful creatures must be saved from their own folly...but perhaps not immediately.",
+      "ja": "またもしつこくエリクサーをねだったことで<br>虚ろな瞳の魔物に睨まれるマジックポットを見つけた<br>レッサーハヴォックたちを倒し、マジックポットを助けろ",
+      "de": "Ihre Gier nach Elixieren hat die Wunderpotts ein weiteres Mal in die Bredouille gebracht. Beschütze die dusseligen Behältnisse erneut, indem du die niederen Kreszentia-Chaos erlegst.",
+      "fr": "S'obstinant à réclamer des élixirs à tout va, les pots magiques ont cette fois provoqué le courroux de sinistres créatures en forme d'œil. Vainquez les ravageurs pour sauver vos petits amis empotés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060958.png",
+    "level": 1,
+    "location": 11264027
   },
   "1978": {
     "name": {

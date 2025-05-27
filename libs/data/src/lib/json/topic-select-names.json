@@ -876,39 +876,39 @@
     "fr": ""
   },
   "3276946": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cipher Exchange",
+    "ja": "魔紋起動証の交換",
+    "de": "Arkansiegel",
+    "fr": "Échange de sceaux arcaniques"
   },
   "3276947": {
     "en": "Purchase Fieldcraft/Tradecraft Gear (Lv. 1-20)",
     "ja": "職人用装備の購入（Lv1～）",
-    "de": "Sammler/Handwerker-Ausrüstung (St.1 - 20)",
+    "de": "Sammler/Handwerker-Ausrüstung (St. 1 - 20)",
     "fr": "Équipements d'artisanat et de récolte (Nv 1-20)"
   },
   "3276948": {
     "en": "Purchase Fieldcraft/Tradecraft Gear (Lv. 21-40)",
     "ja": "職人用装備の購入（Lv21～）",
-    "de": "Sammler/Handwerker-Ausrüstung (St.21 - 40)",
+    "de": "Sammler/Handwerker-Ausrüstung (St. 21 - 40)",
     "fr": "Équipements d'artisanat et de récolte (Nv 21-40)"
   },
   "3276949": {
     "en": "Purchase Fieldcraft/Tradecraft Gear (Lv. 41-60)",
     "ja": "職人用装備の購入（Lv41～）",
-    "de": "Sammler/Handwerker-Ausrüstung (St.41 - 60)",
+    "de": "Sammler/Handwerker-Ausrüstung (St. 41 - 60)",
     "fr": "Équipements d'artisanat et de récolte (Nv 41-60)"
   },
   "3276950": {
     "en": "Purchase Fieldcraft/Tradecraft Gear (Lv. 61-80)",
     "ja": "職人用装備の購入（Lv61～）",
-    "de": "Sammler/Handwerker-Ausrüstung (St.61 - 80)",
+    "de": "Sammler/Handwerker-Ausrüstung (St. 61 - 80)",
     "fr": "Équipements d'artisanat et de récolte (Nv 61-80)"
   },
   "3276951": {
     "en": "Purchase Fieldcraft/Tradecraft Gear (Lv. 81-100)",
     "ja": "職人用装備の購入（Lv81～）",
-    "de": "Sammler/Handwerker-Ausrüstung (St.81 - 100)",
+    "de": "Sammler/Handwerker-Ausrüstung (St. 81 - 100)",
     "fr": "Équipements d'artisanat et de récolte (Nv 81-100)"
   }
 }

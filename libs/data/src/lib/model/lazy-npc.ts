@@ -78,6 +78,7 @@ export enum Ja {
   Meanleves = "MEANLEVES",
   MechOps = "MECH OPS",
   Meister = "MEISTER",
+  OccultCrescent = "OCCULT CRESCENT",
   OceanFishing = "OCEAN FISHING",
   Purchase = "PURCHASE",
   RAIDTrade = "RAID TRADE",

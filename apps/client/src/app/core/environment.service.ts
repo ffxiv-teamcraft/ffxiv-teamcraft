@@ -31,6 +31,9 @@ export class EnvironmentService {
   }
 
   public get maxSubmarineRank() : number {
-    return 125;
+    if (this.gameVersion < 7.2) {
+      return 125
+    }
+    return 130;
   }
 }

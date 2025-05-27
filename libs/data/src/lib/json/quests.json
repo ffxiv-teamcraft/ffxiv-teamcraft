@@ -91638,309 +91638,559 @@
   },
   "70791": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Cultivating Hope",
+      "ja": " マムークの希望の芽",
+      "de": " Glimmende Hoffnung",
+      "fr": " Un champ d'espoir"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101401.png"
   },
   "70792": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Doppro Tradition",
+      "ja": " ドプロ族の流儀",
+      "de": " Traditionelles Mittel der Doppro",
+      "fr": " Association de bienfaiteurs"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101402.png"
   },
   "70793": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Hoobigo's Return",
+      "ja": " フビゴ族の帰郷",
+      "de": " Rückkehr eines Hoobigo",
+      "fr": " L'appel aux Hoobigo"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101403.png"
   },
   "70794": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " The Boon of Boonewa",
+      "ja": " ブネワ族の術式",
+      "de": " Die Magie der Boonewa",
+      "fr": " Lumineuses légumineuses "
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101404.png"
   },
   "70795": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A New Yak T'el",
+      "ja": " ヤクテル樹海の新名物",
+      "de": " Ein neues Yak T'el",
+      "fr": " Chef, la recette (de l'amitié)&nbsp;!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101405.png"
   },
   "70796": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " The Pride of Mamook",
+      "ja": " マムージャ族の愛する故郷",
+      "de": " Der Stolz von Mamook",
+      "fr": " Qu'est-ce qu'on déguste&nbsp;?"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101406.png"
   },
   "70797": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Root of the Problem",
+      "ja": " 野菜のための雑草除草",
+      "de": " Unkraut vergeht doch",
+      "fr": " Bons légumes sans mauvaises herbes"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70798": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Taking Your Leavings",
+      "ja": " ウィヴルの恵みは香ばしい",
+      "de": " Dung und Dünger",
+      "fr": " Un parfum de wivre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70799": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Cultivating Data",
+      "ja": " 試料も野菜も新鮮一番",
+      "de": " Der Äthertest",
+      "fr": " La fraîcheur avant tout"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70800": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Toil for the Soil",
+      "ja": " 発酵肥料でホカホカ土に",
+      "de": " Frierende Felder",
+      "fr": " Engrais en graines"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70801": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Stem's the Breaks",
+      "ja": " 余さず使おうナジュールを",
+      "de": " Weiterverwertete Stängel",
+      "fr": " Le recyclage, c'est la santé"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70802": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " All Tools' Maintenance",
+      "ja": " 農具も身体も労わり大事",
+      "de": " Erschöpfte Werkzeuge",
+      "fr": " Faut que ça brille"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70803": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Healing the Fields",
+      "ja": " 土壌改善、継続中",
+      "de": " Edel sei die Anbaufläche",
+      "fr": " Entretien terrestre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70804": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Bonding with Branchbearers",
+      "ja": " 畑の木鳥に愛を",
+      "de": " Eine Freude für die Zweigträger",
+      "fr": " Nos amies les sylveplumes"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70805": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Bugs Begone",
+      "ja": " 極まりし虫よけ対策",
+      "de": " Ein trauriger Tag für Ungeziefer",
+      "fr": " Mort aux parasites"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70806": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Pain Relief",
+      "ja": " 痛みにキクージャ、患部に貼るんじゃ",
+      "de": " Gut gewickelt",
+      "fr": " Douleurs et tremblements"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70807": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Stimulating Growth",
+      "ja": " グングン成長、促進剤",
+      "de": " Wachstumsorientiert",
+      "fr": " Petits végétaux deviendront grands"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70808": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Fresh Cleaning Supplies",
+      "ja": " 地産地消の天然洗剤",
+      "de": " Gebäudereinigung",
+      "fr": " Faut que ça reluise"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70809": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Shine a Light on the Problem",
+      "ja": " 貸し出し派遣、ブランチベアラー",
+      "de": " Phantasmalicht, leuchte!",
+      "fr": " À dos doré de sylveplume"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70810": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Measure of Influence",
+      "ja": " アンギル、エーテル、調査する",
+      "de": " Ätherische Einflüsse",
+      "fr": " La passion de l'éther"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70811": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Promoting Produce",
+      "ja": " 農園野菜はいかがです？",
+      "de": " Frisches Gemüse gefällig?",
+      "fr": " Ils sont frais, mes légumes&nbsp;!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70812": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Rough Around the Edges",
+      "ja": " 畑を守る武具のお手入れ",
+      "de": " Gut gepflegt ist halb gewonnen",
+      "fr": " Protection champêtre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70813": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Building a Better Smoke Bomb",
+      "ja": " 改良、改臭、極まりし煙玉",
+      "de": " Neuer, besser, Rauchbomben",
+      "fr": " Expulser les pestes par la puanteur"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70814": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Remedies at the Ready",
+      "ja": " 警備の「もしも」に常備薬",
+      "de": " Vertrauen ist gut, Medizin ist besser",
+      "fr": " L'essentiel est dans Yak T'el"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70815": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Welcoming Fragrance",
+      "ja": " 香りで彩る安らぎの森",
+      "de": " Aromatisierte Entspannung",
+      "fr": " Un parfum accueillant"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70816": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Fruit of Friendship",
+      "ja": " その甘酸っぱさ、友好の味",
+      "de": " Der süße Geschmack der Freundschaft",
+      "fr": " Les fruits de l'amitié"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70817": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Vital Vegetables",
+      "ja": " 野菜の悩みに活力入魂",
+      "de": " Auch Pflanzen haben schlechte Tage",
+      "fr": " Légumes tonifiés"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70818": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Creative Composting",
+      "ja": " 上質堆肥とブランチベアラー",
+      "de": " Kompost aus luftigen Höhen",
+      "fr": " Compost amélioré"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70819": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Stores to Dry For",
+      "ja": " 貯蔵の要は乾燥剤",
+      "de": " In trockenen Lagern",
+      "fr": " Sécheur du grenier"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70820": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Keeping the Lights On",
+      "ja": " 農地を照らせ呪光灯",
+      "de": " Licht für die Felder",
+      "fr": " Que la lumière reste"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70821": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Gifts of the Gainery",
+      "ja": " 地平の向こうとお野菜交流",
+      "de": " Ein kulinarischer Austausch",
+      "fr": " Échange équivalent"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70822": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Seasoning for Soup",
+      "ja": " 野菜スープをより良い味に",
+      "de": " Neue Würze braucht die Suppe",
+      "fr": " Nous, c'est le goût"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70823": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Store-to-door Delivery",
+      "ja": " 届け僕らの農園野菜",
+      "de": " Vom Feld bis vor die Haustür",
+      "fr": " Légumes à domicile"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      }
+    ]
   },
   "70824": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Above-average Beverage",
+      "ja": " 名物飲料、推進中！",
+      "de": " Neues Kultgetränk gesucht!",
+      "fr": " Passion boisson"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48084,
+        "amount": 1
+      },
+      {
+        "id": 6141,
+        "amount": 1
+      }
+    ]
   },
   "70825": {
     "name": {
@@ -92106,21 +92356,23 @@
   },
   "70831": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Wizened Testimony",
+      "ja": "実直な探偵",
+      "de": "Wie ein Ei dem anderen",
+      "fr": "Les temps comme les œufs sont durs"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101397.png"
   },
   "70832": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Case of the Fiendish Fugitives",
+      "ja": "はなたれた魔物",
+      "de": "Die schillernde Eleganz eines Hildibrands",
+      "fr": "N'a-qu'un-œuf"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101398.png"
   },
   "70833": {
     "name": {
@@ -92322,120 +92574,235 @@
   },
   "70845": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "One Last Hurrah",
+      "ja": "ケテンラム、最後の冒険",
+      "de": "Ketenramms Schwanengesang",
+      "fr": "La dernière aventure de Ketenramm"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101417.png"
   },
   "70846": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Phantom Village",
+      "ja": "無人の町",
+      "de": "Die Stadt der leeren Straßen",
+      "fr": "La ville fantôme"
     },
     "icon": "/i/071000/071221.png"
   },
   "70847": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Unfamiliar Territory",
+      "ja": "使えない使い魔",
+      "de": "Geflügelte Geheimnisse",
+      "fr": "Un familier peu familier"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101418.png"
   },
   "70848": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "New Job, Old Tricks",
+      "ja": "「サポートジョブ」の継承",
+      "de": "Das Wissen alter Zeit",
+      "fr": "S.O.S jobs fantômes"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101419.png"
   },
   "70849": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Ancient Arts of War",
+      "ja": "古の戦闘技術",
+      "de": "Von unsterblichen Künsten",
+      "fr": "Le b.a.-ba du soutien"
     },
     "icon": "/i/071000/071221.png"
   },
   "70850": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Creatures of the Crescent",
+      "ja": "三日月島に棲む魔物",
+      "de": "Die Kreaturen Kreszentias",
+      "fr": "Le bestiaire de Lunule"
     },
     "icon": "/i/071000/071221.png"
   },
   "70851": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Ruined Land",
+      "ja": "島内に佇む古城",
+      "de": "Alte Steine und alte Geschichten",
+      "fr": "Une exploration qui va croissant"
     },
     "icon": "/i/071000/071221.png"
   },
   "70852": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Common Thread",
+      "ja": "見えない共通項",
+      "de": "Ein roter Faden",
+      "fr": "Une piste qui mène aux ruines"
     },
     "icon": "/i/071000/071221.png"
   },
   "70853": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Past and Crescent",
+      "ja": "断絶した文明",
+      "de": "Echos alter Zeit",
+      "fr": "Le cercle des civilisations disparues"
     },
     "icon": "/i/071000/071221.png"
   },
   "70854": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mysteries Abide",
+      "ja": "蜃気楼、いまだ消えず",
+      "de": "Insistente Illusion",
+      "fr": "Le mystère reste entier"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101420.png"
   },
   "70855": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Arcane Artistry",
+      "ja": "蜃気楼に包まれし武具",
+      "de": "Ein phantastisches Arsenal",
+      "fr": "Un forgeron fantomatique"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101421.png"
   },
   "70856": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Forging the Phantasmal",
+      "ja": " ファントムウェポンの創造",
+      "de": " Phantastische Schmiedekunst",
+      "fr": " L'arsenal fantôme"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 47869,
+        "amount": 1
+      },
+      {
+        "id": 47890,
+        "amount": 1
+      },
+      {
+        "id": 47870,
+        "amount": 1
+      },
+      {
+        "id": 47871,
+        "amount": 1
+      },
+      {
+        "id": 47872,
+        "amount": 1
+      },
+      {
+        "id": 47873,
+        "amount": 1
+      },
+      {
+        "id": 47874,
+        "amount": 1
+      },
+      {
+        "id": 47875,
+        "amount": 1
+      },
+      {
+        "id": 47876,
+        "amount": 1
+      },
+      {
+        "id": 47877,
+        "amount": 1
+      },
+      {
+        "id": 47878,
+        "amount": 1
+      },
+      {
+        "id": 47879,
+        "amount": 1
+      },
+      {
+        "id": 47880,
+        "amount": 1
+      },
+      {
+        "id": 47881,
+        "amount": 1
+      },
+      {
+        "id": 47882,
+        "amount": 1
+      },
+      {
+        "id": 47883,
+        "amount": 1
+      },
+      {
+        "id": 47884,
+        "amount": 1
+      },
+      {
+        "id": 47885,
+        "amount": 1
+      },
+      {
+        "id": 47886,
+        "amount": 1
+      },
+      {
+        "id": 47887,
+        "amount": 1
+      },
+      {
+        "id": 47888,
+        "amount": 1
+      },
+      {
+        "id": 47889,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101422.png"
   },
   "70857": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dressed to Protect",
+      "ja": "紅蓮祭と海の守護者",
+      "de": "Auf Wellen laufen",
+      "fr": "Alerte à Costa del Sol"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080101.png",
+    "rewards": [
+      {
+        "id": 47924,
+        "amount": 1
+      },
+      {
+        "id": 47925,
+        "amount": 1
+      },
+      {
+        "id": 47926,
+        "amount": 1
+      },
+      {
+        "id": 47927,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101416.png"
   },
   "70858": {
     "name": {

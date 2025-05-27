@@ -15396,7 +15396,7 @@
     "fr": "Félicité insulaire"
   },
   "2567": {
-    "en": "Starward Standings ",
+    "en": "Starward Standings",
     "ja": "計画貢献度ボード",
     "de": "Anzeige der Außerordentlichen",
     "fr": "Tableau des contributions"
@@ -15498,10 +15498,10 @@
     "fr": "Habitations allagoises nord"
   },
   "2584": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Occult Crescent<br>(Field Entry)",
+    "ja": "蜃気楼の島 クレセントアイル<br>[特殊フィールド探索]",
+    "de": "Kreszentia (Feldexkursion)",
+    "fr": "L'île de Lunule<br>[Missions d'exploration]"
   },
   "2585": {
     "en": "",
@@ -28530,22 +28530,22 @@
     "fr": "Salle d'audition des Affranchis"
   },
   "4756": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gok Golma",
+    "ja": "ゴクゴルマ農園",
+    "de": "Gok Golma",
+    "fr": "Gok Golma"
   },
   "4757": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Village",
+    "ja": "蜃気楼の町",
+    "de": "Trugstadt",
+    "fr": "Ville fantôme"
   },
   "4758": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Main Deck",
+    "ja": "大洋の船上",
+    "de": "Auf hoher See",
+    "fr": "Pont du navire"
   },
   "4759": {
     "en": "Break Room",
@@ -28560,10 +28560,10 @@
     "fr": "Salle du trône séculaire"
   },
   "4761": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The <i>Queen Lhaminn</i>",
+    "ja": "クイーン・ラミン号",
+    "de": "<i>FF Lhaminn</i>",
+    "fr": "Queen Lhaminn"
   },
   "4762": {
     "en": "",
@@ -29556,130 +29556,130 @@
     "fr": "Vallée des Pampas"
   },
   "4927": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Expedition Base Camp",
+    "ja": "探査隊のベースキャンプ",
+    "de": "Basislager der Expedition",
+    "fr": "Camp de base"
   },
   "4928": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Wanderer's Haven",
+    "ja": "放浪神聖域跡前",
+    "de": "Zuflucht des Wanderers",
+    "fr": "Refuge du Vagabond"
   },
   "4929": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Crystallized Caverns",
+    "ja": "水晶洞窟前",
+    "de": "Kristallgrotte",
+    "fr": "Cavernes de cristal"
   },
   "4930": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eldergrowth",
+    "ja": "古樹の湿原前",
+    "de": "Holderwuchs",
+    "fr": "Vieilleracine"
   },
   "4931": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Occult Crescent",
+    "ja": "三日月島",
+    "de": "Kreszentia",
+    "fr": "Île de Lunule"
   },
   "4932": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "South Horn",
+    "ja": "三日月島南部",
+    "de": "Südliches Kreszentia",
+    "fr": "Île de Lunule méridionale"
   },
   "4933": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Tower of Blood",
+    "ja": "フォークタワー：力の塔",
+    "de": "Turm des Blutes",
+    "fr": "Tour fourchue de la Force"
   },
   "4934": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Southdown Heath",
+    "ja": "南部平原",
+    "de": "Südheide",
+    "fr": "Plaines de bruyère"
   },
   "4935": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Vanishing Slope",
+    "ja": "蜃気楼の浜",
+    "de": "Trughalde",
+    "fr": "Versant des Visions"
   },
   "4936": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Wanderer's Haven",
+    "ja": "放浪神聖域跡",
+    "de": "Zuflucht des Wanderers",
+    "fr": "Refuge du Vagabond"
   },
   "4937": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lost Citadel",
+    "ja": "円蓋の城塞",
+    "de": "Verlorene Festung",
+    "fr": "Forteresse perdue"
   },
   "4938": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Heathcliff",
+    "ja": "南部丘陵",
+    "de": "Heidklipp",
+    "fr": "Quiètes collines"
   },
   "4939": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Crystallized Caverns",
+    "ja": "水晶洞窟",
+    "de": "Kristallgrotte",
+    "fr": "Cavernes de cristal"
   },
   "4940": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eldergrowth",
+    "ja": "古樹の湿原",
+    "de": "Holderwuchs",
+    "fr": "Vieilleracine"
   },
   "4941": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shadowed City",
+    "ja": "禁忌の廃都",
+    "de": "Stadt der Schemen",
+    "fr": "Cité des Interdits"
   },
   "4942": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stonemarsh",
+    "ja": "石塔水沼",
+    "de": "Felsfenn",
+    "fr": "Lagune lapidaire"
   },
   "4943": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Abandoned Ascent",
+    "ja": "階段の殿堂",
+    "de": "Leere Stufen",
+    "fr": "L'Ascension archaïque"
   },
   "4944": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Expedition Base Camp",
+    "ja": "探査隊のベースキャンプ",
+    "de": "Basislager der Expedition",
+    "fr": "Camp de base"
   },
   "4945": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Solitary Pavilion",
+    "ja": "静寂の東屋",
+    "de": "Stille Laube",
+    "fr": "Pavillon solitaire"
   },
   "4946": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Occult Cloister",
+    "ja": "異相回廊",
+    "de": "Falscher Kreuzgang",
+    "fr": "Cloître occulte"
   },
   "4947": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stonemarsh",
+    "ja": "石塔水沼前",
+    "de": "Felsfenn",
+    "fr": "Lagune lapidaire"
   },
   "4948": {
     "en": "",
@@ -31068,166 +31068,166 @@
     "fr": "Ring de la Chasse"
   },
   "5179": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Tower of Blood",
+    "ja": "フォークタワー：力の塔",
+    "de": "Turm des Blutes",
+    "fr": "Tour fourchue de la Force"
   },
   "5180": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Tower Base",
+    "ja": "下層",
+    "de": "Fuß des Turmes",
+    "fr": "Quartiers inférieurs"
   },
   "5181": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central Gallery",
+    "ja": "中層中央広間",
+    "de": "Zentrale Galerie",
+    "fr": "Galerie centrale"
   },
   "5182": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central West Passage",
+    "ja": "中層西部回廊",
+    "de": "Zentraler Westkorridor",
+    "fr": "Passage central ouest"
   },
   "5183": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central East Passage",
+    "ja": "中層東部回廊",
+    "de": "Zentraler Ostkorridor",
+    "fr": "Passage central est"
   },
   "5184": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 1",
+    "ja": "中層秘匿区画1",
+    "de": "Geheimer Winkel 1",
+    "fr": "Coin caché I"
   },
   "5185": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 2",
+    "ja": "中層秘匿区画2",
+    "de": "Geheimer Winkel 2",
+    "fr": "Coin caché II"
   },
   "5186": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 3",
+    "ja": "中層秘匿区画3",
+    "de": "Geheimer Winkel 3",
+    "fr": "Coin caché III"
   },
   "5187": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 4",
+    "ja": "中層秘匿区画4",
+    "de": "Geheimer Winkel 4",
+    "fr": "Coin caché IV"
   },
   "5188": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 5",
+    "ja": "中層秘匿区画5",
+    "de": "Geheimer Winkel 5",
+    "fr": "Coin caché V"
   },
   "5189": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 6",
+    "ja": "中層秘匿区画6",
+    "de": "Geheimer Winkel 6",
+    "fr": "Coin caché VI"
   },
   "5190": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 7",
+    "ja": "中層秘匿区画7",
+    "de": "Geheimer Winkel 7",
+    "fr": "Coin caché VII"
   },
   "5191": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook 8",
+    "ja": "中層秘匿区画8",
+    "de": "Geheimer Winkel 8",
+    "fr": "Coin caché VIII"
   },
   "5192": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Interior",
+    "ja": "上層1",
+    "de": "Oberer Außenbereich",
+    "fr": "Quartiers supérieurs I"
   },
   "5193": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Exterior",
+    "ja": "上層2",
+    "de": "Oberer Innenbereich",
+    "fr": "Quartiers supérieurs II"
   },
   "5194": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Towertop Gateway",
+    "ja": "最上層1",
+    "de": "Turmhöhen-Tor",
+    "fr": "Sommet I"
   },
   "5195": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Towertop Passage",
+    "ja": "最上層2",
+    "de": "Turmhöhen-Korridor",
+    "fr": "Sommet II"
   },
   "5196": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secluded Stacks",
+    "ja": "隠者の書庫",
+    "de": "Eremitage der Seiten",
+    "fr": "Étude oubliée"
   },
   "5197": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Top Secret Nook 1",
+    "ja": "最上層秘匿区画1",
+    "de": "Streng geheimer Winkel 1",
+    "fr": "Recoin secret I"
   },
   "5198": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Top Secret Nook 2",
+    "ja": "最上層秘匿区画2",
+    "de": "Streng geheimer Winkel 2",
+    "fr": "Recoin secret II"
   },
   "5199": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Top Secret Nook 3",
+    "ja": "最上層秘匿区画3",
+    "de": "Streng geheimer Winkel 3",
+    "fr": "Recoin secret III"
   },
   "5200": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Palaeography Room",
+    "ja": "石板の間",
+    "de": "Paläografiezimmer",
+    "fr": "Salle de paléographie"
   },
   "5201": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Astronomy Room",
+    "ja": "星頭の間",
+    "de": "Astronomiezimmer",
+    "fr": "Salle d'astronomie"
   },
   "5202": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Glaciology Forum",
+    "ja": "氷魔の間",
+    "de": "Glaziologiezimmer",
+    "fr": "Salle de glaciologie"
   },
   "5203": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haematology Room",
+    "ja": "力の間",
+    "de": "Hämatologiezimmer",
+    "fr": "Antre de la Force"
   },
   "5204": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pronged Passage",
+    "ja": "フォークタワー外縁回廊",
+    "de": "Zinkenweg",
+    "fr": "Passage extérieur"
   },
   "5205": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Binding Lock",
+    "ja": "特殊鍵操作区画",
+    "de": "Riegelschloss",
+    "fr": "Verrou maître"
   },
   "5206": {
     "en": "Weeping Pool",
@@ -31302,10 +31302,10 @@
     "fr": "Intérieur de la division résidentielle 8-72"
   },
   "5218": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Yuweyawata",
+    "ja": "ユウェヤーワータ",
+    "de": "Yuweyawata",
+    "fr": "Yuweyawata"
   },
   "5219": {
     "en": "Sinus Ardorum",

@@ -3203,17 +3203,61 @@
     ]
   },
   "200": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "jobs": []
+    "en": "PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM GNB DNC RPR SGE VPR PCT",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子 リーパー 賢者 ヴァイパー ピクトマンサー",
+    "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN SNT WEI VPR PKT",
+    "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS FCH SAG VPR PIC",
+    "jobs": [
+      "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE",
+      "VPR",
+      "PCT"
+    ]
   },
   "201": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "jobs": []
+    "en": "PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM GNB DNC RPR SGE VPR PCT",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子 リーパー 賢者 ヴァイパー ピクトマンサー",
+    "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN SNT WEI VPR PKT",
+    "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS FCH SAG VPR PIC",
+    "jobs": [
+      "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE",
+      "VPR",
+      "PCT"
+    ]
   }
 }

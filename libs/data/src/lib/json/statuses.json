@@ -21420,8 +21420,8 @@
     }
   },
   "1531": {
-    "en": "Down the Rabbit Hole",
-    "de": "Immer dem Hasen nach",
+    "en": "Cache Me if You Can",
+    "de": "Immer der Spürnase nach",
     "ja": "財宝誘導",
     "fr": "Lapinou&nbsp;!",
     "icon": "/i/215000/215886.png",
@@ -30485,10 +30485,10 @@
     "icon": "/i/212000/212618.png",
     "maxStacks": 0,
     "description": {
-      "en": "Damage taken is reduced while HP recovered via healing actions is increased.",
-      "de": "Erlittener Schaden ist verringert, erhaltene Heileffekte sind erhöht.",
-      "ja": "受けるダメージが軽減され、さらに自身に対するＨＰ回復効果が上昇した状態。",
-      "fr": "Les dégâts reçus sont réduits et les effets de récupération de PV sont augmentés."
+      "en": "Damage taken is reduced while HP recovered via healing actions is increased. Movement speed is also increased.",
+      "de": "Erlittener Schaden ist verringert, erhaltene Heileffekte und Bewegungsgeschwindigkeit sind erhöht.",
+      "ja": "受けるダメージが軽減され、自身に対するＨＰ回復効果が上昇した状態。さらに移動速度が上昇する。",
+      "fr": "Les dégâts reçus sont réduits et les effets de récupération de PV sont augmentés. De plus, la vitesse de déplacement est augmentée."
     }
   },
   "2179": {
@@ -45099,7 +45099,7 @@
     "ja": "ソウルレゾナンス",
     "fr": "Résonance de l'âme",
     "icon": "/i/219000/219314.png",
-    "maxStacks": 5,
+    "maxStacks": 6,
     "description": {
       "en": "<span style=\"color:#ffffff\">Fire</span> is upgraded to <span style=\"color:#ffffff\">Flare</span> and <span style=\"color:#ffffff\">Blizzard</span> is upgraded to <span style=\"color:#ffffff\">Freeze</span>.",
       "de": "<span style=\"color:#ffffff\">Feuer</span> ändert sich zu <span style=\"color:#ffffff\">Flare</span> und <span style=\"color:#ffffff\">Eis</span> zu <span style=\"color:#ffffff\">Einfrieren</span>.",
@@ -48678,17 +48678,17 @@
     }
   },
   "3478": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Thrice-come Ruin",
+    "de": "Zeichen des Untergangs III",
+    "ja": "破滅の刻印：参",
+    "fr": "Marque de ruine III",
+    "icon": "/i/219000/219861.png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bearing signs that the end may be nigh. Too many stacks will result in <span style=\"color:#ffffff\">Doom</span>.",
+      "de": "Das sichere Zeichen eines nahenden Endes. Zu viele Stapel verursachen <span style=\"color:#ffffff\">Verhängnis</span>.",
+      "ja": "破滅の刻印を刻まれた状態。スタック数が増えると死の宣告状態が付与される。",
+      "fr": "Le corps est marqué d'un sceau funeste. L'effet inflige Glas s'il est accumulé un certain nombre de fois."
     }
   },
   "3479": {
@@ -48734,17 +48734,17 @@
     }
   },
   "3482": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/i/215000/215503.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Certain death when counter reaches zero.",
+      "de": "Wird kampfunfähig, sobald der Timer des Fluchs auf 0 sinkt.",
+      "ja": "カウント0で戦闘不能に陥る状態。",
+      "fr": "Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "3483": {
@@ -48888,7 +48888,7 @@
     }
   },
   "3493": {
-    "en": "Lethargy",
+    "en": "Slow",
     "de": "Gemachga",
     "ja": "スロウガ",
     "fr": "Méga Lenteur",
@@ -55174,31 +55174,31 @@
     }
   },
   "3942": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Terror",
+    "de": "Terror",
+    "ja": "恐怖",
+    "fr": "Terreur",
+    "icon": "/i/215000/215516.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Frozen with fear and unable to execute actions.",
+      "de": "Vor Angst bewegungsunfähig.",
+      "ja": "恐怖で行動できなくなった状態。",
+      "fr": "La peur empêche tout mouvement."
     }
   },
   "3943": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Disease",
+    "de": "Krankheit",
+    "ja": "病気",
+    "fr": "Maladie",
+    "icon": "/i/215000/215014.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed and HP recovery via healing magic are reduced.",
+      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich ist verringert.",
+      "ja": "移動速度が低下し、かつ回復魔法による自身に対するＨＰ回復効果が低下した状態。",
+      "fr": "La vitesse de déplacement et l'effet des sorts de restauration des PV sont réduits."
     }
   },
   "3944": {
@@ -58324,17 +58324,17 @@
     }
   },
   "4167": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hysteria",
+    "de": "Panik",
+    "ja": "恐慌",
+    "fr": "Hystérie",
+    "icon": "/i/215000/215552.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to act on your own free will.",
+      "de": "Vor lauter Angst keine Kontrolle über die Bewegung. ",
+      "ja": "恐怖で行動できなくなり、勝手に動いてしまう状態。",
+      "fr": "Incapable d'agir de sa propre volonté."
     }
   },
   "4168": {
@@ -58940,59 +58940,59 @@
     }
   },
   "4211": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Playing with Fire",
+    "de": "Feuerfaszination",
+    "ja": "火の魅了",
+    "fr": "Envoûtement du feu",
+    "icon": "/i/215000/215374.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Entranced by the beauty of fire. Will be unable to resist moving toward a specific fire-aspected target when this effect expires.",
+      "de": "Vom Feuer fasziniert. Bewegt sich bei Ende des Effekts auf ein bestimmtes feuerelementares Ziel zu.",
+      "ja": "火に魅了された状態。効果時間が終了すると、火属性を有する特定の対象のもとへ移動してしまう。",
+      "fr": "Le corps est envoûté par le feu. Se déplace vers une certaine cible imprégnée par le feu à la fin de l'effet."
     }
   },
   "4212": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Playing with Ice",
+    "de": "Eisfaszination",
+    "ja": "氷の魅了",
+    "fr": "Envoûtement de la glace",
+    "icon": "/i/215000/215373.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Entranced by the beauty of ice. Will be unable to resist moving toward a specific ice-aspected target when this effect expires.",
+      "de": "Von Eis fasziniert. Bewegt sich bei Ende des Effekts auf ein bestimmtes eiselementares Ziel zu.",
+      "ja": "氷に魅了された状態。効果時間が終了すると、氷属性を有する特定の対象のもとへ移動してしまう。",
+      "fr": "Le corps est envoûté par la glace. Se déplace vers une certaine cible imprégnée par la glace à la fin de l'effet."
     }
   },
   "4213": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pyromania",
+    "de": "Feuertoll",
+    "ja": "火の魅惑",
+    "fr": "Tentation du feu",
+    "icon": "/i/215000/215374.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to resist moving toward a specific fire-aspected target.",
+      "de": "Vom Feuer fasziniert. Bewegt sich auf ein bestimmtes feuerelementares Ziel zu.",
+      "ja": "火属性を有する特定の対象のもとへ移動してしまう状態。",
+      "fr": "Le corps se déplace irrémédiablement vers une certaine cible imprégnée par le feu."
     }
   },
   "4214": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cryomania",
+    "de": "Eistoll",
+    "ja": "氷の魅惑",
+    "fr": "Tentation de la glace",
+    "icon": "/i/215000/215373.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to resist moving toward a specific ice-aspected target.",
+      "de": "Von Eis fasziniert. Bewegt sich auf ein bestimmtes eiselementares Ziel zu.",
+      "ja": "氷属性を有する特定の対象のもとへ移動してしまう状態。",
+      "fr": "Le corps se déplace irrémédiablement vers une certaine cible imprégnée par la glace."
     }
   },
   "4215": {
@@ -59001,7 +59001,7 @@
     "ja": "",
     "fr": "",
     "icon": "",
-    "maxStacks": 0,
+    "maxStacks": 3,
     "description": {
       "en": "",
       "de": "",
@@ -59085,7 +59085,7 @@
     "ja": "",
     "fr": "",
     "icon": "",
-    "maxStacks": 0,
+    "maxStacks": 3,
     "description": {
       "en": "",
       "de": "",
@@ -59099,7 +59099,7 @@
     "ja": "",
     "fr": "",
     "icon": "",
-    "maxStacks": 0,
+    "maxStacks": 3,
     "description": {
       "en": "",
       "de": "",
@@ -59150,59 +59150,59 @@
     }
   },
   "4226": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Phantom Mastery",
+    "de": "Phantom-Meisterschaft",
+    "ja": "サポートジョブマスター",
+    "fr": "Maître fantôme",
+    "icon": "/i/219000/219961.png",
+    "maxStacks": 12,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Benefiting from masterful knowledge of a phantom job. Damage dealt and healing potency are increased.",
+      "de": "Hat Meisterschaft über einen Phantomjob erlangt. Ausgeteilter Schaden und Wirkung ausgeteilter Heilmagie sind erhöht.",
+      "ja": "マスターしたサポートジョブの加護を得た状態。与ダメージ、与回復量が上昇する。",
+      "fr": "Grâce à la maîtrise du job de soutien, les dégâts infligés et la puissance de la magie curative sont augmentés."
     }
   },
   "4227": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Balanced Party",
+    "de": "Gleiche Geister",
+    "ja": "適正パーティ",
+    "fr": "Équipe optimale",
+    "icon": "/i/229000/229944.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "In a party with other adventurers of similar knowledge levels. Phantom EXP gained from combat is increased.",
+      "de": "Befindet sich in einer Gruppe mit Gruppenmitgliedern ähnlicher Wissensstufe. Die Routine beim Besiegen von Feinden ist für Phantomjobs erhöht.",
+      "ja": "ナレッジレベルの近い仲間とパーティを組んでいる状態。討伐時の獲得サポートジョブ経験値が上昇する。",
+      "fr": "Appartient à une équipe dont les membres ont un niveau de savoir proche. L'expérience de soutien obtenue au combat est augmentée."
     }
   },
   "4228": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Duties as Assigned",
+    "de": "Fester Job",
+    "ja": "ジョブチェンジ不可",
+    "fr": "Changement de job impossible",
+    "icon": "/i/216000/216236.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to change to another class or job, including phantom jobs.",
+      "de": "Jobwechsel nicht möglich, Phantomjobs eingeschlossen.",
+      "ja": "サポートジョブも含め、他のクラス・ジョブにチェンジできない状態。",
+      "fr": "Impossible de changer de classe, de job, ou de job de soutien."
     }
   },
   "4229": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Battle High",
+    "de": "Euphorie",
+    "ja": "戦意高揚",
+    "fr": "Passion du combat",
+    "icon": "/i/229000/229945.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The thrill of combat is enhancing various capabilities.",
+      "de": "Ist in einem Zustand der Euphorie. Diverse positive Effekte sind aktiv.",
+      "ja": "戦意が高揚した状態。様々な良い効果が発動する。",
+      "fr": "Divers effets bénéfiques sont octroyés."
     }
   },
   "4230": {
@@ -59220,703 +59220,703 @@
     }
   },
   "4231": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Guard",
+    "de": "Phantom-Beschützen",
+    "ja": "まもり",
+    "fr": "Défense",
+    "icon": "/i/229000/229901.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージの一部が軽減される状態。",
+      "fr": "Certains dégâts subis sont réduits."
     }
   },
   "4232": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pray",
+    "de": "Gebet",
+    "ja": "いのり［回］",
+    "fr": "Prière",
+    "icon": "/i/229000/229902.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "連続してＨＰが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "4233": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Enduring Fortitude",
+    "de": "Schutzgebet",
+    "ja": "いのり［守］",
+    "fr": "Prière protectrice",
+    "icon": "/i/229000/229903.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージが軽減される状態。",
+      "fr": "Les dégâts subis sont réduits."
     }
   },
   "4234": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Pledge",
+    "de": "Gelübde",
+    "ja": "ちかい",
+    "fr": "Promesse",
+    "icon": "/i/217000/217238.png",
+    "maxStacks": 2,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Impervious to most damage for one strike.",
+      "de": "Einmalig immun gegen fast alle Attacken.",
+      "ja": "一部を除くすべての攻撃を一度だけ無効化する状態。",
+      "fr": "Insensible à la plupart des attaques."
     }
   },
   "4235": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rage",
+    "de": "Wüten",
+    "ja": "あばれる",
+    "fr": "Fureur",
+    "icon": "/i/229000/229904.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Relentlessly striking nearest target with auto-attacks. Immune to certain status effects, as well as most knockback and draw-in effects.",
+      "de": "Greift Gegner fächerförmig vor sich unablässig mit Auto-Attacke an und ist gegen einige negative Status sowie gegen fast alle Rückstoß- und Heranzieheffekte immun.",
+      "ja": "最も近くにいる対象をオートアタックで攻撃し続ける状態。<br>また一部の状態異常を無効化し、さらに一部を除くすべてのノックバックと引きよせを無効化する。",
+      "fr": "Utilise continuellement des attaques automatiques sur l'ennemi le plus proche.<br>Certaines altérations d'état sont annulées et la plupart des projections et attractions sont sans effet."
     }
   },
   "4236": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pent-up Rage",
+    "de": "Durch Mark und Bein",
+    "ja": "肉斬骨断",
+    "fr": "Brutalité",
+    "icon": "/i/229000/229905.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Increasing the potency of <span style=\"color:#ffffff\">Deadly Blow</span> based on damage taken.",
+      "de": "Der Attacke-Wert von <span style=\"color:#ffffff\">Todesstoß</span> erhöht sich mit dem erlittenen Schaden.",
+      "ja": "受けたダメージに応じて、「いちげき」の威力が上昇する状態。",
+      "fr": "La puissance de la prochaine action Frappes brutales est augmentée lorsque des dégâts sont subis."
     }
   },
   "4237": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Phantom Kick",
+    "de": "Treten",
+    "ja": "けり",
+    "fr": "Coups de pied",
+    "icon": "/i/218000/218167.png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "4238": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Counterstance",
+    "de": "Gegenzug",
+    "ja": "かまえる［守］",
+    "fr": "Posture",
+    "icon": "/i/229000/229906.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance to parry is increased.",
+      "de": "Paraderate ist erhöht.",
+      "ja": "受け流し発動率が向上した状態。",
+      "fr": "Les chances de parade sont augmentées."
     }
   },
   "4239": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fleetfooted",
+    "de": "Gegenwind",
+    "ja": "かまえる［走］",
+    "fr": "Posture athlétique",
+    "icon": "/i/229000/229954.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "4240": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Aim",
+    "de": "Phantom-Zielen",
+    "ja": "ねらう",
+    "fr": "Ciblage",
+    "icon": "/i/229000/229907.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Critical hit rate and direct hit rate are increased.",
+      "de": "Kritische Trefferrate und direkte Trefferrate sind erhöht.",
+      "ja": "クリティカル発動率、ダイレクトヒット発動率が向上した状態。",
+      "fr": "Les chances de critiques et de coups nets sont augmentées."
     }
   },
   "4241": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Deadly Phantom Aim",
+    "de": "Genaues Phantom-Zielen",
+    "ja": "ねらう［強］",
+    "fr": "Ciblage sûr",
+    "icon": "/i/229000/229908.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Critical hit rate and direct hit rate are increased, and all hits are guaranteed to land.",
+      "de": "Kritische Trefferrate und direkte Trefferrate sind erhöht. Attacken treffen garantiert.",
+      "ja": "クリティカル発動率、ダイレクトヒット発動率が向上した状態。さらに攻撃が確実に命中する。",
+      "fr": "Les chances de critiques et de coups nets sont augmentées et les attaques touchent à coup sûr."
     }
   },
   "4242": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Freelancer",
+    "de": "Phantom-Freiberufler",
+    "ja": "サポートすっぴん",
+    "fr": "Freelance fantôme",
+    "icon": "/i/216000/216871.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Currently operating as a Phantom Freelancer.",
+      "de": "Ist als Phantom-Freiberufler unterwegs.",
+      "ja": "サポートジョブとしてすっぴんを設定している状態。",
+      "fr": "L'émancipation de toute discipline permet l'utilisation d'actions de soutien."
     }
   },
   "4243": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Unicorn",
+    "de": "Kreszentes Einhorn",
+    "ja": "マギ・ユニコーン",
+    "fr": "Magi Licorne",
+    "icon": "/i/229000/229956.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A magicked barrier is nullifying damage.",
+      "de": "Erlittener Schaden ist um einen bestimmten Betrag verringert.",
+      "ja": "一定量のダメージを軽減する状態。",
+      "fr": "Insensible à un certain montant de dégâts."
     }
   },
   "4244": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Romeo's Ballad",
+    "de": "Liebliche Klänge",
+    "ja": "あいのうた",
+    "fr": "Lied arrêté",
+    "icon": "/i/229000/229955.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Phantom EXP earned through battle is increased.",
+      "de": "Die erhaltene Phantomroutine beim Besiegen von Feinden ist erhöht.",
+      "ja": "敵討伐時のサポート経験値の獲得量が上昇する状態。",
+      "fr": "L'expérience de soutien obtenue au combat est augmentée."
     }
   },
   "4245": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Shirahadori",
+    "de": "Shirahadori",
+    "ja": "しらはどり",
+    "fr": "Shirahadori",
+    "icon": "/i/229000/229909.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Impervious to most physical damage for one strike.",
+      "de": "Einmalig immun gegen fast allen physischen Schaden.",
+      "ja": "一部を除く物理ダメージを1度だけ無効化する状態。",
+      "fr": "Insensible une seule fois à la plupart des attaques physiques."
     }
   },
   "4246": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Mighty March",
+    "de": "Kraft-Choral",
+    "ja": "たいりょくのうた",
+    "fr": "Hymne militaire",
+    "icon": "/i/229000/229910.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time and maximum HP is increased.",
+      "de": "Regeneriert schrittweise LP und Maximal-LP sind erhöht.",
+      "ja": "連続してＨＰが回復している状態。さらに最大ＨＰが増加する。",
+      "fr": "Des PV sont récupérés périodiquement et les PV maximums sont augmentés."
     }
   },
   "4247": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Offensive Aria",
+    "de": "Angriffs-Arie",
+    "ja": "こうげきのうた",
+    "fr": "Menuet vaillant",
+    "icon": "/i/229000/229911.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "4248": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Arcane Stop",
+    "de": "Kreszentes Stopp",
+    "ja": "マギ・ストップ",
+    "fr": "Magi Stop",
+    "icon": "/i/215000/215579.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Time is stopped.",
+      "de": "Die Zeit ist angehalten.",
+      "ja": "時間が停止した状態。",
+      "fr": "Le temps est arrêté."
     }
   },
   "4249": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hero's Rime",
+    "de": "Helden-Hymnus",
+    "ja": "えいゆうのうた",
+    "fr": "Héroïque",
+    "icon": "/i/229000/229912.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt and healing potency are increased while damage taken is reduced.",
+      "de": "Ausgeteilter Schaden und Wirkung von Heileffekten sind erhöht. Außerdem ist ein Teil des erlittenen Schadens verringert.",
+      "ja": "与ダメージと回復効果の回復量が上昇した状態。さらに受けるダメージの一部を軽減させる。",
+      "fr": "Les dégâts infligés ainsi que les effets de récupération de PV sont augmentés et les dégâts subis sont réduits."
     }
   },
   "4250": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hero's Lament",
+    "de": "Kritischer Helden-Hymnus",
+    "ja": "えいゆうのうた［害］",
+    "fr": "Contrecoup héroïque",
+    "icon": "/i/229000/229913.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt and healing potency are reduced. Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are also reduced.",
+      "de": "Ausgeteilter Schaden und Wirkung von Heileffekten sind verringert. Die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verlängert.",
+      "ja": "限界を超えた反動を受けている状態。与ダメージと回復効果の回復量が低下する。さらにオートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長される。",
+      "fr": "Le contrecoup du dépassement des limites est subi. Les dégâts infligés et les PV restaurés par les sorts curatifs sont réduits. La vitesse des attaques automatiques est réduite, et les temps de lancement et de recharge des sorts ainsi que des techniques d'arme sont allongés."
     }
   },
   "4251": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Battle Bell",
+    "de": "Kampfesglocke",
+    "ja": "たたかいのベル",
+    "fr": "Cloche de combat",
+    "icon": "/i/229000/229914.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased each time damage is taken.",
+      "de": "Mit jeder erlittenen Attacke erhöht sich der ausgeteilte Schaden.",
+      "ja": "攻撃を受けるたびに、自身の与ダメージが上昇する状態。",
+      "fr": "Octroie Cloche d'attaque lorsque des dégâts sont subis."
     }
   },
   "4252": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Battle's Clangor",
+    "de": "Kampfesgeläut",
+    "ja": "たたかいのベル［被］",
+    "fr": "Cloche d'attaque",
+    "icon": "/i/218000/218192.png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "4253": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blessed Rain",
+    "de": "Segenreicher Schauer",
+    "ja": "めぐみのあめ",
+    "fr": "Pluie salvatrice",
+    "icon": "/i/229000/229916.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A magicked barrier is nullifying damage.",
+      "de": "Erlittener Schaden ist um einen bestimmten Betrag verringert.",
+      "ja": "一定量のダメージを軽減する状態。",
+      "fr": "Insensible à un certain montant de dégâts."
     }
   },
   "4254": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Misty Mirage",
+    "de": "Trugnebel",
+    "ja": "しんきろう",
+    "fr": "Illusion fugace",
+    "icon": "/i/229000/229917.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Evasion is enhanced.",
+      "de": "Die Fähigkeit des Ausweichens ist verbessert.",
+      "ja": "回避力が向上した状態。",
+      "fr": "L'esquive est augmentée."
     }
   },
   "4255": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hasty Mirage",
+    "de": "Trughast",
+    "ja": "にげみず",
+    "fr": "Apparition intense",
+    "icon": "/i/229000/229918.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "4256": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Aetherial Gain",
+    "de": "Ätherernte",
+    "ja": "エーテルよく",
+    "fr": "Force éthérée",
+    "icon": "/i/229000/229919.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "4257": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ringing Respite",
+    "de": "Ruheglocke",
+    "ja": "いこいのベル",
+    "fr": "Cloche de détente",
+    "icon": "/i/229000/229920.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Triggers a healing effect upon taking damage.",
+      "de": "Mit jeder erlittenen Attacke tritt ein Heileffekt ein.",
+      "ja": "攻撃を受けるたびに、自身に回復効果を発生させる状態。",
+      "fr": "Les PV sont restaurés lorsque des dégâts sont subis."
     }
   },
   "4258": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Suspend",
+    "de": "Schweben",
+    "ja": "ふゆう",
+    "fr": "Flottement",
+    "icon": "/i/215000/215037.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Floating several ilms off the ground, defying the universal laws of gravity.",
+      "de": "Schwebt einige Ilme über dem Boden.",
+      "ja": "重力に反発し、宙に浮いた状態。",
+      "fr": "Le corps flotte à quelques ilms du sol, défiant la loi de la gravité."
     }
   },
   "4259": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Mage Masher",
+    "de": "Kreszenter Stummdolch",
+    "ja": "マギ・メイジマッシャー",
+    "fr": "Magi Bâillonnement",
+    "icon": "/i/229000/229921.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attack magic potency is reduced.",
+      "de": "Das magische Potenzial ist verringert.",
+      "ja": "魔法攻撃力が低下した状態。",
+      "fr": "La puissance magique est réduite."
     }
   },
   "4260": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Quick",
+    "de": "Kreszente Flinkheit",
+    "ja": "マギ・クイック［攻］",
+    "fr": "Magi Accélération offensive",
+    "icon": "/i/229000/229922.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attack speed is increased and spell casting time is reduced.",
+      "de": "Angriffsgeschwindigkeit ist erhöht und Ausführungszeit von Zaubern ist verkürzt.",
+      "ja": "攻撃速度が上昇し、魔法の詠唱時間が短縮される状態。",
+      "fr": "Le délai des attaques automatiques ainsi que les temps de lancement et de recharge des techniques d'arme et des sorts de magie sont réduits."
     }
   },
   "4261": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Swift",
+    "de": "Kreszente Schnelligkeit",
+    "ja": "マギ・クイック［走］",
+    "fr": "Magi Accélération athlétique",
+    "icon": "/i/214000/214980.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "4262": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Resurrection Restricted",
+    "de": "Wiederbelebungsbegrenzung",
+    "ja": "蘇生制限",
+    "fr": "Anti-résurrection",
+    "icon": "/i/218000/218286.png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrection can only be attempted by certain means. Each resurrection expends 1 stack, rendering all means of revival impossible after reaching 0.",
+      "de": "Gewisse Wiederbelebungseffekte sind wirkungslos und die Stapelzahl verringert sich mit jeder erhaltenen Wiederbelebung. Fällt die Stapelzahl auf 0, sind alle Wiederbelebungseffekte wirkungslos.",
+      "ja": "一部の蘇生効果を受け付けず、蘇生するたびにスタック数が減少する状態。スタック数が0になると蘇生不可状態になる。",
+      "fr": "Les moyens de réanimation classiques sont sans effet. Un degré est consommé à chaque réanimation et l'effet devient Résurrection impossible lorsque le dernier degré est consommé."
     }
   },
   "4263": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Resurrection Denied",
+    "de": "Sterblich",
+    "ja": "蘇生不可",
+    "fr": "Résurrection impossible",
+    "icon": "/i/229000/229943.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrection is impossible by any means.",
+      "de": "Kann nicht wiederbelebt werden.",
+      "ja": "すべての蘇生効果を受け付けない状態。",
+      "fr": "Toute réanimation est impossible."
     }
   },
   "4264": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Silver Sickness",
+    "de": "Silber",
+    "ja": "オールド",
+    "fr": "Déclin",
+    "icon": "/i/215000/215771.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is reduced and damage taken is increased.",
+      "de": "Ausgeteilter Schaden ist verringert und erlittener Schaden ist erhöht.",
+      "ja": "与ダメージが低下し、受けるダメージが増加した状態。",
+      "fr": "Les dégâts infligés sont réduits et les dégâts subis sont augmentés."
     }
   },
   "4265": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prediction of Judgment",
+    "de": "Prophezeiung: Das Jüngste Gericht",
+    "ja": "よげん：せいなるしんぱん",
+    "fr": "Prédiction&nbsp;: jugement divin",
+    "icon": "/i/229000/229923.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "You have seen <span style=\"color:#ffffff\">Phantom Judgment</span> in the near future.",
+      "de": "Prophezeit das Jüngste Gericht.",
+      "ja": "「せいなるしんぱん」を予言している状態。",
+      "fr": "Un jugement divin a été prédit."
     }
   },
   "4266": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prediction of Cleansing",
+    "de": "Prophezeiung: Kosmischer Kollaps",
+    "ja": "よげん：てんちほうかい",
+    "fr": "Prédiction&nbsp;: purification",
+    "icon": "/i/229000/229924.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "You have seen <span style=\"color:#ffffff\">Cleansing</span> in the near future.",
+      "de": "Prophezeit den kosmischen Kollaps.",
+      "ja": "「てんちほうかい」を予言している状態。",
+      "fr": "Une purification a été prédite."
     }
   },
   "4267": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prediction of Blessing",
+    "de": "Prophezeiung: Segen",
+    "ja": "よげん：てんのめぐみ",
+    "fr": "Prédiction&nbsp;: bénédiction",
+    "icon": "/i/229000/229925.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "You have seen <span style=\"color:#ffffff\">Blessing</span> in the near future.",
+      "de": "Prophezeit den Segen.",
+      "ja": "「てんのめぐみ」を予言している状態。",
+      "fr": "Une bénédiction a été prédite."
     }
   },
   "4268": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prediction of Starfall",
+    "de": "Prophezeiung: Sternenregen",
+    "ja": "よげん：いんせき",
+    "fr": "Prédiction&nbsp;: météorites",
+    "icon": "/i/229000/229926.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "You have seen <span style=\"color:#ffffff\">Starfall</span> in the near future.",
+      "de": "Prophezeit den Sternenregen.",
+      "ja": "「いんせき」を予言している状態。",
+      "fr": "Une pluie de météorites a été prédite."
     }
   },
   "4269": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "False Prediction",
+    "de": "Falsche Prophetie",
+    "ja": "にせよげん",
+    "fr": "Prédiction fallacieuse",
+    "icon": "/i/229000/229927.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suffering unaspected damage over time from a false prediction.",
+      "de": "Hat eine falsche Prophezeiung ausgesprochen. Erleidet schrittweise elementneutralen Schaden.",
+      "ja": "予言成就の機会を逃した状態。無属性ダメージにより、ＨＰが徐々に失われる。",
+      "fr": "En raison de la non-réalisation des prédictions, des dégâts périodiques neutres sont subis."
     }
   },
   "4270": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blessing",
+    "de": "Segen",
+    "ja": "てんのめぐみ",
+    "fr": "Bénédiction",
+    "icon": "/i/215000/215532.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "連続してＨＰが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "4271": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Recuperation",
+    "de": "Gesundung",
+    "ja": "ちゆのせんこく",
+    "fr": "Récupération",
+    "icon": "/i/229000/229928.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Changes to <span style=\"color:#ffffff\">Fortified Recuperation</span> when effect expires.",
+      "de": "Ändert sich bei Ablauf zu <span style=\"color:#ffffff\">Vollständige Gesundung</span>.",
+      "ja": "「ちゆのせんこく」を受けた状態。効果時間が終了すると、ちゆのせんこく［強］になる。",
+      "fr": "Une altération d'état est soignée à la fin de l'effet. Sinon, devient Récupération prédite."
     }
   },
   "4272": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fortified Recuperation",
+    "de": "Vollständige Gesundung",
+    "ja": "ちゆのせんこく［強］",
+    "fr": "Récupération prédite",
+    "icon": "/i/229000/229929.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Removes a detrimental effect from self and nearby party members if afflicted with a detrimental effect.",
+      "de": "Der nächste negative Effekt wird sofort von sich selbst und umstehenden Gruppenmitgliedern entfernt.",
+      "ja": "次に状態異常効果を受けると、即座に自身と周囲の状態異常効果を解除する状態。",
+      "fr": "Si une altération d'état est subie pendant la durée de l'effet, une altération d'état est soignée pour vous et les équipiers alentour."
     }
   },
   "4273": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Doom",
+    "de": "Phantom-Todesurteil",
+    "ja": "しのせんこく",
+    "fr": "Châtiment",
+    "icon": "/i/215000/215503.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Certain death when counter reaches zero.",
+      "de": "Wird kampfunfähig, sobald der Timer des Fluchs auf 0 sinkt.",
+      "ja": "カウント0で戦闘不能に陥る状態。",
+      "fr": "Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "4274": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Rejuvenation",
+    "de": "Phantom-Genesung",
+    "ja": "いやしのせんこく",
+    "fr": "Rajeunissement",
+    "icon": "/i/229000/229930.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Restores HP of self and nearby party members when effect expires.",
+      "de": "Bei Ablauf wird ein Heileffekt im Umkreis ausgelöst.",
+      "ja": "効果時間終了時、周囲に回復効果を発生させる。",
+      "fr": "À la fin de l'effet, des PV sont récupérés par vous et les équipiers alentour."
     }
   },
   "4275": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Invulnerability",
+    "de": "Unverwundbarkeit",
+    "ja": "ふしのせんこく",
+    "fr": "Immortalité",
+    "icon": "/i/229000/229931.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Most attacks cannot reduce your HP to less than 1.",
+      "de": "Die meisten Attacken verringern die LP auf nicht weniger als 1.",
+      "ja": "一部を除くすべての攻撃に対してＨＰが1より減ることがない状態。",
+      "fr": "Les PV ne peuvent être réduits à moins de 1 par la plupart des attaques."
     }
   },
   "4276": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Sprint",
+    "de": "Kreszenter Sprint",
+    "ja": "マギ・ダッシュ",
+    "fr": "Magi Élan",
+    "icon": "/i/216000/216678.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "4277": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vigilance",
+    "de": "Wachsamkeit",
+    "ja": "けいかい",
+    "fr": "Vigilance",
+    "icon": "/i/229000/229932.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Keeping vigilant. Gain the effect of <span style=\"color:#ffffff\">Foreseen Offense</span> when entering combat.",
+      "de": "Wachsam gegenüber der Umgebung. Bei Eintritt in den Kampf wird <span style=\"color:#ffffff\">Sicherer Sieg</span> gewährt.",
+      "ja": "周囲を警戒している状態。戦闘状態に入ると自身に先手必勝状態を付与する。",
+      "fr": "Agression sera octroyé lors de l'entrée en combat."
     }
   },
   "4278": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Foreseen Offense",
+    "de": "Sicherer Sieg",
+    "ja": "先手必勝",
+    "fr": "Agression",
+    "icon": "/i/229000/229933.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Critical hit rate is increased.",
+      "de": "Kritische Trefferrate ist erhöht.",
+      "ja": "クリティカル発動率が向上した状態。",
+      "fr": "Les chances de critiques sont augmentées."
     }
   },
   "4279": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Weapon Pilfered",
+    "de": "Gestohlene Waffe",
+    "ja": "ぶきをぬすむ［被］",
+    "fr": "Désarmement",
+    "icon": "/i/229000/229934.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attack power is reduced.",
+      "de": "Der Attacke-Wert ist verringert.",
+      "ja": "物理攻撃力が低下した状態。",
+      "fr": "Les dégâts physiques infligés sont réduits."
     }
   },
   "4280": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cloudy Caress",
+    "de": "Abendkühle",
+    "ja": "ゆうすずみ",
+    "fr": "Couchant nébuleux",
+    "icon": "/i/229000/229915.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "HP recovery via healing actions is increased.",
+      "de": "Eigene LP-Regeneration durch Heilmagie ist erhöht.",
+      "ja": "自身に対するＨＰ回復効果を向上させる状態。",
+      "fr": "Les effets de récupération de PV sont augmentés."
     }
   },
   "4281": {
@@ -60662,87 +60662,87 @@
     }
   },
   "4334": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wicked Water",
+    "de": "Verfluchtes Wasser",
+    "ja": "カースドウォーター",
+    "fr": "Eau abjecte",
+    "icon": "/i/229000/229938.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Entombed in water. Ice resistance is increased, but movement speed is reduced.",
+      "de": "Resistenz gegen Eis ist erhöht, aber die Bewegungsgeschwindigkeit ist verringert. ",
+      "ja": "水の呪いをかけられ、氷属性に対する耐性が向上する代わりに、移動速度が低下した状態。",
+      "fr": "La résistance à l'eau est augmentée et la vitesse de déplacement est réduite."
     }
   },
   "4335": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Gelid Gaol",
+    "de": "Eisgefängnis",
+    "ja": "アイスジェイル",
+    "fr": "Geôle de glace",
+    "icon": "/i/229000/229939.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Entombed in ice and unable to move.",
+      "de": "In Eismagie eingeschlossen.",
+      "ja": "氷の魔力で拘束された状態。",
+      "fr": "Le corps est emprisonné dans une prison glacée."
     }
   },
   "4336": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prey: Lesser Axebit",
+    "de": "Kleine Axtkerbe",
+    "ja": "マーキング：アクス［小］",
+    "fr": "Marque inférieure de la hache",
+    "icon": "/i/229000/229957.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Target of incoming attack. Will be struck by the rune axe when this effect expires.",
+      "de": "Wird nach Ablauf von einer Attacke mit der Runenaxt getroffen.",
+      "ja": "攻撃の対象として狙われている状態。効果時間終了時にルーンアクスによる攻撃が発生する。",
+      "fr": "La victime est prise pour cible. Une attaque de la hache runique est subie à la fin de l'effet."
     }
   },
   "4337": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prey: Greater Axebit",
+    "de": "Große Axtkerbe",
+    "ja": "マーキング：アクス［大］",
+    "fr": "Marque supérieure de la hache",
+    "icon": "/i/229000/229958.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Target of incoming attack. Will be struck by the rune axe when this effect expires.",
+      "de": "Wird nach Ablauf von einer Attacke mit der Runenaxt getroffen.",
+      "ja": "攻撃の対象として狙われている状態。効果時間終了時にルーンアクスによる攻撃が発生する。",
+      "fr": "La victime est prise pour cible. Une attaque de la hache runique est subie à la fin de l'effet."
     }
   },
   "4338": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prey: Lancepoint",
+    "de": "Speerkerbe",
+    "ja": "マーキング：ランス",
+    "fr": "Marque de la lance",
+    "icon": "/i/229000/229959.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Target of incoming attack. Will be struck by the holy lance when this effect expires.",
+      "de": "Wird nach Ablauf von einer Attacke mit dem Heiligenspeer getroffen.",
+      "ja": "攻撃の対象として狙われている状態。効果時間終了時にホーリーランスによる攻撃が発生する。",
+      "fr": "La victime est prise pour cible. Une attaque de la lance sacrée est subie à la fin de l'effet."
     }
   },
   "4339": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Unsealed",
+    "de": "Entsiegelung",
+    "ja": "封印解放",
+    "fr": "Descellage",
+    "icon": "/i/229000/229960.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unleashing a weapon's full power.",
+      "de": "Die volle Macht des Arsenals ist entfesselt.",
+      "ja": "武器の力を解放している状態。",
+      "fr": "Le sceau sur la puissance des armes est levé."
     }
   },
   "4340": {
@@ -60774,115 +60774,115 @@
     }
   },
   "4342": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Buyer's Remorse",
+    "de": "Verfluchter Schatz",
+    "ja": "呪いの宝物",
+    "fr": "Trésor maudit",
+    "icon": "/i/229000/229950.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A fenced treasure's curse has taken effect.",
+      "de": "Der Fluch, der auf dem Schatz liegt, kann sich frei entfalten.",
+      "ja": "宝物に込められた呪いが活性化している状態。",
+      "fr": "Le corps est atteint par la malédiction du trésor."
     }
   },
   "4343": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Buyer's Remorse",
+    "de": "Verfluchter Schatz",
+    "ja": "呪いの宝物",
+    "fr": "Trésor maudit",
+    "icon": "/i/229000/229950.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A fenced treasure's curse has taken effect.",
+      "de": "Der Fluch, der auf dem Schatz liegt, kann sich frei entfalten.",
+      "ja": "宝物に込められた呪いが活性化している状態。",
+      "fr": "Le corps est atteint par la malédiction du trésor."
     }
   },
   "4344": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Buyer's Remorse",
+    "de": "Verfluchter Schatz",
+    "ja": "呪いの宝物",
+    "fr": "Trésor maudit",
+    "icon": "/i/229000/229950.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A fenced treasure's curse has taken effect.",
+      "de": "Der Fluch, der auf dem Schatz liegt, kann sich frei entfalten.",
+      "ja": "宝物に込められた呪いが活性化している状態。",
+      "fr": "Le corps est atteint par la malédiction du trésor."
     }
   },
   "4345": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cursed Change",
+    "de": "Verfluchtes Wechselgeld",
+    "ja": "呪いの釣銭",
+    "fr": "Sou maudit",
+    "icon": "/i/229000/229951.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Holding sinister small change.",
+      "de": "Im Besitz verfluchten Wechselgeldes.",
+      "ja": "呪いのかかった釣銭を所持している状態。",
+      "fr": "En possession d'un sou maudit."
     }
   },
   "4346": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Buy! Buy! Buy!",
+    "de": "Kauf was!",
+    "ja": "購買命令",
+    "fr": "Obligation d'achat",
+    "icon": "/i/229000/229952.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Recommended a perfect purchase by the trade tortoise, and would be a fool not to buy it now.",
+      "de": "Von der Münzkröte zu einem spezifischen Kauf verleitet.",
+      "ja": "コイントートスにより、購買すべき品物を指定された状態。",
+      "fr": "Le produit devant être acheté a été désigné par la tortue à pièces."
     }
   },
   "4347": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Buy! Buy! Buy!",
+    "de": "Kauf was!",
+    "ja": "購買命令",
+    "fr": "Obligation d'achat",
+    "icon": "/i/229000/229952.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Recommended a perfect purchase by the trade tortoise, and would be a fool not to buy it now.",
+      "de": "Von der Münzkröte zu einem spezifischen Kauf verleitet.",
+      "ja": "コイントートスにより、購買すべき品物を指定された状態。",
+      "fr": "Le produit devant être acheté a été désigné par la tortue à pièces."
     }
   },
   "4348": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Buy! Buy! Buy!",
+    "de": "Kauf was!",
+    "ja": "購買命令",
+    "fr": "Obligation d'achat",
+    "icon": "/i/229000/229952.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Recommended a perfect purchase by the trade tortoise, and would be a fool not to buy it now.",
+      "de": "Von der Münzkröte zu einem spezifischen Kauf verleitet.",
+      "ja": "コイントートスにより、購買すべき品物を指定された状態。",
+      "fr": "Le produit devant être acheté a été désigné par la tortue à pièces."
     }
   },
   "4349": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Fury",
+    "de": "Tobsucht",
+    "ja": "激怒",
+    "fr": "Fureur",
+    "icon": "/i/219000/219497.png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Brimming with unbridled rage.",
+      "de": "Im Inneren brodelt der Zorn.",
+      "ja": "怒りに満ちた状態。",
+      "fr": "L'organisme est envahi par la colère."
     }
   },
   "4350": {
@@ -60928,59 +60928,59 @@
     }
   },
   "4353": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Defying Gravity",
+    "de": "Zwangsflug",
+    "ja": "強制浮遊",
+    "fr": "Flottement forcé",
+    "icon": "/i/229000/229946.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Floating some yalms above the ground.",
+      "de": "Hängt in der Luft.",
+      "ja": "宙に浮かされた状態。",
+      "fr": "Le corps flotte malgré lui dans les airs."
     }
   },
   "4354": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Crater Later",
+    "de": "Kometenziel",
+    "ja": "コメット対象",
+    "fr": "Cible de comète",
+    "icon": "/i/229000/229947.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Target of a comet, which will strike current location after a short delay when this effect expires.",
+      "de": "Nach Ablauf und kurzer Verzögerung schlägt ein Meteorit am Aufenthaltsort ein.",
+      "ja": "コメットの対象になった状態。効果時間が終了した際の居場所に、時間差で隕石が落着する。",
+      "fr": "La victime est prise pour cible. Une comète s'écrase à son emplacement peu après la fin de l'effet."
     }
   },
   "4355": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dark Defenses",
+    "de": "Dunkle Defensive",
+    "ja": "闇の防勢",
+    "fr": "Défense ténébreuse",
+    "icon": "/i/229000/229948.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Dark energies are bolstering defense.",
+      "de": "Die Verteidigung ist durch dunkle Mächte verstärkt.",
+      "ja": "闇属性の魔力により防御力が向上した状態。",
+      "fr": "La défense est augmentée par un pouvoir magique de Ténèbres."
     }
   },
   "4356": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "闇の攻勢",
+    "de": "闇の攻勢",
+    "ja": "闇の攻勢",
+    "fr": "Attaque ténébreuse",
+    "icon": "/i/229000/229949.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "闇属性の魔力により攻撃力が向上した状態。",
+      "de": "闇属性の魔力により攻撃力が向上した状態。",
+      "ja": "闇属性の魔力により攻撃力が向上した状態。",
+      "fr": "L'attaque est augmentée par un pouvoir magique de Ténèbres."
     }
   },
   "4357": {
@@ -60998,171 +60998,171 @@
     }
   },
   "4358": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Knight",
+    "de": "Phantom-Ritter",
+    "ja": "サポートナイト",
+    "fr": "Paladin fantôme",
+    "icon": "/i/216000/216872.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a knight of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Ritter und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古きナイトの記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien paladin permettent l'utilisation d'actions de soutien."
     }
   },
   "4359": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Berserker",
+    "de": "Phantom-Berserker",
+    "ja": "サポートバーサーカー",
+    "fr": "Berserker fantôme",
+    "icon": "/i/216000/216873.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a berserker of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Berserker und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古きバーサーカーの記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien berserker permettent l'utilisation d'actions de soutien."
     }
   },
   "4360": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Monk",
+    "de": "Phantom-Mönch",
+    "ja": "サポートモンク",
+    "fr": "Moine fantôme",
+    "icon": "/i/216000/216874.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a monk of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Mönche und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古きモンクの記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien moine permettent l'utilisation d'actions de soutien."
     }
   },
   "4361": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Ranger",
+    "de": "Phantom-Jäger",
+    "ja": "サポート狩人",
+    "fr": "Rôdeur fantôme",
+    "icon": "/i/216000/216875.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a ranger of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Jäger und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き狩人の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien rôdeur permettent l'utilisation d'actions de soutien."
     }
   },
   "4362": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Samurai",
+    "de": "Phantom-Samurai",
+    "ja": "サポート侍",
+    "fr": "Samouraï fantôme",
+    "icon": "/i/216000/216876.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a samurai of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Samurai und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き侍の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien samouraï permettent l'utilisation d'actions de soutien."
     }
   },
   "4363": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Bard",
+    "de": "Phantom-Barde",
+    "ja": "サポート吟遊詩人",
+    "fr": "Barde fantôme",
+    "icon": "/i/216000/216877.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a bard of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Barden und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き吟遊詩人の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien barde permettent l'utilisation d'actions de soutien."
     }
   },
   "4364": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Geomancer",
+    "de": "Phantom-Geomant",
+    "ja": "サポート風水士",
+    "fr": "Géomancien fantôme",
+    "icon": "/i/216000/216878.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a geomancer of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Geomanten und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き風水士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien géomancien permettent l'utilisation d'actions de soutien."
     }
   },
   "4365": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Time Mage",
+    "de": "Phantom-Zeitmagier",
+    "ja": "サポート時魔道士",
+    "fr": "Chronomancien fantôme",
+    "icon": "/i/216000/216879.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a time mage of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Zeitmagier und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き時魔道士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien chronomancien permettent l'utilisation d'actions de soutien."
     }
   },
   "4366": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Cannoneer",
+    "de": "Phantom-Grenadier",
+    "ja": "サポート砲撃士",
+    "fr": "Artilleur fantôme",
+    "icon": "/i/216000/216880.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a cannoneer of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Grenadiere und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き砲撃士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien artilleur permettent l'utilisation d'actions de soutien."
     }
   },
   "4367": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Chemist",
+    "de": "Phantom-Alchemist",
+    "ja": "サポート薬師",
+    "fr": "Alchimiste fantôme",
+    "icon": "/i/216000/216881.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a chemist of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Alchemisten und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き薬師の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien alchimiste permettent l'utilisation d'actions de soutien."
     }
   },
   "4368": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Oracle",
+    "de": "Phantom-Seher",
+    "ja": "サポート予言士",
+    "fr": "Devin fantôme",
+    "icon": "/i/216000/216882.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of an oracle of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Seher und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き予言士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien devin permettent l'utilisation d'actions de soutien."
     }
   },
   "4369": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Thief",
+    "de": "Phantom-Dieb",
+    "ja": "サポートシーフ",
+    "fr": "Voleur fantôme",
+    "icon": "/i/216000/216883.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a thief of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Diebe und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古きシーフの記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien voleur permettent l'utilisation d'actions de soutien."
     }
   },
   "4370": {
@@ -61250,17 +61250,17 @@
     }
   },
   "4376": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Transporting",
+    "de": "Transport",
+    "ja": "運搬",
+    "fr": "Charge",
+    "icon": "/i/216000/216208.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Carrying a weighty burden and growing wearier with each passing second.",
+      "de": "Wird nach einer gewissen Zeit müde und lässt das Getragene fallen.",
+      "ja": "荷を運搬している状態。一定時間が経過すると、疲れて荷を落としてしまう。",
+      "fr": "Transporte une charge jusqu'à ce que la fatigue oblige à la poser."
     }
   },
   "4377": {
@@ -61334,17 +61334,17 @@
     }
   },
   "4382": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Thunderous Memory",
+    "de": "Donnernde Erinnerung",
+    "ja": "サンダーメモリー",
+    "fr": "Mémoire de foudre",
+    "icon": "/i/217000/217278.png",
+    "maxStacks": 2,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Retaining the memory of a lightning-based attack.",
+      "de": "Erinnert sich an spezifische blitzbasierte Kommandos.",
+      "ja": "雷属性の特定アクションを記憶した状態。",
+      "fr": "Une certaine action de foudre est mémorisée."
     }
   },
   "4383": {
@@ -61362,17 +61362,17 @@
     }
   },
   "4384": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Valued Customer",
+    "de": "Ins Geschäft gekommen",
+    "ja": "商品所持",
+    "fr": "Panier rempli",
+    "icon": "/i/229000/229953.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "In possession of one of the trade tortoise's wares.",
+      "de": "Hat bei der Münzkröte eingekauft.",
+      "ja": "コイントートスの商品を所持している状態。",
+      "fr": "En possession du produit désigné par la tortue à pièces."
     }
   },
   "4385": {
@@ -62118,143 +62118,143 @@
     }
   },
   "4438": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Tritonic Gravity",
+    "de": "Entscheidungsschlacht mit Triton",
+    "ja": "決戦：トライトン",
+    "fr": "Combat décisif&nbsp;: Tritonien",
+    "icon": "/i/229000/229940.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Locked in a battle with Triton. Attacks against other opponents are ineffective.",
+      "de": "In die Schlacht gezwungen. Attacken gegen andere Ziele sind wirkungslos.",
+      "ja": "決戦を強制された状態。トライトン以外への攻撃が無効化される。",
+      "fr": "Seules les attaques sur Tritonien ont un effet."
     }
   },
   "4439": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Nereidic Gravity",
+    "de": "Entscheidungsschlacht mit Nereid",
+    "ja": "決戦：ネレゲイド",
+    "fr": "Combat décisif&nbsp;: Néregat",
+    "icon": "/i/229000/229941.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Locked in a battle with Nereid. Attacks against other opponents are ineffective.",
+      "de": "In die Schlacht gezwungen. Attacken gegen andere Ziele sind wirkungslos.",
+      "ja": "決戦を強制された状態。ネレゲイド以外への攻撃が無効化される。",
+      "fr": "Seules les attaques sur Néregat ont un effet."
     }
   },
   "4440": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phobosic Gravity",
+    "de": "Entscheidungsschlacht mit Phobos",
+    "ja": "決戦：フォーボス",
+    "fr": "Combat décisif&nbsp;: Phobos",
+    "icon": "/i/229000/229942.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Locked in a battle with Phobos. Attacks against other opponents are ineffective.",
+      "de": "In die Schlacht gezwungen. Attacken gegen andere Ziele sind wirkungslos.",
+      "ja": "決戦を強制された状態。フォーボス以外への攻撃が無効化される。",
+      "fr": "Seules les attaques sur Phobos ont un effet."
     }
   },
   "4441": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Nova Ooze",
+    "de": "Glutheißes Gift",
+    "ja": "あつあつ毒素",
+    "fr": "Toxicité brûlante",
+    "icon": "/i/219000/219245.png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxic fire aether is causing vulnerability to certain attacks. Stacks can be reduced by exposure to attacks that produce <span style=\"color:#ffffff\">Ice Ooze</span>.",
+      "de": "Mit feuerbasiertem Toxin vergiftet. Wird beim Erleiden bestimmter Attacken kampfunfähig. Attacken, die <span style=\"color:#ffffff\">Klirrkaltes Gift</span> verursachen, reduzieren die Stapelzahl.",
+      "ja": "火属性エーテルを含む毒素に冒され、特定の攻撃を受けると戦闘不能になる状態。「ひえひえ毒素」状態となる攻撃を受けることでスタック数が減少する。",
+      "fr": "Le corps est intoxiqué par de l'éther de feu et une certaine attaque provoque le K.O. Le nombre de degrés diminue lorsqu'une attaque affectée par Toxicité glaciale est subie."
     }
   },
   "4442": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Ice Ooze",
+    "de": "Klirrkaltes Gift",
+    "ja": "ひえひえ毒素",
+    "fr": "Toxicité glaciale",
+    "icon": "/i/219000/219253.png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxic ice aether is causing vulnerability to certain attacks. Stacks can be reduced by exposure to attacks that produce <span style=\"color:#ffffff\">Nova Ooze</span>.",
+      "de": "Mit eisbasiertem Toxin vergiftet. Wird beim Erleiden bestimmter Attacken kampfunfähig. Attacken, die <span style=\"color:#ffffff\">Glutheißes Gift</span> verursachen, reduzieren die Stapelzahl.",
+      "ja": "氷属性エーテルを含む毒素に冒され、特定の攻撃を受けると戦闘不能になる状態。「あつあつ毒素」状態となる攻撃を受けることでスタック数が減少する。",
+      "fr": "Le corps est intoxiqué par de l'éther de glace et une certaine attaque provoque le K.O. Le nombre de degrés diminue lorsqu'une attaque affectée par Toxicité brûlante est subie."
     }
   },
   "4443": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Icebound Buffoonery",
+    "de": "Schneemännchen",
+    "ja": "雪だるま化",
+    "fr": "Boule de neige",
+    "icon": "/i/218000/218171.png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Snowy exoskeleton is nullifying all damage taken. Colliding with sufficient players at once will reduce stacks. Effect will be removed when stacks reach 0.",
+      "de": "Von Schnee umhüllt und immun gegen Attacken. Beim Zusammenstoß mit einer bestimmten Mindestzahl an Spielern verringert sich die Stapelzahl, bis der Status bei 0 Stapeln aufgehoben wird.",
+      "ja": "雪に覆われ、被ダメージを無効化した状態。<br>一度に一定数以上のプレイヤーにぶつかるたびにスタック数が減少し、0になると解除される。",
+      "fr": "Le corps est enveloppé de neige et aucun dégât n'est subi. Percuter un certain nombre de joueurs simultanément permet de reduire les degrés de l'effet, qui s'annule lorsqu'ils tombent à zéro."
     }
   },
   "4444": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Toxic Minerals",
+    "de": "Mineralgift",
+    "ja": "ミネラルポイズン",
+    "fr": "Poison minéral",
+    "icon": "/i/215000/215420.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Poison spreads throughout the body, spelling <span style=\"color:#ffffff\">Doom</span> after an allotted time has passed.",
+      "de": "Der Körper wird von einem schleichenden Gift durchdrungen. Nach Ablauf tritt <span style=\"color:#ffffff\">Verhängnis</span> ein.",
+      "ja": "身体に遅効性の毒が回っている状態。効果時間が終了すると「死の宣告」状態になる。",
+      "fr": "Le corps est envahi par un poison paralysant. Devient glas lorsque la durée de l'effet s'est écoulée."
     }
   },
   "4445": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Petrification",
+    "de": "Stein",
+    "ja": "石化",
+    "fr": "Pétrification",
+    "icon": "/i/215000/215001.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Stone-like rigidity is preventing the execution of actions.",
+      "de": "Die Versteinerung des Körpers verhindert das Ausführen jeglicher Kommandos.",
+      "ja": "手足が石化し、行動できなくなった状態。",
+      "fr": "Une rigidité semblable à celle de la pierre empêche toute action."
     }
   },
   "4446": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Short Fuse",
+    "de": "Naher Zündstoff",
+    "ja": "誘爆因子［近］",
+    "fr": "Agent explosif proche",
+    "icon": "/i/229000/229935.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Primed to explode, and will not hesitate to do so if allowed to move too close to partner.",
+      "de": "Mit einer Deklaration belegt, die unter bestimmten Voraussetzungen eine Explosion verursacht. Ist der Abstand zum Ziel gering, wird <span style=\"color:#ffffff\">Fegeflamme</span> ausgelöst.",
+      "ja": "特定条件下で誘爆する因子を生じさせた状態。対となる存在との距離が近いと集火爆炎を起こす。",
+      "fr": "Diffuse un agent explosif. Provoque Explosion embrasante lorsque Papa bombo et Maman bombo sont proches l'un de l'autre."
     }
   },
   "4447": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Long Fuse",
+    "de": "Ferner Zündstoff",
+    "ja": "誘爆因子［遠］",
+    "fr": "Agent explosif éloigné",
+    "icon": "/i/229000/229936.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Primed to explode, and will not hesitate to do so if allowed to move too far from partner.",
+      "de": "Mit einer Deklaration belegt, die unter bestimmten Voraussetzungen eine Explosion verursacht. Ist der Abstand zum Ziel groß, wird <span style=\"color:#ffffff\">Fegeflamme</span> ausgelöst.",
+      "ja": "特定条件下で誘爆する因子を生じさせた状態。対となる存在との距離が遠いと集火爆炎を起こす。",
+      "fr": "Diffuse un agent explosif. Provoque Explosion embrasante lorsque Papa bombo et Maman bombo sont éloignés l'un de l'autre."
     }
   },
   "4448": {
@@ -62398,17 +62398,17 @@
     }
   },
   "4458": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Armed to the Teeth",
+    "de": "Waffenarsenal",
+    "ja": "武装",
+    "fr": "Aux armes",
+    "icon": "/i/229000/229937.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Utilizing a weapon to increase attack potency.",
+      "de": "Mit einer Waffe ausgerüstet. Der Attacke-Wert ist erhöht.",
+      "ja": "武器を帯び、攻撃力が向上した状態。",
+      "fr": "La puissance d'attaque est augmentée."
     }
   },
   "4459": {
@@ -62566,17 +62566,17 @@
     }
   },
   "4470": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Silence",
+    "de": "Stumm",
+    "ja": "沈黙",
+    "fr": "Silence",
+    "icon": "/i/215000/215005.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A stifling magic is preventing casts.",
+      "de": "Zauber können nicht gewirkt werden.",
+      "ja": "魔法を詠唱できなくなった状態。",
+      "fr": "Le lancement de sorts est impossible."
     }
   },
   "4471": {
@@ -62608,31 +62608,31 @@
     }
   },
   "4473": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prey",
+    "de": "Markierung",
+    "ja": "マーキング",
+    "fr": "Marquage",
+    "icon": "/i/215000/215026.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Marked as prey.",
+      "de": "Als Beute markiert.",
+      "ja": "獲物として狙いを付けられた状態。",
+      "fr": "Fait l'objet du marquage d'un prédateur."
     }
   },
   "4474": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Right of Entry: The Forked Tower",
+    "de": "Vorrecht: Turm des Blutes",
+    "ja": "優先突入権：フォークタワー",
+    "fr": "Droit d'entrée à la Tour fourchue",
+    "icon": "/i/229000/229961.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Permitted to enter the Forked Tower.",
+      "de": "Hat das Recht, den Fork-Turm - Blut zu betreten.",
+      "ja": "フォークタワーに優先して突入できる権利を有した状態。",
+      "fr": "A reçu un droit d'entrée prioritaire pour la Tour fourchue."
     }
   },
   "4475": {
@@ -63028,31 +63028,31 @@
     }
   },
   "4503": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Burns",
+    "de": "Brandwunde",
+    "ja": "火傷",
+    "fr": "Brûlure",
+    "icon": "/i/215000/215524.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining fire damage over time.",
+      "de": "Erleidet schrittweise Feuerschaden.",
+      "ja": "火属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de feu sont subis."
     }
   },
   "4504": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Electrocution",
+    "de": "Stromschlag",
+    "ja": "感電",
+    "fr": "Électrocution",
+    "icon": "/i/215000/215528.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining lightning damage over time.",
+      "de": "Erleidet schrittweise Blitzschaden.",
+      "ja": "雷属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de foudre sont subis."
     }
   },
   "4505": {
@@ -63182,17 +63182,17 @@
     }
   },
   "4514": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Damage Down",
+    "de": "Verringerte Verwundbarkeit",
+    "ja": "ダメージ低下",
+    "fr": "Malus de dégâts",
+    "icon": "/i/215000/215520.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is reduced.",
+      "de": "Ausgeteilter Schaden ist verringert.",
+      "ja": "与ダメージが低下した状態。",
+      "fr": "Les dégâts infligés sont réduits."
     }
   },
   "4515": {
@@ -63266,17 +63266,17 @@
     }
   },
   "4520": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sprint",
+    "de": "Sprint",
+    "ja": "スプリント",
+    "fr": "Sprint",
+    "icon": "/i/210000/210101.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "4521": {
@@ -63518,45 +63518,45 @@
     }
   },
   "4538": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/i/217000/217061.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "4539": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Invincibility",
+    "de": "Unverwundbar",
+    "ja": "無敵",
+    "fr": "Invulnérable",
+    "icon": "/i/215000/215024.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Invulnerable to all damage.",
+      "de": "Erleidet keinen Schaden. ",
+      "ja": "被ダメージを無効化する状態。",
+      "fr": "Aucun dégât n'est subi."
     }
   },
   "4540": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Piercing Resistance Down",
+    "de": "Stichresistenz -",
+    "ja": "突属性耐性低下",
+    "fr": "Résistance au perforant réduite",
+    "icon": "/i/215000/215065.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Piercing resistance is reduced.",
+      "de": "Stichresistenz ist verringert.",
+      "ja": "突属性に対する耐性が低下した状態。",
+      "fr": "La résistance au perforant est réduite."
     }
   },
   "4541": {
@@ -63798,17 +63798,17 @@
     }
   },
   "4558": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/i/215000/215503.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Certain death when counter reaches zero.",
+      "de": "Wird kampfunfähig, sobald der Timer auf 0 sinkt.",
+      "ja": "カウント0で戦闘不能に陥る状態。",
+      "fr": "Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "4559": {
