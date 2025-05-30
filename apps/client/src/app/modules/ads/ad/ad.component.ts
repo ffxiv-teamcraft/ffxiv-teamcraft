@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { auditTime, delay, distinctUntilChanged, fromEvent, map, startWith, Subscription, takeUntil } from 'rxjs';
+import { auditTime, delay, distinctUntilChanged, filter, fromEvent, map, startWith, Subscription, takeUntil } from 'rxjs';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 
 declare const ramp: any;
 declare const gtag: any;
@@ -16,7 +17,11 @@ export class AdComponent extends TeamcraftComponent {
 
   private subscription: Subscription;
 
-  constructor(private platform: PlatformService) {
+  private platform = inject(PlatformService);
+
+  private router = inject(Router)
+
+  constructor() {
     super();
     if (!this.platform.isOverlay()) {
       (<any>window)._pwGA4PageviewId = ''.concat(Date.now().toString());
@@ -24,10 +29,19 @@ export class AdComponent extends TeamcraftComponent {
         'event',
         'ramp_js',
         {
-          'send_to': platform.isDesktop() ? 'G-0HS31QMFKW' : 'G-DBE6XPBFQS',
+          'send_to': this.platform.isDesktop() ? 'G-0HS31QMFKW' : 'G-DBE6XPBFQS',
           'pageview_id': (<any>window)._pwGA4PageviewId
         }
       );
+      this.router.events
+        .pipe(
+          filter((event) => {
+            return event instanceof NavigationEnd;
+          })
+        )
+        .subscribe((event: NavigationEnd) => {
+          ramp.spaNewPage(event.url);
+        });
       (<any>window).ramp = {
         passiveMode: true,
         que: [],
@@ -88,7 +102,7 @@ export class AdComponent extends TeamcraftComponent {
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'desktop';
       ramp.isMobile = false;
-      ramp.addUnits([{
+      ramp.spaAddAds([{
         selectorId: 'pwAdBanner',
         type: 'leaderboard_atf'
       }]);
@@ -100,7 +114,7 @@ export class AdComponent extends TeamcraftComponent {
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'mobile';
       ramp.isMobile = true;
-      ramp.addUnits([{
+      ramp.spaAddAds([{
         selectorId: 'pwAdBanner',
         type: '320x50_atf'
       }]).then(() => {

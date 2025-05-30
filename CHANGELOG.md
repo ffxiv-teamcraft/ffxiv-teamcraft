@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.35...v11.3.36) (2025-05-30)
+
+
+### Features
+
+* **db:** allagan report imports ([085ce64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/085ce64093a12857ee25f34edf7ccf3784a84a90))
+* **home:** add link to Teamcrafter's Kickstarter, starting July 2nd ! ([a5a39b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a5a39b27798229fa8b82a0790f832c55a115edc6))
+
 ### [11.3.35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.34...v11.3.35) (2025-05-27)
 
 
