@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.36...v11.3.37) (2025-06-30)
+
+
+### Features
+
+* **data:** update for cn patch-7.2 ([358087d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/358087d8b406222c4df942e8b2cdb2567b7e180e))
+* **db:** CN 7.2 support and allagan reports import ([496fb49](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/496fb49a5ee1cc3cdb9610bb2a6aec603ccec6df))
+
 ### [11.3.36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.35...v11.3.36) (2025-05-30)
 
 
