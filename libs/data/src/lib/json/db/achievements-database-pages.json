@@ -6629,7 +6629,7 @@
       "de": "Folgende Gildenaufträge wurden abgeschlossen: Trau keinem Fremden, Ein erlesener Kunde, Zwischen den Fronten, Eine Marionette sieht rot, In feinste Kröte gekleidet, Gewagte Kombination, Giftmischer, Einen geräucherten Räuber bitte.",
       "ja": "クラスクエスト「結ばれる想い」「大富豪からの指名」「道分つ甲冑師」「孔雀石は希望の煌めき」「逸品たる使命」「恋する男の一大決心」「毒薬の愉悦」「食通ロロリトの挑戦状」をすべてコンプリートする",
       "fr": "Accomplir les quêtes de classe “Une leçon de vie”, “À la conquête du marché uldien”, “Un duel d'armuriers”, “Comme un diamant brut”, “Les défauts de la cuirasse”, “Ne perdons pas le fil”, “Poisons pour tous” et “Un palais exigeant”.",
-      "ko": "클래스 퀘스트 '이어지는 마음', '억만장자의 의뢰', '뜻이 다른 갑주제작사', '공작석은 희망으로 반짝인다', '진정한 명품', '사랑에 빠진 남자, 일생일대의 결심', '독약 만들기는 즐거워', '미식가 로로리토의 도전장'을 모두 완료",
+      "ko": "클래스 퀘스트 '하나 되는 마음', '억만장자의 의뢰', '뜻이 다른 갑주제작사', '공작석은 희망으로 반짝인다', '진정한 명품', '사랑에 빠진 남자, 일생일대의 결심', '독약 만들기는 즐거워', '미식가 로로리토의 도전장'을 모두 완료",
       "zh": "完成“包容之心”“大富豪的订单”“各自的前程”“孔雀石的希望之光”“杰作的使命”“热恋男儿的决心”“毒药的愉悦”“美食家罗罗力特的挑战”八个职业任务。"
     },
     "item": 0,
@@ -75144,12 +75144,14 @@
     "de": "Eine Schippe drauf I",
     "ja": "ニトウィケ：ランク1",
     "fr": "Train-train quotidien I",
+    "ko": "니토위퀘: 1단계",
     "zh": "尼托维凯的信任1",
     "description": {
       "en": "Achieve a satisfaction level of 1 with Nitowikwe.",
       "de": "Zufriedenheitsrang 1 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを1にする",
       "fr": "Atteindre le rang 1 de satisfaction auprès de Nitowikwe.",
+      "ko": "니토위퀘의 신뢰도 1단계 달성",
       "zh": "尼托维凯的信赖等级达到1级。"
     },
     "item": 0,
@@ -75163,12 +75165,14 @@
     "de": "Eine Schippe drauf II",
     "ja": "ニトウィケ：ランク2",
     "fr": "Train-train quotidien II",
+    "ko": "니토위퀘: 2단계",
     "zh": "尼托维凯的信任2",
     "description": {
       "en": "Achieve a satisfaction level of 2 with Nitowikwe.",
       "de": "Zufriedenheitsrang 2 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを2にする",
       "fr": "Atteindre le rang 2 de satisfaction auprès de Nitowikwe.",
+      "ko": "니토위퀘의 신뢰도 2단계 달성",
       "zh": "尼托维凯的信赖等级达到2级。"
     },
     "item": 0,
@@ -75182,12 +75186,14 @@
     "de": "Eine Schippe drauf III",
     "ja": "ニトウィケ：ランク3",
     "fr": "Train-train quotidien III",
+    "ko": "니토위퀘: 3단계",
     "zh": "尼托维凯的信任3",
     "description": {
       "en": "Achieve a satisfaction level of 3 with Nitowikwe.",
       "de": "Zufriedenheitsrang 3 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを3にする",
       "fr": "Atteindre le rang 3 de satisfaction auprès de Nitowikwe.",
+      "ko": "니토위퀘의 신뢰도 3단계 달성",
       "zh": "尼托维凯的信赖等级达到3级。"
     },
     "item": 0,
@@ -75201,12 +75207,14 @@
     "de": "Eine Schippe drauf IV",
     "ja": "ニトウィケ：ランク4",
     "fr": "Train-train quotidien IV",
+    "ko": "니토위퀘: 4단계",
     "zh": "尼托维凯的信任4",
     "description": {
       "en": "Achieve a satisfaction level of 4 with Nitowikwe.",
       "de": "Zufriedenheitsrang 4 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを4にする",
       "fr": "Atteindre le rang 4 de satisfaction auprès de Nitowikwe.",
+      "ko": "니토위퀘의 신뢰도 4단계 달성",
       "zh": "尼托维凯的信赖等级达到4级。"
     },
     "item": 0,
@@ -75220,12 +75228,14 @@
     "de": "Eine Schippe drauf V",
     "ja": "ニトウィケ：ランク5",
     "fr": "Train-train quotidien V",
+    "ko": "니토위퀘: 5단계",
     "zh": "尼托维凯的信任5",
     "description": {
       "en": "Achieve a satisfaction level of 5 with Nitowikwe.",
       "de": "Zufriedenheitsrang 5 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを5にする",
       "fr": "Atteindre le rang 5 de satisfaction auprès de Nitowikwe.",
+      "ko": "니토위퀘의 신뢰도 5단계 달성",
       "zh": "尼托维凯的信赖等级达到5级。"
     },
     "item": 0,
@@ -75239,12 +75249,14 @@
     "de": "Transkontinentale Träume I",
     "ja": "ニトウィケの得意先：ランク1",
     "fr": "Fournisseur officiel de Nitowikwe I",
+    "ko": "니토위퀘의 단골: 1단계",
     "zh": "尼托维凯的老主顾1",
     "description": {
       "en": "Deliver 36 collectables to Nitowikwe.",
       "de": "Nitowikwe 36 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計36回納品する",
       "fr": "Échanger 36 objets collectionnables à Nitowikwe.",
+      "ko": "니토위퀘에게 소장품 36회 납품",
       "zh": "在尼托维凯处累计交纳收藏品36次。"
     },
     "item": 0,
@@ -75258,12 +75270,14 @@
     "de": "Transkontinentale Träume II",
     "ja": "ニトウィケの得意先：ランク2",
     "fr": "Fournisseur officiel de Nitowikwe II",
+    "ko": "니토위퀘의 단골: 2단계",
     "zh": "尼托维凯的老主顾2",
     "description": {
       "en": "Deliver 48 collectables to Nitowikwe.",
       "de": "Nitowikwe 48 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計48回納品する",
       "fr": "Échanger 48 objets collectionnables à Nitowikwe.",
+      "ko": "니토위퀘에게 소장품 48회 납품",
       "zh": "在尼托维凯处累计交纳收藏品48次。"
     },
     "item": 0,
@@ -75277,12 +75291,14 @@
     "de": "Transkontinentale Träume III",
     "ja": "ニトウィケの得意先：ランク3",
     "fr": "Fournisseur officiel de Nitowikwe III",
+    "ko": "니토위퀘의 단골: 3단계",
     "zh": "尼托维凯的老主顾3",
     "description": {
       "en": "Deliver 60 collectables to Nitowikwe.",
       "de": "Nitowikwe 60 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計60回納品する",
       "fr": "Échanger 60 objets collectionnables à Nitowikwe.",
+      "ko": "니토위퀘에게 소장품 60회 납품",
       "zh": "在尼托维凯处累计交纳收藏品60次。"
     },
     "item": 0,
@@ -75296,12 +75312,14 @@
     "de": "Transkontinentale Träume IV",
     "ja": "ニトウィケの得意先：ランク4",
     "fr": "Fournisseur officiel de Nitowikwe IV",
+    "ko": "니토위퀘의 단골: 4단계",
     "zh": "尼托维凯的老主顾4",
     "description": {
       "en": "Deliver 90 collectables to Nitowikwe.",
       "de": "Nitowikwe 90 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計90回納品する",
       "fr": "Échanger 90 objets collectionnables à Nitowikwe.",
+      "ko": "니토위퀘에게 소장품 90회 납품",
       "zh": "在尼托维凯处累计交纳收藏品90次。"
     },
     "item": 0,
@@ -75315,12 +75333,14 @@
     "de": "Transkontinentale Träume V",
     "ja": "ニトウィケの得意先：ランク5",
     "fr": "Fournisseur officiel de Nitowikwe V",
+    "ko": "니토위퀘의 단골: 5단계",
     "zh": "尼托维凯的老主顾5",
     "description": {
       "en": "Deliver 120 collectables to Nitowikwe.",
       "de": "Nitowikwe 120 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計120回納品する",
       "fr": "Échanger 120 objets collectionnables à Nitowikwe.",
+      "ko": "니토위퀘에게 소장품 120회 납품",
       "zh": "在尼托维凯处累计交纳收藏品120次。"
     },
     "item": 0,
@@ -75334,12 +75354,14 @@
     "de": "Transkontinentale Träume VI",
     "ja": "ニトウィケの得意先：ランク6",
     "fr": "Fournisseur officiel de Nitowikwe VI",
+    "ko": "니토위퀘의 단골: 6단계",
     "zh": "尼托维凯的老主顾6",
     "description": {
       "en": "Deliver 150 collectables to Nitowikwe.",
       "de": "Nitowikwe 150 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計150回納品する",
       "fr": "Échanger 150 objets collectionnables à Nitowikwe.",
+      "ko": "니토위퀘에게 소장품 150회 납품",
       "zh": "在尼托维凯处累计交纳收藏品150次。"
     },
     "item": 0,
@@ -75458,12 +75480,14 @@
     "de": "Freigeist für immer!",
     "ja": "「自由の扉」よ、永遠に",
     "fr": "Affranchis sans frontières",
+    "ko": "'자유의 문'이여, 영원하라",
     "zh": "关上自由之门",
     "description": {
       "en": "Complete the quest “Bar the Passage.”",
       "de": "Den Auftrag „Kampf an Zorgor der Weiten“ abgeschlossen.",
       "ja": "クエスト「決戦、ゾーゴー永結橋」をコンプリートする",
       "fr": "Accomplir la quête “Pour s'affranchir de la tyrannie, tout s'appelle vertu”.",
+      "ko": "퀘스트 '결전, 조고 영결교' 완료",
       "zh": "完成任务“决战！佐戈永结桥”。"
     },
     "item": 0,
@@ -75477,12 +75501,14 @@
     "de": "Wachumeqimeqi sagt Dankeschön",
     "ja": "みんなでワチュメキメキ！",
     "fr": "On est tous un peu Wachumeqimeqi",
+    "ko": "다 함께 와추메키메키!",
     "zh": "把你的心我的心串一串",
     "description": {
       "en": "Complete the quest “Appreciated Value.”",
       "de": "Den Auftrag „Das Wachumeqimeqi-Dankesspektakel“ abgeschlossen.",
       "ja": "クエスト「ワチュメキメキ大感謝祭」をコンプリートする",
       "fr": "Accomplir la quête “La grande foire aux mille mercis”.",
+      "ko": "퀘스트 '와추메키메키 감사 대축제' 완료",
       "zh": "完成任务“珠串万货街感恩大酬宾”。"
     },
     "item": 0,
@@ -75618,12 +75644,14 @@
     "de": "Heiter bis wolkig",
     "ja": "暗闇の雲を晴らしし者",
     "fr": "Nuage dissipé",
+    "ko": "어둠의 구름을 걷어낸 자",
     "zh": "祓暗的诛云者",
     "description": {
       "en": "Defeat the Cloud of Darkness in the Cloud of Darkness (Chaotic).",
       "de": "Die Wolke der Dunkelheit in „Die Wolke der Dunkelheit (chaotisch)“ besiegt.",
       "ja": "滅暗闇の雲激闘戦で、暗闇の雲を討伐する",
       "fr": "Vaincre le Nuage de Ténèbres dans le raid “La Tour de Ténèbres (chaotique)”.",
+      "ko": "멸 어둠의 구름 격투전에서 어둠의 구름 처치",
       "zh": "在暗黑之云诛灭战中战胜暗黑之云。"
     },
     "item": 0,
@@ -75658,11 +75686,13 @@
     "de": "Kristallkönig (14. Saison)",
     "ja": "コンフリクトの王者：シーズン14",
     "fr": "Roi du conflit : saison 14",
+    "zh": "冲突的王者第14赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Fourteen ranked #1.",
       "de": "Die 14. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで1位になる",
-      "fr": "Terminer la saison 14 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 14 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第14赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 769
@@ -75675,11 +75705,13 @@
     "de": "Kristallfürst (14. Saison)",
     "ja": "コンフリクトの勇者：シーズン14",
     "fr": "Prince du conflit : saison 14",
+    "zh": "冲突的勇者第14赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Fourteen.",
       "de": "Die 14. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 14 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 14 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第14赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 770
@@ -75692,11 +75724,13 @@
     "de": "Kristallkämpfer (14. Saison)",
     "ja": "コンフリクトの入賞者：シーズン14",
     "fr": "As du conflit : saison 14",
+    "zh": "冲突的获奖者第14赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Fourteen.",
       "de": "Die 14. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで入賞する",
-      "fr": "Terminer la saison 14 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 14 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第14赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 771
@@ -75777,11 +75811,13 @@
     "de": "Kartograph: Die Unterfried-Ruinen",
     "ja": "アンダーキープを踏破せし者",
     "fr": "Cartographe du continent : La Gardienne de l'Immémorial",
+    "zh": "踏遍永护塔底",
     "description": {
       "en": "Discover every location within the Underkeep.",
       "de": "Alle Orte in den Unterfried-Ruinen erkundet.",
       "ja": "アンダーキープ（王城旧跡）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte de la Gardienne de l'Immémorial."
+      "fr": "Découvrir toute la carte de la Gardienne de l'Immémorial.",
+      "zh": "成功探索永护塔底（王城古迹）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -75794,11 +75830,13 @@
     "de": "Aufforderung zum Ehrenduell",
     "ja": "永久なる騎士を狩りし者",
     "fr": "Honneur préservé",
+    "zh": "永恒的弑臣者",
     "description": {
       "en": "Defeat Zelenia in Recollection (Extreme).",
       "de": "Zelenia in Gok Tajaal - Zelenia bezwungen.",
       "ja": "極ゼレニア討滅戦で、ゼレニアを討伐する",
-      "fr": "Vaincre Zelenia dans le défi “Le Sanctuaire du Serment (extrême)”."
+      "fr": "Vaincre Zelenia dans le défi “Le Sanctuaire du Serment (extrême)”.",
+      "zh": "在泽莲尼娅歼殛战中战胜泽莲尼娅。"
     },
     "item": 0,
     "title": 0
@@ -75811,11 +75849,13 @@
     "de": "Stufen des Arkadions I",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク1",
     "fr": "Champion poids lourds-légers de l'Arcadion I",
+    "zh": "称霸登天斗技场中量级1",
     "description": {
       "en": "Complete AAC Cruiserweight Tier.",
       "de": "Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA 1 fois."
+      "fr": "Conquérir la division poids lourds-légers CCA 1 fois.",
+      "zh": "成功挑战阿卡狄亚登天斗技场中量级。"
     },
     "item": 0,
     "title": 0
@@ -75828,11 +75868,13 @@
     "de": "Stufen des Arkadions II",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク2",
     "fr": "Champion poids lourds-légers de l'Arcadion II",
+    "zh": "称霸登天斗技场中量级2",
     "description": {
       "en": "Complete AAC Cruiserweight Tier 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計5回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA 5 fois."
+      "fr": "Conquérir la division poids lourds-légers CCA 5 fois.",
+      "zh": "累计成功挑战阿卡狄亚登天斗技场中量级5次。"
     },
     "item": 0,
     "title": 0
@@ -75845,11 +75887,13 @@
     "de": "Stufen des Arkadions III",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク3",
     "fr": "Champion poids lourds-légers de l'Arcadion III",
+    "zh": "称霸登天斗技场中量级3",
     "description": {
       "en": "Complete AAC Cruiserweight Tier 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計10回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA 10 fois."
+      "fr": "Conquérir la division poids lourds-légers CCA 10 fois.",
+      "zh": "累计成功挑战阿卡狄亚登天斗技场中量级10次。"
     },
     "item": 0,
     "title": 0
@@ -75862,11 +75906,13 @@
     "de": "Epische Stufen des Arkadions I",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク1",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion I",
+    "zh": "完全称霸登天斗技场中量级1",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage).",
       "de": "Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 1 fois."
+      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 1 fois.",
+      "zh": "成功挑战阿卡狄亚零式登天斗技场中量级。"
     },
     "item": 0,
     "title": 0
@@ -75879,11 +75925,13 @@
     "de": "Epische Stufen des Arkadions II",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク2",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion II",
+    "zh": "完全称霸登天斗技场中量级2",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計5回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 5 fois."
+      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 5 fois.",
+      "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级5次。"
     },
     "item": 0,
     "title": 0
@@ -75896,11 +75944,13 @@
     "de": "Epische Stufen des Arkadions III",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク3",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion III",
+    "zh": "完全称霸登天斗技场中量级3",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計10回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 10 fois."
+      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 10 fois.",
+      "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级10次。"
     },
     "item": 0,
     "title": 0
@@ -75913,11 +75963,13 @@
     "de": "Auf der Suche nach Endlosigkeit",
     "ja": "永久の探求者",
     "fr": "Explorateurs de l'éternité",
+    "zh": "永久探求者",
     "description": {
       "en": "Complete the main scenario quest “Seekers of Eternity.”",
       "de": "Den Auftrag „Auf der Suche nach Endlosigkeit“ erfolgreich abgeschlossen.",
       "ja": "クエスト「永久の探求者」をコンプリートする",
-      "fr": "Accomplir la quête “Explorateurs de l'éternité”."
+      "fr": "Accomplir la quête “Explorateurs de l'éternité”.",
+      "zh": "完成任务“永久探求者”。"
     },
     "item": 0,
     "title": 773
@@ -75947,11 +75999,13 @@
     "de": "Aus für die Gerüchteküche",
     "ja": "キングの貴き真相",
     "fr": "Quand il rêve, il est un Roi",
+    "zh": "幻卡王的重要真相",
     "description": {
       "en": "Complete the quest “Royal Rumblings.”",
       "de": "Den Auftrag „Der falsche König“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとキングの噂」をコンプリートする",
-      "fr": "Accomplir la quête “Le Roi singé”."
+      "fr": "Accomplir la quête “Le Roi singé”.",
+      "zh": "完成任务“金碟游乐场与幻卡王的传闻”。"
     },
     "item": 0,
     "title": 0
@@ -76882,11 +76936,13 @@
     "de": "Lunarer Erkundungsmeister",
     "ja": "月面のマスターエクスプローラー",
     "fr": "Explorateur sélénien aguerri",
+    "zh": "月面探索大师",
     "description": {
       "en": "Successfully complete all stellar missions in Sinus Ardorum with the highest rating possible.",
       "de": "Alle Stellarmissionen auf dem Mond mit der höchsten Wertung abgeschlossen.",
       "ja": "焦がれの入江のコスモミッションを、すべて最高評価でコンプリートする",
-      "fr": "Terminer toutes les missions cosmiques de Sinus Ardorum avec la meilleure évaluation possible."
+      "fr": "Terminer toutes les missions cosmiques de Sinus Ardorum avec la meilleure évaluation possible.",
+      "zh": "以最高评价完成憧憬湾的所有探索任务。"
     },
     "item": 0,
     "title": 781
@@ -76899,11 +76955,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Säge",
     "ja": "コスモツール：コスモ・ソー",
     "fr": "Outil cosmique : scie cosmique",
+    "zh": "宇宙工具：宇宙手锯",
     "description": {
       "en": "Obtain a cosmic saw.",
       "de": "Eine Kosmo-Säge erlangt.",
       "ja": "コスモ・ソーを入手する",
-      "fr": "Obtenir la scie cosmique."
+      "fr": "Obtenir la scie cosmique.",
+      "zh": "获得宇宙手锯。"
     },
     "item": 0,
     "title": 0
@@ -76916,11 +76974,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Kreuzschlaghammer",
     "ja": "コスモツール：コスモ・クロスペインハンマー",
     "fr": "Outil cosmique : marteau à panne croisée cosmique",
+    "zh": "宇宙工具：宇宙横头锤",
     "description": {
       "en": "Obtain a cosmic cross-pein hammer.",
       "de": "Einen Kosmo-Kreuzschlaghammer erlangt.",
       "ja": "コスモ・クロスペインハンマーを入手する",
-      "fr": "Obtenir le marteau à panne croisée cosmique."
+      "fr": "Obtenir le marteau à panne croisée cosmique.",
+      "zh": "获得宇宙横头锤。"
     },
     "item": 0,
     "title": 0
@@ -76933,11 +76993,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Schlichthammer",
     "ja": "コスモツール：コスモ・レイジングハンマー",
     "fr": "Outil cosmique : marteau de batteur cosmique",
+    "zh": "宇宙工具：宇宙圆头锤",
     "description": {
       "en": "Obtain a cosmic raising hammer.",
       "de": "Einen Kosmo-Schlichthammer erlangt.",
       "ja": "コスモ・レイジングハンマーを入手する",
-      "fr": "Obtenir le marteau de batteur cosmique."
+      "fr": "Obtenir le marteau de batteur cosmique.",
+      "zh": "获得宇宙圆头锤。"
     },
     "item": 0,
     "title": 0
@@ -76950,11 +77012,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Fäustel",
     "ja": "コスモツール：コスモ・マレット",
     "fr": "Outil cosmique : massette cosmique",
+    "zh": "宇宙工具：宇宙工艺锤",
     "description": {
       "en": "Obtain a cosmic mallet.",
       "de": "Einen Kosmo-Fäustel erlangt.",
       "ja": "コスモ・マレットを入手する",
-      "fr": "Obtenir la massette cosmique."
+      "fr": "Obtenir la massette cosmique.",
+      "zh": "获得宇宙工艺锤。"
     },
     "item": 0,
     "title": 0
@@ -76967,11 +77031,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Rundmesser",
     "ja": "コスモツール：コスモ・ラウンドナイフ",
     "fr": "Outil cosmique : couteau arrondi cosmique",
+    "zh": "宇宙工具：宇宙圆革刀",
     "description": {
       "en": "Obtain a cosmic round knife.",
       "de": "Ein Kosmo-Rundmesser erlangt.",
       "ja": "コスモ・ラウンドナイフを入手する",
-      "fr": "Obtenir le couteau arrondi cosmique."
+      "fr": "Obtenir le couteau arrondi cosmique.",
+      "zh": "获得宇宙圆革刀。"
     },
     "item": 0,
     "title": 0
@@ -76984,11 +77050,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Nadel",
     "ja": "コスモツール：コスモ・ニードル",
     "fr": "Outil cosmique : aiguille cosmique",
+    "zh": "宇宙工具：宇宙缝针",
     "description": {
       "en": "Obtain a cosmic needle.",
       "de": "Eine Kosmo-Nadel erlangt.",
       "ja": "コスモ・ニードルを入手する",
-      "fr": "Obtenir l'aiguille cosmique."
+      "fr": "Obtenir l'aiguille cosmique.",
+      "zh": "获得宇宙缝针。"
     },
     "item": 0,
     "title": 0
@@ -77001,11 +77069,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Destillierkolben",
     "ja": "コスモツール：コスモ・アレンビック",
     "fr": "Outil cosmique : alambic cosmique",
+    "zh": "宇宙工具：宇宙蒸馏器",
     "description": {
       "en": "Obtain a cosmic alembic.",
       "de": "Einen Kosmo-Destillierkolben erlangt.",
       "ja": "コスモ・アレンビックを入手する",
-      "fr": "Obtenir l'alambic cosmique."
+      "fr": "Obtenir l'alambic cosmique.",
+      "zh": "获得宇宙蒸馏器。"
     },
     "item": 0,
     "title": 0
@@ -77018,11 +77088,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Bratpfanne",
     "ja": "コスモツール：コスモ・フライパン",
     "fr": "Outil cosmique : poêle à frire cosmique",
+    "zh": "宇宙工具：宇宙煎锅",
     "description": {
       "en": "Obtain a cosmic frypan.",
       "de": "Eine Kosmo-Bratpfanne erlangt.",
       "ja": "コスモ・フライパンを入手する",
-      "fr": "Obtenir la poêle à frire cosmique."
+      "fr": "Obtenir la poêle à frire cosmique.",
+      "zh": "获得宇宙煎锅。"
     },
     "item": 0,
     "title": 0
@@ -77035,11 +77107,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Spitzhacke",
     "ja": "コスモツール：コスモ・ピック",
     "fr": "Outil cosmique : pioche cosmique",
+    "zh": "宇宙工具：宇宙鹤嘴锄",
     "description": {
       "en": "Obtain a cosmic pickaxe.",
       "de": "Eine Kosmo-Spitzhacke erlangt.",
       "ja": "コスモ・ピックを入手する",
-      "fr": "Obtenir la pioche cosmique."
+      "fr": "Obtenir la pioche cosmique.",
+      "zh": "获得宇宙鹤嘴锄。"
     },
     "item": 0,
     "title": 0
@@ -77052,11 +77126,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Handbeil",
     "ja": "コスモツール：コスモ・ハチェット",
     "fr": "Outil cosmique : hachette cosmique",
+    "zh": "宇宙工具：宇宙手斧",
     "description": {
       "en": "Obtain a cosmic hatchet.",
       "de": "Ein Kosmo-Handbeil erlangt.",
       "ja": "コスモ・ハチェットを入手する",
-      "fr": "Obtenir la hachette cosmique."
+      "fr": "Obtenir la hachette cosmique.",
+      "zh": "获得宇宙手斧。"
     },
     "item": 0,
     "title": 0
@@ -77069,11 +77145,13 @@
     "de": "Kosmo-Werkzeug: Kosmo-Angelrute",
     "ja": "コスモツール：コスモ・フィッシングロッド",
     "fr": "Outil cosmique : canne à pêche cosmique",
+    "zh": "宇宙工具：宇宙钓竿",
     "description": {
       "en": "Obtain a cosmic fishing rod.",
       "de": "Eine Kosmo-Angelrute erlangt.",
       "ja": "コスモ・フィッシングロッドを入手する",
-      "fr": "Obtenir la canne à pêche cosmique."
+      "fr": "Obtenir la canne à pêche cosmique.",
+      "zh": "获得宇宙钓竿。"
     },
     "item": 0,
     "title": 0
@@ -77086,11 +77164,13 @@
     "de": "Zimmerer der unendlichen Weiten I",
     "ja": "星渡る木工師：ランク1",
     "fr": "Menuisier du cosmos I",
+    "zh": "星际刻木匠1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que menuisier."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que menuisier.",
+      "zh": "在宇宙探索中，使用刻木匠累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77103,11 +77183,13 @@
     "de": "Zimmerer der unendlichen Weiten II",
     "ja": "星渡る木工師：ランク2",
     "fr": "Menuisier du cosmos II",
+    "zh": "星际刻木匠2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que menuisier."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que menuisier.",
+      "zh": "在宇宙探索中，使用刻木匠累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77120,11 +77202,13 @@
     "de": "Zimmerer der unendlichen Weiten III",
     "ja": "星渡る木工マスター",
     "fr": "Maître menuisier du cosmos",
+    "zh": "星际刻木大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que menuisier."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que menuisier.",
+      "zh": "在宇宙探索中，使用刻木匠累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 782
@@ -77137,11 +77221,13 @@
     "de": "Grobschmied der unendlichen Weiten I",
     "ja": "星渡る鍛冶師：ランク1",
     "fr": "Forgeron du cosmos I",
+    "zh": "星际锻铁匠1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que forgeron."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que forgeron.",
+      "zh": "在宇宙探索中，使用锻铁匠累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77154,11 +77240,13 @@
     "de": "Grobschmied der unendlichen Weiten II",
     "ja": "星渡る鍛冶師：ランク2",
     "fr": "Forgeron du cosmos II",
+    "zh": "星际锻铁匠2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que forgeron."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que forgeron.",
+      "zh": "在宇宙探索中，使用锻铁匠累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77171,11 +77259,13 @@
     "de": "Grobschmied der unendlichen Weiten III",
     "ja": "星渡る鍛冶マスター",
     "fr": "Maître forgeron du cosmos",
+    "zh": "星际锻铁大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que forgeron."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que forgeron.",
+      "zh": "在宇宙探索中，使用锻铁匠累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 783
@@ -77188,11 +77278,13 @@
     "de": "Plattner der unendlichen Weiten I",
     "ja": "星渡る甲冑師：ランク1",
     "fr": "Armurier du cosmos I",
+    "zh": "星际铸甲匠1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'armurier."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'armurier.",
+      "zh": "在宇宙探索中，使用铸甲匠累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77205,11 +77297,13 @@
     "de": "Plattner der unendlichen Weiten II",
     "ja": "星渡る甲冑師：ランク2",
     "fr": "Armurier du cosmos II",
+    "zh": "星际铸甲匠2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'armurier."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'armurier.",
+      "zh": "在宇宙探索中，使用铸甲匠累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77222,11 +77316,13 @@
     "de": "Plattner der unendlichen Weiten III",
     "ja": "星渡る甲冑マスター",
     "fr": "Maître armurier du cosmos",
+    "zh": "星际铸甲大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'armurier."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'armurier.",
+      "zh": "在宇宙探索中，使用铸甲匠累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 784
@@ -77239,11 +77335,13 @@
     "de": "Goldschmied der unendlichen Weiten I",
     "ja": "星渡る彫金師：ランク1",
     "fr": "Orfèvre du cosmos I",
+    "zh": "星际雕金匠1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'orfèvre."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'orfèvre.",
+      "zh": "在宇宙探索中，使用雕金匠累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77256,11 +77354,13 @@
     "de": "Goldschmied der unendlichen Weiten II",
     "ja": "星渡る彫金師：ランク2",
     "fr": "Orfèvre du cosmos II",
+    "zh": "星际雕金匠2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'orfèvre."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'orfèvre.",
+      "zh": "在宇宙探索中，使用雕金匠累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77273,11 +77373,13 @@
     "de": "Goldschmied der unendlichen Weiten III",
     "ja": "星渡る彫金マスター",
     "fr": "Maître orfèvre du cosmos",
+    "zh": "星际雕金大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'orfèvre."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'orfèvre.",
+      "zh": "在宇宙探索中，使用雕金匠累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 785
@@ -77290,11 +77392,13 @@
     "de": "Gerber der unendlichen Weiten I",
     "ja": "星渡る革細工師：ランク1",
     "fr": "Tanneur du cosmos I",
+    "zh": "星际制革匠1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que tanneur."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que tanneur.",
+      "zh": "在宇宙探索中，使用制革匠累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77307,11 +77411,13 @@
     "de": "Gerber der unendlichen Weiten II",
     "ja": "星渡る革細工師：ランク2",
     "fr": "Tanneur du cosmos II",
+    "zh": "星际制革匠2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que tanneur."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que tanneur.",
+      "zh": "在宇宙探索中，使用制革匠累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77324,11 +77430,13 @@
     "de": "Gerber der unendlichen Weiten III",
     "ja": "星渡る革細工マスター",
     "fr": "Maître tanneur du cosmos",
+    "zh": "星际制革大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que tanneur."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que tanneur.",
+      "zh": "在宇宙探索中，使用制革匠累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 786
@@ -77341,11 +77449,13 @@
     "de": "Weber der unendlichen Weiten I",
     "ja": "星渡る裁縫師：ランク1",
     "fr": "Couturier du cosmos I",
+    "zh": "星际裁衣匠1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que couturier."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que couturier.",
+      "zh": "在宇宙探索中，使用裁衣匠累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77358,11 +77468,13 @@
     "de": "Weber der unendlichen Weiten II",
     "ja": "星渡る裁縫師：ランク2",
     "fr": "Couturier du cosmos II",
+    "zh": "星际裁衣匠2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que couturier."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que couturier.",
+      "zh": "在宇宙探索中，使用裁衣匠累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77375,11 +77487,13 @@
     "de": "Weber der unendlichen Weiten III",
     "ja": "星渡る裁縫マスター",
     "fr": "Maître couturier du cosmos",
+    "zh": "星际裁衣大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que couturier."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que couturier.",
+      "zh": "在宇宙探索中，使用裁衣匠累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 787
@@ -77392,11 +77506,13 @@
     "de": "Alchemist der unendlichen Weiten I",
     "ja": "星渡る錬金術師：ランク1",
     "fr": "Alchimiste du cosmos I",
+    "zh": "星际炼金术士1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'alchimiste."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'alchimiste.",
+      "zh": "在宇宙探索中，使用炼金术士累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77409,11 +77525,13 @@
     "de": "Alchemist der unendlichen Weiten II",
     "ja": "星渡る錬金術師：ランク2",
     "fr": "Alchimiste du cosmos II",
+    "zh": "星际炼金术士2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'alchimiste."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant qu'alchimiste.",
+      "zh": "在宇宙探索中，使用炼金术士累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77426,11 +77544,13 @@
     "de": "Alchemist der unendlichen Weiten III",
     "ja": "星渡る錬金術マスター",
     "fr": "Maître alchimiste du cosmos",
+    "zh": "星际炼金术大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'alchimiste."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant qu'alchimiste.",
+      "zh": "在宇宙探索中，使用炼金术士累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 788
@@ -77443,11 +77563,13 @@
     "de": "Gourmet der unendlichen Weiten I",
     "ja": "星渡る調理師：ランク1",
     "fr": "Cuisinier du cosmos I",
+    "zh": "星际烹调师1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que cuisinier."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que cuisinier.",
+      "zh": "在宇宙探索中，使用烹调师累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77460,11 +77582,13 @@
     "de": "Gourmet der unendlichen Weiten II",
     "ja": "星渡る調理師：ランク2",
     "fr": "Cuisinier du cosmos II",
+    "zh": "星际烹调师2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que cuisinier."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que cuisinier.",
+      "zh": "在宇宙探索中，使用烹调师累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77477,11 +77601,13 @@
     "de": "Gourmet der unendlichen Weiten III",
     "ja": "星渡る調理マスター",
     "fr": "Maître cuisinier du cosmos",
+    "zh": "星际烹调大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que cuisinier."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que cuisinier.",
+      "zh": "在宇宙探索中，使用烹调师累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 789
@@ -77494,11 +77620,13 @@
     "de": "Minenarbeiter der unendlichen Weiten I",
     "ja": "星渡る採掘師：ランク1",
     "fr": "Mineur du cosmos I",
+    "zh": "星际采矿工1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que mineur."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que mineur.",
+      "zh": "在宇宙探索中，使用采矿工累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77511,11 +77639,13 @@
     "de": "Minenarbeiter der unendlichen Weiten II",
     "ja": "星渡る採掘師：ランク2",
     "fr": "Mineur du cosmos II",
+    "zh": "星际采矿工2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que mineur."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que mineur.",
+      "zh": "在宇宙探索中，使用采矿工累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77528,11 +77658,13 @@
     "de": "Minenarbeiter der unendlichen Weiten III",
     "ja": "星渡る採掘マスター",
     "fr": "Maître mineur du cosmos",
+    "zh": "星际采矿大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que mineur."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que mineur.",
+      "zh": "在宇宙探索中，使用采矿工累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 790
@@ -77545,11 +77677,13 @@
     "de": "Gärtner der unendlichen Weiten I",
     "ja": "星渡る園芸師：ランク1",
     "fr": "Botaniste du cosmos I",
+    "zh": "星际园艺工1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que botaniste."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que botaniste.",
+      "zh": "在宇宙探索中，使用园艺工累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77562,11 +77696,13 @@
     "de": "Gärtner der unendlichen Weiten II",
     "ja": "星渡る園芸師：ランク2",
     "fr": "Botaniste du cosmos II",
+    "zh": "星际园艺工2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que botaniste."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que botaniste.",
+      "zh": "在宇宙探索中，使用园艺工累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77579,11 +77715,13 @@
     "de": "Gärtner der unendlichen Weiten III",
     "ja": "星渡る園芸マスター",
     "fr": "Maître botaniste du cosmos",
+    "zh": "星际园艺大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que botaniste."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que botaniste.",
+      "zh": "在宇宙探索中，使用园艺工累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 791
@@ -77596,11 +77734,13 @@
     "de": "Fischer der unendlichen Weiten I",
     "ja": "星渡る漁師：ランク1",
     "fr": "Pêcheur du cosmos I",
+    "zh": "星际捕鱼人1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師で技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que pêcheur."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que pêcheur.",
+      "zh": "在宇宙探索中，使用捕鱼人累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77613,11 +77753,13 @@
     "de": "Fischer der unendlichen Weiten II",
     "ja": "星渡る漁師：ランク2",
     "fr": "Pêcheur du cosmos II",
+    "zh": "星际捕鱼人2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師で技巧点を150,000点獲得する",
-      "fr": "Gagner un total de 150 000 points cosmiques en tant que pêcheur."
+      "fr": "Gagner un total de 150 000 points cosmiques en tant que pêcheur.",
+      "zh": "在宇宙探索中，使用捕鱼人累计获得150,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77630,11 +77772,13 @@
     "de": "Fischer der unendlichen Weiten III",
     "ja": "星渡る漁師マスター",
     "fr": "Maître pêcheur du cosmos",
+    "zh": "星际捕鱼大师",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師で技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques en tant que pêcheur."
+      "fr": "Gagner un total de 500 000 points cosmiques en tant que pêcheur.",
+      "zh": "在宇宙探索中，使用捕鱼人累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 792
@@ -77647,11 +77791,13 @@
     "de": "Handwerksmeister der unendlichen Weiten",
     "ja": "星渡る製作マスター",
     "fr": "Maître artisan du cosmos",
+    "zh": "星际制作大师",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points with any Disciple of the Hand.",
       "de": "Bei der Kosmo-Erkundung als Handwerker eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、いずれかのクラフタークラスで技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'artisan."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant qu'artisan.",
+      "zh": "在宇宙探索中，使用任意制作职业累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77664,11 +77810,13 @@
     "de": "Sammlermeister der unendlichen Weiten",
     "ja": "星渡る採集マスター",
     "fr": "Maître récolteur du cosmos",
+    "zh": "星际采集大师",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points with any Disciple of the Land.",
       "de": "Bei der Kosmo-Erkundung als Sammler eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、いずれかのギャザラークラスで技巧点を50,000点獲得する",
-      "fr": "Gagner un total de 50 000 points cosmiques en tant que récolteur."
+      "fr": "Gagner un total de 50 000 points cosmiques en tant que récolteur.",
+      "zh": "在宇宙探索中，使用任意采集职业累计获得50,000点技巧点。"
     },
     "item": 0,
     "title": 0
@@ -77681,11 +77829,13 @@
     "de": "Handwerkskönig der unendlichen Weiten",
     "ja": "星渡る製作王",
     "fr": "Artisan en chef du cosmos",
+    "zh": "星际制作之王",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Hand.",
       "de": "Bei der Kosmo-Erkundung in allen Handwerkerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのクラフタークラスで技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat."
+      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat.",
+      "zh": "在宇宙探索中，所有的制作职业均累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 793
@@ -77698,11 +77848,13 @@
     "de": "Sammlerkönig der unendlichen Weiten",
     "ja": "星渡る採集王",
     "fr": "Récolteur en chef du cosmos",
+    "zh": "星际采集之王",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Land.",
       "de": "Bei der Kosmo-Erkundung in allen Sammlerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのギャザラークラスで技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes de récolte."
+      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes de récolte.",
+      "zh": "在宇宙探索中，所有的采集职业均累计获得500,000点技巧点。"
     },
     "item": 0,
     "title": 794
@@ -77715,11 +77867,13 @@
     "de": "Außerordentliche Kraft der unendlichen Weiten",
     "ja": "星渡る探索王",
     "fr": "Grand explorateur du cosmos",
+    "zh": "星际探索之王",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Hand and Land.",
       "de": "Bei der Kosmo-Erkundung in allen Handwerker- und Sammlerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのクラフター・ギャザラークラスで技巧点を500,000点獲得する",
-      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat et de récolte."
+      "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat et de récolte.",
+      "zh": "在宇宙探索中，所有的制作职业和采集职业均累计获得500,000点技巧点。"
     },
     "item": 48232,
     "title": 0
@@ -77732,11 +77886,13 @@
     "de": "Das Glück der Sterne I",
     "ja": "コスモフォーチュンに導かれし者：ランク1",
     "fr": "Une chance cosmique",
+    "zh": "勇闯好运道1",
     "description": {
       "en": "Draw 10 cosmic fortunes.",
       "de": "10 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに10回挑戦する",
-      "fr": "Jouer 10 fois à la Roue de la fortune cosmique."
+      "fr": "Jouer 10 fois à la Roue de la fortune cosmique.",
+      "zh": "挑战10次宇宙好运道。"
     },
     "item": 0,
     "title": 0
@@ -77749,11 +77905,13 @@
     "de": "Das Glück der Sterne II",
     "ja": "コスモフォーチュンに導かれし者：ランク2",
     "fr": "Une chance stellaire",
+    "zh": "勇闯好运道2",
     "description": {
       "en": "Draw 100 cosmic fortunes.",
       "de": "100 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに100回挑戦する",
-      "fr": "Jouer 100 fois à la Roue de la fortune cosmique."
+      "fr": "Jouer 100 fois à la Roue de la fortune cosmique.",
+      "zh": "挑战100次宇宙好运道。"
     },
     "item": 0,
     "title": 0
@@ -77766,11 +77924,13 @@
     "de": "Das Glück der Sterne III",
     "ja": "コスモフォーチュンに導かれし者：ランク3",
     "fr": "Une chance galactique",
+    "zh": "勇闯好运道3",
     "description": {
       "en": "Draw 1,000 cosmic fortunes.",
       "de": "1000 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに1,000回挑戦する",
-      "fr": "Jouer 1 000 fois à la Roue de la fortune cosmique."
+      "fr": "Jouer 1 000 fois à la Roue de la fortune cosmique.",
+      "zh": "挑战1,000次宇宙好运道。"
     },
     "item": 0,
     "title": 795
