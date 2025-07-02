@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
 
   public showSupporterIssueBanner = localStorage.getItem('show-supporter-issue-closed') !== 'true';
 
-  public showTeamcrafterBanner = localStorage.getItem('hide-teamcrafter') !== 'true';
+  public showTeamcrafterBanner = localStorage.getItem('hide-teamcrafter-ks') !== 'true';
 
   UpdaterStatus = UpdaterStatus;
 

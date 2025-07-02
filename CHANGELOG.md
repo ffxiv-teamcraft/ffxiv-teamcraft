@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.37...v11.3.38) (2025-07-02)
+
+
+### Bug Fixes
+
+* **pcap:** use the right deucalion for CN ([9bd673e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bd673ee868279be96ad4c7d2f81b8df50bbd947))
+
 ### [11.3.37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.36...v11.3.37) (2025-06-30)
 
 
