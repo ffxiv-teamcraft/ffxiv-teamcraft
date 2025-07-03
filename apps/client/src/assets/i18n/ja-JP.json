@@ -553,7 +553,7 @@
     "New_child_window": "Create a new child window",
     "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
     "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
-    "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
+    "Desktop_tip_title": "Teamcraftはデスクトップアプリ版も用意しています！より良く、より速く、より強力です",
     "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
     "Lists_offline_by_default": "Make lists offline by default",
     "Unlocked_FATE_areas": "Unlocked FATE shops",
@@ -909,7 +909,7 @@
     "STORMBLOOD": "紅蓮のリベレーター",
     "SHADOWBRINGERS": "漆黒のヴィランズ",
     "ENDWALKER": "暁月のフィナーレ",
-    "DAWNTRAIL": "Dawntrail",
+    "DAWNTRAIL": "黄金のレガシー",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -949,8 +949,8 @@
     "SMN": "召喚士",
     "RDM": "赤魔道士",
     "BLU": "青魔道士",
-    "PCT": "PCT",
-    "VPR": "VPR",
+    "PCT": "ピクトマンサー",
+    "VPR": "ヴァイパー",
     "CRP": "木工",
     "BSM": "鍛冶",
     "ARM": "甲冑",
@@ -1301,7 +1301,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
-    "Copy_panel_as_csv": "Copy this panel as CSV",
+    "Copy_panel_as_csv": "このパネルをCSV形式でコピー",
     "Ignore_completed_items": "完了したアイテム除外",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
@@ -3296,10 +3296,10 @@
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
-    "Teamcrafter_description_banner": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering made by the creator of Teamcraft !",
+    "Teamcrafter_description_ks_banner": "Back Teamcrafter on Kickstarter to get lifetime ad-free Teamcraft!",
     "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy !",
     "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to you ! Please consider following it on Kickstarter and adding it to your Steam wishlist, it's a huge help for me.",
     "Wishlist": "Wishlist on Steam",
-    "Follow_KS": "Follow on Kickstarter"
+    "Kickstarter": "View on Kickstarter"
   }
 }

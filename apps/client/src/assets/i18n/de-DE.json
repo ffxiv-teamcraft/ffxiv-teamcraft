@@ -25,7 +25,7 @@
   "Check_guides": "Schau dir unsere Guides an",
   "Guides_links": "Teamcraft Guides",
   "Db_ban": "Du hast aufgrund deiner vorherigen Aktivitäten keine Berechtigung, Kommentare in den Datenbank zu veröffentlichen. Wenn du die Sperre diskutieren möchtest, schreibe Miu#1568 auf Discord eine Nachricht.",
-  "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
+  "Sensitive_operation": "Für die gewünschte Operation, musst du dich erneut anmelden, um zu bestätigen, dass du derjenige bist, der es tut. Bitte melde dich erneut an.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -629,8 +629,8 @@
     "Characters": "Charaktere",
     "Missing_character": "Fehlende Charaktere",
     "Missing_character_description": "Dieser Charakter existiert nicht mehr, bitte lösche ihn aus deinem Profil.",
-    "Delete_account": "Delete my account",
-    "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
+    "Delete_account": "Mein Konto löschen",
+    "Delete_account_confirmation": "Dies kann nicht rückgängig gemacht werden und wird dein Konto sowie dein Profil löschen, deine Listen, Rotationen und Ausrüstungssets werden weiterhin existieren aber mit einem nicht vorhandenen Konto verknüpft sein.",
     "VERIFICATION": {
       "Button": "Verifizieren",
       "Title": "Charakterverifizierung",
@@ -1470,7 +1470,7 @@
     "Log_in_to_track": "Logge dich ein, um die Vervollständigung des Notizbuchs verfolgen zu können",
     "Logs_import_done": "Deine Einträge wurden erfolgreich importiert",
     "Crafting_log": "Handwerker-Notizbuch",
-    "Gathering_log": "Gathering log (excluding fishing)",
+    "Gathering_log": "Sammler-Notizbuch (ohne Fische)",
     "Import_using_pcap": "Durch Paketerfassung importieren",
     "IMPORT": {
       "Data_loading": "Daten vorladen",
@@ -1604,7 +1604,7 @@
     "Gathering": "Sammeln",
     "Tradeable": "Handelbar",
     "Unique": "Einzigartig",
-    "Dye_slots": "Dye slots",
+    "Dye_slots": "Färbeslots",
     "Materia_sockets": "Materia-Slots",
     "Advanced_melding": "Riskante Techniken",
     "Repair_job": "Reparateur",
@@ -3295,11 +3295,11 @@
     "Inventory": "Inventar"
   },
   "TEAMCRAFTER": {
-    "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
-    "Teamcrafter_description_banner": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering made by the creator of Teamcraft !",
-    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy !",
-    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to you ! Please consider following it on Kickstarter and adding it to your Steam wishlist, it's a huge help for me.",
+    "Teamcrafter_description": "Ankündigung von Teamcrafter: ein Roguelike-Spiel mit Schwerpunkt auf Crafting und Sammeln",
+    "Teamcrafter_description_ks_banner": "Unterstütze Teamcrafter auf Kickstarter und erhalte lebenslang werbefreies Teamcraft!",
+    "Teamcrafter_description_text": "Bekämpfst du gerne heftige Monster? Riskierst du deinum Fremde zu retten? Nein, dazu musst du verrückt sein!",
+    "Teamcrafter_description_text_part2": "Teamcrafter ermöglicht es mir einen Kindheitstraum zu realisieren dank der Community, dank dir! Bitte verfolge es auf Kickstarter und füge es deiner Steam Wunschliste hinzu, was mir eine große Hilfe wäre.",
     "Wishlist": "Wishlist on Steam",
-    "Follow_KS": "Follow on Kickstarter"
+    "Kickstarter": "Bei Kickstarter anzeigen"
   }
 }
