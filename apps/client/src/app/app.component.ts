@@ -872,7 +872,7 @@ export class AppComponent implements OnInit {
 
   hideTeamcrafterBanner(): void {
     this.showTeamcrafterBanner = false;
-    localStorage.setItem('hide-teamcrafter', 'true');
+    localStorage.setItem('hide-teamcrafter-ks', 'true');
   }
 
   hideDesktopTip(): void {
