@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.39...v11.3.40) (2025-07-07)
+
+
+### Bug Fixes
+
+* change kickstarter banner location to avoid overlapping pcap ([8f87159](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f8715961c45d4bdc7fcfba153e9199d74888f9b))
+
 ### [11.3.39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.38...v11.3.39) (2025-07-07)
 
 
