@@ -150,6 +150,10 @@
                     </li>
                   }
                 }
+                <a href="https://www.kickstarter.com/projects/teamcraftstudios/teamcrafter?ref=8gts0d" target="_blank"
+                   nz-tooltip [nzTooltipTitle]="'TEAMCRAFTER.Teamcrafter_description_ks_banner' | translate" nzTooltipPlacement="bottom" fxHide.lt-sm fxShow>
+                  <img src="./assets/teamcrafter/back.png" alt="Now on kickstarter" class="back_banner">
+                </a>
                 <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
                   {{time$ | async}}
                 </li>
