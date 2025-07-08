@@ -56,7 +56,7 @@ export class AdComponent extends TeamcraftComponent {
               startWith(window.innerWidth),
               auditTime(1000),
               map(width => {
-                if (width > 475 && width < 1350) {
+                if (width > 475 && width < 1150) {
                   return 'mobile';
                 } else if (width >= 350) {
                   return 'desktop';
