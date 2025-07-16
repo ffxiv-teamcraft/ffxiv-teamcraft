@@ -42442,7 +42442,7 @@
     "description": {
       "en": "Engraved with runes of ancient power, the gilded headstone has come to life to drive away the intruders. Only by reducing it to rubble can safe passage be secured.",
       "ja": "古の魔法が刻まれた石板が<br>侵入者排除のため動き出した<br>金色の怪石「ゴールデンブロックス」を倒せ",
-      "de": "Der güldene Schein der magischen Steinplatte „ゴールデンブロックス“ weist ihr den Weg zu unerwünschten Inselbesuchern, die sie dann geschwinde beseitigt. Stelle dich ゴールデンブロックス macht, ehe dich das gleiche Schicksal erwartet.",
+      "de": "Der Schein des goldenen Grabsteins weist ihm den Weg zu unerwünschten Inselbesuchern, die er dann geschwinde beseitigt. Stelle dich seiner Macht, ehe dich das gleiche Schicksal erwartet.",
       "fr": "Une pierre tombale gravée de symboles magiques s'est soudainement animée pour repousser les intrus. Défendez-vous contre ce curieux adversaire."
     },
     "icon": "/i/060000/060502.png",
@@ -42459,7 +42459,7 @@
     "description": {
       "en": "All the beasts and familiars of the Occult Crescent fear the Ropross, its presence marked ever by the final screams of its victims. What group of brave explorers will end its reign of terror once and for all?",
       "ja": "島の使い魔や獣を切り裂いて遊ぶ<br>残忍な魔獣が現れた<br>悲鳴の蒐集者、ロプロスを倒せ",
-      "de": "Die Bestie namens „Ropross“ ist eine Geißel für alle magischen Wesen der Insel, findet sie doch Freude an ihren Qualen. Beseitige sie zum Wohle des Inselfriedens.",
+      "de": "Die Bestie namens „Loploth“ ist eine Geißel für alle magischen Wesen der Insel, findet sie doch Freude an ihren Qualen. Beseitige sie zum Wohle des Inselfriedens.",
       "fr": "Ropross est une chimère ailée qui se plaît à déchiqueter les familiers et animaux de l'île juste pour le plaisir. Mettez un terme à son règne sadique."
     },
     "icon": "/i/060000/060502.png",
@@ -42493,7 +42493,7 @@
     "description": {
       "en": "Deep within crystalline caves, a great stone beast has awoken from its slumber. Wreathed in lightning, it dispenses divine judgment upon any who would stand before it.",
       "ja": "身体に雷をまとう黒き石獣が<br>水晶の洞窟内で目を覚ました<br>神罰の石獣、シジフォスを倒せ",
-      "de": "Das schwarze Steingrauen, Sisyphos, verfügt nicht nur über die Macht der Blitze sondern ist jüngst auch aus seinem Schlummer erwacht. EIne Gefahr für die gesamte Insel!",
+      "de": "Das schwarze Steingrauen, Sisyphos, verfügt nicht nur über die Macht der Blitze, sondern ist jüngst auch aus seinem Schlummer erwacht. Eine Gefahr für die gesamte Insel!",
       "fr": "Au cœur des Cavernes de cristal s'est éveillé un monstre de pierre dont le corps est parcouru d'éclairs. Venez à bout de Sisyphos, le châtieur céleste."
     },
     "icon": "/i/060000/060502.png",
@@ -42527,7 +42527,7 @@
     "description": {
       "en": "While the fiery familiars of the island are tasked with regulating the temperatures of their surroundings, there are times when they become overzealous in their duties. Their flames must be extinguished ere they give rise to an inferno.",
       "ja": "湿度管理を使命とする<br>燃え盛る使い魔が現れた<br>湿度の狩手、ディヒューミディファイアを倒せ",
-      "de": "Ein Familiar mit der Macht, die Luftfeuchtigkeit nach seinem Willen zu kontrollieren: ディヒューミディファイア. Wird er nicht besiegt, nimmt das Schwitzen kein Ende!",
+      "de": "Ein Familiar mit der Macht, die Luftfeuchtigkeit nach seinem Willen zu kontrollieren: der Entfeuchter. Wird er nicht besiegt, nimmt das Schwitzen kein Ende!",
       "fr": "Un flamboyant familier créé dans le but de réguler la température ambiante a fait son apparition. Éteignez les flammes du déshumidificateur."
     },
     "icon": "/i/060000/060502.png",
@@ -42578,7 +42578,7 @@
     "description": {
       "en": "With fiery magicks, this winged creature renders its final verdict upon the living, draining their vital energy for its own. While its eerie beauty and deadly grace are enchanting to behold, it cannot be allowed to roam free.",
       "ja": "火球の呪術によって敵対者の命を弄ぶ<br>恐るべきサキュバス型妖異が現れた<br>美しき呪殺者、イグゼクレーターを倒せ",
-      "de": "Mit seiner feurigen Magie entzieht das Sukkubus -ähnliche Wesen namens „イグゼクレーター“ seinen Opfern ihre Lebensenergie. So schön es auch anzuschauen ist, eine Gefahr stellt es trotzdem dar.",
+      "de": "Mit seiner feurigen Magie entzieht das sukkubusähnliche Wesen namens „Exekutor“ seinen Opfern ihre Lebensenergie. So schön es auch anzuschauen ist, eine Gefahr stellt es trotzdem dar.",
       "fr": "Créature du néant proche de la succube, la bourrelle utilise sa magie de feu pour calciner ses victimes. Venez à bout de cette sinistre exécutrice."
     },
     "icon": "/i/060000/060502.png",
@@ -42680,7 +42680,7 @@
     "description": {
       "en": "It seems the magic pots are loath to learn from their mistakes, as they have once again followed their greed for elixirs into trouble. The pitiful creatures must be saved from their own folly...but perhaps not immediately.",
       "ja": "またもしつこくエリクサーをねだったことで<br>虚ろな瞳の魔物に睨まれるマジックポットを見つけた<br>レッサーハヴォックたちを倒し、マジックポットを助けろ",
-      "de": "Ihre Gier nach Elixieren hat die Wunderpotts ein weiteres Mal in die Bredouille gebracht. Beschütze die dusseligen Behältnisse erneut, indem du die niederen Kreszentia-Chaos erlegst.",
+      "de": "Ihre Gier nach Elixieren hat die Wunderpotts ein weiteres Mal in die Bredouille gebracht. Beschütze die dusseligen Behältnisse erneut, indem du die niederen Chaos erlegst.",
       "fr": "S'obstinant à réclamer des élixirs à tout va, les pots magiques ont cette fois provoqué le courroux de sinistres créatures en forme d'œil. Vainquez les ravageurs pour sauver vos petits amis empotés."
     },
     "icon": "/i/060000/060958.png",

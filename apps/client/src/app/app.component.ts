@@ -134,6 +134,11 @@ export class AppComponent implements OnInit {
     default: `v${this.version}`,
   };
 
+  public ksBreakpoints = {
+    1100: false,
+    default: true,
+  };
+
   public githubStars$ = this.http
     .get<{ stargazers_count: number }>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft')
     .pipe(map((repo) => repo.stargazers_count));

@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.3.41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.40...v11.3.41) (2025-07-16)
+
+
+### Features
+
+* **db:** support for korean 7.2 data ([4a8d55d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a8d55dfd33a2953298ee12072e8719c81107f5b))
+* **db:** support for korean v7.2 update ([c79a399](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c79a399a00052f539e9f7796f947b2e29775e7c6))
+
+
+### Bug Fixes
+
+* korean 7.2 deucalion loading ([9744cd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9744cd0b228064f0872f1337148cacdb3ba5c4b9))
+* korean 7.2 packet structure changes ([a83428f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a83428f5bc7b2a5da09b6cf6405aa9910fd2414f))
+* **pcap:** use the latest version of deucalion for KR ([0ab1988](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ab1988ba9963059bb81c3988bab2c83281ac098))
+
 ### [11.3.40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.39...v11.3.40) (2025-07-07)
 
 

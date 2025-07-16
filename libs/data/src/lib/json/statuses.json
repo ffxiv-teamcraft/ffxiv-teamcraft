@@ -21423,7 +21423,7 @@
     "en": "Cache Me if You Can",
     "de": "Immer der Spürnase nach",
     "ja": "財宝誘導",
-    "fr": "Lapinou&nbsp;!",
+    "fr": "Piste au trésor",
     "icon": "/i/215000/215886.png",
     "maxStacks": 0,
     "description": {
@@ -59286,7 +59286,7 @@
       "en": "Relentlessly striking nearest target with auto-attacks. Immune to certain status effects, as well as most knockback and draw-in effects.",
       "de": "Greift Gegner fächerförmig vor sich unablässig mit Auto-Attacke an und ist gegen einige negative Status sowie gegen fast alle Rückstoß- und Heranzieheffekte immun.",
       "ja": "最も近くにいる対象をオートアタックで攻撃し続ける状態。<br>また一部の状態異常を無効化し、さらに一部を除くすべてのノックバックと引きよせを無効化する。",
-      "fr": "Utilise continuellement des attaques automatiques sur l'ennemi le plus proche.<br>Certaines altérations d'état sont annulées et la plupart des projections et attractions sont sans effet."
+      "fr": "Effectue continuellement des attaques physiques dans une zone en éventail vers les ennemis à proximité.<br>Certaines altérations d'état sont annulées et la plupart des projections et attractions sont sans effet."
     }
   },
   "4236": {

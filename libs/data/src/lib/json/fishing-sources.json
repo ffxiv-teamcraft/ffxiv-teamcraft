@@ -7297,7 +7297,10 @@
       "tug": 1,
       "bait": 4927,
       "snagging": false,
-      "minGathering": 290
+      "minGathering": 290,
+      "video": "https://youtu.be/W2kr4UxIGUw",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7706": [
