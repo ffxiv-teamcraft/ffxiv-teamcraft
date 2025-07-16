@@ -5,7 +5,7 @@ export interface LazyInstanceSearch {
   fr:    string;
   id:    number;
   ja:    string;
-  ko?:   string;
+  ko:    string;
   lvl:   number;
   patch: number;
   zh:    string;
