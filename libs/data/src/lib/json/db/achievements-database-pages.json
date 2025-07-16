@@ -26600,7 +26600,7 @@
     "de": "Meister des Handwerks II",
     "ja": "職人魂を持つ冒険者",
     "fr": "Virtuose de la main",
-    "ko": "장인정신을 가진 모험가",
+    "ko": "장인 정신을 가진 모험가",
     "zh": "博闻之巧者",
     "description": {
       "en": "Achieve level 60 as a carpenter, blacksmith, armorer, goldsmith, leatherworker, weaver, alchemist, and culinarian.",
@@ -38530,7 +38530,7 @@
     "de": "Meister des Handwerks III",
     "ja": "職人魂を磨きし冒険者",
     "fr": "Prodige de la main",
-    "ko": "장인정신을 갈고닦은 모험가",
+    "ko": "장인 정신을 갈고닦은 모험가",
     "zh": "博志之巧者",
     "description": {
       "en": "Achieve level 70 as a carpenter, blacksmith, armorer, goldsmith, leatherworker, weaver, alchemist, and culinarian.",
@@ -47578,7 +47578,7 @@
     "de": "Meister des Handwerks IV",
     "ja": "職人魂を究めし冒険者",
     "fr": "Icône de la main",
-    "ko": "장인정신의 극에 달한 모험가",
+    "ko": "장인 정신의 극에 달한 모험가",
     "zh": "博物之巧者",
     "description": {
       "en": "Achieve level 80 as a carpenter, blacksmith, armorer, goldsmith, leatherworker, weaver, alchemist, and culinarian.",
@@ -51059,7 +51059,7 @@
       "de": "Im Inhalt „Alexander (fatal)“ den Perfekten Alexander besiegt.",
       "ja": "絶アレキサンダー討滅戦で、パーフェクト・アレキサンダーを討伐する",
       "fr": "Vaincre Alexander parfait dans le raid “L'Odyssée d'Alexander (fatal)”.",
-      "ko": "절 알렉산더 토벌전에서 완전체 알렉산더 처치",
+      "ko": "절 알렉산더 토벌전에 참가하여 완전체 알렉산더 처치",
       "zh": "在亚历山大绝境战中战胜亚历山大。"
     },
     "item": 0,
@@ -54772,7 +54772,7 @@
       "de": "Elidibus in seiner Form als Krieger des Lichts besiegen.",
       "ja": "極ウォーリア・オブ・ライト討滅戦で、ウォーリア・オブ・ライトを討伐する",
       "fr": "Vaincre le Guerrier de la Lumière primordial dans le défi “Le Trône du Sacrifice (extrême)”.",
-      "ko": "극 빛의 전사 토벌전에서 빛의 전사 처치",
+      "ko": "극 빛의 전사 토벌전에 참가하여 빛의 전사 처치",
       "zh": "在光之战士幻耀歼灭战中战胜光之战士。"
     },
     "item": 0,
@@ -64243,7 +64243,7 @@
       "de": "Endsängerin in Eschatos - Endsängerin bezwungen.",
       "ja": "終極の戦いで、終焉を謳うものを討伐する",
       "fr": "Vaincre la chantre de l'anéantissement dans le défi “Le Répons final (extrême)”.",
-      "ko": "종극의 결전에서 종언을 노래하는 자 처치",
+      "ko": "종극의 결전에 참가하여 종언을 노래하는 자 처치",
       "zh": "在终极之战中战胜讴歌终结之物。"
     },
     "item": 0,
@@ -66091,7 +66091,7 @@
       "de": "Rubicante in Eschatos - Rubicante bezwungen.",
       "ja": "極ルビカンテ討滅戦でルビカンテを討伐する",
       "fr": "Vaincre Rubicante dans le défi “Le Mont du Supplice (extrême)”.",
-      "ko": "극 루비칸테 토벌전에서 루비칸테 처치",
+      "ko": "극 루비칸테 토벌전에 참가하여 루비칸테 처치",
       "zh": "在卢比坎特歼殛战中战胜卢比坎特。"
     },
     "item": 0,
@@ -67893,7 +67893,7 @@
       "de": "Golbez in Eschatos - Golbez bezwungen.",
       "ja": "極ゴルベーザ討滅戦でゴルベーザを討伐する",
       "fr": "Vaincre Golbez dans le défi “La Chaire de l'Exilée (extrême)”.",
-      "ko": "극 골베자 토벌전에서 골베자 처치",
+      "ko": "극 골베자 토벌전에 참가하여 골베자 처치",
       "zh": "在高贝扎歼殛战中战胜高贝扎。"
     },
     "item": 0,
@@ -71161,7 +71161,7 @@
       "de": "Zeromus in „Eschatos - Zeromus“ besiegt.",
       "ja": "極ゼロムス討滅戦でゼロムスを討伐する",
       "fr": "Vaincre Zeromus dans le défi “La Fracture abyssale (extrême)”.",
-      "ko": "극 제로무스 토벌전에서 제로무스 처치",
+      "ko": "극 제로무스 토벌전에 참가하여 제로무스 처치",
       "zh": "在泽罗姆斯歼殛战中战胜泽罗姆斯。"
     },
     "item": 0,
@@ -75424,7 +75424,7 @@
       "de": "Die Ewige Königin in Gok Tajaal - Ewige Königin bezwungen.",
       "ja": "極エターナルクイーン討滅戦で、エターナルクイーンを討伐する",
       "fr": "Vaincre la Reine Éternité dans le défi “Interphos (extrême)”.",
-      "ko": "극 이터널 퀸 토벌전에서 이터널 퀸 처치",
+      "ko": "극 이터널 퀸 토벌전에 참가하여 이터널 퀸 처치",
       "zh": "在永恒女王忆想歼灭战中战胜永恒女王。"
     },
     "item": 0,
@@ -75651,7 +75651,7 @@
       "de": "Die Wolke der Dunkelheit in „Die Wolke der Dunkelheit (chaotisch)“ besiegt.",
       "ja": "滅暗闇の雲激闘戦で、暗闇の雲を討伐する",
       "fr": "Vaincre le Nuage de Ténèbres dans le raid “La Tour de Ténèbres (chaotique)”.",
-      "ko": "멸 어둠의 구름 격투전에서 어둠의 구름 처치",
+      "ko": "멸 어둠의 구름 격투전에 참가하여 어둠의 구름 처치",
       "zh": "在暗黑之云诛灭战中战胜暗黑之云。"
     },
     "item": 0,
@@ -75686,12 +75686,14 @@
     "de": "Kristallkönig (14. Saison)",
     "ja": "コンフリクトの王者：シーズン14",
     "fr": "Roi du conflit : saison 14",
+    "ko": "컨플릭트의 제왕: 시즌 14",
     "zh": "冲突的王者第14赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Fourteen ranked #1.",
       "de": "Die 14. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで1位になる",
       "fr": "Terminer la saison 14 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 14에서 1위 입상",
       "zh": "在水晶冲突的第14赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -75705,12 +75707,14 @@
     "de": "Kristallfürst (14. Saison)",
     "ja": "コンフリクトの勇者：シーズン14",
     "fr": "Prince du conflit : saison 14",
+    "ko": "컨플릭트의 용자: 시즌 14",
     "zh": "冲突的勇者第14赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Fourteen.",
       "de": "Die 14. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで上位に入賞する",
       "fr": "Terminer la saison 14 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 14에서 상위 랭킹에 입상",
       "zh": "在水晶冲突的第14赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -75724,12 +75728,14 @@
     "de": "Kristallkämpfer (14. Saison)",
     "ja": "コンフリクトの入賞者：シーズン14",
     "fr": "As du conflit : saison 14",
+    "ko": "컨플릭트의 입상자: 시즌 14",
     "zh": "冲突的获奖者第14赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Fourteen.",
       "de": "Die 14. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで入賞する",
       "fr": "Terminer la saison 14 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 14에서 랭킹에 입상",
       "zh": "在水晶冲突的第14赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -75811,12 +75817,14 @@
     "de": "Kartograph: Die Unterfried-Ruinen",
     "ja": "アンダーキープを踏破せし者",
     "fr": "Cartographe du continent : La Gardienne de l'Immémorial",
+    "ko": "언더킵 탐험가",
     "zh": "踏遍永护塔底",
     "description": {
       "en": "Discover every location within the Underkeep.",
       "de": "Alle Orte in den Unterfried-Ruinen erkundet.",
       "ja": "アンダーキープ（王城旧跡）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de la Gardienne de l'Immémorial.",
+      "ko": "언더킵을 탐험하여 모든 지역 발견",
       "zh": "成功探索永护塔底（王城古迹）的所有地区。"
     },
     "item": 0,
@@ -75830,12 +75838,14 @@
     "de": "Aufforderung zum Ehrenduell",
     "ja": "永久なる騎士を狩りし者",
     "fr": "Honneur préservé",
+    "ko": "영원한 기사를 쓰러뜨린 자",
     "zh": "永恒的弑臣者",
     "description": {
       "en": "Defeat Zelenia in Recollection (Extreme).",
       "de": "Zelenia in Gok Tajaal - Zelenia bezwungen.",
       "ja": "極ゼレニア討滅戦で、ゼレニアを討伐する",
       "fr": "Vaincre Zelenia dans le défi “Le Sanctuaire du Serment (extrême)”.",
+      "ko": "극 젤레니아 토벌전에 참가하여 젤레니아 처치",
       "zh": "在泽莲尼娅歼殛战中战胜泽莲尼娅。"
     },
     "item": 0,
@@ -75849,12 +75859,14 @@
     "de": "Stufen des Arkadions I",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク1",
     "fr": "Champion poids lourds-légers de l'Arcadion I",
+    "ko": "아르카디아 크루저급을 제패한 자: 1단계",
     "zh": "称霸登天斗技场中量级1",
     "description": {
       "en": "Complete AAC Cruiserweight Tier.",
       "de": "Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を攻略する",
       "fr": "Conquérir la division poids lourds-légers CCA 1 fois.",
+      "ko": "아르카디아 선수권: 크루저급 완료",
       "zh": "成功挑战阿卡狄亚登天斗技场中量级。"
     },
     "item": 0,
@@ -75868,12 +75880,14 @@
     "de": "Stufen des Arkadions II",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク2",
     "fr": "Champion poids lourds-légers de l'Arcadion II",
+    "ko": "아르카디아 크루저급을 제패한 자: 2단계",
     "zh": "称霸登天斗技场中量级2",
     "description": {
       "en": "Complete AAC Cruiserweight Tier 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計5回攻略する",
       "fr": "Conquérir la division poids lourds-légers CCA 5 fois.",
+      "ko": "아르카디아 선수권: 크루저급 5회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场中量级5次。"
     },
     "item": 0,
@@ -75887,12 +75901,14 @@
     "de": "Stufen des Arkadions III",
     "ja": "アルカディアのクルーザー級を制覇せし者：ランク3",
     "fr": "Champion poids lourds-légers de l'Arcadion III",
+    "ko": "아르카디아 크루저급을 제패한 자: 3단계",
     "zh": "称霸登天斗技场中量级3",
     "description": {
       "en": "Complete AAC Cruiserweight Tier 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計10回攻略する",
       "fr": "Conquérir la division poids lourds-légers CCA 10 fois.",
+      "ko": "아르카디아 선수권: 크루저급 10회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场中量级10次。"
     },
     "item": 0,
@@ -75906,12 +75922,14 @@
     "de": "Epische Stufen des Arkadions I",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク1",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion I",
+    "ko": "아르카디아 크루저급을 완벽히 제패한 자: 1단계",
     "zh": "完全称霸登天斗技场中量级1",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage).",
       "de": "Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を攻略する",
       "fr": "Conquérir la division poids lourds-légers CCA (sadique) 1 fois.",
+      "ko": "아르카디아 선수권: 크루저급(영웅) 완료",
       "zh": "成功挑战阿卡狄亚零式登天斗技场中量级。"
     },
     "item": 0,
@@ -75925,12 +75943,14 @@
     "de": "Epische Stufen des Arkadions II",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク2",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion II",
+    "ko": "아르카디아 크루저급을 완벽히 제패한 자: 2단계",
     "zh": "完全称霸登天斗技场中量级2",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計5回攻略する",
       "fr": "Conquérir la division poids lourds-légers CCA (sadique) 5 fois.",
+      "ko": "아르카디아 선수권: 크루저급(영웅) 5회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级5次。"
     },
     "item": 0,
@@ -75944,12 +75964,14 @@
     "de": "Epische Stufen des Arkadions III",
     "ja": "アルカディアのクルーザー級を完全制覇せし者：ランク3",
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion III",
+    "ko": "아르카디아 크루저급을 완벽히 제패한 자: 3단계",
     "zh": "完全称霸登天斗技场中量级3",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計10回攻略する",
       "fr": "Conquérir la division poids lourds-légers CCA (sadique) 10 fois.",
+      "ko": "아르카디아 선수권: 크루저급(영웅) 10회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级10次。"
     },
     "item": 0,
@@ -75963,12 +75985,14 @@
     "de": "Auf der Suche nach Endlosigkeit",
     "ja": "永久の探求者",
     "fr": "Explorateurs de l'éternité",
+    "ko": "영원의 탐구자",
     "zh": "永久探求者",
     "description": {
       "en": "Complete the main scenario quest “Seekers of Eternity.”",
       "de": "Den Auftrag „Auf der Suche nach Endlosigkeit“ erfolgreich abgeschlossen.",
       "ja": "クエスト「永久の探求者」をコンプリートする",
       "fr": "Accomplir la quête “Explorateurs de l'éternité”.",
+      "ko": "퀘스트 '영원의 탐구자' 완료",
       "zh": "完成任务“永久探求者”。"
     },
     "item": 0,
@@ -75999,12 +76023,14 @@
     "de": "Aus für die Gerüchteküche",
     "ja": "キングの貴き真相",
     "fr": "Quand il rêve, il est un Roi",
+    "ko": "킹의 숭고한 진상",
     "zh": "幻卡王的重要真相",
     "description": {
       "en": "Complete the quest “Royal Rumblings.”",
       "de": "Den Auftrag „Der falsche König“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとキングの噂」をコンプリートする",
       "fr": "Accomplir la quête “Le Roi singé”.",
+      "ko": "퀘스트 '골드 소서와 킹에 관한 소문' 완료",
       "zh": "完成任务“金碟游乐场与幻卡王的传闻”。"
     },
     "item": 0,
@@ -76682,7 +76708,7 @@
     "ja": "サポートジョブマスター：ランク1",
     "fr": "Maître fantôme I",
     "description": {
-      "en": "Master 1 phantom job.",
+      "en": "Master a phantom job.",
       "de": "1 Phantomjob gemeistert.",
       "ja": "サポートジョブを1種類マスターする",
       "fr": "Maîtriser 1 job de soutien."

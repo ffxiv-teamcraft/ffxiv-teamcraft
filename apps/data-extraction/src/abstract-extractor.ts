@@ -249,7 +249,7 @@ export abstract class AbstractExtractor {
       },
       timeout: 120000
     }, (err, _, res) => {
-      if (!res.data) {
+      if (!res?.data) {
         console.log(JSON.stringify(res));
       }
       AbstractExtractor.TOTAL_REQUESTS++;
