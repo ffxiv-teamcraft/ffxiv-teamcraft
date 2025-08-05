@@ -7,8 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **db:** support for global 7.3 ([b801e9c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b801e9c2b255cf51311cc70c21fefd3583a99df4))
-* **db:** support for global 7.3 ([9d2edd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d2edd5320184019078895a4089970965e158e30))
+* **db:** support for global 7.3 ([b801e9c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b801e9c2b255cf51311cc70c21fefd3583a99df4), [9d2edd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d2edd5320184019078895a4089970965e158e30))
 
 ### [11.3.41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.40...v11.3.41) (2025-07-16)
 
