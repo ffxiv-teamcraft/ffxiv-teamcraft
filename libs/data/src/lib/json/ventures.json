@@ -6562,5 +6562,17 @@
     "ja": "海島綿",
     "de": "Schwarzbaumwoll-Samenkapsel",
     "fr": "Fleur de coton des îles"
+  },
+  "1102": {
+    "en": "Alexandrian Ore",
+    "ja": "アレクサンドリアン鉱",
+    "de": "Alexandrisches Erz",
+    "fr": "Minerai alexandrin"
+  },
+  "1103": {
+    "en": "Optical Fibergrass",
+    "ja": "オプティカルグラス",
+    "de": "Optisches Gras",
+    "fr": "Herbe optique"
   }
 }

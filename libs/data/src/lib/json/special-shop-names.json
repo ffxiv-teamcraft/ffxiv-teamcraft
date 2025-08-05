@@ -7098,10 +7098,10 @@
     "fr": ""
   },
   "1770732": {
-    "en": "Trophy Crystal Exchange (Universal Gear)",
-    "ja": "トロフィークリスタルの取引（全クラス共通防具）",
-    "de": "Kristalltrophäen (Rüstungen)",
-    "fr": "Cristaux-trophées (protections toutes classes)"
+    "en": "Trophy Crystal Exchange (Universal Gear) I",
+    "ja": "トロフィークリスタルの取引（全クラス共通防具その1）",
+    "de": "Kristalltrophäen (Allgemeine Rüstungen I)",
+    "fr": "Cristaux-trophées (protections toutes classes I)"
   },
   "1770733": {
     "en": "Elevated Ester Augmentation",
@@ -7398,10 +7398,10 @@
     "fr": "Assignats orange (Nv ≧ 100) [NvObj 700]"
   },
   "1770782": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purple Scrip Exchange (Lv. 100 Materials)",
+    "ja": "紫貨の取引：Lv100～向け素材",
+    "de": "Violette Scheine (ab St. 100, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 100)"
   },
   "1770783": {
     "en": "Orange Scrip Exchange (Lv. 100 Materials/Furnishings)",
@@ -8154,10 +8154,10 @@
     "fr": "Assignats mauves : matériaux pour outils de Cielacier (Nv ≧ 80)"
   },
   "1770908": {
-    "en": "Sheet Music Exchange",
-    "ja": "譜面の交換",
-    "de": "Orchestrion",
-    "fr": "Rouleaux d'orchestrion"
+    "en": "Tattered Score Exchange (First Movement)",
+    "ja": "ぼろぼろの譜面の取引（第一楽章）",
+    "de": "Vergilbte Notenrollen (Erster Satz)",
+    "fr": "Partitions fripées : recueil 1"
   },
   "1770909": {
     "en": "Neo Kingdom Gear (DoW, IL 700)",
@@ -8262,7 +8262,7 @@
     "fr": "Composants pour armes fantômes"
   },
   "1770926": {
-    "en": "Phantom Weapon Exchange",
+    "en": "Phantom Weapons Penumbrae",
     "ja": "ファントムウェポンの取引",
     "de": "Phantomwaffen",
     "fr": "Armes fantômes"
@@ -8376,10 +8376,10 @@
     "fr": "Assignats orange (Nv ≧ 100) [NvObj 720]"
   },
   "1770945": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cosmocredit Exchange",
+    "ja": "コスモクレジットとの交換",
+    "de": "Kosmo-Kohle",
+    "fr": "Échange de crédits cosmiques"
   },
   "1770946": {
     "en": "Enlightenment Silver Piece Exchange (Ciphers)",
@@ -8416,5 +8416,149 @@
     "ja": "シーズナルイベント報酬の交換（その他）",
     "de": "Saisonale Gegenstände (Anderes)",
     "fr": "Récompenses d'événements saisonniers (divers)"
+  },
+  "1770952": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770955": {
+    "en": "Everkeep Certificates of Grade 2 Import (NQ Weapons)",
+    "ja": "エバーキープの手形G2との交換（武器NQ）",
+    "de": "Immerfried-Marken II (NQ-Waffen)",
+    "fr": "Avoirs de la Gardienne de l'Éternité II (armes QN)"
+  },
+  "1770956": {
+    "en": "Everkeep Certificates of Grade 2 Import (NQ Gear)",
+    "ja": "エバーキープの手形G2との交換（防具NQ）",
+    "de": "Immerfried-Marken II (NQ-Rüstung)",
+    "fr": "Avoirs de la Gardienne de l'Éternité II (pièces d'armure QN)"
+  },
+  "1770957": {
+    "en": "Everkeep Certificates of Grade 2 Import (NQ Accessories)",
+    "ja": "エバーキープの手形G2との交換（アクセサリーNQ）",
+    "de": "Immerfried-Marken II (NQ-Accessoires)",
+    "fr": "Avoirs de la Gardienne de l'Éternité II (accessoires QN)"
+  },
+  "1770958": {
+    "en": "Everkeep Certificates of Grade 2 Import (HQ Weapons)",
+    "ja": "エバーキープの手形G2との交換（武器HQ）",
+    "de": "Immerfried-Marken II (HQ-Waffen)",
+    "fr": "Avoirs de la Gardienne de l'Éternité II (armes HQ)"
+  },
+  "1770959": {
+    "en": "Everkeep Certificates of Grade 2 Import (HQ Gear)",
+    "ja": "エバーキープの手形G2との交換（防具HQ）",
+    "de": "Immerfried-Marken II (HQ-Rüstung)",
+    "fr": "Avoirs de la Gardienne de l'Éternité II (pièces d'armure HQ)"
+  },
+  "1770960": {
+    "en": "Everkeep Certificates of Grade 2 Import (HQ Accessories)",
+    "ja": "エバーキープの手形G2との交換（アクセサリーHQ）",
+    "de": "Immerfried-Marken II (HQ-Accessoires)",
+    "fr": "Avoirs de la Gardienne de l'Éternité II (accessoires HQ)"
+  },
+  "1770961": {
+    "en": "Augmented Ceremonial Equipment (Weapons)",
+    "ja": "セレモニアル強化装備の取引（武器）",
+    "de": "Modifizierte Zeremonial-Ausrüstung (Waffen)",
+    "fr": "Amélioration d'armes des cérémonies"
+  },
+  "1770962": {
+    "en": "Augmented Ceremonial Equipment (Gear)",
+    "ja": "セレモニアル強化装備の取引（防具）",
+    "de": "Modifizierte Zeremonial-Ausrüstung (Rüstungen)",
+    "fr": "Amélioration de pièces d'armure des cérémonies"
+  },
+  "1770963": {
+    "en": "Augmented Ceremonial Equipment (Accessories)",
+    "ja": "セレモニアル強化装備の取引（アクセサリー）",
+    "de": "Modifizierte Zeremonial-Ausrüstung (Accessoires)",
+    "fr": "Amélioration d'accessoires des cérémonies"
+  },
+  "1770964": {
+    "en": "Tattered Score Exchange (Second Movement)",
+    "ja": "ぼろぼろの譜面の取引（第二楽章）",
+    "de": "Vergilbte Notenrollen (Zweiter Satz)",
+    "fr": "Partitions fripées : recueil 2"
+  },
+  "1770965": {
+    "en": "Totem Gear (Necron)",
+    "ja": "報酬装備の取引（永遠の闇）",
+    "de": "Ewiges Dunkel-Ausrüstung",
+    "fr": "Équipements totémiques (Darkness)"
+  },
+  "1770966": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770967": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770968": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770969": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770970": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770971": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770972": {
+    "en": "Trophy Crystal Exchange (Universal Gear) II",
+    "ja": "トロフィークリスタルの取引（全クラス共通防具その2）",
+    "de": "Kristalltrophäen (Allgemeine Rüstungen II)",
+    "fr": "Cristaux-trophées (protections toutes classes II)"
+  },
+  "1770973": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770974": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770975": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770976": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770977": {
+    "en": "Cosmocredit Exchange (Materials/Materia/Items)",
+    "ja": "コスモクレジットとの交換（素材・マテリア・消耗品）",
+    "de": "Kosmo-Kohle (Materialien/Materia/Verbrauchsgegenstände)",
+    "fr": "Échange de crédits cosmiques (matériaux, matérias et consommables)"
   }
 }

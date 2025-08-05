@@ -15381,7 +15381,7 @@
     "en": "Resistance Secretariat",
     "ja": "コンテンツ解説",
     "de": "Informationen",
-    "fr": "Guide de la résistance"
+    "fr": "Guide"
   },
   "2565": {
     "en": "Andron",
@@ -24564,10 +24564,10 @@
     "fr": "Les Sables sanglants"
   },
   "4095": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Bayside Battleground",
+    "ja": "ベイサイド・バトルグラウンド",
+    "de": "Der Küstenkampf",
+    "fr": "Le Rivage redoutable"
   },
   "4096": {
     "en": "",
@@ -26882,7 +26882,7 @@
   "4481": {
     "en": "Zirgor Zormor",
     "ja": "ジィゴ・ゾーモー",
-    "de": "Jirgor Zormor",
+    "de": "Zirgor Zormor",
     "fr": "Zirgor Zormor"
   },
   "4482": {
@@ -26900,7 +26900,7 @@
   "4484": {
     "en": "Zirgor Zormor",
     "ja": "ジィゴ・ゾーモー",
-    "de": "Jirgor Zormor",
+    "de": "Zirgor Zormor",
     "fr": "Zirgor Zormor"
   },
   "4485": {
@@ -28161,7 +28161,7 @@
     "en": "Electrope Strike",
     "ja": "エレクトロープ採石場",
     "de": "Elektrob-Bruch",
-    "fr": "Mines d'Électrope"
+    "fr": "Mines d'électrope"
   },
   "4695": {
     "en": "Gate of Remembrance",
@@ -29682,10 +29682,10 @@
     "fr": "Lagune lapidaire"
   },
   "4948": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Containment Complex 10-29",
+    "ja": "格納殻10-29",
+    "de": "Lagerhülle 10-29",
+    "fr": "Division d'entreposage 10-29"
   },
   "4949": {
     "en": "",
@@ -29694,40 +29694,40 @@
     "fr": ""
   },
   "4950": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Researchers' Commons",
+    "ja": "汎用研究室",
+    "de": "Universallabor",
+    "fr": "Salle polyvalente"
   },
   "4951": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hub",
+    "ja": "中央ハブ",
+    "de": "Zentralbereich",
+    "fr": "Pièce centrale"
   },
   "4952": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Protolab",
+    "ja": "第一実験室",
+    "de": "Versuchslabor I ",
+    "fr": "Salle d'expérimentation n°1"
   },
   "4953": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Deuterolab",
+    "ja": "第二実験室",
+    "de": "Versuchslabor II",
+    "fr": "Salle d'expérimentation n°2"
   },
   "4954": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Facilities",
+    "ja": "管理設備室",
+    "de": "Verwaltungskammer",
+    "fr": "Bureau de maintenance"
   },
   "4955": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Director's Office",
+    "ja": "所長室",
+    "de": "Büro des Forschungsleiters ",
+    "fr": "Bureau du directeur"
   },
   "4956": {
     "en": "",
@@ -31434,220 +31434,220 @@
     "fr": "Ascenseur nadiral"
   },
   "5240": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "San d'Oria: The Second Walk",
+    "ja": "サンドリア：ザ・セカンドウォーク",
+    "de": "San d'Oria: Die zweite Etappe",
+    "fr": "San d'Oria - La deuxième perambulation"
   },
   "5241": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "San d'Oria",
+    "ja": "サンドリア",
+    "de": "San d'Oria",
+    "fr": "San d'Oria"
   },
   "5242": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ronfaure",
+    "ja": "ロンフォール",
+    "de": "Ronfaure",
+    "fr": "Ronfaure"
   },
   "5243": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Horlais Peak",
+    "ja": "ホルレーの岩峰",
+    "de": "Horlais-Gipfel",
+    "fr": "Pic de Horlais"
   },
   "5244": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-I",
+    "ja": "艦隊の飛空艇",
+    "de": "Flotten-Luftschiff",
+    "fr": "Pont d'aéronef"
   },
   "5245": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-II",
+    "ja": "艦隊の飛空艇II",
+    "de": "Flotten-Luftschiff II",
+    "fr": "Pont d'aéronef II"
   },
   "5246": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-III",
+    "ja": "艦隊の飛空艇III",
+    "de": "Flotten-Luftschiff III",
+    "fr": "Pont d'aéronef III"
   },
   "5247": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-IV",
+    "ja": "艦隊の飛空艇IV",
+    "de": "Flotten-Luftschiff IV",
+    "fr": "Pont d'aéronef IV"
   },
   "5248": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Qufim",
+    "ja": "クフィム",
+    "de": "Qufim",
+    "fr": "Qufim"
   },
   "5249": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stellar Fulcrum",
+    "ja": "天輪の場",
+    "de": "Sternen-Fulcrum",
+    "fr": "Axe stellaire"
   },
   "5250": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Shrine of Ru'Avitau",
+    "ja": "ル・アビタウ神殿",
+    "de": "Ru'Avitau-Schrein",
+    "fr": "Tombeau de Ru'Avitau"
   },
   "5251": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Celestial Nexus",
+    "ja": "宿星の座",
+    "de": "Himmels-Nexus",
+    "fr": "Nœud céleste"
   },
   "5252": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "San d'Oria",
+    "ja": "サンドリア",
+    "de": "San d'Oria",
+    "fr": "San d'Oria"
   },
   "5253": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ronfaure",
+    "ja": "ロンフォール",
+    "de": "Ronfaure",
+    "fr": "Ronfaure"
   },
   "5254": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Horlais Peak",
+    "ja": "ホルレーの岩峰",
+    "de": "Horlais-Gipfel",
+    "fr": "Pic de Horlais"
   },
   "5255": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Qufim",
+    "ja": "クフィム",
+    "de": "Qufim",
+    "fr": "Qufim"
   },
   "5256": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Stellar Fulcrum",
+    "ja": "天輪の場",
+    "de": "Sternen-Fulcrum",
+    "fr": "Axe stellaire"
   },
   "5257": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Shrine of Ru'Avitau",
+    "ja": "ル・アビタウ神殿",
+    "de": "Ru'Avitau-Schrein",
+    "fr": "Tombeau de Ru'Avitau"
   },
   "5258": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Celestial Nexus",
+    "ja": "宿星の座",
+    "de": "Himmels-Nexus",
+    "fr": "Nœud céleste"
   },
   "5259": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Chateau d'Oraguille",
+    "ja": "ドラギーユ城",
+    "de": "Oraguille-Schloss",
+    "fr": "Château d'Oraguille"
   },
   "5260": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Highland Battlefield",
+    "ja": "岩峰の武闘場",
+    "de": "Hochland-Arena",
+    "fr": "Arène des divinités"
   },
   "5261": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-I",
+    "ja": "艦隊の飛空艇",
+    "de": "Flotten-Luftschiff",
+    "fr": "Pont d'aéronef"
   },
   "5262": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-II",
+    "ja": "艦隊の飛空艇II",
+    "de": "Flotten-Luftschiff II",
+    "fr": "Pont d'aéronef II"
   },
   "5263": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-III",
+    "ja": "艦隊の飛空艇III",
+    "de": "Flotten-Luftschiff III",
+    "fr": "Pont d'aéronef III"
   },
   "5264": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship J-IV",
+    "ja": "艦隊の飛空艇IV",
+    "de": "Flotten-Luftschiff IV",
+    "fr": "Pont d'aéronef IV"
   },
   "5265": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Delkfutt's Tower",
+    "ja": "デルクフの塔",
+    "de": "Delkfutts-Turm",
+    "fr": "Tour de Delkfutt"
   },
   "5266": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Meso Terminal",
+    "ja": "メインターミナル",
+    "de": "Meso-System",
+    "fr": "Mésoterminal"
   },
   "5267": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Circuits",
+    "ja": "メインターミナル下層",
+    "de": "Unteres Meso-System",
+    "fr": "Étage inférieur"
   },
   "5268": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central Circuits",
+    "ja": "メインターミナル中層",
+    "de": "Mittleres Meso-System",
+    "fr": "Étage intermédiaire"
   },
   "5269": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Circuits",
+    "ja": "メインターミナル上層",
+    "de": "Oberes Meso-System",
+    "fr": "Étage supérieur"
   },
   "5270": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triage Module",
+    "ja": "下層多目的広場",
+    "de": "Diversorium",
+    "fr": "Place polyvalente inférieure"
   },
   "5271": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Public Forum",
+    "ja": "中層ホール",
+    "de": "Großer Saal",
+    "fr": "Hall intermédiaire"
   },
   "5272": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Non-volatile Memory",
+    "ja": "重要記憶保管室",
+    "de": "Essenzialerinnerungsbewahrung",
+    "fr": "Chambre des souvenirs de haute importance"
   },
   "5273": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Preserved Medical Facility",
+    "ja": "記録された医療棟",
+    "de": "Gespeicherter Medizintrakt",
+    "fr": "Aile médicale reconstituée"
   },
   "5274": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Preserved Carceral Facility",
+    "ja": "記録された監獄棟",
+    "de": "Gespeicherter Kerker",
+    "fr": "Aile carcérale reconstituée"
   },
   "5275": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Preserved Castle Town",
+    "ja": "記録された王都市街",
+    "de": "Gespeicherte Hauptstadt",
+    "fr": "Ville royale reconstituée"
   },
   "5276": {
     "en": "",
@@ -31698,16 +31698,16 @@
     "fr": ""
   },
   "5284": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Ageless Necropolis",
+    "ja": "死の満ちる地",
+    "de": "Fülle des Todes",
+    "fr": "Nécropole intemporelle"
   },
   "5285": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Lightless Abyss",
+    "ja": "奈落",
+    "de": "Abgrund",
+    "fr": "Abîme d'Obscurité"
   },
   "5286": {
     "en": "",
@@ -31776,16 +31776,16 @@
     "fr": ""
   },
   "5297": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Vault Oneiron",
+    "ja": "ボルト・オネイロン",
+    "de": "Tresor Oneiron",
+    "fr": "Coffre d'Oneiron"
   },
   "5298": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Armada Airship",
+    "ja": "艦隊の飛空艇",
+    "de": "Flotten-Luftschiff",
+    "fr": "Pont d'aéronef"
   },
   "5299": {
     "en": "",
@@ -31914,10 +31914,10 @@
     "fr": ""
   },
   "5320": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Intersite Travel",
+    "ja": "コスモエクスプローラー：拠点へ移動",
+    "de": "Portal zur Basis",
+    "fr": "Voyages interstations"
   },
   "5321": {
     "en": "",

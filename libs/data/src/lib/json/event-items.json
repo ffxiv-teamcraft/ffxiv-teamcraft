@@ -26194,17 +26194,17 @@
     "icon": "/i/020000/020952.png"
   },
   "2003742": {
-    "en": "Drained Battery Pack",
+    "en": "Battery Pack",
     "ja": "",
-    "de": "Leerer Energievorrat",
-    "fr": "Réservoir d'énergie vide",
+    "de": "Energievorrat",
+    "fr": "Réservoir d'énergie",
     "icon": "/i/023000/023553.png"
   },
   "2003743": {
-    "en": "Charged Battery Pack",
+    "en": "Battery Pack",
     "ja": "",
-    "de": "Rappelvoller Energievorrat",
-    "fr": "Réservoir d'énergie plein",
+    "de": "Energievorrat",
+    "fr": "Réservoir d'énergie",
     "icon": "/i/023000/023553.png"
   },
   "2003744": {
@@ -26322,16 +26322,16 @@
   "2003760": {
     "en": "",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Süßes für Allerschutzheiligen",
+    "fr": "Douceurs de la Veillée",
+    "icon": "/i/026000/026111.png"
   },
   "2003761": {
     "en": "",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Kürbis für Allerschutzheiligen",
+    "fr": "Citrouille décorative",
+    "icon": "/i/024000/024153.png"
   },
   "2003762": {
     "en": "",
@@ -26339,5 +26339,194 @@
     "de": "",
     "fr": "",
     "icon": ""
+  },
+  "2003763": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003764": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003765": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003766": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003767": {
+    "en": "Card-shaped Object",
+    "ja": "",
+    "de": "Sicherheitspass (?)",
+    "fr": "Carte en électrope",
+    "icon": "/i/026000/026078.png"
+  },
+  "2003768": {
+    "en": "Level 2 Security Card",
+    "ja": "",
+    "de": "St. II-Sicherheitspass",
+    "fr": "Carte d'accès de niveau 2",
+    "icon": "/i/026000/026079.png"
+  },
+  "2003769": {
+    "en": "Level 3 Security Card",
+    "ja": "",
+    "de": "St. III-Sicherheitspass",
+    "fr": "Carte d'accès de niveau 3",
+    "icon": "/i/026000/026080.png"
+  },
+  "2003770": {
+    "en": "Crumpled Note",
+    "ja": "",
+    "de": "Notizschnipsel",
+    "fr": "Bout de papier griffonné",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003771": {
+    "en": "Large Alexandrite",
+    "ja": "",
+    "de": "Alexandrit",
+    "fr": "Alexandrite",
+    "icon": "/i/021000/021290.png"
+  },
+  "2003772": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003773": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003774": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003775": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003776": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003777": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003778": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003779": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003780": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003781": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003782": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003783": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003784": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003785": {
+    "en": "Gargantuaskin Treasure Map",
+    "ja": "",
+    "de": "Gargantualeder-Schatzkarte",
+    "fr": "Carte au trésor en peau de gargantua",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003786": {
+    "en": "High-rolling Thief's Map",
+    "ja": "",
+    "de": "Äthergramm-Karte VIII",
+    "fr": "Carte de portail magique VIII",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003787": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003788": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003789": {
+    "en": "Level 1 Security Card",
+    "ja": "",
+    "de": "St. I-Sicherheitspass",
+    "fr": "Carte d'accès de niveau 1",
+    "icon": "/i/026000/026078.png"
   }
 }

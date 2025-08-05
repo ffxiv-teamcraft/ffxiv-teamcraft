@@ -27,7 +27,7 @@ export class EnvironmentService {
   }
 
   public get maxIlvl(): number {
-    return 730;
+    return 760;
   }
 
   public get maxSubmarineRank() : number {

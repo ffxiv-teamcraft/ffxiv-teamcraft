@@ -139,7 +139,7 @@
   },
   "24": {
     "en": "Wondrous Tails",
-    "ja": "空想帳",
+    "ja": "クロの空想帳",
     "de": "Abenteueralbum",
     "fr": "Aventures imaginaires"
   },
@@ -226,5 +226,11 @@
     "ja": "蜃気楼の島 クレセントアイル",
     "de": "Kreszentia",
     "fr": "Île de Lunule"
+  },
+  "39": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

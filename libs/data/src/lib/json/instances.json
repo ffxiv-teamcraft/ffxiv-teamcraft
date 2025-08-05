@@ -15,7 +15,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112005.png",
@@ -47,7 +47,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112002.png",
@@ -81,7 +81,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112003.png",
@@ -115,7 +115,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112001.png",
@@ -149,7 +149,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112014.png",
@@ -181,7 +181,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112006.png",
@@ -213,7 +213,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112004.png",
@@ -245,7 +245,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112007.png",
@@ -277,7 +277,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112009.png",
@@ -309,7 +309,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112010.png",
@@ -341,7 +341,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112012.png",
@@ -373,7 +373,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112011.png",
@@ -405,7 +405,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112013.png",
@@ -437,7 +437,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112015.png",
@@ -469,7 +469,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112016.png",
@@ -501,7 +501,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112027.png",
@@ -533,7 +533,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112025.png",
@@ -565,7 +565,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112026.png",
@@ -597,7 +597,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112048.png",
@@ -631,7 +631,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112049.png",
@@ -663,7 +663,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112042.png",
@@ -695,7 +695,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112058.png",
@@ -727,7 +727,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112059.png",
@@ -759,7 +759,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112060.png",
@@ -791,7 +791,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112068.png",
@@ -823,7 +823,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112066.png",
@@ -855,7 +855,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112067.png",
@@ -887,7 +887,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112077.png",
@@ -919,7 +919,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112078.png",
@@ -951,7 +951,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112091.png",
@@ -983,7 +983,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112076.png",
@@ -1015,7 +1015,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112093.png",
@@ -1047,7 +1047,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112090.png",
@@ -1079,7 +1079,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112094.png",
@@ -1111,7 +1111,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112087.png",
@@ -1143,7 +1143,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112088.png",
@@ -1175,7 +1175,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112092.png",
@@ -1207,7 +1207,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112089.png",
@@ -1239,7 +1239,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112117.png",
@@ -1271,7 +1271,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112116.png",
@@ -1303,7 +1303,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112124.png",
@@ -1335,7 +1335,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112125.png",
@@ -1367,7 +1367,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112163.png",
@@ -1399,7 +1399,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112164.png",
@@ -1431,7 +1431,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112186.png",
@@ -1463,7 +1463,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112187.png",
@@ -1495,7 +1495,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112214.png",
@@ -1527,7 +1527,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112215.png",
@@ -1559,7 +1559,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112227.png",
@@ -1591,7 +1591,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112233.png",
@@ -1623,7 +1623,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112226.png",
@@ -1655,7 +1655,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112228.png",
@@ -1687,7 +1687,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112229.png",
@@ -1719,7 +1719,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112230.png",
@@ -1751,7 +1751,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112231.png",
@@ -1783,7 +1783,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112232.png",
@@ -1815,7 +1815,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112255.png",
@@ -1847,7 +1847,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112264.png",
@@ -1879,7 +1879,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112263.png",
@@ -1911,7 +1911,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112283.png",
@@ -1943,7 +1943,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112310.png",
@@ -1975,7 +1975,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112311.png",
@@ -2007,7 +2007,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112333.png",
@@ -2039,7 +2039,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112343.png",
@@ -2071,7 +2071,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112344.png",
@@ -2103,7 +2103,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112347.png",
@@ -2135,7 +2135,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112348.png",
@@ -2167,7 +2167,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112345.png",
@@ -2199,7 +2199,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112346.png",
@@ -2231,7 +2231,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112349.png",
@@ -2263,7 +2263,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112342.png",
@@ -2295,7 +2295,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112373.png",
@@ -2327,7 +2327,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112378.png",
@@ -2359,7 +2359,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112399.png",
@@ -2391,7 +2391,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112406.png",
@@ -2423,7 +2423,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112428.png",
@@ -2455,7 +2455,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112435.png",
@@ -2487,7 +2487,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112442.png",
@@ -2519,7 +2519,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112436.png",
@@ -2551,7 +2551,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112439.png",
@@ -2583,7 +2583,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112438.png",
@@ -2615,7 +2615,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112437.png",
@@ -2647,7 +2647,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112440.png",
@@ -2679,7 +2679,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112441.png",
@@ -2711,7 +2711,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112017.png",
@@ -2743,7 +2743,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112465.png",
@@ -2775,7 +2775,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112481.png",
@@ -2807,7 +2807,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112502.png",
@@ -2839,7 +2839,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112521.png",
@@ -2871,7 +2871,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112543.png",
@@ -2903,7 +2903,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112555.png",
@@ -2935,7 +2935,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112558.png",
@@ -2967,7 +2967,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112554.png",
@@ -2999,7 +2999,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112559.png",
@@ -3031,7 +3031,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112556.png",
@@ -3063,7 +3063,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112557.png",
@@ -3095,7 +3095,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112560.png",
@@ -3126,7 +3126,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112561.png",
@@ -3157,7 +3157,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112584.png",
@@ -3188,7 +3188,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061801.png",
     "banner": "/i/112000/112592.png",
@@ -3201,6 +3201,37 @@
     "contentText": [
       42132,
       42100
+    ]
+  },
+  "102": {
+    "id": 102,
+    "en": "the Meso Terminal",
+    "ja": "永久幽界 メインターミナル",
+    "de": "Das Meso-System",
+    "fr": "Le Mésoterminal",
+    "description": {
+      "en": "The lights of Living Memory no longer shine, and the Meso Terminal at its center stands silent amidst the wistful echoes of lives once lived. A monument to the existence of the Alexandrian people, as well as a resting place for their memories, it is within this soaring spire that Calyx maintains his stronghold.<br><br>The self-proclaimed architect of mankind's evolution has invited you to confront him in the upper reaches of the terminal─an invitation you must accept lest his atrocities continue to escalate. Step into the structure's glowing interior, and begin your wary ascent through the midst of the dreaming Endless...",
+      "ja": "灯火が消え、命の残響だけが寂しげに響くリビング・メモリーの中央に、黄金の女王像を戴く石碑が佇む。メインターミナル――それは、かつて生きた人々の記憶を保存（プリザベート）した命の碑。<br>アレクサンドリアの人々が生きた証たるその内こそが、プリザベーションの指導者カリュクスの根城……。「人類の進化」を謳う彼と決着をつけるため、冒険者よ、今こそ永久人たちの幽界を上り往け。",
+      "de": "Ein gigantischer Grabstein steht geschmückt vom güldenen Antlitz einer Ewigen Königin im Zentrum der einst von Lachen und Treiben erfüllten Lebenden Erinnerung: das Meso-System.<br>Was Jahrhunderte lang die Erinnerungen so vieler vergangener Leben behütete, hat sich als Calyx' verborgenes Schloss entpuppt, in dem er auch jetzt unentwegt an der Verwirklichung seiner Pläne werkelt. Ihn, der für eine Evolution in der Endlosigkeit jegliche Moral abgestriffen zu haben scheint, gilt es nun mit allen Mitteln zu stoppen.",
+      "fr": "Les lumières de La Mémoire vivante se sont éteintes, et le silence règne dans la cité autrefois si festive. Au centre de ce décor solennel se dresse encore, telle une immense stèle funéraire, un monolithe géant surmonté d'une statue dorée&nbsp;: le mésoterminal, lieu de sauvegarde des souvenirs et de fabrication des Éternels. Un symbole d'existence du peuple alexandrin, au sommet duquel Calyx, le grand maître de Préservation, vous attend de pied ferme. À vous de gravir les méandres du “monde virtuel des souvenirs”, et de mettre un terme aux agissements de celui qui prône l'immortalité comme évolution nécessaire de l'espèce humaine."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112611.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 720,
+    "sync": 100,
+    "exp": 0,
+    "map": 1055,
+    "contentText": [
+      42627,
+      42600
     ]
   },
   "5001": {
@@ -5419,7 +5450,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111006.png",
@@ -5451,7 +5482,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111001.png",
@@ -5483,7 +5514,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111007.png",
@@ -5515,7 +5546,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111008.png",
@@ -5547,7 +5578,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111002.png",
@@ -5579,7 +5610,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111003.png",
@@ -5611,7 +5642,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111005.png",
@@ -5643,7 +5674,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111004.png",
@@ -5675,7 +5706,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111009.png",
@@ -5707,7 +5738,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111010.png",
@@ -5739,7 +5770,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111011.png",
@@ -5771,7 +5802,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111012.png",
@@ -5803,7 +5834,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111013.png",
@@ -5835,7 +5866,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061803.png",
     "banner": "/i/111000/111014.png",
@@ -6378,7 +6409,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112008.png",
@@ -6410,7 +6441,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112018.png",
@@ -6442,7 +6473,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112019.png",
@@ -6474,7 +6505,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112021.png",
@@ -6506,7 +6537,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112022.png",
@@ -6538,7 +6569,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112023.png",
@@ -6570,7 +6601,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112028.png",
@@ -6602,7 +6633,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112029.png",
@@ -6634,7 +6665,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112030.png",
@@ -6666,7 +6697,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112031.png",
@@ -6698,7 +6729,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112050.png",
@@ -6730,7 +6761,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112032.png",
@@ -6757,7 +6788,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112536.png",
@@ -6784,7 +6815,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112320.png",
@@ -6811,7 +6842,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112358.png",
@@ -6843,7 +6874,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112051.png",
@@ -6875,7 +6906,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112052.png",
@@ -6907,7 +6938,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112053.png",
@@ -6935,7 +6966,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112055.png",
@@ -6963,7 +6994,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112054.png",
@@ -6995,7 +7026,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112062.png",
@@ -7027,7 +7058,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112063.png",
@@ -7059,7 +7090,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112073.png",
@@ -7091,7 +7122,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112074.png",
@@ -7123,7 +7154,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112075.png",
@@ -7155,7 +7186,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112065.png",
@@ -7183,7 +7214,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112081.png",
@@ -7215,7 +7246,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112080.png",
@@ -7247,7 +7278,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112103.png",
@@ -7279,7 +7310,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112107.png",
@@ -7311,7 +7342,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112104.png",
@@ -7343,7 +7374,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112105.png",
@@ -7375,7 +7406,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112106.png",
@@ -7407,7 +7438,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112122.png",
@@ -7439,7 +7470,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112126.png",
@@ -7471,7 +7502,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112127.png",
@@ -7503,7 +7534,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112160.png",
@@ -7535,7 +7566,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112161.png",
@@ -7567,7 +7598,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112201.png",
@@ -7599,7 +7630,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112202.png",
@@ -7631,7 +7662,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112212.png",
@@ -7663,7 +7694,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112213.png",
@@ -7695,7 +7726,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112244.png",
@@ -7727,7 +7758,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112242.png",
@@ -7759,7 +7790,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112245.png",
@@ -7791,7 +7822,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112243.png",
@@ -7823,7 +7854,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112246.png",
@@ -7855,7 +7886,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112258.png",
@@ -7887,7 +7918,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112273.png",
@@ -7919,7 +7950,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112274.png",
@@ -7951,7 +7982,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112289.png",
@@ -7979,7 +8010,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112290.png",
@@ -8007,7 +8038,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112291.png",
@@ -8039,7 +8070,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112292.png",
@@ -8071,7 +8102,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112321.png",
@@ -8103,7 +8134,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112322.png",
@@ -8135,7 +8166,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112320.png",
@@ -8167,7 +8198,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112339.png",
@@ -8199,7 +8230,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112340.png",
@@ -8231,7 +8262,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112358.png",
@@ -8263,7 +8294,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112359.png",
@@ -8295,7 +8326,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112360.png",
@@ -8327,7 +8358,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112361.png",
@@ -8359,7 +8390,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112362.png",
@@ -8391,7 +8422,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112372.png",
@@ -8423,7 +8454,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112379.png",
@@ -8455,7 +8486,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112380.png",
@@ -8487,7 +8518,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112381.png",
@@ -8519,7 +8550,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112402.png",
@@ -8551,7 +8582,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112403.png",
@@ -8583,7 +8614,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112419.png",
@@ -8615,7 +8646,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112420.png",
@@ -8647,7 +8678,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112429.png",
@@ -8679,7 +8710,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112430.png",
@@ -8711,7 +8742,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112445.png",
@@ -8743,7 +8774,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112446.png",
@@ -8775,7 +8806,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112447.png",
@@ -8807,7 +8838,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112443.png",
@@ -8839,7 +8870,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112444.png",
@@ -8871,7 +8902,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112468.png",
@@ -8903,7 +8934,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112467.png",
@@ -8935,7 +8966,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112482.png",
@@ -8967,7 +8998,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112483.png",
@@ -8999,7 +9030,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112503.png",
@@ -9031,7 +9062,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112504.png",
@@ -9063,7 +9094,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112536.png",
@@ -9095,7 +9126,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112522.png",
@@ -9127,7 +9158,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112523.png",
@@ -9159,7 +9190,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112544.png",
@@ -9191,7 +9222,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112545.png",
@@ -9216,14 +9247,14 @@
     "description": {
       "en": "In the lands of Tural, there is a class of beasts which transcends the limits of the natural order─the tural vidraal. The mightiest of these, the feared and fearsome Valigarmanda, caused centuries of suffering until it was at last sealed away in the mountain fastness of Urqopacha by a young Gulool Ja Ja. Eighty years later, however, a foolish claimant in the rite of succession has seen fit to release the Skyruin from its icy prison. If you would spare Tural's people a new age of terror, then you must stand with Wuk Lamat against this flying calamity and its endless elemental fury.",
       "ja": "トラル大陸において、他と一線を画す規格外の力を持った獣はこう呼ばれる。大地を掌握する者――トラルヴィドラールと。その中でも最強と恐れられる存在、「ヴァリガルマンダ」は約80年前に若き日のグルージャジャらによって成敗され、オルコ・パチャ山麓に封印されてきた。だが、この「生ける天災」が、継承の儀の最中に解き放たれてしまう。かくしてウクラマトと冒険者たち一行は、トラル大陸の平穏を護るべく立ち上がる。火、氷、雷の力を振るう伝説の有翼蛇を討滅せよ！",
-      "de": "Auf Tural erhalten jene Lebewesen, welche Tausende von Jahren überdauern und unvorstellbar gewaltige Mächte besitzen, einen besonderen Namen&nbsp;- Tural Vidraal. Selbst achtzig Jahre, nachdem sie im Anschluss an einen erbitterten Kampf mit Gulool Ja Ja und dessen Gefährten in den Bergen des Urqupacha versiegelt wurde, gilt Valigarmanda, die Geflügelte Geißel, auch jetzt noch als die stärkste dieser legendären Bestien. Eben diese lebenden Katastrophe ist nun im Laufe des Ritus der Thronfolge aus ihrem Schlaf gerissen worden. Jetzt liegt es an dir, gemeinsam mit Wuk Lamat und den übrigen Thronanwärtern, den stärksten Tural Vidraal aufzuhalten, bevor er erneut eine Schneise der Verwüstung durch den Kontinent ziehen kann!",
+      "de": "Auf Tural erhalten jene Lebewesen, welche Tausende von Jahren überdauern und unvorstellbar gewaltige Mächte besitzen, einen besonderen Namen&nbsp;- Tural Vidraal. Selbst achtzig Jahre, nachdem sie im Anschluss an einen erbitterten Kampf mit Gulool Ja Ja und dessen Gefährten in den Bergen des Urqopacha versiegelt wurde, gilt Valigarmanda, die Geflügelte Geißel, auch jetzt noch als die stärkste dieser legendären Bestien. Eben diese lebenden Katastrophe ist nun im Laufe des Ritus der Thronfolge aus ihrem Schlaf gerissen worden. Jetzt liegt es an dir, gemeinsam mit Wuk Lamat und den übrigen Thronanwärtern, den stärksten Tural Vidraal aufzuhalten, bevor er erneut eine Schneise der Verwüstung durch den Kontinent ziehen kann!",
       "fr": "Les Tural vidraal. “Ceux qui règnent sur la terre.” Des créatures aux facultés hors normes et à la puissance incommensurable. La plus terrifiante de toutes, Valigarmanda, fut emprisonnée il y a huit décennies au pied des montagnes d'Urqopacha par le jeune Gulool Ja Ja et ses alliés, au terme d'un bras de fer absolument épique. Or, voilà que la “calamité incarnée” se retrouve libérée en plein rite de succession&nbsp;! Wuk Lamat décide alors de mettre la compétition entre parenthèses afin de sauver le Tural aux côtés de ses frères. Joignez-vous à elle dans son combat contre l'oiseau-serpent de légende, maître des éléments feu, glace et foudre&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112562.png",
@@ -9255,7 +9286,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112563.png",
@@ -9272,7 +9303,7 @@
   },
   "20095": {
     "id": 20095,
-    "en": "The Interphos",
+    "en": "the Interphos",
     "ja": "エターナルクイーン討滅戦",
     "de": "Zel Tajaal - Ewige Königin",
     "fr": "Interphos",
@@ -9286,7 +9317,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112566.png",
@@ -9317,7 +9348,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112564.png",
@@ -9349,7 +9380,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112565.png",
@@ -9380,7 +9411,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061850.png",
     "banner": "/i/112000/112586.png",
@@ -9397,7 +9428,7 @@
   },
   "20099": {
     "id": 20099,
-    "en": "The Minstrel's Ballad: Sphene's Burden",
+    "en": "the Minstrel's Ballad: Sphene's Burden",
     "ja": "極エターナルクイーン討滅戦",
     "de": "Gok Tajaal - Ewige Königin",
     "fr": "Interphos (extrême)",
@@ -9411,7 +9442,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112588.png",
@@ -9436,13 +9467,13 @@
       "en": "Calyx's trail has led you to Alexandria's castle and into a wicked trap. Seeking to take more precise measurements of your strength, Calyx pits you against a mechanical guardian forged from Sphene's memories of Zelenia, the second-in-command of the royal knights. The queen implores you to lay this affront to her dear friend's honor to rest. Make ready to test your mettle against one of Alexandria's finest blades!",
       "ja": "カリュクスの残した手掛かりを追い、エバーキープ地下に佇むアレクサンドリア城へと到達した冒険者たち。しかし、城内の探索中に冒険者とスフェーンだけが玉座の間へと転移させられてしまう。待ち受けていたのはカリュクスとシミュラント、そしてスフェーンの記憶をもとに造られた守護機構「ゼレニア」だった。大切な臣下との思い出を利用されたことに憤るスフェーンは、守護機構の破壊を冒険者に懇願する。その切なる願いに応え、ゼレニアを討滅せよ！",
       "de": "Calyx' Spur führt euch zur Burg Alexandria, doch kurz nachdem ihr die alten Hallen betreten habt, tappst du in eine hinterlistige Falle. Zusammen mit Sphene wirst du in den Thronsaal katapultiert, wo Calyx und die Simulantin bereits auf euch warten. Um deine Stärke präziser messen zu können, lässt Calyx dich gegen eine mechanische Wächterin antreten, die aus Sphenes Erinnerungen an Zelenia, die ehemalige Vizekommandantin des königlichen Ritterordens und treue Begleiterin Sphenes, erschaffen wurde. Dieser Missbrauch der Erinnerungen an ihre gute Freundin empört Sphene zutiefst und sie bittet dich inständig darum, die Maschine zu zerstören und Zelenias Ehre wiederherzustellen. Mach dich bereit, dich mit einer der tapfersten Kriegerinnen Alexandrias zu messen!",
-      "fr": "Les traces de Calyx vous ont menée jusqu'au fin fond de l'ancien château d'Alexandrie. Durant votre exploration, Sphene ainsi que vous-même avez été téléportées de force dans la salle du trône. Calyx et Simulacre vous y attendaient de pied ferme, accompagnés de “Zelenia”, une gardienne mécanique créée à partir des souvenirs de Sphene. Révoltée par cet affront à la mémoire de la chevalière, Sphene vous a implorée de détruire cette abomination. Exaucez le souhait de votre amie et libérez ce spectre du passé de son serment séculaire&nbsp;!"
+      "fr": "Les traces de Calyx vous ont menée jusqu'au fin fond de l'ancien château d'Alexandrie. Durant votre exploration, Sphene et vous avez été téléportées de force dans la salle du trône. Calyx et Simulacre vous y attendaient de pied ferme, accompagnés de Zelenia, une gardienne mécanique créée à partir des souvenirs de Sphene. Révoltée par cet affront à la mémoire de la chevalière, Sphene vous a implorée de détruire cette abomination. Exaucez le souhait de votre amie et libérez ce spectre du passé de son serment séculaire&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112595.png",
@@ -9473,7 +9504,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
     "banner": "/i/112000/112596.png",
@@ -9486,6 +9517,68 @@
     "contentText": [
       42339,
       42300
+    ]
+  },
+  "20104": {
+    "id": 20104,
+    "en": "the Ageless Necropolis",
+    "ja": "永遠の闇討滅戦",
+    "de": "Zel Tajaal - Das Ewige Dunkel",
+    "fr": "La Nécropole intemporelle",
+    "description": {
+      "en": "By entrusting their memories of departed loved ones to the cloud, Alexandrians have long escaped the grief of separation. Being thus forced to confront the realities of mortal existence, what then filled their hearts was a dark and unreasoning terror. Harnessing this heightened fear of death for his own ends, a genius of an age gone by now channels the people's desperate prayers for succor into a new primal incarnation. It falls to the Warrior of Light to stand unflinching in the face of fear-made-manifest, and claim victory over this inexorable entity.",
+      "ja": "死者にまつわる記憶の一切を雲の上に預けることで、離別の悲しみから逃れた人々……。彼らがふたたび死と向き合うことを強いられたとき、その胸の内より溢れ出たのは、闇に染め抜かれた純粋なまでの恐怖だった。<br>異様なまでに高められた死への恐怖は今、早世の天才が仕掛けた計略によって束ねられ、新たな蛮神として顕現する。光の戦士よ、死への恐怖に打ち勝ち「永遠の闇」を討滅せよ！",
+      "de": "Den Schmerz des endgültigen Abschieds von seinen Liebsten den Wolken anzuvertrauen und alles über sie zu vergessen&nbsp;... Als den Leuten Alexandrias diese Möglichkeit genommen wurde, sahen sie sich erneut mit dem Tod und allem, was mit ihm einhergeht, konfrontiert. Angesichts der Plötzlichkeit, mit der dieser Wandel vonstattenging, ist es wenig verwunderlich, wie schnell ihre Herzen nun drohen, vor Todesangst geradezu überzulaufen. Das Elektrobgenie Calyx macht sich das Ganze wiederum zu Nutzen, indem er die nicht abschwemmen wollende Furcht zur Beschwörung eines Primae nutzt: dem Ewigen Dunkel. Schaffst du es ein weiteres Mal, Alexandria vor seinem Untergang zu bewahren und Calyx' Pläne endgültig zu durchkreuzen?",
+      "fr": "Les Alexandrins s'étaient préservés du chagrin du deuil, bien soulagés de voir le souvenir de leurs défunts “emporté dans les cieux”. Or, les voici brusquement confrontés aux affres de la mortalité&nbsp;: leurs cœurs se remplissent d'une peur primale teintée du plus profond désespoir&nbsp;; une angoisse poussée à son paroxysme que votre impitoyable ennemi va s'empresser de canaliser... afin d'invoquer un Primordial. Guerrière de la Lumière, luttez contre l'une des plus grandes hantises de l'humanité... et triomphez de l'obscurité éternelle&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112612.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 725,
+    "sync": 100,
+    "exp": 0,
+    "map": 1045,
+    "contentText": [
+      42921,
+      42900
+    ]
+  },
+  "20105": {
+    "id": 20105,
+    "en": "the Minstrel's Ballad: Necron's Embrace",
+    "ja": "極永遠の闇討滅戦",
+    "de": "Gok Tajaal - Das Ewige Dunkel",
+    "fr": "La Nécropole intemporelle (extrême)",
+    "description": {
+      "en": "Powerful was the onset of fear felt by a people who had long escaped death's mournful memories. And powerful was the entity which that fear begat. And yet, the minstrel muses, how much more powerful still would the primal be were it fed upon the dread of its summoner─a child genius who felt the hand of death close ever tighter upon his shoulder every day of his disease-ravaged life? The horror of that beleaguered heart begins to infect your own as the first chilling notes of the song pour forth from somber lips...",
+      "ja": "異邦の詩人は謳う。早世の天才が呼び降ろした蛮神のことを。それは、記憶を雲の上に預けることで、死の悲しみから逃れ続けてきた人々が抱いた死の恐怖を糧として形作られた。<br>しかし、召喚者たる少年にとって、人々の心を蝕む恐れは日常であり、誰よりも冥い闇を宿していたはずである。少年が感じていたであろう恐怖を想い、それでも死を忘るるなかれと語りかける詩歌を聞きながら、光の戦士は今、永遠の闇との戦いを追体験する。",
+      "de": "Der Fahrende Sänger haut in die Saiten und lässt wahrlich finstere Töne puren Schreckens ertönen. Du fühlst dich an jene Manifestation der Todesangst zurückerinnert, welche die Herzen aller befiel, die ihr Leben lang vor ihr davongelaufen waren. Beschworen durch ein junges Genie, dessen Angst noch weitaus größer gewesen sein muss als die seiner Opfer, denen er das Monstrum entgegenwarf&nbsp;- fürchtete es den Tod doch mehr als alles andere. Die finsteren Melodien ziehen dich langsam in ihren Bann und lassen Visionen jenes geschichtsträchtigen Kampfes um die Furcht in den Herzen eines Königreichs Gestalt werden&nbsp;...",
+      "fr": "Le ménestrel errant vous écoute attentivement tandis que vous lui contez l'histoire de ce jeune prodige au destin contrarié, celui-là même qui invoqua un Primordial en exploitant la peur de mourir de tout un peuple. À en croire le poète, le jeune garçon lui-même fut sans doute le premier hanté par l'angoisse du trépas, nourrissant plus que quiconque cette part d'ombre inhérente à l'être humain. Les quelques vers qu'il déclame vous invitent à sonder cette terreur intime, à ne jamais oublier votre propre mortalité... et à revivre, en pensée, votre combat contre l'obscurité éternelle."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112613.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 740,
+    "sync": 100,
+    "exp": 0,
+    "map": 1045,
+    "contentText": [
+      42921,
+      42900
     ]
   },
   "25001": {
@@ -9646,10 +9739,10 @@
       "fr": "Née du désir d'élucider les mystères de la Tour de Cristal, un important vestige de l'ancienne civilisation allagoise, une nouvelle société de recherche appelée Noah a été fondée. En tant que membre à part entière, vous avez réussi, avec l'aide de Cid, à neutraliser le système de défense des Huit Sentinelles.<br>... Mais devant vous se dresse désormais un autre défi, le Dédale antique, que vous devez traverser pour pouvoir accéder à la Tour de Cristal."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112033.png",
@@ -9681,7 +9774,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112043.png",
@@ -9713,7 +9806,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112044.png",
@@ -9741,7 +9834,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112045.png",
@@ -9773,7 +9866,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112046.png",
@@ -9805,7 +9898,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112047.png",
@@ -9833,7 +9926,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112038.png",
@@ -9865,7 +9958,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112039.png",
@@ -9897,7 +9990,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112040.png",
@@ -9929,7 +10022,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112041.png",
@@ -9958,10 +10051,10 @@
       "fr": "Grâce à vous et à vos camarades, l'équipe Noah a réussi à franchir le Dédale ancien et a ainsi pu atteindre la Tour de Syrcus, l'édifice central de cet imposant vestige allagois. L'intervention inattendue de deux étranges personnages, Unéi et Doga, a permis d'ouvrir la grande porte qui en bloquait l'accès.<br>Désormais, vous devez pénétrer dans la Tour et vaincre le redoutable empereur Xande pour mettre fin à ses ambitions destructrices et sauver Éorzéa d'une terrible menace&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112061.png",
@@ -9993,7 +10086,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112038.png",
@@ -10025,7 +10118,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112039.png",
@@ -10057,7 +10150,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112040.png",
@@ -10089,7 +10182,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112041.png",
@@ -10121,7 +10214,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112069.png",
@@ -10153,7 +10246,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112070.png",
@@ -10185,7 +10278,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112071.png",
@@ -10213,7 +10306,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112072.png",
@@ -10242,10 +10335,10 @@
       "fr": "À la fin de son second règne, Xande, l'empereur d'Allag, a conclu un pacte avec une puissante entité du néant, le Nuage de Ténèbres, afin de livrer le monde réel aux démons de cette autre dimension...<br>Bien que vous ayez vaincu l'ancien monarque, non seulement l'accord qu'il a passé avec la créature maléfique n'a pas été annulé, mais cette dernière a emporté avec elle trois de vos camarades dans son domaine, le Monde des Ténèbres. Heureusement, G'raha Tia, Rammbroes et Cid ont découvert un moyen d'utiliser les mécanismes de la Tour de Cristal pour ouvrir une porte du néant et vous permettre de faire une incursion salvatrice. Préparez-vous bien toutefois, car nul ne sait quels dangers vous attendent de l'autre côté."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112079.png",
@@ -10277,7 +10370,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112095.png",
@@ -10309,7 +10402,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112096.png",
@@ -10341,7 +10434,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112097.png",
@@ -10373,7 +10466,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112098.png",
@@ -10401,7 +10494,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112099.png",
@@ -10433,7 +10526,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112100.png",
@@ -10465,7 +10558,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112101.png",
@@ -10497,7 +10590,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112102.png",
@@ -10522,10 +10615,10 @@
       "fr": "Depuis que la production d'aéronefs a pris son essor, le ciel d'Abalathia est devenu le terrain de jeux des “pirates des cieux”, une nouvelle engeance de flibustiers volants qui pillent les marchandises des convois, quand ils ne font pas main basse sur les vaisseaux tout entiers. Le capitaine Leofard a cependant une vision différente des choses. Pour lui, en effet, la vie de pirate est avant tout une quête de liberté, un long voyage à la découverte des secrets de la mer de nuages. Et c'est en répondant à l'invitation de cet homme au caractère bien trempé que vous avez appris l'existence d'un navire fantôme à la dérive dans L'Écume des cieux. À présent, vous vous apprêtez à aborder l'épave hantée en compagnie des Becs-rouges et à percer à jour tous ses mystères."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112118.png",
@@ -10557,7 +10650,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112128.png",
@@ -10589,7 +10682,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112129.png",
@@ -10621,7 +10714,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112130.png",
@@ -10653,7 +10746,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112131.png",
@@ -10685,7 +10778,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112132.png",
@@ -10717,7 +10810,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112133.png",
@@ -10749,7 +10842,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112134.png",
@@ -10781,7 +10874,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112135.png",
@@ -10810,10 +10903,10 @@
       "fr": "Diabolos et ses sbires ont quitté L'Écume des cieux d'Abalathia pour se diriger vers la lande saline de Yafaem, les terres marécageuses où reposent les ruines de la cité de Mhach. D'après Cait Sith, les démons chercheraient à s'emparer de la Clef de voûte, un artefact qui leur permettrait de rompre le contrat qui lie Scáthach aux mages du néant, et ainsi de lui rendre tout son pouvoir. Votre mission consiste à vous frayer un chemin jusqu'à l'endroit où est entreposée cette pierre magique et à vous en emparer avant vos ennemis. Pendant ce temps-là, Leofard et Stacia feront leur possible pour retrouver Radlia."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112162.png",
@@ -10845,7 +10938,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112188.png",
@@ -10877,7 +10970,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112189.png",
@@ -10909,7 +11002,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112190.png",
@@ -10941,7 +11034,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112191.png",
@@ -10973,7 +11066,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112192.png",
@@ -11005,7 +11098,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112193.png",
@@ -11037,7 +11130,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112194.png",
@@ -11069,7 +11162,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112195.png",
@@ -11098,10 +11191,10 @@
       "fr": "Le manuscrit ancien trouvé par Radlia mentionne une île construite dans le ciel par les Mhachois pour s'y abriter après un cataclysme. Cependant, l'Arche qui devait transporter les réfugiés s'est évaporée dans la Mer de nuages, et le projet de migration a échoué. Cait Sith est persuadé que Diabolos s'est emparé de l'endroit pour en faire son repaire et s'y installer avec ses sbires... Embarquez à bord du Dame Radlia pour vous rendre sur l'île et récupérer la Clef de voûte afin de mettre l'immonde colonie de démons définitivement hors d'état de nuire&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112203.png",
@@ -11133,7 +11226,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112234.png",
@@ -11161,7 +11254,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112235.png",
@@ -11193,7 +11286,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112236.png",
@@ -11225,7 +11318,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112237.png",
@@ -11257,7 +11350,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112238.png",
@@ -11285,7 +11378,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112239.png",
@@ -11317,7 +11410,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112240.png",
@@ -11349,7 +11442,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112241.png",
@@ -11381,7 +11474,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061832.png",
     "banner": "/i/112000/112261.png",
@@ -11410,10 +11503,10 @@
       "fr": "Un aéronef d'envergure a atterri à l'aérodrome de Kugane... Son nom&nbsp;? Le Prima Vista, et à son bord, la troupe de théâtre la plus célèbre de tout l'empire de Garlemald&nbsp;: la Compagnie des Majestueux. Que sont-ils venus faire en Orient&nbsp;? Promouvoir leur dernier chef-d'œuvre intitulé “L'histoire des Braves du zodiaque”&nbsp;? À moins que leur présence ait un rapport avec le mystérieux royaume d'Ivalice..."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112256.png",
@@ -11445,7 +11538,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112265.png",
@@ -11477,7 +11570,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112267.png",
@@ -11509,7 +11602,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112269.png",
@@ -11541,7 +11634,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112271.png",
@@ -11573,7 +11666,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112266.png",
@@ -11605,7 +11698,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112268.png",
@@ -11637,7 +11730,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112270.png",
@@ -11669,7 +11762,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112272.png",
@@ -11701,7 +11794,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061832.png",
     "banner": "/i/112000/112296.png",
@@ -11730,10 +11823,10 @@
       "fr": "Le Prima Vista a mis le cap sur Ridorana, un immense gouffre béant situé en plein cœur de la mer de Valnard au sud de Rabanastre, et dont certains prétendent qu'il mènerait tout droit aux sept enfers. Au bord de cette faille se trouve un phare qui semble se dresser là depuis la nuit des temps... À vous de parvenir jusqu'à son sommet afin de retrouver Ba'Gamnan et de faire la lumière sur le véritable pouvoir des auralithes sacrées&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112286.png",
@@ -11765,7 +11858,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112312.png",
@@ -11797,7 +11890,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112313.png",
@@ -11829,7 +11922,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112314.png",
@@ -11861,7 +11954,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112315.png",
@@ -11893,7 +11986,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112316.png",
@@ -11925,7 +12018,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112317.png",
@@ -11957,7 +12050,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112318.png",
@@ -11989,7 +12082,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112319.png",
@@ -12018,10 +12111,10 @@
       "fr": "Votre voyage à rebrousse-temps de la légende des Braves du zodiaque et des auralithes sacrées a atteint sa destination finale. D'après le Livre blanc de Durai, le Monastère d'Orbonne est l'endroit où le périple de Ramza Beoulve et de ses compagnons a trouvé à la fois son commencement et sa conclusion. Il ne tient plus qu'à vous de lever le voile sur les mystères d'Ivalice&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112334.png",
@@ -12053,7 +12146,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112350.png",
@@ -12085,7 +12178,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112351.png",
@@ -12117,7 +12210,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112354.png",
@@ -12149,7 +12242,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112355.png",
@@ -12181,7 +12274,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112352.png",
@@ -12213,7 +12306,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112353.png",
@@ -12245,7 +12338,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112356.png",
@@ -12277,7 +12370,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112357.png",
@@ -12309,7 +12402,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061832.png",
     "banner": "/i/112000/112374.png",
@@ -12338,10 +12431,10 @@
       "fr": "Embarquée dans les frasques d'Anogg et de Konogg, vous avez découvert dans la grotte près de Komra une jeune femme vêtue de blanc, aux prises avec d'étranges machines qu'elle a désignées comme étant des “formes de vie mécaniques”. D'après elle, ces dernières seraient contrôlées par un certain individu tapi au cœur des vestiges... N'écoutant que votre courage (et les desiderata des jumeaux terribles), vous vous apprêtez à franchir le pas d'un royaume de rouille et d'acier recelant moult secrets..."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112375.png",
@@ -12373,7 +12466,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112385.png",
@@ -12405,7 +12498,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112386.png",
@@ -12437,7 +12530,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112387.png",
@@ -12469,7 +12562,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112388.png",
@@ -12501,7 +12594,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112389.png",
@@ -12533,7 +12626,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112390.png",
@@ -12565,7 +12658,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112391.png",
@@ -12597,7 +12690,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112392.png",
@@ -12626,10 +12719,10 @@
       "fr": "Une violente secousse accompagnée d'un grand fracas, un immense cratère ouvert dans les montagnes des Duergars, un bataillon d'androïdes vêtus de blanc, le village de Komra noyé sous les bombes, la trahison de 2P, et enfin, l'irruption d'une nouvelle alliée en la personne de 2B. Tandis que les événements s'enchaînent sans vous laisser le moindre répit, vous voilà rendue aux portes d'un mystérieux complexe, prête à en découdre avec vos assaillants venus d'ailleurs..."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112400.png",
@@ -12661,7 +12754,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112407.png",
@@ -12693,7 +12786,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112408.png",
@@ -12725,7 +12818,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112409.png",
@@ -12757,7 +12850,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112410.png",
@@ -12789,7 +12882,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112411.png",
@@ -12821,7 +12914,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112412.png",
@@ -12853,7 +12946,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112413.png",
@@ -12885,7 +12978,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112414.png",
@@ -12914,10 +13007,10 @@
       "fr": "Au beau milieu du cratère est apparue une gigantesque tour tutoyant les cieux. Matérialisée par vos ennemis, cette forteresse aux murs immaculés abrite une mystérieuse sphère qui, d'après Anogg, est sur le point d'engloutir votre monde et doit à tout prix être détruite. Faites équipe avec les androïdes 2B et 9S, et gravissez l'étrange édifice afin d'aller mettre un terme définitif à la menace des machines&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112431.png",
@@ -12949,7 +13042,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061832.png",
     "banner": "/i/112000/112469.png",
@@ -12981,7 +13074,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112454.png",
@@ -13013,7 +13106,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112455.png",
@@ -13045,7 +13138,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112452.png",
@@ -13077,7 +13170,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112453.png",
@@ -13109,7 +13202,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112448.png",
@@ -13141,7 +13234,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112449.png",
@@ -13173,7 +13266,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112450.png",
@@ -13205,7 +13298,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112451.png",
@@ -13234,10 +13327,10 @@
       "fr": "Votre enquête sur le “monde chimérique” au service des Élèves de Baldesion vous a menée dans un espace mystérieux qui n'était autre que le domaine des Dieux éorzéens. C'est là que Byregot et d'autres divinités sont apparus devant vous, déclarant qu'en l'absence d'Hydaelyn, il revenait désormais aux Douze de diriger la planète. L'Artisan et ses compagnons ont alors mis l'humanité au défi de prouver sa valeur afin de rester maître de son destin, et c'est bien évidemment à vous qu'il incombe de répondre à leur invitation. Rassemblez vos plus fidèles compagnons d'armes et bravez les Dieux pour leur prouver que le monde est entre de bonnes mains&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112466.png",
@@ -13269,7 +13362,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112484.png",
@@ -13301,7 +13394,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112485.png",
@@ -13333,7 +13426,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112488.png",
@@ -13365,7 +13458,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112489.png",
@@ -13397,7 +13490,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112486.png",
@@ -13429,7 +13522,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112487.png",
@@ -13461,7 +13554,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112490.png",
@@ -13493,7 +13586,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112491.png",
@@ -13525,7 +13618,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061832.png",
     "banner": "/i/112000/112518.png",
@@ -13554,10 +13647,10 @@
       "fr": "De retour à Omphalos, vous et vos compagnons d'exploration avez cette fois fait la rencontre de Nophica. La déesse de la fertilité vous a promis la clef pour déchiffrer les inscriptions du mystérieux monument central, à condition que vous la suiviez dans son domaine pour l'affronter... Comme lors de votre dernière incursion, préparez-vous à combattre les Dieux éorzéens au plus profond de leurs voûtes célestes respectives, et sortez vainqueur pour faire la lumière sur leurs énigmatiques aspirations&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112505.png",
@@ -13589,7 +13682,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112524.png",
@@ -13621,7 +13714,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112525.png",
@@ -13653,7 +13746,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112526.png",
@@ -13685,7 +13778,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112527.png",
@@ -13717,7 +13810,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112528.png",
@@ -13749,7 +13842,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112529.png",
@@ -13781,7 +13874,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112530.png",
@@ -13813,7 +13906,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112531.png",
@@ -13842,10 +13935,10 @@
       "fr": "Dans leur sacerdoce de préservation de l'équilibre d'Ætherys, les Douze ont émis le vœu de se mesurer à l'humanité. Assurés par le veilleur sélénien du bien-fondé de leurs intentions, vous et vos amis êtes résolus à les exaucer jusqu'au bout, en réponse à l'amour inconditionnel qu'ils portent à la planète. Pour cette ultime affrontement, vous devrez vaincre Thaliak, Llymlaen et Oschon, qui se cachait sous les traits de votre compagnon, Deryk l'explorateur... Faites honneur au panthéon éorzéen et remportez la victoire afin de lever le voile sur la destinée de votre monde&nbsp;!"
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112546.png",
@@ -13877,7 +13970,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112567.png",
@@ -13909,7 +14002,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112568.png",
@@ -13940,7 +14033,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112569.png",
@@ -13971,7 +14064,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112570.png",
@@ -14002,7 +14095,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112571.png",
@@ -14033,7 +14126,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112572.png",
@@ -14064,7 +14157,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112573.png",
@@ -14095,7 +14188,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112574.png",
@@ -14126,7 +14219,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061832.png",
     "banner": "/i/112000/112587.png",
@@ -14154,10 +14247,10 @@
       "fr": "Un aventurier ayant perdu la mémoire a été retrouvé dans la forêt de Yak T'el par les Mamool Ja. Depuis son arrivée parmi eux s'enchaînent des événements tous plus étranges les uns que les autres&nbsp;: la réapparition miraculeuse d'une ombre de Gulool Ja Ja plus pugnace que jamais, suivie d'une mystérieuse jeune fille nommée Prishe qui semble familière à l'aventurier amnésique. Désireuse d'obtenir des réponses, vous pénétrez dans une faille interdimensionnelle avec l'inconnu pour seul horizon..."
     },
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 2,
-      "RangedPerParty": 3,
-      "TanksPerParty": 0
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112585.png",
@@ -14188,7 +14281,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112597.png",
@@ -14219,7 +14312,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112598.png",
@@ -14250,7 +14343,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112599.png",
@@ -14281,7 +14374,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112600.png",
@@ -14312,7 +14405,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112601.png",
@@ -14343,7 +14436,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112602.png",
@@ -14374,7 +14467,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112603.png",
@@ -14405,7 +14498,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061802.png",
     "banner": "/i/112000/112604.png",
@@ -14418,6 +14511,37 @@
     "contentText": [
       41935,
       41900
+    ]
+  },
+  "30153": {
+    "id": 30153,
+    "en": "San d'Oria: The Second Walk",
+    "ja": "サンドリア：ザ・セカンドウォーク",
+    "de": "San d'Oria: Die zweite Etappe",
+    "fr": "San d'Oria - La deuxième perambulation",
+    "description": {
+      "en": "Sareel Ja remains determined to fashion a figure he believes worthy of ruling Tural. Confident he has found a champion that proves your match, he has extended you an invitation to return to Jeuno. There, you come face to face with none other than Kam'lanaut─Archduke of Jeuno, and one of the last survivors of an ancient race known as the Zilart. Kam'lanaut soon departs for the battlefield, eager to meet you in combat. Refuse Sareel Ja's hospitality, and he has promised to unleash a horde of echoes upon the people of Yak T'el. With little choice but to accept, you steel yourself for another journey down the Walk of Echoes.",
+      "ja": "トラル大陸に、己が戴くべき「王」を創出する。その野望のため邁進するサレージャから新たな戦いに招かれた冒険者は、超常の技術で再現された異界「ヴァナ・ディール」の一角へと向かう。<br>その先で待つのは、「エコーズの残滓」として再現された絶世の英傑「カムラナート」。人質とされたヤクテル樹海の民を護るため、冒険者とアルシャールは記憶によって紡がれた強敵たちとの死闘に挑む。",
+      "de": "Sareel Ja ist nach wie vor fest entschlossen, seine düsteren Pläne umzusetzen und einen ultimativen, unbesiegbaren Herrscher zu erschaffen. Er lädt dich ein, nach Vana'diel zurückzukehren, um dort gegen noch stärkere Kandidaten anzutreten. Seine Drohung, eine Horde von Echos auf die Bewohner von Yak T'el loszulassen, wenn du seine Einladung abschlägst, lässt dich nicht kalt: Du hast kaum eine andere Wahl, als zuzustimmen. Zusammen mit deinen Mistreitern bereitest du dich auf erbitterte Kämpfe gegen immer mächtigere Feinde vor. Als ihr schließlich in Vana'diel ankommt, trefft ihr auf keinen Geringeren als Kam'lanaut, den Erzherzog von Jeuno und einen der letzten Überlebenden des uralten Volkes der Zilart.",
+      "fr": "Créer un nouvel Aurarque pour dominer le monde par son intermédiaire... Telle est l'ambition maléfique de Sareel Ja qui, pour parvenir au plus vite à ses fins, vous a “invitée” à retourner dans cet autre monde connu sous le nom de Vana'diel afin d'y affronter de nouveaux Échos, résultats de ses manipulations de l'électrope. L'un d'entre eux n'est autre que Kam'lanaut, l'archiduc de Jeuno, qui vous a lancé un défi à mort en vous toisant avec un mépris des plus aristocratiques... Consciente de votre devoir de protéger les peuples du Tural, vous vous demandez toutefois qui sont les puissants ennemis tissés de souvenirs qui se cachent tout au long de cette deuxième perambulation... Joignez vos forces à celles de l'intrépide aventurier Alxaal pour le découvrir&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112614.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 725,
+    "sync": 100,
+    "exp": 0,
+    "map": 1033,
+    "contentText": [
+      42571,
+      42500
     ]
   },
   "35001": {
@@ -15276,7 +15400,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061846.png",
     "banner": "/i/112000/112494.png",
@@ -15308,7 +15432,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061846.png",
     "banner": "/i/112000/112495.png",
@@ -15340,7 +15464,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061846.png",
     "banner": "/i/112000/112534.png",
@@ -15372,7 +15496,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061846.png",
     "banner": "/i/112000/112535.png",
@@ -15404,7 +15528,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061846.png",
     "banner": "/i/112000/112550.png",
@@ -15436,7 +15560,7 @@
       "HealersPerParty": 1,
       "MeleesPerParty": 1,
       "RangedPerParty": 1,
-      "TanksPerParty": 0
+      "TanksPerParty": 1
     },
     "icon": "/i/061000/061846.png",
     "banner": "/i/112000/112551.png",
@@ -15869,6 +15993,88 @@
     "exp": 0,
     "map": 854
   },
+  "40042": {
+    "id": 40042,
+    "en": "the Bayside Battleground",
+    "ja": "ベイサイド・バトルグラウンド",
+    "de": "Der Küstenkampf",
+    "fr": "Le Rivage redoutable",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112471.png",
+    "gamePatch": 91,
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 1060
+  },
+  "40043": {
+    "id": 40043,
+    "en": "the Bayside Battleground",
+    "ja": "ベイサイド・バトルグラウンド",
+    "de": "Der Küstenkampf",
+    "fr": "Le Rivage redoutable",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?<br><br>※Match results will affect Rising Stars and Crystal Credit.<br>※Players with comparable PvP tiers and risers will be matched with one another.<br>※Parties will be sorted by role, tier, riser, and credit to ensure relatively equal averages.",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！<br><br>※試合の勝敗で勝ち星やクリスタルポイントが変動します。<br>※対戦相手とのマッチングは階級や階位が近い相手と行われます。<br>※パーティ同士のロール構成、階級、階位、クリスタルポイントが近くなるように、メンバー分けが行われます。",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!<br><br>※ Siegessterne und Kristallpunkte werden je nach Ausgang der Partie bestimmt.<br>※ Es werden Gegner mit ähnlichem Rang und Kampfklasse vermittelt.<br>※ Gruppen werden nach ausgewogener Rollenverteilung und ähnlichem Rang, Kampfklasse und Kristallpunkten gebildet.",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!<br><br>* Vos étoiles de victoire et vos points de cristal évolueront en fonction du résultat de la partie.<br>* Vos adversaires seront sélectionnés parmi des joueurs d'échelon et de palier proches.<br>* Les joueurs seront répartis en fonction de leur rôle, échelon, palier et points de cristal de façon à obtenir des équipes équilibrées."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112472.png",
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 1060
+  },
+  "40044": {
+    "id": 40044,
+    "en": "Crystalline Conflict (Custom Match - The Bayside Battleground)",
+    "ja": "クリスタルコンフリクト(ベイサイド・バトルグラウンド：カスタムマッチ)",
+    "de": "Crystalline Conflict: Der Küstenkampf (Schaukampf)",
+    "fr": "Crys. Conflict (partie perso. - Le Rivage redoutable)",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112629.png",
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 1060
+  },
   "50001": {
     "id": 50001,
     "en": "the Borderland Ruins (Secure)",
@@ -15879,7 +16085,7 @@
       "en": "While many will remember the Calamity for the destruction it wrought upon the realm of Eorzea, that destruction was not without its blessings─one of those being the uncovering of ancient Allagan ruins hidden underneath the war-scarred Carteneau Flats and heretofore unseen for several Astral Eras. When an attempt by the Grand Companies of Eorzea to determine the control of these ruins, and more importantly the secrets they contain, through peaceful negotiations ended in failure, the city-states instead elected to solve the issue of dominion using a form of civilized warfare dubbed Frontline.",
       "ja": "第七霊災根源の地、カルテノー平原に露になった古代アラグ文明の遺跡。その下に眠る“遺物”の所有権を巡り、友邦であるはずの三都市が対立する。かくして、この地で起こった争いを外には持ち出さぬという協定が結ばれ、カルテノー平原は法の外に置かれた係争地「アウトロー戦区」に指定されたのだった。そして今、平原外縁部の遺跡群を確保すべく、各グランドカンパニーの冒険者部隊が動き出す。",
       "de": "Durch die großen Umwälzungen bei der Siebten Katastrophe wurden auf der Carteneauer Heide uralte allagische Ruinen freigelegt, die zweifellos wertvolle Geheimnisse in sich bergen. Alle drei Stadtstaaten erheben Anspruch darauf, was nicht durch friedliche Verhandlungen zu klären war. So wurde vereinbart, die Streitigkeiten innerhalb eines begrenzten Gebietes mit Waffengewalt zu klären. Seither liefern sich die Truppen der Staatlichen Gesellschaften an der Carteneauer Front gnadenlose Schlachten um die Kontrolle über die allagischen Ruinen.",
-      "fr": "Ravagée par le septième fléau, la plaine de Carteneau n'est plus qu'une terre stérile dont les anciennes reliques allagoises sont la seule richesse. Conscientes de la valeur de ces artéfacts, les trois nations d'Éorzéa rivalisent entre elles pour se les approprier. Les choses s'étant très vite envenimées, les cités-États se sont mises d'accord pour décréter l'endroit une zone de non-droit, ce afin d'éviter un élargissement du conflit en dehors. Les grandes compagnies font désormais appel aux aventuriers qui leur ont prêté allégeance afin de prendre le contrôle de ce territoire disputé."
+      "fr": "Ravagée par le septième fléau, la plaine de Carteneau n'est plus qu'une terre stérile dont les anciennes reliques allagoises sont la seule richesse. Conscientes de la valeur de ces artefacts, les trois nations d'Éorzéa rivalisent entre elles pour se les approprier. Les choses s'étant très vite envenimées, les cités-États se sont mises d'accord pour décréter l'endroit une zone de non-droit, ce afin d'éviter un élargissement du conflit en dehors. Les grandes compagnies font désormais appel aux aventuriers qui leur ont prêté allégeance afin de prendre le contrôle de ce territoire disputé."
     },
     "members": {
       "HealersPerParty": 0,
@@ -16069,7 +16275,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16079,11 +16285,7 @@
     "ilvlReq": 0,
     "sync": 60,
     "exp": 0,
-    "map": 315,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 315
   },
   "55002": {
     "id": 55002,
@@ -16096,7 +16298,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16106,11 +16308,7 @@
     "ilvlReq": 0,
     "sync": 70,
     "exp": 0,
-    "map": 408,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 408
   },
   "55003": {
     "id": 55003,
@@ -16123,7 +16321,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16133,11 +16331,7 @@
     "ilvlReq": 0,
     "sync": 70,
     "exp": 0,
-    "map": 409,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 409
   },
   "55004": {
     "id": 55004,
@@ -16150,7 +16344,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16160,11 +16354,7 @@
     "ilvlReq": 0,
     "sync": 70,
     "exp": 0,
-    "map": 499,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 499
   },
   "55006": {
     "id": 55006,
@@ -16177,7 +16367,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16187,11 +16377,7 @@
     "ilvlReq": 0,
     "sync": 80,
     "exp": 0,
-    "map": 563,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 563
   },
   "55008": {
     "id": 55008,
@@ -16204,7 +16390,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16214,11 +16400,7 @@
     "ilvlReq": 0,
     "sync": 80,
     "exp": 0,
-    "map": 640,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 640
   },
   "55009": {
     "id": 55009,
@@ -16231,7 +16413,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16241,11 +16423,7 @@
     "ilvlReq": 0,
     "sync": 90,
     "exp": 0,
-    "map": 729,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 729
   },
   "55011": {
     "id": 55011,
@@ -16258,7 +16436,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16268,11 +16446,7 @@
     "ilvlReq": 0,
     "sync": 90,
     "exp": 0,
-    "map": 818,
-    "contentText": [
-      12810,
-      12800
-    ]
+    "map": 818
   },
   "55012": {
     "id": 55012,
@@ -16285,7 +16459,7 @@
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061808.png",
     "banner": "",
@@ -16295,10 +16469,32 @@
     "ilvlReq": 0,
     "sync": 100,
     "exp": 0,
-    "map": 896,
+    "map": 896
+  },
+  "55013": {
+    "id": 55013,
+    "en": "Vault Oneiron",
+    "ja": "宝物庫 ボルト・オネイロン",
+    "de": "Tresor Oneiron",
+    "fr": "le coffre d'Oneiron",
+    "description": null,
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061808.png",
+    "banner": "",
+    "contentType": 9,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 1059,
     "contentText": [
-      12810,
-      12800
+      43000,
+      43000
     ]
   },
   "60001": {
@@ -17444,7 +17640,7 @@
   "61001": {
     "id": 61001,
     "en": "Novice Mahjong (Full Ranked Match)",
-    "ja": "ドマ式麻雀：半荘戦一般卓（段位変動有り）",
+    "ja": "ドマ式麻雀：半荘戦一般卓 (段位変動有り)",
     "de": "Anfänger-Mahjong (komplette Partie, gewertet)",
     "fr": "Mahjong domien&nbsp;: tous rangs (partie classée)",
     "description": {
@@ -17472,7 +17668,7 @@
   "61002": {
     "id": 61002,
     "en": "Advanced Mahjong (Full Ranked Match)",
-    "ja": "ドマ式麻雀：半荘戦有段卓（段位変動有り）",
+    "ja": "ドマ式麻雀：半荘戦有段卓 (段位変動有り)",
     "de": "Fortgeschrittenen-Mahjong (komplette Partie, gewertet)",
     "fr": "Mahjong domien&nbsp;: dan seulement (partie classée)",
     "description": {
@@ -17500,7 +17696,7 @@
   "61003": {
     "id": 61003,
     "en": "Four-player Mahjong (Full Match, Kuitan Enabled)",
-    "ja": "ドマ式麻雀：半荘戦4人セット卓（クイタン有り）",
+    "ja": "ドマ式麻雀：半荘戦4人セット卓 (クイタン有り)",
     "de": "4-Spieler-Mahjong (komplette Partie, Kuitan aktiviert)",
     "fr": "Mahjong domien&nbsp;: 4 joueurs (partie avec kuitan)",
     "description": {
@@ -17528,7 +17724,7 @@
   "61004": {
     "id": 61004,
     "en": "Four-player Mahjong (Full Match, Kuitan Disabled)",
-    "ja": "ドマ式麻雀：半荘戦4人セット卓（クイタン無し）",
+    "ja": "ドマ式麻雀：半荘戦4人セット卓 (クイタン無し)",
     "de": "4-Spieler-Mahjong (komplette Partie, Kuitan deaktiviert)",
     "fr": "Mahjong domien&nbsp;: 4 joueurs (partie sans kuitan)",
     "description": {
@@ -17556,7 +17752,7 @@
   "61005": {
     "id": 61005,
     "en": "Novice Mahjong (Quick Ranked Match)",
-    "ja": "ドマ式麻雀：東風戦一般卓（段位変動有り）",
+    "ja": "ドマ式麻雀：東風戦一般卓 (段位変動有り)",
     "de": "Anfänger-Mahjong (schnelle Partie, gewertet)",
     "fr": "Mahjong domien&nbsp;: tous rangs (partie rapide classée)",
     "description": {
@@ -17584,7 +17780,7 @@
   "61006": {
     "id": 61006,
     "en": "Advanced Mahjong (Quick Ranked Match)",
-    "ja": "ドマ式麻雀：東風戦有段卓（段位変動有り）",
+    "ja": "ドマ式麻雀：東風戦有段卓 (段位変動有り)",
     "de": "Fortgeschrittenen-Mahjong (schnelle Partie, gewertet)",
     "fr": "Mahjong domien&nbsp;: dan seulement (partie rapide classée)",
     "description": {
@@ -17612,7 +17808,7 @@
   "61007": {
     "id": 61007,
     "en": "Four-player Mahjong (Quick Match, Kuitan Enabled)",
-    "ja": "ドマ式麻雀：東風戦4人セット卓（クイタン有り）",
+    "ja": "ドマ式麻雀：東風戦4人セット卓 (クイタン有り)",
     "de": "4-Spieler-Mahjong (schnelle Partie, Kuitan aktiviert)",
     "fr": "Mahjong domien&nbsp;: 4 joueurs (partie rapide avec kuitan)",
     "description": {
@@ -17640,7 +17836,7 @@
   "61008": {
     "id": 61008,
     "en": "Four-player Mahjong (Quick Match, Kuitan Disabled)",
-    "ja": "ドマ式麻雀：東風戦4人セット卓（クイタン無し）",
+    "ja": "ドマ式麻雀：東風戦4人セット卓 (クイタン無し)",
     "de": "4-Spieler-Mahjong (schnelle Partie, Kuitan deaktiviert)",
     "fr": "Mahjong domien&nbsp;: 4 joueurs (partie rapide sans kuitan)",
     "description": {
@@ -18220,35 +18416,35 @@
       24900
     ]
   },
-  "64010": {
-    "id": 64010,
-    "en": "Hells' Kier (Unreal)",
-    "ja": "幻朱雀征魂戦",
-    "de": "Traumprüfung - Suzaku",
-    "fr": "Le Nid des Lamentations (irréel)",
+  "64011": {
+    "id": 64011,
+    "en": "the Wreath of Snakes (Unreal)",
+    "ja": "幻青龍征魂戦",
+    "de": "Traumprüfung - Seiryu",
+    "fr": "L'Îlot des Amertumes (irréel)",
     "description": {
-      "en": "The faux commander asks you to regale him with a tale of fiery passion and heartbreak, which soon calls to mind your harrowing encounter with the auspice Suzaku, master of flames and resurrection. You stoke the memories of that battle into a fierce fire, reigniting your struggle to return the great auspice to her senses ere you succumb to her mournful melody.",
-      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは東方の瑞獣・朱雀が彩る焔と音の大舞台。正気に戻すのが先か、正気ごと蹴り飛ばされるのが先か。いま幻の激闘が語られる。",
-      "de": "Der silberzüngige Sotan bittet dich diesmal um eine ganz besondere Geschichte&nbsp;- eine von feuriger Liebe und dem bitteren Schmerz eines gebrochenen Herzens. Natürlich geht es dabei um niemand anderen als Suzaku und du tauchst ein weiteres Mal in das lodernde Flammenmeer, das sie zu beherrschen weiß, während süße Klänge deine Sinne betören.",
-      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Suzaku, l'oiseau de feu immortel, vous revient en mémoire... Terrassez-la afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
+      "en": "The faux commander yearns for a tale of undying vengeance, and as you revisit your numerous memories of such, you recall the auspice Seiryu and his single-minded desire to destroy his loathed foe. Your mind's eye brings that furious encounter to vivid life, and you find yourself facing the mighty being once more in a bid to quell his aramitama ere it consumes him...",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは東方の瑞獣・青龍との波舞う戦い。式鬼の乱舞に溺れるのが先か、アラミタマに溺れる魂を救うのが先か。いま幻の激闘が語られる。",
+      "de": "Der redegewandte Sotan erzählt eine Geschichte über unsterbliche Rache, welche dich an Seiryu und seinen Wunsch, seinen verhassten Feind zu vernichten, erinnert. Vor deinem geistigen Auge erwacht eure wütende Begegnung zum Leben, und du stehst dem mächtigen Drachen noch einmal gegenüber, um sein Aramitama zu bändigen, bevor es ihn verzehrt.",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Seiryû, le Dragon azur, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
       "MeleesPerParty": 2,
       "RangedPerParty": 2,
-      "TanksPerParty": 0
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112594.png",
+    "banner": "/i/112000/112631.png",
     "contentType": 4,
     "levelReq": 100,
     "ilvlReq": 690,
     "sync": 100,
     "exp": 0,
-    "map": 503,
+    "map": 516,
     "contentText": [
-      19915,
-      19900
+      21021,
+      21000
     ]
   }
 }

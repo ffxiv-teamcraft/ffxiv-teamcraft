@@ -10707,5 +10707,41 @@
       "Max": 68,
       "MaxHQ": 85
     }
+  ],
+  "46253": [
+    {
+      "ID": 11,
+      "NQ": 21,
+      "HQ": 26,
+      "Relative": true,
+      "Max": 80,
+      "MaxHQ": 100
+    },
+    {
+      "ID": 71,
+      "NQ": 4,
+      "HQ": 5,
+      "Relative": true,
+      "Max": 92,
+      "MaxHQ": 115
+    }
+  ],
+  "46254": [
+    {
+      "ID": 72,
+      "NQ": 6,
+      "HQ": 7,
+      "Relative": true,
+      "Max": 150,
+      "MaxHQ": 188
+    },
+    {
+      "ID": 73,
+      "NQ": 2,
+      "HQ": 3,
+      "Relative": true,
+      "Max": 77,
+      "MaxHQ": 97
+    }
   ]
 }

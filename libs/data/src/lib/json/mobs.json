@@ -83007,7 +83007,7 @@
     "en": "gimme cat",
     "ja": "いただきキャット",
     "de": "Bettelcat",
-    "fr": "chat-pardeur"
+    "fr": "chat mendiant"
   },
   "13836": {
     "en": "Shale",
@@ -83736,10 +83736,10 @@
     "fr": "Déimos"
   },
   "13957": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "boon baboon",
+    "ja": "マントヒヒ",
+    "de": "mantelig[a] Pavian",
+    "fr": "babouin hamadryas"
   },
   "13958": {
     "en": "clockwork oppressor",
@@ -83754,10 +83754,10 @@
     "fr": "sangfeuille de Ja Tiika"
   },
   "13960": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Gulool Ja Ja",
+    "ja": "マメット・グルージャジャ",
+    "de": "Gulool Ja Ja-Puppe",
+    "fr": "Gulool Ja Ja miniature"
   },
   "13961": {
     "en": "micro rover",
@@ -83814,10 +83814,10 @@
     "fr": ""
   },
   "13970": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "chirurgeon general",
+    "ja": "ある医療長の記憶",
+    "de": "Erinnerung[p] eines Feldchirurgen",
+    "fr": "mémoire d'un chef de clinique"
   },
   "13971": {
     "en": "",
@@ -83838,22 +83838,22 @@
     "fr": ""
   },
   "13974": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Immortal Remains",
+    "ja": "ある人々の記憶",
+    "de": "Erinnerungsschmelz",
+    "fr": "Memoria populi"
   },
   "13975": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "bygone aerostat",
+    "ja": "バイゴーン・エアロスタット",
+    "de": "vergangen[a] Aerostat",
+    "fr": "aérostat séculaire"
   },
   "13976": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved terror",
+    "ja": "記憶の残滓",
+    "de": "Erinnerung[p] voller Schrecken",
+    "fr": "résidu mémoriel"
   },
   "13977": {
     "en": "",
@@ -83880,340 +83880,340 @@
     "fr": ""
   },
   "13981": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault torbalan",
+    "ja": "ボルト・トルバラン",
+    "de": "Tresor-Torbalan",
+    "fr": "torbalan du coffre"
   },
   "13982": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault water spirit",
+    "ja": "ボルト・ウォータースピリット",
+    "de": "Tresor-Wassergeist",
+    "fr": "esprit aqueux du coffre"
   },
   "13983": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault fluid soul",
+    "ja": "ボルト・フルイドソウル",
+    "de": "Tresor-Flüssigseele",
+    "fr": "âme fluide du coffre"
   },
   "13984": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault crab",
+    "ja": "ボルト・クラブ",
+    "de": "Tresor-Krabbe",
+    "fr": "crabe du coffre"
   },
   "13985": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault scorpion",
+    "ja": "ボルト・スコーピオン",
+    "de": "Tresor-Skorpion",
+    "fr": "scorpion du coffre"
   },
   "13986": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault gargantua",
+    "ja": "ボルト・ガルガンチュア",
+    "de": "Tresor-Gargantua",
+    "fr": "gargantua du coffre"
   },
   "13987": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault agavoides",
+    "ja": "ボルト・アガヴォイデス",
+    "de": "Tresor-Agavoid",
+    "fr": "agavoïde du coffre"
   },
   "13988": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault tree",
+    "ja": "ボルト・ウォーキングツリー",
+    "de": "Tresor-Wanderbaum",
+    "fr": "arbre ambulant du coffre"
   },
   "13989": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault wind spirit",
+    "ja": "ボルト・ウィンドスピリット",
+    "de": "Tresor-Windgeist",
+    "fr": "esprit venteux du coffre"
   },
   "13990": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault gemkeeper",
+    "ja": "ボルト・ジェムキーパー",
+    "de": "Tresor-Steinwächter",
+    "fr": "gardien gemmé du coffre"
   },
   "13991": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault acrocat",
+    "ja": "ボルト・フライングキャット",
+    "de": "Tresor-Aerokatze",
+    "fr": "aérochat du coffre"
   },
   "13992": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault bat",
+    "ja": "ボルト・シーカーバット",
+    "de": "Tresor-Sucher-Fledermaus",
+    "fr": "chauve-souris chercheuse du coffre"
   },
   "13993": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault bot",
+    "ja": "ボルト・ボット",
+    "de": "Tresor-Bot",
+    "fr": "bot du coffre"
   },
   "13994": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault aerostat",
+    "ja": "ボルト・エアロスタット",
+    "de": "Tresor-Aerostat",
+    "fr": "aérostat du coffre"
   },
   "13995": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault roadripper",
+    "ja": "ボルト・ロードリッパー",
+    "de": "Tresor-Fräser",
+    "fr": "éventreur du coffre"
   },
   "13996": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gwyddneu",
+    "ja": "グウィディン",
+    "de": "Gwyddneu",
+    "fr": "Gwyddneu"
   },
   "13997": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault leptocyon",
+    "ja": "ボルト・レプトキオン",
+    "de": "Tresor-Leptocyon",
+    "fr": "leptocyon du coffre"
   },
   "13998": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball lightning",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
   },
   "13999": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fastitocalon",
+    "ja": "ファスティトカロン",
+    "de": "Fastitocalon",
+    "fr": "fastitocalon"
   },
   "14000": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault laser cannon",
+    "ja": "ボルト・レーザーキャノン",
+    "de": "Tresor-Laserkanone",
+    "fr": "canon laser du coffre"
   },
   "14001": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Old Bitter-eye",
+    "ja": "ビターアイ",
+    "de": "alt[a] Grantelauge",
+    "fr": "cyclope amer"
   },
   "14002": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault eyeclops",
+    "ja": "ボルト・アイクロプス",
+    "de": "Tresor-Einauge",
+    "fr": "monocle du coffre"
   },
   "14003": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "great gimme cat",
+    "ja": "スーパーいただきキャット",
+    "de": "Super-Bettelcat",
+    "fr": "super chat mendiant"
   },
   "14004": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "cat collar",
+    "ja": "キャットリング",
+    "de": "Katzenhalsband",
+    "fr": "anneau charmant"
   },
   "14005": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "paeonia",
+    "ja": "パエオニア",
+    "de": "Paeonia",
+    "fr": "pivoine"
   },
   "14006": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "paeonia seedling",
+    "ja": "パエオニア・シードリング",
+    "de": "Paeonia-Keimling",
+    "fr": "pousse de pivoine"
   },
   "14007": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "gilded sentry",
+    "ja": "ゴールデンセントリー",
+    "de": "golden[a] Wächter",
+    "fr": "sentinelle dorée"
   },
   "14008": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault laser turret",
+    "ja": "ボルト・レーザータレット",
+    "de": "Tresor-Lasergeschütz",
+    "fr": "tourelle laser du coffre"
   },
   "14009": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mobile fortress",
+    "ja": "モビルフォートレス",
+    "de": "mobil[a] Festung",
+    "fr": "forteresse mobile"
   },
   "14010": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "hexapod",
+    "ja": "ヘクサポッド",
+    "de": "Hexapod",
+    "fr": "hexapode"
   },
   "14011": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mine",
+    "ja": "地雷",
+    "de": "Mine",
+    "fr": "mine"
   },
   "14012": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Spirit of Thunder",
+    "ja": "サンダーソウル",
+    "de": "Geist[p] des Donners",
+    "fr": "âme électrisante"
   },
   "14013": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "portal of levin",
+    "ja": "雷の魔紋",
+    "de": "Portal[p] des Blitzes",
+    "fr": "portail de foudre"
   },
   "14014": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "goldy cat",
+    "ja": "ゴールデンキャット",
+    "de": "Goldchenkatze",
+    "fr": "chat mendiant doré"
   },
   "14015": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vaultkeeper",
+    "ja": "ボルト・キーパー",
+    "de": "Tresor-Hüter",
+    "fr": "gardien du coffre"
   },
   "14016": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault onion",
+    "ja": "ボルト・オニオン",
+    "de": "Tresor-Zwiebel",
+    "fr": "oignon du coffre"
   },
   "14017": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault eggplant",
+    "ja": "ボルト・エッグ",
+    "de": "Tresor-Aubergine",
+    "fr": "aubergine du coffre"
   },
   "14018": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault garlic",
+    "ja": "ボルト・ガーリック",
+    "de": "Tresor-Knoblauch",
+    "fr": "ail du coffre"
   },
   "14019": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault tomato",
+    "ja": "ボルト・トマト",
+    "de": "Tresor-Tomate",
+    "fr": "tomate du coffre"
   },
   "14020": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault queen",
+    "ja": "ボルト・クイーン",
+    "de": "Tresor-Königin",
+    "fr": "reine du coffre"
   },
   "14021": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "a goldy cat and a vault keeper",
+    "ja": "ゴールデンキャットとボルト・キーパー",
+    "de": "Duo[p] Goldchenkatze und Tresor-Hüter",
+    "fr": "chat mendiant doré et un gardien du coffre"
   },
   "14022": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "the vault vegetators",
+    "ja": "ボルト・マンドラーズ",
+    "de": "Tresor-Mandragora",
+    "fr": "le clan des légumes du coffre"
   },
   "14023": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "terminal watchman",
+    "ja": "メインターミナル・ウォッチマン",
+    "de": "Meso-Wächter",
+    "fr": "surveillant du mésoterminal"
   },
   "14024": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "terminal leptocyon",
+    "ja": "メインターミナル・レプトキオン",
+    "de": "Meso-Leptocyon",
+    "fr": "leptocyon du mésoterminal"
   },
   "14025": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved medic",
+    "ja": "ある医療者の記憶",
+    "de": "Erinnerung[p] eines Mediziners",
+    "fr": "mémoire d'un médecin"
   },
   "14026": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved medic",
+    "ja": "ある医療者の記憶",
+    "de": "Erinnerung[p] einer Medizinerin",
+    "fr": "mémoire d'un médecin"
   },
   "14027": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "terminal bot",
+    "ja": "メインターミナル・ボット",
+    "de": "Meso-Bot",
+    "fr": "bot du mésoterminal"
   },
   "14028": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved prisoner",
+    "ja": "ある罪人の記憶",
+    "de": "Erinnerung[p] eines Insassen",
+    "fr": "mémoire d'un prisonnier"
   },
   "14029": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "terminal claw",
+    "ja": "メインターミナル・クロー",
+    "de": "Meso-Todesklaue",
+    "fr": "griffe du mésoterminal"
   },
   "14030": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved prisoner",
+    "ja": "ある罪人の記憶",
+    "de": "Erinnerung[p] eines Insassen",
+    "fr": "mémoire d'un prisonnier"
   },
   "14031": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved prisoner",
+    "ja": "ある罪人の記憶",
+    "de": "Erinnerung[p] eines Insassen",
+    "fr": "mémoire d'un prisonnier"
   },
   "14032": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "terminal turret",
+    "ja": "メインターミナル・タレット",
+    "de": "Meso-Geschützdrohne",
+    "fr": "drone du mésoterminal"
   },
   "14033": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "terminal dataguarder",
+    "ja": "メインターミナル・ガーダー",
+    "de": "Meso-Datenprotektor",
+    "fr": "cybergardien du mésoterminal"
   },
   "14034": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved soldier",
+    "ja": "ある兵士の記憶",
+    "de": "Erinnerung[p] eines Soldaten",
+    "fr": "mémoire d'un soldat"
   },
   "14035": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "preserved soldier",
+    "ja": "ある兵士の記憶",
+    "de": "Erinnerung[p] eines Soldaten",
+    "fr": "mémoire d'un soldat"
   },
   "14036": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Calyx",
+    "ja": "カリュクス",
+    "de": "Calyx",
+    "fr": "Calyx"
   },
   "14037": {
     "en": "",
@@ -84252,286 +84252,286 @@
     "fr": ""
   },
   "14043": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kam'lanaut",
+    "ja": "Kam'lanaut",
+    "de": "Kam'lanaut",
+    "fr": "Kam'lanaut"
   },
   "14044": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kam'lanaut",
+    "ja": "Kam'lanaut",
+    "de": "Kam'lanaut",
+    "fr": "Kam'lanaut"
   },
   "14045": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sublime estoc",
+    "ja": "Sublime Estoc",
+    "de": "erhaben[a] Estoc",
+    "fr": "Sublime Estoc"
   },
   "14046": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vault yan",
+    "ja": "ボルト・ヤーン",
+    "de": "Tresor-Putschi",
+    "fr": "belhamel du coffre"
   },
   "14047": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "bloody headsman",
+    "ja": "ある処刑人の記憶【緋】",
+    "de": "blutig[a] Henkersmann",
+    "fr": "mémoire du bourreau rouge"
   },
   "14048": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ravenous headsman",
+    "ja": "ある処刑人の記憶【蒼】",
+    "de": "ausgehungert[a] Henkersmann",
+    "fr": "mémoire du bourreau bleu"
   },
   "14049": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "pale headsman",
+    "ja": "ある処刑人の記憶【黄】",
+    "de": "blass[a] Henkersmann",
+    "fr": "mémoire du bourreau jaune"
   },
   "14050": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "pestilent headsman",
+    "ja": "ある処刑人の記憶【翠】",
+    "de": "verderblich[a] Henkersmann",
+    "fr": "mémoire du bourreau vert"
   },
   "14051": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sword of justice",
+    "ja": "断罪の雷剣",
+    "de": "Klinge[p] der Sündenläuterung",
+    "fr": "lame électrique du jugement"
   },
   "14052": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "hellmaker",
+    "ja": "焦熱刑具",
+    "de": "Höllenerschaffer",
+    "fr": "four de torture"
   },
   "14053": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Faithbound Kirin",
+    "ja": "Faithbound Kirin",
+    "de": "Kirin [t] Glaubensgebunden[a]",
+    "fr": "Faithbound Kirin"
   },
   "14054": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dawnbound Seiryu",
+    "ja": "Dawnbound Seiryu",
+    "de": "Seiryu [t] Morgengebunden[a]",
+    "fr": "Dawnbound Seiryu"
   },
   "14055": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Moonbound Genbu",
+    "ja": "Moonbound Genbu",
+    "de": "Genbu [t] Mondgebunden[a]",
+    "fr": "Moonbound Genbu"
   },
   "14056": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sunbound Suzaku",
+    "ja": "Sunbound Suzaku",
+    "de": "Suzaku [t] Sonnengebunden[a]",
+    "fr": "Sunbound Suzaku"
   },
   "14057": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Duskbound Byakko",
+    "ja": "Duskbound Byakko",
+    "de": "Byakko [t] Abendgebunden[a]",
+    "fr": "Duskbound Byakko"
   },
   "14058": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sculpted arm",
+    "ja": "sculpted arm",
+    "de": "kräftig[a] Arm",
+    "fr": "sculpted arm"
   },
   "14059": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sculpted arm",
+    "ja": "sculpted arm",
+    "de": "kräftig[a] Arm",
+    "fr": "sculpted arm"
   },
   "14060": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "chiseled arm",
+    "ja": "chiseled arm",
+    "de": "muskulös[a] Arm",
+    "fr": "chiseled arm"
   },
   "14061": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "chiseled arm",
+    "ja": "chiseled arm",
+    "de": "muskulös[a] Arm",
+    "fr": "chiseled arm"
   },
   "14062": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of fire",
+    "ja": "ball of fire",
+    "de": "Feuerball",
+    "fr": "ball of fire"
   },
   "14063": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "giant ascetic",
+    "ja": "Giant Ascetic",
+    "de": "Riesenasket",
+    "fr": "Giant Ascetic"
   },
   "14064": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "giant ranger",
+    "ja": "Giant Ranger",
+    "de": "Riesenwächter",
+    "fr": "Giant Ranger"
   },
   "14065": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alkyoneus",
+    "ja": "Alkyoneus",
+    "de": "Alkyoneus",
+    "fr": "Alkyoneus"
   },
   "14066": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "acrophies",
+    "ja": "Acrophies",
+    "de": "Egel",
+    "fr": "Acrophies"
   },
   "14067": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "light elemental",
+    "ja": "Light Elemental",
+    "de": "Lichtelement",
+    "fr": "Light Elemental"
   },
   "14068": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "banshee",
+    "ja": "Banshee",
+    "de": "Banshee",
+    "fr": "Banshee"
   },
   "14069": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "greater pugil",
+    "ja": "Greater Pugil",
+    "de": "Riesenpugil",
+    "fr": "Greater Pugil"
   },
   "14070": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "clipper",
+    "ja": "Clipper",
+    "de": "Knipser",
+    "fr": "Clipper"
   },
   "14071": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "kraken",
+    "ja": "Kraken",
+    "de": "Krake",
+    "fr": "Kraken"
   },
   "14072": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "detector",
+    "ja": "Detector",
+    "de": "Detektor",
+    "fr": "Detector"
   },
   "14073": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "moon bat",
+    "ja": "Moon Bat",
+    "de": "Mondfledermaus",
+    "fr": "Moon Bat"
   },
   "14074": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "puk",
+    "ja": "Puk",
+    "de": "Puk",
+    "fr": "Puk"
   },
   "14075": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forest funguar",
+    "ja": "Forest Funguar",
+    "de": "Forst-Fungus",
+    "fr": "Forest Funguar"
   },
   "14076": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "scarab beetle",
+    "ja": "Scarab Beetle",
+    "de": "Blatthornkäfer",
+    "fr": "Scarab Beetle"
   },
   "14077": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "goblin fisher",
+    "ja": "Goblin Fisher",
+    "de": "Goblin-Fischer",
+    "fr": "Goblin Fisher"
   },
   "14078": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "goblin thug",
+    "ja": "Goblin Thug",
+    "de": "Goblin-Strolch",
+    "fr": "Goblin Thug"
   },
   "14079": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forest hare",
+    "ja": "Forest Hare",
+    "de": "Waldhase",
+    "fr": "Forest Hare"
   },
   "14080": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Jaggedy-eared Jack",
+    "ja": "Jaggedy-Eared Jack",
+    "de": "Knickohr-Springmaus",
+    "fr": "Jaggedy-Eared Jack"
   },
   "14081": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Orcish grappler",
+    "ja": "Orcish Grappler",
+    "de": "Ork-Greifer",
+    "fr": "Orcish Grappler"
   },
   "14082": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Poisonhand Gnadgad",
+    "ja": "Poisonhand Gnadgad",
+    "de": "Gifthand-Gnadgad",
+    "fr": "Poisonhand Gnadgad"
   },
   "14083": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "airship engineer",
+    "ja": "飛空艇の機関員",
+    "de": "Luftschiffmaschinist",
+    "fr": "mécanicien de l'aéronef"
   },
   "14084": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "airship crewman",
+    "ja": "飛空艇の乗組員",
+    "de": "Luftschiffmatrose",
+    "fr": "membre d'équipage de l'aéronef"
   },
   "14085": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alxaal",
+    "ja": "アルシャール",
+    "de": "Alxaal",
+    "fr": "Alxaal"
   },
   "14086": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eald'narche",
+    "ja": "Eald'narche",
+    "de": "Eald'narche",
+    "fr": "Eald'narche"
   },
   "14087": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "orbital flame",
+    "ja": "orbital flame",
+    "de": "Orbitalflamme",
+    "fr": "orbital flame"
   },
   "14088": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "orbital levin",
+    "ja": "orbital levin",
+    "de": "Orbitalsphäre",
+    "fr": "orbital levin"
   },
   "14089": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "orbital wind",
+    "ja": "orbital wind",
+    "de": "Orbitalwind",
+    "fr": "orbital wind"
   },
   "14090": {
     "en": "",
@@ -84552,28 +84552,28 @@
     "fr": ""
   },
   "14093": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Necron",
+    "ja": "永遠の闇",
+    "de": "Ewig[a] Dunkel",
+    "fr": "Darkness"
   },
   "14094": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "icy hands",
+    "ja": "死を招く手",
+    "de": "eiskalt[a] Hand",
+    "fr": "attrape-mort"
   },
   "14095": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "azure aether",
+    "ja": "青の魂塊",
+    "de": "azur[a] Äther",
+    "fr": "sphère d'énergie bleue"
   },
   "14096": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "beckoning hands",
+    "ja": "死に誘う手",
+    "de": "lockend[a] Hand",
+    "fr": "grand attrape-mort"
   },
   "14097": {
     "en": "",
@@ -84594,6 +84594,1206 @@
     "fr": ""
   },
   "14100": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14101": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14102": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14103": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14104": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14105": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14106": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14107": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14108": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14109": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14110": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14111": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14112": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14113": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14114": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14115": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14116": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14117": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14118": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14119": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14120": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14121": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14122": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14123": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14124": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14125": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14126": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14127": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14128": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14130": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14131": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14132": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14133": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14134": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14136": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14137": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14138": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14139": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14140": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14141": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14142": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14143": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14144": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14146": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14147": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14148": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14149": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14150": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14151": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14152": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14153": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14154": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14160": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14161": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14164": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14165": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14167": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14168": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14169": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14170": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14171": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14172": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14173": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14177": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14178": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14181": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14183": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14184": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14185": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14186": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14187": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14188": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14189": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14190": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14191": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14193": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14194": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14195": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14196": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14197": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14198": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14199": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14201": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14203": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14204": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14205": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14206": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14207": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14209": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14210": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14211": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14212": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14213": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14214": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14215": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14216": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14217": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14218": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14219": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14220": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14221": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14222": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14223": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14228": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14229": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14230": {
+    "en": "Omega, the One",
+    "ja": "Omega, the One",
+    "de": "Omega [t] einzig Wahr[a]",
+    "fr": "Omega, the One"
+  },
+  "14231": {
+    "en": "Ultima, the Feared",
+    "ja": "Ultima, the Feared",
+    "de": "Ultima [t] Gefürchtet[a]",
+    "fr": "Ultima, the Feared"
+  },
+  "14232": {
+    "en": "energy orb",
+    "ja": "energy orb",
+    "de": "Energiekugel",
+    "fr": "energy orb"
+  },
+  "14233": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14234": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14235": {
+    "en": "looming specter",
+    "ja": "闇の巨腕",
+    "de": "Arm[p] des Todes",
+    "fr": "agrippe-mort"
+  },
+  "14236": {
+    "en": "wandering thunder spirit",
+    "ja": "ワンダリング・サンダースピリット",
+    "de": "wandernd[a] Donnergeist",
+    "fr": "esprit foudroyant errant"
+  },
+  "14237": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14238": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14239": {
+    "en": "hooded headsman",
+    "ja": "ある処刑人の記憶",
+    "de": "falsch[a] Henkersmann",
+    "fr": "mémoire d'un bourreau"
+  },
+  "14240": {
+    "en": "territorial acrocat",
+    "ja": "テリトリアル・フライングキャット",
+    "de": "hinterhältig[a] Aerokatze",
+    "fr": "aérochat territorial"
+  },
+  "14241": {
+    "en": "territorial outrunner",
+    "ja": "テリトリアル・アウトランナー",
+    "de": "hinterhältig[a] Auskunftsdrohne",
+    "fr": "trékhoïde territorial"
+  },
+  "14242": {
+    "en": "territorial remembird",
+    "ja": "テリトリアル・メモリーバード",
+    "de": "hinterhältig[a] Memovogel",
+    "fr": "mémopiaf territorial"
+  },
+  "14243": {
+    "en": "territorial scorpion",
+    "ja": "テリトリアル・スコーピオン",
+    "de": "hinterhältig[a] Skorpion",
+    "fr": "scorpion territorial"
+  },
+  "14244": {
+    "en": "territorial brownie",
+    "ja": "テリトリアル・ブラウニー",
+    "de": "hinterhältig[a] Hammerkauz",
+    "fr": "nasique territorial"
+  },
+  "14245": {
+    "en": "territorial timberman",
+    "ja": "テリトリアル・グリーンマン",
+    "de": "hinterhältig[a] Dendrothrop",
+    "fr": "dendrothrope territorial"
+  },
+  "14246": {
+    "en": "territorial pneumobomb",
+    "ja": "テリトリアル・ニューモボム",
+    "de": "hinterhältig[a] Pneumobombe",
+    "fr": "pneumobombo territorial"
+  },
+  "14247": {
+    "en": "territorial blazing soul",
+    "ja": "テリトリアル・ファイアソウル",
+    "de": "hinterhältig[a] brennend[a] Seele",
+    "fr": "âme ardente territoriale"
+  },
+  "14248": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14249": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14250": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14251": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14252": {
+    "en": "raven-red gobtank",
+    "ja": "クロックワーク・レッドゴブリタンク",
+    "de": "rot[a] Aufzieh-Gobmaschine",
+    "fr": "gobtank mécanique carmin"
+  },
+  "14253": {
+    "en": "falcon-blue gobtank",
+    "ja": "クロックワーク・ブルーゴブリタンク",
+    "de": "blau[a] Aufzieh-Gobmaschine",
+    "fr": "gobtank mécanique céruléen"
+  },
+  "14254": {
+    "en": "wind-up Eald'narche",
+    "ja": "マメット・エルドナーシュ",
+    "de": "Eald'narche-Puppe",
+    "fr": "Eald'narche miniature"
+  },
+  "14255": {
+    "en": "rroneek calf",
+    "ja": "ベイビーロネーク",
+    "de": "Rroneek-Kälbchen",
+    "fr": "bébé rroneek"
+  },
+  "14256": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14257": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14258": {
+    "en": "micro crow",
+    "ja": "タイニークロウ",
+    "de": "Mini-Krähe",
+    "fr": "mini-corbeau"
+  },
+  "14259": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14260": {
+    "en": "sunray ray",
+    "ja": "エイエイ",
+    "de": "Manta-Manta",
+    "fr": "raie rayonnante"
+  },
+  "14261": {
+    "en": "mini yan",
+    "ja": "タイニーヤーン",
+    "de": "Mini-Putschi",
+    "fr": "mini-belhamel"
+  },
+  "14262": {
+    "en": "gimme kitten",
+    "ja": "いただきキトン",
+    "de": "Bettelcätzchen",
+    "fr": "bébé chat-pardeur"
+  },
+  "14263": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14264": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14265": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14266": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14267": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14268": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14269": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14270": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14271": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14272": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14273": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14274": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14275": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14276": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14277": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14278": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14279": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14280": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14281": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14282": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14283": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14284": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14285": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14286": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14287": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14288": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14289": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14290": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14291": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14292": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14293": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14294": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14295": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14296": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14297": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14298": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14299": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "14300": {
     "en": "",
     "ja": "",
     "de": "",

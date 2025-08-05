@@ -29088,11 +29088,11 @@
     "itemReward": 0
   },
   "3637": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Delightful Dozen",
+    "ja": "ありがとう12周年！",
+    "de": "Zauberhafte Zwölf",
+    "fr": "Douzaine dorée",
+    "icon": "/i/026000/026107.png",
     "itemReward": 0
   },
   "3638": {
@@ -29941,6 +29941,654 @@
     "de": "Kartograph: Südliches Kreszentia",
     "fr": "Cartographe du continent : Île de Lunule méridionale",
     "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3744": {
+    "en": "Top Tier: Season Fifteen",
+    "ja": "コンフリクトの王者：シーズン15",
+    "de": "Kristallkönig (15. Saison)",
+    "fr": "Roi du conflit : saison 15",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3745": {
+    "en": "Crystal in the Rough: Season Fifteen",
+    "ja": "コンフリクトの勇者：シーズン15",
+    "de": "Kristallfürst (15. Saison)",
+    "fr": "Prince du conflit : saison 15",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3746": {
+    "en": "Ranked and Filed: Season Fifteen",
+    "ja": "コンフリクトの入賞者：シーズン15",
+    "de": "Kristallkämpfer (15. Saison)",
+    "fr": "As du conflit : saison 15",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3747": {
+    "en": "Top Tier: Season Sixteen",
+    "ja": "コンフリクトの王者：シーズン16",
+    "de": "Kristallkönig (16. Saison)",
+    "fr": "Roi du conflit : saison 16",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3748": {
+    "en": "Crystal in the Rough: Season Sixteen",
+    "ja": "コンフリクトの勇者：シーズン16",
+    "de": "Kristallfürst (16. Saison)",
+    "fr": "Prince du conflit : saison 16",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3749": {
+    "en": "Ranked and Filed: Season Sixteen",
+    "ja": "コンフリクトの入賞者：シーズン16",
+    "de": "Kristallkämpfer (16. Saison)",
+    "fr": "As du conflit : saison 16",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3750": {
+    "en": "Omega Material",
+    "ja": "クリスタルベアラー：オメガ",
+    "de": "Kristallträger: Omega",
+    "fr": "Siège de cristal : Oméga",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3751": {
+    "en": "Ultima Material",
+    "ja": "クリスタルベアラー：アルテマ",
+    "de": "Kristallträger: Ultima",
+    "fr": "Siège de cristal : Ultima",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3752": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3753": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3754": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3755": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3756": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3757": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3758": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3759": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3760": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3761": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3762": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3763": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3764": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3765": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3766": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3767": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3768": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3769": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3770": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3771": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3772": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3773": {
+    "en": "In Memoriam",
+    "ja": "明日への道標",
+    "de": "Versprechen einer neuen Zukunft",
+    "fr": "La promesse de demain",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3774": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3775": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3776": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3777": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3778": {
+    "en": "I Can Dig It XVII",
+    "ja": "トレジャーハンター：ランク17",
+    "de": "Wer sucht, der findet XVII",
+    "fr": "Creuser son trou XVII",
+    "icon": "/i/000000/000115.png",
+    "itemReward": 0
+  },
+  "3779": {
+    "en": "Dreaming in Neon I",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク1",
+    "de": "Neonträume I",
+    "fr": "Rêves de grandeur I",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3780": {
+    "en": "Dreaming in Neon II",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク2",
+    "de": "Neonträume II",
+    "fr": "Rêves de grandeur II",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3781": {
+    "en": "Dreaming in Neon III",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク3",
+    "de": "Neonträume III",
+    "fr": "Rêves de grandeur III",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3782": {
+    "en": "Dreaming in Neon IV",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク4",
+    "de": "Neonträume IV",
+    "fr": "Rêves de grandeur IV",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3783": {
+    "en": "Viva Vault Oneiron I",
+    "ja": "ボルト・オネイロンの覇者：ランク1",
+    "de": "Frisch gebackener Panzerknacker I",
+    "fr": "Trésor de rêve I",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3784": {
+    "en": "Viva Vault Oneiron II",
+    "ja": "ボルト・オネイロンの覇者：ランク2",
+    "de": "Frisch gebackener Panzerknacker II",
+    "fr": "Trésor de rêve II",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3785": {
+    "en": "Viva Vault Oneiron III",
+    "ja": "ボルト・オネイロンの覇者：ランク3",
+    "de": "Frisch gebackener Panzerknacker III",
+    "fr": "Trésor de rêve III",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3786": {
+    "en": "Viva Vault Oneiron IV",
+    "ja": "ボルト・オネイロンの覇者：ランク4",
+    "de": "Frisch gebackener Panzerknacker VI",
+    "fr": "Trésor de rêve IV",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3787": {
+    "en": "The Void Is Back in Town",
+    "ja": "愉快なみんなの廃屋敷",
+    "de": "Schaurig-schöne Harmonie",
+    "fr": "愉快なみんなの廃屋敷",
+    "icon": "/i/059000/059548.png",
+    "itemReward": 0
+  },
+  "3788": {
+    "en": "プンシュで乾杯！",
+    "ja": "プンシュで乾杯！",
+    "de": "プンシュで乾杯！",
+    "fr": "プンシュで乾杯！",
+    "icon": "/i/026000/026435.png",
+    "itemReward": 0
+  },
+  "3789": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3790": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3791": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3792": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3793": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3794": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3795": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3796": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3797": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3798": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3799": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3800": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3801": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3802": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3803": {
+    "en": "Mapping the Realm: The Meso Terminal",
+    "ja": "メインターミナルを踏破せし者",
+    "de": "Kartograph: Das Meso-System",
+    "fr": "Cartographe du continent : mésoterminal",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3804": {
+    "en": "Mapping the Realm: San d'Oria: The Second Walk",
+    "ja": "サンドリア：ザ・セカンドウォークを踏破せし者",
+    "de": "Kartograph: San d'Oria: Die zweite Etappe",
+    "fr": "Cartographe du continent : San d'Oria - La deuxième perambulation",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3805": {
+    "en": "Not Today, Necron",
+    "ja": "深淵なる常闇を滅し者",
+    "de": "Licht im Dunkel",
+    "fr": "Chasser l'obscurité",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3806": {
+    "en": "O Brother, Where Zilart Thou",
+    "ja": "サンドリア：ザ・セカンドウォークを制覇せし者",
+    "de": "San d'Oria: Die zweite Etappe",
+    "fr": "Échos des peuples anciens",
+    "icon": "/i/064000/064875.png",
+    "itemReward": 0
+  },
+  "3807": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3808": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3809": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3810": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3811": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3812": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3813": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3814": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3815": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3816": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3817": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3818": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3819": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3820": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3821": {
+    "en": "Go Big on the Trail II",
+    "ja": "黄金の太公望：ランク2",
+    "de": "Kapitalbeschaffung auf Tural II",
+    "fr": "Pêcheur de légendes éternel II",
+    "icon": "/i/001000/001102.png",
+    "itemReward": 0
+  },
+  "3822": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3823": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3824": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
     "itemReward": 0
   }
 }
