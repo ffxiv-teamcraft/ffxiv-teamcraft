@@ -27,13 +27,13 @@ export class EnvironmentService {
   }
 
   public get maxIlvl(): number {
-    return 730;
+    return 760;
   }
 
   public get maxSubmarineRank() : number {
-    if (this.gameVersion < 7.2) {
-      return 125
+    if (this.gameVersion < 7.3) {
+      return 130
     }
-    return 130;
+    return 135;
   }
 }

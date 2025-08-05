@@ -2838,20 +2838,22 @@
       "minGathering": 0
     },
     {
-      "spot": 32,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2599,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
       "spot": 29,
       "hookset": 2,
       "tug": 2,
       "bait": 12704,
       "snagging": false,
       "minGathering": 0
+    },
+    {
+      "spot": 32,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 12711,
+      "snagging": false,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     },
     {
       "spot": 109,

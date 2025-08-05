@@ -5650,7 +5650,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Carrying an object in your arms, growing wearier with each passing second.",
-      "de": "Wird beim Tragen eines Gegenstands mit jeder Sekunde schwächer.",
+      "de": "Du trägst einen Gegenstand. Bei Zeitablauf musst du von vorne anfangen.",
       "ja": "荷を運搬している状態。一定時間が経過すると、疲れて荷を落としてしまう。",
       "fr": "Transporte une charge jusqu'à ce que la fatigue oblige à la poser."
     }
@@ -27741,10 +27741,10 @@
     "icon": "/i/213000/213913.png",
     "maxStacks": 0,
     "description": {
-      "en": "Attacks generate HP equal to the amount of physical damage dealt.",
-      "de": "Der ausgeteilte physische Schaden wird in LP umgewandelt.",
-      "ja": "物理攻撃にＨＰ吸収効果が付与された状態。",
-      "fr": "Les attaques physiques absorbent des PV."
+      "en": "Damage dealt is increased, and attacks generate HP equal to a portion of damage dealt.",
+      "de": "Der ausgeteilte physische Schaden ist erhöht und wird in LP umgewandelt.",
+      "ja": "与ダメージが上昇し、ＨＰ吸収効果が付与された状態。",
+      "fr": "Les dégâts infligés sont augmentés et les attaques absorbent des PV."
     }
   },
   "1983": {
@@ -44063,12 +44063,12 @@
     "ja": "ヒート",
     "fr": "Chaleur",
     "icon": "/i/218000/218066.png",
-    "maxStacks": 4,
+    "maxStacks": 3,
     "description": {
-      "en": "Firearm is generating heat. Becomes <span style=\"color:#ffffff\">Overheated</span> when 4 stacks are accumulated.",
-      "de": "Sammelt <span style=\"color:#ffffff\">Hitze</span>. Ändert sich bei 4 Stapeln zu <span style=\"color:#ffffff\">Überhitzung</span>.",
-      "ja": "ヒートが上昇している状態。4スタック付与されると「オーバーヒート」に変化する。",
-      "fr": "Enclenche Surchauffe au bout du 4e degré de Chaleur."
+      "en": "Firearm is generating heat. Becomes <span style=\"color:#ffffff\">Overheated</span> when 3 stacks are accumulated.",
+      "de": "Sammelt <span style=\"color:#ffffff\">Hitze</span>. Ändert sich bei 3 Stapeln zu <span style=\"color:#ffffff\">Überhitzung</span>.",
+      "ja": "ヒートが上昇している状態。3スタック付与されると「オーバーヒート」に変化する。",
+      "fr": "Enclenche Surchauffe au bout du 3e degré de Chaleur."
     }
   },
   "3149": {
@@ -44261,10 +44261,10 @@
     "icon": "/i/214000/214930.png",
     "maxStacks": 0,
     "description": {
-      "en": "Dancing blades are dealing damage over time to nearby enemies and deflecting a portion of damage taken.",
-      "de": "Fügt umstehenden Gegnern schrittweise Schaden zu und eigener erlittener Schaden ist verringert.",
-      "ja": "周囲に対してダメージを発生させ続けている状態。さらに、受けるダメージの一部が軽減される。",
-      "fr": "Des dégâts physiques périodiques sont infligés aux ennemis alentour, et les dégâts reçus sont réduits."
+      "en": "Dancing blades are dealing damage over time to nearby enemies and deflecting a portion of damage taken. Movement speed is also increased.",
+      "de": "Fügt umstehenden Gegnern schrittweise Schaden zu, eigener erlittener Schaden ist verringert und Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "周囲に対してダメージを発生させ続けている状態。さらに、受けるダメージの一部が軽減され、移動速度が上昇する。",
+      "fr": "Des dégâts physiques périodiques sont infligés aux ennemis alentour, les dégâts reçus sont réduits et la vitesse de déplacement est augmentée."
     }
   },
   "3163": {
@@ -44513,10 +44513,10 @@
     "icon": "/i/214000/214939.png",
     "maxStacks": 0,
     "description": {
-      "en": "Leaping high into the sky, beyond the reach of enemy attacks.",
-      "de": "Hoch in den Himmel gesprungen und von keinem Gegner angreifbar.",
-      "ja": "天高く跳躍し、敵の攻撃を受けない状態。",
-      "fr": "Saute très haut dans les airs et ne peut être pris pour cible."
+      "en": "Leaping high into the sky, beyond the reach of enemy attacks. Movement speed is also increased.",
+      "de": "Hoch in den Himmel gesprungen und von keinem Gegner angreifbar. Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "天高く跳躍し、敵の攻撃を受けない状態。さらに、移動速度が上昇する。",
+      "fr": "Saute très haut dans les airs, ne peut être pris pour cible et la vitesse de déplacement est augmentée."
     }
   },
   "3181": {
@@ -59353,10 +59353,10 @@
     "icon": "/i/229000/229907.png",
     "maxStacks": 0,
     "description": {
-      "en": "Critical hit rate and direct hit rate are increased.",
-      "de": "Kritische Trefferrate und direkte Trefferrate sind erhöht.",
-      "ja": "クリティカル発動率、ダイレクトヒット発動率が向上した状態。",
-      "fr": "Les chances de critiques et de coups nets sont augmentées."
+      "en": "Critical hit rate and direct hit rate are increased. Effect does not apply to healing actions.",
+      "de": "Kritische Trefferrate und direkte Trefferrate sind erhöht. Attacken, die LP regenerieren, sind davon ausgenommen.",
+      "ja": "クリティカル発動率、ダイレクトヒット発動率が向上した状態。ただし、ＨＰ回復アクションには適用されない。",
+      "fr": "Les chances de critiques et de coups nets sont augmentées.<br>Ne s'applique pas aux actions curatives."
     }
   },
   "4241": {
@@ -59367,10 +59367,10 @@
     "icon": "/i/229000/229908.png",
     "maxStacks": 0,
     "description": {
-      "en": "Critical hit rate and direct hit rate are increased, and all hits are guaranteed to land.",
-      "de": "Kritische Trefferrate und direkte Trefferrate sind erhöht. Attacken treffen garantiert.",
-      "ja": "クリティカル発動率、ダイレクトヒット発動率が向上した状態。さらに攻撃が確実に命中する。",
-      "fr": "Les chances de critiques et de coups nets sont augmentées et les attaques touchent à coup sûr."
+      "en": "Critical hit rate and direct hit rate are increased, and all hits are guaranteed to land. Effect does not apply to healing actions.",
+      "de": "Kritische Trefferrate und direkte Trefferrate sind erhöht. Attacken treffen garantiert. Attacken, die LP regenerieren, sind davon ausgenommen.",
+      "ja": "クリティカル発動率、ダイレクトヒット発動率が向上した状態。さらに攻撃が確実に命中する。ただし、ＨＰ回復アクションには適用されない。",
+      "fr": "Les chances de critiques et de coups nets sont augmentées et les attaques touchent à coup sûr.<br>Ne s'applique pas aux actions curatives."
     }
   },
   "4242": {
@@ -59425,7 +59425,7 @@
     "description": {
       "en": "Impervious to most physical damage for one strike.",
       "de": "Einmalig immun gegen fast allen physischen Schaden.",
-      "ja": "一部を除く物理ダメージを1度だけ無効化する状態。",
+      "ja": "一部を除く物理ダメージを一度だけ無効化する状態。",
       "fr": "Insensible une seule fois à la plupart des attaques physiques."
     }
   },
@@ -59551,7 +59551,7 @@
     "description": {
       "en": "Evasion is enhanced.",
       "de": "Die Fähigkeit des Ausweichens ist verbessert.",
-      "ja": "回避力が向上した状態。",
+      "ja": "回避率が向上した状態。",
       "fr": "L'esquive est augmentée."
     }
   },
@@ -61660,7 +61660,7 @@
     "de": "Aufgerüstet",
     "ja": "エンパワーメント",
     "fr": "Gain de puissance",
-    "icon": "/i/215000/215589.png",
+    "icon": "/i/216000/216256.png",
     "maxStacks": 0,
     "description": {
       "en": "Hypercarrot Cannon is primed for use.",
@@ -61796,17 +61796,17 @@
     }
   },
   "4415": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Star Contributor",
+    "de": "Auszeichnung für Außerordentliches",
+    "ja": "最優秀貢献者の証",
+    "fr": "Marque de contributeur exemplaire",
+    "icon": "/i/216000/216255.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bearing proof of exceptional contributions made during a period of cosmic exploration. In effect only when playing as a Disciple of the Hand or Land.",
+      "de": "Bezeugt die höchste Projektleistung am Ende des Projektdatenaufzeichnungsintervalls. Nur für Handwerker und Sammler gültig.",
+      "ja": "集計対象期間に、最優秀貢献者に選ばれたことを証明する。クラフター・ギャザラーでのみ有効。",
+      "fr": "Prouve l'obtention du titre de contributeur exemplaire sur une période donnée. Artisans et récolteurs uniquement."
     }
   },
   "4416": {
@@ -63112,17 +63112,17 @@
     }
   },
   "4509": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Floating Fetters",
+    "de": "Schwebende Fesseln",
+    "ja": "浮遊拘束",
+    "fr": "Entraves flottantes",
+    "icon": "/i/215000/215301.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bound in midair and unable to move.",
+      "de": "In der Luft gehalten und bewegungsunfähig.",
+      "ja": "浮遊したまま拘束され、移動できなくなった状態。",
+      "fr": "Le corps est entravé dans les airs et tout déplacement est impossible."
     }
   },
   "4510": {
@@ -63574,171 +63574,171 @@
     }
   },
   "4542": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cell Block α",
+    "de": "Gesetzlosenverfolgung α: Verfolgt",
+    "ja": "罪人捕捉α［被］",
+    "fr": "Astreinte du bourreau α",
+    "icon": "/i/214000/214255.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Restrained by the headsman charged with this cell block. Attacks against other targets are nullified.",
+      "de": "Vom Henkersmann gefasst. Angriffe auf andere Ziele als jene mit dem Status „Gesetzlosenverfolgung α: Verfolger“ sind wirkungslos.",
+      "ja": "処刑人に捕捉された状態。対象以外への攻撃が無効化される。",
+      "fr": "La victime est liée à son bourreau. Seules les attaques sur celui-ci ont un effet."
     }
   },
   "4543": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cell Block β",
+    "de": "Gesetzlosenverfolgung β: Verfolgt",
+    "ja": "罪人捕捉β［被］",
+    "fr": "Astreinte du bourreau β",
+    "icon": "/i/214000/214256.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Restrained by the headsman charged with this cell block. Attacks against other targets are nullified.",
+      "de": "Vom Henkersmann gefasst. Angriffe auf andere Ziele als jene mit dem Status „Gesetzlosenverfolgung β: Verfolger“ sind wirkungslos.",
+      "ja": "処刑人に捕捉された状態。対象以外への攻撃が無効化される。",
+      "fr": "La victime est liée à son bourreau. Seules les attaques sur celui-ci ont un effet."
     }
   },
   "4544": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cell Block γ",
+    "de": "Gesetzlosenverfolgung γ: Verfolgt",
+    "ja": "罪人捕捉γ［被］",
+    "fr": "Astreinte du bourreau γ",
+    "icon": "/i/214000/214257.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Restrained by the headsman charged with this cell block. Attacks against other targets are nullified.",
+      "de": "Vom Henkersmann gefasst. Angriffe auf andere Ziele als jene mit dem Status „Gesetzlosenverfolgung γ: Verfolger“ sind wirkungslos.",
+      "ja": "処刑人に捕捉された状態。対象以外への攻撃が無効化される。",
+      "fr": "La victime est liée à son bourreau. Seules les attaques sur celui-ci ont un effet."
     }
   },
   "4545": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cell Block δ",
+    "de": "Gesetzlosenverfolgung δ: Verfolgt",
+    "ja": "罪人捕捉δ［被］",
+    "fr": "Astreinte du bourreau δ",
+    "icon": "/i/214000/214292.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Restrained by the headsman charged with this cell block. Attacks against other targets are nullified.",
+      "de": "Vom Henkersmann gefasst. Angriffe auf andere Ziele als jene mit dem Status „Gesetzlosenverfolgung δ: Verfolger“ sind wirkungslos.",
+      "ja": "処刑人に捕捉された状態。対象以外への攻撃が無効化される。",
+      "fr": "La victime est liée à son bourreau. Seules les attaques sur celui-ci ont un effet."
     }
   },
   "4546": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Guard on Duty α",
+    "de": "Gesetzlosenverfolgung α: Verfolger",
+    "ja": "罪人捕捉α",
+    "fr": "Astreinte du condamné α",
+    "icon": "/i/214000/214252.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attending to prisoners in Cell Block α. Attacks from all other prisoners are nullified.",
+      "de": "Sünder ist gefasst. Nur Angreifer mit dem Status „Gesetzlosenverfolgung α: Verfolgt“ richten Schaden an.",
+      "ja": "罪人を捕捉した状態。罪人捕捉α［被］が付与された対象以外からの攻撃が無効化される。",
+      "fr": "S'est lié à un(e) condamné(e). Uniquement vulnérable aux attaques du personnage subissant Astreinte du bourreau α."
     }
   },
   "4547": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Guard on Duty β",
+    "de": "Gesetzlosenverfolgung β: Verfolger",
+    "ja": "罪人捕捉β",
+    "fr": "Astreinte du condamné β",
+    "icon": "/i/214000/214253.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attending to prisoners in Cell Block β. Attacks from all other prisoners are nullified.",
+      "de": "Sünder ist gefasst. Nur Angreifer mit dem Status „Gesetzlosenverfolgung β: Verfolgt“ richten Schaden an.",
+      "ja": "罪人を捕捉した状態。罪人捕捉β［被］が付与された対象以外からの攻撃が無効化される。",
+      "fr": "S'est lié à un(e) condamné(e). Uniquement vulnérable aux attaques du personnage subissant Astreinte du bourreau β."
     }
   },
   "4548": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Guard on Duty γ",
+    "de": "Gesetzlosenverfolgung γ: Verfolger",
+    "ja": "罪人捕捉γ",
+    "fr": "Astreinte du condamné γ",
+    "icon": "/i/214000/214254.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attending to prisoners in Cell Block γ. Attacks from all other prisoners are nullified.",
+      "de": "Sünder ist gefasst. Nur Angreifer mit dem Status „Gesetzlosenverfolgung γ: Verfolgt“ richten Schaden an.",
+      "ja": "罪人を捕捉した状態。罪人捕捉γ［被］が付与された対象以外からの攻撃が無効化される。",
+      "fr": "S'est lié à un(e) condamné(e). Uniquement vulnérable aux attaques du personnage subissant Astreinte du bourreau γ."
     }
   },
   "4549": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Guard on Duty δ",
+    "de": "Gesetzlosenverfolgung δ: Verfolger",
+    "ja": "罪人捕捉δ",
+    "fr": "Astreinte du condamné δ",
+    "icon": "/i/214000/214291.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attending to prisoners in Cell Block δ. Attacks from all other prisoners are nullified.",
+      "de": "Sünder ist gefasst. Nur Angreifer mit dem Status „Gesetzlosenverfolgung δ: Verfolgt“ richten Schaden an.",
+      "ja": "罪人を捕捉した状態。罪人捕捉δ［被］が付与された対象以外からの攻撃が無効化される。",
+      "fr": "S'est lié à un(e) condamné(e). Uniquement vulnérable aux attaques du personnage subissant Astreinte du bourreau δ."
     }
   },
   "4550": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fugitive from Justice",
+    "de": "Entflohen",
+    "ja": "破獄",
+    "fr": "Délivrance du condamné",
+    "icon": "/i/214000/214293.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Free from confinement and able to attack all headsmen.",
+      "de": "Entkommt den Ketten des Henkersmanns. Angriffe auf alle Henkersmänner sind nicht mehr wirkungslos.",
+      "ja": "自身を捕捉した処刑人に打ち勝った状態。すべての処刑人への攻撃が無効化されなくなる。",
+      "fr": "A vaincu son bourreau. Les attaques sur les autres bourreaux ont de nouveau un effet."
     }
   },
   "4551": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Positive Charge",
+    "de": "Positive Ladung",
+    "ja": "磁力【＋】",
+    "fr": "Charge positive",
+    "icon": "/i/215000/215663.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Exhibiting a positive magnetic charge.",
+      "de": "Positiv magnetisch aufgeladen.",
+      "ja": "【＋】の磁力を帯びた状態。",
+      "fr": "La force du champ électromagnétique est positive."
     }
   },
   "4552": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Negative Charge",
+    "de": "Negative Ladung",
+    "ja": "磁力【－】",
+    "fr": "Charge négative",
+    "icon": "/i/215000/215664.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Exhibiting a negative magnetic charge.",
+      "de": "Negativ magnetisch aufgeladen.",
+      "ja": "【－】の磁力を帯びた状態。",
+      "fr": "La force du champ électromagnétique est négative."
     }
   },
   "4553": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Insensible",
+    "de": "Beraubte Sinne",
+    "ja": "知覚異常",
+    "fr": "Troubles sensoriels",
+    "icon": "/i/214000/214290.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deprived of senses and unable to correctly interpret attack indicators.",
+      "de": "Durch eine verzogene Wahrnehmung sind Angriffe schwerer zu antizipieren.",
+      "ja": "知覚を狂わされ、攻撃の予兆を正しく認識できない状態。",
+      "fr": "Les sens sont troublés, ce qui empêche de prévoir les attaques ennemies."
     }
   },
   "4554": {
@@ -64078,17 +64078,17 @@
     }
   },
   "4578": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fetters",
+    "de": "Gefesselt",
+    "ja": "拘束",
+    "fr": "Attache",
+    "icon": "/i/215000/215545.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to execute actions.",
+      "de": "Ist handlungsunfähig.",
+      "ja": "行動できなくなった状態。",
+      "fr": "Toute action est impossible."
     }
   },
   "4579": {
@@ -64106,31 +64106,31 @@
     }
   },
   "4580": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Projection Locus",
+    "de": "Präventivschuss",
+    "ja": "予測射撃［被］",
+    "fr": "Tir préventif",
+    "icon": "/i/214000/214311.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Subject of Omega's calculations. Artillery fire will impact a trajectory determined by subject's current position when a designated period elapses.",
+      "de": "Im Visier von Omega. Artilleriefeuer trifft nach Ablauf einer bestimmten Zeit auf eine Flugbahn, die von der aktuellen Position des Ziels bestimmt wird.",
+      "ja": "Omegaに標的として識別された状態。一定時間後、自身を基準とした特定の方向に攻撃が着弾する。",
+      "fr": "Dans la mire d'Oméga. Après un certain temps, l'attaque est lancée en direction de la cible."
     }
   },
   "4581": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Paradise Found",
+    "de": "Neues Paradies",
+    "ja": "真世界への改変者",
+    "fr": "Paradis transcendé",
+    "icon": "/i/214000/214318.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Remaking the world in a more desirable image.",
+      "de": "Das Bewusstsein hat die Fälschung der materiellen Welt erkannt und kann sie nun nach Belieben manipulieren.",
+      "ja": "模倣された世界の構造を理解し、望むままに操れる状態。",
+      "fr": "La conscience a discerné la contrefaçon du monde matériel et peut désormais le manipuler à volonté."
     }
   },
   "4582": {
@@ -64302,17 +64302,17 @@
     }
   },
   "4594": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/i/215000/215503.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Certain death when counter reaches zero.",
+      "de": "Wird kampfunfähig, sobald der Timer auf 0 sinkt.",
+      "ja": "カウント0で戦闘不能に陥る状態。",
+      "fr": "Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "4595": {
@@ -64386,6 +64386,2106 @@
     }
   },
   "4600": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4601": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4602": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4603": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4604": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4605": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4606": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4607": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4608": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4609": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4610": {
+    "en": "Mighty Strikes",
+    "de": "Mächtiger Schlag",
+    "ja": "マイティストライク",
+    "fr": "Destro-frappes",
+    "icon": "/i/214000/214258.png",
+    "maxStacks": 0,
+    "description": {
+      "en": "While this effect is active, all melee attacks result in critical hits.",
+      "de": "Alle physischen Nahkampf-Angriffe werden für die Dauer des Effekts zu kritischen Treffern.",
+      "ja": "効果時間内、全近接物理攻撃がクリティカルヒット。",
+      "fr": "Toutes les attaques physiques de mêlée deviennent des coups critiques pendant la durée de l'effet."
+    }
+  },
+  "4611": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4612": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4613": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4614": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4615": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4616": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4617": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4618": {
+    "en": "Standing Firm",
+    "de": "Starkes Standbein",
+    "ja": "ふんばる",
+    "fr": "Tenir bon",
+    "icon": "/i/215000/215250.png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Unbowed even by relentless onslaught.",
+      "de": "Kann einem heftigen Angriff standhalten.",
+      "ja": "強烈な衝撃に備えて、踏ん張った状態。",
+      "fr": "Les préparations nécessaires ont été faites pour subir un assaut dévastateur."
+    }
+  },
+  "4619": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4620": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4621": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4622": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4623": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4624": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4625": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4626": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4627": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4628": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4629": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4630": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4631": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4632": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4633": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4634": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4635": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4636": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4637": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4638": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4639": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4640": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4641": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4642": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4643": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4644": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4645": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4646": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4647": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4648": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4649": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4650": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4651": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4652": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4653": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4654": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4655": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4656": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4657": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4658": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4659": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4660": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4661": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4662": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4663": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4664": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4665": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4666": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4667": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4668": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4669": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4670": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4671": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4672": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4673": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4674": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4675": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4676": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4677": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4678": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4679": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4680": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4681": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4682": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4683": {
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/i/215000/215503.png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Certain death when counter reaches zero.",
+      "de": "Wird kampfunfähig, sobald der Timer auf 0 sinkt.",
+      "ja": "カウント0で戦闘不能に陥る状態。",
+      "fr": "Mort certaine lorsque le compteur atteint zéro."
+    }
+  },
+  "4684": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4685": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4686": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4687": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4688": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4689": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4690": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4691": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4692": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4693": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4694": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4695": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4696": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4697": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4698": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4699": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4700": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4701": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4702": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4703": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4704": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4705": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4706": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4707": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4708": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4709": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4710": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4711": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4712": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4713": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4714": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4715": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4716": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4717": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4718": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4719": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4720": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4721": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4722": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4723": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4724": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4725": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4726": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4727": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4728": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4729": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4730": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4731": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4732": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4733": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4734": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4735": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4736": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4737": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4738": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4739": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4740": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4741": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4742": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4743": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4744": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4745": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4746": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4747": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4748": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4749": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4750": {
     "en": "",
     "de": "",
     "ja": "",

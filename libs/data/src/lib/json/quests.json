@@ -12829,6 +12829,10 @@
     "icon": "/i/071000/071201.png",
     "rewards": [
       {
+        "id": 4570,
+        "amount": 3
+      },
+      {
         "id": 3026,
         "amount": 1
       },
@@ -12855,6 +12859,10 @@
     },
     "icon": "/i/071000/071201.png",
     "rewards": [
+      {
+        "id": 4570,
+        "amount": 3
+      },
       {
         "id": 3026,
         "amount": 1
@@ -91282,12 +91290,19 @@
   },
   "70767": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "星芒祭と心躍る一杯",
+      "ja": "星芒祭と心躍る一杯",
+      "de": "星芒祭と心躍る一杯",
+      "fr": "星芒祭と心躍る一杯"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080106.png",
+    "rewards": [
+      {
+        "id": 46792,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101424.png"
   },
   "70768": {
     "name": {
@@ -92376,21 +92391,29 @@
   },
   "70833": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An Adventurous Ambition",
+      "ja": "新生祭と、ラノシアの小さな冒険",
+      "de": "Das kleinste, größte Abenteuer",
+      "fr": "L'aventure a ses raisons..."
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png",
+    "banner": "/i/101000/101414.png"
   },
   "70834": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Light That Ever Burns",
+      "ja": "新生祭と、蒼茫の灯火",
+      "de": "Und immer brennt der Leuchtturm",
+      "fr": "La lumière du lendemain"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png",
+    "rewards": [
+      {
+        "id": 47963,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101415.png"
   },
   "70835": {
     "name": {
@@ -92606,7 +92629,7 @@
       "en": "New Job, Old Tricks",
       "ja": "「サポートジョブ」の継承",
       "de": "Das Wissen alter Zeit",
-      "fr": "S.O.S jobs fantômes"
+      "fr": "S.O.S. jobs fantômes"
     },
     "icon": "/i/071000/071221.png",
     "banner": "/i/101000/101419.png"
@@ -92840,6 +92863,935 @@
     "icon": "/i/071000/071221.png"
   },
   "70861": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70862": {
+    "name": {
+      "en": "Dreams of Paradise",
+      "ja": "一万年の夢の残響",
+      "de": "Ein zehntausend Jahre alter Traum",
+      "fr": "Dans la brume d'un rêve vieux de dix mille ans"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 4570,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/112000/112614.png"
+  },
+  "70863": {
+    "name": {
+      "en": "Northward",
+      "ja": "北の地への導き",
+      "de": "Richtung Norden",
+      "fr": "Direction&nbsp;: le nord"
+    },
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101446.png"
+  },
+  "70864": {
+    "name": {
+      "en": "For Whom the Verse Is Sung",
+      "ja": "歌うは誰がため",
+      "de": "Wem der Vers erklingt",
+      "fr": "Pour qui sonne le couplet"
+    },
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101447.png"
+  },
+  "70865": {
+    "name": {
+      "en": "Apocalypse Nigh",
+      "ja": "世界に在りて君は何を願うのか？",
+      "de": "Das Ende ist nah",
+      "fr": "Apocalypse imminente"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 48197,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101448.png"
+  },
+  "70866": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70867": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70868": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70869": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70870": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70871": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70872": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70873": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70874": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70875": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70876": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70877": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70878": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70879": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70880": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70881": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70882": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70883": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70884": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70885": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70886": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70887": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70888": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70889": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70890": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70891": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70892": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70893": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70894": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70895": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70896": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70897": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70898": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70899": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70900": {
+    "name": {
+      "en": "Targeted Tragedy",
+      "ja": "闇夜の誘い",
+      "de": "Endlose Dunkelheit",
+      "fr": "Sur le lieu du drame"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 44104,
+        "amount": 2
+      },
+      {
+        "id": 44098,
+        "amount": 2
+      },
+      {
+        "id": 44087,
+        "amount": 2
+      },
+      {
+        "id": 44090,
+        "amount": 2
+      },
+      {
+        "id": 27994,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101431.png"
+  },
+  "70901": {
+    "name": {
+      "en": "The Endless Choice",
+      "ja": "未来の選択肢",
+      "de": "Der endlose Entschluss",
+      "fr": "Silence radio"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70902": {
+    "name": {
+      "en": "My Memories and Yours",
+      "ja": "君と僕の記憶",
+      "de": "Unvergessene Erinnerungen",
+      "fr": "Le verre d'adieu"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41757,
+        "amount": 1
+      },
+      {
+        "id": 41761,
+        "amount": 1
+      },
+      {
+        "id": 41768,
+        "amount": 1
+      },
+      {
+        "id": 41769,
+        "amount": 1
+      }
+    ]
+  },
+  "70903": {
+    "name": {
+      "en": "A Darkness in the Heart",
+      "ja": "心を這うもの",
+      "de": "Wo wir uns treffen",
+      "fr": "L'emprise du côté obscur"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70904": {
+    "name": {
+      "en": "Preservation Their Purpose",
+      "ja": "保存する者たち",
+      "de": "Bewahrte Ewigkeit",
+      "fr": "Science sans conscience (première partie)"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 44104,
+        "amount": 2
+      },
+      {
+        "id": 44098,
+        "amount": 2
+      },
+      {
+        "id": 44087,
+        "amount": 2
+      },
+      {
+        "id": 44090,
+        "amount": 2
+      },
+      {
+        "id": 27994,
+        "amount": 1
+      }
+    ]
+  },
+  "70905": {
+    "name": {
+      "en": "A Calculated Evolution",
+      "ja": "進化の方程式",
+      "de": "Evolution der Wenigen",
+      "fr": "Science sans conscience (deuxième partie)"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70906": {
+    "name": {
+      "en": "One of Our Own",
+      "ja": "この国で生きるために",
+      "de": "Alexandrias Vermächtnis",
+      "fr": "La résolution du peuple"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      }
+    ]
+  },
+  "70907": {
+    "name": {
+      "en": "A Terminal Invitation",
+      "ja": "約束のとき",
+      "de": "Der Tag des Versprechens",
+      "fr": "Le jour de la promesse"
+    },
+    "icon": "/i/071000/071201.png",
+    "banner": "/i/112000/112611.png"
+  },
+  "70908": {
+    "name": {
+      "en": "Blades in Waiting",
+      "ja": "ふたりの剣",
+      "de": "Klingen der Dämmerung",
+      "fr": "La fin du cauchemar"
+    },
+    "icon": "/i/071000/071201.png",
+    "banner": "/i/101000/101432.png"
+  },
+  "70909": {
+    "name": {
+      "en": "The Promise of Tomorrow",
+      "ja": "明日への道標",
+      "de": "Versprechen einer neuen Zukunft",
+      "fr": "La promesse de demain"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 46148,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101433.png"
+  },
+  "70910": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70911": {
+    "name": {
+      "en": "Frights of Fancy",
+      "ja": "守護天節と帰ってきたサーカス",
+      "de": "Was soll der Zirkus!",
+      "fr": "C'est quoi ce cirque&nbsp;?"
+    },
+    "icon": "/i/080000/080103.png",
+    "banner": "/i/101000/101440.png"
+  },
+  "70912": {
+    "name": {
+      "en": "Dressed to Impresario",
+      "ja": "守護天節とふたつの幻影",
+      "de": "Saures für die Imps",
+      "fr": "Des bonbons ou six trouilles&nbsp;?"
+    },
+    "icon": "/i/080000/080103.png",
+    "rewards": [
+      {
+        "id": 46827,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101441.png"
+  },
+  "70913": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70914": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70915": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70916": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70917": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70918": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70919": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70920": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70921": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70922": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70923": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70924": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70925": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70926": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70927": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70928": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70929": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70930": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70931": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70932": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70933": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70934": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70935": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70936": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70937": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70938": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70939": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70940": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70941": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70942": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70943": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70944": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70945": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70946": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70947": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70948": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70949": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70950": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70951": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70952": {
     "name": {
       "en": "",
       "ja": "",

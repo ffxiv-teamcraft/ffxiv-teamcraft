@@ -41159,7 +41159,7 @@
       "en": "Moths Are Tough",
       "ja": "深き森の霊蛾「ゴーストモス」",
       "de": "Doktor Motte",
-      "fr": "Défi : S.O.S phalène fantôme"
+      "fr": "Défi : S.O.S. phalène fantôme"
     },
     "description": {
       "en": "If a moth flaps its wings in the forest, and no one is there to hear it, does it make a sound? Possibly, but it <i>does</i> release a toxic cloud of countless tiny scales that can linger in the air for days killing both flora and fauna alike, so it's best not to let the moth flap its wings at all.",
@@ -41601,7 +41601,7 @@
       "en": "Reeds in Need",
       "ja": "野性と葦",
       "de": "Zu Schilfe!",
-      "fr": "SOS roseaux"
+      "fr": "S.O.S. roseaux"
     },
     "description": {
       "en": "Nesting orobon are a blight on reed fields, nibbling on roots and seeds until every last plant is plucked from its place. Rid the fields of these wavekin and spare the Hanuhanu farmer from a season of hunger.",
@@ -42430,7 +42430,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11125598
+    "location": 11125598,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 24.74,
+      "y": 35.03,
+      "z": 0.56
+    }
   },
   "1963": {
     "name": {
@@ -42447,7 +42454,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11126705
+    "location": 11126705,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 28.97,
+      "y": 31.22,
+      "z": 0.7
+    }
   },
   "1964": {
     "name": {
@@ -42464,7 +42478,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 10994975
+    "location": 10994975,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 16.97,
+      "y": 26.58,
+      "z": 1.16
+    }
   },
   "1965": {
     "name": {
@@ -42481,7 +42502,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 10966790
+    "location": 10966790,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 10.51,
+      "y": 9.58,
+      "z": 0.03
+    }
   },
   "1966": {
     "name": {
@@ -42498,7 +42526,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11139552
+    "location": 11139552,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 17.03,
+      "y": 22.22,
+      "z": 1.07
+    }
   },
   "1967": {
     "name": {
@@ -42515,7 +42550,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11139602
+    "location": 11139602,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 20.53,
+      "y": 15.09,
+      "z": 1.11
+    }
   },
   "1968": {
     "name": {
@@ -42532,7 +42574,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 10964466
+    "location": 10964466,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 14.09,
+      "y": 34.51,
+      "z": 0.75
+    }
   },
   "1969": {
     "name": {
@@ -42549,7 +42598,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 10965716
+    "location": 10965716,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 9.7,
+      "y": 28.16,
+      "z": 0.96
+    }
   },
   "1970": {
     "name": {
@@ -42566,7 +42622,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11476225
+    "location": 11476225,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 20.07,
+      "y": 32.65,
+      "z": 0.71
+    }
   },
   "1971": {
     "name": {
@@ -42583,7 +42646,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11476226
+    "location": 11476226,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 23.08,
+      "y": 27.06,
+      "z": 0.97
+    }
   },
   "1972": {
     "name": {
@@ -42600,7 +42670,14 @@
     },
     "icon": "/i/060000/060502.png",
     "level": 1,
-    "location": 11196705
+    "location": 11196705,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 29.76,
+      "y": 21.23,
+      "z": 0.96
+    }
   },
   "1973": {
     "name": {
@@ -42668,7 +42745,14 @@
     },
     "icon": "/i/060000/060958.png",
     "level": 1,
-    "location": 11191083
+    "location": 11191083,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 25.5,
+      "y": 17.19,
+      "z": 1.11
+    }
   },
   "1977": {
     "name": {
@@ -42685,7 +42769,14 @@
     },
     "icon": "/i/060000/060958.png",
     "level": 1,
-    "location": 11264027
+    "location": 11264027,
+    "position": {
+      "map": 967,
+      "zoneid": 4932,
+      "x": 11.87,
+      "y": 32.07,
+      "z": 0.75
+    }
   },
   "1978": {
     "name": {
@@ -42702,7 +42793,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11559950
+    "location": 11559950,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 21.5,
+      "y": 21.5,
+      "z": 0
+    }
   },
   "1979": {
     "name": {
@@ -42719,7 +42817,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11559979
+    "location": 11559979,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 21.5,
+      "y": 21.49,
+      "z": 0.01
+    }
   },
   "1980": {
     "name": {
@@ -42736,7 +42841,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11559997
+    "location": 11559997,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 23.54,
+      "y": 22.85,
+      "z": 0.01
+    }
   },
   "1981": {
     "name": {
@@ -42753,7 +42865,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560014
+    "location": 11560014,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 20.1,
+      "y": 19.94,
+      "z": 0
+    }
   },
   "1982": {
     "name": {
@@ -42770,7 +42889,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560031
+    "location": 11560031,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 22.76,
+      "y": 20.27,
+      "z": 0.01
+    }
   },
   "1983": {
     "name": {
@@ -42787,7 +42913,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560048
+    "location": 11560048,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 19.43,
+      "y": 36.51,
+      "z": 0.46
+    }
   },
   "1984": {
     "name": {
@@ -42804,7 +42937,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560065
+    "location": 11560065,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 18.61,
+      "y": 36.51,
+      "z": 0.51
+    }
   },
   "1985": {
     "name": {
@@ -42821,7 +42961,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560082
+    "location": 11560082,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 21.5,
+      "y": 21.5,
+      "z": 0.01
+    }
   },
   "1986": {
     "name": {
@@ -42838,7 +42985,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560099
+    "location": 11560099,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 20.52,
+      "y": 23.63,
+      "z": 0.03
+    }
   },
   "1987": {
     "name": {
@@ -42855,7 +43009,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560116
+    "location": 11560116,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 19.23,
+      "y": 22.06,
+      "z": 0.01
+    }
   },
   "1988": {
     "name": {
@@ -42872,7 +43033,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560133
+    "location": 11560133,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 22.76,
+      "y": 20.23,
+      "z": 0.01
+    }
   },
   "1989": {
     "name": {
@@ -42889,7 +43057,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560150
+    "location": 11560150,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 20.08,
+      "y": 20.02,
+      "z": 0.07
+    }
   },
   "1990": {
     "name": {
@@ -42906,7 +43081,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560167
+    "location": 11560167,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 27.6,
+      "y": 14.47,
+      "z": 0.52
+    }
   },
   "1991": {
     "name": {
@@ -42923,7 +43105,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560184
+    "location": 11560184,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 28.04,
+      "y": 15.01,
+      "z": -0.02
+    }
   },
   "1992": {
     "name": {
@@ -42940,7 +43129,14 @@
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
-    "location": 11560201
+    "location": 11560201,
+    "position": {
+      "map": 1003,
+      "zoneid": 5219,
+      "x": 21.5,
+      "y": 21.5,
+      "z": 0
+    }
   },
   "1993": {
     "name": {

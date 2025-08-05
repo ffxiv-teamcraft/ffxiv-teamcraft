@@ -1574,5 +1574,45 @@
       "de": "Sporennebel",
       "fr": "Nuages de spores"
     }
+  },
+  "198": {
+    "name": {
+      "en": "Dying Breath",
+      "ja": "死気",
+      "de": "Fürchterlich",
+      "fr": "Atmosphère mortifère"
+    }
+  },
+  "199": {
+    "name": {
+      "en": "Dying Breath",
+      "ja": "死気",
+      "de": "Fürchterlich",
+      "fr": "Atmosphère mortifère"
+    }
+  },
+  "200": {
+    "name": {
+      "en": "Dying Breath",
+      "ja": "死気",
+      "de": "Fürchterlich",
+      "fr": "Atmosphère mortifère"
+    }
+  },
+  "201": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "202": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
   }
 }

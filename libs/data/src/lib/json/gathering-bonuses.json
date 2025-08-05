@@ -5060,20 +5060,68 @@
     }
   },
   "321": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 70,
+    "conditionValue": 4300,
+    "bonus": {
+      "en": " Collectability +{{value}}",
+      "de": "Sammlerwert +{{value}}",
+      "ja": "収集価値＋{{value}}",
+      "fr": " Valeur de collection + {{value}}"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "322": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 70,
+    "conditionValue": 5460,
+    "bonus": {
+      "en": " Collectability +{{value}}",
+      "de": "Sammlerwert +{{value}}",
+      "ja": "収集価値＋{{value}}",
+      "fr": " Valeur de collection + {{value}}"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "323": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 10,
+    "conditionValue": 4300,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "324": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 10,
+    "conditionValue": 5460,
+    "bonus": {
+      "en": " Meticulous Action Effect Chance +{{value}}%～",
+      "de": "Fachkundige Lese: Effektchance +{{value}} (↑)",
+      "ja": "慎重純化：追加効果発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chances de Sélection méthodique +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "325": {
     "value": 0,

@@ -18,7 +18,7 @@ import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-br
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
 import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, skip, startWith, switchMap, tap } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject, timer } from 'rxjs';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzIconService } from 'ng-zorro-antd/icon';
@@ -206,6 +206,14 @@ export class AppComponent implements OnInit {
   public showAd$ = this.authFacade.user$.pipe(
     map((user) => {
       return !(user.admin || user.moderator || user.supporter);
+    }),
+    shareReplay(1)
+  );
+
+  public showKs$ = timer(0, 30000).pipe(
+    switchMap(() => this.showAd$),
+    map((showAd) => {
+      return showAd && Date.now() < 1754517600000;
     }),
     shareReplay(1)
   );

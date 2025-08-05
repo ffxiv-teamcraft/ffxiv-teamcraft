@@ -1024,60 +1024,60 @@
     "location": "M"
   },
   "129": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Moonshadow Isle",
+    "ja": "N　欠月島",
+    "de": "Unvollmonden (N)",
+    "fr": "Île de la Lune gibbeuse (N)",
     "id": 129,
-    "location": ""
+    "location": "N"
   },
   "130": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Emerald Drop",
+    "ja": "O　エメラルド・ディープ",
+    "de": "Smaragd-Tiefen (O)",
+    "fr": "Profondeurs émeraude (O)",
     "id": 130,
-    "location": ""
+    "location": "O"
   },
   "131": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "South Indigo Deep 4",
+    "ja": "P　南蒼茫洋04",
+    "de": "Südlicher Indigo-Ozean 4 (P)",
+    "fr": "Océan Indigo méridional 4 (P)",
     "id": 131,
-    "location": ""
+    "location": "P"
   },
   "132": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "South Delphinium Seashelf",
+    "ja": "Q　紺色海底棚南",
+    "de": "Kobaltmeer-Süd (Q)",
+    "fr": "Sud des profondeurs de la Mer de cobalt (Q)",
     "id": 132,
-    "location": ""
+    "location": "Q"
   },
   "133": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Startail Shelf",
+    "ja": "R　星削水道中部",
+    "de": "Sternenschweif-Schelf (R)",
+    "fr": "Moyennes profondeurs des Étoiles ciselées (R)",
     "id": 133,
-    "location": ""
+    "location": "R"
   },
   "134": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Cradle of the Winds",
+    "ja": "S　風生みの海底谷",
+    "de": "Böhkeim-Furche (S)",
+    "fr": "Vallée sous-marine du Berceau des vents (S)",
     "id": 134,
-    "location": ""
+    "location": "S"
   },
   "135": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Startail Trench",
+    "ja": "T　星削水道深部",
+    "de": "Sternenschweif-Graben (T)",
+    "fr": "Grands fonds des Étoiles ciselées (T)",
     "id": 135,
-    "location": ""
+    "location": "T"
   },
   "136": {
     "en": "",

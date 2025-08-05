@@ -63798,10 +63798,10 @@
     "ko": "크리스탈 운반자: 크리스탈",
     "zh": "水晶之结晶推手",
     "description": {
-      "en": "Complete a Crystalline Conflict season in the Crystal tier.",
-      "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Kristall abgeschlossen.",
-      "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをクリスタル階級で終えた",
-      "fr": "Terminer une saison de Crystalline Conflict à l'échelon de cristal.",
+      "en": "Complete a Crystalline Conflict season in or above the Crystal tier.",
+      "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Kristall oder höher abgeschlossen.",
+      "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをクリスタル階級以上で終えた",
+      "fr": "Terminer une saison de Crystalline Conflict à l'échelon de cristal ou supérieur.",
       "ko": "크리스탈라인 컨플릭트에서 시즌 등급을 크리스탈로 마감",
       "zh": "在水晶冲突的任意赛季中最终取得水晶段位。"
     },
@@ -74730,7 +74730,7 @@
       "en": "Complete the quest “The Neoteric Witch” and AAC Light-heavyweight Tier.",
       "de": "Arkadion - Halbschwergewicht sowie den Auftrag „Die Hybrid-Hexe“ erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を攻略し、クエスト「次世代魔女」をコンプリートする",
-      "fr": "Conquérir la division poids mi-lourds CCA et accomplir la quête “L'Enchanteresse électrique”.",
+      "fr": "Conquérir la catégorie poids mi-lourds CCA et accomplir la quête “L'Enchanteresse électrique”.",
       "ko": "아르카디아 선수권: 라이트헤비급을 완료하고, 퀘스트 '차세대 마녀' 완료",
       "zh": "成功挑战阿卡狄亚登天斗技场轻量级，完成任务“新时代魔女”。"
     },
@@ -74751,7 +74751,7 @@
       "en": "Complete AAC Light-heavyweight Tier 5 times.",
       "de": "5 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を計5回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA 5 fois.",
+      "fr": "Conquérir la catégorie poids mi-lourds CCA 5 fois.",
       "ko": "아르카디아 선수권: 라이트헤비급 5회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场轻量级5次。"
     },
@@ -74772,7 +74772,7 @@
       "en": "Complete AAC Light-heavyweight Tier 10 times.",
       "de": "10 Mal Arkadion - Halbschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ライトヘビー級を計10回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA 10 fois.",
+      "fr": "Conquérir la catégorie poids mi-lourds CCA 10 fois.",
       "ko": "아르카디아 선수권: 라이트헤비급 10회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场轻量级10次。"
     },
@@ -74793,7 +74793,7 @@
       "en": "Complete AAC Light-heavyweight Tier (Savage).",
       "de": "Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 1 fois.",
+      "fr": "Conquérir la catégorie poids mi-lourds CCA (sadique) 1 fois.",
       "ko": "아르카디아 선수권: 라이트헤비급(영웅) 완료",
       "zh": "成功挑战阿卡狄亚零式登天斗技场轻量级。"
     },
@@ -74814,7 +74814,7 @@
       "en": "Complete AAC Light-heavyweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を計5回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 5 fois.",
+      "fr": "Conquérir la catégorie poids mi-lourds CCA (sadique) 5 fois.",
       "ko": "아르카디아 선수권: 라이트헤비급(영웅) 5회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场轻量级5次。"
     },
@@ -74835,7 +74835,7 @@
       "en": "Complete AAC Light-heavyweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Halbschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ライトヘビー級を計10回攻略する",
-      "fr": "Conquérir la division poids mi-lourds CCA (sadique) 10 fois.",
+      "fr": "Conquérir la catégorie poids mi-lourds CCA (sadique) 10 fois.",
       "ko": "아르카디아 선수권: 라이트헤비급(영웅) 10회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场轻量级10次。"
     },
@@ -75744,7 +75744,7 @@
   "3621": {
     "id": 3621,
     "icon": "/i/062000/062979.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Eat Your Vegetables I",
     "de": "Iss dein Gemüse I",
     "ja": "マムージャ族：ランク1",
@@ -75761,7 +75761,7 @@
   "3622": {
     "id": 3622,
     "icon": "/i/062000/062979.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Eat Your Vegetables II",
     "de": "Iss dein Gemüse II",
     "ja": "マムージャ族：ランク2",
@@ -75778,7 +75778,7 @@
   "3623": {
     "id": 3623,
     "icon": "/i/062000/062979.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Eat Your Vegetables III",
     "de": "Iss dein Gemüse III",
     "ja": "マムージャ族：ランク3",
@@ -75795,7 +75795,7 @@
   "3624": {
     "id": 3624,
     "icon": "/i/062000/062979.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Harvest of Hope",
     "de": "Hoffnungsvolle Ernte",
     "ja": "樹海の農学者",
@@ -75865,7 +75865,7 @@
       "en": "Complete AAC Cruiserweight Tier.",
       "de": "Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA 1 fois.",
+      "fr": "Conquérir la catégorie poids lourds-légers CCA 1 fois.",
       "ko": "아르카디아 선수권: 크루저급 완료",
       "zh": "成功挑战阿卡狄亚登天斗技场中量级。"
     },
@@ -75886,7 +75886,7 @@
       "en": "Complete AAC Cruiserweight Tier 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計5回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA 5 fois.",
+      "fr": "Conquérir la catégorie poids lourds-légers CCA 5 fois.",
       "ko": "아르카디아 선수권: 크루저급 5회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场中量级5次。"
     },
@@ -75907,7 +75907,7 @@
       "en": "Complete AAC Cruiserweight Tier 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計10回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA 10 fois.",
+      "fr": "Conquérir la catégorie poids lourds-légers CCA 10 fois.",
       "ko": "아르카디아 선수권: 크루저급 10회 완료",
       "zh": "累计成功挑战阿卡狄亚登天斗技场中量级10次。"
     },
@@ -75928,7 +75928,7 @@
       "en": "Complete AAC Cruiserweight Tier (Savage).",
       "de": "Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 1 fois.",
+      "fr": "Conquérir la catégorie poids lourds-légers CCA (sadique) 1 fois.",
       "ko": "아르카디아 선수권: 크루저급(영웅) 완료",
       "zh": "成功挑战阿卡狄亚零式登天斗技场中量级。"
     },
@@ -75949,7 +75949,7 @@
       "en": "Complete AAC Cruiserweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計5回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 5 fois.",
+      "fr": "Conquérir la catégorie poids lourds-légers CCA (sadique) 5 fois.",
       "ko": "아르카디아 선수권: 크루저급(영웅) 5회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级5次。"
     },
@@ -75970,7 +75970,7 @@
       "en": "Complete AAC Cruiserweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計10回攻略する",
-      "fr": "Conquérir la division poids lourds-légers CCA (sadique) 10 fois.",
+      "fr": "Conquérir la catégorie poids lourds-légers CCA (sadique) 10 fois.",
       "ko": "아르카디아 선수권: 크루저급(영웅) 10회 완료",
       "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级10次。"
     },
@@ -76001,7 +76001,7 @@
   "3634": {
     "id": 3634,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Highly Crescentialed",
     "de": "Spurensuche auf Kreszentia",
     "ja": "夢幻の島に記憶を求めて",
@@ -76039,7 +76039,7 @@
   "3636": {
     "id": 3636,
     "icon": "/i/057000/057245.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Uniformly Guarded",
     "de": "Läufer der Wellen",
     "ja": "クイーン・ラミンの守護者",
@@ -76055,17 +76055,17 @@
   },
   "3637": {
     "id": 3637,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026107.png",
+    "patch": 103,
+    "en": "Delightful Dozen",
+    "de": "Zauberhafte Zwölf",
+    "ja": "ありがとう12周年！",
+    "fr": "Douzaine dorée",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “A Light That Ever Burns.”",
+      "de": "Den Auftrag „Und immer brennt der Leuchtturm“ abgeschlossen.",
+      "ja": "クエスト「新生祭と、蒼茫の灯火」をコンプリートする",
+      "fr": "Accomplir la quête “La lumière du lendemain”."
     },
     "item": 0,
     "title": 0
@@ -76073,7 +76073,7 @@
   "3638": {
     "id": 3638,
     "icon": "/i/030000/030694.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Sword & Kite Shield Penumbrae",
     "de": "Wie von Geisterhand: Phantomschwert Penumbrae und Phantom-Drachenschild Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ソード＆ファントムペンアンブレー・カイトシールド",
@@ -76090,7 +76090,7 @@
   "3639": {
     "id": 3639,
     "icon": "/i/031000/031268.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Bardiche Penumbrae",
     "de": "Wie von Geisterhand: Phantomberdysch Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・バルディッシュ",
@@ -76107,7 +76107,7 @@
   "3640": {
     "id": 3640,
     "icon": "/i/034000/034023.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Guillotine Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Guillotine Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ディバイダー",
@@ -76124,7 +76124,7 @@
   "3641": {
     "id": 3641,
     "icon": "/i/036000/036114.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Bayonet Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Bajonett Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・バヨネット",
@@ -76141,7 +76141,7 @@
   "3642": {
     "id": 3642,
     "icon": "/i/031000/031670.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Spear Penumbrae",
     "de": "Wie von Geisterhand: Phantomspeer Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・スピア",
@@ -76158,7 +76158,7 @@
   "3643": {
     "id": 3643,
     "icon": "/i/030000/030858.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Knuckles Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Schlagringe Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ナックル",
@@ -76175,7 +76175,7 @@
   "3644": {
     "id": 3644,
     "icon": "/i/033000/033644.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Cleavers Penumbrae",
     "de": "Wie von Geisterhand: Phantomspalter Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・クリーバー",
@@ -76192,7 +76192,7 @@
   "3645": {
     "id": 3645,
     "icon": "/i/037000/037447.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Twinfangs Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Zwillingsfänge Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ツインファング",
@@ -76209,7 +76209,7 @@
   "3646": {
     "id": 3646,
     "icon": "/i/036000/036572.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Blade Penumbrae",
     "de": "Wie von Geisterhand: Phantomklinge Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ブレード",
@@ -76226,7 +76226,7 @@
   "3647": {
     "id": 3647,
     "icon": "/i/037000/037284.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: War Scythe Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Kriegssense Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ウォーサイズ",
@@ -76243,7 +76243,7 @@
   "3648": {
     "id": 3648,
     "icon": "/i/032000/032058.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Harp Bow Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Harfenbogen Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ハープボウ",
@@ -76260,7 +76260,7 @@
   "3649": {
     "id": 3649,
     "icon": "/i/034000/034517.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Arquebus Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Hakenbüchse Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・アークウィバス",
@@ -76277,7 +76277,7 @@
   "3650": {
     "id": 3650,
     "icon": "/i/036000/036313.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Terpna Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Terpna Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・テルプナ",
@@ -76294,7 +76294,7 @@
   "3651": {
     "id": 3651,
     "icon": "/i/032000/032904.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Staff Penumbrae",
     "de": "Wie von Geisterhand: Phantomstab Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・スタッフ",
@@ -76311,7 +76311,7 @@
   "3652": {
     "id": 3652,
     "icon": "/i/037000/037838.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Index Penumbrae",
     "de": "Wie von Geisterhand: Phantomindex Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・インデックス",
@@ -76328,7 +76328,7 @@
   "3653": {
     "id": 3653,
     "icon": "/i/036000/036871.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Rapier Penumbrae",
     "de": "Wie von Geisterhand: Phantomrapier Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・レイピア",
@@ -76345,7 +76345,7 @@
   "3654": {
     "id": 3654,
     "icon": "/i/037000/037657.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Flat Brush Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Flachpinsel Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・フラットブラシ",
@@ -76362,7 +76362,7 @@
   "3655": {
     "id": 3655,
     "icon": "/i/032000/032489.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Crook Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Hirtenstock Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・クルーク",
@@ -76379,7 +76379,7 @@
   "3656": {
     "id": 3656,
     "icon": "/i/037000/037839.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Codex Penumbrae",
     "de": "Wie von Geisterhand: Phantomkodex Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・コーデックス",
@@ -76396,7 +76396,7 @@
   "3657": {
     "id": 3657,
     "icon": "/i/034000/034716.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Star Globe Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Sternenglobus Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・スターグローブ",
@@ -76413,7 +76413,7 @@
   "3658": {
     "id": 3658,
     "icon": "/i/037000/037080.png",
-    "patch": 1,
+    "patch": 103,
     "en": "The Might Phantastick: Pendulums Penumbrae",
     "de": "Wie von Geisterhand: Phantom-Perpendikel Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ペンデュラム",
@@ -76430,7 +76430,7 @@
   "3659": {
     "id": 3659,
     "icon": "/i/026000/026184.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Observing the Occult",
     "de": "Kreszenter Chronist",
     "ja": "三日月島の記録員",
@@ -76447,7 +76447,7 @@
   "3660": {
     "id": 3660,
     "icon": "/i/064000/064836.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Critical Thinking I",
     "de": "Herrschaft des Halbmonds I",
     "ja": "孤島の君臨者：ランク1",
@@ -76464,7 +76464,7 @@
   "3661": {
     "id": 3661,
     "icon": "/i/064000/064836.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Critical Thinking II",
     "de": "Herrschaft des Halbmonds II",
     "ja": "孤島の君臨者：ランク2",
@@ -76481,7 +76481,7 @@
   "3662": {
     "id": 3662,
     "icon": "/i/064000/064836.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Critical Thinking III",
     "de": "Herrschaft des Halbmonds III",
     "ja": "孤島の君臨者：ランク3",
@@ -76498,7 +76498,7 @@
   "3663": {
     "id": 3663,
     "icon": "/i/064000/064836.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Critical Thinking IV",
     "de": "Herrschaft des Halbmonds IV",
     "ja": "孤島の君臨者：ランク4",
@@ -76515,7 +76515,7 @@
   "3664": {
     "id": 3664,
     "icon": "/i/003000/003126.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Occult Erudition I",
     "de": "Krone des Wissens I",
     "ja": "知見者の高み：ランク1",
@@ -76532,7 +76532,7 @@
   "3665": {
     "id": 3665,
     "icon": "/i/003000/003126.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Occult Erudition II",
     "de": "Krone des Wissens II",
     "ja": "知見者の高み：ランク2",
@@ -76549,7 +76549,7 @@
   "3666": {
     "id": 3666,
     "icon": "/i/003000/003126.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Occult Erudition III",
     "de": "Krone des Wissens III",
     "ja": "知見者の高み：ランク3",
@@ -76566,7 +76566,7 @@
   "3667": {
     "id": 3667,
     "icon": "/i/003000/003126.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Occult Erudition IV",
     "de": "Krone des Wissens IV",
     "ja": "知見者の高み：ランク4",
@@ -76583,7 +76583,7 @@
   "3668": {
     "id": 3668,
     "icon": "/i/064000/064563.png",
-    "patch": 1,
+    "patch": 103,
     "en": "A Fork to Be Reckoned With I",
     "de": "Blut geleckt I",
     "ja": "力の塔を制覇せし者：ランク1",
@@ -76600,7 +76600,7 @@
   "3669": {
     "id": 3669,
     "icon": "/i/064000/064563.png",
-    "patch": 1,
+    "patch": 103,
     "en": "A Fork to Be Reckoned With II",
     "de": "Blut geleckt II",
     "ja": "力の塔を制覇せし者：ランク2",
@@ -76617,7 +76617,7 @@
   "3670": {
     "id": 3670,
     "icon": "/i/064000/064563.png",
-    "patch": 1,
+    "patch": 103,
     "en": "A Fork to Be Reckoned With III",
     "de": "Blut geleckt III",
     "ja": "力の塔を制覇せし者：ランク3",
@@ -76634,7 +76634,7 @@
   "3671": {
     "id": 3671,
     "icon": "/i/064000/064563.png",
-    "patch": 1,
+    "patch": 103,
     "en": "A Fork to Be Reckoned With IV",
     "de": "Blut geleckt IV",
     "ja": "力の塔を制覇せし者：ランク4",
@@ -76651,7 +76651,7 @@
   "3672": {
     "id": 3672,
     "icon": "/i/064000/064556.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Magic Is the Best Medicine I",
     "de": "Kreszentias Kerub I",
     "ja": "三角海域の船医：ランク1",
@@ -76668,7 +76668,7 @@
   "3673": {
     "id": 3673,
     "icon": "/i/064000/064556.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Magic Is the Best Medicine II",
     "de": "Kreszentias Kerub II",
     "ja": "三角海域の船医：ランク2",
@@ -76685,7 +76685,7 @@
   "3674": {
     "id": 3674,
     "icon": "/i/064000/064556.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Magic Is the Best Medicine III",
     "de": "Kreszentias Kerub III",
     "ja": "三角海域の船医：ランク3",
@@ -76702,7 +76702,7 @@
   "3675": {
     "id": 3675,
     "icon": "/i/064000/064571.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Phantomastery I",
     "de": "Meister der Phantome I",
     "ja": "サポートジョブマスター：ランク1",
@@ -76719,7 +76719,7 @@
   "3676": {
     "id": 3676,
     "icon": "/i/064000/064571.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Phantomastery II",
     "de": "Meister der Phantome II",
     "ja": "サポートジョブマスター：ランク2",
@@ -76736,7 +76736,7 @@
   "3677": {
     "id": 3677,
     "icon": "/i/064000/064571.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Phantomastery III",
     "de": "Meister der Phantome III",
     "ja": "サポートジョブマスター：ランク3",
@@ -76753,7 +76753,7 @@
   "3678": {
     "id": 3678,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Horns of Plenty I",
     "de": "Das Dreieck der Schätze I",
     "ja": "絶海の宝物王：ランク1",
@@ -76770,7 +76770,7 @@
   "3679": {
     "id": 3679,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Horns of Plenty II",
     "de": "Das Dreieck der Schätze II",
     "ja": "絶海の宝物王：ランク2",
@@ -76787,7 +76787,7 @@
   "3680": {
     "id": 3680,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Horns of Plenty III",
     "de": "Das Dreieck der Schätze III",
     "ja": "絶海の宝物王：ランク3",
@@ -76804,7 +76804,7 @@
   "3681": {
     "id": 3681,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Horns of Plenty IV",
     "de": "Das Dreieck der Schätze IV",
     "ja": "絶海の宝物王：ランク4",
@@ -76821,7 +76821,7 @@
   "3682": {
     "id": 3682,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "In Pot Pursuit I",
     "de": "Potenter Pott I",
     "ja": "ポットの導き：ランク1",
@@ -76838,7 +76838,7 @@
   "3683": {
     "id": 3683,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "In Pot Pursuit II",
     "de": "Potenter Pott II",
     "ja": "ポットの導き：ランク2",
@@ -76855,7 +76855,7 @@
   "3684": {
     "id": 3684,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "In Pot Pursuit III",
     "de": "Potenter Pott III",
     "ja": "ポットの導き：ランク3",
@@ -76872,7 +76872,7 @@
   "3685": {
     "id": 3685,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "In Pot Pursuit IV",
     "de": "Potenter Pott IV",
     "ja": "ポットの導き：ランク4",
@@ -76889,7 +76889,7 @@
   "3686": {
     "id": 3686,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Where Rabbits Roam I",
     "de": "Jede Menge Möhrchen I",
     "ja": "フォーチュンカロットの導き：ランク1",
@@ -76906,7 +76906,7 @@
   "3687": {
     "id": 3687,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Where Rabbits Roam II",
     "de": "Jede Menge Möhrchen II",
     "ja": "フォーチュンカロットの導き：ランク2",
@@ -76923,7 +76923,7 @@
   "3688": {
     "id": 3688,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Where Rabbits Roam III",
     "de": "Jede Menge Möhrchen III",
     "ja": "フォーチュンカロットの導き：ランク3",
@@ -76940,7 +76940,7 @@
   "3689": {
     "id": 3689,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Where Rabbits Roam IV",
     "de": "Jede Menge Möhrchen IV",
     "ja": "フォーチュンカロットの導き：ランク4",
@@ -77964,7 +77964,7 @@
   "3743": {
     "id": 3743,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 103,
     "en": "Mapping the Realm: The Occult Crescent: South Horn",
     "de": "Kartograph: Südliches Kreszentia",
     "ja": "三日月島南部を踏破せし者",
@@ -77974,6 +77974,1383 @@
       "de": "Alle Orte im südlichen Kreszentia erkundet.",
       "ja": "三日月島南部を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de l'île de Lunule méridionale."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3744": {
+    "id": 3744,
+    "icon": "/i/000000/000210.png",
+    "patch": 103,
+    "en": "Top Tier: Season Fifteen",
+    "de": "Kristallkönig (15. Saison)",
+    "ja": "コンフリクトの王者：シーズン15",
+    "fr": "Roi du conflit : saison 15",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Fifteen ranked #1.",
+      "de": "Die 15. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで1位になる",
+      "fr": "Terminer la saison 15 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 797
+  },
+  "3745": {
+    "id": 3745,
+    "icon": "/i/000000/000210.png",
+    "patch": 103,
+    "en": "Crystal in the Rough: Season Fifteen",
+    "de": "Kristallfürst (15. Saison)",
+    "ja": "コンフリクトの勇者：シーズン15",
+    "fr": "Prince du conflit : saison 15",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Fifteen.",
+      "de": "Die 15. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 15 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 798
+  },
+  "3746": {
+    "id": 3746,
+    "icon": "/i/000000/000210.png",
+    "patch": 103,
+    "en": "Ranked and Filed: Season Fifteen",
+    "de": "Kristallkämpfer (15. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン15",
+    "fr": "As du conflit : saison 15",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Fifteen.",
+      "de": "Die 15. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで入賞する",
+      "fr": "Terminer la saison 15 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 799
+  },
+  "3747": {
+    "id": 3747,
+    "icon": "/i/000000/000210.png",
+    "patch": 103,
+    "en": "Top Tier: Season Sixteen",
+    "de": "Kristallkönig (16. Saison)",
+    "ja": "コンフリクトの王者：シーズン16",
+    "fr": "Roi du conflit : saison 16",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Sixteen ranked #1.",
+      "de": "Die 16. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで1位になる",
+      "fr": "Terminer la saison 16 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 800
+  },
+  "3748": {
+    "id": 3748,
+    "icon": "/i/000000/000210.png",
+    "patch": 103,
+    "en": "Crystal in the Rough: Season Sixteen",
+    "de": "Kristallfürst (16. Saison)",
+    "ja": "コンフリクトの勇者：シーズン16",
+    "fr": "Prince du conflit : saison 16",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Sixteen.",
+      "de": "Die 16. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 16 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 801
+  },
+  "3749": {
+    "id": 3749,
+    "icon": "/i/000000/000210.png",
+    "patch": 103,
+    "en": "Ranked and Filed: Season Sixteen",
+    "de": "Kristallkämpfer (16. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン16",
+    "fr": "As du conflit : saison 16",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Sixteen.",
+      "de": "Die 16. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで入賞する",
+      "fr": "Terminer la saison 16 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 802
+  },
+  "3750": {
+    "id": 3750,
+    "icon": "/i/000000/000821.png",
+    "patch": 103,
+    "en": "Omega Material",
+    "de": "Kristallträger: Omega",
+    "ja": "クリスタルベアラー：オメガ",
+    "fr": "Siège de cristal : Oméga",
+    "description": {
+      "en": "Complete a Crystalline Conflict season in or above the Omega tier.",
+      "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Omega oder höher abgeschlossen.",
+      "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをオメガ階級以上で終えた",
+      "fr": "Terminer une saison de Crystalline Conflict à l'échelon Oméga ou supérieur."
+    },
+    "item": 0,
+    "title": 803
+  },
+  "3751": {
+    "id": 3751,
+    "icon": "/i/000000/000821.png",
+    "patch": 103,
+    "en": "Ultima Material",
+    "de": "Kristallträger: Ultima",
+    "ja": "クリスタルベアラー：アルテマ",
+    "fr": "Siège de cristal : Ultima",
+    "description": {
+      "en": "Complete a Crystalline Conflict season in the Ultima tier.",
+      "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Ultima abgeschlossen.",
+      "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをアルテマ階級で終えた",
+      "fr": "Terminer une saison de Crystalline Conflict à l'échelon Ultima."
+    },
+    "item": 0,
+    "title": 804
+  },
+  "3752": {
+    "id": 3752,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3753": {
+    "id": 3753,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3754": {
+    "id": 3754,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3755": {
+    "id": 3755,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3756": {
+    "id": 3756,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3757": {
+    "id": 3757,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3758": {
+    "id": 3758,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3759": {
+    "id": 3759,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3760": {
+    "id": 3760,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3761": {
+    "id": 3761,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3762": {
+    "id": 3762,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3763": {
+    "id": 3763,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3764": {
+    "id": 3764,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3765": {
+    "id": 3765,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3766": {
+    "id": 3766,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3767": {
+    "id": 3767,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3768": {
+    "id": 3768,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3769": {
+    "id": 3769,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3770": {
+    "id": 3770,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3771": {
+    "id": 3771,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3772": {
+    "id": 3772,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3773": {
+    "id": 3773,
+    "icon": "/i/026000/026002.png",
+    "patch": 103,
+    "en": "In Memoriam",
+    "de": "Versprechen einer neuen Zukunft",
+    "ja": "明日への道標",
+    "fr": "La promesse de demain",
+    "description": {
+      "en": "Complete the main scenario quest “The Promise of Tomorrow.”",
+      "de": "Den Auftrag des Hauptszenarios „Versprechen einer neuen Zukunft“ abgeschlossen.",
+      "ja": "クエスト「明日への道標」をコンプリートする",
+      "fr": "Accomplir la quête “La promesse de demain”."
+    },
+    "item": 0,
+    "title": 805
+  },
+  "3774": {
+    "id": 3774,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3775": {
+    "id": 3775,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3776": {
+    "id": 3776,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3777": {
+    "id": 3777,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3778": {
+    "id": 3778,
+    "icon": "/i/000000/000115.png",
+    "patch": 103,
+    "en": "I Can Dig It XVII",
+    "de": "Wer sucht, der findet XVII",
+    "ja": "トレジャーハンター：ランク17",
+    "fr": "Creuser son trou XVII",
+    "description": {
+      "en": "Decipher 20 timeworn gargantuaskin maps and open the treasure coffers to which they lead.",
+      "de": "20 vergilbte Gargantualeder-Schatzkarten entziffert und die dazugehörigen Schatztruhen geöffnet.",
+      "ja": "古ぼけた地図G18を解読し、宝箱を20回開ける",
+      "fr": "Déchiffrer 20 vieilles cartes en peau de gargantua et ouvrir les coffres auxquels elles conduisent."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3779": {
+    "id": 3779,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Dreaming in Neon I",
+    "de": "Neonträume I",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク1",
+    "fr": "Rêves de grandeur I",
+    "description": {
+      "en": "Raid Vault Oneiron.",
+      "de": "1 Mal Tresor Oneiron betreten.",
+      "ja": "宝物庫 ボルト・オネイロンに初めて侵入する",
+      "fr": "Pénétrer 1 fois dans le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 807
+  },
+  "3780": {
+    "id": 3780,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Dreaming in Neon II",
+    "de": "Neonträume II",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク2",
+    "fr": "Rêves de grandeur II",
+    "description": {
+      "en": "Raid Vault Oneiron 5 times.",
+      "de": "5 Mal Tresor Oneiron betreten.",
+      "ja": "宝物庫 ボルト・オネイロンに累計5回侵入する",
+      "fr": "Pénétrer 5 fois dans le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3781": {
+    "id": 3781,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Dreaming in Neon III",
+    "de": "Neonträume III",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク3",
+    "fr": "Rêves de grandeur III",
+    "description": {
+      "en": "Raid Vault Oneiron 10 times.",
+      "de": "10 Mal Tresor Oneiron betreten.",
+      "ja": "宝物庫 ボルト・オネイロンに累計10回侵入する",
+      "fr": "Pénétrer 10 fois dans le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3782": {
+    "id": 3782,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Dreaming in Neon IV",
+    "de": "Neonträume IV",
+    "ja": "ボルト・オネイロンに侵入せし者：ランク4",
+    "fr": "Rêves de grandeur IV",
+    "description": {
+      "en": "Raid Vault Oneiron 20 times.",
+      "de": "20 Mal Tresor Oneiron betreten.",
+      "ja": "宝物庫 ボルト・オネイロンに累計20回侵入する",
+      "fr": "Pénétrer 20 fois dans le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 808
+  },
+  "3783": {
+    "id": 3783,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Viva Vault Oneiron I",
+    "de": "Frisch gebackener Panzerknacker I",
+    "ja": "ボルト・オネイロンの覇者：ランク1",
+    "fr": "Trésor de rêve I",
+    "description": {
+      "en": "Clear the final play in Vault Oneiron.",
+      "de": "Tresor Oneiron zum ersten Mal abgeschlossen.",
+      "ja": "宝物庫 ボルト・オネイロンを初めて制覇する",
+      "fr": "Conquérir 1 fois le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3784": {
+    "id": 3784,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Viva Vault Oneiron II",
+    "de": "Frisch gebackener Panzerknacker II",
+    "ja": "ボルト・オネイロンの覇者：ランク2",
+    "fr": "Trésor de rêve II",
+    "description": {
+      "en": "Clear the final play in Vault Oneiron 5 times.",
+      "de": "Tresor Oneiron 5 Mal abgeschlossen.",
+      "ja": "宝物庫 ボルト・オネイロンを累計5回制覇する",
+      "fr": "Conquérir 5 fois le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3785": {
+    "id": 3785,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Viva Vault Oneiron III",
+    "de": "Frisch gebackener Panzerknacker III",
+    "ja": "ボルト・オネイロンの覇者：ランク3",
+    "fr": "Trésor de rêve III",
+    "description": {
+      "en": "Clear the final play in Vault Oneiron 10 times.",
+      "de": "Tresor Oneiron 10 Mal abgeschlossen.",
+      "ja": "宝物庫 ボルト・オネイロンを累計10回制覇する",
+      "fr": "Conquérir 10 fois le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3786": {
+    "id": 3786,
+    "icon": "/i/000000/000116.png",
+    "patch": 103,
+    "en": "Viva Vault Oneiron IV",
+    "de": "Frisch gebackener Panzerknacker VI",
+    "ja": "ボルト・オネイロンの覇者：ランク4",
+    "fr": "Trésor de rêve IV",
+    "description": {
+      "en": "Clear the final play in Vault Oneiron 20 times.",
+      "de": "Tresor Oneiron 20 Mal abgeschlossen.",
+      "ja": "宝物庫 ボルト・オネイロンを累計20回制覇する",
+      "fr": "Conquérir 20 fois le coffre d'Oneiron."
+    },
+    "item": 0,
+    "title": 809
+  },
+  "3787": {
+    "id": 3787,
+    "icon": "/i/059000/059548.png",
+    "patch": 103,
+    "en": "The Void Is Back in Town",
+    "de": "Schaurig-schöne Harmonie",
+    "ja": "愉快なみんなの廃屋敷",
+    "fr": "愉快なみんなの廃屋敷",
+    "description": {
+      "en": "Complete the quest “Dressed to Impresario.”",
+      "de": "Den Auftrag „Saures für die Imps“ abgeschlossen.",
+      "ja": "クエスト「守護天節とふたつの幻影」をコンプリートする",
+      "fr": "クエスト「守護天節とふたつの幻影」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3788": {
+    "id": 3788,
+    "icon": "/i/026000/026435.png",
+    "patch": 103,
+    "en": "プンシュで乾杯！",
+    "de": "プンシュで乾杯！",
+    "ja": "プンシュで乾杯！",
+    "fr": "プンシュで乾杯！",
+    "description": {
+      "en": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
+      "de": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
+      "ja": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
+      "fr": "クエスト「星芒祭と心躍る一杯」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3789": {
+    "id": 3789,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3790": {
+    "id": 3790,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3791": {
+    "id": 3791,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3792": {
+    "id": 3792,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3793": {
+    "id": 3793,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3794": {
+    "id": 3794,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3795": {
+    "id": 3795,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3796": {
+    "id": 3796,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3797": {
+    "id": 3797,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3798": {
+    "id": 3798,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3799": {
+    "id": 3799,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3800": {
+    "id": 3800,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3801": {
+    "id": 3801,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3802": {
+    "id": 3802,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3803": {
+    "id": 3803,
+    "icon": "/i/001000/001001.png",
+    "patch": 103,
+    "en": "Mapping the Realm: The Meso Terminal",
+    "de": "Kartograph: Das Meso-System",
+    "ja": "メインターミナルを踏破せし者",
+    "fr": "Cartographe du continent : mésoterminal",
+    "description": {
+      "en": "Discover every location within the Meso Terminal.",
+      "de": "Alle Orte im Meso-System erkundet.",
+      "ja": "メインターミナル（永久幽界）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du mésoterminal."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3804": {
+    "id": 3804,
+    "icon": "/i/001000/001001.png",
+    "patch": 103,
+    "en": "Mapping the Realm: San d'Oria: The Second Walk",
+    "de": "Kartograph: San d'Oria: Die zweite Etappe",
+    "ja": "サンドリア：ザ・セカンドウォークを踏破せし者",
+    "fr": "Cartographe du continent : San d'Oria - La deuxième perambulation",
+    "description": {
+      "en": "Discover every location within San d'Oria: The Second Walk.",
+      "de": "Alle Orte in San d'Oria: Die zweite Etappe erkundet.",
+      "ja": "サンドリア：ザ・セカンドウォークを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de San d'Oria - La deuxième perambulation."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3805": {
+    "id": 3805,
+    "icon": "/i/000000/000317.png",
+    "patch": 103,
+    "en": "Not Today, Necron",
+    "de": "Licht im Dunkel",
+    "ja": "深淵なる常闇を滅し者",
+    "fr": "Chasser l'obscurité",
+    "description": {
+      "en": "Defeat Necron in the Minstrel's Ballad: Necron's Embrace.",
+      "de": "Das Ewige Dunkel in „Gok Tajaal - Das Ewige Dunkel“ bezwungen.",
+      "ja": "極永遠の闇討滅戦で、永遠の闇を討伐する",
+      "fr": "Vaincre Darkness dans le défi “La Nécropole intemporelle (extrême)”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3806": {
+    "id": 3806,
+    "icon": "/i/064000/064875.png",
+    "patch": 103,
+    "en": "O Brother, Where Zilart Thou",
+    "de": "San d'Oria: Die zweite Etappe",
+    "ja": "サンドリア：ザ・セカンドウォークを制覇せし者",
+    "fr": "Échos des peuples anciens",
+    "description": {
+      "en": "Complete San d'Oria: The Second Walk.",
+      "de": "San d'Oria: Die zweite Etappe erfolgreich abgeschlossen.",
+      "ja": "サンドリア：ザ・セカンドウォークを攻略する",
+      "fr": "Finir San d'Oria - La deuxième perambulation."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3807": {
+    "id": 3807,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3808": {
+    "id": 3808,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3809": {
+    "id": 3809,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3810": {
+    "id": 3810,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3811": {
+    "id": 3811,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3812": {
+    "id": 3812,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3813": {
+    "id": 3813,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3814": {
+    "id": 3814,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3815": {
+    "id": 3815,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3816": {
+    "id": 3816,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3817": {
+    "id": 3817,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3818": {
+    "id": 3818,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3819": {
+    "id": 3819,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3820": {
+    "id": 3820,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3821": {
+    "id": 3821,
+    "icon": "/i/001000/001102.png",
+    "patch": 103,
+    "en": "Go Big on the Trail II",
+    "de": "Kapitalbeschaffung auf Tural II",
+    "ja": "黄金の太公望：ランク2",
+    "fr": "Pêcheur de légendes éternel II",
+    "description": {
+      "en": "Catch 24 different varieties of big fish in areas explored during Dawntrail.",
+      "de": "24 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
+      "ja": "黄金のレガシーのエリアにいるヌシを24種類、釣り上げる",
+      "fr": "Pêcher 24 prises légendaires différentes dans les zones explorées lors de Dawntrail."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3822": {
+    "id": 3822,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3823": {
+    "id": 3823,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3824": {
+    "id": 3824,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
     },
     "item": 0,
     "title": 0

@@ -411,7 +411,7 @@
     "id": 52,
     "zone": 47,
     "name": "Cutter's Cry",
-    "territory": 170,
+    "territory": 1303,
     "scale": 200,
     "weatherRate": 0
   },
@@ -763,7 +763,7 @@
     "id": 96,
     "zone": 47,
     "name": "Cutter's Cry",
-    "territory": 170,
+    "territory": 1303,
     "scale": 200,
     "weatherRate": 0
   },
@@ -771,7 +771,7 @@
     "id": 97,
     "zone": 47,
     "name": "Cutter's Cry",
-    "territory": 170,
+    "territory": 1303,
     "scale": 200,
     "weatherRate": 0
   },
@@ -4617,7 +4617,7 @@
   },
   {
     "id": 578,
-    "zone": 3441,
+    "zone": 3425,
     "name": "The Copied Factory",
     "territory": 896,
     "scale": 200,
@@ -4625,7 +4625,7 @@
   },
   {
     "id": 579,
-    "zone": 3441,
+    "zone": 3425,
     "name": "The Copied Factory",
     "territory": 896,
     "scale": 200,
@@ -4633,7 +4633,7 @@
   },
   {
     "id": 580,
-    "zone": 3441,
+    "zone": 3425,
     "name": "The Copied Factory",
     "territory": 896,
     "scale": 200,
@@ -4641,7 +4641,7 @@
   },
   {
     "id": 581,
-    "zone": 3441,
+    "zone": 3425,
     "name": "The Copied Factory",
     "territory": 896,
     "scale": 200,
@@ -4977,7 +4977,7 @@
   },
   {
     "id": 623,
-    "zone": 3576,
+    "zone": 3492,
     "name": "The Puppets' Bunker",
     "territory": 928,
     "scale": 200,
@@ -4985,7 +4985,7 @@
   },
   {
     "id": 624,
-    "zone": 3576,
+    "zone": 3492,
     "name": "The Puppets' Bunker",
     "territory": 928,
     "scale": 200,
@@ -4993,7 +4993,7 @@
   },
   {
     "id": 625,
-    "zone": 3576,
+    "zone": 3492,
     "name": "The Puppets' Bunker",
     "territory": 928,
     "scale": 200,
@@ -5001,7 +5001,7 @@
   },
   {
     "id": 626,
-    "zone": 3576,
+    "zone": 3492,
     "name": "The Puppets' Bunker",
     "territory": 928,
     "scale": 200,
@@ -6249,7 +6249,7 @@
   },
   {
     "id": 782,
-    "zone": 4036,
+    "zone": 4180,
     "name": "The Fell Court of Troia",
     "territory": 1089,
     "scale": 200,
@@ -6257,7 +6257,7 @@
   },
   {
     "id": 783,
-    "zone": 4036,
+    "zone": 4180,
     "name": "The Fell Court of Troia",
     "territory": 1089,
     "scale": 200,
@@ -6265,7 +6265,7 @@
   },
   {
     "id": 784,
-    "zone": 4036,
+    "zone": 4180,
     "name": "The Fell Court of Troia",
     "territory": 1089,
     "scale": 200,
@@ -6297,7 +6297,7 @@
   },
   {
     "id": 788,
-    "zone": 4037,
+    "zone": 4146,
     "name": "The Aitiascope",
     "territory": 1079,
     "scale": 200,
@@ -7769,7 +7769,7 @@
   },
   {
     "id": 972,
-    "zone": 5154,
+    "zone": 5126,
     "name": "Yuweyawata",
     "territory": 1254,
     "scale": 200,
@@ -7777,7 +7777,7 @@
   },
   {
     "id": 973,
-    "zone": 5154,
+    "zone": 5126,
     "name": "Yuweyawata",
     "territory": 1254,
     "scale": 200,
@@ -7785,7 +7785,7 @@
   },
   {
     "id": 974,
-    "zone": 5154,
+    "zone": 5126,
     "name": "Yuweyawata",
     "territory": 1254,
     "scale": 200,
@@ -8209,7 +8209,7 @@
   },
   {
     "id": 1027,
-    "zone": 5218,
+    "zone": 5126,
     "name": "Yuweyawata",
     "territory": 1254,
     "scale": 200,
@@ -8217,7 +8217,7 @@
   },
   {
     "id": 1028,
-    "zone": 5218,
+    "zone": 5126,
     "name": "Yuweyawata",
     "territory": 1254,
     "scale": 200,
@@ -8225,7 +8225,7 @@
   },
   {
     "id": 1029,
-    "zone": 5218,
+    "zone": 5126,
     "name": "Yuweyawata",
     "territory": 1254,
     "scale": 200,
@@ -8254,5 +8254,549 @@
     "territory": 1262,
     "scale": 400,
     "weatherRate": 0
+  },
+  {
+    "id": 1033,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1034,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1035,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1036,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1037,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1038,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1039,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1040,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1041,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1042,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1043,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1044,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1045,
+    "zone": 5284,
+    "name": "The Ageless Necropolis",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1046,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1047,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1048,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1049,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1050,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1051,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1052,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1053,
+    "zone": 5285,
+    "name": "The Lightless Abyss",
+    "territory": 1295,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1054,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1055,
+    "zone": 5266,
+    "name": "The Meso Terminal",
+    "territory": 1292,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1056,
+    "zone": 5266,
+    "name": "The Meso Terminal",
+    "territory": 1292,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1057,
+    "zone": 5266,
+    "name": "The Meso Terminal",
+    "territory": 1292,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1058,
+    "zone": 5266,
+    "name": "The Meso Terminal",
+    "territory": 1292,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1059,
+    "zone": 5297,
+    "name": "Vault Oneiron",
+    "territory": 1279,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1060,
+    "zone": 4095,
+    "name": "The Bayside Battleground",
+    "territory": 1293,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1061,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1062,
+    "zone": 4948,
+    "name": "Containment Complex 10-29",
+    "territory": 1299,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1063,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1064,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1065,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1066,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1067,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1068,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1069,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1070,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1071,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1072,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1073,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1074,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1075,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1076,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1077,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1078,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1079,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1080,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1081,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1082,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1083,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1084,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1085,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1086,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1087,
+    "zone": 5240,
+    "name": "San d'Oria: The Second Walk",
+    "territory": 1304,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1088,
+    "zone": 2497,
+    "name": "The Haunted Manor",
+    "territory": 1305,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1089,
+    "zone": 2497,
+    "name": "The Haunted Manor",
+    "territory": 1305,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1090,
+    "zone": 2497,
+    "name": "The Haunted Manor",
+    "territory": 1305,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1091,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1092,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1093,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1094,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1095,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1096,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1097,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1098,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1099,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1100,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
   }
 ]

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.41...v11.4.0) (2025-08-05)
+
+
+### Features
+
+* **db:** support for global 7.3 ([b801e9c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b801e9c2b255cf51311cc70c21fefd3583a99df4), [9d2edd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d2edd5320184019078895a4089970965e158e30))
+
 ### [11.3.41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.3.40...v11.3.41) (2025-07-16)
 
 
