@@ -3296,10 +3296,8 @@
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter 발표: 제작과 채집에 중점을 둔 로그라이크 게임",
-    "Teamcrafter_description_ks_banner": "Kickstarter에서 Teamcrafter를 후원하고 팀크래프트의 평생 광고 제거 혜택을 받아보세요!",
-    "Teamcrafter_description_text": "무시무시한 몬스터와 싸우는 걸 좋아하세요? 낯선 사람을 구하기 위해 목숨을 거는 건 어떤가요?\n절대요, 그런 건 미치지 않고서야 못하죠!",
-    "Teamcrafter_description_text_part2": "Teamcrafter는 커뮤니티와 여러분 덕분에 제가 어릴 적부터 꿈꾼 것을 현실로 만들게 됐어요!\nKickstarter에서 팔로우 하고 Steam 찜목록에 추가해 주시면 저에게 큰 도움이 돼요.",
-    "Wishlist": "Steam에서 보기",
-    "Kickstarter": "Kickstarter에서 보기"
+    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
+    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
+    "Wishlist": "Steam에서 보기"
   }
 }
