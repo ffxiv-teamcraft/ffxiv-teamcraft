@@ -3296,10 +3296,8 @@
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",
-    "Teamcrafter_description_ks_banner": "Back Teamcrafter on Kickstarter to get lifetime ad-free Teamcraft!",
-    "Teamcrafter_description_text": "« Vous aimez combattre de féroces monstres ? Risquer votre vie pour sauver des étrangers ?\nBien sûr que non, vous n'êtes pas fou ! »",
-    "Teamcrafter_description_text_part2": "Teamcrafter, c'est moi qui réalise un rêve d'enfance grâce à la communauté, grâce à vous ! Le suivre sur Kickstarter et l'ajouter à votre liste de souhaits sur Steam serait une aide énorme pour moi.",
-    "Wishlist": "Voir sur Steam",
-    "Kickstarter": "View on Kickstarter"
+    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
+    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
+    "Wishlist": "Voir sur Steam"
   }
 }
