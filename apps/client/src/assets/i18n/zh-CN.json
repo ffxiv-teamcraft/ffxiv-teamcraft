@@ -3296,10 +3296,8 @@
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "隆重介绍 Teamcrafter ：一款注重于制作和采集的 roguelike 游戏",
-    "Teamcrafter_description_ks_banner": "Back Teamcrafter on Kickstarter to get lifetime ad-free Teamcraft!",
-    "Teamcrafter_description_text": "你喜欢和凶猛的怪物战斗吗？冒着生命危险去救陌生人？不，你一定是疯了！",
-    "Teamcrafter_description_text_part2": "Teamcrafter 是我实现儿时梦想的作品，感谢社区，感谢你！请考虑在 Kickstarter 上关注它并将其添加到您的 Steam 愿望清单中，这对我来说是一个巨大的帮助。",
-    "Wishlist": "Wishlist on Steam",
-    "Kickstarter": "View on Kickstarter"
+    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
+    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
+    "Wishlist": "Wishlist on Steam"
   }
 }
