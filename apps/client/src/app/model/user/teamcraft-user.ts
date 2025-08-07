@@ -37,6 +37,8 @@ export class TeamcraftUser extends DataModel {
 
   supporter = false;
 
+  backer = false;
+
   supporterUntil?: number = 0;
 
   trustedMJI = false;

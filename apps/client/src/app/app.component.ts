@@ -205,15 +205,7 @@ export class AppComponent implements OnInit {
 
   public showAd$ = this.authFacade.user$.pipe(
     map((user) => {
-      return !(user.admin || user.moderator || user.supporter);
-    }),
-    shareReplay(1)
-  );
-
-  public showKs$ = timer(0, 30000).pipe(
-    switchMap(() => this.showAd$),
-    map((showAd) => {
-      return showAd && Date.now() < 1754517600000;
+      return !(user.admin || user.moderator || user.supporter || user.backer);
     }),
     shareReplay(1)
   );
