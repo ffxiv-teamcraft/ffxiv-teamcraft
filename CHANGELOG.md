@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.1...v11.4.2) (2025-08-09)
+
+
+### Bug Fixes
+
+* update deucalion to support 7.3 hotfix ([3aa1d05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3aa1d05a15a2f6205df0d82966822bf30ed08c63))
+
 ### [11.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.0...v11.4.1) (2025-08-07)
 
 
