@@ -52,13 +52,14 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { StaticData } from '../../../lazy-data/static-data';
 import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { NzAlertComponent } from 'ng-zorro-antd/alert';
 
 @Component({
   selector: 'app-settings-popup',
   templateUrl: './settings-popup.component.html',
   styleUrls: ['./settings-popup.component.less'],
   standalone: true,
-  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe]
+  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe, NzAlertComponent]
 })
 export class SettingsPopupComponent {
 
@@ -75,6 +76,8 @@ export class SettingsPopupComponent {
   user$ = this.authFacade.user$;
 
   nicknameAvailable: boolean;
+
+  ksEmailValid: boolean;
 
   availableThemes = Theme.ALL_THEMES;
 
@@ -496,6 +499,15 @@ export class SettingsPopupComponent {
 
   checkNicknameAvailability(nickname: string): void {
     this.userService.checkNicknameAvailability(nickname).pipe(first()).subscribe(res => this.nicknameAvailable = res);
+  }
+
+  checkKsEmailAvailability(uid: string, email: string): void {
+    this.userService.checkKsEmailAvailability(uid, email).pipe(first()).subscribe(res => {
+      this.ksEmailValid = res;
+      if (res === true) {
+        this.message.success(this.translate.instant('SETTINGS.Ks_email_applied'));
+      }
+    });
   }
 
   setNickname(user: TeamcraftUser, nickname: string): void {

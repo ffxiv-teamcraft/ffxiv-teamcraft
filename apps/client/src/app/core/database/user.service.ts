@@ -100,6 +100,29 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       );
   }
 
+  public checkKsEmailAvailability(uid: string, email: string): Observable<boolean> {
+    return this.http.get<{check: boolean}>("https://ks-api-5vf66obpka-uc.a.run.app/check", {params: {email}}).pipe(
+      switchMap(({check}) => {
+        if(!check) {
+          return of(false)
+        }
+        return this.query(where('ksEmail', '==', email))
+          .pipe(
+            tap(() => this.recordOperation('read')),
+            map(res => res.length === 0)
+          );
+      }),
+      switchMap(res => {
+        if(res){
+          return this.pureUpdate(uid, {backer: true, ksEmail: email}).pipe(
+            map(() => true)
+          )
+        }
+        return of(res);
+      })
+    )
+  }
+
   public getUsersByLodestoneId(id: number): Observable<TeamcraftUser[]> {
     return this.query(where('defaultLodestoneId', '==', id))
       .pipe(
