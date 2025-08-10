@@ -1082,6 +1082,7 @@
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
     "Min_stats": "下限サブステ",
+    "Min_stats_base": "Minimum without buffs",
     "Progress": "必要工数",
     "Quality": "品質",
     "Step_counter": "ターン",
