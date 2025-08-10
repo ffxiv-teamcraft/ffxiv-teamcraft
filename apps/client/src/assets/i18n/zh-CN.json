@@ -429,6 +429,9 @@
   "Precraft_tier": "阶段",
   "Regenerating_lists": "重新生成清单",
   "SETTINGS": {
+    "Kickstarter_email": "Kickstarter email",
+    "Kickstarter_email_used": "Email is not a backer or it's already claimed",
+    "Ks_email_applied": "Backer status applied, ads are now disabled",
     "Requires_restart": "需要重新启动/刷新以生效",
     "Title": "设置",
     "General": "通用",
@@ -3299,6 +3302,8 @@
     "Teamcrafter_description": "隆重介绍 Teamcrafter ：一款注重于制作和采集的 roguelike 游戏",
     "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
     "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
-    "Wishlist": "Wishlist on Steam"
+    "Wishlist": "Wishlist on Steam",
+    "Supported": "Thanks a lot for your support on Kickstarter <3",
+    "Ads_removed": "Ads have been permanently removed from your account"
   }
 }
