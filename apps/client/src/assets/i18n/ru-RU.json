@@ -1082,6 +1082,7 @@
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
     "Min_stats": "Минимальные статы",
+    "Min_stats_base": "Minimum without buffs",
     "Progress": "Прогресс",
     "Quality": "Качество",
     "Step_counter": "Шаг",
