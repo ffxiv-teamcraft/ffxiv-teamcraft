@@ -1082,6 +1082,7 @@
     "Import_macro": "从用户宏导入",
     "Ingame_macro": "用户宏",
     "Min_stats": "最低面板属性",
+    "Min_stats_base": "Minimum without buffs",
     "Progress": "进度",
     "Quality": "品质",
     "Step_counter": "工次",
