@@ -562,6 +562,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dialog.create({
       nzContent: SimulationMinStatsPopupComponent,
       nzData: {
+        bonuses: this.bonuses$.value,
         simulation: simulation.clone(),
         thresholds: this.thresholds
       },

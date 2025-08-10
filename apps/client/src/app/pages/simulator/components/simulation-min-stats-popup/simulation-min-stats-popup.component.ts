@@ -18,6 +18,10 @@ export class SimulationMinStatsPopupComponent extends DialogComponent implements
 
   stats: { control: number, craftsmanship: number, cp: number, found: boolean };
 
+  statsRaw: { control: number, craftsmanship: number, cp: number, found: boolean };
+
+  bonuses: { control: number, cp: number, craftsmanship: number };
+
   thresholds: number[];
 
   constructor() {
@@ -26,9 +30,16 @@ export class SimulationMinStatsPopupComponent extends DialogComponent implements
 
   ngOnInit(): void {
     this.patchData();
-    // setTimeout to queue and make sure CD will see it ocne it's done
+    // setTimeout to queue and make sure CD will see it once it's done
     setTimeout(() => {
       this.stats = this.simulation.getMinStats();
+
+      this.statsRaw = {
+        control: this.stats.control - this.bonuses.control,
+        craftsmanship: this.stats.craftsmanship - this.bonuses.craftsmanship,
+        cp: Math.max(180, this.stats.cp - this.bonuses.cp),
+        found: Object.values(this.bonuses).some(s => s > 0),
+      };
     });
   }
 
