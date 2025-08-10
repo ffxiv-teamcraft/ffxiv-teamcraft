@@ -1082,6 +1082,7 @@
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
     "Min_stats": "제작에 필요한 최저능력치",
+    "Min_stats_base": "Minimum without buffs",
     "Progress": "작업량",
     "Quality": "품질",
     "Step_counter": "공정",
