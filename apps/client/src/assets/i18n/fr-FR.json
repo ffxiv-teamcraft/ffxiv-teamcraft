@@ -429,6 +429,9 @@
   "Precraft_tier": "Étape",
   "Regenerating_lists": "Regénération des listes en cours",
   "SETTINGS": {
+    "Kickstarter_email": "Kickstarter email",
+    "Kickstarter_email_used": "Email is not a backer or it's already claimed",
+    "Ks_email_applied": "Backer status applied, ads are now disabled",
     "Requires_restart": "Nécessite un redémarrage/actualisation pour être pris en compte",
     "Title": "Options",
     "General": "Général",
@@ -3299,6 +3302,8 @@
     "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",
     "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
     "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
-    "Wishlist": "Voir sur Steam"
+    "Wishlist": "Voir sur Steam",
+    "Supported": "Thanks a lot for your support on Kickstarter <3",
+    "Ads_removed": "Ads have been permanently removed from your account"
   }
 }
