@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Simulation } from '@ffxiv-teamcraft/simulator';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 import { DialogComponent } from '../../../../core/dialog.component';
 
@@ -10,7 +11,7 @@ import { DialogComponent } from '../../../../core/dialog.component';
   templateUrl: './simulation-min-stats-popup.component.html',
   styleUrls: ['./simulation-min-stats-popup.component.less'],
   standalone: true,
-  imports: [NzAlertModule, TranslateModule]
+  imports: [NzAlertModule, NzDividerModule, TranslateModule]
 })
 export class SimulationMinStatsPopupComponent extends DialogComponent implements OnInit {
 
