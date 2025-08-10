@@ -1082,6 +1082,7 @@
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Attribute",
+    "Min_stats_base": "Minimum without buffs",
     "Progress": "Fortschritt",
     "Quality": "Qualität",
     "Step_counter": "Schritt",
