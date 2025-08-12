@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.3...v11.4.4) (2025-08-12)
+
+
+### Bug Fixes
+
+* better kickstarter email binding data ([a3746eb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3746ebb566b84561b012047471b09e07d4dc9bb))
+* remove patreon button from sidebar if user is KS backer ([1b83fa1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1b83fa1fc318528e25c5bdbdcb3fb81d3a4d17cc))
+
 ### [11.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.2...v11.4.3) (2025-08-12)
 
 
