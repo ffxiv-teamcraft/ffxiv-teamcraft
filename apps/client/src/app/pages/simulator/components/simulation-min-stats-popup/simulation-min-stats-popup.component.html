@@ -6,6 +6,14 @@
         <div>{{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{stats.control}}</div>
         <div>{{'SIMULATOR.Cp_amount' | translate}}: {{stats.cp}}</div>
       </div>
+      @if (statsRaw.found) {
+        <nz-divider [nzText]="'SIMULATOR.Min_stats_base' | translate" nzPlain nzOrientation="left"></nz-divider>
+        <div>
+          <div>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{statsRaw.craftsmanship}} (+{{bonuses.craftsmanship}})</div>
+          <div>{{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{statsRaw.control}} (+{{bonuses.control}})</div>
+          <div>{{'SIMULATOR.Cp_amount' | translate}}: {{statsRaw.cp}} (+{{bonuses.cp}})</div>
+        </div>
+      }
     } @else {
       <nz-alert [nzMessage]="'SIMULATOR.Could_not_find_minstats' | translate" nzShowIcon nzType="error"></nz-alert>
     }

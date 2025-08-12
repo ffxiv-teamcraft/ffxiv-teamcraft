@@ -528,6 +528,28 @@
               </div>
             }
           }
+          @if (user.ksEmail === undefined) {
+            <div fxLayout="column" fxLayoutGap="5px">
+              <nz-form-item>
+                <nz-form-label>{{ 'SETTINGS.Kickstarter_email' | translate }}</nz-form-label>
+                <nz-form-control [nzValidateStatus]="ksEmailValid === false ? 'error' : null" nzHasFeedback
+                                 [nzErrorTip]="'SETTINGS.Kickstarter_email_used' | translate">
+                  <input #ksEmail (ngModelChange)="ksEmailValid = undefined" [ngModel]="user.ksEmail" nz-input
+                         placeholder="amazing@backer.com"
+                         type="email">
+                </nz-form-control>
+              </nz-form-item>
+              @if (!ksEmailValid && ksEmail.value !== user.ksEmail) {
+                <button (click)="checkKsEmailAvailability(user.$key, ksEmail.value)"
+                        nz-button
+                        nzBlock>Verify and Apply
+                </button>
+              }
+            </div>
+          }
+          @if (user.backer) {
+            <nz-alert nzType="info" [nzMessage]="'TEAMCRAFTER.Supported' | translate" [nzDescription]="'TEAMCRAFTER.Ads_removed' | translate"></nz-alert>
+          }
           <ng-template #connectedWithTipeee>
           </ng-template>
           @if (user.supporter || user.admin) {

@@ -62,6 +62,8 @@ export class TeamcraftUser extends DataModel {
 
   lastTipeeeRefresh?: number;
 
+  ksEmail?: string;
+
   nickname: string;
 
   itemTags: { id: number, tag: string }[] = [];

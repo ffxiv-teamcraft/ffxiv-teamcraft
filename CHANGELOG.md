@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.2...v11.4.3) (2025-08-12)
+
+
+### Features
+
+* **db:** allagan reports import + gathering search index update ([ce43aa9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce43aa9c1d669ac19bb4ec4a112c90e10a4318ac))
+* **db:** support for korean v7.21 update ([28ca178](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/28ca178307c4c1ad8db67df8274546037eedb57f))
+* new kickstarter email input in settings ([d7aadbf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d7aadbfb4a8e5647320efec1f5c6f25b9d9a3ad0))
+* **simulator:** calculate min stats without any buffs ([9734bc5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9734bc502e49d07388203aebc2f3052bd34604af))
+* **simulator:** show min stats without any buffs when buffs are used ([ad6984a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ad6984a48f9e67b63a2d32096905aec2dcb648f7))
+
 ### [11.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.1...v11.4.2) (2025-08-09)
 
 
