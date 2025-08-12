@@ -101,7 +101,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
   }
 
   public checkKsEmailAvailability(uid: string, email: string): Observable<boolean> {
-    return this.http.get<{check: boolean}>("https://ks-api-5vf66obpka-uc.a.run.app/check", {params: {email}}).pipe(
+    return this.http.get<{check: boolean}>("https://ks-api.ffxivteamcraft.com/check", {params: {email}}).pipe(
       switchMap(({check}) => {
         if(!check) {
           return of(false)
