@@ -300,7 +300,7 @@
     "ko": "대상을 향해 전방 부채꼴 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 110<If(GreaterThanOrEqualTo(PlayerParameter(72),25))><If(Equal(PlayerParameter(68),5))>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과(발동률 20%)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>매의 눈<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여<Else/><If(Equal(PlayerParameter(68),23))>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과(발동률 20%)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>매의 눈<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여<Else/></If></If><Else/></If>"
   },
   "107": {
-    "ko": "10초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>그림자 화살<Else/>일제 사격</If><Else/>일제 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있습니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 무기 기술이 3발 발사되며, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>그림자 화살<Else/>일제 사격</If><Else/>일제 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 위력이 <If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>300<Else/>220</If><Else/>220</If>으로 증가합니다.<If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),96))>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>공명 화살 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/></If><Else/></If>"
+    "ko": "10초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>그림자 화살<Else/>일제 사격</If><Else/>일제 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행할 수 있습니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),70))>찬란한 화살<Else/>직선 사격</If><Else/>직선 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 무기 기술이 3발 발사되며, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow><If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>그림자 화살<Else/>일제 사격</If><Else/>일제 사격</If><UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 위력이 <If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>280<Else/>220</If><Else/>220</If>으로 증가합니다.<If(Equal(PlayerParameter(68),23))><If(GreaterThanOrEqualTo(PlayerParameter(72),96))>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>공명 화살 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground><Else/></If><Else/></If>"
   },
   "108": {
     "ko": "10초 동안 대상을 속박하여 움직이지 못하게 합니다.\n실행 후 자동 공격이 정지됩니다."
@@ -8261,6 +8261,9 @@
   "34691": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>풍경 캔버스<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 풍경 요소를 그립니다.\n이 기술은 단축바에 등록하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n자신이 전투 중이 아닐 때에는 시전 시간 없이 실행됩니다.\n고유 재사용 대기 시간이 적용되며, 착용 장비나 강화 효과의 영향을 받지 않습니다.\n또한, 실행 시 무기 기술 및 마법에 동일한 재사용 대기 시간이 발생합니다."
   },
+  "34738": {
+    "ko": "재탄생의 광채로 반짝이는 불꽃을 내뿜습니다.\n※ 전투 효과는 없습니다."
+  },
   "34786": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>요마의 낫<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하여, 대상을 향해 전방 부채꼴 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 8000\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
@@ -8870,6 +8873,15 @@
   "40113": {
     "ko": "날개처럼 생긴 침상연골을 펼칩니다.\n※ 전투 효과는 없습니다."
   },
+  "41269": {
+    "ko": "45초 동안 제작 상태가 '고품질', '견고', '안정', '고효율', '장기 지속', '빠른 진행' 중에서만 변화합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[우주 임무 전용]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "41278": {
+    "ko": "화려한 낚싯대 기술을 발휘하여 '낚아채기 성공률 감소' 효과를 무시하고 물고기를 낚아챕니다.\n물고기를 상처 없이 낚음으로써 높은 평가를 받을 수 있습니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[우주 임무 전용]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "41307": {
+    "ko": "다음에 사용하는 대담한 순화의 소장 가치 상승량이 반드시 최대로 증가합니다.\n다음에 사용하는 신중한 순화의 내구도를 소비하지 않을 확률이 40% 증가합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[우주 임무 전용]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
   "41428": {
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 15초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장송의 검 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>염원의 검 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장송의 검<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
@@ -9095,11 +9107,35 @@
   "42019": {
     "ko": "영역의 바닥이 소멸해, 탈것에 탑승 중인 상태가 해제됩니다."
   },
+  "42036": {
+    "ko": "당근 입자탄을 세 번 연속으로 발사합니다.\n대상 자동 선택 기능을 켜면, 대상을 자동으로 선택할 수 있습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과(발동 확률 10%)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>출력 강화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다."
+  },
+  "42037": {
+    "ko": "거대 편속성 크리스탈을 한 번에 파괴할 수 있는 고출력 당근 입자탄을 발사합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>출력 강화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
   "42057": {
     "ko": "힘차게 자세를 취합니다.\n※ 전투 효과는 없습니다."
   },
+  "42071": {
+    "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 칼날로 범위 안에 있는 변이 버섯을 분쇄합니다."
+  },
+  "42149": {
+    "ko": "현재 있는 탐색 필드의 중앙 크리스탈로 순간이동합니다."
+  },
+  "42150": {
+    "ko": "루나아다만 드릴로 전방에 있는 편속성 크리스탈을 부숩니다.\n단, 거대 편속성 크리스탈에는 효과가 없습니다."
+  },
+  "42151": {
+    "ko": "행복 입자가 든 신호탄을 발사합니다.\n※ 전투 효과는 없습니다."
+  },
   "42194": {
     "ko": "대상과 그 주위 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 8000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고백 기도 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "42258": {
+    "ko": "액체 연료를 이용한 화염 방사기로 전방 부채꼴 범위 안에 있는 작은 변이 버섯을 소각합니다.\n단, 거대한 버섯에는 효과가 없습니다."
+  },
+  "42261": {
+    "ko": "바람속성 충격파를 발생시켜 로더 주변에 있는 변이 버섯을 파괴합니다."
   },
   "43243": {
     "ko": "자신을 중심으로 주위 적에게 범위 물리 공격을 가하고, 10초 동안 대상이 받는 피해량을 25% 증가시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 8000"
@@ -9151,5 +9187,14 @@
   },
   "43291": {
     "ko": "대상에게 마법 공격을 가하고, 5초 동안 대상이 받는 피해량을 25% 증가시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 4000"
+  },
+  "43357": {
+    "ko": "자신의 이동 속도가 50% 향상됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 해제 시까지"
+  },
+  "43365": {
+    "ko": "당근총의 대상 자동 선택 기능을 켭니다."
+  },
+  "43366": {
+    "ko": "당근총의 대상 자동 선택 기능을 끕니다."
   }
 }
