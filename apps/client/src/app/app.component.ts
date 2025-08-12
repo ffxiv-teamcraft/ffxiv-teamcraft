@@ -212,7 +212,7 @@ export class AppComponent implements OnInit {
 
   public showPatreonButton$ = this.authFacade.user$.pipe(
     map((user) => {
-      return !user.supporter;
+      return !user.supporter && !user.backer;
     })
   );
 
