@@ -93469,30 +93469,335 @@
   },
   "70916": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Keeping the Old Ways Alive",
+      "ja": "古の匠たちの技術",
+      "de": "Alte Schmiede rostet nicht",
+      "fr": "La tablette qui tombe à pic"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101449.png"
   },
   "70917": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Aether, Aether, Everywhere",
+      "ja": "属性の力秘めし魔道球",
+      "de": "Keine ruhige Kugel",
+      "fr": "Quatre orbes et une roulette"
     },
     "icon": "/i/071000/071221.png"
   },
   "70918": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Wrought by Hands Phantasmal",
+      "ja": " ファントムウェポンの強化",
+      "de": "Phantastische Verstärkung",
+      "fr": " De la pénombre à l'ombre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 47869,
+            "amount": 1
+          },
+          {
+            "id": 47890,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47006,
+            "amount": 1
+          },
+          {
+            "id": 47027,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47870,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47007,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47871,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47008,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47872,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47009,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47873,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47010,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47874,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47011,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47875,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47012,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47876,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47013,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47877,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47014,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47878,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47015,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47879,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47016,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47880,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47017,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47881,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47018,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47882,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47019,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47883,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47020,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47884,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47021,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47885,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47022,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47886,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47023,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47887,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47024,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47888,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47025,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47889,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 47026,
+            "amount": 1
+          }
+        ]
+      }
+    ]
   },
   "70919": {
     "name": {
@@ -93730,55 +94035,58 @@
   },
   "70945": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Go Forth, Brave Explorers",
+      "ja": "新たなる未知へ！",
+      "de": "Aufbruch ins Unbekannte",
+      "fr": "Terre inconnue"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101444.png"
   },
   "70946": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Brightest Star",
+      "ja": "希望の輝き",
+      "de": "Der hellste Stern",
+      "fr": "L'étoile la plus brillante"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101445.png"
   },
   "70947": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Manager's Discernment",
+      "ja": "プロジェクトマネージャーの明察なお仕事",
+      "de": "Der Leiterins Leid",
+      "fr": "La perspicacité de la gestionnaire"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101436.png"
   },
   "70948": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Perspective Reflected",
+      "ja": "ガラスに映る未来",
+      "de": "Gespiegelte Zukunft",
+      "fr": "Le verre de l'avenir"
     },
     "icon": "/i/071000/071221.png"
   },
   "70949": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pilot Wanted",
+      "ja": "パワーローダー飛行実証実験",
+      "de": "Testpilot gesucht!",
+      "fr": "On recherche un pilote"
     },
     "icon": "/i/071000/071221.png"
   },
   "70950": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Manager's Delegation",
+      "ja": "プロジェクトマネージャーの意義あるお仕事",
+      "de": "Hoher Besuch auf Phaenna",
+      "fr": "L'implication de la gestionnaire"
     },
     "icon": "/i/071000/071221.png"
   },

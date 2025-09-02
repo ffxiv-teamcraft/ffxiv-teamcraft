@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.4...v11.4.5) (2025-09-02)
+
+
+### Features
+
+* **db:** Global 7.31 content update ([c19cfd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c19cfd58b68cfa3705b6fc14aafb0230af8a50d9))
+
+
+### Bug Fixes
+
+* **layout:** better apply logic for level-based filter ([22195ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22195ff67ccda55ac17f138053109c6ac413192c))
+
 ### [11.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.3...v11.4.4) (2025-08-12)
 
 

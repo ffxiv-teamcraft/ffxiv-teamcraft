@@ -141,6 +141,7 @@ export interface Title {
 
 export enum Ja {
   Achievement = "ACHIEVEMENT",
+  Alert = "ALERT",
   AlpacaPorter = "ALPACA PORTER",
   AmaroPorter = "AMARO PORTER",
   Analyst = "ANALYST",
@@ -210,6 +211,7 @@ export enum Ja {
   ShopLevelup = "SHOP & LEVELUP",
   ShopRepairs = "SHOP & REPAIRS",
   ShopTrade = "SHOP & TRADE",
+  SpaceVoyage = "SPACE VOYAGE",
   Suite = "SUITE",
   Tank = "TANK",
   TheMaskedCarnivale = "THE MASKED CARNIVALE",

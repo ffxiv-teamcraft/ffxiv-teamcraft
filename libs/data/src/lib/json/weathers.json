@@ -1601,18 +1601,18 @@
   },
   "201": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Annealing Winds",
+      "ja": "寒冷気流",
+      "de": "Kältefront",
+      "fr": "Courants glaciaux"
     }
   },
   "202": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Glass Storms",
+      "ja": "グラスレイン",
+      "de": "Glasregen",
+      "fr": "Pluie de verre"
     }
   }
 }

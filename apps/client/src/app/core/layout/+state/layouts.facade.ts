@@ -132,7 +132,7 @@ export class LayoutsFacade {
                     if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
                       const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
                       const requiredLevel = Math.min(gatheringLevels[item.id] || 0, gatheredBy.level);
-                      if (!layout.filterBasedOnLevel || this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
+                      if (!adaptativeFilter || !layout.filterBasedOnLevel || this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
                         acc.accepted.push(item);
                       } else {
                         acc.rejected.push(item);

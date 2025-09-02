@@ -43477,10 +43477,10 @@
     "icon": "/i/218000/218351.png",
     "maxStacks": 3,
     "description": {
-      "en": "Damage dealt and potency of all HP restoration actions are reduced.",
-      "de": "Ausgeteilter Schaden und Wirkung von Heilmagie sind verringert.",
-      "ja": "与ダメージと自身からのＨＰ回復効果が低下した状態。",
-      "fr": "Les dégâts infligés et la puissance des effets curatifs prodigués sont réduits."
+      "en": "Damage dealt is reduced.",
+      "de": "Ausgeteilter Schaden ist verringert.",
+      "ja": "与ダメージが低下した状態。",
+      "fr": "Les dégâts infligés sont réduits."
     }
   },
   "3107": {
@@ -64540,45 +64540,45 @@
     }
   },
   "4611": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Extractor Beam Charged",
+    "de": "Schleppstrahl",
+    "ja": "トーウィングビーム使用可能",
+    "fr": "Rayon extracteur opérationnel",
+    "icon": "/i/216000/216256.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Able to use the Extractor Beam.",
+      "de": "<span style=\"color:#ffffff\">Schleppstrahl</span> kann eingesetzt werden.",
+      "ja": "トーウィングビームが使用可能な状態",
+      "fr": "Le Rayon extracteur peut être utilisé."
     }
   },
   "4612": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Plasma Throttle Charged",
+    "de": "Plasma-Klingenlauf",
+    "ja": "プラズマ・ブレードダッシュ使用可能",
+    "fr": "Ruée plasma opérationnelle",
+    "icon": "/i/216000/216256.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Able to use the Plasma Throttle.",
+      "de": "<span style=\"color:#ffffff\">Plasma-Klingenlauf</span> kann eingesetzt werden.",
+      "ja": "プラズマ・ブレードダッシュが使用可能な状態",
+      "fr": "La Ruée plasma peut être utilisée."
     }
   },
   "4613": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Energy Load",
+    "de": "Geladene Klinge",
+    "ja": "ブレードチャージ",
+    "fr": "Lame chargée",
+    "icon": "/i/219000/219866.png",
+    "maxStacks": 6,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Storing energy gathered via the use of Fuller Throttle.",
+      "de": "Durch den Einsatz von <span style=\"color:#ffffff\">Modifizierter Klingenlauf</span> wird Energie abgespeichert.",
+      "ja": "ブレードダッシュ改の使用で、機体内部に蓄積したエネルギー",
+      "fr": "De l'énergie a été accumulée grâce à l'utilisation de la Super ruée tranchante."
     }
   },
   "4614": {

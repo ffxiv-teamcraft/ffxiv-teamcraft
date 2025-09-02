@@ -15378,7 +15378,7 @@
     "fr": "Malle du rappel"
   },
   "2564": {
-    "en": "Resistance Secretariat",
+    "en": "Expedition Information",
     "ja": "コンテンツ解説",
     "de": "Informationen",
     "fr": "Guide"
@@ -31710,70 +31710,70 @@
     "fr": "Abîme d'Obscurité"
   },
   "5286": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Lehr",
+    "ja": "レアー洞",
+    "de": "Kühltunnel",
+    "fr": "L'Arche de Recuisson"
   },
   "5287": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "West Beaconveil",
+    "ja": "グラスブロワーズ基地西",
+    "de": "Westliche Glasbläser-Basis",
+    "fr": "Ouest de la station Souffleverre"
   },
   "5288": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Opalescent Crossing",
+    "ja": "オパルセントの四辻",
+    "de": "Opal-Kreuzung",
+    "fr": "Croisée opalescente"
   },
   "5289": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Soda-lime Float",
+    "ja": "ソーダライム・フロート上流",
+    "de": "Oberlauf des Weichglasspiegels",
+    "fr": "Amont des Flots sodocalciques"
   },
   "5290": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central Soda-lime Channel",
+    "ja": "ソーダライム・フロート中流北",
+    "de": "Nördlicher Mittellauf des Weichglasspiegels",
+    "fr": "Centre-nord des Flots sodocalciques"
   },
   "5291": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Western Soda-lime Tributary",
+    "ja": "ソーダライム・フロート中流南",
+    "de": "Südlicher Mittellauf des Weichglasspiegels",
+    "fr": "Centre-sud des Flots sodocalciques"
   },
   "5292": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Soda-lime Float",
+    "ja": "ソーダライム・フロート下流",
+    "de": "Unterlauf des Weichglasspiegels",
+    "fr": "Aval des Flots sodocalciques"
   },
   "5293": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Prismatic Pull",
+    "ja": "プリズマチック・シンク",
+    "de": "Prismatische Senke",
+    "fr": "Cloaque prismatique"
   },
   "5294": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Capsule Pools",
+    "ja": "カプセル・プールズ",
+    "de": "Kapsel-Becken",
+    "fr": "Étangs aux Capsules"
   },
   "5295": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bubble Bursters",
+    "ja": "泡間の奈落",
+    "de": "Schaumgrund",
+    "fr": "L'Enfer bulleux"
   },
   "5296": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fusingway Flow",
+    "ja": "フュージングウェイ・フロウ",
+    "de": "Fusingway-Fluss",
+    "fr": "Coulée de Fusingway"
   },
   "5297": {
     "en": "Vault Oneiron",
@@ -31800,130 +31800,130 @@
     "fr": "Interventions mécaniques"
   },
   "5301": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phaenna",
+    "ja": "惑星パエンナ",
+    "de": "Phaenna",
+    "fr": "Phaenna"
   },
   "5302": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Glassblown Grotto",
+    "ja": "グラスブロワーズ岩窟",
+    "de": "Glasbläser-Grotte",
+    "fr": "Antre des Souffleurs de verre"
   },
   "5303": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Millefiori ",
+    "ja": "ミルフィオリの丘",
+    "de": "Millefiori-Hügel",
+    "fr": "Colline Milliaflore"
   },
   "5304": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Soda-lime Float",
+    "ja": "ソーダライム・フロート",
+    "de": "Weichglasspiegel",
+    "fr": "Flots sodocalciques"
   },
   "5305": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Saltpeter Shore",
+    "ja": "硝礫の川浜",
+    "de": "Glassteinküste",
+    "fr": "Berges de Salpêtre"
   },
   "5306": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Iridized Rise",
+    "ja": "イリデセント・ステップス",
+    "de": "Schillerstufen",
+    "fr": "Marches iridescentes"
   },
   "5307": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Capsule Chasm",
+    "ja": "カプセル・カズム",
+    "de": "Kapselgrund",
+    "fr": "Gouffre aux Capsules"
   },
   "5308": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fusingway Vent",
+    "ja": "フュージングウェイ・ヴェント",
+    "de": "Fusingway-Schlund",
+    "fr": "Cheminée de Fusingway"
   },
   "5309": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Lehr",
+    "ja": "レアー洞",
+    "de": "Kühltunnel",
+    "fr": "L'Arche de Recuisson"
   },
   "5310": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Chillmark",
+    "ja": "チルマーク洞",
+    "de": "Kühlnarbe",
+    "fr": "La Craquelure"
   },
   "5311": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Windsbreath Bellows",
+    "ja": "風息の楼台",
+    "de": "Windatem-Balg",
+    "fr": "Hauteurs des Courants venteux"
   },
   "5312": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stonesbreath Bellows",
+    "ja": "地息の楼台",
+    "de": "Erdatem-Balg",
+    "fr": "Hauteurs des Courants telluriques"
   },
   "5313": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Slumping Plunge",
+    "ja": "スランピングウェイの大滝",
+    "de": "Slumpingway-Fälle",
+    "fr": "Chutes de Slumpingway"
   },
   "5314": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Prismatic Pull",
+    "ja": "プリズマチック・シンク",
+    "de": "Prismatische Senke",
+    "fr": "Cloaque prismatique"
   },
   "5315": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Scoresheen Sands",
+    "ja": "十七色の流砂",
+    "de": "Glitzersande",
+    "fr": "Les Sables brillants"
   },
   "5316": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Glassblowers' Beacon",
+    "ja": "グラスブロワーズ基地",
+    "de": "Glasbläser-Basis",
+    "fr": "Station Souffleverre"
   },
   "5317": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Capsule Pools",
+    "ja": "カプセル・プールズ",
+    "de": "Kapsel-Becken",
+    "fr": "Étangs aux Capsules"
   },
   "5318": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Opalescent Crossing",
+    "ja": "オパルセントの四辻",
+    "de": "Opal-Kreuzung",
+    "fr": "Croisée opalescente"
   },
   "5319": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Marver Mesa",
+    "ja": "マーバー高原",
+    "de": "Marmorier-Plateau",
+    "fr": "Plateau de graphite"
   },
   "5320": {
     "en": "Intersite Travel",
     "ja": "コスモエクスプローラー：拠点へ移動",
     "de": "Portal zur Basis",
-    "fr": "Voyages interstations"
+    "fr": "Voyages spatiaux"
   },
   "5321": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Emergency Transport",
+    "ja": "緊急状況：任務地へ移動",
+    "de": "Portal zum Einsatzort",
+    "fr": "Transports d'urgence"
   },
   "5322": {
     "en": "",

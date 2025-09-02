@@ -51,11 +51,17 @@ export enum Type {
 }
 
 export interface StartingPoint {
-  map:    number;
-  x:      number;
-  y:      number;
-  z:      number;
-  zoneid: number;
+  de?:     string;
+  en?:     string;
+  fr?:     string;
+  ja?:     string;
+  ko?:     string;
+  map?:    number;
+  x?:      number;
+  y?:      number;
+  z?:      number;
+  zh?:     string;
+  zoneid?: number;
 }
 
 export interface Trade {

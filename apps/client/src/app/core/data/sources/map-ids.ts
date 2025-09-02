@@ -5320,114 +5320,114 @@ export const mapIds = [
     "weatherRate": null
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1065,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1066,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1067,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1068,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1069,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1070,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1071,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1072,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1073,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1074,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1075,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1076,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1077,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1078,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1079,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1080,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1081,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1082,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1083,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1084,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1085,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
-    "zone": 0,
+    "zone": 5301,
     "id": 1086,
-    "weatherRate": null
+    "weatherRate": 171
   },
   {
     "zone": 5240,

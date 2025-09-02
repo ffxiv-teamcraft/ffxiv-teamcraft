@@ -138977,6 +138977,138 @@
     "slots": 0,
     "overmeld": false
   },
+  "47006": {
+    "modifier": 1,
+    "prop": "OneHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47007": {
+    "modifier": 3,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47008": {
+    "modifier": 1,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47009": {
+    "modifier": 2,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47010": {
+    "modifier": 4,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47011": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47012": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47013": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47014": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47015": {
+    "modifier": 11,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47016": {
+    "modifier": 1,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47017": {
+    "modifier": 4,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47018": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47019": {
+    "modifier": 3,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47020": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47021": {
+    "modifier": 1,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47022": {
+    "modifier": 4,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47023": {
+    "modifier": 2,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47024": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47025": {
+    "modifier": 11,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47026": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 2,
+    "overmeld": false
+  },
+  "47027": {
+    "modifier": 1,
+    "prop": "OffHandPercent",
+    "slots": 0,
+    "overmeld": false
+  },
   "47108": {
     "modifier": 1,
     "prop": "HeadPercent",
@@ -140418,6 +140550,534 @@
     "overmeld": false
   },
   "48192": {
+    "modifier": 1,
+    "prop": "OffHandPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49009": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49010": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49011": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49012": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49013": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49014": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49015": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49016": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49017": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49018": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49019": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49020": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49021": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49022": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49023": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49024": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49025": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49026": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49027": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49028": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49029": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49030": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49031": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49032": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49033": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49034": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49035": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49036": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49037": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49038": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49039": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49040": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49041": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49042": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49043": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49044": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49045": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49046": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49047": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49048": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49049": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49050": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49051": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49052": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49053": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49054": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49055": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49056": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49057": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49058": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49059": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49060": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49061": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49062": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49063": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49088": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49089": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49090": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49091": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49092": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49093": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49094": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49095": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49096": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49097": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49098": {
+    "modifier": 9,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49099": {
+    "modifier": 1,
+    "prop": "OneHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49100": {
+    "modifier": 3,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49101": {
+    "modifier": 1,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49102": {
+    "modifier": 2,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49103": {
+    "modifier": 4,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49104": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49105": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49106": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49107": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49108": {
+    "modifier": 11,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49109": {
+    "modifier": 1,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49110": {
+    "modifier": 4,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49111": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49112": {
+    "modifier": 3,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49113": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49114": {
+    "modifier": 1,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49115": {
+    "modifier": 4,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49116": {
+    "modifier": 2,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49117": {
+    "modifier": 6,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49118": {
+    "modifier": 11,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49119": {
+    "modifier": 5,
+    "prop": "TwoHandWeaponPercent",
+    "slots": 0,
+    "overmeld": false
+  },
+  "49120": {
     "modifier": 1,
     "prop": "OffHandPercent",
     "slots": 0,
