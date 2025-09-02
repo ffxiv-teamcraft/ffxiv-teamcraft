@@ -43395,581 +43395,581 @@
   },
   "2008": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Beacon Camp Alpha Expansion",
+      "ja": "第一次基地拡張計画",
+      "de": "Glasbläser-Basis: Erweiterung I",
+      "fr": "Premier agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Glassblowers' Beacon facilities are ready for expansion. Help lay the foundation and clean up glass dust from the surrounding area.",
+      "ja": "グラスブロワーズ基地の施設拡張のため<br>建築地点にて基礎工事と集塵を行い、施工を進行せよ",
+      "de": "Die Glasbläser-Basis soll erweitert werden.<br>Hilf beim Grundbau mit, sammle den entstehenden Staub ein und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station Souffleverre a commencé. Préparez les fondations et nettoyez les alentours."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873681
   },
   "2009": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoliner Alpha Construction Support",
+      "ja": "第一次コスモライナー敷設支援",
+      "de": "Kosmozapper: Bauunterstützung I",
+      "fr": "Mise en place du premier réseau de cosmo-navettes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates Cosmoliner construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Kosmozapper-Netz wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873683
   },
   "2010": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Habitation Module Construction Support",
+      "ja": "居住モジュール設置支援",
+      "de": "Habitationsmodul: Bauunterstützung I",
+      "fr": "Installation des modules d'habitation"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates habitation module construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Habitationsmodul wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873685
   },
   "2011": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Energization Station Construction Support",
+      "ja": "エネルギー設備建設支援",
+      "de": "Energisierungswerke: Bauunterstützung",
+      "fr": "Expansion des infrastructures énergétiques"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates energization expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Energisierungswerken wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873686
   },
   "2012": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hydrofication Station Construction Support",
+      "ja": "給水設備建設支援",
+      "de": "Hydrofizierungswerke: Bauunterstützung",
+      "fr": "Expansion des infrastructures de distribution d'eau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates hydrofication expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Hydrofizierungswerken wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873688
   },
   "2013": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Alpha Expansion",
+      "ja": "第一次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung I",
+      "fr": "Premier agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873689
   },
   "2014": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Upper Crane Construction",
+      "ja": "第一次降下クレーン建設工事",
+      "de": "Applike-Kräne: Bauunterstützung I",
+      "fr": "Première préparation des grues"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "We are ready to begin construction of the upper crane. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>降下施設の建設を行え",
+      "de": "Unterstütze den Bau der Kräne, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour préparer les grues."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873690
   },
   "2015": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Lower Crane Construction",
+      "ja": "第二次降下クレーン建設工事",
+      "de": "Applike-Kräne: Bauunterstützung II",
+      "fr": "Seconde préparation des grues"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "We are ready to begin construction of the lower crane. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>降下施設の建設を行え",
+      "de": "Unterstütze den Bau der Kräne, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour préparer les grues."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873691
   },
   "2016": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Beacon Camp Beta Expansion",
+      "ja": "第二次基地拡張計画",
+      "de": "Glasbläser-Basis: Erweiterung II",
+      "fr": "Second agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Glassblowers' Beacon facilities are ready for expansion. Help lay the foundation and clean up glass dust from the surrounding area.",
+      "ja": "グラスブロワーズ基地の施設拡張のため<br>建築地点にて基礎工事と集塵を行い、施工を進行せよ",
+      "de": "Die Glasbläser-Basis soll erweitert werden.<br>Hilf beim Grundbau mit, sammle den entstehenden Staub ein und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station Souffleverre a commencé. Préparez les fondations et participez aux travaux de déblayage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873693
   },
   "2017": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Beta Expansion",
+      "ja": "第二次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung II",
+      "fr": "Second agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873694
   },
   "2018": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoport Maintenance Support",
+      "ja": "コスモポート整備支援",
+      "de": "Kosmoport: Renovierung",
+      "fr": "Support à l'aménagement du cosmoport"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The cosmoport is in need of maintenance. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>コスモポートのアップグレードを行え",
+      "de": "Bau den Kosmoport aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le cosmoport."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873695
   },
   "2019": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Power Procurement",
+      "ja": "第一次エネルギー集積施設工事",
+      "de": "Energiespeicheranlage: Bauunterstützung I",
+      "fr": "Première préparation du réseau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates power procurement. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an der Energiespeicheranlage wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873696
   },
   "2020": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Additional Power Procurement",
+      "ja": "第二次エネルギー集積施設工事",
+      "de": "Energiespeicheranlage: Bauunterstützung II",
+      "fr": "Seconde préparation du réseau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates power procurement. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an der Energiespeicheranlage wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873697
   },
   "2021": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mobilization Station Construction",
+      "ja": "冷却ドローン拠点建設工事",
+      "de": "Kühldrohnenstation: Bauunterstützung",
+      "fr": "Construction de la station des drones"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates mobilization station construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an der Kühldrohnenstation wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873698
   },
   "2022": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Operation Chilling-a-Way: Phase One",
+      "ja": "第一次溶融ガラス冷却作戦",
+      "de": "Magmaglaskühlung: Phase I",
+      "fr": "Première opération de refroidissement"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fusingway Vent presents a piping hot obstacle to further exploration. Procure cartridges from refrigeration stations and chill sections of molten glass to assist the initiative's efforts.",
+      "ja": "「冷却剤補充装置」にて<br>入手できる冷却剤を使用して<br>溶融ガラスを3ヶ所冷却せよ<br>",
+      "de": "Das geschmolzene Magmaglas muss abgekühlt und gehärtet werden.<br>Benutze das Kühlmittel aus der Nachfüllstation, um das Glas abzukühlen.",
+      "fr": "Récupérez des cartouches d'agent réfrigérant au dispositif d'approvisionnement puis utilisez-les pour refroidir trois foyers de verre en fusion."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873699
   },
   "2023": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Operation Chilling-a-Way: Phase Two",
+      "ja": "第二次溶融ガラス冷却作戦",
+      "de": "Magmaglaskühlung: Phase II",
+      "fr": "Seconde opération de refroidissement"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fusingway Vent presents a piping hot obstacle to further exploration. Procure cartridges from refrigeration stations and chill sections of molten glass to assist the initiative's efforts.",
+      "ja": "「冷却剤補充装置」にて<br>入手できる冷却剤を使用して<br>溶融ガラスを5ヶ所冷却せよ<br>",
+      "de": "Das geschmolzene Magmaglas muss abgekühlt und gehärtet werden.<br>Benutze das Kühlmittel aus der Nachfüllstation, um das Glas abzukühlen.",
+      "fr": "Récupérez des cartouches d'agent réfrigérant au dispositif d'approvisionnement puis utilisez-les pour refroidir cinq foyers de verre en fusion."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873700
   },
   "2024": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Beacon Camp Facility Expansion",
+      "ja": "基地総合設備拡張工事",
+      "de": "Expansion der Basisstrukturen",
+      "fr": "Agrandissement général des installations"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A telescope is ready for installation at Glassblowers' Beacon. Report to the construction site and aid in the effort.",
+      "ja": "グラスブロワーズ基地への天体望遠鏡建設のため<br>建築地点にて施工を行え",
+      "de": "Die Glasbläser-Basis soll um ein Teleskop erweitert werden.<br>Lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station Souffleverre a commencé. Participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873701
   },
   "2025": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Beacon Camp Alpha Expansion",
+      "ja": "第一次基地拡張計画",
+      "de": "Glasbläser-Basis: Erweiterung I",
+      "fr": "Premier agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Glassblowers' Beacon facilities are ready for expansion. Help lay the foundation and clean up glass dust from the surrounding area.",
+      "ja": "グラスブロワーズ基地の施設拡張のため<br>建築地点にて基礎工事と集塵を行い、施工を進行せよ",
+      "de": "Die Glasbläser-Basis soll erweitert werden.<br>Hilf beim Grundbau mit, sammle den entstehenden Staub ein und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station Souffleverre a commencé. Préparez les fondations et nettoyez les alentours."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873681
   },
   "2026": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoliner Alpha Construction Support",
+      "ja": "第一次コスモライナー敷設支援",
+      "de": "Kosmozapper: Bauunterstützung I",
+      "fr": "Mise en place du premier réseau de cosmo-navettes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates Cosmoliner construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Kosmozapper-Netz wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873683
   },
   "2027": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Habitation Module Construction Support",
+      "ja": "居住モジュール設置支援",
+      "de": "Habitationsmodul: Bauunterstützung",
+      "fr": "Installation des modules d'habitation"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates habitation module construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten am Habitationsmodul wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873685
   },
   "2028": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Energization Station Construction Support",
+      "ja": "エネルギー設備建設支援",
+      "de": "Energisierungswerke: Bauunterstützung",
+      "fr": "Expansion des infrastructures énergétiques"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates energization expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Energisierungswerken wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873686
   },
   "2029": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hydrofication Station Construction Support",
+      "ja": "給水設備建設支援",
+      "de": "Hydrofizierungswerke: Bauunterstützung",
+      "fr": "Expansion des infrastructures de distribution d'eau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates hydrofication expansions. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an den Hydrofizierungswerken wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873688
   },
   "2030": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Alpha Expansion",
+      "ja": "第一次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung I",
+      "fr": "Premier agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873689
   },
   "2031": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Upper Crane Construction",
+      "ja": "第一次降下クレーン建設工事",
+      "de": "Applike-Kräne: Bauunterstützung I",
+      "fr": "Première préparation des grues"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "We are ready to begin construction of the upper crane. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>降下施設の建設を行え",
+      "de": "Unterstütze den Bau der Kräne, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour préparer les grues."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873690
   },
   "2032": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Lower Crane Construction",
+      "ja": "第二次降下クレーン建設工事",
+      "de": "Applike-Kräne: Bauunterstützung II",
+      "fr": "Seconde préparation des grues"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "We are ready to begin construction of the lower crane. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>降下施設の建設を行え",
+      "de": "Unterstütze den Bau der Kräne, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour préparer les grues."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873691
   },
   "2033": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Beacon Camp Beta Expansion",
+      "ja": "第二次基地拡張計画",
+      "de": "Glasbläser-Basis: Erweiterung II",
+      "fr": "Second agrandissement de la station"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Glassblowers' Beacon facilities are ready for expansion. Help lay the foundation and clean up glass dust from the surrounding area.",
+      "ja": "グラスブロワーズ基地の施設拡張のため<br>建築地点にて基礎工事と集塵を行い、施工を進行せよ",
+      "de": "Die Glasbläser-Basis soll erweitert werden.<br>Hilf beim Grundbau mit, sammle den entstehenden Staub ein und lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station Souffleverre a commencé. Préparez les fondations et participez aux travaux de déblayage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873693
   },
   "2034": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mech Hangar Beta Expansion",
+      "ja": "第二次ハンガー拡張計画",
+      "de": "Sternenhangar: Erweiterung II",
+      "fr": "Second agrandissement du hangar"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
+      "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873694
   },
   "2035": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cosmoport Maintenance Support",
+      "ja": "コスモポート整備支援",
+      "de": "Kosmoport: Renovierung",
+      "fr": "Support à l'aménagement du cosmoport"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The cosmoport is in need of maintenance. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>コスモポートのアップグレードを行え",
+      "de": "Bau den Kosmoport aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le cosmoport."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873695
   },
   "2036": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Power Procurement",
+      "ja": "第一次エネルギー集積施設工事",
+      "de": "Energiespeicheranlage: Bauunterstützung I",
+      "fr": "Première préparation du réseau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates power procurement. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an der Energiespeicheranlage wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873696
   },
   "2037": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Additional Power Procurement",
+      "ja": "第二次エネルギー集積施設工事",
+      "de": "Energiespeicheranlage: Bauunterstützung II",
+      "fr": "Seconde préparation du réseau"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates power procurement. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an der Energiespeicheranlage wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873697
   },
   "2038": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mobilization Station Construction",
+      "ja": "冷却ドローン拠点建設工事",
+      "de": "Kühldrohnenstation: Bauunterstützung",
+      "fr": "Construction de la station des drones"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A phalanx of mini rovers facilitates mobilization station construction. Retrieve mini rover battery packs, charge them at charging modules, then return the replenished packs to ensure the machines continue their useful trundling.",
+      "ja": "ミニローダーのエネルギータンクを取り外し<br>エネルギースタンドにて充填して<br>ミニローダーにエネルギーを供給せよ",
+      "de": "Für die Arbeiten an der Kühldrohnenstation wird Unterstützung benötigt.<br>Fülle die Energievorräte der Mechas an den entsprechenden Stellen auf.",
+      "fr": "Récupérez les réservoirs d'énergie puis rechargez-les pour fournir de l'énergie aux ouvriers cosmiques."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873698
   },
   "2039": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Operation Chilling-a-Way: Phase One",
+      "ja": "第一次溶融ガラス冷却作戦",
+      "de": "Magmaglaskühlung: Phase I",
+      "fr": "Première opération de refroidissement"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fusingway Vent presents a piping hot obstacle to further exploration. Procure cartridges from refrigeration stations and chill sections of molten glass to assist the initiative's efforts.",
+      "ja": "「冷却剤補充装置」にて<br>入手できる冷却剤を使用して<br>溶融ガラスを3ヶ所冷却せよ<br>",
+      "de": "Das geschmolzene Magmaglas muss abgekühlt und gehärtet werden.<br>Benutze das Kühlmittel aus der Nachfüllstation, um das Glas abzukühlen.",
+      "fr": "Récupérez des cartouches d'agent réfrigérant au dispositif d'approvisionnement puis utilisez-les pour refroidir trois foyers de verre en fusion."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873699
   },
   "2040": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Operation Chilling-a-Way: Phase Two",
+      "ja": "第二次溶融ガラス冷却作戦",
+      "de": "Magmaglaskühlung: Phase II",
+      "fr": "Seconde opération de refroidissement"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fusingway Vent presents a piping hot obstacle to further exploration. Procure cartridges from refrigeration stations and chill sections of molten glass to assist the initiative's efforts.",
+      "ja": "「冷却剤補充装置」にて<br>入手できる冷却剤を使用して<br>溶融ガラスを5ヶ所冷却せよ<br>",
+      "de": "Das geschmolzene Magmaglas muss abgekühlt und gehärtet werden.<br>Benutze das Kühlmittel aus der Nachfüllstation, um das Glas abzukühlen.",
+      "fr": "Récupérez des cartouches d'agent réfrigérant au dispositif d'approvisionnement puis utilisez-les pour refroidir cinq foyers de verre en fusion."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873700
   },
   "2041": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Beacon Camp Facility Expansion",
+      "ja": "基地総合設備拡張工事",
+      "de": "Expansion der Basisstrukturen",
+      "fr": "Agrandissement général des installations"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A telescope is ready for installation at Glassblowers' Beacon. Report to the construction site and aid in the effort.",
+      "ja": "グラスブロワーズ基地への天体望遠鏡建設のため<br>建築地点にて施工を行え",
+      "de": "Die Glasbläser-Basis soll um ein Teleskop erweitert werden.<br>Lege an den entsprechenden Stellen Hand an.",
+      "fr": "Le chantier pour l'agrandissement de la station Souffleverre a commencé. Participez aux travaux."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 11873701
   },
   "2042": {
     "name": {

@@ -816,7 +816,7 @@
     "location": "H"
   },
   "103": {
-    "en": "Northwest Bellflower",
+    "en": "northwest Bellflower",
     "ja": "I　桔梗海溝北西",
     "de": "Nordwesten des Asterngrabens (I)",
     "fr": "Nord-ouest de la fosse des campanules (I)",
@@ -840,7 +840,7 @@
     "location": "K"
   },
   "106": {
-    "en": "the Floral Reef",
+    "en": "the floral reef",
     "ja": "L　咲き誇る礁池",
     "de": "Blühende Lagune (L)",
     "fr": "Lagon en fleur (L)",
@@ -888,7 +888,7 @@
     "location": "Q"
   },
   "112": {
-    "en": "East Dodie's Abyss",
+    "en": "east Dodie's Abyss",
     "ja": "R　ドディー海底谷東",
     "de": "Östliche Dodhi-Furche (R)",
     "fr": "Est de la vallée sous-marine de Dodie (R)",
@@ -904,7 +904,7 @@
     "location": "S"
   },
   "114": {
-    "en": "West Dodie's Abyss",
+    "en": "west Dodie's Abyss",
     "ja": "T　ドディー海底谷西",
     "de": "Westliche Dodhi-Furche (T)",
     "fr": "Ouest de la vallée sous-marine de Dodie (T)",
@@ -936,7 +936,7 @@
     "location": "B"
   },
   "118": {
-    "en": "North Delphinium Seashelf",
+    "en": "north Delphinium Seashelf",
     "ja": "C　紺色海底棚北",
     "de": "Kobaltmeer-Nord (C)",
     "fr": "Nord des profondeurs de la Mer de cobalt (C)",
@@ -952,7 +952,7 @@
     "location": "D"
   },
   "120": {
-    "en": "South Indigo Deep 1",
+    "en": "south Indigo Deep 1",
     "ja": "E　南蒼茫洋01",
     "de": "Südlicher Indigo-Ozean 1 (E)",
     "fr": "Océan Indigo méridional 1 (E)",
@@ -968,7 +968,7 @@
     "location": "F"
   },
   "122": {
-    "en": "South Indigo Deep 2",
+    "en": "south Indigo Deep 2",
     "ja": "G　南蒼茫洋02",
     "de": "Südlicher Indigo-Ozean 2 (G)",
     "fr": "Océan Indigo méridional 2 (G)",
@@ -984,7 +984,7 @@
     "location": "H"
   },
   "124": {
-    "en": "Southern Central Blue",
+    "en": "southern Central Blue",
     "ja": "I　セントラルブルー南",
     "de": "Blaue Unendlichkeit Süd (I)",
     "fr": "Sud de L'Infinité bleue (I)",
@@ -992,7 +992,7 @@
     "location": "I"
   },
   "125": {
-    "en": "South Indigo Deep 3",
+    "en": "south Indigo Deep 3",
     "ja": "J　南蒼茫洋03",
     "de": "Südlicher Indigo-Ozean 3 (J)",
     "fr": "Océan Indigo méridional 3 (J)",
@@ -1016,7 +1016,7 @@
     "location": "L"
   },
   "128": {
-    "en": "Startail Shallows",
+    "en": "Startail shallows",
     "ja": "M　星削水道浅部",
     "de": "Sternenschweif-Untiefen (M)",
     "fr": "Bas-fonds des Étoiles ciselées (M)",
@@ -1040,7 +1040,7 @@
     "location": "O"
   },
   "131": {
-    "en": "South Indigo Deep 4",
+    "en": "south Indigo Deep 4",
     "ja": "P　南蒼茫洋04",
     "de": "Südlicher Indigo-Ozean 4 (P)",
     "fr": "Océan Indigo méridional 4 (P)",
@@ -1048,7 +1048,7 @@
     "location": "P"
   },
   "132": {
-    "en": "South Delphinium Seashelf",
+    "en": "south Delphinium Seashelf",
     "ja": "Q　紺色海底棚南",
     "de": "Kobaltmeer-Süd (Q)",
     "fr": "Sud des profondeurs de la Mer de cobalt (Q)",
@@ -1056,7 +1056,7 @@
     "location": "Q"
   },
   "133": {
-    "en": "Startail Shelf",
+    "en": "Startail shelf",
     "ja": "R　星削水道中部",
     "de": "Sternenschweif-Schelf (R)",
     "fr": "Moyennes profondeurs des Étoiles ciselées (R)",

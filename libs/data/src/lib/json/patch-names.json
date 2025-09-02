@@ -1311,5 +1311,18 @@
     "ko": "Patch 7.3",
     "zh": "Patch 7.3",
     "version": "7.3"
+  },
+  "104": {
+    "id": 104,
+    "banner": null,
+    "ex": 5,
+    "release": 1756801350,
+    "en": "Patch 7.31",
+    "de": "Patch 7.31",
+    "ja": "Patch 7.31",
+    "fr": "Patch 7.31",
+    "ko": "Patch 7.31",
+    "zh": "Patch 7.31",
+    "version": "7.31"
   }
 }
