@@ -429,6 +429,9 @@
   "Precraft_tier": "Étape",
   "Regenerating_lists": "Regénération des listes en cours",
   "SETTINGS": {
+    "Kickstarter_email": "Kickstarter email",
+    "Kickstarter_email_used": "Email is not a backer or it's already claimed",
+    "Ks_email_applied": "Backer status applied, ads are now disabled",
     "Requires_restart": "Nécessite un redémarrage/actualisation pour être pris en compte",
     "Title": "Options",
     "General": "Général",
@@ -1082,6 +1085,7 @@
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
     "Min_stats": "Caractéristiques minimum",
+    "Min_stats_base": "Minimum without buffs",
     "Progress": "Progression",
     "Quality": "Qualité",
     "Step_counter": "Étape",
@@ -3296,10 +3300,10 @@
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",
-    "Teamcrafter_description_ks_banner": "Back Teamcrafter on Kickstarter to get lifetime ad-free Teamcraft!",
-    "Teamcrafter_description_text": "« Vous aimez combattre de féroces monstres ? Risquer votre vie pour sauver des étrangers ?\nBien sûr que non, vous n'êtes pas fou ! »",
-    "Teamcrafter_description_text_part2": "Teamcrafter, c'est moi qui réalise un rêve d'enfance grâce à la communauté, grâce à vous ! Le suivre sur Kickstarter et l'ajouter à votre liste de souhaits sur Steam serait une aide énorme pour moi.",
+    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
+    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
     "Wishlist": "Voir sur Steam",
-    "Kickstarter": "View on Kickstarter"
+    "Supported": "Thanks a lot for your support on Kickstarter <3",
+    "Ads_removed": "Ads have been permanently removed from your account"
   }
 }
