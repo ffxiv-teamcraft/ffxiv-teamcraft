@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.5...v11.4.6) (2025-09-06)
+
+
+### Bug Fixes
+
+* **pcap:** update deucalion to avoid conflict with ACT ([8f9c445](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f9c445af6db7e61d87cc13cb54a18dd3deed4e1))
+
 ### [11.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.4...v11.4.5) (2025-09-02)
 
 
