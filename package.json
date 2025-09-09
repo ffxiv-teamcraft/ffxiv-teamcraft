@@ -228,7 +228,7 @@
     "del-cli": "^5.1.0",
     "dexie": "^3.2.3",
     "echarts": "^5.5.0",
-    "electron": "^31.2.0",
+    "electron": "^35.7.5",
     "electron-builder": "^25.1.8",
     "electron-builder-squirrel-windows": "^25.0.0",
     "enquirer": "^2.3.6",
