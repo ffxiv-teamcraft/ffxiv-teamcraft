@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.6...v11.4.7) (2025-09-09)
+
+
+### Features
+
+* **db:** search index update for KR 7.25 ([2b61887](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b618879bf46d8d2da2e8cdf214101b4901bfe3d))
+* **db:** support for korean v7.25 update ([fa93745](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa937455351fb84579bee4b34a5b3876bbc46ca9))
+
 ### [11.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.5...v11.4.6) (2025-09-06)
 
 
