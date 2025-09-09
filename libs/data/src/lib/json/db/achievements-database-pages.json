@@ -24311,14 +24311,14 @@
     "ja": "アジス・ラーの風を知る者",
     "fr": "Aux quatre vents : Azys Lla",
     "ko": "아지스 라의 바람을 깨달은 자",
-    "zh": "展翅迎风：阿济兹拉",
+    "zh": "展翅迎风：魔大陆阿济兹拉",
     "description": {
       "en": "Attune with all the aether currents on Azys Lla.",
       "de": "Alle Windätherquellen in Azys Lla gebündelt.",
       "ja": "アジス・ラーにて、フライングマウントを開放する",
       "fr": "S'harmoniser avec tous les vents éthérés d'Azys Lla.",
       "ko": "아지스 라에서 나는 탈것 개방",
-      "zh": "在阿济兹拉开放飞行坐骑。"
+      "zh": "在魔大陆阿济兹拉开放飞行坐骑。"
     },
     "item": 0,
     "title": 0
@@ -24339,7 +24339,7 @@
       "ja": "クルザス西部高地、高地ドラヴァニア、低地ドラヴァニア、ドラヴァニア雲海、アバラシア雲海、アジス・ラーのすべてで、フライングマウントを開放する",
       "fr": "S'harmoniser avec tous les vents éthérés des Hautes terres du Coerthas occidental, de l'Avant-pays dravanien, de l'Arrière-pays dravanien, de L'Écume des cieux de Dravania, de L'Écume des cieux d'Abalathia et d'Azys Lla.",
       "ko": "커르다스 서부고지, 고지 드라바니아, 저지 드라바니아, 드라바니아 구름바다, 아발라시아 구름바다, 아지스 라에서 나는 탈것 개방",
-      "zh": "在库尔札斯西部高地、龙堡参天高地、龙堡内陆低地、翻云雾海、阿巴拉提亚云海和阿济兹拉均开放飞行坐骑。"
+      "zh": "在库尔札斯西部高地、龙堡参天高地、龙堡内陆低地、翻云雾海、阿巴拉提亚云海和魔大陆阿济兹拉均开放飞行坐骑。"
     },
     "item": 0,
     "title": 0
@@ -25256,14 +25256,14 @@
     "ja": "アジス・ラーを踏破せし者",
     "fr": "Cartographe du continent : Azys Lla",
     "ko": "아지스 라 탐험가",
-    "zh": "踏遍阿济兹拉",
+    "zh": "踏遍魔大陆阿济兹拉",
     "description": {
       "en": "Discover every location on Azys Lla.",
       "de": "Alle Orte in Azys Lla erkundet.",
       "ja": "アジス・ラーを踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte d'Azys Lla.",
       "ko": "아지스 라를 탐험하여 모든 지역 발견",
-      "zh": "成功探索阿济兹拉的所有地区。"
+      "zh": "成功探索魔大陆阿济兹拉的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -43421,7 +43421,7 @@
     "ja": "ドマとの絆：ランク1",
     "fr": "Œuvres de charité I",
     "ko": "도마와의 인연: 1단계",
-    "zh": "与多玛的羁绊1",
+    "zh": "与多玛的情谊1",
     "description": {
       "en": "See the Doman Enclave through the first phase of reconstruction.",
       "de": "Die erste Stufe des Wiederaufbaus der domanischen Enklave abgeschlossen.",
@@ -43442,7 +43442,7 @@
     "ja": "ドマとの絆：ランク2",
     "fr": "Œuvres de charité II",
     "ko": "도마와의 인연: 2단계",
-    "zh": "与多玛的羁绊2",
+    "zh": "与多玛的情谊2",
     "description": {
       "en": "See the Doman Enclave through the second phase of reconstruction.",
       "de": "Die zweite Stufe des Wiederaufbaus der domanischen Enklave abgeschlossen.",
@@ -44450,7 +44450,7 @@
     "ja": "ドマとの絆：ランク3",
     "fr": "Œuvres de charité III",
     "ko": "도마와의 인연: 3단계",
-    "zh": "与多玛的羁绊3",
+    "zh": "与多玛的情谊3",
     "description": {
       "en": "See the Doman Enclave through the third phase of reconstruction.",
       "de": "Die dritte Stufe des Wiederaufbaus der domanischen Enklave abgeschlossen.",
@@ -44471,7 +44471,7 @@
     "ja": "ドマとの絆：ランク4",
     "fr": "Œuvres de charité IV",
     "ko": "도마와의 인연: 4단계",
-    "zh": "与多玛的羁绊4",
+    "zh": "与多玛的情谊4",
     "description": {
       "en": "See the Doman Enclave through the fourth phase of reconstruction.",
       "de": "Die vierte Stufe des Wiederaufbaus der domanischen Enklave abgeschlossen.",
@@ -44492,7 +44492,7 @@
     "ja": "ドマとの絆：ランク5",
     "fr": "Œuvres de charité V",
     "ko": "도마와의 인연: 5단계",
-    "zh": "与多玛的羁绊5",
+    "zh": "与多玛的情谊5",
     "description": {
       "en": "See the Doman Enclave through the fifth and final phase of reconstruction.",
       "de": "Die fünfte Stufe des Wiederaufbaus der domanischen Enklave abgeschlossen.",
@@ -48552,7 +48552,7 @@
       "ja": "クエスト「実録データ003「絆を修復せし職人」」をコンプリートする",
       "fr": "Accomplir la quête “Sauvegarde 003 [Les liens qui nous unissent]”.",
       "ko": "퀘스트 '실록 데이터 003 - 인연을 복구하는 장인' 완료",
-      "zh": "完成任务“实录数据003‘修复羁绊的工匠’”。"
+      "zh": "完成任务“实录数据003‘修复思念的工匠’”。"
     },
     "item": 0,
     "title": 453
@@ -74665,7 +74665,7 @@
     "de": "Elf magische Jahre",
     "ja": "ありがとう11周年！",
     "fr": "Tonnerre de Limsa Lominsa",
-    "ko": "11주년 고맙습니다!",
+    "ko": "11주년도 잘 부탁드립니다!",
     "zh": "扬帆起航的十一周年",
     "description": {
       "en": "Complete the quest “We Who Are About to Set Sail Salute You.”",
@@ -75753,11 +75753,15 @@
     "de": "Iss dein Gemüse I",
     "ja": "マムージャ族：ランク1",
     "fr": "À la mode de Mamook I",
+    "ko": "마무쟈족: 1단계",
+    "zh": "恒彩农园1",
     "description": {
       "en": "Attain rank 3 reputation (friendly) with the farmers of Gok Golma.",
       "de": "Ein freundliches Verhältnis zu den Bauern von Gok Golma erworben.",
       "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク3「友好」にする",
-      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des fermiers de Gok Golma."
+      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des fermiers de Gok Golma.",
+      "ko": "마무쟈족 '고크골마 농원' 우호 관계 3단계 '우호' 달성",
+      "zh": "与辉鳞族的“恒彩农园”之间的关系程度到达3级“友好”。"
     },
     "item": 0,
     "title": 0
@@ -75770,11 +75774,15 @@
     "de": "Iss dein Gemüse II",
     "ja": "マムージャ族：ランク2",
     "fr": "À la mode de Mamook II",
+    "ko": "마무쟈족: 2단계",
+    "zh": "恒彩农园2",
     "description": {
       "en": "Attain rank 4 reputation (trusted) with the farmers of Gok Golma.",
       "de": "Ein vertrautes Verhältnis zu den Bauern von Gok Golma erworben.",
       "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク4「信頼」にする",
-      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des fermiers de Gok Golma."
+      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des fermiers de Gok Golma.",
+      "ko": "마무쟈족 '고크골마 농원' 우호 관계 4단계 '신뢰' 달성",
+      "zh": "与辉鳞族的“恒彩农园”之间的关系程度到达4级“信赖”。"
     },
     "item": 0,
     "title": 0
@@ -75787,11 +75795,15 @@
     "de": "Iss dein Gemüse III",
     "ja": "マムージャ族：ランク3",
     "fr": "À la mode de Mamook III",
+    "ko": "마무쟈족: 3단계",
+    "zh": "恒彩农园3",
     "description": {
       "en": "Attain rank 6 reputation (honored) with the farmers of Gok Golma.",
       "de": "Ein geachtetes Verhältnis zu den Bauern von Gok Golma erworben.",
       "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク6「名誉」にする",
-      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des fermiers de Gok Golma."
+      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des fermiers de Gok Golma.",
+      "ko": "마무쟈족 '고크골마 농원' 우호 관계 6단계 '명예' 달성",
+      "zh": "与辉鳞族的“恒彩农园”之间的关系程度到达6级“名誉”。"
     },
     "item": 0,
     "title": 0
@@ -75804,11 +75816,15 @@
     "de": "Hoffnungsvolle Ernte",
     "ja": "樹海の農学者",
     "fr": "Le champ bleu",
+    "ko": "밀림의 농학자",
+    "zh": "树海的农业学者",
     "description": {
       "en": "Attain rank 7 reputation (sworn) with the farmers of Gok Golma.",
       "de": "Ein solidarisches Verhältnis zu den Bauern von Gok Golma erworben.",
       "ja": "マムージャ族「ゴクゴルマ農園」の友好関係をランク7「誓約」にする",
-      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des fermiers de Gok Golma."
+      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des fermiers de Gok Golma.",
+      "ko": "마무쟈족 '고크골마 농원' 우호 관계 7단계 '서약' 달성",
+      "zh": "与辉鳞族的“恒彩农园”之间的关系程度到达7级“誓约”。"
     },
     "item": 0,
     "title": 772
@@ -76010,11 +76026,15 @@
     "de": "Spurensuche auf Kreszentia",
     "ja": "夢幻の島に記憶を求めて",
     "fr": "Au sud, rien de nouveau",
+    "ko": "기억을 찾아 몽환의 섬으로",
+    "zh": "追忆梦幻岛",
     "description": {
       "en": "Complete the quest “Mysteries Abide.”",
       "de": "Den Auftrag „Insistente Illusion“ abgeschlossen.",
       "ja": "クエスト「蜃気楼、いまだ消えず」をコンプリートする",
-      "fr": "Accomplir la quête “Le mystère reste entier”."
+      "fr": "Accomplir la quête “Le mystère reste entier”.",
+      "ko": "퀘스트 '신기루는 아직 사라지지 않고' 완료",
+      "zh": "完成任务“迷影重重新月岛”。"
     },
     "item": 0,
     "title": 0
@@ -76048,11 +76068,15 @@
     "de": "Läufer der Wellen",
     "ja": "クイーン・ラミンの守護者",
     "fr": "Croisière à haut risque",
+    "ko": "퀸 라민의 수호자",
+    "zh": "女王的守护者",
     "description": {
       "en": "Complete the quest “Dressed to Protect.”",
       "de": "Den Auftrag „Auf Wellen laufen“ abgeschlossen.",
       "ja": "クエスト「紅蓮祭と海の守護者」をコンプリートする",
-      "fr": "Accomplir la quête “Alerte à Costa del Sol”."
+      "fr": "Accomplir la quête “Alerte à Costa del Sol”.",
+      "ko": "퀘스트 '불꽃축제와 바다의 수호자' 완료",
+      "zh": "完成任务“红莲节与大海的守护者”。"
     },
     "item": 0,
     "title": 0
@@ -76082,11 +76106,15 @@
     "de": "Wie von Geisterhand: Phantomschwert Penumbrae und Phantom-Drachenschild Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ソード＆ファントムペンアンブレー・カイトシールド",
     "fr": "Armes fantômes : épée fantôme penumbra et écu mandorle fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 한손검과 팬텀 반그림자 연모양 방패",
+    "zh": "幻境之骑士·半影",
     "description": {
       "en": "Obtain a phantom sword penumbrae and phantom kite shield penumbrae.",
       "de": "Das Phantomschwert Penumbrae und den Phantom-Drachenschild Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ソード＆ファントムペンアンブレー・カイトシールドを入手する",
-      "fr": "Obtenir l'épée fantôme penumbra et l'écu mandorle fantôme penumbra."
+      "fr": "Obtenir l'épée fantôme penumbra et l'écu mandorle fantôme penumbra.",
+      "ko": "팬텀 반그림자 한손검과 팬텀 반그림자 연모양 방패 입수",
+      "zh": "获得幻境利剑·半影与幻境鸢盾·半影。"
     },
     "item": 0,
     "title": 0
@@ -76099,11 +76127,15 @@
     "de": "Wie von Geisterhand: Phantomberdysch Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・バルディッシュ",
     "fr": "Armes fantômes : bardiche fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 긴날도끼",
+    "zh": "幻境之战士·半影",
     "description": {
       "en": "Obtain a phantom bardiche penumbrae.",
       "de": "Die Phantomberdysch Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・バルディッシュを入手する",
-      "fr": "Obtenir la bardiche fantôme penumbra."
+      "fr": "Obtenir la bardiche fantôme penumbra.",
+      "ko": "팬텀 반그림자 긴날도끼 입수",
+      "zh": "获得幻境巨斧·半影。"
     },
     "item": 0,
     "title": 0
@@ -76116,11 +76148,15 @@
     "de": "Wie von Geisterhand: Phantom-Guillotine Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ディバイダー",
     "fr": "Armes fantômes : fendoir fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 단두검",
+    "zh": "幻境之暗黑骑士·半影",
     "description": {
       "en": "Obtain a phantom guillotine penumbrae.",
       "de": "Die Phantom-Guillotine Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ディバイダーを入手する",
-      "fr": "Obtenir le fendoir fantôme penumbra."
+      "fr": "Obtenir le fendoir fantôme penumbra.",
+      "ko": "팬텀 반그림자 단두검 입수",
+      "zh": "获得幻境断头剑·半影。"
     },
     "item": 0,
     "title": 0
@@ -76133,11 +76169,15 @@
     "de": "Wie von Geisterhand: Phantom-Bajonett Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・バヨネット",
     "fr": "Armes fantômes : baïonnette fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 총검",
+    "zh": "幻境之绝枪战士·半影",
     "description": {
       "en": "Obtain a phantom bayonet penumbrae.",
       "de": "Das Phantom-Bajonett Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・バヨネットを入手する",
-      "fr": "Obtenir la baïonnette fantôme penumbra."
+      "fr": "Obtenir la baïonnette fantôme penumbra.",
+      "ko": "팬텀 반그림자 총검 입수",
+      "zh": "获得幻境刺刀·半影。"
     },
     "item": 0,
     "title": 0
@@ -76150,11 +76190,15 @@
     "de": "Wie von Geisterhand: Phantomspeer Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・スピア",
     "fr": "Armes fantômes : hast fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 창",
+    "zh": "幻境之龙骑士·半影",
     "description": {
       "en": "Obtain a phantom spear penumbrae.",
       "de": "Den Phantomspeer Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・スピアを入手する",
-      "fr": "Obtenir l'hast fantôme penumbra."
+      "fr": "Obtenir l'hast fantôme penumbra.",
+      "ko": "팬텀 반그림자 창 입수",
+      "zh": "获得幻境长枪·半影。"
     },
     "item": 0,
     "title": 0
@@ -76167,11 +76211,15 @@
     "de": "Wie von Geisterhand: Phantom-Schlagringe Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ナックル",
     "fr": "Armes fantômes : poings fantômes penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 너클",
+    "zh": "幻境之武僧·半影",
     "description": {
       "en": "Obtain a pair of phantom knuckles penumbrae.",
       "de": "Die Phantom-Schlagringe Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ナックルを入手する",
-      "fr": "Obtenir les poings fantômes penumbra."
+      "fr": "Obtenir les poings fantômes penumbra.",
+      "ko": "팬텀 반그림자 너클 입수",
+      "zh": "获得幻境指虎·半影。"
     },
     "item": 0,
     "title": 0
@@ -76184,11 +76232,15 @@
     "de": "Wie von Geisterhand: Phantomspalter Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・クリーバー",
     "fr": "Armes fantômes : couperets fantômes penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 살육도",
+    "zh": "幻境之忍者·半影",
     "description": {
       "en": "Obtain a pair of phantom cleavers penumbrae.",
       "de": "Den Phantomspalter Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・クリーバーを入手する",
-      "fr": "Obtenir les couperets fantômes penumbra."
+      "fr": "Obtenir les couperets fantômes penumbra.",
+      "ko": "팬텀 반그림자 살육도 입수",
+      "zh": "获得幻境屠刀·半影。"
     },
     "item": 0,
     "title": 0
@@ -76201,11 +76253,15 @@
     "de": "Wie von Geisterhand: Phantom-Zwillingsfänge Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ツインファング",
     "fr": "Armes fantômes : crochets fantômes penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 쌍송곳니",
+    "zh": "幻境之蝰蛇剑士·半影",
     "description": {
       "en": "Obtain a pair of phantom twinfangs penumbrae.",
       "de": "Die Phantom-Zwillingsfänge Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ツインファングを入手する",
-      "fr": "Obtenir les crochets fantômes penumbra."
+      "fr": "Obtenir les crochets fantômes penumbra.",
+      "ko": "팬텀 반그림자 쌍송곳니 입수",
+      "zh": "获得幻境双牙·半影。"
     },
     "item": 0,
     "title": 0
@@ -76218,11 +76274,15 @@
     "de": "Wie von Geisterhand: Phantomklinge Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ブレード",
     "fr": "Armes fantômes : lame fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 외날검",
+    "zh": "幻境之武士·半影",
     "description": {
       "en": "Obtain a phantom blade penumbrae.",
       "de": "Die Phantomklinge Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ブレードを入手する",
-      "fr": "Obtenir la lame fantôme penumbra."
+      "fr": "Obtenir la lame fantôme penumbra.",
+      "ko": "팬텀 반그림자 외날검 입수",
+      "zh": "获得幻境武士刀·半影。"
     },
     "item": 0,
     "title": 0
@@ -76235,11 +76295,15 @@
     "de": "Wie von Geisterhand: Phantom-Kriegssense Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ウォーサイズ",
     "fr": "Armes fantômes : faux de guerre fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 전투낫",
+    "zh": "幻境之钐镰客·半影",
     "description": {
       "en": "Obtain a phantom war scythe penumbrae.",
       "de": "Die Phantom-Kriegssense Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ウォーサイズを入手する",
-      "fr": "Obtenir la faux de guerre fantôme penumbra."
+      "fr": "Obtenir la faux de guerre fantôme penumbra.",
+      "ko": "팬텀 반그림자 전투낫 입수",
+      "zh": "获得幻境战镰·半影。"
     },
     "item": 0,
     "title": 0
@@ -76252,11 +76316,15 @@
     "de": "Wie von Geisterhand: Phantom-Harfenbogen Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ハープボウ",
     "fr": "Armes fantômes : arc-harpe fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 현악궁",
+    "zh": "幻境之吟游诗人·半影",
     "description": {
       "en": "Obtain a phantom harp bow penumbrae.",
       "de": "Den Phantom-Harfenbogen Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ハープボウを入手する",
-      "fr": "Obtenir l'arc-harpe fantôme penumbra."
+      "fr": "Obtenir l'arc-harpe fantôme penumbra.",
+      "ko": "팬텀 반그림자 현악궁 입수",
+      "zh": "获得幻境琴弓·半影。"
     },
     "item": 0,
     "title": 0
@@ -76269,11 +76337,15 @@
     "de": "Wie von Geisterhand: Phantom-Hakenbüchse Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・アークウィバス",
     "fr": "Armes fantômes : arquebuse fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 화승총",
+    "zh": "幻境之机工士·半影",
     "description": {
       "en": "Obtain a phantom arquebus penumbrae.",
       "de": "Die Phantom-Hakenbüchse Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・アークウィバスを入手する",
-      "fr": "Obtenir l'arquebuse fantôme penumbra."
+      "fr": "Obtenir l'arquebuse fantôme penumbra.",
+      "ko": "팬텀 반그림자 화승총 입수",
+      "zh": "获得幻境明火枪·半影。"
     },
     "item": 0,
     "title": 0
@@ -76286,11 +76358,15 @@
     "de": "Wie von Geisterhand: Phantom-Terpna Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・テルプナ",
     "fr": "Armes fantômes : terpna fantômes penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 테르프나",
+    "zh": "幻境之舞者·半影",
     "description": {
       "en": "Obtain a pair of phantom terpna penumbrae.",
       "de": "Die Phantom-Terpna Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・テルプナを入手する",
-      "fr": "Obtenir les terpna fantômes penumbra."
+      "fr": "Obtenir les terpna fantômes penumbra.",
+      "ko": "팬텀 반그림자 테르프나 입수",
+      "zh": "获得幻境欢刺·半影。"
     },
     "item": 0,
     "title": 0
@@ -76303,11 +76379,15 @@
     "de": "Wie von Geisterhand: Phantomstab Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・スタッフ",
     "fr": "Armes fantômes : bâton fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 주술봉",
+    "zh": "幻境之黑魔法师·半影",
     "description": {
       "en": "Obtain a phantom staff penumbrae.",
       "de": "Den Phantomstab Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・スタッフを入手する",
-      "fr": "Obtenir le bâton fantôme penumbra."
+      "fr": "Obtenir le bâton fantôme penumbra.",
+      "ko": "팬텀 반그림자 주술봉 입수",
+      "zh": "获得幻境长杖·半影。"
     },
     "item": 0,
     "title": 0
@@ -76320,11 +76400,15 @@
     "de": "Wie von Geisterhand: Phantomindex Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・インデックス",
     "fr": "Armes fantômes : index fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 금서",
+    "zh": "幻境之召唤师·半影",
     "description": {
       "en": "Obtain a phantom index penumbrae.",
       "de": "Den Phantomindex Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・インデックスを入手する",
-      "fr": "Obtenir l'index fantôme penumbra."
+      "fr": "Obtenir l'index fantôme penumbra.",
+      "ko": "팬텀 반그림자 금서 입수",
+      "zh": "获得幻境魔导书·半影。"
     },
     "item": 0,
     "title": 0
@@ -76337,11 +76421,15 @@
     "de": "Wie von Geisterhand: Phantomrapier Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・レイピア",
     "fr": "Armes fantômes : rapière fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 레이피어",
+    "zh": "幻境之赤魔法师·半影",
     "description": {
       "en": "Obtain a phantom rapier penumbrae.",
       "de": "Den Phantomrapier Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・レイピアを入手する",
-      "fr": "Obtenir la rapière fantôme penumbra."
+      "fr": "Obtenir la rapière fantôme penumbra.",
+      "ko": "팬텀 반그림자 레이피어 입수",
+      "zh": "获得幻境刺剑·半影。"
     },
     "item": 0,
     "title": 0
@@ -76354,11 +76442,15 @@
     "de": "Wie von Geisterhand: Phantom-Flachpinsel Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・フラットブラシ",
     "fr": "Armes fantômes : pinceau plat fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 납작붓",
+    "zh": "幻境之绘灵法师·半影",
     "description": {
       "en": "Obtain a phantom flat brush penumbrae.",
       "de": "Den Phantom-Flachpinsel Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・フラットブラシを入手する",
-      "fr": "Obtenir le pinceau plat fantôme penumbra."
+      "fr": "Obtenir le pinceau plat fantôme penumbra.",
+      "ko": "팬텀 반그림자 납작붓 입수",
+      "zh": "获得幻境平笔·半影。"
     },
     "item": 0,
     "title": 0
@@ -76371,11 +76463,15 @@
     "de": "Wie von Geisterhand: Phantom-Hirtenstock Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・クルーク",
     "fr": "Armes fantômes : crosse fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 홀장",
+    "zh": "幻境之白魔法师·半影",
     "description": {
       "en": "Obtain a phantom crook penumbrae.",
       "de": "Den Phantom-Hirtenstock Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・クルークを入手する",
-      "fr": "Obtenir la crosse fantôme penumbra."
+      "fr": "Obtenir la crosse fantôme penumbra.",
+      "ko": "팬텀 반그림자 홀장 입수",
+      "zh": "获得幻境手杖·半影。"
     },
     "item": 0,
     "title": 0
@@ -76388,11 +76484,15 @@
     "de": "Wie von Geisterhand: Phantomkodex Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・コーデックス",
     "fr": "Armes fantômes : codex fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 치유서",
+    "zh": "幻境之学者·半影",
     "description": {
       "en": "Obtain a phantom codex penumbrae.",
       "de": "Den Phantomkodex Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・コーデックスを入手する",
-      "fr": "Obtenir le codex fantôme penumbra."
+      "fr": "Obtenir le codex fantôme penumbra.",
+      "ko": "팬텀 반그림자 치유서 입수",
+      "zh": "获得幻境魔导典·半影。"
     },
     "item": 0,
     "title": 0
@@ -76405,11 +76505,15 @@
     "de": "Wie von Geisterhand: Phantom-Sternenglobus Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・スターグローブ",
     "fr": "Armes fantômes : globe céleste fantôme penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 천구의",
+    "zh": "幻境之占星术士·半影",
     "description": {
       "en": "Obtain a phantom star globe penumbrae.",
       "de": "Den Phantom-Sternenglobus Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・スターグローブを入手する",
-      "fr": "Obtenir le globe céleste fantôme penumbra."
+      "fr": "Obtenir le globe céleste fantôme penumbra.",
+      "ko": "팬텀 반그림자 천구의 입수",
+      "zh": "获得幻境天球仪·半影。"
     },
     "item": 0,
     "title": 0
@@ -76422,11 +76526,15 @@
     "de": "Wie von Geisterhand: Phantom-Perpendikel Penumbrae",
     "ja": "ファントムウェポン：ファントムペンアンブレー・ペンデュラム",
     "fr": "Armes fantômes : pendules fantômes penumbra",
+    "ko": "팬텀 웨폰 - 팬텀 반그림자 진자",
+    "zh": "幻境之贤者·半影",
     "description": {
       "en": "Obtain an array of phantom pendulums penumbrae.",
       "de": "Die Phantom-Perpendikel Penumbrae erhalten.",
       "ja": "ファントムペンアンブレー・ペンデュラムを入手する",
-      "fr": "Obtenir les pendules fantômes penumbra."
+      "fr": "Obtenir les pendules fantômes penumbra.",
+      "ko": "팬텀 반그림자 진자 입수",
+      "zh": "获得幻境振空摆·半影。"
     },
     "item": 0,
     "title": 0
@@ -76439,11 +76547,15 @@
     "de": "Kreszenter Chronist",
     "ja": "三日月島の記録員",
     "fr": "Archiviste du croissant",
+    "ko": "초승달 섬 기록원",
+    "zh": "新月岛的记录员",
     "description": {
       "en": "Unlock all entries in the Occult Record pertaining to the South Horn.",
       "de": "Alle Einträge der Kreszentia-Chronik des südlichen Kreszentia freigeschaltet.",
       "ja": "蜃気楼の島 クレセントアイル：南征編における三日月島探査記録帳の全項目を開示する",
-      "fr": "Remplir toutes les entrées du calepin du croissant sur l'île de Lunule méridionale."
+      "fr": "Remplir toutes les entrées du calepin du croissant sur l'île de Lunule méridionale.",
+      "ko": "초승달 섬: 남부편 관련 초승달 섬 탐사기록장의 모든 항목 기록",
+      "zh": "完成蜃景幻界新月岛南征之章调查笔记中的所有项目。"
     },
     "item": 0,
     "title": 0
@@ -76456,11 +76568,15 @@
     "de": "Herrschaft des Halbmonds I",
     "ja": "孤島の君臨者：ランク1",
     "fr": "Décennale critique I",
+    "ko": "외딴섬에 군림하는 자: 1단계",
+    "zh": "君临孤岛1",
     "description": {
       "en": "Complete 10 critical encounters on the Occult Crescent.",
       "de": "10 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを10回コンプリートする",
-      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule."
+      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule.",
+      "ko": "초승달 섬에서 비상 조우 10회 완료",
+      "zh": "在蜃景幻界新月岛中完成10次紧急遭遇战。"
     },
     "item": 0,
     "title": 0
@@ -76473,11 +76589,15 @@
     "de": "Herrschaft des Halbmonds II",
     "ja": "孤島の君臨者：ランク2",
     "fr": "Décennale critique II",
+    "ko": "외딴섬에 군림하는 자: 2단계",
+    "zh": "君临孤岛2",
     "description": {
       "en": "Complete 50 critical encounters on the Occult Crescent.",
       "de": "50 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを50回コンプリートする",
-      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule."
+      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule.",
+      "ko": "초승달 섬에서 비상 조우 50회 완료",
+      "zh": "在蜃景幻界新月岛中完成50次紧急遭遇战。"
     },
     "item": 0,
     "title": 0
@@ -76490,11 +76610,15 @@
     "de": "Herrschaft des Halbmonds III",
     "ja": "孤島の君臨者：ランク3",
     "fr": "Décennale critique III",
+    "ko": "외딴섬에 군림하는 자: 3단계",
+    "zh": "君临孤岛3",
     "description": {
       "en": "Complete 100 critical encounters on the Occult Crescent.",
       "de": "100 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを100回コンプリートする",
-      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule."
+      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule.",
+      "ko": "초승달 섬에서 비상 조우 100회 완료",
+      "zh": "在蜃景幻界新月岛中完成100次紧急遭遇战。"
     },
     "item": 0,
     "title": 0
@@ -76507,11 +76631,15 @@
     "de": "Herrschaft des Halbmonds IV",
     "ja": "孤島の君臨者：ランク4",
     "fr": "Décennale critique IV",
+    "ko": "외딴섬에 군림하는 자: 4단계",
+    "zh": "君临孤岛4",
     "description": {
       "en": "Complete 500 critical encounters on the Occult Crescent.",
       "de": "500 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを500回コンプリートする",
-      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule."
+      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule.",
+      "ko": "초승달 섬에서 비상 조우 500회 완료",
+      "zh": "在蜃景幻界新月岛中完成500次紧急遭遇战。"
     },
     "item": 0,
     "title": 774
@@ -76524,11 +76652,15 @@
     "de": "Krone des Wissens I",
     "ja": "知見者の高み：ランク1",
     "fr": "À la poursuite du savoir insulaire I",
+    "ko": "지식인의 정점: 1단계",
+    "zh": "智者高见1",
     "description": {
       "en": "Complete 10 FATEs on the Occult Crescent.",
       "de": "10 FATEs auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を10回コンプリートする",
-      "fr": "Accomplir 10 ALÉA sur l'île de Lunule."
+      "fr": "Accomplir 10 ALÉA sur l'île de Lunule.",
+      "ko": "초승달 섬에서 돌발 임무 10회 완료",
+      "zh": "在蜃景幻界新月岛中完成10次危命任务。"
     },
     "item": 0,
     "title": 0
@@ -76541,11 +76673,15 @@
     "de": "Krone des Wissens II",
     "ja": "知見者の高み：ランク2",
     "fr": "À la poursuite du savoir insulaire II",
+    "ko": "지식인의 정점: 2단계",
+    "zh": "智者高见2",
     "description": {
       "en": "Complete 50 FATEs on the Occult Crescent.",
       "de": "50 FATEs auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を50回コンプリートする",
-      "fr": "Accomplir 50 ALÉA sur l'île de Lunule."
+      "fr": "Accomplir 50 ALÉA sur l'île de Lunule.",
+      "ko": "초승달 섬에서 돌발 임무 50회 완료",
+      "zh": "在蜃景幻界新月岛中完成50次危命任务。"
     },
     "item": 0,
     "title": 0
@@ -76558,11 +76694,15 @@
     "de": "Krone des Wissens III",
     "ja": "知見者の高み：ランク3",
     "fr": "À la poursuite du savoir insulaire III",
+    "ko": "지식인의 정점: 3단계",
+    "zh": "智者高见3",
     "description": {
       "en": "Complete 100 FATEs on the Occult Crescent.",
       "de": "100 FATEs auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を100回コンプリートする",
-      "fr": "Accomplir 100 ALÉA sur l'île de Lunule."
+      "fr": "Accomplir 100 ALÉA sur l'île de Lunule.",
+      "ko": "초승달 섬에서 돌발 임무 100회 완료",
+      "zh": "在蜃景幻界新月岛中完成100次危命任务。"
     },
     "item": 0,
     "title": 0
@@ -76575,11 +76715,15 @@
     "de": "Krone des Wissens IV",
     "ja": "知見者の高み：ランク4",
     "fr": "À la poursuite du savoir insulaire IV",
+    "ko": "지식인의 정점: 4단계",
+    "zh": "智者高见4",
     "description": {
       "en": "Complete 500 FATEs on the Occult Crescent.",
       "de": "500 FATEs auf Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を500回コンプリートする",
-      "fr": "Accomplir 500 ALÉA sur l'île de Lunule."
+      "fr": "Accomplir 500 ALÉA sur l'île de Lunule.",
+      "ko": "초승달 섬에서 돌발 임무 500회 완료",
+      "zh": "在蜃景幻界新月岛中完成500次危命任务。"
     },
     "item": 0,
     "title": 775
@@ -76592,11 +76736,15 @@
     "de": "Blut geleckt I",
     "ja": "力の塔を制覇せし者：ランク1",
     "fr": "Tour de force I",
+    "ko": "힘의 탑을 제패한 자: 1단계",
+    "zh": "力压两歧1",
     "description": {
       "en": "Complete the Forked Tower: Blood for the first time.",
       "de": "1 Mal den Fork-Turm - Blut erobert.",
       "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を初めて攻略する",
-      "fr": "Finir la Tour fourchue de la Force."
+      "fr": "Finir la Tour fourchue de la Force.",
+      "ko": "초승달 섬에서 포크 타워: 힘의 탑 1회 완료",
+      "zh": "首次成功挑战两歧塔 力之塔。"
     },
     "item": 47978,
     "title": 0
@@ -76609,11 +76757,15 @@
     "de": "Blut geleckt II",
     "ja": "力の塔を制覇せし者：ランク2",
     "fr": "Tour de force II",
+    "ko": "힘의 탑을 제패한 자: 2단계",
+    "zh": "力压两歧2",
     "description": {
       "en": "Complete the Forked Tower: Blood 10 times.",
       "de": "10 Mal den Fork-Turm - Blut erobert.",
       "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計10回攻略する",
-      "fr": "Finir 10 fois la Tour fourchue de la Force."
+      "fr": "Finir 10 fois la Tour fourchue de la Force.",
+      "ko": "초승달 섬에서 포크 타워: 힘의 탑 10회 완료",
+      "zh": "累计成功挑战两歧塔 力之塔10次。"
     },
     "item": 0,
     "title": 0
@@ -76626,11 +76778,15 @@
     "de": "Blut geleckt III",
     "ja": "力の塔を制覇せし者：ランク3",
     "fr": "Tour de force III",
+    "ko": "힘의 탑을 제패한 자: 3단계",
+    "zh": "力压两歧3",
     "description": {
       "en": "Complete the Forked Tower: Blood 50 times.",
       "de": "50 Mal den Fork-Turm - Blut erobert.",
       "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計50回攻略する",
-      "fr": "Finir 50 fois la Tour fourchue de la Force."
+      "fr": "Finir 50 fois la Tour fourchue de la Force.",
+      "ko": "초승달 섬에서 포크 타워: 힘의 탑 50회 완료",
+      "zh": "累计成功挑战两歧塔 力之塔50次。"
     },
     "item": 0,
     "title": 0
@@ -76643,11 +76799,15 @@
     "de": "Blut geleckt IV",
     "ja": "力の塔を制覇せし者：ランク4",
     "fr": "Tour de force IV",
+    "ko": "힘의 탑을 제패한 자: 4단계",
+    "zh": "力压两歧4",
     "description": {
       "en": "Complete the Forked Tower: Blood 100 times.",
       "de": "100 Mal den Fork-Turm - Blut erobert.",
       "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計100回攻略する",
-      "fr": "Finir 100 fois la Tour fourchue de la Force."
+      "fr": "Finir 100 fois la Tour fourchue de la Force.",
+      "ko": "초승달 섬에서 포크 타워: 힘의 탑 100회 완료",
+      "zh": "累计成功挑战两歧塔 力之塔100次。"
     },
     "item": 0,
     "title": 776
@@ -76660,11 +76820,15 @@
     "de": "Kreszentias Kerub I",
     "ja": "三角海域の船医：ランク1",
     "fr": "Défibrilateur du croissant I",
+    "ko": "삼각해역 의사: 1단계",
+    "zh": "三角区的船医1",
     "description": {
       "en": "Resurrect another player on the Occult Crescent 10 times.",
       "de": "10 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
       "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを10回蘇生する",
-      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule."
+      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 전투불능 상태의 다른 플레이어 10회 부활",
+      "zh": "在蜃景幻界新月岛相关任务中，救助10位除自身外处于无法战斗状态的玩家。"
     },
     "item": 0,
     "title": 0
@@ -76677,11 +76841,15 @@
     "de": "Kreszentias Kerub II",
     "ja": "三角海域の船医：ランク2",
     "fr": "Défibrilateur du croissant II",
+    "ko": "삼각해역 의사: 2단계",
+    "zh": "三角区的船医2",
     "description": {
       "en": "Resurrect another player on the Occult Crescent 100 times.",
       "de": "100 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
       "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを100回蘇生する",
-      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule."
+      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 전투불능 상태의 다른 플레이어 100회 부활",
+      "zh": "在蜃景幻界新月岛相关任务中，救助100位除自身外处于无法战斗状态的玩家。"
     },
     "item": 0,
     "title": 0
@@ -76694,11 +76862,15 @@
     "de": "Kreszentias Kerub III",
     "ja": "三角海域の船医：ランク3",
     "fr": "Défibrilateur du croissant III",
+    "ko": "삼각해역 의사: 3단계",
+    "zh": "三角区的船医3",
     "description": {
       "en": "Resurrect another player on the Occult Crescent 500 times.",
       "de": "500 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
       "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを500回蘇生する",
-      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule."
+      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 전투불능 상태의 다른 플레이어 500회 부활",
+      "zh": "在蜃景幻界新月岛相关任务中，救助500位除自身外处于无法战斗状态的玩家。"
     },
     "item": 0,
     "title": 777
@@ -76711,11 +76883,15 @@
     "de": "Meister der Phantome I",
     "ja": "サポートジョブマスター：ランク1",
     "fr": "Maître fantôme I",
+    "ko": "서포트 잡 통달: 1단계",
+    "zh": "辅助职业大师1",
     "description": {
       "en": "Master a phantom job.",
       "de": "1 Phantomjob gemeistert.",
       "ja": "サポートジョブを1種類マスターする",
-      "fr": "Maîtriser 1 job de soutien."
+      "fr": "Maîtriser 1 job de soutien.",
+      "ko": "서포트 잡 1종류 통달",
+      "zh": "将1种辅助职业提升到满级。"
     },
     "item": 0,
     "title": 0
@@ -76728,11 +76904,15 @@
     "de": "Meister der Phantome II",
     "ja": "サポートジョブマスター：ランク2",
     "fr": "Maître fantôme II",
+    "ko": "서포트 잡 통달: 2단계",
+    "zh": "辅助职业大师2",
     "description": {
       "en": "Master 5 phantom jobs.",
       "de": "5 Phantomjobs gemeistert.",
       "ja": "サポートジョブを5種類マスターする",
-      "fr": "Maîtriser 5 jobs de soutien."
+      "fr": "Maîtriser 5 jobs de soutien.",
+      "ko": "서포트 잡 5종류 통달",
+      "zh": "将5种辅助职业提升到满级。"
     },
     "item": 0,
     "title": 0
@@ -76745,11 +76925,15 @@
     "de": "Meister der Phantome III",
     "ja": "サポートジョブマスター：ランク3",
     "fr": "Maître fantôme III",
+    "ko": "서포트 잡 통달: 3단계",
+    "zh": "辅助职业大师3",
     "description": {
       "en": "Master 10 phantom jobs.",
       "de": "10 Phantomjobs gemeistert.",
       "ja": "サポートジョブを10種類マスターする",
-      "fr": "Maîtriser 10 jobs de soutien."
+      "fr": "Maîtriser 10 jobs de soutien.",
+      "ko": "서포트 잡 10종류 통달",
+      "zh": "将10种辅助职业提升到满级。"
     },
     "item": 0,
     "title": 796
@@ -76762,11 +76946,15 @@
     "de": "Das Dreieck der Schätze I",
     "ja": "絶海の宝物王：ランク1",
     "fr": "Le Triangle aux trésors I",
+    "ko": "머나먼 바다의 보물왕: 1단계",
+    "zh": "远海寻宝王1",
     "description": {
       "en": "Open 10 treasure coffers found during your excursions on the Occult Crescent.",
       "de": "10 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を10回開ける",
-      "fr": "Ouvrir 10 coffres au trésor sur l'île de Lunule."
+      "fr": "Ouvrir 10 coffres au trésor sur l'île de Lunule.",
+      "ko": "초승달 섬에서 찾아낸 보물상자 10회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启宝箱10次。"
     },
     "item": 0,
     "title": 0
@@ -76779,11 +76967,15 @@
     "de": "Das Dreieck der Schätze II",
     "ja": "絶海の宝物王：ランク2",
     "fr": "Le Triangle aux trésors II",
+    "ko": "머나먼 바다의 보물왕: 2단계",
+    "zh": "远海寻宝王2",
     "description": {
       "en": "Open 100 treasure coffers found during your excursions on the Occult Crescent.",
       "de": "100 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を100回開ける",
-      "fr": "Ouvrir 100 coffres au trésor sur l'île de Lunule."
+      "fr": "Ouvrir 100 coffres au trésor sur l'île de Lunule.",
+      "ko": "초승달 섬에서 찾아낸 보물상자 100회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启宝箱100次。"
     },
     "item": 0,
     "title": 0
@@ -76796,11 +76988,15 @@
     "de": "Das Dreieck der Schätze III",
     "ja": "絶海の宝物王：ランク3",
     "fr": "Le Triangle aux trésors III",
+    "ko": "머나먼 바다의 보물왕: 3단계",
+    "zh": "远海寻宝王3",
     "description": {
       "en": "Open 1,000 treasure coffers found during your excursions on the Occult Crescent.",
       "de": "1.000 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を1,000回開ける",
-      "fr": "Ouvrir 1 000 coffres au trésor sur l'île de Lunule."
+      "fr": "Ouvrir 1 000 coffres au trésor sur l'île de Lunule.",
+      "ko": "초승달 섬에서 탐색한 보물상자 1,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启宝箱1000次。"
     },
     "item": 0,
     "title": 0
@@ -76813,11 +77009,15 @@
     "de": "Das Dreieck der Schätze IV",
     "ja": "絶海の宝物王：ランク4",
     "fr": "Le Triangle aux trésors IV",
+    "ko": "머나먼 바다의 보물왕: 4단계",
+    "zh": "远海寻宝王4",
     "description": {
       "en": "Open 5,000 treasure coffers found during your excursions on the Occult Crescent.",
       "de": "5.000 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を5,000回開ける",
-      "fr": "Ouvrir 5 000 coffres au trésor sur l'île de Lunule."
+      "fr": "Ouvrir 5 000 coffres au trésor sur l'île de Lunule.",
+      "ko": "초승달 섬에서 탐색한 보물상자 5,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启宝箱5000次。"
     },
     "item": 0,
     "title": 778
@@ -76830,11 +77030,15 @@
     "de": "Potenter Pott I",
     "ja": "ポットの導き：ランク1",
     "fr": "Fortune du pot I",
+    "ko": "항아리의 인도: 1단계",
+    "zh": "魔法罐的指引1",
     "description": {
       "en": "Open 10 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
       "de": "10 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を10回開ける",
-      "fr": "Ouvrir 10 coffres de pot persistant sur l'île de Lunule."
+      "fr": "Ouvrir 10 coffres de pot persistant sur l'île de Lunule.",
+      "ko": "초승달 섬에서 떼쟁이 항아리의 보물상자 10회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启撒娇罐宝箱10次。"
     },
     "item": 0,
     "title": 0
@@ -76847,11 +77051,15 @@
     "de": "Potenter Pott II",
     "ja": "ポットの導き：ランク2",
     "fr": "Fortune du pot II",
+    "ko": "항아리의 인도: 2단계",
+    "zh": "魔法罐的指引2",
     "description": {
       "en": "Open 50 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
       "de": "50 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を50回開ける",
-      "fr": "Ouvrir 50 coffres de pot persistant sur l'île de Lunule."
+      "fr": "Ouvrir 50 coffres de pot persistant sur l'île de Lunule.",
+      "ko": "초승달 섬에서 떼쟁이 항아리의 보물상자 50회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启撒娇罐宝箱50次。"
     },
     "item": 0,
     "title": 0
@@ -76864,11 +77072,15 @@
     "de": "Potenter Pott III",
     "ja": "ポットの導き：ランク3",
     "fr": "Fortune du pot III",
+    "ko": "항아리의 인도: 3단계",
+    "zh": "魔法罐的指引3",
     "description": {
       "en": "Open 200 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
       "de": "200 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を200回開ける",
-      "fr": "Ouvrir 200 coffres de pot persistant sur l'île de Lunule."
+      "fr": "Ouvrir 200 coffres de pot persistant sur l'île de Lunule.",
+      "ko": "초승달 섬에서 떼쟁이 항아리의 보물상자 200회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启撒娇罐宝箱200次。"
     },
     "item": 0,
     "title": 0
@@ -76881,11 +77093,15 @@
     "de": "Potenter Pott IV",
     "ja": "ポットの導き：ランク4",
     "fr": "Fortune du pot IV",
+    "ko": "항아리의 인도: 4단계",
+    "zh": "魔法罐的指引4",
     "description": {
       "en": "Open 1,000 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
       "de": "1.000 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を1,000回開ける",
-      "fr": "Ouvrir 1 000 coffres de pot persistant sur l'île de Lunule."
+      "fr": "Ouvrir 1 000 coffres de pot persistant sur l'île de Lunule.",
+      "ko": "초승달 섬에서 떼쟁이 항아리의 보물상자 1,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启撒娇罐宝箱1000次。"
     },
     "item": 0,
     "title": 779
@@ -76898,11 +77114,15 @@
     "de": "Jede Menge Möhrchen I",
     "ja": "フォーチュンカロットの導き：ランク1",
     "fr": "Carotte sans bâton I",
+    "ko": "재물당근의 인도: 1단계",
+    "zh": "好运胡萝卜的指引1",
     "description": {
       "en": "Open 10 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
       "de": "10 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を10回開ける",
-      "fr": "Ouvrir 10 coffres de lapin du bonheur sur l'île de Lunule."
+      "fr": "Ouvrir 10 coffres de lapin du bonheur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 행운토끼의 보물상자 10회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启幸福兔宝箱10次。"
     },
     "item": 0,
     "title": 0
@@ -76915,11 +77135,15 @@
     "de": "Jede Menge Möhrchen II",
     "ja": "フォーチュンカロットの導き：ランク2",
     "fr": "Carotte sans bâton II",
+    "ko": "재물당근의 인도: 2단계",
+    "zh": "好运胡萝卜的指引2",
     "description": {
       "en": "Open 50 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
       "de": "50 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を50回開ける",
-      "fr": "Ouvrir 50 coffres de lapin du bonheur sur l'île de Lunule."
+      "fr": "Ouvrir 50 coffres de lapin du bonheur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 행운토끼의 보물상자 50회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启幸福兔宝箱50次。"
     },
     "item": 0,
     "title": 0
@@ -76932,11 +77156,15 @@
     "de": "Jede Menge Möhrchen III",
     "ja": "フォーチュンカロットの導き：ランク3",
     "fr": "Carotte sans bâton III",
+    "ko": "재물당근의 인도: 3단계",
+    "zh": "好运胡萝卜的指引3",
     "description": {
       "en": "Open 200 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
       "de": "200 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を200回開ける",
-      "fr": "Ouvrir 200 coffres de lapin du bonheur sur l'île de Lunule."
+      "fr": "Ouvrir 200 coffres de lapin du bonheur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 행운토끼의 보물상자 200회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启幸福兔宝箱200次。"
     },
     "item": 0,
     "title": 0
@@ -76949,11 +77177,15 @@
     "de": "Jede Menge Möhrchen IV",
     "ja": "フォーチュンカロットの導き：ランク4",
     "fr": "Carotte sans bâton IV",
+    "ko": "재물당근의 인도: 4단계",
+    "zh": "好运胡萝卜的指引4",
     "description": {
       "en": "Open 1,000 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
       "de": "1.000 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を1,000回開ける",
-      "fr": "Ouvrir 1 000 coffres de lapin du bonheur sur l'île de Lunule."
+      "fr": "Ouvrir 1 000 coffres de lapin du bonheur sur l'île de Lunule.",
+      "ko": "초승달 섬에서 행운토끼의 보물상자 1,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启幸福兔宝箱1000次。"
     },
     "item": 0,
     "title": 780
@@ -78079,11 +78311,15 @@
     "de": "Kartograph: Südliches Kreszentia",
     "ja": "三日月島南部を踏破せし者",
     "fr": "Cartographe du continent : Île de Lunule méridionale",
+    "ko": "초승달 섬 남부 탐험가",
+    "zh": "踏遍新月岛南部",
     "description": {
       "en": "Discover every location on the Occult Crescent: South Horn.",
       "de": "Alle Orte im südlichen Kreszentia erkundet.",
       "ja": "三日月島南部を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte de l'île de Lunule méridionale."
+      "fr": "Découvrir toute la carte de l'île de Lunule méridionale.",
+      "ko": "초승달 섬 남부를 탐험하여 모든 지역 발견",
+      "zh": "成功探索新月岛南部的所有地区。"
     },
     "item": 0,
     "title": 0
