@@ -149,7 +149,7 @@
     "@angular/language-service": "~18.0.1",
     "@angular/platform-browser": "~18.0.1",
     "@angular/platform-browser-dynamic": "~18.0.1",
-    "@angular/platform-server": "~18.0.1",
+    "@angular/platform-server": "~18.2.14",
     "@angular/router": "~18.0.1",
     "@angular/ssr": "~18.0.2",
     "@apollo/client": "^3.10.4",
