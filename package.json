@@ -205,7 +205,7 @@
     "@typescript-eslint/parser": "6.13.2",
     "algoliasearch": "^4.14.2",
     "apollo-angular": "^6.0.0",
-    "axios": "^1.8.2",
+    "axios": "^1.12.0",
     "body-parser-graphql": "^1.1.0",
     "browser-sync": "^3.0.0",
     "bufferutil": "^4.0.5",
