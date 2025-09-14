@@ -3019,10 +3019,10 @@
     nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.26":
-  version "1.2.26"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.26.tgz#c78a212687702ef28a8df45e7d7686c45a4faf30"
-  integrity sha512-fVnZn5+FG4lomTJitSYTWjSWPeU4ucn2YiP9mA3GWhzthcI5ciznGuyawBtxJKfX1P8AIAvppNnkh99Exf22dw==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.28":
+  version "1.2.28"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.28.tgz#f55b745b57beecded7d3c1d73dc2dda29934f3bf"
+  integrity sha512-h0xNR5Lvq0hHXcs4a3zahbBTntDRwXq2ErHKXxOSraxeZg/lM/rCZXjDmLTJ8QgIXsmpZiq7Z70ghzD7r3SHMg==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.15"
 
@@ -22596,6 +22596,7 @@ wordwrapjs@^4.0.0:
     typical "^5.2.0"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
