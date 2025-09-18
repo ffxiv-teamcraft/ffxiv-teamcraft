@@ -3009,6 +3009,46 @@
       "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
+  "321": {
+    "value": 70,
+    "conditionValue": 4300,
+    "bonus": {
+      "zh": "收藏价值＋<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "322": {
+    "value": 70,
+    "conditionValue": 5460,
+    "bonus": {
+      "zh": "收藏价值＋<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "323": {
+    "value": 10,
+    "conditionValue": 4300,
+    "bonus": {
+      "zh": "慎重提纯：追加效果发生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "324": {
+    "value": 10,
+    "conditionValue": 5460,
+    "bonus": {
+      "zh": "慎重提纯：追加效果发生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
   "327": {
     "value": 20,
     "conditionValue": 444,
