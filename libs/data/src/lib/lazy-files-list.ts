@@ -477,7 +477,7 @@ export const lazyFilesList = {
   },
   'patchContent': {
     'fileName': 'patch-content.json',
-    'hashedFileName': 'patch-content.a1d7bec066c6e32282ffee4e42c40ce2419fd228.json'
+    'hashedFileName': 'patch-content.3a9e07e520c6b426c163db4e681a8290fc4716eb.json'
   },
   'patchNames': {
     'fileName': 'patch-names.json',
