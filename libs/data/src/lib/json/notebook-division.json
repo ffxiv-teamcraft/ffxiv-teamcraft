@@ -2121,10 +2121,10 @@
   },
   "1065": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Yok Huy Quests",
+      "ja": "ヨカフイ族",
+      "de": "Aufträge der Yok Huy",
+      "fr": "Quêtes yok huy"
     },
     "pages": [
       1520,
@@ -2136,8 +2136,8 @@
       1526,
       1527
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 90,
+    "gatheringLevel": 255
   },
   "1066": {
     "name": {

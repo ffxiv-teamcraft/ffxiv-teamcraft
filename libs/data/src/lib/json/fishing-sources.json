@@ -19729,15 +19729,17 @@
       "hookset": 2,
       "tug": 1,
       "bait": 27582,
-      "spawn": 22,
-      "duration": 2,
+      "spawn": 22.5,
+      "duration": 1,
       "weathers": [
         1,
         2
       ],
       "snagging": false,
       "minGathering": 1900,
-      "video": "https://youtu.be/91kA82wd2O4"
+      "video": "https://youtu.be/91kA82wd2O4",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "30433": [

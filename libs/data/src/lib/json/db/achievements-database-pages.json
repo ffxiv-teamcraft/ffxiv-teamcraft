@@ -17788,7 +17788,7 @@
       "ja": "「ザ・フォールド」、「ザ・フィースト」、もしくは「クリスタルコンフリクト」で計50回勝利する",
       "fr": "Triompher 50 fois à The Fold, The Feast ou Crystalline Conflict.",
       "ko": "더 폴드, 더 피스트, 크리스탈라인 컨플릭트에서 총 50회 승리",
-      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计取胜50次。"
+      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计胜利50次。"
     },
     "item": 0,
     "title": 0
@@ -17809,7 +17809,7 @@
       "ja": "「ザ・フォールド」、「ザ・フィースト」、もしくは「クリスタルコンフリクト」で計100回勝利する",
       "fr": "Triompher 100 fois à The Fold, The Feast ou Crystalline Conflict.",
       "ko": "더 폴드, 더 피스트, 크리스탈라인 컨플릭트에서 총 100회 승리",
-      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计取胜100次。"
+      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计胜利100次。"
     },
     "item": 0,
     "title": 0
@@ -17830,7 +17830,7 @@
       "ja": "「ザ・フォールド」、「ザ・フィースト」、もしくは「クリスタルコンフリクト」で計500回勝利する",
       "fr": "Triompher 500 fois à The Fold, The Feast ou Crystalline Conflict.",
       "ko": "더 폴드, 더 피스트, 크리스탈라인 컨플릭트에서 총 500회 승리",
-      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计取胜500次。"
+      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计胜利500次。"
     },
     "item": 0,
     "title": 0
@@ -17851,7 +17851,7 @@
       "ja": "「ザ・フォールド」、「ザ・フィースト」、もしくは「クリスタルコンフリクト」で計1,000回勝利する",
       "fr": "Triompher 1 000 fois à The Fold, The Feast ou Crystalline Conflict.",
       "ko": "더 폴드, 더 피스트, 크리스탈라인 컨플릭트에서 총 1,000회 승리",
-      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计取胜1000次。"
+      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计胜利1000次。"
     },
     "item": 0,
     "title": 0
@@ -17872,7 +17872,7 @@
       "ja": "「ザ・フォールド」、「ザ・フィースト」、もしくは「クリスタルコンフリクト」で計5,000回勝利する",
       "fr": "Triompher 5 000 fois à The Fold, The Feast ou Crystalline Conflict.",
       "ko": "더 폴드, 더 피스트, 크리스탈라인 컨플릭트에서 총 5,000회 승리",
-      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计取胜5000次。"
+      "zh": "在群狼困斗、群狼盛宴或水晶冲突中累计胜利5000次。"
     },
     "item": 0,
     "title": 143
@@ -22806,7 +22806,7 @@
       "ja": "血統レベル9以上の新羽チョコボを入手する",
       "fr": "Obtenir un jeune chocobo dont le niveau de pedigree est de 9 ou plus.",
       "ko": "혈통 레벨 9 이상의 신입 초코보 입수",
-      "zh": "获得一只9级或更高级血统的新陆行鸟"
+      "zh": "获得一只9级或更高级血统的新陆行鸟。"
     },
     "item": 10065,
     "title": 0
@@ -40454,7 +40454,7 @@
       "ja": "ライバルウィングズで50回勝利する",
       "fr": "Triompher 50 fois aux Ailes rivales (machinerie).",
       "ko": "경쟁의 날개에서 50회 승리",
-      "zh": "在烈羽争锋中取胜50次。"
+      "zh": "在烈羽争锋中胜利50次。"
     },
     "item": 0,
     "title": 0
@@ -40475,7 +40475,7 @@
       "ja": "ライバルウィングズで100回勝利する",
       "fr": "Triompher 100 fois aux Ailes rivales (machinerie).",
       "ko": "경쟁의 날개에서 100회 승리",
-      "zh": "在烈羽争锋中取胜100次。"
+      "zh": "在烈羽争锋中胜利100次。"
     },
     "item": 21053,
     "title": 0
@@ -40496,7 +40496,7 @@
       "ja": "ライバルウィングズで500回勝利する",
       "fr": "Triompher 500 fois aux Ailes rivales (machinerie).",
       "ko": "경쟁의 날개에서 500회 승리",
-      "zh": "在烈羽争锋中取胜500次。"
+      "zh": "在烈羽争锋中胜利500次。"
     },
     "item": 0,
     "title": 0
@@ -40517,7 +40517,7 @@
       "ja": "ライバルウィングズで1,000回勝利する",
       "fr": "Triompher 1 000 fois aux Ailes rivales (machinerie).",
       "ko": "경쟁의 날개에서 1,000회 승리",
-      "zh": "在烈羽争锋中取胜1000次。"
+      "zh": "在烈羽争锋中胜利1000次。"
     },
     "item": 0,
     "title": 121
@@ -46620,7 +46620,7 @@
       "ja": "ヒドゥンゴージ（機工戦）で100回勝利する",
       "fr": "Triompher 100 fois à Gorge dérobée (machinerie).",
       "ko": "숨겨진 보루(기공전)에서 100회 승리",
-      "zh": "在隐塞（机动战）中取胜100次。"
+      "zh": "在隐塞（机动战）中胜利100次。"
     },
     "item": 24631,
     "title": 0
@@ -58553,7 +58553,7 @@
       "ja": "オフィシャルトーナメントで10回勝利する",
       "fr": "Remporter 10 duels de tournoi officiel de Triple Triade.",
       "ko": "공식 토너먼트 10회 승리",
-      "zh": "在官方锦标赛中取胜10次。"
+      "zh": "在官方锦标赛中胜利10次。"
     },
     "item": 33139,
     "title": 0
@@ -58574,7 +58574,7 @@
       "ja": "オフィシャルトーナメントで50回勝利する",
       "fr": "Remporter 50 duels de tournoi officiel de Triple Triade.",
       "ko": "공식 토너먼트 50회 승리",
-      "zh": "在官方锦标赛中取胜50次。"
+      "zh": "在官方锦标赛中胜利50次。"
     },
     "item": 0,
     "title": 0
@@ -58595,7 +58595,7 @@
       "ja": "オフィシャルトーナメントで150回勝利する",
       "fr": "Remporter 150 duels de tournoi officiel de Triple Triade.",
       "ko": "공식 토너먼트 150회 승리",
-      "zh": "在官方锦标赛中取胜150次。"
+      "zh": "在官方锦标赛中胜利150次。"
     },
     "item": 33040,
     "title": 0
@@ -63691,7 +63691,7 @@
     "ja": "クリスタルベアラー：ブロンズ",
     "fr": "Siège de cristal : bronze",
     "ko": "크리스탈 운반자: 브론즈",
-    "zh": "青铜之结晶推手",
+    "zh": "青铜之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Bronze tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Bronze oder höher abgeschlossen.",
@@ -63712,7 +63712,7 @@
     "ja": "クリスタルベアラー：シルバー",
     "fr": "Siège de cristal : argent",
     "ko": "크리스탈 운반자: 실버",
-    "zh": "白银之结晶推手",
+    "zh": "白银之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Silver tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Silber oder höher abgeschlossen.",
@@ -63733,7 +63733,7 @@
     "ja": "クリスタルベアラー：ゴールド",
     "fr": "Siège de cristal : or",
     "ko": "크리스탈 운반자: 골드",
-    "zh": "黄金之结晶推手",
+    "zh": "黄金之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Gold tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Gold oder höher abgeschlossen.",
@@ -63754,7 +63754,7 @@
     "ja": "クリスタルベアラー：プラチナ",
     "fr": "Siège de cristal : platine",
     "ko": "크리스탈 운반자: 플래티넘",
-    "zh": "白金之结晶推手",
+    "zh": "白金之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Platinum tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Platin oder höher abgeschlossen.",
@@ -63775,7 +63775,7 @@
     "ja": "クリスタルベアラー：ダイヤモンド",
     "fr": "Siège de cristal : diamant",
     "ko": "크리스탈 운반자: 다이아몬드",
-    "zh": "钻石之结晶推手",
+    "zh": "钻石之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Diamond tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Diamant oder höher abgeschlossen.",
@@ -63796,14 +63796,14 @@
     "ja": "クリスタルベアラー：クリスタル",
     "fr": "Siège de cristal : cristal",
     "ko": "크리스탈 운반자: 크리스탈",
-    "zh": "水晶之结晶推手",
+    "zh": "水晶之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Crystal tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Kristall oder höher abgeschlossen.",
       "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをクリスタル階級以上で終えた",
       "fr": "Terminer une saison de Crystalline Conflict à l'échelon de cristal ou supérieur.",
       "ko": "크리스탈라인 컨플릭트에서 시즌 등급을 크리스탈로 마감",
-      "zh": "在水晶冲突的任意赛季中最终取得水晶段位。"
+      "zh": "在水晶冲突的任意赛季中最终取得水晶或以上段位。"
     },
     "item": 0,
     "title": 629
@@ -76089,11 +76089,13 @@
     "de": "Zauberhafte Zwölf",
     "ja": "ありがとう12周年！",
     "fr": "Douzaine dorée",
+    "zh": "多彩绚烂的周年庆",
     "description": {
       "en": "Complete the quest “A Light That Ever Burns.”",
       "de": "Den Auftrag „Und immer brennt der Leuchtturm“ abgeschlossen.",
       "ja": "クエスト「新生祭と、蒼茫の灯火」をコンプリートする",
-      "fr": "Accomplir la quête “La lumière du lendemain”."
+      "fr": "Accomplir la quête “La lumière du lendemain”.",
+      "zh": "完成任务“新生庆典与苍茫灯火”。"
     },
     "item": 0,
     "title": 0
@@ -78332,11 +78334,13 @@
     "de": "Kristallkönig (15. Saison)",
     "ja": "コンフリクトの王者：シーズン15",
     "fr": "Roi du conflit : saison 15",
+    "zh": "冲突的王者第15赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Fifteen ranked #1.",
       "de": "Die 15. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで1位になる",
-      "fr": "Terminer la saison 15 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 15 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第15赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 797
@@ -78349,11 +78353,13 @@
     "de": "Kristallfürst (15. Saison)",
     "ja": "コンフリクトの勇者：シーズン15",
     "fr": "Prince du conflit : saison 15",
+    "zh": "冲突的勇者第15赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Fifteen.",
       "de": "Die 15. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 15 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 15 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第15赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 798
@@ -78366,11 +78372,13 @@
     "de": "Kristallkämpfer (15. Saison)",
     "ja": "コンフリクトの入賞者：シーズン15",
     "fr": "As du conflit : saison 15",
+    "zh": "冲突的获奖者第15赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Fifteen.",
       "de": "Die 15. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで入賞する",
-      "fr": "Terminer la saison 15 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 15 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第15赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 799
@@ -78383,11 +78391,13 @@
     "de": "Kristallkönig (16. Saison)",
     "ja": "コンフリクトの王者：シーズン16",
     "fr": "Roi du conflit : saison 16",
+    "zh": "冲突的王者第16赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Sixteen ranked #1.",
       "de": "Die 16. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで1位になる",
-      "fr": "Terminer la saison 16 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 16 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第16赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 800
@@ -78400,11 +78410,13 @@
     "de": "Kristallfürst (16. Saison)",
     "ja": "コンフリクトの勇者：シーズン16",
     "fr": "Prince du conflit : saison 16",
+    "zh": "冲突的勇者第16赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Sixteen.",
       "de": "Die 16. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 16 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 16 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第16赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 801
@@ -78417,11 +78429,13 @@
     "de": "Kristallkämpfer (16. Saison)",
     "ja": "コンフリクトの入賞者：シーズン16",
     "fr": "As du conflit : saison 16",
+    "zh": "冲突的获奖者第16赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Sixteen.",
       "de": "Die 16. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで入賞する",
-      "fr": "Terminer la saison 16 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 16 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第16赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 802
@@ -78434,11 +78448,13 @@
     "de": "Kristallträger: Omega",
     "ja": "クリスタルベアラー：オメガ",
     "fr": "Siège de cristal : Oméga",
+    "zh": "欧米茄之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Omega tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Omega oder höher abgeschlossen.",
       "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをオメガ階級以上で終えた",
-      "fr": "Terminer une saison de Crystalline Conflict à l'échelon Oméga ou supérieur."
+      "fr": "Terminer une saison de Crystalline Conflict à l'échelon Oméga ou supérieur.",
+      "zh": "在水晶冲突的任意赛季中最终取得欧米茄或以上段位。"
     },
     "item": 0,
     "title": 803
@@ -78451,11 +78467,13 @@
     "de": "Kristallträger: Ultima",
     "ja": "クリスタルベアラー：アルテマ",
     "fr": "Siège de cristal : Ultima",
+    "zh": "究极之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in the Ultima tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Ultima abgeschlossen.",
       "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをアルテマ階級で終えた",
-      "fr": "Terminer une saison de Crystalline Conflict à l'échelon Ultima."
+      "fr": "Terminer une saison de Crystalline Conflict à l'échelon Ultima.",
+      "zh": "在水晶冲突的任意赛季中最终取得究极段位。"
     },
     "item": 0,
     "title": 804
@@ -78468,11 +78486,13 @@
     "de": "Wie von Geisterhand: Phantomschwert Umbrae und Phantom-Drachenschild Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ソード＆ファントムアンブラ・カイトシールド",
     "fr": "Armes fantômes : épée fantôme umbra et écu mandorle fantôme umbra",
+    "zh": "幻境之骑士·本影",
     "description": {
       "en": "Obtain a phantom sword umbrae and phantom kite shield umbrae.",
       "de": "Das Phantomschwert Umbrae und den Phantom-Drachenschild Umbrae erhalten.",
       "ja": "ファントムアンブラ・ソード＆ファントムアンブラ・カイトシールドを入手する",
-      "fr": "Obtenir l'épée fantôme umbra et l'écu mandorle fantôme umbra."
+      "fr": "Obtenir l'épée fantôme umbra et l'écu mandorle fantôme umbra.",
+      "zh": "获得幻境利剑·本影和幻境鸢盾·本影。"
     },
     "item": 0,
     "title": 0
@@ -78485,11 +78505,13 @@
     "de": "Wie von Geisterhand: Phantomberdysch Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・バルディッシュ",
     "fr": "Armes fantômes : bardiche fantôme umbra",
+    "zh": "幻境之战士·本影",
     "description": {
       "en": "Obtain a phantom bardiche umbrae.",
       "de": "Die Phantomberdysch Umbrae erhalten.",
       "ja": "ファントムアンブラ・バルディッシュを入手する",
-      "fr": "Obtenir la bardiche fantôme umbra."
+      "fr": "Obtenir la bardiche fantôme umbra.",
+      "zh": "获得幻境巨斧·本影。"
     },
     "item": 0,
     "title": 0
@@ -78502,11 +78524,13 @@
     "de": "Wie von Geisterhand: Phantom-Guillotine Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ディバイダー",
     "fr": "Armes fantômes : fendoir fantôme umbra",
+    "zh": "幻境之暗黑骑士·本影",
     "description": {
       "en": "Obtain a phantom guillotine umbrae.",
       "de": "Die Phantom-Guillotine Umbrae erhalten.",
       "ja": "ファントムアンブラ・ディバイダーを入手する",
-      "fr": "Obtenir le fendoir fantôme umbra."
+      "fr": "Obtenir le fendoir fantôme umbra.",
+      "zh": "获得幻境断头剑·本影。"
     },
     "item": 0,
     "title": 0
@@ -78519,11 +78543,13 @@
     "de": "Wie von Geisterhand: Phantom-Bajonett Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・バヨネット",
     "fr": "Armes fantômes : baïonnette fantôme umbra",
+    "zh": "幻境之绝枪战士·本影",
     "description": {
       "en": "Obtain a phantom bayonet umbrae.",
       "de": "Das Phantom-Bajonett Umbrae erhalten.",
       "ja": "ファントムアンブラ・バヨネットを入手する",
-      "fr": "Obtenir la baïonnette fantôme umbra."
+      "fr": "Obtenir la baïonnette fantôme umbra.",
+      "zh": "获得幻境刺刀·本影。"
     },
     "item": 0,
     "title": 0
@@ -78536,11 +78562,13 @@
     "de": "Wie von Geisterhand: Phantomspeer Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・スピア",
     "fr": "Armes fantômes : hast fantôme umbra",
+    "zh": "幻境之龙骑士·本影",
     "description": {
       "en": "Obtain a phantom spear umbrae.",
       "de": "Den Phantomspeer Umbrae erhalten.",
       "ja": "ファントムアンブラ・スピアを入手する",
-      "fr": "Obtenir l'hast fantôme umbra."
+      "fr": "Obtenir l'hast fantôme umbra.",
+      "zh": "获得幻境长枪·本影。"
     },
     "item": 0,
     "title": 0
@@ -78553,11 +78581,13 @@
     "de": "Wie von Geisterhand: Phantom-Schlagringe Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ナックル",
     "fr": "Armes fantômes : poings fantômes umbra",
+    "zh": "幻境之武僧·本影",
     "description": {
       "en": "Obtain a pair of phantom knuckles umbrae.",
       "de": "Die Phantom-Schlagringe Umbrae erhalten.",
       "ja": "ファントムアンブラ・ナックルを入手する",
-      "fr": "Obtenir les poings fantômes umbra."
+      "fr": "Obtenir les poings fantômes umbra.",
+      "zh": "获得幻境指虎·本影。"
     },
     "item": 0,
     "title": 0
@@ -78570,11 +78600,13 @@
     "de": "Wie von Geisterhand: Phantomspalter Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・クリーバー",
     "fr": "Armes fantômes : couperets fantômes umbra",
+    "zh": "幻境之忍者·本影",
     "description": {
       "en": "Obtain a pair of phantom cleavers umbrae.",
       "de": "Den Phantomspalter Umbrae erhalten.",
       "ja": "ファントムアンブラ・クリーバーを入手する",
-      "fr": "Obtenir les couperets fantômes umbra."
+      "fr": "Obtenir les couperets fantômes umbra.",
+      "zh": "获得幻境屠刀·本影。"
     },
     "item": 0,
     "title": 0
@@ -78587,11 +78619,13 @@
     "de": "Wie von Geisterhand: Phantom-Zwillingsfänge Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ツインファング",
     "fr": "Armes fantômes : crochets fantômes umbra",
+    "zh": "幻境之蝰蛇剑士·本影",
     "description": {
       "en": "Obtain a pair of phantom twinfangs umbrae.",
       "de": "Die Phantom-Zwillingsfänge Umbrae erhalten.",
       "ja": "ファントムアンブラ・ツインファングを入手する",
-      "fr": "Obtenir les crochets fantômes umbra."
+      "fr": "Obtenir les crochets fantômes umbra.",
+      "zh": "获得幻境双牙·本影。"
     },
     "item": 0,
     "title": 0
@@ -78604,11 +78638,13 @@
     "de": "Wie von Geisterhand: Phantomklinge Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ブレード",
     "fr": "Armes fantômes : lame fantôme umbra",
+    "zh": "幻境之武士·本影",
     "description": {
       "en": "Obtain a phantom blade umbrae.",
       "de": "Die Phantomklinge Umbrae erhalten.",
       "ja": "ファントムアンブラ・ブレードを入手する",
-      "fr": "Obtenir la lame fantôme umbra."
+      "fr": "Obtenir la lame fantôme umbra.",
+      "zh": "获得幻境武士刀·本影。"
     },
     "item": 0,
     "title": 0
@@ -78621,11 +78657,13 @@
     "de": "Wie von Geisterhand: Phantom-Kriegssense Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ウォーサイズ",
     "fr": "Armes fantômes : faux de guerre fantôme umbra",
+    "zh": "幻境之钐镰客·本影",
     "description": {
       "en": "Obtain a phantom war scythe umbrae.",
       "de": "Die Phantom-Kriegssense Umbrae erhalten.",
       "ja": "ファントムアンブラ・ウォーサイズを入手する",
-      "fr": "Obtenir la faux de guerre fantôme umbra."
+      "fr": "Obtenir la faux de guerre fantôme umbra.",
+      "zh": "获得幻境战镰·本影。"
     },
     "item": 0,
     "title": 0
@@ -78638,11 +78676,13 @@
     "de": "Wie von Geisterhand: Phantom-Harfenbogen Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ハープボウ",
     "fr": "Armes fantômes : arc-harpe fantôme umbra",
+    "zh": "幻境之吟游诗人·本影",
     "description": {
       "en": "Obtain a phantom harp bow umbrae.",
       "de": "Den Phantom-Harfenbogen Umbrae erhalten.",
       "ja": "ファントムアンブラ・ハープボウを入手する",
-      "fr": "Obtenir l'arc-harpe fantôme umbra."
+      "fr": "Obtenir l'arc-harpe fantôme umbra.",
+      "zh": "获得幻境琴弓·本影。"
     },
     "item": 0,
     "title": 0
@@ -78655,11 +78695,13 @@
     "de": "Wie von Geisterhand: Phantom-Hakenbüchse Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・アークウィバス",
     "fr": "Armes fantômes : arquebuse fantôme umbra",
+    "zh": "幻境之机工士·本影",
     "description": {
       "en": "Obtain a phantom arquebus umbrae.",
       "de": "Die Phantom-Hakenbüchse Umbrae erhalten.",
       "ja": "ファントムアンブラ・アークウィバスを入手する",
-      "fr": "Obtenir l'arquebuse fantôme umbra."
+      "fr": "Obtenir l'arquebuse fantôme umbra.",
+      "zh": "获得幻境明火枪·本影。"
     },
     "item": 0,
     "title": 0
@@ -78672,11 +78714,13 @@
     "de": "Wie von Geisterhand: Phantom-Terpna Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・テルプナ",
     "fr": "Armes fantômes : terpna fantômes umbra",
+    "zh": "幻境之舞者·本影",
     "description": {
       "en": "Obtain a pair of phantom terpna umbrae.",
       "de": "Die Phantom-Terpna Umbrae erhalten.",
       "ja": "ファントムアンブラ・テルプナを入手する",
-      "fr": "Obtenir les terpna fantômes umbra."
+      "fr": "Obtenir les terpna fantômes umbra.",
+      "zh": "获得幻境欢刺·本影。"
     },
     "item": 0,
     "title": 0
@@ -78689,11 +78733,13 @@
     "de": "Wie von Geisterhand: Phantomstab Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・スタッフ",
     "fr": "Armes fantômes : bâton fantôme umbra",
+    "zh": "幻境之黑魔法师·本影",
     "description": {
       "en": "Obtain a phantom staff umbrae.",
       "de": "Den Phantomstab Umbrae erhalten.",
       "ja": "ファントムアンブラ・スタッフを入手する",
-      "fr": "Obtenir le bâton fantôme umbra."
+      "fr": "Obtenir le bâton fantôme umbra.",
+      "zh": "获得幻境长杖·本影。"
     },
     "item": 0,
     "title": 0
@@ -78706,11 +78752,13 @@
     "de": "Wie von Geisterhand: Phantomindex Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・インデックス",
     "fr": "Armes fantômes : index fantôme umbra",
+    "zh": "幻境之召唤师·本影",
     "description": {
       "en": "Obtain a phantom index umbrae.",
       "de": "Den Phantomindex Umbrae erhalten.",
       "ja": "ファントムアンブラ・インデックスを入手する",
-      "fr": "Obtenir l'index fantôme umbra."
+      "fr": "Obtenir l'index fantôme umbra.",
+      "zh": "获得幻境魔导书·本影。"
     },
     "item": 0,
     "title": 0
@@ -78723,11 +78771,13 @@
     "de": "Wie von Geisterhand: Phantomrapier Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・レイピア",
     "fr": "Armes fantômes : rapière fantôme umbra",
+    "zh": "幻境之赤魔法师·本影",
     "description": {
       "en": "Obtain a phantom rapier umbrae.",
       "de": "Den Phantomrapier Umbrae erhalten.",
       "ja": "ファントムアンブラ・レイピアを入手する",
-      "fr": "Obtenir la rapière fantôme umbra."
+      "fr": "Obtenir la rapière fantôme umbra.",
+      "zh": "获得幻境刺剑·本影。"
     },
     "item": 0,
     "title": 0
@@ -78740,11 +78790,13 @@
     "de": "Wie von Geisterhand: Phantom-Flachpinsel Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・フラットブラシ",
     "fr": "Armes fantômes : pinceau plat fantôme umbra",
+    "zh": "幻境之绘灵法师·本影",
     "description": {
       "en": "Obtain a phantom flat brush umbrae.",
       "de": "Den Phantom-Flachpinsel Umbrae erhalten.",
       "ja": "ファントムアンブラ・フラットブラシを入手する",
-      "fr": "Obtenir le pinceau plat fantôme umbra."
+      "fr": "Obtenir le pinceau plat fantôme umbra.",
+      "zh": "获得幻境平笔·本影。"
     },
     "item": 0,
     "title": 0
@@ -78757,11 +78809,13 @@
     "de": "Wie von Geisterhand: Phantom-Hirtenstock Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・クルーク",
     "fr": "Armes fantômes : crosse fantôme umbra",
+    "zh": "幻境之白魔法师·本影",
     "description": {
       "en": "Obtain a phantom crook umbrae.",
       "de": "Den Phantom-Hirtenstock Umbrae erhalten.",
       "ja": "ファントムアンブラ・クルークを入手する",
-      "fr": "Obtenir la crosse fantôme umbra."
+      "fr": "Obtenir la crosse fantôme umbra.",
+      "zh": "获得幻境手杖·本影。"
     },
     "item": 0,
     "title": 0
@@ -78774,11 +78828,13 @@
     "de": "Wie von Geisterhand: Phantomkodex Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・コーデックス",
     "fr": "Armes fantômes : codex fantôme umbra",
+    "zh": "幻境之学者·本影",
     "description": {
       "en": "Obtain a phantom codex umbrae.",
       "de": "Den Phantomkodex Umbrae erhalten.",
       "ja": "ファントムアンブラ・コーデックスを入手する",
-      "fr": "Obtenir le codex fantôme umbra."
+      "fr": "Obtenir le codex fantôme umbra.",
+      "zh": "获得幻境魔导典·本影。"
     },
     "item": 0,
     "title": 0
@@ -78791,11 +78847,13 @@
     "de": "Wie von Geisterhand: Phantom-Sternenglobus Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・スターグローブ",
     "fr": "Armes fantômes : globe céleste fantôme umbra",
+    "zh": "幻境之占星术士·本影",
     "description": {
       "en": "Obtain a phantom star globe umbrae.",
       "de": "Den Phantom-Sternenglobus Umbrae erhalten.",
       "ja": "ファントムアンブラ・スターグローブを入手する",
-      "fr": "Obtenir le globe céleste fantôme umbra."
+      "fr": "Obtenir le globe céleste fantôme umbra.",
+      "zh": "获得幻境天球仪·本影。"
     },
     "item": 0,
     "title": 0
@@ -78808,11 +78866,13 @@
     "de": "Wie von Geisterhand: Phantom-Perpendikel Umbrae",
     "ja": "ファントムウェポン：ファントムアンブラ・ペンデュラム",
     "fr": "Armes fantômes : pendules fantômes umbra",
+    "zh": "幻境之贤者·本影",
     "description": {
       "en": "Obtain an array of phantom pendulums umbrae.",
       "de": "Die Phantom-Perpendikel Umbrae erhalten.",
       "ja": "ファントムアンブラ・ペンデュラムを入手する",
-      "fr": "Obtenir les pendules fantômes umbra."
+      "fr": "Obtenir les pendules fantômes umbra.",
+      "zh": "获得幻境振空摆·本影。"
     },
     "item": 0,
     "title": 0
@@ -78825,82 +78885,84 @@
     "de": "Versprechen einer neuen Zukunft",
     "ja": "明日への道標",
     "fr": "La promesse de demain",
+    "zh": "明日的路标",
     "description": {
       "en": "Complete the main scenario quest “The Promise of Tomorrow.”",
       "de": "Den Auftrag des Hauptszenarios „Versprechen einer neuen Zukunft“ abgeschlossen.",
       "ja": "クエスト「明日への道標」をコンプリートする",
-      "fr": "Accomplir la quête “La promesse de demain”."
+      "fr": "Accomplir la quête “La promesse de demain”.",
+      "zh": "完成任务“明日的路标”。"
     },
     "item": 0,
     "title": 805
   },
   "3774": {
     "id": 3774,
-    "icon": "",
+    "icon": "/i/062000/062980.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Winter's Warmth I",
+    "de": "Schneegeflüster I",
+    "ja": "ヨカフイ族：ランク1",
+    "fr": "Séjour à l'autel I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 3 reputation (friendly) with the Hands of Zirgorteh.",
+      "de": "Ein freundliches Verhältnis zu den Yok Huy von Zirgorteh erworben.",
+      "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク3「友好」にする",
+      "fr": "Atteindre le rang 3 (Ami) de réputation auprès des bienfaiteurs de Zirgorteh."
     },
     "item": 0,
     "title": 0
   },
   "3775": {
     "id": 3775,
-    "icon": "",
+    "icon": "/i/062000/062980.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Winter's Warmth II",
+    "de": "Schneegeflüster II",
+    "ja": "ヨカフイ族：ランク2",
+    "fr": "Séjour à l'autel II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 4 reputation (trusted) with the Hands of Zirgorteh.",
+      "de": "Ein vertrautes Verhältnis zu den Yok Huy von Zirgorteh erworben.",
+      "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク4「信頼」にする",
+      "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des bienfaiteurs de Zirgorteh."
     },
     "item": 0,
     "title": 0
   },
   "3776": {
     "id": 3776,
-    "icon": "",
+    "icon": "/i/062000/062980.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Winter's Warmth III",
+    "de": "Schneegeflüster III",
+    "ja": "ヨカフイ族：ランク3",
+    "fr": "Séjour à l'autel III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 6 reputation (honored) with the Hands of Zirgorteh.",
+      "de": "Ein geachtetes Verhältnis zu den Yok Huy von Zirgorteh erworben.",
+      "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク6「名誉」にする",
+      "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des bienfaiteurs de Zirgorteh."
     },
     "item": 0,
     "title": 0
   },
   "3777": {
     "id": 3777,
-    "icon": "",
+    "icon": "/i/062000/062980.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Peak Performance",
+    "de": "Eine riesige Freundschaft",
+    "ja": "雪山の現場監督",
+    "fr": "Travail en haute altitude",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attain rank 7 reputation (sworn) with the Hands of Zirgorteh.",
+      "de": "Ein solidarisches Verhältnis zu den Yok Huy von Zirgorteh erworben.",
+      "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク7「誓約」にする",
+      "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des bienfaiteurs de Zirgorteh."
     },
     "item": 0,
-    "title": 0
+    "title": 806
   },
   "3778": {
     "id": 3778,
@@ -78910,11 +78972,13 @@
     "de": "Wer sucht, der findet XVII",
     "ja": "トレジャーハンター：ランク17",
     "fr": "Creuser son trou XVII",
+    "zh": "寻宝猎人17",
     "description": {
       "en": "Decipher 20 timeworn gargantuaskin maps and open the treasure coffers to which they lead.",
       "de": "20 vergilbte Gargantualeder-Schatzkarten entziffert und die dazugehörigen Schatztruhen geöffnet.",
       "ja": "古ぼけた地図G18を解読し、宝箱を20回開ける",
-      "fr": "Déchiffrer 20 vieilles cartes en peau de gargantua et ouvrir les coffres auxquels elles conduisent."
+      "fr": "Déchiffrer 20 vieilles cartes en peau de gargantua et ouvrir les coffres auxquels elles conduisent.",
+      "zh": "累计20次成功解读陈旧的卡冈图亚革地图并开启宝箱。"
     },
     "item": 0,
     "title": 0
@@ -78927,11 +78991,13 @@
     "de": "Neonträume I",
     "ja": "ボルト・オネイロンに侵入せし者：ランク1",
     "fr": "Rêves de grandeur I",
+    "zh": "踏入巡梦金库1",
     "description": {
       "en": "Raid Vault Oneiron.",
       "de": "1 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに初めて侵入する",
-      "fr": "Pénétrer 1 fois dans le coffre d'Oneiron."
+      "fr": "Pénétrer 1 fois dans le coffre d'Oneiron.",
+      "zh": "初次入侵巡梦金库。"
     },
     "item": 0,
     "title": 807
@@ -78944,11 +79010,13 @@
     "de": "Neonträume II",
     "ja": "ボルト・オネイロンに侵入せし者：ランク2",
     "fr": "Rêves de grandeur II",
+    "zh": "踏入巡梦金库2",
     "description": {
       "en": "Raid Vault Oneiron 5 times.",
       "de": "5 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに累計5回侵入する",
-      "fr": "Pénétrer 5 fois dans le coffre d'Oneiron."
+      "fr": "Pénétrer 5 fois dans le coffre d'Oneiron.",
+      "zh": "累计入侵巡梦金库5次。"
     },
     "item": 0,
     "title": 0
@@ -78961,11 +79029,13 @@
     "de": "Neonträume III",
     "ja": "ボルト・オネイロンに侵入せし者：ランク3",
     "fr": "Rêves de grandeur III",
+    "zh": "踏入巡梦金库3",
     "description": {
       "en": "Raid Vault Oneiron 10 times.",
       "de": "10 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに累計10回侵入する",
-      "fr": "Pénétrer 10 fois dans le coffre d'Oneiron."
+      "fr": "Pénétrer 10 fois dans le coffre d'Oneiron.",
+      "zh": "累计入侵巡梦金库10次。"
     },
     "item": 0,
     "title": 0
@@ -78978,11 +79048,13 @@
     "de": "Neonträume IV",
     "ja": "ボルト・オネイロンに侵入せし者：ランク4",
     "fr": "Rêves de grandeur IV",
+    "zh": "踏入巡梦金库4",
     "description": {
       "en": "Raid Vault Oneiron 20 times.",
       "de": "20 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに累計20回侵入する",
-      "fr": "Pénétrer 20 fois dans le coffre d'Oneiron."
+      "fr": "Pénétrer 20 fois dans le coffre d'Oneiron.",
+      "zh": "累计入侵巡梦金库20次。"
     },
     "item": 0,
     "title": 808
@@ -78995,11 +79067,13 @@
     "de": "Frisch gebackener Panzerknacker I",
     "ja": "ボルト・オネイロンの覇者：ランク1",
     "fr": "Trésor de rêve I",
+    "zh": "称霸巡梦金库1",
     "description": {
       "en": "Clear the final play in Vault Oneiron.",
       "de": "Tresor Oneiron zum ersten Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを初めて制覇する",
-      "fr": "Conquérir 1 fois le coffre d'Oneiron."
+      "fr": "Conquérir 1 fois le coffre d'Oneiron.",
+      "zh": "初次称霸巡梦金库。"
     },
     "item": 0,
     "title": 0
@@ -79012,11 +79086,13 @@
     "de": "Frisch gebackener Panzerknacker II",
     "ja": "ボルト・オネイロンの覇者：ランク2",
     "fr": "Trésor de rêve II",
+    "zh": "称霸巡梦金库2",
     "description": {
       "en": "Clear the final play in Vault Oneiron 5 times.",
       "de": "Tresor Oneiron 5 Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを累計5回制覇する",
-      "fr": "Conquérir 5 fois le coffre d'Oneiron."
+      "fr": "Conquérir 5 fois le coffre d'Oneiron.",
+      "zh": "累计称霸巡梦金库5次。"
     },
     "item": 0,
     "title": 0
@@ -79029,11 +79105,13 @@
     "de": "Frisch gebackener Panzerknacker III",
     "ja": "ボルト・オネイロンの覇者：ランク3",
     "fr": "Trésor de rêve III",
+    "zh": "称霸巡梦金库3",
     "description": {
       "en": "Clear the final play in Vault Oneiron 10 times.",
       "de": "Tresor Oneiron 10 Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを累計10回制覇する",
-      "fr": "Conquérir 10 fois le coffre d'Oneiron."
+      "fr": "Conquérir 10 fois le coffre d'Oneiron.",
+      "zh": "累计称霸巡梦金库10次。"
     },
     "item": 0,
     "title": 0
@@ -79046,11 +79124,13 @@
     "de": "Frisch gebackener Panzerknacker VI",
     "ja": "ボルト・オネイロンの覇者：ランク4",
     "fr": "Trésor de rêve IV",
+    "zh": "称霸巡梦金库4",
     "description": {
       "en": "Clear the final play in Vault Oneiron 20 times.",
       "de": "Tresor Oneiron 20 Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを累計20回制覇する",
-      "fr": "Conquérir 20 fois le coffre d'Oneiron."
+      "fr": "Conquérir 20 fois le coffre d'Oneiron.",
+      "zh": "累计称霸巡梦金库20次。"
     },
     "item": 0,
     "title": 809
@@ -79062,12 +79142,14 @@
     "en": "The Void Is Back in Town",
     "de": "Schaurig-schöne Harmonie",
     "ja": "愉快なみんなの廃屋敷",
-    "fr": "愉快なみんなの廃屋敷",
+    "fr": "Impresario impressionné",
+    "zh": "众人愉悦的废弃宅邸",
     "description": {
       "en": "Complete the quest “Dressed to Impresario.”",
       "de": "Den Auftrag „Saures für die Imps“ abgeschlossen.",
       "ja": "クエスト「守護天節とふたつの幻影」をコンプリートする",
-      "fr": "クエスト「守護天節とふたつの幻影」をコンプリートする"
+      "fr": "Accomplir la quête “Des bonbons ou six trouilles&nbsp;?”.",
+      "zh": "完成任务“守护天节与两种幻影”。"
     },
     "item": 0,
     "title": 0
@@ -79076,15 +79158,17 @@
     "id": 3788,
     "icon": "/i/026000/026435.png",
     "patch": 103,
-    "en": "プンシュで乾杯！",
-    "de": "プンシュで乾杯！",
+    "en": "The Spice of Starlight",
+    "de": "Kinderpunsch-Überraschung",
     "ja": "プンシュで乾杯！",
-    "fr": "プンシュで乾杯！",
+    "fr": "Kinderpunsch surprise",
+    "zh": "用软饮干杯！",
     "description": {
-      "en": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
-      "de": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
+      "en": "Complete the quest “We Three Kinderpunsch.”",
+      "de": "Den Auftrag „Ausschank zum Sternenlichtfest“ abgeschlossen.",
       "ja": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
-      "fr": "クエスト「星芒祭と心躍る一杯」をコンプリートする"
+      "fr": "Accomplir la quête “Les tasses des Cités”.",
+      "zh": "完成任务“星芒节与暖心的热饮”。"
     },
     "item": 0,
     "title": 0
@@ -79131,11 +79215,13 @@
     "de": "Phaenna-Erkundungsmeister",
     "ja": "惑星パエンナのマスターエクスプローラー",
     "fr": "Explorateur phaennien aguerri",
+    "zh": "法恩娜探索大师",
     "description": {
       "en": "Successfully complete all stellar missions on Phaenna with the highest rating possible.",
       "de": "Alle Stellarmissionen auf Phaenna mit der höchsten Wertung abgeschlossen.",
       "ja": "惑星パエンナのコスモミッションを、すべて最高評価でコンプリートする",
-      "fr": "Terminer toutes les missions cosmiques de Phaenna avec la meilleure évaluation possible."
+      "fr": "Terminer toutes les missions cosmiques de Phaenna avec la meilleure évaluation possible.",
+      "zh": "以最高评价完成法恩娜行星的所有探索任务。"
     },
     "item": 0,
     "title": 810
@@ -79148,11 +79234,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Säge",
     "ja": "コスモツール：スペース・ソー",
     "fr": "Outil cosmique : scie spatiale",
+    "zh": "宇宙工具：太空手锯",
     "description": {
       "en": "Obtain a stellar saw.",
       "de": "Eine Weltraum-Säge erlangt.",
       "ja": "スペース・ソーを入手する",
-      "fr": "Obtenir la scie spatiale."
+      "fr": "Obtenir la scie spatiale.",
+      "zh": "获得太空手锯。"
     },
     "item": 0,
     "title": 0
@@ -79165,11 +79253,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Kreuzschlaghammer",
     "ja": "コスモツール：スペース・クロスペインハンマー",
     "fr": "Outil cosmique : marteau à panne croisée spatial",
+    "zh": "宇宙工具：太空横头锤",
     "description": {
       "en": "Obtain a stellar cross-pein hammer.",
       "de": "Einen Weltraum-Kreuzschlaghammer erlangt.",
       "ja": "スペース・クロスペインハンマーを入手する",
-      "fr": "Obtenir le marteau à panne croisée spatial."
+      "fr": "Obtenir le marteau à panne croisée spatial.",
+      "zh": "获得太空横头锤。"
     },
     "item": 0,
     "title": 0
@@ -79182,11 +79272,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Schlichthammer",
     "ja": "コスモツール：スペース・レイジングハンマー",
     "fr": "Outil cosmique : marteau de batteur spatial",
+    "zh": "宇宙工具：太空圆头锤",
     "description": {
       "en": "Obtain a stellar raising hammer.",
       "de": "Einen Weltraum-Schlichthammer erlangt.",
       "ja": "スペース・レイジングハンマーを入手する",
-      "fr": "Obtenir le marteau de batteur spatial."
+      "fr": "Obtenir le marteau de batteur spatial.",
+      "zh": "获得太空圆头锤。"
     },
     "item": 0,
     "title": 0
@@ -79199,11 +79291,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Fäustel",
     "ja": "コスモツール：スペース・マレット",
     "fr": "Outil cosmique : massette spatiale",
+    "zh": "宇宙工具：太空工艺锤",
     "description": {
       "en": "Obtain a stellar mallet.",
       "de": "Einen Weltraum-Fäustel erlangt.",
       "ja": "スペース・マレットを入手する",
-      "fr": "Obtenir la massette spatiale."
+      "fr": "Obtenir la massette spatiale.",
+      "zh": "获得太空工艺锤。"
     },
     "item": 0,
     "title": 0
@@ -79216,11 +79310,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Rundmesser",
     "ja": "コスモツール：スペース・ラウンドナイフ",
     "fr": "Outil cosmique : couteau arrondi spatial",
+    "zh": "宇宙工具：太空圆革刀",
     "description": {
       "en": "Obtain a stellar round knife.",
       "de": "Ein Weltraum-Rundmesser erlangt.",
       "ja": "スペース・ラウンドナイフを入手する",
-      "fr": "Obtenir le couteau arrondi spatial."
+      "fr": "Obtenir le couteau arrondi spatial.",
+      "zh": "获得太空圆革刀。"
     },
     "item": 0,
     "title": 0
@@ -79233,11 +79329,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Nadel",
     "ja": "コスモツール：スペース・ニードル",
     "fr": "Outil cosmique : aiguille spatiale",
+    "zh": "宇宙工具：太空缝针",
     "description": {
       "en": "Obtain a stellar needle.",
       "de": "Eine Weltraum-Nadel erlangt.",
       "ja": "スペース・ニードルを入手する",
-      "fr": "Obtenir l'aiguille spatiale."
+      "fr": "Obtenir l'aiguille spatiale.",
+      "zh": "获得太空缝针。"
     },
     "item": 0,
     "title": 0
@@ -79250,11 +79348,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Destillierkolben",
     "ja": "コスモツール：スペース・アレンビック",
     "fr": "Outil cosmique : alambic spatial",
+    "zh": "宇宙工具：太空蒸馏器",
     "description": {
       "en": "Obtain a stellar alembic.",
       "de": "Einen Weltraum-Destillierkolben erlangt.",
       "ja": "スペース・アレンビックを入手する",
-      "fr": "Obtenir l'alambic spatial."
+      "fr": "Obtenir l'alambic spatial.",
+      "zh": "获得太空蒸馏器。"
     },
     "item": 0,
     "title": 0
@@ -79267,11 +79367,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Bratpfanne",
     "ja": "コスモツール：スペース・フライパン",
     "fr": "Outil cosmique : poêle à frire spatiale",
+    "zh": "宇宙工具：太空煎锅",
     "description": {
       "en": "Obtain a stellar frypan.",
       "de": "Eine Weltraum-Bratpfanne erlangt.",
       "ja": "スペース・フライパンを入手する",
-      "fr": "Obtenir la poêle à frire spatiale."
+      "fr": "Obtenir la poêle à frire spatiale.",
+      "zh": "获得太空煎锅。"
     },
     "item": 0,
     "title": 0
@@ -79284,11 +79386,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Spitzhacke",
     "ja": "コスモツール：スペース・ピック",
     "fr": "Outil cosmique : pioche spatiale",
+    "zh": "宇宙工具：太空鹤嘴锄",
     "description": {
       "en": "Obtain a stellar pickaxe.",
       "de": "Eine Weltraum-Spitzhacke erlangt.",
       "ja": "スペース・ピックを入手する",
-      "fr": "Obtenir la pioche spatiale."
+      "fr": "Obtenir la pioche spatiale.",
+      "zh": "获得太空鹤嘴锄。"
     },
     "item": 0,
     "title": 0
@@ -79301,11 +79405,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Handbeil",
     "ja": "コスモツール：スペース・ハチェット",
     "fr": "Outil cosmique : hachette spatiale",
+    "zh": "宇宙工具：太空手斧",
     "description": {
       "en": "Obtain a stellar hatchet.",
       "de": "Ein Weltraum-Handbeil erlangt.",
       "ja": "スペース・ハチェットを入手する",
-      "fr": "Obtenir la hachette spatiale."
+      "fr": "Obtenir la hachette spatiale.",
+      "zh": "获得太空手斧。"
     },
     "item": 0,
     "title": 0
@@ -79318,11 +79424,13 @@
     "de": "Kosmo-Werkzeug: Weltraum-Angelrute",
     "ja": "コスモツール：スペース・フィッシングロッド",
     "fr": "Outil cosmique : canne à pêche spatiale",
+    "zh": "宇宙工具：太空钓竿",
     "description": {
       "en": "Obtain a stellar fishing rod.",
       "de": "Eine Weltraum-Angelrute erlangt.",
       "ja": "スペース・フィッシングロッドを入手する",
-      "fr": "Obtenir la canne à pêche spatiale."
+      "fr": "Obtenir la canne à pêche spatiale.",
+      "zh": "获得太空钓竿。"
     },
     "item": 0,
     "title": 0
@@ -79335,11 +79443,13 @@
     "de": "Kartograph: Das Meso-System",
     "ja": "メインターミナルを踏破せし者",
     "fr": "Cartographe du continent : mésoterminal",
+    "zh": "踏遍中央终端",
     "description": {
       "en": "Discover every location within the Meso Terminal.",
       "de": "Alle Orte im Meso-System erkundet.",
       "ja": "メインターミナル（永久幽界）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du mésoterminal."
+      "fr": "Découvrir toute la carte du mésoterminal.",
+      "zh": "成功探索中央终端（永久幽界）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -79352,11 +79462,13 @@
     "de": "Kartograph: San d'Oria: Die zweite Etappe",
     "ja": "サンドリア：ザ・セカンドウォークを踏破せし者",
     "fr": "Cartographe du continent : San d'Oria - La deuxième perambulation",
+    "zh": "踏遍桑多利亚：第二巡行",
     "description": {
       "en": "Discover every location within San d'Oria: The Second Walk.",
       "de": "Alle Orte in San d'Oria: Die zweite Etappe erkundet.",
       "ja": "サンドリア：ザ・セカンドウォークを踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte de San d'Oria - La deuxième perambulation."
+      "fr": "Découvrir toute la carte de San d'Oria - La deuxième perambulation.",
+      "zh": "成功探索桑多利亚：第二巡行的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -79369,11 +79481,13 @@
     "de": "Licht im Dunkel",
     "ja": "深淵なる常闇を滅し者",
     "fr": "Chasser l'obscurité",
+    "zh": "永暗的毁灭者",
     "description": {
       "en": "Defeat Necron in the Minstrel's Ballad: Necron's Embrace.",
       "de": "Das Ewige Dunkel in „Gok Tajaal - Das Ewige Dunkel“ bezwungen.",
       "ja": "極永遠の闇討滅戦で、永遠の闇を討伐する",
-      "fr": "Vaincre Darkness dans le défi “La Nécropole intemporelle (extrême)”."
+      "fr": "Vaincre Darkness dans le défi “La Nécropole intemporelle (extrême)”.",
+      "zh": "在永远之暗悲惶歼灭战中战胜永远之暗。"
     },
     "item": 0,
     "title": 0
@@ -79386,251 +79500,253 @@
     "de": "San d'Oria: Die zweite Etappe",
     "ja": "サンドリア：ザ・セカンドウォークを制覇せし者",
     "fr": "Échos des peuples anciens",
+    "zh": "称霸桑多利亚：第二巡行",
     "description": {
       "en": "Complete San d'Oria: The Second Walk.",
       "de": "San d'Oria: Die zweite Etappe erfolgreich abgeschlossen.",
       "ja": "サンドリア：ザ・セカンドウォークを攻略する",
-      "fr": "Finir San d'Oria - La deuxième perambulation."
+      "fr": "Finir San d'Oria - La deuxième perambulation.",
+      "zh": "成功挑战桑多利亚：第二巡行。"
     },
     "item": 0,
     "title": 0
   },
   "3807": {
     "id": 3807,
-    "icon": "",
+    "icon": "/i/064000/064810.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Pilgrim's Progress I",
+    "de": "Pfadfinder I",
+    "ja": "ピルグリム・トラバースの探索者：ランク1",
+    "fr": "Pèlerinage en terre sainte I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the area marked by stone 10 of Pilgrim's Traverse.",
+      "de": "Den 10. Pfad von Pilgers Pfad abgeschlossen.",
+      "ja": "ピルグリム・トラバースの第10巡礼路を攻略する",
+      "fr": "Conquérir la 10e zone du Sanctuaire des pèlerins."
     },
     "item": 0,
     "title": 0
   },
   "3808": {
     "id": 3808,
-    "icon": "",
+    "icon": "/i/064000/064810.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Pilgrim's Progress II",
+    "de": "Pfadfinder II",
+    "ja": "ピルグリム・トラバースの探索者：ランク2",
+    "fr": "Pèlerinage en terre sainte II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the area marked by stone 20 of Pilgrim's Traverse.",
+      "de": "Den 20. Pfad von Pilgers Pfad abgeschlossen.",
+      "ja": "ピルグリム・トラバースの第20巡礼路を攻略する",
+      "fr": "Conquérir la 20e zone du Sanctuaire des pèlerins."
     },
     "item": 0,
     "title": 0
   },
   "3809": {
     "id": 3809,
-    "icon": "",
+    "icon": "/i/064000/064810.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Pilgrim's Progress III",
+    "de": "Pfadfinder III",
+    "ja": "ピルグリム・トラバースの探索者：ランク3",
+    "fr": "Pèlerinage en terre sainte III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the area marked by stone 30 of Pilgrim's Traverse.",
+      "de": "Den 30. Pfad von Pilgers Pfad abgeschlossen.",
+      "ja": "ピルグリム・トラバースの第30巡礼路を攻略する",
+      "fr": "Conquérir la 30e zone du Sanctuaire des pèlerins."
     },
     "item": 0,
-    "title": 0
+    "title": 811
   },
   "3810": {
     "id": 3810,
-    "icon": "",
+    "icon": "/i/064000/064810.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Pilgrim's Progress IV",
+    "de": "Pfadfinder IV",
+    "ja": "ピルグリム・トラバースの探索者：ランク4",
+    "fr": "Pèlerinage en terre sainte IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the area marked by stone 50 of Pilgrim's Traverse.",
+      "de": "Den 50. Pfad von Pilgers Pfad abgeschlossen.",
+      "ja": "ピルグリム・トラバースの第50巡礼路を攻略する",
+      "fr": "Conquérir la 40e zone du Sanctuaire des pèlerins."
     },
     "item": 0,
     "title": 0
   },
   "3811": {
     "id": 3811,
-    "icon": "",
+    "icon": "/i/064000/064810.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Pilgrim's Progress VI",
+    "de": "Pfadfinder VI",
+    "ja": "ピルグリム・トラバースの探索者：ランク6",
+    "fr": "Pèlerinage en terre sainte VI",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the area marked by stone 100 of Pilgrim's Traverse.",
+      "de": "Den 100. Pfad von Pilgers Pfad abgeschlossen.",
+      "ja": "ピルグリム・トラバースの第100巡礼路を攻略する",
+      "fr": "Conquérir la 100e zone du Sanctuaire des pèlerins."
     },
     "item": 0,
-    "title": 0
+    "title": 812
   },
   "3812": {
     "id": 3812,
-    "icon": "",
+    "icon": "/i/061000/061265.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "No Longer Limp",
+    "de": "Bewaffnete Wallfahrt",
+    "ja": "強化されし光耀魔器",
+    "fr": "Armement étincelant",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a weapon of the First Light.",
+      "de": "Eine Pilger-Waffe erhalten.",
+      "ja": "「光耀武器」のいずれかを入手する",
+      "fr": "Obtenir une des armes de la Lumière originelle."
     },
     "item": 0,
     "title": 0
   },
   "3813": {
     "id": 3813,
-    "icon": "",
+    "icon": "/i/061000/061265.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "That Wasn't Wine",
+    "de": "Schwerbewaffnete Wallfahrt",
+    "ja": "さらに強化されし光耀魔器",
+    "fr": "Sacrement guerrier",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a sacramental weapon.",
+      "de": "Eine Waffe der Sakramente erhalten.",
+      "ja": "「光耀儀礼武器」のいずれかを入手する",
+      "fr": "Obtenir une des armes sacramentelles."
     },
     "item": 0,
     "title": 0
   },
   "3814": {
     "id": 3814,
-    "icon": "",
+    "icon": "/i/003000/003321.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Solo Traveler I",
+    "de": "Einsamer Pilger I",
+    "ja": "至高なる挑戦者：ランク1",
+    "fr": "Pèlerin solitaire I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the 1st through the 50th areas of Pilgrim's Traverse solo and reach stone 51.",
+      "de": "Pilgers Pfad alleine auf dem 1. Pfad betreten und bis zum 51. Pfad erkundet.",
+      "ja": "ピルグリム・トラバースにソロで第1巡礼路から突入し第51巡礼路に到達する",
+      "fr": "Obtenir un score en solo dans le Sanctuaire des pèlerins en commençant par la 1re zone et en s'aventurant au-delà de la 50e."
     },
     "item": 0,
     "title": 0
   },
   "3815": {
     "id": 3815,
-    "icon": "",
+    "icon": "/i/003000/003321.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Solo Traveler II",
+    "de": "Einsamer Pilger II",
+    "ja": "至高なる挑戦者：ランク2",
+    "fr": "Pèlerin solitaire II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the 1st through the 100th areas of Pilgrim's Traverse solo.",
+      "de": "Pilgers Pfad alleine auf dem 1. Pfad betreten und bis zum 100. Pfad erkundet.",
+      "ja": "ピルグリム・トラバースにソロで第1巡礼路から突入し第100巡礼路まで攻略する",
+      "fr": "Atteindre la 100e zone en solo dans le Sanctuaire des pèlerins en commençant par la 1re."
     },
     "item": 0,
-    "title": 0
+    "title": 813
   },
   "3816": {
     "id": 3816,
-    "icon": "",
+    "icon": "/i/060000/060035.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "For the Hoard VII",
+    "de": "Mein Schatz VII",
+    "ja": "埋もれた財宝：ランク7",
+    "fr": "Exhumation profonde VII",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Discover 30,000 pieces of the Accursed Hoard.",
+      "de": "30.000 verborgene Schätze gefunden.",
+      "ja": "埋もれた財宝を30,000個発見した",
+      "fr": "Découvrir 30 000 trésors cachés."
     },
     "item": 0,
-    "title": 0
+    "title": 814
   },
   "3817": {
     "id": 3817,
-    "icon": "",
+    "icon": "/i/026000/026081.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Faerie Favors",
+    "de": "Strahlende Erscheinung",
+    "ja": "至高なる英雄の証",
+    "fr": "Mystique raffiné",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Speak with Aenc Daen while in possession of all four accessories of the First Light.",
+      "de": "Mit Aenc Daen gesprochen, während du alle vier Schmuckstücke des Strahlenden Lichts angelegt oder in Besitz hast.",
+      "ja": "「ファーストライト・イヤリング」「ファーストライト・ネックレス」「ファーストライト・バングル」「ファーストライト・リング」を所持または装備した状態で、インク＝ダエンと話す",
+      "fr": "Parler à Aenc Daen en étant en possession ou en s'étant équipé d'une paire de boucles d'oreilles de la Lumière originelle, d'un collier de la Lumière originelle, d'une paire de joncs de la Lumière originelle et d'une bague de la Lumière originelle."
     },
     "item": 0,
-    "title": 0
+    "title": 815
   },
   "3818": {
     "id": 3818,
-    "icon": "",
+    "icon": "/i/003000/003374.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Unholy Sacrament",
+    "de": "Balde ruhest du auch",
+    "ja": "大巡礼の会葬者",
+    "fr": "Six fulms sous terre",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Final Verse (Quantum).",
+      "de": "„Eminente Trauer (variabel)“ abgeschlossen.",
+      "ja": "詩想エミネントグリーフ討滅戦を攻略する",
+      "fr": "Finir le Verset final (quantique)."
     },
     "item": 0,
-    "title": 0
+    "title": 816
   },
   "3819": {
     "id": 3819,
-    "icon": "",
+    "icon": "/i/003000/003370.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Unholy Devotion",
+    "de": "Am Ende des Pfades",
+    "ja": "死せる巡礼路の果てへ",
+    "fr": "Mort et enterré",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Final Verse (Quantum) with the maximum amount of sacramental offerings.",
+      "de": "„Eminente Trauer (variabel)“ mit der maximalen Anzahl an Opfergaben abgeschlossen.",
+      "ja": "詩想エミネントグリーフ討滅戦を供物を最大限捧げた状態で攻略する",
+      "fr": "Finir le Verset final (quantique) après avoir accompli le maximum possible d'offrandes sacramentelles."
     },
     "item": 0,
-    "title": 0
+    "title": 817
   },
   "3820": {
     "id": 3820,
-    "icon": "",
+    "icon": "/i/027000/027661.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Triple-decker XIV",
+    "de": "Tripledecker XIV",
+    "ja": "カードコレクター：ランク14",
+    "fr": "Porte-cartes XIV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain 451 unique Triple Triad cards.",
+      "de": "451 verschiedene Triple Triad-Karten erhalten.",
+      "ja": "トリプルトライアドのカードを451種類入手する",
+      "fr": "Obtenir 451 cartes de Triple Triade différentes."
     },
-    "item": 0,
+    "item": 46821,
     "title": 0
   },
   "3821": {
@@ -79641,62 +79757,64 @@
     "de": "Kapitalbeschaffung auf Tural II",
     "ja": "黄金の太公望：ランク2",
     "fr": "Pêcheur de légendes éternel II",
+    "zh": "金曦太公2",
     "description": {
       "en": "Catch 24 different varieties of big fish in areas explored during Dawntrail.",
       "de": "24 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
       "ja": "黄金のレガシーのエリアにいるヌシを24種類、釣り上げる",
-      "fr": "Pêcher 24 prises légendaires différentes dans les zones explorées lors de Dawntrail."
+      "fr": "Pêcher 24 prises légendaires différentes dans les zones explorées lors de Dawntrail.",
+      "zh": "在金曦区域钓上24种钓场之王。"
     },
     "item": 0,
     "title": 0
   },
   "3822": {
     "id": 3822,
-    "icon": "",
+    "icon": "/i/053000/053720.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Guardian Hunter",
+    "de": "Erfolgreiche Jagd",
+    "ja": "白き来訪者",
+    "fr": "Le Spectre Blanc",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “The White Wanderer.”",
+      "de": "Den Auftrag „Der Weiße Besucher“ abgeschlossen.",
+      "ja": "クエスト「白き来訪者」をコンプリートする",
+      "fr": "Accomplir la quête “Le Spectre Blanc”."
     },
     "item": 0,
-    "title": 0
+    "title": 818
   },
   "3823": {
     "id": 3823,
-    "icon": "",
+    "icon": "/i/000000/000317.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Guardiansbane",
+    "de": "Wächterschlächter",
+    "ja": "護竜アルシュベルドを狩りし者",
+    "fr": "Le retour du Spectre Blanc",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat Guardian Arkveld in the Windward Wilds (Extreme).",
+      "de": "Wächter-Arkveld in „Jagd auf Wächter-Arkveld (schwer)“ bezwungen.",
+      "ja": "極護竜アルシュベルド狩猟戦で、護竜アルシュベルドを討伐する",
+      "fr": "Vaincre l'Arkveld Gardien dans le défi “Chasse à l'Arkveld Gardien (extrême)”."
     },
     "item": 0,
     "title": 0
   },
   "3824": {
     "id": 3824,
-    "icon": "",
+    "icon": "/i/064000/064810.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Pilgrim's Progress V",
+    "de": "Pfadfinder V",
+    "ja": "ピルグリム・トラバースの探索者：ランク5",
+    "fr": "Pèlerinage en terre sainte V",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the area marked by stone 70 of Pilgrim's Traverse.",
+      "de": "Den 70. Pfad von Pilgers Pfad abgeschlossen.",
+      "ja": "ピルグリム・トラバースの第70巡礼路を攻略する",
+      "fr": "Conquérir la 70e zone du Sanctuaire des pèlerins."
     },
     "item": 0,
     "title": 0

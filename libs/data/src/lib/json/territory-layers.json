@@ -20435,6 +20435,103 @@
       }
     }
   ],
+  "1297": [
+    {
+      "mapId": 1054,
+      "index": 0,
+      "placeNameId": 0,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 1091,
+      "index": 0,
+      "placeNameId": 0,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 1092,
+      "index": 0,
+      "placeNameId": 0,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 1093,
+      "index": 0,
+      "placeNameId": 0,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 1094,
+      "index": 0,
+      "placeNameId": 0,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    }
+  ],
   "1303": [
     {
       "mapId": 52,

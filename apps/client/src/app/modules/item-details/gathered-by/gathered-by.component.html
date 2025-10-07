@@ -10,7 +10,9 @@
         @if (node.video) {
           <div class="flex-row justify-center">
             <iframe width="300" height="169" [src]="node.video | tcYoutubeEmbed | nzSanitizer:'resourceUrl'" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    title="Youtube guide"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         }
         @if (node.id > 0) {

@@ -8425,11 +8425,11 @@
   },
   {
     "id": 1054,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4949,
+    "name": "Zirgorteh the Open-armed",
+    "territory": 1297,
+    "scale": 400,
+    "weatherRate": 160
   },
   {
     "id": 1055,
@@ -8497,19 +8497,19 @@
   },
   {
     "id": 1063,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5276,
+    "name": "The Windward Wilds",
+    "territory": 1300,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1064,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5276,
+    "name": "The Windward Wilds",
+    "territory": 1301,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1065,
@@ -8721,35 +8721,35 @@
   },
   {
     "id": 1091,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4949,
+    "name": "Zirgorteh the Open-armed",
+    "territory": 1297,
+    "scale": 400,
+    "weatherRate": 160
   },
   {
     "id": 1092,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4949,
+    "name": "Zirgorteh the Open-armed",
+    "territory": 1297,
+    "scale": 400,
+    "weatherRate": 160
   },
   {
     "id": 1093,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4949,
+    "name": "Zirgorteh the Open-armed",
+    "territory": 1297,
+    "scale": 400,
+    "weatherRate": 160
   },
   {
     "id": 1094,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4949,
+    "name": "Zirgorteh the Open-armed",
+    "territory": 1297,
+    "scale": 400,
+    "weatherRate": 160
   },
   {
     "id": 1095,
@@ -8777,11 +8777,11 @@
   },
   {
     "id": 1098,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5277,
+    "name": "Pilgrim's Traverse",
+    "territory": 1280,
+    "scale": 100,
+    "weatherRate": 0
   },
   {
     "id": 1099,

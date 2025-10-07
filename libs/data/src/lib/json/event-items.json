@@ -26320,39 +26320,39 @@
     "icon": "/i/027000/027551.png"
   },
   "2003760": {
-    "en": "",
+    "en": "All Saints' Cookies",
     "ja": "",
     "de": "Süßes für Allerschutzheiligen",
     "fr": "Douceurs de la Veillée",
     "icon": "/i/026000/026111.png"
   },
   "2003761": {
-    "en": "",
+    "en": "Decorative Pumpkin",
     "ja": "",
     "de": "Kürbis für Allerschutzheiligen",
     "fr": "Citrouille décorative",
     "icon": "/i/024000/024153.png"
   },
   "2003762": {
-    "en": "",
+    "en": "Liquor Bottle",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Weinflasche",
+    "fr": "Bouteille d'eau-de-vie",
+    "icon": "/i/025000/025057.png"
   },
   "2003763": {
-    "en": "",
+    "en": "Sack of Produce",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Sack Feldfrüchte",
+    "fr": "Sac de légumes",
+    "icon": "/i/025000/025351.png"
   },
   "2003764": {
-    "en": "",
+    "en": "Piece of Paper",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Stück Papier",
+    "fr": "Morceau de papier",
+    "icon": "/i/026000/026151.png"
   },
   "2003765": {
     "en": "",
@@ -26439,60 +26439,60 @@
     "icon": ""
   },
   "2003777": {
-    "en": "",
+    "en": "Melting Salts",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Streusalz",
+    "fr": "Sels antigivrants",
+    "icon": "/i/026000/026111.png"
   },
   "2003778": {
-    "en": "",
+    "en": "Polishing Powder",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Flasche Pyroxenpflegemittel",
+    "fr": "Agent lustrant",
+    "icon": "/i/025000/025919.png"
   },
   "2003779": {
-    "en": "",
+    "en": "Crimson Karvarhur Bloom",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Rote Karvarhur-Rose",
+    "fr": "Fleur rouge de Karvarhur",
+    "icon": "/i/025000/025687.png"
   },
   "2003780": {
-    "en": "",
+    "en": "Chirwagur Payment",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Chirwagur-Handelsware",
+    "fr": "Talisman yok huy",
+    "icon": "/i/021000/021205.png"
   },
   "2003781": {
-    "en": "",
+    "en": "Chirwagur Salt",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Chirwagur-Salz",
+    "fr": "Sel de Chirwagur",
+    "icon": "/i/025000/025104.png"
   },
   "2003782": {
-    "en": "",
+    "en": "Spring Water Icicle",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Zirgorteh-Eiszapfen",
+    "fr": "Glace naturelle",
+    "icon": "/i/020000/020015.png"
   },
   "2003783": {
-    "en": "",
+    "en": "Essential Construction Supplies",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Wichtige Bauvorräte",
+    "fr": "Fournitures essentielles pour la construction",
+    "icon": "/i/021000/021003.png"
   },
   "2003784": {
-    "en": "",
+    "en": "Restoration Glowstone",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Phosphorit",
+    "fr": "Pierre phosphorescente",
+    "icon": "/i/021000/021477.png"
   },
   "2003785": {
     "en": "Gargantuaskin Treasure Map",
@@ -26509,11 +26509,11 @@
     "icon": "/i/026000/026151.png"
   },
   "2003787": {
-    "en": "",
+    "en": "Jar of Kirkahryar",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Kirkahryar",
+    "fr": "Kirkahryar",
+    "icon": "/i/022000/022802.png"
   },
   "2003788": {
     "en": "",
