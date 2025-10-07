@@ -192,16 +192,16 @@
     "fr": "Échos de Vana'diel"
   },
   "33": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Main Quests",
+    "ja": "ストーリークエスト",
+    "de": "Hauptaufträge",
+    "fr": "Histoire principale"
   },
   "34": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Daily Quests",
+    "ja": "デイリークエスト",
+    "de": "Nebenaufträge",
+    "fr": "Quêtes quotidiennes"
   },
   "35": {
     "en": "Main Quests",
@@ -618,10 +618,10 @@
     "fr": "Eurêka Orthos"
   },
   "104": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pilgrim's Traverse",
+    "ja": "ピルグリム・トラバース",
+    "de": "Pilgers Pfad",
+    "fr": "Le Sanctuaire des pèlerins"
   },
   "105": {
     "en": "Island Sanctuary Quests",

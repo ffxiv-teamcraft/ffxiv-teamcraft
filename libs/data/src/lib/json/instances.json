@@ -9519,6 +9519,60 @@
       42300
     ]
   },
+  "20102": {
+    "id": 20102,
+    "en": "the Windward Wilds",
+    "ja": "護竜アルシュベルド狩猟戦",
+    "de": "Jagd auf Wächter-Arkveld",
+    "fr": "Chasse à l'Arkveld Gardien",
+    "description": {
+      "en": "Animal carcasses have been turning up left and right in Shaaloani, with a mysterious mark bill suggesting that a new monster prowls the plains. Tasked with hunting the beast, you set off to meet your client, a stray Felyne, and together with their stalwart Seikret companion, scour the wilds and identify your mark: Guardian Arkveld. Now invigorated by a repast of grilled meat and equipped with potent mega potions, the time is come to end the Guardian's rampage and return peace to the wilds!",
+      "ja": "シャーローニ荒野で相次ぐ、動物たちの不審死。事件の背後には、未知のモンスターの関与があるとして、不思議な手配書が出回っていた。冒険者は、モンスター討伐を依頼する「旅のアイルー」、そして頼もしい騎乗動物「セクレト」とともに痕跡を辿り、ついに護竜「アルシュベルド」を発見するに至った。上手に焼けた肉を食べて準備は万全、「回復薬グレート」を携え、護竜の狩猟に挑め！",
+      "de": "Die Wildnis Shaaloanis ist von Tierkadavern gepflastert und dann erreicht dich auch noch eine merkwürdige Jagdlizenz, dessen Aussteller sich als niedliches Katzenwesen entpuppt. Gemeinsam folgt ihr den Spuren der Vernichtung, bis sie euch schließlich zu dem Übeltäter des Ganzen führt: dem sogenannten Arkveld&nbsp;- eine brandgefährliche Bestie, welche zusammen mit deinem kurzfelligen Freund auf mysteriöse Weise auf Tural gelandet ist. In klassischer Jägermanier stärkst du dich im Feldlager an einer gehörigen Portion Grillfleisch und bereitest dich mit Mega-Tränken auf eine Jagd der Extraklasse vor. Zerberste die Ketten des Weißen Geists aus dem Verbotenen Land!",
+      "fr": "Des cadavres d'animaux ayant péri dans des conditions suspectes jonchent la Shaaloani... Après avoir accepté de remédier à cette inquiétante situation, vous faites la connaissance d'un Felyne et d'un Seikret qui vous révèlent l'identité du coupable&nbsp;: l'Arkveld Gardien, une bête immense d'une très grande férocité. Avalez un bon gros bout de viande grillée, munissez-vous de vos méga potions et partez chasser le monstre pour restaurer la tranquillité dans la région&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112627.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 725,
+    "sync": 100,
+    "exp": 0,
+    "map": 1063
+  },
+  "20103": {
+    "id": 20103,
+    "en": "the Windward Wilds (Extreme)",
+    "ja": "極護竜アルシュベルド狩猟戦",
+    "de": "Jagd auf Wächter-Arkveld (schwer)",
+    "fr": "Chasse à l'Arkveld Gardien (extrême)",
+    "description": {
+      "en": "The wandering minstrel sings of a lone Guardian, whose obsession with aether would have invited ruin upon the wildlife of Shaaloani. Had the white wanderer─this beast from beyond─never spent its strength facing Serpentlord Ttokrrone, what power might it have brought to bear against you? The minstrel’s musings ignite your imagination, drawing you back to that arduous encounter, now more arduous still...",
+      "ja": "異邦の詩人は謳う。強力なエネルギーに執着し、生態系を破壊せんばかりに暴れまわった護竜のことを。何処からか突如として現れた白き来訪者に対し、もし荒野の頂点たる存在がその縄張りをかけて争っていなかったとしたら、果たして彼のモンスターはどれほどの力を身につけていたであろうか――。冒険者は今、護竜アルシュベルドの狩猟を追体験する。",
+      "de": "Des Fahrenden Sängers Stimme erklingt mit der Imposanz eines Jagdhorns und führt dich ein in eine Vision einer Wildnis, welche von einem einzigen monströsen Wesen dominiert ist: dem Weißen Geist. Du beginnst dich zu wundern, wie euer Kampf wohl ausgegangen wäre, hätte das Wächterwesen sich zuvor nicht bereits mit den stärksten Bestien der staubigen Ebenen Turals gemessen. Und je tiefer du dich diesem Gedanken hingibst, desto mehr nimmt er langsam Gestalt an, bis du dich ein weiteres Mal einem kettenscharrenden Arkveld gegenüber siehst.",
+      "fr": "Inspiré par votre récit, le ménestrel errant vous conte l'histoire d'un dragon étouffant dans sa propre souffrance, obsédé par une montée en puissance infinie, et semant la pagaille au point de menacer l'équilibre d'un écosystème tout entier. Que serait-il advenu si la nature elle-même, à travers ses créations, n'avait pas lutté pour sa préservation contre cet envahisseur surgi de nulle part&nbsp;? Quel incroyable carnage aurait-il commis dans sa folie&nbsp;? Pour en avoir un avant-goût, tentez donc de chasser un Arkveld Gardien plus déchaîné que jamais&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112628.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 740,
+    "sync": 100,
+    "exp": 0,
+    "map": 1063
+  },
   "20104": {
     "id": 20104,
     "en": "the Ageless Necropolis",
@@ -17635,6 +17689,347 @@
     "contentText": [
       35408,
       35400
+    ]
+  },
+  "60041": {
+    "id": 60041,
+    "en": "Pilgrim's Traverse (Stones 1-10)",
+    "ja": "ピルグリム・トラバース 第1～10巡礼路",
+    "de": "Pilgers Pfad (Ebenen 1-10)",
+    "fr": "Le Sanctuaire des pèlerins (zones 1-10)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112615.png",
+    "gamePatch": 86,
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0,
+    "contentText": [
+      42704,
+      42700
+    ]
+  },
+  "60042": {
+    "id": 60042,
+    "en": "Pilgrim's Traverse (Stones 11-20)",
+    "ja": "ピルグリム・トラバース 第11～20巡礼路",
+    "de": "Pilgers Pfad (Ebenen 11-20)",
+    "fr": "Le Sanctuaire des pèlerins (zones 11-20)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112616.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60043": {
+    "id": 60043,
+    "en": "Pilgrim's Traverse (Stones 21-30)",
+    "ja": "ピルグリム・トラバース 第21～30巡礼路",
+    "de": "Pilgers Pfad (Ebenen 21-30)",
+    "fr": "Le Sanctuaire des pèlerins (zones 21-30)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112617.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60044": {
+    "id": 60044,
+    "en": "Pilgrim's Traverse (Stones 31-40)",
+    "ja": "ピルグリム・トラバース 第31～40巡礼路",
+    "de": "Pilgers Pfad (Ebenen 31-40)",
+    "fr": "Le Sanctuaire des pèlerins (zones 31-40)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112618.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60045": {
+    "id": 60045,
+    "en": "Pilgrim's Traverse (Stones 41-50)",
+    "ja": "ピルグリム・トラバース 第41～50巡礼路",
+    "de": "Pilgers Pfad (Ebenen 41-50)",
+    "fr": "Le Sanctuaire des pèlerins (zones 41-50)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112619.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60046": {
+    "id": 60046,
+    "en": "Pilgrim's Traverse (Stones 51-60)",
+    "ja": "ピルグリム・トラバース 第51～60巡礼路",
+    "de": "Pilgers Pfad (Ebenen 51-60)",
+    "fr": "Le Sanctuaire des pèlerins (zones 51-60)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112620.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60047": {
+    "id": 60047,
+    "en": "Pilgrim's Traverse (Stones 61-70)",
+    "ja": "ピルグリム・トラバース 第61～70巡礼路",
+    "de": "Pilgers Pfad (Ebenen 61-70)",
+    "fr": "Le Sanctuaire des pèlerins (zones 61-70)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112621.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60048": {
+    "id": 60048,
+    "en": "Pilgrim's Traverse (Stones 71-80)",
+    "ja": "ピルグリム・トラバース 第71～80巡礼路",
+    "de": "Pilgers Pfad (Ebenen 71-80)",
+    "fr": "Le Sanctuaire des pèlerins (zones 71-80)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112622.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60049": {
+    "id": 60049,
+    "en": "Pilgrim's Traverse (Stones 81-90)",
+    "ja": "ピルグリム・トラバース 第81～90巡礼路",
+    "de": "Pilgers Pfad (Ebenen 81-90)",
+    "fr": "Le Sanctuaire des pèlerins (zones 81-90)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112623.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
+  },
+  "60050": {
+    "id": 60050,
+    "en": "Pilgrim's Traverse (Stones 91-100)",
+    "ja": "ピルグリム・トラバース 第91～100巡礼路",
+    "de": "Pilgers Pfad (Ebenen 91-100)",
+    "fr": "Le Sanctuaire des pèlerins (zones 91-100)",
+    "description": {
+      "en": "The return of night to Norvrandt should have brought peaceful slumber to the Church of the First Light, but within its ruined chapels crawls an uneasy horde of sin eaters. With the aid of the faerie king, you must venture down the pilgrim road to attend an unlikely funeral and grant eternal rest to all who yet yearn for oblivion.",
+      "ja": "夜も戻ったこのときに、廃墟はひっそり口を開け、罪喰いどもが這い出して、彷徨い歩く巡礼路――。<br>かつてノルヴラントで多くの信心を集めた「光耀教会」、その跡地で人知れず葬儀が始まった。妖精王と手を取り合い、行け、眠れる者のもとへ。終わりという安らぎを届けるために。",
+      "de": "Als die Nacht zurückkehrte, öffneten die Ruinen leise ihre Mäuler&nbsp;- Sündenvertilger quollen hervor und ergossen sich auf den Pfad der Pilger.<br>In den Stätten der Kirche des Strahlenden Lichts wird im Geheimen eine Trauerfeier abgehalten. Zusammen mit dem Feenkönig Titania begibst du dich auf Wallfahrt, um den Schlafenden ihren Frieden zu bringen.",
+      "fr": "Alors même que la nuit est revenue dans le premier reflet, des purgateurs continuent de s'échapper en nombre des vestiges de l'église de l'Aurore. Tout porte à croire que des funérailles se tiennent en secret au cœur de ce lieu oublié, siège d'une religion qui comptait jadis de nombreux fidèles en Norvrandt. Sous les auspices du Monarque féérique, vous vous lancez à l'assaut de ses méandres afin de retrouver le défunt et de lui apporter, si possible, le repos éternel."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112624.png",
+    "contentType": 21,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0,
+    "contentText": [
+      42814,
+      42800
+    ]
+  },
+  "60051": {
+    "id": 60051,
+    "en": "the Final Verse (Quantum)",
+    "ja": "詩想エミネントグリーフ討滅戦",
+    "de": "Eminente Trauer (variabel)",
+    "fr": "Le Verset final (quantique)",
+    "description": {
+      "en": "Shaped by your offerings, a deep anguish burgeons from the sleepless abyss. Only those with the fortitude to face an aberration of both Light and Darkness may navigate this waking dream and overcome the damnation trapped upon a holy road.",
+      "ja": "死せる路、先に坐すのは光か闇か。供物の香りに彩られ、詩想の果てに夢見るは、果てなき巡礼、その最果ての部屋。<br>眠りを拒む宵の淵、悪さも呪文も魔法の力も、深き悲嘆に近づけぬ。巡礼者よ、それでも歩みを運ぶのか――。",
+      "de": "Endet der Pfad im Licht oder in Dunkelheit? Der Duft der Opfergaben liegt schwer über der Erzählung, die an einen märchenhaften Traum in einer Sommernacht erinnert.<br>Weder Bann noch Segen vermögen den Träumenden aus kummervoller Nacht zu wecken. Pilger auf diesen Pfaden, wirst du das Ende je erreichen?",
+      "fr": "Lumière ou Ténèbres, que reste-t-il à la lisière de la mort&nbsp;? Enivré par le parfum des offrandes, le rêveur découvre un dédale vertigineux, et au bout, une chambre mortuaire. Perdue entre chien et loup, une âme torturée y cherche en vain un repos qui ne vient jamais, tandis que sa malice et ses sortilèges ne lui sont d'aucun secours. Oserez-vous malgré tout pénétrer dans son antre, ô chers pèlerins&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112625.png",
+    "contentType": 39,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0,
+    "contentText": [
+      42814,
+      42800
+    ]
+  },
+  "60052": {
+    "id": 60052,
+    "en": "the Final Verse",
+    "ja": "エミネントグリーフ討滅戦",
+    "de": "Eminente Trauer",
+    "fr": "Le Verset final",
+    "description": {
+      "en": "In a distant church of the First Light persists an unholy union, sealed away and forgotten by time. Although no more yielding but a dream, this simulacrum of Light and Darkness will test your readiness to face what lurks at the end of the pilgrim road...",
+      "ja": "死せる路、その最奥に潜むは忘らるる異形。光は闇を、闇は光を蝕んで、奏でる声音が憎悪へ誘う。<br>山を越え、谷間を越えて、巡礼はいま深淵に至れり。一夜の舞いのその先に、残るはいずれの強者だろうか。",
+      "de": "In einer abgelegenen Kirche des Strahlenden Lichts verbirgt sich ein chimärenhafter Schrecken, der längst dem Vergessen anheim gefallen war.<br>Pilger, der du das Ende aller Pfade erreicht hast! Versinke im Traum einer Sommernacht und stelle dich der aus Licht und Dunkelheit geborenen Bedrohung!",
+      "fr": "Au bout du chemin se terre une créature difforme oubliée de tous, un amalgame absurde de Lumière et de Ténèbres dont l'âme n'est plus que haine et rancœur. Les pèlerins sont allés par monts et par vaux&nbsp;; les voilà à présent parvenus aux abysses, contraints d'exécuter une danse macabre dont seuls les plus vaillants pourront réchapper..."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061824.png",
+    "banner": "/i/112000/112633.png",
+    "contentType": 39,
+    "levelReq": 91,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0,
+    "contentText": [
+      42814,
+      42800
     ]
   },
   "61001": {

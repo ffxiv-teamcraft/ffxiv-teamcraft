@@ -63126,45 +63126,45 @@
     }
   },
   "4510": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/i/215000/215003.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "4511": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Burns",
+    "de": "Brandwunde",
+    "ja": "火傷",
+    "fr": "Brûlure",
+    "icon": "/i/219000/219001.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining fire damage over time.",
+      "de": "Erleidet schrittweise Feuerschaden.",
+      "ja": "火属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de feu sont subis."
     }
   },
   "4512": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Suppuration",
+    "de": "Verbrennung",
+    "ja": "熱傷",
+    "fr": "Morsure du feu",
+    "icon": "/i/217000/217181.png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Maximum HP is reduced and damage taken is increased.",
+      "de": "Maximale LP sind verringert, erlittener Schaden ist erhöht.",
+      "ja": "最大HPが低下し、受けるダメージが増加する状態。",
+      "fr": "Les PV maximums sont réduits et les dégâts reçus sont augmentés."
     }
   },
   "4513": {
@@ -63238,31 +63238,31 @@
     }
   },
   "4518": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Shadow of Death",
+    "de": "Finsternis des Todes",
+    "ja": "死出の暗闇",
+    "fr": "Noirceur de l'au-delà",
+    "icon": "/i/214000/214289.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Death prowls ever closer, resulting in KO when this effect expires. Effect removed upon taking Light-aspected damage.",
+      "de": "Wird auf den Pfad des Todes gelockt und bei Ablauf der Wirkungsdauer kampfunfähig. Wird aufgehoben, wenn Lichtschaden erlitten wird.",
+      "ja": "死出の道に誘われ、効果時間終了時に戦闘不能になる状態。光属性の攻撃を受けると解除される。",
+      "fr": "L'esprit est attiré vers l'au-delà, le personnage devenant inconscient à la fin de l'effet. Subir une attaque de Lumière dissipera l'effet."
     }
   },
   "4519": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Nowhere to Run",
+    "de": "Last des Todes",
+    "ja": "死出の重荷",
+    "fr": "Fardeau de l'au-delà",
+    "icon": "/i/220000/220001.png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Death draws closer with each movement. 8 stacks will result in KO.",
+      "de": "Ist auf den Pfad des Todes gelockt. Bewegung erhöht die Stapelzahl, und 8 Stapel führen zu Kampfunfähigkeit.",
+      "ja": "死出の道に誘われた状態。移動によってスタック数が増え、スタック数が8になると戦闘不能になる。",
+      "fr": "L'esprit est attiré vers l'au-delà. L'effet peut se cumuler en fonction des déplacements. S'il est cumulé 8 fois, le personnage tombe inconscient."
     }
   },
   "4520": {
@@ -63812,227 +63812,227 @@
     }
   },
   "4559": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dark Vengeance",
+    "de": "Echo der Dunkelheit",
+    "ja": "闇の反響",
+    "fr": "Écho de Ténèbres",
+    "icon": "/i/214000/214317.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Touched by Darkness and taking damage over time. Will suffer <span style=\"color:#ffffff\">Hysteria</span> when this effect expires.",
+      "de": "Erleidet schrittweise Schaden. Verfällt in <span style=\"color:#ffffff\">Panik</span>, wenn der Zähler null erreicht.",
+      "ja": "闇に触れ、その影響を受けた状態。ＨＰが徐々に失われる状態。カウント0で恐慌状態に陥る。",
+      "fr": "L'influence des Ténèbres est subie, causant des dégâts périodiques. Inflige Hystérie lorsque le compteur atteint zéro."
     }
   },
   "4560": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Light Vengeance",
+    "de": "Echo des Lichts",
+    "ja": "光の反響",
+    "fr": "Écho de Lumière",
+    "icon": "/i/214000/214316.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Touched by Light. Petrification sets in when effect expires.",
+      "de": "Wird zu <span style=\"color:#ffffff\">Stein</span>, wenn der Zähler null erreicht.",
+      "ja": "光に触れ、その影響を受けた状態。カウント0で石化状態に陥る。",
+      "fr": "L'influence de la Lumière est subie. Inflige Pétrification lorsque le compteur atteint zéro."
     }
   },
   "4561": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Borrowed Time",
+    "de": "Seelenharmonie",
+    "ja": "魂魄同調",
+    "fr": "Concordance d'âmes",
+    "icon": "/i/214000/214296.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustained by the power of a distinct but enmeshed entity.",
+      "de": "Kämpft mit der Kraft einer verbundenen Seele weiter.",
+      "ja": "繋がり合ったもうひとつの存在の力で戦いを続けている状態。",
+      "fr": "L'âme est liée à une autre, qui lui donne sa force pour combattre."
     }
   },
   "4562": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Chains of Condemnation",
+    "de": "Flammenfessel",
+    "ja": "焔の枷",
+    "fr": "Chaînes de flammes",
+    "icon": "/i/214000/214297.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Shackled by flames and unable to move without taking fire damage.",
+      "de": "Erleidet bei Bewegung Feuerschaden.",
+      "ja": "炎の枷をつけられ、移動すると火属性ダメージを受ける状態。",
+      "fr": "La victime est liée par des chaînes de flammes et subit des dégâts de feu si elle se déplace."
     }
   },
   "4563": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Searing Chains",
+    "de": "Flammenkette",
+    "ja": "焔の鎖",
+    "fr": "Chaînes incandescentes",
+    "icon": "/i/214000/214298.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Red-hot chains bind the flesh, causing damage over time. Breaking the chain will result in torment by <span style=\"color:#ffffff\">Searing Chains</span>.",
+      "de": "Ist mit einer Feuerkette verbunden. Erleidet schrittweise Schaden. Wenn die Kette reißt, wird <span style=\"color:#ffffff\">Flammenkette</span> ausgelöst.",
+      "ja": "炎の鎖で繋がれ、ＨＰが徐々に失われる状態。鎖が切れると、焔の鎖が発動する。",
+      "fr": "Des dégâts périodiques sont subis à cause des brûlures causées par les chaînes. Déclenche Chaînes incandescentes lorsque la chaîne est brisée."
     }
   },
   "4564": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Shackled Healing",
+    "de": "Lichtkette der Warnung: Heilung",
+    "ja": "戒めの光鎖【回復】",
+    "fr": "Menottes d'admonestation&nbsp;: Soin",
+    "icon": "/i/214000/214299.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Behavior is restricted. Use of HP-restoring actions will inflict <span style=\"color:#ffffff\">Shackles of Penitence</span> on those nearby.",
+      "de": "Löst bei Einsatz von Heilkommandos <span style=\"color:#ffffff\">Lichtketten der Strafe</span> in der Nähe aus.",
+      "ja": "特定の行動に制限をかけられた状態。ＨＰ回復系アクションを使用すると、周囲に懲罰の光鎖が発動する。",
+      "fr": "Le champ d'action est réduit par les menottes. Déclenche Menottes de pénitence autour de la cible si une action de régénération de PV est utilisée."
     }
   },
   "4565": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Shackled Abilities",
+    "de": "Lichtkette der Warnung: Kampf",
+    "ja": "戒めの光鎖【アビリティ】",
+    "fr": "Menottes d'admonestation&nbsp;: Aptitudes",
+    "icon": "/i/214000/214300.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Behavior is restricted. Use of abilities will inflict <span style=\"color:#ffffff\">Shackles of Penitence</span> on those nearby.",
+      "de": "Löst bei Einsatz von Talenten <span style=\"color:#ffffff\">Lichtketten der Strafe</span> in der Nähe aus.",
+      "ja": "特定の行動に制限をかけられた状態。アビリティを使用すると、周囲に懲罰の光鎖が発動する。",
+      "fr": "Le champ d'action est réduit par les menottes. Déclenche Menottes de pénitence autour de la cible si une aptitude est utilisée."
     }
   },
   "4566": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hellish Earth",
+    "de": "Flammengarten",
+    "ja": "焔の園",
+    "fr": "Jardin de flammes",
+    "icon": "/i/214000/214301.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Trapped in a field of fire and sustaining damage over time. Leaving the area results in instant death.",
+      "de": "Erleidet schrittweise Schaden. Wird bei Verlassen des Bereichs kampfunfähig.",
+      "ja": "焔の園の影響でＨＰが徐々に失われる状態。エリア外に出ると戦闘不能になる。",
+      "fr": "Des dégâts périodiques de feu sont subis dans la zone enflammée. Sortir de la zone provoque le K.O."
     }
   },
   "4567": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Sin Bearer",
+    "de": "Anhäufen der Schuld",
+    "ja": "罪の蓄積",
+    "fr": "Accumulation de péchés",
+    "icon": "/i/220000/220061.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Burdened by a growing number of sins. Maximum stacks will result in a fiery explosion and bearing the <span style=\"color:#ffffff\">Sum of All Sins</span>─however, bearing the <span style=\"color:#ffffff\">Sum of All Sins</span> can be avoided if other players are hit by the explosion.",
+      "de": "Lädt nach und nach Schuld auf sich. Wenn das Maximum erreicht ist, werden eine Explosion und <span style=\"color:#ffffff\">Ausbruch der Schuld</span> ausgelöst.",
+      "ja": "罪の呪いが身体に蓄積されつつある状態。スタック数が最大になると爆発を起こし「罪の臨界」状態になる。なお、ほかのプレイヤーが爆発を受けることで「罪の臨界」状態になるのを防ぐことができる。",
+      "fr": "Une malédiction accumule des péchés dans le corps de la victime. Lorsque le cumul maximum est atteint, celle-ci subit une explosion ainsi que Paroxysme du péché. Ce dernier effet peut être évité si un autre joueur subit les dégâts de l'explosion."
     }
   },
   "4568": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sum of All Sins",
+    "de": "Ausbruch der Schuld",
+    "ja": "罪の臨界",
+    "fr": "Paroxysme du péché",
+    "icon": "/i/214000/214302.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Overburdened by the weight of sin. Unable to move and periodically erupting in an explosion of hellfire. ",
+      "de": "Die angehäufte Schuld entlädt sich. Wird handlungsunfähig und löst regelmäßig <span style=\"color:#ffffff\">Detonation</span> aus.",
+      "ja": "身体に蓄積された罪の呪いが、臨界を迎えつつある状態。行動できなくなり、定期的に大爆発を起こす。",
+      "fr": "Les péchés accumulés dans le corps atteignent leur paroxysme. La victime est immobilisée et subit périodiquement des grosses explosions."
     }
   },
   "4569": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Without Sin",
+    "de": "Absolution",
+    "ja": "免罪",
+    "fr": "Absolution",
+    "icon": "/i/214000/214303.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Temporarily unable to be burdened by sin.",
+      "de": "Verhindert vorübergehend <span style=\"color:#ffffff\">Anhäufen der Schuld</span>.",
+      "ja": "一時的に、罪の呪いが身体に蓄積しなくなった状態。",
+      "fr": "Les péchés cessent de s'accumuler pendant quelques temps."
     }
   },
   "4570": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Fire Damage Up",
+    "de": "Feuerschaden +",
+    "ja": "火属性与ダメージ上昇",
+    "fr": "Bonus de dégâts de feu",
+    "icon": "/i/220000/220081.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire damage dealt is increased.",
+      "de": "Erhöht ausgeteilten Feuerschaden.",
+      "ja": "火属性攻撃で与えるダメージが上昇した状態。",
+      "fr": "Les dégâts de feu infligés sont augmentés."
     }
   },
   "4571": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Dark Damage Up",
+    "de": "Dunkelschaden +",
+    "ja": "闇属性与ダメージ上昇",
+    "fr": "Bonus de dégâts de ténèbres",
+    "icon": "/i/220000/220101.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Dark damage dealt is increased.",
+      "de": "Erhöht ausgeteilten Dunkelschaden.",
+      "ja": "闇属性攻撃で与えるダメージが上昇した状態。",
+      "fr": "Les dégâts de ténèbres infligés sont augmentés."
     }
   },
   "4572": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Light Damage Up",
+    "de": "Lichtschaden +",
+    "ja": "光属性与ダメージ上昇",
+    "fr": "Bonus de dégâts de lumière",
+    "icon": "/i/220000/220121.png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Light damage dealt is increased.",
+      "de": "Erhöht ausgeteilten Lichtschaden.",
+      "ja": "光属性攻撃で与えるダメージが上昇した状態。",
+      "fr": "Les dégâts de lumière infligés sont augmentés."
     }
   },
   "4573": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Well-done, Steak",
+    "de": "Gebratenes Steak",
+    "ja": "こんがり肉",
+    "fr": "Steak à point",
+    "icon": "/i/214000/214294.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Full of steak and regenerating HP over time. Maximum HP is increased.",
+      "de": "Gut genährt fühlst du dich zufrieden und bereit für jede Herausforderung. Die maximalen LP sind erhöht und LP regenerieren sich über Zeit.",
+      "ja": "こんがり肉を食べ、満足感に包まれた状態。最大ＨＰが増加し、さらに継続回復する。",
+      "fr": "La satisfaction intense d'avoir mangé un délicieux morceau de viande augmente les PV maximums et procure un effet de récupération périodique des PV."
     }
   },
   "4574": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Guardian Will",
+    "de": "Wächteraura",
+    "ja": "護竜の圧",
+    "fr": "Pression du Gardien",
+    "icon": "/i/214000/214295.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Guardian Arkveld's overpowering force of will is causing damage over time and increased damage taken. This effect can only be dispelled by the wyvern's defeat.",
+      "de": "Du bist von der gewaltigen Aura des Wächter-Arkvelds überwältigt. Erleidet schrittweise Schaden und erlittener Schaden ist erhöht. Dieser Status bleibt bestehen, bis der Wächter-Arkveld bezwungen ist.",
+      "ja": "護竜の影響を受けた状態。ＨＰが徐々に失われ、かつ受けるダメージが増加する。<br>なお、この状態はアルシュベルドが倒れるまで解除されない。",
+      "fr": "La pression infligée par l'Arkveld Gardien est à son maximum. Des dégâts périodiques sont subis, et les dégâts reçus sont augmentés. L'effet persiste tant que l'Arkveld Gardien n'est pas vaincu."
     }
   },
   "4575": {
@@ -64092,17 +64092,17 @@
     }
   },
   "4579": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blaze Spikes",
+    "de": "Feuerstachel",
+    "ja": "ブレイズスパイク",
+    "fr": "Pointes de feu",
+    "icon": "/i/215000/215508.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental spikes are dealing fire damage to attackers.",
+      "de": "Der Gegner erleidet bei jedem Angriff Feuerschaden.",
+      "ja": "火属性の反撃ダメージを与える状態。",
+      "fr": "Une barrière protectrice de feu blesse les attaquants."
     }
   },
   "4580": {
@@ -64148,129 +64148,129 @@
     }
   },
   "4583": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beyond Beleafed",
+    "de": "Wicht",
+    "ja": "草人",
+    "fr": "Enfeuillé",
+    "icon": "/i/214000/214304.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Transformed into a leafman and unable to execute actions.",
+      "de": "In einen Wicht verwandelt. Kommandos können nicht ausgeführt werden.",
+      "ja": "草人に変身した状態。アクション実行不可。",
+      "fr": "La transformation en enfeuillé empêche toute action."
     }
   },
   "4584": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Midsummer Night's Balm",
+    "de": "Friedlicher Mondschein",
+    "ja": "安寧の月明かり",
+    "fr": "Lumière nocturne de la quiétude",
+    "icon": "/i/214000/214305.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Maximum HP is increased.",
+      "de": "Maximal-LP sind erhöht.",
+      "ja": "最大ＨＰが増加した状態。",
+      "fr": "Les PV maximums sont augmentés."
     }
   },
   "4585": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Electrocution",
+    "de": "Stromschlag",
+    "ja": "感電",
+    "fr": "Électrocution",
+    "icon": "/i/215000/215528.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining lightning damage over time.",
+      "de": "Erleidet schrittweise Blitzschaden.",
+      "ja": "雷属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de foudre sont subis."
     }
   },
   "4586": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Away with the Fae",
+    "de": "Feewerdung",
+    "ja": "妖精",
+    "fr": "Mystiféecation",
+    "icon": "/i/214000/214306.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Transformed into a faerie and unable to execute actions.",
+      "de": "In ein Feenwesen verwandelt. Kommandos können nicht ausgeführt werden.",
+      "ja": "妖精に変身した状態。アクション実行不可。",
+      "fr": "La transformation en fée empêche toute action."
     }
   },
   "4587": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Anointed",
+    "de": "Segen des Lebens",
+    "ja": "司祭の祝福",
+    "fr": "Bénédiction des prêtres",
+    "icon": "/i/214000/214307.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "持続的にHPが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "4588": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Mortific",
+    "de": "Segen der Stärke",
+    "ja": "僧兵の祝福",
+    "fr": "Bénédiction des moines",
+    "icon": "/i/214000/214308.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken and damage dealt are increased, and attacks generate HP equal to a portion of damage dealt.",
+      "de": "Ausgeteilter Schaden ist erhöht und ein Teil davon wird in LP umgewandelt. Dafür wird erlittener Schaden erhöht.",
+      "ja": "与ダメージが上昇し、ＨＰ吸収効果が付与された状態。ただし受けるダメージが増加する。",
+      "fr": "Les dégâts infligés sont augmentés et les attaques absorbent des PV. En contrepartie, les dégâts reçus augmentent également."
     }
   },
   "4589": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pure",
+    "de": "Reinigung",
+    "ja": "浄化の守り",
+    "fr": "Charme de purification",
+    "icon": "/i/214000/214310.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The next status ailment suffered will be cured automatically.",
+      "de": "Schützt vor dem nächsten negativen Statuseffekt.",
+      "ja": "次に受ける1回の状態異常効果を防ぐ状態。",
+      "fr": "La prochaine altération d'état sera bloquée."
     }
   },
   "4590": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Recitation",
+    "de": "Schnelle Reaktivierung",
+    "ja": "リキャスト時間短縮",
+    "fr": "Temps de recharge réduit",
+    "icon": "/i/214000/214309.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ability recast time is reduced, excluding charged actions.",
+      "de": "Reaktivierungszeit von Talenten ist verkürzt. Kommandos mit Aufladungen sind davon ausgenommen.",
+      "ja": "アビリティのリキャストタイムが短縮された状態。ただしチャージアクションを除く。",
+      "fr": "Le temps de recharge des aptitudes est réduit, excepté pour les actions à charge."
     }
   },
   "4591": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Incense Penalty",
+    "de": "Weihrauch unwirksam",
+    "ja": "ジュニパーの香禁止",
+    "fr": "Encens inutilisable",
+    "icon": "/i/214000/214319.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to burn incense.",
+      "de": "Verhindert Einsatz von Weihrauch.",
+      "ja": "ジュニパーの香が使用できない状態。",
+      "fr": "L'encens de genévrier est inutilisable."
     }
   },
   "4592": {
@@ -64736,17 +64736,17 @@
     }
   },
   "4625": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Breaker of Wind",
+    "de": "Windfestes Standbein",
+    "ja": "強風無効",
+    "fr": "Immunisé aux rafales",
+    "icon": "/i/216000/216824.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Mired in quicksand and impervious to knockback by even the most powerful winds.",
+      "de": "Steckt im Sand und kann nicht von starken Böen oder heftigen Winden zurückgestoßen werden.",
+      "ja": "流砂にはまった影響で、強風によるノックバックが無効になった状態。",
+      "fr": "Les pieds sont pris dans les sables mouvants, empêchant d'être projeté par les rafales de vent."
     }
   },
   "4626": {
@@ -65114,17 +65114,17 @@
     }
   },
   "4652": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Toxicosis",
+    "de": "Giftlache",
+    "ja": "猛毒",
+    "fr": "Poison violent",
+    "icon": "/i/215000/215517.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "4653": {
@@ -65898,45 +65898,45 @@
     }
   },
   "4708": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Transfiguration",
+    "de": "Verwandlung",
+    "ja": "変身",
+    "fr": "Transformation",
+    "icon": "/i/216000/216214.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Corporeal form has been altered.",
+      "de": "Die körperliche Erscheinung ist verändert.",
+      "ja": "別の姿に変身した状態。",
+      "fr": "L'apparence est complètement changée."
     }
   },
   "4709": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Swift Sprint",
+    "de": "Supersprint",
+    "ja": "スーパースプリント",
+    "fr": "Super sprint",
+    "icon": "/i/214000/214980.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is greatly increased.",
+      "de": "Bewegungsgeschwindigkeit ist stark erhöht.",
+      "ja": "移動速度が大幅に上昇した状態。",
+      "fr": "La vitesse de déplacement est grandement augmentée."
     }
   },
   "4710": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "HP Boost",
+    "de": "LP-Bonus",
+    "ja": "最大ＨＰアップ",
+    "fr": "Bonus de PV",
+    "icon": "/i/215000/215075.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Maximum HP is increased.",
+      "de": "Maximal-LP sind erhöht.",
+      "ja": "最大ＨＰが増加した状態。",
+      "fr": "Les PV maximums sont augmentés."
     }
   },
   "4711": {
@@ -66038,17 +66038,17 @@
     }
   },
   "4718": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Haste",
+    "de": "Hast",
+    "ja": "ヘイスト",
+    "fr": "Hâte",
+    "icon": "/i/215000/215008.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are reduced.",
+      "de": "Die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verkürzt.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが短縮された状態。",
+      "fr": "La vitesse des attaques automatiques est augmentée, et les temps de lancement et de recharge des sorts et des techniques d'arme sont réduits."
     }
   },
   "4719": {
@@ -66108,17 +66108,17 @@
     }
   },
   "4723": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sapling's Crown",
+    "de": "Segen des Feenkönigs",
+    "ja": "妖精王の加護",
+    "fr": "Protection du Monarque",
+    "icon": "/i/216000/216829.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Warded by the pixie king and invulnerable to all damage.",
+      "de": "Erleidet vorübergehend keinen Schaden.",
+      "ja": "妖精王の加護を受けた状態。一時的に無敵になる。",
+      "fr": "Invulnérable temporairement grâce à la protection du Monarque féérique."
     }
   },
   "4724": {

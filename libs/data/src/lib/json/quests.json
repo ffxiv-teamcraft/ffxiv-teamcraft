@@ -91290,10 +91290,10 @@
   },
   "70767": {
     "name": {
-      "en": "星芒祭と心躍る一杯",
+      "en": "We Three Kinderpunsch",
       "ja": "星芒祭と心躍る一杯",
-      "de": "星芒祭と心躍る一杯",
-      "fr": "星芒祭と心躍る一杯"
+      "de": "Ausschank zum Sternenlichtfest",
+      "fr": "Les tasses des Cités"
     },
     "icon": "/i/080000/080106.png",
     "rewards": [
@@ -92925,309 +92925,1563 @@
   },
   "70866": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Frosty Neighbors",
+      "ja": " 雪山に住まう精霊",
+      "de": " Alle guten Geister",
+      "fr": " Les esprits des neiges"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101425.png"
   },
   "70867": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Still as Stone",
+      "ja": " 石に刻む歴史",
+      "de": " Das Scheiden der Geister",
+      "fr": " Gravé dans la pierre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101426.png"
   },
   "70868": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Buried Memories",
+      "ja": " 記憶に生きる者",
+      "de": " Maisgeist",
+      "fr": " Le devoir de mémoire"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101427.png"
   },
   "70869": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " The Pact",
+      "ja": " 雪の儀式",
+      "de": " Der Geist wäre willig ...",
+      "fr": " La cérémonie des flocons"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101428.png"
   },
   "70870": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Forged in Corn",
+      "ja": " 淡雪より生命は芽吹く",
+      "de": " Die Geister, die wir riefen",
+      "fr": " Une avalanche de joie"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101429.png"
   },
   "70871": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " With High Spirits",
+      "ja": " 語りかける雪の精",
+      "de": " Schnee von morgen",
+      "fr": " Une amitié impérissable"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101430.png"
   },
   "70872": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Snow on the Mountain",
+      "ja": " こまめな雪かき、生きる知恵",
+      "de": " Schneebedeckter Berg",
+      "fr": " Nettoyer, déblayer, déneiger, l'autel toujours pimpant&nbsp;!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70873": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Work of Cart",
+      "ja": " 山道往くは伝統荷車",
+      "de": " Robuste Karren",
+      "fr": " Les chariots de fournitures"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70874": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Will Work for Supplies",
+      "ja": " キミの腕前、資材の対価",
+      "de": " Arbeit gegen Vorräte",
+      "fr": " L'échange équivalent"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70875": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Getting a Glow On",
+      "ja": " 家路を照らす祈りの燐光",
+      "de": " Es werde Licht",
+      "fr": " Pierres de lumière"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70876": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Hold My Hand Warmers",
+      "ja": " 凍てつく指に保温のカイロ",
+      "de": " Warme Hände leisten mehr",
+      "fr": " Un poêle dans la main"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70877": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " For a Goods Cause",
+      "ja": " 雪山の物資補給",
+      "de": " Lebenswichtige Vorräte",
+      "fr": " Réserves à sec"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70878": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Happiness Is a Warm Poncho",
+      "ja": " 誰もに優しいポンチョのぬくもり",
+      "de": " Warme Ponchos",
+      "fr": " Jamais sans mon poncho"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70879": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Worth Their Salt",
+      "ja": " 石材を守り継ぐため",
+      "de": " Winterdienst",
+      "fr": " Sels de roche"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70880": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Tradition for Trade",
+      "ja": " お代は自慢の民芸品",
+      "de": " Handwerk der Yok Huy",
+      "fr": " Entre tradition et marché"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70881": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Few Tools Short of a Toolbox",
+      "ja": " 道具がなけりゃ復旧できぬ",
+      "de": " Werkzeugmangel",
+      "fr": " Pénurie d'outils"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70882": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Romanced by the Stone",
+      "ja": " 石工職人、いずこへ転がる",
+      "de": " Tagträumerei",
+      "fr": " L'apprenti tête en l'air"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70883": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Every Last Pebble",
+      "ja": " 無駄にならない廃材管理",
+      "de": " Schuttverwertung",
+      "fr": " Développement durable"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70884": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Trail Fix",
+      "ja": " 滑落事故の再発防止策",
+      "de": " Sicherheit am Berg",
+      "fr": " Prévention routière"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70885": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Working Stew Hard",
+      "ja": " 慰労のチャーロー、みんなでどうぞ",
+      "de": " Ein warmes Päuschen",
+      "fr": " Travaux, boulot, chairo"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70886": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Snack in Hand",
+      "ja": " 手軽においしく、保存食",
+      "de": " Leckere Lebensmittel leicht gemacht",
+      "fr": " Conserves de gourmet"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70887": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Seasoned Stories",
+      "ja": " 塩と交換、話、聞かせて",
+      "de": " Ein salziger Handel",
+      "fr": " Le sel de la transaction"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70888": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Larder for the Long Term",
+      "ja": " 貯蔵庫内の環境維持",
+      "de": " Auf die Lagerung kommt es an",
+      "fr": " Garde-manger à fournir"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70889": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Table for Too Few",
+      "ja": " みんなの賑やか食事処に",
+      "de": " Gutes Geschirr gesucht",
+      "fr": " Chargé de vaisselle"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70890": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " I Want to Trade My Icicle",
+      "ja": " 街で人気だよ、天然氷は！",
+      "de": " Eis über alles!",
+      "fr": " À fond ou ça fond&nbsp;!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70891": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Larder Logistics",
+      "ja": " 貯蔵庫に夢を詰めて",
+      "de": " Große Träume, größeres Lager",
+      "fr": " Ranger le garde-manger"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70892": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " The Weight of Generosity",
+      "ja": " 石箱お届けのお知らせ",
+      "de": " Achtung Schwertransport!",
+      "fr": " Mission musclée"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70893": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Growing Field",
+      "ja": " 雪山の食料事情",
+      "de": " Arbeit macht hungrig",
+      "fr": " Champ à chérir"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70894": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " The Crystals' Favor",
+      "ja": " 蒼氷の輝石が照らすのは",
+      "de": " Ein Altar wie aus funkelndem Eis",
+      "fr": " Autel quatre étoiles"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70895": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Big Mountain, Little Climbers",
+      "ja": " 山嶺に挑むよ、小さき友が",
+      "de": " Kleine Gipfelstürmer vor großen Hürden",
+      "fr": " Appareiller les pèlerins pelupelu"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70896": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Scouring for Flowers",
+      "ja": " ヨカフイ族の食す花",
+      "de": " Stärkende Wunderblumen",
+      "fr": " Les fines fleurs des bienfaiteurs"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70897": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Rock-solid Repair Job",
+      "ja": " 岩兵の故障かな？ と思ったら",
+      "de": " Wohlbehütete Steinwächter",
+      "fr": " Le soldat flagada"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70898": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Mad about Brew",
+      "ja": " 美酒のための良い道具",
+      "de": " Nur das Beste für die edlen Tropfen",
+      "fr": " Une distillerie à outiller"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 9,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 10,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 11,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 12,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 13,
+        "amount": 35
+      },
+      {
+        "id": 46178,
+        "amount": 1
+      },
+      {
+        "id": 8,
+        "amount": 35
+      }
+    ]
   },
   "70899": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Feast of Indecision",
+      "ja": " 待ち人、悩みて",
+      "de": " Ein Fest der Unentschlossenheit",
+      "fr": " Une coursière velléitaire"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46178,
+        "amount": 1
+      }
+    ]
   },
   "70900": {
     "name": {
@@ -93407,12 +94661,27 @@
   },
   "70910": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The White Wanderer",
+      "ja": "白き来訪者",
+      "de": "Der Weiße Besucher",
+      "fr": "Le Spectre Blanc"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080135.png",
+    "rewards": [
+      {
+        "id": 46833,
+        "amount": 1
+      },
+      {
+        "id": 46161,
+        "amount": 1
+      },
+      {
+        "id": 47476,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101443.png"
   },
   "70911": {
     "name": {
@@ -93451,21 +94720,23 @@
   },
   "70914": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Vandal in the Wild",
+      "ja": "いかしたタフガイ",
+      "de": "Vandalismus in der Wildnis",
+      "fr": "Le Bon, le Brut et le Vandale"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101434.png"
   },
   "70915": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "On the Trail of Destruction",
+      "ja": "つかえる紳士",
+      "de": "Eiertanz ums Erdseim",
+      "fr": "Le passé est un œuf cassé"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101435.png"
   },
   "70916": {
     "name": {
@@ -93999,37 +95270,74 @@
   },
   "70941": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pilgrimage of Light",
+      "ja": "ピルグリム・トラバースの目覚め",
+      "de": "Erwachen des Pfades",
+      "fr": "Pèlerinage de Lumière"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 47342,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101437.png"
   },
   "70942": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Faerie Tale",
+      "ja": "フェアリーテイル",
+      "de": "Vom Wunsch nach Erlösung",
+      "fr": "Conte de fées"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46152,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101438.png"
   },
   "70943": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Branch and Their Sapling",
+      "ja": "若木と枝に",
+      "de": "Ein Zweig und sein Bäumchen",
+      "fr": "Un arbrisseau et sa branchette"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 46255,
+        "amount": 8
+      },
+      {
+        "id": 46256,
+        "amount": 8
+      },
+      {
+        "id": 46257,
+        "amount": 8
+      },
+      {
+        "id": 46258,
+        "amount": 8
+      },
+      {
+        "id": 46259,
+        "amount": 8
+      }
+    ],
+    "banner": "/i/101000/101439.png"
   },
   "70944": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Pilgrim's Answer",
+      "ja": "巡礼路の解明",
+      "de": "Am Ende des Pfades",
+      "fr": "Lumineuses Ténèbres"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -94057,7 +95365,7 @@
     "name": {
       "en": "A Manager's Discernment",
       "ja": "プロジェクトマネージャーの明察なお仕事",
-      "de": "Der Leiterins Leid",
+      "de": "Der Leiterin Leid",
       "fr": "La perspicacité de la gestionnaire"
     },
     "icon": "/i/071000/071221.png",

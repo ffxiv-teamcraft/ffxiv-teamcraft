@@ -5265,9 +5265,9 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 4949,
     "id": 1054,
-    "weatherRate": null
+    "weatherRate": 160
   },
   {
     "zone": 5266,
@@ -5310,14 +5310,14 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 5276,
     "id": 1063,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 5276,
     "id": 1064,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
     "zone": 5301,
@@ -5450,24 +5450,24 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 4949,
     "id": 1091,
-    "weatherRate": null
+    "weatherRate": 160
   },
   {
-    "zone": 0,
+    "zone": 4949,
     "id": 1092,
-    "weatherRate": null
+    "weatherRate": 160
   },
   {
-    "zone": 0,
+    "zone": 4949,
     "id": 1093,
-    "weatherRate": null
+    "weatherRate": 160
   },
   {
-    "zone": 0,
+    "zone": 4949,
     "id": 1094,
-    "weatherRate": null
+    "weatherRate": 160
   },
   {
     "zone": 0,
@@ -5485,9 +5485,9 @@ export const mapIds = [
     "weatherRate": null
   },
   {
-    "zone": 0,
+    "zone": 5277,
     "id": 1098,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
     "zone": 0,

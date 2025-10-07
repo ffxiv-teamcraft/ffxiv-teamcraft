@@ -76194,16 +76194,16 @@
     "fr": "Ryoqor Terteh"
   },
   "12700": {
-    "en": "Qorrloh Teh",
+    "en": "Qorrlo Teh",
     "ja": "コォーロ・テー",
-    "de": "Qorrloh Teh",
-    "fr": "qorrloh teh"
+    "de": "Qorrlo Teh",
+    "fr": "qorrlo teh"
   },
   "12701": {
-    "en": "Rorrloh Teh",
+    "en": "Rorrlo Teh",
     "ja": "ローロ・テー",
-    "de": "Rorrloh Teh",
-    "fr": "rorrloh teh"
+    "de": "Rorrlo Teh",
+    "fr": "rorrlo teh"
   },
   "12702": {
     "en": "snowball",
@@ -79869,7 +79869,7 @@
     "en": "Rororrlo Teh",
     "ja": "ロローロ・テー",
     "de": "Rororrlo Teh",
-    "fr": "rororrloh teh"
+    "fr": "rororrlo teh"
   },
   "13313": {
     "en": "the Cornservant",
@@ -80107,9 +80107,9 @@
   },
   "13352": {
     "en": "luminous remnant",
-    "ja": "luminous remnant",
+    "ja": "Luminous Remnant",
     "de": "leuchtend[a] Erinnerung",
-    "fr": "luminous remnant"
+    "fr": "Luminous Remnant"
   },
   "13353": {
     "en": "Bakool Ja Ja the Mighty",
@@ -81919,9 +81919,9 @@
   },
   "13654": {
     "en": "lordly shadow",
-    "ja": "lordly shadow",
+    "ja": "Lordly Shadow",
     "de": "erhaben[a] Schatten",
-    "fr": "lordly shadow"
+    "fr": "Lordly Shadow"
   },
   "13655": {
     "en": "binding sigil",
@@ -81973,15 +81973,15 @@
   },
   "13663": {
     "en": "ravaging wind",
-    "ja": "ravaging wind",
+    "ja": "Ravaging Wind",
     "de": "verheerend[a] Wind",
-    "fr": "ravaging wind"
+    "fr": "Ravaging Wind"
   },
   "13664": {
     "en": "biting wind",
-    "ja": "biting wind",
+    "ja": "Biting Wind",
     "de": "beißend[a] Wind",
-    "fr": "biting wind"
+    "fr": "Biting Wind"
   },
   "13665": {
     "en": "darter",
@@ -83172,10 +83172,10 @@
     "fr": "Mortimer"
   },
   "13863": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven treachery",
+    "ja": "フォーギヴン・トレチャリー",
+    "de": "geläutert[a] Verrat",
+    "fr": "traîtrise pardonnée"
   },
   "13864": {
     "en": "Zelenia's shade",
@@ -83802,16 +83802,16 @@
     "fr": "piège"
   },
   "13968": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven profanity",
+    "ja": "フォーギヴン・プロファニティー",
+    "de": "geläutert[a] Beschimpfung",
+    "fr": "grossièreté pardonnée"
   },
   "13969": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Kugelblitz",
+    "fr": "orbe de foudre"
   },
   "13970": {
     "en": "chirurgeon general",
@@ -83820,22 +83820,22 @@
     "fr": "mémoire d'un chef de clinique"
   },
   "13971": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven zeal",
+    "ja": "フォーギヴン・ズィール",
+    "de": "geläutert[a] Übereifer",
+    "fr": "zèle pardonné"
   },
   "13972": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "holy sphere",
+    "ja": "光球",
+    "de": "Lichtkugel",
+    "fr": "orbe de lumière"
   },
   "13973": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven emulation",
+    "ja": "フォーギヴン・エミュレーション",
+    "de": "geläutert[a] Wetteifer",
+    "fr": "imitation pardonnée"
   },
   "13974": {
     "en": "Immortal Remains",
@@ -83856,28 +83856,28 @@
     "fr": "résidu mémoriel"
   },
   "13977": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven naivety",
+    "ja": "フォーギヴン・ナイヴテイ",
+    "de": "geläutert[a] Naivität",
+    "fr": "naïveté pardonnée"
   },
   "13978": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven adulation",
+    "ja": "フォーギヴン・アデュレーション",
+    "de": "geläutert[a] Schmeichelei",
+    "fr": "adoration pardonnée"
   },
   "13979": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ornamental leafman",
+    "ja": "花人",
+    "de": "Blumerich",
+    "fr": "enfleuri"
   },
   "13980": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "striking shrublet",
+    "ja": "花こびと",
+    "de": "Blumling",
+    "fr": "petit enfleuri"
   },
   "13981": {
     "en": "vault torbalan",
@@ -84216,40 +84216,40 @@
     "fr": "Calyx"
   },
   "14037": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eminent Grief",
+    "ja": "エミネントグリーフ",
+    "de": "Eminent[a] Trauer",
+    "fr": "Pontife du Chagrin"
   },
   "14038": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "devoured eater",
+    "ja": "侵蝕された罪喰い",
+    "de": "erodiert[a] Sündenvertilger",
+    "fr": "purgateur dévoré"
   },
   "14039": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "vodoriga minion",
+    "ja": "ミニオンズ・ヴォドリガ",
+    "de": "Diener[p] von Vodoriga",
+    "fr": "vodoriga asservie"
   },
   "14040": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "bloodguard minion",
+    "ja": "ミニオンズ・ブラッドガード",
+    "de": "Diener[p] der Blutwache",
+    "fr": "garde de sang asservi"
   },
   "14041": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "flameborn",
+    "ja": "焔の分身",
+    "de": "Sprungfeuer",
+    "fr": "division de flamme"
   },
   "14042": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane font",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Sphäre",
+    "fr": "sphère arcanique"
   },
   "14043": {
     "en": "Kam'lanaut",
@@ -84343,33 +84343,33 @@
   },
   "14058": {
     "en": "sculpted arm",
-    "ja": "sculpted arm",
+    "ja": "Sculpted Arm",
     "de": "kräftig[a] Arm",
-    "fr": "sculpted arm"
+    "fr": "Sculpted Arm"
   },
   "14059": {
     "en": "sculpted arm",
-    "ja": "sculpted arm",
+    "ja": "Sculpted Arm",
     "de": "kräftig[a] Arm",
-    "fr": "sculpted arm"
+    "fr": "Sculpted Arm"
   },
   "14060": {
     "en": "chiseled arm",
-    "ja": "chiseled arm",
+    "ja": "Chiseled Arm",
     "de": "muskulös[a] Arm",
-    "fr": "chiseled arm"
+    "fr": "Chiseled Arm"
   },
   "14061": {
     "en": "chiseled arm",
-    "ja": "chiseled arm",
+    "ja": "Chiseled Arm",
     "de": "muskulös[a] Arm",
-    "fr": "chiseled arm"
+    "fr": "Chiseled Arm"
   },
   "14062": {
     "en": "ball of fire",
-    "ja": "ball of fire",
+    "ja": "Ball of Fire",
     "de": "Feuerball",
-    "fr": "ball of fire"
+    "fr": "Ball of Fire"
   },
   "14063": {
     "en": "giant ascetic",
@@ -84517,39 +84517,39 @@
   },
   "14087": {
     "en": "orbital flame",
-    "ja": "orbital flame",
+    "ja": "Orbital Flame",
     "de": "Orbitalflamme",
-    "fr": "orbital flame"
+    "fr": "Orbital Flame"
   },
   "14088": {
     "en": "orbital levin",
-    "ja": "orbital levin",
+    "ja": "Orbital Levin",
     "de": "Orbitalsphäre",
-    "fr": "orbital levin"
+    "fr": "Orbital Levin"
   },
   "14089": {
     "en": "orbital wind",
-    "ja": "orbital wind",
+    "ja": "Orbital Wind",
     "de": "Orbitalwind",
-    "fr": "orbital wind"
+    "fr": "Orbital Wind"
   },
   "14090": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Malacoda",
+    "ja": "マラコーダ",
+    "de": "Malacoda",
+    "fr": "Malacoda"
   },
   "14091": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane cylinder",
+    "ja": "指向魔法陣",
+    "de": "arkan[a] Zylinder",
+    "fr": "cercle arcanique orienté"
   },
   "14092": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane cylinder",
+    "ja": "指向魔法陣",
+    "de": "arkan[a] Zylinder",
+    "fr": "cercle arcanique orienté"
   },
   "14093": {
     "en": "Necron",
@@ -84576,802 +84576,802 @@
     "fr": "grand attrape-mort"
   },
   "14097": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ancestral Maliktender",
+    "ja": "元祖マリクテンダー",
+    "de": "Malikkaktor-Ahn",
+    "fr": "Malikpampa l'ancien"
   },
   "14098": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sabotender amir",
+    "ja": "エミール・サボテンダー",
+    "de": "Amir-Kaktor",
+    "fr": "pampa émir"
   },
   "14099": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "flowertender amirah",
+    "ja": "エミーラ・フラワーテンダー",
+    "de": "Amirah-Blütenkaktor",
+    "fr": "pampa à fleur émira"
   },
   "14100": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse morpho",
+    "ja": "トラバース・パープルモルフォ",
+    "de": "Wallfahrt-Purpur-Morpho",
+    "fr": "morpho violet du pèlerinage"
   },
   "14101": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse echevore",
+    "ja": "トラバース・エケボア",
+    "de": "Wallfahrt-Echevore",
+    "fr": "échevore du pèlerinage"
   },
   "14102": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse phooka",
+    "ja": "トラバース・プーカ",
+    "de": "Wallfahrt-Phookah",
+    "fr": "phooka du pèlerinage"
   },
   "14103": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse hawker",
+    "ja": "トラバース・ホーカー",
+    "de": "Wallfahrt-Mosaikjungfer",
+    "fr": "æschne du pèlerinage"
   },
   "14104": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse moss fungus",
+    "ja": "トラバース・モスフングス",
+    "de": "Wallfahrt-Moosfungus",
+    "fr": "mycose moisie du pèlerinage"
   },
   "14105": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse rowan",
+    "ja": "トラバース・ローワン",
+    "de": "Wallfahrt-Rowan",
+    "fr": "rowan du pèlerinage"
   },
   "14106": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse killer bee",
+    "ja": "トラバース・キラービー",
+    "de": "Wallfahrt-Killerbiene",
+    "fr": "abeille tueuse du pèlerinage"
   },
   "14107": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse clematis",
+    "ja": "トラバース・クレマチス",
+    "de": "Wallfahrt-Clematis",
+    "fr": "clématite du pèlerinage"
   },
   "14108": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse basket",
+    "ja": "トラバース・バスケット",
+    "de": "Wallfahrt-Korb",
+    "fr": "panier du pèlerinage"
   },
   "14109": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse etainmoth",
+    "ja": "トラバース・エーディンモス",
+    "de": "Wallfahrt-Edianmotte",
+    "fr": "noctuétain du pèlerinage"
   },
   "14110": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse shrub",
+    "ja": "トラバース・シュラブレット",
+    "de": "Wallfahrt-Eibisch",
+    "fr": "arbrisseau du pèlerinage"
   },
   "14111": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse lorikeet",
+    "ja": "トラバース・ロリキート",
+    "de": "Wallfahrt-Lorikeet",
+    "fr": "loriquet du pèlerinage"
   },
   "14112": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse rosebear",
+    "ja": "トラバース・ローズベアー",
+    "de": "Wallfahrt-Rosenbär",
+    "fr": "ours-rose du pèlerinage"
   },
   "14113": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven conformity",
+    "ja": "フォーギヴン・コンフォーミティー",
+    "de": "geläutert[a] Angepasstheit",
+    "fr": "conformisme pardonné"
   },
   "14114": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven ignorance",
+    "ja": "フォーギヴン・イグノランス",
+    "de": "geläutert[a] Ignoranz",
+    "fr": "ignorance pardonnée"
   },
   "14115": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven folly",
+    "ja": "フォーギヴン・フォリー",
+    "de": "geläutert[a] Torheit",
+    "fr": "folie pardonnée"
   },
   "14116": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven conceit",
+    "ja": "フォーギヴン・コンスィート",
+    "de": "geläutert[a] Hochmut",
+    "fr": "suffisance pardonnée"
   },
   "14117": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven violence",
+    "ja": "フォーギヴン・ヴァイオレンス",
+    "de": "geläutert[a] Gewalt",
+    "fr": "violence pardonnée"
   },
   "14118": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven disobedience",
+    "ja": "フォーギヴン・ディスオビーデアンス",
+    "de": "geläutert[a] Ungehorsam",
+    "fr": "désobéissance pardonnée"
   },
   "14119": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven deceit",
+    "ja": "フォーギヴン・デシート",
+    "de": "geläutert[a] Tücke",
+    "fr": "tromperie pardonnée"
   },
   "14120": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven contempt",
+    "ja": "フォーギヴン・コンテンプト",
+    "de": "geläutert[a] Verachtung",
+    "fr": "dédain pardonné"
   },
   "14121": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven complacency",
+    "ja": "フォーギヴン・コンプレイセンシー",
+    "de": "geläutert[a] Selbstgefälligkeit",
+    "fr": "complaisance pardonnée"
   },
   "14122": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse Puck",
+    "ja": "トラバース・パック",
+    "de": "Wallfahrt-Puck",
+    "fr": "puck du pèlerinage"
   },
   "14123": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse topiary",
+    "ja": "トラバース・トピアリー",
+    "de": "Wallfahrt-Busch",
+    "fr": "topiaire du pèlerinage"
   },
   "14124": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse Peaseblossom",
+    "ja": "トラバース・ピーズブロッサム",
+    "de": "Wallfahrt-Bohnenblüte",
+    "fr": "fleur-de-pois du pèlerinage"
   },
   "14125": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse tot aevis",
+    "ja": "トラバース・トートエイビス",
+    "de": "Wallfahrt-Schillermähnen-Avis",
+    "fr": "toteibis du pèlerinage"
   },
   "14126": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven jealousy",
+    "ja": "フォーギヴン・ジェラシー",
+    "de": "geläutert[a] Eifersucht",
+    "fr": "jalousie pardonnée"
   },
   "14127": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven venery",
+    "ja": "フォーギヴン・ヴェナリー",
+    "de": "geläutert[a] Wollust",
+    "fr": "débauche pardonnée"
   },
   "14128": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven dissonance",
+    "ja": "フォーギヴン・ディソナンス",
+    "de": "geläutert[a] Widerspruch",
+    "fr": "dissonance pardonnée"
   },
   "14129": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven cruelty",
+    "ja": "フォーギヴン・クルエルティー",
+    "de": "geläutert[a] Grausamkeit",
+    "fr": "cruauté pardonnée"
   },
   "14130": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven ambition",
+    "ja": "フォーギヴン・アンビション",
+    "de": "geläutert[a] Begierde",
+    "fr": "ambition pardonnée"
   },
   "14131": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven insult",
+    "ja": "フォーギヴン・インサルト",
+    "de": "geläutert[a] Beleidigung",
+    "fr": "insulte pardonnée"
   },
   "14132": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven hesitance",
+    "ja": "フォーギヴン・ヘジテンス",
+    "de": "geläutert[a] Zögerlichkeit",
+    "fr": "hésitation pardonnée"
   },
   "14133": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse statue",
+    "ja": "トラバース・スタチュー",
+    "de": "Wallfahrt-Dämonenstatue",
+    "fr": "statue du pèlerinage"
   },
   "14134": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse morgawr",
+    "ja": "トラバース・モーゴウル",
+    "de": "Wallfahrt-Morgwar",
+    "fr": "morgawr du pèlerinage"
   },
   "14135": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse tragopan",
+    "ja": "トラバース・トラゴパン",
+    "de": "Wallfahrt-Tragopan",
+    "fr": "tragopan du pèlerinage"
   },
   "14136": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven bribery",
+    "ja": "フォーギヴン・ブライバリー",
+    "de": "geläutert[a] Bestechlichkeit",
+    "fr": "corruption pardonnée"
   },
   "14137": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse clionid",
+    "ja": "トラバース・クリオニッド",
+    "de": "Wallfahrt-Clionid",
+    "fr": "clionide du pèlerinage"
   },
   "14138": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven intolerance",
+    "ja": "フォーギヴン・イントーラランス",
+    "de": "geläutert[a] Intoleranz",
+    "fr": "intolérance pardonnée"
   },
   "14139": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse soldierstone",
+    "ja": "トラバース・ストーンソルジャー",
+    "de": "Wallfahrt-Steinsoldat",
+    "fr": "soldat de pierre du pèlerinage"
   },
   "14140": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven plague",
+    "ja": "フォーギヴン・プレイグ",
+    "de": "geläutert[a] Plage",
+    "fr": "peste pardonnée"
   },
   "14141": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven perversion",
+    "ja": "フォーギヴン・パーヴァージョン",
+    "de": "geläutert[a] Perversion",
+    "fr": "perversion pardonnée"
   },
   "14142": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven extortion",
+    "ja": "フォーギヴン・エクストーション",
+    "de": "geläutert[a] Wucher",
+    "fr": "extorsion pardonnée"
   },
   "14143": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven prejudice",
+    "ja": "フォーギヴン・プレジュディス",
+    "de": "geläutert[a] Voreingenommenheit",
+    "fr": "préjugé pardonné"
   },
   "14144": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven hypocrisy",
+    "ja": "フォーギヴン・ヒポクリシー",
+    "de": "geläutert[a] Heuchelei",
+    "fr": "hypocrisie pardonnée"
   },
   "14145": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven petulance",
+    "ja": "フォーギヴン・ペチュランス",
+    "de": "geläutert[a] Launenhaftigkeit",
+    "fr": "irascibilité pardonnée"
   },
   "14146": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven mockery",
+    "ja": "フォーギヴン・モッカリィ",
+    "de": "geläutert[a] Verhöhnung",
+    "fr": "moquerie pardonnée"
   },
   "14147": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse inquisitor",
+    "ja": "トラバース・インクイジター",
+    "de": "Wallfahrt-Inquisitor",
+    "fr": "inquisiteur du pèlerinage"
   },
   "14148": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "bird of the traverse",
+    "ja": "バード・オブ・トラバース",
+    "de": "Wallfahrt-Pfadvogel",
+    "fr": "oiseau du pèlerinage"
   },
   "14149": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse lionstone",
+    "ja": "トラバース・ストーンライオン",
+    "de": "Wallfahrt-Steinlöwe",
+    "fr": "lion de pierre du pèlerinage"
   },
   "14150": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse jaculus",
+    "ja": "トラバース・ヤクルス",
+    "de": "Wallfahrt-Jaculus",
+    "fr": "griffon du pèlerinage"
   },
   "14151": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse pegasus",
+    "ja": "トラバース・ペガサス",
+    "de": "Wallfahrt-Pegasus",
+    "fr": "pégase du pèlerinage"
   },
   "14152": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse petreffigy",
+    "ja": "トラバース・エフィジィ",
+    "de": "Wallfahrt-Bildnis",
+    "fr": "effigie du pèlerinage"
   },
   "14153": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse troubadour",
+    "ja": "トラバース・トルバ",
+    "de": "Wallfahrt-Tolba",
+    "fr": "tolba du pèlerinage"
   },
   "14154": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse anaconda",
+    "ja": "トラバース・アナコンダ",
+    "de": "Wallfahrt-Anakonda",
+    "fr": "anaconda du pèlerinage"
   },
   "14155": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse triffid",
+    "ja": "トラバース・トリフィド",
+    "de": "Wallfahrt-Triffid",
+    "fr": "triffide du pèlerinage"
   },
   "14156": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse lizard",
+    "ja": "トラバース・リザード",
+    "de": "Wallfahrt-Eidechse",
+    "fr": "lézard du pèlerinage"
   },
   "14157": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse termite",
+    "ja": "トラバース・ターマイト",
+    "de": "Wallfahrt-Termite",
+    "fr": "starmite du pèlerinage"
   },
   "14158": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse antlion",
+    "ja": "トラバース・アントリオン",
+    "de": "Wallfahrt-Ameisenlöwe",
+    "fr": "fourmilion du pèlerinage"
   },
   "14159": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse pincerbeak",
+    "ja": "トラバース・ピンサービーク",
+    "de": "Wallfahrt-Zwicker",
+    "fr": "bec-pinceur du pèlerinage"
   },
   "14160": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse cliffkite",
+    "ja": "トラバース・クリフカイト",
+    "de": "Wallfahrt-Gratgleiter",
+    "fr": "milan des falaises du pèlerinage"
   },
   "14161": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse weapon",
+    "ja": "トラバース・ウェポン",
+    "de": "Wallfahrt-Waffe",
+    "fr": "arme du pèlerinage"
   },
   "14162": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse agave",
+    "ja": "トラバース・アガベ",
+    "de": "Wallfahrt-Agave",
+    "fr": "agave du pèlerinage"
   },
   "14163": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse germinant",
+    "ja": "トラバース・ジェルミナンツ",
+    "de": "Wallfahrt-Germinant",
+    "fr": "germinateur du pèlerinage"
   },
   "14164": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse mantis",
+    "ja": "トラバース・マンティス",
+    "de": "Wallfahrt-Mantis",
+    "fr": "mante du pèlerinage"
   },
   "14165": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse tawnyclaw",
+    "ja": "トラバース・ブラウンクロウ",
+    "de": "Wallfahrt-Braunkralle",
+    "fr": "griffe brune du pèlerinage"
   },
   "14166": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse guardian",
+    "ja": "トラバース・ガーディアン",
+    "de": "Wallfahrt-Wächter",
+    "fr": "gardien du pèlerinage"
   },
   "14167": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse sand serpent",
+    "ja": "トラバース・サンドサーペント",
+    "de": "Wallfahrt-Sandschlange",
+    "fr": "serpent des sables du pèlerinage"
   },
   "14168": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse saichania",
+    "ja": "トラバース・サイカニア",
+    "de": "Wallfahrt-Saichania",
+    "fr": "saichania du pèlerinage"
   },
   "14169": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse monitor",
+    "ja": "トラバース・モニター",
+    "de": "Wallfahrt-Waran",
+    "fr": "varan du pèlerinage"
   },
   "14170": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse fallen aevis",
+    "ja": "トラバース・イビルエイビス",
+    "de": "Wallfahrt-Übelavis",
+    "fr": "eibis démoniaque du pèlerinage"
   },
   "14171": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse Pachamama",
+    "ja": "トラバース・パチャママ",
+    "de": "Wallfahrt-Pachamama",
+    "fr": "pachamama du pèlerinage"
   },
   "14172": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse hyssop",
+    "ja": "トラバース・ヒソプ",
+    "de": "Wallfahrt-Ysop",
+    "fr": "hyssop du pèlerinage"
   },
   "14173": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse phorusrhacos",
+    "ja": "トラバース・フォルスラコス",
+    "de": "Wallfahrt-Phorusrhacos",
+    "fr": "phorusrhacos du pèlerinage"
   },
   "14174": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse howler",
+    "ja": "トラバース・ハウラー",
+    "de": "Wallfahrt-Heuler",
+    "fr": "hurleur du pèlerinage"
   },
   "14175": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse caracal",
+    "ja": "トラバース・カラカル",
+    "de": "Wallfahrt-Wüstenluchs",
+    "fr": "caracal du pèlerinage"
   },
   "14176": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse gigant",
+    "ja": "トラバース・ギガント",
+    "de": "Wallfahrt-Gigant",
+    "fr": "géant du pèlerinage"
   },
   "14177": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse beetle",
+    "ja": "トラバース・ビートル",
+    "de": "Wallfahrt-Käfer",
+    "fr": "scarabée du pèlerinage"
   },
   "14178": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven riot",
+    "ja": "フォーギヴン・ライオティング",
+    "de": "geläutert[a] Randale",
+    "fr": "révolte pardonnée"
   },
   "14179": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven contention",
+    "ja": "フォーギヴン・コンテンション",
+    "de": "geläutert[a] Streitlust",
+    "fr": "contention pardonnée"
   },
   "14180": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse queen",
+    "ja": "トラバース・クイーンビー",
+    "de": "Wallfahrt-Bienenkönigin",
+    "fr": "reine des abeilles du pèlerinage"
   },
   "14181": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven grudge",
+    "ja": "フォーギヴン・グラッジ",
+    "de": "geläutert[a] Ranküne",
+    "fr": "rancune pardonnée"
   },
   "14182": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse Talos",
+    "ja": "トラバース・タロース",
+    "de": "Wallfahrt-Talos",
+    "fr": "talos du pèlerinage"
   },
   "14183": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse cliffmole",
+    "ja": "トラバース・クリフモール",
+    "de": "Wallfahrt-Klippenmull",
+    "fr": "taupe des falaises du pèlerinage"
   },
   "14184": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven imparity",
+    "ja": "フォーギヴン・イムパリティー",
+    "de": "geläutert[a] Ungleichheit",
+    "fr": "inégalité pardonnée"
   },
   "14185": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven mischief",
+    "ja": "フォーギヴン・ミスチーフ",
+    "de": "geläutert[a] Gemeinheit",
+    "fr": "malice pardonnée"
   },
   "14186": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven voracity",
+    "ja": "フォーギヴン・ヴォラシティ",
+    "de": "geläutert[a] Unersättlichkeit",
+    "fr": "voracité pardonnée"
   },
   "14187": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven doubt",
+    "ja": "フォーギヴン・ダウト",
+    "de": "geläutert[a] Zweifel",
+    "fr": "doute pardonné"
   },
   "14188": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven attachment",
+    "ja": "フォーギヴン・アタッチメント",
+    "de": "geläutert[a] Anhänglichkeit",
+    "fr": "attachement pardonné"
   },
   "14189": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse gnome",
+    "ja": "トラバース・ノーム",
+    "de": "Wallfahrt-Gnom",
+    "fr": "gnome du pèlerinage"
   },
   "14190": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse ngozi",
+    "ja": "トラバース・ンゴツィ",
+    "de": "Wallfahrt-Ngozi",
+    "fr": "ngozi du pèlerinage"
   },
   "14191": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven dissention",
+    "ja": "フォーギヴン・ディセンション",
+    "de": "geläutert[a] Zwietracht",
+    "fr": "dissension pardonnée"
   },
   "14192": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven corruption",
+    "ja": "フォーギヴン・コラプション",
+    "de": "geläutert[a] Korruption",
+    "fr": "corruption pardonnée"
   },
   "14193": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven spite",
+    "ja": "フォーギヴン・スパイト",
+    "de": "geläutert[a] Boshaftigkeit",
+    "fr": "malveillance pardonnée"
   },
   "14194": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse stone eater",
+    "ja": "トラバース・ロックイーター",
+    "de": "Wallfahrt-Steinfresser",
+    "fr": "mange-roche du pèlerinage"
   },
   "14195": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse huldu",
+    "ja": "トラバース・フルドゥ",
+    "de": "Wallfahrt-Huldu",
+    "fr": "huldu du pèlerinage"
   },
   "14196": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse diplomat cream",
+    "ja": "トラバース・ホイップカスタード",
+    "de": "Wallfahrt-Eiercreme",
+    "fr": "crème fouettée du pèlerinage"
   },
   "14197": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven vanity",
+    "ja": "フォーギヴン・ヴァニティー",
+    "de": "geläutert[a] Eitelkeit",
+    "fr": "vanité pardonnée"
   },
   "14198": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven arrogance",
+    "ja": "フォーギヴン・アロガンス",
+    "de": "geläutert[a] Gefallsucht",
+    "fr": "arrogance pardonnée"
   },
   "14199": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven slander",
+    "ja": "フォーギヴン・スランダー",
+    "de": "geläutert[a] Nachrede",
+    "fr": "calomnie pardonnée"
   },
   "14200": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "forgiven unbelief",
+    "ja": "フォーギヴン・アンビリーフ",
+    "de": "geläutert[a] Unglauben",
+    "fr": "incrédulité pardonnée"
   },
   "14201": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse amemet",
+    "ja": "トラバース・アメミット",
+    "de": "Wallfahrt-Amemet",
+    "fr": "amemet du pèlerinage"
   },
   "14202": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse worm",
+    "ja": "トラバース・ウォーム",
+    "de": "Wallfahrt-Wurm",
+    "fr": "ver du pèlerinage"
   },
   "14203": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse scissorjaws",
+    "ja": "トラバース・シザージョウ",
+    "de": "Wallfahrt-Scherenmaul",
+    "fr": "mandicisaille du pèlerinage"
   },
   "14204": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse cama",
+    "ja": "トラバース・キャマ",
+    "de": "Wallfahrt-Cama",
+    "fr": "chama du pèlerinage"
   },
   "14205": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked Baal",
+    "ja": "インヴォークド・バエル",
+    "de": "gerufen[a] Bael",
+    "fr": "baël invoqué"
   },
   "14206": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse rider",
+    "ja": "トラバース・ライダー",
+    "de": "Wallfahrt-Reiter",
+    "fr": "cavalier du pèlerinage"
   },
   "14207": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked succubus",
+    "ja": "インヴォークド・サキュバス",
+    "de": "gerufen[a] Sukkubus",
+    "fr": "succube invoqué"
   },
   "14208": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked Humbaba",
+    "ja": "インヴォークド・フンババ",
+    "de": "gerufen[a] Hunbaba",
+    "fr": "humbaba invoqué"
   },
   "14209": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked gremlin",
+    "ja": "インヴォークド・グレムリン",
+    "de": "gerufen[a] Gremlin",
+    "fr": "gremlin invoqué"
   },
   "14210": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse gnoll",
+    "ja": "トラバース・ノール",
+    "de": "Wallfahrt-Gnoll",
+    "fr": "gnole du pèlerinage"
   },
   "14211": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse cubus",
+    "ja": "トラバース・カブス",
+    "de": "Wallfahrt-Lunte",
+    "fr": "oléofuror du pèlerinage"
   },
   "14212": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked satana",
+    "ja": "インヴォークド・サタナジュニア",
+    "de": "gerufen[a] Satana",
+    "fr": "minisatana invoqué"
   },
   "14213": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked arch demon",
+    "ja": "インヴォークド・アークデーモン",
+    "de": "gerufen[a] Erzdämon",
+    "fr": "archidémon invoqué"
   },
   "14214": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked caym",
+    "ja": "インヴォークド・カイム",
+    "de": "gerufen[a] Caym",
+    "fr": "caym invoqué"
   },
   "14215": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked Cerberus",
+    "ja": "インヴォークド・ケルベロス",
+    "de": "gerufen[a] Cerberus",
+    "fr": "cerbère invoqué"
   },
   "14216": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked troubadour",
+    "ja": "インヴォークド・トルバドゥール",
+    "de": "gerufen[a] Troubadour",
+    "fr": "troubadour invoqué"
   },
   "14217": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse warg",
+    "ja": "トラバース・ワーグ",
+    "de": "Wallfahrt-Warg",
+    "fr": "warg du pèlerinage"
   },
   "14218": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked Gusion",
+    "ja": "インヴォークド・グシオン",
+    "de": "gerufen[a] Gusion",
+    "fr": "gusion invoqué"
   },
   "14219": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked dreamer",
+    "ja": "インヴォークド・ドリームエビル",
+    "de": "gerufen[a] bös[a] Träumer",
+    "fr": "rêveur maudit invoqué"
   },
   "14220": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked bachelor",
+    "ja": "インヴォークド・バチェラー",
+    "de": "gerufen[a] Spinnrich",
+    "fr": "aranéide invoqué"
   },
   "14221": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked Destrudo",
+    "ja": "インヴォークド・デストルドー",
+    "de": "gerufen[a] Destrudo",
+    "fr": "destrudo invoqué"
   },
   "14222": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked sawtooth",
+    "ja": "インヴォークド・ソウトゥース",
+    "de": "gerufen[a] Sägezahn",
+    "fr": "dentata invoqué"
   },
   "14223": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse triffid",
+    "ja": "トラバース・ヴァイオレットトリフィド",
+    "de": "violett[a] Wallfahrt-Triffid",
+    "fr": "triffide violet du pèlerinage"
   },
   "14224": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse ya-te-veo",
+    "ja": "トラバース・ヤテベオ",
+    "de": "Wallfahrt-Yateveo",
+    "fr": "yateveo du pèlerinage"
   },
   "14225": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked dahak",
+    "ja": "インヴォークド・ダハーカ",
+    "de": "gerufen[a] Dahak",
+    "fr": "dahaka invoqué"
   },
   "14226": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked Acheron",
+    "ja": "インヴォークド・アケローン",
+    "de": "gerufen[a] Acheron",
+    "fr": "achéron invoqué"
   },
   "14227": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked poppet",
+    "ja": "インヴォークド・パペット",
+    "de": "gerufen[a] Puppe",
+    "fr": "poupée invoquée"
   },
   "14228": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse malevolence",
+    "ja": "トラバース・マレヴォレンス",
+    "de": "Wallfahrt-Böswilligkeit",
+    "fr": "malveillance du pèlerinage"
   },
   "14229": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "invoked archaeodemon",
+    "ja": "インヴォークド・アルケオデーモン",
+    "de": "gerufen[a] Archaeodämon",
+    "fr": "archéodémon invoqué"
   },
   "14230": {
     "en": "Omega, the One",
@@ -85387,9 +85387,9 @@
   },
   "14232": {
     "en": "energy orb",
-    "ja": "energy orb",
+    "ja": "Energy Orb",
     "de": "Energiekugel",
-    "fr": "energy orb"
+    "fr": "Energy Orb"
   },
   "14233": {
     "en": "",
@@ -85416,16 +85416,16 @@
     "fr": "esprit foudroyant errant"
   },
   "14237": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Guardian Arkveld",
+    "ja": "護竜アルシュベルド",
+    "de": "Wächter-Arkveld",
+    "fr": "Arkveld Gardien"
   },
   "14238": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "cracked crystal",
+    "ja": "不活性クリスタル",
+    "de": "zerbrochen[a] Kristall",
+    "fr": "cristal inactif"
   },
   "14239": {
     "en": "hooded headsman",
@@ -85482,16 +85482,16 @@
     "fr": "âme ardente territoriale"
   },
   "14248": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Seikret fledgling",
+    "ja": "ベビーセクレト",
+    "de": "Saikrii-Küken",
+    "fr": "bébé Seikret"
   },
   "14249": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Vigorwasp",
+    "ja": "回復ミツムシ",
+    "de": "Vitalitätswespe",
+    "fr": "vitaguêpe"
   },
   "14250": {
     "en": "model suit",
@@ -85500,10 +85500,10 @@
     "fr": "mécano cosmique factice"
   },
   "14251": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Yok Huy",
+    "ja": "マメット・ヨカフイ",
+    "de": "Aufzieh-Yok Huy",
+    "fr": "Yok Huy miniature"
   },
   "14252": {
     "en": "raven-red gobtank",
@@ -85530,10 +85530,10 @@
     "fr": "bébé rroneek"
   },
   "14256": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "oglop",
+    "ja": "ブリ虫",
+    "de": "Schabe",
+    "fr": "ブリ虫"
   },
   "14257": {
     "en": "",
@@ -85548,10 +85548,10 @@
     "fr": "mini-corbeau"
   },
   "14259": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Feo Ul",
+    "ja": "マメット・フェオ＝ウル",
+    "de": "Feo Ul-Puppe",
+    "fr": "Feo Ul miniature"
   },
   "14260": {
     "en": "sunray ray",
@@ -85572,46 +85572,46 @@
     "fr": "bébé chat-pardeur"
   },
   "14263": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ogbunabali",
+    "ja": "オグブナバリ",
+    "de": "Ogbunabali",
+    "fr": "Ogbunabali"
   },
   "14264": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mimic",
+    "ja": "ミミック",
+    "de": "Mimik",
+    "fr": "mimic"
   },
   "14265": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mimic",
+    "ja": "ミミック",
+    "de": "Mimik",
+    "fr": "mimic"
   },
   "14266": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mimic",
+    "ja": "ミミック",
+    "de": "Mimik",
+    "fr": "mimic"
   },
   "14267": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "traverse korrigan",
+    "ja": "トラバース・コリガン",
+    "de": "Wallfahrt-Korrigane",
+    "fr": "korrigan du pèlerinage"
   },
   "14268": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Titania",
+    "ja": "ティターニア",
+    "de": "Titania",
+    "fr": "Titania"
   },
   "14269": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Feo Ul",
+    "ja": "フェオ＝ウル",
+    "de": "Feo Ul",
+    "fr": "Feo Ul"
   },
   "14270": {
     "en": "",
@@ -85692,10 +85692,10 @@
     "fr": ""
   },
   "14283": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sin beaver",
+    "ja": "シンビーバー",
+    "de": "Sündenbiber",
+    "fr": "castor purgateur"
   },
   "14284": {
     "en": "",
