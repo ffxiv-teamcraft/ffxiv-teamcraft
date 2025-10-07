@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.8...v11.4.9) (2025-10-07)
+
+
+### Features
+
+* **data:** update for cn patch-7.3 ([ea82192](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea8219260e3ad2e2befac1b0b89f07b80c5402fc))
+* **db:** 7.35 data import ([0f5a8c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f5a8c9d85cff9d0a8928404ce69435565b5bb5a))
+* **desktop:** support for global 7.35 ([1e8f757](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e8f7570b3ba31394768f0fc8aa27cad65ab4fdb))
+
+
+### Bug Fixes
+
+* **db:** youtube video embeds on desktop app ([5a9316f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a9316fa628bf6d39ab3816eb6b671c650a8532d))
+
 ### [11.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.7...v11.4.8) (2025-09-14)
 
 
