@@ -3009,6 +3009,46 @@
       "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
     }
   },
+  "321": {
+    "value": 70,
+    "conditionValue": 4300,
+    "bonus": {
+      "ko": "소장 가치+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "322": {
+    "value": 70,
+    "conditionValue": 5460,
+    "bonus": {
+      "ko": "소장 가치+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "323": {
+    "value": 10,
+    "conditionValue": 4300,
+    "bonus": {
+      "ko": "신중한 순화: 추가 효과 발생률＋<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "324": {
+    "value": 10,
+    "conditionValue": 5460,
+    "bonus": {
+      "ko": "신중한 순화: 추가 효과 발생률＋<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
   "327": {
     "value": 20,
     "conditionValue": 444,
