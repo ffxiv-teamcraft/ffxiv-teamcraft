@@ -188,7 +188,7 @@ export class PacketCapture {
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion_12.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
+        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);

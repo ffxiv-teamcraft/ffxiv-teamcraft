@@ -243,7 +243,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType<LoadLogTracking>(AuthActionTypes.LoadLogTracking),
       switchMap(action => {
-        return this.logTrackingService.get(`${action.userId}:${action.lodestoneId?.toString()}`).pipe(
+        return this.logTrackingService.get(`${action.userId}:${action.lodestoneId?.toString()}`, true).pipe(
           catchError((err) => {
             console.error(err);
             return of({

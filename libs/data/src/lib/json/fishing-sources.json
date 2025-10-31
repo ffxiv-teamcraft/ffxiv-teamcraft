@@ -8075,10 +8075,12 @@
       "hookset": 1,
       "tug": 1,
       "bait": 4898,
-      "spawn": 23,
-      "duration": 2.08,
+      "spawn": 23.5,
+      "duration": 1.58,
       "snagging": false,
-      "minGathering": 358
+      "minGathering": 358,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7949": [
@@ -10190,9 +10192,11 @@
       "tug": 1,
       "bait": 12730,
       "spawn": 18,
-      "duration": 3,
+      "duration": 2.5,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     },
     {
       "spot": 120,
@@ -10200,9 +10204,11 @@
       "tug": 1,
       "bait": 12722,
       "spawn": 18,
-      "duration": 3,
+      "duration": 2.5,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "12803": [

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.10...v11.4.11) (2025-10-31)
+
+
+### Features
+
+* **db:** allagan reports import ([5fdaa60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5fdaa60120b82069ccec1e4ae741c90b98c91032))
+* **db:** support for korean v7.3 update ([97e74d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97e74d99ca72b8e04db51fa2c6fb753fb118d258))
+
+
+### Bug Fixes
+
+* **pcap:** use the latest version of deucalion for KR ([786c757](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/786c7579e1a7b70edaf8cf6611c0f71cb4a6b7d3))
+
 ### [11.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.9...v11.4.10) (2025-10-07)
 
 
