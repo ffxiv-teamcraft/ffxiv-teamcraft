@@ -63802,7 +63802,7 @@
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Kristall oder höher abgeschlossen.",
       "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをクリスタル階級以上で終えた",
       "fr": "Terminer une saison de Crystalline Conflict à l'échelon de cristal ou supérieur.",
-      "ko": "크리스탈라인 컨플릭트에서 시즌 등급을 크리스탈로 마감",
+      "ko": "크리스탈라인 컨플릭트에서 시즌 등급을 크리스탈 이상으로 마감",
       "zh": "在水晶冲突的任意赛季中最终取得水晶或以上段位。"
     },
     "item": 0,
@@ -76089,12 +76089,14 @@
     "de": "Zauberhafte Zwölf",
     "ja": "ありがとう12周年！",
     "fr": "Douzaine dorée",
+    "ko": "12주년 고맙습니다!",
     "zh": "多彩绚烂的周年庆",
     "description": {
       "en": "Complete the quest “A Light That Ever Burns.”",
       "de": "Den Auftrag „Und immer brennt der Leuchtturm“ abgeschlossen.",
       "ja": "クエスト「新生祭と、蒼茫の灯火」をコンプリートする",
       "fr": "Accomplir la quête “La lumière du lendemain”.",
+      "ko": "퀘스트 '신생제와 창망의 등불' 완료",
       "zh": "完成任务“新生庆典与苍茫灯火”。"
     },
     "item": 0,
@@ -76997,7 +76999,7 @@
       "de": "1.000 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を1,000回開ける",
       "fr": "Ouvrir 1 000 coffres au trésor sur l'île de Lunule.",
-      "ko": "초승달 섬에서 탐색한 보물상자 1,000회 열기",
+      "ko": "초승달 섬에서 찾아낸 보물상자 1,000회 열기",
       "zh": "累计在蜃景幻界新月岛找到并开启宝箱1000次。"
     },
     "item": 0,
@@ -77018,7 +77020,7 @@
       "de": "5.000 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を5,000回開ける",
       "fr": "Ouvrir 5 000 coffres au trésor sur l'île de Lunule.",
-      "ko": "초승달 섬에서 탐색한 보물상자 5,000회 열기",
+      "ko": "초승달 섬에서 찾아낸 보물상자 5,000회 열기",
       "zh": "累计在蜃景幻界新月岛找到并开启宝箱5000次。"
     },
     "item": 0,
@@ -78334,12 +78336,14 @@
     "de": "Kristallkönig (15. Saison)",
     "ja": "コンフリクトの王者：シーズン15",
     "fr": "Roi du conflit : saison 15",
+    "ko": "컨플릭트의 제왕: 시즌 15",
     "zh": "冲突的王者第15赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Fifteen ranked #1.",
       "de": "Die 15. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで1位になる",
       "fr": "Terminer la saison 15 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 15에서 1위 입상",
       "zh": "在水晶冲突的第15赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -78353,12 +78357,14 @@
     "de": "Kristallfürst (15. Saison)",
     "ja": "コンフリクトの勇者：シーズン15",
     "fr": "Prince du conflit : saison 15",
+    "ko": "컨플릭트의 용자: 시즌 15",
     "zh": "冲突的勇者第15赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Fifteen.",
       "de": "Die 15. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで上位に入賞する",
       "fr": "Terminer la saison 15 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 15에서 상위 랭킹에 입상",
       "zh": "在水晶冲突的第15赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -78372,12 +78378,14 @@
     "de": "Kristallkämpfer (15. Saison)",
     "ja": "コンフリクトの入賞者：シーズン15",
     "fr": "As du conflit : saison 15",
+    "ko": "컨플릭트의 입상자: 시즌 15",
     "zh": "冲突的获奖者第15赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Fifteen.",
       "de": "Die 15. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン15にて、ランキングで入賞する",
       "fr": "Terminer la saison 15 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 15에서 랭킹에 입상",
       "zh": "在水晶冲突的第15赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -78391,12 +78399,14 @@
     "de": "Kristallkönig (16. Saison)",
     "ja": "コンフリクトの王者：シーズン16",
     "fr": "Roi du conflit : saison 16",
+    "ko": "컨플릭트의 제왕: 시즌 16",
     "zh": "冲突的王者第16赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Sixteen ranked #1.",
       "de": "Die 16. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで1位になる",
       "fr": "Terminer la saison 16 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 16에서 1위 입상",
       "zh": "在水晶冲突的第16赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -78410,12 +78420,14 @@
     "de": "Kristallfürst (16. Saison)",
     "ja": "コンフリクトの勇者：シーズン16",
     "fr": "Prince du conflit : saison 16",
+    "ko": "컨플릭트의 용자: 시즌 16",
     "zh": "冲突的勇者第16赛季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Sixteen.",
       "de": "Die 16. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで上位に入賞する",
       "fr": "Terminer la saison 16 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 16에서 상위 랭킹에 입상",
       "zh": "在水晶冲突的第16赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -78429,12 +78441,14 @@
     "de": "Kristallkämpfer (16. Saison)",
     "ja": "コンフリクトの入賞者：シーズン16",
     "fr": "As du conflit : saison 16",
+    "ko": "컨플릭트의 입상자: 시즌 16",
     "zh": "冲突的获奖者第16赛季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Sixteen.",
       "de": "Die 16. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン16にて、ランキングで入賞する",
       "fr": "Terminer la saison 16 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 16에서 랭킹에 입상",
       "zh": "在水晶冲突的第16赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -78448,12 +78462,14 @@
     "de": "Kristallträger: Omega",
     "ja": "クリスタルベアラー：オメガ",
     "fr": "Siège de cristal : Oméga",
+    "ko": "크리스탈 운반자: 오메가",
     "zh": "欧米茄之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in or above the Omega tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Omega oder höher abgeschlossen.",
       "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをオメガ階級以上で終えた",
       "fr": "Terminer une saison de Crystalline Conflict à l'échelon Oméga ou supérieur.",
+      "ko": "크리스탈라인 컨플릭트에서 시즌 등급을 오메가 이상으로 마감",
       "zh": "在水晶冲突的任意赛季中最终取得欧米茄或以上段位。"
     },
     "item": 0,
@@ -78467,12 +78483,14 @@
     "de": "Kristallträger: Ultima",
     "ja": "クリスタルベアラー：アルテマ",
     "fr": "Siège de cristal : Ultima",
+    "ko": "크리스탈 운반자: 알테마",
     "zh": "究极之水晶守护者",
     "description": {
       "en": "Complete a Crystalline Conflict season in the Ultima tier.",
       "de": "Eine Saison von „Crystalline Conflict“ mit Kampfklasse Ultima abgeschlossen.",
       "ja": "クリスタルコンフリクトのいずれかのシーズンで、ランクをアルテマ階級で終えた",
       "fr": "Terminer une saison de Crystalline Conflict à l'échelon Ultima.",
+      "ko": "크리스탈라인 컨플릭트에서 시즌 등급을 알테마로 마감",
       "zh": "在水晶冲突的任意赛季中最终取得究极段位。"
     },
     "item": 0,
@@ -78885,12 +78903,14 @@
     "de": "Versprechen einer neuen Zukunft",
     "ja": "明日への道標",
     "fr": "La promesse de demain",
+    "ko": "내일을 향한 이정표",
     "zh": "明日的路标",
     "description": {
       "en": "Complete the main scenario quest “The Promise of Tomorrow.”",
       "de": "Den Auftrag des Hauptszenarios „Versprechen einer neuen Zukunft“ abgeschlossen.",
       "ja": "クエスト「明日への道標」をコンプリートする",
       "fr": "Accomplir la quête “La promesse de demain”.",
+      "ko": "퀘스트 '내일을 향한 이정표' 완료",
       "zh": "完成任务“明日的路标”。"
     },
     "item": 0,
@@ -78899,7 +78919,7 @@
   "3774": {
     "id": 3774,
     "icon": "/i/062000/062980.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Winter's Warmth I",
     "de": "Schneegeflüster I",
     "ja": "ヨカフイ族：ランク1",
@@ -78916,7 +78936,7 @@
   "3775": {
     "id": 3775,
     "icon": "/i/062000/062980.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Winter's Warmth II",
     "de": "Schneegeflüster II",
     "ja": "ヨカフイ族：ランク2",
@@ -78933,7 +78953,7 @@
   "3776": {
     "id": 3776,
     "icon": "/i/062000/062980.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Winter's Warmth III",
     "de": "Schneegeflüster III",
     "ja": "ヨカフイ族：ランク3",
@@ -78950,7 +78970,7 @@
   "3777": {
     "id": 3777,
     "icon": "/i/062000/062980.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Peak Performance",
     "de": "Eine riesige Freundschaft",
     "ja": "雪山の現場監督",
@@ -78972,12 +78992,14 @@
     "de": "Wer sucht, der findet XVII",
     "ja": "トレジャーハンター：ランク17",
     "fr": "Creuser son trou XVII",
+    "ko": "보물 사냥꾼: 17단계",
     "zh": "寻宝猎人17",
     "description": {
       "en": "Decipher 20 timeworn gargantuaskin maps and open the treasure coffers to which they lead.",
       "de": "20 vergilbte Gargantualeder-Schatzkarten entziffert und die dazugehörigen Schatztruhen geöffnet.",
       "ja": "古ぼけた地図G18を解読し、宝箱を20回開ける",
       "fr": "Déchiffrer 20 vieilles cartes en peau de gargantua et ouvrir les coffres auxquels elles conduisent.",
+      "ko": "18등급 오래된 지도를 해독하여 보물상자 20회 열기",
       "zh": "累计20次成功解读陈旧的卡冈图亚革地图并开启宝箱。"
     },
     "item": 0,
@@ -78991,12 +79013,14 @@
     "de": "Neonträume I",
     "ja": "ボルト・オネイロンに侵入せし者：ランク1",
     "fr": "Rêves de grandeur I",
+    "ko": "볼트 오네이론에 침입한 자: 1단계",
     "zh": "踏入巡梦金库1",
     "description": {
       "en": "Raid Vault Oneiron.",
       "de": "1 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに初めて侵入する",
       "fr": "Pénétrer 1 fois dans le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 1회 침입",
       "zh": "初次入侵巡梦金库。"
     },
     "item": 0,
@@ -79010,12 +79034,14 @@
     "de": "Neonträume II",
     "ja": "ボルト・オネイロンに侵入せし者：ランク2",
     "fr": "Rêves de grandeur II",
+    "ko": "볼트 오네이론에 침입한 자: 2단계",
     "zh": "踏入巡梦金库2",
     "description": {
       "en": "Raid Vault Oneiron 5 times.",
       "de": "5 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに累計5回侵入する",
       "fr": "Pénétrer 5 fois dans le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 5회 침입",
       "zh": "累计入侵巡梦金库5次。"
     },
     "item": 0,
@@ -79029,12 +79055,14 @@
     "de": "Neonträume III",
     "ja": "ボルト・オネイロンに侵入せし者：ランク3",
     "fr": "Rêves de grandeur III",
+    "ko": "볼트 오네이론에 침입한 자: 3단계",
     "zh": "踏入巡梦金库3",
     "description": {
       "en": "Raid Vault Oneiron 10 times.",
       "de": "10 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに累計10回侵入する",
       "fr": "Pénétrer 10 fois dans le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 10회 침입",
       "zh": "累计入侵巡梦金库10次。"
     },
     "item": 0,
@@ -79048,12 +79076,14 @@
     "de": "Neonträume IV",
     "ja": "ボルト・オネイロンに侵入せし者：ランク4",
     "fr": "Rêves de grandeur IV",
+    "ko": "볼트 오네이론에 침입한 자: 4단계",
     "zh": "踏入巡梦金库4",
     "description": {
       "en": "Raid Vault Oneiron 20 times.",
       "de": "20 Mal Tresor Oneiron betreten.",
       "ja": "宝物庫 ボルト・オネイロンに累計20回侵入する",
       "fr": "Pénétrer 20 fois dans le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 20회 침입",
       "zh": "累计入侵巡梦金库20次。"
     },
     "item": 0,
@@ -79067,12 +79097,14 @@
     "de": "Frisch gebackener Panzerknacker I",
     "ja": "ボルト・オネイロンの覇者：ランク1",
     "fr": "Trésor de rêve I",
+    "ko": "볼트 오네이론을 제패한 자: 1단계",
     "zh": "称霸巡梦金库1",
     "description": {
       "en": "Clear the final play in Vault Oneiron.",
       "de": "Tresor Oneiron zum ersten Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを初めて制覇する",
       "fr": "Conquérir 1 fois le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 1회 완료",
       "zh": "初次称霸巡梦金库。"
     },
     "item": 0,
@@ -79086,12 +79118,14 @@
     "de": "Frisch gebackener Panzerknacker II",
     "ja": "ボルト・オネイロンの覇者：ランク2",
     "fr": "Trésor de rêve II",
+    "ko": "볼트 오네이론을 제패한 자: 2단계",
     "zh": "称霸巡梦金库2",
     "description": {
       "en": "Clear the final play in Vault Oneiron 5 times.",
       "de": "Tresor Oneiron 5 Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを累計5回制覇する",
       "fr": "Conquérir 5 fois le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 5회 완료",
       "zh": "累计称霸巡梦金库5次。"
     },
     "item": 0,
@@ -79105,12 +79139,14 @@
     "de": "Frisch gebackener Panzerknacker III",
     "ja": "ボルト・オネイロンの覇者：ランク3",
     "fr": "Trésor de rêve III",
+    "ko": "볼트 오네이론을 제패한 자: 3단계",
     "zh": "称霸巡梦金库3",
     "description": {
       "en": "Clear the final play in Vault Oneiron 10 times.",
       "de": "Tresor Oneiron 10 Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを累計10回制覇する",
       "fr": "Conquérir 10 fois le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 10회 완료",
       "zh": "累计称霸巡梦金库10次。"
     },
     "item": 0,
@@ -79124,12 +79160,14 @@
     "de": "Frisch gebackener Panzerknacker VI",
     "ja": "ボルト・オネイロンの覇者：ランク4",
     "fr": "Trésor de rêve IV",
+    "ko": "볼트 오네이론을 제패한 자: 4단계",
     "zh": "称霸巡梦金库4",
     "description": {
       "en": "Clear the final play in Vault Oneiron 20 times.",
       "de": "Tresor Oneiron 20 Mal abgeschlossen.",
       "ja": "宝物庫 ボルト・オネイロンを累計20回制覇する",
       "fr": "Conquérir 20 fois le coffre d'Oneiron.",
+      "ko": "보물고 볼트 오네이론 20회 완료",
       "zh": "累计称霸巡梦金库20次。"
     },
     "item": 0,
@@ -79143,12 +79181,14 @@
     "de": "Schaurig-schöne Harmonie",
     "ja": "愉快なみんなの廃屋敷",
     "fr": "Impresario impressionné",
+    "ko": "유쾌한 모두의 폐가",
     "zh": "众人愉悦的废弃宅邸",
     "description": {
       "en": "Complete the quest “Dressed to Impresario.”",
       "de": "Den Auftrag „Saures für die Imps“ abgeschlossen.",
       "ja": "クエスト「守護天節とふたつの幻影」をコンプリートする",
       "fr": "Accomplir la quête “Des bonbons ou six trouilles&nbsp;?”.",
+      "ko": "퀘스트 '수호천절과 두 가지 환영' 완료",
       "zh": "完成任务“守护天节与两种幻影”。"
     },
     "item": 0,
@@ -79162,12 +79202,14 @@
     "de": "Kinderpunsch-Überraschung",
     "ja": "プンシュで乾杯！",
     "fr": "Kinderpunsch surprise",
+    "ko": "プンシュで乾杯！",
     "zh": "用软饮干杯！",
     "description": {
       "en": "Complete the quest “We Three Kinderpunsch.”",
       "de": "Den Auftrag „Ausschank zum Sternenlichtfest“ abgeschlossen.",
       "ja": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
       "fr": "Accomplir la quête “Les tasses des Cités”.",
+      "ko": "クエスト「星芒祭と心躍る一杯」をコンプリートする",
       "zh": "完成任务“星芒节与暖心的热饮”。"
     },
     "item": 0,
@@ -79443,12 +79485,14 @@
     "de": "Kartograph: Das Meso-System",
     "ja": "メインターミナルを踏破せし者",
     "fr": "Cartographe du continent : mésoterminal",
+    "ko": "메인 터미널 탐험가",
     "zh": "踏遍中央终端",
     "description": {
       "en": "Discover every location within the Meso Terminal.",
       "de": "Alle Orte im Meso-System erkundet.",
       "ja": "メインターミナル（永久幽界）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte du mésoterminal.",
+      "ko": "메인 터미널을 탐험하여 모든 지역 발견",
       "zh": "成功探索中央终端（永久幽界）的所有地区。"
     },
     "item": 0,
@@ -79462,12 +79506,14 @@
     "de": "Kartograph: San d'Oria: Die zweite Etappe",
     "ja": "サンドリア：ザ・セカンドウォークを踏破せし者",
     "fr": "Cartographe du continent : San d'Oria - La deuxième perambulation",
+    "ko": "산도리아: 두 번째 반향세계 탐험가",
     "zh": "踏遍桑多利亚：第二巡行",
     "description": {
       "en": "Discover every location within San d'Oria: The Second Walk.",
       "de": "Alle Orte in San d'Oria: Die zweite Etappe erkundet.",
       "ja": "サンドリア：ザ・セカンドウォークを踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de San d'Oria - La deuxième perambulation.",
+      "ko": "산도리아: 두 번째 반향세계를 탐험하여 모든 지역 발견",
       "zh": "成功探索桑多利亚：第二巡行的所有地区。"
     },
     "item": 0,
@@ -79481,12 +79527,14 @@
     "de": "Licht im Dunkel",
     "ja": "深淵なる常闇を滅し者",
     "fr": "Chasser l'obscurité",
+    "ko": "심연의 어둠을 무찌른 자",
     "zh": "永暗的毁灭者",
     "description": {
       "en": "Defeat Necron in the Minstrel's Ballad: Necron's Embrace.",
       "de": "Das Ewige Dunkel in „Gok Tajaal - Das Ewige Dunkel“ bezwungen.",
       "ja": "極永遠の闇討滅戦で、永遠の闇を討伐する",
       "fr": "Vaincre Darkness dans le défi “La Nécropole intemporelle (extrême)”.",
+      "ko": "극 영원한 어둠 토벌전에 참가하여 영원한 어둠 처치",
       "zh": "在永远之暗悲惶歼灭战中战胜永远之暗。"
     },
     "item": 0,
@@ -79500,12 +79548,14 @@
     "de": "San d'Oria: Die zweite Etappe",
     "ja": "サンドリア：ザ・セカンドウォークを制覇せし者",
     "fr": "Échos des peuples anciens",
+    "ko": "산도리아: 두 번째 반향세계를 제패한 자",
     "zh": "称霸桑多利亚：第二巡行",
     "description": {
       "en": "Complete San d'Oria: The Second Walk.",
       "de": "San d'Oria: Die zweite Etappe erfolgreich abgeschlossen.",
       "ja": "サンドリア：ザ・セカンドウォークを攻略する",
       "fr": "Finir San d'Oria - La deuxième perambulation.",
+      "ko": "산도리아: 두 번째 반향세계 완료",
       "zh": "成功挑战桑多利亚：第二巡行。"
     },
     "item": 0,
@@ -79514,7 +79564,7 @@
   "3807": {
     "id": 3807,
     "icon": "/i/064000/064810.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Pilgrim's Progress I",
     "de": "Pfadfinder I",
     "ja": "ピルグリム・トラバースの探索者：ランク1",
@@ -79531,7 +79581,7 @@
   "3808": {
     "id": 3808,
     "icon": "/i/064000/064810.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Pilgrim's Progress II",
     "de": "Pfadfinder II",
     "ja": "ピルグリム・トラバースの探索者：ランク2",
@@ -79548,7 +79598,7 @@
   "3809": {
     "id": 3809,
     "icon": "/i/064000/064810.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Pilgrim's Progress III",
     "de": "Pfadfinder III",
     "ja": "ピルグリム・トラバースの探索者：ランク3",
@@ -79565,7 +79615,7 @@
   "3810": {
     "id": 3810,
     "icon": "/i/064000/064810.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Pilgrim's Progress IV",
     "de": "Pfadfinder IV",
     "ja": "ピルグリム・トラバースの探索者：ランク4",
@@ -79582,7 +79632,7 @@
   "3811": {
     "id": 3811,
     "icon": "/i/064000/064810.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Pilgrim's Progress VI",
     "de": "Pfadfinder VI",
     "ja": "ピルグリム・トラバースの探索者：ランク6",
@@ -79599,7 +79649,7 @@
   "3812": {
     "id": 3812,
     "icon": "/i/061000/061265.png",
-    "patch": 1,
+    "patch": 105,
     "en": "No Longer Limp",
     "de": "Bewaffnete Wallfahrt",
     "ja": "強化されし光耀魔器",
@@ -79616,7 +79666,7 @@
   "3813": {
     "id": 3813,
     "icon": "/i/061000/061265.png",
-    "patch": 1,
+    "patch": 105,
     "en": "That Wasn't Wine",
     "de": "Schwerbewaffnete Wallfahrt",
     "ja": "さらに強化されし光耀魔器",
@@ -79633,7 +79683,7 @@
   "3814": {
     "id": 3814,
     "icon": "/i/003000/003321.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Solo Traveler I",
     "de": "Einsamer Pilger I",
     "ja": "至高なる挑戦者：ランク1",
@@ -79650,7 +79700,7 @@
   "3815": {
     "id": 3815,
     "icon": "/i/003000/003321.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Solo Traveler II",
     "de": "Einsamer Pilger II",
     "ja": "至高なる挑戦者：ランク2",
@@ -79667,7 +79717,7 @@
   "3816": {
     "id": 3816,
     "icon": "/i/060000/060035.png",
-    "patch": 1,
+    "patch": 105,
     "en": "For the Hoard VII",
     "de": "Mein Schatz VII",
     "ja": "埋もれた財宝：ランク7",
@@ -79684,7 +79734,7 @@
   "3817": {
     "id": 3817,
     "icon": "/i/026000/026081.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Faerie Favors",
     "de": "Strahlende Erscheinung",
     "ja": "至高なる英雄の証",
@@ -79701,7 +79751,7 @@
   "3818": {
     "id": 3818,
     "icon": "/i/003000/003374.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Unholy Sacrament",
     "de": "Balde ruhest du auch",
     "ja": "大巡礼の会葬者",
@@ -79718,7 +79768,7 @@
   "3819": {
     "id": 3819,
     "icon": "/i/003000/003370.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Unholy Devotion",
     "de": "Am Ende des Pfades",
     "ja": "死せる巡礼路の果てへ",
@@ -79735,7 +79785,7 @@
   "3820": {
     "id": 3820,
     "icon": "/i/027000/027661.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Triple-decker XIV",
     "de": "Tripledecker XIV",
     "ja": "カードコレクター：ランク14",
@@ -79757,12 +79807,14 @@
     "de": "Kapitalbeschaffung auf Tural II",
     "ja": "黄金の太公望：ランク2",
     "fr": "Pêcheur de légendes éternel II",
+    "ko": "황금의 강태공: 2단계",
     "zh": "金曦太公2",
     "description": {
       "en": "Catch 24 different varieties of big fish in areas explored during Dawntrail.",
       "de": "24 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
       "ja": "黄金のレガシーのエリアにいるヌシを24種類、釣り上げる",
       "fr": "Pêcher 24 prises légendaires différentes dans les zones explorées lors de Dawntrail.",
+      "ko": "황금의 유산 지역의 터주 24종류 낚기",
       "zh": "在金曦区域钓上24种钓场之王。"
     },
     "item": 0,
@@ -79771,7 +79823,7 @@
   "3822": {
     "id": 3822,
     "icon": "/i/053000/053720.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Guardian Hunter",
     "de": "Erfolgreiche Jagd",
     "ja": "白き来訪者",
@@ -79788,7 +79840,7 @@
   "3823": {
     "id": 3823,
     "icon": "/i/000000/000317.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Guardiansbane",
     "de": "Wächterschlächter",
     "ja": "護竜アルシュベルドを狩りし者",
@@ -79805,7 +79857,7 @@
   "3824": {
     "id": 3824,
     "icon": "/i/064000/064810.png",
-    "patch": 1,
+    "patch": 105,
     "en": "Pilgrim's Progress V",
     "de": "Pfadfinder V",
     "ja": "ピルグリム・トラバースの探索者：ランク5",
