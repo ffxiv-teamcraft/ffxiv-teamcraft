@@ -8214,7 +8214,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 구현하여, 대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 800\n2번째 대상부터는 위력이 70% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 동물 캔버스에 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 상징<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 발생\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>폼폼 상징<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>날개 상징<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>발톱 상징<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 상징<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 모이면 이들 상징이 모두 사라지고 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마딘 상징<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발생합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 3\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 동물 캔버스에 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 그려진 상태\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.\n※ 발동 조건이 갖춰지면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>동물 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>송곳니 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "34674": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 구현하여, 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 콤보 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 3중첩을 부여합니다.\n<If(Equal(PlayerParameter(68),42))><If(GreaterThanOrEqualTo(PlayerParameter(72),86))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적 수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<Else/></If><Else/></If><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 무기 캔버스에 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 그려진 상태\n전투 중에만 사용할 수 있습니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.\n※ 발동 조건이 갖춰지면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>무기 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 구현하여, 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 콤보 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 3중첩을 부여합니다.\n<If(Equal(PlayerParameter(68),42))><If(GreaterThanOrEqualTo(PlayerParameter(72),86))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<Else/></If><Else/></If><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 무기 캔버스에 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 그려진 상태\n전투 중에만 사용할 수 있습니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.\n※ 발동 조건이 갖춰지면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>무기 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>망치 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "34675": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 공간예술을 구성하고, 20초 동안 자신과 주위 파티원이 주는 피해량을 5% 증가시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30초 동안 팔레트 소비 없이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>색빼기 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<If(Equal(PlayerParameter(68),42))><If(GreaterThanOrEqualTo(PlayerParameter(72),82))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>공간예술<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 5중첩 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>공간예술<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 공간예술 체험 범위 안에서 색마법 또는 별무리 프리즘을 실행하면 1중첩씩 소비되며, 해당 마법의 시전 시간과 재사용 대기 시간이 25% 감소합니다.\n<Else/></If><Else/></If><If(Equal(PlayerParameter(68),42))><If(GreaterThanOrEqualTo(PlayerParameter(72),92))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 공간예술 5중첩을 모두 소비하면 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>무지개 빛방울 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 부여됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>무지개 빛방울 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 무지개 빛방울의 재사용 대기 시간이 단축되며, 시전 시간 없이 실행할 수 있습니다.\n<Else/></If><Else/></If><If(Equal(PlayerParameter(68),42))><If(GreaterThanOrEqualTo(PlayerParameter(72),100))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 20초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>별무리 프리즘 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<Else/></If><Else/></If><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 풍경 캔버스에 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘 그림<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 그려진 상태\n전투 중에만 사용할 수 있습니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.\n※ 발동 조건이 갖춰지면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>풍경 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘 구현<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -9326,6 +9326,9 @@
   "42151": {
     "ko": "행복 입자가 든 신호탄을 발사합니다.\n※ 전투 효과는 없습니다."
   },
+  "42152": {
+    "ko": "작업등을 켭니다.\n※ 전투 효과는 없습니다."
+  },
   "42194": {
     "ko": "대상과 그 주위 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 8000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고백 기도 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
@@ -9409,6 +9412,27 @@
   },
   "44875": {
     "ko": "불이 붙은 횃불을 들어 올립니다.\n※ 전투 효과는 없습니다."
+  },
+  "44920": {
+    "ko": "자신의 전방 부채꼴 범위 안에 있는 번개 이온 파워를 빨아들여 기체에 에너지로 저장합니다."
+  },
+  "44921": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>번개 이온 파워 10<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하여, 부유 마법의 원리로 지하에 있는 파엔나이트를 지상으로 끌어 올립니다. 모래늪 구멍에 사용할 수 있습니다."
+  },
+  "44922": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>번개 이온 파워 10<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하여, 부유 마법의 원리로 지하에 있는 파엔나이트를 지상으로 끌어 올립니다. 모래늪 구멍에 사용할 수 있습니다."
+  },
+  "44923": {
+    "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 칼날로 범위 안에 있는 유리 덩어리를 분쇄합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 칼날 충전(최대 6중첩)"
+  },
+  "44924": {
+    "ko": "바람속성 충격파를 발생시키면서 전방으로 돌진하며, 로더 앞쪽에 달린 칼날로 범위 안에 있는 유리 덩어리를 분쇄합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>칼날 충전 3<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "44925": {
+    "ko": "루나아다만 드릴로 지면을 파서 땅속에 있는 소형 파엔나이트를 채굴합니다."
+  },
+  "44926": {
+    "ko": "바람속성을 이용한 흡인기로 전방 부채꼴 범위 안에 있는 유리 조각을 빨아들입니다.\n단, 거대한 유리 덩어리에는 효과가 없습니다."
   },
   "45193": {
     "ko": "쭈욱 기분 좋게 기지개를 켭니다.\n※ 전투 효과는 없습니다."
