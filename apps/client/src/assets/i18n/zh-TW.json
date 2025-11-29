@@ -82,7 +82,7 @@
   "Hide_used": "Hide used rows",
   "Collapse_if_done": "Collapse if done",
   "Collapse_by_default": "Collapse by default",
-  "Retainer_ventures": "Retainer ventures",
+  "Retainer_ventures": "雇員探險",
   "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
     "Workshops": "Workshops",
@@ -492,7 +492,7 @@
     "Disable_search_history": "Disable search history",
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Packet_capture_info": "擷取網路封包的行為，與 ACT（Advanced Combat Tracker）一樣，都違反了服務條款（ToS）。但只要你不在遊戲內向所有人大肆張揚此事，Square Enix 是會容忍的。只要不張揚，你就不會有任何風險。",
     "Enable_autofill_by_default": "Enable autofill by default",
     "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
@@ -2764,8 +2764,8 @@
     "Lowest_price": "Lowest price"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and Gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Title": "雇員探險",
+    "Description": "請輸入你的雇員職業、等級、裝等和獲得力，以找出能獲得最高利潤的理想任務。如果你的雇員等級很高，系統會考慮所有它能獲得且有利潤的物品，因此這可能需要長達一分鐘的時間。",
     "Retainer_ilvl": "Ilvl",
     "Gathering": "Gathering",
     "Task_level": "Task level",
@@ -3286,7 +3286,7 @@
     "Grand_Company_Supplies": "Grand Company Supplies",
     "Currency_Spending_Guide": "Currency Guide",
     "Collectables": "Collectables",
-    "Retainer_Ventures": "Retainer Ventures",
+    "Retainer_Ventures": "雇員探險",
     "Treasure_Finder": "Treasure Finder",
     "Layouts": "Layouts",
     "Macro_Translator": "Macro Translator",
@@ -3294,7 +3294,7 @@
     "Recipe_Finder": "Recipe Finder",
     "Food_Picker": "Food Picker",
     "Reminders": "Reminders",
-    "About": "About",
+    "About": "關於",
     "Fish_Train": "Fish Train",
     "Inventory": "Inventory"
   },
