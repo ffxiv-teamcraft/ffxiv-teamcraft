@@ -100,13 +100,13 @@
   },
   "ABOUT": {
     "title": "關於",
-    "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
-    "Copyright_notice_title": "Copyright notice",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
-    "Thanks_title": "Thanks",
-    "Data_sources": "Data sources",
-    "Patreon_supporters": "Patreon supporters",
-    "Contributors": "Contributors"
+    "Created_by": "FFXIV Teamcraft 由來自 Louisoix, Chaos 伺服器的 Miu Asakura 所創建。",
+    "Copyright_notice_title": "版權聲明",
+    "Copyright_notice_content": "FINAL FANTASY 是 Square Enix Holdings Co., Ltd. 的註冊商標。 <br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 版權所有。 <br>FFXIV Teamcraft 與 Square Enix 並無從屬關係。",
+    "Thanks_title": "鳴謝",
+    "Data_sources": "資料來源",
+    "Patreon_supporters": "Patreon 贊助者",
+    "Contributors": "貢獻者"
   },
   "Patreon_login_success": "Patreon login success!",
   "Tipeee_login_success": "Tipeee login success!",
@@ -137,7 +137,7 @@
     "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
     "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Search": "搜尋"
   },
   "COMMON": {
     "Play": "Play",
@@ -227,7 +227,7 @@
     }
   },
   "ALARMS": {
-    "Title": "Alarms",
+    "Title": "鬧鐘",
     "No_alarm": "No alarms set",
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
@@ -276,7 +276,7 @@
       "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
     },
     "CUSTOM": {
-      "Title": "Add custom alarm",
+      "Title": "新增自訂鬧鐘",
       "Name": "Name",
       "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "Spawns twice",
@@ -579,7 +579,7 @@
       "Packet_capture": "Packet capture",
       "Networking": "Networking",
       "Theme": "Theme",
-      "Search": "Search",
+      "Search": "搜尋",
       "Lists": "Lists",
       "Alarms": "Alarms",
       "Other": "Other",
@@ -754,7 +754,7 @@
       "Hide_final_items": "Hide final items"
     },
     "COMPLETION_POPUP": {
-      "Title": "List completed",
+      "Title": "清單已完成",
       "Content": "This list is now completed, what do you want to do with it?",
       "Delete": "Delete the list",
       "Clear": "Empty the list",
@@ -837,7 +837,7 @@
       "Others": "Others"
     },
     "DISPLAY_MODE": {
-      "Title": "Display mode",
+      "Title": "顯示模式",
       "Full": "Full",
       "Minimalist": "Minimalist",
       "Step_by_step": "Step by step",
@@ -967,7 +967,7 @@
     "FSH": "FSH"
   },
   "MACRO_TRANSLATION": {
-    "Title": "Macro translator",
+    "Title": "巨集轉換器",
     "Macro_language": "Macro language",
     "Macro_to_translate": "Macro to translate",
     "Do_translate": "Translate!",
@@ -999,7 +999,7 @@
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "Gathering items",
+    "Title": "採集筆記",
     "No_items": "No gathering node found",
     "Gathering_name": "Enter item name",
     "Ephemeral_node": "Ephemeral node, can be respawned",
@@ -1023,7 +1023,7 @@
     "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
-    "Title": "Announcement",
+    "Title": "公告",
     "Read_more": "Read more"
   },
   "LIST_TEMPLATE": {
@@ -1048,7 +1048,7 @@
     "Participate_description": "This gives you permission to tick items and modify amounts done",
     "Write": "Write",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
-    "Title": "Permissions management",
+    "Title": "權限管理",
     "Everyone": "Everyone",
     "You": "You",
     "Add_new": "Add a user",
@@ -1066,7 +1066,7 @@
     "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
-    "Title": "Wiki",
+    "Title": "百科",
     "Not_found_in_current_lang": "This page wasn't found in your current language. English version will be shown",
     "Not_found": "Page not found"
   },
@@ -1574,7 +1574,7 @@
   },
   "GC_SUPPLY": {
     "Title": "Grand Company Supplies",
-    "Search": "Search",
+    "Search": "搜尋",
     "Generate_list": "Create a quick list",
     "Intro": "Input your levels and click search to get started",
     "Loading_message": "Loading possible deliveries..."
