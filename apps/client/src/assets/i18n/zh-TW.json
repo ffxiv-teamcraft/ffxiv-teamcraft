@@ -40,7 +40,7 @@
     "Seconds": "s"
   },
   "ITEMS": {
-    "Title": "Search",
+    "Title": "搜尋",
     "No_match": "No matching items",
     "Item_name": "Item name",
     "Add_to_list": "Add this item to a list",
@@ -99,7 +99,7 @@
     "Add_lists": "Add lists"
   },
   "ABOUT": {
-    "title": "About",
+    "title": "關於",
     "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
     "Copyright_notice_title": "Copyright notice",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
@@ -433,7 +433,7 @@
     "Kickstarter_email_used": "Email is not a backer or it's already claimed",
     "Ks_email_applied": "Backer status applied, ads are now disabled",
     "Requires_restart": "Requires restart/refresh to be taken into account",
-    "Title": "Settings",
+    "Title": "設定",
     "General": "General",
     "Link_base": "Item links",
     "DateFormat": "Date Format",
