@@ -2,11 +2,11 @@
   "Mogstation": "Mogstation",
   "Quests": "任務",
   "Facebook_notice": "Facebook 登入已停用。您可以透過 \"重置密碼\" 來加入密碼，或加入 Discord 詢問管理員 Miu。",
-  "Pick_a_list": "Pick a list",
-  "Pick_a_user": "Pick a user",
+  "Pick_a_list": "選擇清單",
+  "Pick_a_user": "選擇使用者",
   "Pick_a_fc": "Pick a free company",
-  "Pick_a_rotation": "Pick a rotation",
-  "Pick_a_recipe": "Pick a recipe",
+  "Pick_a_rotation": "選擇工序",
+  "Pick_a_recipe": "選擇配方",
   "Pick_an_item": "Pick an item",
   "FC": "Free Company",
   "FC_name": "Free Company Name",
@@ -40,7 +40,7 @@
     "Seconds": "s"
   },
   "ITEMS": {
-    "Title": "搜尋",
+    "Title": "搜索",
     "No_match": "No matching items",
     "Item_name": "Item name",
     "Add_to_list": "Add this item to a list",
@@ -137,7 +137,7 @@
     "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
     "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "搜尋"
+    "Search": "搜索"
   },
   "COMMON": {
     "Play": "Play",
@@ -318,7 +318,7 @@
   "No": "No",
   "Crystals": "Crystals",
   "Gathering": "Gathering",
-  "Perception": "Perception",
+  "Perception": "鑑別力",
   "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "Other",
   "Pre_crafts": "Pre crafts",
@@ -579,7 +579,7 @@
       "Packet_capture": "Packet capture",
       "Networking": "Networking",
       "Theme": "Theme",
-      "Search": "搜尋",
+      "Search": "搜索",
       "Lists": "Lists",
       "Alarms": "Alarms",
       "Other": "Other",
@@ -744,10 +744,10 @@
       "NONE": "None"
     },
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Attach": "附加工序",
+      "Detach": "刪除工序",
+      "Click_to_copy_macro": "點擊以打開 \"複製巨集\" 彈出框",
+      "Open_in_overlay": "在工序懸浮窗中打開"
     },
     "INVENTORY": {
       "Show_final_items": "Show final items",
@@ -885,7 +885,7 @@
         "ADD_TAG": "Add tag to item",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
         "MARKET_BOARD_INFORMATIONS": "Marketboard information",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "附加工序"
       }
     },
     "LAYOUT": {
@@ -1096,7 +1096,7 @@
     "Change_recipe": "Change recipe",
     "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
     "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
-    "Convert_rotation": "Open in standard simulator",
+    "Convert_rotation": "在標準模擬器中打開",
     "Configuration": "Configuration",
     "Level": "Level",
     "Reliability": "Reliability",
@@ -1105,9 +1105,9 @@
     "Min_HQ": "Min. HQ",
     "Max_HQ": "Max. HQ",
     "Specialist": "Specialist",
-    "New_rotation": "New rotation",
-    "Rotations": "Crafting rotations",
-    "Favorite_Rotations": "Favorite Rotations",
+    "New_rotation": "新增工序",
+    "Rotations": "生產工序",
+    "Favorite_Rotations": "最愛工序",
     "No_rotations": "No rotations",
     "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Reset rotation",
@@ -1574,7 +1574,7 @@
   },
   "GC_SUPPLY": {
     "Title": "Grand Company Supplies",
-    "Search": "搜尋",
+    "Search": "搜索",
     "Generate_list": "Create a quick list",
     "Intro": "Input your levels and click search to get started",
     "Loading_message": "Loading possible deliveries..."
@@ -2767,9 +2767,9 @@
     "Title": "雇員探險",
     "Description": "請輸入你的雇員職業、等級、裝備平均品級和獲得力，以找出能獲得最高利潤的理想任務。如果你的雇員等級很高，系統會考慮所有它能獲得且有利潤的物品，因此這可能需要長達一分鐘的時間。",
     "Retainer_ilvl": "裝備平均品級",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
+    "Gathering": "獲得力",
+    "Task_level": "探險等級",
+    "Total_per_venture": "單次探險總計",
     "Use_retainer": "Fill with retainer",
     "Select_retainer": "Pick one of your retainers",
     "Missing_gear": "Missing gear",
@@ -3264,7 +3264,7 @@
     "Migrate": "Migrate"
   },
   "TITLE": {
-    "Search": "Search",
+    "Search": "搜索",
     "Lists": "Lists",
     "Crafting_Simulator": "Crafting Simulator",
     "Crafting_Rotation": "Crafting Rotation",
