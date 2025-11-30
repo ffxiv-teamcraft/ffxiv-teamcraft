@@ -2765,8 +2765,8 @@
   },
   "RETAINER_VENTURES": {
     "Title": "雇員探險",
-    "Description": "請輸入你的雇員職業、等級、裝等和獲得力，以找出能獲得最高利潤的理想任務。如果你的雇員等級很高，系統會考慮所有它能獲得且有利潤的物品，因此這可能需要長達一分鐘的時間。",
-    "Retainer_ilvl": "Ilvl",
+    "Description": "請輸入你的雇員職業、等級、裝備平均品級和獲得力，以找出能獲得最高利潤的理想任務。如果你的雇員等級很高，系統會考慮所有它能獲得且有利潤的物品，因此這可能需要長達一分鐘的時間。",
+    "Retainer_ilvl": "裝備平均品級",
     "Gathering": "Gathering",
     "Task_level": "Task level",
     "Total_per_venture": "Total per venture",
