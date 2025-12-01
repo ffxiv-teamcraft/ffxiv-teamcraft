@@ -11,7 +11,7 @@
   "FC": "Free Company",
   "FC_name": "Free Company Name",
   "FC_rank": "Free Company Rank",
-  "Saving_in_database": "Saving data on server",
+  "Saving_in_database": "正在保存資料至伺服器",
   "See_on_map": "在地圖查看",
   "No_known_coordinates": "無已知座標",
   "Edit_amount": "編輯數量",
@@ -23,7 +23,7 @@
   "Selection": "Selection",
   "Change_character": "角色",
   "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Guides_links": "Teamcraft 指南",
   "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
   "AUTH_ERRORS": {
@@ -34,10 +34,10 @@
   },
   "TIMERS": {
     "Days": "days",
-    "Day": "day",
-    "Hours": "h",
-    "Minutes": "m",
-    "Seconds": "s"
+    "Day": "天",
+    "Hours": "小時",
+    "Minutes": "分鐘",
+    "Seconds": "秒"
   },
   "ITEMS": {
     "Title": "搜索",
