@@ -51,12 +51,12 @@
     "Share_url_copied": "搜索連結已複製到剪貼簿",
     "Only_craftable": "僅顯示有配方的物品",
     "Want_filters": "須要更多過濾方式？",
-    "Open_search": "Open search page instead",
-    "Island_recipe": "Island Sanctuary recipe",
-    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
+    "Open_search": "打開搜索頁面",
+    "Island_recipe": "無人島配方",
+    "Ingesting_index": "正在讀取新選定語言的內容，這應該只需數秒鐘..."
   },
-  "Use_as_default_character": "Use as default character",
-  "Download_desktop_app": "Download desktop app",
+  "Use_as_default_character": "設為默認角色",
+  "Download_desktop_app": "下載桌面應用程式",
   "Find_us_on_twitter": "Find us on Twitter",
   "Join_discord_server": "Join our Discord server",
   "See_code_github": "Star the project on Github",
