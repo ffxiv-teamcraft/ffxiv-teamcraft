@@ -8,7 +8,7 @@ import { AddCharacter, AddCustomCharacter, Logout, VerifyCharacter } from '../..
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { uniq } from 'lodash';
 import { LodestoneService } from '../../api/lodestone.service';
-import { CHINESE_GAME_SERVERS, GAME_SERVERS, KOREAN_GAME_SERVERS } from '@ffxiv-teamcraft/data/handmade/game-servers';
+import { CHINESE_GAME_SERVERS, GAME_SERVERS, KOREAN_GAME_SERVERS, TAIWAN_GAME_SERVERS } from '@ffxiv-teamcraft/data/handmade/game-servers';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -53,7 +53,7 @@ export class CharacterLinkPopupComponent extends DialogComponent {
   public mandatory = false;
 
   public isKoreanOrChinese(server: string): boolean {
-    return CHINESE_GAME_SERVERS.includes(server) || KOREAN_GAME_SERVERS.includes(server);
+    return CHINESE_GAME_SERVERS.includes(server) || KOREAN_GAME_SERVERS.includes(server) || TAIWAN_GAME_SERVERS.includes(server);
   }
 
   constructor(private store: Store<any>, private modalRef: NzModalRef,

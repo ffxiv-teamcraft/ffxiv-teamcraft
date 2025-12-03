@@ -37,6 +37,15 @@ export const CHINESE_GAME_SERVERS = [
   'HongChaChuan2'
 ];
 
+export const TAIWAN_GAME_SERVERS = [
+  '伊弗利特',
+  '迦樓羅',
+  '利維坦',
+  '鳳凰',
+  '奧汀',
+  '巴哈姆特'
+];
+
 export const GAME_SERVERS = [
   'Adamantoise',
   'Aegis',
@@ -131,6 +140,9 @@ export const GAME_SERVERS = [
 
   // Korean servers
   ...KOREAN_GAME_SERVERS,
+
+    // Traditional Chinese servers
+  ...TAIWAN_GAME_SERVERS,
 
   // New for 6.18
   'Alpha',
@@ -312,5 +324,11 @@ export const GAME_SERVERS_PER_DC = {
   'Korea':
     [
       ...KOREAN_GAME_SERVERS
+    ],
+
+    // Taiwan servers don't have datacenters, so we're going to call them "Taiwan"
+  'Taiwan':
+    [
+      ...TAIWAN_GAME_SERVERS
     ]
 };
