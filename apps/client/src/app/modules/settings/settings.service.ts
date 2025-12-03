@@ -47,7 +47,7 @@ export class SettingsService {
   }
 
   public get availableLocales(): string[] {
-    return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
+    return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'tw', 'ru'];
   }
 
   public get availableDateLocales(): string[] {
@@ -55,7 +55,7 @@ export class SettingsService {
   }
 
   public get availableRegions(): Region[] {
-    return [Region.Global, Region.China, Region.Korea];
+    return [Region.Global, Region.China, Region.Korea, Region.Taiwan];
   }
 
   public get region(): Region {
