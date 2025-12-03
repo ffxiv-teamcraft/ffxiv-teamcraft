@@ -200,7 +200,7 @@
     "Show_more": "顯示更多",
     "Item": "物品",
     "Venture": "探險",
-    "Monster": "Monster",
+    "Monster": "怪物",
     "Airship": "飛空艇",
     "Submarine": "潛水艇",
     "Voyage": "Voyage",
@@ -264,7 +264,7 @@
     "Next_spawn_prefix": "下一個：",
     "REALTIME": {
       "Reset_timers": "Reminders",
-      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS": "每週任務",
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo Cactpot, Challenge Log, Fashion Report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Roulettes & Beast tribes",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
