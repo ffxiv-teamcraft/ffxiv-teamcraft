@@ -1,6 +1,6 @@
 {
   "Mogstation": "Station Mog",
-  "Quests": "Quests",
+  "Quests": "Quêtes",
   "Facebook_notice": "La connexion à Facebook n'est plus disponible, vous pouvez ajouter un mot de passe à votre compte en utilisant le système \"réinitialiser le mot de passe\", ou en demandant à Miu sur Discord.",
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez un utilisateur",
@@ -2004,7 +2004,7 @@
     "Sort_by": "Trier par: ",
     "Sort_asc": "Croissant",
     "Sort_desc": "Décroissant",
-    "Add_stat_filter": "Ajouter un filtre de stat",
+    "Add_stat_filter": "Ajouter un filtre de caractéristique",
     "Job": "Job",
     "Class": "Classe",
     "Land": "DoL",
@@ -2015,7 +2015,7 @@
     "Patch": "Patch",
     "Language": "Langue",
     "Share": "Partager",
-    "Placeholder": "Rechercher quelque chose de génial",
+    "Placeholder": "Rechercher...",
     "Hide_filters": "Masquer les filtres supplémentaires",
     "Show_filters": "Afficher les filtres supplémentaires",
     "Item_type_placeholder": "Sélectionner le type d'objet",
@@ -2023,11 +2023,11 @@
     "Required_level": "Niveau requis",
     "Recipe_level": "Niveau de la recette",
     "Crafted_by": "Fabriqué par",
-    "Worn_by": "Porté par",
+    "Worn_by": "Équipé par",
     "Gear_stats": "Statistiques d'équipement",
     "Consumable_stats": "Statistiques de consommables",
     "No_stats_filters": "Oups, aucun résultat",
-    "Add_stat_using_button": "Pour ajouter un filtre de stat, cliquez sur le bouton ci-dessous",
+    "Add_stat_using_button": "Pour ajouter un filtre de caractéristique, cliquez sur le bouton ci-dessous",
     "Stat": "Stat",
     "Range": "Plage",
     "Exclude": "Exclure",
@@ -2343,7 +2343,7 @@
     "SEARCH": {
       "Search_type": "Vous pouvez changer le type de recherche ici (objet, quête, carte, nœud, PNJ, etc).",
       "Share": "Utilisez ce bouton pour obtenir un lien de partage de cette recherche.",
-      "Filters": "Ouvrez ce panneau pour utiliser des filtres avancés, pour filtrer par stat, bonus, ilvl, et plus encore"
+      "Filters": "Ouvrez ce panneau pour utiliser des filtres avancés, pour filtrer par caractéristique, bonus, ilvl, et plus encore"
     },
     "LIST_PANEL": {
       "Share": "Cliquez ici pour obtenir un lien vers cette liste afin de la partager facilement.",
