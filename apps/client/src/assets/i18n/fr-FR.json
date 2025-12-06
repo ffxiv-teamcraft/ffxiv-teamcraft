@@ -429,9 +429,9 @@
   "Precraft_tier": "Étape",
   "Regenerating_lists": "Regénération des listes en cours",
   "SETTINGS": {
-    "Kickstarter_email": "Kickstarter email",
-    "Kickstarter_email_used": "Email is not a backer or it's already claimed",
-    "Ks_email_applied": "Backer status applied, ads are now disabled",
+    "Kickstarter_email": "E-mail Kickstarter",
+    "Kickstarter_email_used": "L'e-mail n'est pas un contributeur valide ou il a déjà été réclamé",
+    "Ks_email_applied": "Statut de contributeur appliqué, les publicités sont maintenant désactivées",
     "Requires_restart": "Nécessite un redémarrage/actualisation pour être pris en compte",
     "Title": "Options",
     "General": "Général",
@@ -1085,7 +1085,7 @@
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
     "Min_stats": "Caractéristiques minimum",
-    "Min_stats_base": "Minimum without buffs",
+    "Min_stats_base": "Minimum sans bonus",
     "Progress": "Progression",
     "Quality": "Qualité",
     "Step_counter": "Étape",
@@ -3300,10 +3300,10 @@
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",
-    "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
-    "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
+    "Teamcrafter_description_text": "« Vous aimez combattre de féroces monstres ? Risquer votre vie pour sauver des étrangers ?\nBien sûr que non, vous n'êtes pas fou ! »",
+    "Teamcrafter_description_text_part2": "Teamcrafter, c'est moi qui réalise un rêve d'enfance grâce à la communauté. Merci pour votre soutien incroyable sur Kickstarter qui aura permis d'être entièrement financé, et même plus !",
     "Wishlist": "Voir sur Steam",
-    "Supported": "Thanks a lot for your support on Kickstarter <3",
-    "Ads_removed": "Ads have been permanently removed from your account"
+    "Supported": "Merci beaucoup pour votre soutien sur Kickstarter <3",
+    "Ads_removed": "Les publicités ont été définitivement supprimées de votre compte"
   }
 }
