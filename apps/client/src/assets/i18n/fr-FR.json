@@ -490,7 +490,7 @@
     "Always_all_deliveries": "Cocher par défaut le bouton 'Les 3 livraisons' sur la page des mandats",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
-    "Disable_search_debounce": "Désactiver la recherche auto (appuyer sur Entrée pour délencher la recherche)",
+    "Disable_search_debounce": "Désactiver la recherche auto (appuyer sur Entrée pour déclencher la recherche)",
     "Enable_packet_capture": "Activer la capture de paquets (ajoute des fonctionnalités d'inventaire en temps réel)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de Licence de l'Utilisateur Final), la même raison pour laquelle ACT est contre. Mais Square Enix le tolère à moins que vous ne vous soyez en train de le répéter à tout le monde en jeu. Ne dites rien et vous ne risquerez rien.",
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
@@ -1290,7 +1290,7 @@
     "ROTATION_TIPS": {
       "Use_observe_before_focused": "Vous devriez utiliser Observation avant l'action au tour {{index}} afin de monter son taux de réussite à 100%.",
       "Use_durability_restoration_later": "Vous devriez utiliser l'action de réparation au tour {{index}} plus tôt afin d'éviter de gâcher une partie de son effet.",
-      "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
+      "Do_not_overlap_buffs": "Vous avez écrasé le bonus appliqué au tour {{overlappedIndex}} avec le bonus appliqué au tour {{overlappingIndex}}, appliquez le second bonus plus tard pour éviter de perdre des tours d'effet sur le premier.",
       "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
       "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
@@ -1299,7 +1299,7 @@
   },
   "PRICING": {
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
-    "Expect_to_sell_everything_explain": "N'inclut pas les restes d'objets des prés dans vos dépenses car ils seront revendus.",
+    "Expect_to_sell_everything_explain": "N'inclut pas les restes d'objets des pré-crafts dans vos dépenses car ils seront revendus",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Autofill_panel_prices_your_server": "Remplir les prix en se basant sur l’hôtel des ventes (votre serveur uniquement)",
     "Content_copied": "Contenu copié dans le presse-papiers",
