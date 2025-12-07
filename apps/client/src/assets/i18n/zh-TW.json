@@ -246,7 +246,7 @@
     "Open_overlay": "切換遊戲內覆蓋",
     "Open_alarms_overlay": "切換鬧鐘遊戲內覆蓋",
     "More_available": "還有 {{amount}} 個…",
-    "Node_content": "Node content",
+    "Node_content": "採集物情報",
     "Toggle_collapse": "切換群組收合",
     "Add_alarms_to_group": "新增鬧鐘至群組",
     "Group_link_copied": "已複製鬧鐘群組連結",
@@ -289,10 +289,10 @@
       "Weather": "天氣",
       "Weather_from": "上一個天氣",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
-        "Rocky": "Rocky Outcrop",
-        "Tree": "Mature Tree",
-        "Vegetation": "Lush Vegetation Patch",
+        "Mineral": "礦脈",
+        "Rocky": "石場",
+        "Tree": "良材",
+        "Vegetation": "草場",
         "Fishing": "Fishing"
       }
     }
