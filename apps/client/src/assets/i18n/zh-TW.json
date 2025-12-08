@@ -272,8 +272,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "軍團籌備重置倒計時",
       "LEVE_ALLOWANCES": "理符受理限額",
       "LEVE_ALLOWANCES_DESCRIPTION": "增加 3 個受理限額",
-      "OCEAN_FISHING": "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
+      "OCEAN_FISHING": "出海垂釣",
+      "OCEAN_FISHING_DESCRIPTION": "努力號乘船登記時間"
     },
     "CUSTOM": {
       "Title": "新增自訂鬧鐘",
@@ -293,7 +293,7 @@
         "Rocky": "石場",
         "Tree": "良材",
         "Vegetation": "草場",
-        "Fishing": "Fishing"
+        "Fishing": "釣魚"
       }
     }
   },
@@ -338,7 +338,7 @@
   "Island_animal": "無人島動物",
   "Island_crop": "無人島作物",
   "Desynth": "分解",
-  "Vendors": "Vendors",
+  "Vendors": "商人",
   "Open": "開啟",
   "Trade": "Trade",
   "Treasures": "獲取方法",
