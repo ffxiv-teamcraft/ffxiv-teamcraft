@@ -265,15 +265,15 @@
     "REALTIME": {
       "Reset_timers": "重置倒計時",
       "WEEKLY_RESETS": "每週任務",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo Cactpot, Challenge Log, Fashion Report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "每日隨機＆蠻族日常",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
+      "WEEKLY_RESETS_DESCRIPTION": "老主顧、天書、週常掉落（24 人本、零式、普通 Raid 武器代幣）、仙人彩、挑戰筆記、金碟暖暖、B 級怪物狩獵的重置倒計時",
+      "ROULETTES_RESET": "每日隨機＆友好部族任務",
+      "ROULETTES_RESET_DESCRIPTION": "隨機任務、友好部族任務、每日狩獵及仙人彩的重置倒計時",
       "DELIVERIES_RESET": "軍團籌備",
       "DELIVERIES_RESET_DESCRIPTION": "軍團籌備重置倒計時",
       "LEVE_ALLOWANCES": "理符受理限額",
-      "LEVE_ALLOWANCES_DESCRIPTION": "增加 3 個受理限額",
+      "LEVE_ALLOWANCES_DESCRIPTION": "受理限額更新倒計時",
       "OCEAN_FISHING": "出海垂釣",
-      "OCEAN_FISHING_DESCRIPTION": "努力號乘船登記時間"
+      "OCEAN_FISHING_DESCRIPTION": "努力號乘船登記倒計時"
     },
     "CUSTOM": {
       "Title": "新增自訂鬧鐘",
@@ -340,7 +340,7 @@
   "Desynth": "分解",
   "Vendors": "商人",
   "Open": "開啟",
-  "Trade": "Trade",
+  "Trade": "兌換",
   "Treasures": "獲取方法",
   "Fates": "F.A.T.E",
   "Filters": "篩選",
