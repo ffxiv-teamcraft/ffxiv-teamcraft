@@ -46,7 +46,7 @@
     "Add_to_list": "將此物品加入清單",
     "Apply_filters": "套用過濾器",
     "Reset_filters": "重置過濾器",
-    "Too_many_results_warning": "搜尋回傳了超過 100 個物品。由於我們的資料來源限制為 100 筆結果，你可能需要額外的篩選條件才能找到特定物品。",
+    "Too_many_results_warning": "搜尋回傳了超過 100 個物品。由於我們的資料來源限制為 100 筆結果，你可能需要使用進階篩選器來找到特定物品。",
     "Share_url": "複製搜索連結到剪貼簿",
     "Share_url_copied": "搜索連結已複製到剪貼簿",
     "Only_craftable": "僅顯示有配方的物品",
@@ -891,7 +891,7 @@
     "LAYOUT": {
       "Filter": "Filter",
       "Panel_name": "Panel name",
-      "Order_by": "Sort by",
+      "Order_by": "排序",
       "Order": "Order",
       "Tag_filter": "Tag filter"
     },
@@ -1300,8 +1300,8 @@
   "PRICING": {
     "Expect_to_sell_everything": "Expect to sell everything",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
-    "Autofill_panel_prices": "基於市場價格填入",
-    "Autofill_panel_prices_your_server": "根據市場價格（僅目前伺服器）填入價格",
+    "Autofill_panel_prices": "基於市場交易板價格填入",
+    "Autofill_panel_prices_your_server": "根據市場交易板價格（僅目前伺服器）填入價格",
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copy this panel as text",
@@ -1420,8 +1420,8 @@
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Slogan": "製作、分享、協作",
+    "Lists_created_counter": "FFXIV Teamcraft 上已建立了 {{amount}} 個清單",
     "Donation_button": "Make a one time donation",
     "Buy_merch": "Get Teamcraft merch",
     "Features_header": "Get started!",
@@ -1514,7 +1514,7 @@
     "Add_to_list": "Add to a list",
     "No_items": "You have no custom items",
     "DETAILS": {
-      "Level": "Level",
+      "Level": "等級",
       "None": "none",
       "Stars": "Stars",
       "Requirements": "Requirements",
@@ -1583,7 +1583,7 @@
     "Title": "Desynth guide",
     "Job": "Job",
     "Level": "Desynth level",
-    "Intro": "Select a job and input a level to find the best items to level up your desynth",
+    "Intro": "選擇一個職業並輸入分解等級，即可找到最適合用於提高該職業分解等級的物品",
     "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Higher chances",
@@ -1671,7 +1671,7 @@
     "Ishgard_restoration": "Ishgardian restoration",
     "GC_supply_value": "Expert Delivery",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level",
+      "Masterpiece_exp_tooltip": "下一級所需經驗百分比",
       "Required_craftsmanship": "Req. Craftsmanship",
       "Required_control": "Req. Control",
       "Mark_as_done_in_gathering_log": "Mark as done in log",
@@ -1966,7 +1966,7 @@
     "Inventory": "Inventory",
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
+    "Sort_alphabetically": "按字母排序",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items",
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
@@ -2001,9 +2001,9 @@
   },
   "SEARCH": {
     "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
+    "Sort_by": "排序：",
+    "Sort_asc": "遞增",
+    "Sort_desc": "遞減",
     "Add_stat_filter": "Add stat filter",
     "Job": "Job",
     "Class": "Class",
@@ -2016,10 +2016,10 @@
     "Language": "Language",
     "Share": "Share",
     "Placeholder": "Search for something awesome",
-    "Hide_filters": "Hide Additional Filters",
-    "Show_filters": "Show Additional Filters",
+    "Hide_filters": "隱藏進階篩選器",
+    "Show_filters": "顯示進階篩選器",
     "Item_type_placeholder": "Select Item Type",
-    "Item_level": "Item Level",
+    "Item_level": "物品等級",
     "Required_level": "Required Level",
     "Recipe_level": "Recipe Level",
     "Crafted_by": "Crafted by",
@@ -2039,11 +2039,11 @@
       "Compare": "Compare"
     },
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "相關性",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "等級",
+      "Ilvl": "物品等級",
+      "Rlvl": "配方等級"
     }
   },
   "SIDEBAR": {
@@ -2742,9 +2742,9 @@
     "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "In_inventory": "已擁有",
+    "Only_inventory": "僅考慮已擁有",
+    "Interactions_description": "點擊一個等級即可選擇整欄，點擊一個物品方塊即可選擇該物品，點擊刪除圖示即可取消選擇物品而不替換它。"
   },
   "RETAINERS": {
     "Title": "Retainers",
@@ -3064,7 +3064,7 @@
   },
   "PROFITS": {
     "Title": "Profits Helper",
-    "Description": "Find the best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Description": "根據您的等級和來自 Universalis 的市場交易板資料，尋找最適合製作或採集的物品",
     "Self_sufficient": "Self sufficient",
     "Crafting": "Crafting",
     "Gathering": "Gathering",
