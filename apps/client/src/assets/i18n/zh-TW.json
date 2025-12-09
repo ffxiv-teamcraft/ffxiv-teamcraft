@@ -2048,20 +2048,20 @@
   },
   "SIDEBAR": {
     "Favorites": "收藏",
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other",
-    "Commissions": "Commissions",
-    "Commission_board": "Board",
-    "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives",
-    "Leveling": "Leveling",
-    "Currencies": "Currencies",
+    "General": "一般",
+    "Sharing": "共享",
+    "Gathering": "採集",
+    "Helpers": "輔助工具",
+    "Other": "其他",
+    "Commissions": "委託",
+    "Commission_board": "佈告板",
+    "My_commissions": "我的委託",
+    "Archived_commissions": "封存庫",
+    "Leveling": "練級",
+    "Currencies": "貨幣",
     "Add_to_favorites": "新增至收藏",
     "Remove_from_favorites": "從移除中收藏",
-    "Island_Sanctuary": "Island Sanctuary"
+    "Island_Sanctuary": "無人島"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "封包擷取功能可使用",
@@ -2609,11 +2609,11 @@
       "Link_copied": "Commission import code copied"
     },
     "BOARD": {
-      "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
-      "Min_price": "Min. price",
-      "Tracking_tip": "You can get notifications for new commissions on your data center using the official Teamcraft Discord server's commissions section"
+      "Title": "委託佈告板",
+      "Filter_with_tags": "使用標籤篩選",
+      "No_matching_commissions": "查無相關的委託",
+      "Min_price": "最低價格",
+      "Tracking_tip": "您可以使用 Teamcraft 官方 Discord 伺服器的委託版塊，取得您所在資料中心的新委託通知"
     },
     "DETAILS": {
       "Created_by": "Created by {{name}}",
@@ -2644,7 +2644,7 @@
       "Rate_commission": "Add your rating",
       "Bump": "Bring this commission back to the top, only once per 24h",
       "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard",
+      "Share_link_copied": "已將委託分享連結複製到剪貼簿",
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
@@ -3296,7 +3296,7 @@
     "Reminders": "重置倒計時",
     "About": "關於",
     "Fish_Train": "漁旅",
-    "Inventory": "Inventory"
+    "Inventory": "背包"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
