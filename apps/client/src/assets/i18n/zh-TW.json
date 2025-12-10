@@ -622,15 +622,15 @@
     "Veteran": "老手",
     "Autofill_from_packets": "使用封包擷取以自動填入狀態（也會考慮食物統計）",
     "Autofill_stats_explain": "切換到所需的職業以進行更新，並在完成後關閉此彈出視窗。",
-    "Open_public_profile": "Open public profile",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
-    "Gearset_priority": "Priority",
-    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
-    "Characters": "Characters",
-    "Missing_character": "Missing character",
+    "Open_public_profile": "公開個人資料",
+    "Community_contributions": "社群貢獻",
+    "Fishing_rankings": "垂釣排名",
+    "Total_rankings": "綜合排名",
+    "Loading_fish_rankings": "正在讀取垂釣排名",
+    "Gearset_priority": "優先級",
+    "Gearset_priority_explain": "用於決定為可由多種職業製作的物品（例如錠、塊以及其他飛空艇修理材料）選擇哪個配方。",
+    "Characters": "角色",
+    "Missing_character": "角色不存在",
     "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "Delete_account": "Delete my account",
     "Delete_account_confirmation": "此操作無法復原，並將刪除你的帳號以及你的個人資料。你的清單、工序和裝備配置仍會存在，但會連結到一個不存在的個人資料。",
@@ -733,15 +733,15 @@
       "Never": "Never"
     },
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "LIGHT_BLUE": "Light blue",
-      "PURPLE": "Purple",
-      "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "RED": "紅色",
+      "GREEN": "綠​​色",
+      "YELLOW": "黃色",
+      "BLUE": "藍色",
+      "LIGHT_BLUE": "淺藍色",
+      "PURPLE": "紫色",
+      "ORANGE": "橙色",
+      "PINK": "粉紅色",
+      "NONE": "無"
     },
     "ROTATION": {
       "Attach": "附加工序",
@@ -750,12 +750,12 @@
       "Open_in_overlay": "在工序遊戲內覆蓋中打開"
     },
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "顯示最終物品",
+      "Hide_final_items": "隱藏最終物品"
     },
     "COMPLETION_POPUP": {
       "Title": "清單已完成",
-      "Content": "This list is now completed, what do you want to do with it?",
+      "Content": "此清單已完成，你想對它做什麼？",
       "Delete": "Delete the list",
       "Clear": "Empty the list",
       "Reset": "Reset the list",
