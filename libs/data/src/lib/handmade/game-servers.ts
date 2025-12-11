@@ -43,7 +43,9 @@ export const TAIWAN_GAME_SERVERS = [
   '利維坦',
   '鳳凰',
   '奧汀',
-  '巴哈姆特'
+  '巴哈姆特',
+  '拉姆',
+  '泰坦'
 ];
 
 export const GAME_SERVERS = [
