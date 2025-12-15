@@ -33,7 +33,7 @@ export class XIVSearch {
         this.rawData[content] = data;
         this.indexes[content] = new Document({
           language: this.lang,
-          encode: ['ko', 'zh'].includes(this.lang) ? doc => {
+          encode: ['ko', 'zh', 'tw'].includes(this.lang) ? doc => {
             let str = doc;
             // This is due to an inconsistency in the encoder
             // When ingesting, it's called with a document object, when searching, it's called with a string.
@@ -113,6 +113,7 @@ export class XIVSearch {
           fr: row.fr,
           ko: row.ko,
           zh: row.zh,
+          tw: row.tw,
           ...row.data
         };
       });

@@ -28,7 +28,7 @@ import { SearchParams, XIVSearchFilter } from '@ffxiv-teamcraft/search';
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-  public readonly availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
+  public readonly availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh', 'tw'];
 
   public searchLang = this.settings.searchLanguage || this.translate.currentLang;
 

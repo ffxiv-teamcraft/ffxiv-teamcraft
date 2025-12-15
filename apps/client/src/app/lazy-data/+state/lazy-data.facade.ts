@@ -75,14 +75,15 @@ export class LazyDataFacade {
             const global$ = of(this.merge(entry));
             const cn$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'zh'));
             const kr$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'ko'));
+            const tw$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'tw'));
 
             if (forceAll) {
               return combineLatest([
                 global$,
-                cn$, kr$
+                cn$, kr$, tw$
               ]).pipe(
-                map(([global, cn, kr]) => {
-                  return this.merge(global, cn, kr);
+                map(([global, cn, kr, tw]) => {
+                  return this.merge(global, cn, kr, tw);
                 })
               );
             }
@@ -101,6 +102,12 @@ export class LazyDataFacade {
                 return kr$.pipe(
                   map(koRow => {
                     return this.merge(entry, koRow);
+                  })
+                );
+              case Region.Taiwan:
+                return tw$.pipe(
+                  map(twRow => {
+                    return this.merge(entry, twRow);
                   })
                 );
             }
@@ -155,6 +162,9 @@ export class LazyDataFacade {
             if (this.translate.currentLang === 'zh') {
               region = Region.China;
             }
+            if (this.translate.currentLang === 'tw') {
+              region = Region.Taiwan;
+            }
             switch (region) {
               case Region.Global:
                 return of(row);
@@ -179,6 +189,18 @@ export class LazyDataFacade {
                     return {
                       ...row,
                       ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : koRow)
+                    };
+                  })
+                );
+              case Region.Taiwan:
+                return this.getRow(this.findPrefixedProperty(propertyKey, 'tw') as LazyDataRecordKey, id).pipe(
+                  map(twRow => {
+                    if (twRow === null) {
+                      return row;
+                    }
+                    return {
+                      ...row,
+                      ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : twRow)
                     };
                   })
                 );
@@ -253,6 +275,19 @@ export class LazyDataFacade {
           }),
           shareReplay(1)
         );
+      case Region.Taiwan:
+        return combineLatest([
+          this.getEntry('twRecipes'),
+          this.getEntry('recipes')
+        ]).pipe(
+          map(([eRecipes, recipes]) => {
+            return recipes.map(r => {
+              const eRecipe = eRecipes.find(e => e.id === r.id);
+              return eRecipe || r;
+            });
+          }),
+          shareReplay(1)
+        );
       default:
         return this.getEntry('recipes');
     }
@@ -300,6 +335,8 @@ export class LazyDataFacade {
         return this.getEntry('zhItems');
       case Region.Korea:
         return this.getEntry('koItems');
+      case Region.Taiwan:
+        return this.getEntry('twItems');
       default:
         return this.getEntry('items');
     }
@@ -307,7 +344,7 @@ export class LazyDataFacade {
 
   public getIndexByName(property: LazyDataI18nKey, name: string, lang: Language, flip = false): Observable<number | null> {
     // If it's Chinese
-    if (lang === 'zh' || lang === 'ko') {
+    if (lang === 'zh' || lang === 'ko' || lang === 'tw') {
       return this.getEntry(this.findPrefixedProperty(property, lang)).pipe(
         switchMap(entry => {
           const result = this.getIndexByNameInEntry(entry, name, lang, flip);
@@ -325,7 +362,7 @@ export class LazyDataFacade {
     );
   }
 
-  public getSearchIndex<K extends LazyDataI18nKey | 'koItems' | 'zhItems'>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{
+  public getSearchIndex<K extends LazyDataI18nKey | 'koItems' | 'zhItems' | 'twItems'>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{
     id: number,
     name: I18nName
   }[]> {
@@ -377,7 +414,7 @@ export class LazyDataFacade {
     }
   }
 
-  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
+  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh' | 'tw'): LazyDataI18nKey {
     return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
   }
 }
