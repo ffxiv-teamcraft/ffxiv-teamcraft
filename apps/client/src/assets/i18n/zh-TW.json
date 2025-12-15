@@ -663,7 +663,7 @@
     "Lists_search_placeholder": "搜索清單…",
     "Add_to_a_list": "新增至清單",
     "Please_pick_recipe": "請為此物品選擇配方",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list. The items will be added to this list and you'll be redirected to it.",
+    "Import_description": "請為可以製作的物品選擇您想使用的配方，然後選擇一個清單。這些物品將會新增至此清單，並將您重新導向至該清單。",
     "Delete_after_merge": "Delete original lists after merge",
     "Favorite_lists": "收藏清單",
     "No_favorite_lists": "您還未收藏任何清單",
