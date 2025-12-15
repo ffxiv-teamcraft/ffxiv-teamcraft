@@ -798,7 +798,7 @@
     "List_too_large": "清單過長",
     "List_too_large_description": "此清單過於龐大，可能會拖慢您的電腦速度或達到資料庫限制。為確保您不會遺失清單，您將無法再向其新增物品，除非移除現有物品。",
     "New_tag": "新標籤",
-    "Amount_ilvl": "Amount (ilvl)",
+    "Amount_ilvl": "數量（品級）",
     "Contributions_popup": "貢獻統計",
     "Autofill_details": "當您在遊戲中獲得物品時，使用封包擷取自動填入。如果您離開清單頁面，此功能將停用，以避免非預期的改動。",
     "Autofill": "自動填入",
@@ -1410,7 +1410,7 @@
   },
   "TOOLTIP": {
     "Level": "Level",
-    "Ilvl": "ilvl",
+    "Ilvl": "品級",
     "Cost": "Cost",
     "Class_job": "Class/Job",
     "Damage_phys": "Phys. Damage",
@@ -1632,7 +1632,7 @@
     "Team_size": "Team size",
     "Time": "Duration",
     "Min_level": "Level min.",
-    "Min_ilevel": "ilvl min.",
+    "Min_ilevel": "最低品級。",
     "Sync_to": "Level max.",
     "Exp": "Exp",
     "Week_restriction": "Weekly restriction",
@@ -2165,7 +2165,7 @@
       "Placeholder": "Pick Expansion"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
+      "Title": "只用於製作低品級物品的舊材料",
       "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
       "Recipe_ilvl": "Min Resulting iLvl",
       "Company_workshop": "Company Workshop"
@@ -2300,7 +2300,7 @@
       "Avg_melding_chances": "Avg. overmeld chances"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
+      "Ilvl": "平均品級",
       "HP": "Hit Points",
       "Direct_hit_chances": "Direct Hit Chances",
       "Critical_hit_chances": "Critical Hit Chances",
@@ -2343,7 +2343,7 @@
     "SEARCH": {
       "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
       "Share": "Use this button to get your search results as a shareable link.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Filters": "開啟此面板以使用進階篩選條件，依據能力值、獎勵、品級等進行篩選"
     },
     "LIST_PANEL": {
       "Share": "Click here to copy a link to this list, to easily share it.",
