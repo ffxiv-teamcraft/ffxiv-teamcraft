@@ -1,0 +1,1298 @@
+{
+  "100001": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100002": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100003": {
+    "tw": "恢復30點耐久"
+  },
+  "100004": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100005": {
+    "tw": "恢復60點耐久"
+  },
+  "100006": {
+    "tw": "消耗耐久以推動作業進展\n處理風屬性配方時效率變為2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100007": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100008": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100009": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升20\n使用之後會結束內靜效果\n效率：100（100～）\n成功率：90%"
+  },
+  "100010": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100015": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100016": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100017": {
+    "tw": "恢復30點耐久"
+  },
+  "100018": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100019": {
+    "tw": "恢復60點耐久"
+  },
+  "100020": {
+    "tw": "消耗耐久以推動作業進展\n處理火屬性配方時效率變為2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100021": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100022": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100023": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100030": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100031": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100032": {
+    "tw": "恢復30點耐久"
+  },
+  "100033": {
+    "tw": "消耗耐久以推動作業進展\n效率：250\n成功率：50%"
+  },
+  "100034": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100035": {
+    "tw": "恢復60點耐久"
+  },
+  "100036": {
+    "tw": "消耗耐久以推動作業進展\n處理冰屬性配方時效率變為2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100037": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100038": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100039": {
+    "tw": "消耗耐久完成剩餘工作量的1/3左右（上限：1000）\n成功率：90%"
+  },
+  "100040": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100045": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100046": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100047": {
+    "tw": "恢復30點耐久"
+  },
+  "100048": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100049": {
+    "tw": "恢復60點耐久"
+  },
+  "100050": {
+    "tw": "消耗耐久以推動作業進展\n處理土屬性配方時效率變為2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100051": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100052": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100053": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100060": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100061": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100062": {
+    "tw": "恢復30點耐久"
+  },
+  "100063": {
+    "tw": "消耗耐久以推動作業進展\n一定會成功\n效率：90\n成功率：100%"
+  },
+  "100064": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100065": {
+    "tw": "恢復60點耐久"
+  },
+  "100066": {
+    "tw": "消耗耐久以推動作業進展\n處理雷屬性配方時效率變為2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100067": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100068": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100069": {
+    "tw": "消耗耐久以推動作業進展\n一定會成功\n效率：120\n成功率：100%"
+  },
+  "100070": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100075": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100076": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100077": {
+    "tw": "恢復30點耐久"
+  },
+  "100078": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100079": {
+    "tw": "恢復60點耐久"
+  },
+  "100080": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100081": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100082": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100083": {
+    "tw": "消耗耐久以推動作業進展40\n成功率：90%"
+  },
+  "100090": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100091": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100092": {
+    "tw": "恢復30點耐久"
+  },
+  "100093": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100094": {
+    "tw": "恢復60點耐久"
+  },
+  "100095": {
+    "tw": "消耗耐久以推動作業進展\n處理水屬性配方時效率變為2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100096": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100097": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100098": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100099": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100105": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>\n成功率：100%"
+  },
+  "100106": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100107": {
+    "tw": "恢復30點耐久"
+  },
+  "100108": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：50%"
+  },
+  "100109": {
+    "tw": "消耗耐久以提高製品品質\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100110": {
+    "tw": "恢復60點耐久"
+  },
+  "100111": {
+    "tw": "消耗耐久以推動作業進展\n效率：150\n成功率：90%"
+  },
+  "100112": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：90%"
+  },
+  "100113": {
+    "tw": "放空一次作業，不做任何事"
+  },
+  "100120": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100121": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100122": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100123": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100124": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100125": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100126": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100127": {
+    "tw": "消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升10\n使用之後會結束內靜效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率變為100%"
+  },
+  "100128": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100129": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100130": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100131": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100132": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100133": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100134": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100135": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”及以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：150\n成功率：100%"
+  },
+  "100136": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以完成工作量的1/3左右（上限：1000）\n成功率：100%"
+  },
+  "100137": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100138": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100139": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100140": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100141": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100142": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100143": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100144": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：改革\n效率：100\n成功率：40%"
+  },
+  "100145": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100146": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100147": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100148": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100149": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100150": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100151": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100152": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜每生效過一次效率提升15\n使用之後會令內靜累積的效果減半\n效率：100（100～）\n成功率：70%"
+  },
+  "100153": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100154": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100155": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100156": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100157": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100158": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100159": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100160": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n隨工作小調層數的消耗程度恢復相應的耐久\n使用之後會結束工作小調效果\n成功率：100%"
+  },
+  "100161": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100162": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100163": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100164": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100165": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100166": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100167": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100168": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅在內靜與工作小調層數相同時才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展，品質也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100169": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100170": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100171": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100172": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100173": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100174": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100175": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100176": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小調的層數為3的倍數時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1層工作小調的效果，恢復15點CP\n成功率：100%"
+  },
+  "100178": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n根據剩餘的工作量多少，令數次作業（上限25次）內發動堅實製作不消耗CP和耐久"
+  },
+  "100179": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“木工師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100180": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“鍛造師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100181": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“甲冑師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100182": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“金工師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100183": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“皮革師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100184": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“裁縫師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100185": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“鍊金術師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100186": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作業內會比較容易出現高品質狀態\n使用時需消耗道具“烹調師圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100187": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100188": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100189": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100190": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100191": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100192": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100193": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100194": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11層工作小調的狀態\n每出現一次“高品質”及以上的狀態時，累積的小調效果會減少1層。效果減少到0時會發動消耗耐久推進作業進展的“收尾”，並結束工作小調效果\n（收尾　效率：200　成功率：50%）\n累積的效果為3的倍數時，部分製作系技能的效率會有所提高"
+  },
+  "100195": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100196": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100197": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100198": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100199": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100200": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100201": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100202": {
+    "tw": "消耗耐久以提高製品品質\n效率：100\n成功率：60%"
+  },
+  "100203": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100204": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100205": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100206": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100207": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100208": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100209": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100210": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),82))>180<Else/>150</If><Else/>150</If>\n成功率：100%"
+  },
+  "100211": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100212": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100213": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100214": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100215": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100216": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100217": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100218": {
+    "tw": "消耗耐久以推動作業進展\n效率：300\n成功率：60%"
+  },
+  "100219": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100220": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100221": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100222": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100223": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100224": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100225": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100226": {
+    "tw": "消耗耐久以提高製品品質\n成功時：內靜的累積層數x2（最多累積11層）\n失敗時：內靜的累積層數減半\n效率：100\n成功率：50%"
+  },
+  "100227": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100228": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100229": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100230": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100231": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100232": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100233": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100234": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100235": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100236": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100237": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100238": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100239": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100240": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100241": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100242": {
+    "tw": "消耗耐久以推動作業進展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100243": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100244": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100245": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100246": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100247": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100248": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100249": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100250": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>觀察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊時成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100251": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100252": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100253": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100254": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100255": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100256": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100257": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100258": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始準備狀態，一定概率可降低CP的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>裝備專家之證時：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次專精絕技並結束起始準備的狀態"
+  },
+  "100259": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100260": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100261": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100262": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100263": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100264": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100265": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100266": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復25點耐久"
+  },
+  "100267": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100268": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100269": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100270": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100271": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100272": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100273": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100274": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，恢復65點CP"
+  },
+  "100275": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100276": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100277": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100278": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100279": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100280": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100281": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100282": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n結束起始準備的狀態，使內靜的累積層數+3（最多累積11層）"
+  },
+  "100283": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100284": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100285": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100286": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100287": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100288": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100289": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100290": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的100%\n成功率：100%\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>無法在高難度配方中使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100291": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100292": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100293": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100294": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100295": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100296": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100297": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100298": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業且用於等級低了10級或以上的配方時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升製品最大品質的30%～100%\n成功率：100%"
+  },
+  "100299": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100300": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100301": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100302": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100303": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100304": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100305": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100306": {
+    "tw": "大量消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：200\n成功率：100%\n耐久消耗：20"
+  },
+  "100307": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100308": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100309": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100310": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100311": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100312": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100313": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100314": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足20的情況下使用時，效率會大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100315": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100316": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100317": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100318": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100319": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100320": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100321": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100322": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作業大幅進展\n效率：400\n成功率：100%"
+  },
+  "100323": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100324": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100325": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100326": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100327": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100328": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100329": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100330": {
+    "tw": "消耗耐久以推動作業進展，同時提高品質\n<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),94))>製作效率：150\n加工效率：100<Else/>效率：100</If><Else/>效率：100</If>\n成功率：100%"
+  },
+  "100331": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100332": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100333": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100334": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100335": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100336": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100337": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100338": {
+    "tw": "消耗耐久以推動作業進展\n效率：100\n成功率：100%"
+  },
+  "100339": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100340": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100341": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100342": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100343": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100344": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100345": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100346": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在內靜的層數大於1時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n隨內靜的效果提高效率，內靜層數每上升1層效率提升20\n使用之後會結束內靜效果\n效率：100（最大300）\n成功率：100%"
+  },
+  "100355": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100356": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100357": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100358": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100359": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100360": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100361": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100362": {
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+  },
+  "100363": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100364": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100365": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100366": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100367": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100368": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100369": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100370": {
+    "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"
+  },
+  "100371": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100372": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100373": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100374": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100375": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100376": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100377": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100378": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品質”或以上的狀態下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢復20點CP"
+  },
+  "100379": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100380": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100381": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100382": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100383": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100384": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100385": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100386": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以推動作業進展\n追加效果：令下一次使用的製作系技能效果提升100%，5次作業內有效\n效率：300\n成功率：100%"
+  },
+  "100387": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100388": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100389": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100390": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100391": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100392": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100393": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100394": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>僅可在首次作業時發動<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高製品品質\n追加效果：內靜的累積層數+1（最多累積10層）\n效率：100\n成功率：100%"
+  },
+  "100395": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100396": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100397": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100398": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100399": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100400": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100401": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100402": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n變更一次作業狀態\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100403": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100404": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100405": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100406": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100407": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100408": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100409": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100410": {
+    "tw": "大量消耗耐久以推動作業進展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩餘耐久不足的情況下使用時，效率會減半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+  },
+  "100411": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100412": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100413": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100414": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100415": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100416": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100417": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100418": {
+    "tw": "消耗耐久以提高製品品質\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中級加工或觀察　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊中消耗CP：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
+  },
+  "100419": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100420": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100421": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100422": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100423": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100424": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100425": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100426": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n專心致志效果發動後，可在非“高品質”或“最高品質”狀態下使用技能集中加工、集中製作或秘訣\n使用技能集中加工、集中製作或秘訣後，專心致志效果結束\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100427": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100428": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100429": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100430": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100431": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100432": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100433": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100434": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在儉約和長期儉約狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量減半的同時推動作業進展\n效率：180\n成功率：100%"
+  },
+  "100435": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100436": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100437": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100438": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100439": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100440": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100441": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100442": {
+    "tw": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有內靜的層數為10時才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n不消耗耐久，提高製品品質\n效率：100\n成功率：100%"
+  },
+  "100443": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100444": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100445": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100446": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100447": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100448": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100449": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100450": {
+    "tw": "消耗耐久以提高制品品質\n效率：100\n成功率：100％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊條件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>連擊效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>內靜的累積等階+1（最多累積10階）"
+  },
+  "100451": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100452": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100453": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100454": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100455": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100456": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100457": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100458": {
+    "tw": "消耗耐久以提高制品品質\n不會消耗CP，但是成功率比較低\n效率：150\n成功率：60%\n使用條件：工匠的良機狀態中\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※該技能無法設置到快速鍵<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100459": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100460": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100461": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100462": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100463": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100464": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100465": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100466": {
+    "tw": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>專家專用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>改革狀態下無法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n為自身附加改革狀態\n持續時間：一次作業\n使用時需消耗道具“能工巧匠圖紙”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不會消耗一次作業時間<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100467": {
+    "tw": "恢復全部耐久"
+  },
+  "100468": {
+    "tw": "恢復全部耐久"
+  },
+  "100469": {
+    "tw": "恢復全部耐久"
+  },
+  "100470": {
+    "tw": "恢復全部耐久"
+  },
+  "100471": {
+    "tw": "恢復全部耐久"
+  },
+  "100472": {
+    "tw": "恢復全部耐久"
+  },
+  "100473": {
+    "tw": "恢復全部耐久"
+  },
+  "100474": {
+    "tw": "恢復全部耐久"
+  },
+  "100475": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100476": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100477": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100478": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100479": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100480": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100481": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100482": {
+    "tw": "令下一次作業不消耗耐久\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次製作或練習最多可使用1次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  }
+}
