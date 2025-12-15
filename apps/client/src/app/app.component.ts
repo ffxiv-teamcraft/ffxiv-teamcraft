@@ -189,7 +189,7 @@ export class AppComponent implements OnInit {
 
   public showSupporterIssueBanner = localStorage.getItem('show-supporter-issue-closed') !== 'true';
 
-  public showTeamcrafterBanner = localStorage.getItem('hide-teamcrafter-ks') !== 'true';
+  public showTeamcrafterBanner = localStorage.getItem('hide-teamcrafter-banner') !== 'true';
 
   UpdaterStatus = UpdaterStatus;
 
@@ -877,7 +877,7 @@ export class AppComponent implements OnInit {
 
   hideTeamcrafterBanner(): void {
     this.showTeamcrafterBanner = false;
-    localStorage.setItem('hide-teamcrafter-ks', 'true');
+    localStorage.setItem('hide-teamcrafter-banner', 'true');
   }
 
   hideDesktopTip(): void {
