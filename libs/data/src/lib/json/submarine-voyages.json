@@ -1,6 +1,6 @@
 {
   "1": {
-    "en": "the Ivory Shoals",
+    "en": "the Ivory Shoals (A)",
     "ja": "A　白の浅瀬",
     "de": "Elfenbein-Syrte (A)",
     "fr": "Écueils d'Ivoire (A)",
@@ -8,7 +8,7 @@
     "location": "A"
   },
   "2": {
-    "en": "deep-sea site 1",
+    "en": "deep-sea site 1 (B)",
     "ja": "B　溺没海01",
     "de": "Tiefsee 1 (B)",
     "fr": "Mer des noyades 1 (B)",
@@ -16,7 +16,7 @@
     "location": "B"
   },
   "3": {
-    "en": "deep-sea site 2",
+    "en": "deep-sea site 2 (C)",
     "ja": "C　溺没海02",
     "de": "Tiefsee 2 (C)",
     "fr": "Mer des noyades 2 (C)",
@@ -24,7 +24,7 @@
     "location": "C"
   },
   "4": {
-    "en": "the Lightless Basin",
+    "en": "the Lightless Basin (D)",
     "ja": "D　黒の海盆",
     "de": "Lichtloses Becken (D)",
     "fr": "Bassin sans lumière (D)",
@@ -32,7 +32,7 @@
     "location": "D"
   },
   "5": {
-    "en": "deep-sea site 3",
+    "en": "deep-sea site 3 (E)",
     "ja": "E　溺没海03",
     "de": "Tiefsee 3 (E)",
     "fr": "Mer des noyades 3 (E)",
@@ -40,7 +40,7 @@
     "location": "E"
   },
   "6": {
-    "en": "the Southern Rimilala Trench",
+    "en": "the Southern Rimilala Trench (F)",
     "ja": "F　リミララ海溝南端",
     "de": "Südlicher Rimilala-Graben (F)",
     "fr": "Sud de la fosse de Rimilala (F)",
@@ -48,7 +48,7 @@
     "location": "F"
   },
   "7": {
-    "en": "the Umbrella Narrow",
+    "en": "the Umbrella Narrow (G)",
     "ja": "G　アンブレラ海峡",
     "de": "Schirmenge (G)",
     "fr": "Détroit du Parapluie (G)",
@@ -56,7 +56,7 @@
     "location": "G"
   },
   "8": {
-    "en": "Offender's Rot",
+    "en": "Offender's Rot (H)",
     "ja": "H　虜囚島",
     "de": "Banditenatoll (H)",
     "fr": "Trou de l'Agresseur (H)",
@@ -64,7 +64,7 @@
     "location": "H"
   },
   "9": {
-    "en": "Neolith Island",
+    "en": "Neolith Island (I)",
     "ja": "I　石人島",
     "de": "Neolitheninsel (I)",
     "fr": "Île des Néolithes (I)",
@@ -72,7 +72,7 @@
     "location": "I"
   },
   "10": {
-    "en": "unidentified derelict",
+    "en": "unidentified derelict (J)",
     "ja": "J　名も無き沈没船",
     "de": "Unidentifiziertes Wrack (J)",
     "fr": "Épave sans nom (J)",
@@ -80,7 +80,7 @@
     "location": "J"
   },
   "11": {
-    "en": "the Cobalt Shoals",
+    "en": "the Cobalt Shoals (K)",
     "ja": "K　藍の浅瀬",
     "de": "Indigo-Untiefen (K)",
     "fr": "Haut-fond indigo (K)",
@@ -88,7 +88,7 @@
     "location": "K"
   },
   "12": {
-    "en": "the Mystic Basin",
+    "en": "the Mystic Basin (L)",
     "ja": "L　神秘の海盆",
     "de": "Lagune der Legenden (L)",
     "fr": "Bassin mystérieux (L)",
@@ -96,7 +96,7 @@
     "location": "L"
   },
   "13": {
-    "en": "deep-sea site 4",
+    "en": "deep-sea site 4 (M)",
     "ja": "M　溺没海04",
     "de": "Tiefsee 4 (M)",
     "fr": "Mer des noyades 4 (M)",
@@ -104,7 +104,7 @@
     "location": "M"
   },
   "14": {
-    "en": "the Central Rimilala Trench",
+    "en": "the Central Rimilala Trench (N)",
     "ja": "N　リミララ海溝中腹",
     "de": "Zentraler Rimilala-Graben (N)",
     "fr": "Flanc de la fosse de Rimilala (N)",
@@ -112,7 +112,7 @@
     "location": "N"
   },
   "15": {
-    "en": "the Wreckage of <i>Discovery I</i>",
+    "en": "the Wreckage of <i>Discovery I</i> (O)",
     "ja": "O　ディスカバリー号の残骸",
     "de": "Wrack der <i>Discovery</i> (O)",
     "fr": "Épave du <i>Découverte I</i> (O)",
@@ -120,7 +120,7 @@
     "location": "O"
   },
   "16": {
-    "en": "Komura",
+    "en": "Komura (P)",
     "ja": "P　木叢島",
     "de": "Komura (P)",
     "fr": "Île verdoyante (P)",
@@ -128,7 +128,7 @@
     "location": "P"
   },
   "17": {
-    "en": "Kanayama",
+    "en": "Kanayama (Q)",
     "ja": "Q　金山島",
     "de": "Kanayama (Q)",
     "fr": "Île aux monts métallifère (Q)",
@@ -136,7 +136,7 @@
     "location": "Q"
   },
   "18": {
-    "en": "concealed bay",
+    "en": "concealed bay (R)",
     "ja": "R　水師の隠し港",
     "de": "Versteckte Bucht (R)",
     "fr": "Repaire de l'armada (R)",
@@ -144,7 +144,7 @@
     "location": "R"
   },
   "19": {
-    "en": "deep-sea site 5",
+    "en": "deep-sea site 5 (S)",
     "ja": "S　溺没海05",
     "de": "Tiefsee 5 (S)",
     "fr": "Mer des noyades 5 (S)",
@@ -152,7 +152,7 @@
     "location": "S"
   },
   "20": {
-    "en": "Purgatory",
+    "en": "Purgatory (T)",
     "ja": "T　煉獄島",
     "de": "Vorhölle (T)",
     "fr": "Île du purgatoire (T)",
@@ -160,7 +160,7 @@
     "location": "T"
   },
   "21": {
-    "en": "deep-sea site 6",
+    "en": "deep-sea site 6 (U)",
     "ja": "U　溺没海06",
     "de": "Tiefsee 6 (U)",
     "fr": "Mer des noyades 6 (U)",
@@ -168,7 +168,7 @@
     "location": "U"
   },
   "22": {
-    "en": "the Rimilala Shelf",
+    "en": "the Rimilala Shelf (V)",
     "ja": "V　リミララ海溝大傾斜",
     "de": "Rimilala-Riff (V)",
     "fr": "Large talus de la fosse de Rimilala (V)",
@@ -176,7 +176,7 @@
     "location": "V"
   },
   "23": {
-    "en": "deep-sea site 7",
+    "en": "deep-sea site 7 (W)",
     "ja": "W　溺没海07",
     "de": "Tiefsee 7 (W)",
     "fr": "Mer des noyades 7 (W)",
@@ -184,7 +184,7 @@
     "location": "W"
   },
   "24": {
-    "en": "Glittersand Basin",
+    "en": "Glittersand Basin (X)",
     "ja": "X　輝砂の海盆",
     "de": "Glitzersand-Becken (X)",
     "fr": "Bassin des sables scintillants (X)",
@@ -192,7 +192,7 @@
     "location": "X"
   },
   "25": {
-    "en": "Flickering Dip",
+    "en": "Flickering Dip (Y)",
     "ja": "Y　残照の白谷",
     "de": "Flicker-Senke (Y)",
     "fr": "Vallée écumeuse du crépuscule (Y)",
@@ -200,7 +200,7 @@
     "location": "Y"
   },
   "26": {
-    "en": "the Wreckage of the <i>Headway</i>",
+    "en": "the Wreckage of the <i>Headway</i> (Z)",
     "ja": "Z　ヘッドウェイ号の残骸",
     "de": "Wrack der <i>Headway</i> (Z)",
     "fr": "Épave de <i>L'Avancée</i> (Z)",
@@ -208,7 +208,7 @@
     "location": "Z"
   },
   "27": {
-    "en": "the Upwell",
+    "en": "the Upwell (AA)",
     "ja": "AA　変理の海域",
     "de": "Sondersee (AA)",
     "fr": "Zone des contre-courants (AA)",
@@ -216,7 +216,7 @@
     "location": "AA"
   },
   "28": {
-    "en": "the Rimilala Trench Bottom",
+    "en": "the Rimilala Trench Bottom (AB)",
     "ja": "AB　リミララ海溝最深部",
     "de": "Rimilala-Tiefe (AB)",
     "fr": "Fin fond de la fosse de Rimilala (AB)",
@@ -224,7 +224,7 @@
     "location": "AB"
   },
   "29": {
-    "en": "stone temple",
+    "en": "stone temple (AC)",
     "ja": "AC　石造寺院跡",
     "de": "Steintempel (AC)",
     "fr": "Ruines du temple de pierre (AC)",
@@ -232,7 +232,7 @@
     "location": "AC"
   },
   "30": {
-    "en": "sunken vault",
+    "en": "sunken vault (AD)",
     "ja": "AD　古の宝物庫",
     "de": "Versunkene Schatzkammer (AD)",
     "fr": "Ancien écrin (AD)",
@@ -248,7 +248,7 @@
     "location": ""
   },
   "32": {
-    "en": "South Isle of Zozonan",
+    "en": "South Isle of Zozonan (A)",
     "ja": "A　ゾーゾーナン島南端",
     "de": "Zozonan-Südriff (A)",
     "fr": "Rive sud de l'Île Zozonan (A)",
@@ -256,7 +256,7 @@
     "location": "A"
   },
   "33": {
-    "en": "Wreckage of the <i>Windwalker</i>",
+    "en": "Wreckage of the <i>Windwalker</i> (B)",
     "ja": "B　ウィンド・ウォーカーの残骸",
     "de": "Windschreiterschädel (B)",
     "fr": "Épave du <i>Marche-Vent</i> (B)",
@@ -264,7 +264,7 @@
     "location": "B"
   },
   "34": {
-    "en": "North Isle of Zozonan",
+    "en": "North Isle of Zozonan (C)",
     "ja": "C　ゾーゾーナン島北端",
     "de": "Zozonan-Nordriff (C)",
     "fr": "Rive nord de l'Île Zozonan (C)",
@@ -272,7 +272,7 @@
     "location": "C"
   },
   "35": {
-    "en": "Sea of Ash 1",
+    "en": "Sea of Ash 1 (D)",
     "ja": "D　灰海01",
     "de": "Verbranntes Meer 1 (D)",
     "fr": "Mer de Cendre 1 (D)",
@@ -280,7 +280,7 @@
     "location": "D"
   },
   "36": {
-    "en": "the Southern Charnel Trench",
+    "en": "the Southern Charnel Trench (E)",
     "ja": "E　火葬炉海溝南端",
     "de": "Leichenfeuergraben Süd (E)",
     "fr": "Sud de la Fosse crématoire (E)",
@@ -288,7 +288,7 @@
     "location": "E"
   },
   "37": {
-    "en": "Sea of Ash 2",
+    "en": "Sea of Ash 2 (F)",
     "ja": "F　灰海02",
     "de": "Verbranntes Meer 2 (F)",
     "fr": "Mer de Cendre 2 (F)",
@@ -296,7 +296,7 @@
     "location": "F"
   },
   "38": {
-    "en": "Sea of Ash 3",
+    "en": "Sea of Ash 3 (G)",
     "ja": "G　灰海03",
     "de": "Verbranntes Meer 3 (G)",
     "fr": "Mer de Cendre 3 (G)",
@@ -304,7 +304,7 @@
     "location": "G"
   },
   "39": {
-    "en": "Ascetic's Demise",
+    "en": "Ascetic's Demise (H)",
     "ja": "H　修道士たちの墓標",
     "de": "Grabmal des Asketen (H)",
     "fr": "Crypte des Ascètes (H)",
@@ -312,7 +312,7 @@
     "location": "H"
   },
   "40": {
-    "en": "the Central Charnel Trench",
+    "en": "the Central Charnel Trench (I)",
     "ja": "I　 火葬炉海溝中腹",
     "de": "Leichenfeuergraben Mitte (I)",
     "fr": "Flanc de la Fosse crématoire (I)",
@@ -320,7 +320,7 @@
     "location": "I"
   },
   "41": {
-    "en": "the Catacombs of the Father",
+    "en": "the Catacombs of the Father (J)",
     "ja": "J　神父の岩窟",
     "de": "Des Priesters Felsgrotte (J)",
     "fr": "Grotte du Révérend (J)",
@@ -328,7 +328,7 @@
     "location": "J"
   },
   "42": {
-    "en": "Sea of Ash 4",
+    "en": "Sea of Ash 4 (K)",
     "ja": "K　灰海04",
     "de": "Verbranntes Meer 4 (K)",
     "fr": "Mer de Cendre 4 (K)",
@@ -336,7 +336,7 @@
     "location": "K"
   },
   "43": {
-    "en": "the Midden Pit",
+    "en": "the Midden Pit (L)",
     "ja": "L　砂利の海盆",
     "de": "Das Schotterbecken (L)",
     "fr": "Bassin sédimentaire (L)",
@@ -344,7 +344,7 @@
     "location": "L"
   },
   "44": {
-    "en": "the Lone Glove",
+    "en": "the Lone Glove (M)",
     "ja": "M　片割れ手袋島",
     "de": "Insel der einsamen Hand (M)",
     "fr": "Île du gant esseulé (M)",
@@ -352,7 +352,7 @@
     "location": "M"
   },
   "45": {
-    "en": "Coldtoe Isle",
+    "en": "Coldtoe Isle (N)",
     "ja": "N　穴あき靴下島",
     "de": "Insel der nassen Socken (N)",
     "fr": "Île de la chaussette trouée (N)",
@@ -360,7 +360,7 @@
     "location": "N"
   },
   "46": {
-    "en": "Smuggler's Knot",
+    "en": "Smuggler's Knot (O)",
     "ja": "O　密輸業者の取引場",
     "de": "Schmugglerbasar (O)",
     "fr": "Repaire des contrebandiers (O)",
@@ -368,7 +368,7 @@
     "location": "O"
   },
   "47": {
-    "en": "the Open Robe",
+    "en": "the Open Robe (P)",
     "ja": "P　擦り切れローブ島",
     "de": "Lumpenkleidinsel (P)",
     "fr": "Île de la robe fripée (P)",
@@ -376,7 +376,7 @@
     "location": "P"
   },
   "48": {
-    "en": "Nald'thal's Pipe",
+    "en": "Nald'thal's Pipe (Q)",
     "ja": "Q　ナルザルの煙管",
     "de": "Nald'thals Schlot (Q)",
     "fr": "Cheminée de Nald'thal (Q)",
@@ -384,7 +384,7 @@
     "location": "Q"
   },
   "49": {
-    "en": "the Slipped Anchor",
+    "en": "the Slipped Anchor (R)",
     "ja": "R　走錨海域",
     "de": "Schliergrund (R)",
     "fr": "Mer de Chasse-Ancre (R)",
@@ -392,7 +392,7 @@
     "location": "R"
   },
   "50": {
-    "en": "Glutton's Belly",
+    "en": "Glutton's Belly (S)",
     "ja": "S　強欲の胃袋",
     "de": "Hungriger Magen (S)",
     "fr": "Estomac goulu (S)",
@@ -400,7 +400,7 @@
     "location": "S"
   },
   "51": {
-    "en": "the Blue Hole",
+    "en": "the Blue Hole (T)",
     "ja": "T　ブルーホール",
     "de": "Das Blaue Loch (T)",
     "fr": "Trou bleu (T)",
@@ -416,7 +416,7 @@
     "location": ""
   },
   "53": {
-    "en": "the Isle of Sacrament",
+    "en": "the Isle of Sacrament (A)",
     "ja": "A　祭壇島",
     "de": "Insel des Sakraments (A)",
     "fr": "Île du Sacrement (A)",
@@ -424,7 +424,7 @@
     "location": "A"
   },
   "54": {
-    "en": "the Kraken's Tomb",
+    "en": "the Kraken's Tomb (B)",
     "ja": "B　蛸壺入江",
     "de": "Grab des Kraken (B)",
     "fr": "Tombe du Kraken (B)",
@@ -432,7 +432,7 @@
     "location": "B"
   },
   "55": {
-    "en": "Sea of Jade 1",
+    "en": "Sea of Jade 1 (C)",
     "ja": "C　翠浪海01",
     "de": "Jademeer 1 (C)",
     "fr": "Mer de Jade 1 (C)",
@@ -440,7 +440,7 @@
     "location": "C"
   },
   "56": {
-    "en": "Rogo-Tumu-Here's Haunt",
+    "en": "Rogo-Tumu-Here's Haunt (D)",
     "ja": "D　ロゴトゥムヘレの狩場",
     "de": "Revier des Rogo-Tumu-Here (D)",
     "fr": "Chasse de Rogo-Tumu-Here (D)",
@@ -448,7 +448,7 @@
     "location": "D"
   },
   "57": {
-    "en": "the Stone Barbs",
+    "en": "the Stone Barbs (E)",
     "ja": "E　吸盤礁",
     "de": "Steinerne Dornen (E)",
     "fr": "Ventouse de pierre (E)",
@@ -456,7 +456,7 @@
     "location": "E"
   },
   "58": {
-    "en": "Rogo-Tumu-Here's Repose",
+    "en": "Rogo-Tumu-Here's Repose (F)",
     "ja": "F　ロゴトゥムヘレの寝蔵",
     "de": "Schlafplatz des Rogo-Tumu-Here (F)",
     "fr": "Repos de Rogo-Tumu-Here (F)",
@@ -464,7 +464,7 @@
     "location": "F"
   },
   "59": {
-    "en": "Tangaroa's Prow",
+    "en": "Tangaroa's Prow (G)",
     "ja": "G　タナロアの釣針",
     "de": "Tangaroas Angelhaken (G)",
     "fr": "Hameçon de Tangaroa (G)",
@@ -472,7 +472,7 @@
     "location": "G"
   },
   "60": {
-    "en": "Sea of Jade 2",
+    "en": "Sea of Jade 2 (H)",
     "ja": "H　翠浪海02",
     "de": "Jademeer 2 (H)",
     "fr": "Mer de Jade 2 (H)",
@@ -480,7 +480,7 @@
     "location": "H"
   },
   "61": {
-    "en": "the Blind Sound",
+    "en": "the Blind Sound (I)",
     "ja": "I　目隠し峡江",
     "de": "Blinder Meeresarm (I)",
     "fr": "Fjord aveugle (I)",
@@ -488,7 +488,7 @@
     "location": "I"
   },
   "62": {
-    "en": "Sea of Jade 3",
+    "en": "Sea of Jade 3 (J)",
     "ja": "J　翠浪海03",
     "de": "Jademeer 3 (J)",
     "fr": "Mer de Jade 3 (J)",
@@ -496,7 +496,7 @@
     "location": "J"
   },
   "63": {
-    "en": "Moergynn's Forge",
+    "en": "Moergynn's Forge (K)",
     "ja": "K　ムールギンの鍛冶場",
     "de": "Moergynns Schmiede (K)",
     "fr": "Forge de Moergynn (K)",
@@ -504,7 +504,7 @@
     "location": "K"
   },
   "64": {
-    "en": "Tangaroa's Beacon",
+    "en": "Tangaroa's Beacon (L)",
     "ja": "L　タナロアの浮標",
     "de": "Tangaroas Boje (L)",
     "fr": "Fanal de Tangaroa (L)",
@@ -512,7 +512,7 @@
     "location": "L"
   },
   "65": {
-    "en": "Sea of Jade 4",
+    "en": "Sea of Jade 4 (M)",
     "ja": "M　翠浪海04",
     "de": "Jademeer 4 (M)",
     "fr": "Mer de Jade 4 (M)",
@@ -520,7 +520,7 @@
     "location": "M"
   },
   "66": {
-    "en": "the Forest of Kelp",
+    "en": "the Forest of Kelp (N)",
     "ja": "N　海藻樹林",
     "de": "Seegrashain (N)",
     "fr": "Forêt d'algues (N)",
@@ -528,7 +528,7 @@
     "location": "N"
   },
   "67": {
-    "en": "Sea of Jade 5",
+    "en": "Sea of Jade 5 (O)",
     "ja": "O　翠浪海05",
     "de": "Jademeer 5 (O)",
     "fr": "Mer de Jade 5 (O)",
@@ -536,7 +536,7 @@
     "location": "O"
   },
   "68": {
-    "en": "Bladefall Chasm",
+    "en": "Bladefall Chasm (P)",
     "ja": "P　なまくら切岸",
     "de": "Schwertklippe (P)",
     "fr": "Abîme émoussé (P)",
@@ -544,7 +544,7 @@
     "location": "P"
   },
   "69": {
-    "en": "Stormport",
+    "en": "Stormport (Q)",
     "ja": "Q　風の休所",
     "de": "Sturmruh (Q)",
     "fr": "Port-tempête (Q)",
@@ -552,7 +552,7 @@
     "location": "Q"
   },
   "70": {
-    "en": "Wyrm's Rest",
+    "en": "Wyrm's Rest (R)",
     "ja": "R　竜骨溜まり",
     "de": "Drachengebeinsanger (R)",
     "fr": "Repos du dragon (R)",
@@ -560,7 +560,7 @@
     "location": "R"
   },
   "71": {
-    "en": "Sea of Jade 6",
+    "en": "Sea of Jade 6 (S)",
     "ja": "S　翠浪海06",
     "de": "Jademeer 6 (S)",
     "fr": "Mer de Jade 6 (S)",
@@ -568,7 +568,7 @@
     "location": "S"
   },
   "72": {
-    "en": "the Devil's Crypt",
+    "en": "the Devil's Crypt (T)",
     "ja": "T　海獣の霊園",
     "de": "Gruft des Seeungeheuers (T)",
     "fr": "Crypte du diable (T)",
@@ -584,7 +584,7 @@
     "location": ""
   },
   "74": {
-    "en": "Mastbound's Bounty",
+    "en": "Mastbound's Bounty (A)",
     "ja": "A　耳蝋漁場",
     "de": "Ohrenschmalzbecken (A)",
     "fr": "Bassin de cérumen (A)",
@@ -592,7 +592,7 @@
     "location": "A"
   },
   "75": {
-    "en": "Sirensong Sea 1",
+    "en": "Sirensong Sea 1 (B)",
     "ja": "B　セイレーン海01",
     "de": "Sirenen-See 1 (B)",
     "fr": "Mer du Chant des sirènes 1 (B)",
@@ -600,7 +600,7 @@
     "location": "B"
   },
   "76": {
-    "en": "Sirensong Sea 2",
+    "en": "Sirensong Sea 2 (C)",
     "ja": "C　セイレーン海02",
     "de": "Sirenen-See 2 (C)",
     "fr": "Mer du Chant des sirènes 2 (C)",
@@ -608,7 +608,7 @@
     "location": "C"
   },
   "77": {
-    "en": "Anthemoessa",
+    "en": "Anthemoessa (D)",
     "ja": "D　アンテモエッサ島",
     "de": "Anthemoessa (D)",
     "fr": "Île d'Anthémuse (D)",
@@ -616,7 +616,7 @@
     "location": "D"
   },
   "78": {
-    "en": "Magos Trench",
+    "en": "Magos Trench (E)",
     "ja": "E　海魔の口",
     "de": "Magosgraben (E)",
     "fr": "Bouche du démon des mers (E)",
@@ -624,7 +624,7 @@
     "location": "E"
   },
   "79": {
-    "en": "Thrall's Unrest",
+    "en": "Thrall's Unrest (F)",
     "ja": "F　漂流海域",
     "de": "Thralls Enge (F)",
     "fr": "Pertuis des naufrages (F)",
@@ -632,7 +632,7 @@
     "location": "F"
   },
   "80": {
-    "en": "Crow's Drop",
+    "en": "Crow's Drop (G)",
     "ja": "G　告死礁",
     "de": "Todesriff (G)",
     "fr": "Récif de la mort (G)",
@@ -640,7 +640,7 @@
     "location": "G"
   },
   "81": {
-    "en": "Sirensong Sea 3",
+    "en": "Sirensong Sea 3 (H)",
     "ja": "H　セイレーン海03",
     "de": "Sirenen-See 3 (H)",
     "fr": "Mer du Chant des sirènes 3 (H)",
@@ -648,7 +648,7 @@
     "location": "H"
   },
   "82": {
-    "en": "the Anthemoessa Undertow",
+    "en": "the Anthemoessa Undertow (I)",
     "ja": "I　アンテモエッサ海廊",
     "de": "Haus von Anthemoessa (I)",
     "fr": "Courant sous-marin d'Anthémuse (I)",
@@ -656,7 +656,7 @@
     "location": "I"
   },
   "83": {
-    "en": "Sirensong Sea 4",
+    "en": "Sirensong Sea 4 (J)",
     "ja": "J　セイレーン海04",
     "de": "Sirenen-See 4 (J)",
     "fr": "Mer du Chant des sirènes 4 (J)",
@@ -664,7 +664,7 @@
     "location": "J"
   },
   "84": {
-    "en": "Seafoam Tide",
+    "en": "Seafoam Tide (K)",
     "ja": "K　渦紋海峡",
     "de": "Wirbelenge (K)",
     "fr": "Détroit aux tourbillons (K)",
@@ -672,7 +672,7 @@
     "location": "K"
   },
   "85": {
-    "en": "the Beak",
+    "en": "the Beak (L)",
     "ja": "L　鳥嘴湾",
     "de": "Schnabelbucht (L)",
     "fr": "Baie du Bec (L)",
@@ -680,7 +680,7 @@
     "location": "L"
   },
   "86": {
-    "en": "Seafarer's End",
+    "en": "Seafarer's End (M)",
     "ja": "M　海魔の牢獄",
     "de": "Kerker des Seeteufels (M)",
     "fr": "Geôle du démon des mers (M)",
@@ -688,7 +688,7 @@
     "location": "M"
   },
   "87": {
-    "en": "Drifter's Decay",
+    "en": "Drifter's Decay (N)",
     "ja": "N　放棄された流刑島",
     "de": "Atoll des Exils (N)",
     "fr": "Atoll des exilés (N)",
@@ -696,7 +696,7 @@
     "location": "N"
   },
   "88": {
-    "en": "Lugat's Landing",
+    "en": "Lugat's Landing (O)",
     "ja": "O　ルガトの浜",
     "de": "Strand des Lugat (O)",
     "fr": "Plage de Lugat (O)",
@@ -704,7 +704,7 @@
     "location": "O"
   },
   "89": {
-    "en": "the Frozen Spring",
+    "en": "the Frozen Spring (P)",
     "ja": "P　積氷泉",
     "de": "Frostbrunn (P)",
     "fr": "Source givrée (P)",
@@ -712,7 +712,7 @@
     "location": "P"
   },
   "90": {
-    "en": "Sirensong Sea 5",
+    "en": "Sirensong Sea 5 (Q)",
     "ja": "Q　セイレーン海05",
     "de": "Sirenen-See 5 (Q)",
     "fr": "Mer du Chant des sirènes 5 (Q)",
@@ -720,7 +720,7 @@
     "location": "Q"
   },
   "91": {
-    "en": "Tidewind Isle",
+    "en": "Tidewind Isle (R)",
     "ja": "R　渦紋島",
     "de": "Schneckholm (R)",
     "fr": "Île du tumulte (R)",
@@ -728,7 +728,7 @@
     "location": "R"
   },
   "92": {
-    "en": "Bloodbreak",
+    "en": "Bloodbreak (S)",
     "ja": "S　赤血海丘",
     "de": "Blutblase (S)",
     "fr": "Colline de sang pourpre (S)",
@@ -736,7 +736,7 @@
     "location": "S"
   },
   "93": {
-    "en": "the Crystal Font",
+    "en": "the Crystal Font (T)",
     "ja": "T　海晶泉",
     "de": "Kristallquell (T)",
     "fr": "Source cristalline (T)",
@@ -752,7 +752,7 @@
     "location": ""
   },
   "95": {
-    "en": "Weeping Trellis",
+    "en": "Weeping Trellis (A)",
     "ja": "A　誘う藤棚",
     "de": "Glyzinienschauer (A)",
     "fr": "Arche de glycines aguichantes (A)",
@@ -760,7 +760,7 @@
     "location": "A"
   },
   "96": {
-    "en": "the Forsaken Isle",
+    "en": "the Forsaken Isle (B)",
     "ja": "B　白化した島",
     "de": "Gebleichte Insel (B)",
     "fr": "Île blanchie (B)",
@@ -768,7 +768,7 @@
     "location": "B"
   },
   "97": {
-    "en": "Fortune's Ford",
+    "en": "Fortune's Ford (C)",
     "ja": "C　漂鳥の浅瀬",
     "de": "Sandbank der Wandervögel (C)",
     "fr": "Haut-fond de l'oiseau vagabond (C)",
@@ -776,7 +776,7 @@
     "location": "C"
   },
   "98": {
-    "en": "Lilac Sea 1",
+    "en": "Lilac Sea 1 (D)",
     "ja": "D　紫礁海01",
     "de": "Fliedermeer 1 (D)",
     "fr": "Mer de lilas 1 (D)",
@@ -784,7 +784,7 @@
     "location": "D"
   },
   "99": {
-    "en": "Runners' Reach",
+    "en": "Runners' Reach (E)",
     "ja": "E　ラルス島",
     "de": "Larth (E)",
     "fr": "Île du râle (E)",
@@ -792,7 +792,7 @@
     "location": "E"
   },
   "100": {
-    "en": "Bellflower Flood",
+    "en": "Bellflower Flood (F)",
     "ja": "F　桔梗海溝中央",
     "de": "Mitte des Asterngrabens (F)",
     "fr": "Centre de la fosse des campanules (F)",
@@ -800,7 +800,7 @@
     "location": "F"
   },
   "101": {
-    "en": "Lilac Sea 2",
+    "en": "Lilac Sea 2 (G)",
     "ja": "G　紫礁海02",
     "de": "Fliedermeer 2 (G)",
     "fr": "Mer de lilas 2 (G)",
@@ -808,7 +808,7 @@
     "location": "G"
   },
   "102": {
-    "en": "Lilac Sea 3",
+    "en": "Lilac Sea 3 (H)",
     "ja": "H　紫礁海03",
     "de": "Fliedermeer 3 (H)",
     "fr": "Mer de lilas 3 (H)",
@@ -816,7 +816,7 @@
     "location": "H"
   },
   "103": {
-    "en": "northwest Bellflower",
+    "en": "northwest Bellflower (I)",
     "ja": "I　桔梗海溝北西",
     "de": "Nordwesten des Asterngrabens (I)",
     "fr": "Nord-ouest de la fosse des campanules (I)",
@@ -824,7 +824,7 @@
     "location": "I"
   },
   "104": {
-    "en": "Corolla Isle",
+    "en": "Corolla Isle (J)",
     "ja": "J　花冠島",
     "de": "Korolleninsel (J)",
     "fr": "Île des couronnes florales (J)",
@@ -832,7 +832,7 @@
     "location": "J"
   },
   "105": {
-    "en": "Southeast Bellflower",
+    "en": "southeast Bellflower (K)",
     "ja": "K　桔梗海溝南東",
     "de": "Südosten des Asterngrabens (K)",
     "fr": "Sud-est de la fosse des campanules (K)",
@@ -840,7 +840,7 @@
     "location": "K"
   },
   "106": {
-    "en": "the floral reef",
+    "en": "the floral reef (L)",
     "ja": "L　咲き誇る礁池",
     "de": "Blühende Lagune (L)",
     "fr": "Lagon en fleur (L)",
@@ -848,7 +848,7 @@
     "location": "L"
   },
   "107": {
-    "en": "Wingsreach",
+    "en": "Wingsreach (M)",
     "ja": "M　翼弁島",
     "de": "Vexilleninsel (M)",
     "fr": "Île des tiges ailées (M)",
@@ -856,7 +856,7 @@
     "location": "M"
   },
   "108": {
-    "en": "the Floating Standard",
+    "en": "the Floating Standard (N)",
     "ja": "N　旗弁島",
     "de": "Fahneninsel (N)",
     "fr": "Île de l'étendard (N)",
@@ -864,7 +864,7 @@
     "location": "N"
   },
   "109": {
-    "en": "the Fluttering Bay",
+    "en": "the Fluttering Bay (O)",
     "ja": "O　胡蝶の円湾",
     "de": "Mondorchideenbucht (O)",
     "fr": "Baie des orchidées papillon (O)",
@@ -872,7 +872,7 @@
     "location": "O"
   },
   "110": {
-    "en": "Lilac Sea 4",
+    "en": "Lilac Sea 4 (P)",
     "ja": "P　紫礁海04",
     "de": "Fliedermeer 4 (P)",
     "fr": "Mer de lilas 4 (P)",
@@ -880,7 +880,7 @@
     "location": "P"
   },
   "111": {
-    "en": "Proudkeel",
+    "en": "Proudkeel (Q)",
     "ja": "Q　舟弁島",
     "de": "Schiffcheninsel (Q)",
     "fr": "Île de la carène (Q)",
@@ -888,7 +888,7 @@
     "location": "Q"
   },
   "112": {
-    "en": "east Dodie's Abyss",
+    "en": "east Dodie's Abyss (R)",
     "ja": "R　ドディー海底谷東",
     "de": "Östliche Dodhi-Furche (R)",
     "fr": "Est de la vallée sous-marine de Dodie (R)",
@@ -896,7 +896,7 @@
     "location": "R"
   },
   "113": {
-    "en": "Lilac Sea 5",
+    "en": "Lilac Sea 5 (S)",
     "ja": "S　紫礁海05",
     "de": "Fliedermeer 5 (S)",
     "fr": "Mer de lilas 5 (S)",
@@ -904,7 +904,7 @@
     "location": "S"
   },
   "114": {
-    "en": "west Dodie's Abyss",
+    "en": "west Dodie's Abyss (T)",
     "ja": "T　ドディー海底谷西",
     "de": "Westliche Dodhi-Furche (T)",
     "fr": "Ouest de la vallée sous-marine de Dodie (T)",
@@ -920,7 +920,7 @@
     "location": ""
   },
   "116": {
-    "en": "the Indigo Shallows",
+    "en": "the Indigo Shallows (A)",
     "ja": "A　インディゴ・シャロウ",
     "de": "Indigo-Untiefen (A)",
     "fr": "Hauts-fonds indigo (A)",
@@ -928,7 +928,7 @@
     "location": "A"
   },
   "117": {
-    "en": "Voyagers' Reprieve",
+    "en": "Voyagers' Reprieve (B)",
     "ja": "B　探検家の中継基地",
     "de": "Relaisstation (B)",
     "fr": "Base d'exploration intermédiaire (B)",
@@ -936,7 +936,7 @@
     "location": "B"
   },
   "118": {
-    "en": "north Delphinium Seashelf",
+    "en": "north Delphinium Seashelf (C)",
     "ja": "C　紺色海底棚北",
     "de": "Kobaltmeer-Nord (C)",
     "fr": "Nord des profondeurs de la Mer de cobalt (C)",
@@ -944,7 +944,7 @@
     "location": "C"
   },
   "119": {
-    "en": "Rainbringer Rift",
+    "en": "Rainbringer Rift (D)",
     "ja": "D　雨生みの海底谷",
     "de": "Regenwiege-Furche (D)",
     "fr": "Vallée sous-marine du Berceau des pluies (D)",
@@ -952,7 +952,7 @@
     "location": "D"
   },
   "120": {
-    "en": "south Indigo Deep 1",
+    "en": "south Indigo Deep 1 (E)",
     "ja": "E　南蒼茫洋01",
     "de": "Südlicher Indigo-Ozean 1 (E)",
     "fr": "Océan Indigo méridional 1 (E)",
@@ -960,7 +960,7 @@
     "location": "E"
   },
   "121": {
-    "en": "the Central Blue",
+    "en": "the Central Blue (F)",
     "ja": "F　セントラルブルー",
     "de": "Blaue Unendlichkeit (F)",
     "fr": "Infinité bleue (F)",
@@ -968,7 +968,7 @@
     "location": "F"
   },
   "122": {
-    "en": "south Indigo Deep 2",
+    "en": "south Indigo Deep 2 (G)",
     "ja": "G　南蒼茫洋02",
     "de": "Südlicher Indigo-Ozean 2 (G)",
     "fr": "Océan Indigo méridional 2 (G)",
@@ -976,7 +976,7 @@
     "location": "G"
   },
   "123": {
-    "en": "the Talon",
+    "en": "the Talon (H)",
     "ja": "H　鉤爪島",
     "de": "Kralleninsel (H)",
     "fr": "Île des serres (H)",
@@ -984,7 +984,7 @@
     "location": "H"
   },
   "124": {
-    "en": "southern Central Blue",
+    "en": "southern Central Blue (I)",
     "ja": "I　セントラルブルー南",
     "de": "Blaue Unendlichkeit Süd (I)",
     "fr": "Sud de L'Infinité bleue (I)",
@@ -992,7 +992,7 @@
     "location": "I"
   },
   "125": {
-    "en": "south Indigo Deep 3",
+    "en": "south Indigo Deep 3 (J)",
     "ja": "J　南蒼茫洋03",
     "de": "Südlicher Indigo-Ozean 3 (J)",
     "fr": "Océan Indigo méridional 3 (J)",
@@ -1000,7 +1000,7 @@
     "location": "J"
   },
   "126": {
-    "en": "the Talonspoint Depths",
+    "en": "the Talonspoint Depths (K)",
     "ja": "K　鉤爪島沖合",
     "de": "Krallentiefen (K)",
     "fr": "Large de l'île des serres (K)",
@@ -1008,7 +1008,7 @@
     "location": "K"
   },
   "127": {
-    "en": "Saltfarer's Eye",
+    "en": "Saltfarer's Eye (L)",
     "ja": "L　碧眼島",
     "de": "Insel des Blauauges (L)",
     "fr": "Île de l'iris aigue-marine (L)",
@@ -1016,7 +1016,7 @@
     "location": "L"
   },
   "128": {
-    "en": "Startail shallows",
+    "en": "Startail shallows (M)",
     "ja": "M　星削水道浅部",
     "de": "Sternenschweif-Untiefen (M)",
     "fr": "Bas-fonds des Étoiles ciselées (M)",
@@ -1024,7 +1024,7 @@
     "location": "M"
   },
   "129": {
-    "en": "Moonshadow Isle",
+    "en": "Moonshadow Isle (N)",
     "ja": "N　欠月島",
     "de": "Unvollmonden (N)",
     "fr": "Île de la Lune gibbeuse (N)",
@@ -1032,7 +1032,7 @@
     "location": "N"
   },
   "130": {
-    "en": "Emerald Drop",
+    "en": "Emerald Drop (O)",
     "ja": "O　エメラルド・ディープ",
     "de": "Smaragd-Tiefen (O)",
     "fr": "Profondeurs émeraude (O)",
@@ -1040,7 +1040,7 @@
     "location": "O"
   },
   "131": {
-    "en": "south Indigo Deep 4",
+    "en": "south Indigo Deep 4 (P)",
     "ja": "P　南蒼茫洋04",
     "de": "Südlicher Indigo-Ozean 4 (P)",
     "fr": "Océan Indigo méridional 4 (P)",
@@ -1048,7 +1048,7 @@
     "location": "P"
   },
   "132": {
-    "en": "south Delphinium Seashelf",
+    "en": "south Delphinium Seashelf (Q)",
     "ja": "Q　紺色海底棚南",
     "de": "Kobaltmeer-Süd (Q)",
     "fr": "Sud des profondeurs de la Mer de cobalt (Q)",
@@ -1056,7 +1056,7 @@
     "location": "Q"
   },
   "133": {
-    "en": "Startail shelf",
+    "en": "Startail shelf (R)",
     "ja": "R　星削水道中部",
     "de": "Sternenschweif-Schelf (R)",
     "fr": "Moyennes profondeurs des Étoiles ciselées (R)",
@@ -1064,7 +1064,7 @@
     "location": "R"
   },
   "134": {
-    "en": "Cradle of the Winds",
+    "en": "Cradle of the Winds (S)",
     "ja": "S　風生みの海底谷",
     "de": "Böhkeim-Furche (S)",
     "fr": "Vallée sous-marine du Berceau des vents (S)",
@@ -1072,7 +1072,7 @@
     "location": "S"
   },
   "135": {
-    "en": "Startail Trench",
+    "en": "Startail Trench (T)",
     "ja": "T　星削水道深部",
     "de": "Sternenschweif-Graben (T)",
     "fr": "Grands fonds des Étoiles ciselées (T)",
@@ -1088,60 +1088,60 @@
     "location": ""
   },
   "137": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "eastern Blackblood Wells (A)",
+    "ja": "A　黒き血の溜まり東",
+    "de": "Östliche Schwarzblut-Pfuhle (A)",
+    "fr": "Est du caillot de sang noir (A)",
     "id": 137,
-    "location": ""
+    "location": "A"
   },
   "138": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Sea Wolf Cove (B)",
+    "ja": "B　海狼たちの港",
+    "de": "Seewolfbucht (B)",
+    "fr": "Port des loups de mer (B)",
     "id": 138,
-    "location": ""
+    "location": "B"
   },
   "139": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "southernmost Hanthbyrt (C)",
+    "ja": "C　ハンドビルト島南端",
+    "de": "Südliches Hanthbyrt (C)",
+    "fr": "Rive sud de l'île artificielle (C)",
     "id": 139,
-    "location": ""
+    "location": "C"
   },
   "140": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Oeyaseik (D)",
+    "ja": "D　ウーヤ・セイク湖",
+    "de": "Oeyaseik (D)",
+    "fr": "Lac d'Oeya Seik (D)",
     "id": 140,
-    "location": ""
+    "location": "D"
   },
   "141": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "northeast Hanthbyrt (E)",
+    "ja": "E　ハンドビルト島北東",
+    "de": "Nördliches Hanthbyrt (E)",
+    "fr": "Nord-est de l'île artificielle (E)",
     "id": 141,
-    "location": ""
+    "location": "E"
   },
   "142": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Vyrstrant (F)",
+    "ja": "F　フェイエルの浜",
+    "de": "Vyrstrant (F)",
+    "fr": "Plage de Fejer (F)",
     "id": 142,
-    "location": ""
+    "location": "F"
   },
   "143": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Sunken Jawbone (G)",
+    "ja": "G　牙の岬沖",
+    "de": "Tiefer Kiefer (G)",
+    "fr": "Rivage des griffes (G)",
     "id": 143,
-    "location": ""
+    "location": "G"
   },
   "144": {
     "en": "",

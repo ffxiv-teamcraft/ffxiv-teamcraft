@@ -5,6 +5,7 @@ import * as semver from 'semver';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { PirschEventDirective } from '../../../core/analytics/pirsch-event.directive';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     styleUrls: ['./changelog-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzDividerModule, MarkdownModule, TranslateModule]
+  imports: [NzDividerModule, MarkdownModule, TranslateModule, PirschEventDirective]
 })
 export class ChangelogPopupComponent implements OnInit {
   public patchNotes: typeof environment.patchNotes;

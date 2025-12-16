@@ -7024,5 +7024,155 @@
         "amountRequired": 2
       }
     ]
+  },
+  "49826": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49827": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49828": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49829": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49830": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 80,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 2,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49831": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49832": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49833": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49834": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 40,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 1,
+        "amountRequired": 1
+      }
+    ]
+  },
+  "49835": {
+    "itemSeriesId": 30,
+    "bonuses": [
+      {
+        "baseParam": 55,
+        "value": 80,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 54,
+        "value": 2,
+        "amountRequired": 1
+      }
+    ]
   }
 }

@@ -57,7 +57,6 @@ export class MarketboardPopupComponent extends DialogComponent implements OnInit
   ngOnInit() {
     this.patchData();
     this.server$ = this.authFacade.mainCharacter$.pipe(
-      tap(console.log),
       map(character => character.Server),
       shareReplay({ bufferSize: 1, refCount: true })
     );

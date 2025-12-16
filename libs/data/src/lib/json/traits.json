@@ -4565,8 +4565,8 @@
     "ja": "マナフィケーション効果アップ",
     "fr": "Manafication améliorée",
     "icon": "/i/006000/006205.png",
-    "level": 78,
-    "job": 35,
+    "level": 0,
+    "job": 0,
     "description": {
       "en": "Reduces <span style=\"color:#ffffff\">Manafication</span> recast timer to 110 seconds and adds an additional effect that increases magic damage dealt by 5%.",
       "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#ffffff\">Manafizierung</span> auf 110 Sekunden und erhöht bei Ausführung den eigenen ausgeteilten Schaden um 5&nbsp;%.<br>Dauer: 10 Sekunden",
@@ -6398,10 +6398,10 @@
     "level": 88,
     "job": 37,
     "description": {
-      "en": "Increases <span style=\"color:#ffffff\">Powder Gauge</span> capacity to 3 <span style=\"color:#ffffff\">Cartridges</span>.<br>Executing <span style=\"color:#ffffff\">Bloodfest</span> stores 3 <span style=\"color:#ffffff\">Cartridges</span>.",
-      "de": "Die maximale Anzahl deiner <span style=\"color:#ffffff\">Erda-Patronen</span> wird auf 3 erhöht und <span style=\"color:#ffffff\">Blutpatronen</span> gewährt dir nun ebenfalls 3 Erda-Patronen.",
-      "ja": "<span style=\"color:#ffffff\">「ソイル」</span>の最大スタック数が3に増加する。<br>さらに、ブラッドソイル実行時に3スタックのソイルが付与されるようになる。",
-      "fr": "Augmente à 3 le nombre maximum de <span style=\"color:#ffffff\">Cartouches d'éther</span>, et <span style=\"color:#ffffff\">Cartouche de sang</span> vous en octroie 3."
+      "en": "Increases <span style=\"color:#ffffff\">Powder Gauge</span> capacity to 3 <span style=\"color:#ffffff\">Cartridges</span>. While under the effect of <span style=\"color:#ffffff\">Bloodfest</span>, increases the maximum capacity to 6.<br>Executing <span style=\"color:#ffffff\">Bloodfest</span> stores 3 <span style=\"color:#ffffff\">Cartridges</span>.",
+      "de": "Die maximale Anzahl deiner <span style=\"color:#ffffff\">Erda-Patronen</span> wird auf 3 erhöht und während <span style=\"color:#ffffff\">Blutpatronen</span> aktiv ist, erhöht sich die maximale Anzahl auf 6. Die Ausführung von <span style=\"color:#ffffff\">Blutpatronen</span> gewährt außerdem sofort 3 Patronen.",
+      "ja": "<span style=\"color:#ffffff\">「ソイル」</span>の最大スタック数が3に増加し、ブラッドソイルの効果中は最大スタック数が6に増加する。<br>さらに、ブラッドソイルの実行時に付与されるソイルが3に増加する",
+      "fr": "Augmente à 3 le nombre maximum de <span style=\"color:#ffffff\">Cartouches d'éther</span>, ou 6 sous l'effet de <span style=\"color:#ffffff\">Cartouche de sang</span>. Par ailleurs, <span style=\"color:#ffffff\">Cartouche de sang</span> octroie 3 <span style=\"color:#ffffff\">Cartouches d'éther</span> lors de son utilisation."
     }
   },
   "428": {
@@ -7280,8 +7280,8 @@
     "ja": "マナフィケーション効果アップII",
     "fr": "Manafication améliorée II",
     "icon": "/i/006000/006212.png",
-    "level": 90,
-    "job": 35,
+    "level": 0,
+    "job": 0,
     "description": {
       "en": "Increases maximum stacks of <span style=\"color:#ffffff\">Manafication</span> to 6.",
       "de": "Die Maximalstapelzahl von <span style=\"color:#ffffff\">Manafizierung</span> wird auf 6 erhöht.",
@@ -9315,18 +9315,18 @@
     }
   },
   "622": {
-    "en": "Enhanced Manafication III",
-    "de": "Verbesserte Manafizierung III",
-    "ja": "マナフィケーション効果アップIII",
-    "fr": "Manafication améliorée III",
-    "icon": "/i/006000/006215.png",
+    "en": "Enhanced Manafication",
+    "de": "Verbesserte Manafizierung",
+    "ja": "マナフィケーション効果アップ",
+    "fr": "Manafication améliorée",
+    "icon": "/i/006000/006216.png",
     "level": 100,
     "job": 35,
     "description": {
-      "en": "Grants <span style=\"color:#ffffff\">Prefulgence Ready</span> upon consuming all stacks of <span style=\"color:#ffffff\">Manafication</span>.<br><span style=\"color:#ffffff\">Duration: </span>30s<br><span style=\"color:#ffffff\">Manafication</span> changes to <span style=\"color:#ffffff\">Prefulgence</span> while under the effect of <span style=\"color:#ffffff\">Prefulgence Ready</span>.",
-      "de": "Erfolgreiches Aufbrauchen aller Stapel von <span style=\"color:#ffffff\">Manafizierung</span> gewährt dir <span style=\"color:#ffffff\">Kristallglanz-bereit</span>.<br>Dauer: 30 Sekunden<br>Ist <span style=\"color:#ffffff\">Kristallglanz-bereit</span> aktiv, ändert sich <span style=\"color:#ffffff\">Manafizierung</span> zu <span style=\"color:#ffffff\">Kristallglanz</span>.",
-      "ja": "自身に<span style=\"color:#ffffff\">「プリフルジェンス実行可」</span>が付与される。<br><span style=\"color:#ffffff\">効果時間：</span>30秒<br><span style=\"color:#ffffff\">発動条件：</span>マナフィケーションの効果を全て消費したとき<br>効果中はマナフィケーションがプリフルジェンスに変化する。",
-      "fr": "Permet de recevoir <span style=\"color:#ffffff\">Syncristallisation préparée</span> lorsque tous les degrés de <span style=\"color:#ffffff\">Manafication</span> sont consommés.<br><span style=\"color:#ffffff\">Durée&nbsp;:</span> 30s<br>Remplace <span style=\"color:#ffffff\">Manafication</span> par <span style=\"color:#ffffff\">Syncristallisation</span> pendant la durée de l'effet."
+      "en": "Grants <span style=\"color:#ffffff\">Prefulgence Ready</span> upon executing <span style=\"color:#ffffff\">Manafication</span>.<br><span style=\"color:#ffffff\">Duration: </span>30s<br><span style=\"color:#ffffff\">Manafication</span> changes to <span style=\"color:#ffffff\">Prefulgence</span> while under the effect of <span style=\"color:#ffffff\">Prefulgence Ready</span>.",
+      "de": "Erfolgreiche Ausführung von <span style=\"color:#ffffff\">Manafizierung</span> gewährt dir <span style=\"color:#ffffff\">Kristallglanz-bereit</span>.<br>Dauer: 30 Sekunden<br>Ist <span style=\"color:#ffffff\">Kristallglanz-bereit</span> aktiv, ändert sich <span style=\"color:#ffffff\">Manafizierung</span> zu <span style=\"color:#ffffff\">Kristallglanz</span>.",
+      "ja": "自身に<span style=\"color:#ffffff\">「プリフルジェンス実行可」</span>が付与される。<br><span style=\"color:#ffffff\">効果時間：</span>30秒<br><span style=\"color:#ffffff\">発動条件：</span>マナフィケーション実行時<br>効果中はマナフィケーションがプリフルジェンスに変化する。",
+      "fr": "Permet de recevoir <span style=\"color:#ffffff\">Syncristallisation préparée</span>.<br><span style=\"color:#ffffff\">Durée&nbsp;:</span> 30s<br>Remplace <span style=\"color:#ffffff\">Manafication</span> par <span style=\"color:#ffffff\">Syncristallisation</span> pendant la durée de l'effet."
     }
   },
   "623": {
@@ -9758,10 +9758,10 @@
     "level": 94,
     "job": 24,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Dia</span> and its damage over time to 85, <span style=\"color:#ffffff\">Afflatus Misery</span> to 1,360, and <span style=\"color:#ffffff\">Glare III</span> to 340.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Dia</span>: 85<br>Attacke-Wert des Schaden-über-Zeit-Effekts: 85<br>Attacke-Wert von <span style=\"color:#ffffff\">Afflatus miseriae</span>: 1.360<br>Attacke-Wert von <span style=\"color:#ffffff\">Blendga</span>: 340",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">ディアの威力：</span>85<br><span style=\"color:#ffffff\">ディアの継続ダメージの威力：</span>85<br><span style=\"color:#ffffff\">ハート・オブ・ミゼリの威力：</span>1360<br><span style=\"color:#ffffff\">グレアガの威力：</span>340",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Lumen&nbsp;:</span> 85<br><span style=\"color:#ffffff\">Puissance des dégâts périodiques de Lumen&nbsp;:</span> 85<br><span style=\"color:#ffffff\">Puissance d'Offrande de misère&nbsp;:</span> 1360<br><span style=\"color:#ffffff\">Puissance de Méga Chatoiement&nbsp;:</span> 340"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Dia</span> and its damage over time to 85, <span style=\"color:#ffffff\">Afflatus Misery</span> to 1,400, and <span style=\"color:#ffffff\">Glare III</span> to 350.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Dia</span>: 85<br>Attacke-Wert des Schaden-über-Zeit-Effekts: 85<br>Attacke-Wert von <span style=\"color:#ffffff\">Afflatus miseriae</span>: 1.400<br>Attacke-Wert von <span style=\"color:#ffffff\">Blendga</span>: 350",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">ディアの威力：</span>85<br><span style=\"color:#ffffff\">ディアの継続ダメージの威力：</span>85<br><span style=\"color:#ffffff\">ハート・オブ・ミゼリの威力：</span>1400<br><span style=\"color:#ffffff\">グレアガの威力：</span>350",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Lumen&nbsp;:</span> 85<br><span style=\"color:#ffffff\">Puissance des dégâts périodiques de Lumen&nbsp;:</span> 85<br><span style=\"color:#ffffff\">Puissance d'Offrande de misère&nbsp;:</span> 1400<br><span style=\"color:#ffffff\">Puissance de Méga Chatoiement&nbsp;:</span> 350"
     }
   },
   "652": {
@@ -9833,10 +9833,10 @@
     "level": 94,
     "job": 28,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Biolysis</span>'s damage over time effect to 80 and <span style=\"color:#ffffff\">Broil IV</span> to 320.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert des Schadens über Zeit von <span style=\"color:#ffffff\">Causae et Curae</span>: 80<br>Attacke-Wert von <span style=\"color:#ffffff\">Rabiate Bravade</span>: 320",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">蠱毒法の継続ダメージの威力：</span>80<br><span style=\"color:#ffffff\">極炎法の威力：</span>320",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Loi de l'infection&nbsp;:</span> 80<br><span style=\"color:#ffffff\">Puissance de Loi de l'ébullition IV&nbsp;:</span> 320"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Biolysis</span>'s damage over time effect to 85 and <span style=\"color:#ffffff\">Broil IV</span> to 320.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert des Schadens über Zeit von <span style=\"color:#ffffff\">Causae et Curae</span>: 85<br>Attacke-Wert von <span style=\"color:#ffffff\">Rabiate Bravade</span>: 320",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">蠱毒法の継続ダメージの威力：</span>85<br><span style=\"color:#ffffff\">極炎法の威力：</span>320",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Loi de l'infection&nbsp;:</span> 85<br><span style=\"color:#ffffff\">Puissance de Loi de l'ébullition IV&nbsp;:</span> 320"
     }
   },
   "657": {
@@ -9863,10 +9863,10 @@
     "level": 94,
     "job": 31,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Auto Crossbow</span> to 180, <span style=\"color:#ffffff\">Heated Split Shot</span> to 220, <span style=\"color:#ffffff\">Heated Slug Shot</span> to 140, <span style=\"color:#ffffff\">Heated Clean Shot</span> to 160, and <span style=\"color:#ffffff\">Blazing Shot</span> to 240.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Armbrust</span>: 180<br>Attacke-Wert von <span style=\"color:#ffffff\">Höllenfeuer frei</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Höllen-Flintenlaufgeschoss</span>: 140<br>Attacke-Wert von <span style=\"color:#ffffff\">Sauberer Höllenschuss</span>: 160<br>Attacke-Wert von <span style=\"color:#ffffff\">Brandschuss</span>: 240",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">オートボウガンの威力：</span>180<br><span style=\"color:#ffffff\">ヒートスプリットショットの威力：</span>220<br><span style=\"color:#ffffff\">ヒートスラッグショットの威力：</span>140<br><span style=\"color:#ffffff\">ヒートクリーンショットの威力：</span>160<br><span style=\"color:#ffffff\">ブレイズショットの威力：</span>240",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance d'Arbalète automatique&nbsp;:</span> 180<br><span style=\"color:#ffffff\">Puissance de Tir scindé chauffé&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Tir de balle chauffé&nbsp;:</span> 140<br><span style=\"color:#ffffff\">Puissance de Tir net chauffé&nbsp;:</span> 160<br><span style=\"color:#ffffff\">Puissance de Tir ardent&nbsp;:</span> 240"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Auto Crossbow</span> to 180, <span style=\"color:#ffffff\">Heated Split Shot</span> to 220, <span style=\"color:#ffffff\">Drill</span> to 660, <span style=\"color:#ffffff\">Heated Slug Shot</span> to 140, <span style=\"color:#ffffff\">Heated Clean Shot</span> to 160, <span style=\"color:#ffffff\">Blazing Shot</span> to 240, <span style=\"color:#ffffff\">Air Anchor</span> to 660, and <span style=\"color:#ffffff\">Chain Saw</span> to 660.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Armbrust</span>: 180<br>Attacke-Wert von <span style=\"color:#ffffff\">Höllenfeuer frei</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Bohrer</span>: 660<br>Attacke-Wert von <span style=\"color:#ffffff\">Höllen-Flintenlaufgeschoss</span>: 140<br>Attacke-Wert von <span style=\"color:#ffffff\">Sauberer Höllenschuss</span>: 160<br>Attacke-Wert von <span style=\"color:#ffffff\">Brandschuss</span>: 240<br>Attacke-Wert von <span style=\"color:#ffffff\">Luftanker</span>: 660<br>Attacke-Wert von <span style=\"color:#ffffff\">Kreissäge</span>: 660",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">オートボウガンの威力：</span>180<br><span style=\"color:#ffffff\">ヒートスプリットショットの威力：</span>220<br><span style=\"color:#ffffff\">ドリルの威力：</span>660<br><span style=\"color:#ffffff\">ヒートスラッグショットの威力：</span>140<br><span style=\"color:#ffffff\">ヒートクリーンショットの威力：</span>160<br><span style=\"color:#ffffff\">ブレイズショットの威力：</span>240<br><span style=\"color:#ffffff\">エアアンカーの威力：</span>660<br><span style=\"color:#ffffff\">回転のこぎりの威力：</span>660",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance d'Arbalète automatique&nbsp;:</span> 180<br><span style=\"color:#ffffff\">Puissance de Tir scindé chauffé&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Foreuse&nbsp;:</span> 660<br><span style=\"color:#ffffff\">Puissance de Tir de balle chauffé&nbsp;:</span> 140<br><span style=\"color:#ffffff\">Puissance de Tir net chauffé&nbsp;:</span> 160<br><span style=\"color:#ffffff\">Puissance de Tir ardent&nbsp;:</span> 240<br><span style=\"color:#ffffff\">Puissance d'Ancre aérienne&nbsp;:</span> 660<br><span style=\"color:#ffffff\">Puissance de Tronçonneuses rotatives&nbsp;:</span> 660"
     }
   },
   "659": {
@@ -9923,10 +9923,10 @@
     "level": 94,
     "job": 38,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Cascade</span> to 220, <span style=\"color:#ffffff\">Fountain</span> to 120, <span style=\"color:#ffffff\">Double Standard Finish</span> to 850, <span style=\"color:#ffffff\">Reverse Cascade</span> to 280, <span style=\"color:#ffffff\">Fan Dance</span> to 180, <span style=\"color:#ffffff\">Fountainfall</span> to 340, <span style=\"color:#ffffff\">Fan Dance III</span> to 220, <span style=\"color:#ffffff\">Quadruple Technical Finish</span> to 1,300, <span style=\"color:#ffffff\">Saber Dance</span> to 520, and <span style=\"color:#ffffff\">Fan Dance IV</span> to 420.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Cascade</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Fontäne</span>: 120<br>Attacke-Wert von <span style=\"color:#ffffff\">Einfaches Finale II</span>: 850<br>Attacke-Wert von <span style=\"color:#ffffff\">Invertierte Cascade</span>: 280<br>Attacke-Wert von <span style=\"color:#ffffff\">Fächertanz I</span>: 180<br>Attacke-Wert von <span style=\"color:#ffffff\">Fallende Fontäne</span>: 340<br>Attacke-Wert von <span style=\"color:#ffffff\">Fächertanz III</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Komplexes Finale IV</span>: 1300<br>Attacke-Wert von <span style=\"color:#ffffff\">Schwerttanz</span>: 520<br>Attacke-Wert von <span style=\"color:#ffffff\">Fächertanz IV</span>: 420",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">カスケードの威力：</span>220<br><span style=\"color:#ffffff\">ファウンテンの威力：</span>120<br><span style=\"color:#ffffff\">ダブル・スタンダードフィニッシュの威力：</span>850<br><span style=\"color:#ffffff\">リバースカスケードの威力：</span>280<br><span style=\"color:#ffffff\">扇の舞い【序】の威力：</span>180<br><span style=\"color:#ffffff\">ファウンテンフォールの威力：</span>340<br><span style=\"color:#ffffff\">扇の舞い【急】の威力：</span>220<br><span style=\"color:#ffffff\">クワッド・テクニカルフィニッシュの威力：</span>1300<br><span style=\"color:#ffffff\">剣の舞いの威力：</span>520<br><span style=\"color:#ffffff\">扇の舞い【終】の威力：</span>420",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Cascade&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Fontaine&nbsp;:</span> 120<br><span style=\"color:#ffffff\">Puissance de Final classique doublé&nbsp;:</span> 850<br><span style=\"color:#ffffff\">Puissance de Cascade inversée&nbsp;:</span> 280<br><span style=\"color:#ffffff\">Puissance de Danse de l'éventail I&nbsp;:</span> 180<br><span style=\"color:#ffffff\">Puissance de Fontaine en cascade&nbsp;:</span> 340<br><span style=\"color:#ffffff\">Puissance de Danse de l'éventail III&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Final technique quadruplé&nbsp;:</span> 1300<br><span style=\"color:#ffffff\">Puissance de Danse du sabre&nbsp;:</span> 520<br><span style=\"color:#ffffff\">Puissance de Danse de l'éventail IV&nbsp;:</span> 420"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Cascade</span> to 220, <span style=\"color:#ffffff\">Fountain</span> to 120, <span style=\"color:#ffffff\">Double Standard Finish</span> to 850, <span style=\"color:#ffffff\">Reverse Cascade</span> to 280, <span style=\"color:#ffffff\">Fan Dance</span> to 180, <span style=\"color:#ffffff\">Fountainfall</span> to 340, <span style=\"color:#ffffff\">Fan Dance III</span> to 220, <span style=\"color:#ffffff\">Quadruple Technical Finish</span> to 1,300, <span style=\"color:#ffffff\">Saber Dance</span> to 540, and <span style=\"color:#ffffff\">Fan Dance IV</span> to 460.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Cascade</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Fontäne</span>: 120<br>Attacke-Wert von <span style=\"color:#ffffff\">Einfaches Finale II</span>: 850<br>Attacke-Wert von <span style=\"color:#ffffff\">Invertierte Cascade</span>: 280<br>Attacke-Wert von <span style=\"color:#ffffff\">Fächertanz I</span>: 180<br>Attacke-Wert von <span style=\"color:#ffffff\">Fallende Fontäne</span>: 340<br>Attacke-Wert von <span style=\"color:#ffffff\">Fächertanz III</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Komplexes Finale IV</span>: 1.300<br>Attacke-Wert von <span style=\"color:#ffffff\">Schwerttanz</span>: 540<br>Attacke-Wert von <span style=\"color:#ffffff\">Fächertanz IV</span>: 460",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">カスケードの威力：</span>220<br><span style=\"color:#ffffff\">ファウンテンの威力：</span>120<br><span style=\"color:#ffffff\">ダブル・スタンダードフィニッシュの威力：</span>850<br><span style=\"color:#ffffff\">リバースカスケードの威力：</span>280<br><span style=\"color:#ffffff\">扇の舞い【序】の威力：</span>180<br><span style=\"color:#ffffff\">ファウンテンフォールの威力：</span>340<br><span style=\"color:#ffffff\">扇の舞い【急】の威力：</span>220<br><span style=\"color:#ffffff\">クワッド・テクニカルフィニッシュの威力：</span>1300<br><span style=\"color:#ffffff\">剣の舞いの威力：</span>540<br><span style=\"color:#ffffff\">扇の舞い【終】の威力：</span>460",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Cascade&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Fontaine&nbsp;:</span> 120<br><span style=\"color:#ffffff\">Puissance de Final classique doublé&nbsp;:</span> 850<br><span style=\"color:#ffffff\">Puissance de Cascade inversée&nbsp;:</span> 280<br><span style=\"color:#ffffff\">Puissance de Danse de l'éventail I&nbsp;:</span> 180<br><span style=\"color:#ffffff\">Puissance de Fontaine en cascade&nbsp;:</span> 340<br><span style=\"color:#ffffff\">Puissance de Danse de l'éventail III&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Final technique quadruplé&nbsp;:</span> 1300<br><span style=\"color:#ffffff\">Puissance de Danse du sabre&nbsp;:</span> 540<br><span style=\"color:#ffffff\">Puissance de Danse de l'éventail IV&nbsp;:</span> 460"
     }
   },
   "663": {
@@ -9998,10 +9998,10 @@
     "level": 94,
     "job": 37,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Keen Edge</span> to 300, <span style=\"color:#ffffff\">Brutal Shell</span> to 240, <span style=\"color:#ffffff\">Solid Barrel</span> to 240, <span style=\"color:#ffffff\">Burst Strike</span> to 460, <span style=\"color:#ffffff\">Gnashing Fang</span> to 500, <span style=\"color:#ffffff\">Savage Claw</span> to 560, <span style=\"color:#ffffff\">Wicked Talon</span> to 620, <span style=\"color:#ffffff\">Jugular Rip</span> to 240, <span style=\"color:#ffffff\">Abdomen Tear</span> to 280, <span style=\"color:#ffffff\">Eye Gouge</span> to 320, <span style=\"color:#ffffff\">Blasting Zone</span> to 800, and <span style=\"color:#ffffff\">Hypervelocity</span> to 200.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Zerfetzer</span>: 300<br>Attacke-Wert von <span style=\"color:#ffffff\">Brutaler Einschlag</span>: 240<br>Attacke-Wert von <span style=\"color:#ffffff\">Stahlwalze</span>: 240<br>Attacke-Wert von <span style=\"color:#ffffff\">Explosiver Stoß</span>: 460<br>Attacke-Wert von <span style=\"color:#ffffff\">Schlagfänge</span>: 500<br>Attacke-Wert von <span style=\"color:#ffffff\">Wilde Klauen</span>: 560<br>Attacke-Wert von <span style=\"color:#ffffff\">Tückische Kralle</span>: 620<br>Attacke-Wert von <span style=\"color:#ffffff\">Kehlreißer</span>: 240<br>Attacke-Wert von <span style=\"color:#ffffff\">Bauchschlitzer</span>: 280<br>Attacke-Wert von <span style=\"color:#ffffff\">Augenstecher</span>: 320<br>Attacke-Wert von <span style=\"color:#ffffff\">Erda-Detonation</span>: 800<br>Attacke-Wert von <span style=\"color:#ffffff\">Überschall</span>: 200",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">キーンエッジの威力：</span>300<br><span style=\"color:#ffffff\">ブルータルシェルの威力：</span>240<br><span style=\"color:#ffffff\">ソリッドバレルの威力：</span>240<br><span style=\"color:#ffffff\">バーストストライクの威力：</span>460<br><span style=\"color:#ffffff\">ビートファングの威力：</span>500<br><span style=\"color:#ffffff\">サベッジクロウの威力：</span>560<br><span style=\"color:#ffffff\">ウィケッドタロンの威力：</span>620<br><span style=\"color:#ffffff\">ジャギュラーリップの威力：</span>240<br><span style=\"color:#ffffff\">アブドメンテアーの威力：</span>280<br><span style=\"color:#ffffff\">アイガウジの威力：</span>320<br><span style=\"color:#ffffff\">ブラスティングゾーンの威力：</span>800<br><span style=\"color:#ffffff\">ハイパーヴェロシティの威力：</span>200",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Tranchant acéré&nbsp;:</span> 300<br><span style=\"color:#ffffff\">Puissance d'Impact brutal&nbsp;:</span> 240<br><span style=\"color:#ffffff\">Puissance de Salve tranchante&nbsp;:</span> 240<br><span style=\"color:#ffffff\">Puissance de Frappe explosive&nbsp;:</span> 460<br><span style=\"color:#ffffff\">Puissance de Croc pugnace&nbsp;:</span> 500<br><span style=\"color:#ffffff\">Puissance de Griffe sauvage&nbsp;:</span> 560<br><span style=\"color:#ffffff\">Puissance de Serre vicieuse&nbsp;:</span> 620<br><span style=\"color:#ffffff\">Puissance d'Arrachage de la jugulaire&nbsp;:</span> 240<br><span style=\"color:#ffffff\">Puissance de Lacération de l'abdomen&nbsp;:</span> 280<br><span style=\"color:#ffffff\">Puissance de Perforation des yeux&nbsp;:</span> 320<br><span style=\"color:#ffffff\">Puissance de Zone de destruction&nbsp;:</span> 800<br><span style=\"color:#ffffff\">Puissance de Hypervitesse&nbsp;:</span> 200"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Keen Edge</span> to 300, <span style=\"color:#ffffff\">Brutal Shell</span> to 240, <span style=\"color:#ffffff\">Solid Barrel</span> to 240, <span style=\"color:#ffffff\">Burst Strike</span> to 420, <span style=\"color:#ffffff\">Gnashing Fang</span> to 440, <span style=\"color:#ffffff\">Savage Claw</span> to 500, <span style=\"color:#ffffff\">Wicked Talon</span> to 560, <span style=\"color:#ffffff\">Jugular Rip</span> to 220, <span style=\"color:#ffffff\">Abdomen Tear</span> to 260, <span style=\"color:#ffffff\">Eye Gouge</span> to 300, <span style=\"color:#ffffff\">Blasting Zone</span> to 800, and <span style=\"color:#ffffff\">Hypervelocity</span> to 180.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Zerfetzer</span>: 300<br>Attacke-Wert von <span style=\"color:#ffffff\">Brutaler Einschlag</span>: 240<br>Attacke-Wert von <span style=\"color:#ffffff\">Stahlwalze</span>: 240<br>Attacke-Wert von <span style=\"color:#ffffff\">Explosiver Stoß</span>: 420<br>Attacke-Wert von <span style=\"color:#ffffff\">Schlagfänge</span>: 440<br>Attacke-Wert von <span style=\"color:#ffffff\">Wilde Klauen</span>: 500<br>Attacke-Wert von <span style=\"color:#ffffff\">Tückische Kralle</span>: 560<br>Attacke-Wert von <span style=\"color:#ffffff\">Kehlreißer</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Bauchschlitzer</span>: 260<br>Attacke-Wert von <span style=\"color:#ffffff\">Augenstecher</span>: 300<br>Attacke-Wert von <span style=\"color:#ffffff\">Erda-Detonation</span>: 800<br>Attacke-Wert von <span style=\"color:#ffffff\">Überschall</span>: 180",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">キーンエッジの威力：</span>300<br><span style=\"color:#ffffff\">ブルータルシェルの威力：</span>240<br><span style=\"color:#ffffff\">ソリッドバレルの威力：</span>240<br><span style=\"color:#ffffff\">バーストストライクの威力：</span>420<br><span style=\"color:#ffffff\">ビートファングの威力：</span>440<br><span style=\"color:#ffffff\">サベッジクロウの威力：</span>500<br><span style=\"color:#ffffff\">ウィケッドタロンの威力：</span>560<br><span style=\"color:#ffffff\">ジャギュラーリップの威力：</span>220<br><span style=\"color:#ffffff\">アブドメンテアーの威力：</span>260<br><span style=\"color:#ffffff\">アイガウジの威力：</span>300<br><span style=\"color:#ffffff\">ブラスティングゾーンの威力：</span>800<br><span style=\"color:#ffffff\">ハイパーヴェロシティの威力：</span>180",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Tranchant acéré&nbsp;:</span> 300<br><span style=\"color:#ffffff\">Puissance d'Impact brutal&nbsp;:</span> 240<br><span style=\"color:#ffffff\">Puissance de Salve tranchante&nbsp;:</span> 240<br><span style=\"color:#ffffff\">Puissance de Frappe explosive&nbsp;:</span> 420<br><span style=\"color:#ffffff\">Puissance de Croc pugnace&nbsp;:</span> 440<br><span style=\"color:#ffffff\">Puissance de Griffe sauvage&nbsp;:</span> 500<br><span style=\"color:#ffffff\">Puissance de Serre vicieuse&nbsp;:</span> 560<br><span style=\"color:#ffffff\">Puissance d'Arrachage de la jugulaire&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Lacération de l'abdomen&nbsp;:</span> 260<br><span style=\"color:#ffffff\">Puissance de Perforation des yeux&nbsp;:</span> 300<br><span style=\"color:#ffffff\">Puissance de Zone de destruction&nbsp;:</span> 800<br><span style=\"color:#ffffff\">Puissance de Hypervitesse&nbsp;:</span> 180"
     }
   },
   "668": {
@@ -10013,10 +10013,10 @@
     "level": 94,
     "job": 23,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Empyreal Arrow</span> to 260, <span style=\"color:#ffffff\">Sidewinder</span> to 400, <span style=\"color:#ffffff\">Refulgent Arrow</span> to 280, <span style=\"color:#ffffff\">Burst Shot</span> to 220, and <span style=\"color:#ffffff\">Apex Arrow</span> to 120 up to 600.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Empyreischer Pfeil</span>: 260<br>Attacke-Wert von <span style=\"color:#ffffff\">Seitenschneider</span>: 400<br>Attacke-Wert von <span style=\"color:#ffffff\">Glänzender Pfeil</span>: 280<br>Attacke-Wert von <span style=\"color:#ffffff\">Berstender Schuss</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Apex-Pfeil</span>: 120 bis 600",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">エンピリアルアローの威力：</span>260<br><span style=\"color:#ffffff\">サイドワインダーの威力：</span>400<br><span style=\"color:#ffffff\">リフルジェントアローの威力：</span>280<br><span style=\"color:#ffffff\">バーストショットの威力：</span>220<br><span style=\"color:#ffffff\">エイペックスアローの威力：</span>120～600",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Flèche empyréenne&nbsp;:</span> 260<br><span style=\"color:#ffffff\">Puissance de Vent venimeux&nbsp;:</span> 400<br><span style=\"color:#ffffff\">Puissance de Flèche rayonnante&nbsp;:</span> 280<br><span style=\"color:#ffffff\">Puissance de Tir éclatant&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Trait alpha&nbsp;:</span> de 120 à 600<br>"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Empyreal Arrow</span> to 260, <span style=\"color:#ffffff\">Sidewinder</span> to 400, <span style=\"color:#ffffff\">Refulgent Arrow</span> to 280, <span style=\"color:#ffffff\">Burst Shot</span> to 220, and <span style=\"color:#ffffff\">Apex Arrow</span> to 140 up to 700.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Empyreischer Pfeil</span>: 260<br>Attacke-Wert von <span style=\"color:#ffffff\">Seitenschneider</span>: 400<br>Attacke-Wert von <span style=\"color:#ffffff\">Glänzender Pfeil</span>: 280<br>Attacke-Wert von <span style=\"color:#ffffff\">Berstender Schuss</span>: 220<br>Attacke-Wert von <span style=\"color:#ffffff\">Apex-Pfeil</span>: 140 bis 700",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">エンピリアルアローの威力：</span>260<br><span style=\"color:#ffffff\">サイドワインダーの威力：</span>400<br><span style=\"color:#ffffff\">リフルジェントアローの威力：</span>280<br><span style=\"color:#ffffff\">バーストショットの威力：</span>220<br><span style=\"color:#ffffff\">エイペックスアローの威力：</span>140～700",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Flèche empyréenne&nbsp;:</span> 260<br><span style=\"color:#ffffff\">Puissance de Vent venimeux&nbsp;:</span> 400<br><span style=\"color:#ffffff\">Puissance de Flèche rayonnante&nbsp;:</span> 280<br><span style=\"color:#ffffff\">Puissance de Tir éclatant&nbsp;:</span> 220<br><span style=\"color:#ffffff\">Puissance de Trait alpha&nbsp;:</span> de 140 à 700<br>"
     }
   },
   "669": {
@@ -10028,10 +10028,10 @@
     "level": 94,
     "job": 40,
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ffffff\">Dosis III</span> to 380, <span style=\"color:#ffffff\">Toxikon II</span> to 380, and <span style=\"color:#ffffff\">Pneuma</span> to 380. ",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Dosis III</span>: 380<br>Attacke-Wert von <span style=\"color:#ffffff\">Toxikon II</span>: 380<br>Attacke-Wert von <span style=\"color:#ffffff\">Pneuma</span>: 380",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">ドシスIIIの威力：</span>380<br><span style=\"color:#ffffff\">トキシコンIIの威力：</span>380<br><span style=\"color:#ffffff\">プネウマの威力：</span>380",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Dosis III&nbsp;:</span> 380<br><span style=\"color:#ffffff\">Puissance de Toxikon II&nbsp;:</span> 380<br><span style=\"color:#ffffff\">Puissance de Pneuma&nbsp;:</span> 380"
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Dosis III</span> to 380, <span style=\"color:#ffffff\">Eukrasian Dosis III</span> to 85, <span style=\"color:#ffffff\">Toxikon II</span> to 380, and <span style=\"color:#ffffff\">Pneuma</span> to 380.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffffff\">Dosis III</span>: 380<br>Attacke-Wert von <span style=\"color:#ffffff\">Eukratische Dosis III</span>: 85<br>Attacke-Wert von <span style=\"color:#ffffff\">Toxikon II</span>: 380<br>Attacke-Wert von <span style=\"color:#ffffff\">Pneuma</span>: 380",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">ドシスIIIの威力：</span>380<br><span style=\"color:#ffffff\">エウクラシア・ドシスIIIの威力：</span>85<br><span style=\"color:#ffffff\">トキシコンIIの威力：</span>380<br><span style=\"color:#ffffff\">プネウマの威力：</span>380",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Dosis III&nbsp;:</span> 380<br><span style=\"color:#ffffff\">Puissance de Dosis eucrasique III&nbsp;:</span> 85<br><span style=\"color:#ffffff\">Puissance de Toxikon II&nbsp;:</span> 380<br><span style=\"color:#ffffff\">Puissance de Pneuma&nbsp;:</span> 380"
     }
   },
   "670": {
@@ -11235,6 +11235,1371 @@
     }
   },
   "750": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "751": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "752": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "753": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "754": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "755": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "756": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "757": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "758": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "759": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "760": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "761": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "762": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "763": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "764": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "765": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "766": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "767": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "768": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "769": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "770": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "771": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "772": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "773": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "774": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "775": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "776": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "777": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "778": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "779": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "780": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "781": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "782": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "783": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "784": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "785": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "786": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "787": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "788": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "789": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "790": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "791": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "792": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "793": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "794": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "795": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "796": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "797": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "798": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "799": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "800": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "801": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "802": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "803": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "804": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "805": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "806": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "807": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "808": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "809": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "810": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "811": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "812": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "813": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "814": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "815": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "816": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "817": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "818": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "819": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "820": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "821": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "822": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "823": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "824": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "825": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "826": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "827": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "828": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "829": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "830": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "831": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "832": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "833": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "834": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "835": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "836": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "837": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "838": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "839": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "840": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "level": 0,
+    "job": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "841": {
     "en": "",
     "de": "",
     "ja": "",

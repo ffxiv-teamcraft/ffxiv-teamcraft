@@ -10187,10 +10187,10 @@
   ],
   "12802": [
     {
-      "spot": 135,
+      "spot": 120,
       "hookset": 1,
       "tug": 1,
-      "bait": 12730,
+      "bait": 12722,
       "spawn": 18,
       "duration": 2.5,
       "snagging": false,
@@ -10199,10 +10199,10 @@
       "mLure": 0
     },
     {
-      "spot": 120,
+      "spot": 135,
       "hookset": 1,
       "tug": 1,
-      "bait": 12722,
+      "bait": 12730,
       "spawn": 18,
       "duration": 2.5,
       "snagging": false,

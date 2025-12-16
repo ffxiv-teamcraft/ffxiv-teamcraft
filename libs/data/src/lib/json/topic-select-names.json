@@ -612,10 +612,10 @@
     "fr": "Amélioration d'équipements du roman royal (NvObj 750-760)"
   },
   "3276902": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bygone Brass Gear Augmentation (IL 790)",
+    "ja": "「キングダムブラス装備」の強化（ILv780→790）",
+    "de": "Königreichsmessing-Ausrüstung (G.-St. 780 → 790)",
+    "fr": "Amélioration d'équipements en laiton royal (NvObj 780-790)"
   },
   "3276903": {
     "en": "Light-heavy Hologear Exchange (IL 710)",
@@ -642,16 +642,16 @@
     "fr": "Registres des poids lourds-légers (NvObj 760-765)"
   },
   "3276907": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Heavyweight Hologear Exchange (IL 770)",
+    "ja": "ホログラム装備【ヘビー級】の取引（ILv770）",
+    "de": "Hologramm-Ausrüstung des Superschwergewichts (G.-St. 770)",
+    "fr": "Équipements holographiques des poids lourds (NvObj 770)"
   },
   "3276908": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "AAC Illustrated: HW Edition Exchange (IL 790-795)",
+    "ja": "ヘビー級の断章の取引（ILv790～795）",
+    "de": "Superschwergewichts-Kodizes (G.-St. 790/795)",
+    "fr": "Registres des poids lourds (NvObj 790-795)"
   },
   "3276909": {
     "en": "Gordian Manifesto Exchange (IL 210)",
@@ -910,5 +910,11 @@
     "ja": "職人用装備の購入（Lv81～）",
     "de": "Sammler/Handwerker-Ausrüstung (St. 81 - 100)",
     "fr": "Équipements d'artisanat et de récolte (Nv 81-100)"
+  },
+  "3276952": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }
