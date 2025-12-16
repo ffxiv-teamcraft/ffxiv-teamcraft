@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.11...v11.4.12) (2025-12-16)
+
+
+### Features
+
+* **data-extraction:** tw data extractor ([#3096](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3096)) ([aaefc2b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aaefc2bfe8c5add0dad1338d9fee13f91771f3d7))
+* **data:** update for cn patch-7.35 ([9aef31a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9aef31a2035a2bfbd6e248d9ecd8a31d988d6bb8))
+* **data:** update for tw patch-7.00-ea ([#3098](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3098)) ([c7a372d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7a372dae18ffa79abd5315b7f85aabe39eb76bf))
+* **db:** support for 7.4 content update ([e74c453](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e74c4536dff1b782a04eb2dfe8ce9b223ce421be))
+* start work for TW locale ([dec5f79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dec5f7918b775cf8c9ca0d34f128868a7e2f05eb))
+
 ### [11.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.10...v11.4.11) (2025-10-31)
 
 
