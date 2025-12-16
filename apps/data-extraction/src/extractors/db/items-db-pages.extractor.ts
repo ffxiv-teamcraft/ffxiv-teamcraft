@@ -111,7 +111,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
 
 
     combineLatest([
-      this.getSheet<any>(xiv, 'Item', ['ClassJobRepair#', 'PriceMid', 'PriceLow', 'ItemSeries#', 'ItemAction.Data#','ItemAction.Type#',
+      this.getSheet<any>(xiv, 'Item', ['ClassJobRepair#', 'PriceMid', 'PriceLow', 'ItemSeries#', 'ItemAction.Data#','ItemAction.Action#',
         'AdditionalData#', 'Name', 'Description', 'IsUntradable', 'ClassJobUse#', 'ClassJobCategory#', 'LevelEquip#', 'LevelItem#',
         'BaseParamValueSpecial#', 'CanBeHq', 'ItemSearchCategory#', 'ItemUICategory#', 'Icon', 'IsUnique', 'DyeCount'], false, 1)      ,
       this.getSheet(xiv, 'GcSupplyDutyReward', ['SealsExpertDelivery'])
@@ -172,7 +172,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
             sellPrice: item.PriceLow,
             isFish: fishes.includes(item.index),
             hasMoreDetails: !!item.ItemSeries,
-            action: item.ItemAction.Type,
+            action: item.ItemAction.Action,
             actionData: item.ItemAction.Data[0],
             bonuses: bonuses[item.index],
             stats: stats[item.index],

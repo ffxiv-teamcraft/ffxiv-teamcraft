@@ -32,7 +32,8 @@ export class I18nDisplayComponent implements OnChanges {
         { key: 'fr', icon: 'french' },
         { key: 'ja', icon: 'japanese' },
         { key: 'zh', icon: 'chinese' },
-        { key: 'ko', icon: 'korean' }
+        { key: 'ko', icon: 'korean' },
+        { key: 'tw', icon: 'taiwan' }
       ].filter(({ key }) => value && value[key]);
     }
   }

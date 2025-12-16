@@ -1614,5 +1614,37 @@
       "de": "Glasregen",
       "fr": "Pluie de verre"
     }
+  },
+  "203": {
+    "name": {
+      "en": "Thunder",
+      "ja": "雷",
+      "de": "Gewittrig",
+      "fr": "Orages"
+    }
+  },
+  "204": {
+    "name": {
+      "en": "Thunder",
+      "ja": "雷",
+      "de": "Gewittrig",
+      "fr": "Orages"
+    }
+  },
+  "205": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "206": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
   }
 }

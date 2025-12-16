@@ -8560,5 +8560,185 @@
     "ja": "コスモクレジットとの交換（素材・マテリア・消耗品）",
     "de": "Kosmo-Kohle (Materialien/Materia/Verbrauchsgegenstände)",
     "fr": "Échange de crédits cosmiques (matériaux, matérias et consommables)"
+  },
+  "1770978": {
+    "en": "Quetzalli Gear Exchange (DoW, IL 720)",
+    "ja": "「ケーツハリー装備」の取引（ILv720ファイター装備）",
+    "de": "Quetzalli-Ausrüstung (Krieger, G.-St. 720)",
+    "fr": "Équipements de Kixaihih (guerre - NvObj 720)"
+  },
+  "1770979": {
+    "en": "Quetzalli Gear Exchange (DoM, IL 720)",
+    "ja": "「ケーツハリー装備」の取引（ILv720ソーサラー装備）",
+    "de": "Quetzalli-Ausrüstung (Magier, G.-St. 720)",
+    "fr": "Équipements de Kixaihih (magie - NvObj 720)"
+  },
+  "1770980": {
+    "en": "Allagan Tomestones of Mnemonics (DoW, IL 780)",
+    "ja": "アラガントームストーン:記憶の取引（ILv780ファイター装備）",
+    "de": "Allagische Steine der Mnemonik (Krieger, G.-St. 780)",
+    "fr": "Mémoquartz allagois mnémoniques (guerre - NvObj 780)"
+  },
+  "1770981": {
+    "en": "Allagan Tomestones of Mnemonics (DoM, IL 780)",
+    "ja": "アラガントームストーン:記憶の取引（ILv780ソーサラー装備）",
+    "de": "Allagische Steine der Mnemonik (Magier, G.-St. 780)",
+    "fr": "Mémoquartz allagois mnémoniques (magie - NvObj 780)"
+  },
+  "1770982": {
+    "en": "Allagan Tomestones of Mnemonics (IL 780 Weapons)",
+    "ja": "アラガントームストーン:記憶の取引（ILv780武器）",
+    "de": "Allagische Steine der Mnemonik (Waffen, G.-St. 780)",
+    "fr": "Mémoquartz allagois mnémoniques (armes - NvObj 780)"
+  },
+  "1770983": {
+    "en": "Bygone Brass Gear Augmentation (DoW) I",
+    "ja": "「キングダムブラス装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Königreichsmessing-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements en laiton royal (guerre 1)"
+  },
+  "1770984": {
+    "en": "Bygone Brass Gear Augmentation (DoW) II",
+    "ja": "「キングダムブラス装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Königreichsmessing-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements en laiton royal (guerre 2)"
+  },
+  "1770985": {
+    "en": "Bygone Brass Gear Augmentation (DoM)",
+    "ja": "「キングダムブラス装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Königreichsmessing-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements en laiton royal (magie)"
+  },
+  "1770986": {
+    "en": "Heavyweight Hologear Exchange (DoW) I",
+    "ja": "ホログラム装備【ヘビー級】の取引（ファイターその1）",
+    "de": "Hologramm-Ausrüstung, Superschwergewicht (Krieger I)",
+    "fr": "Équipements holographiques des poids lourds (guerre 1)"
+  },
+  "1770987": {
+    "en": "Heavyweight Hologear Exchange (DoW) II",
+    "ja": "ホログラム装備【ヘビー級】の取引（ファイターその2）",
+    "de": "Hologramm-Ausrüstung, Superschwergewicht (Krieger II)",
+    "fr": "Équipements holographiques des poids lourds (guerre 2)"
+  },
+  "1770988": {
+    "en": "Heavyweight Hologear Exchange (DoM)",
+    "ja": "ホログラム装備【ヘビー級】の取引（ソーサラー）",
+    "de": "Hologramm-Ausrüstung, Superschwergewicht (Magier)",
+    "fr": "Équipements holographiques des poids lourds (magie)"
+  },
+  "1770989": {
+    "en": "AAC Illustrated: HW Edition Exchange (DoW) I",
+    "ja": "ヘビー級の断章の取引（ファイターその1）",
+    "de": "Superschwergewichts-Kodizes (Krieger I)",
+    "fr": "Registres des poids lourds (guerre 1)"
+  },
+  "1770990": {
+    "en": "AAC Illustrated: HW Edition Exchange (DoW) II",
+    "ja": "ヘビー級の断章の取引（ファイターその2）",
+    "de": "Superschwergewichts-Kodizes (Krieger II)",
+    "fr": "Registres des poids lourds (guerre 2)"
+  },
+  "1770991": {
+    "en": "AAC Illustrated: HW Edition Exchange (DoM)",
+    "ja": "ヘビー級の断章の取引（ソーサラー）",
+    "de": "Superschwergewichts-Kodizes (Magier)",
+    "fr": "Registres des poids lourds (magie)"
+  },
+  "1770992": {
+    "en": "Totem Gear (Doomtrain)",
+    "ja": "報酬装備の取引（グラシャラボラス）",
+    "de": "Doomtrain-Ausrüstung",
+    "fr": "Équipements totémiques (Glasya-Labolas)"
+  },
+  "1770993": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770994": {
+    "en": "Allagan Tomestones of Mathematics (Other)",
+    "ja": "アラガントームストーン:数理の取引（その他）",
+    "de": "Allagische Steine der Mathematik (Anderes)",
+    "fr": "Mémoquartz allagois mathématiques (divers)"
+  },
+  "1770995": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770996": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770997": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770998": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770999": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771000": {
+    "en": "Orange Scrip Exchange (Lv. 100/IL 750)",
+    "ja": "橙貨の取引：Lv100～向け【ILv750】",
+    "de": "Orange Scheine (ab St. 100) [G.-St. 750]",
+    "fr": "Assignats orange (Nv ≧ 100) [NvObj 750]"
+  },
+  "1771001": {
+    "en": "Orange Scrip Exchange (Lv. 100/IL 750)",
+    "ja": "橙貨の取引：Lv100～向け【ILv750】",
+    "de": "Orange Scheine (ab St. 100) [G.-St. 750]",
+    "fr": "Assignats orange (Nv ≧ 100) [NvObj 750]"
+  },
+  "1771002": {
+    "en": "Tattered Score Exchange (Seasonal)",
+    "ja": "ぼろぼろの譜面の取引（シーズナル）",
+    "de": "Vergilbte Notenrollen (Saisonal)",
+    "fr": "Partitions fripées : événements"
+  },
+  "1771003": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771004": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771006": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771007": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

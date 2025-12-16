@@ -11810,5 +11810,325 @@
       }
     },
     "itemFood": 695
+  },
+  {
+    "ID": 49239,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "CriticalHit": {
+        "ID": 27,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "SkillSpeed": {
+        "ID": 45,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 701
+  },
+  {
+    "ID": 49240,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "CriticalHit": {
+        "ID": 27,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 702
+  },
+  {
+    "ID": 49241,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Piety": {
+        "ID": 6,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 703
+  },
+  {
+    "ID": 49242,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "SpellSpeed": {
+        "ID": 46,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "Piety": {
+        "ID": 6,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 704
+  },
+  {
+    "ID": 49243,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "SpellSpeed": {
+        "ID": 46,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "DirectHitRate": {
+        "ID": 22,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 705
+  },
+  {
+    "ID": 49244,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "CriticalHit": {
+        "ID": 27,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "SpellSpeed": {
+        "ID": 46,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 706
+  },
+  {
+    "ID": 49245,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "DirectHitRate": {
+        "ID": 22,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 699
+  },
+  {
+    "ID": 49246,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "SkillSpeed": {
+        "ID": 45,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "DirectHitRate": {
+        "ID": 22,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 700
+  },
+  {
+    "ID": 49247,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Tenacity": {
+        "ID": 19,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 707
+  },
+  {
+    "ID": 49248,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 120,
+        "MaxHQ": 151
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 237,
+        "MaxHQ": 297
+      },
+      "Tenacity": {
+        "ID": 19,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 72,
+        "MaxHQ": 91
+      }
+    },
+    "itemFood": 708
   }
 ]

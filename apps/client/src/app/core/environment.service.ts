@@ -15,6 +15,8 @@ export class EnvironmentService {
     switch (this.settings.region) {
       case Region.China:
         return environment.chineseGameVersion;
+      case Region.Taiwan:
+        return environment.chineseGameVersion;
       case Region.Korea:
         return environment.koreanGameVersion;
       case Region.Global:
@@ -27,7 +29,7 @@ export class EnvironmentService {
   }
 
   public get maxIlvl(): number {
-    return 760;
+    return 795;
   }
 
   public get maxSubmarineRank() : number {

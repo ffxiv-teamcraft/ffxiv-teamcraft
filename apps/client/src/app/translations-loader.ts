@@ -24,6 +24,8 @@ export function getFilename(lang: string): string {
       return 'pt-BR';
     case 'zh':
       return 'zh-CN';
+    case 'tw':
+      return 'zh-TW';
     case 'ru':
       return 'ru-RU';
     default:

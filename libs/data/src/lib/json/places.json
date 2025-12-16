@@ -28566,16 +28566,16 @@
     "fr": "Queen Lhaminn"
   },
   "4762": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alexandria Crater",
+    "ja": "アレクサンドリア王国跡地",
+    "de": "Alexandrias Ruinenring",
+    "fr": "Vestiges d'Alexandrie"
   },
   "4763": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bentini Depot",
+    "ja": "ベンティーニ貨物駅",
+    "de": "Bahnhof Bentini",
+    "fr": "Gare de Bendini"
   },
   "4764": {
     "en": "",
@@ -28584,10 +28584,10 @@
     "fr": ""
   },
   "4765": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Treno",
+    "ja": "トレノ",
+    "de": "Treno",
+    "fr": "Tréno"
   },
   "4766": {
     "en": "",
@@ -31662,40 +31662,40 @@
     "fr": "Sanctuaire des pèlerins"
   },
   "5278": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Pâtisserie",
+    "ja": "ヴァレンティオンパティスリー",
+    "de": "Pâtisserie",
+    "fr": "Pâtisserie de la Valention"
   },
   "5279": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pâtisserie Stage",
+    "ja": "パティスリーフロア",
+    "de": "Küche",
+    "fr": "Cuisines"
   },
   "5280": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shelves of Frosting",
+    "ja": "クリーム・キャビネット",
+    "de": "Cremes",
+    "fr": "Galerie des crèmes"
   },
   "5281": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shelves of Delicacies",
+    "ja": "フルーツ・キャビネット",
+    "de": "Früchte",
+    "fr": "Galerie des fruits"
   },
   "5282": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shelves of Garnishes",
+    "ja": "トッピング・キャビネット",
+    "de": "Beläge",
+    "fr": "Galerie des garnitures"
   },
   "5283": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shelves of Cake Toppers",
+    "ja": "デコレーション・キャビネット",
+    "de": "Dekorationen",
+    "fr": "Galerie des décorations"
   },
   "5284": {
     "en": "The Ageless Necropolis",
@@ -31916,13 +31916,13 @@
   "5320": {
     "en": "Intersite Travel",
     "ja": "コスモエクスプローラー：拠点へ移動",
-    "de": "Portal zur Basis",
+    "de": "Weltraum-Reise",
     "fr": "Voyages spatiaux"
   },
   "5321": {
     "en": "Emergency Transport",
     "ja": "緊急状況：任務地へ移動",
-    "de": "Portal zum Einsatzort",
+    "de": "Alarmstufe Rot - Schnellreise",
     "fr": "Transports d'urgence"
   },
   "5322": {
@@ -32094,136 +32094,136 @@
     "fr": ""
   },
   "5350": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Mistwake",
+    "ja": "ミストウェイク",
+    "de": "Nebeltrift",
+    "fr": "Sillage brumeux"
   },
   "5351": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Quan Caverns",
+    "ja": "クワン洞",
+    "de": "Quans Höhle",
+    "fr": "Grotte de Kwane"
   },
   "5352": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Treno Lowlands",
+    "ja": "トレノ平野",
+    "de": "Treno-Ebene",
+    "fr": "Plaine de Tréno"
   },
   "5353": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The City of Treno",
+    "ja": "トレノ市街地",
+    "de": "Treno-Stadt",
+    "fr": "Centre-ville de Tréno"
   },
   "5354": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shattered Lair",
+    "ja": "魔獣の縄張り",
+    "de": "Steinernes Nest",
+    "fr": "Territoire des fauves"
   },
   "5355": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Overture Plaza",
+    "ja": "トレノ入口広場",
+    "de": "Boulevardplatz",
+    "fr": "Parvis de Tréno"
   },
   "5356": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Town Round",
+    "ja": "タウンホール前広場",
+    "de": "Rathausplatz",
+    "fr": "Place de l'hôtel de ville"
   },
   "5357": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Quan Caverns",
+    "ja": "クワン洞",
+    "de": "Quans Höhle",
+    "fr": "Grotte de Kwane"
   },
   "5358": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Treno Lowlands",
+    "ja": "トレノ平野",
+    "de": "Treno-Ebene",
+    "fr": "Plaine de Tréno"
   },
   "5359": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The City of Treno",
+    "ja": "トレノ市街地",
+    "de": "Treno-Stadt",
+    "fr": "Centre-ville de Tréno"
   },
   "5360": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Electrope Mine",
+    "ja": "放棄された採掘区画",
+    "de": "Verlassener Bruch",
+    "fr": "Mine abandonnée"
   },
   "5361": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Derelict Railway",
+    "ja": "鉄馬車線路",
+    "de": "Gütergleise",
+    "fr": "Voie ferroviaire"
   },
   "5362": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Treno Thoroughfare",
+    "ja": "トレノへの道",
+    "de": "Weg nach Treno",
+    "fr": "Entrée de Tréno"
   },
   "5363": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Darkgate",
+    "ja": "トレノゲート",
+    "de": "Stadttore",
+    "fr": "Grande Porte de Tréno"
   },
   "5364": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Codetta Quarter",
+    "ja": "拡張区画",
+    "de": "Kleinstadt",
+    "fr": "Quartier périphérique"
   },
   "5365": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Main Street",
+    "ja": "トレノ主道路",
+    "de": "Hauptstraße",
+    "fr": "Avenue principale de Tréno"
   },
   "5366": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bridge Street",
+    "ja": "トレノの裏道",
+    "de": "Gartengasse",
+    "fr": "Allée pavée de Tréno"
   },
   "5367": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hell on Rails",
+    "ja": "鉄馬車線路",
+    "de": "Gütergleise",
+    "fr": "Voie ferroviaire"
   },
   "5368": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "???",
+    "ja": "？？？？",
+    "de": "???",
+    "fr": "???"
   },
   "5369": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ring Noir",
+    "ja": "リング・オブ・ヴァンプ",
+    "de": "Vampirring",
+    "fr": "Ring fatal"
   },
   "5370": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The X-Ring",
+    "ja": "リング・オブ・エクストリーム",
+    "de": "Extremring",
+    "fr": "Ring extrême"
   },
   "5371": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Crown",
+    "ja": "リング・オブ・タイラント",
+    "de": "Tyrannenring",
+    "fr": "Ring du champion"
   },
   "5372": {
     "en": "",
@@ -32424,10 +32424,10 @@
     "fr": ""
   },
   "5405": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arcadia",
+    "ja": "リング・オブ・アルカディア",
+    "de": "Arkadionring",
+    "fr": "Ring arcadien"
   },
   "5406": {
     "en": "",
@@ -32586,148 +32586,148 @@
     "fr": ""
   },
   "5432": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Worqor Chirteh",
+    "ja": "ウォーコー・チーテ",
+    "de": "Worqor Chirteh",
+    "fr": "Worqor Chirteh"
   },
   "5433": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 1",
+    "ja": "戦略目標地01",
+    "de": "Triumphpunkt 1",
+    "fr": "Point névralgique 1"
   },
   "5434": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 3",
+    "ja": "戦略目標地03",
+    "de": "Triumphpunkt 2",
+    "fr": "Point névralgique 2"
   },
   "5435": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 2",
+    "ja": "戦略目標地02",
+    "de": "Triumphpunkt 3",
+    "fr": "Point névralgique 3"
   },
   "5436": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 4",
+    "ja": "戦略目標地04",
+    "de": "Triumphpunkt 4",
+    "fr": "Point névralgique 4"
   },
   "5437": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 5",
+    "ja": "戦略目標地05",
+    "de": "Triumphpunkt 5",
+    "fr": "Point névralgique 5"
   },
   "5438": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 6",
+    "ja": "戦略目標地06",
+    "de": "Triumphpunkt 6",
+    "fr": "Point névralgique 6"
   },
   "5439": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 7",
+    "ja": "戦略目標地07",
+    "de": "Triumphpunkt 7",
+    "fr": "Point névralgique 7"
   },
   "5440": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 8",
+    "ja": "戦略目標地08",
+    "de": "Triumphpunkt 8",
+    "fr": "Point névralgique 8"
   },
   "5441": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 9",
+    "ja": "戦略目標地09",
+    "de": "Triumphpunkt 9",
+    "fr": "Point névralgique 9"
   },
   "5442": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 10",
+    "ja": "戦略目標地10",
+    "de": "Triumphpunkt 10",
+    "fr": "Point névralgique 10"
   },
   "5443": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 11",
+    "ja": "戦略目標地11",
+    "de": "Triumphpunkt 11",
+    "fr": "Point névralgique 11"
   },
   "5444": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Triumph 12",
+    "ja": "戦略目標地12",
+    "de": "Triumphpunkt 12",
+    "fr": "Point névralgique 12"
   },
   "5445": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lilyswim",
+    "ja": "睡蓮湖近郊",
+    "de": "睡蓮湖近郊",
+    "fr": "Alentours du lac aux Nénuphars"
   },
   "5446": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Moongate Hub",
+    "ja": "ムーンゲート基地",
+    "de": "Mondtor-Station",
+    "fr": "Station sélénienne"
   },
   "5447": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Calabash Cove",
+    "ja": "キャラバシュ・コーヴ",
+    "de": "Kalabassenbucht ",
+    "fr": "La Gourde"
   },
   "5448": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Weddingway's Bower",
+    "ja": "ウェディングウェイの式園",
+    "de": "Weddingways Traugarten",
+    "fr": "Pépinière de Weddingway"
   },
   "5449": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gleamslope",
+    "ja": "グリーミングマウンテン",
+    "de": "Glimmberg",
+    "fr": "Mont scintillant"
   },
   "5450": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lunar Nadir",
+    "ja": "ルナ・ネイディア",
+    "de": "Lunarer Nadir",
+    "fr": "Nadir lunaire"
   },
   "5451": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Glassblowers' Beacon",
+    "ja": "グラスブロワーズ基地",
+    "de": "Glasbläser-Basis",
+    "fr": "Station Souffleverre"
   },
   "5452": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Iridized Rise",
+    "ja": "イリデセント・ステップス",
+    "de": "Schillerstufen",
+    "fr": "Marches iridescentes"
   },
   "5453": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Saltpeter Shore",
+    "ja": "硝礫の川浜",
+    "de": "Glassteinküste",
+    "fr": "Berges de Salpêtre"
   },
   "5454": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Capsule Chasm",
+    "ja": "カプセル・カズム",
+    "de": "Kapselgrund",
+    "fr": "Gouffre aux Capsules"
   },
   "5455": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fusingway Vent",
+    "ja": "フュージングウェイ・ヴェント",
+    "de": "Fusingway-Schlund",
+    "fr": "Cheminée de Fusingway"
   },
   "5456": {
     "en": "",
@@ -32796,46 +32796,46 @@
     "fr": ""
   },
   "5467": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dorgerwor the Astute",
+    "ja": "ドーゲーウォーの野営地",
+    "de": "Dorgerwor der Scharfsinnige",
+    "fr": "Campement de Dorgerwor"
   },
   "5468": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Singing Stone",
+    "ja": "祭陽殿跡",
+    "de": "Weg des Gesangs",
+    "fr": "Chanteroche"
   },
   "5469": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Chirteh's Keep",
+    "ja": "チーテ野城跡",
+    "de": "Chirteh-Burgruine",
+    "fr": "Fort de Chirteh"
   },
   "5470": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zirgor",
+    "ja": "ジィゴ岩砦",
+    "de": "Zirgor",
+    "fr": "Zirgor"
   },
   "5471": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Argent Overlook",
+    "ja": "雪見の丘",
+    "de": "Silberhügel",
+    "fr": "Colline d'argent"
   },
   "5472": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Vahder",
+    "ja": "ヴァデー岩砦",
+    "de": "Vahder",
+    "fr": "Vahder"
   },
   "5473": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Snowmelt",
+    "ja": "雪水の泉",
+    "de": "Schneeschmelze",
+    "fr": "Source gelée"
   },
   "5474": {
     "en": "",

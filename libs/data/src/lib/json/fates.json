@@ -10672,7 +10672,7 @@
     "name": {
       "en": "Another Day, Another Demon",
       "ja": "ヒッポグリフの晩餐会",
-      "de": "Hippogryhpen greifen an",
+      "de": "Hippogryphen greifen an",
       "fr": "À chaque jour suffit son monstre"
     },
     "description": {
@@ -28230,7 +28230,7 @@
     "description": {
       "en": "The slaughter of their brethren has sent the remaining Matanga into a fit of unbridled fury. No longer content with driving the Dataqi people from their territory, the Matanga now seek the death of the tribe's every last man, woman, and child.",
       "ja": "遊牧の民、ダタク族の行く手に<br>野蛮なマタンガ族が立ちはだかった<br>襲い来る、マタンガ族を倒せ",
-      "de": "Die Tötung ihrer Artgenossen hat die überlebenden Matangas in wilde Raserei versetzt. Sie sind fest entschlossen, jeden Mann, jede Frau und jedes Kind der Dataq umzubringen.",
+      "de": "Die Tötung ihrer Artgenossen hat die überlebenden Matanga in wilde Raserei versetzt. Sie sind fest entschlossen, jeden Mann, jede Frau und jedes Kind der Dataq umzubringen.",
       "fr": "En route pour le lieu de ralliement des Goro, les Dataq sont de nouveau pris en chasse par les mêmes Matangas qui les avaient attaqués précédemment. Intervenez avant que les nomades ne repeignent la steppe de leur sang."
     },
     "icon": "/i/060000/060504.png",
@@ -28846,7 +28846,7 @@
     },
     "description": {
       "en": "After its avian prey was snatched right out of its beak, this ravening predator began a merciless hunt for anything—or anyone—it might carry away and devour. Proceed with caution, as surely a fowl foul enough to cannibalize other birds would have no qualms about downing a Lalafell or two. ",
-      "ja": "渡り鳥を補食しようとしていた<br>怪鳥が得物を横取りされ怒っている<br>「シームルグ・ストライダー」を倒せ",
+      "ja": "渡り鳥を補食しようとしていた<br>怪鳥が獲物を横取りされ怒っている<br>「シームルグ・ストライダー」を倒せ",
       "de": "Simurghs Läufer hatte sich auf ein paar fette Wandervögel in seinem Magen gefreut, doch hungrige Expeditionsteilnehmer haben ihm die Beute vorm Schnabel weggeschnappt. Dass er darüber alles andere als glücklich ist, muss wohl nicht extra betont werden.",
       "fr": "Le trotteur de Simurgh raffole des oiseaux migrateurs, et il n'a pas aimé que d'autres monstres s'invitent à son festin. Calmez les ardeurs de ce violent volatile avant qu'il ne mette en péril toute l'expédition&nbsp;!"
     },
@@ -38494,7 +38494,7 @@
       "en": "Artificial Malevolence: Mighty Metatron",
       "ja": "魔導技師の帰郷：メタトロン・ベース",
       "de": "Reinwaschung eines Ingenieurs: Metatron",
-      "fr": "Retour au pays&nbsp;: Metatron "
+      "fr": "Retour au pays&nbsp;: Métatron "
     },
     "description": {
       "en": "The gargantuan winged warmachina Metatron has descended upon the ruins of Garlemald with but one purpose: annihilation. And yet, there is hope, for at its core lies the answer to defeating the mechanical army and freeing the city from its reign of terror.",
@@ -42883,9 +42883,9 @@
     },
     "description": {
       "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
-      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
       "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
-      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
@@ -43027,9 +43027,9 @@
     },
     "description": {
       "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
-      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
       "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
-      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
@@ -43051,9 +43051,9 @@
     },
     "description": {
       "en": "The cosmoport is in need of maintenance. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
-      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>コスモポートのアップグレードを行え",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>コスモポートのアップグレードを行え",
       "de": "Bau den Kosmoport aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
-      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le cosmoport."
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le cosmoport."
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
@@ -43215,9 +43215,9 @@
     },
     "description": {
       "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
-      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
       "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
-      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
@@ -43317,9 +43317,9 @@
     },
     "description": {
       "en": "The mech hangar is ready for expansion. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
-      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>ローダーハンガーのアップグレードを行え",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>ローダーハンガーのアップグレードを行え",
       "de": "Bau den Sternenhangar aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
-      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le hangar."
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le hangar."
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
@@ -43334,9 +43334,9 @@
     },
     "description": {
       "en": "The cosmoport is in need of maintenance. Retrieve parts from a supply crate, assemble them at a fabrication station, then perform necessary upgrades.",
-      "ja": "物資集積カーゴから部品を取り出し<br>一時作業場で組み立てて<br>コスモポートのアップグレードを行え",
+      "ja": "物資集積カーゴから資材を取り出し<br>一時作業場で加工し<br>コスモポートのアップグレードを行え",
       "de": "Bau den Kosmoport aus, indem du die benötigten Teile besorgst, verarbeitest und an der entsprechenden Stelle verbaust.",
-      "fr": "Prenez des pièces dans les caisses de provisions, utilisez un établi éphémère pour les assembler et servez-vous de l'objet obtenu pour améliorer le cosmoport."
+      "fr": "Prenez des matériaux dans les caisses de provisions, utilisez un établi éphémère pour les façonner et servez-vous de l'objet obtenu pour améliorer le cosmoport."
     },
     "icon": "/i/060000/060994.png",
     "level": 1,
@@ -43973,71 +43973,71 @@
   },
   "2042": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Live from Ul'dah",
+      "ja": "プリンセスデー「特別路上公演」",
+      "de": "Der Kreuzgang rockt",
+      "fr": "Des spectacles inoubliables"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Songbirds and the Seneschal Prince have taken the stage! Speak with the royal handmaiden to get dressed and join the show!",
+      "ja": "執事王の侍女に話しかけ<br>三歌姫と執事王子の公演に参加せよ<br>歌い手たちに「声援」を送れ",
+      "de": "Die Singdrosseln und Prinz Schwalbenschwanz haben ihren Auftritt begonnen. Sprich mit dem königlichen Kammermädchen, um dich der tobenden Menge anzuschließen und die vier anzufeuern.",
+      "fr": "Parlez à la servante du sénéchal royal pour assister au concert et encourager votre idole&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060505.png",
+    "level": 5,
+    "location": 7235800
   },
   "2043": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Live from Ul'dah",
+      "ja": "プリンセスデー「特別路上公演」",
+      "de": "Der Kreuzgang rockt",
+      "fr": "Des spectacles inoubliables"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Songbirds and the Seneschal Prince have taken the stage! Speak with the royal handmaiden to get dressed and join the show!",
+      "ja": "執事王の侍女に話しかけ<br>三歌姫と執事王子の公演に参加せよ<br>歌い手たちに「声援」を送れ",
+      "de": "Die Singdrosseln und Prinz Schwalbenschwanz haben ihren Auftritt begonnen. Sprich mit dem königlichen Kammermädchen, um dich der tobenden Menge anzuschließen und die vier anzufeuern.",
+      "fr": "Parlez à la servante du sénéchal royal pour assister au concert et encourager votre idole&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060505.png",
+    "level": 5,
+    "location": 7235800
   },
   "2044": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Live from Ul'dah",
+      "ja": "プリンセスデー「特別路上公演」",
+      "de": "Der Kreuzgang rockt",
+      "fr": "Des spectacles inoubliables"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Songbirds and the Seneschal Prince have taken the stage! Speak with the royal handmaiden to get dressed and join the show!",
+      "ja": "執事王の侍女に話しかけ<br>三歌姫と執事王子の公演に参加せよ<br>歌い手たちに「声援」を送れ",
+      "de": "Die Singdrosseln und Prinz Schwalbenschwanz haben ihren Auftritt begonnen. Sprich mit dem königlichen Kammermädchen, um dich der tobenden Menge anzuschließen und die vier anzufeuern.",
+      "fr": "Parlez à la servante du sénéchal royal pour assister au concert et encourager votre idole&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060505.png",
+    "level": 5,
+    "location": 7235800
   },
   "2045": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Live from Ul'dah",
+      "ja": "プリンセスデー「特別路上公演」",
+      "de": "Der Kreuzgang rockt",
+      "fr": "Des spectacles inoubliables"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Songbirds and the Seneschal Prince have taken the stage! Speak with the royal handmaiden to get dressed and join the show!",
+      "ja": "執事王の侍女に話しかけ<br>三歌姫と執事王子の公演に参加せよ<br>歌い手たちに「声援」を送れ",
+      "de": "Die Singdrosseln und Prinz Schwalbenschwanz haben ihren Auftritt begonnen. Sprich mit dem königlichen Kammermädchen, um dich der tobenden Menge anzuschließen und die vier anzufeuern.",
+      "fr": "Parlez à la servante du sénéchal royal pour assister au concert et encourager votre idole&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060505.png",
+    "level": 5,
+    "location": 7235800
   },
   "2046": {
     "name": {
@@ -44108,6 +44108,584 @@
     "location": 0
   },
   "2050": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2051": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2052": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2053": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2054": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2055": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2056": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2057": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2058": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2059": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2060": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2061": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2062": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2063": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2064": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2065": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2066": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2067": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2068": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2069": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2070": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2071": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2072": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2073": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2074": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2075": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2076": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2077": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2078": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2079": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2080": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2081": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2082": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2083": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2084": {
     "name": {
       "en": "",
       "ja": "",

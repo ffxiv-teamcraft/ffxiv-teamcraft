@@ -8708,7 +8708,7 @@
     "ja": "産めよ、増えよ、地に満ちよ！",
     "de": "Gehet hin und vermehret euch",
     "fr": "Croissez et multipliez-vous !",
-    "icon": "/i/027000/027645.png",
+    "icon": "/i/027000/027655.png",
     "itemReward": 0
   },
   "1090": {
@@ -8716,7 +8716,7 @@
     "ja": "奇跡の血量",
     "de": "Zuchterfolg",
     "fr": "Véritable pur-sang",
-    "icon": "/i/027000/027645.png",
+    "icon": "/i/027000/027655.png",
     "itemReward": 10065
   },
   "1091": {
@@ -8724,7 +8724,7 @@
     "ja": "チョコボ調教師",
     "de": "Chocobo-Trainer",
     "fr": "Dresseur de chocobo",
-    "icon": "/i/027000/027647.png",
+    "icon": "/i/027000/027657.png",
     "itemReward": 0
   },
   "1092": {
@@ -8732,7 +8732,7 @@
     "ja": "チョコボ騎手：ランク1",
     "de": "Rivalen der Chocobo-Rennbahn I",
     "fr": "Les courses, c'est ma passion I",
-    "icon": "/i/027000/027641.png",
+    "icon": "/i/027000/027651.png",
     "itemReward": 0
   },
   "1093": {
@@ -8740,7 +8740,7 @@
     "ja": "チョコボ騎手：ランク2",
     "de": "Rivalen der Chocobo-Rennbahn II",
     "fr": "Les courses, c'est ma passion II",
-    "icon": "/i/027000/027641.png",
+    "icon": "/i/027000/027651.png",
     "itemReward": 0
   },
   "1094": {
@@ -8748,7 +8748,7 @@
     "ja": "チョコボ騎手：ランク3",
     "de": "Rivalen der Chocobo-Rennbahn III",
     "fr": "Les courses, c'est ma passion III",
-    "icon": "/i/027000/027641.png",
+    "icon": "/i/027000/027651.png",
     "itemReward": 0
   },
   "1095": {
@@ -8756,7 +8756,7 @@
     "ja": "チョコボ騎手：ランク4",
     "de": "Rivalen der Chocobo-Rennbahn IV",
     "fr": "Les courses, c'est ma passion IV",
-    "icon": "/i/027000/027641.png",
+    "icon": "/i/027000/027651.png",
     "itemReward": 0
   },
   "1096": {
@@ -8764,7 +8764,7 @@
     "ja": "優駿：ランク1",
     "de": "Zum ersten Mal Erster",
     "fr": "Bête de course I",
-    "icon": "/i/027000/027646.png",
+    "icon": "/i/027000/027656.png",
     "itemReward": 0
   },
   "1097": {
@@ -8772,7 +8772,7 @@
     "ja": "優駿：ランク2",
     "de": "Ehre dem Ersten I",
     "fr": "Bête de course II",
-    "icon": "/i/027000/027646.png",
+    "icon": "/i/027000/027656.png",
     "itemReward": 0
   },
   "1098": {
@@ -8780,7 +8780,7 @@
     "ja": "優駿：ランク3",
     "de": "Ehre dem Ersten II",
     "fr": "Bête de course III",
-    "icon": "/i/027000/027646.png",
+    "icon": "/i/027000/027656.png",
     "itemReward": 0
   },
   "1099": {
@@ -8788,7 +8788,7 @@
     "ja": "勝負師の極意",
     "de": "Erster unter den Ersten",
     "fr": "Monstre de course",
-    "icon": "/i/027000/027646.png",
+    "icon": "/i/027000/027656.png",
     "itemReward": 0
   },
   "1100": {
@@ -12092,7 +12092,7 @@
     "ja": "チョコボチャレンジャー：ランク1",
     "de": "Einsame Spitze",
     "fr": "Challengeur à plumes I",
-    "icon": "/i/027000/027646.png",
+    "icon": "/i/027000/027656.png",
     "itemReward": 15129
   },
   "1513": {
@@ -24628,7 +24628,7 @@
     "ja": "セニョール・アドバイザー",
     "de": "Stimme von Señor Kaktor",
     "fr": "Señor conseiller",
-    "icon": "/i/064000/064420.png",
+    "icon": "/i/246000/246395.png",
     "itemReward": 0
   },
   "3080": {
@@ -25628,7 +25628,7 @@
     "ja": "受け継がれし扇と舞踊",
     "de": "Tanzende Erinnerungen",
     "fr": "Héritier des traditions",
-    "icon": "/i/064000/064428.png",
+    "icon": "/i/246000/246403.png",
     "itemReward": 0
   },
   "3205": {
@@ -26260,7 +26260,7 @@
     "ja": "パパの楽しい変身ライフ",
     "de": "Des einen Freud, des anderen Schreck",
     "fr": "Les citrouilles de la trouille",
-    "icon": "/i/064000/064442.png",
+    "icon": "/i/246000/246417.png",
     "itemReward": 0
   },
   "3284": {
@@ -28540,7 +28540,7 @@
     "ja": "暑気払いの大うちわ",
     "de": "Held der Hitze",
     "fr": "Gros éventails rafraîchissants",
-    "icon": "/i/064000/064452.png",
+    "icon": "/i/246000/246427.png",
     "itemReward": 0
   },
   "3569": {
@@ -28570,7 +28570,7 @@
   "3572": {
     "en": "Pick on Someone Your Own Size I",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク1",
-    "de": "Tor des Arkadion I",
+    "de": "Tor des Arkadions I",
     "fr": "Champion poids mi-lourds de l'Arcadion I",
     "icon": "/i/002000/002981.png",
     "itemReward": 0
@@ -28578,7 +28578,7 @@
   "3573": {
     "en": "Pick on Someone Your Own Size II",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク2",
-    "de": "Tor des Arkadion II",
+    "de": "Tor des Arkadions II",
     "fr": "Champion poids mi-lourds de l'Arcadion II",
     "icon": "/i/002000/002981.png",
     "itemReward": 0
@@ -28586,7 +28586,7 @@
   "3574": {
     "en": "Pick on Someone Your Own Size III",
     "ja": "アルカディアのライトヘビー級を制覇せし者：ランク3",
-    "de": "Tor des Arkadion III",
+    "de": "Tor des Arkadions III",
     "fr": "Champion poids mi-lourds de l'Arcadion III",
     "icon": "/i/002000/002981.png",
     "itemReward": 0
@@ -28594,7 +28594,7 @@
   "3575": {
     "en": "Savage Someone Your Own Size I",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク1",
-    "de": "Episches Tor des Arkadion I",
+    "de": "Episches Tor des Arkadions I",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion I",
     "icon": "/i/002000/002981.png",
     "itemReward": 0
@@ -28602,7 +28602,7 @@
   "3576": {
     "en": "Savage Someone Your Own Size II",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク2",
-    "de": "Episches Tor des Arkadion II",
+    "de": "Episches Tor des Arkadions II",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion II",
     "icon": "/i/002000/002981.png",
     "itemReward": 0
@@ -28610,7 +28610,7 @@
   "3577": {
     "en": "Savage Someone Your Own Size III",
     "ja": "アルカディアのライトヘビー級を完全制覇せし者：ランク3",
-    "de": "Episches Tor des Arkadion III",
+    "de": "Episches Tor des Arkadions III",
     "fr": "Champion poids mi-lourds incontesté de l'Arcadion III",
     "icon": "/i/002000/002981.png",
     "itemReward": 0
@@ -28892,7 +28892,7 @@
     "ja": "満開のブーケを一緒に",
     "de": "Die Sprache der Blumen",
     "fr": "Né sous le destin de la rose",
-    "icon": "/i/064000/064457.png",
+    "icon": "/i/246000/246432.png",
     "itemReward": 0
   },
   "3613": {
@@ -28912,11 +28912,11 @@
     "itemReward": 0
   },
   "3615": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hitting Full Stride",
+    "ja": "元気に駆けた御披露道中",
+    "de": "Ein geschenkter Gaul",
+    "fr": "Murmurer à l'oreille de la licorne",
+    "icon": "/i/059000/059929.png",
     "itemReward": 0
   },
   "3616": {
@@ -29076,7 +29076,7 @@
     "ja": "キングの貴き真相",
     "de": "Aus für die Gerüchteküche",
     "fr": "Quand il rêve, il est un Roi",
-    "icon": "/i/064000/064462.png",
+    "icon": "/i/246000/246437.png",
     "itemReward": 0
   },
   "3636": {
@@ -30304,11 +30304,11 @@
     "itemReward": 0
   },
   "3789": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "An Extra-large Serving of Love",
+    "ja": "甘いケーキの伝道師",
+    "de": "Eine Extraportion Liebe",
+    "fr": "Amours cachés et tourments d'amour",
+    "icon": "/i/053000/053544.png",
     "itemReward": 0
   },
   "3790": {
@@ -30589,6 +30589,614 @@
     "de": "Pfadfinder V",
     "fr": "Pèlerinage en terre sainte V",
     "icon": "/i/064000/064810.png",
+    "itemReward": 0
+  },
+  "3825": {
+    "en": "Top Tier: Season Seventeen",
+    "ja": "コンフリクトの王者：シーズン17",
+    "de": "Kristallkönig (17. Saison)",
+    "fr": "Roi du conflit : saison 17",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3826": {
+    "en": "Crystal in the Rough: Season Seventeen",
+    "ja": "コンフリクトの勇者：シーズン17",
+    "de": "Kristallfürst (17. Saison)",
+    "fr": "Prince du conflit : saison 17",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3827": {
+    "en": "Ranked and Filed: Season Seventeen",
+    "ja": "コンフリクトの入賞者：シーズン17",
+    "de": "Kristallkämpfer (17. Saison)",
+    "fr": "As du conflit : saison 17",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3828": {
+    "en": "Top Tier: Season Eighteen",
+    "ja": "コンフリクトの王者：シーズン18",
+    "de": "Kristallkönig (18. Saison)",
+    "fr": "Roi du conflit : saison 18",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3829": {
+    "en": "Crystal in the Rough: Season Eighteen",
+    "ja": "コンフリクトの勇者：シーズン18",
+    "de": "Kristallfürst (18. Saison)",
+    "fr": "Prince du conflit : saison 18",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3830": {
+    "en": "Ranked and Filed: Season Eighteen",
+    "ja": "コンフリクトの入賞者：シーズン18",
+    "de": "Kristallkämpfer (18. Saison)",
+    "fr": "As du conflit : saison 18",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3831": {
+    "en": "Worqor and Peace I",
+    "ja": "ウォーコー・チーテ：ランク1",
+    "de": "Worqor Champion I",
+    "fr": "Par monts et par vaux I",
+    "icon": "/i/064000/064933.png",
+    "itemReward": 0
+  },
+  "3832": {
+    "en": "Worqor and Peace II",
+    "ja": "ウォーコー・チーテ：ランク2",
+    "de": "Worqor Champion II",
+    "fr": "Par monts et par vaux II",
+    "icon": "/i/064000/064933.png",
+    "itemReward": 0
+  },
+  "3833": {
+    "en": "Worqor and Peace III",
+    "ja": "ウォーコー・チーテ：ランク3",
+    "de": "Worqor Champion III",
+    "fr": "Par monts et par vaux III",
+    "icon": "/i/064000/064933.png",
+    "itemReward": 0
+  },
+  "3834": {
+    "en": "Worqor and Peace IV",
+    "ja": "ウォーコー・チーテ：ランク4",
+    "de": "Worqor Champion IV",
+    "fr": "Par monts et par vaux IV",
+    "icon": "/i/064000/064933.png",
+    "itemReward": 0
+  },
+  "3835": {
+    "en": "Worqor and Peace V",
+    "ja": "ウォーコー・チーテ：ランク5",
+    "de": "Worqor Champion V",
+    "fr": "Par monts et par vaux V",
+    "icon": "/i/064000/064933.png",
+    "itemReward": 50448
+  },
+  "3836": {
+    "en": "Worqor and Peace VI",
+    "ja": "ウォーコー・チーテ：ランク6",
+    "de": "Worqor Champion VI",
+    "fr": "Par monts et par vaux VI",
+    "icon": "/i/064000/064933.png",
+    "itemReward": 0
+  },
+  "3837": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3838": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3839": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3840": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3844": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3845": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3846": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3847": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3848": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3849": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3850": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3851": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3852": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3853": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3854": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3855": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3856": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3857": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3858": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3859": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3860": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3861": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3862": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3863": {
+    "en": "Into the Mist",
+    "ja": "霧の中の理想郷",
+    "de": "Nebelland hab ich gesehen",
+    "fr": "Voyage au bout de la brume",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3864": {
+    "en": "Ascension",
+    "ja": "アルカディアの統一王者",
+    "de": "Regulatorloser Großmeister",
+    "fr": "Champion céleste",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3865": {
+    "en": "On Top of the World I",
+    "ja": "アルカディアのヘビー級を制覇せし者：ランク1",
+    "de": "Thron des Arkadions I",
+    "fr": "Champion poids lourds de l'Arcadion I",
+    "icon": "/i/002000/002981.png",
+    "itemReward": 0
+  },
+  "3866": {
+    "en": "On Top of the World II",
+    "ja": "アルカディアのヘビー級を制覇せし者：ランク2",
+    "de": "Thron des Arkadions II",
+    "fr": "Champion poids lourds de l'Arcadion II",
+    "icon": "/i/002000/002981.png",
+    "itemReward": 0
+  },
+  "3867": {
+    "en": "On Top of the World III",
+    "ja": "アルカディアのヘビー級を制覇せし者：ランク3",
+    "de": "Thron des Arkadions III",
+    "fr": "Champion poids lourds de l'Arcadion III",
+    "icon": "/i/002000/002981.png",
+    "itemReward": 0
+  },
+  "3868": {
+    "en": "On Top of the Savage World I",
+    "ja": "アルカディアのヘビー級を完全制覇せし者：ランク1",
+    "de": "Epischer Thron des Arkadions I",
+    "fr": "Champion poids lourds incontesté de l'Arcadion I",
+    "icon": "/i/002000/002981.png",
+    "itemReward": 0
+  },
+  "3869": {
+    "en": "On Top of the Savage World II",
+    "ja": "アルカディアのヘビー級を完全制覇せし者：ランク2",
+    "de": "Epischer Thron des Arkadions II",
+    "fr": "Champion poids lourds incontesté de l'Arcadion II",
+    "icon": "/i/002000/002981.png",
+    "itemReward": 0
+  },
+  "3870": {
+    "en": "On Top of the Savage World III",
+    "ja": "アルカディアのヘビー級を完全制覇せし者：ランク3",
+    "de": "Epischer Thron des Arkadions III",
+    "fr": "Champion poids lourds incontesté de l'Arcadion III",
+    "icon": "/i/002000/002981.png",
+    "itemReward": 0
+  },
+  "3871": {
+    "en": "Real Devotion",
+    "ja": "きみの笑顔に魅せられて",
+    "de": "Ravender Reporter",
+    "fr": "Micro-trottoir",
+    "icon": "/i/026000/026107.png",
+    "itemReward": 0
+  },
+  "3872": {
+    "en": "芽吹く新緑の季節",
+    "ja": "芽吹く新緑の季節",
+    "de": "芽吹く新緑の季節",
+    "fr": "Attention, ça va trancher",
+    "icon": "/i/056000/056914.png",
+    "itemReward": 0
+  },
+  "3873": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3874": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3875": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3876": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3877": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3878": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3879": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3880": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3881": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3882": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3883": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3884": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3885": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3886": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3887": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3888": {
+    "en": "Mapping the Realm: Mistwake",
+    "ja": "ミストウェイクを踏破せし者",
+    "de": "Kartograph: Die Nebeltrift",
+    "fr": "Cartographe du continent : Sillage brumeux",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3889": {
+    "en": "I Choo-Choo-Choose Doom",
+    "ja": "暴走列車を廃し者",
+    "de": "Panzerzugfaust",
+    "fr": "Braqueur de convoi",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3890": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3891": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3892": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3893": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3894": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3895": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3896": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3897": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3898": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3899": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3900": {
+    "en": "Design and Conquer 2025",
+    "ja": "調度品デザイナー：2025",
+    "de": "Meisterhafte Möbelkunst 2025",
+    "fr": "Artiste décorateur 2025",
+    "icon": "/i/001000/001975.png",
     "itemReward": 0
   }
 }

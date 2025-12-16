@@ -39,7 +39,8 @@ export class SearchService implements OnApplicationBootstrap {
       de: this.getXivSearch('de'),
       fr: this.getXivSearch('fr'),
       ko: this.getXivSearch('ko'),
-      zh: this.getXivSearch('zh')
+      zh: this.getXivSearch('zh'),
+      tw: this.getXivSearch('tw')
     } as any;
     return combineLatest(Object.values(this.indexes).map(search => {
       return combineLatest(Object.values(SearchType).filter(v => !['Recipe', 'Any'].includes(v)).map(content => {

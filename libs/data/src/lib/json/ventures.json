@@ -6574,5 +6574,41 @@
     "ja": "オプティカルグラス",
     "de": "Optisches Gras",
     "fr": "Herbe optique"
+  },
+  "1104": {
+    "en": "Octahedrite",
+    "ja": "オクタヘドライト鉱石",
+    "de": "Oktaedrit-Erzklumpen",
+    "fr": "Minerai d'octaédrite"
+  },
+  "1105": {
+    "en": "Raw Rhodochrosite",
+    "ja": "ロードクロサイト原石",
+    "de": "Roh-Rhodochrosit",
+    "fr": "Rhodochrosite brute"
+  },
+  "1106": {
+    "en": "Fulgurite",
+    "ja": "フルグライト",
+    "de": "Fulgurit",
+    "fr": "Fulgurite"
+  },
+  "1107": {
+    "en": "Cordia Log",
+    "ja": "コーディア原木",
+    "de": "Cordia-Holzscheit",
+    "fr": "Rondin de cordia"
+  },
+  "1108": {
+    "en": "Shaaloani Coffee",
+    "ja": "シャーローニ・コーヒー",
+    "de": "Shaaloani-Kaffeebohnen",
+    "fr": "Grains de café de Shaaloani"
+  },
+  "1109": {
+    "en": "Cochineal Pigment",
+    "ja": "コチニール染料",
+    "de": "Karmin",
+    "fr": "Pigment nopal"
   }
 }

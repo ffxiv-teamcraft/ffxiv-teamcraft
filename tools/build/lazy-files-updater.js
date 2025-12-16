@@ -14,12 +14,14 @@ const baseFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/j
 const dbFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/db/')).map((row) => `/db/${row}`);
 const koFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/ko/')).map((row) => `/ko/${row}`);
 const zhFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/zh/')).map((row) => `/zh/${row}`);
+const twFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/tw/')).map((row) => `/tw/${row}`);
 
 const allFiles = [
   ...baseFiles,
   ...dbFiles,
   ...koFiles,
-  ...zhFiles
+  ...zhFiles,
+  ...twFiles
 ];
 
 const getPropertyName = (filename) => _.camelCase(filename.replace('/db/', '').replace('.json', '').replace('.index', '').replace(/\/\w+\//, ''));
@@ -28,6 +30,7 @@ function getClassName(file) {
   const baseName = file
     .replace('/ko/', '')
     .replace('/zh/', '')
+    .replace('/tw/', '')
     .replace('/db/', '')
     .replace('ies.json', 'y')
     .replace('fishes.json', 'fish')
@@ -80,6 +83,8 @@ function getType(file) {
         inferredType = '{ko: string}';
       } else if (firstElement.zh !== undefined) {
         inferredType = '{zh: string}';
+      } else if (firstElement.tw !== undefined) {
+        inferredType = '{tw: string}';
       } else {
         inferredType = typeof firstElement;
       }
@@ -96,7 +101,7 @@ function validateLines(lines) {
   }
   const props = lines.slice(1, -2);
   if (props.length === 1) {
-    return !/(ko|zh):/i.test(props[0]);
+    return !/(ko|zh|tw):/i.test(props[0]);
   }
   return true;
 }

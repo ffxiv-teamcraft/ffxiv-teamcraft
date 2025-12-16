@@ -808,5 +808,11 @@ export const aetheryteNames = {
     "de": "Scanpass Neun (zum Ewigen Erbe)",
     "ja": "スキャンポート（ヘリテージファウンド方面）",
     "fr": "Sentinelle Neuf (L'Hoirie recouvrée)"
+  },
+  "239": {
+    "en": "Phantom Village",
+    "de": "Trugstadt",
+    "ja": "蜃気楼の町",
+    "fr": "Ville fantôme"
   }
 };

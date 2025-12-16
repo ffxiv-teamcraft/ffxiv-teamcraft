@@ -146,7 +146,7 @@ export class I18nToolsService {
     if (array === undefined) {
       return -1;
     }
-    if (['en', 'fr', 'de', 'ja', 'ko', 'zh'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'ko', 'zh', 'tw'].indexOf(language) === -1) {
       language = 'en';
     }
     let res = -1;
@@ -168,7 +168,7 @@ export class I18nToolsService {
         break;
       }
     }
-    if (['ko', 'zh'].indexOf(language) > -1 && res === -1) {
+    if (['ko', 'zh', 'tw'].indexOf(language) > -1 && res === -1) {
       return this.getIndexByName(array, name, 'en');
     }
     return res;

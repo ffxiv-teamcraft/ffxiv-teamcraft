@@ -61,7 +61,6 @@ export class PatchComponent extends TeamcraftPageComponent {
     switchMap(patch => {
       return this.lazyData.getRow('patchContent', patch.id).pipe(
         map(patchContent => {
-          console.log(patchContent);
           return {
             ...patch,
             ...patchContent

@@ -86,7 +86,7 @@ export class I18nPipe implements PipeTransform, OnDestroy {
       return false;
     }
     const isGlobalEntry = typeof data.en === 'string' && typeof data.de === 'string' && typeof data.ja === 'string' && typeof data.fr === 'string';
-    const isKorenOrChineseEntry = typeof data.ko === 'string' || typeof data.zh === 'string';
+    const isKorenOrChineseEntry = typeof data.ko === 'string' || typeof data.zh === 'string' || typeof data.tw === 'string';
     return isGlobalEntry || isKorenOrChineseEntry;
   }
 
@@ -112,11 +112,12 @@ export class I18nPipe implements PipeTransform, OnDestroy {
         next?.name?.ja === current?.name?.ja &&
         next?.name?.fr === current?.name?.fr &&
         next?.name?.ko === current?.name?.ko &&
-        next?.name?.zh === current?.name?.zh
+        next?.name?.zh === current?.name?.zh &&
+        next?.name?.tw === current?.name?.tw
       );
     } else {
       return next?.de === current?.de && next?.en === current?.en && next?.ja === current?.ja
-        && next?.fr === current?.fr && next?.ko === current?.ko && next?.zh === current?.zh;
+        && next?.fr === current?.fr && next?.ko === current?.ko && next?.zh === current?.zh && next?.tw === current?.tw;
     }
   }
 

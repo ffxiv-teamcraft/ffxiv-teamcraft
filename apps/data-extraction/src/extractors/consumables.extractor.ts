@@ -7,12 +7,12 @@ export class ConsumablesExtractor extends AbstractExtractor {
     const foods = [];
     const medicines = [];
     combineLatest([
-      this.getSheet<any>(xiv, 'Item', ['ItemSearchCategory#', 'LevelItem#', 'LevelEquip#', 'ItemAction.Type#', 'ItemAction.Data#'], false, 1),
+      this.getSheet<any>(xiv, 'Item', ['ItemSearchCategory#', 'LevelItem#', 'LevelEquip#', 'ItemAction.Action#', 'ItemAction.Data#'], false, 1),
       this.getSheet<any>(xiv, 'ItemFood', null, false, 1)
     ])
       .subscribe(([items, itemFoods]) => {
         items.forEach(item => {
-          if ([844, 845, 846].includes(item.ItemAction.Type)) {
+          if ([844, 845, 846].includes(item.ItemAction?.Action)) {
             const bonus = this.computeBonuses(itemFoods.find(a => a.index === item.ItemAction.Data[1]));
             const consumable = {
               ID: item.index,
