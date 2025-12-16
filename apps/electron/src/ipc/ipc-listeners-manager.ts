@@ -36,7 +36,8 @@ export class IpcListenersManager {
     de: this.getXivSearch('de'),
     fr: this.getXivSearch('fr'),
     ko: this.getXivSearch('ko'),
-    zh: this.getXivSearch('zh')
+    zh: this.getXivSearch('zh'),
+    tw: this.getXivSearch('tw')
   };
 
   private loading: Array<keyof I18nName> = [];
