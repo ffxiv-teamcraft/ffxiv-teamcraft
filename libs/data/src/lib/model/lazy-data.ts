@@ -124,7 +124,6 @@ import {LazyTrait} from './lazy-trait';
 import {LazyTreasure} from './lazy-treasure';
 import {LazyTribe} from './lazy-tribe';
 import {LazyTripleTriadRule} from './lazy-triple-triad-rule';
-import {LazyUsedInQuest} from './lazy-used-in-quest';
 import {LazyVenture} from './lazy-venture';
 import {LazyVoyageSource} from './lazy-voyage-source';
 import {LazyWeather} from './lazy-weather';
@@ -208,7 +207,7 @@ export interface LazyData {
   fishingSources: Record<number, LazyFishingSource[]>;
   fishingSpotSearch: Array<LazyFishingSpotSearch>;
   fishingSpots: Array<LazyFishingSpot>;
-  foods: LazyFood;
+  foods: Array<LazyFood>;
   freeCompanyActions: Record<number, LazyFreeCompanyAction>;
   gardeningSources: Record<number, number[]>;
   gatheringBonuses: Record<number, LazyGatheringBonus>;
@@ -230,7 +229,7 @@ export interface LazyData {
   ilvls: Record<number, number>;
   instanceSearch: Array<LazyInstanceSearch>;
   instanceSources: Record<number, number[]>;
-  instances: LazyInstance;
+  instances: Record<number, LazyInstance>;
   islandAnimals: Record<number, LazyIslandAnimal>;
   islandBuildings: Record<number, LazyIslandBuilding>;
   islandCraftworksTheme: Record<number, LazyIslandCraftworksTheme>;
@@ -240,7 +239,7 @@ export interface LazyData {
   islandLandmarks: Record<number, LazyIslandLandmark>;
   islandPopularity: Record<number, LazyIslandPopularity>;
   islandSupply: Record<number, number>;
-  itemBonuses: LazyItemBonus;
+  itemBonuses: Record<number, LazyItemBonus[]>;
   itemCategory: Record<number, LazyItemCategory>;
   itemEquipSlotCategory: Record<number, number>;
   itemIcons: Record<number, string>;
@@ -269,7 +268,7 @@ export interface LazyData {
   maps: Record<number, LazyMap>;
   marketItems: Array<number>;
   materias: Array<LazyMateria>;
-  medicines: LazyMedicine;
+  medicines: Array<LazyMedicine>;
   mobs: Record<number, LazyMob>;
   mogstationSources: Record<number, LazyMogstationSource>;
   monsterSearch: Array<LazyMonsterSearch>;
@@ -325,7 +324,7 @@ export interface LazyData {
   tribes: Record<number, LazyTribe>;
   tripleTriadRules: Record<number, LazyTripleTriadRule>;
   uiCategories: Record<number, number>;
-  usedInQuests: LazyUsedInQuest;
+  usedInQuests: Record<number, number[]>;
   ventureSources: Record<number, number[]>;
   ventures: Record<number, LazyVenture>;
   voyageSources: Record<number, LazyVoyageSource[]>;

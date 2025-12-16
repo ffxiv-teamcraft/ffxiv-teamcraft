@@ -1,1 +1,2154 @@
-[]
+[
+  {
+    "ID": 4594,
+    "LevelEquip": 1,
+    "LevelItem": 20,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
+      }
+    },
+    "itemFood": 10
+  },
+  {
+    "ID": 4595,
+    "LevelEquip": 1,
+    "LevelItem": 20,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
+      }
+    },
+    "itemFood": 8
+  },
+  {
+    "ID": 4596,
+    "LevelEquip": 1,
+    "LevelItem": 20,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
+      }
+    },
+    "itemFood": 9
+  },
+  {
+    "ID": 4597,
+    "LevelEquip": 1,
+    "LevelItem": 20,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
+      }
+    },
+    "itemFood": 7
+  },
+  {
+    "ID": 4598,
+    "LevelEquip": 1,
+    "LevelItem": 20,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
+      }
+    },
+    "itemFood": 6
+  },
+  {
+    "ID": 4599,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
+      }
+    },
+    "itemFood": 16
+  },
+  {
+    "ID": 4600,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
+      }
+    },
+    "itemFood": 14
+  },
+  {
+    "ID": 4601,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 28,
+        "MaxHQ": 35
+      }
+    },
+    "itemFood": 15
+  },
+  {
+    "ID": 4602,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
+      }
+    },
+    "itemFood": 13
+  },
+  {
+    "ID": 4603,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
+      }
+    },
+    "itemFood": 12
+  },
+  {
+    "ID": 4604,
+    "LevelEquip": 1,
+    "LevelItem": 50,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
+      }
+    },
+    "itemFood": 29
+  },
+  {
+    "ID": 4605,
+    "LevelEquip": 1,
+    "LevelItem": 50,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
+      }
+    },
+    "itemFood": 27
+  },
+  {
+    "ID": 4606,
+    "LevelEquip": 1,
+    "LevelItem": 50,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 50,
+        "MaxHQ": 62
+      }
+    },
+    "itemFood": 28
+  },
+  {
+    "ID": 4607,
+    "LevelEquip": 1,
+    "LevelItem": 50,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
+      }
+    },
+    "itemFood": 26
+  },
+  {
+    "ID": 4608,
+    "LevelEquip": 1,
+    "LevelItem": 50,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
+      }
+    },
+    "itemFood": 25
+  },
+  {
+    "ID": 4609,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    },
+    "itemFood": 40
+  },
+  {
+    "ID": 4610,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    },
+    "itemFood": 38
+  },
+  {
+    "ID": 4611,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
+      }
+    },
+    "itemFood": 39
+  },
+  {
+    "ID": 4612,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    },
+    "itemFood": 37
+  },
+  {
+    "ID": 4613,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    },
+    "itemFood": 36
+  },
+  {
+    "ID": 4638,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 20,
+        "ValueHQ": 20,
+        "Max": 34,
+        "MaxHQ": 34
+      },
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 20,
+        "ValueHQ": 20,
+        "Max": 34,
+        "MaxHQ": 34
+      },
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 20,
+        "ValueHQ": 20,
+        "Max": 34,
+        "MaxHQ": 34
+      }
+    },
+    "itemFood": 23
+  },
+  {
+    "ID": 6946,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "SlowResistance": {
+        "ID": 57,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 280
+  },
+  {
+    "ID": 6947,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "SilenceResistance": {
+        "ID": 60,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 281
+  },
+  {
+    "ID": 6948,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "BlindResistance": {
+        "ID": 61,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 282
+  },
+  {
+    "ID": 6949,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "PoisonResistance": {
+        "ID": 62,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 283
+  },
+  {
+    "ID": 6950,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "StunResistance": {
+        "ID": 63,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 284
+  },
+  {
+    "ID": 6951,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "SleepResistance": {
+        "ID": 64,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 285
+  },
+  {
+    "ID": 6952,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "BindResistance": {
+        "ID": 65,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 286
+  },
+  {
+    "ID": 6953,
+    "LevelEquip": 1,
+    "LevelItem": 1,
+    "Bonuses": {
+      "HeavyResistance": {
+        "ID": 66,
+        "Relative": false,
+        "Value": 15,
+        "ValueHQ": 20
+      }
+    },
+    "itemFood": 287
+  },
+  {
+    "ID": 7059,
+    "LevelEquip": 1,
+    "LevelItem": 55,
+    "Bonuses": {
+      "IncreasedSpiritbondGain": {
+        "ID": 69,
+        "Relative": false,
+        "Value": 3,
+        "ValueHQ": 3
+      }
+    },
+    "itemFood": 296
+  },
+  {
+    "ID": 10086,
+    "LevelEquip": 1,
+    "LevelItem": 110,
+    "Bonuses": {
+      "DesynthesisSkillGain": {
+        "ID": 51,
+        "Relative": false,
+        "Value": 30,
+        "ValueHQ": 40
+      }
+    },
+    "itemFood": 271
+  },
+  {
+    "ID": 12622,
+    "LevelEquip": 1,
+    "LevelItem": 145,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
+      }
+    },
+    "itemFood": 228
+  },
+  {
+    "ID": 12623,
+    "LevelEquip": 1,
+    "LevelItem": 145,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
+      }
+    },
+    "itemFood": 229
+  },
+  {
+    "ID": 12624,
+    "LevelEquip": 1,
+    "LevelItem": 145,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 71,
+        "MaxHQ": 89
+      }
+    },
+    "itemFood": 230
+  },
+  {
+    "ID": 12625,
+    "LevelEquip": 1,
+    "LevelItem": 145,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
+      }
+    },
+    "itemFood": 231
+  },
+  {
+    "ID": 12626,
+    "LevelEquip": 1,
+    "LevelItem": 145,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
+      }
+    },
+    "itemFood": 232
+  },
+  {
+    "ID": 14176,
+    "LevelEquip": 1,
+    "LevelItem": 210,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
+      }
+    },
+    "itemFood": 238
+  },
+  {
+    "ID": 14177,
+    "LevelEquip": 1,
+    "LevelItem": 210,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
+      }
+    },
+    "itemFood": 239
+  },
+  {
+    "ID": 14178,
+    "LevelEquip": 1,
+    "LevelItem": 210,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 75,
+        "MaxHQ": 94
+      }
+    },
+    "itemFood": 240
+  },
+  {
+    "ID": 14179,
+    "LevelEquip": 1,
+    "LevelItem": 210,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
+      }
+    },
+    "itemFood": 241
+  },
+  {
+    "ID": 14180,
+    "LevelEquip": 1,
+    "LevelItem": 210,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
+      }
+    },
+    "itemFood": 242
+  },
+  {
+    "ID": 16716,
+    "LevelEquip": 1,
+    "LevelItem": 250,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
+      }
+    },
+    "itemFood": 264
+  },
+  {
+    "ID": 16717,
+    "LevelEquip": 1,
+    "LevelItem": 250,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
+      }
+    },
+    "itemFood": 265
+  },
+  {
+    "ID": 16718,
+    "LevelEquip": 1,
+    "LevelItem": 250,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 82,
+        "MaxHQ": 102
+      }
+    },
+    "itemFood": 266
+  },
+  {
+    "ID": 16719,
+    "LevelEquip": 1,
+    "LevelItem": 250,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
+      }
+    },
+    "itemFood": 267
+  },
+  {
+    "ID": 16720,
+    "LevelEquip": 1,
+    "LevelItem": 250,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
+      }
+    },
+    "itemFood": 268
+  },
+  {
+    "ID": 19882,
+    "LevelEquip": 1,
+    "LevelItem": 273,
+    "Bonuses": {
+      "Craftsmanship": {
+        "ID": 70,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 20,
+        "MaxHQ": 25
+      }
+    },
+    "itemFood": 337
+  },
+  {
+    "ID": 19883,
+    "LevelEquip": 1,
+    "LevelItem": 276,
+    "Bonuses": {
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 20,
+        "MaxHQ": 25
+      }
+    },
+    "itemFood": 338
+  },
+  {
+    "ID": 19884,
+    "LevelEquip": 1,
+    "LevelItem": 282,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 4,
+        "ValueHQ": 5,
+        "Max": 10,
+        "MaxHQ": 13
+      }
+    },
+    "itemFood": 339
+  },
+  {
+    "ID": 19885,
+    "LevelEquip": 1,
+    "LevelItem": 260,
+    "Bonuses": {
+      "IncreasedSpiritbondGain": {
+        "ID": 69,
+        "Relative": false,
+        "Value": 4,
+        "ValueHQ": 5
+      }
+    },
+    "itemFood": 340
+  },
+  {
+    "ID": 19886,
+    "LevelEquip": 1,
+    "LevelItem": 288,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
+      }
+    },
+    "itemFood": 341
+  },
+  {
+    "ID": 19887,
+    "LevelEquip": 1,
+    "LevelItem": 288,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
+      }
+    },
+    "itemFood": 342
+  },
+  {
+    "ID": 19888,
+    "LevelEquip": 1,
+    "LevelItem": 288,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 78,
+        "MaxHQ": 98
+      }
+    },
+    "itemFood": 343
+  },
+  {
+    "ID": 19889,
+    "LevelEquip": 1,
+    "LevelItem": 288,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
+      }
+    },
+    "itemFood": 344
+  },
+  {
+    "ID": 19890,
+    "LevelEquip": 1,
+    "LevelItem": 288,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
+      }
+    },
+    "itemFood": 345
+  },
+  {
+    "ID": 22447,
+    "LevelEquip": 1,
+    "LevelItem": 320,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      }
+    },
+    "itemFood": 361
+  },
+  {
+    "ID": 22448,
+    "LevelEquip": 1,
+    "LevelItem": 320,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      }
+    },
+    "itemFood": 362
+  },
+  {
+    "ID": 22449,
+    "LevelEquip": 1,
+    "LevelItem": 320,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      }
+    },
+    "itemFood": 363
+  },
+  {
+    "ID": 22450,
+    "LevelEquip": 1,
+    "LevelItem": 320,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      }
+    },
+    "itemFood": 364
+  },
+  {
+    "ID": 22451,
+    "LevelEquip": 1,
+    "LevelItem": 320,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      }
+    },
+    "itemFood": 365
+  },
+  {
+    "ID": 24261,
+    "LevelEquip": 1,
+    "LevelItem": 350,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
+      }
+    },
+    "itemFood": 387
+  },
+  {
+    "ID": 24262,
+    "LevelEquip": 1,
+    "LevelItem": 350,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
+      }
+    },
+    "itemFood": 388
+  },
+  {
+    "ID": 24263,
+    "LevelEquip": 1,
+    "LevelItem": 350,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 90,
+        "MaxHQ": 113
+      }
+    },
+    "itemFood": 389
+  },
+  {
+    "ID": 24264,
+    "LevelEquip": 1,
+    "LevelItem": 350,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
+      }
+    },
+    "itemFood": 390
+  },
+  {
+    "ID": 24265,
+    "LevelEquip": 1,
+    "LevelItem": 350,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
+      }
+    },
+    "itemFood": 391
+  },
+  {
+    "ID": 27786,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    },
+    "itemFood": 442
+  },
+  {
+    "ID": 27787,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    },
+    "itemFood": 443
+  },
+  {
+    "ID": 27788,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 95,
+        "MaxHQ": 119
+      }
+    },
+    "itemFood": 444
+  },
+  {
+    "ID": 27789,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    },
+    "itemFood": 445
+  },
+  {
+    "ID": 27790,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    },
+    "itemFood": 446
+  },
+  {
+    "ID": 27957,
+    "LevelEquip": 1,
+    "LevelItem": 406,
+    "Bonuses": {
+      "Craftsmanship": {
+        "ID": 70,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 33,
+        "MaxHQ": 41
+      }
+    },
+    "itemFood": 449
+  },
+  {
+    "ID": 27958,
+    "LevelEquip": 1,
+    "LevelItem": 412,
+    "Bonuses": {
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 34,
+        "MaxHQ": 42
+      }
+    },
+    "itemFood": 450
+  },
+  {
+    "ID": 27959,
+    "LevelEquip": 1,
+    "LevelItem": 412,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 5,
+        "ValueHQ": 6,
+        "Max": 13,
+        "MaxHQ": 16
+      }
+    },
+    "itemFood": 451
+  },
+  {
+    "ID": 27960,
+    "LevelEquip": 1,
+    "LevelItem": 395,
+    "Bonuses": {
+      "IncreasedSpiritbondGain": {
+        "ID": 69,
+        "Relative": false,
+        "Value": 5,
+        "ValueHQ": 6
+      }
+    },
+    "itemFood": 452
+  },
+  {
+    "ID": 27995,
+    "LevelEquip": 1,
+    "LevelItem": 450,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
+      }
+    },
+    "itemFood": 453
+  },
+  {
+    "ID": 27996,
+    "LevelEquip": 1,
+    "LevelItem": 450,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
+      }
+    },
+    "itemFood": 454
+  },
+  {
+    "ID": 27997,
+    "LevelEquip": 1,
+    "LevelItem": 450,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
+      }
+    },
+    "itemFood": 455
+  },
+  {
+    "ID": 27998,
+    "LevelEquip": 1,
+    "LevelItem": 450,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
+      }
+    },
+    "itemFood": 456
+  },
+  {
+    "ID": 27999,
+    "LevelEquip": 1,
+    "LevelItem": 450,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
+      }
+    },
+    "itemFood": 457
+  },
+  {
+    "ID": 29492,
+    "LevelEquip": 1,
+    "LevelItem": 480,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
+      }
+    },
+    "itemFood": 464
+  },
+  {
+    "ID": 29493,
+    "LevelEquip": 1,
+    "LevelItem": 480,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
+      }
+    },
+    "itemFood": 465
+  },
+  {
+    "ID": 29494,
+    "LevelEquip": 1,
+    "LevelItem": 480,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 109,
+        "MaxHQ": 136
+      }
+    },
+    "itemFood": 466
+  },
+  {
+    "ID": 29495,
+    "LevelEquip": 1,
+    "LevelItem": 480,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
+      }
+    },
+    "itemFood": 467
+  },
+  {
+    "ID": 29496,
+    "LevelEquip": 1,
+    "LevelItem": 480,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
+      }
+    },
+    "itemFood": 468
+  },
+  {
+    "ID": 31893,
+    "LevelEquip": 1,
+    "LevelItem": 510,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
+      }
+    },
+    "itemFood": 486
+  },
+  {
+    "ID": 31894,
+    "LevelEquip": 1,
+    "LevelItem": 510,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
+      }
+    },
+    "itemFood": 487
+  },
+  {
+    "ID": 31895,
+    "LevelEquip": 1,
+    "LevelItem": 510,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 119,
+        "MaxHQ": 149
+      }
+    },
+    "itemFood": 488
+  },
+  {
+    "ID": 31896,
+    "LevelEquip": 1,
+    "LevelItem": 510,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
+      }
+    },
+    "itemFood": 489
+  },
+  {
+    "ID": 31897,
+    "LevelEquip": 1,
+    "LevelItem": 510,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
+      }
+    },
+    "itemFood": 490
+  },
+  {
+    "ID": 36104,
+    "LevelEquip": 1,
+    "LevelItem": 560,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
+      }
+    },
+    "itemFood": 552
+  },
+  {
+    "ID": 36105,
+    "LevelEquip": 1,
+    "LevelItem": 560,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
+      }
+    },
+    "itemFood": 553
+  },
+  {
+    "ID": 36106,
+    "LevelEquip": 1,
+    "LevelItem": 560,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 136,
+        "MaxHQ": 171
+      }
+    },
+    "itemFood": 554
+  },
+  {
+    "ID": 36107,
+    "LevelEquip": 1,
+    "LevelItem": 560,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
+      }
+    },
+    "itemFood": 555
+  },
+  {
+    "ID": 36108,
+    "LevelEquip": 1,
+    "LevelItem": 560,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
+      }
+    },
+    "itemFood": 556
+  },
+  {
+    "ID": 36109,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    },
+    "itemFood": 557
+  },
+  {
+    "ID": 36110,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    },
+    "itemFood": 558
+  },
+  {
+    "ID": 36111,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 155,
+        "MaxHQ": 194
+      }
+    },
+    "itemFood": 559
+  },
+  {
+    "ID": 36112,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    },
+    "itemFood": 560
+  },
+  {
+    "ID": 36113,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    },
+    "itemFood": 561
+  },
+  {
+    "ID": 36114,
+    "LevelEquip": 1,
+    "LevelItem": 527,
+    "Bonuses": {
+      "Craftsmanship": {
+        "ID": 70,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 40,
+        "MaxHQ": 50
+      }
+    },
+    "itemFood": 562
+  },
+  {
+    "ID": 36115,
+    "LevelEquip": 1,
+    "LevelItem": 540,
+    "Bonuses": {
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 40,
+        "MaxHQ": 50
+      }
+    },
+    "itemFood": 563
+  },
+  {
+    "ID": 36116,
+    "LevelEquip": 1,
+    "LevelItem": 554,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 5,
+        "ValueHQ": 6,
+        "Max": 17,
+        "MaxHQ": 21
+      }
+    },
+    "itemFood": 564
+  },
+  {
+    "ID": 37840,
+    "LevelEquip": 1,
+    "LevelItem": 610,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
+      }
+    },
+    "itemFood": 581
+  },
+  {
+    "ID": 37841,
+    "LevelEquip": 1,
+    "LevelItem": 610,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
+      }
+    },
+    "itemFood": 582
+  },
+  {
+    "ID": 37842,
+    "LevelEquip": 1,
+    "LevelItem": 610,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 189,
+        "MaxHQ": 236
+      }
+    },
+    "itemFood": 583
+  },
+  {
+    "ID": 37843,
+    "LevelEquip": 1,
+    "LevelItem": 610,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
+      }
+    },
+    "itemFood": 584
+  },
+  {
+    "ID": 37844,
+    "LevelEquip": 1,
+    "LevelItem": 610,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
+      }
+    },
+    "itemFood": 585
+  },
+  {
+    "ID": 39727,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 209,
+        "MaxHQ": 262
+      }
+    },
+    "itemFood": 603
+  },
+  {
+    "ID": 39728,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 209,
+        "MaxHQ": 262
+      }
+    },
+    "itemFood": 604
+  },
+  {
+    "ID": 39729,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 228,
+        "MaxHQ": 286
+      }
+    },
+    "itemFood": 605
+  },
+  {
+    "ID": 39730,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 209,
+        "MaxHQ": 262
+      }
+    },
+    "itemFood": 606
+  },
+  {
+    "ID": 39731,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 209,
+        "MaxHQ": 262
+      }
+    },
+    "itemFood": 607
+  },
+  {
+    "ID": 44157,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    },
+    "itemFood": 644
+  },
+  {
+    "ID": 44158,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    },
+    "itemFood": 645
+  },
+  {
+    "ID": 44159,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 284,
+        "MaxHQ": 355
+      }
+    },
+    "itemFood": 646
+  },
+  {
+    "ID": 44160,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    },
+    "itemFood": 647
+  },
+  {
+    "ID": 44161,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    },
+    "itemFood": 648
+  },
+  {
+    "ID": 44162,
+    "LevelEquip": 1,
+    "LevelItem": 710,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 313,
+        "MaxHQ": 392
+      }
+    },
+    "itemFood": 662
+  },
+  {
+    "ID": 44163,
+    "LevelEquip": 1,
+    "LevelItem": 710,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 313,
+        "MaxHQ": 392
+      }
+    },
+    "itemFood": 663
+  },
+  {
+    "ID": 44164,
+    "LevelEquip": 1,
+    "LevelItem": 710,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 324,
+        "MaxHQ": 406
+      }
+    },
+    "itemFood": 664
+  },
+  {
+    "ID": 44165,
+    "LevelEquip": 1,
+    "LevelItem": 710,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 313,
+        "MaxHQ": 392
+      }
+    },
+    "itemFood": 665
+  },
+  {
+    "ID": 44166,
+    "LevelEquip": 1,
+    "LevelItem": 710,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 313,
+        "MaxHQ": 392
+      }
+    },
+    "itemFood": 666
+  },
+  {
+    "ID": 44167,
+    "LevelEquip": 1,
+    "LevelItem": 665,
+    "Bonuses": {
+      "Craftsmanship": {
+        "ID": 70,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 50,
+        "MaxHQ": 63
+      }
+    },
+    "itemFood": 649
+  },
+  {
+    "ID": 44168,
+    "LevelEquip": 1,
+    "LevelItem": 670,
+    "Bonuses": {
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 50,
+        "MaxHQ": 63
+      }
+    },
+    "itemFood": 650
+  },
+  {
+    "ID": 44169,
+    "LevelEquip": 1,
+    "LevelItem": 675,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 5,
+        "ValueHQ": 6,
+        "Max": 21,
+        "MaxHQ": 27
+      }
+    },
+    "itemFood": 651
+  },
+  {
+    "ID": 45995,
+    "LevelEquip": 1,
+    "LevelItem": 740,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 368,
+        "MaxHQ": 461
+      }
+    },
+    "itemFood": 686
+  },
+  {
+    "ID": 45996,
+    "LevelEquip": 1,
+    "LevelItem": 740,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 368,
+        "MaxHQ": 461
+      }
+    },
+    "itemFood": 687
+  },
+  {
+    "ID": 45997,
+    "LevelEquip": 1,
+    "LevelItem": 740,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 393,
+        "MaxHQ": 492
+      }
+    },
+    "itemFood": 688
+  },
+  {
+    "ID": 45998,
+    "LevelEquip": 1,
+    "LevelItem": 740,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 368,
+        "MaxHQ": 461
+      }
+    },
+    "itemFood": 689
+  },
+  {
+    "ID": 45999,
+    "LevelEquip": 1,
+    "LevelItem": 740,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 368,
+        "MaxHQ": 461
+      }
+    },
+    "itemFood": 690
+  },
+  {
+    "ID": 49234,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 432,
+        "MaxHQ": 541
+      }
+    },
+    "itemFood": 709
+  },
+  {
+    "ID": 49235,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 432,
+        "MaxHQ": 541
+      }
+    },
+    "itemFood": 710
+  },
+  {
+    "ID": 49236,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 476,
+        "MaxHQ": 595
+      }
+    },
+    "itemFood": 711
+  },
+  {
+    "ID": 49237,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 432,
+        "MaxHQ": 541
+      }
+    },
+    "itemFood": 712
+  },
+  {
+    "ID": 49238,
+    "LevelEquip": 1,
+    "LevelItem": 770,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 432,
+        "MaxHQ": 541
+      }
+    },
+    "itemFood": 713
+  }
+]

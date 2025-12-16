@@ -5,7 +5,7 @@ export const lazyFilesList = {
   },
   'achievements': {
     'fileName': 'achievements.json',
-    'hashedFileName': 'achievements.01c9d716e0e0effb5ad2a4be25ba8f0b7abd4152.json'
+    'hashedFileName': 'achievements.42209053e15d24acfba442adcf479412a064b350.json'
   },
   'actionCategories': {
     'fileName': 'action-categories.json',
@@ -189,7 +189,7 @@ export const lazyFilesList = {
   },
   'foods': {
     'fileName': 'foods.json',
-    'hashedFileName': 'foods.97d170e1550eee4afc0af065b78cda302a97674c.json'
+    'hashedFileName': 'foods.ba7bd1359f5bab065a7aa24c38f40071c97d8302.json'
   },
   'freeCompanyActions': {
     'fileName': 'free-company-actions.json',
@@ -277,7 +277,7 @@ export const lazyFilesList = {
   },
   'instances': {
     'fileName': 'instances.json',
-    'hashedFileName': 'instances.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
+    'hashedFileName': 'instances.dd610286932e18bb6bd78da63d66e362c7295ed6.json'
   },
   'islandAnimals': {
     'fileName': 'island-animals.json',
@@ -317,7 +317,7 @@ export const lazyFilesList = {
   },
   'itemBonuses': {
     'fileName': 'item-bonuses.json',
-    'hashedFileName': 'item-bonuses.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
+    'hashedFileName': 'item-bonuses.90b4a67a6696ed247825aa72fe7391d28556d048.json'
   },
   'itemCategory': {
     'fileName': 'item-category.json',
@@ -433,7 +433,7 @@ export const lazyFilesList = {
   },
   'medicines': {
     'fileName': 'medicines.json',
-    'hashedFileName': 'medicines.97d170e1550eee4afc0af065b78cda302a97674c.json'
+    'hashedFileName': 'medicines.47f39d625cdebc9a6bd2b2ab0ebf8cffa659e904.json'
   },
   'mobs': {
     'fileName': 'mobs.json',
@@ -497,7 +497,7 @@ export const lazyFilesList = {
   },
   'quests': {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.929187fe00bd38fd17e3abaed039c68844327f4a.json'
+    'hashedFileName': 'quests.e9a46eee7b2ea851d2f76288263ab3b4c38be62c.json'
   },
   'races': {
     'fileName': 'races.json',
@@ -657,7 +657,7 @@ export const lazyFilesList = {
   },
   'usedInQuests': {
     'fileName': 'used-in-quests.json',
-    'hashedFileName': 'used-in-quests.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
+    'hashedFileName': 'used-in-quests.60d7caf64314ee3bf8dfa0f28cc47071774d9605.json'
   },
   'ventureSources': {
     'fileName': 'venture-sources.json',
@@ -693,7 +693,7 @@ export const lazyFilesList = {
   },
   'itemsDatabasePages': {
     'fileName': 'db/items-database-pages.json',
-    'hashedFileName': 'db/items-database-pages.0e82a0f1cc0c9ae11c0be6c30d4576504ba3d1a0.json'
+    'hashedFileName': 'db/items-database-pages.5729a84008b961e620f2f49881d8338009c5c838.json'
   },
   'levesDatabasePages': {
     'fileName': 'db/leves-database-pages.json',

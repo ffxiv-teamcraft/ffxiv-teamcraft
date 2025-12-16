@@ -9,7 +9,6 @@ export interface MapData {
   offset_z?: number;
   map_marker_range: number;
   priority_ui: number;
-  hierarchy: number;
   territory_id: number;
   image: string;
   placename_id: number;

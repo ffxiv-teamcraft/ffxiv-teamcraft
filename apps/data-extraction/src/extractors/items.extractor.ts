@@ -28,7 +28,7 @@ export class ItemsExtractor extends AbstractExtractor {
       'ChestLegsFeetPercent',
       ''
     ][equipSlotCategoryId - 1];
-  };
+  }
 
   protected doExtract(xiv: XivDataService): any {
 
@@ -156,7 +156,7 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.IsCollectable) {
             collectableFlags[item.index] = 2;
           }
-          if ([844, 845, 846].includes(item.ItemAction?.Type)) {
+          if ([844, 845, 846].includes(item.ItemAction?.Action)) {
             itemBonuses[item.index] = this.processBonuses(itemFood.find(food => food.index === item.ItemAction.Data[1]));
           }
           if (item.BaseParam.some(p => p > 0)) {
