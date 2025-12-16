@@ -9,7 +9,6 @@ export interface LazyActionsDatabasePage {
   effectRange?:      number;
   en:                string;
   fr?:               string;
-  fromQuest?:        number;
   icon:              string;
   id:                number;
   ja?:               string;

@@ -1,8 +1,6 @@
 export interface LazyItemsDatabasePage {
-  action?:            number;
   actionData?:        number;
   additionalData?:    number;
-  bonuses?:           Bonus[];
   bpSpecial:          number[];
   cjUse?:             number;
   cjc?:               number;
@@ -47,16 +45,6 @@ export interface LazyItemsDatabasePage {
   tradeEntries?:      TradeEntry[];
   unique?:            boolean | number;
   usedForLeves?:      UsedForLeve[];
-  usedInQuests?:      number[];
-}
-
-export interface Bonus {
-  HQ:       number;
-  ID:       number;
-  Max?:     number;
-  MaxHQ?:   number;
-  NQ:       number;
-  Relative: boolean;
 }
 
 export interface Collectable {

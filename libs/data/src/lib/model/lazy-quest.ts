@@ -1,10 +1,11 @@
 export interface LazyQuest {
-  action?:  number;
-  banner?:  string;
-  icon:     string;
-  name:     Name;
-  rewards?: Reward[];
-  trades?:  Trade[];
+  action?: number;
+  icon:    Icon;
+  name:    Name;
+}
+
+export enum Icon {
+  I071000071221PNG = "/i/071000/071221.png",
 }
 
 export interface Name {
@@ -12,20 +13,4 @@ export interface Name {
   en: string;
   fr: string;
   ja: string;
-}
-
-export interface Reward {
-  amount: number;
-  hq?:    boolean;
-  id:     number;
-}
-
-export interface Trade {
-  currencies: Currency[];
-  items:      Currency[];
-}
-
-export interface Currency {
-  amount: number;
-  id:     number;
 }

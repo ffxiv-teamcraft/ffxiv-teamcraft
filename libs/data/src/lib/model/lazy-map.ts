@@ -1,6 +1,5 @@
 export interface LazyMap {
   dungeon:          boolean;
-  hierarchy:        number;
   housing:          boolean;
   id:               number;
   image:            string;
