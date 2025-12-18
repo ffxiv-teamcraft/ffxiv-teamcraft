@@ -1390,12 +1390,12 @@
       "FINAL_LIST_PROGRESSION": "查看生產進度",
       "USER_ASSIGNMENT": "成員指派",
       "ITEM_COMPLETION": "道具完成進度",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_PROGRESSION": "道具進度"
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Title": "市場交易板資訊",
+    "Error": "XIVAPI 或 Companion API 目前無法使用，請稍候片刻再重試。",
     "Amount": "Quantity",
     "HQ": "高品質",
     "Total_price": "Total price",
