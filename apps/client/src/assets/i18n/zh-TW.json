@@ -1388,8 +1388,8 @@
       "LIST_REMOVED": "清單已移除",
       "LIST_PROGRESSION": "查看素材進度",
       "FINAL_LIST_PROGRESSION": "查看生產進度",
-      "USER_ASSIGNMENT": "User assignment",
-      "ITEM_COMPLETION": "Item completion",
+      "USER_ASSIGNMENT": "成員指派",
+      "ITEM_COMPLETION": "道具完成進度",
       "ITEM_PROGRESSION": "Item progression"
     }
   },
