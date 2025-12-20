@@ -592,7 +592,8 @@
     "REGIONS": {
       "Global": "글로벌서버",
       "CN": "중국서버",
-      "KR": "한국서버"
+      "KR": "한국서버",
+      "TW": "Taiwan"
     },
     "NOTIFICATIONS": {
       "Title": "공지",
@@ -3303,6 +3304,7 @@
     "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
     "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
     "Wishlist": "Steam에서 보기",
+    "Teamcrafter_description_banner": "Wishlist Teamcrafter on Steam: a roguelike game focused on crafting and gathering made by the developer behind FFXIV Teamcraft!",
     "Supported": "Thanks a lot for your support on Kickstarter <3",
     "Ads_removed": "Ads have been permanently removed from your account"
   }

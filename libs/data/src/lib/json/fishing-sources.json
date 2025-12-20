@@ -28121,5 +28121,63 @@
       "aLure": 3,
       "mLure": 0
     }
+  ],
+  "49796": [
+    {
+      "spot": 305,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 4,
+      "duration": 2,
+      "weathers": [
+        7
+      ],
+      "minGathering": 4450,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "49797": [
+    {
+      "spot": 313,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 0,
+      "duration": 2,
+      "weathers": [
+        4
+      ],
+      "predators": [
+        {
+          "id": 43735,
+          "amount": 3
+        }
+      ],
+      "minGathering": 4450,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "49798": [
+    {
+      "spot": 314,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43736,
+      "spawn": 20,
+      "duration": 2,
+      "weathers": [
+        7
+      ],
+      "weathersFrom": [
+        1,
+        2
+      ],
+      "minGathering": 4450,
+      "aLure": 0,
+      "mLure": 0
+    }
   ]
 }

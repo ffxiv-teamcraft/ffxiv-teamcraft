@@ -592,7 +592,8 @@
     "REGIONS": {
       "Global": "国际服",
       "CN": "国服",
-      "KR": "韩服"
+      "KR": "韩服",
+      "TW": "Taiwan"
     },
     "NOTIFICATIONS": {
       "Title": "通知",
@@ -3303,6 +3304,7 @@
     "Teamcrafter_description_text": "你喜欢和凶猛的怪物战斗吗？冒着生命危险去救陌生人？不，你一定是疯了！",
     "Teamcrafter_description_text_part2": "Teamcrafter 是我实现儿时梦想的作品，感谢社区，感谢你在 Kickstarter 上的大力支持，使得这个项目不仅达成了众筹目标，甚至远超预期！",
     "Wishlist": "Wishlist on Steam",
+    "Teamcrafter_description_banner": "Wishlist Teamcrafter on Steam: a roguelike game focused on crafting and gathering made by the developer behind FFXIV Teamcraft!",
     "Supported": "非常感谢您在 Kickstarter 上的支持 <3",
     "Ads_removed": "已为您的账户永久移除广告"
   }

@@ -75,15 +75,14 @@ export class LazyDataFacade {
             const global$ = of(this.merge(entry));
             const cn$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'zh'));
             const kr$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'ko'));
-            const tw$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'tw'));
 
             if (forceAll) {
               return combineLatest([
                 global$,
-                cn$, kr$, tw$
+                cn$, kr$
               ]).pipe(
-                map(([global, cn, kr, tw]) => {
-                  return this.merge(global, cn, kr, tw);
+                map(([global, cn, kr]) => {
+                  return this.merge(global, cn, kr);
                 })
               );
             }
@@ -102,12 +101,6 @@ export class LazyDataFacade {
                 return kr$.pipe(
                   map(koRow => {
                     return this.merge(entry, koRow);
-                  })
-                );
-              case Region.Taiwan:
-                return tw$.pipe(
-                  map(twRow => {
-                    return this.merge(entry, twRow);
                   })
                 );
             }
@@ -162,9 +155,6 @@ export class LazyDataFacade {
             if (this.translate.currentLang === 'zh') {
               region = Region.China;
             }
-            if (this.translate.currentLang === 'tw') {
-              region = Region.Taiwan;
-            }
             switch (region) {
               case Region.Global:
                 return of(row);
@@ -189,18 +179,6 @@ export class LazyDataFacade {
                     return {
                       ...row,
                       ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : koRow)
-                    };
-                  })
-                );
-              case Region.Taiwan:
-                return this.getRow(this.findPrefixedProperty(propertyKey, 'tw') as LazyDataRecordKey, id).pipe(
-                  map(twRow => {
-                    if (twRow === null) {
-                      return row;
-                    }
-                    return {
-                      ...row,
-                      ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : twRow)
                     };
                   })
                 );

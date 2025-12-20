@@ -90180,7 +90180,7 @@
       "en": " Gwok Away",
       "ja": " ブリ虫バイバイ！",
       "de": " Wo sich die wilden Schaben laben",
-      "fr": " Indésirables oglops"
+      "fr": " Indésirables puluches"
     },
     "icon": "/i/071000/071221.png",
     "rewards": [
@@ -91272,21 +91272,29 @@
   },
   "70765": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Seize the Neigh",
+      "ja": "馬の縁者と降神祭",
+      "de": "Jahreswechsel im Galopp",
+      "fr": "Cheval passion"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080107.png",
+    "banner": "/i/101000/101383.png"
   },
   "70766": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Majesty in Motion",
+      "ja": "御披露道中と降神祭",
+      "de": "Die Pferdeparade",
+      "fr": "L'autre défilé"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080107.png",
+    "rewards": [
+      {
+        "id": 44484,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101384.png"
   },
   "70767": {
     "name": {
@@ -92864,12 +92872,19 @@
   },
   "70861": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Icing on the Cake",
+      "ja": "ヴァレンティオンデーと特大ケーキ",
+      "de": "Die Süßwarenkrise",
+      "fr": "Les gâteaux du cœur"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080108.png",
+    "rewards": [
+      {
+        "id": 47349,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101423.png"
   },
   "70862": {
     "name": {
@@ -95408,6 +95423,680 @@
     "icon": "/i/071000/071221.png"
   },
   "70952": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70953": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70954": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70955": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70956": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70957": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70958": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70959": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70960": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70961": {
+    "name": {
+      "en": "エッグハントと謎の草",
+      "ja": "エッグハントと謎の草",
+      "de": "エッグハントと謎の草",
+      "fr": "Buissons maudits"
+    },
+    "icon": "/i/080000/080110.png",
+    "rewards": [
+      {
+        "id": 50286,
+        "amount": 1
+      },
+      {
+        "id": 50309,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101450.png"
+  },
+  "70962": {
+    "name": {
+      "en": "With the Winds",
+      "ja": "羅針盤が示す先へ",
+      "de": "Der Kompassnadel nach",
+      "fr": "Vers la pointe du compas"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 44183,
+        "amount": 2
+      },
+      {
+        "id": 44178,
+        "amount": 2
+      },
+      {
+        "id": 44181,
+        "amount": 2
+      },
+      {
+        "id": 27994,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101468.png"
+  },
+  "70963": {
+    "name": {
+      "en": "Through the Thunder",
+      "ja": "黒雲を突き抜けて",
+      "de": "Mit blindem Blick",
+      "fr": "Nuée noire"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70964": {
+    "name": {
+      "en": "Beyond the Mountains",
+      "ja": "霧の大陸",
+      "de": "Der Kontinent des Nebels",
+      "fr": "Un continent nébuleux"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41757,
+        "amount": 1
+      },
+      {
+        "id": 41761,
+        "amount": 1
+      },
+      {
+        "id": 41768,
+        "amount": 1
+      },
+      {
+        "id": 41769,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/112000/112634.png"
+  },
+  "70965": {
+    "name": {
+      "en": "Around the City",
+      "ja": "トレノの暮らし",
+      "de": "Ein Tag in Treno",
+      "fr": "Sous le dôme de Tréno"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70966": {
+    "name": {
+      "en": "To Work",
+      "ja": "ルムルとエヤネ",
+      "de": "Geschwisterliebe",
+      "fr": "Frère et sœur"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 44183,
+        "amount": 2
+      },
+      {
+        "id": 44179,
+        "amount": 2
+      },
+      {
+        "id": 44177,
+        "amount": 2
+      },
+      {
+        "id": 27994,
+        "amount": 1
+      }
+    ]
+  },
+  "70967": {
+    "name": {
+      "en": "In Her Heart",
+      "ja": "大地に根づく花のように",
+      "de": "Möge der Himmel unser werden",
+      "fr": "Les tourments d'une Milalla"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70968": {
+    "name": {
+      "en": "Toward Trouble",
+      "ja": "苦難の中にあろうとも",
+      "de": "Blut auf Gleisen",
+      "fr": "Quelles que soient les difficultés"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      }
+    ]
+  },
+  "70969": {
+    "name": {
+      "en": "Where We Call Home",
+      "ja": "隣人と手を取り合いて",
+      "de": "Seite an Seite",
+      "fr": "Solidarité entre voisins"
+    },
+    "icon": "/i/071000/071201.png",
+    "banner": "/i/101000/101469.png"
+  },
+  "70970": {
+    "name": {
+      "en": "Into the Mist",
+      "ja": "霧の中の理想郷",
+      "de": "Nebelland hab ich gesehen",
+      "fr": "Voyage au bout de la brume"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 50779,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101470.png"
+  },
+  "70971": {
+    "name": {
+      "en": "Feral Fandom",
+      "ja": "アルカディアのファンたち",
+      "de": "Das Arkadion von Morgen",
+      "fr": "L'écho des fans"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41768,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/101000/101473.png"
+  },
+  "70972": {
+    "name": {
+      "en": "The Breathtaker",
+      "ja": "魔性の処刑人",
+      "de": "Die diabolische Henkerin",
+      "fr": "Bâillon, domination, sans modération"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41769,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112637.png"
+  },
+  "70973": {
+    "name": {
+      "en": "Daring Devils",
+      "ja": "温度差兄弟",
+      "de": "Extrem, extremer, Team Extrem",
+      "fr": "Ni chaud ni froid"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41761,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112639.png"
+  },
+  "70974": {
+    "name": {
+      "en": "Challenger and Champion",
+      "ja": "挑戦者と統一王者",
+      "de": "Die Entschlossenheit eines Großmeisters",
+      "fr": "Challenger contre Champion"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41757,
+        "amount": 5
+      },
+      {
+        "id": 41758,
+        "amount": 3
+      },
+      {
+        "id": 41759,
+        "amount": 3
+      },
+      {
+        "id": 41760,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/101000/101474.png"
+  },
+  "70975": {
+    "name": {
+      "en": "Iron Fist",
+      "ja": "アルカディアの圧政者",
+      "de": "Der Herrscher des Arkadions",
+      "fr": "Le despote destructeur"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      },
+      {
+        "id": 41768,
+        "amount": 3
+      },
+      {
+        "id": 41769,
+        "amount": 3
+      },
+      {
+        "id": 41761,
+        "amount": 3
+      },
+      {
+        "id": 41757,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/112000/112641.png"
+  },
+  "70976": {
+    "name": {
+      "en": "Glory Incarnate",
+      "ja": "亡国の大蛇",
+      "de": "Die Legende des Lindwurms",
+      "fr": "Le serpent séculaire"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 50792,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/112000/112643.png"
+  },
+  "70977": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70978": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70979": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70980": {
+    "name": {
+      "en": "What Can Eye Do for You",
+      "ja": "プリンセスデーと歌い手たちの人気の秘訣",
+      "de": "Die Prinzessinnenfest-Reportage",
+      "fr": "La recette du succès"
+    },
+    "icon": "/i/080000/080109.png",
+    "rewards": [
+      {
+        "id": 50335,
+        "amount": 1
+      },
+      {
+        "id": 50336,
+        "amount": 1
+      },
+      {
+        "id": 50460,
+        "amount": 1
+      },
+      {
+        "id": 50462,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101451.png"
+  },
+  "70981": {
+    "name": {
+      "en": "Backstage Chats",
+      "ja": "プリンセスデーと歌い手たちとの交流",
+      "de": "Stelldichein mit den Stars",
+      "fr": "Tête à tête de rêve"
+    },
+    "icon": "/i/080000/080109.png",
+    "rewards": [
+      {
+        "id": 5888,
+        "amount": 10
+      },
+      {
+        "id": 5889,
+        "amount": 10
+      }
+    ],
+    "banner": "/i/101000/101452.png"
+  },
+  "70982": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70983": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70984": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70985": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70986": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70987": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70988": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70989": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70990": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70991": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70992": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70993": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70994": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70995": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70996": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70997": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70998": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70999": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "71000": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "71001": {
     "name": {
       "en": "",
       "ja": "",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.12...v11.4.13) (2025-12-20)
+
+
+### Features
+
+* **db:** import missing data from 7.4 & fix tomestones ([e7d9224](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7d9224857a4fc77bc999be1fc535fa5f241d85a))
+
 ### [11.4.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.11...v11.4.12) (2025-12-16)
 
 
