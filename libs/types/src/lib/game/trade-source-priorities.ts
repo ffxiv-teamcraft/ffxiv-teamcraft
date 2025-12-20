@@ -30,9 +30,10 @@ export const TRADE_SOURCES_PRIORITIES = {
   43: 0, // Astronomy
   44: 0, // Causality
   45: 0, // Comedy
-  46: 25, // Aesthetics
-  47: 25, // Heliometry
+  46: 0, // Aesthetics
+  47: 0, // Heliometry
   48: 25, // Mathematics
+  49: 25, // Mnemonics
   7811: 28, // Rowena's Token (Soldiery)
   9383: 28, // Rowena's Token (Poetics)
   14298: 28, // Rowena's Token (Lore)

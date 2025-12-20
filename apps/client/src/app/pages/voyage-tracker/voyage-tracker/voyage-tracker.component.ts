@@ -65,7 +65,7 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
     takeUntil(this.onDestroy$)
   );
 
-  constructor(private dialog: NzModalService, public ipc: IpcService, public translate: TranslateService,
+  constructor(public ipc: IpcService, public translate: TranslateService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public settings: SettingsService) {
     super();
   }
