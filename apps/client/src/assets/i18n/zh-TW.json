@@ -1588,9 +1588,9 @@
     "Loading_message": "正在載入…",
     "TAGS": {
       "Higher_chances": "高機率",
-      "Lower_exp": "Lower exp",
-      "Good_chances": "Good chances",
-      "Good_exp": "Good exp",
+      "Lower_exp": "低分解經驗",
+      "Good_chances": "適當的分解機率",
+      "Good_exp": "適當的分解經驗",
       "Lower_chances": "Lower chances",
       "Higher_exp": "Higher exp",
       "Very_common": "Very common",
