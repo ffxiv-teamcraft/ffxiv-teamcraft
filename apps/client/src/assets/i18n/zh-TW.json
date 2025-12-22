@@ -1500,85 +1500,85 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more!"
+    "Loading_data": "正在載入物品、技能以及更多內容！"
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
-    "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
+    "Title": "自訂物品",
+    "New_item": "創建新自訂物品",
+    "New_folder": "創建新資料夾",
+    "Rename_folder": "重新命名資料夾",
+    "Import_items": "匯入自定義物品",
+    "Save": "儲存物品",
+    "Details": "物品詳情",
     "Export_item": "匯出物品",
     "Export_items": "批次匯出物品",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Add_to_list": "新增至清單",
+    "No_items": "無自定義物品",
     "DETAILS": {
       "Level": "等級",
       "None": "無",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Stars": "難易度",
+      "Requirements": "素材",
+      "Add_requirement": "增加素材",
+      "Yields": "獲得個數",
+      "Name": "名稱",
+      "ID": "物品 ID",
       "CRAFT": {
-        "Title": "Crafted by",
-        "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
+        "Title": "製作方法",
+        "Job": "職業",
+        "No_requirement_warning": "您沒有設定任何素材。這代表您正在建立一個材料數量為０的製作工序。"
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
-        "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Title": "採集方法",
+        "Type": "採集點類型",
+        "Folklore": "傳承錄",
+        "Slot": "欄位"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "鬧鐘"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "商人",
+        "Npc_name": "NPC 名稱",
+        "Price": "價格",
+        "Delete_vendor": "刪除商人"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Title": "兌換來源",
+        "Npc_name": "NPC 名稱",
+        "Shop_name": "商店名稱",
+        "Delete_trade": "刪除兌換",
+        "Trade_details": "兌換詳情",
+        "Add_currency": "新增貨幣"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "精選來源"
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "搜索 NPC",
+      "Npc_name": "NPC 名稱"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content…",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Corrupted_file": "匯入檔案已損壞或格式錯誤",
+      "Drag_or_click": "將檔案拖曳至此，或點擊以選擇檔案",
+      "Format": "格式",
+      "Folder": "資料夾",
+      "No_folder": "無資料夾",
+      "Parsing_file": "正在解析檔案內容…",
+      "Saving_items": "正在儲存物品（{{done}}/{{todo}}）"
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_title": "您有未儲存的變更",
+    "Dialog_description": "離開此頁面將會刪除您所有未儲存的變更，您確定嗎？"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
+    "Title": "軍團籌備",
     "Search": "搜索",
-    "Generate_list": "Create a quick list",
-    "Intro": "Input your levels and click search to get started",
-    "Loading_message": "Loading possible deliveries..."
+    "Generate_list": "創建快速清單",
+    "Intro": "輸入您的等級並點擊搜尋以開始",
+    "Loading_message": "正在載入可能的籌備品…"
   },
   "DESYNTH": {
     "Title": "分解指南",
@@ -1649,7 +1649,7 @@
     "Gil": "Gil",
     "Level": "等級",
     "Details": "詳細",
-    "RP_Details": "RP Details",
+    "RP_Details": "RP 詳情",
     "Experience_points": "經驗值",
     "Reputation_points": "蠻族友好度",
     "Map": "地圖",
@@ -1658,11 +1658,11 @@
     "Drop_rate": "掉落率",
     "Involved_monsters": "相關怪物",
     "Reduces_to": "精選",
-    "Icons_shown": "Data to show",
-    "Select_data_type": "Select data types to show to see the details here",
-    "Desynths_to": "Desynths to",
-    "Limited": "Limited spawn",
-    "3d_model_viewer": "3D model preview",
+    "Icons_shown": "要顯示的資料",
+    "Select_data_type": "選擇要顯示的資料類型以在此查看詳情",
+    "Desynths_to": "分解產出",
+    "Limited": "限時採集",
+    "3d_model_viewer": "3D 模型預覽",
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
     "Currencies": "Currencies",
