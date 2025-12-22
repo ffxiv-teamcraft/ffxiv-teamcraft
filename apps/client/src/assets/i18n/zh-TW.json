@@ -1717,9 +1717,9 @@
       "Your_ranking": "Your ranking",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
-      "Lure": "Lure",
-      "Lure_stacks": "Min. stacks",
-      "Lures": "Lures",
+      "Lure": "擬餌",
+      "Lure_stacks": "最小層數",
+      "Lures": "擬餌",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1768,9 +1768,9 @@
       "Remove_this_bait": "Remove this bait",
       "Bait_removed": "Bait removed from this spot",
       "Position_unknown": "Unknown location",
-      "No_lure_filter": "No lure filter",
-      "Exclude_all_lures": "Exclude lures",
-      "Lure_filter": "Lure filter"
+      "No_lure_filter": "未過濾擬餌",
+      "Exclude_all_lures": "排除擬餌",
+      "Lure_filter": "擬餌篩選器"
     },
     "NODE": {
       "Items": "物品",
