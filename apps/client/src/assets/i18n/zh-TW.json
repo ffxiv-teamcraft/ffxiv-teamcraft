@@ -1748,7 +1748,7 @@
         "Time_since_thrown": "拋竿以來的時間",
         "Throw_etime": "拋竿時間（艾奧傑亞時間）",
         "Ignored_spot": "此釣場不支援回報器，預計會顯示異常數值。",
-        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
+        "Ignored_spot_description": "釣魚回報器將不會回報您所釣到的任何魚類。",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
