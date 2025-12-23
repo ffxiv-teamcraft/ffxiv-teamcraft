@@ -15125,6 +15125,12 @@
   "70764": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n별빛 시장에 있는 솔린은 의욕이 넘치는 것 같다."
   },
+  "70765": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n뱃고물 광장에 있는 말 사또는 모험가가 강신제를 도와주었으면 하는 듯하다."
+  },
+  "70766": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n뱃고물 광장에 있는 말 사또는 마침내 홍보 행진을 시작하려는 모양이다."
+  },
   "70767": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 아므 가란지는 모험가의 힘을 빌리고 싶은 듯하다."
   },
@@ -15413,6 +15419,108 @@
   "70865": {
     "ko": "셰셰네 청린샘에 있는 바쿠쟈쟈는 반구 안으로 가고 싶은 듯하다."
   },
+  "70866": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n워라의 잔향에 있는 파라파는 장인을 찾고 있는 듯하다."
+  },
+  "70867": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n눈지기의 돌방에 있는 파라파는 그동안의 감사한 마음을 전하고 싶은 듯하다."
+  },
+  "70868": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n눈지기의 돌방에 있는 파라파는 모험가의 힘을 빌리고 싶은 듯하다. "
+  },
+  "70869": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n눈지기의 돌방에 있는 파라파는 모험가에게 말하고 싶은 것이 있는 듯하다."
+  },
+  "70870": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n눈지기의 돌방에 있는 파라파는 어딘가 당황하고 있는 듯하다."
+  },
+  "70871": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n눈지기의 돌방에 있는 파라파는 눈의 정령에 대해서 이야기하고 싶은 듯하다."
+  },
+  "70872": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 제설용 도구를 만들었으면 하는 듯하다."
+  },
+  "70873": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 운반용 짐수레에 대해 부탁하고 싶은 것이 있는 듯하다."
+  },
+  "70874": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 모험가에게 부탁하고 싶은 일이 있는 듯하다."
+  },
+  "70875": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 모험가에게 받아와 달라고 부탁하고 싶은 것이 있는 듯하다."
+  },
+  "70876": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 작업원들의 방한 대책에 도움을 요청하고 싶은 듯하다."
+  },
+  "70877": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 물자 보충을 도와줬으면 하는 듯하다."
+  },
+  "70878": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 방한구 제작을 도와줬으면 하는 듯하다."
+  },
+  "70879": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 건축물 보전을 도와주었으면 하는 듯하다."
+  },
+  "70880": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 곤경에 처한 소품 장인을 도와주었으면 하는 듯하다."
+  },
+  "70881": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 부족한 가공 도구를 보충해주길 바라는 듯하다. "
+  },
+  "70882": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 사람 찾는 일을 부탁하고 싶은 듯하다."
+  },
+  "70883": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 설산의 물자 보충에 협력해 주기를 바라는 듯하다."
+  },
+  "70884": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 설산에서의 사고를 줄이고 싶다고 생각하는 듯하다."
+  },
+  "70885": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 협력자들이 휴식을 취했으면 하는 듯하다."
+  },
+  "70886": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 보존식을 대량 생산하기 위해 힘을 보태주었으면 하는 듯하다."
+  },
+  "70887": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 거래 상대를 지명받아 곤란해하고 있는 듯하다."
+  },
+  "70888": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 식료품 저장고의 환경 유지에 관해 생각하고 있는 듯하다."
+  },
+  "70889": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 배식 용품의 부족을 어떻게든 해결하고 싶은 듯하다."
+  },
+  "70890": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 신속하게 움직일 수 있는 인재를 찾고 있는 듯하다."
+  },
+  "70891": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 늘어나는 물자에 대비하고 싶은 듯하다."
+  },
+  "70892": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 짐이 도착하길 기다리고 있는 듯하다."
+  },
+  "70893": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 식량 문제를 해결하고 싶은 듯하다."
+  },
+  "70894": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 눈의 제단의 빛을 유지하고 싶은 듯하다."
+  },
+  "70895": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 등산 도구를 구하고 있는 듯하다."
+  },
+  "70896": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 꽃이 필요한 듯하다."
+  },
+  "70897": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 바위 병사를 걱정하고 있는 듯하다."
+  },
+  "70898": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 키카랴 제조를 돕고 싶은 듯하다."
+  },
+  "70899": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n눈지기의 돌방에 있는 부야구는 기다리는 사람을 걱정하고 있는 듯하다."
+  },
   "70900": {
     "ko": "백룸에 있는 셰일은 모험가에게 할 말이 있는 듯하다."
   },
@@ -15443,11 +15551,20 @@
   "70909": {
     "ko": "백룸에 있는 셰일은 안도한 듯하다."
   },
+  "70910": {
+    "ko": "바닷새떼 시장에 있는 마물 사냥 조합원은 기대에 가득 찬 눈빛으로 모험가를 바라보고 있다."
+  },
   "70911": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n미 케토 야외음악당에 있는 호박머리 여자는 모험가에게 소개하고 싶은 행사가 있는 듯하다."
   },
   "70912": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 호박머리 여자는 폐가 소동을 수습하기 위해서 모험가의 힘을 빌리고 싶은 듯하다."
+  },
+  "70914": {
+    "ko": "레크리에이션 존에 있는 할디보일드는 번잡한 도시 한복판에 조용히 서 있다."
+  },
+  "70915": {
+    "ko": "셰셰네 청린샘에 있는 힐디브랜드는 그 어느 때보다 걱정이 되는 듯하다."
   },
   "70916": {
     "ko": "신기루 마을에 있는 리디르세일은 뭔가 곤란한 일이 있는 듯하다."
@@ -15457,6 +15574,15 @@
   },
   "70918": {
     "ko": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>특수 규칙:  직업 고정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n신기루 마을에 있는 리디르세일은 팬텀 웨폰의 강화에 착수했으면 하는 듯하다."
+  },
+  "70941": {
+    "ko": "에테라이트 광장에 있는 눈을 빛내는 소녀가 뭔가를 열심히 떠들고 있다."
+  },
+  "70942": {
+    "ko": "볼레크도르프에 있는 잉크 다엔은 탐색 상황이 궁금한 듯하다."
+  },
+  "70943": {
+    "ko": "볼레크도르프에 있는 잉크 다엔은 평소보다 더 창백한 얼굴을 하고 있다."
   },
   "70945": {
     "ko": "달 관문 기지에 있는 서칭웨이는 우주 개척 계획의 새로운 단계에 대해 전하고 싶은 듯하다."
