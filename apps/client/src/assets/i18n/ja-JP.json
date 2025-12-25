@@ -213,7 +213,7 @@
     "Public": "公開",
     "Private": "非公開",
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
-    "And_X_more": "and {{amount}} more...",
+    "And_X_more": "……",
     "items": "items",
     "Empty_list": "Nothing to list here",
     "DAYS": {
