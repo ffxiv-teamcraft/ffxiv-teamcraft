@@ -3,7 +3,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { BehaviorSubject, combineLatest, of } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop.facade';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
@@ -13,17 +13,17 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-import-workshop-from-pcap-popup',
-    templateUrl: './import-workshop-from-pcap-popup.component.html',
-    styleUrls: ['./import-workshop-from-pcap-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NzStepsModule, NzBadgeModule, NgTemplateOutlet, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+  selector: 'app-import-workshop-from-pcap-popup',
+  templateUrl: './import-workshop-from-pcap-popup.component.html',
+  styleUrls: ['./import-workshop-from-pcap-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NzStepsModule, NzBadgeModule, NgTemplateOutlet, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
   private _freeCompany = new BehaviorSubject(null);
