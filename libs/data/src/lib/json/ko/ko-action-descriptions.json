@@ -9315,7 +9315,7 @@
     "ko": "힘차게 자세를 취합니다.\n※ 전투 효과는 없습니다."
   },
   "42071": {
-    "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 칼날로 범위 안에 있는 변이 버섯을 분쇄합니다."
+    "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 삽날로 범위 안에 있는 변이 버섯을 분쇄합니다."
   },
   "42149": {
     "ko": "현재 있는 탐색 필드의 중앙 크리스탈로 순간이동합니다."
@@ -9398,6 +9398,15 @@
   "43366": {
     "ko": "당근총의 대상 자동 선택 기능을 끕니다."
   },
+  "44247": {
+    "ko": "체력을 많이 회복합니다."
+  },
+  "44492": {
+    "ko": "변신 상태를 해제합니다."
+  },
+  "44516": {
+    "ko": "눈꽃을 만들어냅니다.\n※ 전투 효과는 없습니다."
+  },
   "44517": {
     "ko": "과자 환영을 보여줍니다."
   },
@@ -9409,6 +9418,12 @@
   },
   "44520": {
     "ko": "호박 환영을 보여줍니다.\n※ 전투 효과는 없습니다."
+  },
+  "44628": {
+    "ko": "자신의 25m 앞쪽을 향해 신속하게 이동하고, 이동 경로상의 적에게 피해를 줍니다."
+  },
+  "44629": {
+    "ko": "자신을 중심으로 주위 적에게 피해를 줍니다."
   },
   "44875": {
     "ko": "불이 붙은 횃불을 들어 올립니다.\n※ 전투 효과는 없습니다."
@@ -9423,10 +9438,10 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>번개 이온 파워 10<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하여, 부유 마법의 원리로 지하에 있는 파엔나이트를 지상으로 끌어 올립니다. 모래늪 구멍에 사용할 수 있습니다."
   },
   "44923": {
-    "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 칼날로 범위 안에 있는 유리 덩어리를 분쇄합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 칼날 충전(최대 6중첩)"
+    "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 삽날로 범위 안에 있는 유리 덩어리를 분쇄합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 삽날 충전(최대 6중첩)"
   },
   "44924": {
-    "ko": "바람속성 충격파를 발생시키면서 전방으로 돌진하며, 로더 앞쪽에 달린 칼날로 범위 안에 있는 유리 덩어리를 분쇄합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>칼날 충전 3<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "바람속성 충격파를 발생시키면서 전방으로 돌진하며, 로더 앞쪽에 달린 삽날로 범위 안에 있는 유리 덩어리를 분쇄합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>삽날 충전 3<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "44925": {
     "ko": "루나아다만 드릴로 지면을 파서 땅속에 있는 소형 파엔나이트를 채굴합니다."
