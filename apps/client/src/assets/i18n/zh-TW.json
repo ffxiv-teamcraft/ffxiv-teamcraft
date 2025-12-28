@@ -2298,13 +2298,13 @@
       "Your_gearset": "你的裝備配置",
       "Other_gearset": "其他裝備配置",
       "Diff": "差異",
-      "Avg_melding_chances": "Avg. overmeld chances"
+      "Avg_melding_chances": "平均禁斷鑲嵌成功率"
     },
     "STAT_DISPLAY": {
       "Ilvl": "平均品級",
-      "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
+      "HP": "體力",
+      "Direct_hit_chances": "直擊率",
+      "Critical_hit_chances": "暴擊率",
       "Critical_hit_multiplier": "Critical Hit Mult.",
       "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
