@@ -279,7 +279,7 @@
       "Title": "新增自訂鬧鐘",
       "Name": "名稱",
       "Spawn": "出現（艾奧傑亞時間）",
-      "Spawns_twice": "重生 2 次",
+      "Spawns_twice": "出現 2 次",
       "Spawns_twice_description": "每艾奧傑亞天出現 2 次（上午、下午）",
       "Duration": "持續（艾奧傑亞小時）",
       "Slot": "欄位",
@@ -2305,17 +2305,17 @@
       "HP": "體力",
       "Direct_hit_chances": "直擊率",
       "Critical_hit_chances": "暴擊率",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
-      "Determination_bonus": "Determination bonus",
+      "Critical_hit_multiplier": "暴擊倍率",
+      "Determination_bonus": "信念加成",
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "同步裝備配置",
       "Tag": "同步",
       "Tag_tooltip": "此裝備配置透過封包擷取同步，將會於再次同步時更新。",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets…"
+      "Importing_gearset": "正在匯入 {{name}} 的裝備配置",
+      "Imported_gearset": "已匯入 {{name}} 的裝備配置",
+      "Syncing_gearsets": "正在同步裝備配置…"
     }
   },
   "FOLDERS": {
@@ -2329,103 +2329,103 @@
     "Favorite_folders": "收藏資料夾"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Start": "開始此頁面的教學",
+    "Next": "下一步",
+    "Done": "完成",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use its basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?",
+      "Title": "歡迎使用 FFXIV Teamcraft",
+      "Explanation": "Teamcraft 有一個關於如何使用其基本特色與功能的小型教學。它會以小視窗或彈出視窗的形式，出現在應用程式中的各個頁面。",
+      "Question": "您是否要啟用此功能？",
       "Can_be_changed_in_settings": "可以在設定中開啟或關閉。"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "將鼠標懸停在您的名稱上以進入個人資料編輯器，並設定您的等級、屬性以及更多內容。"
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link.",
+      "Search_type": "您可以在此處更改搜尋的資料類型（物品、任務、地圖、採集點、NPC 等）。",
+      "Share": "使用此按鈕將您的搜尋結果轉換為可分享的連結。",
       "Filters": "開啟此面板以使用進階篩選條件，依據能力值、獎勵、品級等進行篩選"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it.",
-      "Open_list": "Click here to open the list's details. You can also double click the list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "點擊此處複製此清單的連結，以便輕鬆分享。",
+      "Open_list": "點擊此處開啟清單詳情。您也可以連按兩下清單名稱。",
+      "More": "點擊此選單以重新命名清單、管理權限以及更多內容。"
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
+      "HQ_mark": "此圖示表示此物品為最終配方所需，因此您可能需要高品質版本，但並非強制要求。",
       "Layout": "您可以開啟版面配置編輯器來任意地編輯顯示內容、變更面板及其如何篩選資料。此按鈕左側的按鈕用於快速切換版面配置。",
-      "Permissions": "You can edit permissions, add other users, make your list read-only, share it to a FC, and more, by opening the permission editor.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
+      "Permissions": "您可以在開啟權限編輯器後，編輯權限、新增其他使用者、將您的清單設為唯讀、分享至公會以及更多內容。",
+      "Fill_with_inventory": "您可以將背包內的所有物品新增至此清單中。",
+      "Pricing_mode_button": "透過價格模式，輕鬆準備並預測此清單的收益。",
       "More_actions_button": "此按鈕會開啟一個選單，其中包含許多針對當前列表行的不同操作。您可以使用版面配置編輯器將這些操作轉換為按鈕。",
       "Alarm_button": "點擊此處為此物品建立鬧鐘，以便在出現時獲得提醒。"
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as Ariyala, Craftingasaservice and Garlandtools."
+      "Merge": "您可以透過合併按鈕來合併兩個清單。",
+      "Import": "您可以從 Ariyala、Craftingasaservice 與 Garlandtools 等各種網站匯入清單。"
     },
     "DB": {
-      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+      "Button": "點擊此資訊按鈕可開啟資料庫頁面，其中包含其旁邊項目的詳細資訊（NPC 名稱、地圖、物品、怪物等）。對於物品，點擊圖示也可以開啟資料庫頁面。"
     },
     "DESYNTH": {
-      "Job": "Select the job you want to level",
-      "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done!"
+      "Job": "選擇您想要升級的職業",
+      "Level": "輸入分解等級（而非實際的職業等級）",
+      "Search": "點擊搜尋，大功告成！"
     },
     "RESET_TIMERS": {
-      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+      "Toggle": "將此開關設置為開啟，即可啟用特定計時器的鬧鐘。"
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
-      "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (Good, Excellent, Poor, fail, etc) and predict the results.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
-      "Import_ingame_macro": "Click here to import from ingame macro.",
-      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share the rotation with your stats and consumables."
+      "Character_configuration": "在此處設定您的等級與屬性。",
+      "HQ_ingredients": "在此處輸入高品質素材以設定初始品質。",
+      "Consumables": "在此處設定消耗品與公會特效。",
+      "Right_click_condition": "右鍵點擊技能以設定其狀態（高品質、最高品質、低品質、失敗等）並預測結果。",
+      "Save_as_new": "點擊此處在您的帳號中儲存此工序的副本。",
+      "Import_ingame_macro": "點擊此處從遊戲內巨集匯入。",
+      "Generate_ingame_macro": "點擊此處為此工序生成遊戲內巨集。",
+      "Share_with_stats": "點擊此處開啟分享彈窗，讓您可以分享包含您的屬性與消耗品設定在內的工序。"
     },
     "ALARMS": {
-      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
-      "Custom": "Click here to create a custom alarm.",
-      "Compact": "Click here to toggle alarms' compact display."
+      "Settings": "點擊此處編輯鬧鐘設定（音效、音量等）。",
+      "Custom": "點擊此處建立自訂鬧鐘。",
+      "Compact": "點擊此處切換鬧鐘的緊湊模式。"
     },
     "COMMUNITY_ROTATIONS": {
-      "Text_filter": "Use this input field to find a rotation using its name",
-      "Tags_filter": "Filter by tags using this select box",
-      "Rlvl_filter": "Filter by recipe level using this select box",
-      "Durability_filter": "Filter by durability using this select box",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum Control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum CP required here, this will find only rotations with required CP < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the resulting rotations."
+      "Text_filter": "請使用此輸入欄位，透過名稱搜尋工序",
+      "Tags_filter": "請使用此選取框透過標籤進行篩選",
+      "Rlvl_filter": "請使用此選取框透過配方等級進行篩選",
+      "Durability_filter": "請使用此選取框透過耐久度進行篩選",
+      "Min_craftsmanship": "請在此處依最低作業精度需求進行篩選，這將僅搜尋出「需求作業精度 < 您輸入的數值」之工序。",
+      "Min_control": "請在此處依最低加工精度需求進行篩選，這將僅搜尋出「需求加工精度 < 您輸入的數值」之工序。",
+      "Min_cp": "請在此處依最低製作力需求進行篩選，這將僅搜尋出「需求製作力 < 您輸入的數值」之工序。",
+      "Set_selector": "請選擇要用於模擬的職業，系統將根據該職業顯示生成工序的成功率。"
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page. Here you can select the time range for which you want to see data displayed, it defaults to today.",
-      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
-      "Edit_dashboard": "You can enter edit mode using this button. It's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily. Don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Welcome_time_range": "歡迎來到指標儀表板。您可以在此選擇想要查看資料的時間範圍，系統預設顯示今日的數據。",
+      "Select_dashboard": "您可以擁有多個儀表板，並能輕鬆地在它們之間切換，以便查看對您而言重要的資訊。",
+      "Edit_dashboard": "您可以使用此按鈕進入編輯模式。此功能僅適用於非預設的儀表板。",
+      "Create_dashboard": "您可以輕鬆建立自己的儀表板。建立後請記得進行編輯，否則它將只是預設儀表板的副本。",
       "Delete_layout": "想擺脫一個儀表板？按下此按鈕，確認，然後咻一聲（刪除無法復原）。",
       "Export_layout": "想與您的夥伴分享您令人驚嘆的儀表板？點擊此按鈕即可複製您目前所選儀表板的匯出代碼。",
       "Import_layout": "如果有人使用匯出代碼與您分享一個儀表板，請使用此按鈕來匯入它。",
       "EDITOR": {
         "Welcome_add_column": "歡迎使用儀表板版面配置編輯器，您可以使用此按鈕新增欄位（最多 5 個欄位）。",
-        "Save": "Don't forget to save your modifications after you edited your dashboard.",
+        "Save": "編輯完儀表板後，請別忘了儲存您的修改。",
         "Revert": "或者如果您不喜歡您所做的更改，請使用此按鈕返回到您編輯之前的原始版面配置。",
-        "Delete_column": "Want to remove a column? Here it is!",
-        "Add_panel": "Click here to add a new panel.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
-        "Data_type": "First of all, select the metric type you want to use.",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Delete_column": "想要移除某個欄位嗎？按這裡就對了！",
+        "Add_panel": "點擊此處新增面板。",
+        "Reorder": "您可以利用拖放功能將面板移動到任何您想要的位置。",
+        "Data_type": "首先，請選擇您想要使用的指標類型。",
+        "Filters": "然後，過濾資料以僅顯示您想要呈現的部分，並具備組合及反轉篩選器的功能。",
+        "Title": "為您的面板設定標題",
+        "Display_type": "選擇您想要用來呈現資料的組件，並相應地增加輸入。"
       }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "自動修正此錯誤",
     "USERS": {
-      "Title": "Users",
+      "Title": "使用者",
       "X_characters_linked": "已連結 {{amount}} 個角色",
       "Email": "電子郵件",
       "Uid": "UID",
@@ -2438,20 +2438,20 @@
         "CHARACTER": "角色"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "開啟個人資料",
+        "Check": "執行完整性檢查"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid",
-        "All_lists_ok": "All lists are working properly"
+        "All_characters_valid": "所有連結的角色皆有效",
+        "All_lists_ok": "所有清單皆正常運作"
       }
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
+    "Title": "指標儀表板",
+    "Today": "今日",
+    "This_week": "本週",
+    "This_month": "本月",
     "Add_new_column": "Add a new column (max 5)",
     "Default_dashboard": "Default dashboard",
     "Copy_to_clipboard": "複製匯出代碼到剪貼簿",
@@ -2470,77 +2470,77 @@
       "GATHERING": "Gathering",
       "CRAFTING": "Crafting",
       "FISHING": "Fishing",
-      "VENDOR": "Vendor",
-      "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard",
-      "RETAINER": "Retainer"
+      "VENDOR": "商人",
+      "TELEPORT": "傳送",
+      "MARKETBOARD": "市場交易板",
+      "RETAINER": "雇員"
     },
     "TYPES": {
-      "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ANY": "任何",
+      "CURRENCY": "貨幣",
+      "ITEM": "物品"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
-      "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Type": "類型",
+      "Entry_label": "標籤",
+      "Value": "數值",
+      "Source": "來源",
+      "Timestamp": "時間戳記"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
-      "Source": "Amount per source"
+      "Amount": "每個物品的數量",
+      "Source": "每個來源的數量"
     },
     "EDITOR": {
-      "Data": "Data",
-      "Data_type": "Type",
-      "Filter": "Filter",
-      "Accepted_items": "Accepted items",
-      "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
-      "Title": "Title",
-      "Font_size": "Font size",
-      "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
-      "Operator": "Operator",
+      "Data": "資料",
+      "Data_type": "類型",
+      "Filter": "篩選器",
+      "Accepted_items": "接受的物品",
+      "Accepted_sources": "接受的來源",
+      "Display": "顯示",
+      "Display_type": "顯示組件",
+      "Title": "標題",
+      "Font_size": "文字大小",
+      "Value_label": "數值標籤",
+      "Pie_metric": "指標",
+      "Add_filter": "新增篩選器",
+      "Operator": "操作員",
       "Cannot_edit_default": "您不能編輯預設版面配置，請改為創建一個新的版面配置來自訂它",
       "Cannot_delete_default": "您無法刪除預設版面配置",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
-        "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "FishFilter": "僅接受來自釣場的魚類",
+        "ItemFilter": "僅接受一組特定的物品",
+        "NoFilter": "全部接受",
+        "ObtentionFilter": "僅接受大於 0 的數值",
+        "SourceFilter": "僅接受一組特定的來源",
+        "SpendingFilter": "僅接受小於 0 的數值",
+        "GilFilter": "僅接受金幣項目"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
-        "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
-        "table": "Table of all matching entries"
+        "total": "聚合數值",
+        "histogram": "隨時間變化的演變趨勢",
+        "pie-chart": "圓餅圖",
+        "table": "所有符合項目的表格"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
-    "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Open": "開啟物品搜尋懸浮視窗",
+    "Intro_message": "搜尋物品以查看其詳細資訊、背包以及市場交易板資訊",
+    "Placeholder": "物品名稱",
+    "None_inside_inventory": "此物品不在任何背包中。",
+    "Open_in_main_window": "在主視窗開啟",
+    "Marketboard_informations": "市場交易板資訊"
   },
   "COLLECTABLES": {
-    "Title": "Collectables",
-    "No_collectables_for_this_level": "No collectables available for this level"
+    "Title": "收藏品",
+    "No_collectables_for_this_level": "此等級目前沒有可用的收藏品"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
+    "Title": "工序重播",
+    "Online_replays": "線上重播",
+    "Offline_replays": "離線重播",
+    "Open_replay_page": "開啟重播頁面",
     "Open_result_modal": "Open result popup",
     "Copy_to_clipboard": "Copy share link to your clipboard",
     "Delete": "Delete replay",
@@ -2901,16 +2901,16 @@
         "Abbreviation": "S+"
       },
       "MODIFIED_UNKIU": {
-        "Abbreviation": "U+"
+        "Abbreviation": "2改"
       },
       "MODIFIED_WHALE": {
-        "Abbreviation": "W+"
+        "Abbreviation": "3改"
       },
       "MODIFIED_COELACANTH": {
-        "Abbreviation": "C+"
+        "Abbreviation": "4改"
       },
       "MODIFIED_SYLDRA": {
-        "Abbreviation": "Y+"
+        "Abbreviation": "5改"
       }
     }
   },
@@ -2930,7 +2930,7 @@
     "Feature_banner_title": "New feature: Allagan Reports",
     "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan reports",
-    "Reports": "Reports",
+    "Reports": "報告",
     "Pending_changes": "Pending changes",
     "No_pending_changes": "No pending changes",
     "New_report": "New report",
@@ -3270,7 +3270,7 @@
     "Crafting_Simulator": "生產模擬器",
     "Crafting_Rotation": "生產工序",
     "Gearsets": "裝備配置",
-    "Crafting_Replays": "工序回放",
+    "Crafting_Replays": "工序重播",
     "Allagan_Reports": "亞拉戈報告",
     "Community_Lists": "社群清單",
     "Community_Rotations": "社群工序",
