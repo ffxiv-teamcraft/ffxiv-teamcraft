@@ -2711,18 +2711,18 @@
       "CANNOT_GATHER": "我無法收集所需物品，且委託人也不會提供這些物品。"
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Title": "匯入委託",
+      "Description": "請檢查下列項目是否為您想建立委託的內容。注意：不可交易的物品已自動從下方清單中移除。",
+      "Create_commission": "創建委託",
+      "No_items": "沒有物品"
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
+    "Total_entries": "總筆數",
+    "Last_updated": "最後更新",
     "Last_bnpc_update": "已上傳怪物位置",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
+    "Last_node_update": "最後上傳的採集位置",
+    "Clear_map": "清空此地圖",
     "Dashboard": "Mappy Dashboard",
     "Open_details": "Open details page",
     "X_Missing_nodes": "{{amount}} missing node(s)",
