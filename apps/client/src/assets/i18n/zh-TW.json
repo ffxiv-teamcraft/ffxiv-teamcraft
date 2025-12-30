@@ -122,9 +122,9 @@
   "Public_lists": "共享清單",
   "Your_public_lists": "您的共享清單",
   "Public_list": "共享清單",
-  "Profile": "個人資料",
+  "Profile": "個人檔案",
   "Private_lodestone": "您的角色在 Lodstone 上設置為私密狀態",
-  "Private_lodestone_explain": "請至少將主要個人資料設定為公開，以便 Teamcraft 可以使用。",
+  "Private_lodestone_explain": "請至少將主要個人檔案設定為公開，以便 Teamcraft 可以使用。",
   "X_for_total": "共 {{amount}} 個",
   "Discounts": "折扣",
   "Flat_discount": "金額",
@@ -623,7 +623,7 @@
     "Veteran": "老手",
     "Autofill_from_packets": "使用封包擷取以自動填入狀態（也會考慮食物統計）",
     "Autofill_stats_explain": "切換到所需的職業以進行更新，並在完成後關閉此彈出視窗。",
-    "Open_public_profile": "公開個人資料",
+    "Open_public_profile": "公開個人檔案",
     "Community_contributions": "社群貢獻",
     "Fishing_rankings": "垂釣排名",
     "Total_rankings": "綜合排名",
@@ -632,16 +632,16 @@
     "Gearset_priority_explain": "用於決定為可由多種職業製作的物品（例如錠、塊以及其他飛空艇修理材料）選擇哪個配方。",
     "Characters": "角色",
     "Missing_character": "角色不存在",
-    "Missing_character_description": "此角色已不存在，請從您的個人資料中刪除。",
+    "Missing_character_description": "此角色已不存在，請從您的個人檔案中刪除。",
     "Delete_account": "刪除我的帳號",
-    "Delete_account_confirmation": "此操作無法復原，並將刪除你的帳號以及你的個人資料。你的清單、工序和裝備配置仍會存在，但會連結到一個不存在的個人資料。",
+    "Delete_account_confirmation": "此操作無法復原，並將刪除你的帳號以及你的個人檔案。你的清單、工序和裝備配置仍會存在，但會連結到一個不存在的個人資料。",
     "VERIFICATION": {
       "Button": "驗證",
       "Title": "角色驗證",
-      "Guide": "若要驗證您的帳號，請將此代碼：\"{{userId}}\" 貼到您的 Lodestone 個人資料簡介中，然後點擊下方的按鈕。更多資訊請參閱 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
-      "Success": "角色已驗證！您現在可以關閉此彈出視窗。您可以隨時從 Lodestone 個人資料中移除該代碼，因為它已不再需要。",
+      "Guide": "若要驗證您的帳號，請將此代碼：\"{{userId}}\" 貼到您的 Lodestone 個人檔案簡介中，然後點擊下方的按鈕。更多資訊請參閱 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Success": "角色已驗證！您現在可以關閉此彈出視窗。您可以隨時從 Lodestone 個人檔案中移除該代碼，因為它已不再需要。",
       "Validate": "驗證",
-      "Submitted": "正在檢查您的 Lodestone 個人資料...",
+      "Submitted": "正在檢查您的 Lodestone 個人檔案…",
       "Error": "找不到您個人資料中的驗證碼。請確認是否已貼上驗證碼並套用變更。如果仍然驗證失敗，請在幾小時後重試，因為這與 Lodestone 的快取機制有關。然而，驗證僅影響公會清單和委託系統，其他功能仍可正常使用。"
     }
   },
@@ -782,7 +782,7 @@
     "Missing_tags_after_button": " 按鈕",
     "Add_remove_amount": "新增/移除給定的數量",
     "Add_from_external": "新增為外部（您沒有使用材料製作它）",
-    "Missing_masterbook": "您的個人資料中沒有這本秘笈。點擊以將其新增到個人資料。",
+    "Missing_masterbook": "您的個人檔案中沒有這本秘笈。點擊以新增。",
     "No_note": "無備註",
     "Edit_note": "編輯備註",
     "Note_placeholder": "備註",
@@ -1251,7 +1251,7 @@
     },
     "CONFIGURATION": {
       "Job": "職業",
-      "Job_not_configured": "您似乎尚未設定此職業。請前往「個人資料」頁面進行正確設定並填寫屬性數值。",
+      "Job_not_configured": "您似乎尚未設定此職業。請前往「個人檔案」頁面進行正確設定並填寫屬性數值。",
       "Job_not_configured_anonymous": "請輸入您的屬性數值以獲得準確的模擬結果，或是登入您的帳號",
       "Select_job": "選擇職業",
       "Craftsmanship": "作業精度",
@@ -1266,7 +1266,7 @@
       "Food": "選擇料理",
       "Medicine": "選擇藥品",
       "Action": "選擇公會特效",
-      "Save_on_profile": "保存至角色",
+      "Save_on_profile": "保存至個人檔案",
       "Reset_set": "重置這些屬性",
       "Save_consumables": "將這些消耗品設為預設",
       "No_food": "無料理",
@@ -1607,7 +1607,7 @@
     "Recipes": "配方",
     "No_known_way_to_obtain": "找不到此物品的獲取途徑",
     "Gathering": "採集",
-    "Tradeable": "可交換的",
+    "Tradeable": "可兌換的",
     "Unique": "珍稀",
     "Dye_slots": "染料槽",
     "Materia_sockets": "魔晶石鑲孔",
@@ -1627,7 +1627,7 @@
     "More_on_attt_npc": "在另一個九宮幻卡追蹤器上查看此 NPC 的詳細資訊",
     "Triple_triad_pack": "九宮幻卡卡包",
     "Dungeons": "副本 / 討伐戰",
-    "Used_for_trades": "交換",
+    "Used_for_trades": "兌換",
     "Can_contain_items": "可能包含物品",
     "Open_in_db": "查看資料庫內的詳細資訊",
     "Team_size": "人數限制",
@@ -1800,7 +1800,7 @@
       "Quests": "任務",
       "Shops": "商店",
       "Leves": "理符",
-      "Trades": "交換"
+      "Trades": "兌換"
     },
     "FIGHT_TYPE": {
       "Boss": "首領",
@@ -2214,7 +2214,7 @@
     "Filters": "篩選",
     "Total_stats": "總屬性",
     "Total_materias_needed": "所需的魔晶石總計",
-    "Total_cost": "總成本（交換、金幣等）",
+    "Total_cost": "總成本（兌換、金幣等）",
     "Materia": "魔晶石",
     "Amount_needed": "數量",
     "Slots_used": "槽位",
@@ -2254,7 +2254,7 @@
     "Paste_lodestone_id": "貼上 Lodestone ID",
     "Currency": "貨幣",
     "Optimize_materias": "最佳化魔晶石鑲嵌順序",
-    "No_trades_needed": "無須交換",
+    "No_trades_needed": "無須兌換",
     "Stats_caps": "屬性上限",
     "Stat_computing_diclaimer": "結果並非百分之百準確，這些數據來自像你我一樣花費大量時間研究公式的玩家（Allagan Studies），請勿將誤差作為錯誤回報。",
     "Missing_items": "看來你缺少了一些裝備部位，請確保你的篩選器已正確設定",
@@ -2339,7 +2339,7 @@
       "Can_be_changed_in_settings": "可以在設定中開啟或關閉。"
     },
     "APP": {
-      "Profile": "將鼠標懸停在您的名稱上以進入個人資料編輯器，並設定您的等級、屬性以及更多內容。"
+      "Profile": "將鼠標懸停在您的名稱上以進入個人檔案編輯器，並設定您的等級、屬性以及更多內容。"
     },
     "SEARCH": {
       "Search_type": "您可以在此處更改搜尋的資料類型（物品、任務、地圖、採集點、NPC 等）。",
@@ -2438,7 +2438,7 @@
         "CHARACTER": "角色"
       },
       "ACTIONS": {
-        "Profile": "開啟個人資料",
+        "Profile": "開啟個人檔案",
         "Check": "執行完整性檢查"
       },
       "INTEGRITY_CHECK": {
@@ -2650,60 +2650,60 @@
       "Items_count": "物品編號",
       "Creation_date": "創建日期",
       "Server_&_tags": "伺服器 & 標籤",
-      "Add_items": "Add items",
-      "Rating": "Rating",
-      "Comment": "Your comment",
-      "Comment_placeholder": "Add more details about your rating here"
+      "Add_items": "新增物品",
+      "Rating": "評分",
+      "Comment": "您的評論",
+      "Comment_placeholder": "在此處新增更多關於您評分的詳細資訊"
     },
     "APPLY": {
-      "Price": "Your price",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Price": "您的出價",
+      "Contact_info_placeholder": "如有需要，委託人該如何聯絡您以討論您的應徵？您可以視需求提供 Discord、遊戲內名稱或電子郵件。"
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "點擊開啟委託",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "委託已結束",
+        "Content": "您不再是委託 {{name}} 的承接人"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "委託已結束",
+        "Content": "委託 {{name}} 的承接人已放棄委託"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "委託已開始",
+        "Content": "您已被錄用承接委託 {{name}}"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "新應徵者",
+        "Content": "委託 {{name}} 有新的應徵者"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "委託清單已完成",
+        "Content": "與委託 {{name}} 相關的清單已完成"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
-      "No_ratings": "No ratings yet",
-      "Fired_X_times": "Fired {{amount}} times",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Details": "委託檔案",
+      "View_details": "開啟檔案詳情",
+      "Ratings": "評分",
+      "Incidents": "異常紀錄",
+      "No_incidents": "無異常紀錄",
+      "Fired": "已被解除委託",
+      "Resigned": "已辭退委託",
+      "No_ratings": "尚無評分",
+      "Fired_X_times": "已被解除委託 {{amount}} 次",
+      "Resigned_X_times": "已辭退委託 {{amount}} 次"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has an active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "Please_pick_reason": "您為何要解除此承接人的委託？",
+      "NO_ACTIVE_SUB": "承接人的已不再訂閱遊戲。",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "承接人不再方便與此委託人合作。",
+      "NO_LONGER_NEED_JOB_DONE": "不再需要此委託。",
+      "FOUND_SOMEONE_ELSE": "已為此委託找到其他承接人。",
+      "CANNOT_AFFORD": "我負擔不起此委託費用。"
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
+      "Please_pick_reason": "您為何要辭退此委託？",
       "NO_ACTIVE_SUB": "我已不再訂閱遊戲。",
       "UNCOMFORTABLE_WITH_CLIENT": "不再方便與此委託人合作。",
       "CANNOT_COMPLETE_LEVEL": "我無法完成此委託，因為我未達到等級要求。",
@@ -2723,23 +2723,23 @@
     "Last_bnpc_update": "已上傳怪物位置",
     "Last_node_update": "最後上傳的採集位置",
     "Clear_map": "清空此地圖",
-    "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Dashboard": "Mappy 儀表板",
+    "Open_details": "開啟詳情頁面",
+    "X_Missing_nodes": "尚缺 {{amount}} 個採集點",
+    "Missing_nodes": "缺失的採集點",
+    "No_missing_nodes": "無缺失的採集點",
+    "Only_missing_nodes": "僅顯示含有缺失採集點的地圖"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
+    "Title": "工坊配方流程",
+    "View_tree": "開啟工坊配方流程",
+    "Phase": "第 {{phase}} 階段"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_purchases": "Include purchases",
-    "Include_trades": "Include trades",
+    "Title": "練級裝備",
+    "Include_crafting": "包含裝備製作",
+    "Include_purchases": "包含裝備購買",
+    "Include_trades": "包含裝備兌換",
     "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
@@ -2788,17 +2788,17 @@
     "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
-    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
-    "Already_supporting": "Already a Patreon supporter? Make sure you link your account to Patreon in the settings",
+    "Popup_introduction": "嗨，我是 Miu，也就是您目前使用的這款工具的開發者。<br/>在過去幾年裡，Teamcraft 一直是我的興趣所在，而我的夢想是能將它轉變為我的全職工作。<br/><br/>在您的幫助下，這個夢想將有機會成真。您可以透過 Patreon 支持這款工具，每一塊錢對我來說都至關重要，並且能幫助我達成這個目標。<br/><br/>在 Patreon 上支持本專案，您還能獲得一些超酷的福利：",
+    "Already_supporting": "已經是 Patreon 的贊助者了嗎？請務必在設定中將您的帳號與 Patreon 進行關聯",
     "PATREON_BENEFITS": {
-      "No_ads": "Ads-free Teamcraft experience",
-      "Discord_rank": "Special rank on the Discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
-      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
-      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
-      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
+      "No_ads": "享受無廣告的 Teamcraft 體驗",
+      "Discord_rank": "Discord 伺服器上的特殊身分組，讓您可以進入贊助者專屬頻道，搶先查看我們的開發進度（${{price}}）",
+      "Profile_badge": "Teamcraft 個人檔案上的特殊徽章 (${{price}})",
+      "Custom_theme": "更進階的主題自定義功能，包含自定義顏色輸入 (${{price}})",
+      "Pins_badge": "專屬的 Teamcraft 實體別針徽章寄送服務 (${{price}})（需在 Patreon 上填寫收件資訊）",
+      "Loading_screen_message": "在「由……贊助提供」載入訊息中新增一項內容，可以填寫您的名稱、公會名稱、通訊貝名稱，或是任何您想加入的文字！(${{price}})"
     },
-    "Select_retainer": "Pick one of your retainers"
+    "Select_retainer": "請選擇您的一位雇員"
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "使用封包擷取匯入",
@@ -2812,7 +2812,7 @@
     "Submersibles": "潛水艇"
   },
   "VOYAGE_TRACKER": {
-    "Title": "Voyage tracker",
+    "Title": "探索追蹤器",
     "Import_using_pcap": "使用封包擷取匯入",
     "Voyage_completion_alarm": "Voyage completion alarm",
     "Voyage_completed_notification_title": "{{name}} has completed its voyage",
