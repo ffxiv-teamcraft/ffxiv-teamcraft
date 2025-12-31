@@ -1858,12 +1858,12 @@
         "CP": "製作力",
         "Beast_gauge": "獸魂量譜",
         "Blood_gauge": "暗血量譜",
-        "Ninki": "Ninki",
-        "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
-        "Kenki": "Kenki"
+        "Ninki": "忍氣",
+        "Chakra": "鬥氣",
+        "Greasing_lightning": "疾風迅雷",
+        "Aetherflow": "以太超流",
+        "Oath_gauge": "忠義量譜",
+        "Kenki": "劍氣"
       }
     },
     "TRAIT": {
@@ -2831,28 +2831,28 @@
     "Nothing_to_show": "沒有任何內容可顯示",
     "Please_import_pcap": "請使用封包擷取匯入飛空艇與潛水艇",
     "SECTOR_PROGRESSION": {
-      "Airship": "Airship",
-      "Submersible": "Submersible"
+      "Airship": "飛空艇",
+      "Submersible": "潛水艇"
     },
     "VOYAGE_DETAILS": {
-      "Title": "Voyage"
+      "Title": "探索"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
-      "Condition": "Condition"
+      "Title": "配件",
+      "Condition": "耐久度"
     },
     "STATS_DETAILS": {
-      "Title": "Stats"
+      "Title": "性能"
     },
     "STATS": {
-      "Surveillance": "Surveillance",
-      "Retrieval": "Retrieval",
-      "Speed": "Speed",
-      "Range": "Range",
-      "Favor": "Favor"
+      "Surveillance": "探索性能",
+      "Retrieval": "收集性能",
+      "Speed": "巡航速度",
+      "Range": "航行距離",
+      "Favor": "恩惠"
     },
     "RANK_DETAILS": {
-      "Experience_Points": "Experience Points"
+      "Experience_Points": "經驗"
     }
   },
   "AIRSHIP": {
@@ -2915,9 +2915,9 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
+    "Title": "尋寶助手",
+    "Description": "請選擇一張地圖，並尋找您正在搜尋的寶藏",
+    "Select_map": "選擇地圖",
     "Select_item": "Select treasure map item",
     "Select_treasure_map": "Select your treasure map",
     "Find_another": "Find another treasure"
