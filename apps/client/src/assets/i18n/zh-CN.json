@@ -1110,7 +1110,7 @@
     "Rotations": "生产手法",
     "Favorite_Rotations": "收藏手法",
     "No_rotations": "无手法",
-    "Create_a_custom_rotation": "创建自定义手法",
+    "Custom_recipe_simulation": "使用自定义配方值进行模拟（高级）",
     "Reset": "重置手法",
     "Reset_saved": "撤销未保存的改动",
     "Import_from_crafting_optimizer": "从制作模拟器导入",

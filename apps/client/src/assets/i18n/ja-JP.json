@@ -1110,7 +1110,7 @@
     "Rotations": "スキル回し",
     "Favorite_Rotations": "制作スキル回しお気に入り",
     "No_rotations": "スキル回しがありません",
-    "Create_a_custom_rotation": "カスタムでスキル回しを作成する",
+    "Custom_recipe_simulation": "カスタムレシピ値を使用してシミュレーションする（上級）",
     "Reset": "リセット",
     "Reset_saved": "未保存の変更を元に戻す",
     "Import_from_crafting_optimizer": "Crafting optimizerから取り込む",

@@ -1110,7 +1110,7 @@
     "Rotations": "Crafting rotations",
     "Favorite_Rotations": "Favorite Rotations",
     "No_rotations": "No rotations",
-    "Create_a_custom_rotation": "Create a custom rotation",
+    "Custom_recipe_simulation": "Simulate using custom recipe values (advanced)",
     "Reset": "Reset rotation",
     "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Import from crafting optimizer",
