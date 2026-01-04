@@ -1082,6 +1082,23 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       shareReplay({ bufferSize: 1, refCount: true })
     );
 
+    combineLatest([
+      this.recipe$,
+      this.crafterStats$
+    ]).pipe(
+      filter(([recipe, _stats]) => recipe.maxAdjustableJobLevel && recipe.maxAdjustableJobLevel !== 0),
+      switchMap(([recipe, stats]) => this.lazyData.getRow('gathererCrafterLvAdjustTable', Math.min(stats.level, recipe.maxAdjustableJobLevel)).pipe(map(row => ({ recipe, adjustedRlvlIndex: row.recipeLevel, stats })))),
+      switchMap(({ recipe, adjustedRlvlIndex, stats }) => this.lazyData.getRow('recipeLevelTable', adjustedRlvlIndex).pipe(map(data => ({ recipe, adjustedRlvl: { data, index: adjustedRlvlIndex }, stats }))))
+    ).subscribe(({ recipe, adjustedRlvl, stats }) => {
+      const maxLevelQuality = recipe.quality;
+      recipe.lvl = Math.min(stats.level, recipe.maxAdjustableJobLevel);
+      recipe.rlvl = adjustedRlvl.index;
+      recipe.progress = Math.floor(adjustedRlvl.data.difficulty * recipe.difficultyFactor / 100);
+      recipe.quality = Math.floor(adjustedRlvl.data.quality * recipe.qualityFactor / 100);
+      recipe.durability = Math.floor(80 * recipe.durabilityFactor / 100);
+      recipe.ingredients.forEach((ingredient) => { ingredient.quality = ingredient.quality / maxLevelQuality * recipe.quality; }); // TODO test if this works out numerically
+    });
+
     combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables', true)]).pipe(
       startWith([]),
       pairwise(),
