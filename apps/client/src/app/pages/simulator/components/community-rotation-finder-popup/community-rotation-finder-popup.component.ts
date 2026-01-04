@@ -120,7 +120,7 @@ export class CommunityRotationFinderPopupComponent extends DialogComponent imple
                   this.stats._control + bonuses.control,
                   this.stats.cp + bonuses.cp,
                   this.stats.specialist,
-                  this.stats.splendorous,
+                  this.stats.relicTool,
                   this.stats.level,
                   this.stats.levels as CrafterLevels);
                 const actions = this.simulator.CraftingActionsRegistry.deserializeRotation(rotation.rotation);
