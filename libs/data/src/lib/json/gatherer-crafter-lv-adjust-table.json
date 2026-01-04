@@ -1,0 +1,305 @@
+{
+  "0": {
+    "recipeLevel": 0
+  },
+  "1": {
+    "recipeLevel": 1
+  },
+  "2": {
+    "recipeLevel": 2
+  },
+  "3": {
+    "recipeLevel": 3
+  },
+  "4": {
+    "recipeLevel": 4
+  },
+  "5": {
+    "recipeLevel": 5
+  },
+  "6": {
+    "recipeLevel": 6
+  },
+  "7": {
+    "recipeLevel": 7
+  },
+  "8": {
+    "recipeLevel": 8
+  },
+  "9": {
+    "recipeLevel": 9
+  },
+  "10": {
+    "recipeLevel": 10
+  },
+  "11": {
+    "recipeLevel": 11
+  },
+  "12": {
+    "recipeLevel": 12
+  },
+  "13": {
+    "recipeLevel": 13
+  },
+  "14": {
+    "recipeLevel": 14
+  },
+  "15": {
+    "recipeLevel": 15
+  },
+  "16": {
+    "recipeLevel": 16
+  },
+  "17": {
+    "recipeLevel": 17
+  },
+  "18": {
+    "recipeLevel": 18
+  },
+  "19": {
+    "recipeLevel": 19
+  },
+  "20": {
+    "recipeLevel": 20
+  },
+  "21": {
+    "recipeLevel": 21
+  },
+  "22": {
+    "recipeLevel": 22
+  },
+  "23": {
+    "recipeLevel": 23
+  },
+  "24": {
+    "recipeLevel": 24
+  },
+  "25": {
+    "recipeLevel": 25
+  },
+  "26": {
+    "recipeLevel": 26
+  },
+  "27": {
+    "recipeLevel": 27
+  },
+  "28": {
+    "recipeLevel": 28
+  },
+  "29": {
+    "recipeLevel": 29
+  },
+  "30": {
+    "recipeLevel": 30
+  },
+  "31": {
+    "recipeLevel": 31
+  },
+  "32": {
+    "recipeLevel": 32
+  },
+  "33": {
+    "recipeLevel": 33
+  },
+  "34": {
+    "recipeLevel": 34
+  },
+  "35": {
+    "recipeLevel": 35
+  },
+  "36": {
+    "recipeLevel": 36
+  },
+  "37": {
+    "recipeLevel": 37
+  },
+  "38": {
+    "recipeLevel": 38
+  },
+  "39": {
+    "recipeLevel": 39
+  },
+  "40": {
+    "recipeLevel": 40
+  },
+  "41": {
+    "recipeLevel": 41
+  },
+  "42": {
+    "recipeLevel": 42
+  },
+  "43": {
+    "recipeLevel": 43
+  },
+  "44": {
+    "recipeLevel": 44
+  },
+  "45": {
+    "recipeLevel": 45
+  },
+  "46": {
+    "recipeLevel": 46
+  },
+  "47": {
+    "recipeLevel": 47
+  },
+  "48": {
+    "recipeLevel": 48
+  },
+  "49": {
+    "recipeLevel": 49
+  },
+  "50": {
+    "recipeLevel": 50
+  },
+  "51": {
+    "recipeLevel": 115
+  },
+  "52": {
+    "recipeLevel": 125
+  },
+  "53": {
+    "recipeLevel": 130
+  },
+  "54": {
+    "recipeLevel": 133
+  },
+  "55": {
+    "recipeLevel": 136
+  },
+  "56": {
+    "recipeLevel": 139
+  },
+  "57": {
+    "recipeLevel": 142
+  },
+  "58": {
+    "recipeLevel": 145
+  },
+  "59": {
+    "recipeLevel": 148
+  },
+  "60": {
+    "recipeLevel": 150
+  },
+  "61": {
+    "recipeLevel": 255
+  },
+  "62": {
+    "recipeLevel": 265
+  },
+  "63": {
+    "recipeLevel": 270
+  },
+  "64": {
+    "recipeLevel": 273
+  },
+  "65": {
+    "recipeLevel": 276
+  },
+  "66": {
+    "recipeLevel": 279
+  },
+  "67": {
+    "recipeLevel": 282
+  },
+  "68": {
+    "recipeLevel": 285
+  },
+  "69": {
+    "recipeLevel": 288
+  },
+  "70": {
+    "recipeLevel": 290
+  },
+  "71": {
+    "recipeLevel": 381
+  },
+  "72": {
+    "recipeLevel": 395
+  },
+  "73": {
+    "recipeLevel": 400
+  },
+  "74": {
+    "recipeLevel": 403
+  },
+  "75": {
+    "recipeLevel": 406
+  },
+  "76": {
+    "recipeLevel": 409
+  },
+  "77": {
+    "recipeLevel": 412
+  },
+  "78": {
+    "recipeLevel": 415
+  },
+  "79": {
+    "recipeLevel": 418
+  },
+  "80": {
+    "recipeLevel": 430
+  },
+  "81": {
+    "recipeLevel": 517
+  },
+  "82": {
+    "recipeLevel": 520
+  },
+  "83": {
+    "recipeLevel": 525
+  },
+  "84": {
+    "recipeLevel": 530
+  },
+  "85": {
+    "recipeLevel": 535
+  },
+  "86": {
+    "recipeLevel": 540
+  },
+  "87": {
+    "recipeLevel": 545
+  },
+  "88": {
+    "recipeLevel": 550
+  },
+  "89": {
+    "recipeLevel": 555
+  },
+  "90": {
+    "recipeLevel": 560
+  },
+  "91": {
+    "recipeLevel": 650
+  },
+  "92": {
+    "recipeLevel": 653
+  },
+  "93": {
+    "recipeLevel": 656
+  },
+  "94": {
+    "recipeLevel": 660
+  },
+  "95": {
+    "recipeLevel": 665
+  },
+  "96": {
+    "recipeLevel": 670
+  },
+  "97": {
+    "recipeLevel": 675
+  },
+  "98": {
+    "recipeLevel": 680
+  },
+  "99": {
+    "recipeLevel": 685
+  },
+  "100": {
+    "recipeLevel": 690
+  }
+}
