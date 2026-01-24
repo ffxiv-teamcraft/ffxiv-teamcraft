@@ -490,6 +490,7 @@ export class AppComponent implements OnInit {
           if (url && url.endsWith('/')) {
             url = url.substring(0, url.length - 1);
           }
+          // Chrome added a quite bad warning regarding local
           return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
             map(() => true),
             tap((hasDesktop) => {
