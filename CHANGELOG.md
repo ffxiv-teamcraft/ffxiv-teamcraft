@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.13...v11.4.14) (2026-01-28)
+
+
+### Features
+
+* allagan reports import ([3d7a63e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d7a63e0f23d7c781fe91186ae42ae28e7f7aaec))
+
+
+### Bug Fixes
+
+* don't try to detect desktop app anymore to avoid bad Chrome warning ([66fc58a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66fc58ab18e7848db0f2bcb383f2af55e7be8793))
+* pcap fix for deucalion version ([e20ddec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e20ddecc811f43074001205d5ffaa48e9a947dd0))
+* **workshop:** vessel import logic ([a1e3a7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1e3a7c792c7ab1c419f46001db5f6578e0f3a3e))
+
 ### [11.4.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.12...v11.4.13) (2025-12-20)
 
 
