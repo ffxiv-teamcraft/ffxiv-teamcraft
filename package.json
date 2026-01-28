@@ -261,7 +261,7 @@
     "nx": "^19.0.6",
     "pirsch-sdk": "^2.6.0",
     "prettier": "2.6.2",
-    "qs": "^6.11.0",
+    "qs": "^6.14.1",
     "quicktype-core": "^23.0.107",
     "redis": "^4.6.5",
     "reflect-metadata": "^0.1.13",
