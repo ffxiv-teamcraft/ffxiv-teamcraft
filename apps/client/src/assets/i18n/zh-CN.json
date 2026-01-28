@@ -429,7 +429,7 @@
   "Precraft_tier": "阶段",
   "Regenerating_lists": "重新生成清单",
   "SETTINGS": {
-    "Kickstarter_email": "Kickstarter email",
+    "Kickstarter_email": "Kickstarter 电子邮件",
     "Kickstarter_email_used": "此电子邮件不属于支持者，或者它已经绑定了",
     "Ks_email_applied": "支持者身份已激活，已为您关闭广告",
     "Requires_restart": "需要重新启动/刷新以生效",
@@ -593,7 +593,7 @@
       "Global": "国际服",
       "CN": "国服",
       "KR": "韩服",
-      "TW": "Taiwan"
+      "TW": "繁中服"
     },
     "NOTIFICATIONS": {
       "Title": "通知",
@@ -3304,7 +3304,7 @@
     "Teamcrafter_description_text": "你喜欢和凶猛的怪物战斗吗？冒着生命危险去救陌生人？不，你一定是疯了！",
     "Teamcrafter_description_text_part2": "Teamcrafter 是我实现儿时梦想的作品，感谢社区，感谢你在 Kickstarter 上的大力支持，使得这个项目不仅达成了众筹目标，甚至远超预期！",
     "Wishlist": "Wishlist on Steam",
-    "Teamcrafter_description_banner": "Wishlist Teamcrafter on Steam: a roguelike game focused on crafting and gathering made by the developer behind FFXIV Teamcraft!",
+    "Teamcrafter_description_banner": "将 Teamcrafter 添加进 Steam 愿望单：一款由 FFXIV Teamcraft 开发者打造的以采集与制作为核心的 roguelike 游戏！",
     "Supported": "非常感谢您在 Kickstarter 上的支持 <3",
     "Ads_removed": "已为您的账户永久移除广告"
   }
