@@ -109,9 +109,6 @@ export class AdComponent extends TeamcraftComponent {
         {
           selectorId: 'pwAdBanner',
           type: 'leaderboard_atf'
-        },
-        {
-          type: 'corner_ad_video'
         }
       ]);
     });
