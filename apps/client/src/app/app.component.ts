@@ -475,35 +475,26 @@ export class AppComponent implements OnInit {
         });
 
       // Custom protocol detection
-      this.hasDesktop$ = this.hasDesktopReloader$.pipe(
-        switchMap(() => router.events),
-        filter((current) => current instanceof NavigationEnd),
-        first(),
-        switchMap((current: NavigationEnd) => {
-          let url = current.url;
-          if (!this.settings.autoOpenInDesktop || url.indexOf('noDesktop=') > -1) {
-            return of(false);
-          }
-          if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
-            return of(false);
-          }
-          if (url && url.endsWith('/')) {
-            url = url.substring(0, url.length - 1);
-          }
-          return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
-            map(() => true),
-            tap((hasDesktop) => {
-              if (hasDesktop) {
-                window.location.assign(`teamcraft://${url}`);
-              }
-            }),
-            catchError((e) => {
-              console.log(e);
-              return of(false);
-            })
-          );
-        })
-      );
+      // Chrome added a quite bad warning regarding local so we just return false now
+      this.hasDesktop$ = of(false);
+      // this.hasDesktop$ = this.hasDesktopReloader$.pipe(
+      //   switchMap(() => router.events),
+      //   filter((current) => current instanceof NavigationEnd),
+      //   first(),
+      //   switchMap((current: NavigationEnd) => {
+      //     let url = current.url;
+      //     if (!this.settings.autoOpenInDesktop || url.indexOf('noDesktop=') > -1) {
+      //       return of(false);
+      //     }
+      //     if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
+      //       return of(false);
+      //     }
+      //     if (url && url.endsWith('/')) {
+      //       url = url.substring(0, url.length - 1);
+      //     }
+      //
+      //   })
+      // );
       this.translate.onLangChange.subscribe((l) => (this.locale = l.lang as Language));
 
       this.translate.onLangChange.subscribe((change) => {

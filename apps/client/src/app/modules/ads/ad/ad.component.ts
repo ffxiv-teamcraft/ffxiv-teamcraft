@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { auditTime, delay, distinctUntilChanged, filter, fromEvent, map, startWith, Subscription, takeUntil } from 'rxjs';
+import { auditTime, delay, distinctUntilChanged, filter, fromEvent, map, skip, startWith, Subscription, takeUntil } from 'rxjs';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 declare const ramp: any;
 declare const gtag: any;
@@ -19,7 +19,7 @@ export class AdComponent extends TeamcraftComponent {
 
   private platform = inject(PlatformService);
 
-  private router = inject(Router)
+  private router = inject(Router);
 
   constructor() {
     super();
@@ -33,15 +33,6 @@ export class AdComponent extends TeamcraftComponent {
           'pageview_id': (<any>window)._pwGA4PageviewId
         }
       );
-      this.router.events
-        .pipe(
-          filter((event) => {
-            return event instanceof NavigationEnd;
-          })
-        )
-        .subscribe((event: NavigationEnd) => {
-          ramp.spaNewPage(event.url);
-        });
       (<any>window).ramp = {
         passiveMode: true,
         que: [],
@@ -76,6 +67,18 @@ export class AdComponent extends TeamcraftComponent {
       ramp2CDNScript.async = true;
       ramp2CDNScript.setAttribute('src', `https://cdn.intergient.com/1024627/${this.platform.isDesktop() ? 73554 : 73498}/ramp.js`);
       document.head.appendChild(ramp2CDNScript);
+      this.router.events
+        .pipe(
+          skip(1),
+          filter((event) => {
+            return event instanceof NavigationEnd;
+          })
+        )
+        .subscribe((event: NavigationEnd) => {
+          if (ramp?.spaNewPage) {
+            ramp.spaNewPage(event.url);
+          }
+        });
     }
   }
 
@@ -102,12 +105,14 @@ export class AdComponent extends TeamcraftComponent {
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'desktop';
       ramp.isMobile = false;
-      ramp.spaAddAds([{
-        selectorId: 'pwAdBanner',
-        type: 'leaderboard_atf'
-      }]);
-      setTimeout(() => ramp.displayUnits(), 500);
+      ramp.spaAddAds([
+        {
+          selectorId: 'pwAdBanner',
+          type: 'leaderboard_atf'
+        }
+      ]);
     });
+    ramp.spaNewPage('/search');
   }
 
   private enableMobileAd(): void {
@@ -117,9 +122,7 @@ export class AdComponent extends TeamcraftComponent {
       ramp.spaAddAds([{
         selectorId: 'pwAdBanner',
         type: '320x50_atf'
-      }]).then(() => {
-        ramp.displayUnits();
-      });
+      }]);
     });
   }
 
