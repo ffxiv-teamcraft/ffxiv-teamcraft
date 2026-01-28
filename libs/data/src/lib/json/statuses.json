@@ -67077,7 +67077,7 @@
     "en": "Defend",
     "de": "Abwehr",
     "ja": "ぼうぎょ",
-    "fr": "Défense",
+    "fr": "Défense de fer",
     "icon": "/i/229000/229967.png",
     "maxStacks": 0,
     "description": {
@@ -67089,16 +67089,16 @@
   },
   "4793": {
     "en": "Finishing Fervor",
-    "de": "Todesstoß-Verstärkung",
+    "de": "Finaler Stoß-Verstärkung",
     "ja": "ひっさつ強化",
     "fr": "Coup fatal renforcé",
     "icon": "/i/218000/218176.png",
     "maxStacks": 4,
     "description": {
       "en": "Filled with fervor after a successful safeguard. Chance of inflicting heavy damage with <span style=\"color:#ffffff\">Finisher</span> increased.",
-      "de": "Aufgrund der erfolgreichen Abwehr eines Angriffs mit Mut erfüllt. Die Wahrscheinlichkeit auf große Erfolge von <span style=\"color:#ffffff\">Todesstoß</span> ist erhöht.",
+      "de": "Aufgrund der erfolgreichen Abwehr eines Angriffs mit Mut erfüllt. Die Wahrscheinlichkeit auf große Erfolge von <span style=\"color:#ffffff\">Finaler Stoß</span> ist erhöht.",
       "ja": "ぼうぎょに成功し、気勢が上がった状態。ひっさつで大ダメージを与える確率が上昇する。",
-      "fr": "Une Défense a été réalisée avec succès. Les chances d'infliger des dégâts importants avec Coup fatal sont augmentées."
+      "fr": "Une Défense de fer a été réalisée avec succès. Les chances d'infliger des dégâts importants avec Coup fatal sont augmentées."
     }
   },
   "4794": {
