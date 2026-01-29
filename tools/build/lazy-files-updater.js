@@ -38,7 +38,8 @@ function getClassName(file) {
     .replace(/s?\.index/, '')
     .replace(/bonuse$/, 'bonus')
     .replace(/statuse$/, 'status')
-    .replace(/sery$/, 'series');
+    .replace(/sery$/, 'series')
+    .replace('lv', 'level');
   return 'Lazy' + _.startCase(_.camelCase(baseName)).replace(/\s/g, '');
 }
 
