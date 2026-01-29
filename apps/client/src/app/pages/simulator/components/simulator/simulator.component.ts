@@ -1100,7 +1100,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       recipe.progress = Math.floor(adjustedRlvl.data.difficulty * recipe.difficultyFactor / 100);
       recipe.quality = Math.floor(adjustedRlvl.data.quality * recipe.qualityFactor / 100);
       recipe.durability = Math.floor(80 * recipe.durabilityFactor / 100);
-      recipe.ingredients.forEach((ingredient) => { ingredient.quality = ingredient.quality / previousMaxQuality * recipe.quality; }); // TODO test if this works out numerically
+      recipe.ingredients.forEach((ingredient) => { ingredient.quality = ingredient.quality / previousMaxQuality * recipe.quality; });
     });
 
     combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables', true)]).pipe(

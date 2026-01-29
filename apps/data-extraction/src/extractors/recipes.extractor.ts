@@ -102,7 +102,7 @@ export class RecipesExtractor extends AbstractExtractor {
               return {
                 id: ingredient.id,
                 amount: ingredient.amount,
-                quality: (ingredient.ilvl / totalIlvl * totalContrib * hqFlags[ingredient.id]) || 0 // TODO test if dividing by `maxQuality` and then multiplying with the level synced one works without numerical issues
+                quality: (ingredient.ilvl / totalIlvl * totalContrib * hqFlags[ingredient.id]) || 0
               };
             }),
           expert: recipe.IsExpert,
