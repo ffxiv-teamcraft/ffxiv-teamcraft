@@ -94,7 +94,7 @@ export class RecipesExtractor extends AbstractExtractor {
           controlReq: recipe.RequiredControl,
           craftsmanshipReq: recipe.RequiredCraftsmanship,
           rlvl: recipe.RecipeLevelTable.index,
-          maxAdjustableJobLevel: recipe.MaxAdjustableJobLevel.index,
+          maxAdjustableJobLevel: recipe.MaxAdjustableJobLevel.index || undefined,
           masterbook: recipe.SecretRecipeBook?.Item || undefined,
           requiredQuality: recipe.RequiredQuality,
           ingredients: ingredients
