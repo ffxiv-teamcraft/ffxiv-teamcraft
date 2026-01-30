@@ -1,4799 +1,7199 @@
 {
   "0": {
+    "difficulty": 100,
+    "quality": 100,
+    "durability": 100,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "1": {
+    "difficulty": 19,
+    "quality": 100,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "2": {
+    "difficulty": 20,
+    "quality": 110,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "3": {
+    "difficulty": 20,
+    "quality": 120,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "4": {
+    "difficulty": 21,
+    "quality": 130,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "5": {
+    "difficulty": 33,
+    "quality": 150,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "6": {
+    "difficulty": 36,
+    "quality": 170,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "7": {
+    "difficulty": 37,
+    "quality": 190,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "8": {
+    "difficulty": 41,
+    "quality": 210,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "9": {
+    "difficulty": 42,
+    "quality": 230,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "10": {
+    "difficulty": 45,
+    "quality": 250,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "11": {
+    "difficulty": 48,
+    "quality": 270,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "12": {
+    "difficulty": 53,
+    "quality": 290,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "13": {
+    "difficulty": 54,
+    "quality": 310,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "14": {
+    "difficulty": 54,
+    "quality": 330,
+    "durability": 60,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "15": {
+    "difficulty": 55,
+    "quality": 360,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "16": {
+    "difficulty": 63,
+    "quality": 390,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "17": {
+    "difficulty": 66,
+    "quality": 420,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "18": {
+    "difficulty": 67,
+    "quality": 450,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "19": {
+    "difficulty": 68,
+    "quality": 480,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "20": {
+    "difficulty": 74,
+    "quality": 510,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "21": {
+    "difficulty": 75,
+    "quality": 540,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "22": {
+    "difficulty": 75,
+    "quality": 570,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "23": {
+    "difficulty": 79,
+    "quality": 600,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "24": {
+    "difficulty": 85,
+    "quality": 630,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "25": {
+    "difficulty": 89,
+    "quality": 660,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "26": {
+    "difficulty": 90,
+    "quality": 690,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "27": {
+    "difficulty": 91,
+    "quality": 720,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "28": {
+    "difficulty": 100,
+    "quality": 760,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "29": {
+    "difficulty": 101,
+    "quality": 800,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "30": {
+    "difficulty": 102,
+    "quality": 850,
+    "durability": 70,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "31": {
+    "difficulty": 106,
+    "quality": 900,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "32": {
+    "difficulty": 110,
+    "quality": 950,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "33": {
+    "difficulty": 111,
+    "quality": 1000,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "34": {
+    "difficulty": 115,
+    "quality": 1050,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "35": {
+    "difficulty": 123,
+    "quality": 1110,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "36": {
+    "difficulty": 124,
+    "quality": 1160,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "37": {
+    "difficulty": 128,
+    "quality": 1220,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "38": {
+    "difficulty": 129,
+    "quality": 1280,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "39": {
+    "difficulty": 137,
+    "quality": 1340,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "40": {
+    "difficulty": 138,
+    "quality": 1400,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "41": {
+    "difficulty": 143,
+    "quality": 1460,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "42": {
+    "difficulty": 144,
+    "quality": 1520,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "43": {
+    "difficulty": 155,
+    "quality": 1580,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "44": {
+    "difficulty": 156,
+    "quality": 1640,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "45": {
+    "difficulty": 158,
+    "quality": 1700,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "46": {
+    "difficulty": 159,
+    "quality": 1760,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "47": {
+    "difficulty": 167,
+    "quality": 1820,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "48": {
+    "difficulty": 172,
+    "quality": 1880,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "49": {
+    "difficulty": 174,
+    "quality": 1940,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "50": {
+    "difficulty": 180,
+    "quality": 2000,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "51": {
+    "difficulty": 185,
+    "quality": 2040,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "52": {
+    "difficulty": 190,
+    "quality": 2080,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "53": {
+    "difficulty": 195,
+    "quality": 2120,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "54": {
+    "difficulty": 200,
+    "quality": 2160,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "55": {
+    "difficulty": 210,
+    "quality": 2200,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "56": {
+    "difficulty": 212,
+    "quality": 2220,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "57": {
+    "difficulty": 214,
+    "quality": 2240,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "58": {
+    "difficulty": 216,
+    "quality": 2260,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "59": {
+    "difficulty": 218,
+    "quality": 2280,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "60": {
+    "difficulty": 220,
+    "quality": 2300,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "61": {
+    "difficulty": 223,
+    "quality": 2320,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "62": {
+    "difficulty": 226,
+    "quality": 2340,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "63": {
+    "difficulty": 229,
+    "quality": 2360,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "64": {
+    "difficulty": 232,
+    "quality": 2380,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "65": {
+    "difficulty": 235,
+    "quality": 2400,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "66": {
+    "difficulty": 238,
+    "quality": 2420,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "67": {
+    "difficulty": 241,
+    "quality": 2440,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "68": {
+    "difficulty": 244,
+    "quality": 2460,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "69": {
+    "difficulty": 247,
+    "quality": 2480,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 100,
     "qualityDivider": 30,
     "qualityModifier": 100
   },
   "70": {
+    "difficulty": 250,
+    "quality": 2500,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "71": {
+    "difficulty": 258,
+    "quality": 2512,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "72": {
+    "difficulty": 266,
+    "quality": 2524,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "73": {
+    "difficulty": 274,
+    "quality": 2536,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "74": {
+    "difficulty": 282,
+    "quality": 2548,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "75": {
+    "difficulty": 290,
+    "quality": 2560,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "76": {
+    "difficulty": 298,
+    "quality": 2572,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "77": {
+    "difficulty": 306,
+    "quality": 2584,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "78": {
+    "difficulty": 314,
+    "quality": 2596,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "79": {
+    "difficulty": 322,
+    "quality": 2608,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "80": {
+    "difficulty": 330,
+    "quality": 2620,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "81": {
+    "difficulty": 339,
+    "quality": 2633,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "82": {
+    "difficulty": 348,
+    "quality": 2646,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "83": {
+    "difficulty": 357,
+    "quality": 2659,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "84": {
+    "difficulty": 366,
+    "quality": 2672,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "85": {
+    "difficulty": 375,
+    "quality": 2685,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "86": {
+    "difficulty": 384,
+    "quality": 2698,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "87": {
+    "difficulty": 393,
+    "quality": 2711,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "88": {
+    "difficulty": 402,
+    "quality": 2724,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "89": {
+    "difficulty": 411,
+    "quality": 2737,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "90": {
+    "difficulty": 420,
+    "quality": 2750,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "91": {
+    "difficulty": 423,
+    "quality": 2757,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "92": {
+    "difficulty": 426,
+    "quality": 2764,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "93": {
+    "difficulty": 429,
+    "quality": 2771,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "94": {
+    "difficulty": 432,
+    "quality": 2778,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "95": {
+    "difficulty": 435,
+    "quality": 2785,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "96": {
+    "difficulty": 438,
+    "quality": 2792,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "97": {
+    "difficulty": 441,
+    "quality": 2799,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "98": {
+    "difficulty": 444,
+    "quality": 2806,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "99": {
+    "difficulty": 447,
+    "quality": 2813,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "100": {
+    "difficulty": 450,
+    "quality": 2820,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "101": {
+    "difficulty": 453,
+    "quality": 2828,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "102": {
+    "difficulty": 456,
+    "quality": 2836,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "103": {
+    "difficulty": 459,
+    "quality": 2844,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "104": {
+    "difficulty": 462,
+    "quality": 2852,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "105": {
+    "difficulty": 465,
+    "quality": 2860,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "106": {
+    "difficulty": 468,
+    "quality": 2868,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "107": {
+    "difficulty": 471,
+    "quality": 2876,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "108": {
+    "difficulty": 474,
+    "quality": 2884,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "109": {
+    "difficulty": 477,
+    "quality": 2892,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "110": {
+    "difficulty": 480,
+    "quality": 2900,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "111": {
+    "difficulty": 480,
+    "quality": 2900,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "112": {
+    "difficulty": 480,
+    "quality": 2900,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "113": {
+    "difficulty": 480,
+    "quality": 2900,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "114": {
+    "difficulty": 480,
+    "quality": 2900,
+    "durability": 80,
     "progressDivider": 50,
     "progressModifier": 80,
     "qualityDivider": 30,
     "qualityModifier": 70
   },
   "115": {
+    "difficulty": 220,
+    "quality": 2070,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "116": {
+    "difficulty": 224,
+    "quality": 2077,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "117": {
+    "difficulty": 228,
+    "quality": 2084,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "118": {
+    "difficulty": 232,
+    "quality": 2091,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "119": {
+    "difficulty": 236,
+    "quality": 2098,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "120": {
+    "difficulty": 240,
+    "quality": 2105,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "121": {
+    "difficulty": 244,
+    "quality": 2112,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "122": {
+    "difficulty": 248,
+    "quality": 2119,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "123": {
+    "difficulty": 252,
+    "quality": 2126,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "124": {
+    "difficulty": 256,
+    "quality": 2133,
+    "durability": 80,
     "progressDivider": 61,
     "progressModifier": 100,
     "qualityDivider": 39,
     "qualityModifier": 100
   },
   "125": {
+    "difficulty": 260,
+    "quality": 2140,
+    "durability": 80,
     "progressDivider": 62,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "126": {
+    "difficulty": 268,
+    "quality": 2154,
+    "durability": 80,
     "progressDivider": 62,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "127": {
+    "difficulty": 276,
+    "quality": 2168,
+    "durability": 80,
     "progressDivider": 62,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "128": {
+    "difficulty": 284,
+    "quality": 2182,
+    "durability": 80,
     "progressDivider": 62,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "129": {
+    "difficulty": 292,
+    "quality": 2196,
+    "durability": 80,
     "progressDivider": 62,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "130": {
+    "difficulty": 300,
+    "quality": 2210,
+    "durability": 80,
     "progressDivider": 63,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "131": {
+    "difficulty": 313,
+    "quality": 2233,
+    "durability": 80,
     "progressDivider": 63,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "132": {
+    "difficulty": 326,
+    "quality": 2256,
+    "durability": 80,
     "progressDivider": 63,
     "progressModifier": 100,
     "qualityDivider": 43,
     "qualityModifier": 100
   },
   "133": {
+    "difficulty": 340,
+    "quality": 2280,
+    "durability": 80,
     "progressDivider": 64,
     "progressModifier": 100,
     "qualityDivider": 44,
     "qualityModifier": 100
   },
   "134": {
+    "difficulty": 353,
+    "quality": 2303,
+    "durability": 80,
     "progressDivider": 64,
     "progressModifier": 100,
     "qualityDivider": 44,
     "qualityModifier": 100
   },
   "135": {
+    "difficulty": 366,
+    "quality": 2326,
+    "durability": 80,
     "progressDivider": 64,
     "progressModifier": 100,
     "qualityDivider": 44,
     "qualityModifier": 100
   },
   "136": {
+    "difficulty": 380,
+    "quality": 2350,
+    "durability": 70,
     "progressDivider": 65,
     "progressModifier": 100,
     "qualityDivider": 45,
     "qualityModifier": 100
   },
   "137": {
+    "difficulty": 393,
+    "quality": 2373,
+    "durability": 70,
     "progressDivider": 65,
     "progressModifier": 100,
     "qualityDivider": 45,
     "qualityModifier": 100
   },
   "138": {
+    "difficulty": 406,
+    "quality": 2396,
+    "durability": 70,
     "progressDivider": 65,
     "progressModifier": 100,
     "qualityDivider": 45,
     "qualityModifier": 100
   },
   "139": {
+    "difficulty": 420,
+    "quality": 2420,
+    "durability": 70,
     "progressDivider": 66,
     "progressModifier": 100,
     "qualityDivider": 46,
     "qualityModifier": 100
   },
   "140": {
+    "difficulty": 433,
+    "quality": 2443,
+    "durability": 70,
     "progressDivider": 66,
     "progressModifier": 100,
     "qualityDivider": 46,
     "qualityModifier": 100
   },
   "141": {
+    "difficulty": 446,
+    "quality": 2466,
+    "durability": 70,
     "progressDivider": 66,
     "progressModifier": 100,
     "qualityDivider": 46,
     "qualityModifier": 100
   },
   "142": {
+    "difficulty": 460,
+    "quality": 2490,
+    "durability": 70,
     "progressDivider": 67,
     "progressModifier": 100,
     "qualityDivider": 47,
     "qualityModifier": 100
   },
   "143": {
+    "difficulty": 473,
+    "quality": 2513,
+    "durability": 70,
     "progressDivider": 67,
     "progressModifier": 100,
     "qualityDivider": 47,
     "qualityModifier": 100
   },
   "144": {
+    "difficulty": 486,
+    "quality": 2536,
+    "durability": 70,
     "progressDivider": 67,
     "progressModifier": 100,
     "qualityDivider": 47,
     "qualityModifier": 100
   },
   "145": {
+    "difficulty": 500,
+    "quality": 2560,
+    "durability": 70,
     "progressDivider": 68,
     "progressModifier": 100,
     "qualityDivider": 48,
     "qualityModifier": 100
   },
   "146": {
+    "difficulty": 513,
+    "quality": 2583,
+    "durability": 70,
     "progressDivider": 68,
     "progressModifier": 100,
     "qualityDivider": 48,
     "qualityModifier": 100
   },
   "147": {
+    "difficulty": 526,
+    "quality": 2606,
+    "durability": 70,
     "progressDivider": 68,
     "progressModifier": 100,
     "qualityDivider": 48,
     "qualityModifier": 100
   },
   "148": {
+    "difficulty": 540,
+    "quality": 2630,
+    "durability": 70,
     "progressDivider": 69,
     "progressModifier": 100,
     "qualityDivider": 49,
     "qualityModifier": 100
   },
   "149": {
+    "difficulty": 560,
+    "quality": 2665,
+    "durability": 70,
     "progressDivider": 69,
     "progressModifier": 100,
     "qualityDivider": 49,
     "qualityModifier": 100
   },
   "150": {
+    "difficulty": 580,
+    "quality": 2700,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "151": {
+    "difficulty": 588,
+    "quality": 2710,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "152": {
+    "difficulty": 596,
+    "quality": 2720,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "153": {
+    "difficulty": 604,
+    "quality": 2730,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "154": {
+    "difficulty": 612,
+    "quality": 2740,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "155": {
+    "difficulty": 620,
+    "quality": 2750,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "156": {
+    "difficulty": 628,
+    "quality": 2760,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "157": {
+    "difficulty": 636,
+    "quality": 2770,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "158": {
+    "difficulty": 644,
+    "quality": 2780,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "159": {
+    "difficulty": 652,
+    "quality": 2790,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "160": {
+    "difficulty": 660,
+    "quality": 2800,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "161": {
+    "difficulty": 664,
+    "quality": 2805,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "162": {
+    "difficulty": 668,
+    "quality": 2810,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "163": {
+    "difficulty": 672,
+    "quality": 2815,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "164": {
+    "difficulty": 676,
+    "quality": 2820,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "165": {
+    "difficulty": 680,
+    "quality": 2825,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "166": {
+    "difficulty": 684,
+    "quality": 2830,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "167": {
+    "difficulty": 688,
+    "quality": 2835,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "168": {
+    "difficulty": 692,
+    "quality": 2840,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "169": {
+    "difficulty": 696,
+    "quality": 2845,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "170": {
+    "difficulty": 700,
+    "quality": 2850,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "171": {
+    "difficulty": 704,
+    "quality": 2855,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "172": {
+    "difficulty": 708,
+    "quality": 2860,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "173": {
+    "difficulty": 712,
+    "quality": 2865,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "174": {
+    "difficulty": 716,
+    "quality": 2870,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "175": {
+    "difficulty": 720,
+    "quality": 2875,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "176": {
+    "difficulty": 724,
+    "quality": 2880,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "177": {
+    "difficulty": 728,
+    "quality": 2885,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "178": {
+    "difficulty": 732,
+    "quality": 2890,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "179": {
+    "difficulty": 736,
+    "quality": 2895,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 100,
     "qualityDivider": 50,
     "qualityModifier": 100
   },
   "180": {
+    "difficulty": 740,
+    "quality": 2900,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "181": {
+    "difficulty": 744,
+    "quality": 2913,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "182": {
+    "difficulty": 748,
+    "quality": 2926,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "183": {
+    "difficulty": 752,
+    "quality": 2939,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "184": {
+    "difficulty": 756,
+    "quality": 2952,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "185": {
+    "difficulty": 760,
+    "quality": 2965,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "186": {
+    "difficulty": 764,
+    "quality": 2978,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "187": {
+    "difficulty": 768,
+    "quality": 2991,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "188": {
+    "difficulty": 772,
+    "quality": 3004,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "189": {
+    "difficulty": 776,
+    "quality": 3017,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "190": {
+    "difficulty": 780,
+    "quality": 3030,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "191": {
+    "difficulty": 785,
+    "quality": 3043,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "192": {
+    "difficulty": 790,
+    "quality": 3056,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "193": {
+    "difficulty": 795,
+    "quality": 3069,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "194": {
+    "difficulty": 800,
+    "quality": 3082,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "195": {
+    "difficulty": 805,
+    "quality": 3095,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "196": {
+    "difficulty": 810,
+    "quality": 3108,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "197": {
+    "difficulty": 815,
+    "quality": 3121,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "198": {
+    "difficulty": 820,
+    "quality": 3134,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "199": {
+    "difficulty": 825,
+    "quality": 3147,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "200": {
+    "difficulty": 830,
+    "quality": 3160,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "201": {
+    "difficulty": 835,
+    "quality": 3174,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "202": {
+    "difficulty": 840,
+    "quality": 3188,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "203": {
+    "difficulty": 845,
+    "quality": 3202,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "204": {
+    "difficulty": 850,
+    "quality": 3216,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "205": {
+    "difficulty": 855,
+    "quality": 3230,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "206": {
+    "difficulty": 860,
+    "quality": 3244,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "207": {
+    "difficulty": 865,
+    "quality": 3258,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "208": {
+    "difficulty": 870,
+    "quality": 3272,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "209": {
+    "difficulty": 875,
+    "quality": 3286,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "210": {
+    "difficulty": 880,
+    "quality": 3300,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "211": {
+    "difficulty": 882,
+    "quality": 3309,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "212": {
+    "difficulty": 884,
+    "quality": 3318,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "213": {
+    "difficulty": 886,
+    "quality": 3327,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "214": {
+    "difficulty": 888,
+    "quality": 3336,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "215": {
+    "difficulty": 890,
+    "quality": 3345,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "216": {
+    "difficulty": 892,
+    "quality": 3354,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "217": {
+    "difficulty": 894,
+    "quality": 3363,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "218": {
+    "difficulty": 896,
+    "quality": 3372,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "219": {
+    "difficulty": 898,
+    "quality": 3381,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "220": {
+    "difficulty": 900,
+    "quality": 3390,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "221": {
+    "difficulty": 903,
+    "quality": 3403,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "222": {
+    "difficulty": 906,
+    "quality": 3416,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "223": {
+    "difficulty": 909,
+    "quality": 3429,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "224": {
+    "difficulty": 912,
+    "quality": 3442,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "225": {
+    "difficulty": 915,
+    "quality": 3455,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "226": {
+    "difficulty": 918,
+    "quality": 3468,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "227": {
+    "difficulty": 921,
+    "quality": 3481,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "228": {
+    "difficulty": 924,
+    "quality": 3494,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "229": {
+    "difficulty": 927,
+    "quality": 3507,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "230": {
+    "difficulty": 930,
+    "quality": 3520,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "231": {
+    "difficulty": 933,
+    "quality": 3534,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "232": {
+    "difficulty": 936,
+    "quality": 3548,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "233": {
+    "difficulty": 939,
+    "quality": 3562,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "234": {
+    "difficulty": 942,
+    "quality": 3576,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "235": {
+    "difficulty": 945,
+    "quality": 3590,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "236": {
+    "difficulty": 948,
+    "quality": 3604,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "237": {
+    "difficulty": 951,
+    "quality": 3618,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "238": {
+    "difficulty": 954,
+    "quality": 3632,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "239": {
+    "difficulty": 957,
+    "quality": 3646,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "240": {
+    "difficulty": 960,
+    "quality": 3660,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "241": {
+    "difficulty": 964,
+    "quality": 3674,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "242": {
+    "difficulty": 968,
+    "quality": 3688,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "243": {
+    "difficulty": 972,
+    "quality": 3702,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "244": {
+    "difficulty": 976,
+    "quality": 3716,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "245": {
+    "difficulty": 980,
+    "quality": 3730,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "246": {
+    "difficulty": 984,
+    "quality": 3744,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "247": {
+    "difficulty": 988,
+    "quality": 3758,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "248": {
+    "difficulty": 992,
+    "quality": 3772,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "249": {
+    "difficulty": 996,
+    "quality": 3786,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "250": {
+    "difficulty": 1000,
+    "quality": 3800,
+    "durability": 70,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "251": {
+    "difficulty": 1000,
+    "quality": 3800,
+    "durability": 80,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "252": {
+    "difficulty": 1000,
+    "quality": 3800,
+    "durability": 80,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "253": {
+    "difficulty": 1000,
+    "quality": 3800,
+    "durability": 80,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "254": {
+    "difficulty": 1000,
+    "quality": 3800,
+    "durability": 80,
     "progressDivider": 70,
     "progressModifier": 80,
     "qualityDivider": 50,
     "qualityModifier": 70
   },
   "255": {
+    "difficulty": 630,
+    "quality": 2790,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "256": {
+    "difficulty": 635,
+    "quality": 2799,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "257": {
+    "difficulty": 640,
+    "quality": 2808,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "258": {
+    "difficulty": 645,
+    "quality": 2817,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "259": {
+    "difficulty": 650,
+    "quality": 2826,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "260": {
+    "difficulty": 655,
+    "quality": 2835,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "261": {
+    "difficulty": 660,
+    "quality": 2844,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "262": {
+    "difficulty": 665,
+    "quality": 2853,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "263": {
+    "difficulty": 670,
+    "quality": 2862,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "264": {
+    "difficulty": 675,
+    "quality": 2871,
+    "durability": 80,
     "progressDivider": 81,
     "progressModifier": 100,
     "qualityDivider": 58,
     "qualityModifier": 100
   },
   "265": {
+    "difficulty": 680,
+    "quality": 2880,
+    "durability": 80,
     "progressDivider": 82,
     "progressModifier": 100,
     "qualityDivider": 61,
     "qualityModifier": 100
   },
   "266": {
+    "difficulty": 690,
+    "quality": 2898,
+    "durability": 80,
     "progressDivider": 82,
     "progressModifier": 100,
     "qualityDivider": 61,
     "qualityModifier": 100
   },
   "267": {
+    "difficulty": 700,
+    "quality": 2916,
+    "durability": 80,
     "progressDivider": 82,
     "progressModifier": 100,
     "qualityDivider": 61,
     "qualityModifier": 100
   },
   "268": {
+    "difficulty": 710,
+    "quality": 2934,
+    "durability": 80,
     "progressDivider": 82,
     "progressModifier": 100,
     "qualityDivider": 61,
     "qualityModifier": 100
   },
   "269": {
+    "difficulty": 720,
+    "quality": 2952,
+    "durability": 80,
     "progressDivider": 82,
     "progressModifier": 100,
     "qualityDivider": 61,
     "qualityModifier": 100
   },
   "270": {
+    "difficulty": 730,
+    "quality": 2970,
+    "durability": 80,
     "progressDivider": 83,
     "progressModifier": 100,
     "qualityDivider": 64,
     "qualityModifier": 100
   },
   "271": {
+    "difficulty": 746,
+    "quality": 3000,
+    "durability": 80,
     "progressDivider": 83,
     "progressModifier": 100,
     "qualityDivider": 64,
     "qualityModifier": 100
   },
   "272": {
+    "difficulty": 763,
+    "quality": 3030,
+    "durability": 80,
     "progressDivider": 83,
     "progressModifier": 100,
     "qualityDivider": 64,
     "qualityModifier": 100
   },
   "273": {
+    "difficulty": 780,
+    "quality": 3060,
+    "durability": 80,
     "progressDivider": 84,
     "progressModifier": 100,
     "qualityDivider": 65,
     "qualityModifier": 100
   },
   "274": {
+    "difficulty": 796,
+    "quality": 3090,
+    "durability": 80,
     "progressDivider": 84,
     "progressModifier": 100,
     "qualityDivider": 65,
     "qualityModifier": 100
   },
   "275": {
+    "difficulty": 813,
+    "quality": 3120,
+    "durability": 80,
     "progressDivider": 84,
     "progressModifier": 100,
     "qualityDivider": 65,
     "qualityModifier": 100
   },
   "276": {
+    "difficulty": 830,
+    "quality": 3150,
+    "durability": 80,
     "progressDivider": 85,
     "progressModifier": 100,
     "qualityDivider": 66,
     "qualityModifier": 100
   },
   "277": {
+    "difficulty": 846,
+    "quality": 3180,
+    "durability": 80,
     "progressDivider": 85,
     "progressModifier": 100,
     "qualityDivider": 66,
     "qualityModifier": 100
   },
   "278": {
+    "difficulty": 863,
+    "quality": 3210,
+    "durability": 80,
     "progressDivider": 85,
     "progressModifier": 100,
     "qualityDivider": 66,
     "qualityModifier": 100
   },
   "279": {
+    "difficulty": 880,
+    "quality": 3240,
+    "durability": 80,
     "progressDivider": 86,
     "progressModifier": 100,
     "qualityDivider": 66,
     "qualityModifier": 100
   },
   "280": {
+    "difficulty": 896,
+    "quality": 3270,
+    "durability": 80,
     "progressDivider": 86,
     "progressModifier": 100,
     "qualityDivider": 66,
     "qualityModifier": 100
   },
   "281": {
+    "difficulty": 913,
+    "quality": 3300,
+    "durability": 80,
     "progressDivider": 86,
     "progressModifier": 100,
     "qualityDivider": 66,
     "qualityModifier": 100
   },
   "282": {
+    "difficulty": 930,
+    "quality": 3330,
+    "durability": 80,
     "progressDivider": 87,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "283": {
+    "difficulty": 946,
+    "quality": 3360,
+    "durability": 80,
     "progressDivider": 87,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "284": {
+    "difficulty": 963,
+    "quality": 3390,
+    "durability": 80,
     "progressDivider": 87,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "285": {
+    "difficulty": 980,
+    "quality": 3420,
+    "durability": 80,
     "progressDivider": 88,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "286": {
+    "difficulty": 996,
+    "quality": 3450,
+    "durability": 80,
     "progressDivider": 88,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "287": {
+    "difficulty": 1013,
+    "quality": 3480,
+    "durability": 80,
     "progressDivider": 88,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "288": {
+    "difficulty": 1030,
+    "quality": 3510,
+    "durability": 80,
     "progressDivider": 89,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "289": {
+    "difficulty": 1055,
+    "quality": 3555,
+    "durability": 80,
     "progressDivider": 89,
     "progressModifier": 100,
     "qualityDivider": 68,
     "qualityModifier": 100
   },
   "290": {
+    "difficulty": 1080,
+    "quality": 3600,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "291": {
+    "difficulty": 1086,
+    "quality": 3660,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "292": {
+    "difficulty": 1092,
+    "quality": 3720,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "293": {
+    "difficulty": 1098,
+    "quality": 3780,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "294": {
+    "difficulty": 1104,
+    "quality": 3840,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "295": {
+    "difficulty": 1110,
+    "quality": 3900,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "296": {
+    "difficulty": 1116,
+    "quality": 3960,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "297": {
+    "difficulty": 1122,
+    "quality": 4020,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "298": {
+    "difficulty": 1128,
+    "quality": 4080,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "299": {
+    "difficulty": 1134,
+    "quality": 4140,
+    "durability": 80,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "300": {
+    "difficulty": 1140,
+    "quality": 4200,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "301": {
+    "difficulty": 1143,
+    "quality": 4230,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "302": {
+    "difficulty": 1146,
+    "quality": 4260,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "303": {
+    "difficulty": 1149,
+    "quality": 4290,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "304": {
+    "difficulty": 1152,
+    "quality": 4320,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "305": {
+    "difficulty": 1155,
+    "quality": 4350,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "306": {
+    "difficulty": 1158,
+    "quality": 4380,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "307": {
+    "difficulty": 1161,
+    "quality": 4410,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "308": {
+    "difficulty": 1164,
+    "quality": 4440,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "309": {
+    "difficulty": 1167,
+    "quality": 4470,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "310": {
+    "difficulty": 1170,
+    "quality": 4500,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "311": {
+    "difficulty": 1173,
+    "quality": 4530,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "312": {
+    "difficulty": 1176,
+    "quality": 4560,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "313": {
+    "difficulty": 1179,
+    "quality": 4590,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "314": {
+    "difficulty": 1182,
+    "quality": 4620,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "315": {
+    "difficulty": 1185,
+    "quality": 4650,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "316": {
+    "difficulty": 1188,
+    "quality": 4680,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "317": {
+    "difficulty": 1191,
+    "quality": 4710,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "318": {
+    "difficulty": 1194,
+    "quality": 4740,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "319": {
+    "difficulty": 1197,
+    "quality": 4770,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 100,
     "qualityDivider": 70,
     "qualityModifier": 100
   },
   "320": {
+    "difficulty": 1200,
+    "quality": 4800,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "321": {
+    "difficulty": 1205,
+    "quality": 4813,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "322": {
+    "difficulty": 1210,
+    "quality": 4826,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "323": {
+    "difficulty": 1215,
+    "quality": 4839,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "324": {
+    "difficulty": 1220,
+    "quality": 4852,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "325": {
+    "difficulty": 1225,
+    "quality": 4865,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "326": {
+    "difficulty": 1230,
+    "quality": 4878,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "327": {
+    "difficulty": 1235,
+    "quality": 4891,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "328": {
+    "difficulty": 1240,
+    "quality": 4904,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "329": {
+    "difficulty": 1245,
+    "quality": 4917,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "330": {
+    "difficulty": 1250,
+    "quality": 4930,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "331": {
+    "difficulty": 1255,
+    "quality": 4943,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "332": {
+    "difficulty": 1260,
+    "quality": 4956,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "333": {
+    "difficulty": 1265,
+    "quality": 4969,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "334": {
+    "difficulty": 1270,
+    "quality": 4982,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "335": {
+    "difficulty": 1275,
+    "quality": 4995,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "336": {
+    "difficulty": 1280,
+    "quality": 5008,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "337": {
+    "difficulty": 1285,
+    "quality": 5021,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "338": {
+    "difficulty": 1290,
+    "quality": 5034,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "339": {
+    "difficulty": 1295,
+    "quality": 5047,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "340": {
+    "difficulty": 1300,
+    "quality": 5060,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "341": {
+    "difficulty": 1305,
+    "quality": 5074,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "342": {
+    "difficulty": 1310,
+    "quality": 5088,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "343": {
+    "difficulty": 1315,
+    "quality": 5102,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "344": {
+    "difficulty": 1320,
+    "quality": 5116,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "345": {
+    "difficulty": 1325,
+    "quality": 5130,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "346": {
+    "difficulty": 1330,
+    "quality": 5144,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "347": {
+    "difficulty": 1335,
+    "quality": 5158,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "348": {
+    "difficulty": 1340,
+    "quality": 5172,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "349": {
+    "difficulty": 1345,
+    "quality": 5186,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "350": {
+    "difficulty": 1350,
+    "quality": 5200,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "351": {
+    "difficulty": 1355,
+    "quality": 5230,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "352": {
+    "difficulty": 1360,
+    "quality": 5260,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "353": {
+    "difficulty": 1365,
+    "quality": 5290,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "354": {
+    "difficulty": 1370,
+    "quality": 5320,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "355": {
+    "difficulty": 1375,
+    "quality": 5350,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "356": {
+    "difficulty": 1380,
+    "quality": 5380,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "357": {
+    "difficulty": 1385,
+    "quality": 5410,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "358": {
+    "difficulty": 1390,
+    "quality": 5440,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "359": {
+    "difficulty": 1395,
+    "quality": 5470,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "360": {
+    "difficulty": 1400,
+    "quality": 5500,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "361": {
+    "difficulty": 1405,
+    "quality": 5530,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "362": {
+    "difficulty": 1410,
+    "quality": 5560,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "363": {
+    "difficulty": 1415,
+    "quality": 5590,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "364": {
+    "difficulty": 1420,
+    "quality": 5620,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "365": {
+    "difficulty": 1425,
+    "quality": 5650,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "366": {
+    "difficulty": 1430,
+    "quality": 5680,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "367": {
+    "difficulty": 1435,
+    "quality": 5710,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "368": {
+    "difficulty": 1440,
+    "quality": 5740,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "369": {
+    "difficulty": 1445,
+    "quality": 5770,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "370": {
+    "difficulty": 1450,
+    "quality": 5800,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "371": {
+    "difficulty": 1455,
+    "quality": 5830,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "372": {
+    "difficulty": 1460,
+    "quality": 5860,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "373": {
+    "difficulty": 1465,
+    "quality": 5890,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "374": {
+    "difficulty": 1470,
+    "quality": 5920,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "375": {
+    "difficulty": 1475,
+    "quality": 5950,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "376": {
+    "difficulty": 1480,
+    "quality": 5980,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "377": {
+    "difficulty": 1485,
+    "quality": 6010,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "378": {
+    "difficulty": 1490,
+    "quality": 6040,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "379": {
+    "difficulty": 1495,
+    "quality": 6070,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "380": {
+    "difficulty": 1500,
+    "quality": 6100,
+    "durability": 70,
     "progressDivider": 90,
     "progressModifier": 80,
     "qualityDivider": 70,
     "qualityModifier": 70
   },
   "381": {
+    "difficulty": 1150,
+    "quality": 3700,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "382": {
+    "difficulty": 1155,
+    "quality": 3707,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "383": {
+    "difficulty": 1160,
+    "quality": 3714,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "384": {
+    "difficulty": 1165,
+    "quality": 3721,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "385": {
+    "difficulty": 1170,
+    "quality": 3728,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "386": {
+    "difficulty": 1175,
+    "quality": 3735,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "387": {
+    "difficulty": 1180,
+    "quality": 3742,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "388": {
+    "difficulty": 1185,
+    "quality": 3749,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "389": {
+    "difficulty": 1190,
+    "quality": 3756,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "390": {
+    "difficulty": 1195,
+    "quality": 3763,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "391": {
+    "difficulty": 1200,
+    "quality": 3770,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "392": {
+    "difficulty": 1205,
+    "quality": 3777,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "393": {
+    "difficulty": 1210,
+    "quality": 3784,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "394": {
+    "difficulty": 1215,
+    "quality": 3792,
+    "durability": 80,
     "progressDivider": 101,
     "progressModifier": 100,
     "qualityDivider": 81,
     "qualityModifier": 100
   },
   "395": {
+    "difficulty": 1220,
+    "quality": 3800,
+    "durability": 80,
     "progressDivider": 102,
     "progressModifier": 100,
     "qualityDivider": 82,
     "qualityModifier": 100
   },
   "396": {
+    "difficulty": 1234,
+    "quality": 3820,
+    "durability": 80,
     "progressDivider": 102,
     "progressModifier": 100,
     "qualityDivider": 82,
     "qualityModifier": 100
   },
   "397": {
+    "difficulty": 1248,
+    "quality": 3840,
+    "durability": 80,
     "progressDivider": 102,
     "progressModifier": 100,
     "qualityDivider": 82,
     "qualityModifier": 100
   },
   "398": {
+    "difficulty": 1262,
+    "quality": 3860,
+    "durability": 80,
     "progressDivider": 102,
     "progressModifier": 100,
     "qualityDivider": 82,
     "qualityModifier": 100
   },
   "399": {
+    "difficulty": 1276,
+    "quality": 3880,
+    "durability": 80,
     "progressDivider": 102,
     "progressModifier": 100,
     "qualityDivider": 82,
     "qualityModifier": 100
   },
   "400": {
+    "difficulty": 1290,
+    "quality": 3900,
+    "durability": 80,
     "progressDivider": 103,
     "progressModifier": 100,
     "qualityDivider": 83,
     "qualityModifier": 100
   },
   "401": {
+    "difficulty": 1313,
+    "quality": 3933,
+    "durability": 80,
     "progressDivider": 103,
     "progressModifier": 100,
     "qualityDivider": 83,
     "qualityModifier": 100
   },
   "402": {
+    "difficulty": 1336,
+    "quality": 3966,
+    "durability": 80,
     "progressDivider": 103,
     "progressModifier": 100,
     "qualityDivider": 83,
     "qualityModifier": 100
   },
   "403": {
+    "difficulty": 1360,
+    "quality": 4000,
+    "durability": 80,
     "progressDivider": 104,
     "progressModifier": 100,
     "qualityDivider": 84,
     "qualityModifier": 100
   },
   "404": {
+    "difficulty": 1383,
+    "quality": 4033,
+    "durability": 80,
     "progressDivider": 104,
     "progressModifier": 100,
     "qualityDivider": 84,
     "qualityModifier": 100
   },
   "405": {
+    "difficulty": 1406,
+    "quality": 4066,
+    "durability": 80,
     "progressDivider": 104,
     "progressModifier": 100,
     "qualityDivider": 84,
     "qualityModifier": 100
   },
   "406": {
+    "difficulty": 1430,
+    "quality": 4100,
+    "durability": 80,
     "progressDivider": 105,
     "progressModifier": 100,
     "qualityDivider": 85,
     "qualityModifier": 100
   },
   "407": {
+    "difficulty": 1453,
+    "quality": 4133,
+    "durability": 80,
     "progressDivider": 105,
     "progressModifier": 100,
     "qualityDivider": 85,
     "qualityModifier": 100
   },
   "408": {
+    "difficulty": 1476,
+    "quality": 4166,
+    "durability": 80,
     "progressDivider": 105,
     "progressModifier": 100,
     "qualityDivider": 85,
     "qualityModifier": 100
   },
   "409": {
+    "difficulty": 1500,
+    "quality": 4200,
+    "durability": 80,
     "progressDivider": 106,
     "progressModifier": 100,
     "qualityDivider": 86,
     "qualityModifier": 100
   },
   "410": {
+    "difficulty": 1523,
+    "quality": 4233,
+    "durability": 80,
     "progressDivider": 106,
     "progressModifier": 100,
     "qualityDivider": 86,
     "qualityModifier": 100
   },
   "411": {
+    "difficulty": 1546,
+    "quality": 4266,
+    "durability": 80,
     "progressDivider": 106,
     "progressModifier": 100,
     "qualityDivider": 86,
     "qualityModifier": 100
   },
   "412": {
+    "difficulty": 1570,
+    "quality": 4300,
+    "durability": 80,
     "progressDivider": 107,
     "progressModifier": 100,
     "qualityDivider": 87,
     "qualityModifier": 100
   },
   "413": {
+    "difficulty": 1593,
+    "quality": 4333,
+    "durability": 80,
     "progressDivider": 107,
     "progressModifier": 100,
     "qualityDivider": 87,
     "qualityModifier": 100
   },
   "414": {
+    "difficulty": 1616,
+    "quality": 4366,
+    "durability": 80,
     "progressDivider": 107,
     "progressModifier": 100,
     "qualityDivider": 87,
     "qualityModifier": 100
   },
   "415": {
+    "difficulty": 1640,
+    "quality": 4400,
+    "durability": 80,
     "progressDivider": 108,
     "progressModifier": 100,
     "qualityDivider": 88,
     "qualityModifier": 100
   },
   "416": {
+    "difficulty": 1663,
+    "quality": 4433,
+    "durability": 80,
     "progressDivider": 108,
     "progressModifier": 100,
     "qualityDivider": 88,
     "qualityModifier": 100
   },
   "417": {
+    "difficulty": 1686,
+    "quality": 4466,
+    "durability": 80,
     "progressDivider": 108,
     "progressModifier": 100,
     "qualityDivider": 88,
     "qualityModifier": 100
   },
   "418": {
+    "difficulty": 1710,
+    "quality": 4500,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "419": {
+    "difficulty": 1715,
+    "quality": 4508,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "420": {
+    "difficulty": 1720,
+    "quality": 4516,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "421": {
+    "difficulty": 1726,
+    "quality": 4524,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "422": {
+    "difficulty": 1732,
+    "quality": 4532,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "423": {
+    "difficulty": 1738,
+    "quality": 4540,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "424": {
+    "difficulty": 1744,
+    "quality": 4548,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "425": {
+    "difficulty": 1750,
+    "quality": 4556,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "426": {
+    "difficulty": 1756,
+    "quality": 4564,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "427": {
+    "difficulty": 1762,
+    "quality": 4573,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "428": {
+    "difficulty": 1768,
+    "quality": 4582,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "429": {
+    "difficulty": 1774,
+    "quality": 4591,
+    "durability": 80,
     "progressDivider": 109,
     "progressModifier": 100,
     "qualityDivider": 89,
     "qualityModifier": 100
   },
   "430": {
+    "difficulty": 1780,
+    "quality": 4600,
+    "durability": 80,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "431": {
+    "difficulty": 1792,
+    "quality": 4614,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "432": {
+    "difficulty": 1804,
+    "quality": 4628,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "433": {
+    "difficulty": 1816,
+    "quality": 4642,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "434": {
+    "difficulty": 1828,
+    "quality": 4656,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "435": {
+    "difficulty": 1840,
+    "quality": 4670,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "436": {
+    "difficulty": 1852,
+    "quality": 4684,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "437": {
+    "difficulty": 1864,
+    "quality": 4698,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "438": {
+    "difficulty": 1876,
+    "quality": 4712,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "439": {
+    "difficulty": 1888,
+    "quality": 4726,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "440": {
+    "difficulty": 1900,
+    "quality": 6000,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "441": {
+    "difficulty": 1915,
+    "quality": 6190,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "442": {
+    "difficulty": 1930,
+    "quality": 6380,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "443": {
+    "difficulty": 1945,
+    "quality": 6570,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "444": {
+    "difficulty": 1960,
+    "quality": 6760,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "445": {
+    "difficulty": 1975,
+    "quality": 6950,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "446": {
+    "difficulty": 1990,
+    "quality": 7140,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "447": {
+    "difficulty": 2005,
+    "quality": 7330,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "448": {
+    "difficulty": 2020,
+    "quality": 7520,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "449": {
+    "difficulty": 2035,
+    "quality": 7710,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "450": {
+    "difficulty": 2050,
+    "quality": 7900,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "451": {
+    "difficulty": 2075,
+    "quality": 7920,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "452": {
+    "difficulty": 2100,
+    "quality": 7940,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "453": {
+    "difficulty": 2125,
+    "quality": 7960,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "454": {
+    "difficulty": 2150,
+    "quality": 7980,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "455": {
+    "difficulty": 2175,
+    "quality": 8000,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "456": {
+    "difficulty": 2200,
+    "quality": 8020,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "457": {
+    "difficulty": 2225,
+    "quality": 8040,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "458": {
+    "difficulty": 2250,
+    "quality": 8060,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "459": {
+    "difficulty": 2275,
+    "quality": 8080,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "460": {
+    "difficulty": 2300,
+    "quality": 8100,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "461": {
+    "difficulty": 2325,
+    "quality": 8120,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "462": {
+    "difficulty": 2350,
+    "quality": 8140,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "463": {
+    "difficulty": 2375,
+    "quality": 8160,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "464": {
+    "difficulty": 2400,
+    "quality": 8180,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "465": {
+    "difficulty": 2425,
+    "quality": 8200,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "466": {
+    "difficulty": 2450,
+    "quality": 8220,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "467": {
+    "difficulty": 2475,
+    "quality": 8240,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "468": {
+    "difficulty": 2500,
+    "quality": 8260,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "469": {
+    "difficulty": 2525,
+    "quality": 8280,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "470": {
+    "difficulty": 2550,
+    "quality": 8300,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "471": {
+    "difficulty": 2575,
+    "quality": 8320,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 90,
     "qualityModifier": 100
   },
   "472": {
+    "difficulty": 2600,
+    "quality": 8340,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "473": {
+    "difficulty": 2625,
+    "quality": 8360,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "474": {
+    "difficulty": 2650,
+    "quality": 8380,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "475": {
+    "difficulty": 2675,
+    "quality": 8400,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "476": {
+    "difficulty": 2700,
+    "quality": 8420,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "477": {
+    "difficulty": 2725,
+    "quality": 8440,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "478": {
+    "difficulty": 2750,
+    "quality": 8460,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "479": {
+    "difficulty": 2775,
+    "quality": 8480,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "480": {
+    "difficulty": 2800,
+    "quality": 8500,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "481": {
+    "difficulty": 3856,
+    "quality": 12323,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "482": {
+    "difficulty": 2852,
+    "quality": 8566,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "483": {
+    "difficulty": 2878,
+    "quality": 8599,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "484": {
+    "difficulty": 2904,
+    "quality": 8632,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "485": {
+    "difficulty": 2930,
+    "quality": 8665,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "486": {
+    "difficulty": 2956,
+    "quality": 8698,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "487": {
+    "difficulty": 2982,
+    "quality": 8731,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "488": {
+    "difficulty": 3008,
+    "quality": 8764,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "489": {
+    "difficulty": 3034,
+    "quality": 8797,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "490": {
+    "difficulty": 3060,
+    "quality": 8830,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "491": {
+    "difficulty": 3087,
+    "quality": 8863,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "492": {
+    "difficulty": 3114,
+    "quality": 8896,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "493": {
+    "difficulty": 3141,
+    "quality": 8929,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "494": {
+    "difficulty": 3168,
+    "quality": 8962,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "495": {
+    "difficulty": 3195,
+    "quality": 8995,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "496": {
+    "difficulty": 3222,
+    "quality": 9028,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "497": {
+    "difficulty": 3249,
+    "quality": 9061,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "498": {
+    "difficulty": 3276,
+    "quality": 9094,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "499": {
+    "difficulty": 3303,
+    "quality": 9127,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "500": {
+    "difficulty": 3330,
+    "quality": 9160,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "501": {
+    "difficulty": 3357,
+    "quality": 9194,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "502": {
+    "difficulty": 3384,
+    "quality": 9228,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "503": {
+    "difficulty": 3411,
+    "quality": 9262,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "504": {
+    "difficulty": 3438,
+    "quality": 9296,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "505": {
+    "difficulty": 3465,
+    "quality": 9330,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "506": {
+    "difficulty": 3492,
+    "quality": 9364,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "507": {
+    "difficulty": 3519,
+    "quality": 9398,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "508": {
+    "difficulty": 3546,
+    "quality": 9432,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "509": {
+    "difficulty": 3573,
+    "quality": 9466,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "510": {
+    "difficulty": 3600,
+    "quality": 9500,
+    "durability": 70,
     "progressDivider": 110,
     "progressModifier": 80,
     "qualityDivider": 90,
     "qualityModifier": 70
   },
   "511": {
+    "difficulty": 4672,
+    "quality": 15656,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "512": {
+    "difficulty": 4220,
+    "quality": 14618,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "513": {
+    "difficulty": 5059,
+    "quality": 15474,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "514": {
+    "difficulty": 5077,
+    "quality": 14321,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "515": {
+    "difficulty": 5095,
+    "quality": 14854,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "516": {
+    "difficulty": 5470,
+    "quality": 16156,
+    "durability": 70,
     "progressDivider": 140,
     "progressModifier": 100,
     "qualityDivider": 130,
     "qualityModifier": 100
   },
   "517": {
+    "difficulty": 2000,
+    "quality": 5200,
+    "durability": 80,
     "progressDivider": 121,
     "progressModifier": 100,
     "qualityDivider": 105,
     "qualityModifier": 100
   },
   "518": {
+    "difficulty": 2100,
+    "quality": 5300,
+    "durability": 80,
     "progressDivider": 121,
     "progressModifier": 100,
     "qualityDivider": 105,
     "qualityModifier": 100
   },
   "519": {
+    "difficulty": 2200,
+    "quality": 5500,
+    "durability": 80,
     "progressDivider": 121,
     "progressModifier": 100,
     "qualityDivider": 105,
     "qualityModifier": 100
   },
   "520": {
+    "difficulty": 2300,
+    "quality": 5700,
+    "durability": 80,
     "progressDivider": 122,
     "progressModifier": 100,
     "qualityDivider": 106,
     "qualityModifier": 100
   },
   "521": {
+    "difficulty": 2350,
+    "quality": 5800,
+    "durability": 80,
     "progressDivider": 122,
     "progressModifier": 100,
     "qualityDivider": 106,
     "qualityModifier": 100
   },
   "522": {
+    "difficulty": 2400,
+    "quality": 5900,
+    "durability": 80,
     "progressDivider": 122,
     "progressModifier": 100,
     "qualityDivider": 106,
     "qualityModifier": 100
   },
   "523": {
+    "difficulty": 2450,
+    "quality": 6000,
+    "durability": 80,
     "progressDivider": 122,
     "progressModifier": 100,
     "qualityDivider": 106,
     "qualityModifier": 100
   },
   "524": {
+    "difficulty": 2500,
+    "quality": 6100,
+    "durability": 80,
     "progressDivider": 122,
     "progressModifier": 100,
     "qualityDivider": 106,
     "qualityModifier": 100
   },
   "525": {
+    "difficulty": 2600,
+    "quality": 6200,
+    "durability": 80,
     "progressDivider": 123,
     "progressModifier": 100,
     "qualityDivider": 107,
     "qualityModifier": 100
   },
   "526": {
+    "difficulty": 2660,
+    "quality": 6280,
+    "durability": 80,
     "progressDivider": 123,
     "progressModifier": 100,
     "qualityDivider": 107,
     "qualityModifier": 100
   },
   "527": {
+    "difficulty": 2720,
+    "quality": 6360,
+    "durability": 80,
     "progressDivider": 123,
     "progressModifier": 100,
     "qualityDivider": 107,
     "qualityModifier": 100
   },
   "528": {
+    "difficulty": 2780,
+    "quality": 6440,
+    "durability": 80,
     "progressDivider": 123,
     "progressModifier": 100,
     "qualityDivider": 107,
     "qualityModifier": 100
   },
   "529": {
+    "difficulty": 2840,
+    "quality": 6520,
+    "durability": 80,
     "progressDivider": 123,
     "progressModifier": 100,
     "qualityDivider": 107,
     "qualityModifier": 100
   },
   "530": {
+    "difficulty": 2900,
+    "quality": 6600,
+    "durability": 80,
     "progressDivider": 124,
     "progressModifier": 100,
     "qualityDivider": 108,
     "qualityModifier": 100
   },
   "531": {
+    "difficulty": 2920,
+    "quality": 6620,
+    "durability": 80,
     "progressDivider": 124,
     "progressModifier": 100,
     "qualityDivider": 108,
     "qualityModifier": 100
   },
   "532": {
+    "difficulty": 2940,
+    "quality": 6640,
+    "durability": 80,
     "progressDivider": 124,
     "progressModifier": 100,
     "qualityDivider": 108,
     "qualityModifier": 100
   },
   "533": {
+    "difficulty": 2960,
+    "quality": 6660,
+    "durability": 80,
     "progressDivider": 124,
     "progressModifier": 100,
     "qualityDivider": 108,
     "qualityModifier": 100
   },
   "534": {
+    "difficulty": 2980,
+    "quality": 6680,
+    "durability": 80,
     "progressDivider": 124,
     "progressModifier": 100,
     "qualityDivider": 108,
     "qualityModifier": 100
   },
   "535": {
+    "difficulty": 3000,
+    "quality": 6700,
+    "durability": 80,
     "progressDivider": 125,
     "progressModifier": 100,
     "qualityDivider": 109,
     "qualityModifier": 100
   },
   "536": {
+    "difficulty": 3020,
+    "quality": 6720,
+    "durability": 80,
     "progressDivider": 125,
     "progressModifier": 100,
     "qualityDivider": 109,
     "qualityModifier": 100
   },
   "537": {
+    "difficulty": 3040,
+    "quality": 6740,
+    "durability": 80,
     "progressDivider": 125,
     "progressModifier": 100,
     "qualityDivider": 109,
     "qualityModifier": 100
   },
   "538": {
+    "difficulty": 3060,
+    "quality": 6760,
+    "durability": 80,
     "progressDivider": 125,
     "progressModifier": 100,
     "qualityDivider": 109,
     "qualityModifier": 100
   },
   "539": {
+    "difficulty": 3080,
+    "quality": 6780,
+    "durability": 80,
     "progressDivider": 125,
     "progressModifier": 100,
     "qualityDivider": 109,
     "qualityModifier": 100
   },
   "540": {
+    "difficulty": 3100,
+    "quality": 6800,
+    "durability": 80,
     "progressDivider": 126,
     "progressModifier": 100,
     "qualityDivider": 110,
     "qualityModifier": 100
   },
   "541": {
+    "difficulty": 3120,
+    "quality": 6820,
+    "durability": 80,
     "progressDivider": 126,
     "progressModifier": 100,
     "qualityDivider": 110,
     "qualityModifier": 100
   },
   "542": {
+    "difficulty": 3140,
+    "quality": 6840,
+    "durability": 80,
     "progressDivider": 126,
     "progressModifier": 100,
     "qualityDivider": 110,
     "qualityModifier": 100
   },
   "543": {
+    "difficulty": 3160,
+    "quality": 6860,
+    "durability": 80,
     "progressDivider": 126,
     "progressModifier": 100,
     "qualityDivider": 110,
     "qualityModifier": 100
   },
   "544": {
+    "difficulty": 3180,
+    "quality": 6880,
+    "durability": 80,
     "progressDivider": 126,
     "progressModifier": 100,
     "qualityDivider": 110,
     "qualityModifier": 100
   },
   "545": {
+    "difficulty": 3200,
+    "quality": 6900,
+    "durability": 80,
     "progressDivider": 127,
     "progressModifier": 100,
     "qualityDivider": 111,
     "qualityModifier": 100
   },
   "546": {
+    "difficulty": 3220,
+    "quality": 6920,
+    "durability": 80,
     "progressDivider": 127,
     "progressModifier": 100,
     "qualityDivider": 111,
     "qualityModifier": 100
   },
   "547": {
+    "difficulty": 3240,
+    "quality": 6940,
+    "durability": 80,
     "progressDivider": 127,
     "progressModifier": 100,
     "qualityDivider": 111,
     "qualityModifier": 100
   },
   "548": {
+    "difficulty": 3260,
+    "quality": 6960,
+    "durability": 80,
     "progressDivider": 127,
     "progressModifier": 100,
     "qualityDivider": 111,
     "qualityModifier": 100
   },
   "549": {
+    "difficulty": 3280,
+    "quality": 6980,
+    "durability": 80,
     "progressDivider": 127,
     "progressModifier": 100,
     "qualityDivider": 111,
     "qualityModifier": 100
   },
   "550": {
+    "difficulty": 3300,
+    "quality": 7000,
+    "durability": 80,
     "progressDivider": 128,
     "progressModifier": 100,
     "qualityDivider": 112,
     "qualityModifier": 100
   },
   "551": {
+    "difficulty": 3320,
+    "quality": 7020,
+    "durability": 80,
     "progressDivider": 128,
     "progressModifier": 100,
     "qualityDivider": 112,
     "qualityModifier": 100
   },
   "552": {
+    "difficulty": 3340,
+    "quality": 7040,
+    "durability": 80,
     "progressDivider": 128,
     "progressModifier": 100,
     "qualityDivider": 112,
     "qualityModifier": 100
   },
   "553": {
+    "difficulty": 3360,
+    "quality": 7060,
+    "durability": 80,
     "progressDivider": 128,
     "progressModifier": 100,
     "qualityDivider": 112,
     "qualityModifier": 100
   },
   "554": {
+    "difficulty": 3380,
+    "quality": 7080,
+    "durability": 80,
     "progressDivider": 128,
     "progressModifier": 100,
     "qualityDivider": 112,
     "qualityModifier": 100
   },
   "555": {
+    "difficulty": 3400,
+    "quality": 7100,
+    "durability": 80,
     "progressDivider": 129,
     "progressModifier": 100,
     "qualityDivider": 113,
     "qualityModifier": 100
   },
   "556": {
+    "difficulty": 3420,
+    "quality": 7120,
+    "durability": 80,
     "progressDivider": 129,
     "progressModifier": 100,
     "qualityDivider": 113,
     "qualityModifier": 100
   },
   "557": {
+    "difficulty": 3440,
+    "quality": 7140,
+    "durability": 80,
     "progressDivider": 129,
     "progressModifier": 100,
     "qualityDivider": 113,
     "qualityModifier": 100
   },
   "558": {
+    "difficulty": 3460,
+    "quality": 7160,
+    "durability": 80,
     "progressDivider": 129,
     "progressModifier": 100,
     "qualityDivider": 113,
     "qualityModifier": 100
   },
   "559": {
+    "difficulty": 3480,
+    "quality": 7180,
+    "durability": 80,
     "progressDivider": 129,
     "progressModifier": 100,
     "qualityDivider": 113,
     "qualityModifier": 100
   },
   "560": {
+    "difficulty": 3500,
+    "quality": 7200,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "561": {
+    "difficulty": 3520,
+    "quality": 7220,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "562": {
+    "difficulty": 3540,
+    "quality": 7240,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "563": {
+    "difficulty": 3560,
+    "quality": 7260,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "564": {
+    "difficulty": 3580,
+    "quality": 7280,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "565": {
+    "difficulty": 3600,
+    "quality": 7300,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "566": {
+    "difficulty": 3620,
+    "quality": 7320,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "567": {
+    "difficulty": 3640,
+    "quality": 7340,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "568": {
+    "difficulty": 3660,
+    "quality": 7360,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "569": {
+    "difficulty": 3680,
+    "quality": 7380,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "570": {
+    "difficulty": 3700,
+    "quality": 7400,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "571": {
+    "difficulty": 3720,
+    "quality": 7440,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "572": {
+    "difficulty": 3740,
+    "quality": 7480,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "573": {
+    "difficulty": 3760,
+    "quality": 7520,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "574": {
+    "difficulty": 3780,
+    "quality": 7560,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "575": {
+    "difficulty": 3800,
+    "quality": 7600,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "576": {
+    "difficulty": 3820,
+    "quality": 7640,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "577": {
+    "difficulty": 3840,
+    "quality": 7680,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "578": {
+    "difficulty": 3860,
+    "quality": 7720,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "579": {
+    "difficulty": 3880,
+    "quality": 7760,
+    "durability": 80,
     "progressDivider": 130,
     "progressModifier": 90,
     "qualityDivider": 115,
     "qualityModifier": 80
   },
   "580": {
+    "difficulty": 3900,
+    "quality": 7800,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "581": {
+    "difficulty": 3940,
+    "quality": 7820,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "582": {
+    "difficulty": 3980,
+    "quality": 7840,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "583": {
+    "difficulty": 4020,
+    "quality": 7860,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "584": {
+    "difficulty": 4060,
+    "quality": 7880,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "585": {
+    "difficulty": 4100,
+    "quality": 7900,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "586": {
+    "difficulty": 4140,
+    "quality": 7920,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "587": {
+    "difficulty": 4180,
+    "quality": 7940,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "588": {
+    "difficulty": 4220,
+    "quality": 7960,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "589": {
+    "difficulty": 4260,
+    "quality": 7980,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "590": {
+    "difficulty": 4300,
+    "quality": 8000,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "591": {
+    "difficulty": 4400,
+    "quality": 8010,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "592": {
+    "difficulty": 4400,
+    "quality": 8020,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "593": {
+    "difficulty": 4400,
+    "quality": 8030,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "594": {
+    "difficulty": 4400,
+    "quality": 8040,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "595": {
+    "difficulty": 4400,
+    "quality": 8050,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "596": {
+    "difficulty": 4400,
+    "quality": 8060,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "597": {
+    "difficulty": 4400,
+    "quality": 8070,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "598": {
+    "difficulty": 4400,
+    "quality": 8080,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "599": {
+    "difficulty": 4400,
+    "quality": 8090,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "600": {
+    "difficulty": 4400,
+    "quality": 8100,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "601": {
+    "difficulty": 4400,
+    "quality": 8110,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "602": {
+    "difficulty": 4400,
+    "quality": 8120,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "603": {
+    "difficulty": 4400,
+    "quality": 8130,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "604": {
+    "difficulty": 4400,
+    "quality": 8140,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "605": {
+    "difficulty": 4400,
+    "quality": 8150,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "606": {
+    "difficulty": 4400,
+    "quality": 8160,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "607": {
+    "difficulty": 4400,
+    "quality": 8170,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "608": {
+    "difficulty": 4400,
+    "quality": 8180,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "609": {
+    "difficulty": 4400,
+    "quality": 8190,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "610": {
+    "difficulty": 4400,
+    "quality": 8200,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "611": {
+    "difficulty": 7480,
+    "quality": 13620,
+    "durability": 70,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "612": {
+    "difficulty": 4400,
+    "quality": 8440,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "613": {
+    "difficulty": 4400,
+    "quality": 8460,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "614": {
+    "difficulty": 4400,
+    "quality": 8480,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "615": {
+    "difficulty": 4400,
+    "quality": 8500,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "616": {
+    "difficulty": 4400,
+    "quality": 8520,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "617": {
+    "difficulty": 4400,
+    "quality": 8540,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "618": {
+    "difficulty": 4400,
+    "quality": 8560,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "619": {
+    "difficulty": 4400,
+    "quality": 8580,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "620": {
+    "difficulty": 4400,
+    "quality": 8600,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "621": {
+    "difficulty": 4400,
+    "quality": 8620,
+    "durability": 60,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "622": {
+    "difficulty": 4400,
+    "quality": 8640,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "623": {
+    "difficulty": 4400,
+    "quality": 8660,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "624": {
+    "difficulty": 4400,
+    "quality": 8680,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "625": {
+    "difficulty": 4400,
+    "quality": 8700,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "626": {
+    "difficulty": 4400,
+    "quality": 8720,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "627": {
+    "difficulty": 4400,
+    "quality": 8740,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "628": {
+    "difficulty": 4400,
+    "quality": 8760,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "629": {
+    "difficulty": 4400,
+    "quality": 8780,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "630": {
+    "difficulty": 4400,
+    "quality": 8800,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "631": {
+    "difficulty": 4400,
+    "quality": 8820,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "632": {
+    "difficulty": 4400,
+    "quality": 8840,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "633": {
+    "difficulty": 4400,
+    "quality": 8860,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "634": {
+    "difficulty": 4400,
+    "quality": 8880,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "635": {
+    "difficulty": 4400,
+    "quality": 8900,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "636": {
+    "difficulty": 4400,
+    "quality": 8920,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "637": {
+    "difficulty": 4400,
+    "quality": 8940,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "638": {
+    "difficulty": 4400,
+    "quality": 8960,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "639": {
+    "difficulty": 4400,
+    "quality": 8980,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "640": {
+    "difficulty": 4400,
+    "quality": 9000,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 80,
     "qualityDivider": 115,
     "qualityModifier": 70
   },
   "641": {
+    "difficulty": 4400,
+    "quality": 9020,
+    "durability": 60,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "642": {
+    "difficulty": 4400,
+    "quality": 9040,
+    "durability": 70,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "643": {
+    "difficulty": 4400,
+    "quality": 9060,
+    "durability": 70,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "644": {
+    "difficulty": 4400,
+    "quality": 9080,
+    "durability": 70,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "645": {
+    "difficulty": 4400,
+    "quality": 9100,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 100,
     "qualityDivider": 115,
     "qualityModifier": 100
   },
   "646": {
+    "difficulty": 4400,
+    "quality": 9120,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 100,
     "qualityDivider": 115,
     "qualityModifier": 100
   },
   "647": {
+    "difficulty": 4400,
+    "quality": 9140,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 100,
     "qualityDivider": 115,
     "qualityModifier": 100
   },
   "648": {
+    "difficulty": 4400,
+    "quality": 9160,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 100,
     "qualityDivider": 115,
     "qualityModifier": 100
   },
   "649": {
+    "difficulty": 4400,
+    "quality": 9180,
+    "durability": 70,
     "progressDivider": 130,
     "progressModifier": 100,
     "qualityDivider": 115,
     "qualityModifier": 100
   },
   "650": {
+    "difficulty": 4000,
+    "quality": 8200,
+    "durability": 80,
     "progressDivider": 143,
     "progressModifier": 100,
     "qualityDivider": 123,
     "qualityModifier": 100
   },
   "651": {
+    "difficulty": 4083,
+    "quality": 8333,
+    "durability": 80,
     "progressDivider": 143,
     "progressModifier": 100,
     "qualityDivider": 123,
     "qualityModifier": 100
   },
   "652": {
+    "difficulty": 4166,
+    "quality": 8466,
+    "durability": 80,
     "progressDivider": 143,
     "progressModifier": 100,
     "qualityDivider": 123,
     "qualityModifier": 100
   },
   "653": {
+    "difficulty": 4250,
+    "quality": 8600,
+    "durability": 80,
     "progressDivider": 146,
     "progressModifier": 100,
     "qualityDivider": 126,
     "qualityModifier": 100
   },
   "654": {
+    "difficulty": 4333,
+    "quality": 8733,
+    "durability": 80,
     "progressDivider": 146,
     "progressModifier": 100,
     "qualityDivider": 126,
     "qualityModifier": 100
   },
   "655": {
+    "difficulty": 4416,
+    "quality": 8866,
+    "durability": 80,
     "progressDivider": 146,
     "progressModifier": 100,
     "qualityDivider": 126,
     "qualityModifier": 100
   },
   "656": {
+    "difficulty": 4500,
+    "quality": 9000,
+    "durability": 80,
     "progressDivider": 149,
     "progressModifier": 100,
     "qualityDivider": 129,
     "qualityModifier": 100
   },
   "657": {
+    "difficulty": 4575,
+    "quality": 9100,
+    "durability": 80,
     "progressDivider": 149,
     "progressModifier": 100,
     "qualityDivider": 129,
     "qualityModifier": 100
   },
   "658": {
+    "difficulty": 4650,
+    "quality": 9200,
+    "durability": 80,
     "progressDivider": 149,
     "progressModifier": 100,
     "qualityDivider": 129,
     "qualityModifier": 100
   },
   "659": {
+    "difficulty": 4725,
+    "quality": 9300,
+    "durability": 80,
     "progressDivider": 149,
     "progressModifier": 100,
     "qualityDivider": 129,
     "qualityModifier": 100
   },
   "660": {
+    "difficulty": 4800,
+    "quality": 9400,
+    "durability": 80,
     "progressDivider": 152,
     "progressModifier": 100,
     "qualityDivider": 132,
     "qualityModifier": 100
   },
   "661": {
+    "difficulty": 4860,
+    "quality": 9480,
+    "durability": 80,
     "progressDivider": 152,
     "progressModifier": 100,
     "qualityDivider": 132,
     "qualityModifier": 100
   },
   "662": {
+    "difficulty": 4920,
+    "quality": 9560,
+    "durability": 80,
     "progressDivider": 152,
     "progressModifier": 100,
     "qualityDivider": 132,
     "qualityModifier": 100
   },
   "663": {
+    "difficulty": 4980,
+    "quality": 9640,
+    "durability": 80,
     "progressDivider": 152,
     "progressModifier": 100,
     "qualityDivider": 132,
     "qualityModifier": 100
   },
   "664": {
+    "difficulty": 5040,
+    "quality": 9720,
+    "durability": 80,
     "progressDivider": 152,
     "progressModifier": 100,
     "qualityDivider": 132,
     "qualityModifier": 100
   },
   "665": {
+    "difficulty": 5100,
+    "quality": 9800,
+    "durability": 80,
     "progressDivider": 155,
     "progressModifier": 100,
     "qualityDivider": 135,
     "qualityModifier": 100
   },
   "666": {
+    "difficulty": 5160,
+    "quality": 9880,
+    "durability": 80,
     "progressDivider": 155,
     "progressModifier": 100,
     "qualityDivider": 135,
     "qualityModifier": 100
   },
   "667": {
+    "difficulty": 5220,
+    "quality": 9960,
+    "durability": 80,
     "progressDivider": 155,
     "progressModifier": 100,
     "qualityDivider": 135,
     "qualityModifier": 100
   },
   "668": {
+    "difficulty": 5280,
+    "quality": 10040,
+    "durability": 80,
     "progressDivider": 155,
     "progressModifier": 100,
     "qualityDivider": 135,
     "qualityModifier": 100
   },
   "669": {
+    "difficulty": 5340,
+    "quality": 10120,
+    "durability": 80,
     "progressDivider": 155,
     "progressModifier": 100,
     "qualityDivider": 135,
     "qualityModifier": 100
   },
   "670": {
+    "difficulty": 5400,
+    "quality": 10200,
+    "durability": 80,
     "progressDivider": 158,
     "progressModifier": 100,
     "qualityDivider": 138,
     "qualityModifier": 100
   },
   "671": {
+    "difficulty": 5460,
+    "quality": 10280,
+    "durability": 80,
     "progressDivider": 158,
     "progressModifier": 100,
     "qualityDivider": 138,
     "qualityModifier": 100
   },
   "672": {
+    "difficulty": 5520,
+    "quality": 10360,
+    "durability": 80,
     "progressDivider": 158,
     "progressModifier": 100,
     "qualityDivider": 138,
     "qualityModifier": 100
   },
   "673": {
+    "difficulty": 5580,
+    "quality": 10440,
+    "durability": 80,
     "progressDivider": 158,
     "progressModifier": 100,
     "qualityDivider": 138,
     "qualityModifier": 100
   },
   "674": {
+    "difficulty": 5640,
+    "quality": 10520,
+    "durability": 80,
     "progressDivider": 158,
     "progressModifier": 100,
     "qualityDivider": 138,
     "qualityModifier": 100
   },
   "675": {
+    "difficulty": 5700,
+    "quality": 10600,
+    "durability": 80,
     "progressDivider": 161,
     "progressModifier": 100,
     "qualityDivider": 141,
     "qualityModifier": 100
   },
   "676": {
+    "difficulty": 5760,
+    "quality": 10680,
+    "durability": 80,
     "progressDivider": 161,
     "progressModifier": 100,
     "qualityDivider": 141,
     "qualityModifier": 100
   },
   "677": {
+    "difficulty": 5820,
+    "quality": 10760,
+    "durability": 80,
     "progressDivider": 161,
     "progressModifier": 100,
     "qualityDivider": 141,
     "qualityModifier": 100
   },
   "678": {
+    "difficulty": 5880,
+    "quality": 10840,
+    "durability": 80,
     "progressDivider": 161,
     "progressModifier": 100,
     "qualityDivider": 141,
     "qualityModifier": 100
   },
   "679": {
+    "difficulty": 5940,
+    "quality": 10920,
+    "durability": 80,
     "progressDivider": 161,
     "progressModifier": 100,
     "qualityDivider": 141,
     "qualityModifier": 100
   },
   "680": {
+    "difficulty": 6000,
+    "quality": 11000,
+    "durability": 80,
     "progressDivider": 164,
     "progressModifier": 100,
     "qualityDivider": 144,
     "qualityModifier": 100
   },
   "681": {
+    "difficulty": 6060,
+    "quality": 11080,
+    "durability": 80,
     "progressDivider": 164,
     "progressModifier": 100,
     "qualityDivider": 144,
     "qualityModifier": 100
   },
   "682": {
+    "difficulty": 6120,
+    "quality": 11160,
+    "durability": 80,
     "progressDivider": 164,
     "progressModifier": 100,
     "qualityDivider": 144,
     "qualityModifier": 100
   },
   "683": {
+    "difficulty": 6180,
+    "quality": 11240,
+    "durability": 80,
     "progressDivider": 164,
     "progressModifier": 100,
     "qualityDivider": 144,
     "qualityModifier": 100
   },
   "684": {
+    "difficulty": 6240,
+    "quality": 11320,
+    "durability": 80,
     "progressDivider": 164,
     "progressModifier": 100,
     "qualityDivider": 144,
     "qualityModifier": 100
   },
   "685": {
+    "difficulty": 6300,
+    "quality": 11400,
+    "durability": 80,
     "progressDivider": 167,
     "progressModifier": 100,
     "qualityDivider": 147,
     "qualityModifier": 100
   },
   "686": {
+    "difficulty": 6360,
+    "quality": 11520,
+    "durability": 80,
     "progressDivider": 167,
     "progressModifier": 100,
     "qualityDivider": 147,
     "qualityModifier": 100
   },
   "687": {
+    "difficulty": 6420,
+    "quality": 11640,
+    "durability": 80,
     "progressDivider": 167,
     "progressModifier": 100,
     "qualityDivider": 147,
     "qualityModifier": 100
   },
   "688": {
+    "difficulty": 6480,
+    "quality": 11760,
+    "durability": 80,
     "progressDivider": 167,
     "progressModifier": 100,
     "qualityDivider": 147,
     "qualityModifier": 100
   },
   "689": {
+    "difficulty": 6540,
+    "quality": 11880,
+    "durability": 80,
     "progressDivider": 167,
     "progressModifier": 100,
     "qualityDivider": 147,
     "qualityModifier": 100
   },
   "690": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "691": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "692": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "693": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "694": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "695": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "696": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "697": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "698": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "699": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "700": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "701": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "702": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "703": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "704": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "705": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "706": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "707": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "708": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "709": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "710": {
+    "difficulty": 7500,
+    "quality": 15000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "711": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "712": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "713": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "714": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "715": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "716": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "717": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "718": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "719": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "720": {
+    "difficulty": 8050,
+    "quality": 17600,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "721": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "722": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "723": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "724": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "725": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "726": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "727": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "728": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "729": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "730": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "731": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "732": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "733": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "734": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "735": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "736": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "737": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "738": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "739": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "740": {
+    "difficulty": 9000,
+    "quality": 18700,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "741": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "742": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "743": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "744": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "745": {
+    "difficulty": 10000,
+    "quality": 25000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 100,
     "qualityDivider": 150,
     "qualityModifier": 100
   },
   "746": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "747": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "748": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "749": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "750": {
+    "difficulty": 9000,
+    "quality": 19000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "751": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "752": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "753": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "754": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "755": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "756": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "757": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "758": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "759": {
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "760": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "761": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "762": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "763": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "764": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "765": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "766": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "767": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "768": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "769": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 80,
     "progressDivider": 180,
     "progressModifier": 100,
     "qualityDivider": 180,
     "qualityModifier": 100
   },
   "770": {
+    "difficulty": 10040,
+    "quality": 21200,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "771": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "772": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "773": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "774": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "775": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "776": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "777": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "778": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "779": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "780": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "781": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "782": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "783": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "784": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "785": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "786": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "787": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "788": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "789": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "790": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "791": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "792": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "793": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "794": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "795": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "796": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "797": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "798": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "799": {
+    "difficulty": 6600,
+    "quality": 12000,
+    "durability": 70,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,

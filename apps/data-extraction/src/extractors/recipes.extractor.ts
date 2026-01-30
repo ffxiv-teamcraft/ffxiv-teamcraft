@@ -24,23 +24,33 @@ export class RecipesExtractor extends AbstractExtractor {
     ];
 
     const rlt = {};
+    const lvlAdjustTable = {};
     combineLatest([
       this.getSheet<any>(xiv, 'CompanyCraftSequence',
         ['ResultItem#', 'CompanyCraftDraft.Name', 'CompanyCraftPart.CompanyCraftProcess.SupplyItem.Item#', 'CompanyCraftPart.CompanyCraftProcess.SetQuantity', 'CompanyCraftPart.CompanyCraftProcess.SetsRequired'], false, 4),
-      this.getSheet<any>(xiv, 'Recipe', ['RecipeLevelTable', 'QualityFactor', 'Ingredient.LevelItem#', 'AmountIngredient', 'LevelItem#', 'MaterialQualityFactor', 'CraftType#', 'AmountResult', 'ItemResult#', 'DurabilityFactor', 'DifficultyFactor',
+      this.getSheet<any>(xiv, 'Recipe', ['RecipeLevelTable', 'MaxAdjustableJobLevel', 'QualityFactor', 'Ingredient.LevelItem#', 'AmountIngredient', 'LevelItem#', 'MaterialQualityFactor', 'CraftType#', 'AmountResult', 'ItemResult#', 'DurabilityFactor', 'DifficultyFactor',
         'CanQuickSynth', 'CanHq', 'RequiredControl', 'RequiredCraftsmanship', 'SecretRecipeBook.Item#', 'RequiredQuality', 'IsExpert'], false, 1),
       this.getSheet<any>(xiv, 'MJIRecipe', ['Material.ItemPouch.Item#', 'Amount', 'KeyItem.Item#', 'ItemPouch.Item#', 'Yield'], true, 2),
       this.getSheet<any>(xiv, 'MJICraftworksObject', ['Material.Item#', 'Amount', 'Item#'], true, 1),
       this.getSheet<any>(xiv, 'MJIBuilding', ['Material.Item#', 'Amount'], true, 1),
       this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount'], true, 1),
-      this.getSheet<any>(xiv, 'RecipeLevelTable', ['ProgressDivider', 'ProgressModifier', 'QualityDivider', 'QualityModifier'], true, 1)
-    ]).subscribe(([companyCrafts, xivRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings, mjiLandmarks, recipeLevelTable]) => {
-      recipeLevelTable.forEach(lvl => {
-        rlt[lvl.index] = {
-          progressDivider: lvl.ProgressDivider,
-          progressModifier: lvl.ProgressModifier,
-          qualityDivider: lvl.QualityDivider,
-          qualityModifier: lvl.QualityModifier
+      this.getSheet<any>(xiv, 'RecipeLevelTable', ['Difficulty', 'Quality', 'Durability', 'ProgressDivider', 'ProgressModifier', 'QualityDivider', 'QualityModifier'], true, 1),
+      this.getSheet<any>(xiv, 'GathererCrafterLvAdjustTable', ['RecipeLevel'], true, 1)
+    ]).subscribe(([companyCrafts, xivRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings, mjiLandmarks, recipeLevelTable, gathererCrafterLvAdjustTable]) => {
+      recipeLevelTable.forEach(rlvl => {
+        rlt[rlvl.index] = {
+          difficulty: rlvl.Difficulty,
+          quality: rlvl.Quality,
+          durability: rlvl.Durability,
+          progressDivider: rlvl.ProgressDivider,
+          progressModifier: rlvl.ProgressModifier,
+          qualityDivider: rlvl.QualityDivider,
+          qualityModifier: rlvl.QualityModifier
+        };
+      });
+      gathererCrafterLvAdjustTable.forEach(lvl => {
+        lvlAdjustTable[lvl.index] = {
+          recipeLevel: lvl.RecipeLevel.index,
         };
       });
       xivRecipes.forEach(recipe => {
@@ -73,6 +83,9 @@ export class RecipesExtractor extends AbstractExtractor {
           durability: Math.floor(recipe.RecipeLevelTable.Durability * recipe.DurabilityFactor / 100),
           quality: maxQuality,
           progress: Math.floor(recipe.RecipeLevelTable.Difficulty * recipe.DifficultyFactor / 100),
+          durabilityFactor: recipe.MaxAdjustableJobLevel.index ? recipe.DurabilityFactor : undefined,
+          qualityFactor: recipe.MaxAdjustableJobLevel.index ? recipe.QualityFactor : undefined,
+          difficultyFactor: recipe.MaxAdjustableJobLevel.index ? recipe.DifficultyFactor : undefined,
           suggestedCraftsmanship: recipe.RecipeLevelTable.SuggestedCraftsmanship,
           progressDivider: recipe.RecipeLevelTable.ProgressDivider,
           qualityDivider: recipe.RecipeLevelTable.QualityDivider,
@@ -81,6 +94,7 @@ export class RecipesExtractor extends AbstractExtractor {
           controlReq: recipe.RequiredControl,
           craftsmanshipReq: recipe.RequiredCraftsmanship,
           rlvl: recipe.RecipeLevelTable.index,
+          maxAdjustableJobLevel: recipe.MaxAdjustableJobLevel.index || undefined,
           masterbook: recipe.SecretRecipeBook?.Item || undefined,
           requiredQuality: recipe.RequiredQuality,
           ingredients: ingredients
@@ -373,6 +387,7 @@ export class RecipesExtractor extends AbstractExtractor {
       this.persistToJsonAsset('recipes-ingredient-lookup', rlookup);
       this.persistToJsonAsset('recipes-per-item', recipesPerItem);
       this.persistToJsonAsset('recipe-level-table', rlt);
+      this.persistToJsonAsset('gatherer-crafter-lv-adjust-table', lvlAdjustTable);
       this.done();
     });
   }

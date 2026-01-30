@@ -2,7 +2,9 @@ export interface LazyRecipe {
   conditionsFlag?:         number;
   controlReq?:             number;
   craftsmanshipReq?:       number;
+  difficultyFactor?:       number;
   durability?:             number;
+  durabilityFactor?:       number;
   expert?:                 boolean;
   hq:                      boolean;
   id:                      number | string;
@@ -11,12 +13,14 @@ export interface LazyRecipe {
   job:                     number;
   lvl:                     number;
   masterbook?:             MasterbookClass | number;
+  maxAdjustableJobLevel?:  number;
   progress?:               number;
   progressDivider?:        number;
   progressModifier?:       number;
   qs:                      boolean;
   quality?:                number;
   qualityDivider?:         number;
+  qualityFactor?:          number;
   qualityModifier?:        number;
   requiredQuality?:        number;
   result:                  number;
