@@ -34,6 +34,7 @@ import {LazyFishingSpotSearch} from './lazy-fishing-spot-search';
 import {LazyFishingSpot} from './lazy-fishing-spot';
 import {LazyFood} from './lazy-food';
 import {LazyFreeCompanyAction} from './lazy-free-company-action';
+import {LazyGathererCrafterLevelAdjustTable} from './lazy-gatherer-crafter-level-adjust-table';
 import {LazyGatheringBonus} from './lazy-gathering-bonus';
 import {LazyGatheringItem} from './lazy-gathering-item';
 import {LazyGatheringLogPage} from './lazy-gathering-log-page';
@@ -210,6 +211,7 @@ export interface LazyData {
   foods: Array<LazyFood>;
   freeCompanyActions: Record<number, LazyFreeCompanyAction>;
   gardeningSources: Record<number, number[]>;
+  gathererCrafterLvAdjustTable: Record<number, LazyGathererCrafterLevelAdjustTable>;
   gatheringBonuses: Record<number, LazyGatheringBonus>;
   gatheringItems: Record<number, LazyGatheringItem>;
   gatheringLevels: Record<number, number>;

@@ -147,6 +147,16 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
           if (action.getIds()[0] === 100451) {
             actionName = hastyTouch.actionName;
           }
+          // If it's stellar steady hand
+          if (action.getIds()[0] === 46843) {
+            // Addon#13867
+            actionName = this.i18n.getName({
+              en: `Duty Action II`,
+              fr: `Action de mission II`,
+              de: `Spezialkommando II`,
+              ja: `コンテンツアクションII`
+            });
+          }
           if (actionName.indexOf(' ') > -1 || this.translator.currentLang === 'ko') {
             actionName = `"${actionName}"`;
           }

@@ -153,7 +153,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   public thresholds: number[] = [];
 
   @Input()
-  public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number, splendorous: boolean };
+  public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number, relic: boolean };
 
   @Input()
   public routeConsumables: RouteConsumables;
@@ -333,7 +333,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       cp: [180, Validators.required],
       level: [0, Validators.required],
       specialist: [false],
-      splendorous: [false]
+      relicTool: [false]
     });
 
     this.statsForm.valueChanges.pipe(
@@ -647,7 +647,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
         cp: stats.cp,
         control: stats._control,
         level: stats.level,
-        splendorous: stats.splendorous
+        relicTool: stats.relicTool
       };
       rotation.rotation = this.registry.serializeRotation(actions);
       rotation.custom = this.custom;
@@ -815,7 +815,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       rawForm.control,
       rawForm.cp,
       rawForm.specialist,
-      rawForm.splendorous,
+      rawForm.relicTool,
       rawForm.level,
       this.availableLevels
     );
@@ -835,7 +835,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
           craftsmanship: rawForm.craftsmanship,
           cp: rawForm.cp,
           specialist: rawForm.specialist,
-          splendorous: rawForm.splendorous
+          relicTool: rawForm.relicTool
         };
         return {
           ...(sets.find(currentSet => currentSet.jobId === set.jobId) || {}),
@@ -988,9 +988,9 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
           set.cp = this.routeStats.cp;
           set.level = this.routeStats.level;
           set.specialist = this.routeStats.spec;
-          set.splendorous = this.routeStats.splendorous;
+          set.relicTool = this.routeStats.relic;
         }
-        return new this.simulator.CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.splendorous, set.level, levels);
+        return new this.simulator.CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.relicTool, set.level, levels);
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
@@ -1020,7 +1020,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
           cp: stats.cp,
           level: stats.level,
           specialist: stats.specialist,
-          splendorous: stats.splendorous
+          relicTool: stats.relicTool
         }, { emitEvent: true });
       })
     );
@@ -1041,7 +1041,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
           stats._control + bonuses.control,
           stats.cp + bonuses.cp,
           stats.specialist,
-          stats.splendorous,
+          stats.relicTool,
           stats.level,
           levels as CrafterLevels);
       })
@@ -1081,6 +1081,27 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
+
+    combineLatest([
+      this.recipe$,
+      this.crafterStats$
+    ]).pipe(
+      filter(([recipe, _stats]) => recipe.maxAdjustableJobLevel && recipe.maxAdjustableJobLevel !== 0),
+      switchMap(([recipe, stats]) => this.lazyData.getRow('gathererCrafterLvAdjustTable', Math.min(stats.level, recipe.maxAdjustableJobLevel)).pipe(map(row => ({ recipe, adjustedRlvlIndex: row.recipeLevel, stats })))),
+      switchMap(({ recipe, adjustedRlvlIndex, stats }) => this.lazyData.getRow('recipeLevelTable', adjustedRlvlIndex).pipe(map(data => ({ recipe, adjustedRlvl: { data, index: adjustedRlvlIndex }, stats }))))
+    ).subscribe(({ recipe, adjustedRlvl, stats }) => {
+      recipe.rlvl = adjustedRlvl.index;
+      recipe.progressDivider = adjustedRlvl.data.progressDivider;
+      recipe.progressModifier = adjustedRlvl.data.progressModifier;
+      recipe.qualityDivider = adjustedRlvl.data.qualityDivider;
+      recipe.qualityModifier = adjustedRlvl.data.qualityModifier;
+      recipe.lvl = Math.min(stats.level, recipe.maxAdjustableJobLevel);
+      const previousMaxQuality = recipe.quality;
+      recipe.progress = Math.floor(adjustedRlvl.data.difficulty * recipe.difficultyFactor / 100);
+      recipe.quality = Math.floor(adjustedRlvl.data.quality * recipe.qualityFactor / 100);
+      recipe.durability = Math.floor(80 * recipe.durabilityFactor / 100);
+      recipe.ingredients.forEach((ingredient) => { ingredient.quality = ingredient.quality / previousMaxQuality * recipe.quality; });
+    });
 
     combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables', true)]).pipe(
       startWith([]),

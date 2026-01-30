@@ -1633,18 +1633,18 @@
   },
   "205": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gravitational Flux",
+      "ja": "乱重力",
+      "de": "Gravitationsanomalie",
+      "fr": "Fluctuations gravitationnelles"
     }
   },
   "206": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bubble Bloom",
+      "ja": "水泡嵐",
+      "de": "Schaumsturm",
+      "fr": "Tempête de bulles"
     }
   }
 }

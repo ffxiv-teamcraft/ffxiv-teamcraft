@@ -245,7 +245,7 @@ export class AuthFacade {
             control: 0,
             craftsmanship: 0,
             specialist: false,
-            splendorous: false
+            relicTool: false
           };
         }
         return set;

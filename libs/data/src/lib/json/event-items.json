@@ -23121,11 +23121,11 @@
     "icon": "/i/025000/025580.png"
   },
   "2003303": {
-    "en": "",
+    "en": "Vicarious Vacationer",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Badesion",
+    "fr": "Barnabaigneur",
+    "icon": "/i/059000/059896.png"
   },
   "2003304": {
     "en": "Aetherial Supplement",
@@ -26355,11 +26355,11 @@
     "icon": "/i/026000/026151.png"
   },
   "2003765": {
-    "en": "",
+    "en": "Phantom Glass",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Phantomglas",
+    "fr": "Lunette fantôme",
+    "icon": "/i/025000/025986.png"
   },
   "2003766": {
     "en": "Aetherwell Array",
@@ -26614,18 +26614,18 @@
     "icon": ""
   },
   "2003802": {
-    "en": "",
+    "en": "Aetheric Stimulant",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Aktivatorpatrone",
+    "fr": "Cartouche d'activeur d'éther",
+    "icon": "/i/023000/023569.png"
   },
   "2003803": {
-    "en": "",
+    "en": "Aetheric Stimulant",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Aktivatorpatrone",
+    "fr": "Cartouche d'activeur d'éther",
+    "icon": "/i/023000/023569.png"
   },
   "2003804": {
     "en": "Synthetic Desensitizer",
@@ -26635,16 +26635,16 @@
     "icon": "/i/026000/026110.png"
   },
   "2003805": {
-    "en": "",
+    "en": "Oizys Jasper",
     "ja": "",
-    "de": "",
+    "de": "Oizys-Jaspis",
     "fr": "",
     "icon": ""
   },
   "2003806": {
-    "en": "",
+    "en": "Oizys Jasper",
     "ja": "",
-    "de": "",
+    "de": "Prächtiger Oizys-Jaspis",
     "fr": "",
     "icon": ""
   },

@@ -49,6 +49,7 @@ export const LazyDataKeys = [
   'foods',
   'freeCompanyActions',
   'gardeningSources',
+  'gathererCrafterLvAdjustTable',
   'gatheringBonuses',
   'gatheringItems',
   'gatheringLevels',
