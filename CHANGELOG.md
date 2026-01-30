@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.14...v11.4.15) (2026-01-30)
+
+
+### Features
+
+* **simulator:** implement cosmic exploration recipe level syncing ([b3989af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b3989af64dbe33e2128cd1ae12db9631b23d36b2))
+* **simulator:** rename splendorous to relic tool ([29541cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29541cf63c62bf58f7993e2443621df6318b52bf))
+* support for new Stellar Steady Hand and db fixes ([59c3125](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59c31258a057d4eafd30ffcca65b50a1d10134b8))
+
+
+### Bug Fixes
+
+* actually set adjusted rlvl data for recipe ([b7b13b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7b13b8a7a63c257fbfe81aacb101e5f41c8cc67))
+* add missing selective field inclusion logic ([f23b29b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f23b29bac060a26393f5713976e6088071b36d71))
+
 ### [11.4.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.13...v11.4.14) (2026-01-28)
 
 
