@@ -1110,7 +1110,7 @@
     "Rotations": "Rotations de craft",
     "Favorite_Rotations": "Rotations préférées",
     "No_rotations": "Aucune rotation",
-    "Create_a_custom_rotation": "Créer une rotation personnalisée",
+    "Custom_recipe_simulation": "Simulation à l'aide de valeurs de recette personnalisées (avancé)",
     "Reset": "Remettre à zéro la rotation",
     "Reset_saved": "Annuler les modifications non enregistrées",
     "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",

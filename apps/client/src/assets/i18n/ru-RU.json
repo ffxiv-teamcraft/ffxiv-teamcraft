@@ -1110,7 +1110,7 @@
     "Rotations": "Крафтовая ротация",
     "Favorite_Rotations": "Избранная ротация",
     "No_rotations": "Нет ротаций",
-    "Create_a_custom_rotation": "Создать кастомную ротацию",
+    "Custom_recipe_simulation": "Моделирование с использованием пользовательских значений рецепта (расширенные настройки)",
     "Reset": "Сбросить ротацию",
     "Reset_saved": "Восстановить несохраненные изменения",
     "Import_from_crafting_optimizer": "Импортировать из crafting optimizer",
