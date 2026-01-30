@@ -2,19 +2,9 @@ export interface LazyNpc {
   de:           string;
   defaultTalks: number[];
   en:           string;
-  festival?:    number;
   fr:           string;
   ja:           string;
-  position?:    Position;
   title:        Title;
-}
-
-export interface Position {
-  map:    number;
-  x:      number;
-  y:      number;
-  z:      number | null;
-  zoneid: number;
 }
 
 export interface Title {
@@ -30,11 +20,13 @@ export enum Ja {
   AlpacaPorter = "ALPACA PORTER",
   AmaroPorter = "AMARO PORTER",
   Analyst = "ANALYST",
+  ArtifactSearch = "ARTIFACT SEARCH",
   Blunderville = "BLUNDERVILLE",
   Cactpot = "CACTPOT",
   CeremonyShop = "CEREMONY SHOP",
   Chocobo = "CHOCOBO",
   ChocoboRacing = "CHOCOBO RACING",
+  CosmicExploration = "COSMIC EXPLORATION",
   CosmicFortune = "COSMIC FORTUNE",
   CosmoExplorer = "COSMO EXPLORER",
   Crops = "CROPS",
