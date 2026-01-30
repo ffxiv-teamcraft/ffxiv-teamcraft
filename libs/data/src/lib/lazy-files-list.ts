@@ -157,7 +157,7 @@ export const lazyFilesList = {
   },
   'fates': {
     'fileName': 'fates.json',
-    'hashedFileName': 'fates.79fb1994b1f4d5f9e34896939221e22ced319406.json'
+    'hashedFileName': 'fates.7e70d60b91e2ef13ea12398f0f819659f4937c28.json'
   },
   'fishParameter': {
     'fileName': 'fish-parameter.json',
@@ -473,7 +473,7 @@ export const lazyFilesList = {
   },
   'npcs': {
     'fileName': 'npcs.json',
-    'hashedFileName': 'npcs.0b6fe871e194e655c945642893cf02eae0aa3d8f.json'
+    'hashedFileName': 'npcs.31ee6a96512822180e459caaff73965e0a598982.json'
   },
   'paramGrow': {
     'fileName': 'param-grow.json',
@@ -617,7 +617,7 @@ export const lazyFilesList = {
   },
   'territoryLayers': {
     'fileName': 'territory-layers.json',
-    'hashedFileName': 'territory-layers.bac885a38d40c95083cc367415a92d01455be28c.json'
+    'hashedFileName': 'territory-layers.794b582e6a96fc06d5c76cb715e1c61526db7c53.json'
   },
   'territoryTypeTelepoRelay': {
     'fileName': 'territory-type-telepo-relay.json',

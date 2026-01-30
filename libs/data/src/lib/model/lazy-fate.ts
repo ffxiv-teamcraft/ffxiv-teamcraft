@@ -4,6 +4,7 @@ export interface LazyFate {
   level:       number;
   location:    number;
   name:        Description;
+  position?:   Position;
 }
 
 export interface Description {
@@ -29,4 +30,12 @@ export enum Icon {
   I060000060958PNG = "/i/060000/060958.png",
   I060000060994PNG = "/i/060000/060994.png",
   I063000063926PNG = "/i/063000/063926.png",
+}
+
+export interface Position {
+  map:    number;
+  x:      number;
+  y:      number;
+  z:      number;
+  zoneid: number;
 }
