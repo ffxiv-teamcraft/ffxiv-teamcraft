@@ -14,15 +14,15 @@
 
 ### Prepare Your Environment
 
-* Install [Node.js](http://nodejs.org/) (>= 16.14) and Yarn (`npm i -g yarn`)
+* Install [Node.js](http://nodejs.org/) (>= 22.14) and Yarn (`npm i -g yarn`)
 * Install local dev dependencies: `yarn` while current directory is this repo
 
 #### Windows 10 environment
 
 To build Electron on Windows, node-gyp is required and depends on some external tools:
 
-1. Install a Python 3 distribution (like miniconda) Python needs to be discoverable on your PATH.
-1. Install Visual Studio Community Edition 2022 and the C++ Desktop development tools.
+* Install a Python 3 distribution (like miniconda) Python needs to be discoverable on your PATH. 
+* Install Visual Studio Community Edition 2022 and the C++ Desktop development tools.
 
 ### Live Development Server
 

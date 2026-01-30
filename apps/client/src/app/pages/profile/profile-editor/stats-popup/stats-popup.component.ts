@@ -50,7 +50,7 @@ export class StatsPopupComponent extends DialogComponent implements OnInit {
               control: 0,
               craftsmanship: 0,
               specialist: false,
-              splendorous: false
+              relicTool: false
             };
           }
           return set;
