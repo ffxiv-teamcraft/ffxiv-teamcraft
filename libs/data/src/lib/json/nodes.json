@@ -24783,323 +24783,515 @@
     "folklore": 43883
   },
   "1302": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50361
+    ],
+    "level": 1,
+    "type": 1
   },
   "1303": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50361
+    ],
+    "level": 1,
+    "type": 1
   },
   "1304": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50361
+    ],
+    "level": 1,
+    "type": 1
   },
   "1305": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50361
+    ],
+    "level": 1,
+    "type": 1
   },
   "1306": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50362,
+      50363
+    ],
+    "level": 1,
     "type": 0
   },
   "1307": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50363
+    ],
+    "level": 1,
     "type": 0
   },
   "1308": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50362,
+      50363
+    ],
+    "level": 1,
     "type": 0
   },
   "1309": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50362
+    ],
+    "level": 1,
     "type": 0
   },
   "1310": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50364,
+      50365,
+      50366
+    ],
+    "level": 1,
     "type": 0
   },
   "1311": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50365
+    ],
+    "level": 1,
     "type": 0
   },
   "1312": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50364,
+      50365,
+      50366
+    ],
+    "level": 1,
     "type": 0
   },
   "1313": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50364
+    ],
+    "level": 1,
     "type": 0
   },
   "1314": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50365
+    ],
+    "level": 1,
     "type": 0
   },
   "1315": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50367,
+      50368,
+      50426
+    ],
+    "level": 1,
+    "type": 1
   },
   "1316": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50370,
+      50371,
+      50427
+    ],
+    "level": 1,
     "type": 0
   },
   "1317": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50377
+    ],
+    "level": 1,
     "type": 0
   },
   "1318": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50369,
+      50377
+    ],
+    "level": 1,
     "type": 0
   },
   "1319": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50380
+    ],
+    "level": 1,
+    "type": 1
   },
   "1320": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50379
+    ],
+    "level": 1,
     "type": 0
   },
   "1321": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50367
+    ],
+    "level": 1,
+    "type": 1
   },
   "1322": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50427
+    ],
+    "level": 1,
     "type": 0
   },
   "1323": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50372
+    ],
+    "level": 1,
     "type": 0
   },
   "1324": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50373
+    ],
+    "level": 1,
     "type": 0
   },
   "1325": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50379
+    ],
+    "level": 1,
     "type": 0
   },
   "1326": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50374
+    ],
+    "level": 1,
     "type": 0
   },
   "1327": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50375
+    ],
+    "level": 1,
     "type": 0
   },
   "1328": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50376
+    ],
+    "level": 1,
     "type": 0
   },
   "1329": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50375,
+      50378
+    ],
+    "level": 1,
     "type": 0
   },
   "1330": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50384
+    ],
+    "level": 1,
+    "type": 3
   },
   "1331": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50384
+    ],
+    "level": 1,
+    "type": 3
   },
   "1332": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50384
+    ],
+    "level": 1,
+    "type": 3
   },
   "1333": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50384
+    ],
+    "level": 1,
+    "type": 3
   },
   "1334": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50385,
+      50386
+    ],
+    "level": 1,
+    "type": 2
   },
   "1335": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50386
+    ],
+    "level": 1,
+    "type": 2
   },
   "1336": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50385,
+      50386
+    ],
+    "level": 1,
+    "type": 2
   },
   "1337": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50385
+    ],
+    "level": 1,
+    "type": 2
   },
   "1338": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50387,
+      50388,
+      50389
+    ],
+    "level": 1,
+    "type": 2
   },
   "1339": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50388
+    ],
+    "level": 1,
+    "type": 2
   },
   "1340": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50387,
+      50388,
+      50389
+    ],
+    "level": 1,
+    "type": 2
   },
   "1341": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50387
+    ],
+    "level": 1,
+    "type": 2
   },
   "1342": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50388
+    ],
+    "level": 1,
+    "type": 2
   },
   "1343": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50390,
+      50391,
+      50428
+    ],
+    "level": 1,
+    "type": 2
   },
   "1344": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50393,
+      50394,
+      50429
+    ],
+    "level": 1,
+    "type": 2
   },
   "1345": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50400
+    ],
+    "level": 1,
+    "type": 2
   },
   "1346": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50428,
+      50400
+    ],
+    "level": 1,
+    "type": 2
   },
   "1347": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50402
+    ],
+    "level": 1,
+    "type": 3
   },
   "1348": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50402
+    ],
+    "level": 1,
+    "type": 3
   },
   "1349": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50391
+    ],
+    "level": 1,
+    "type": 2
   },
   "1350": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50395
+    ],
+    "level": 1,
+    "type": 3
   },
   "1351": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50396
+    ],
+    "level": 1,
+    "type": 3
   },
   "1352": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50392
+    ],
+    "level": 1,
+    "type": 3
   },
   "1353": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50403
+    ],
+    "level": 1,
+    "type": 3
   },
   "1354": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50397
+    ],
+    "level": 1,
+    "type": 2
   },
   "1355": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50398
+    ],
+    "level": 1,
+    "type": 3
   },
   "1356": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50399
+    ],
+    "level": 1,
+    "type": 3
   },
   "1357": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50398,
+      50401
+    ],
+    "level": 1,
+    "type": 3
   },
   "1358": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50407
+    ],
+    "level": 1,
     "type": 0
   },
   "1359": {
-    "items": [],
-    "level": 0,
+    "items": [
+      50408
+    ],
+    "level": 1,
     "type": 0
   },
   "1360": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50409
+    ],
+    "level": 1,
+    "type": 2
   },
   "1361": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      50410
+    ],
+    "level": 1,
+    "type": 2
   },
   "1362": {
     "items": [],
-    "level": 0,
-    "type": 0
+    "limited": false,
+    "level": 1,
+    "type": 0,
+    "base": 1362,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "radius": 1052,
+    "x": 15.85,
+    "y": 23.56,
+    "z": 0,
+    "map": 0
   },
   "1363": {
     "items": [],
-    "level": 0,
-    "type": 0
+    "limited": false,
+    "level": 1,
+    "type": 1,
+    "base": 1363,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "radius": 815,
+    "x": 20.87,
+    "y": 23.28,
+    "z": 0,
+    "map": 0
   },
   "1364": {
     "items": [],
-    "level": 0,
-    "type": 0
+    "limited": false,
+    "level": 1,
+    "type": 2,
+    "base": 1364,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "radius": 536,
+    "x": 19.09,
+    "y": 21.16,
+    "z": 0,
+    "map": 0
   },
   "1365": {
     "items": [],
-    "level": 0,
-    "type": 0
+    "limited": false,
+    "level": 1,
+    "type": 3,
+    "base": 1365,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "radius": 829,
+    "x": 22.18,
+    "y": 18.14,
+    "z": 0,
+    "map": 0
   }
 }

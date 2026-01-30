@@ -24307,6 +24307,1406 @@
     "folklore": 43886,
     "recordType": 3
   },
+  "50090": {
+    "id": 15703,
+    "itemId": 50090,
+    "level": 10,
+    "icon": "/i/029000/029488.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50091": {
+    "id": 15704,
+    "itemId": 50091,
+    "level": 10,
+    "icon": "/i/023000/023605.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50092": {
+    "id": 15705,
+    "itemId": 50092,
+    "level": 10,
+    "icon": "/i/023000/023606.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50093": {
+    "id": 15706,
+    "itemId": 50093,
+    "level": 10,
+    "icon": "/i/023000/023607.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50094": {
+    "id": 15707,
+    "itemId": 50094,
+    "level": 10,
+    "icon": "/i/029000/029277.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50095": {
+    "id": 15708,
+    "itemId": 50095,
+    "level": 10,
+    "icon": "/i/029000/029479.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50096": {
+    "id": 15709,
+    "itemId": 50096,
+    "level": 10,
+    "icon": "/i/029000/029488.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50097": {
+    "id": 15710,
+    "itemId": 50097,
+    "level": 10,
+    "icon": "/i/023000/023605.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50098": {
+    "id": 15711,
+    "itemId": 50098,
+    "level": 10,
+    "icon": "/i/029000/029284.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50099": {
+    "id": 15712,
+    "itemId": 50099,
+    "level": 10,
+    "icon": "/i/023000/023607.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50100": {
+    "id": 15713,
+    "itemId": 50100,
+    "level": 10,
+    "icon": "/i/029000/029277.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50101": {
+    "id": 15714,
+    "itemId": 50101,
+    "level": 10,
+    "icon": "/i/023000/023608.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50102": {
+    "id": 15715,
+    "itemId": 50102,
+    "level": 50,
+    "icon": "/i/029000/029488.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50103": {
+    "id": 15716,
+    "itemId": 50103,
+    "level": 50,
+    "icon": "/i/023000/023605.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50104": {
+    "id": 15717,
+    "itemId": 50104,
+    "level": 50,
+    "icon": "/i/029000/029405.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50105": {
+    "id": 15718,
+    "itemId": 50105,
+    "level": 50,
+    "icon": "/i/029000/029287.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50106": {
+    "id": 15719,
+    "itemId": 50106,
+    "level": 50,
+    "icon": "/i/023000/023607.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50107": {
+    "id": 15720,
+    "itemId": 50107,
+    "level": 50,
+    "icon": "/i/029000/029277.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50108": {
+    "id": 15721,
+    "itemId": 50108,
+    "level": 50,
+    "icon": "/i/023000/023609.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50109": {
+    "id": 15722,
+    "itemId": 50109,
+    "level": 50,
+    "icon": "/i/028000/028599.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50110": {
+    "id": 15723,
+    "itemId": 50110,
+    "level": 50,
+    "icon": "/i/029000/029488.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50111": {
+    "id": 15724,
+    "itemId": 50111,
+    "level": 50,
+    "icon": "/i/023000/023605.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50112": {
+    "id": 15725,
+    "itemId": 50112,
+    "level": 50,
+    "icon": "/i/029000/029493.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50113": {
+    "id": 15726,
+    "itemId": 50113,
+    "level": 50,
+    "icon": "/i/029000/029302.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50114": {
+    "id": 15727,
+    "itemId": 50114,
+    "level": 50,
+    "icon": "/i/023000/023607.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50115": {
+    "id": 15728,
+    "itemId": 50115,
+    "level": 50,
+    "icon": "/i/029000/029277.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50116": {
+    "id": 15729,
+    "itemId": 50116,
+    "level": 50,
+    "icon": "/i/029000/029510.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50117": {
+    "id": 15730,
+    "itemId": 50117,
+    "level": 50,
+    "icon": "/i/029000/029402.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50118": {
+    "id": 15731,
+    "itemId": 50118,
+    "level": 90,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50119": {
+    "id": 15732,
+    "itemId": 50119,
+    "level": 90,
+    "icon": "/i/023000/023611.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50120": {
+    "id": 15733,
+    "itemId": 50120,
+    "level": 90,
+    "icon": "/i/029000/029481.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50121": {
+    "id": 15734,
+    "itemId": 50121,
+    "level": 90,
+    "icon": "/i/029000/029172.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50122": {
+    "id": 15735,
+    "itemId": 50122,
+    "level": 90,
+    "icon": "/i/028000/028137.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50123": {
+    "id": 15736,
+    "itemId": 50123,
+    "level": 90,
+    "icon": "/i/029000/029397.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50124": {
+    "id": 15737,
+    "itemId": 50124,
+    "level": 90,
+    "icon": "/i/023000/023613.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50125": {
+    "id": 15738,
+    "itemId": 50125,
+    "level": 90,
+    "icon": "/i/029000/029399.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50126": {
+    "id": 15739,
+    "itemId": 50126,
+    "level": 90,
+    "icon": "/i/029000/029313.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50127": {
+    "id": 15740,
+    "itemId": 50127,
+    "level": 90,
+    "icon": "/i/028000/028756.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50128": {
+    "id": 15741,
+    "itemId": 50128,
+    "level": 90,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50129": {
+    "id": 15742,
+    "itemId": 50129,
+    "level": 90,
+    "icon": "/i/029000/029030.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50130": {
+    "id": 15743,
+    "itemId": 50130,
+    "level": 90,
+    "icon": "/i/029000/029132.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50131": {
+    "id": 15744,
+    "itemId": 50131,
+    "level": 90,
+    "icon": "/i/029000/029811.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50132": {
+    "id": 15745,
+    "itemId": 50132,
+    "level": 90,
+    "icon": "/i/028000/028061.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50133": {
+    "id": 15746,
+    "itemId": 50133,
+    "level": 90,
+    "icon": "/i/029000/029397.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50134": {
+    "id": 15747,
+    "itemId": 50134,
+    "level": 90,
+    "icon": "/i/023000/023614.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50135": {
+    "id": 15748,
+    "itemId": 50135,
+    "level": 90,
+    "icon": "/i/023000/023615.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50136": {
+    "id": 15749,
+    "itemId": 50136,
+    "level": 90,
+    "icon": "/i/029000/029186.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50137": {
+    "id": 15750,
+    "itemId": 50137,
+    "level": 90,
+    "icon": "/i/028000/028523.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50138": {
+    "id": 15751,
+    "itemId": 50138,
+    "level": 90,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50139": {
+    "id": 15752,
+    "itemId": 50139,
+    "level": 90,
+    "icon": "/i/023000/023611.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50140": {
+    "id": 15753,
+    "itemId": 50140,
+    "level": 90,
+    "icon": "/i/029000/029040.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50141": {
+    "id": 15754,
+    "itemId": 50141,
+    "level": 90,
+    "icon": "/i/028000/028139.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50142": {
+    "id": 15755,
+    "itemId": 50142,
+    "level": 100,
+    "icon": "/i/029000/029397.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50143": {
+    "id": 15756,
+    "itemId": 50143,
+    "level": 100,
+    "icon": "/i/023000/023613.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50144": {
+    "id": 15757,
+    "itemId": 50144,
+    "level": 100,
+    "icon": "/i/023000/023616.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50145": {
+    "id": 15758,
+    "itemId": 50145,
+    "level": 100,
+    "icon": "/i/029000/029406.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50146": {
+    "id": 15759,
+    "itemId": 50146,
+    "level": 100,
+    "icon": "/i/029000/029424.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50147": {
+    "id": 15760,
+    "itemId": 50147,
+    "level": 100,
+    "icon": "/i/028000/028758.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50148": {
+    "id": 15761,
+    "itemId": 50148,
+    "level": 100,
+    "icon": "/i/029000/029397.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50149": {
+    "id": 15762,
+    "itemId": 50149,
+    "level": 100,
+    "icon": "/i/023000/023613.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50150": {
+    "id": 15763,
+    "itemId": 50150,
+    "level": 100,
+    "icon": "/i/029000/029413.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50151": {
+    "id": 15764,
+    "itemId": 50151,
+    "level": 100,
+    "icon": "/i/029000/029267.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50152": {
+    "id": 15765,
+    "itemId": 50152,
+    "level": 100,
+    "icon": "/i/028000/028759.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50153": {
+    "id": 15766,
+    "itemId": 50153,
+    "level": 100,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50154": {
+    "id": 15767,
+    "itemId": 50154,
+    "level": 100,
+    "icon": "/i/023000/023611.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50155": {
+    "id": 15768,
+    "itemId": 50155,
+    "level": 100,
+    "icon": "/i/029000/029805.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50156": {
+    "id": 15769,
+    "itemId": 50156,
+    "level": 100,
+    "icon": "/i/029000/029110.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50157": {
+    "id": 15770,
+    "itemId": 50157,
+    "level": 100,
+    "icon": "/i/028000/028141.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50158": {
+    "id": 15771,
+    "itemId": 50158,
+    "level": 100,
+    "icon": "/i/022000/022621.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50159": {
+    "id": 15772,
+    "itemId": 50159,
+    "level": 100,
+    "icon": "/i/029000/029296.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50160": {
+    "id": 15773,
+    "itemId": 50160,
+    "level": 100,
+    "icon": "/i/023000/023617.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50161": {
+    "id": 15774,
+    "itemId": 50161,
+    "level": 100,
+    "icon": "/i/023000/023618.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50162": {
+    "id": 15775,
+    "itemId": 50162,
+    "level": 100,
+    "icon": "/i/029000/029628.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50163": {
+    "id": 15776,
+    "itemId": 50163,
+    "level": 100,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50164": {
+    "id": 15777,
+    "itemId": 50164,
+    "level": 100,
+    "icon": "/i/023000/023611.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50165": {
+    "id": 15778,
+    "itemId": 50165,
+    "level": 100,
+    "icon": "/i/029000/029598.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50166": {
+    "id": 15779,
+    "itemId": 50166,
+    "level": 100,
+    "icon": "/i/028000/028041.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50167": {
+    "id": 15780,
+    "itemId": 50167,
+    "level": 100,
+    "icon": "/i/028000/028138.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50168": {
+    "id": 15781,
+    "itemId": 50168,
+    "level": 100,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50169": {
+    "id": 15782,
+    "itemId": 50169,
+    "level": 100,
+    "icon": "/i/023000/023611.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50170": {
+    "id": 15783,
+    "itemId": 50170,
+    "level": 100,
+    "icon": "/i/029000/029185.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50171": {
+    "id": 15784,
+    "itemId": 50171,
+    "level": 100,
+    "icon": "/i/028000/028081.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50172": {
+    "id": 15785,
+    "itemId": 50172,
+    "level": 100,
+    "icon": "/i/023000/023612.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50173": {
+    "id": 15786,
+    "itemId": 50173,
+    "level": 100,
+    "icon": "/i/028000/028140.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50174": {
+    "id": 15787,
+    "itemId": 50174,
+    "level": 100,
+    "icon": "/i/029000/029397.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50175": {
+    "id": 15788,
+    "itemId": 50175,
+    "level": 100,
+    "icon": "/i/023000/023613.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50176": {
+    "id": 15789,
+    "itemId": 50176,
+    "level": 100,
+    "icon": "/i/028000/028607.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50177": {
+    "id": 15790,
+    "itemId": 50177,
+    "level": 100,
+    "icon": "/i/029000/029261.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50178": {
+    "id": 15791,
+    "itemId": 50178,
+    "level": 100,
+    "icon": "/i/028000/028757.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50179": {
+    "id": 15792,
+    "itemId": 50179,
+    "level": 100,
+    "icon": "/i/022000/022621.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50180": {
+    "id": 15793,
+    "itemId": 50180,
+    "level": 100,
+    "icon": "/i/029000/029296.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50181": {
+    "id": 15794,
+    "itemId": 50181,
+    "level": 100,
+    "icon": "/i/023000/023619.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50182": {
+    "id": 15795,
+    "itemId": 50182,
+    "level": 100,
+    "icon": "/i/029000/029424.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50183": {
+    "id": 15796,
+    "itemId": 50183,
+    "level": 100,
+    "icon": "/i/029000/029619.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50184": {
+    "id": 15797,
+    "itemId": 50184,
+    "level": 100,
+    "icon": "/i/029000/029621.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50185": {
+    "id": 15798,
+    "itemId": 50185,
+    "level": 100,
+    "icon": "/i/028000/028557.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50186": {
+    "id": 15799,
+    "itemId": 50186,
+    "level": 100,
+    "icon": "/i/029000/029231.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50187": {
+    "id": 15800,
+    "itemId": 50187,
+    "level": 100,
+    "icon": "/i/029000/029307.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50188": {
+    "id": 15801,
+    "itemId": 50188,
+    "level": 100,
+    "icon": "/i/023000/023620.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50189": {
+    "id": 15802,
+    "itemId": 50189,
+    "level": 100,
+    "icon": "/i/028000/028660.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50190": {
+    "id": 15803,
+    "itemId": 50190,
+    "level": 100,
+    "icon": "/i/028000/028760.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50191": {
+    "id": 15804,
+    "itemId": 50191,
+    "level": 100,
+    "icon": "/i/029000/029169.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50192": {
+    "id": 15805,
+    "itemId": 50192,
+    "level": 100,
+    "icon": "/i/029000/029170.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50193": {
+    "id": 15806,
+    "itemId": 50193,
+    "level": 100,
+    "icon": "/i/029000/029165.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50194": {
+    "id": 15807,
+    "itemId": 50194,
+    "level": 100,
+    "icon": "/i/029000/029006.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50195": {
+    "id": 15808,
+    "itemId": 50195,
+    "level": 100,
+    "icon": "/i/028000/028143.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 44
+  },
+  "50196": {
+    "id": 15809,
+    "itemId": 50196,
+    "level": 100,
+    "icon": "/i/022000/022621.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50197": {
+    "id": 15810,
+    "itemId": 50197,
+    "level": 100,
+    "icon": "/i/029000/029296.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50198": {
+    "id": 15811,
+    "itemId": 50198,
+    "level": 100,
+    "icon": "/i/029000/029617.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50199": {
+    "id": 15812,
+    "itemId": 50199,
+    "level": 100,
+    "icon": "/i/029000/029609.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50200": {
+    "id": 15813,
+    "itemId": 50200,
+    "level": 100,
+    "icon": "/i/029000/029618.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50201": {
+    "id": 15814,
+    "itemId": 50201,
+    "level": 100,
+    "icon": "/i/029000/029629.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50202": {
+    "id": 15815,
+    "itemId": 50202,
+    "level": 100,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50203": {
+    "id": 15816,
+    "itemId": 50203,
+    "level": 100,
+    "icon": "/i/023000/023611.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50204": {
+    "id": 15817,
+    "itemId": 50204,
+    "level": 100,
+    "icon": "/i/029000/029058.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50205": {
+    "id": 15818,
+    "itemId": 50205,
+    "level": 100,
+    "icon": "/i/029000/029184.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50206": {
+    "id": 15819,
+    "itemId": 50206,
+    "level": 100,
+    "icon": "/i/029000/029151.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50207": {
+    "id": 15820,
+    "itemId": 50207,
+    "level": 100,
+    "icon": "/i/028000/028142.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50208": {
+    "id": 15821,
+    "itemId": 50208,
+    "level": 100,
+    "icon": "/i/029000/029169.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50209": {
+    "id": 15822,
+    "itemId": 50209,
+    "level": 100,
+    "icon": "/i/029000/029170.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50210": {
+    "id": 15823,
+    "itemId": 50210,
+    "level": 100,
+    "icon": "/i/029000/029062.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50211": {
+    "id": 15824,
+    "itemId": 50211,
+    "level": 100,
+    "icon": "/i/055000/055632.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50212": {
+    "id": 15825,
+    "itemId": 50212,
+    "level": 100,
+    "icon": "/i/054000/054432.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50213": {
+    "id": 15826,
+    "itemId": 50213,
+    "level": 100,
+    "icon": "/i/028000/028144.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50214": {
+    "id": 15827,
+    "itemId": 50214,
+    "level": 100,
+    "icon": "/i/022000/022621.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50215": {
+    "id": 15828,
+    "itemId": 50215,
+    "level": 100,
+    "icon": "/i/029000/029608.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50216": {
+    "id": 15829,
+    "itemId": 50216,
+    "level": 100,
+    "icon": "/i/029000/029616.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50217": {
+    "id": 15830,
+    "itemId": 50217,
+    "level": 100,
+    "icon": "/i/029000/029248.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50218": {
+    "id": 15831,
+    "itemId": 50218,
+    "level": 100,
+    "icon": "/i/029000/029108.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50219": {
+    "id": 15832,
+    "itemId": 50219,
+    "level": 100,
+    "icon": "/i/029000/029627.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50220": {
+    "id": 15833,
+    "itemId": 50220,
+    "level": 100,
+    "icon": "/i/028000/028557.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50221": {
+    "id": 15834,
+    "itemId": 50221,
+    "level": 100,
+    "icon": "/i/029000/029231.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50222": {
+    "id": 15835,
+    "itemId": 50222,
+    "level": 100,
+    "icon": "/i/023000/023621.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50223": {
+    "id": 15836,
+    "itemId": 50223,
+    "level": 100,
+    "icon": "/i/023000/023622.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50224": {
+    "id": 15837,
+    "itemId": 50224,
+    "level": 100,
+    "icon": "/i/029000/029232.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50225": {
+    "id": 15838,
+    "itemId": 50225,
+    "level": 100,
+    "icon": "/i/028000/028761.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": 44
+  },
+  "50226": {
+    "id": 15839,
+    "itemId": 50226,
+    "level": 10,
+    "icon": "/i/023000/023610.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50227": {
+    "id": 15840,
+    "itemId": 50227,
+    "level": 10,
+    "icon": "/i/028000/028136.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50228": {
+    "id": 15841,
+    "itemId": 50228,
+    "level": 10,
+    "icon": "/i/023000/023607.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
+  "50229": {
+    "id": 15842,
+    "itemId": 50229,
+    "level": 10,
+    "icon": "/i/025000/025975.png",
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": 44
+  },
   "2001398": {
     "id": 15005,
     "itemId": 2001398,
