@@ -706,6 +706,8 @@ export class StatsService {
   }
 
   private getStatValue(displayName: string, level: number, job: number, stats: { id: number, value: number }[], statBonus = 0): Observable<number> {
+    const haste = this.getHaste(job, level);
+
     switch (displayName) {
       case 'HP':
         return this.getMaxHp(job, level, (stats.find(stat => stat.id === BaseParam.VITALITY)?.value || 0) + statBonus);
@@ -718,7 +720,7 @@ export class StatsService {
       case 'Determination_bonus':
         return of(Math.floor(this.getDeterminationBonus(level, (stats.find(stat => stat.id === BaseParam.DETERMINATION)?.value || 0) + statBonus)) / 10);
       case 'GCD':
-        return of(Math.floor(this.getGCD(level, (stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED)?.value || 0) + statBonus)) / 1000);
+        return of(Math.floor(this.getGCD(level, (stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED)?.value || 0) + statBonus, haste)) / 1000);
       default:
         return of(0);
     }
@@ -751,10 +753,32 @@ export class StatsService {
     return 200 * (critical - levelModSub) / levelModDiv + 50;
   }
 
-  private getGCD(level: number, speed: number): number {
+  private getGCD(level: number, speed: number, haste: number): number {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
-    return (1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5;
+    const baseGcd = (1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5;
+    return Math.floor(Math.floor(baseGcd) * (100 - haste) / 100);
+  }
+
+  private getHaste(job: number, level: number): number {
+    switch(job) {
+      // MNK - GL upgrades as higher level traits unlock
+      case 2:
+      case 20:
+        if(level >= 76) { return 20 }
+        if(level >= 40) { return 15 }
+        if(level >= 20) { return 10 }
+        return 5;
+
+      // NIN - Huton is flat 15%
+      case 29:
+      case 30:
+        return 15;
+
+      // Other jobs don't have speed modifiers and we can ignore BLM's Astral/Umbral
+      default:
+        return 0;
+    }
   }
 
   private getCriticalMultiplier(level: number, critical: number): number {
