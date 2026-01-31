@@ -22,7 +22,7 @@ export interface LazyQuestsDatabasePage {
   requires:      number[];
   rewards:       Reward[];
   start:         number;
-  startingPoint: null;
+  startingPoint: StartingPoint | null;
   trades?:       Trade[];
   zh?:           string;
 }
@@ -48,6 +48,14 @@ export enum Type {
   Instance = "instance",
   Item = "item",
   Rep = "rep",
+}
+
+export interface StartingPoint {
+  map:    number;
+  x:      number;
+  y:      number;
+  z:      number;
+  zoneid: number;
 }
 
 export interface Trade {
