@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, EventEmitter, inject, input, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, EventEmitter, input, Input, Output } from '@angular/core';
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -149,9 +149,13 @@ export class ActionComponent {
 
   private computeAvailableConditions(): void {
     this.availableConditions = (this.simulation.possibleConditions || [StepState.NORMAL, StepState.GOOD, StepState.EXCELLENT, StepState.POOR]).map(condition => {
+      let name = `UNK${condition}`;
+      if (StepState[condition] !== undefined) {
+        name = `${StepState[condition].slice(0, 1)}${StepState[condition].slice(1).toLowerCase()}`;
+      }
       return {
         condition,
-        name: `${StepState[condition].slice(0, 1)}${StepState[condition].slice(1).toLowerCase()}`
+        name
       };
     });
   }
