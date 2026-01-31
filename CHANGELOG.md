@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.15...v11.4.16) (2026-01-31)
+
+
+### Features
+
+* **gearsets:** add function to calculate GCD haste modifier ([a82f27c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a82f27cd21f6abce13c18e0bf0280b87632fc46b))
+
+
+### Bug Fixes
+
+* export Material Miracle properly in macros ([2df1488](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2df148829b2e0fd6152c4194c7ff735d74eb1779))
+* **gearsets:** fix GCD stat calculation not applying GCD speed traits to MNK and NIN ([95b3051](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95b3051198d11a1eb50d3c9abd5d71a39216175a))
+* **simulator:** handle unknown conditions ([4ca8c64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ca8c646e66e0a22d4eeff6773b6b73147282dbe))
+* **simulator:** support for new ROBUST condition ([8edfafa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8edfafa7d3c655d980bb931a9b6070c6dff22ac1))
+
 ### [11.4.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.14...v11.4.15) (2026-01-30)
 
 
