@@ -757,6 +757,27 @@ export class StatsService {
     return (1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5;
   }
 
+  private getHaste(job: number, level: number): number {
+    switch(job) {
+      // MNK - GL upgrades as higher level traits unlock
+      case 2:
+      case 20:
+        if(level >= 76) { return 20 }
+        if(level >= 40) { return 15 }
+        if(level >= 20) { return 10 }
+        return 5;
+
+      // NIN - Huton is flat 15%
+      case 29:
+      case 30:
+        return 15;
+
+      // Other jobs don't have speed modifiers and we can ignore BLM's Astral/Umbral
+      default:
+        return 0;
+    }
+  }
+
   private getCriticalMultiplier(level: number, critical: number): number {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
