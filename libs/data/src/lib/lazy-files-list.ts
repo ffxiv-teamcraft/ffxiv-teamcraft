@@ -689,7 +689,7 @@ export const lazyFilesList = {
   },
   'fatesDatabasePages': {
     'fileName': 'db/fates-database-pages.json',
-    'hashedFileName': 'db/fates-database-pages.7828a52d7d8ac6a685d23cfe942cc47bcb10493c.json'
+    'hashedFileName': 'db/fates-database-pages.625f01891bf0ff9ef95b78e6a342e5a074919aea.json'
   },
   'fishingSpotsDatabasePages': {
     'fileName': 'db/fishing-spots-database-pages.json',
@@ -713,11 +713,11 @@ export const lazyFilesList = {
   },
   'npcsDatabasePages': {
     'fileName': 'db/npcs-database-pages.json',
-    'hashedFileName': 'db/npcs-database-pages.bf2865e43b5c648ef3967fcb94f83e5df03188c8.json'
+    'hashedFileName': 'db/npcs-database-pages.498b924024dd35725ef6a1388e2fed2b2732c904.json'
   },
   'questsDatabasePages': {
     'fileName': 'db/quests-database-pages.json',
-    'hashedFileName': 'db/quests-database-pages.f9eb565aac3dd2e8254ef290c58b0b3af5103f2c.json'
+    'hashedFileName': 'db/quests-database-pages.58a342b9de1a8195e1cece78601d8faae6d2c0c5.json'
   },
   'questsText': {
     'fileName': 'db/quests-text.index',
