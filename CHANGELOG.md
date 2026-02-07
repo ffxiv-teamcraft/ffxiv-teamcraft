@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.16...v11.4.17) (2026-02-07)
+
+
+### Features
+
+* **db:** support for korean v7.4 update ([cecc1cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cecc1cb0ab2164a97e5e67052736166a71b7b6bf))
+* **island:** predict the future using the past (kudos to Mienna!) ([f59c775](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f59c77520023c9c38b2f76cb63a7d899bbdc118c))
+
 ### [11.4.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.15...v11.4.16) (2026-01-31)
 
 
