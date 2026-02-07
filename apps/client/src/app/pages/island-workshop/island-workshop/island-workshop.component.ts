@@ -8,10 +8,10 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder, NzTableModule } from 'ng-zorro-antd/table';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, shareReplay, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { subDays } from 'date-fns';
+import { addWeeks, subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
 import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -66,6 +66,8 @@ interface ColumnItem {
 })
 export class IslandWorkshopComponent extends TeamcraftComponent {
 
+  static START_DATE = new Date(1661241600000);
+
   static POPULARITY_KEYS = {
     1: 'Very_high',
     2: 'High',
@@ -99,6 +101,23 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     'Saturday'
   ];
 
+  public previousResetForUpload$ = timer(0, 1000).pipe(
+    map(() => {
+      // Only supports EU servers for now.
+      let reset = new Date();
+      reset.setUTCSeconds(0);
+      reset.setUTCMinutes(0);
+      reset.setUTCMilliseconds(0);
+      if (reset.getUTCHours() < 8) {
+        // This means the reset was yesterday
+        reset = subDays(reset, 1);
+      }
+      return reset.getTime();
+    }),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
+
   public previousReset$ = timer(0, 1000).pipe(
     map(() => {
       // Only supports EU servers for now.
@@ -110,10 +129,16 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         // This means the reset was yesterday
         reset = subDays(reset, 1);
       }
-      reset.setUTCHours(8);
-      return reset.getTime();
+      const timeSinceStart = reset.getTime() - IslandWorkshopComponent.START_DATE.getTime();
+      const weeksSinceStart = (timeSinceStart / 86400000) + 1;
+      const weekIndex = (weeksSinceStart - 59) % 100 + 59;
+      const offsetReset = addWeeks(IslandWorkshopComponent.START_DATE, weekIndex);
+      offsetReset.setDate(reset.getDate());
+      offsetReset.setUTCHours(8);
+      return offsetReset.getTime();
     }),
-    distinctUntilChanged()
+    distinctUntilChanged(),
+    shareReplay(1)
   );
 
   public previousWeeklyReset$ = timer(0, 1000).pipe(
@@ -130,9 +155,14 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         }
       }
       previousWeeklyReset.setUTCHours(8);
-      return previousWeeklyReset.getTime();
+      const timeSinceStart = previousWeeklyReset.getTime() - IslandWorkshopComponent.START_DATE.getTime();
+      const weeksSinceStart = (timeSinceStart / 604800000) + 1;
+      const weekIndex = (weeksSinceStart - 59) % 100 + 59;
+      console.log("WEEK", weekIndex);
+      return addWeeks(IslandWorkshopComponent.START_DATE, weekIndex).getTime();
     }),
-    distinctUntilChanged()
+    distinctUntilChanged(),
+    shareReplay(1)
   );
 
   public supplies = Object.entries(IslandWorkshopComponent.SUPPLY_KEYS)
@@ -437,7 +467,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       this.ipc.pcapToggle$.subscribe((value) => {
         this.pcapToggle = value;
       });
-      combineLatest([this.previousReset$, this.state$, this.authFacade.user$]).pipe(
+      combineLatest([this.previousResetForUpload$, this.state$, this.authFacade.user$]).pipe(
         switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
