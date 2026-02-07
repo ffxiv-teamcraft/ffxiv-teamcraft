@@ -733,11 +733,11 @@ export const lazyFilesList = {
   },
   'koAchievementDescriptions': {
     'fileName': 'ko/ko-achievement-descriptions.json',
-    'hashedFileName': 'ko/ko-achievement-descriptions.3205d3a218afd83821c760c71b8b8df0ec306893.json'
+    'hashedFileName': 'ko/ko-achievement-descriptions.ea6c269a8dbf0999b3c2d9d4bb0571d81a36d74f.json'
   },
   'koAchievements': {
     'fileName': 'ko/ko-achievements.json',
-    'hashedFileName': 'ko/ko-achievements.9f8671895739e1f1f0cae6e120f5e3c52a5dd81a.json'
+    'hashedFileName': 'ko/ko-achievements.1e689997e71dff4f5d4bc1993a05a91b687ed744.json'
   },
   'koActionCategories': {
     'fileName': 'ko/ko-action-categories.json',
@@ -745,11 +745,11 @@ export const lazyFilesList = {
   },
   'koActionDescriptions': {
     'fileName': 'ko/ko-action-descriptions.json',
-    'hashedFileName': 'ko/ko-action-descriptions.1b252b9a6297add347da47f0032b1db9925d0e57.json'
+    'hashedFileName': 'ko/ko-action-descriptions.33c04734d7bfb50f23c4aa24b8c273e94e0ef8f4.json'
   },
   'koActions': {
     'fileName': 'ko/ko-actions.json',
-    'hashedFileName': 'ko/ko-actions.dead1d17cfa4330614f11509c6f1590b7d24e6d3.json'
+    'hashedFileName': 'ko/ko-actions.5ff6951735b36a0b2ea728cb4a8edf70ff96f5fd.json'
   },
   'koAirshipVoyages': {
     'fileName': 'ko/ko-airship-voyages.json',
@@ -777,7 +777,7 @@ export const lazyFilesList = {
   },
   'koEventItems': {
     'fileName': 'ko/ko-event-items.json',
-    'hashedFileName': 'ko/ko-event-items.a589137846960d6e57260d6688fdb25931467f5a.json'
+    'hashedFileName': 'ko/ko-event-items.0af898180a9ad7de0a2373d3ad37a3dd17470452.json'
   },
   'koExVersions': {
     'fileName': 'ko/ko-ex-versions.json',
@@ -785,7 +785,7 @@ export const lazyFilesList = {
   },
   'koFates': {
     'fileName': 'ko/ko-fates.json',
-    'hashedFileName': 'ko/ko-fates.3e8909cac33cb6fac834f3c5c549027ff5d0586c.json'
+    'hashedFileName': 'ko/ko-fates.bd984d4ed5f0d3f8e948459e46915571c627acfa.json'
   },
   'koFreeCompanyActions': {
     'fileName': 'ko/ko-free-company-actions.json',
@@ -793,7 +793,7 @@ export const lazyFilesList = {
   },
   'koGatheringBonuses': {
     'fileName': 'ko/ko-gathering-bonuses.json',
-    'hashedFileName': 'ko/ko-gathering-bonuses.49343dc2e000d32e7547c14065c04b41a91a7d24.json'
+    'hashedFileName': 'ko/ko-gathering-bonuses.17338ab6f238fb40fade535d06da976288b27ece.json'
   },
   'koGatheringTypes': {
     'fileName': 'ko/ko-gathering-types.json',
@@ -801,11 +801,11 @@ export const lazyFilesList = {
   },
   'koInstanceDescriptions': {
     'fileName': 'ko/ko-instance-descriptions.json',
-    'hashedFileName': 'ko/ko-instance-descriptions.89f68aafbae0d61a4d3c7a3b5214de6bfd563194.json'
+    'hashedFileName': 'ko/ko-instance-descriptions.ef50814fdc943cb732df643b96d1eaefdb83fc89.json'
   },
   'koInstances': {
     'fileName': 'ko/ko-instances.json',
-    'hashedFileName': 'ko/ko-instances.1713a5716fadf36d2f2478fd546e903a9bc00930.json'
+    'hashedFileName': 'ko/ko-instances.44dcebdd0aba109caa14465f5863cb005423c28b.json'
   },
   'koIslandCraftworksTheme': {
     'fileName': 'ko/ko-island-craftworks-theme.json',
@@ -813,7 +813,7 @@ export const lazyFilesList = {
   },
   'koItemDescriptions': {
     'fileName': 'ko/ko-item-descriptions.json',
-    'hashedFileName': 'ko/ko-item-descriptions.0876fd4a0efd403ab801a2d75e9a06c771ca2cc0.json'
+    'hashedFileName': 'ko/ko-item-descriptions.ecc295098df98a1c9a5e326a9ed7fab13d140770.json'
   },
   'koItemKinds': {
     'fileName': 'ko/ko-item-kinds.json',
@@ -829,7 +829,7 @@ export const lazyFilesList = {
   },
   'koItems': {
     'fileName': 'ko/ko-items.json',
-    'hashedFileName': 'ko/ko-items.c3856a1fd576a398f7408d1e190cc9445291dffa.json'
+    'hashedFileName': 'ko/ko-items.94377c3255954b06d29ee67188740292b7a9bd1d.json'
   },
   'koJobAbbr': {
     'fileName': 'ko/ko-job-abbr.json',
@@ -845,7 +845,7 @@ export const lazyFilesList = {
   },
   'koJournalGenre': {
     'fileName': 'ko/ko-journal-genre.json',
-    'hashedFileName': 'ko/ko-journal-genre.8c2fbd533c6d22204ef89b6cfd4e51746447bc9e.json'
+    'hashedFileName': 'ko/ko-journal-genre.31b4d32ae9cbe5cd170df5ea711929ac3ebf6edf.json'
   },
   'koLeveDescriptions': {
     'fileName': 'ko/ko-leve-descriptions.json',
@@ -857,11 +857,11 @@ export const lazyFilesList = {
   },
   'koMaps': {
     'fileName': 'ko/ko-maps.json',
-    'hashedFileName': 'ko/ko-maps.e0b4fb2f02a45f6e30f6810ebadfe45a78c7f025.json'
+    'hashedFileName': 'ko/ko-maps.bf2485de3b892502e5a2867f6a1cf09c7dda43a6.json'
   },
   'koMobs': {
     'fileName': 'ko/ko-mobs.json',
-    'hashedFileName': 'ko/ko-mobs.1029bc378cd49bea0fac1da2690e8cf12cec4120.json'
+    'hashedFileName': 'ko/ko-mobs.e9f4376560b755963a8f3cdf1aaf2cbfe8fa6a07.json'
   },
   'koNotebookDivisionCategory': {
     'fileName': 'ko/ko-notebook-division-category.json',
@@ -869,31 +869,31 @@ export const lazyFilesList = {
   },
   'koNotebookDivision': {
     'fileName': 'ko/ko-notebook-division.json',
-    'hashedFileName': 'ko/ko-notebook-division.68370dfa0de73b2ce106d5eff01288b723f8ac0b.json'
+    'hashedFileName': 'ko/ko-notebook-division.dc8662b7b80bd960d03afcc32d7ed4342c2e3589.json'
   },
   'koNpcTitles': {
     'fileName': 'ko/ko-npc-titles.json',
-    'hashedFileName': 'ko/ko-npc-titles.a0e2b6fc54c6e56e33460fde5173c15532360a2b.json'
+    'hashedFileName': 'ko/ko-npc-titles.d8722b4c4b576ad66e8bc8a5ec5afecb77ba8abc.json'
   },
   'koNpcs': {
     'fileName': 'ko/ko-npcs.json',
-    'hashedFileName': 'ko/ko-npcs.8cbc97de3c7ed665d3fef4b7ad0e534e57dc49d0.json'
+    'hashedFileName': 'ko/ko-npcs.56302ce24539eea6c15e0ea9455ffe6f8f164df9.json'
   },
   'koPatchs': {
     'fileName': 'ko/ko-patchs.json',
-    'hashedFileName': 'ko/ko-patchs.6e9bdb8d9a145d368bbc76c08baf34b1cd7df8bf.json'
+    'hashedFileName': 'ko/ko-patchs.1056c79df3483726926c625b5c55c52e82ab57ea.json'
   },
   'koPlaces': {
     'fileName': 'ko/ko-places.json',
-    'hashedFileName': 'ko/ko-places.2bcf7affe3dff1bc764c937dc7e04bba93439a45.json'
+    'hashedFileName': 'ko/ko-places.efababd6a26bfebddd90ca01ca2bc2883c390ce5.json'
   },
   'koQuestDescriptions': {
     'fileName': 'ko/ko-quest-descriptions.json',
-    'hashedFileName': 'ko/ko-quest-descriptions.40affdb461d43823ce56eed6fe4b2970d22b840c.json'
+    'hashedFileName': 'ko/ko-quest-descriptions.bf44b1e54d31fc3704a6da4eec0e22c8c0504453.json'
   },
   'koQuests': {
     'fileName': 'ko/ko-quests.json',
-    'hashedFileName': 'ko/ko-quests.4b59e75130470f96510e7747dbe6d2bc3f13f8b5.json'
+    'hashedFileName': 'ko/ko-quests.5933fe5ea68fbf95d2ccf6cbe1ea992242a17596.json'
   },
   'koRaces': {
     'fileName': 'ko/ko-races.json',
@@ -901,31 +901,31 @@ export const lazyFilesList = {
   },
   'koRecipes': {
     'fileName': 'ko/ko-recipes.json',
-    'hashedFileName': 'ko/ko-recipes.320e1127c463abeec199d17f615b8375b2a1552c.json'
+    'hashedFileName': 'ko/ko-recipes.daaca04e4dea3f00388b4dd74fbd155d1e0b9806.json'
   },
   'koShops': {
     'fileName': 'ko/ko-shops.json',
-    'hashedFileName': 'ko/ko-shops.12841ad5c02c7442dba2a418cbc282f033efcc05.json'
+    'hashedFileName': 'ko/ko-shops.bb2f0e26c1070e55af5b389ca0f7d8077db0f785.json'
   },
   'koStatusDescriptions': {
     'fileName': 'ko/ko-status-descriptions.json',
-    'hashedFileName': 'ko/ko-status-descriptions.eb904a92ed7ef1a60ac1b20a2fd1b63c188653b4.json'
+    'hashedFileName': 'ko/ko-status-descriptions.b57906e43f2f894ae02c1d5e79b939f11aa42f16.json'
   },
   'koStatuses': {
     'fileName': 'ko/ko-statuses.json',
-    'hashedFileName': 'ko/ko-statuses.641d5a0c246bcfbcfab8464bd73e58d567972673.json'
+    'hashedFileName': 'ko/ko-statuses.33dec418a54f9fb7396a14a9fd142c7760f5ef8d.json'
   },
   'koSubmarineVoyages': {
     'fileName': 'ko/ko-submarine-voyages.json',
-    'hashedFileName': 'ko/ko-submarine-voyages.930053e833fb5bb82a5c89fefc6b9cc9dc059464.json'
+    'hashedFileName': 'ko/ko-submarine-voyages.6dbb7a21a8012eb2ac3198e3b894a2ee8e78cc05.json'
   },
   'koTraitDescriptions': {
     'fileName': 'ko/ko-trait-descriptions.json',
-    'hashedFileName': 'ko/ko-trait-descriptions.de136a392ca0fbf7c948cdee8939bf9c60461799.json'
+    'hashedFileName': 'ko/ko-trait-descriptions.599cb874050c84afd99b59c96f32937f7f642717.json'
   },
   'koTraits': {
     'fileName': 'ko/ko-traits.json',
-    'hashedFileName': 'ko/ko-traits.aa78bc32188ae8a69e079a2139654af149302721.json'
+    'hashedFileName': 'ko/ko-traits.2d02cbcc6d885321770871d5aa6c40242f7baf1d.json'
   },
   'koTribes': {
     'fileName': 'ko/ko-tribes.json',
@@ -941,11 +941,11 @@ export const lazyFilesList = {
   },
   'koVentures': {
     'fileName': 'ko/ko-ventures.json',
-    'hashedFileName': 'ko/ko-ventures.03c4c7424d9703290412eefb80036d6e95a2f197.json'
+    'hashedFileName': 'ko/ko-ventures.ed9a892cddb5beb1c62d6047f6b3db0c5ef962ba.json'
   },
   'koWeathers': {
     'fileName': 'ko/ko-weathers.json',
-    'hashedFileName': 'ko/ko-weathers.e9377c20365b418753941e425ab450e209f24220.json'
+    'hashedFileName': 'ko/ko-weathers.80eb0ccfa350cdf1465e5f65455790241cae3096.json'
   },
   'koWorld': {
     'fileName': 'ko/ko-world.json',
