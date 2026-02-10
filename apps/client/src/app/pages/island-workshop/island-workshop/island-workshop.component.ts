@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, DestroyRef } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest, EMPTY, map, Observable, of, timer } from 'rxjs';
+import { combineLatest, EMPTY, interval, map, Observable, of, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder, NzTableModule } from 'ng-zorro-antd/table';
@@ -11,7 +11,7 @@ import { TextQuestionPopupComponent } from '../../../modules/text-question-popup
 import { catchError, distinctUntilChanged, filter, retry, shareReplay, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { addWeeks, subDays } from 'date-fns';
+import { addDays, addWeeks, subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
 import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -158,7 +158,6 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       const timeSinceStart = previousWeeklyReset.getTime() - IslandWorkshopComponent.START_DATE.getTime();
       const weeksSinceStart = (timeSinceStart / 604800000) + 1;
       const weekIndex = (weeksSinceStart - 59) % 100 + 59;
-      console.log("WEEK", weekIndex);
       return addWeeks(IslandWorkshopComponent.START_DATE, weekIndex).getTime();
     }),
     distinctUntilChanged(),
@@ -310,7 +309,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     switchMap(([reset]) => {
       const historyEntriesToFetch = [reset.toString()];
       let nextDay = reset + 86400000;
-      while (nextDay < Date.now()) {
+      while (nextDay < addWeeks(reset, 1).getTime()) {
         historyEntriesToFetch.push(nextDay.toString());
         nextDay += 86400000;
       }
@@ -324,8 +323,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public today$ = this.stateHistory$.pipe(
-    map(history => history.length - 1)
+  public today$ = timer(0, 60000).pipe(
+    map(() => ((new Date().getDay() - 2) + 7) % 7)
   );
 
   public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([

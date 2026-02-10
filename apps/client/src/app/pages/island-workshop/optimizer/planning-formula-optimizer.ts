@@ -35,13 +35,14 @@ export class PlanningFormulaOptimizer {
       // Compute projected supply
       const projectedSupplyObjects = this.getProjectedSupplyObjects(this.history, i, objectsUsage);
 
-      const unknownDay = [1, 2, 3, 7, 7, 7, 7][this.currentDayIndex] < i;
-
-      // If there's some unknown peaks for this day, consider it as not ready to optimize
-      if (unknownDay) {
-        day.unknown = true;
-        return day;
-      }
+      // No longer needed now that we can check supply/demand in the past, will be needed again if they add new island data
+      // const unknownDay = [1, 2, 3, 7, 7, 7, 7][this.currentDayIndex] < i;
+      //
+      // // If there's some unknown peaks for this day, consider it as not ready to optimize
+      // if (unknownDay) {
+      //   day.unknown = true;
+      //   return day;
+      // }
 
       // Okay, if we're here, we know what'll peak and how, so we want to build an optimized value route now
       const [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);

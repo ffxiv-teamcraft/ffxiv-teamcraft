@@ -1,27 +1,25 @@
 <nz-page-header>
-  <nz-page-header-title>{{'ISLAND_SANCTUARY.WORKSHOP.Title' | translate}}</nz-page-header-title>
-  <nz-page-header-subtitle>{{'ISLAND_SANCTUARY.WORKSHOP.Subtitle' | translate}}</nz-page-header-subtitle>
+  <nz-page-header-title>{{ 'ISLAND_SANCTUARY.WORKSHOP.Title' | translate }}</nz-page-header-title>
+  <nz-page-header-subtitle>{{ 'ISLAND_SANCTUARY.WORKSHOP.Subtitle' | translate }}</nz-page-header-subtitle>
   <nz-page-header-extra>
-    <label nz-checkbox [(ngModel)]="editMode">{{'ISLAND_SANCTUARY.WORKSHOP.Edit_mode' | translate}}</label>
+    <label nz-checkbox [(ngModel)]="editMode">{{ 'ISLAND_SANCTUARY.WORKSHOP.Edit_mode' | translate }}</label>
     <button nz-button [clipboard]="getExport" [clipboardSuccessMessage]="'ISLAND_SANCTUARY.WORKSHOP.State_copied' | translate">
-      <span nz-icon nzType="download" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Export_state' | translate}}
+      <span nz-icon nzType="download" nzTheme="outline"></span> {{ 'ISLAND_SANCTUARY.WORKSHOP.Export_state' | translate }}
     </button>
     <button nz-button (click)="importState()">
-      <span nz-icon nzType="upload" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_state' | translate}}
+      <span nz-icon nzType="upload" nzTheme="outline"></span> {{ 'ISLAND_SANCTUARY.WORKSHOP.Import_state' | translate }}
     </button>
-    @if (!pcapToggle) {
-      @if (onlineState$ | async; as onlineState) {
-        <span nz-tooltip
-          [nzTooltipTitle]="onlineState.objects.length === 0 ? ('ISLAND_SANCTUARY.WORKSHOP.Online_state_missing' | translate) : null">
+    @if (onlineState$ | async; as onlineState) {
+      <span nz-tooltip
+            [nzTooltipTitle]="onlineState.objects.length === 0 ? ('ISLAND_SANCTUARY.WORKSHOP.Online_state_missing' | translate) : null">
           <button
             nz-button
             (click)="importOnlineState(onlineState)"
             [disabled]="onlineState.objects.length === 0"
             nzType="primary">
-            <span nz-icon nzType="cloud-download" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_online_state' | translate}}
+            <span nz-icon nzType="cloud-download" nzTheme="outline"></span> {{ 'ISLAND_SANCTUARY.WORKSHOP.Import_online_state' | translate }}
           </button>
         </span>
-      }
     }
   </nz-page-header-extra>
   <nz-page-header-content>
@@ -48,15 +46,15 @@
       </div>
       <div>
         <label nz-checkbox [ngModel]="excludePastureMaterials$ | async" (ngModelChange)="excludePastureMaterials$.next($event)">
-        {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_pasture_materials' | translate}}</label>
+          {{ 'ISLAND_SANCTUARY.WORKSHOP.Exclude_pasture_materials' | translate }}</label>
       </div>
       <div>
         <label nz-checkbox [ngModel]="excludeCropMaterials$ | async" (ngModelChange)="excludeCropMaterials$.next($event)">
-        {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_crop_materials' | translate}}</label>
+          {{ 'ISLAND_SANCTUARY.WORKSHOP.Exclude_crop_materials' | translate }}</label>
       </div>
       <div>
         <label nz-checkbox [ngModel]="displayItemMetadata$ | async" (ngModelChange)="displayItemMetadata$.next($event)">
-        {{'ISLAND_SANCTUARY.WORKSHOP.Display_item_metadata' | translate}}</label>
+          {{ 'ISLAND_SANCTUARY.WORKSHOP.Display_item_metadata' | translate }}</label>
       </div>
     </div>
   </nz-page-header-content>
@@ -64,23 +62,23 @@
 @if (state$ | async; as state) {
   @if (stateIsOutdated$ | async) {
     <nz-alert nzType="warning"
-      [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync' | translate"
-      [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync_explain' | translate"
-      nzCloseable
+              [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync' | translate"
+              [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync_explain' | translate"
+              nzCloseable
     ></nz-alert>
   }
 }
 @if (optimizerResult$ | async; as optimizerResult) {
   @if (optimizerResult.planning !== null) {
     <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score"
-      [today]="today$ | async"
-      [weeklyReset]="previousWeeklyReset$ | async"
-    [displayItemMetadata]="displayItemMetadata$ | async"></app-workshop-planning>
+                           [today]="today$ | async"
+                           [weeklyReset]="previousWeeklyReset$ | async"
+                           [displayItemMetadata]="displayItemMetadata$ | async"></app-workshop-planning>
   }
   @if (optimizerResult.planning === null) {
     <nz-alert [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.No_planning' | translate"
-      [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.No_planning_explain' | translate"
-    nzType="error" nzShowIcon></nz-alert>
+              [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.No_planning_explain' | translate"
+              nzType="error" nzShowIcon></nz-alert>
   }
 }
 
@@ -100,7 +98,7 @@
                   <app-i18n-name content="items" [id]="row.id"></app-i18n-name>
                 </div>
                 <div>
-                  x{{row.quantity}}
+                  x{{ row.quantity }}
                 </div>
               </div>
             </div>
@@ -119,7 +117,7 @@
                   <app-i18n-name content="items" [id]="row.id"></app-i18n-name>
                 </div>
                 <div>
-                  x{{row.quantity}}
+                  x{{ row.quantity }}
                 </div>
               </div>
             </div>
@@ -133,25 +131,25 @@
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
   @if (tableColumns$ | async; as tableColumns) {
     <nz-table #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="pageSize" nzHideOnSinglePage
-      [nzFooter]="platformService.isDesktop() ? ('ISLAND_SANCTUARY.WORKSHOP.Import_explain' | translate) : null">
+              [nzFooter]="platformService.isDesktop() ? ('ISLAND_SANCTUARY.WORKSHOP.Import_explain' | translate) : null">
       <thead>
-        <tr>
-          @for (column of tableColumns; track column) {
-            <th
-              [nzSortOrder]="column.sortOrder"
-              [nzSortFn]="column.sortFn"
-              [nzSortDirections]="column.sortDirections"
-              [nzFilterMultiple]="column.filterMultiple"
-              [nzFilters]="column.listOfFilter"
-              [nzFilterFn]="column.filterFn">
-              {{('ISLAND_SANCTUARY.WORKSHOP.' + column.name) | translate}}
-              @if (column.name === 'Possible_peak_days') {
-                <i nz-icon nzType="info-circle" nz-tooltip
-                [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Peak_days_explain' | translate"></i>
-              }
-            </th>
-          }
-        </tr>
+      <tr>
+        @for (column of tableColumns; track column) {
+          <th
+            [nzSortOrder]="column.sortOrder"
+            [nzSortFn]="column.sortFn"
+            [nzSortDirections]="column.sortDirections"
+            [nzFilterMultiple]="column.filterMultiple"
+            [nzFilters]="column.listOfFilter"
+            [nzFilterFn]="column.filterFn">
+            {{ ('ISLAND_SANCTUARY.WORKSHOP.' + column.name) | translate }}
+            @if (column.name === 'Possible_peak_days') {
+              <i nz-icon nzType="info-circle" nz-tooltip
+                 [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Peak_days_explain' | translate"></i>
+            }
+          </th>
+        }
+      </tr>
       </thead>
       <tbody>
         @for (row of craftworksTable.data; track trackByRow(i, row); let i = $index) {
@@ -165,7 +163,7 @@
             <td>
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                 <img src="./assets/icons/island/popularity{{row.popularity.id}}.png" alt="" class="ui-icon">
-                <div>{{('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.popularityKey) | translate}}</div>
+                <div>{{ ('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.popularityKey) | translate }}</div>
               </div>
             </td>
             <td>
@@ -176,7 +174,7 @@
                       <img src="./assets/icons/island/supply.png" alt="" class="ui-icon supply-icon">
                     }
                   </div>
-                  <div>{{('ISLAND_SANCTUARY.WORKSHOP.SUPPLY.' + row.supplyKey) | translate}}</div>
+                  <div>{{ ('ISLAND_SANCTUARY.WORKSHOP.SUPPLY.' + row.supplyKey) | translate }}</div>
                 </div>
               }
               @if (editMode) {
@@ -192,17 +190,17 @@
               @if (!editMode) {
                 <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                   <img src="./assets/icons/island/demand{{row.demand}}.png" alt="" class="ui-icon">
-                  <div>{{('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + row.demandKey) | translate}}</div>
+                  <div>{{ ('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + row.demandKey) | translate }}</div>
                 </div>
               }
               @if (editMode) {
                 <nz-select [ngModel]="row.demand" (ngModelChange)="setStateRowProperty(i, 'demand', $event)" nzSize="small">
                   @for (demand of demands; track demand) {
                     <nz-option nzCustomContent [nzLabel]="('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + demand.label) | translate"
-                      [nzValue]="demand.value">
+                               [nzValue]="demand.value">
                       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                         <img src="./assets/icons/island/demand{{demand.value}}.png" alt="" class="ui-icon">
-                        <div>{{('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + demand.label) | translate}}</div>
+                        <div>{{ ('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + demand.label) | translate }}</div>
                       </div>
                     </nz-option>
                   }
@@ -211,28 +209,28 @@
             </td>
             <td>
               @for (pattern of row.patterns; track pattern; let last = $last) {
-                <span [class.strong-peak]="pattern.strong">{{('COMMON.DAYS.' + days[pattern.day]) | translate}}
+                <span [class.strong-peak]="pattern.strong">{{ ('COMMON.DAYS.' + days[pattern.day]) | translate }}
                   @if (!last) {
                     <span>,&nbsp;</span>
                   } </span>
-                }
-              </td>
-              <td>
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  <img src="./assets/icons/island/popularity{{row.predictedPopularity.id}}.png" alt="" class="ui-icon">
-                  <div>{{('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.predictedPopularityKey) | translate}}</div>
-                </div>
-              </td>
-              <td>
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  {{row.craftworksEntry.craftingTime}}h
-                </div>
-              </td>
-              <td>
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  @for (theme of row.craftworksEntry.themes; track theme; let last = $last) {
-                    <span><app-i18n-name content="islandCraftworksTheme"
-                    [id]="theme"></app-i18n-name>@if (!last) {
+              }
+            </td>
+            <td>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <img src="./assets/icons/island/popularity{{row.predictedPopularity.id}}.png" alt="" class="ui-icon">
+                <div>{{ ('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.predictedPopularityKey) | translate }}</div>
+              </div>
+            </td>
+            <td>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                {{ row.craftworksEntry.craftingTime }}h
+              </div>
+            </td>
+            <td>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                @for (theme of row.craftworksEntry.themes; track theme; let last = $last) {
+                  <span><app-i18n-name content="islandCraftworksTheme"
+                                       [id]="theme"></app-i18n-name>@if (!last) {
                     <span>,</span>
                   }</span>
                 }

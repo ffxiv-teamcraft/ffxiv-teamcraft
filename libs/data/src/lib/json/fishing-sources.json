@@ -7513,7 +7513,10 @@
       "spawn": 18,
       "duration": 1,
       "snagging": false,
-      "minGathering": 335
+      "minGathering": 335,
+      "video": "https://youtu.be/f9C8yTyToNM",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7909": [
@@ -11102,7 +11105,10 @@
       "spawn": 8,
       "duration": 2,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 680,
+      "video": "https://youtu.be/ZtJPyBPS404",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "15634": [
@@ -14780,11 +14786,10 @@
       "weathers": [
         8
       ],
-      "weathersFrom": [
-        2
-      ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24889": [
@@ -28135,8 +28140,7 @@
       "spawn": 16,
       "duration": 2,
       "weathers": [
-        7,
-        3
+        7
       ],
       "weathersFrom": [
         3
@@ -28256,7 +28260,8 @@
         4
       ],
       "minGathering": 4450,
-      "aLure": 3,
+      "video": "https://youtu.be/Sbv17KtFuGU",
+      "aLure": 0,
       "mLure": 0
     }
   ],
