@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.17...v11.4.18) (2026-02-10)
+
+
+### Features
+
+* **db:** allagan reports import ([c23369f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c23369f027da0fadd67b991f84139d07d9036d6f))
+
+
+### Bug Fixes
+
+* **island:** show the entire week at once and allow import from desktop ([3ce4ac6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ce4ac65c23211345680259f05acfb3a2465bdb4))
+
 ### [11.4.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.16...v11.4.17) (2026-02-07)
 
 
