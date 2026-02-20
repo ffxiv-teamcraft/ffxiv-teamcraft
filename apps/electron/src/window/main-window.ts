@@ -97,7 +97,8 @@ export class MainWindow {
         '*://tpc.googlesyndication.com/*/*',
         '*://tpc.googlesyndication.com/**',
         '*://www.googletagservices.com/*',
-        '*://www.googletagservices.com/**'
+        '*://www.googletagservices.com/**',
+        '*://fundingchoicesmessages.google.com/**'
       ]
     };
 

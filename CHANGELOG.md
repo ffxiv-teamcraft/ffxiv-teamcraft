@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.18...v11.4.19) (2026-02-20)
+
+
+### Features
+
+* **db:** allagan reports import ([daecc2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/daecc2cd361f9f5d7ac0d2d1e9e4b70417db9dbd))
+
 ### [11.4.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.17...v11.4.18) (2026-02-10)
 
 

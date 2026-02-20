@@ -14161,7 +14161,9 @@
         9
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1050,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23059": [
@@ -14186,7 +14188,9 @@
         11
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1100,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23061": [
@@ -14243,7 +14247,9 @@
       "spawn": 16,
       "duration": 4,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1050,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23066": [
@@ -14294,7 +14300,9 @@
       "spawn": 20,
       "duration": 4,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1100,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23070": [
@@ -14409,7 +14417,9 @@
         9
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24206": [
@@ -14421,10 +14431,13 @@
       "spawn": 8,
       "duration": 4,
       "weathers": [
-        3
+        3,
+        4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24207": [
@@ -14449,7 +14462,9 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24209": [
@@ -14495,7 +14510,9 @@
         3
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24212": [
@@ -14526,7 +14543,9 @@
       "spawn": 4,
       "duration": 2,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24214": [
@@ -14740,7 +14759,9 @@
         7
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24886": [
@@ -14772,7 +14793,9 @@
         1
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24888": [
@@ -14807,7 +14830,9 @@
         3
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24890": [
@@ -14871,13 +14896,13 @@
       "spawn": 0,
       "duration": 8,
       "weathers": [
+        3,
         4
       ],
-      "weathersFrom": [
-        2
-      ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24990": [
@@ -15739,9 +15764,11 @@
       "spot": 213,
       "hookset": 2,
       "tug": 2,
-      "bait": 27588,
+      "bait": 28634,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "27458": [
