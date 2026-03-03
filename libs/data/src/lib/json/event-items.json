@@ -26518,7 +26518,7 @@
   "2003788": {
     "en": "Peculiar Plant",
     "ja": "",
-    "de": "",
+    "de": "Besondere Pflanze",
     "fr": "Feuille vigoureuse",
     "icon": "/i/025000/025239.png"
   },
@@ -26649,18 +26649,18 @@
     "icon": ""
   },
   "2003807": {
-    "en": "",
+    "en": "Distress Beacon",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Notrufsender",
+    "fr": "Dispositif d'alerte",
+    "icon": "/i/025000/025994.png"
   },
   "2003808": {
-    "en": "",
+    "en": "Superconductor Coil",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Supraleitende Magnetspule",
+    "fr": "Bobine hyperconductrice",
+    "icon": "/i/020000/020916.png"
   },
   "2003809": {
     "en": "",

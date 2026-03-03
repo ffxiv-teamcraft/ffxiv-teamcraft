@@ -30968,9 +30968,9 @@
     "itemReward": 0
   },
   "3872": {
-    "en": "芽吹く新緑の季節",
+    "en": "Springtime Delights",
     "ja": "芽吹く新緑の季節",
-    "de": "芽吹く新緑の季節",
+    "de": "Sensenmeister",
     "fr": "Attention, ça va trancher",
     "icon": "/i/056000/056914.png",
     "itemReward": 0
@@ -31112,11 +31112,11 @@
     "itemReward": 0
   },
   "3890": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Mapping the Realm: The Merchant's Tale",
+    "ja": "商客物語を読破せし者",
+    "de": "Kartograph: Des Händlers Liebesmüh",
+    "fr": "Cartographe du continent : Contes du Camelot",
+    "icon": "/i/001000/001001.png",
     "itemReward": 0
   },
   "3891": {
@@ -31128,67 +31128,67 @@
     "itemReward": 0
   },
   "3892": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through the Carpets and Flames",
+    "ja": "火精ペリを狩りし者",
+    "de": "Feurige Wächterin",
+    "fr": "C'est magique !",
+    "icon": "/i/002000/002513.png",
     "itemReward": 0
   },
   "3893": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Singing with the Fishes",
+    "ja": "人魚ダリヤを狩りし者",
+    "de": "Gesänge aus der Tiefe",
+    "fr": "Chanteur des profondeurs",
+    "icon": "/i/002000/002513.png",
     "itemReward": 0
   },
   "3894": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Master of Masters",
+    "ja": "ソードマスターを狩りし者",
+    "de": "Legendäre Klingen",
+    "fr": "Qui vit par l'épée...",
+    "icon": "/i/002000/002513.png",
     "itemReward": 0
   },
   "3895": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "The Strife Aquatic",
+    "ja": "ダンダーンを狩りし者",
+    "de": "Der Schrecken der Tiefsee",
+    "fr": "Pêche au gros",
+    "icon": "/i/002000/002513.png",
     "itemReward": 0
   },
   "3896": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "A Timeless Tale",
+    "ja": "受け継ぎ、いつか超える日まで",
+    "de": "Eine Geschichte ohne Ende",
+    "fr": "Une histoire sans fin",
+    "icon": "/i/026000/026002.png",
     "itemReward": 0
   },
   "3897": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
-    "itemReward": 0
+    "en": "A Storied Collection",
+    "ja": "商客物語 探索記",
+    "de": "Ein Buch mit vielen Seiten",
+    "fr": "Mille et une pages",
+    "icon": "/i/026000/026182.png",
+    "itemReward": 50454
   },
   "3898": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Stranger than Fiction",
+    "ja": "商客物語を制覇せし者",
+    "de": "Fantastischer als Fiktion",
+    "fr": "Un ouvrage captivant",
+    "icon": "/i/000000/000317.png",
     "itemReward": 0
   },
   "3899": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "One Thousand and One Fights",
+    "ja": "異聞商客物語を制覇せし者",
+    "de": "Tausendundein Kampf",
+    "fr": "Défis fantastiques",
+    "icon": "/i/000000/000317.png",
     "itemReward": 0
   },
   "3900": {

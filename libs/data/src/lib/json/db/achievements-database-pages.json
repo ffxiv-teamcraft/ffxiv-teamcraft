@@ -28510,7 +28510,7 @@
       "de": "Einen der drei Stadtstaaten zu insgesamt 10 Siegen auf Robbenholm geführt.",
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計10回勝利する",
       "fr": "Remporter 10 victoires au Rocher des tréfonds.",
-      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 10회 승리",
+      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대 중 하나로 총 10회 승리",
       "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得10次胜利。"
     },
     "item": 12517,
@@ -28531,7 +28531,7 @@
       "de": "Einen der drei Stadtstaaten zu insgesamt 30 Siegen auf Robbenholm geführt.",
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計30回勝利する",
       "fr": "Remporter 30 victoires au Rocher des tréfonds.",
-      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 30회 승리",
+      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대 중 하나로 총 30회 승리",
       "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得30次胜利。"
     },
     "item": 12515,
@@ -28552,7 +28552,7 @@
       "de": "Einen der drei Stadtstaaten zu insgesamt 50 Siegen auf Robbenholm geführt.",
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計50回勝利する",
       "fr": "Remporter 50 victoires au Rocher des tréfonds.",
-      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 50회 승리",
+      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대 중 하나로 총 50회 승리",
       "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得50次胜利。"
     },
     "item": 12516,
@@ -28573,7 +28573,7 @@
       "de": "Einen der drei Stadtstaaten zu insgesamt 100 Siegen auf Robbenholm geführt.",
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計100回勝利する",
       "fr": "Remporter 100 victoires au Rocher des tréfonds.",
-      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 100회 승리",
+      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대 중 하나로 총 100회 승리",
       "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得100次胜利。"
     },
     "item": 12514,
@@ -28594,7 +28594,7 @@
       "de": "Einen der drei Stadtstaaten zu insgesamt 300 Siegen auf Robbenholm geführt.",
       "ja": "シールロックにて、黒渦団、双蛇党、不滅隊で、累計300回勝利する",
       "fr": "Remporter 300 victoires au Rocher des tréfonds.",
-      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대로 총 300회 승리",
+      "ko": "봉인된 바위섬에서 흑와단, 쌍사당, 불멸대 중 하나로 총 300회 승리",
       "zh": "加入黑涡团、双蛇党、恒辉队中的任一军队并在尘封秘岩取得300次胜利。"
     },
     "item": 0,
@@ -66612,7 +66612,7 @@
       "de": "Mit Koh Rabntah gesprochen, nachdem der Auftrag „Logos Orthos“ abgeschlossen wurde und während du alle vier enaretischen Schmuckstücke angelegt oder in Besitz hast.",
       "ja": "クエスト「エウレカの真相」をコンプリートし、「エナレトス・イヤリング」「エナレトス・ネックレス」「エナレトス・ブレスレット」「エナレトス・リング」を所持または装備した状態で、コー・ラブンタと話す",
       "fr": "Parler à Koh Rabntah après avoir accompli la quête “Le véritable sens d'Eurêka” et en étant en possession ou en s'étant équipé des accessoires enaretos suivants&nbsp;: paire de boucles d'oreilles, collier, bracelet et bague.",
-      "ko": "에나레토스 귀걸이, 에나레토스 목걸이, 에나레토스 팔찌, 에나레토스 반지를 소지 또는 장비하고 코 라븐타와 대화",
+      "ko": "퀘스트 '에우레카의 진상'을 완료하고 에나레토스 귀걸이, 에나레토스 목걸이, 에나레토스 팔찌, 에나레토스 반지를 소지 또는 장비하고 코 라븐타와 대화",
       "zh": "持有或装备“高尚耳坠”“高尚项链”“高尚手环”“高尚戒指”时，与珂尔·拉布恩塔对话。"
     },
     "item": 0,
@@ -75631,11 +75631,13 @@
     "de": "Ein geschenkter Gaul",
     "ja": "元気に駆けた御披露道中",
     "fr": "Murmurer à l'oreille de la licorne",
+    "ko": "씩씩하게 달린 홍보 행진",
     "description": {
       "en": "Complete the quest “Majesty in Motion.”",
       "de": "Den Auftrag „Die Pferdeparade“ abgeschlossen.",
       "ja": "クエスト「御披露道中と降神祭」をコンプリートする",
-      "fr": "Accomplir la quête “L'autre défilé”."
+      "fr": "Accomplir la quête “L'autre défilé”.",
+      "ko": "퀘스트 '홍보 행진과 강신제' 완료"
     },
     "item": 0,
     "title": 0
@@ -78966,12 +78968,14 @@
     "de": "Schneegeflüster I",
     "ja": "ヨカフイ族：ランク1",
     "fr": "Séjour à l'autel I",
+    "ko": "요카후이족: 1단계",
     "zh": "雪棱拜坛修复团1",
     "description": {
       "en": "Attain rank 3 reputation (friendly) with the Hands of Zirgorteh.",
       "de": "Ein freundliches Verhältnis zu den Yok Huy von Zirgorteh erworben.",
       "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク3「友好」にする",
       "fr": "Atteindre le rang 3 (Ami) de réputation auprès des bienfaiteurs de Zirgorteh.",
+      "ko": "요카후이족 '지고테 제단 복구단' 우호 관계 3단계 '우호' 달성",
       "zh": "与尤卡巨人族的“雪棱拜坛修复团”之间的关系程度到达3级“友好”。"
     },
     "item": 0,
@@ -78985,12 +78989,14 @@
     "de": "Schneegeflüster II",
     "ja": "ヨカフイ族：ランク2",
     "fr": "Séjour à l'autel II",
+    "ko": "요카후이족: 2단계",
     "zh": "雪棱拜坛修复团2",
     "description": {
       "en": "Attain rank 4 reputation (trusted) with the Hands of Zirgorteh.",
       "de": "Ein vertrautes Verhältnis zu den Yok Huy von Zirgorteh erworben.",
       "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク4「信頼」にする",
       "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des bienfaiteurs de Zirgorteh.",
+      "ko": "요카후이족 '지고테 제단 복구단' 우호 관계 4단계 '신뢰' 달성",
       "zh": "与尤卡巨人族的“雪棱拜坛修复团”之间的关系程度到达4级“信赖”。"
     },
     "item": 0,
@@ -79004,12 +79010,14 @@
     "de": "Schneegeflüster III",
     "ja": "ヨカフイ族：ランク3",
     "fr": "Séjour à l'autel III",
+    "ko": "요카후이족: 3단계",
     "zh": "雪棱拜坛修复团3",
     "description": {
       "en": "Attain rank 6 reputation (honored) with the Hands of Zirgorteh.",
       "de": "Ein geachtetes Verhältnis zu den Yok Huy von Zirgorteh erworben.",
       "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク6「名誉」にする",
       "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des bienfaiteurs de Zirgorteh.",
+      "ko": "요카후이족 '지고테 제단 복구단' 우호 관계 6단계 '명예' 달성",
       "zh": "与尤卡巨人族的“雪棱拜坛修复团”之间的关系程度到达6级“名誉”。"
     },
     "item": 0,
@@ -79023,12 +79031,14 @@
     "de": "Eine riesige Freundschaft",
     "ja": "雪山の現場監督",
     "fr": "Travail en haute altitude",
+    "ko": "설산의 현장 감독",
     "zh": "雪山的工程监理",
     "description": {
       "en": "Attain rank 7 reputation (sworn) with the Hands of Zirgorteh.",
       "de": "Ein solidarisches Verhältnis zu den Yok Huy von Zirgorteh erworben.",
       "ja": "ヨカフイ族「ジィゴーテー拝壇復旧団」の友好関係をランク7「誓約」にする",
       "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des bienfaiteurs de Zirgorteh.",
+      "ko": "요카후이족 '지고테 제단 복구단' 우호 관계 7단계 '서약' 달성",
       "zh": "与尤卡巨人族的“雪棱拜坛修复团”之间的关系程度到达7级“誓约”。"
     },
     "item": 0,
@@ -79273,11 +79283,13 @@
     "de": "Eine Extraportion Liebe",
     "ja": "甘いケーキの伝道師",
     "fr": "Amours cachés et tourments d'amour",
+    "ko": "달콤한 케이크 전도사",
     "description": {
       "en": "Complete the quest “The Icing on the Cake.”",
       "de": "Den Auftrag „Die Süßwarenkrise“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーと特大ケーキ」をコンプリートする",
-      "fr": "Accomplir la quête “Les gâteaux du cœur”."
+      "fr": "Accomplir la quête “Les gâteaux du cœur”.",
+      "ko": "퀘스트 '발렌티온데이와 특대 케이크' 완료"
     },
     "item": 0,
     "title": 0
@@ -79643,12 +79655,14 @@
     "de": "Pfadfinder I",
     "ja": "ピルグリム・トラバースの探索者：ランク1",
     "fr": "Pèlerinage en terre sainte I",
+    "ko": "노르브란트 순례길 탐색자: 1단계",
     "zh": "朝圣交错路的探索者1",
     "description": {
       "en": "Clear the area marked by stone 10 of Pilgrim's Traverse.",
       "de": "Den 10. Pfad von Pilgers Pfad abgeschlossen.",
       "ja": "ピルグリム・トラバースの第10巡礼路を攻略する",
       "fr": "Conquérir la 10e zone du Sanctuaire des pèlerins.",
+      "ko": "노르브란트 순례길 제10순례길 완료",
       "zh": "成功突破朝圣交错路第10朝圣路。"
     },
     "item": 0,
@@ -79662,12 +79676,14 @@
     "de": "Pfadfinder II",
     "ja": "ピルグリム・トラバースの探索者：ランク2",
     "fr": "Pèlerinage en terre sainte II",
+    "ko": "노르브란트 순례길 탐색자: 2단계",
     "zh": "朝圣交错路的探索者2",
     "description": {
       "en": "Clear the area marked by stone 20 of Pilgrim's Traverse.",
       "de": "Den 20. Pfad von Pilgers Pfad abgeschlossen.",
       "ja": "ピルグリム・トラバースの第20巡礼路を攻略する",
       "fr": "Conquérir la 20e zone du Sanctuaire des pèlerins.",
+      "ko": "노르브란트 순례길 제20순례길 완료",
       "zh": "成功突破朝圣交错路第20朝圣路。"
     },
     "item": 0,
@@ -79681,12 +79697,14 @@
     "de": "Pfadfinder III",
     "ja": "ピルグリム・トラバースの探索者：ランク3",
     "fr": "Pèlerinage en terre sainte III",
+    "ko": "노르브란트 순례길 탐색자: 3단계",
     "zh": "朝圣交错路的探索者3",
     "description": {
       "en": "Clear the area marked by stone 30 of Pilgrim's Traverse.",
       "de": "Den 30. Pfad von Pilgers Pfad abgeschlossen.",
       "ja": "ピルグリム・トラバースの第30巡礼路を攻略する",
       "fr": "Conquérir la 30e zone du Sanctuaire des pèlerins.",
+      "ko": "노르브란트 순례길 제30순례길 완료",
       "zh": "成功突破朝圣交错路第30朝圣路。"
     },
     "item": 0,
@@ -79700,12 +79718,14 @@
     "de": "Pfadfinder IV",
     "ja": "ピルグリム・トラバースの探索者：ランク4",
     "fr": "Pèlerinage en terre sainte IV",
+    "ko": "노르브란트 순례길 탐색자: 4단계",
     "zh": "朝圣交错路的探索者4",
     "description": {
       "en": "Clear the area marked by stone 50 of Pilgrim's Traverse.",
       "de": "Den 50. Pfad von Pilgers Pfad abgeschlossen.",
       "ja": "ピルグリム・トラバースの第50巡礼路を攻略する",
       "fr": "Conquérir la 50e zone du Sanctuaire des pèlerins.",
+      "ko": "노르브란트 순례길 제50순례길 완료",
       "zh": "成功突破朝圣交错路第50朝圣路。"
     },
     "item": 0,
@@ -79719,12 +79739,14 @@
     "de": "Pfadfinder VI",
     "ja": "ピルグリム・トラバースの探索者：ランク6",
     "fr": "Pèlerinage en terre sainte VI",
+    "ko": "노르브란트 순례길 탐색자: 6단계",
     "zh": "朝圣交错路的探索者6",
     "description": {
       "en": "Clear the area marked by stone 100 of Pilgrim's Traverse.",
       "de": "Den 100. Pfad von Pilgers Pfad abgeschlossen.",
       "ja": "ピルグリム・トラバースの第100巡礼路を攻略する",
       "fr": "Conquérir la 100e zone du Sanctuaire des pèlerins.",
+      "ko": "노르브란트 순례길 제100순례길 완료",
       "zh": "成功突破朝圣交错路第100朝圣路。"
     },
     "item": 0,
@@ -79738,12 +79760,14 @@
     "de": "Bewaffnete Wallfahrt",
     "ja": "強化されし光耀魔器",
     "fr": "Armement étincelant",
+    "ko": "강화된 광요 마기",
     "zh": "光耀之光",
     "description": {
       "en": "Obtain a weapon of the First Light.",
       "de": "Eine Pilger-Waffe erhalten.",
       "ja": "「光耀武器」のいずれかを入手する",
       "fr": "Obtenir une des armes de la Lumière originelle.",
+      "ko": "'최초의 빛 무기' 중 하나 입수",
       "zh": "获得任意一把“光耀武器”。"
     },
     "item": 0,
@@ -79757,12 +79781,14 @@
     "de": "Schwerbewaffnete Wallfahrt",
     "ja": "さらに強化されし光耀魔器",
     "fr": "Sacrement guerrier",
+    "ko": "더욱 강화된 광요 마기",
     "zh": "圣礼之光",
     "description": {
       "en": "Obtain a sacramental weapon.",
       "de": "Eine Waffe der Sakramente erhalten.",
       "ja": "「光耀儀礼武器」のいずれかを入手する",
       "fr": "Obtenir une des armes sacramentelles.",
+      "ko": "'성례 무기' 중 하나 입수",
       "zh": "获得任意一把“圣礼武器”。"
     },
     "item": 0,
@@ -79776,12 +79802,14 @@
     "de": "Einsamer Pilger I",
     "ja": "至高なる挑戦者：ランク1",
     "fr": "Pèlerin solitaire I",
+    "ko": "지고한 도전자: 1단계",
     "zh": "崇高的挑战者1",
     "description": {
       "en": "Clear the 1st through the 50th areas of Pilgrim's Traverse solo and reach stone 51.",
       "de": "Pilgers Pfad alleine auf dem 1. Pfad betreten und bis zum 51. Pfad erkundet.",
       "ja": "ピルグリム・トラバースにソロで第1巡礼路から突入し第51巡礼路に到達する",
       "fr": "Obtenir un score en solo dans le Sanctuaire des pèlerins en commençant par la 1re zone et en s'aventurant au-delà de la 50e.",
+      "ko": "단독으로 노르브란트 순례길 제1순례길에 진입하여 제51순례길 도달",
       "zh": "单人从第1朝圣路进入朝圣交错路，并到达第51朝圣路。"
     },
     "item": 0,
@@ -79795,12 +79823,14 @@
     "de": "Einsamer Pilger II",
     "ja": "至高なる挑戦者：ランク2",
     "fr": "Pèlerin solitaire II",
+    "ko": "지고한 도전자: 2단계",
     "zh": "崇高的挑战者2",
     "description": {
       "en": "Clear the 1st through the 100th areas of Pilgrim's Traverse solo.",
       "de": "Pilgers Pfad alleine auf dem 1. Pfad betreten und bis zum 100. Pfad erkundet.",
       "ja": "ピルグリム・トラバースにソロで第1巡礼路から突入し第100巡礼路まで攻略する",
       "fr": "Atteindre la 100e zone en solo dans le Sanctuaire des pèlerins en commençant par la 1re.",
+      "ko": "단독으로 노르브란트 순례길 제1순례길에 진입하여 제100순례길 완료",
       "zh": "单人从第1朝圣路进入朝圣交错路，并通过第100朝圣路。"
     },
     "item": 0,
@@ -79814,12 +79844,14 @@
     "de": "Mein Schatz VII",
     "ja": "埋もれた財宝：ランク7",
     "fr": "Exhumation profonde VII",
+    "ko": "파묻힌 보물: 7단계",
     "zh": "埋藏的宝藏7",
     "description": {
       "en": "Discover 30,000 pieces of the Accursed Hoard.",
       "de": "30.000 verborgene Schätze gefunden.",
       "ja": "埋もれた財宝を30,000個発見した",
       "fr": "Découvrir 30 000 trésors cachés.",
+      "ko": "파묻힌 보물 30,000회 발견",
       "zh": "发现埋藏的宝藏30000个。"
     },
     "item": 0,
@@ -79833,12 +79865,14 @@
     "de": "Strahlende Erscheinung",
     "ja": "至高なる英雄の証",
     "fr": "Mystique raffiné",
+    "ko": "지고한 영웅의 증거",
     "zh": "至高英雄的证明",
     "description": {
       "en": "Speak with Aenc Daen while in possession of all four accessories of the First Light after completing the quest “A Branch and Their Sapling.”",
       "de": "Mit Aenc Daen gesprochen, nachdem der Auftrag „Ein Zweig und sein Bäumchen“ abgeschlossen wurde und während du alle vier Schmuckstücke des Strahlenden Lichts angelegt oder in Besitz hast.",
       "ja": "クエスト「若木と枝に」をコンプリートし、「ファーストライト・イヤリング」「ファーストライト・ネックレス」「ファーストライト・バングル」「ファーストライト・リング」を所持または装備した状態で、インク＝ダエンと話す",
       "fr": "Parler à Aenc Daen après avoir accompli la quête “Un arbrisseau et sa branchette” et en étant en possession ou en s'étant équipé des accessoires de la Lumière originelle suivants&nbsp;: paire de boucles d'oreilles, collier, paire de joncs et bague.",
+      "ko": "퀘스트 '어린나무와 가지에게'를 완료하고 최초의 빛 귀걸이, 최초의 빛 목걸이, 최초의 빛 장식고리, 최초의 빛 반지를 소지 또는 장비하고 잉크 다엔과 대화",
       "zh": "持有或装备“光耀耳坠”“光耀项链”“光耀手镯”“光耀指环”时，与因克·代恩对话。"
     },
     "item": 0,
@@ -79852,12 +79886,14 @@
     "de": "Balde ruhest du auch",
     "ja": "大巡礼の会葬者",
     "fr": "Six fulms sous terre",
+    "ko": "대순례의 조문객",
     "zh": "朝觐路的悼亡者",
     "description": {
       "en": "Complete the Final Verse (Quantum).",
       "de": "„Eminente Trauer (variabel)“ abgeschlossen.",
       "ja": "詩想エミネントグリーフ討滅戦を攻略する",
       "fr": "Finir le Verset final (quantique).",
+      "ko": "시상 드높은 비애 토벌전 완료",
       "zh": "成功挑战卓异的悲寂深想战。"
     },
     "item": 0,
@@ -79871,12 +79907,14 @@
     "de": "Am Ende des Pfades",
     "ja": "死せる巡礼路の果てへ",
     "fr": "Mort et enterré",
+    "ko": "죽음의 순례길 끝으로",
     "zh": "去往夺命朝圣路的终点",
     "description": {
       "en": "Complete the Final Verse (Quantum) with the maximum amount of sacramental offerings.",
       "de": "„Eminente Trauer (variabel)“ mit der maximalen Anzahl an Opfergaben abgeschlossen.",
       "ja": "詩想エミネントグリーフ討滅戦を供物を最大限捧げた状態で攻略する",
       "fr": "Finir le Verset final (quantique) après avoir accompli le maximum possible d'offrandes sacramentelles.",
+      "ko": "시상 드높은 비애 토벌전에서 공물을 최대로 바친 상태로 완료",
       "zh": "在供奉的供品数量达到上限的情况下成功挑战卓异的悲寂深想战。"
     },
     "item": 0,
@@ -79890,12 +79928,14 @@
     "de": "Tripledecker XIV",
     "ja": "カードコレクター：ランク14",
     "fr": "Porte-cartes XIV",
+    "ko": "카드 수집가: 14단계",
     "zh": "九宫卡手14",
     "description": {
       "en": "Obtain 451 unique Triple Triad cards.",
       "de": "451 verschiedene Triple Triad-Karten erhalten.",
       "ja": "トリプルトライアドのカードを451種類入手する",
       "fr": "Obtenir 451 cartes de Triple Triade différentes.",
+      "ko": "트리플 트라이어드 카드 451종류 입수",
       "zh": "获得451种九宫幻卡。"
     },
     "item": 46821,
@@ -79930,12 +79970,14 @@
     "de": "Erfolgreiche Jagd",
     "ja": "白き来訪者",
     "fr": "Le Spectre Blanc",
+    "ko": "하얀 방문자",
     "zh": "白色访客",
     "description": {
       "en": "Complete the quest “The White Wanderer.”",
       "de": "Den Auftrag „Der Weiße Besucher“ abgeschlossen.",
       "ja": "クエスト「白き来訪者」をコンプリートする",
       "fr": "Accomplir la quête “Le Spectre Blanc”.",
+      "ko": "퀘스트 '하얀 방문자' 완료",
       "zh": "完成任务“白色访客”。"
     },
     "item": 0,
@@ -79949,12 +79991,14 @@
     "de": "Wächterschlächter",
     "ja": "護竜アルシュベルドを狩りし者",
     "fr": "Le retour du Spectre Blanc",
+    "ko": "수호룡 알슈베르도를 쓰러뜨린 자",
     "zh": "狩猎护锁刃龙",
     "description": {
       "en": "Defeat Guardian Arkveld in the Windward Wilds (Extreme).",
       "de": "Wächter-Arkveld in „Jagd auf Wächter-Arkveld (schwer)“ bezwungen.",
       "ja": "極護竜アルシュベルド狩猟戦で、護竜アルシュベルドを討伐する",
       "fr": "Vaincre l'Arkveld Gardien dans le défi “Chasse à l'Arkveld Gardien (extrême)”.",
+      "ko": "극 수호룡 알슈베르도 수렵전에 참가하여 수호룡 알슈베르도 처치",
       "zh": "在护锁刃龙上位狩猎战中狩猎护锁刃龙。"
     },
     "item": 0,
@@ -79968,12 +80012,14 @@
     "de": "Pfadfinder V",
     "ja": "ピルグリム・トラバースの探索者：ランク5",
     "fr": "Pèlerinage en terre sainte V",
+    "ko": "노르브란트 순례길 탐색자: 5단계",
     "zh": "朝圣交错路的探索者5",
     "description": {
       "en": "Clear the area marked by stone 70 of Pilgrim's Traverse.",
       "de": "Den 70. Pfad von Pilgers Pfad abgeschlossen.",
       "ja": "ピルグリム・トラバースの第70巡礼路を攻略する",
       "fr": "Conquérir la 70e zone du Sanctuaire des pèlerins.",
+      "ko": "노르브란트 순례길 제70순례길 완료",
       "zh": "成功突破朝圣交错路第70朝圣路。"
     },
     "item": 0,
@@ -79987,11 +80033,13 @@
     "de": "Kristallkönig (17. Saison)",
     "ja": "コンフリクトの王者：シーズン17",
     "fr": "Roi du conflit : saison 17",
+    "ko": "컨플릭트의 제왕: 시즌 17",
     "description": {
       "en": "Complete Crystalline Conflict Season Seventeen ranked #1.",
       "de": "Die 17. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン17にて、ランキングで1位になる",
-      "fr": "Terminer la saison 17 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 17 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 17에서 1위 입상"
     },
     "item": 0,
     "title": 819
@@ -80004,11 +80052,13 @@
     "de": "Kristallfürst (17. Saison)",
     "ja": "コンフリクトの勇者：シーズン17",
     "fr": "Prince du conflit : saison 17",
+    "ko": "컨플릭트의 용자: 시즌 17",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Seventeen.",
       "de": "Die 17. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン17にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 17 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 17 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 17에서 상위 랭킹에 입상"
     },
     "item": 0,
     "title": 820
@@ -80021,11 +80071,13 @@
     "de": "Kristallkämpfer (17. Saison)",
     "ja": "コンフリクトの入賞者：シーズン17",
     "fr": "As du conflit : saison 17",
+    "ko": "컨플릭트의 입상자: 시즌 17",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Seventeen.",
       "de": "Die 17. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン17にて、ランキングで入賞する",
-      "fr": "Terminer la saison 17 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 17 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 17에서 랭킹에 입상"
     },
     "item": 0,
     "title": 821
@@ -80038,11 +80090,13 @@
     "de": "Kristallkönig (18. Saison)",
     "ja": "コンフリクトの王者：シーズン18",
     "fr": "Roi du conflit : saison 18",
+    "ko": "컨플릭트의 제왕: 시즌 18",
     "description": {
       "en": "Complete Crystalline Conflict Season Eighteen ranked #1.",
       "de": "Die 18. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン18にて、ランキングで1位になる",
-      "fr": "Terminer la saison 18 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 18 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 18에서 1위 입상"
     },
     "item": 0,
     "title": 822
@@ -80055,11 +80109,13 @@
     "de": "Kristallfürst (18. Saison)",
     "ja": "コンフリクトの勇者：シーズン18",
     "fr": "Prince du conflit : saison 18",
+    "ko": "컨플릭트의 용자: 시즌 18",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Eighteen.",
       "de": "Die 18. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン18にて、ランキングで上位に入賞する",
-      "fr": "Terminer la saison 18 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 18 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 18에서 상위 랭킹에 입상"
     },
     "item": 0,
     "title": 823
@@ -80072,11 +80128,13 @@
     "de": "Kristallkämpfer (18. Saison)",
     "ja": "コンフリクトの入賞者：シーズン18",
     "fr": "As du conflit : saison 18",
+    "ko": "컨플릭트의 입상자: 시즌 18",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Eighteen.",
       "de": "Die 18. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン18にて、ランキングで入賞する",
-      "fr": "Terminer la saison 18 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 18 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 18에서 랭킹에 입상"
     },
     "item": 0,
     "title": 824
@@ -80089,11 +80147,13 @@
     "de": "Worqor Champion I",
     "ja": "ウォーコー・チーテ：ランク1",
     "fr": "Par monts et par vaux I",
+    "ko": "워코 치테: 1단계",
     "description": {
       "en": "Guide any of the three Grand Companies to victory at Worqor Chirteh.",
       "de": "Einen der drei Stadtstaaten zum ersten Mal zu einem Sieg auf dem Worqor Chirteh geführt.",
       "ja": "ウォーコー・チーテにて、黒渦団、双蛇党、不滅隊のいずれかの部隊で、初めて勝利する",
-      "fr": "Remporter 1 victoire avec l'une des trois grandes compagnies à Worqor Chirteh."
+      "fr": "Remporter 1 victoire avec l'une des trois grandes compagnies à Worqor Chirteh.",
+      "ko": "워코 치테에서 흑와단, 쌍사당, 불멸대 중 하나로 1회 승리"
     },
     "item": 0,
     "title": 0
@@ -80106,11 +80166,13 @@
     "de": "Worqor Champion II",
     "ja": "ウォーコー・チーテ：ランク2",
     "fr": "Par monts et par vaux II",
+    "ko": "워코 치테: 2단계",
     "description": {
       "en": "Guide any of the three Grand Companies to a total of 10 victories at Worqor Chirteh.",
       "de": "Einen der drei Stadtstaaten zu insgesamt 10 Siegen auf dem Worqor Chirteh geführt.",
       "ja": "ウォーコー・チーテにて、黒渦団、双蛇党、不滅隊で、累計10回勝利する",
-      "fr": "Remporter 10 victoires à Worqor Chirteh."
+      "fr": "Remporter 10 victoires à Worqor Chirteh.",
+      "ko": "워코 치테에서 흑와단, 쌍사당, 불멸대 중 하나로 총 10회 승리"
     },
     "item": 0,
     "title": 0
@@ -80123,11 +80185,13 @@
     "de": "Worqor Champion III",
     "ja": "ウォーコー・チーテ：ランク3",
     "fr": "Par monts et par vaux III",
+    "ko": "워코 치테: 3단계",
     "description": {
       "en": "Guide any of the three Grand Companies to a total of 30 victories at Worqor Chirteh.",
       "de": "Einen der drei Stadtstaaten zu insgesamt 30 Siegen auf dem Worqor Chirteh geführt.",
       "ja": "ウォーコー・チーテにて、黒渦団、双蛇党、不滅隊で、累計30回勝利する",
-      "fr": "Remporter 30 victoires à Worqor Chirteh."
+      "fr": "Remporter 30 victoires à Worqor Chirteh.",
+      "ko": "워코 치테에서 흑와단, 쌍사당, 불멸대 중 하나로 총 30회 승리"
     },
     "item": 0,
     "title": 0
@@ -80140,11 +80204,13 @@
     "de": "Worqor Champion IV",
     "ja": "ウォーコー・チーテ：ランク4",
     "fr": "Par monts et par vaux IV",
+    "ko": "워코 치테: 4단계",
     "description": {
       "en": "Guide any of the three Grand Companies to a total of 50 victories at Worqor Chirteh.",
       "de": "Einen der drei Stadtstaaten zu insgesamt 50 Siegen auf dem Worqor Chirteh geführt.",
       "ja": "ウォーコー・チーテにて、黒渦団、双蛇党、不滅隊で、累計50回勝利する",
-      "fr": "Remporter 50 victoires à Worqor Chirteh."
+      "fr": "Remporter 50 victoires à Worqor Chirteh.",
+      "ko": "워코 치테에서 흑와단, 쌍사당, 불멸대 중 하나로 총 50회 승리"
     },
     "item": 0,
     "title": 0
@@ -80157,11 +80223,13 @@
     "de": "Worqor Champion V",
     "ja": "ウォーコー・チーテ：ランク5",
     "fr": "Par monts et par vaux V",
+    "ko": "워코 치테: 5단계",
     "description": {
       "en": "Guide any of the three Grand Companies to a total of 100 victories at Worqor Chirteh.",
       "de": "Einen der drei Stadtstaaten zu insgesamt 100 Siegen auf dem Worqor Chirteh geführt.",
       "ja": "ウォーコー・チーテにて、黒渦団、双蛇党、不滅隊で、累計100回勝利する",
-      "fr": "Remporter 100 victoires à Worqor Chirteh."
+      "fr": "Remporter 100 victoires à Worqor Chirteh.",
+      "ko": "워코 치테에서 흑와단, 쌍사당, 불멸대 중 하나로 총 100회 승리"
     },
     "item": 50448,
     "title": 0
@@ -80174,11 +80242,13 @@
     "de": "Worqor Champion VI",
     "ja": "ウォーコー・チーテ：ランク6",
     "fr": "Par monts et par vaux VI",
+    "ko": "워코 치테: 6단계",
     "description": {
       "en": "Guide any of the three Grand Companies to a total of 300 victories at Worqor Chirteh.",
       "de": "Einen der drei Stadtstaaten zu insgesamt 300 Siegen auf dem Worqor Chirteh geführt.",
       "ja": "ウォーコー・チーテにて、黒渦団、双蛇党、不滅隊で、累計300回勝利する",
-      "fr": "Remporter 300 victoires à Worqor Chirteh."
+      "fr": "Remporter 300 victoires à Worqor Chirteh.",
+      "ko": "워코 치테에서 흑와단, 쌍사당, 불멸대 중 하나로 총 300회 승리"
     },
     "item": 0,
     "title": 825
@@ -80276,11 +80346,13 @@
     "de": "Obskure Meisterwerke: Phantomschwert Obscurum und Phantom-Schild Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ソード＆ファントムオブスキュラム・シールド",
     "fr": "Armes fantômes : épée fantôme obscurum et bouclier fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 한손검과 팬텀 어둠그림자 방패",
     "description": {
       "en": "Obtain a phantom sword obscurum and phantom shield obscurum.",
       "de": "Das Phantomschwert Obscurum und den Phantom-Schild Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ソード＆ファントムオブスキュラム・シールドを入手する",
-      "fr": "Obtenir l'épée fantôme obscurum et le bouclier fantôme obscurum."
+      "fr": "Obtenir l'épée fantôme obscurum et le bouclier fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 한손검과 팬텀 어둠그림자 방패 입수"
     },
     "item": 0,
     "title": 0
@@ -80293,11 +80365,13 @@
     "de": "Obskures Meisterwerk: Phantomberdysch Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・バルディッシュ",
     "fr": "Armes fantômes : bardiche fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 긴날도끼",
     "description": {
       "en": "Obtain a phantom bardiche obscurum.",
       "de": "Die Phantomberdysch Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・バルディッシュを入手する",
-      "fr": "Obtenir la bardiche fantôme obscurum."
+      "fr": "Obtenir la bardiche fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 긴날도끼 입수"
     },
     "item": 0,
     "title": 0
@@ -80310,11 +80384,13 @@
     "de": "Obskures Meisterwerk: Phantom-Guillotine Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ディバイダー",
     "fr": "Armes fantômes : fendoir fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 단두검",
     "description": {
       "en": "Obtain a phantom guillotine obscurum.",
       "de": "Die Phantom-Guillotine Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ディバイダーを入手する",
-      "fr": "Obtenir le fendoir fantôme obscurum."
+      "fr": "Obtenir le fendoir fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 단두검 입수"
     },
     "item": 0,
     "title": 0
@@ -80327,11 +80403,13 @@
     "de": "Obskures Meisterwerk: Phantom-Revolverklinge Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ガンブレード",
     "fr": "Armes fantômes : pistolame fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 건블레이드",
     "description": {
       "en": "Obtain a phantom gunblade obscurum.",
       "de": "Die Phantom-Revolverklinge erhalten.",
       "ja": "ファントムオブスキュラム・ガンブレードを入手する",
-      "fr": "Obtenir la pistolame fantôme obscurum."
+      "fr": "Obtenir la pistolame fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 건블레이드 입수"
     },
     "item": 0,
     "title": 0
@@ -80344,11 +80422,13 @@
     "de": "Obskures Meisterwerk: Phantom-Kriegsgabel Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・フォーク",
     "fr": "Armes fantômes : fourche fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 갈래창",
     "description": {
       "en": "Obtain a phantom fork obscurum.",
       "de": "Den Phantom-Kriegsgabel Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・フォークを入手する",
-      "fr": "Obtenir la fourche fantôme obscurum."
+      "fr": "Obtenir la fourche fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 갈래창 입수"
     },
     "item": 0,
     "title": 0
@@ -80361,11 +80441,13 @@
     "de": "Obskure Meisterwerke: Phantom-Jamadhars Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ジャマダル",
     "fr": "Armes fantômes : jamadhars fantômes obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 자마다르",
     "description": {
       "en": "Obtain a pair of phantom jamadhars obscurum.",
       "de": "Die Phantom-Jamadhars Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ジャマダルを入手する",
-      "fr": "Obtenir les jamadhars fantômes obscurum."
+      "fr": "Obtenir les jamadhars fantômes obscurum.",
+      "ko": "팬텀 어둠그림자 자마다르 입수"
     },
     "item": 0,
     "title": 0
@@ -80378,11 +80460,13 @@
     "de": "Obskures Meisterwerk: Phantomspalter Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ククリ",
     "fr": "Armes fantômes : khukuris fantômes obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 쿠쿠리",
     "description": {
       "en": "Obtain a pair of phantom khukuri obscurum.",
       "de": "Den Phantomspalter Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ククリを入手する",
-      "fr": "Obtenir les khukuris fantômes obscurum."
+      "fr": "Obtenir les khukuris fantômes obscurum.",
+      "ko": "팬텀 어둠그림자 쿠쿠리 입수"
     },
     "item": 0,
     "title": 0
@@ -80395,11 +80479,13 @@
     "de": "Obskure Meisterwerke: Phantom-Zwillingsfänge Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ツインファング",
     "fr": "Armes fantômes : crochets jumeaux fantômes obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 쌍송곳니",
     "description": {
       "en": "Obtain a pair of phantom twinfangs obscurum.",
       "de": "Die Phantom-Zwillingsfänge Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ツインファングを入手する",
-      "fr": "Obtenir les crochets jumeaux fantômes obscurum."
+      "fr": "Obtenir les crochets jumeaux fantômes obscurum.",
+      "ko": "팬텀 어둠그림자 쌍송곳니 입수"
     },
     "item": 0,
     "title": 0
@@ -80412,11 +80498,13 @@
     "de": "Obskures Meisterwerk: Phantomklinge Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ブレード",
     "fr": "Armes fantômes : lame fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 외날검",
     "description": {
       "en": "Obtain a phantom blade obscurum.",
       "de": "Die Phantomklinge Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ブレードを入手する",
-      "fr": "Obtenir la lame fantôme obscurum."
+      "fr": "Obtenir la lame fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 외날검 입수"
     },
     "item": 0,
     "title": 0
@@ -80429,11 +80517,13 @@
     "de": "Obskures Meisterwerk: Phantom-Kriegssense Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ウォーサイズ",
     "fr": "Armes fantômes : faux de guerre fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 전투낫",
     "description": {
       "en": "Obtain a phantom war scythe obscurum.",
       "de": "Die Phantom-Kriegssense Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ウォーサイズを入手する",
-      "fr": "Obtenir la faux de guerre fantôme obscurum."
+      "fr": "Obtenir la faux de guerre fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 전투낫 입수"
     },
     "item": 0,
     "title": 0
@@ -80446,11 +80536,13 @@
     "de": "Obskures Meisterwerk: Phantom-Langbogen Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ロングボウ",
     "fr": "Armes fantômes : arc long fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 장궁",
     "description": {
       "en": "Obtain a phantom longbow obscurum.",
       "de": "Den Phantom-Langbogen Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ロングボウを入手する",
-      "fr": "Obtenir l'arc long fantôme obscurum."
+      "fr": "Obtenir l'arc long fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 장궁 입수"
     },
     "item": 0,
     "title": 0
@@ -80463,11 +80555,13 @@
     "de": "Obskures Meisterwerk: Phantom-Muskete Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・マスケトン",
     "fr": "Armes fantômes : mousqueton fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 단총",
     "description": {
       "en": "Obtain a phantom musketoon obscurum.",
       "de": "Die Phantom-Muskete Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・マスケトンを入手する",
-      "fr": "Obtenir le mousqueton fantôme obscurum."
+      "fr": "Obtenir le mousqueton fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 단총 입수"
     },
     "item": 0,
     "title": 0
@@ -80480,11 +80574,13 @@
     "de": "Obskure Meisterwerke: Phantom-Tathlums Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・タスラム",
     "fr": "Armes fantômes : tathlums fantômes obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 타흘룸",
     "description": {
       "en": "Obtain a pair of phantom tathlums obscurum.",
       "de": "Die Phantom-Tathlums Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・タスラムを入手する",
-      "fr": "Obtenir les tathlums fantômes obscurum."
+      "fr": "Obtenir les tathlums fantômes obscurum.",
+      "ko": "팬텀 어둠그림자 타흘룸 입수"
     },
     "item": 0,
     "title": 0
@@ -80497,11 +80593,13 @@
     "de": "Obskures Meisterwerk: Phantom-Langstab Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ロングポール",
     "fr": "Armes fantômes : échalas fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 장봉",
     "description": {
       "en": "Obtain a phantom longpole obscurum.",
       "de": "Den Phantom-Langstab Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ロングポールを入手する",
-      "fr": "Obtenir l'échalas fantôme obscurum."
+      "fr": "Obtenir l'échalas fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 장봉 입수"
     },
     "item": 0,
     "title": 0
@@ -80514,11 +80612,13 @@
     "de": "Obskures Meisterwerk: Phantomindex Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・インデックス",
     "fr": "Armes fantômes : index fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 금서",
     "description": {
       "en": "Obtain a phantom index obscurum.",
       "de": "Den Phantomindex Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・インデックスを入手する",
-      "fr": "Obtenir l'index fantôme obscurum."
+      "fr": "Obtenir l'index fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 금서 입수"
     },
     "item": 0,
     "title": 0
@@ -80531,11 +80631,13 @@
     "de": "Obskures Meisterwerk: Phantomdegen Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ハンガー",
     "fr": "Armes fantômes : ballante fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 행어",
     "description": {
       "en": "Obtain a phantom hanger obscurum.",
       "de": "Den Phantomdegen Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ハンガーを入手する",
-      "fr": "Obtenir la ballante fantôme obscurum."
+      "fr": "Obtenir la ballante fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 행어 입수"
     },
     "item": 0,
     "title": 0
@@ -80548,11 +80650,13 @@
     "de": "Obskures Meisterwerk: Phantom-Rundpinsel Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ラウンドブラシ",
     "fr": "Armes fantômes : pinceau rond fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 둥근붓",
     "description": {
       "en": "Obtain a phantom round brush obscurum.",
       "de": "Den Phantom-Rundpinsel Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ラウンドブラシを入手する",
-      "fr": "Obtenir le pinceau rond fantôme obscurum."
+      "fr": "Obtenir le pinceau rond fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 둥근붓 입수"
     },
     "item": 0,
     "title": 0
@@ -80565,11 +80669,13 @@
     "de": "Obskures Meisterwerk: Phantom-Hirtenstock Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ケーン",
     "fr": "Armes fantômes : canne fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 환술봉",
     "description": {
       "en": "Obtain a phantom cane obscurum.",
       "de": "Den Phantom-Hirtenstock Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ケーンを入手する",
-      "fr": "Obtenir la canne fantôme obscurum."
+      "fr": "Obtenir la canne fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 환술봉 입수"
     },
     "item": 0,
     "title": 0
@@ -80582,11 +80688,13 @@
     "de": "Obskures Meisterwerk: Phantomkodex Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・コーデックス",
     "fr": "Armes fantômes : codex fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 치유서",
     "description": {
       "en": "Obtain a phantom codex obscurum.",
       "de": "Den Phantomkodex Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・コーデックスを入手する",
-      "fr": "Obtenir le codex fantôme obscurum."
+      "fr": "Obtenir le codex fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 치유서 입수"
     },
     "item": 0,
     "title": 0
@@ -80599,11 +80707,13 @@
     "de": "Obskures Meisterwerk: Phantom-Sternenglobus Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・スターペンダント",
     "fr": "Armes fantômes : mobile stellaire fantôme obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 항성의",
     "description": {
       "en": "Obtain a phantom star pendant obscurum.",
       "de": "Den Phantom-Sternenglobus Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・スターペンダントを入手する",
-      "fr": "Obtenir le mobile stellaire fantôme obscurum."
+      "fr": "Obtenir le mobile stellaire fantôme obscurum.",
+      "ko": "팬텀 어둠그림자 항성의 입수"
     },
     "item": 0,
     "title": 0
@@ -80616,11 +80726,13 @@
     "de": "Obskure Meisterwerke: Phantom-Schwingen Obscurum",
     "ja": "ファントムウェポン：ファントムオブスキュラム・ウィング",
     "fr": "Armes fantômes : ailes fantômes obscurum",
+    "ko": "팬텀 웨폰 - 팬텀 어둠그림자 날개",
     "description": {
       "en": "Obtain an array of phantom wings obscurum.",
       "de": "Die Phantom-Schwingen Obscurum erhalten.",
       "ja": "ファントムオブスキュラム・ウィングを入手する",
-      "fr": "Obtenir les ailes fantômes obscurum."
+      "fr": "Obtenir les ailes fantômes obscurum.",
+      "ko": "팬텀 어둠그림자 날개 입수"
     },
     "item": 0,
     "title": 0
@@ -80633,11 +80745,13 @@
     "de": "Nebelland hab ich gesehen",
     "ja": "霧の中の理想郷",
     "fr": "Voyage au bout de la brume",
+    "ko": "안개 속 이상향",
     "description": {
       "en": "Complete the main scenario quest “Into the Mist.”",
       "de": "Den Auftrag „Nebelland hab ich gesehen“ abgeschlossen.",
       "ja": "クエスト「霧の中の理想郷」をコンプリートする",
-      "fr": "Accomplir la quête “Voyage au bout de la brume”."
+      "fr": "Accomplir la quête “Voyage au bout de la brume”.",
+      "ko": "퀘스트 '안개 속 이상향' 완료"
     },
     "item": 0,
     "title": 829
@@ -80650,11 +80764,13 @@
     "de": "Regulatorloser Großmeister",
     "ja": "アルカディアの統一王者",
     "fr": "Champion céleste",
+    "ko": "아르카디아 선수권 통합 챔피언",
     "description": {
       "en": "Complete the quest “Glory Incarnate.”",
       "de": "Den Auftrag „Die Legende des Lindwurms“ abgeschlossen.",
       "ja": "クエスト「亡国の大蛇」をコンプリートする",
-      "fr": "Accomplir la quête “Le serpent séculaire”."
+      "fr": "Accomplir la quête “Le serpent séculaire”.",
+      "ko": "퀘스트 '망국의 거대 뱀' 완료"
     },
     "item": 0,
     "title": 0
@@ -80667,11 +80783,13 @@
     "de": "Thron des Arkadions I",
     "ja": "アルカディアのヘビー級を制覇せし者：ランク1",
     "fr": "Champion poids lourds de l'Arcadion I",
+    "ko": "아르카디아 헤비급을 제패한 자: 1단계",
     "description": {
       "en": "Complete AAC Heavyweight Tier.",
       "de": "Arkadion - Superschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ヘビー級を攻略する",
-      "fr": "Conquérir la catégorie poids lourds CCA 1 fois."
+      "fr": "Conquérir la catégorie poids lourds CCA 1 fois.",
+      "ko": "아르카디아 선수권: 헤비급 완료"
     },
     "item": 0,
     "title": 0
@@ -80684,11 +80802,13 @@
     "de": "Thron des Arkadions II",
     "ja": "アルカディアのヘビー級を制覇せし者：ランク2",
     "fr": "Champion poids lourds de l'Arcadion II",
+    "ko": "아르카디아 헤비급을 제패한 자: 2단계",
     "description": {
       "en": "Complete AAC Heavyweight Tier 5 times.",
       "de": "5 Mal Arkadion - Superschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ヘビー級を計5回攻略する",
-      "fr": "Conquérir la catégorie poids lourds CCA 5 fois."
+      "fr": "Conquérir la catégorie poids lourds CCA 5 fois.",
+      "ko": "아르카디아 선수권: 헤비급 5회 완료"
     },
     "item": 0,
     "title": 0
@@ -80701,11 +80821,13 @@
     "de": "Thron des Arkadions III",
     "ja": "アルカディアのヘビー級を制覇せし者：ランク3",
     "fr": "Champion poids lourds de l'Arcadion III",
+    "ko": "아르카디아 헤비급을 제패한 자: 3단계",
     "description": {
       "en": "Complete AAC Heavyweight Tier 10 times.",
       "de": "10 Mal Arkadion - Superschwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：ヘビー級を計10回攻略する",
-      "fr": "Conquérir la catégorie poids lourds CCA 10 fois."
+      "fr": "Conquérir la catégorie poids lourds CCA 10 fois.",
+      "ko": "아르카디아 선수권: 헤비급 10회 완료"
     },
     "item": 0,
     "title": 0
@@ -80718,11 +80840,13 @@
     "de": "Epischer Thron des Arkadions I",
     "ja": "アルカディアのヘビー級を完全制覇せし者：ランク1",
     "fr": "Champion poids lourds incontesté de l'Arcadion I",
+    "ko": "아르카디아 헤비급을 완벽히 제패한 자: 1단계",
     "description": {
       "en": "Complete AAC Heavyweight Tier (Savage).",
       "de": "Arkadion - Superschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ヘビー級を攻略する",
-      "fr": "Conquérir la catégorie poids lourds CCA (sadique) 1 fois."
+      "fr": "Conquérir la catégorie poids lourds CCA (sadique) 1 fois.",
+      "ko": "아르카디아 선수권: 헤비급(영웅) 완료"
     },
     "item": 0,
     "title": 0
@@ -80735,11 +80859,13 @@
     "de": "Epischer Thron des Arkadions II",
     "ja": "アルカディアのヘビー級を完全制覇せし者：ランク2",
     "fr": "Champion poids lourds incontesté de l'Arcadion II",
+    "ko": "아르카디아 헤비급을 완벽히 제패한 자: 2단계",
     "description": {
       "en": "Complete AAC Heavyweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Superschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ヘビー級を計5回攻略する",
-      "fr": "Conquérir la catégorie poids lourds CCA (sadique) 5 fois."
+      "fr": "Conquérir la catégorie poids lourds CCA (sadique) 5 fois.",
+      "ko": "아르카디아 선수권: 헤비급(영웅) 5회 완료"
     },
     "item": 0,
     "title": 0
@@ -80752,11 +80878,13 @@
     "de": "Epischer Thron des Arkadions III",
     "ja": "アルカディアのヘビー級を完全制覇せし者：ランク3",
     "fr": "Champion poids lourds incontesté de l'Arcadion III",
+    "ko": "아르카디아 헤비급을 완벽히 제패한 자: 3단계",
     "description": {
       "en": "Complete AAC Heavyweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Superschwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：ヘビー級を計10回攻略する",
-      "fr": "Conquérir la catégorie poids lourds CCA (sadique) 10 fois."
+      "fr": "Conquérir la catégorie poids lourds CCA (sadique) 10 fois.",
+      "ko": "아르카디아 선수권: 헤비급(영웅) 10회 완료"
     },
     "item": 0,
     "title": 0
@@ -80769,11 +80897,13 @@
     "de": "Ravender Reporter",
     "ja": "きみの笑顔に魅せられて",
     "fr": "Micro-trottoir",
+    "ko": "당신의 미소에 매혹되어",
     "description": {
       "en": "Complete the quest “What Can Eye Do for You.”",
       "de": "Den Auftrag „Der Prinzessinnenfest-Report“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーと歌い手たちの人気の秘訣」をコンプリートする",
-      "fr": "Accomplir la quête “La recette du succès”."
+      "fr": "Accomplir la quête “La recette du succès”.",
+      "ko": "퀘스트 '프린세스데이와 가수들의 인기 비결' 완료"
     },
     "item": 0,
     "title": 0
@@ -80782,15 +80912,17 @@
     "id": 3872,
     "icon": "/i/056000/056914.png",
     "patch": 106,
-    "en": "芽吹く新緑の季節",
-    "de": "芽吹く新緑の季節",
+    "en": "Springtime Delights",
+    "de": "Sensenmeister",
     "ja": "芽吹く新緑の季節",
     "fr": "Attention, ça va trancher",
+    "ko": "신록이 움트는 계절",
     "description": {
-      "en": "クエスト「エッグハントと謎の草」をコンプリートする",
-      "de": "クエスト「エッグハントと謎の草」をコンプリートする",
+      "en": "Complete the quest “Of Weeds and Whimsy.”",
+      "de": "Den Auftrag „Das große Jäten“ abgeschlossen.",
       "ja": "クエスト「エッグハントと謎の草」をコンプリートする",
-      "fr": "Accomplir la quête “Buissons maudits”."
+      "fr": "Accomplir la quête “Buissons maudits”.",
+      "ko": "퀘스트 '알 사냥과 이상한 풀' 완료"
     },
     "item": 0,
     "title": 0
@@ -80854,11 +80986,13 @@
     "de": "Oizys-Erkundungsmeister",
     "ja": "惑星オイジュスのマスターエクスプローラー",
     "fr": "Explorateur oizien aguerri",
+    "ko": "행성 오이지스 개척 전문가",
     "description": {
       "en": "Successfully complete all stellar missions on Oizys with the highest rating possible.",
       "de": "Alle Stellarmissionen auf Oizys mit der höchsten Wertung abgeschlossen.",
       "ja": "惑星オイジュスのコスモミッションを、すべて最高評価でコンプリートする",
-      "fr": "Terminer toutes les missions cosmiques d'Oizys avec la meilleure évaluation possible."
+      "fr": "Terminer toutes les missions cosmiques d'Oizys avec la meilleure évaluation possible.",
+      "ko": "행성 오이지스의 모든 우주 임무를 최고 평가로 완료"
     },
     "item": 0,
     "title": 832
@@ -80871,11 +81005,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Säge",
     "ja": "コスモツール：ハイパースペース・ソー",
     "fr": "Outil cosmique : scie hyperspatiale",
+    "ko": "우주 도구: 초공간 톱",
     "description": {
       "en": "Obtain a hypersaw.",
       "de": "Eine Hyperraum-Säge erlangt.",
       "ja": "ハイパースペース・ソーを入手する",
-      "fr": "Obtenir la scie hyperspatiale."
+      "fr": "Obtenir la scie hyperspatiale.",
+      "ko": "초공간 톱 입수"
     },
     "item": 0,
     "title": 0
@@ -80888,11 +81024,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Kreuzschlaghammer",
     "ja": "コスモツール：ハイパースペース・クロスペインハンマー",
     "fr": "Outil cosmique : marteau à panne croisée hyperspatial",
+    "ko": "우주 도구: 초공간 단조망치",
     "description": {
       "en": "Obtain a cross-pein hyperhammer.",
       "de": "Einen Hyperraum-Kreuzschlaghammer erlangt.",
       "ja": "ハイパースペース・クロスペインハンマーを入手する",
-      "fr": "Obtenir le marteau à panne croisée hyperspatial."
+      "fr": "Obtenir le marteau à panne croisée hyperspatial.",
+      "ko": "초공간 단조망치 입수"
     },
     "item": 0,
     "title": 0
@@ -80905,11 +81043,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Schlichthammer",
     "ja": "コスモツール：ハイパースペース・レイジングハンマー",
     "fr": "Outil cosmique : marteau de batteur hyperspatial",
+    "ko": "우주 도구: 초공간 돋을무늬 망치",
     "description": {
       "en": "Obtain a raising hyperhammer.",
       "de": "Einen Hyperraum-Schlichthammer erlangt.",
       "ja": "ハイパースペース・レイジングハンマーを入手する",
-      "fr": "Obtenir le marteau de batteur hyperspatial."
+      "fr": "Obtenir le marteau de batteur hyperspatial.",
+      "ko": "초공간 돋을무늬 망치 입수"
     },
     "item": 0,
     "title": 0
@@ -80922,11 +81062,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Fäustel",
     "ja": "コスモツール：ハイパースペース・マレット",
     "fr": "Outil cosmique : massette hyperspatiale",
+    "ko": "우주 도구: 초공간 세공망치",
     "description": {
       "en": "Obtain a hypermallet.",
       "de": "Einen Hyperraum-Fäustel erlangt.",
       "ja": "ハイパースペース・マレットを入手する",
-      "fr": "Obtenir la massette hyperspatiale."
+      "fr": "Obtenir la massette hyperspatiale.",
+      "ko": "초공간 세공망치 입수"
     },
     "item": 0,
     "title": 0
@@ -80939,11 +81081,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Rundmesser",
     "ja": "コスモツール：ハイパースペース・ラウンドナイフ",
     "fr": "Outil cosmique : couteau arrondi hyperspatial",
+    "ko": "우주 도구: 초공간 둥근칼",
     "description": {
       "en": "Obtain a round hyperknife.",
       "de": "Ein Hyperraum-Rundmesser erlangt.",
       "ja": "ハイパースペース・ラウンドナイフを入手する",
-      "fr": "Obtenir le couteau arrondi hyperspatial."
+      "fr": "Obtenir le couteau arrondi hyperspatial.",
+      "ko": "초공간 둥근칼 입수"
     },
     "item": 0,
     "title": 0
@@ -80956,11 +81100,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Nadel",
     "ja": "コスモツール：ハイパースペース・ニードル",
     "fr": "Outil cosmique : aiguille hyperspatiale",
+    "ko": "우주 도구: 초공간 바늘",
     "description": {
       "en": "Obtain a hyperneedle.",
       "de": "Eine Hyperraum-Nadel erlangt.",
       "ja": "ハイパースペース・ニードルを入手する",
-      "fr": "Obtenir l'aiguille hyperspatiale."
+      "fr": "Obtenir l'aiguille hyperspatiale.",
+      "ko": "초공간 바늘 입수"
     },
     "item": 0,
     "title": 0
@@ -80973,11 +81119,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Destillierkolben",
     "ja": "コスモツール：ハイパースペース・アレンビック",
     "fr": "Outil cosmique : alambic hyperspatial",
+    "ko": "우주 도구: 초공간 증류기",
     "description": {
       "en": "Obtain a hyperalembic.",
       "de": "Einen Hyperraum-Destillierkolben erlangt.",
       "ja": "ハイパースペース・アレンビックを入手する",
-      "fr": "Obtenir l'alambic hyperspatial."
+      "fr": "Obtenir l'alambic hyperspatial.",
+      "ko": "초공간 증류기 입수"
     },
     "item": 0,
     "title": 0
@@ -80990,11 +81138,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Bratpfanne",
     "ja": "コスモツール：ハイパースペース・フライパン",
     "fr": "Outil cosmique : poêle à frire hyperspatiale",
+    "ko": "우주 도구: 초공간 프라이팬",
     "description": {
       "en": "Obtain a hyperfrypan.",
       "de": "Eine Hyperraum-Bratpfanne erlangt.",
       "ja": "ハイパースペース・フライパンを入手する",
-      "fr": "Obtenir la poêle à frire hyperspatiale."
+      "fr": "Obtenir la poêle à frire hyperspatiale.",
+      "ko": "초공간 프라이팬 입수"
     },
     "item": 0,
     "title": 0
@@ -81007,11 +81157,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Spitzhacke",
     "ja": "コスモツール：ハイパースペース・ピック",
     "fr": "Outil cosmique : pioche hyperspatiale",
+    "ko": "우주 도구: 초공간 곡괭이",
     "description": {
       "en": "Obtain a hyperpickaxe.",
       "de": "Eine Hyperraum-Spitzhacke erlangt.",
       "ja": "ハイパースペース・ピックを入手する",
-      "fr": "Obtenir la pioche hyperspatiale."
+      "fr": "Obtenir la pioche hyperspatiale.",
+      "ko": "초공간 곡괭이 입수"
     },
     "item": 0,
     "title": 0
@@ -81024,11 +81176,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Handbeil",
     "ja": "コスモツール：ハイパースペース・ハチェット",
     "fr": "Outil cosmique : hachette hyperspatiale",
+    "ko": "우주 도구: 초공간 손도끼",
     "description": {
       "en": "Obtain a hyperhatchet.",
       "de": "Ein Hyperraum-Handbeil erlangt.",
       "ja": "ハイパースペース・ハチェットを入手する",
-      "fr": "Obtenir la hachette hyperspatiale."
+      "fr": "Obtenir la hachette hyperspatiale.",
+      "ko": "초공간 손도끼 입수"
     },
     "item": 0,
     "title": 0
@@ -81041,11 +81195,13 @@
     "de": "Kosmo-Werkzeug: Hyperraum-Angelrute",
     "ja": "コスモツール：ハイパースペース・フィッシングロッド",
     "fr": "Outil cosmique : canne à pêche hyperspatiale",
+    "ko": "우주 도구: 초공간 낚싯대",
     "description": {
       "en": "Obtain a fishing hyperrod.",
       "de": "Eine Hyperraum-Angelrute erlangt.",
       "ja": "ハイパースペース・フィッシングロッドを入手する",
-      "fr": "Obtenir la canne à pêche hyperspatiale."
+      "fr": "Obtenir la canne à pêche hyperspatiale.",
+      "ko": "초공간 낚싯대 입수"
     },
     "item": 0,
     "title": 0
@@ -81058,11 +81214,13 @@
     "de": "Kartograph: Die Nebeltrift",
     "ja": "ミストウェイクを踏破せし者",
     "fr": "Cartographe du continent : Sillage brumeux",
+    "ko": "안개여로 탐험가",
     "description": {
       "en": "Discover every location within Mistwake.",
       "de": "Alle Orte in der Nebeltrift erkundet.",
       "ja": "ミストウェイク（遺忘行路）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du Sillage brumeux."
+      "fr": "Découvrir toute la carte du Sillage brumeux.",
+      "ko": "안개여로를 탐험하여 모든 지역 발견"
     },
     "item": 0,
     "title": 0
@@ -81075,28 +81233,30 @@
     "de": "Panzerzugfaust",
     "ja": "暴走列車を廃し者",
     "fr": "Braqueur de convoi",
+    "ko": "폭주열차를 멈춘 자",
     "description": {
       "en": "Defeat the Doomtrain in Hell on Rails (Extreme).",
       "de": "Den Doomtrain in Gok Tajaal - Doomtrain bezwungen.",
       "ja": "極グラシャラボラス討滅戦で、グラシャラボラスを討伐する",
-      "fr": "Vaincre Glasya-Labolas dans le défi “Le Convoi maléfique (extrême)”."
+      "fr": "Vaincre Glasya-Labolas dans le défi “Le Convoi maléfique (extrême)”.",
+      "ko": "극 글라시아 라볼라스 토벌전에 참가하여 글라시아 라볼라스 처치"
     },
     "item": 0,
     "title": 0
   },
   "3890": {
     "id": 3890,
-    "icon": "",
+    "icon": "/i/001000/001001.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Mapping the Realm: The Merchant's Tale",
+    "de": "Kartograph: Des Händlers Liebesmüh",
+    "ja": "商客物語を読破せし者",
+    "fr": "Cartographe du continent : Contes du Camelot",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Discover every location within <i>The Merchant's Tale</i> variant dungeon.",
+      "de": "Alle Orte in Des Händlers Liebesmüh erkundet.",
+      "ja": "商客物語（ヴァリアントダンジョン）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte des Contes du Camelot."
     },
     "item": 0,
     "title": 0
@@ -81120,139 +81280,139 @@
   },
   "3892": {
     "id": 3892,
-    "icon": "",
+    "icon": "/i/002000/002513.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Through the Carpets and Flames",
+    "de": "Feurige Wächterin",
+    "ja": "火精ペリを狩りし者",
+    "fr": "C'est magique !",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat the Pari of Plenty in <i>The Merchant's Tale</i> variant dungeon.",
+      "de": "Die Sengende Pari aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
+      "ja": "商客物語（ヴァリアントダンジョン）で、火精ペリを討伐する",
+      "fr": "Vaincre Pari dans les “Contes du Camelot - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3893": {
     "id": 3893,
-    "icon": "",
+    "icon": "/i/002000/002513.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Singing with the Fishes",
+    "de": "Gesänge aus der Tiefe",
+    "ja": "人魚ダリヤを狩りし者",
+    "fr": "Chanteur des profondeurs",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat Darya the Sea-maid in <i>The Merchant's Tale</i> variant dungeon.",
+      "de": "Meerjungfrau Darya aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
+      "ja": "商客物語（ヴァリアントダンジョン）で、人魚ダリヤを討伐する",
+      "fr": "Vaincre Darya dans les “Contes du Camelot - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3894": {
     "id": 3894,
-    "icon": "",
+    "icon": "/i/002000/002513.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Master of Masters",
+    "de": "Legendäre Klingen",
+    "ja": "ソードマスターを狩りし者",
+    "fr": "Qui vit par l'épée...",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat the Lone Swordmaster in <i>The Merchant's Tale</i> variant dungeon.",
+      "de": "Die Meisterin des Schwertes aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
+      "ja": "商客物語（ヴァリアントダンジョン）で、ソードマスターを討伐する",
+      "fr": "Vaincre le maître d'armes dans les “Contes du Camelot - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3895": {
     "id": 3895,
-    "icon": "",
+    "icon": "/i/002000/002513.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "The Strife Aquatic",
+    "de": "Der Schrecken der Tiefsee",
+    "ja": "ダンダーンを狩りし者",
+    "fr": "Pêche au gros",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat the Deadly Dandan in <i>The Merchant's Tale</i> variant dungeon.",
+      "de": "Dandan aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
+      "ja": "商客物語（ヴァリアントダンジョン）で、ダンダーンを討伐する",
+      "fr": "Vaincre Dandan dans les “Contes du Camelot - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3896": {
     "id": 3896,
-    "icon": "",
+    "icon": "/i/026000/026002.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Timeless Tale",
+    "de": "Eine Geschichte ohne Ende",
+    "ja": "受け継ぎ、いつか超える日まで",
+    "fr": "Une histoire sans fin",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Starting a New Chapter.”",
+      "de": "Den Auftrag „Eine Geschichte ohne Ende“ abgeschlossen.",
+      "ja": "クエスト「受け継ぎ、いつか超える日まで」をコンプリートする",
+      "fr": "Accomplir la quête “Une histoire sans fin”."
     },
     "item": 0,
-    "title": 0
+    "title": 830
   },
   "3897": {
     "id": 3897,
-    "icon": "",
+    "icon": "/i/026000/026182.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Storied Collection",
+    "de": "Ein Buch mit vielen Seiten",
+    "ja": "商客物語 探索記",
+    "fr": "Mille et une pages",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unlock all folklore records in <i>The Merchant's Tale</i>.",
+      "de": "Alle Einträge der Folkloresammlung in „Des Händlers Liebesmüh“ aufgedeckt.",
+      "ja": "商客物語 探索記をすべて開示する",
+      "fr": "Découvrir toutes les entrées du journal d'exploration des Contes du Camelot."
     },
-    "item": 0,
+    "item": 50454,
     "title": 0
   },
   "3898": {
     "id": 3898,
-    "icon": "",
+    "icon": "/i/000000/000317.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Stranger than Fiction",
+    "de": "Fantastischer als Fiktion",
+    "ja": "商客物語を制覇せし者",
+    "fr": "Un ouvrage captivant",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete <i>The Merchant's Tale</i> (Advanced).",
+      "de": "Des Händlers Liebesmüh (fortgeschritten) erfolgreich abgeschlossen.",
+      "ja": "商客物語（アドバンスド・ヴァリアントダンジョン）を攻略する",
+      "fr": "Finir les Contes du Camelot (avancé)."
     },
     "item": 0,
     "title": 0
   },
   "3899": {
     "id": 3899,
-    "icon": "",
+    "icon": "/i/000000/000317.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "One Thousand and One Fights",
+    "de": "Tausendundein Kampf",
+    "ja": "異聞商客物語を制覇せし者",
+    "fr": "Défis fantastiques",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete Another Merchant's Tale.",
+      "de": "Des Händlers kuriose Liebesmüh erfolgreich abgeschlossen.",
+      "ja": "異聞商客物語（アナザーダンジョン）を攻略する",
+      "fr": "Finir les Contes du Camelot annexes - Donjon alternatif."
     },
     "item": 0,
-    "title": 0
+    "title": 831
   },
   "3900": {
     "id": 3900,
@@ -81262,11 +81422,13 @@
     "de": "Meisterhafte Möbelkunst 2025",
     "ja": "調度品デザイナー：2025",
     "fr": "Artiste décorateur 2025",
+    "ko": "가구 디자이너: 2025",
     "description": {
       "en": "Emerge victorious in the Furnishing Design Contest 2025.",
       "de": "Als Gewinner des Möbeldesign-Wettbewerbs 2025 ausgezeichnet.",
       "ja": "調度品デザインコンテスト2025にて入賞する",
-      "fr": "Remporter un prix lors du concours de création de meuble 2025."
+      "fr": "Remporter un prix lors du concours de création de meuble 2025.",
+      "ko": "2025 가구 디자인 콘테스트에서 입상"
     },
     "item": 0,
     "title": 833
