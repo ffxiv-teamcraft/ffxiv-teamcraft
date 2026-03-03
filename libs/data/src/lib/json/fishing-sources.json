@@ -7710,7 +7710,10 @@
         10
       ],
       "snagging": false,
-      "minGathering": 338
+      "minGathering": 338,
+      "video": "https://youtu.be/T6S8dWFurO8",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7923": [
@@ -8054,7 +8057,10 @@
       "tug": 1,
       "bait": 4937,
       "snagging": false,
-      "minGathering": 349
+      "minGathering": 349,
+      "video": "https://youtu.be/_VNVYYT_d0k",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7947": [
@@ -14202,7 +14208,9 @@
       "spawn": 8,
       "duration": 4,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1100,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23062": [
@@ -14215,7 +14223,9 @@
         1
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23063": [
@@ -14225,7 +14235,9 @@
       "tug": 1,
       "bait": 20112,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1050,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "23064": [
@@ -14435,7 +14447,7 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0,
+      "minGathering": 1200,
       "aLure": 0,
       "mLure": 0
     }
@@ -14479,7 +14491,9 @@
         1
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24210": [
@@ -14495,7 +14509,9 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24211": [
@@ -14575,8 +14591,14 @@
       "weathers": [
         5
       ],
+      "weathersFrom": [
+        1,
+        2
+      ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24216": [
@@ -14593,7 +14615,9 @@
         3
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24217": [
@@ -14628,7 +14652,9 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1200,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24557": [
@@ -14694,7 +14720,9 @@
         1
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24882": [
@@ -14709,7 +14737,9 @@
         9
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24883": [
@@ -14727,7 +14757,9 @@
         9
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24884": [
@@ -14746,7 +14778,9 @@
         2
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24885": [
@@ -14810,7 +14844,7 @@
         8
       ],
       "snagging": false,
-      "minGathering": 0,
+      "minGathering": 1250,
       "aLure": 0,
       "mLure": 0
     }
@@ -14847,7 +14881,9 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24891": [
@@ -14866,7 +14902,9 @@
         7
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24892": [
@@ -14884,7 +14922,9 @@
         2
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "24893": [
@@ -14899,8 +14939,11 @@
         3,
         4
       ],
+      "weathersFrom": [
+        2
+      ],
       "snagging": false,
-      "minGathering": 1200,
+      "minGathering": 1250,
       "aLure": 0,
       "mLure": 0
     }
@@ -16792,12 +16835,14 @@
       "tug": 1,
       "bait": 27590,
       "spawn": 12,
-      "duration": 7,
+      "duration": 8,
       "weathers": [
         1
       ],
       "snagging": false,
-      "minGathering": 1500
+      "minGathering": 1500,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "28067": [
@@ -20095,10 +20140,13 @@
         4
       ],
       "weathersFrom": [
-        3
+        3,
+        4
       ],
       "snagging": false,
-      "minGathering": 1950
+      "minGathering": 1950,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "32051": [
@@ -28288,7 +28336,7 @@
       ],
       "minGathering": 4450,
       "video": "https://youtu.be/Sbv17KtFuGU",
-      "aLure": 0,
+      "aLure": 3,
       "mLure": 0
     }
   ],

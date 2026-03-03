@@ -8712,22 +8712,22 @@
     "fr": "Partitions fripées : événements"
   },
   "1771003": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Corvosi Potsherd Exchange",
+    "ja": "コルヴォの遺物の取引",
+    "de": "Corvos-Reliquien",
+    "fr": "Reliques corvosiennes"
   },
   "1771004": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Corvosi Brass Exchange",
+    "ja": "コルヴォ真鍮貨の取引",
+    "de": "Corvos-Messingmünzen",
+    "fr": "Pièces en laiton corvosiennes"
   },
   "1771005": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Corvosi Manuscript Exchange",
+    "ja": "コルヴォの書物の取引",
+    "de": "Corvos-Schriften",
+    "fr": "Écrits corvosiens"
   },
   "1771006": {
     "en": "",
@@ -8740,5 +8740,29 @@
     "ja": "探索計画の手形の取引",
     "de": "Kosmo-Marken",
     "fr": "Avoirs de l'exploration cosmique"
+  },
+  "1771008": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771009": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771010": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1771011": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

@@ -7106,7 +7106,7 @@
   },
   "65901": {
     "name": {
-      "en": "Best Laid Schemes",
+      "en": "Best-laid Schemes",
       "ja": "押収された武器",
       "de": "Nicht ganz mit rechten Dingen",
       "fr": "Une saisie au rabais"
@@ -29212,7 +29212,7 @@
   },
   "67263": {
     "name": {
-      "en": "The Best Laid Plans",
+      "en": "The Best-laid Plans",
       "ja": "試験飛行計画中",
       "de": "Bereit zum Abflug",
       "fr": "Cargaisons et dragons"
@@ -95505,9 +95505,9 @@
   },
   "70961": {
     "name": {
-      "en": "エッグハントと謎の草",
+      "en": "Of Weeds and Whimsy",
       "ja": "エッグハントと謎の草",
-      "de": "エッグハントと謎の草",
+      "de": "Das große Jäten",
       "fr": "Buissons maudits"
     },
     "icon": "/i/080000/080110.png",
@@ -95852,21 +95852,28 @@
   },
   "70977": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Spellbinding Read",
+      "ja": "瑠璃紺の本に語らるる冒険譚",
+      "de": "Ein Buch zum Eintauchen",
+      "fr": "Un livre captivant"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101471.png"
   },
   "70978": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Starting a New Chapter",
+      "ja": "受け継ぎ、いつか超える日まで",
+      "de": "Eine Geschichte ohne Ende",
+      "fr": "Une histoire sans fin"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36055,
+        "amount": 3
+      }
+    ]
   },
   "70979": {
     "name": {
@@ -95927,102 +95934,412 @@
   },
   "70982": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Need for Speed",
+      "ja": "モノクロの過去",
+      "de": "Action in Schwarzweiß",
+      "fr": "Un destrier flambant n'œuf"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101460.png"
   },
   "70983": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Meteorites and Meteor-wrongs",
+      "ja": "ひび割れた絆",
+      "de": "Schale mit Riss",
+      "fr": "Œuf qui roule n'amasse pas maousse"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101461.png"
   },
   "70984": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mission of Gravity",
+      "ja": "重力への探究",
+      "de": "Erkundung Schwerkraft",
+      "fr": "Une extrême gravité"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101455.png"
   },
   "70985": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Memory's Orbit",
+      "ja": "辿る砂星の記憶",
+      "de": "Und noch sooo viel weiter",
+      "fr": "Oizys c'est bon&nbsp;!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101456.png"
   },
   "70986": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Manager's Prudence",
+      "ja": "プロジェクトマネージャーの聡明なお仕事",
+      "de": "Wer rackert, muss rasten",
+      "fr": "L'empathie de la gestionnaire"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101457.png"
   },
   "70987": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Terror along the Tracks",
+      "ja": "恐怖のオイジュス探検",
+      "de": "Vom Zappen und Zittern",
+      "fr": "La navette de l'épouvante"
     },
     "icon": "/i/071000/071221.png"
   },
   "70988": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Manager's Power",
+      "ja": "プロジェクトマネージャーの懸命なお仕事",
+      "de": "Qualität hat ihren Preis",
+      "fr": "La force de la gestionnaire"
     },
     "icon": "/i/071000/071221.png"
   },
   "70989": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An Interstellar Field Trip",
+      "ja": "深宇宙探査学のフィールドスタディ",
+      "de": "Feldstudien mit Freunden",
+      "fr": "Une visite très académique"
     },
     "icon": "/i/071000/071221.png"
   },
   "70990": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Timeworn Techniques",
+      "ja": "最適な技術を求めて",
+      "de": "Bewährte Techniken",
+      "fr": "Recherche technique désespérément"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101472.png"
   },
   "70991": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In Pursuit of Perfection",
+      "ja": "正しき姿を求めて",
+      "de": "Der Perfektion auf der Spur",
+      "fr": "La main à la pâte"
     },
     "icon": "/i/071000/071221.png"
   },
   "70992": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Phantom Reborn",
+      "ja": " ファントムウェポンの新生",
+      "de": " Ein wiedergeborenes Phantom",
+      "fr": " Puissance fantôme ultime"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 47006,
+            "amount": 1
+          },
+          {
+            "id": 47027,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50032,
+            "amount": 1
+          },
+          {
+            "id": 50053,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47007,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50033,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47008,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50034,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47009,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50035,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47010,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50036,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47011,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50037,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47012,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50038,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47013,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50039,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47014,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50040,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47015,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50041,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47016,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50042,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47017,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50043,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47018,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50044,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47019,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50045,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47020,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50046,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47021,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50047,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47022,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50048,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47023,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50049,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47024,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50050,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47025,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50051,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 47026,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50052,
+            "amount": 1
+          }
+        ]
+      }
+    ]
   },
   "70993": {
     "name": {
@@ -96044,10 +96361,10 @@
   },
   "70995": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Abridged Too Far",
+      "ja": "「商客物語」を記録しまス！",
+      "de": "„Des Händlers Liebesmüh“ auf den Punkt gebracht!",
+      "fr": "Contes du Camelot (version abrégée)"
     },
     "icon": "/i/071000/071221.png"
   },

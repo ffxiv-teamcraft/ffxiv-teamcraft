@@ -1324,7 +1324,7 @@
       "en": "Restoration",
       "ja": "イシュガルド復興",
       "de": "Wiederaufbau",
-      "fr": "Reconstruction d'Ishgard (1)"
+      "fr": "Azurée (1)"
     },
     "pages": [
       1200,
@@ -1364,7 +1364,7 @@
       "en": "Restoration (2)",
       "ja": "イシュガルド復興2",
       "de": "Wiederaufbau (2)",
-      "fr": "Reconstruction d'Ishgard (2)"
+      "fr": "Azurée (2)"
     },
     "pages": [
       1216,
@@ -1444,7 +1444,7 @@
       "en": "Restoration (3)",
       "ja": "イシュガルド復興3",
       "de": "Wiederaufbau (3)",
-      "fr": "Reconstruction d'Ishgard (3)"
+      "fr": "Azurée (3)"
     },
     "pages": [
       1248,
@@ -1544,7 +1544,7 @@
       "en": "Restoration (4)",
       "ja": "イシュガルド復興4",
       "de": "Wiederaufbau (4)",
-      "fr": "Reconstruction d'Ishgard (4)"
+      "fr": "Azurée (4)"
     },
     "pages": [
       1288,
@@ -1684,7 +1684,7 @@
       "en": "Fixtures",
       "ja": "内装・外装",
       "de": "Bauelemente",
-      "fr": "Éléments d'intérieur et d'extérieur"
+      "fr": "Éléments d'habillage"
     },
     "pages": [
       1344,
@@ -2184,7 +2184,7 @@
       "en": "Coerthas",
       "ja": "クルザス",
       "de": "Coerthas",
-      "fr": "Légendes du Coerthas"
+      "fr": "Coerthas"
     },
     "pages": [
       2000,
@@ -2204,7 +2204,7 @@
       "en": "Dravania",
       "ja": "ドラヴァニア",
       "de": "Dravania",
-      "fr": "Légendes de Dravania"
+      "fr": "Dravania"
     },
     "pages": [
       2004,
@@ -2224,7 +2224,7 @@
       "en": "Abalathia",
       "ja": "アバラシア",
       "de": "Abalathia",
-      "fr": "Légendes d'Abalathia"
+      "fr": "Abalathia"
     },
     "pages": [
       2008,
@@ -2244,7 +2244,7 @@
       "en": "Gyr Abania",
       "ja": "ギラバニア",
       "de": "Gyr Abania",
-      "fr": "Légendes de Gyr Abania"
+      "fr": "Gyr Abania"
     },
     "pages": [
       2012,
@@ -2264,7 +2264,7 @@
       "en": "Othard",
       "ja": "オサード",
       "de": "Othard",
-      "fr": "Légendes d'Othard"
+      "fr": "Othard"
     },
     "pages": [
       2016,
@@ -2284,7 +2284,7 @@
       "en": "Norvrandt",
       "ja": "ノルヴラント",
       "de": "Norvrandt",
-      "fr": "Légendes de Norvrandt"
+      "fr": "Norvrandt"
     },
     "pages": [
       2020,
@@ -2304,7 +2304,7 @@
       "en": "Ishgard Restoration",
       "ja": "イシュガルド復興",
       "de": "Wiederaufbau Ishgards",
-      "fr": "Reconstruction d'Ishgard"
+      "fr": "Azurée"
     },
     "pages": [
       -1,
@@ -2384,7 +2384,7 @@
       "en": "Ilsabard/Northern Empty",
       "ja": "北洋地域・イルサバード",
       "de": "Nördliche Meere / Ilsabard",
-      "fr": "Légendes des mers du Nord et d'Ilsabard"
+      "fr": "Mers du N./Ilsabard"
     },
     "pages": [
       2025,
@@ -2404,7 +2404,7 @@
       "en": "Sea of Stars",
       "ja": "星外宙域",
       "de": "Kosmos",
-      "fr": "Légendes de l'espace intersidéral"
+      "fr": "Espace intersidéral"
     },
     "pages": [
       2028,
@@ -2424,7 +2424,7 @@
       "en": "World Unsundered",
       "ja": "古代世界",
       "de": "Unzersplitterte Welt",
-      "fr": "Légendes de l'ancien monde"
+      "fr": "Ancien monde"
     },
     "pages": [
       2033,

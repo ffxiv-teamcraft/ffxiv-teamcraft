@@ -18473,10 +18473,10 @@
     "icon": "/i/214000/214955.png",
     "maxStacks": 0,
     "description": {
-      "en": "Nullifying status afflictions that can be removed by <span style=\"color:#ffffff\">Purify</span>, as well as knockback and draw-in effects.",
-      "de": "Immun gegen alle Statuseffekte, die von <span style=\"color:#ffffff\">Purifikation</span> aufgehoben werden können, sowie Rückstoß- und Heranzieheffekte.",
-      "ja": "「浄化」で解除することができる状態異常効果と、ノックバック、引き寄せの効果を無効化する状態。",
-      "fr": "Insensible aux altérations d'état soignables avec Dépuration, aux projections et aux attractions."
+      "en": "HP recovery via healing actions is increased. Status afflictions that can be removed by <span style=\"color:#ffffff\">Purify</span>, as well as knockback and draw-in effects, are nullified.",
+      "de": "Immun gegen alle Statuseffekte, die von <span style=\"color:#ffffff\">Purifikation</span> aufgehoben werden können, sowie Rückstoß- und Heranzieheffekte. Darüber hinaus werden erhaltene Heileffekte erhöht.",
+      "ja": "「浄化」で解除することができる状態異常効果と、ノックバック、引き寄せの効果を無効化し、さらに自身に対するＨＰ回復効果が上昇した状態。",
+      "fr": "Insensible aux altérations d'état soignables avec Dépuration, aux projections et aux attractions. De plus, les effets de récupération de PV sont augmentés."
     }
   },
   "1321": {
@@ -43183,10 +43183,10 @@
     "icon": "/i/214000/214979.png",
     "maxStacks": 0,
     "description": {
-      "en": "Transfiguration magicks have changed your form. Unable to execute actions.",
-      "de": "Verwandelt. Kann keine Kommandos ausführen.",
-      "ja": "変身させられた状態。アクション実行不可。",
-      "fr": "La transformation en faible créature empêche toute action."
+      "en": "Transfiguration magicks have changed your form. Unable to execute actions and damage taken is increased.",
+      "de": "Verwandelt. Kann keine Kommandos ausführen und erlittener Schaden ist erhöht.",
+      "ja": "変身させられた状態。アクションが実行できず、さらに受けるダメージが増加する。",
+      "fr": "La transformation en faible créature empêche toute action et augmente les dégâts subis."
     }
   },
   "3086": {
@@ -61755,28 +61755,28 @@
   },
   "4412": {
     "en": "Enhanced Egg Acuity",
-    "de": "アルコンエッグ発見率上昇",
+    "de": "Verbesserte Eiersuche",
     "ja": "アルコンエッグ発見率上昇",
     "fr": "Sagacité des Prœufs",
     "icon": "/i/216000/216259.png",
     "maxStacks": 0,
     "description": {
-      "en": "Highly sensitive to the plentiful glimmer of Archon eggs.",
-      "de": "アルコンエッグを見つけやすくなっている状態。",
+      "en": "Probability of gleaning Archon eggs is increased.",
+      "de": "Die Wahrscheinlichkeit, Saliah-Eier zu finden, ist erhöht.",
       "ja": "アルコンエッグを見つけやすくなっている状態。",
       "fr": "Les chances de trouver des Prœufs sont augmentées."
     }
   },
   "4413": {
     "en": "Golden Eye",
-    "de": "アルコンエッグ【金】率上昇",
+    "de": "Goldenes Auge",
     "ja": "アルコンエッグ【金】率上昇",
     "fr": "Fortune des Prœufs",
     "icon": "/i/216000/216260.png",
     "maxStacks": 0,
     "description": {
       "en": "Any Archon eggs gleaned are guaranteed to be gold.",
-      "de": "見つけたアルコンエッグが必ずアルコンエッグ【金】になる状態。",
+      "de": "Alle gefundenen Saliah-Eier sind garantiert golden.",
       "ja": "見つけたアルコンエッグが必ずアルコンエッグ【金】になる状態。",
       "fr": "Tous les Prœufs trouvés sont dorés."
     }
@@ -61923,14 +61923,14 @@
   },
   "4424": {
     "en": "Eggstreme Egg Acuity",
-    "de": "アルコンエッグ発見率上昇＋",
+    "de": "Extremes Eiergespür",
     "ja": "アルコンエッグ発見率上昇＋",
     "fr": "Bénédiction des Prœufs",
     "icon": "/i/216000/216261.png",
     "maxStacks": 0,
     "description": {
-      "en": "Highly sensitive to the plentiful glimmer of gold Archon eggs.",
-      "de": "アルコンエッグを見つけやすくなり、かつ見つけたアルコンエッグが必ずアルコンエッグ【金】になる状態。",
+      "en": "Probability of gleaning Archon eggs is increased, and all eggs gleaned will be gold.",
+      "de": "Die Wahrscheinlichkeit, Saliah-Eier zu finden, ist erhöht und alle gefundenen Eier sind golden.",
       "ja": "アルコンエッグを見つけやすくなり、かつ見つけたアルコンエッグが必ずアルコンエッグ【金】になる状態。",
       "fr": "Les chances de trouver des Prœufs sont augmentées et tous les Prœufs trouvés sont dorés."
     }
@@ -64596,45 +64596,45 @@
     }
   },
   "4615": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Curse of Solitude",
+    "de": "Fluch des Sprengpulvers: Streuung",
+    "ja": "爆粉の呪い：散",
+    "fr": "Cendres déflagrantes&nbsp;: dispersion",
+    "icon": "/i/214000/214327.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Covered in accursed fire powder, resulting in an explosion when this effect expires.",
+      "de": "Mit einem Fluch belegt. Beim Ende des Effekts wird eine Explosion ausgelöst.",
+      "ja": "爆粉の呪いを受けた状態。効果時間が終了すると爆発を起こす。",
+      "fr": "La malédiction des cendres déflagrantes provoque une explosion à la fin de l'effet."
     }
   },
   "4616": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Curse of Companionship",
+    "de": "Fluch des Sprengpulvers: Ansammlung",
+    "ja": "爆粉の呪い：集",
+    "fr": "Cendres détonantes&nbsp;: congrégation",
+    "icon": "/i/214000/214328.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Covered in accursed fire powder, resulting in an intense explosion when this effect expires.",
+      "de": "Mit einem Fluch belegt. Beim Ende des Effekts wird eine starke Explosion ausgelöst.",
+      "ja": "爆粉の呪いを受けた状態。効果時間が終了すると重爆発を起こす。",
+      "fr": "La malédiction des cendres détonantes provoque une grande explosion à la fin de l'effet."
     }
   },
   "4617": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Curse of Immolation",
+    "de": "Fluch der Verkohlung",
+    "ja": "焼尽の呪い",
+    "fr": "Cendres calcinantes",
+    "icon": "/i/214000/214329.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Beset by rising heat, resulting in fire damage when this effect expires. Contact with ice-aspected attacks will remove this effect.",
+      "de": "Erleidet bei Ablauf der Wirkungsdauer Feuerschaden. Ein Eis-Angriff hebt den Effekt auf.",
+      "ja": "焼尽の呪いを受け、効果時間終了時に火属性ダメージを受ける状態。氷属性の攻撃を受けると効果が解除される。",
+      "fr": "La malédiction des cendres calcinantes infligera des dégâts de feu à la fin de l'effet. Subir une attaque de glace dissipera l'effet."
     }
   },
   "4618": {
@@ -64764,29 +64764,29 @@
     }
   },
   "4627": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fury",
+    "de": "Tobsucht",
+    "ja": "激怒",
+    "fr": "Furie",
+    "icon": "/i/214000/214330.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Empowered by righteous fury.",
+      "de": "Der verursachte Schaden wird durch Wut erhöht.",
+      "ja": "怒りにまかせ本気の攻撃を繰り出している状態。",
+      "fr": "Les dégâts infligés sont augmentés par la colère."
     }
   },
   "4628": {
-    "en": "草刈り参加",
-    "de": "草刈り参加",
+    "en": "In the Weeds",
+    "de": "Im Dickicht",
     "ja": "草刈り参加",
     "fr": "Jardinage en cours",
     "icon": "/i/216000/216258.png",
     "maxStacks": 0,
     "description": {
-      "en": "草刈りに参加している状態。",
-      "de": "草刈りに参加している状態。",
+      "en": "Ready to slay leafkin with a bespoke garden scythe.",
+      "de": "Bereit, mit einer maßgefertigten Gartensense Unkraut zu vernichten.",
       "ja": "草刈りに参加している状態。",
       "fr": "Participe au désherbage de printemps."
     }
@@ -66122,45 +66122,45 @@
     }
   },
   "4724": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Near Shore Shackles",
+    "de": "Fluide Ketten (nah)",
+    "ja": "水の鎖［近］",
+    "fr": "Chaînes aqueuses proches",
+    "icon": "/i/215000/215327.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chained to an ally. Drawing too near to this partner will result in increased damage taken.",
+      "de": "Erleidet bei Annäherung an einen durch Fluide Ketten verbundenen Mitstreiter erhöhten Schaden.",
+      "ja": "水の鎖で繋がれた仲間に近づくと、被害が増大する状態。",
+      "fr": "Se rapprocher de l'autre victime reliée par ces chaînes provoque une grosse explosion."
     }
   },
   "4725": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Far Shore Shackles",
+    "de": "Fluide Ketten (fern)",
+    "ja": "水の鎖［遠］",
+    "fr": "Chaînes aqueuses éloignées",
+    "icon": "/i/215000/215328.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chained to an ally. Drawing too far from this partner will result in increased damage taken.",
+      "de": "Erleidet bei Entfernung von einem durch Fluide Ketten verbundenen Mitstreiter erhöhten Schaden.",
+      "ja": "水の鎖で繋がれた仲間から離れると、被害が増大する状態。",
+      "fr": "S'éloigner l'autre victime reliée par ces chaînes provoque une grosse explosion."
     }
   },
   "4726": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Tidalspout Target",
+    "de": "Ziel von Wassersturm",
+    "ja": "ターゲッティング：バーストフラッド",
+    "fr": "Cible de déferlement soudain",
+    "icon": "/i/215000/215969.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Designated target of Tidalspout, which will activate when this effect expires.",
+      "de": "Ins Visier genommen. Bei Ende dieses Effekts wird <span style=\"color:#ffffff\">Wassersturm</span> ausgelöst.",
+      "ja": "標的となっている状態。効果時間終了時に、バーストフラッドが発動する。",
+      "fr": "Déferlement soudain est retardé et sera lancé sur cette cible à la fin de cet effet."
     }
   },
   "4727": {
@@ -66808,213 +66808,213 @@
     }
   },
   "4773": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic E",
+    "de": "Omen: Osten",
+    "ja": "凶兆：東",
+    "fr": "Augure&nbsp;: est",
+    "icon": "/i/214000/214359.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus der angegebenen Richtung.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par la direction indiquée sont augmentés."
     }
   },
   "4774": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic W",
+    "de": "Omen: Westen",
+    "ja": "凶兆：西",
+    "fr": "Augure&nbsp;: ouest",
+    "icon": "/i/214000/214360.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus der angegebenen Richtung.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par la direction indiquée sont augmentés."
     }
   },
   "4775": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic E-W",
+    "de": "Omen: Osten, Westen",
+    "ja": "凶兆：東西",
+    "fr": "Augure&nbsp;: est, ouest",
+    "icon": "/i/214000/214361.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4776": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic S",
+    "de": "Omen: Süden",
+    "ja": "凶兆：南",
+    "fr": "Augure&nbsp;: sud",
+    "icon": "/i/214000/214362.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus der angegebenen Richtung.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par la direction indiquée sont augmentés."
     }
   },
   "4777": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic S-E",
+    "de": "Omen: Osten, Süden",
+    "ja": "凶兆：東南",
+    "fr": "Augure&nbsp;: est, sud",
+    "icon": "/i/214000/214363.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4778": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic S-W",
+    "de": "Omen: Westen, Süden",
+    "ja": "凶兆：西南",
+    "fr": "Augure&nbsp;: ouest, sud",
+    "icon": "/i/214000/214364.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4779": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic S-E-W",
+    "de": "Omen: Osten, Westen, Süden",
+    "ja": "凶兆：東西南",
+    "fr": "Augure&nbsp;: est, ouest, sud",
+    "icon": "/i/214000/214365.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4780": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N",
+    "de": "Omen: Norden",
+    "ja": "凶兆：北",
+    "fr": "Augure&nbsp;: nord",
+    "icon": "/i/214000/214366.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus der angegebenen Richtung.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par la direction indiquée sont augmentés."
     }
   },
   "4781": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-E",
+    "de": "Omen: Osten, Norden",
+    "ja": "凶兆：東北",
+    "fr": "Augure&nbsp;: est, nord",
+    "icon": "/i/214000/214367.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4782": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-W",
+    "de": "Omen: Westen, Norden",
+    "ja": "凶兆：西北",
+    "fr": "Augure&nbsp;: ouest, nord",
+    "icon": "/i/214000/214368.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4783": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-E-W",
+    "de": "Omen: Osten, Westen, Norden",
+    "ja": "凶兆：東西北",
+    "fr": "Augure&nbsp;: est, ouest, nord",
+    "icon": "/i/214000/214369.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4784": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-S",
+    "de": "Omen: Süden, Norden",
+    "ja": "凶兆：南北",
+    "fr": "Augure&nbsp;: sud, nord",
+    "icon": "/i/214000/214370.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4785": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-S-E",
+    "de": "Omen: Osten, Süden, Norden",
+    "ja": "凶兆：東南北",
+    "fr": "Augure&nbsp;: est, sud, nord",
+    "icon": "/i/214000/214371.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4786": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-S-W",
+    "de": "Omen: Westen, Süden, Norden",
+    "ja": "凶兆：西南北",
+    "fr": "Augure&nbsp;: ouest, sud, nord",
+    "icon": "/i/214000/214372.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4787": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic N-S-E-W",
+    "de": "Omen: Osten, Westen, Süden, Norden",
+    "ja": "凶兆：東西南北",
+    "fr": "Augure&nbsp;: est, ouest, sud, nord",
+    "icon": "/i/214000/214373.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus den angegebenen Richtungen.",
+      "ja": "一部の攻撃を受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par les directions indiquées sont augmentés."
     }
   },
   "4788": {
@@ -67480,59 +67480,59 @@
     }
   },
   "4821": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Positive Charge",
+    "de": "Positive Ladung",
+    "ja": "磁力【＋】",
+    "fr": "Charge positive",
+    "icon": "/i/215000/215663.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Exhibiting a positive magnetic charge.",
+      "de": "Positiv magnetisch aufgeladen.",
+      "ja": "【＋】の磁力を帯びた状態。",
+      "fr": "La force du champ électromagnétique est positive."
     }
   },
   "4822": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Negative Charge",
+    "de": "Negative Ladung",
+    "ja": "磁力【－】",
+    "fr": "Charge négative",
+    "icon": "/i/215000/215664.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Exhibiting a negative magnetic charge.",
+      "de": "Negativ magnetisch aufgeladen.",
+      "ja": "【－】の磁力を帯びた状態。",
+      "fr": "La force du champ électromagnétique est négative."
     }
   },
   "4823": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Positive Charge",
+    "de": "Positive Ladung",
+    "ja": "磁力【＋】",
+    "fr": "Charge positive",
+    "icon": "/i/215000/215663.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Exhibiting a positive magnetic charge.",
+      "de": "Positiv magnetisch aufgeladen.",
+      "ja": "【＋】の磁力を帯びた状態。",
+      "fr": "La force du champ électromagnétique est positive."
     }
   },
   "4824": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Negative Charge",
+    "de": "Negative Ladung",
+    "ja": "磁力【－】",
+    "fr": "Charge négative",
+    "icon": "/i/215000/215664.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Exhibiting a negative magnetic charge.",
+      "de": "Negativ magnetisch aufgeladen.",
+      "ja": "【－】の磁力を帯びた状態。",
+      "fr": "La force du champ électromagnétique est négative."
     }
   },
   "4825": {
@@ -67704,31 +67704,31 @@
     }
   },
   "4837": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Magnetic Levitation",
+    "de": "Magnetschwebe",
+    "ja": "磁気浮上",
+    "fr": "Lévitation magnétique",
+    "icon": "/i/215000/215037.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Suspended in midair by magnetic forces.",
+      "de": "Schwebt durch den Einfluss eines Magnetfeldes in der Luft.",
+      "ja": "磁力により、宙に浮いた状態。",
+      "fr": "Un champ de force magnétique permet de flotter dans l'air."
     }
   },
   "4838": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Magnetic Pull",
+    "de": "Magnetanziehung",
+    "ja": "磁気重圧",
+    "fr": "Pesanteur magnétique",
+    "icon": "/i/215000/215002.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is decreased due to magnetic forces.",
+      "de": "Bewegungsgeschwindigkeit ist durch den Einfluss eines Magnetfeldes verringert.",
+      "ja": "磁力により、移動速度が低下した状態。",
+      "fr": "Un champ de force magnétique réduit la vitesse de déplacement."
     }
   },
   "4839": {
@@ -67802,31 +67802,31 @@
     }
   },
   "4844": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Chains of Passion α",
+    "de": "Fluch der Flammenkette α",
+    "ja": "炎鎖の呪いα",
+    "fr": "Malédiction des flammes enchaînées α",
+    "icon": "/i/216000/216766.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fated to be bound by burning chains to a partner with a matching mark when this effect expires.",
+      "de": "Wird bei Ende dieses Effekts mit flammenden Ketten an jemanden gefesselt, der unter demselben Fluch steht.",
+      "ja": "炎鎖の呪いを受けた状態。効果終了時に、同じ呪いを受けた他者と炎の鎖で繋がれてしまう。",
+      "fr": "Une chaîne de flammes relie les victimes de ce même effet lorsque la durée s'est écoulée."
     }
   },
   "4845": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Chains of Passion β",
+    "de": "Fluch der Flammenkette β",
+    "ja": "炎鎖の呪いβ",
+    "fr": "Malédiction des flammes enchaînées β",
+    "icon": "/i/216000/216767.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fated to be bound by burning chains to a partner with a matching mark when this effect expires.",
+      "de": "Wird bei Ende dieses Effekts mit flammenden Ketten an jemanden gefesselt, der unter demselben Fluch steht.",
+      "ja": "炎鎖の呪いを受けた状態。効果終了時に、同じ呪いを受けた他者と炎の鎖で繋がれてしまう。",
+      "fr": "Une chaîne de flammes relie les victimes de ce même effet lorsque la durée s'est écoulée."
     }
   },
   "4846": {
@@ -69510,45 +69510,45 @@
     }
   },
   "4966": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic E",
+    "de": "Omen: Osten",
+    "ja": "凶兆：東",
+    "fr": "Augure&nbsp;: est",
+    "icon": "/i/214000/214359.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus der angegebenen Richtung.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par la direction indiquée sont augmentés."
     }
   },
   "4967": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Malefic W",
+    "de": "Omen: Westen",
+    "ja": "凶兆：西",
+    "fr": "Augure&nbsp;: ouest",
+    "icon": "/i/214000/214360.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Being hit by certain attacks from an ill-favored cardinal direction will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden durch bestimmte Angriffe aus der angegebenen Richtung.",
+      "ja": "一部の攻撃を特定方角から受けた際、ダメージが増加する状態。",
+      "fr": "Certains dégâts subis par la direction indiquée sont augmentés."
     }
   },
   "4968": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hydrobullet Target",
+    "de": "Ziel von Hydro-Kugel",
+    "ja": "ターゲッティング：ハイドロバレット",
+    "fr": "Cible de barillet hydrique",
+    "icon": "/i/215000/215996.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Designated target of Hydrobullet, which will activate when this effect expires.",
+      "de": "Ins Visier genommen. Bei Ende dieses Effekts wird <span style=\"color:#ffffff\">Hydro-Kugel</span> ausgelöst.",
+      "ja": "標的となっている状態。効果時間終了時に、ハイドロバレットが発動する。",
+      "fr": "Barillet hydrique est retardé et sera lancé sur cette cible à la fin de cet effet."
     }
   },
   "4969": {
@@ -69608,17 +69608,17 @@
     }
   },
   "4973": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "In Event",
+    "de": "In Ereignis",
+    "ja": "イベント中",
+    "fr": "Événement",
+    "icon": "/i/215000/215765.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Participating in an in-game event.",
+      "de": "Nimmt an einem Spielereignis teil.",
+      "ja": "イベントが発生している状態。",
+      "fr": "Participe à un événement."
     }
   },
   "4974": {
@@ -70644,17 +70644,17 @@
     }
   },
   "5047": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bubble Gaol",
+    "de": "Blasenkerker",
+    "ja": "バブルプリズン",
+    "fr": "Prison de bulle",
+    "icon": "/i/215000/215301.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ensnared by aetherial seafoam and unable to move.",
+      "de": "In magischen Blasen eingekerkert, die jegliche Handlung verhindern.",
+      "ja": "魔力の泡に閉じ込められ、行動できなくなった状態。",
+      "fr": "Une bulle d'eau magique emprisonne le corps, empêchant toute action."
     }
   },
   "5048": {
@@ -72114,17 +72114,17 @@
     }
   },
   "5152": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Load-bearing",
+    "de": "Schwer beladen",
+    "ja": "重運搬",
+    "fr": "Charge lourde",
+    "icon": "/i/216000/216246.png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Carrying a weighty burden and growing wearier with each passing second.",
+      "de": "Schwer beladen. Wird nach einer gewissen Zeit müde und lässt das Getragene fallen.",
+      "ja": "かなり重たい荷を運搬している状態。一定時間が経過すると、疲れて荷を落としてしまう。",
+      "fr": "Transporte une charge lourde jusqu'à ce que la fatigue oblige à la laisser tomber."
     }
   },
   "5153": {

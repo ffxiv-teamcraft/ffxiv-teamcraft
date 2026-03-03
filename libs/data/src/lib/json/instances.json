@@ -15832,6 +15832,38 @@
       37400
     ]
   },
+  "36004": {
+    "id": 36004,
+    "en": "<i>The Merchant's Tale</i>",
+    "ja": "ヴァリアントダンジョン 商客物語",
+    "de": "Des Händlers Liebesmüh",
+    "fr": "Contes du Camelot - Donjon à embranchements",
+    "description": {
+      "en": "Your latest odd job commission brings you together with one Y'nazqha, a gleaner who finds herself in possession of an unusual book inherited from her father and mentor. It contains a rendition of <i>The Merchant's Tale</i>, a fable passed down through generations in Corvos. While the beautifully illuminated pages of the manuscript set it apart from common storybooks, its most singular feature is the enchantment which can pull the very mind of its readers into the story.<br><br>And so it is you are thrust into the role of bodyguard for Y'nazqha, who becomes the eponymous merchant while journeying within the tale. Together you must travel through a world steeped in folklore and find a treasure of immeasurable worth─treasure grand enough to stir even the most hardened heart.",
+      "ja": "文書回収の専門家、ヤ・ナズカは、師でもある亡父から一冊の書を受け取ったという。コルヴォ地方に伝わる寓話『商客物語』を記したその装飾写本には、なんと読み手の精神を「本の中」に引き込むという特別な魔法がかけられていた。<br>物語の主人公である「若き商人」となったナズカと共に、相棒である「護衛」役となって、「計り知れぬほど価値ある品」を巡る不可思議な冒険の旅に出よう。",
+      "de": "Dein neuester Auftrag führt dich zu der jungen Klauberin Y'nazqha, die ein ungewöhnliches Buch von ihrem Vater und Mentor geerbt hat. Es handelt sich dabei um ein Märchen namens „Des Händlers Liebesmüh“, das in Corvos seit Generationen weitergegeben wird. Doch es sind nicht nur die wunderschön illustrierten Seiten, welche das Buch von gewöhnlichen Märchenbüchern abhebt: Es ist mit magischen Symbolen versehen, die die Macht haben, den Leser unmittelbar in die Geschichte hineinzuziehen.<br>Schlüpfe in die Rolle der mutigen Leibwächterin und unterstütze Y'nazqha in der Rolle des jungen Händlers dabei, dessen Angebeteten einen ganz besonderen Liebesbeweis zu erbringen und damit ihr Herz zu erobern.",
+      "fr": "La glaneuse Y'nazqha a hérité de son défunt père et mentor Y'rhul Nunh un livre pour le moins particulier. Cet ouvrage magique, intitulé les “Contes du Camelot”, aurait pour particularité de plonger littéralement ses lecteurs au centre des aventures qui y sont inscrites, avec tous les dangers que cela comporte. Incarnez le légendaire garde du corps de Corvos et aidez Y'nazqha dans le rôle du jeune camelot à conquérir le cœur d'une belle demoiselle accablée de tristesse."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112645.png",
+    "gamePatch": 91,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 1114,
+    "contentText": [
+      43769,
+      43600
+    ]
+  },
   "37001": {
     "id": 37001,
     "en": "Another Sil'dihn Subterrane",
@@ -16022,6 +16054,69 @@
     "contentText": [
       37647,
       37400
+    ]
+  },
+  "37007": {
+    "id": 37007,
+    "en": "Another Merchant's Tale",
+    "ja": "アナザーダンジョン 異聞商客物語",
+    "de": "Des Händlers kuriose Liebesmüh",
+    "fr": "Contes du Camelot annexes - Donjon alternatif",
+    "description": {
+      "en": "<i>The Merchant's Tale</i> depicts a Corvos from before the Garlean occupation, made even more wondrous by the flourishes of countless storytellers throughout the ages. As you relate the details of your time within its pages to Osmon, he continues the timeless storytelling tradition by adding his own embellishments to an already fantastic fable, and you feel yourself drawn back in to the beautiful but increasingly dangerous world of folklore...",
+      "ja": "冒険者の土産話を聞いて、オスモンは想像を膨らませる。『商客物語』は、ガレマール帝国による占領以前のコルヴォ地方が描かれており、その描写には語り手の理想も詰め込まれていたのではないか、と。ならば現代を生きるオスモンが、さらに理想を詰め込んでみたとしたら、いかなる盛り上がりを演出できるのか。冒険者は想像の果てにある異聞の激闘を追体験する。",
+      "de": "„Des Händlers Liebesmüh“ zeigt das Corvos aus der Zeit vor der garleischen Herrschaft, welches durch die Ausschmückungen unzähliger Geschichtenerzähler im Laufe der Jahrhunderte noch wundersamere Formen angenommen hat. Während du Osmon von deinen Erlebnissen erzählst, wird auch seine Fantasie beflügelt: Er beginnt, dem fantastischen Märchen seine eigenen Ausschmückungen hinzuzufügen, und du spürst, wie du zurück in die schöne, aber zunehmend gefährliche Welt des jungen Händlers gezogen wirst&nbsp;...",
+      "fr": "L'imagination d'Osmon s'est immédiatement enflammée en écoutant le récit de vos aventures dans les Contes du Camelot&nbsp;: qu'adviendrait-il si le lecteur parvenait à modeler à sa guise ces histoires&nbsp;? Quels dangers rôdaient lorsque la région de Corvos était au sommet de sa gloire, bien avant l'occupation de l'Empire&nbsp;? Et voilà qu'en y réfléchissant, vous vous laissez prendre au jeu à votre tour, mais vous n'y pouvez rien car votre âme d'aventurière doit absolument obtenir le fin mot de l'histoire&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112647.png",
+    "gamePatch": 91,
+    "contentType": 30,
+    "levelReq": 100,
+    "ilvlReq": 770,
+    "sync": 100,
+    "exp": 0,
+    "map": 1164,
+    "contentText": [
+      43768,
+      43600
+    ]
+  },
+  "38001": {
+    "id": 38001,
+    "en": "<i>The Merchant's Tale</i> (Advanced)",
+    "ja": "アドバンスド・ヴァリアントダンジョン 商客物語",
+    "de": "Des Händlers Liebesmüh (fortgeschritten)",
+    "fr": "Contes du Camelot - Donjon à embranchements (avancé)",
+    "description": {
+      "en": "The dutiful mammet Memolivia listens to your every word with what you can only guess is rapt attention, speedily writing down the details in incomprehensible shorthand. It then begins trimming the text further until naught remains but concise descriptions of the fiercest battles you encountered in <i>The Merchant's Tale</i>. As you read the record over, you find that without the trappings of that wondrous story to soften them, the foes you faced were terrifying beyond your wildest imaginings...",
+      "ja": "冒険者の土産話を聞いた速記用魔法人形の「かきとりくん」は、効率的に記録するため、省略に省略を重ね、要点をつまみにつまんだ。結果として記されたのは、過程を省かれた戦いに次ぐ戦い……。冒険者はいま、事実と異なる気がする記録を前に、恐るべき連戦を追体験する。",
+      "de": "Memolivia ist eine magische Marionette, deren Aufgabe es ist, gekürzte Versionen von Abenteurergeschichten zu dokumentieren. Allerdings vereinfacht sie die Geschichten so stark, bis nur noch prägnante Beschreibungen der heftigsten Schlachten übrig bleiben, die du in „Des Händlers Liebesmüh“ erlebt hast. Beim Durchlesen der Aufzeichnungen wird dir bewusst, dass deine Reise durch das Buch ohne die mildernden Ausschmückungen doch gefährlicher und grausamer war, als du es in Erinnerung hast&nbsp;...",
+      "fr": "Mémolivia est une marionnette magique dont la tâche est de conserver des versions abrégées de récits d'aventuriers. Néanmoins, elle simplifie tellement leurs histoires qu'il n'en reste qu'une succession de combats particulièrement violents... Vous parcourez les archives de votre amie mécanique avec un frisson dans le dos en imaginant la puissance de ces ennemis prêts à vous fondre dessus les uns après les autres."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112646.png",
+    "contentType": 30,
+    "levelReq": 100,
+    "ilvlReq": 760,
+    "sync": 100,
+    "exp": 0,
+    "map": 1162,
+    "contentText": [
+      43768,
+      43600
     ]
   },
   "40027": {
