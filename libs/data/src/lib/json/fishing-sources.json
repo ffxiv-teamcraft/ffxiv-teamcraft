@@ -11079,7 +11079,10 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/lmBiRPt1HNU",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "15631": [
@@ -14937,7 +14940,8 @@
       "duration": 8,
       "weathers": [
         3,
-        4
+        4,
+        5
       ],
       "weathersFrom": [
         2
@@ -28221,6 +28225,7 @@
         3
       ],
       "minGathering": 4450,
+      "video": "https://youtu.be/GtJ8_k_6rvA",
       "aLure": 0,
       "mLure": 0
     }
