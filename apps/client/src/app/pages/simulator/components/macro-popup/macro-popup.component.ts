@@ -152,7 +152,7 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
             // Addon#13867
             actionName = this.i18n.getName({
               en: `Duty Action II`,
-              fr: `Action de mission II`,
+              fr: `Action de mission 2`,
               de: `Spezialkommando II`,
               ja: `コンテンツアクションII`
             });
