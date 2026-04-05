@@ -246,10 +246,18 @@ export class AuthEffects {
         return this.logTrackingService.get(`${action.userId}:${action.lodestoneId?.toString()}`, true).pipe(
           catchError((err) => {
             console.error(err);
-            return of({
+            this.logTrackingService.clearCache();
+            return this.logTrackingService.set(`${action.userId}:${action.lodestoneId?.toString()}`, {
               crafting: [],
               gathering: []
-            });
+            }).pipe(
+              map(() => {
+                return {
+                  crafting: [],
+                  gathering: []
+                }
+              })
+            );
           })
         );
       }),

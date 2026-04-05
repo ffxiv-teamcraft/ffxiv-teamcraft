@@ -76091,7 +76091,7 @@
     "de": "Zauberhafte Zwölf",
     "ja": "ありがとう12周年！",
     "fr": "Douzaine dorée",
-    "ko": "12주년 고맙습니다!",
+    "ko": "곧 11주년을 맞이합니다!",
     "zh": "多彩绚烂的周年庆",
     "description": {
       "en": "Complete the quest “A Light That Ever Burns.”",
@@ -81252,11 +81252,13 @@
     "de": "Kartograph: Des Händlers Liebesmüh",
     "ja": "商客物語を読破せし者",
     "fr": "Cartographe du continent : Contes du Camelot",
+    "ko": "상인 이야기를 독파한 자",
     "description": {
       "en": "Discover every location within <i>The Merchant's Tale</i> variant dungeon.",
       "de": "Alle Orte in Des Händlers Liebesmüh erkundet.",
       "ja": "商客物語（ヴァリアントダンジョン）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte des Contes du Camelot."
+      "fr": "Découvrir toute la carte des Contes du Camelot.",
+      "ko": "변형 던전: 상인 이야기를 탐험하여 모든 지역 발견"
     },
     "item": 0,
     "title": 0
@@ -81286,11 +81288,13 @@
     "de": "Feurige Wächterin",
     "ja": "火精ペリを狩りし者",
     "fr": "C'est magique !",
+    "ko": "불요정 페리를 쓰러뜨린 자",
     "description": {
       "en": "Defeat the Pari of Plenty in <i>The Merchant's Tale</i> variant dungeon.",
       "de": "Die Sengende Pari aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
       "ja": "商客物語（ヴァリアントダンジョン）で、火精ペリを討伐する",
-      "fr": "Vaincre Pari dans les “Contes du Camelot - Donjon à embranchements”."
+      "fr": "Vaincre Pari dans les “Contes du Camelot - Donjon à embranchements”.",
+      "ko": "변형 던전: 상인 이야기에서 불요정 페리 처치"
     },
     "item": 0,
     "title": 0
@@ -81303,11 +81307,13 @@
     "de": "Gesänge aus der Tiefe",
     "ja": "人魚ダリヤを狩りし者",
     "fr": "Chanteur des profondeurs",
+    "ko": "인어 다르야를 쓰러뜨린 자",
     "description": {
       "en": "Defeat Darya the Sea-maid in <i>The Merchant's Tale</i> variant dungeon.",
       "de": "Meerjungfrau Darya aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
       "ja": "商客物語（ヴァリアントダンジョン）で、人魚ダリヤを討伐する",
-      "fr": "Vaincre Darya dans les “Contes du Camelot - Donjon à embranchements”."
+      "fr": "Vaincre Darya dans les “Contes du Camelot - Donjon à embranchements”.",
+      "ko": "변형 던전: 상인 이야기에서 인어 다르야 처치"
     },
     "item": 0,
     "title": 0
@@ -81320,11 +81326,13 @@
     "de": "Legendäre Klingen",
     "ja": "ソードマスターを狩りし者",
     "fr": "Qui vit par l'épée...",
+    "ko": "소드마스터를 쓰러뜨린 자",
     "description": {
       "en": "Defeat the Lone Swordmaster in <i>The Merchant's Tale</i> variant dungeon.",
       "de": "Die Meisterin des Schwertes aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
       "ja": "商客物語（ヴァリアントダンジョン）で、ソードマスターを討伐する",
-      "fr": "Vaincre le maître d'armes dans les “Contes du Camelot - Donjon à embranchements”."
+      "fr": "Vaincre le maître d'armes dans les “Contes du Camelot - Donjon à embranchements”.",
+      "ko": "변형 던전: 상인 이야기에서 소드마스터 처치"
     },
     "item": 0,
     "title": 0
@@ -81337,11 +81345,13 @@
     "de": "Der Schrecken der Tiefsee",
     "ja": "ダンダーンを狩りし者",
     "fr": "Pêche au gros",
+    "ko": "단단을 쓰러뜨린 자",
     "description": {
       "en": "Defeat the Deadly Dandan in <i>The Merchant's Tale</i> variant dungeon.",
       "de": "Dandan aus „Des Händlers Liebesmüh“ (Unstetes Gewölbe) besiegt.",
       "ja": "商客物語（ヴァリアントダンジョン）で、ダンダーンを討伐する",
-      "fr": "Vaincre Dandan dans les “Contes du Camelot - Donjon à embranchements”."
+      "fr": "Vaincre Dandan dans les “Contes du Camelot - Donjon à embranchements”.",
+      "ko": "변형 던전: 상인 이야기에서 단단 처치"
     },
     "item": 0,
     "title": 0
@@ -81354,11 +81364,13 @@
     "de": "Eine Geschichte ohne Ende",
     "ja": "受け継ぎ、いつか超える日まで",
     "fr": "Une histoire sans fin",
+    "ko": "이어받아, 뛰어넘을 날까지",
     "description": {
       "en": "Complete the quest “Starting a New Chapter.”",
       "de": "Den Auftrag „Eine Geschichte ohne Ende“ abgeschlossen.",
       "ja": "クエスト「受け継ぎ、いつか超える日まで」をコンプリートする",
-      "fr": "Accomplir la quête “Une histoire sans fin”."
+      "fr": "Accomplir la quête “Une histoire sans fin”.",
+      "ko": "퀘스트 '이어받아, 뛰어넘을 날까지' 완료"
     },
     "item": 0,
     "title": 830
@@ -81371,11 +81383,13 @@
     "de": "Ein Buch mit vielen Seiten",
     "ja": "商客物語 探索記",
     "fr": "Mille et une pages",
+    "ko": "상인 이야기 탐색기",
     "description": {
       "en": "Unlock all folklore records in <i>The Merchant's Tale</i>.",
       "de": "Alle Einträge der Folkloresammlung in „Des Händlers Liebesmüh“ aufgedeckt.",
       "ja": "商客物語 探索記をすべて開示する",
-      "fr": "Découvrir toutes les entrées du journal d'exploration des Contes du Camelot."
+      "fr": "Découvrir toutes les entrées du journal d'exploration des Contes du Camelot.",
+      "ko": "상인 이야기 탐색기 모두 수집"
     },
     "item": 50454,
     "title": 0
@@ -81388,11 +81402,13 @@
     "de": "Fantastischer als Fiktion",
     "ja": "商客物語を制覇せし者",
     "fr": "Un ouvrage captivant",
+    "ko": "상인 이야기를 제패한 자",
     "description": {
       "en": "Complete <i>The Merchant's Tale</i> (Advanced).",
       "de": "Des Händlers Liebesmüh (fortgeschritten) erfolgreich abgeschlossen.",
       "ja": "商客物語（アドバンスド・ヴァリアントダンジョン）を攻略する",
-      "fr": "Finir les Contes du Camelot (avancé)."
+      "fr": "Finir les Contes du Camelot (avancé).",
+      "ko": "상급 변형 던전: 상인 이야기 완료"
     },
     "item": 0,
     "title": 0
@@ -81405,11 +81421,13 @@
     "de": "Tausendundein Kampf",
     "ja": "異聞商客物語を制覇せし者",
     "fr": "Défis fantastiques",
+    "ko": "번외 상인 이야기를 제패한 자",
     "description": {
       "en": "Complete Another Merchant's Tale.",
       "de": "Des Händlers kuriose Liebesmüh erfolgreich abgeschlossen.",
       "ja": "異聞商客物語（アナザーダンジョン）を攻略する",
-      "fr": "Finir les Contes du Camelot annexes - Donjon alternatif."
+      "fr": "Finir les Contes du Camelot annexes - Donjon alternatif.",
+      "ko": "파생 던전: 번외 상인 이야기 완료"
     },
     "item": 0,
     "title": 831
