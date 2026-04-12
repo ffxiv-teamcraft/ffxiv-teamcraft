@@ -559,7 +559,7 @@
     "Desktop_tip_title": "팀크래프트는 데스크톱 앱이 있습니다! 더 빠르고, 편하고, 강력합니다!",
     "Desktop_tip_description": "데스크톱 앱은 더 빠른 오프라인 검색 기능을 사용할 수 있으며, 오버레이 기능과 패킷 캡쳐 기능을 사용할 수 있습니다(기본적으로 패킷 캡쳐는 비활성화된 상태입니다). 더 나은 경험을 원하신다면 데스크톱 앱을 적극 권장합니다.",
     "Lists_offline_by_default": "오프라인 목록을 기본값으로 설정",
-    "Unlocked_FATE_areas": "Unlocked FATE shops",
+    "Unlocked_FATE_areas": "잠금 해제된 FATE 상점",
     "Unlocked_FATE_areas_explain": "해당 확장팩의 모든 공유 FATE를 완료하여 FATE 상점을 해금한 도시들.",
     "COLORS": {
       "Background": "배경 색상",
@@ -1086,7 +1086,7 @@
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
     "Min_stats": "제작에 필요한 최저능력치",
-    "Min_stats_base": "Minimum without buffs",
+    "Min_stats_base": "버프가 없는 최소값",
     "Progress": "작업량",
     "Quality": "품질",
     "Step_counter": "공정",
@@ -1481,13 +1481,13 @@
       "Data_loading": "Data preloading",
       "Packet_capture": "Packet capture",
       "Packet_capture_error": "Packet capture is not running, make sure you have it running properly before starting",
-      "Ready": "Ready to import your logs !",
-      "Log_in_explain": "Go to character selection (System - Log Out) and log in using the character you want to import the logs of. Do NOT close the game",
-      "Details": "Important details",
+      "Ready": "로그 가져오기 준비 완료!",
+      "Log_in_explain": "캐릭터 선택(시스템 - 로그아웃)으로 이동하여 로그를 가져올 캐릭터를 사용하여 로그인하세요. 게임을 종료하지 마세요",
+      "Details": "중요한 세부 사항",
       "Details_explain": "Log import will reset your spearfishing log (support will be added in a future update) and will remove any recipe/item that's not tracked for ingame achievements.",
       "Additions": "Additions",
       "Deletions": "Deletions",
-      "Save": "Apply these changes"
+      "Save": "다음 변경 사항 적용"
     },
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
@@ -2001,7 +2001,7 @@
     "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
-    "Quick_search_tip": "Press Ctrl + Shift + F to open a quick search box from any page !",
+    "Quick_search_tip": "어떤 페이지에서든 Ctrl + Shift + F를 눌러 빠른 검색 창을 열 수 있습니다!",
     "Sort_by": "정렬 기준: ",
     "Sort_asc": "오름차순",
     "Sort_desc": "내림차순",
@@ -3007,7 +3007,7 @@
     "Shadow_size": "그림자 크기",
     "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
     "Select_all": "모든 제안서 선택",
-    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
+    "Input_hours_tip": "시간 단위 입력 값, 소수를 사용하여 분을 추가합니다(예: 7.5는 7:30과 같습니다)",
     "SPEEDS": {
       "VERY_SLOW": "매우 느림",
       "SLOW": "느림",
@@ -3108,7 +3108,7 @@
       "GAME_NOT_RUNNING": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요). <br> 만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.",
       "RESTART_GAME": "패킷 캡쳐가 올바르게 작동하도록 게임을 다시 시작하세요.",
       "GAME_RUNNING_AS_ADMIN": "게임이 관리자 권한으로 실행 중이므로 게임을 관리자 권한 없이 다시 실행하시거나 팀크래프트를 관리자 권한으로 실행하세요.",
-      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
+      "MISSING_INJECTOR": "패킷 캡처 도구가 누락되어 있으며, 바이러스 백신으로 인해 잘못된 양성 반응으로 인해 제거되었을 가능성이 높습니다. Teamcraft의 설치 폴더를 화이트리스트에 올리고 다시 설치하세요."
     }
   },
   "ISLAND_SANCTUARY": {
@@ -3304,8 +3304,8 @@
     "Teamcrafter_description_text": "Do you like fighting fierce monsters? Risking your life to save strangers?\nNo, you'd have to be crazy!",
     "Teamcrafter_description_text_part2": "Teamcrafter is me realizing a childhood dream thanks to the community, thanks to your amazing support on Kickstarter that allowed it to be fully funded and even more!",
     "Wishlist": "Steam에서 보기",
-    "Teamcrafter_description_banner": "Wishlist Teamcrafter on Steam: a roguelike game focused on crafting and gathering made by the developer behind FFXIV Teamcraft!",
-    "Supported": "Thanks a lot for your support on Kickstarter <3",
+    "Teamcrafter_description_banner": "Steam 위시리스트에 ‘Teamcrafter’를 추가하세요: FFXIV Teamcraft를 제작한 개발자가 만든, 제작과 채집에 중점을 둔 로그라이크 게임입니다!",
+    "Supported": "킥스타터에서 보내주신 성원에 진심으로 감사드립니다 <3",
     "Ads_removed": "Ads have been permanently removed from your account"
   }
 }
