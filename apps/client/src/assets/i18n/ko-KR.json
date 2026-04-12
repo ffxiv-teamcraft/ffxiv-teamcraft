@@ -429,9 +429,9 @@
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
-    "Kickstarter_email": "Kickstarter email",
-    "Kickstarter_email_used": "Email is not a backer or it's already claimed",
-    "Ks_email_applied": "Backer status applied, ads are now disabled",
+    "Kickstarter_email": "킥스타터 이메일",
+    "Kickstarter_email_used": "이 이메일 주소는 후원자가 아니거나 이미 등록된 상태입니다",
+    "Ks_email_applied": "후원자 상태가 적용되었으며, 이제 광고가 비활성화되었습니다",
     "Requires_restart": "계정에 적용하려면 재시작/새로고침이 필요합니다",
     "Title": "설정",
     "General": "일반",
@@ -560,7 +560,7 @@
     "Desktop_tip_description": "데스크톱 앱은 더 빠른 오프라인 검색 기능을 사용할 수 있으며, 오버레이 기능과 패킷 캡쳐 기능을 사용할 수 있습니다(기본적으로 패킷 캡쳐는 비활성화된 상태입니다). 더 나은 경험을 원하신다면 데스크톱 앱을 적극 권장합니다.",
     "Lists_offline_by_default": "오프라인 목록을 기본값으로 설정",
     "Unlocked_FATE_areas": "Unlocked FATE shops",
-    "Unlocked_FATE_areas_explain": "Cities in which you have unlocked FATE shop after completing all Shared FATEs for that expansion.",
+    "Unlocked_FATE_areas_explain": "해당 확장팩의 모든 공유 FATE를 완료하여 FATE 상점을 해금한 도시들.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -593,7 +593,7 @@
       "Global": "글로벌서버",
       "CN": "중국서버",
       "KR": "한국서버",
-      "TW": "Taiwan"
+      "TW": "대만"
     },
     "NOTIFICATIONS": {
       "Title": "공지",
@@ -622,7 +622,7 @@
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
     "Autofill_from_packets": "패킷 캡쳐를 사용하여 능력치 자동 채우기 (음식 사용 시 음식도 포함됩니다)",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done.",
+    "Autofill_stats_explain": "업데이트할 클래스로 전환한 다음, 작업이 끝나면 이 팝업을 닫으세요.",
     "Open_public_profile": "공개 프로필 보기",
     "Community_contributions": "커뮤니티 목록 및 로테이션",
     "Fishing_rankings": "낚시 순위",
@@ -633,7 +633,7 @@
     "Characters": "캐릭터",
     "Missing_character": "캐릭터 정보 없음",
     "Missing_character_description": "캐릭터 정보가 더 이상 유효하지 않습니다. 프로필에서 캐릭터 정보를 삭제해주세요.",
-    "Delete_account": "Delete my account",
+    "Delete_account": "내 계정 삭제",
     "Delete_account_confirmation": "This cannot be undone and will delete your account as well as your profile, your lists, rotations and gearsets will still exist but will be linked to a non-existing profile.",
     "VERIFICATION": {
       "Button": "인증",
@@ -726,8 +726,8 @@
     "Mark_whole_panel_nq": "수동 HQ 마크 제거",
     "Mark_whole_panel_hq": "전체 패널 HQ 마크",
     "Crafts": "제작",
-    "Convert_to_online": "Convert to online list",
-    "Converted_to_online": "Your list is now online",
+    "Convert_to_online": "온라인 목록으로 변환",
+    "Converted_to_online": "목록이 이제 온라인 상태입니다",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -832,7 +832,7 @@
       "Crafts": "제작 순서",
       "Toggle_overlay": "단계별 오버레이 켜기/끄기",
       "Empty_map": "현재 맵에서는 할 게 없으며, 목록에서 가장 가까운 맵은 {{closest}} 입니다",
-      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
+      "Only_crafts_remaining": "이 목록을 위해 모든 것이 모였고, 공예품만 남았습니다.",
       "Unknown_map": "알 수 없는 지역, 팀크래프트가 감지할 수 있도록 지역을 이동해 주세요.",
       "No_list": "선택된 목록이 없습니다. 메인 화면에서 목록을 열어 오버레이가 의도한 대로 작동하도록 하세요.",
       "Others": "기타"
@@ -1006,7 +1006,7 @@
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집 수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
-    "Sublime_item": "Sublime",
+    "Sublime_item": "숭고함",
     "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "오직 날씨 조건만을 위하여 물고기의 눈 필요",
     "Add_alarm": "알람 추가",
@@ -1119,7 +1119,7 @@
     "Unsaved_changes": "저장되지 않은 변경점이 있습니다. 페이지를 나가기 전에 저장을 하지 않으면 변경한 부분이 사라집니다.",
     "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
-    "Generate_ingame_macro": "Convert to ingame macro",
+    "Generate_ingame_macro": "게임 내 매크로로 변환",
     "Share_button_tooltip": "공유링크 복사",
     "Share_link_copied": "로테이션 공유용 링크를 클립보드에 복사했습니다",
     "Persist": "현재 로테이션 저장",
