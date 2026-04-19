@@ -25,12 +25,14 @@ export class TraitsDbPagesExtractor extends AbstractExtractor {
         {
           field: 'Name',
           koSource: 'koTraits',
-          zhSource: 'zhTraits'
+          zhSource: 'zhTraits',
+          twSource: 'twTraits'
         },
         {
           field: 'Description',
           koSource: 'koTraitDescriptions',
           zhSource: 'zhTraitDescriptions',
+          twSource: 'twTraitDescriptions',
           targetField: 'description'
         }
       ]).forEach(({ row, extended }) => {

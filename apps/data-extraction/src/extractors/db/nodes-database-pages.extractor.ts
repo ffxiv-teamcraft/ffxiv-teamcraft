@@ -10,6 +10,7 @@ export class NodesDatabasePagesExtractor extends AbstractExtractor {
     const nodes = this.requireLazyFileByKey('nodes');
     const koBonuses = this.requireLazyFileByKey('koGatheringBonuses');
     const zhBonuses = this.requireLazyFileByKey('zhGatheringBonuses');
+    const twBonuses = this.requireLazyFileByKey('twGatheringBonuses');
     const gatheringItemsByItemId = Object.entries(this.requireLazyFileByKey('gatheringItems'))
       .reduce((acc, [key, value]) => {
         return {
@@ -71,6 +72,7 @@ export class NodesDatabasePagesExtractor extends AbstractExtractor {
           .map(bonus => {
             const koBonus = koBonuses[bonus.index];
             const zhBonus = zhBonuses[bonus.index];
+            const twBonus = twBonuses[bonus.index];
             return {
               condition: ['en', 'de', 'ja', 'fr'].reduce((acc, lang) => {
                 return {
@@ -79,7 +81,8 @@ export class NodesDatabasePagesExtractor extends AbstractExtractor {
                 };
               }, {
                 ko: koBonus?.condition?.ko?.replace('<Value>IntegerParameter(1)</Value>', koBonus.conditionValue.toString()) || '',
-                zh: zhBonus?.condition?.zh?.replace('<Value>IntegerParameter(1)</Value>', zhBonus.conditionValue.toString()) || ''
+                zh: zhBonus?.condition?.zh?.replace('<Value>IntegerParameter(1)</Value>', zhBonus.conditionValue.toString()) || '',
+                tw: twBonus?.condition?.tw?.replace('<Value>IntegerParameter(1)</Value>', twBonus.conditionValue.toString()) || ''
               }),
               bonus: ['en', 'de', 'ja', 'fr'].reduce((acc, lang) => {
                 return {
@@ -88,7 +91,8 @@ export class NodesDatabasePagesExtractor extends AbstractExtractor {
                 };
               }, {
                 ko: koBonus?.bonus?.ko?.replace('<Value>IntegerParameter(1)</Value>', koBonus.value.toString()) || '',
-                zh: zhBonus?.bonus?.zh?.replace('<Value>IntegerParameter(1)</Value>', zhBonus.value.toString()) || ''
+                zh: zhBonus?.bonus?.zh?.replace('<Value>IntegerParameter(1)</Value>', zhBonus.value.toString()) || '',
+                tw: twBonus?.bonus?.tw?.replace('<Value>IntegerParameter(1)</Value>', twBonus.value.toString()) || ''
               })
             };
           });

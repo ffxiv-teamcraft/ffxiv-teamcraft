@@ -21,6 +21,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
     const textIndex = {};
     const koDescriptions = this.requireLazyFileByKey('koQuestDescriptions');
     const zhDescriptions = this.requireLazyFileByKey('zhQuestDescriptions');
+    const twDescriptions = this.requireLazyFileByKey('twQuestDescriptions');
     this.getSheet<any>(xiv, 'Quest',
       [
         'IssuerStart#',
@@ -59,7 +60,8 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
                     ja: textCSV[2]['1_ja'],
                     fr: textCSV[2]['1_fr'],
                     ko: koDescriptions[quest.id]?.ko,
-                    zh: zhDescriptions[quest.id]?.zh
+                    zh: zhDescriptions[quest.id]?.zh,
+                    tw: twDescriptions[quest.id]?.tw
                   },
                   chainLength: questChainLengths[+quest.id],
                   genre: row.JournalGenre,

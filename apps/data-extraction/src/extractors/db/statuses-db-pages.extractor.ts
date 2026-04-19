@@ -10,12 +10,14 @@ export class StatusesDbPagesExtractor extends AbstractExtractor {
         {
           field: 'Name',
           koSource: 'koStatuses',
-          zhSource: 'zhStatuses'
+          zhSource: 'zhStatuses',
+          twSource: 'twStatuses'
         },
         {
           field: 'Description',
           koSource: 'koStatusDescriptions',
           zhSource: 'zhStatusDescriptions',
+          twSource: 'twStatusDescriptions',
           targetField: 'description'
         }
       ]).forEach(({ row, extended }) => {
