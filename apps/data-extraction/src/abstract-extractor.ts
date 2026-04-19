@@ -8,7 +8,7 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { ParsedRow } from './xiv/parsed-row';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { kebabCase } from 'lodash';
-import { I18nName, LazyDataChineseKey, LazyDataI18nKey, LazyDataKoreanKey } from '@ffxiv-teamcraft/types';
+import { I18nName, LazyDataChineseKey, LazyDataI18nKey, LazyDataKoreanKey, LazyDataTraditionalChineseKey } from '@ffxiv-teamcraft/types';
 import zlib from 'zlib';
 import { LazyPatchContent } from '@ffxiv-teamcraft/data/model/lazy-patch-content';
 
@@ -90,6 +90,9 @@ export abstract class AbstractExtractor {
     }
     if (kebab.startsWith('zh-')) {
       path = join(AbstractExtractor.assetOutputFolder, 'zh', `${kebabCase(key)}.json`);
+    }
+    if (kebab.startsWith('tw-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'tw', `${kebabCase(key)}.json`);
     }
     return JSON.parse(readFileSync(path, 'utf-8'));
   }
@@ -303,7 +306,7 @@ export abstract class AbstractExtractor {
     return cleaned;
   }
 
-  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
+  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh' | 'tw'): LazyDataI18nKey {
     return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
   }
 
@@ -313,6 +316,7 @@ export abstract class AbstractExtractor {
     const baseEntry = this.requireLazyFileByKey(property);
     const koEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'ko'));
     const zhEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'zh'));
+    const twEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'tw'));
     return Object.entries<T>(baseEntry as any)
       .filter(([, entry]) => getNameFn(entry).en?.length > 0)
       .map(([id, entry]) => {
@@ -328,6 +332,9 @@ export abstract class AbstractExtractor {
         if (zhEntries[id]) {
           row.zh = zhEntries[id].zh;
         }
+        if (twEntries[id]) {
+          row.tw = twEntries[id].tw;
+        }
         return row;
       });
   }
@@ -336,13 +343,15 @@ export abstract class AbstractExtractor {
     field: string,
     targetField?: string,
     koSource?: LazyDataKoreanKey,
-    zhSource?: LazyDataChineseKey
+    zhSource?: LazyDataChineseKey,
+    twSource?: LazyDataTraditionalChineseKey
   }[]): { row: any, extended: any }[] {
     const preloadedAsianSources = {};
     sources.forEach(source => {
       preloadedAsianSources[source.field] = {
         ko: source.koSource ? this.requireLazyFileByKey(source.koSource) : null,
-        zh: source.zhSource ? this.requireLazyFileByKey(source.zhSource) : null
+        zh: source.zhSource ? this.requireLazyFileByKey(source.zhSource) : null,
+        tw: source.twSource ? this.requireLazyFileByKey(source.twSource) : null
       };
     });
     return data
@@ -355,6 +364,7 @@ export abstract class AbstractExtractor {
           const target = targetField ? extended[targetField] : extended;
           const ko = preloadedAsianSources[field]?.['ko']?.[row.index];
           const zh = preloadedAsianSources[field]?.['zh']?.[row.index];
+          const tw = preloadedAsianSources[field]?.['tw']?.[row.index];
 
           target.en = row[`${field}_en`];
           target.de = row[`${field}_de`];
@@ -365,6 +375,9 @@ export abstract class AbstractExtractor {
           }
           if (zh) {
             target.zh = zh.zh;
+          }
+          if (tw) {
+            target.tw = tw.tw;
           }
         });
         return { row, extended };
