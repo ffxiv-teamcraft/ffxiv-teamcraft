@@ -127,7 +127,7 @@
     "sqlite3": "5.1.5",
     "tslib": "^2.6.2",
     "universal-analytics": "^0.5.3",
-    "uuid": "^9.0.1"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~18.0.2",
