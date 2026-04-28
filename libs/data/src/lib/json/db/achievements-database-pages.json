@@ -71413,7 +71413,7 @@
     "ko": "내일을 향한 한 걸음",
     "zh": "迈向明日的一步",
     "description": {
-      "en": "Complete the quest “The Coming Dawn.”",
+      "en": "Complete the main scenario quest “The Coming Dawn.”",
       "de": "Den Auftrag „Der Dämmerung entgegen“ abgeschlossen.",
       "ja": "クエスト「明日への一歩」をコンプリートする",
       "fr": "Accomplir la quête de l'épopée “L'appel de l'aventure”.",
@@ -76551,8 +76551,8 @@
     "patch": 103,
     "en": "Observing the Occult",
     "de": "Kreszenter Chronist",
-    "ja": "三日月島の記録員",
-    "fr": "Archiviste du croissant",
+    "ja": "三日月島南部の記録員",
+    "fr": "Archiviste méridional",
     "ko": "초승달 섬 기록원",
     "zh": "新月岛的记录员",
     "description": {
@@ -76577,10 +76577,10 @@
     "ko": "외딴섬에 군림하는 자: 1단계",
     "zh": "君临孤岛1",
     "description": {
-      "en": "Complete 10 critical encounters on the Occult Crescent.",
-      "de": "10 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを10回コンプリートする",
-      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule.",
+      "en": "Complete 10 critical encounters on the Occult Crescent: South Horn.",
+      "de": "10 kritische Begegnungen im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、クリティカルエンカウントを10回コンプリートする",
+      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 비상 조우 10회 완료",
       "zh": "在蜃景幻界新月岛中完成10次紧急遭遇战。"
     },
@@ -76598,10 +76598,10 @@
     "ko": "외딴섬에 군림하는 자: 2단계",
     "zh": "君临孤岛2",
     "description": {
-      "en": "Complete 50 critical encounters on the Occult Crescent.",
-      "de": "50 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを50回コンプリートする",
-      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule.",
+      "en": "Complete 50 critical encounters on the Occult Crescent: South Horn.",
+      "de": "50 kritische Begegnungen im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、クリティカルエンカウントを50回コンプリートする",
+      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 비상 조우 50회 완료",
       "zh": "在蜃景幻界新月岛中完成50次紧急遭遇战。"
     },
@@ -76619,10 +76619,10 @@
     "ko": "외딴섬에 군림하는 자: 3단계",
     "zh": "君临孤岛3",
     "description": {
-      "en": "Complete 100 critical encounters on the Occult Crescent.",
-      "de": "100 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを100回コンプリートする",
-      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule.",
+      "en": "Complete 100 critical encounters on the Occult Crescent: South Horn.",
+      "de": "100 kritische Begegnungen im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、クリティカルエンカウントを100回コンプリートする",
+      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 비상 조우 100회 완료",
       "zh": "在蜃景幻界新月岛中完成100次紧急遭遇战。"
     },
@@ -76640,10 +76640,10 @@
     "ko": "외딴섬에 군림하는 자: 4단계",
     "zh": "君临孤岛4",
     "description": {
-      "en": "Complete 500 critical encounters on the Occult Crescent.",
-      "de": "500 kritische Begegnungen auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、クリティカルエンカウントを500回コンプリートする",
-      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule.",
+      "en": "Complete 500 critical encounters on the Occult Crescent: South Horn.",
+      "de": "500 kritische Begegnungen im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、クリティカルエンカウントを500回コンプリートする",
+      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 비상 조우 500회 완료",
       "zh": "在蜃景幻界新月岛中完成500次紧急遭遇战。"
     },
@@ -76661,10 +76661,10 @@
     "ko": "지식인의 정점: 1단계",
     "zh": "智者高见1",
     "description": {
-      "en": "Complete 10 FATEs on the Occult Crescent.",
-      "de": "10 FATEs auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を10回コンプリートする",
-      "fr": "Accomplir 10 ALÉA sur l'île de Lunule.",
+      "en": "Complete 10 FATEs on the Occult Crescent: South Horn.",
+      "de": "10 FATEs im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、F.A.T.E.を10回コンプリートする",
+      "fr": "Accomplir 10 ALÉA sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 돌발 임무 10회 완료",
       "zh": "在蜃景幻界新月岛中完成10次危命任务。"
     },
@@ -76682,10 +76682,10 @@
     "ko": "지식인의 정점: 2단계",
     "zh": "智者高见2",
     "description": {
-      "en": "Complete 50 FATEs on the Occult Crescent.",
-      "de": "50 FATEs auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を50回コンプリートする",
-      "fr": "Accomplir 50 ALÉA sur l'île de Lunule.",
+      "en": "Complete 50 FATEs on the Occult Crescent: South Horn.",
+      "de": "50 FATEs im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、F.A.T.E.を50回コンプリートする",
+      "fr": "Accomplir 50 ALÉA sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 돌발 임무 50회 완료",
       "zh": "在蜃景幻界新月岛中完成50次危命任务。"
     },
@@ -76703,10 +76703,10 @@
     "ko": "지식인의 정점: 3단계",
     "zh": "智者高见3",
     "description": {
-      "en": "Complete 100 FATEs on the Occult Crescent.",
-      "de": "100 FATEs auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を100回コンプリートする",
-      "fr": "Accomplir 100 ALÉA sur l'île de Lunule.",
+      "en": "Complete 100 FATEs on the Occult Crescent: South Horn.",
+      "de": "100 FATEs im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、F.A.T.E.を100回コンプリートする",
+      "fr": "Accomplir 100 ALÉA sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 돌발 임무 100회 완료",
       "zh": "在蜃景幻界新月岛中完成100次危命任务。"
     },
@@ -76724,10 +76724,10 @@
     "ko": "지식인의 정점: 4단계",
     "zh": "智者高见4",
     "description": {
-      "en": "Complete 500 FATEs on the Occult Crescent.",
-      "de": "500 FATEs auf Kreszentia erfolgreich abgeschlossen.",
-      "ja": "蜃気楼の島 クレセントアイルにて、F.A.T.E.を500回コンプリートする",
-      "fr": "Accomplir 500 ALÉA sur l'île de Lunule.",
+      "en": "Complete 500 FATEs on the Occult Crescent: South Horn.",
+      "de": "500 FATEs im südlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、F.A.T.E.を500回コンプリートする",
+      "fr": "Accomplir 500 ALÉA sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 돌발 임무 500회 완료",
       "zh": "在蜃景幻界新月岛中完成500次危命任务。"
     },
@@ -76747,7 +76747,7 @@
     "description": {
       "en": "Complete the Forked Tower: Blood for the first time.",
       "de": "1 Mal den Fork-Turm - Blut erobert.",
-      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を初めて攻略する",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、フォークタワー：力の塔を初めて攻略する",
       "fr": "Finir la Tour fourchue de la Force.",
       "ko": "초승달 섬에서 포크 타워: 힘의 탑 1회 완료",
       "zh": "首次成功挑战两歧塔 力之塔。"
@@ -76768,7 +76768,7 @@
     "description": {
       "en": "Complete the Forked Tower: Blood 10 times.",
       "de": "10 Mal den Fork-Turm - Blut erobert.",
-      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計10回攻略する",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、フォークタワー：力の塔を累計10回攻略する",
       "fr": "Finir 10 fois la Tour fourchue de la Force.",
       "ko": "초승달 섬에서 포크 타워: 힘의 탑 10회 완료",
       "zh": "累计成功挑战两歧塔 力之塔10次。"
@@ -76789,7 +76789,7 @@
     "description": {
       "en": "Complete the Forked Tower: Blood 50 times.",
       "de": "50 Mal den Fork-Turm - Blut erobert.",
-      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計50回攻略する",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、フォークタワー：力の塔を累計50回攻略する",
       "fr": "Finir 50 fois la Tour fourchue de la Force.",
       "ko": "초승달 섬에서 포크 타워: 힘의 탑 50회 완료",
       "zh": "累计成功挑战两歧塔 力之塔50次。"
@@ -76810,7 +76810,7 @@
     "description": {
       "en": "Complete the Forked Tower: Blood 100 times.",
       "de": "100 Mal den Fork-Turm - Blut erobert.",
-      "ja": "蜃気楼の島 クレセントアイルにて、フォークタワー：力の塔を累計100回攻略する",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、フォークタワー：力の塔を累計100回攻略する",
       "fr": "Finir 100 fois la Tour fourchue de la Force.",
       "ko": "초승달 섬에서 포크 타워: 힘의 탑 100회 완료",
       "zh": "累计成功挑战两歧塔 力之塔100次。"
@@ -76825,14 +76825,14 @@
     "en": "Magic Is the Best Medicine I",
     "de": "Kreszentias Kerub I",
     "ja": "三角海域の船医：ランク1",
-    "fr": "Défibrilateur du croissant I",
+    "fr": "Défibrilateur méridional I",
     "ko": "삼각해역 의사: 1단계",
     "zh": "三角区的船医1",
     "description": {
-      "en": "Resurrect another player on the Occult Crescent 10 times.",
-      "de": "10 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
-      "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを10回蘇生する",
-      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule.",
+      "en": "Resurrect another player on the Occult Crescent: South Horn 10 times.",
+      "de": "10 Mal einen Spieler (außer sich selbst) im südlichen Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、自分以外の戦闘不能状態のプレイヤーを10回蘇生する",
+      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 전투불능 상태의 다른 플레이어 10회 부활",
       "zh": "在蜃景幻界新月岛相关任务中，救助10位除自身外处于无法战斗状态的玩家。"
     },
@@ -76846,14 +76846,14 @@
     "en": "Magic Is the Best Medicine II",
     "de": "Kreszentias Kerub II",
     "ja": "三角海域の船医：ランク2",
-    "fr": "Défibrilateur du croissant II",
+    "fr": "Défibrilateur méridional II",
     "ko": "삼각해역 의사: 2단계",
     "zh": "三角区的船医2",
     "description": {
-      "en": "Resurrect another player on the Occult Crescent 100 times.",
-      "de": "100 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
-      "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを100回蘇生する",
-      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule.",
+      "en": "Resurrect another player on the Occult Crescent: South Horn 100 times.",
+      "de": "100 Mal einen Spieler (außer sich selbst) im südlichen Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、自分以外の戦闘不能状態のプレイヤーを100回蘇生する",
+      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 전투불능 상태의 다른 플레이어 100회 부활",
       "zh": "在蜃景幻界新月岛相关任务中，救助100位除自身外处于无法战斗状态的玩家。"
     },
@@ -76867,14 +76867,14 @@
     "en": "Magic Is the Best Medicine III",
     "de": "Kreszentias Kerub III",
     "ja": "三角海域の船医：ランク3",
-    "fr": "Défibrilateur du croissant III",
+    "fr": "Défibrilateur méridional III",
     "ko": "삼각해역 의사: 3단계",
     "zh": "三角区的船医3",
     "description": {
-      "en": "Resurrect another player on the Occult Crescent 500 times.",
-      "de": "500 Mal einen Spieler (außer sich selbst) auf Kreszentia wiederbelebt.",
-      "ja": "蜃気楼の島 クレセントアイルにて、自分以外の戦闘不能状態のプレイヤーを500回蘇生する",
-      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule.",
+      "en": "Resurrect another player on the Occult Crescent: South Horn 500 times.",
+      "de": "500 Mal einen Spieler (außer sich selbst) im südlichen Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイル：南征編にて、自分以外の戦闘不能状態のプレイヤーを500回蘇生する",
+      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule méridionale.",
       "ko": "초승달 섬에서 전투불능 상태의 다른 플레이어 500회 부활",
       "zh": "在蜃景幻界新月岛相关任务中，救助500位除自身外处于无法战斗状态的玩家。"
     },
@@ -77704,7 +77704,7 @@
     "id": 3714,
     "icon": "/i/001000/001703.png",
     "patch": 102,
-    "en": "Rocket Tanning I ",
+    "en": "Rocket Tanning I",
     "de": "Gerber der unendlichen Weiten I",
     "ja": "星渡る革細工師：ランク1",
     "fr": "Tanneur du cosmos I",
@@ -80255,88 +80255,88 @@
   },
   "3837": {
     "id": 3837,
-    "icon": "",
+    "icon": "/i/062000/062968.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rhyme & Region 2026",
+    "de": "Regionalmatador 2026",
+    "ja": "リージョンチャンピオン：CCRC2026",
+    "fr": "Belligérant régional 2026",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Emerge victorious in the 2026 Crystalline Conflict Regional Championship (Japan).",
+      "de": "Crystalline Conflict Regional Championship 2026 in der Region Japan gewonnen.",
+      "ja": "Crystalline Conflictリージョンチャンピオンシップ2026にて、日本リージョンで優勝する",
+      "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2026” de la zone Japon."
     },
     "item": 0,
-    "title": 0
+    "title": 826
   },
   "3838": {
     "id": 3838,
-    "icon": "",
+    "icon": "/i/062000/062968.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rhyme & Region 2026",
+    "de": "Regionalmatador 2026",
+    "ja": "リージョンチャンピオン：CCRC2026",
+    "fr": "Belligérant régional 2026",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Emerge victorious in the 2026 Crystalline Conflict Regional Championship (North America).",
+      "de": "Crystalline Conflict Regional Championship 2026 in der Region Nordamerika gewonnen.",
+      "ja": "Crystalline Conflictリージョンチャンピオンシップ2026にて、北米リージョンで優勝する",
+      "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2026” de la zone Amérique du Nord."
     },
     "item": 0,
-    "title": 0
+    "title": 826
   },
   "3839": {
     "id": 3839,
-    "icon": "",
+    "icon": "/i/062000/062968.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rhyme & Region 2026",
+    "de": "Regionalmatador 2026",
+    "ja": "リージョンチャンピオン：CCRC2026",
+    "fr": "Belligérant régional 2026",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Emerge victorious in the 2026 Crystalline Conflict Regional Championship (Europe & Oceania).",
+      "de": "Crystalline Conflict Regional Championship 2026 in der Region Europa & Ozeanien gewonnen.",
+      "ja": "Crystalline Conflictリージョンチャンピオンシップ2026にて、欧州/太平洋リージョンで優勝する",
+      "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2026” de la zone Europe/Pacifique."
     },
     "item": 0,
-    "title": 0
+    "title": 826
   },
   "3840": {
     "id": 3840,
-    "icon": "",
+    "icon": "/i/062000/062967.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rhyme & Region 2026 - Finalist",
+    "de": "Regionalmatador 2026 - Finalist",
+    "ja": "リージョンファイナリスト：CCRC2026",
+    "fr": "Belligérant régional 2026 : Finaliste",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Reach the finals in the 2026 Crystalline Conflict Regional Championship.",
+      "de": "Crystalline Conflict Regional Championship 2026 als Finalist bestritten.",
+      "ja": "Crystalline Conflictリージョンチャンピオンシップ2026にて、ファイナルに進出する",
+      "fr": "Accéder à la finale d'un championnat “Crystalline Conflict Regional Championship 2026”."
     },
     "item": 0,
-    "title": 0
+    "title": 827
   },
   "3841": {
     "id": 3841,
-    "icon": "",
+    "icon": "/i/062000/062966.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Rhyme & Region 2026 - Placed",
+    "de": "Regionalmatador 2026 - Vorentscheidungen",
+    "ja": "リージョンランカー：CCRC2026",
+    "fr": "Belligérant régional 2026 : Classé",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place in the top 8 in the 2026 Crystalline Conflict Regional Championship preliminaries.",
+      "de": "Crystalline Conflict Regional Championship 2026 unter den Besten 8 der Vorrunde abgeschlossen.",
+      "ja": "Crystalline Conflictリージョンチャンピオンシップ2026にて、予選ラウンドでベスト8になる",
+      "fr": "Être classé parmi les 8 premiers lors la phase éliminatoire d'un championnat “Crystalline Conflict Regional Championship 2026”."
     },
     "item": 0,
-    "title": 0
+    "title": 828
   },
   "3842": {
     "id": 3842,
@@ -80929,34 +80929,34 @@
   },
   "3873": {
     "id": 3873,
-    "icon": "",
+    "icon": "/i/058000/058051.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Golden Globe-trotter",
+    "de": "Ein Obulus für die Otter",
+    "ja": "キュキュッと保護活動にも貢献を",
+    "fr": "Loutrement vôtre",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “You Otter Be There.”",
+      "de": "Den Auftrag „Ottos Werbegang“ abgeschlossen.",
+      "ja": "クエスト「ゴールドソーサーと小さな宣伝大使」をコンプリートする",
+      "fr": "Accomplir la quête “Une mascotte trop choute”."
     },
     "item": 0,
     "title": 0
   },
   "3874": {
     "id": 3874,
-    "icon": "",
+    "icon": "/i/053000/053744.png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Summertime Drifter",
+    "de": "Keine Angst vor Strand und Meer",
+    "ja": "ぷかぷか巡る常夏の浜",
+    "fr": "Costa del Sol Croisières",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Earning Your Water Wings.”",
+      "de": "Den Auftrag „Kalte Füße im kühlen Nass“ abgeschlossen.",
+      "ja": "クエスト「紅蓮祭と海辺の若葉たち」をコンプリートする",
+      "fr": "Accomplir la quête “La mer, c'est super&nbsp;!”."
     },
     "item": 0,
     "title": 0
@@ -81450,5 +81450,3014 @@
     },
     "item": 0,
     "title": 833
+  },
+  "3901": {
+    "id": 3901,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3902": {
+    "id": 3902,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3903": {
+    "id": 3903,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3904": {
+    "id": 3904,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3905": {
+    "id": 3905,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3906": {
+    "id": 3906,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3907": {
+    "id": 3907,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3908": {
+    "id": 3908,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3909": {
+    "id": 3909,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3910": {
+    "id": 3910,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3911": {
+    "id": 3911,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3912": {
+    "id": 3912,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3913": {
+    "id": 3913,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3914": {
+    "id": 3914,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3915": {
+    "id": 3915,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3916": {
+    "id": 3916,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3917": {
+    "id": 3917,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3918": {
+    "id": 3918,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3919": {
+    "id": 3919,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3920": {
+    "id": 3920,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3921": {
+    "id": 3921,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3922": {
+    "id": 3922,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3923": {
+    "id": 3923,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3924": {
+    "id": 3924,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3925": {
+    "id": 3925,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3926": {
+    "id": 3926,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Top Tier: Season Nineteen",
+    "de": "Kristallkönig (19. Saison)",
+    "ja": "コンフリクトの王者：シーズン19",
+    "fr": "Roi du conflit : saison 19",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Nineteen ranked #1.",
+      "de": "Die 19. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン19にて、ランキングで1位になる",
+      "fr": "Terminer la saison 19 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 847
+  },
+  "3927": {
+    "id": 3927,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Crystal in the Rough: Season Nineteen",
+    "de": "Kristallfürst (19. Saison)",
+    "ja": "コンフリクトの勇者：シーズン19",
+    "fr": "Prince du conflit : saison 19",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Nineteen.",
+      "de": "Die 19. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン19にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 19 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 848
+  },
+  "3928": {
+    "id": 3928,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Ranked and Filed: Season Nineteen",
+    "de": "Kristallkämpfer (19. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン19",
+    "fr": "As du conflit : saison 19",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Nineteen.",
+      "de": "Die 19. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン19にて、ランキングで入賞する",
+      "fr": "Terminer la saison 19 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 849
+  },
+  "3929": {
+    "id": 3929,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Top Tier: Season Twenty",
+    "de": "Kristallkönig (20. Saison)",
+    "ja": "コンフリクトの王者：シーズン20",
+    "fr": "Roi du conflit : saison 20",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Twenty ranked #1.",
+      "de": "Die 20. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン20にて、ランキングで1位になる",
+      "fr": "Terminer la saison 20 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 850
+  },
+  "3930": {
+    "id": 3930,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Crystal in the Rough: Season Twenty",
+    "de": "Kristallfürst (20. Saison)",
+    "ja": "コンフリクトの勇者：シーズン20",
+    "fr": "Prince du conflit : saison 20",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Twenty.",
+      "de": "Die 20. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン20にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 20 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 851
+  },
+  "3931": {
+    "id": 3931,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Ranked and Filed: Season Twenty",
+    "de": "Kristallkämpfer (20. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン20",
+    "fr": "As du conflit : saison 20",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Twenty.",
+      "de": "Die 20. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン20にて、ランキングで入賞する",
+      "fr": "Terminer la saison 20 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 852
+  },
+  "3932": {
+    "id": 3932,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Top Tier: Season Twenty-one",
+    "de": "Kristallkönig (21. Saison)",
+    "ja": "コンフリクトの王者：シーズン21",
+    "fr": "Roi du conflit : saison 21",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Twenty-one ranked #1.",
+      "de": "Die 21. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン21にて、ランキングで1位になる",
+      "fr": "Terminer la saison 21 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 853
+  },
+  "3933": {
+    "id": 3933,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Crystal in the Rough: Season Twenty-one",
+    "de": "Kristallfürst (21. Saison)",
+    "ja": "コンフリクトの勇者：シーズン21",
+    "fr": "Prince du conflit : saison 21",
+    "description": {
+      "en": "Achieve high ranking rewards in Crystalline Conflict Season Twenty-one.",
+      "de": "Die 21. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン21にて、ランキングで上位に入賞する",
+      "fr": "Terminer la saison 21 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 854
+  },
+  "3934": {
+    "id": 3934,
+    "icon": "/i/000000/000210.png",
+    "patch": 1,
+    "en": "Ranked and Filed: Season Twenty-one",
+    "de": "Kristallkämpfer (21. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン21",
+    "fr": "As du conflit : saison 21",
+    "description": {
+      "en": "Achieve ranked rewards in Crystalline Conflict Season Twenty-one.",
+      "de": "Die 21. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン21にて、ランキングで入賞する",
+      "fr": "Terminer la saison 21 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 855
+  },
+  "3935": {
+    "id": 3935,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3936": {
+    "id": 3936,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3937": {
+    "id": 3937,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3938": {
+    "id": 3938,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3939": {
+    "id": 3939,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3940": {
+    "id": 3940,
+    "icon": "/i/026000/026002.png",
+    "patch": 1,
+    "en": "On the Other Side",
+    "de": "Unsere Tür steht dir immer offen",
+    "ja": "誰かが待っている",
+    "fr": "Notre porte vous sera toujours ouverte",
+    "description": {
+      "en": "Complete the quest “Distant Promises.”",
+      "de": "Den Auftrag „Ferne Versprechen“ abgeschlossen.",
+      "ja": "クエスト「遠い約束」をコンプリートする",
+      "fr": "Accomplir la quête “Promesses lointaines”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3941": {
+    "id": 3941,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3942": {
+    "id": 3942,
+    "icon": "/i/026000/026002.png",
+    "patch": 1,
+    "en": "Trail to the Heavens",
+    "de": "Der Weg in die Ferne",
+    "ja": "彼方に至る路",
+    "fr": "Le chemin vers le lointain",
+    "description": {
+      "en": "Complete the main scenario quest “Trail to the Heavens.”",
+      "de": "Den Auftrag „Der Weg in die Ferne“ abgeschlossen.",
+      "ja": "クエスト「彼方に至る路」をコンプリートする",
+      "fr": "Accomplir la quête “Le chemin vers le lointain”."
+    },
+    "item": 0,
+    "title": 856
+  },
+  "3943": {
+    "id": 3943,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3944": {
+    "id": 3944,
+    "icon": "/i/026000/026038.png",
+    "patch": 1,
+    "en": "On the Wing",
+    "de": "Geflügelter Heldenmut",
+    "ja": "眩き白翼の英雄",
+    "fr": "Blanches et dorées",
+    "description": {
+      "en": "Complete the quest “The Wing Spirit Cometh.”",
+      "de": "Den Auftrag „Die Legende vom Geflügelten Geist“ abgeschlossen.",
+      "ja": "ウィング・オブ・レガシーを入手する",
+      "fr": "Obtenir les ailes de l'héritage."
+    },
+    "item": 0,
+    "title": 858
+  },
+  "3945": {
+    "id": 3945,
+    "icon": "/i/056000/056959.png",
+    "patch": 1,
+    "en": "トモダチドコダ",
+    "de": "トモダチドコダ",
+    "ja": "トモダチドコダ",
+    "fr": "トモダチドコダ",
+    "description": {
+      "en": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
+      "de": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
+      "ja": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
+      "fr": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3946": {
+    "id": 3946,
+    "icon": "/i/026000/026104.png",
+    "patch": 1,
+    "en": "祝祭告げる鐘の音",
+    "de": "祝祭告げる鐘の音",
+    "ja": "祝祭告げる鐘の音",
+    "fr": "Traîneau et grelots",
+    "description": {
+      "en": "クエスト「星芒祭と子どものためのベル」をコンプリートする",
+      "de": "クエスト「星芒祭と子どものためのベル」をコンプリートする",
+      "ja": "クエスト「星芒祭と子どものためのベル」をコンプリートする",
+      "fr": "Accomplir la quête “Le tintement des étoiles”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3947": {
+    "id": 3947,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3948": {
+    "id": 3948,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3949": {
+    "id": 3949,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3950": {
+    "id": 3950,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3951": {
+    "id": 3951,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3952": {
+    "id": 3952,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3953": {
+    "id": 3953,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3954": {
+    "id": 3954,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3955": {
+    "id": 3955,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3956": {
+    "id": 3956,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3957": {
+    "id": 3957,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3958": {
+    "id": 3958,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3959": {
+    "id": 3959,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3960": {
+    "id": 3960,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3961": {
+    "id": 3961,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3962": {
+    "id": 3962,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3963": {
+    "id": 3963,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3964": {
+    "id": 3964,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3965": {
+    "id": 3965,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3966": {
+    "id": 3966,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3967": {
+    "id": 3967,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3968": {
+    "id": 3968,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3969": {
+    "id": 3969,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3970": {
+    "id": 3970,
+    "icon": "/i/001000/001116.png",
+    "patch": 1,
+    "en": "Denizens of Nowhere",
+    "de": "Meisterfischer der Einsamen Insel",
+    "ja": "名もなき島の魚拓王",
+    "fr": "Ichtyogrammiste de l'île sans nom",
+    "description": {
+      "en": "Catch every type of fish near the unnamed island when a spectral current is not present.",
+      "de": "In den Gewässern der Einsamen Insel alle Fischarten gefangen, die außerhalb des Wetterphänomens der Phantomströmung gefangen werden können.",
+      "ja": "名もなき島で天候が幻海流ではない時に釣れる魚を、全種類釣り上げる",
+      "fr": "Pêcher un poisson de chaque espèce au large de l'île sans nom, sauf ceux apparaissant dans les courants spectraux."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3971": {
+    "id": 3971,
+    "icon": "/i/001000/001116.png",
+    "patch": 1,
+    "en": "Denizens of Thavnair Margin",
+    "de": "Meisterfischer von Thavnair",
+    "ja": "サベネア島沖合の魚拓王",
+    "fr": "Ichtyogrammiste de Thavnair",
+    "description": {
+      "en": "Catch every type of fish in Thavnair Margin when a spectral current is not present.",
+      "de": "In den Gewässern von Thavnair alle Fischarten gefangen, die außerhalb des Wetterphänomens der Phantomströmung gefangen werden können.",
+      "ja": "サベネア島沖合で天候が幻海流ではない時に釣れる魚を、全種類釣り上げる",
+      "fr": "Pêcher un poisson de chaque espèce au large de Thavnair, sauf ceux apparaissant dans les courants spectraux."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3972": {
+    "id": 3972,
+    "icon": "/i/001000/001116.png",
+    "patch": 1,
+    "en": "Specters of Nowhere",
+    "de": "Phantomfischer der Einsamen Insel",
+    "ja": "名もなき島の幻海王",
+    "fr": "Spectre de l'île sans nom",
+    "description": {
+      "en": "Catch every type of fish near the unnamed island when a spectral current is present.",
+      "de": "In den Gewässern der Einsamen Insel alle Fischarten gefangen, die während des Wetterphänomens der Phantomströmung gefangen werden können.",
+      "ja": "名もなき島で天候が幻海流の時に釣れる魚を、全種類釣り上げる",
+      "fr": "Pêcher un poisson de chaque espèce apparaissant dans les courants spectraux au large de l'île sans nom."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3973": {
+    "id": 3973,
+    "icon": "/i/001000/001116.png",
+    "patch": 1,
+    "en": "Specters of Thavnair Margin",
+    "de": "Phantomfischer von Thavnair",
+    "ja": "サベネア島沖合の幻海王",
+    "fr": "Spectre de Thavnair",
+    "description": {
+      "en": "Catch every type of fish in Thavnair Margin when a spectral current is present.",
+      "de": "In den Gewässern von Thavnair alle Fischarten gefangen, die während des Wetterphänomens der Phantomströmung gefangen werden können.",
+      "ja": "サベネア島沖合で天候が幻海流の時に釣れる魚を、全種類釣り上げる",
+      "fr": "Pêcher un poisson de chaque espèce apparaissant dans les courants spectraux au large de Thavnair."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3974": {
+    "id": 3974,
+    "icon": "/i/001000/001138.png",
+    "patch": 1,
+    "en": "Near, Far, Wherever Fish Are IV",
+    "de": "Ozeanfischer IV",
+    "ja": "ビッグオーシャンフィッシャー：ランク4",
+    "fr": "Ratisseur des hautes mers IV",
+    "description": {
+      "en": "Score at least 20,000 points during a single ocean fishing voyage on the Ruby route.",
+      "de": "20.000 Punkte auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
+      "ja": "オーシャンフィッシング（遠洋）で、1回の航海で20,000ポイント以上の合計釣果点を記録する",
+      "fr": "Atteindre un score de 20 000 points au cours d'une expédition de pêche en mer (haute mer)."
+    },
+    "item": 0,
+    "title": 859
+  },
+  "3975": {
+    "id": 3975,
+    "icon": "/i/028000/028147.png",
+    "patch": 1,
+    "en": "What Even Is That",
+    "de": "Angel-Archäologe",
+    "ja": "古生物学者",
+    "fr": "Archéologie sous-marine",
+    "description": {
+      "en": "Earn the “Prehistoric Professionals” bonus during an ocean fishing voyage on the Ruby route.",
+      "de": "Den Bonus „Angel-Archäologen“ auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
+      "ja": "オーシャンフィッシング（遠洋）にて、古生物学者を達成する",
+      "fr": "Obtenir le bonus Archéologie sous-marine au cours d'une expédition de pêche en mer (haute mer)."
+    },
+    "item": 0,
+    "title": 860
+  },
+  "3976": {
+    "id": 3976,
+    "icon": "/i/028000/028145.png",
+    "patch": 1,
+    "en": "What Did Stomatopods Do to You?",
+    "de": "Krebskenner",
+    "ja": "シャコパンチャー",
+    "fr": "Banc de crevettes-mantes",
+    "description": {
+      "en": "Earn the “Time Waits for No Mantis” bonus during an ocean fishing voyage on the Ruby route.",
+      "de": "Den Bonus „Krebskenner“ auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
+      "ja": "オーシャンフィッシング（遠洋）にて、シャコパンチャーを達成する",
+      "fr": "Obtenir le bonus Banc de crevettes-mantes au cours d'une expédition de pêche en mer (haute mer)."
+    },
+    "item": 0,
+    "title": 861
+  },
+  "3977": {
+    "id": 3977,
+    "icon": "/i/001000/001001.png",
+    "patch": 1,
+    "en": "Mapping the Realm: The Clyteum",
+    "de": "Kartograph: Das Klyteum",
+    "ja": "クルティウス魔導工廠を踏破せし者",
+    "fr": "Cartographe du continent : Le Clyteum",
+    "description": {
+      "en": "Discover every location within the Clyteum.",
+      "de": "Alle Orte im Klyteum erkundet.",
+      "ja": "クルティウス魔導工廠（妖異侵攻）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du Clyteum."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3978": {
+    "id": 3978,
+    "icon": "/i/001000/001001.png",
+    "patch": 1,
+    "en": "Mapping the Realm: Windurst: The Third Walk",
+    "de": "Kartograph: Windurst: Die dritte Etappe",
+    "ja": "ウィンダス：ザ・サードウォークを踏破せし者",
+    "fr": "Cartographe du continent : Windurst - La troisième perambulation",
+    "description": {
+      "en": "Discover every location within Windurst: The Third Walk.",
+      "de": "Alle Orte in Windurst: Die dritte Etappe erkundet.",
+      "ja": "ウィンダス：ザ・サードウォークを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de Windurst - La troisième perambulation."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3979": {
+    "id": 3979,
+    "icon": "/i/000000/000317.png",
+    "patch": 1,
+    "en": "Nothing Out of Nothing",
+    "de": "Von nichts kommt nichts",
+    "ja": "虚無を無に還せし者",
+    "fr": "Que le néant retourne dans le néant",
+    "description": {
+      "en": "Defeat Enuo in the Unmaking (Extreme).",
+      "de": "Enuo in „Gok Tajaal - Enuo“ bezwungen.",
+      "ja": "極エヌオー討滅戦で、エヌオーを討伐する",
+      "fr": "Vaincre Énuo dans le défi “L'Anticréation (extrême)”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3980": {
+    "id": 3980,
+    "icon": "/i/064000/064875.png",
+    "patch": 1,
+    "en": "The Pursuit of Emptiness",
+    "de": "Windurst: Die dritte Etappe",
+    "ja": "ウィンダス：ザ・サードウォークを制覇せし者",
+    "fr": "Échos des promesses lointaines",
+    "description": {
+      "en": "Complete Windurst: The Third Walk.",
+      "de": "Windurst: Die dritte Etappe erfolgreich abgeschlossen.",
+      "ja": "ウィンダス：ザ・サードウォークを攻略する",
+      "fr": "Finir Windurst - La troisième perambulation."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3981": {
+    "id": 3981,
+    "icon": "/i/001000/001015.png",
+    "patch": 1,
+    "en": "I Found That: Miner IX",
+    "de": "Ich hab's gefunden: Minenarbeiter IX",
+    "ja": "手帳好きの採掘師：ランク9",
+    "fr": "Carnet de notes : mineur IX",
+    "description": {
+      "en": "Mine and record discovery of 280 unique items that can only be gathered as a miner.",
+      "de": "280 verschiedene Gegenstände als Minenarbeiter gesammelt und im Sammler-Notizbuch vermerkt.",
+      "ja": "採掘師でのみ採集可能アイテムのうち、280種類を採集し、採集手帳に印を付ける",
+      "fr": "Récolter 280 objets différents en tant que mineur et les avoir notés dans le carnet de récolte."
+    },
+    "item": 0,
+    "title": 862
+  },
+  "3982": {
+    "id": 3982,
+    "icon": "/i/001000/001065.png",
+    "patch": 1,
+    "en": "I Found That: Botanist IX",
+    "de": "Ich hab's gefunden: Gärtner IX",
+    "ja": "手帳好きの園芸師：ランク9",
+    "fr": "Carnet de notes : botaniste IX",
+    "description": {
+      "en": "Harvest and record discovery of 420 unique items that can only be gathered as a botanist.",
+      "de": "420 verschiedene Gegenstände als Gärtner gesammelt und im Sammler-Notizbuch vermerkt.",
+      "ja": "園芸師でのみ採集可能アイテムのうち、420種類を採集し、採集手帳に印を付ける",
+      "fr": "Récolter 420 objets différents en tant que botaniste et les avoir notés dans le carnet de récolte."
+    },
+    "item": 0,
+    "title": 863
+  },
+  "3983": {
+    "id": 3983,
+    "icon": "/i/001000/001104.png",
+    "patch": 1,
+    "en": "I Caught That IX",
+    "de": "Dicker Fang IX",
+    "ja": "手帳好きの漁師：ランク9",
+    "fr": "Carnet de notes : pêcheur IX",
+    "description": {
+      "en": "Catch and record discovery of 1,730 unique fish.",
+      "de": "1.730 verschiedene Fische gefangen und im Fischer-Notizbuch vermerkt.",
+      "ja": "漁師の採集可能アイテムのうち、1,730種類を採集し、釣り手帳に印を付ける",
+      "fr": "Pêcher 1 730 prises différentes et les avoir notées dans le carnet de pêche."
+    },
+    "item": 0,
+    "title": 864
+  },
+  "3984": {
+    "id": 3984,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3985": {
+    "id": 3985,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3986": {
+    "id": 3986,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3987": {
+    "id": 3987,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3988": {
+    "id": 3988,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3989": {
+    "id": 3989,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3990": {
+    "id": 3990,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3991": {
+    "id": 3991,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3992": {
+    "id": 3992,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3993": {
+    "id": 3993,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3994": {
+    "id": 3994,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3995": {
+    "id": 3995,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3996": {
+    "id": 3996,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3997": {
+    "id": 3997,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3998": {
+    "id": 3998,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3999": {
+    "id": 3999,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4000": {
+    "id": 4000,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4001": {
+    "id": 4001,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4002": {
+    "id": 4002,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4003": {
+    "id": 4003,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4004": {
+    "id": 4004,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4005": {
+    "id": 4005,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4006": {
+    "id": 4006,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4007": {
+    "id": 4007,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4008": {
+    "id": 4008,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4009": {
+    "id": 4009,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4010": {
+    "id": 4010,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4011": {
+    "id": 4011,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4012": {
+    "id": 4012,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4013": {
+    "id": 4013,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4014": {
+    "id": 4014,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4015": {
+    "id": 4015,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4016": {
+    "id": 4016,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4017": {
+    "id": 4017,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4018": {
+    "id": 4018,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4019": {
+    "id": 4019,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4020": {
+    "id": 4020,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4021": {
+    "id": 4021,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4022": {
+    "id": 4022,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4023": {
+    "id": 4023,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4024": {
+    "id": 4024,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4025": {
+    "id": 4025,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4026": {
+    "id": 4026,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4027": {
+    "id": 4027,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4028": {
+    "id": 4028,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4029": {
+    "id": 4029,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4030": {
+    "id": 4030,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4031": {
+    "id": 4031,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4032": {
+    "id": 4032,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4033": {
+    "id": 4033,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4034": {
+    "id": 4034,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4035": {
+    "id": 4035,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4036": {
+    "id": 4036,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4037": {
+    "id": 4037,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4038": {
+    "id": 4038,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4039": {
+    "id": 4039,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4040": {
+    "id": 4040,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4041": {
+    "id": 4041,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4042": {
+    "id": 4042,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4043": {
+    "id": 4043,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4044": {
+    "id": 4044,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4045": {
+    "id": 4045,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4046": {
+    "id": 4046,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4047": {
+    "id": 4047,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4048": {
+    "id": 4048,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4049": {
+    "id": 4049,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4050": {
+    "id": 4050,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4051": {
+    "id": 4051,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4052": {
+    "id": 4052,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4053": {
+    "id": 4053,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4054": {
+    "id": 4054,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4055": {
+    "id": 4055,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4056": {
+    "id": 4056,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4057": {
+    "id": 4057,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4058": {
+    "id": 4058,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4059": {
+    "id": 4059,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4060": {
+    "id": 4060,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4061": {
+    "id": 4061,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4062": {
+    "id": 4062,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4063": {
+    "id": 4063,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4064": {
+    "id": 4064,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4065": {
+    "id": 4065,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4066": {
+    "id": 4066,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4067": {
+    "id": 4067,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4068": {
+    "id": 4068,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4069": {
+    "id": 4069,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4070": {
+    "id": 4070,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4071": {
+    "id": 4071,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4072": {
+    "id": 4072,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4073": {
+    "id": 4073,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4074": {
+    "id": 4074,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4075": {
+    "id": 4075,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4076": {
+    "id": 4076,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "4077": {
+    "id": 4077,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
   }
 }

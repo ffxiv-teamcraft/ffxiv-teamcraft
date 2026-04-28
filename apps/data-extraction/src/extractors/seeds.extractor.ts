@@ -37,7 +37,7 @@ export class SeedsExtractor extends AbstractExtractor {
           entries[+entry.ApiID_plant] = {
             seedItemId: +entry.ApiID_seed,
             duration: +entry.Duration <= 10 ? +entry.Duration * 24 : +entry.Duration,
-            crossBreeds: crosses.sort((a, b) => {
+            crossBreeds: (crosses || []).sort((a, b) => {
               return this.getScore(a) - this.getScore(b);
             }).map(cross => {
               return {

@@ -3086,7 +3086,7 @@
     "de": "Kaktorsenke",
     "fr": "La Vallée des Pampas",
     "description": {
-      "en": "At the behest of Zeycihan, professor of archeology at the Studium, you are tasked with venturing into a valley swarming with sabotenders. In the furthest reaches of this gorge of succulents lie the remnants of an ancient structure believed to be of Yok Huy origin, but if you are to discover what mysteries dwell within, you must first survive the innumerous needles of the valley's denizens...",
+      "en": "At the behest of Zeycihan, professor of archaeology at the Studium, you are tasked with venturing into a valley swarming with sabotenders. In the furthest reaches of this gorge of succulents lie the remnants of an ancient structure believed to be of Yok Huy origin, but if you are to discover what mysteries dwell within, you must first survive the innumerous needles of the valley's denizens...",
       "ja": "トラル各地で発掘を行うシャーレアン魔法大学の考古学者、ゼイキハンから紹介を受けた次なる冒険の舞台、それはシャーローニ荒野の外れにあるというサボテンダーバレー。文字通り、サボテンが群生する渓谷の奥には、かつてサカ・トラルに渡ったヨカフイ族のものと思われる、古き遺構があるらしい。<br>先行調査より撤退したというゼイキハンの足取りも辿りつつ、凶暴なサボテンダーたちの針を掻い潜り、歴史の不思議が眠り続ける遺跡最深部へ到達せよ。",
       "de": "Zeycihan ist ein sharlayanischer Archäologe, dessen Studien ihn nach Tural verschlagen haben. Nun liegt sein ganzer Fokus auf der Kaktorsenke, ein Tal am äußersten Rand von Shaaloani. Inmitten der Vielzahl von Kaktoren unterschiedlichster Art ragen uralte Ruinen in den Himmel, die den einstigen Herren Turals gehört haben sollen: den Yok Huy. Wandle auf Zeycihans Spuren, bahne dir einen Weg durch die abertausend Nadeln und lüfte das Geheimnis, das unter dem Staub der Jahrhunderte schlummert ...",
       "fr": "Zeycihan, professeur d'archéologie à l'académie de magie de Sharlayan, a été chargé par l'ancien Aurarque de la Raison d'explorer le Tural à la recherche de vestiges anciens. Il a découvert dans un des recoins de la Shaaloani une vallée abritant des ruines inconnues. Cependant, l'endroit est envahi par les pampas en tout genre et vous êtes la seule personne suffisamment forte pour arpenter les lieux et peut-être percer leurs mystères."
@@ -3263,6 +3263,37 @@
     "contentText": [
       43107,
       43100
+    ]
+  },
+  "104": {
+    "id": 104,
+    "en": "the Clyteum",
+    "ja": "妖異侵攻 クルティウス魔導工廠",
+    "de": "Das Klyteum",
+    "fr": "Le Clyteum",
+    "description": {
+      "en": "The Clyteum was once the imperial army's largest manufactory, supplying munitions and war machines to sustain Garlemald's relentless territorial expansion. Where its cavernous halls once rang with the clamor of industrial production, they now resound with the shrieks of countless voidsent who emerge from fissures without cease. Jullus and the Garlean community hasten to contain the threat, but will need all the help they can get to secure victory...",
+      "ja": "今や廃墟となって久しいガレマルドの北部には、かつて帝国最大級の兵器工廠が存在していた。その名はクルティウス魔導工廠。ガレマール帝国の版図拡大を支えた、数多の飛空戦艦を製造した重要拠点である。その周辺に、突如として多数のヴォイドクラックが出現。大量の妖異が湧き出しているとの情報がもたらされた。迎撃に向かったガレアン・コミュニティを支援するため、瓦礫の街並みを抜けて突き進め。",
+      "de": "Früher stellte das Klyteum ausschließlich Munition, später zusätzlich allerhand Kriegswerkzeug für das Garleische Kaiserreich her. Statt dem Hämmern und Stampfen der Maschinen dröhnen heute die Stimmen unzähliger Nichtsgesandter durch die Hallen, die unaufhörlich durch den Riss drängen. Jullus und seine Gemeinschaft bemühen sich, die Bedrohung einzudämmen, doch sie benötigen jede nur erdenkliche Hilfe ...",
+      "fr": "La région nord de l'ancienne Garlemald, aujourd'hui laissée à l'abandon, abrite l'une des plus grandes usines d'armement de l'Empire : le Clyteum. C'est ici qu'ont été conçus de nombreux aéronefs impériaux, ceux-là même ayant autrefois permis l'expansion du territoire. Des rapports alarmants ont indiqué que plusieurs fissures du néant s'étaient ouvertes à l'intérieur du bâtiment, laissant des hordes de monstres y déferler. Frayez-vous un chemin à travers les décombres de la cité en ruine, et prêtez main-forte à la communauté garlemaldaise pour repousser l'invasion."
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112657.png",
+    "contentType": 2,
+    "levelReq": 100,
+    "ilvlReq": 750,
+    "sync": 100,
+    "exp": 0,
+    "map": 1198,
+    "contentText": [
+      44523,
+      44500
     ]
   },
   "5001": {
@@ -9048,7 +9079,7 @@
     "description": {
       "en": "The void─a world without death, where the strong devour the weak... Upon hearing your tales from that lightless place, the wandering minstrel cannot help but wonder: what if Barbariccia had devoured more of the great wyrm's aether? Having mused thus, the man then calls upon his not inconsiderable dramatic flair to weave a new verse, one which imagines a vastly empowered archfiend. The breezy melody sets your mind adrift upon shadowed winds, where you relive the stormy encounter, now stormier still...",
       "ja": "異邦の詩人は謳う。死なき異界で、ただひたすらに力を求め、互いに喰らい合う妖異たちの終わりなき日々を。その果てに、結晶へと封じられた魂に刻まれるは、悔恨の叫声か、それとも安堵の溜息か。もし、天竜のエーテルを、さらに多く喰らうことができていたのなら、風の妖異はいかなる存在に昇華し、いかなる結末を迎えたのか。異界の風に思いを馳せながら謳われた歌を聴き、冒険者は今、風のバルバリシアとの戦いを追体験する。",
-      "de": "Das Nichts ist grausam wie faszinierend. Ein Ort voller Alpträume, den selbst der Tod meidet. Und doch ist er reich an faszinierenden Schicksalen, die den Fahrenden Sänger zu einem Gedankenspiel inspirieren: Was wäre gewesen, hätte Barbarizia den ganzen Äther des Drachen verschlungen? Dieser düsteren Idee entspringt ein blutiger Vers und eine noch weitaus brutalere Barbarizia, als du sie erleben durftest. Die Vorstellung packt auch deine Gedanken und trägt dich zurück an den Ort des heulenden Sturms und der peitschenden Winde&nbsp;...",
+      "de": "Das Nichts ist grausam wie faszinierend. Ein Ort voller Albträume, den selbst der Tod meidet. Und doch ist er reich an faszinierenden Schicksalen, die den Fahrenden Sänger zu einem Gedankenspiel inspirieren: Was wäre gewesen, hätte Barbarizia den ganzen Äther des Drachen verschlungen? Dieser düsteren Idee entspringt ein blutiger Vers und eine noch weitaus brutalere Barbarizia, als du sie erleben durftest. Die Vorstellung packt auch deine Gedanken und trägt dich zurück an den Ort des heulenden Sturms und der peitschenden Winde&nbsp;...",
       "fr": "Vos péripéties dans le treizième reflet ont fourni une inspiration nouvelle au ménestrel errant&nbsp;: dans un monde uniquement régi par la loi du plus fort, où les habitants s'entre-dévorent sans cesse, que serait-il advenu si Barbariccia avait absorbé davantage d'éther de dragon ancien avant votre duel&nbsp;? Nul doute que la puissance de ses bourrasques et autres rafales en aurait été grandement augmentée... Saurez-vous y faire face sans sourciller&nbsp;?"
     },
     "members": {
@@ -9752,6 +9783,68 @@
     "contentText": [
       43414,
       43400
+    ]
+  },
+  "20108": {
+    "id": 20108,
+    "en": "the Unmaking",
+    "ja": "エヌオー討滅戦",
+    "de": "Zel Tajaal - Enuo",
+    "fr": "L'Anticréation",
+    "description": {
+      "en": "Borne by the key on a gleaming golden path, you emerge onto the red moon into the midst of carnage. Your faithful allies of the Thirteenth, Zero and Golbez, battle tirelessly to drive back hordes of voidsent, all the while watched by a sinister form in the dark. Wielding the boundless power of the void, the dread sovereign Enuo has risen from depths unfathomable, intent on reducing all existence to still, silent nothingness. Will their bleak vision of a world unmade be realized? Or will life and Light prevail?",
+      "ja": "暗く淀んだ大海の底に、其れは潜むという。終わりなき世界に終わりをもたらすために。彼の者の名は「エヌオー」、すべてを「無」に還す者なり……。<br>原初世界に大量発生した妖異の撃退に追われる冒険者は、突如発動した「世界を繋ぐ力」の鍵によって次元を超え、今一度、ヴォイドの赤き月に降り立つ。再会した懐かしい顔ぶれと力を合わせ、両世界にまたがる騒乱の根源、大妖異エヌオーを鎮めるのだ！",
+      "de": "Aus den Tiefen des trüben Ozeans emporgestiegen kommt der Nichtsgesandte Enuo&nbsp;... Nachdem der Schlüssel unerwartet aktiviert wurde, findest du dich auf dem roten Mond wieder. Zero und Golbez sind dort bereits im Kampf mit den Nichtswesen, doch der mächtige Enuo erfordert deine Aufmerksamkeit.",
+      "fr": "Une entité surpuissante, jusqu'ici tapie dans les sombres abysses du treizième reflet, a refait surface... Son nom est “Énuo”, celui qui gouverne le néant, et il souhaite mettre un terme à ce monde sans fin. Cherchant un moyen d'endiguer l'invasion de créatures du néant qui frappe votre monde, vous voyagez jusqu'au treizième reflet grâce au pouvoir de la clef, et vous retrouvez face au souverain impitoyable. Vos retrouvailles inattendues avec Zero et Golbez vous aideront-elles à triompher de ce terrible adversaire ?"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112659.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 755,
+    "sync": 100,
+    "exp": 0,
+    "map": 1201,
+    "contentText": [
+      45325,
+      45300
+    ]
+  },
+  "20109": {
+    "id": 20109,
+    "en": "the Unmaking (Extreme)",
+    "ja": "極エヌオー討滅戦",
+    "de": "Gok Tajaal - Enuo",
+    "fr": "L'Anticréation (extrême)",
+    "description": {
+      "en": "The wandering minstrel strums a somber dirge, depicting a mighty denizen of that world without Light, struck down ere they could render all unto naught. But what if Enuo had emerged from the abyssal ocean stronger still? Would you and your comrades have triumphed over the fell sovereign, or been consigned to depths unending? Steeped in the leaden darkness of the void, each note of the minstrel's song brings you closer to that fateful encounter...",
+      "ja": "異邦の詩人は謳う。「無」の力を操りし、光なき世界の大妖異のことを。強大なる存在との戦いにおいて、光の戦士は友たる存在の助けを得て窮地を脱した。ならば、もしもそれがなかったならば？　すべてが無に呑まれゆく世界で、光の戦士は今、エヌオーとの戦いを追体験する。",
+      "de": "Der Fahrende Sänger besingt den großen Unheilsbringer der lichtlosen Welt, der die Macht des Nichts beherrscht. Im Kampf gegen dieses mächtige Wesen konnte sich der Krieger des Lichts dank der Hilfe von Verbündeten aus der Bedrängnis befreien. Was wäre jedoch gewesen, wenn es diese Hilfe nicht gegeben hätte? In einer Welt, die vom Nichts verschlungen wird, durchlebt der Krieger des Lichts nun erneut den Kampf gegen Enuo.",
+      "fr": "Le ménestrel errant est captivé par votre récit épique du combat contre Énuo. Vous aviez remporté cette âpre bataille grâce à vos amis, dont le soutien providentiel vous a permis d'échapper à la prison de Ténèbres dans laquelle le souverain maléfique vous avait enfermée. Mais le poète à l'imagination débordante ne peut s'empêcher d'envisager le pire : et si vous aviez dû combattre seule ? Auriez-vous été engloutie à tout jamais dans le néant éternel ? Voici l'occasion de le vérifier..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112660.png",
+    "contentType": 4,
+    "levelReq": 100,
+    "ilvlReq": 770,
+    "sync": 100,
+    "exp": 0,
+    "map": 1201,
+    "contentText": [
+      45325,
+      45300
     ]
   },
   "25001": {
@@ -14992,6 +15085,37 @@
       43900
     ]
   },
+  "30163": {
+    "id": 30163,
+    "en": "Windurst: The Third Walk",
+    "ja": "ウィンダス：ザ・サードウォーク",
+    "de": "Windurst: Die dritte Etappe",
+    "fr": "Windurst - La troisième perambulation",
+    "description": {
+      "en": "Yet another missive from Sareel Ja finds its way into your hands bearing grim tidings. There is to be a coronation for his new king, meaning this may be your last opportunity to thwart his schemes. With Prishe gravely injured, and Bakool Ja Ja assisting the Landsguard, it falls to you and Alxaal to brave the unknown once more. What new dangers await, and what will become of your echo companions should you prove victorious?",
+      "ja": "プリッシュの身体に異変が起こる中で、冒険者たちの下へサレージャからの招待状が届く。その誘いを断れば、「エコーズの残滓」によって、トラルに生きる罪なき者たちの血が流れることだろう。<br>ならば、やるべきことはただひとつ。幻影によって紡がれた異界ヴァナ・ディールの一角へと向かい、記憶を利用された強者の残滓たちを退け、突き進むのだ。偽りの「真なる王」の戴冠を阻むために……！",
+      "de": "Während Prishes Gesundheitszustand euch weiterhin Sorgen bereitet, erreicht euch abermals ein Schreiben von Sareel Ja, in dem er verkündet, dass sein Traum kurz vor der Verwirklichung stehe und ein neuer, allmächtiger Herrscher gefunden zu sein scheint. Er lädt euch zur feierlichen Krönung ein, was bedeutet, dass dies womöglich eure letzte Gelegenheit ist, seine Pläne zu durchkreuzen. Da Prishe schwer angeschlagen ist und Bakool Ja Ja der Landsgarde zur Seite steht, liegt es an dir und Alxaal, euch ins Unbekannte zu wagen und Sareel Ja ein für allemal aufzuhalten. Doch auf eurem Weg in die entscheidende Schlacht wird eure Entschlossenheit zunehmend von einer Sorge überschattet: Was wird aus Prishe und Alxaal, wenn ihr euer Ziel erreicht habt?",
+      "fr": "Tandis que la condition physique de Prishe continue de faire planer un voile d'inquiétude sur les esprits, Sareel Ja sort enfin de sa cachette pour vous envoyer une troisième invitation. Hélas, son opiniâtreté vous force d'y répondre favorablement, sans quoi les Échos du mage boonewa feront couler le sang de nombreux innocents aux quatre coins du Tural. Désormais, votre seul et unique objectif est d'exterminer le résidu de créatures hostiles dans le Vana'diel recréé par les sorts d'illusion des Mamool Ja, afin d'empêcher le couronnement d'un Aurarque imposteur&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112661.png",
+    "contentType": 5,
+    "levelReq": 100,
+    "ilvlReq": 755,
+    "sync": 100,
+    "exp": 0,
+    "map": 1192,
+    "contentText": [
+      44732,
+      44600
+    ]
+  },
   "35001": {
     "id": 35001,
     "en": "All's Well That Starts Well",
@@ -16617,6 +16741,87 @@
     "sync": 0,
     "exp": 0,
     "map": 1060
+  },
+  "40045": {
+    "id": 40045,
+    "en": "Archeia Harmonias",
+    "ja": "ハルモニア戦争図書館",
+    "de": "Archeia Harmonias",
+    "fr": "La Bibliothèque Harmonia",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112471.png",
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 1229
+  },
+  "40046": {
+    "id": 40046,
+    "en": "Archeia Harmonias",
+    "ja": "ハルモニア戦争図書館",
+    "de": "Archeia Harmonias",
+    "fr": "La Bibliothèque Harmonia",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?<br><br>※Match results will affect Rising Stars and Crystal Credit.<br>※Players with comparable PvP tiers and risers will be matched with one another.<br>※Parties will be sorted by role, tier, riser, and credit to ensure relatively equal averages.",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！<br><br>※試合の勝敗で勝ち星やクリスタルポイントが変動します。<br>※対戦相手とのマッチングは階級や階位が近い相手と行われます。<br>※パーティ同士のロール構成、階級、階位、クリスタルポイントが近くなるように、メンバー分けが行われます。",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!<br><br>※ Siegessterne und Kristallpunkte werden je nach Ausgang der Partie bestimmt.<br>※ Es werden Gegner mit ähnlichem Rang und Kampfklasse vermittelt.<br>※ Gruppen werden nach ausgewogener Rollenverteilung und ähnlichem Rang, Kampfklasse und Kristallpunkten gebildet.",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!<br><br>* Vos étoiles de victoire et vos points de cristal évolueront en fonction du résultat de la partie.<br>* Vos adversaires seront sélectionnés parmi des joueurs d'échelon et de palier proches.<br>* Les joueurs seront répartis en fonction de leur rôle, échelon, palier et points de cristal de façon à obtenir des équipes équilibrées."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112472.png",
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 1229
+  },
+  "40047": {
+    "id": 40047,
+    "en": "Crystalline Conflict (Custom Match - Archeia Harmonias)",
+    "ja": "クリスタルコンフリクト(ハルモニア戦争図書館：カスタムマッチ)",
+    "de": "Crystalline Conflict: Archeia Harmonias (Schaukampf)",
+    "fr": "Crys. Conflict (partie perso. - La Bibliothèque Harmonia)",
+    "description": {
+      "en": "The pen is mightier than the sword, or so the adage goes, but the written word shall bear silent witness as teams Astra and Umbra clash upon the platforms of this vast war library. Newcome pups and Wolves' Den regulars alike must deftly overcome the obstacle of the aetherometer to triumph amidst the tomes.<br><br> At the end of the crystal line, who will stand victorious? Will it be you?",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112669.png",
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 1229
   },
   "41001": {
     "id": 41001,
@@ -18928,7 +19133,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -18955,7 +19160,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -18982,7 +19187,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19009,7 +19214,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19036,7 +19241,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19063,7 +19268,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19090,7 +19295,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19117,7 +19322,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19144,7 +19349,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19171,7 +19376,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19198,7 +19403,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19225,7 +19430,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24940,
+      24953,
       24900
     ]
   },
@@ -19252,7 +19457,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      24953,
       24900
     ]
   },
@@ -19279,7 +19484,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      24953,
       24900
     ]
   },
@@ -19306,7 +19511,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      24953,
       24900
     ]
   },
@@ -19333,7 +19538,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      24953,
       24900
     ]
   },
@@ -19360,7 +19565,7 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      24953,
       24900
     ]
   },
@@ -19387,21 +19592,99 @@
     "exp": 0,
     "map": 604,
     "contentText": [
-      24948,
+      24953,
       24900
     ]
   },
-  "64012": {
-    "id": 64012,
-    "en": "Tsukuyomi's Pain (Unreal)",
-    "ja": "幻ツクヨミ討滅戦",
-    "de": "Traumprüfung - Tsukuyomi",
-    "fr": "Castrum Fluminis (irréel)",
+  "63018": {
+    "id": 63018,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24953,
+      24900
+    ]
+  },
+  "63019": {
+    "id": 63019,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24953,
+      24900
+    ]
+  },
+  "63020": {
+    "id": 63020,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24953,
+      24900
+    ]
+  },
+  "64013": {
+    "id": 64013,
+    "en": "Shinryu's Domain (Unreal)",
+    "ja": "幻神龍討滅戦",
+    "de": "Traumprüfung - Heldenlied von Shinryu",
+    "fr": "Le domaine de Shinryu (irréel)",
     "description": {
-      "en": "The faux commander is in the mood for a tale that evokes intense pathos, which prompts you to recall the torment that defined Yotsuyu's life. As your memories of the tragic figure unfold in your mind's eye, you find yourself confronting her once more as the primal Tsukuyomi, majestic as the moon and inevitable as the night...",
-      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは夜神ツクヨミとの死闘。それは白銅鏡より現れたる月の神か、復讐のために産み落とされた宵闇の化身か。いま幻の激闘が語られる。",
-      "de": "Der eloquente Sotan teilt eine herzzerreißende Erzählung mit dir, die es dem Geschichtenliebhaber in jüngster Zeit angetan hat. Die Tragik in seinen Worten lässt unwillkürlich Bilder von Yotsuyu und deiner finalen Konfrontation mit dem Primae Tsukuyomi in deinem Kopf aufleben. Ehe du dich versiehst, stehst du erneut in Castrum Fluminis und spürst den hasserfüllten Blick der Herrscherin der Nacht und des Mondes auf dir&nbsp;...",
-      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Tsukuyomi, la Maîtresse de la lune et de la nuit, vous revient en mémoire... Terrassez-la afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
+      "en": "The faux commander craves a tale of fierce battle raging above the clouds, putting you in mind of your clash with the mighty Shinryu. The memory transports you to the dragon's lofty domain, and a struggle that leads to only two possible fates: your opponent's demise, or your bloody remains strewn across the heavens.",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは神龍との天駆ける戦い。戦鬼に引導を渡すが先か、空に命散らすが先か。いま幻の激闘が語られる。",
+      "de": "Wenn Sotan zum Tee lädt, darf eine gute Geschichte nicht fehlen. Diesmal entführt der galante Gastgeber in luftige Höhen, wo er von der Schlacht gegen den schaurigen Shinryu erzählt. Über den Wolken wird sich nun abermals entscheiden, wer in diesem titanischen Kräftemessen als Sieger hervorgeht. Gelingt es dir, den göttlichen Drachen niederzustrecken oder wirst du, hoch oben in den Himmeln, dein blutiges Ende finden?",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Shinryu, le dragon divin, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
@@ -19410,16 +19693,16 @@
       "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112650.png",
+    "banner": "/i/112000/112670.png",
     "contentType": 4,
     "levelReq": 100,
     "ilvlReq": 690,
     "sync": 100,
     "exp": 0,
-    "map": 476,
+    "map": 435,
     "contentText": [
-      19533,
-      19500
+      16905,
+      16900
     ]
   }
 }

@@ -1646,5 +1646,69 @@
       "de": "Schaumsturm",
       "fr": "Tempête de bulles"
     }
+  },
+  "207": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "208": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "209": {
+    "name": {
+      "en": "Clear Skies",
+      "ja": "快晴",
+      "de": "Klar",
+      "fr": "Dégagé"
+    }
+  },
+  "210": {
+    "name": {
+      "en": "Showers",
+      "ja": "暴雨",
+      "de": "Wolkenbruch",
+      "fr": "Pluie torrentielle"
+    }
+  },
+  "211": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "212": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "213": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "214": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
   }
 }

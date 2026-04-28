@@ -29265,9 +29265,9 @@
   },
   "3659": {
     "en": "Observing the Occult",
-    "ja": "三日月島の記録員",
+    "ja": "三日月島南部の記録員",
     "de": "Kreszenter Chronist",
-    "fr": "Archiviste du croissant",
+    "fr": "Archiviste méridional",
     "icon": "/i/026000/026184.png",
     "itemReward": 0
   },
@@ -29371,7 +29371,7 @@
     "en": "Magic Is the Best Medicine I",
     "ja": "三角海域の船医：ランク1",
     "de": "Kreszentias Kerub I",
-    "fr": "Défibrilateur du croissant I",
+    "fr": "Défibrilateur méridional I",
     "icon": "/i/064000/064556.png",
     "itemReward": 0
   },
@@ -29379,7 +29379,7 @@
     "en": "Magic Is the Best Medicine II",
     "ja": "三角海域の船医：ランク2",
     "de": "Kreszentias Kerub II",
-    "fr": "Défibrilateur du croissant II",
+    "fr": "Défibrilateur méridional II",
     "icon": "/i/064000/064556.png",
     "itemReward": 0
   },
@@ -29387,7 +29387,7 @@
     "en": "Magic Is the Best Medicine III",
     "ja": "三角海域の船医：ランク3",
     "de": "Kreszentias Kerub III",
-    "fr": "Défibrilateur du croissant III",
+    "fr": "Défibrilateur méridional III",
     "icon": "/i/064000/064556.png",
     "itemReward": 0
   },
@@ -29704,7 +29704,7 @@
     "itemReward": 0
   },
   "3714": {
-    "en": "Rocket Tanning I ",
+    "en": "Rocket Tanning I",
     "ja": "星渡る革細工師：ランク1",
     "de": "Gerber der unendlichen Weiten I",
     "fr": "Tanneur du cosmos I",
@@ -30688,43 +30688,43 @@
     "itemReward": 0
   },
   "3837": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rhyme & Region 2026",
+    "ja": "リージョンチャンピオン：CCRC2026",
+    "de": "Regionalmatador 2026",
+    "fr": "Belligérant régional 2026",
+    "icon": "/i/062000/062968.png",
     "itemReward": 0
   },
   "3838": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rhyme & Region 2026",
+    "ja": "リージョンチャンピオン：CCRC2026",
+    "de": "Regionalmatador 2026",
+    "fr": "Belligérant régional 2026",
+    "icon": "/i/062000/062968.png",
     "itemReward": 0
   },
   "3839": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rhyme & Region 2026",
+    "ja": "リージョンチャンピオン：CCRC2026",
+    "de": "Regionalmatador 2026",
+    "fr": "Belligérant régional 2026",
+    "icon": "/i/062000/062968.png",
     "itemReward": 0
   },
   "3840": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rhyme & Region 2026 - Finalist",
+    "ja": "リージョンファイナリスト：CCRC2026",
+    "de": "Regionalmatador 2026 - Finalist",
+    "fr": "Belligérant régional 2026 : Finaliste",
+    "icon": "/i/062000/062967.png",
     "itemReward": 0
   },
   "3841": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rhyme & Region 2026 - Placed",
+    "ja": "リージョンランカー：CCRC2026",
+    "de": "Regionalmatador 2026 - Vorentscheidungen",
+    "fr": "Belligérant régional 2026 : Classé",
+    "icon": "/i/062000/062966.png",
     "itemReward": 0
   },
   "3842": {
@@ -30976,19 +30976,19 @@
     "itemReward": 0
   },
   "3873": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Golden Globe-trotter",
+    "ja": "キュキュッと保護活動にも貢献を",
+    "de": "Ein Obulus für die Otter",
+    "fr": "Loutrement vôtre",
+    "icon": "/i/058000/058051.png",
     "itemReward": 0
   },
   "3874": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Summertime Drifter",
+    "ja": "ぷかぷか巡る常夏の浜",
+    "de": "Keine Angst vor Strand und Meer",
+    "fr": "Costa del Sol Croisières",
+    "icon": "/i/053000/053744.png",
     "itemReward": 0
   },
   "3875": {
@@ -31197,6 +31197,1422 @@
     "de": "Meisterhafte Möbelkunst 2025",
     "fr": "Artiste décorateur 2025",
     "icon": "/i/001000/001975.png",
+    "itemReward": 0
+  },
+  "3901": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3902": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3904": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3905": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3906": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3907": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3908": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3909": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3910": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3911": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3912": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3913": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3914": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3915": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3916": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3917": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3918": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3919": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3920": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3921": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3922": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3923": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3924": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3925": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3926": {
+    "en": "Top Tier: Season Nineteen",
+    "ja": "コンフリクトの王者：シーズン19",
+    "de": "Kristallkönig (19. Saison)",
+    "fr": "Roi du conflit : saison 19",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3927": {
+    "en": "Crystal in the Rough: Season Nineteen",
+    "ja": "コンフリクトの勇者：シーズン19",
+    "de": "Kristallfürst (19. Saison)",
+    "fr": "Prince du conflit : saison 19",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3928": {
+    "en": "Ranked and Filed: Season Nineteen",
+    "ja": "コンフリクトの入賞者：シーズン19",
+    "de": "Kristallkämpfer (19. Saison)",
+    "fr": "As du conflit : saison 19",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3929": {
+    "en": "Top Tier: Season Twenty",
+    "ja": "コンフリクトの王者：シーズン20",
+    "de": "Kristallkönig (20. Saison)",
+    "fr": "Roi du conflit : saison 20",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3930": {
+    "en": "Crystal in the Rough: Season Twenty",
+    "ja": "コンフリクトの勇者：シーズン20",
+    "de": "Kristallfürst (20. Saison)",
+    "fr": "Prince du conflit : saison 20",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3931": {
+    "en": "Ranked and Filed: Season Twenty",
+    "ja": "コンフリクトの入賞者：シーズン20",
+    "de": "Kristallkämpfer (20. Saison)",
+    "fr": "As du conflit : saison 20",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3932": {
+    "en": "Top Tier: Season Twenty-one",
+    "ja": "コンフリクトの王者：シーズン21",
+    "de": "Kristallkönig (21. Saison)",
+    "fr": "Roi du conflit : saison 21",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3933": {
+    "en": "Crystal in the Rough: Season Twenty-one",
+    "ja": "コンフリクトの勇者：シーズン21",
+    "de": "Kristallfürst (21. Saison)",
+    "fr": "Prince du conflit : saison 21",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3934": {
+    "en": "Ranked and Filed: Season Twenty-one",
+    "ja": "コンフリクトの入賞者：シーズン21",
+    "de": "Kristallkämpfer (21. Saison)",
+    "fr": "As du conflit : saison 21",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3935": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3936": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3937": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3938": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3939": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3940": {
+    "en": "On the Other Side",
+    "ja": "誰かが待っている",
+    "de": "Unsere Tür steht dir immer offen",
+    "fr": "Notre porte vous sera toujours ouverte",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3941": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3942": {
+    "en": "Trail to the Heavens",
+    "ja": "彼方に至る路",
+    "de": "Der Weg in die Ferne",
+    "fr": "Le chemin vers le lointain",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3943": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3944": {
+    "en": "On the Wing",
+    "ja": "眩き白翼の英雄",
+    "de": "Geflügelter Heldenmut",
+    "fr": "Blanches et dorées",
+    "icon": "/i/026000/026038.png",
+    "itemReward": 0
+  },
+  "3945": {
+    "en": "トモダチドコダ",
+    "ja": "トモダチドコダ",
+    "de": "トモダチドコダ",
+    "fr": "トモダチドコダ",
+    "icon": "/i/056000/056959.png",
+    "itemReward": 0
+  },
+  "3946": {
+    "en": "祝祭告げる鐘の音",
+    "ja": "祝祭告げる鐘の音",
+    "de": "祝祭告げる鐘の音",
+    "fr": "Traîneau et grelots",
+    "icon": "/i/026000/026104.png",
+    "itemReward": 0
+  },
+  "3947": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3948": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3949": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3950": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3951": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3952": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3953": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3954": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3955": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3956": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3957": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3958": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3959": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3960": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3961": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3962": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3963": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3964": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3965": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3966": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3967": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3968": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3969": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3970": {
+    "en": "Denizens of Nowhere",
+    "ja": "名もなき島の魚拓王",
+    "de": "Meisterfischer der Einsamen Insel",
+    "fr": "Ichtyogrammiste de l'île sans nom",
+    "icon": "/i/001000/001116.png",
+    "itemReward": 0
+  },
+  "3971": {
+    "en": "Denizens of Thavnair Margin",
+    "ja": "サベネア島沖合の魚拓王",
+    "de": "Meisterfischer von Thavnair",
+    "fr": "Ichtyogrammiste de Thavnair",
+    "icon": "/i/001000/001116.png",
+    "itemReward": 0
+  },
+  "3972": {
+    "en": "Specters of Nowhere",
+    "ja": "名もなき島の幻海王",
+    "de": "Phantomfischer der Einsamen Insel",
+    "fr": "Spectre de l'île sans nom",
+    "icon": "/i/001000/001116.png",
+    "itemReward": 0
+  },
+  "3973": {
+    "en": "Specters of Thavnair Margin",
+    "ja": "サベネア島沖合の幻海王",
+    "de": "Phantomfischer von Thavnair",
+    "fr": "Spectre de Thavnair",
+    "icon": "/i/001000/001116.png",
+    "itemReward": 0
+  },
+  "3974": {
+    "en": "Near, Far, Wherever Fish Are IV",
+    "ja": "ビッグオーシャンフィッシャー：ランク4",
+    "de": "Ozeanfischer IV",
+    "fr": "Ratisseur des hautes mers IV",
+    "icon": "/i/001000/001138.png",
+    "itemReward": 0
+  },
+  "3975": {
+    "en": "What Even Is That",
+    "ja": "古生物学者",
+    "de": "Angel-Archäologe",
+    "fr": "Archéologie sous-marine",
+    "icon": "/i/028000/028147.png",
+    "itemReward": 0
+  },
+  "3976": {
+    "en": "What Did Stomatopods Do to You?",
+    "ja": "シャコパンチャー",
+    "de": "Krebskenner",
+    "fr": "Banc de crevettes-mantes",
+    "icon": "/i/028000/028145.png",
+    "itemReward": 0
+  },
+  "3977": {
+    "en": "Mapping the Realm: The Clyteum",
+    "ja": "クルティウス魔導工廠を踏破せし者",
+    "de": "Kartograph: Das Klyteum",
+    "fr": "Cartographe du continent : Le Clyteum",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3978": {
+    "en": "Mapping the Realm: Windurst: The Third Walk",
+    "ja": "ウィンダス：ザ・サードウォークを踏破せし者",
+    "de": "Kartograph: Windurst: Die dritte Etappe",
+    "fr": "Cartographe du continent : Windurst - La troisième perambulation",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3979": {
+    "en": "Nothing Out of Nothing",
+    "ja": "虚無を無に還せし者",
+    "de": "Von nichts kommt nichts",
+    "fr": "Que le néant retourne dans le néant",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3980": {
+    "en": "The Pursuit of Emptiness",
+    "ja": "ウィンダス：ザ・サードウォークを制覇せし者",
+    "de": "Windurst: Die dritte Etappe",
+    "fr": "Échos des promesses lointaines",
+    "icon": "/i/064000/064875.png",
+    "itemReward": 0
+  },
+  "3981": {
+    "en": "I Found That: Miner IX",
+    "ja": "手帳好きの採掘師：ランク9",
+    "de": "Ich hab's gefunden: Minenarbeiter IX",
+    "fr": "Carnet de notes : mineur IX",
+    "icon": "/i/001000/001015.png",
+    "itemReward": 0
+  },
+  "3982": {
+    "en": "I Found That: Botanist IX",
+    "ja": "手帳好きの園芸師：ランク9",
+    "de": "Ich hab's gefunden: Gärtner IX",
+    "fr": "Carnet de notes : botaniste IX",
+    "icon": "/i/001000/001065.png",
+    "itemReward": 0
+  },
+  "3983": {
+    "en": "I Caught That IX",
+    "ja": "手帳好きの漁師：ランク9",
+    "de": "Dicker Fang IX",
+    "fr": "Carnet de notes : pêcheur IX",
+    "icon": "/i/001000/001104.png",
+    "itemReward": 0
+  },
+  "3984": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3985": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3986": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3987": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3988": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3989": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3990": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3991": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3992": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3993": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3994": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3995": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3996": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3997": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3998": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3999": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4000": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4001": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4002": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4003": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4004": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4006": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4007": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4008": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4009": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4010": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4011": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4012": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4013": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4014": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4015": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4017": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4018": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4019": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4020": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4021": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4022": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4023": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4024": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4025": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4026": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4027": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4028": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4029": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4030": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4031": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4032": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4033": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4034": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4035": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4038": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4039": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4040": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4041": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4042": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4043": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4044": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4045": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4046": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4047": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4048": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4049": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4050": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4051": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4052": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4053": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4054": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4055": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4056": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4057": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4058": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4059": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4060": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4061": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4062": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4063": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4064": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4065": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4066": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4067": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4068": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4069": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4070": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4071": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4072": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4073": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4074": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4075": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4076": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "4077": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
     "itemReward": 0
   }
 }
