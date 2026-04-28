@@ -201,7 +201,7 @@ export class MainWindow {
       setTimeout(() => this.win.setTitle(`${title} - Main Window`));
     });
 
-    this.win.on('minimize', (event) => {
+    this.win.on('minimize' as any, (event) => {
       if (this.store.get<boolean>('enable-minimize-reduction-button', false)) {
         event.preventDefault();
         this.win.hide();
