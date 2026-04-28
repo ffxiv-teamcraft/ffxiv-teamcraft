@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.20...v11.4.21) (2026-04-28)
+
+
+### Features
+
+* **db:** 7.5 data ([fcc185e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fcc185eba259bc281c6dfcdba55e6eef5a80e436))
+* **db:** add TW data to database ([b145dcf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b145dcfd577ae06ca9770033d9d8c28bc69b3024))
+* **db:** CN 7.5 data ([12cbe84](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12cbe849b6376b046baba4c7eb1bd85d91fb4b6b))
+* **db:** support for korean v7.45 update ([c5e3d59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5e3d59348ca66549425140351651871366b3924))
+* **db:** support for korean v7.5 update ([297d06c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/297d06cb92cb9ee8eac49dca4848af7c3b813d68))
+* **db:** TW 7.1 data ([54f3073](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54f3073138af2197457d48bdbbc974c63ff81324))
+* **db:** update data for global 7.45h ([52f2a27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52f2a275255800e2cf3cb4d7339aeb010bf23a52))
+* **search:** add TW data to search ([7c155d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c155d13815df6b6e889c446f0fd72472bef3ce8))
+* update game version ([a8af509](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8af509888daeaf44de67f2ad2d5a7256ad72fe4))
+
+
+### Bug Fixes
+
+* fix submarine max rank ([d026fe7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d026fe7038889307242fee9dcaa5a5b75ebac684))
+* **log-tracker:** tentative fix for log tracker data not found ([64097e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64097e0a9a4bc139085870006e8edeea1e60da78))
+* **simulator:** french translation for duty action ([2e8d84b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e8d84b83a20aa0111b4e0a3740ea5f9e78b834c)), closes [#3159](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3159)
+
 ### [11.4.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.19...v11.4.20) (2026-03-03)
 
 
