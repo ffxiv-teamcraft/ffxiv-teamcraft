@@ -5,10 +5,11 @@ export interface LazyMobsDatabasePage {
   fr:       string;
   id:       string;
   ja:       string;
-  ko?:      string;
+  ko:       string;
   monster?: Monster;
   patch:    number;
-  zh?:      string;
+  tw?:      string;
+  zh:       string;
 }
 
 export interface Monster {

@@ -18,6 +18,7 @@ export interface LazyLevesDatabasePage {
   npcs:         Npc[];
   repeats:      number;
   rewards:      any[];
+  tw?:          string;
   zh?:          string;
 }
 
@@ -37,6 +38,7 @@ export interface Description {
   id?:   string;
   ja:    string;
   ko?:   string;
+  tw?:   string;
   zh?:   string;
 }
 

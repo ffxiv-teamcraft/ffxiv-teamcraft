@@ -26,6 +26,7 @@ export interface LazyActionsDatabasePage {
   recast?:           number;
   target?:           Target;
   traits?:           Trait[];
+  tw?:               string;
   zh?:               string;
 }
 
@@ -35,6 +36,7 @@ export interface Description {
   fr?: string;
   ja?: string;
   ko?: string;
+  tw?: string;
   zh?: string;
 }
 
@@ -58,5 +60,6 @@ export interface Trait {
   id:          number;
   ja:          string;
   ko:          string;
+  tw:          string;
   zh:          string;
 }

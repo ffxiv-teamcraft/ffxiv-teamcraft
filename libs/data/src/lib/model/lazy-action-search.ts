@@ -9,6 +9,7 @@ export interface LazyActionSearch {
   ko?:   string;
   lvl:   number;
   patch: number;
+  tw?:   string;
   zh?:   string;
 }
 

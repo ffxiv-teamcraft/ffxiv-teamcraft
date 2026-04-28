@@ -14,8 +14,9 @@ export interface LazyFishingSpotsDatabasePage {
   patch:         number;
   placeId:       number;
   radius:        number;
+  tw?:           string;
   weatherRate:   number;
-  zh?:           string;
+  zh:            string;
   zoneId:        number;
 }
 
