@@ -63,7 +63,7 @@ import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-
 import { Database, objectVal, ref } from '@angular/fire/database';
 import { gameEnv } from '../environments/game-env';
 import { PacketCaptureStatus } from './core/electron/packet-capture-status';
-import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
+import { NzBadgeStatusType } from 'ng-zorro-antd/badge';
 import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
 import { PushNotificationsService } from './core/push-notifications.service';
 

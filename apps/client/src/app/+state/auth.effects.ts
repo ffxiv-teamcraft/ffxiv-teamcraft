@@ -28,7 +28,7 @@ import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
-import { User } from '@firebase/auth-types';
+import { User } from 'firebase/auth';
 import { AuthFacade } from './auth.facade';
 import { SupportService } from '../core/patreon/support.service';
 import { diff } from 'deep-diff';
