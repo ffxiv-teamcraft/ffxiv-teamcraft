@@ -6009,6 +6009,26 @@
       "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
     }
   },
+  "648": {
+    "value": 70,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "소장 가치+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "649": {
+    "value": 70,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "소장 가치+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
   "650": {
     "value": 1,
     "conditionValue": 600,
@@ -6077,6 +6097,126 @@
     },
     "condition": {
       "ko": "최대 GP <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "657": {
+    "value": 10,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "신중한 순화: 추가 효과 발생률＋<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "658": {
+    "value": 10,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "신중한 순화: 추가 효과 발생률＋<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "659": {
+    "value": 15,
+    "conditionValue": 5400,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "660": {
+    "value": 40,
+    "conditionValue": 5400,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "661": {
+    "value": 60,
+    "conditionValue": 5400,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "662": {
+    "value": 15,
+    "conditionValue": 5400,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "663": {
+    "value": 40,
+    "conditionValue": 5400,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "664": {
+    "value": 60,
+    "conditionValue": 5400,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "665": {
+    "value": 1,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "666": {
+    "value": 2,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "667": {
+    "value": 1,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "668": {
+    "value": 2,
+    "conditionValue": 5500,
+    "bonus": {
+      "ko": "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
     }
   },
   "669": {
