@@ -30818,6 +30818,11 @@
       },
       {
         "source": "client",
+        "target": "npm:firebase",
+        "type": "static"
+      },
+      {
+        "source": "client",
         "target": "npm:deep-diff",
         "type": "static"
       },
@@ -69608,5 +69613,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1777383053451
+  "computedAt": 1777383826638
 }

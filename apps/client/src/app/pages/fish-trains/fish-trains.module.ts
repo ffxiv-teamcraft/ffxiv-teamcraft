@@ -15,7 +15,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -36,7 +36,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     FullpageMessageModule,
     UserAvatarModule,
     NzAvatarModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzTagModule,
     NzSelectModule,
     NzDividerModule,

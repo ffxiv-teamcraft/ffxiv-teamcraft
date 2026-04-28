@@ -15,7 +15,7 @@ import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
@@ -28,7 +28,7 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
     templateUrl: './fishing-reporter-overlay.component.html',
     styleUrls: ['./fishing-reporter-overlay.component.less'],
     standalone: true,
-    imports: [OverlayContainerComponent, FlexModule, NzAlertModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzDividerModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, ActionNamePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, LazyRowPipe]
+    imports: [OverlayContainerComponent, FlexModule, NzAlertModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzDividerModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, ActionNamePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, LazyRowPipe]
 })
 export class FishingReporterOverlayComponent {
 

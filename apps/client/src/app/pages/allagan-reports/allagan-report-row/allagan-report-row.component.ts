@@ -38,7 +38,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NgIf, NgSwitch, NgSwitchCase, NgTemplateOutlet, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 import { ReportSourceDisplayComponent } from '../report-source-display/report-source-display.component';
@@ -53,7 +53,7 @@ import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
     styleUrls: ['./allagan-report-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-  imports: [NzGridModule, FlexModule, ReportSourceDisplayComponent, NgIf, NzTagModule, NzToolTipModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NgSwitch, ReportSourceCompactDetailsComponent, NgSwitchCase, DbButtonComponent, NgTemplateOutlet, NgFor, ItemIconComponent, I18nNameComponent, SpearfishingSpeedComponent, NzAvatarModule, RouterLink, AsyncPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, XivapiIconPipe, CharacterNamePipe, WeatherIconPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, MapNamePipe, TugNamePipe, HourDisplayPipe, FloorPipe]
+  imports: [NzGridModule, FlexModule, ReportSourceDisplayComponent, NgIf, NzTagModule, NzTooltipModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NgSwitch, ReportSourceCompactDetailsComponent, NgSwitchCase, DbButtonComponent, NgTemplateOutlet, NgFor, ItemIconComponent, I18nNameComponent, SpearfishingSpeedComponent, NzAvatarModule, RouterLink, AsyncPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, XivapiIconPipe, CharacterNamePipe, WeatherIconPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, MapNamePipe, TugNamePipe, HourDisplayPipe, FloorPipe]
 })
 export class AllaganReportRowComponent {
 

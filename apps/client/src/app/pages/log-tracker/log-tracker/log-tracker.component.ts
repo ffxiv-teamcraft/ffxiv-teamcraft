@@ -36,7 +36,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
@@ -52,7 +52,7 @@ import { LogTrackerImportPopupComponent } from '../log-tracker-import-popup/log-
     templateUrl: './log-tracker.component.html',
     styleUrls: ['./log-tracker.component.less'],
     standalone: true,
-    imports: [NgIf, NzAlertModule, NzTabsModule, FlexModule, NzSwitchModule, FormsModule, NgFor, I18nNameComponent, NzToolTipModule, NzSpinModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzCheckboxModule, ItemIconComponent, ItemRarityDirective, NzGridModule, MapPositionComponent, NzDropDownModule, NzMenuModule, NzDividerModule, FishingLogTrackerComponent, AsyncPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, AlarmDisplayPipe]
+    imports: [NgIf, NzAlertModule, NzTabsModule, FlexModule, NzSwitchModule, FormsModule, NgFor, I18nNameComponent, NzTooltipModule, NzSpinModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzCheckboxModule, ItemIconComponent, ItemRarityDirective, NzGridModule, MapPositionComponent, NzDropDownModule, NzMenuModule, NzDividerModule, FishingLogTrackerComponent, AsyncPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, AlarmDisplayPipe]
 })
 export class LogTrackerComponent extends TrackerComponent {
 

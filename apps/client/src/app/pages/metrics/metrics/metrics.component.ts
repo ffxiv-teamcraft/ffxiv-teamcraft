@@ -24,7 +24,7 @@ import { MetricsDisplayEditorComponent } from '../../../modules/player-metrics/d
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -42,7 +42,7 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './metrics.component.html',
     styleUrls: ['./metrics.component.less'],
     standalone: true,
-    imports: [FlexModule, NzCardModule, NzDatePickerModule, TutorialStepDirective, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, NzToolTipModule, NzPopconfirmModule, ClipboardDirective, NzAlertModule, CdkDropListGroup, CdkDropList, MetricsDisplayEditorComponent, CdkDrag, MetricDisplayComponent, TranslateModule, AsyncPipe]
+    imports: [FlexModule, NzCardModule, NzDatePickerModule, TutorialStepDirective, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, NzTooltipModule, NzPopconfirmModule, ClipboardDirective, NzAlertModule, CdkDropListGroup, CdkDropList, MetricsDisplayEditorComponent, CdkDrag, MetricDisplayComponent, TranslateModule, AsyncPipe]
 })
 export class MetricsComponent extends TeamcraftPageComponent {
 
@@ -91,7 +91,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
   constructor(private metricsService: PlayerMetricsService, private translate: TranslateService,
               protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[],
               private pendingChangesService: PendingChangesService, private metricsDashboardsFacade: MetricsDashboardsFacade,
-              private message: NzMessageService, private dialog: NzModalService) {
+              private message: private dialog: NzModalService) {
     super(seoService);
     this.ranges = {};
     this.ranges[this.translate.instant('METRICS.Today')] = [startOfDay(new Date()), new Date()];

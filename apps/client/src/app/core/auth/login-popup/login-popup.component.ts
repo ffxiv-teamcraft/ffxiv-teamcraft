@@ -32,7 +32,7 @@ export class LoginPopupComponent extends DialogComponent {
 
   constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private modalRef: NzModalRef, public platform: PlatformService,
-              private message: NzMessageService, private translate: TranslateService) {
+              private message: private translate: TranslateService) {
     super();
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

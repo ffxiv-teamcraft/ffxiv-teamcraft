@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { RouterLink } from '@angular/router';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { AsyncPipe } from '@angular/common';
@@ -19,7 +19,7 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './user-avatar.component.html',
     styleUrls: ['./user-avatar.component.less'],
     standalone: true,
-    imports: [NzBadgeModule, RouterLink, NzToolTipModule, NzAvatarModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule]
+    imports: [NzBadgeModule, RouterLink, NzTooltipModule, NzAvatarModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class UserAvatarComponent implements OnInit {
 

@@ -25,7 +25,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { RouterLink } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -41,7 +41,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     styleUrls: ['./workshop-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, CdkDropList, FlexModule, CdkDrag, ListPanelComponent, NzGridModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
+    imports: [NzCollapseModule, CdkDropList, FlexModule, CdkDrag, ListPanelComponent, NzGridModule, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, NzIconModule, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
 })
 export class WorkshopPanelComponent {
 

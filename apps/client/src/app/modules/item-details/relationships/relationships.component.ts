@@ -17,7 +17,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { InventoryPositionComponent } from '../../inventory/inventory-position/inventory-position.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
@@ -30,7 +30,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './relationships.component.html',
   styleUrls: ['./relationships.component.less'],
   standalone: true,
-  imports: [FlexModule, ItemIconComponent, I18nNameComponent, NzTagModule, NzToolTipModule, InventoryPositionComponent, NzButtonModule, NzWaveModule, NzIconModule, NzListModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
+  imports: [FlexModule, ItemIconComponent, I18nNameComponent, NzTagModule, NzTooltipModule, InventoryPositionComponent, NzButtonModule, NzWaveModule, NzIconModule, NzListModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
 export class RelationshipsComponent extends DialogComponent implements OnInit {
 

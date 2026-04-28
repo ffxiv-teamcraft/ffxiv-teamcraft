@@ -68,6 +68,7 @@ import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-st
 import { PushNotificationsService } from './core/push-notifications.service';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],

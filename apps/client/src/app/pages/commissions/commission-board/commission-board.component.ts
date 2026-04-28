@@ -23,7 +23,7 @@ import { AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -32,7 +32,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./commission-board.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, PageLoaderComponent, NzInputModule, NzSelectModule, FormsModule, NzCheckboxModule, NzInputNumberModule, NzGridModule, CommissionPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzTooltipModule, NzButtonModule, NzIconModule, PageLoaderComponent, NzInputModule, NzSelectModule, FormsModule, NzCheckboxModule, NzInputNumberModule, NzGridModule, CommissionPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommissionBoardComponent {
 
@@ -107,8 +107,7 @@ export class CommissionBoardComponent {
     })
   );
 
-  constructor(private commissionsService: CommissionService, private notificationsService: NzNotificationService,
-              private messageService: NzMessageService, private translate: TranslateService,
+  constructor(private commissionsService: CommissionService, private notificationsService: private messageService: private translate: TranslateService,
               private activatedRoute: ActivatedRoute, private router: Router,
               private lazyData: LazyDataFacade, private settings: SettingsService) {
   }

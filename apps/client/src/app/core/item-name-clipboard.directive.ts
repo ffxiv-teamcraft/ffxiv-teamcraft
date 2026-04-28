@@ -37,8 +37,7 @@ export class ItemNameClipboardDirective extends NzTooltipDirective implements On
     })
   );
 
-  constructor(private clipboardService: Clipboard, private i18n: I18nToolsService, private message: NzMessageService,
-              private settings: SettingsService, private translate: TranslateService,
+  constructor(private clipboardService: Clipboard, private i18n: I18nToolsService, private message: private settings: SettingsService, private translate: TranslateService,
               elementRef: ElementRef, hostView: ViewContainerRef,
               renderer: Renderer2) {
     super(elementRef, hostView,  renderer);

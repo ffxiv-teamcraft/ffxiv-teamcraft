@@ -9,7 +9,7 @@ import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
@@ -23,14 +23,14 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     styleUrls: ['./list-crystals-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, FlexModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [NzCollapseModule, FlexModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, NzIconModule, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class ListCrystalsPanelComponent {
 
   @Input()
   crystals: ListRow[] = [];
 
-  constructor(private i18nTools: I18nToolsService, private message: NzMessageService, private translate: TranslateService) {
+  constructor(private i18nTools: I18nToolsService, private message: private translate: TranslateService) {
   }
 
   trackByItem(index: number, item: ListRow): number {

@@ -17,7 +17,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { ItemSourcesDisplayComponent } from '../../../modules/list/item/item-sources-display/item-sources-display.component';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
@@ -41,7 +41,7 @@ interface Display {
     styleUrls: ['./item-search-overlay.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [OverlayContainerComponent, FlexModule, FormsModule, NzInputModule, NzAutocompleteModule, ItemIconComponent, I18nNameComponent, InventoryPositionComponent, NzTagModule, NzToolTipModule, NzButtonModule, NzWaveModule, ItemSourcesDisplayComponent, NzDividerModule, MarketboardPopupComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, IfMobilePipe]
+    imports: [OverlayContainerComponent, FlexModule, FormsModule, NzInputModule, NzAutocompleteModule, ItemIconComponent, I18nNameComponent, InventoryPositionComponent, NzTagModule, NzTooltipModule, NzButtonModule, NzWaveModule, ItemSourcesDisplayComponent, NzDividerModule, MarketboardPopupComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, IfMobilePipe]
 })
 export class ItemSearchOverlayComponent {
 

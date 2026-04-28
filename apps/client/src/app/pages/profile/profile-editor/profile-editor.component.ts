@@ -26,7 +26,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { Router, RouterLink } from '@angular/router';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
@@ -40,7 +40,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     templateUrl: './profile-editor.component.html',
     styleUrls: ['./profile-editor.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzAvatarModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, RouterLink, NzTagModule, NzGridModule, NzCardModule, NzListModule, NzSliderModule, NzPopconfirmModule, UserAvatarComponent, AsyncPipe, TranslateModule, IfMobilePipe, CharacterNamePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
+    imports: [NgIf, FlexModule, NzAvatarModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzTooltipModule, NzWaveModule, RouterLink, NzTagModule, NzGridModule, NzCardModule, NzListModule, NzSliderModule, NzPopconfirmModule, UserAvatarComponent, AsyncPipe, TranslateModule, IfMobilePipe, CharacterNamePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class ProfileEditorComponent {
 

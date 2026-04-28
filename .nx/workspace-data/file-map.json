@@ -18,2112 +18,6 @@
   "nxJsonPlugins": [],
   "fileMap": {
     "projectFileMap": {
-      "data": [
-        {
-          "file": "libs/data/.babelrc",
-          "hash": "12678781556853150254"
-        },
-        {
-          "file": "libs/data/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/data/README.md",
-          "hash": "346502755150921139"
-        },
-        {
-          "file": "libs/data/jest.config.ts",
-          "hash": "11211889106616540525"
-        },
-        {
-          "file": "libs/data/package.json",
-          "hash": "13299666613862780291"
-        },
-        {
-          "file": "libs/data/project.json",
-          "hash": "17047698284593438534"
-        },
-        {
-          "file": "libs/data/src/index.ts",
-          "hash": "11888095956655437235"
-        },
-        {
-          "file": "libs/data/src/lib/extracts-hash.ts",
-          "hash": "6053012612234277275"
-        },
-        {
-          "file": "libs/data/src/lib/extracts/extracts.json",
-          "hash": "2055005278292741342"
-        },
-        {
-          "file": "libs/data/src/lib/handmade/game-servers.ts",
-          "hash": "15659511926716283417"
-        },
-        {
-          "file": "libs/data/src/lib/handmade/island-workshop-rank-ratio.ts",
-          "hash": "13293235274169229464"
-        },
-        {
-          "file": "libs/data/src/lib/handmade/job-abbr-en.ts",
-          "hash": "17862142708514332922"
-        },
-        {
-          "file": "libs/data/src/lib/handmade/levemetes.ts",
-          "hash": "3241961500708214880"
-        },
-        {
-          "file": "libs/data/src/lib/handmade/monster-drops.ts",
-          "hash": "13184497211160297172"
-        },
-        {
-          "file": "libs/data/src/lib/handmade/quests-chain-lengths.ts",
-          "hash": "5473548149236353470"
-        },
-        {
-          "file": "libs/data/src/lib/json/achievement-search.index",
-          "hash": "3216679956362848221"
-        },
-        {
-          "file": "libs/data/src/lib/json/achievements.json",
-          "hash": "16576548615093394612"
-        },
-        {
-          "file": "libs/data/src/lib/json/action-categories.json",
-          "hash": "11544798313201186795"
-        },
-        {
-          "file": "libs/data/src/lib/json/action-cd-groups.json",
-          "hash": "6700989808749758087"
-        },
-        {
-          "file": "libs/data/src/lib/json/action-icons.json",
-          "hash": "7904143985329069931"
-        },
-        {
-          "file": "libs/data/src/lib/json/action-search.index",
-          "hash": "3914324400551445438"
-        },
-        {
-          "file": "libs/data/src/lib/json/action-timeline.json",
-          "hash": "3219524095087533147"
-        },
-        {
-          "file": "libs/data/src/lib/json/actions.json",
-          "hash": "18008932137099193237"
-        },
-        {
-          "file": "libs/data/src/lib/json/additional-item-data.json",
-          "hash": "5632336278648609273"
-        },
-        {
-          "file": "libs/data/src/lib/json/aetherial-reduce.json",
-          "hash": "3520157793415153154"
-        },
-        {
-          "file": "libs/data/src/lib/json/aetherytes.json",
-          "hash": "17877052661773492479"
-        },
-        {
-          "file": "libs/data/src/lib/json/airship-parts.json",
-          "hash": "11731984354389398207"
-        },
-        {
-          "file": "libs/data/src/lib/json/airship-ranks.json",
-          "hash": "12489902369935971517"
-        },
-        {
-          "file": "libs/data/src/lib/json/airship-voyages.json",
-          "hash": "8597212351203523310"
-        },
-        {
-          "file": "libs/data/src/lib/json/baits.json",
-          "hash": "17269209400909126398"
-        },
-        {
-          "file": "libs/data/src/lib/json/base-params.json",
-          "hash": "10221467880098201863"
-        },
-        {
-          "file": "libs/data/src/lib/json/beast-reputation-ranks.json",
-          "hash": "10585871764192819021"
-        },
-        {
-          "file": "libs/data/src/lib/json/class-jobs-modifiers.json",
-          "hash": "12609754837245864285"
-        },
-        {
-          "file": "libs/data/src/lib/json/collectable-flags.json",
-          "hash": "11627823209794597197"
-        },
-        {
-          "file": "libs/data/src/lib/json/collectables-page-data.json",
-          "hash": "13552728764303472148"
-        },
-        {
-          "file": "libs/data/src/lib/json/collectables-shop-item-group.json",
-          "hash": "11599016344822655445"
-        },
-        {
-          "file": "libs/data/src/lib/json/collectables-shops.json",
-          "hash": "15940589802303692239"
-        },
-        {
-          "file": "libs/data/src/lib/json/collectables.json",
-          "hash": "1213755189607168084"
-        },
-        {
-          "file": "libs/data/src/lib/json/content-type.json",
-          "hash": "2921184811282717823"
-        },
-        {
-          "file": "libs/data/src/lib/json/craft-actions.json",
-          "hash": "568963287064437568"
-        },
-        {
-          "file": "libs/data/src/lib/json/crafting-levels.json",
-          "hash": "15592122377278401047"
-        },
-        {
-          "file": "libs/data/src/lib/json/crafting-log-pages.json",
-          "hash": "1396946413732085088"
-        },
-        {
-          "file": "libs/data/src/lib/json/crafting-log.json",
-          "hash": "45039040932394639"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/achievements-database-pages.json",
-          "hash": "4930582634148954039"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/actions-database-pages.json",
-          "hash": "13814657926813312913"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/fates-database-pages.json",
-          "hash": "15623677545292076608"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/fishing-spots-database-pages.json",
-          "hash": "6045902752039492594"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/items-database-pages.json",
-          "hash": "10746422365430772308"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/leves-database-pages.json",
-          "hash": "17284913862224371318"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/mobs-database-pages.json",
-          "hash": "549451662458052970"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/nodes-database-pages.json",
-          "hash": "16988775983665117353"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/npcs-database-pages.json",
-          "hash": "14951045971613719492"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/quests-database-pages.json",
-          "hash": "8566911348778535811"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/quests-text.index",
-          "hash": "7908716558108820093"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/statuses-database-pages.json",
-          "hash": "6037714801667894092"
-        },
-        {
-          "file": "libs/data/src/lib/json/db/traits-database-pages.json",
-          "hash": "7213818302882242698"
-        },
-        {
-          "file": "libs/data/src/lib/json/deprecated-items.json",
-          "hash": "7545215030422226800"
-        },
-        {
-          "file": "libs/data/src/lib/json/desynth.json",
-          "hash": "10670113297788976492"
-        },
-        {
-          "file": "libs/data/src/lib/json/diadem-territory.json",
-          "hash": "10155966185054241020"
-        },
-        {
-          "file": "libs/data/src/lib/json/drop-sources.json",
-          "hash": "6644691017265806650"
-        },
-        {
-          "file": "libs/data/src/lib/json/equip-slot-categories.json",
-          "hash": "10802689969293248022"
-        },
-        {
-          "file": "libs/data/src/lib/json/equipment.json",
-          "hash": "7068369724716230886"
-        },
-        {
-          "file": "libs/data/src/lib/json/event-items.json",
-          "hash": "7259093848392813716"
-        },
-        {
-          "file": "libs/data/src/lib/json/ex-versions.json",
-          "hash": "14398616138351952112"
-        },
-        {
-          "file": "libs/data/src/lib/json/extractable-items.json",
-          "hash": "3250525464017551557"
-        },
-        {
-          "file": "libs/data/src/lib/json/fate-search.index",
-          "hash": "217224902034035846"
-        },
-        {
-          "file": "libs/data/src/lib/json/fate-sources.json",
-          "hash": "16016201139820573186"
-        },
-        {
-          "file": "libs/data/src/lib/json/fates.json",
-          "hash": "4555480249166576426"
-        },
-        {
-          "file": "libs/data/src/lib/json/fish-parameter.json",
-          "hash": "9859655054332859360"
-        },
-        {
-          "file": "libs/data/src/lib/json/fishes.json",
-          "hash": "4728249954495839358"
-        },
-        {
-          "file": "libs/data/src/lib/json/fishing-log-tracker-page-data.json",
-          "hash": "17714692655307161064"
-        },
-        {
-          "file": "libs/data/src/lib/json/fishing-log.json",
-          "hash": "11598473608040899012"
-        },
-        {
-          "file": "libs/data/src/lib/json/fishing-sources.json",
-          "hash": "15478169711913066981"
-        },
-        {
-          "file": "libs/data/src/lib/json/fishing-spot-search.index",
-          "hash": "930941451385058579"
-        },
-        {
-          "file": "libs/data/src/lib/json/fishing-spots.json",
-          "hash": "16128287567786602276"
-        },
-        {
-          "file": "libs/data/src/lib/json/foods.json",
-          "hash": "16414636587102148088"
-        },
-        {
-          "file": "libs/data/src/lib/json/free-company-actions.json",
-          "hash": "18064752495220041578"
-        },
-        {
-          "file": "libs/data/src/lib/json/gardening-sources.json",
-          "hash": "12194820322338620783"
-        },
-        {
-          "file": "libs/data/src/lib/json/gatherer-crafter-lv-adjust-table.json",
-          "hash": "7554337551794983744"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-bonuses.json",
-          "hash": "15910759181605339202"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-items.json",
-          "hash": "4648564487001125917"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-levels.json",
-          "hash": "3494425370977125062"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-log-pages.json",
-          "hash": "3050155680641088952"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-node-search.index",
-          "hash": "5382301435280388961"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-point-to-node-id.json",
-          "hash": "4250894948485689643"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-search-index.json",
-          "hash": "10238829707762815318"
-        },
-        {
-          "file": "libs/data/src/lib/json/gathering-types.json",
-          "hash": "10393805868086147302"
-        },
-        {
-          "file": "libs/data/src/lib/json/gc-names.json",
-          "hash": "10615786630473223235"
-        },
-        {
-          "file": "libs/data/src/lib/json/gc-supply.json",
-          "hash": "3962926660119922300"
-        },
-        {
-          "file": "libs/data/src/lib/json/gil-shop-names.json",
-          "hash": "12258765440891573290"
-        },
-        {
-          "file": "libs/data/src/lib/json/gubal-bnpcs-index.json",
-          "hash": "14472744383962071306"
-        },
-        {
-          "file": "libs/data/src/lib/json/hq-flags.json",
-          "hash": "8380186634906774100"
-        },
-        {
-          "file": "libs/data/src/lib/json/hunts.json",
-          "hash": "11242966359157123595"
-        },
-        {
-          "file": "libs/data/src/lib/json/hwd-inspections.json",
-          "hash": "12590223388141155977"
-        },
-        {
-          "file": "libs/data/src/lib/json/hwd-phases.json",
-          "hash": "14296618293284169484"
-        },
-        {
-          "file": "libs/data/src/lib/json/ilvls.json",
-          "hash": "7306369722186251635"
-        },
-        {
-          "file": "libs/data/src/lib/json/instance-search.index",
-          "hash": "10876557363106396106"
-        },
-        {
-          "file": "libs/data/src/lib/json/instance-sources.json",
-          "hash": "10452861239143081764"
-        },
-        {
-          "file": "libs/data/src/lib/json/instances.json",
-          "hash": "6636063770325584198"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-animals.json",
-          "hash": "2176882257438343231"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-buildings.json",
-          "hash": "9596133448461890441"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-craftworks-theme.json",
-          "hash": "7004582805405223478"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-craftworks.json",
-          "hash": "2360644246665702086"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-crops.json",
-          "hash": "16395789905608148050"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-gathering-items.json",
-          "hash": "2800839112971634490"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-landmarks.json",
-          "hash": "10350036731312111972"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-popularity.json",
-          "hash": "15199854501015886834"
-        },
-        {
-          "file": "libs/data/src/lib/json/island-supply.json",
-          "hash": "9473929310369415565"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-bonuses.json",
-          "hash": "1442758445097315271"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-category.json",
-          "hash": "12874881817137100046"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-equip-slot-category.json",
-          "hash": "17807293188159257433"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-icons.json",
-          "hash": "11510248166852966923"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-level.json",
-          "hash": "2743855581847644230"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-main-attributes.json",
-          "hash": "17057695098657293611"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-melding-data.json",
-          "hash": "2827948940500880111"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-patch.json",
-          "hash": "12656865030750916862"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-search.index",
-          "hash": "7047166434933238660"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-series.json",
-          "hash": "2219356898380081054"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-set-bonuses.json",
-          "hash": "853501153993041793"
-        },
-        {
-          "file": "libs/data/src/lib/json/item-stats.json",
-          "hash": "16842275208394020458"
-        },
-        {
-          "file": "libs/data/src/lib/json/items.json",
-          "hash": "10048862359222090021"
-        },
-        {
-          "file": "libs/data/src/lib/json/job-abbr.json",
-          "hash": "10118976941237161316"
-        },
-        {
-          "file": "libs/data/src/lib/json/job-categories.json",
-          "hash": "6293615584516196762"
-        },
-        {
-          "file": "libs/data/src/lib/json/job-name.json",
-          "hash": "5698927270914493636"
-        },
-        {
-          "file": "libs/data/src/lib/json/job-sort-index.json",
-          "hash": "12578544521122667904"
-        },
-        {
-          "file": "libs/data/src/lib/json/journal-genre.json",
-          "hash": "16636315624945093511"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-achievement-descriptions.json",
-          "hash": "4958073613831019990"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-achievements.json",
-          "hash": "15321269107866681782"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-action-categories.json",
-          "hash": "16230249117013988888"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-action-descriptions.json",
-          "hash": "11926190548557868424"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-actions.json",
-          "hash": "3215214999690145968"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-airship-voyages.json",
-          "hash": "18408366195641594954"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-base-params.json",
-          "hash": "18264189420790882716"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-beast-reputation-ranks.json",
-          "hash": "11195743681012234912"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-content-types.json",
-          "hash": "955424806774590603"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-craft-actions.json",
-          "hash": "7167691049405442668"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-craft-descriptions.json",
-          "hash": "14280792424538123529"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-event-items.json",
-          "hash": "5223344828568481607"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-ex-versions.json",
-          "hash": "11253154162719011757"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-fates.json",
-          "hash": "4130086361410734958"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-free-company-actions.json",
-          "hash": "4553910921169710723"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-gathering-bonuses.json",
-          "hash": "15815912638724082561"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-gathering-types.json",
-          "hash": "10700740772150450984"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-instance-descriptions.json",
-          "hash": "14629851201231884555"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-instances.json",
-          "hash": "10434982574269104949"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-island-craftworks-theme.json",
-          "hash": "11044084294177523279"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-item-descriptions.json",
-          "hash": "13981097182308095809"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-item-kinds.json",
-          "hash": "2388797018811388360"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-item-search-categories.json",
-          "hash": "10149726031653161664"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-item-ui-categories.json",
-          "hash": "14219035072516221233"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-items.json",
-          "hash": "3846470544174444676"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-job-abbr.json",
-          "hash": "17006065655976702402"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-job-categories.json",
-          "hash": "3174074675795618472"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-job-name.json",
-          "hash": "17006065655976702402"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-journal-genre.json",
-          "hash": "9096831059496140323"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-leve-descriptions.json",
-          "hash": "790986746631013539"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-leves.json",
-          "hash": "6975590073673103901"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-maps.json",
-          "hash": "14834708591918130767"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-mobs.json",
-          "hash": "5399571490650114551"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-notebook-division-category.json",
-          "hash": "14697662102378005244"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-notebook-division.json",
-          "hash": "6305836829912232312"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-npc-titles.json",
-          "hash": "3001905731377940993"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-npcs.json",
-          "hash": "14292923549236644112"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-patchs.json",
-          "hash": "5761309316442912730"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-places.json",
-          "hash": "1810899626964833121"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-quest-descriptions.json",
-          "hash": "6287170792196468956"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-quests.json",
-          "hash": "12654116898128341669"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-races.json",
-          "hash": "2112166652882712446"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-recipes.json",
-          "hash": "17805870330519325610"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-shops.json",
-          "hash": "11424835772370145166"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-status-descriptions.json",
-          "hash": "17332149104263032701"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-statuses.json",
-          "hash": "9040249290214428802"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-submarine-voyages.json",
-          "hash": "14282097808035979980"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-trait-descriptions.json",
-          "hash": "12464671613152368479"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-traits.json",
-          "hash": "6292168674209409090"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-tribes.json",
-          "hash": "16255690237095921081"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-triple-triad-rule-descriptions.json",
-          "hash": "4230187816334647132"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-triple-triad-rules.json",
-          "hash": "15160100375561038700"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-ventures.json",
-          "hash": "683500836078107605"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-weathers.json",
-          "hash": "7153456136475844994"
-        },
-        {
-          "file": "libs/data/src/lib/json/ko/ko-world.json",
-          "hash": "2697865138945619554"
-        },
-        {
-          "file": "libs/data/src/lib/json/legendary-fish.json",
-          "hash": "16278301409807991201"
-        },
-        {
-          "file": "libs/data/src/lib/json/leve-search.index",
-          "hash": "14222192542867206"
-        },
-        {
-          "file": "libs/data/src/lib/json/leves-per-item.json",
-          "hash": "2086932620730432661"
-        },
-        {
-          "file": "libs/data/src/lib/json/leves.json",
-          "hash": "17118609948048813688"
-        },
-        {
-          "file": "libs/data/src/lib/json/log-tracker-page-data.json",
-          "hash": "4154380715747611694"
-        },
-        {
-          "file": "libs/data/src/lib/json/loot-sources.json",
-          "hash": "12757449206294364239"
-        },
-        {
-          "file": "libs/data/src/lib/json/map-entries.json",
-          "hash": "16558206036513458211"
-        },
-        {
-          "file": "libs/data/src/lib/json/map-search.index",
-          "hash": "9950437482665673976"
-        },
-        {
-          "file": "libs/data/src/lib/json/maps.json",
-          "hash": "13691554799508746496"
-        },
-        {
-          "file": "libs/data/src/lib/json/market-items.json",
-          "hash": "3257820210129852202"
-        },
-        {
-          "file": "libs/data/src/lib/json/materias.json",
-          "hash": "15529633240326959734"
-        },
-        {
-          "file": "libs/data/src/lib/json/medicines.json",
-          "hash": "5581617111018188733"
-        },
-        {
-          "file": "libs/data/src/lib/json/mobs.json",
-          "hash": "17589696276647264159"
-        },
-        {
-          "file": "libs/data/src/lib/json/mogstation-sources.json",
-          "hash": "886494568784555514"
-        },
-        {
-          "file": "libs/data/src/lib/json/monster-search.index",
-          "hash": "1926338481866597999"
-        },
-        {
-          "file": "libs/data/src/lib/json/monsters.json",
-          "hash": "11352400907267190970"
-        },
-        {
-          "file": "libs/data/src/lib/json/nodes.json",
-          "hash": "15054503481897128322"
-        },
-        {
-          "file": "libs/data/src/lib/json/notebook-division-category.json",
-          "hash": "10876520931266387294"
-        },
-        {
-          "file": "libs/data/src/lib/json/notebook-division.json",
-          "hash": "4830647362160600773"
-        },
-        {
-          "file": "libs/data/src/lib/json/npc-search.index",
-          "hash": "13574676675534618151"
-        },
-        {
-          "file": "libs/data/src/lib/json/npcs.json",
-          "hash": "6355437664630208607"
-        },
-        {
-          "file": "libs/data/src/lib/json/param-grow.json",
-          "hash": "9295568477997419206"
-        },
-        {
-          "file": "libs/data/src/lib/json/patch-content.json",
-          "hash": "7402975002294181449"
-        },
-        {
-          "file": "libs/data/src/lib/json/patch-names.json",
-          "hash": "16971350078737800492"
-        },
-        {
-          "file": "libs/data/src/lib/json/places.json",
-          "hash": "16947648555089633916"
-        },
-        {
-          "file": "libs/data/src/lib/json/quest-search.index",
-          "hash": "5702576544372676054"
-        },
-        {
-          "file": "libs/data/src/lib/json/quest-sources.json",
-          "hash": "15809211751533822239"
-        },
-        {
-          "file": "libs/data/src/lib/json/quests.json",
-          "hash": "9489638700405275879"
-        },
-        {
-          "file": "libs/data/src/lib/json/races.json",
-          "hash": "16288714008006014243"
-        },
-        {
-          "file": "libs/data/src/lib/json/rarities.json",
-          "hash": "16444284332046529262"
-        },
-        {
-          "file": "libs/data/src/lib/json/recipe-level-table.json",
-          "hash": "10860764272547008907"
-        },
-        {
-          "file": "libs/data/src/lib/json/recipes-ingredient-lookup.json",
-          "hash": "2409736207457635959"
-        },
-        {
-          "file": "libs/data/src/lib/json/recipes-per-item.json",
-          "hash": "3041169518506746875"
-        },
-        {
-          "file": "libs/data/src/lib/json/recipes.json",
-          "hash": "15963909504288373261"
-        },
-        {
-          "file": "libs/data/src/lib/json/reduction.json",
-          "hash": "894077140121194775"
-        },
-        {
-          "file": "libs/data/src/lib/json/retainer-tasks.json",
-          "hash": "16659143001740251213"
-        },
-        {
-          "file": "libs/data/src/lib/json/reverse-instance-sources.json",
-          "hash": "13811985126502577414"
-        },
-        {
-          "file": "libs/data/src/lib/json/reverse-reduction.json",
-          "hash": "12489343167062598334"
-        },
-        {
-          "file": "libs/data/src/lib/json/satisfaction-thresholds.json",
-          "hash": "11032914286209718237"
-        },
-        {
-          "file": "libs/data/src/lib/json/scrip-index.json",
-          "hash": "8911256988590871294"
-        },
-        {
-          "file": "libs/data/src/lib/json/search-category.json",
-          "hash": "1275740225516263867"
-        },
-        {
-          "file": "libs/data/src/lib/json/seeds.json",
-          "hash": "2793673349160557517"
-        },
-        {
-          "file": "libs/data/src/lib/json/shop-names.json",
-          "hash": "8308949672809800148"
-        },
-        {
-          "file": "libs/data/src/lib/json/shops-by-npc.json",
-          "hash": "15641087647211266826"
-        },
-        {
-          "file": "libs/data/src/lib/json/shops.json",
-          "hash": "2934220145973685253"
-        },
-        {
-          "file": "libs/data/src/lib/json/spear-fishing-fish.json",
-          "hash": "4969597472761977530"
-        },
-        {
-          "file": "libs/data/src/lib/json/spear-fishing-log.json",
-          "hash": "8738467587204986207"
-        },
-        {
-          "file": "libs/data/src/lib/json/spearfishing-sources.json",
-          "hash": "11065003305525417830"
-        },
-        {
-          "file": "libs/data/src/lib/json/special-shop-names.json",
-          "hash": "368840268447538377"
-        },
-        {
-          "file": "libs/data/src/lib/json/stack-sizes.json",
-          "hash": "12099376820601088825"
-        },
-        {
-          "file": "libs/data/src/lib/json/status-search.index",
-          "hash": "12677781579673497449"
-        },
-        {
-          "file": "libs/data/src/lib/json/statuses.json",
-          "hash": "3642149496772139793"
-        },
-        {
-          "file": "libs/data/src/lib/json/submarine-parts.json",
-          "hash": "9617455094984708044"
-        },
-        {
-          "file": "libs/data/src/lib/json/submarine-ranks.json",
-          "hash": "8652849002209769629"
-        },
-        {
-          "file": "libs/data/src/lib/json/submarine-voyages.json",
-          "hash": "11442686821732900556"
-        },
-        {
-          "file": "libs/data/src/lib/json/telepo-relay.json",
-          "hash": "594896493913732613"
-        },
-        {
-          "file": "libs/data/src/lib/json/territory-layers.json",
-          "hash": "17908805136612919455"
-        },
-        {
-          "file": "libs/data/src/lib/json/territory-type-telepo-relay.json",
-          "hash": "13451649634531182431"
-        },
-        {
-          "file": "libs/data/src/lib/json/titles.json",
-          "hash": "14255598600854230306"
-        },
-        {
-          "file": "libs/data/src/lib/json/topic-select-names.json",
-          "hash": "6368657430687828827"
-        },
-        {
-          "file": "libs/data/src/lib/json/trade-flags.json",
-          "hash": "939825422801522922"
-        },
-        {
-          "file": "libs/data/src/lib/json/trait-search.index",
-          "hash": "1274573489649091522"
-        },
-        {
-          "file": "libs/data/src/lib/json/traits.json",
-          "hash": "16219080276345786350"
-        },
-        {
-          "file": "libs/data/src/lib/json/treasures.json",
-          "hash": "9890919234748444318"
-        },
-        {
-          "file": "libs/data/src/lib/json/tribes.json",
-          "hash": "10548307407466017180"
-        },
-        {
-          "file": "libs/data/src/lib/json/triple-triad-rules.json",
-          "hash": "6944487661730745750"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-achievement-descriptions.json",
-          "hash": "8453005864181297129"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-achievements.json",
-          "hash": "15168323333437324611"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-action-categories.json",
-          "hash": "2255749948063013323"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-action-descriptions.json",
-          "hash": "4850146597601265445"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-actions.json",
-          "hash": "9616221889650250274"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-airship-voyages.json",
-          "hash": "7075793048243093049"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-base-params.json",
-          "hash": "16753150868388651604"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-beast-reputation-ranks.json",
-          "hash": "3296490249397786025"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-content-types.json",
-          "hash": "9149726405118434112"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-craft-actions.json",
-          "hash": "18036972821794463544"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-craft-descriptions.json",
-          "hash": "5366348123461758096"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-event-items.json",
-          "hash": "6283982678556519478"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-ex-versions.json",
-          "hash": "3185918794295482459"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-fates.json",
-          "hash": "15983084138474625655"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-gathering-bonuses.json",
-          "hash": "7928100318196098513"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-gathering-types.json",
-          "hash": "10811038291929620861"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-instance-descriptions.json",
-          "hash": "1412789947566692436"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-instances.json",
-          "hash": "17578514115303890845"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-island-craftworks-theme.json",
-          "hash": "13703782090009660629"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-item-descriptions.json",
-          "hash": "5170346181684248642"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-item-search-categories.json",
-          "hash": "3651914837802654647"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-item-ui-categories.json",
-          "hash": "534362021595492642"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-items.json",
-          "hash": "6586928397696474448"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-job-abbr.json",
-          "hash": "9102428556185170637"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-job-categories.json",
-          "hash": "1021216781649747311"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-job-name.json",
-          "hash": "9102428556185170637"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-journal-genre.json",
-          "hash": "17916183225515974311"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-leve-descriptions.json",
-          "hash": "17947334323210596787"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-leves.json",
-          "hash": "12725045170639321930"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-maps.json",
-          "hash": "2298897725798491984"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-mobs.json",
-          "hash": "844198345406592927"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-notebook-division-category.json",
-          "hash": "13432921962427138724"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-notebook-division.json",
-          "hash": "5051234077965468543"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-npc-titles.json",
-          "hash": "15384556499631978175"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-npcs.json",
-          "hash": "13647220374155745323"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-places.json",
-          "hash": "12428836030727120438"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-quest-descriptions.json",
-          "hash": "14836866278229268498"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-quests.json",
-          "hash": "5881225957293425535"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-races.json",
-          "hash": "6375046107242745121"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-recipes.json",
-          "hash": "7468796255798140063"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-shops.json",
-          "hash": "11567757094323534529"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-status-descriptions.json",
-          "hash": "12220866305972333590"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-statuses.json",
-          "hash": "15010926030726246548"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-submarine-voyages.json",
-          "hash": "15185041789832896893"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-trait-descriptions.json",
-          "hash": "17385970957286325376"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-traits.json",
-          "hash": "4687911722777827689"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-tribes.json",
-          "hash": "11006111764682202912"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-triple-triad-rule-descriptions.json",
-          "hash": "9889189251644241370"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-triple-triad-rules.json",
-          "hash": "3477327485695768826"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-ventures.json",
-          "hash": "9552435945843936390"
-        },
-        {
-          "file": "libs/data/src/lib/json/tw/tw-weathers.json",
-          "hash": "9829563119195411355"
-        },
-        {
-          "file": "libs/data/src/lib/json/ui-categories.json",
-          "hash": "1286051615693502004"
-        },
-        {
-          "file": "libs/data/src/lib/json/used-in-quests.json",
-          "hash": "390024469107825943"
-        },
-        {
-          "file": "libs/data/src/lib/json/venture-sources.json",
-          "hash": "9117677301400792484"
-        },
-        {
-          "file": "libs/data/src/lib/json/ventures.json",
-          "hash": "5690974670326469963"
-        },
-        {
-          "file": "libs/data/src/lib/json/voyage-sources.json",
-          "hash": "2996612909754752296"
-        },
-        {
-          "file": "libs/data/src/lib/json/weathers.json",
-          "hash": "11505077973268807830"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-achievement-descriptions.json",
-          "hash": "8568176150509073354"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-achievements.json",
-          "hash": "15320017819689048581"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-action-categories.json",
-          "hash": "11028964978778941256"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-action-descriptions.json",
-          "hash": "9492111877628153399"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-actions.json",
-          "hash": "10732805062480351222"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-airship-voyages.json",
-          "hash": "753470330621984571"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-base-params.json",
-          "hash": "6474147605674341869"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-beast-reputation-ranks.json",
-          "hash": "9018783272487895026"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-content-types.json",
-          "hash": "18377572791571376838"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-craft-actions.json",
-          "hash": "11294398443703662131"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-craft-descriptions.json",
-          "hash": "7609206097889368014"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-event-items.json",
-          "hash": "16859558373404941916"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-ex-versions.json",
-          "hash": "280413690991366714"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-fates.json",
-          "hash": "7752720601359294071"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-free-company-actions.json",
-          "hash": "11213554697612664736"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-gathering-bonuses.json",
-          "hash": "12986348870500108260"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-gathering-types.json",
-          "hash": "6218115688807886388"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-instance-descriptions.json",
-          "hash": "5127409858943404137"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-instances.json",
-          "hash": "1695305056566668794"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-island-craftworks-theme.json",
-          "hash": "177209836684385659"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-item-descriptions.json",
-          "hash": "6222222292601133371"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-item-kinds.json",
-          "hash": "15758150213079756526"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-item-search-categories.json",
-          "hash": "11359989899267593931"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-item-ui-categories.json",
-          "hash": "16817120741217083958"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-items.json",
-          "hash": "7563493772347263443"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-job-abbr.json",
-          "hash": "7242523952821316235"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-job-categories.json",
-          "hash": "12933803776419290677"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-job-name.json",
-          "hash": "7242523952821316235"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-journal-genre.json",
-          "hash": "16736420029742944237"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-leve-descriptions.json",
-          "hash": "1573985514587478763"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-leves.json",
-          "hash": "12449280511955165531"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-maps.json",
-          "hash": "12736289679100452909"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-mobs.json",
-          "hash": "6048049834547850810"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-notebook-division-category.json",
-          "hash": "6884675347675838915"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-notebook-division.json",
-          "hash": "3898657629049659783"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-npc-titles.json",
-          "hash": "18144263495677153956"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-npcs.json",
-          "hash": "13895451690414743182"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-patchs.json",
-          "hash": "341241566830957643"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-places.json",
-          "hash": "7912110749969310297"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-quest-descriptions.json",
-          "hash": "11145471930549145956"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-quests.json",
-          "hash": "13241457684943365584"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-races.json",
-          "hash": "1905506020518326133"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-recipes.json",
-          "hash": "17805870330519325610"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-shops.json",
-          "hash": "5503150878876580220"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-status-descriptions.json",
-          "hash": "10150025137531747981"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-statuses.json",
-          "hash": "10213170711013162788"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-submarine-voyages.json",
-          "hash": "12164552301793610911"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-trait-descriptions.json",
-          "hash": "17329213479911100523"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-traits.json",
-          "hash": "4181170458289115516"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-tribes.json",
-          "hash": "9433264372163870259"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-triple-triad-rule-descriptions.json",
-          "hash": "16944155017643266631"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-triple-triad-rules.json",
-          "hash": "3718521890348644014"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-ventures.json",
-          "hash": "1166518169158222176"
-        },
-        {
-          "file": "libs/data/src/lib/json/zh/zh-weathers.json",
-          "hash": "9878466579513053421"
-        },
-        {
-          "file": "libs/data/src/lib/lazy-files-list.ts",
-          "hash": "14776841137250549828"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-achievement-search.ts",
-          "hash": "2320082415197346990"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-achievement.ts",
-          "hash": "1321331018138834696"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-achievements-database-page.ts",
-          "hash": "15445727098200244609"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-action-category.ts",
-          "hash": "17777304145503035542"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-action-search.ts",
-          "hash": "18212619546805819008"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-action.ts",
-          "hash": "13236228268050649117"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-actions-database-page.ts",
-          "hash": "8649962031674811772"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-additional-item-data.ts",
-          "hash": "11424098919671229058"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-aetheryte.ts",
-          "hash": "10768061880239419279"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-airship-part.ts",
-          "hash": "4458500385256304341"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-airship-rank.ts",
-          "hash": "9814245130940785450"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-airship-voyage.ts",
-          "hash": "1158400686779636620"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-bait.ts",
-          "hash": "10556711056589617946"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-base-param.ts",
-          "hash": "4041731356025227404"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-beast-reputation-rank.ts",
-          "hash": "13152149868766601536"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-class-jobs-modifier.ts",
-          "hash": "14113526141974128861"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-collectable.ts",
-          "hash": "1164961103929102735"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-collectables-page-data.ts",
-          "hash": "8083612752471607378"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-collectables-shop-item-group.ts",
-          "hash": "3755236128300748850"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-content-type.ts",
-          "hash": "11813484380746321520"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-craft-action.ts",
-          "hash": "8245355422474538567"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-crafting-log-page.ts",
-          "hash": "12429062247946437656"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-data-keys.ts",
-          "hash": "14316711394191384311"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-data.ts",
-          "hash": "14961867320352223103"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-default-talk.ts",
-          "hash": "18436862018151811921"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-diadem-territory.ts",
-          "hash": "13379743554607305369"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-equip-slot-category.ts",
-          "hash": "5860742579595506501"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-equipment.ts",
-          "hash": "9468679209557053524"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-event-item.ts",
-          "hash": "1338060189413852329"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ex-version.ts",
-          "hash": "3340121399793381296"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fate-search.ts",
-          "hash": "12761157814894031022"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fate.ts",
-          "hash": "10420721501953445040"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fates-database-page.ts",
-          "hash": "14222985405371857360"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fish-parameter.ts",
-          "hash": "10989561705273876054"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fishing-log-tracker-page-data.ts",
-          "hash": "11745924484781554722"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fishing-log.ts",
-          "hash": "1641523874767188513"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fishing-source.ts",
-          "hash": "17388715266259053307"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fishing-spot-search.ts",
-          "hash": "4478601724463942606"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fishing-spot.ts",
-          "hash": "930074359417534620"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-fishing-spots-database-page.ts",
-          "hash": "14944563023759716924"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-food.ts",
-          "hash": "1291388343153197751"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-free-company-action.ts",
-          "hash": "7958389086806320668"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gatherer-crafter-level-adjust-table.ts",
-          "hash": "10853521324784314966"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gathering-bonus.ts",
-          "hash": "7986536837636525766"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gathering-item.ts",
-          "hash": "16535795876103449706"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gathering-log-page.ts",
-          "hash": "12668033813152996952"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gathering-node-search.ts",
-          "hash": "1646061896181987953"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gathering-search-index.ts",
-          "hash": "3569363229906988238"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gathering-type.ts",
-          "hash": "17160421685393648100"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gc-name.ts",
-          "hash": "17649022231754148503"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gc-supply.ts",
-          "hash": "9239665333458322153"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-gil-shop-name.ts",
-          "hash": "13210935918717868559"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-hunt.ts",
-          "hash": "5536888295784187755"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-hwd-inspection.ts",
-          "hash": "5505250799968114408"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-hwd-phase.ts",
-          "hash": "14355725683436227150"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-instance-search.ts",
-          "hash": "10918079174069875144"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-instance.ts",
-          "hash": "8078536808261670713"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-animal.ts",
-          "hash": "6846887411255598643"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-building.ts",
-          "hash": "8644562859324654491"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-craftwork.ts",
-          "hash": "4051749888402233231"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-craftworks-theme.ts",
-          "hash": "2742515937339689013"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-crop.ts",
-          "hash": "12240194611327792920"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-gathering-item.ts",
-          "hash": "8661719841038734223"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-landmark.ts",
-          "hash": "14419459579617772880"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-island-popularity.ts",
-          "hash": "16580092964836037342"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-bonus.ts",
-          "hash": "14254923361175767294"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-category.ts",
-          "hash": "7795348684336064152"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-level.ts",
-          "hash": "14091301315694878849"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-main-attribute.ts",
-          "hash": "14252507546335209241"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-melding-data.ts",
-          "hash": "3850729363440726545"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-search.ts",
-          "hash": "5233435883725702369"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-series.ts",
-          "hash": "11429796783745256331"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-set-bonus.ts",
-          "hash": "14557689289098135560"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item-stat.ts",
-          "hash": "12978580597132756363"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-item.ts",
-          "hash": "14915221852253318778"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-items-database-page.ts",
-          "hash": "14948079745157062714"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-job-abbr.ts",
-          "hash": "11864184681372789772"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-job-category.ts",
-          "hash": "1894692701444211910"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-job-name.ts",
-          "hash": "10611174108990561784"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-journal-genre.ts",
-          "hash": "13487765761414922563"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ko-airship-voyage.ts",
-          "hash": "4101537832710541075"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ko-fate.ts",
-          "hash": "14581841169211364513"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ko-gathering-bonus.ts",
-          "hash": "641272818834313956"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ko-recipe.ts",
-          "hash": "14839503577389591829"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ko-status.ts",
-          "hash": "3433084662322749940"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-ko-submarine-voyage.ts",
-          "hash": "13847608105745564757"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-leve-search.ts",
-          "hash": "910779852636270534"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-leve.ts",
-          "hash": "6307838179271066340"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-leves-database-page.ts",
-          "hash": "16332631080248233136"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-leves-per-item.ts",
-          "hash": "9034899833200358013"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-log-tracker-page-data.ts",
-          "hash": "1792115230687318245"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-map-entry.ts",
-          "hash": "7524113754065643993"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-map-search.ts",
-          "hash": "14009114141902225170"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-map.ts",
-          "hash": "2480110730243159213"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-materia.ts",
-          "hash": "6381296841399284366"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-medicine.ts",
-          "hash": "8333214008267571156"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-mob.ts",
-          "hash": "12982738709950930175"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-mobs-database-page.ts",
-          "hash": "2836256633313868457"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-mogstation-source.ts",
-          "hash": "5290531196659964374"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-monster-search.ts",
-          "hash": "2966996966089982487"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-monster.ts",
-          "hash": "13993485719628661910"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-node.ts",
-          "hash": "12185057102620943805"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-nodes-database-page.ts",
-          "hash": "5967765593600795415"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-notebook-division-category.ts",
-          "hash": "12925068973175694143"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-notebook-division.ts",
-          "hash": "5392587785875440293"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-npc-search.ts",
-          "hash": "1554034267818547282"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-npc.ts",
-          "hash": "2192662886987137287"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-npcs-database-page.ts",
-          "hash": "3114307736797538847"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-page-title.ts",
-          "hash": "18167782988007624200"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-param-grow.ts",
-          "hash": "2381587338245326530"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-patch-content.ts",
-          "hash": "10858513185632081209"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-patch-name.ts",
-          "hash": "334602205841514758"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-place.ts",
-          "hash": "12999196338424022046"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-quest-search.ts",
-          "hash": "3105872047885422758"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-quest-source.ts",
-          "hash": "8931329432699399044"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-quest.ts",
-          "hash": "12513895815618619200"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-quests-database-page.ts",
-          "hash": "8134772726937553"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-quests-text.ts",
-          "hash": "12252230977485009367"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-race.ts",
-          "hash": "8843201191199886444"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-recipe-level-table.ts",
-          "hash": "9459533950514940118"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-recipe.ts",
-          "hash": "1659376956101164431"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-recipes-ingredient-lookup.ts",
-          "hash": "3056447926315449015"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-recipes-per-item.ts",
-          "hash": "16145418886127785611"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-retainer-task.ts",
-          "hash": "13161668572558102363"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-search-category.ts",
-          "hash": "14026214384936522432"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-seed.ts",
-          "hash": "8968310484001009412"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-shop-name.ts",
-          "hash": "11229119392077933832"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-shop.ts",
-          "hash": "4867130398458352811"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-shops-by-npc.ts",
-          "hash": "2300497201872199319"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-spear-fishing-log.ts",
-          "hash": "15146899605185620721"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-spearfishing-source.ts",
-          "hash": "11502949308832498468"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-special-shop-name.ts",
-          "hash": "17624254841097283585"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-status-search.ts",
-          "hash": "10584344899554155287"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-status.ts",
-          "hash": "11299740694171716425"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-statuses-database-page.ts",
-          "hash": "9015863595611783561"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-submarine-part.ts",
-          "hash": "7466643254821255454"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-submarine-rank.ts",
-          "hash": "15836680411496340417"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-submarine-voyage.ts",
-          "hash": "17994945129282736479"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-telepo-relay.ts",
-          "hash": "9031183992535574044"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-territory-layer.ts",
-          "hash": "18071594354661174589"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-territory-type-telepo-relay.ts",
-          "hash": "9528912492998282327"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-title.ts",
-          "hash": "2357444029450341780"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-topic-select-name.ts",
-          "hash": "12232766923391065426"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-trait-search.ts",
-          "hash": "7634438817111192412"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-trait.ts",
-          "hash": "7945993223038109559"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-traits-database-page.ts",
-          "hash": "4996855810896165700"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-treasure.ts",
-          "hash": "17135224229526486609"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tribe.ts",
-          "hash": "14194114160440933430"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-triple-triad-rule.ts",
-          "hash": "4928905108512656315"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tw-airship-voyage.ts",
-          "hash": "15133876727592720535"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tw-fate.ts",
-          "hash": "10277628385700745701"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tw-gathering-bonus.ts",
-          "hash": "10947116474156382197"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tw-recipe.ts",
-          "hash": "18252640835869943767"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tw-status.ts",
-          "hash": "11316770915936334000"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-tw-submarine-voyage.ts",
-          "hash": "2685098207212295253"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-venture.ts",
-          "hash": "5499667593128939"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-voyage-source.ts",
-          "hash": "14587586090733229927"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-weather.ts",
-          "hash": "12937123705791211767"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-zh-airship-voyage.ts",
-          "hash": "16257447482579486331"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-zh-fate.ts",
-          "hash": "40283560616522557"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-zh-gathering-bonus.ts",
-          "hash": "2730554290743566"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-zh-recipe.ts",
-          "hash": "16495875888483359026"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-zh-status.ts",
-          "hash": "13158233474026853471"
-        },
-        {
-          "file": "libs/data/src/lib/model/lazy-zh-submarine-voyage.ts",
-          "hash": "1615249972613129555"
-        },
-        {
-          "file": "libs/data/tsconfig.json",
-          "hash": "12834038490315927699"
-        },
-        {
-          "file": "libs/data/tsconfig.lib.json",
-          "hash": "13034901906147047048"
-        },
-        {
-          "file": "libs/data/tsconfig.spec.json",
-          "hash": "2406015174838385060"
-        }
-      ],
       "data-extraction": [
         {
           "file": "apps/data-extraction/.eslintrc.json",
@@ -2869,6 +763,418 @@
           ]
         }
       ],
+      "types": [
+        {
+          "file": "libs/types/.babelrc",
+          "hash": "12678781556853150254"
+        },
+        {
+          "file": "libs/types/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/types/README.md",
+          "hash": "10825246303961700588"
+        },
+        {
+          "file": "libs/types/jest.config.ts",
+          "hash": "18244480876019115532"
+        },
+        {
+          "file": "libs/types/project.json",
+          "hash": "8548744064640495968"
+        },
+        {
+          "file": "libs/types/src/index.ts",
+          "hash": "6653065925684026345"
+        },
+        {
+          "file": "libs/types/src/lib/core/index.ts",
+          "hash": "15087511978217408805"
+        },
+        {
+          "file": "libs/types/src/lib/core/vector2.ts",
+          "hash": "13210428587717805303"
+        },
+        {
+          "file": "libs/types/src/lib/core/vector3.ts",
+          "hash": "16737909777921898563"
+        },
+        {
+          "file": "libs/types/src/lib/data/allagan-report-source.ts",
+          "hash": "3263795986341689425"
+        },
+        {
+          "file": "libs/types/src/lib/data/fishing-bait.ts",
+          "hash": "8495923378957147449"
+        },
+        {
+          "file": "libs/types/src/lib/data/gathering-node.ts",
+          "hash": "3417136501855578503"
+        },
+        {
+          "file": "libs/types/src/lib/data/hookset.ts",
+          "hash": "4942683432442425336"
+        },
+        {
+          "file": "libs/types/src/lib/data/index.ts",
+          "hash": "14782733871463800167"
+        },
+        {
+          "file": "libs/types/src/lib/data/territory-layer.ts",
+          "hash": "18202596314961494916"
+        },
+        {
+          "file": "libs/types/src/lib/data/tug.ts",
+          "hash": "11623808671054489718"
+        },
+        {
+          "file": "libs/types/src/lib/data/xivapi-patch.ts",
+          "hash": "9098716562406744661"
+        },
+        {
+          "file": "libs/types/src/lib/fishing/fish-train-stop.ts",
+          "hash": "16857159385646403986"
+        },
+        {
+          "file": "libs/types/src/lib/fishing/fish-train.ts",
+          "hash": "11333920566295529512"
+        },
+        {
+          "file": "libs/types/src/lib/fishing/index.ts",
+          "hash": "14686598451584430067"
+        },
+        {
+          "file": "libs/types/src/lib/game/base-param.ts",
+          "hash": "3016650878374629842"
+        },
+        {
+          "file": "libs/types/src/lib/game/index.ts",
+          "hash": "15565076105959984880"
+        },
+        {
+          "file": "libs/types/src/lib/game/spearfishing-shadow-size.ts",
+          "hash": "1499769801088103632"
+        },
+        {
+          "file": "libs/types/src/lib/game/spearfishing-speed.ts",
+          "hash": "12590585562332673310"
+        },
+        {
+          "file": "libs/types/src/lib/game/trade-source-priorities.ts",
+          "hash": "18352798558903174103"
+        },
+        {
+          "file": "libs/types/src/lib/i18n-name.ts",
+          "hash": "6024476817771196390"
+        },
+        {
+          "file": "libs/types/src/lib/lazy-data-types.ts",
+          "hash": "11024164856380418633",
+          "deps": [
+            "data"
+          ]
+        },
+        {
+          "file": "libs/types/src/lib/list/data-type.ts",
+          "hash": "7522136369007207056"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/alarm-details.ts",
+          "hash": "9195987830427556795"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/compact-masterbook.ts",
+          "hash": "5441715050500271122"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/exploration-type.ts",
+          "hash": "1540400877992081705"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/index.ts",
+          "hash": "16393816638175840237"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/ingredient.ts",
+          "hash": "17110636141259733902"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/monster-location.ts",
+          "hash": "4648634685731529732"
+        },
+        {
+          "file": "libs/types/src/lib/list/details-model/triple-triad-duel.ts",
+          "hash": "16267285280351285176"
+        },
+        {
+          "file": "libs/types/src/lib/list/extracts/extracts.ts",
+          "hash": "9544082415336208171"
+        },
+        {
+          "file": "libs/types/src/lib/list/extracts/get-item-source.ts",
+          "hash": "14892666640468304555",
+          "deps": [
+            "npm:@ungap/structured-clone"
+          ]
+        },
+        {
+          "file": "libs/types/src/lib/list/extracts/index.ts",
+          "hash": "15482890817190378664"
+        },
+        {
+          "file": "libs/types/src/lib/list/extracts/item-source.ts",
+          "hash": "13846963678901575403"
+        },
+        {
+          "file": "libs/types/src/lib/list/index.ts",
+          "hash": "1184057677801011092"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/crafted-by.ts",
+          "hash": "13499239295785042425",
+          "deps": [
+            "data"
+          ]
+        },
+        {
+          "file": "libs/types/src/lib/list/source/drop.ts",
+          "hash": "12105154665244975891"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/fate-data.ts",
+          "hash": "10554863564245371729"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/gardening-data.ts",
+          "hash": "17749690284609745137"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/gathered-by.ts",
+          "hash": "3208455144324078868"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/index.ts",
+          "hash": "13901633770536821162"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/instance.ts",
+          "hash": "2643068722866167088"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/island-animal.ts",
+          "hash": "13307603924810213398"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/island-crop.ts",
+          "hash": "2868228035350718209"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/mogstation-item.ts",
+          "hash": "14608817879355770592"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/trade-entry.ts",
+          "hash": "6421478799400343937"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/trade-npc.ts",
+          "hash": "4122755533803890802"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/trade-source.ts",
+          "hash": "12083768026346875630"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/trade.ts",
+          "hash": "1465353573528851071"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/treasure.ts",
+          "hash": "4545014579684121799"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/vendor.ts",
+          "hash": "6457721534237570593"
+        },
+        {
+          "file": "libs/types/src/lib/list/source/voyage-source.ts",
+          "hash": "2465966227409125695"
+        },
+        {
+          "file": "libs/types/src/lib/region.enum.ts",
+          "hash": "4342909406104437214"
+        },
+        {
+          "file": "libs/types/src/lib/search/achievement-search-result.ts",
+          "hash": "10006275013398498679"
+        },
+        {
+          "file": "libs/types/src/lib/search/action-search-result.ts",
+          "hash": "1093513113801431695"
+        },
+        {
+          "file": "libs/types/src/lib/search/base-search-result.ts",
+          "hash": "3089514351664040531"
+        },
+        {
+          "file": "libs/types/src/lib/search/fate-search-result.ts",
+          "hash": "12420668835416825959"
+        },
+        {
+          "file": "libs/types/src/lib/search/fishing-spot-search-result.ts",
+          "hash": "1306263860330498901",
+          "deps": [
+            "data"
+          ]
+        },
+        {
+          "file": "libs/types/src/lib/search/gathering-node-search-result.ts",
+          "hash": "14630763298910535282",
+          "deps": [
+            "data"
+          ]
+        },
+        {
+          "file": "libs/types/src/lib/search/index.ts",
+          "hash": "16972578325459751826"
+        },
+        {
+          "file": "libs/types/src/lib/search/instance-search-result.ts",
+          "hash": "12438140236505462774"
+        },
+        {
+          "file": "libs/types/src/lib/search/leve-search-result.ts",
+          "hash": "4697418165399625982"
+        },
+        {
+          "file": "libs/types/src/lib/search/levequest.ts",
+          "hash": "13036161292386726512"
+        },
+        {
+          "file": "libs/types/src/lib/search/map-search-result.ts",
+          "hash": "4594306833039021296"
+        },
+        {
+          "file": "libs/types/src/lib/search/mob-search-result.ts",
+          "hash": "13782977082663476690"
+        },
+        {
+          "file": "libs/types/src/lib/search/npc-search-result.ts",
+          "hash": "7572688576660134777"
+        },
+        {
+          "file": "libs/types/src/lib/search/quest-search-result.ts",
+          "hash": "13028206122758392573"
+        },
+        {
+          "file": "libs/types/src/lib/search/recipe.ts",
+          "hash": "8525863432598137829"
+        },
+        {
+          "file": "libs/types/src/lib/search/search-filter.ts",
+          "hash": "1759299604158825945"
+        },
+        {
+          "file": "libs/types/src/lib/search/search-result.ts",
+          "hash": "13544282536543826928"
+        },
+        {
+          "file": "libs/types/src/lib/search/search-type.ts",
+          "hash": "543624798287961670"
+        },
+        {
+          "file": "libs/types/src/lib/search/status-search-result.ts",
+          "hash": "1529131788027257975"
+        },
+        {
+          "file": "libs/types/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/types/tsconfig.lib.json",
+          "hash": "13034901906147047048"
+        },
+        {
+          "file": "libs/types/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "lodestone-api": [
+        {
+          "file": "apps/lodestone-api/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/lodestone-api/Dockerfile",
+          "hash": "8568493126232137063"
+        },
+        {
+          "file": "apps/lodestone-api/cloudbuild.yaml",
+          "hash": "5879641341341524779"
+        },
+        {
+          "file": "apps/lodestone-api/jest.config.ts",
+          "hash": "14793157475565128206"
+        },
+        {
+          "file": "apps/lodestone-api/package.json",
+          "hash": "15878788384275859829",
+          "deps": [
+            "npm:@xivapi/nodestone",
+            "npm:express",
+            "npm:cors",
+            "npm:redis",
+            "npm:tslib",
+            "npm:class-transformer",
+            "npm:class-validator",
+            "npm:typescript",
+            "npm:reflect-metadata",
+            "npm:@types/express",
+            "npm:@types/node"
+          ]
+        },
+        {
+          "file": "apps/lodestone-api/project.json",
+          "hash": "2849164660855338121"
+        },
+        {
+          "file": "apps/lodestone-api/src/cache/redis-cache.ts",
+          "hash": "11227040717918631451",
+          "deps": [
+            "npm:redis"
+          ]
+        },
+        {
+          "file": "apps/lodestone-api/src/environments/environment.prod.ts",
+          "hash": "10220522844224226756"
+        },
+        {
+          "file": "apps/lodestone-api/src/environments/environment.ts",
+          "hash": "1135292433917692033"
+        },
+        {
+          "file": "apps/lodestone-api/src/main.ts",
+          "hash": "5366608386861423998",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:@xivapi/nodestone"
+          ]
+        },
+        {
+          "file": "apps/lodestone-api/tsconfig.app.json",
+          "hash": "15489350182582570456"
+        },
+        {
+          "file": "apps/lodestone-api/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/lodestone-api/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
       "client": [
         {
           "file": "apps/client/.eslintrc.json",
@@ -2902,7 +1208,7 @@
         },
         {
           "file": "apps/client/src/app/+state/auth.effects.ts",
-          "hash": "11798848841442103112",
+          "hash": "12184765121107969864",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
@@ -2910,6 +1216,7 @@
             "npm:@ngrx/store",
             "npm:ng-zorro-antd",
             "npm:@ngx-translate/core",
+            "npm:firebase",
             "npm:deep-diff",
             "npm:@angular/fire"
           ]
@@ -2946,7 +1253,7 @@
         },
         {
           "file": "apps/client/src/app/apollo-client-factory.ts",
-          "hash": "16785034454386543265",
+          "hash": "8013847200855668812",
           "deps": [
             "npm:@apollo/client",
             "npm:apollo-angular",
@@ -2978,7 +1285,7 @@
         },
         {
           "file": "apps/client/src/app/app.component.ts",
-          "hash": "1346968573135926069",
+          "hash": "5050030907155836485",
           "deps": [
             "npm:@angular/core",
             "npm:@ngx-translate/core",
@@ -2997,7 +1304,7 @@
         },
         {
           "file": "apps/client/src/app/app.module.ts",
-          "hash": "6056871296736013408",
+          "hash": "9906997649768381915",
           "deps": [
             "npm:@angular/platform-browser",
             "npm:@angular/core",
@@ -4450,7 +2757,7 @@
         },
         {
           "file": "apps/client/src/app/core/rxjs/lazy-loaded.ts",
-          "hash": "2236780073020958376",
+          "hash": "3582905109371399022",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -16722,341 +15029,2329 @@
           "hash": "17717282290375417713"
         }
       ],
-      "types": [
+      "search": [
         {
-          "file": "libs/types/.babelrc",
-          "hash": "12678781556853150254"
-        },
-        {
-          "file": "libs/types/.eslintrc.json",
+          "file": "libs/search/.eslintrc.json",
           "hash": "13800677001662881425"
         },
         {
-          "file": "libs/types/README.md",
-          "hash": "10825246303961700588"
+          "file": "libs/search/README.md",
+          "hash": "2918268056342767444"
         },
         {
-          "file": "libs/types/jest.config.ts",
-          "hash": "18244480876019115532"
+          "file": "libs/search/jest.config.ts",
+          "hash": "1596315547325875044"
         },
         {
-          "file": "libs/types/project.json",
-          "hash": "8548744064640495968"
+          "file": "libs/search/project.json",
+          "hash": "14648880851091903934"
         },
         {
-          "file": "libs/types/src/index.ts",
-          "hash": "6653065925684026345"
+          "file": "libs/search/src/index.ts",
+          "hash": "1595633602278842070"
         },
         {
-          "file": "libs/types/src/lib/core/index.ts",
-          "hash": "15087511978217408805"
-        },
-        {
-          "file": "libs/types/src/lib/core/vector2.ts",
-          "hash": "13210428587717805303"
-        },
-        {
-          "file": "libs/types/src/lib/core/vector3.ts",
-          "hash": "16737909777921898563"
-        },
-        {
-          "file": "libs/types/src/lib/data/allagan-report-source.ts",
-          "hash": "3263795986341689425"
-        },
-        {
-          "file": "libs/types/src/lib/data/fishing-bait.ts",
-          "hash": "8495923378957147449"
-        },
-        {
-          "file": "libs/types/src/lib/data/gathering-node.ts",
-          "hash": "3417136501855578503"
-        },
-        {
-          "file": "libs/types/src/lib/data/hookset.ts",
-          "hash": "4942683432442425336"
-        },
-        {
-          "file": "libs/types/src/lib/data/index.ts",
-          "hash": "14782733871463800167"
-        },
-        {
-          "file": "libs/types/src/lib/data/territory-layer.ts",
-          "hash": "18202596314961494916"
-        },
-        {
-          "file": "libs/types/src/lib/data/tug.ts",
-          "hash": "11623808671054489718"
-        },
-        {
-          "file": "libs/types/src/lib/data/xivapi-patch.ts",
-          "hash": "9098716562406744661"
-        },
-        {
-          "file": "libs/types/src/lib/fishing/fish-train-stop.ts",
-          "hash": "16857159385646403986"
-        },
-        {
-          "file": "libs/types/src/lib/fishing/fish-train.ts",
-          "hash": "11333920566295529512"
-        },
-        {
-          "file": "libs/types/src/lib/fishing/index.ts",
-          "hash": "14686598451584430067"
-        },
-        {
-          "file": "libs/types/src/lib/game/base-param.ts",
-          "hash": "3016650878374629842"
-        },
-        {
-          "file": "libs/types/src/lib/game/index.ts",
-          "hash": "15565076105959984880"
-        },
-        {
-          "file": "libs/types/src/lib/game/spearfishing-shadow-size.ts",
-          "hash": "1499769801088103632"
-        },
-        {
-          "file": "libs/types/src/lib/game/spearfishing-speed.ts",
-          "hash": "12590585562332673310"
-        },
-        {
-          "file": "libs/types/src/lib/game/trade-source-priorities.ts",
-          "hash": "18352798558903174103"
-        },
-        {
-          "file": "libs/types/src/lib/i18n-name.ts",
-          "hash": "6024476817771196390"
-        },
-        {
-          "file": "libs/types/src/lib/lazy-data-types.ts",
-          "hash": "11024164856380418633",
+          "file": "libs/search/src/lib/search-params.ts",
+          "hash": "4199729492579908342",
           "deps": [
-            "data"
+            "types"
           ]
         },
         {
-          "file": "libs/types/src/lib/list/data-type.ts",
-          "hash": "7522136369007207056"
+          "file": "libs/search/src/lib/xiv-search-filter.ts",
+          "hash": "306592063451189707"
         },
         {
-          "file": "libs/types/src/lib/list/details-model/alarm-details.ts",
-          "hash": "9195987830427556795"
-        },
-        {
-          "file": "libs/types/src/lib/list/details-model/compact-masterbook.ts",
-          "hash": "5441715050500271122"
-        },
-        {
-          "file": "libs/types/src/lib/list/details-model/exploration-type.ts",
-          "hash": "1540400877992081705"
-        },
-        {
-          "file": "libs/types/src/lib/list/details-model/index.ts",
-          "hash": "16393816638175840237"
-        },
-        {
-          "file": "libs/types/src/lib/list/details-model/ingredient.ts",
-          "hash": "17110636141259733902"
-        },
-        {
-          "file": "libs/types/src/lib/list/details-model/monster-location.ts",
-          "hash": "4648634685731529732"
-        },
-        {
-          "file": "libs/types/src/lib/list/details-model/triple-triad-duel.ts",
-          "hash": "16267285280351285176"
-        },
-        {
-          "file": "libs/types/src/lib/list/extracts/extracts.ts",
-          "hash": "9544082415336208171"
-        },
-        {
-          "file": "libs/types/src/lib/list/extracts/get-item-source.ts",
-          "hash": "14892666640468304555",
+          "file": "libs/search/src/lib/xiv-search.spec.ts",
+          "hash": "2573946209537253582",
           "deps": [
-            "npm:@ungap/structured-clone"
+            "types"
           ]
         },
         {
-          "file": "libs/types/src/lib/list/extracts/index.ts",
-          "hash": "15482890817190378664"
-        },
-        {
-          "file": "libs/types/src/lib/list/extracts/item-source.ts",
-          "hash": "13846963678901575403"
-        },
-        {
-          "file": "libs/types/src/lib/list/index.ts",
-          "hash": "1184057677801011092"
-        },
-        {
-          "file": "libs/types/src/lib/list/source/crafted-by.ts",
-          "hash": "13499239295785042425",
+          "file": "libs/search/src/lib/xiv-search.ts",
+          "hash": "11531084729657767519",
           "deps": [
-            "data"
+            "types",
+            "npm:rxjs",
+            "data",
+            "npm:flexsearch-ts",
+            "npm:lodash"
           ]
         },
         {
-          "file": "libs/types/src/lib/list/source/drop.ts",
-          "hash": "12105154665244975891"
+          "file": "libs/search/tsconfig.json",
+          "hash": "2840670722752396445"
         },
         {
-          "file": "libs/types/src/lib/list/source/fate-data.ts",
-          "hash": "10554863564245371729"
+          "file": "libs/search/tsconfig.lib.json",
+          "hash": "8188472110264778699"
         },
         {
-          "file": "libs/types/src/lib/list/source/gardening-data.ts",
-          "hash": "17749690284609745137"
+          "file": "libs/search/tsconfig.spec.json",
+          "hash": "6898991939206723030"
+        }
+      ],
+      "data": [
+        {
+          "file": "libs/data/.babelrc",
+          "hash": "12678781556853150254"
         },
         {
-          "file": "libs/types/src/lib/list/source/gathered-by.ts",
-          "hash": "3208455144324078868"
+          "file": "libs/data/.eslintrc.json",
+          "hash": "13800677001662881425"
         },
         {
-          "file": "libs/types/src/lib/list/source/index.ts",
-          "hash": "13901633770536821162"
+          "file": "libs/data/README.md",
+          "hash": "346502755150921139"
         },
         {
-          "file": "libs/types/src/lib/list/source/instance.ts",
-          "hash": "2643068722866167088"
+          "file": "libs/data/jest.config.ts",
+          "hash": "11211889106616540525"
         },
         {
-          "file": "libs/types/src/lib/list/source/island-animal.ts",
-          "hash": "13307603924810213398"
+          "file": "libs/data/package.json",
+          "hash": "13299666613862780291"
         },
         {
-          "file": "libs/types/src/lib/list/source/island-crop.ts",
-          "hash": "2868228035350718209"
+          "file": "libs/data/project.json",
+          "hash": "17047698284593438534"
         },
         {
-          "file": "libs/types/src/lib/list/source/mogstation-item.ts",
-          "hash": "14608817879355770592"
+          "file": "libs/data/src/index.ts",
+          "hash": "11888095956655437235"
         },
         {
-          "file": "libs/types/src/lib/list/source/trade-entry.ts",
-          "hash": "6421478799400343937"
+          "file": "libs/data/src/lib/extracts-hash.ts",
+          "hash": "6053012612234277275"
         },
         {
-          "file": "libs/types/src/lib/list/source/trade-npc.ts",
-          "hash": "4122755533803890802"
+          "file": "libs/data/src/lib/extracts/extracts.json",
+          "hash": "2055005278292741342"
         },
         {
-          "file": "libs/types/src/lib/list/source/trade-source.ts",
-          "hash": "12083768026346875630"
+          "file": "libs/data/src/lib/handmade/game-servers.ts",
+          "hash": "15659511926716283417"
         },
         {
-          "file": "libs/types/src/lib/list/source/trade.ts",
-          "hash": "1465353573528851071"
+          "file": "libs/data/src/lib/handmade/island-workshop-rank-ratio.ts",
+          "hash": "13293235274169229464"
         },
         {
-          "file": "libs/types/src/lib/list/source/treasure.ts",
-          "hash": "4545014579684121799"
+          "file": "libs/data/src/lib/handmade/job-abbr-en.ts",
+          "hash": "17862142708514332922"
         },
         {
-          "file": "libs/types/src/lib/list/source/vendor.ts",
-          "hash": "6457721534237570593"
+          "file": "libs/data/src/lib/handmade/levemetes.ts",
+          "hash": "3241961500708214880"
         },
         {
-          "file": "libs/types/src/lib/list/source/voyage-source.ts",
-          "hash": "2465966227409125695"
+          "file": "libs/data/src/lib/handmade/monster-drops.ts",
+          "hash": "13184497211160297172"
         },
         {
-          "file": "libs/types/src/lib/region.enum.ts",
-          "hash": "4342909406104437214"
+          "file": "libs/data/src/lib/handmade/quests-chain-lengths.ts",
+          "hash": "5473548149236353470"
         },
         {
-          "file": "libs/types/src/lib/search/achievement-search-result.ts",
-          "hash": "10006275013398498679"
+          "file": "libs/data/src/lib/json/achievement-search.index",
+          "hash": "3216679956362848221"
         },
         {
-          "file": "libs/types/src/lib/search/action-search-result.ts",
-          "hash": "1093513113801431695"
+          "file": "libs/data/src/lib/json/achievements.json",
+          "hash": "16576548615093394612"
         },
         {
-          "file": "libs/types/src/lib/search/base-search-result.ts",
-          "hash": "3089514351664040531"
+          "file": "libs/data/src/lib/json/action-categories.json",
+          "hash": "11544798313201186795"
         },
         {
-          "file": "libs/types/src/lib/search/fate-search-result.ts",
-          "hash": "12420668835416825959"
+          "file": "libs/data/src/lib/json/action-cd-groups.json",
+          "hash": "6700989808749758087"
         },
         {
-          "file": "libs/types/src/lib/search/fishing-spot-search-result.ts",
-          "hash": "1306263860330498901",
-          "deps": [
-            "data"
-          ]
+          "file": "libs/data/src/lib/json/action-icons.json",
+          "hash": "7904143985329069931"
         },
         {
-          "file": "libs/types/src/lib/search/gathering-node-search-result.ts",
-          "hash": "14630763298910535282",
-          "deps": [
-            "data"
-          ]
+          "file": "libs/data/src/lib/json/action-search.index",
+          "hash": "3914324400551445438"
         },
         {
-          "file": "libs/types/src/lib/search/index.ts",
-          "hash": "16972578325459751826"
+          "file": "libs/data/src/lib/json/action-timeline.json",
+          "hash": "3219524095087533147"
         },
         {
-          "file": "libs/types/src/lib/search/instance-search-result.ts",
-          "hash": "12438140236505462774"
+          "file": "libs/data/src/lib/json/actions.json",
+          "hash": "18008932137099193237"
         },
         {
-          "file": "libs/types/src/lib/search/leve-search-result.ts",
-          "hash": "4697418165399625982"
+          "file": "libs/data/src/lib/json/additional-item-data.json",
+          "hash": "5632336278648609273"
         },
         {
-          "file": "libs/types/src/lib/search/levequest.ts",
-          "hash": "13036161292386726512"
+          "file": "libs/data/src/lib/json/aetherial-reduce.json",
+          "hash": "3520157793415153154"
         },
         {
-          "file": "libs/types/src/lib/search/map-search-result.ts",
-          "hash": "4594306833039021296"
+          "file": "libs/data/src/lib/json/aetherytes.json",
+          "hash": "17877052661773492479"
         },
         {
-          "file": "libs/types/src/lib/search/mob-search-result.ts",
-          "hash": "13782977082663476690"
+          "file": "libs/data/src/lib/json/airship-parts.json",
+          "hash": "11731984354389398207"
         },
         {
-          "file": "libs/types/src/lib/search/npc-search-result.ts",
-          "hash": "7572688576660134777"
+          "file": "libs/data/src/lib/json/airship-ranks.json",
+          "hash": "12489902369935971517"
         },
         {
-          "file": "libs/types/src/lib/search/quest-search-result.ts",
-          "hash": "13028206122758392573"
+          "file": "libs/data/src/lib/json/airship-voyages.json",
+          "hash": "8597212351203523310"
         },
         {
-          "file": "libs/types/src/lib/search/recipe.ts",
-          "hash": "8525863432598137829"
+          "file": "libs/data/src/lib/json/baits.json",
+          "hash": "17269209400909126398"
         },
         {
-          "file": "libs/types/src/lib/search/search-filter.ts",
-          "hash": "1759299604158825945"
+          "file": "libs/data/src/lib/json/base-params.json",
+          "hash": "10221467880098201863"
         },
         {
-          "file": "libs/types/src/lib/search/search-result.ts",
-          "hash": "13544282536543826928"
+          "file": "libs/data/src/lib/json/beast-reputation-ranks.json",
+          "hash": "10585871764192819021"
         },
         {
-          "file": "libs/types/src/lib/search/search-type.ts",
-          "hash": "543624798287961670"
+          "file": "libs/data/src/lib/json/class-jobs-modifiers.json",
+          "hash": "12609754837245864285"
         },
         {
-          "file": "libs/types/src/lib/search/status-search-result.ts",
-          "hash": "1529131788027257975"
+          "file": "libs/data/src/lib/json/collectable-flags.json",
+          "hash": "11627823209794597197"
         },
         {
-          "file": "libs/types/tsconfig.json",
+          "file": "libs/data/src/lib/json/collectables-page-data.json",
+          "hash": "13552728764303472148"
+        },
+        {
+          "file": "libs/data/src/lib/json/collectables-shop-item-group.json",
+          "hash": "11599016344822655445"
+        },
+        {
+          "file": "libs/data/src/lib/json/collectables-shops.json",
+          "hash": "15940589802303692239"
+        },
+        {
+          "file": "libs/data/src/lib/json/collectables.json",
+          "hash": "1213755189607168084"
+        },
+        {
+          "file": "libs/data/src/lib/json/content-type.json",
+          "hash": "2921184811282717823"
+        },
+        {
+          "file": "libs/data/src/lib/json/craft-actions.json",
+          "hash": "568963287064437568"
+        },
+        {
+          "file": "libs/data/src/lib/json/crafting-levels.json",
+          "hash": "15592122377278401047"
+        },
+        {
+          "file": "libs/data/src/lib/json/crafting-log-pages.json",
+          "hash": "1396946413732085088"
+        },
+        {
+          "file": "libs/data/src/lib/json/crafting-log.json",
+          "hash": "45039040932394639"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/achievements-database-pages.json",
+          "hash": "4930582634148954039"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/actions-database-pages.json",
+          "hash": "13814657926813312913"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/fates-database-pages.json",
+          "hash": "15623677545292076608"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/fishing-spots-database-pages.json",
+          "hash": "6045902752039492594"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/items-database-pages.json",
+          "hash": "10746422365430772308"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/leves-database-pages.json",
+          "hash": "17284913862224371318"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/mobs-database-pages.json",
+          "hash": "549451662458052970"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/nodes-database-pages.json",
+          "hash": "16988775983665117353"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/npcs-database-pages.json",
+          "hash": "14951045971613719492"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/quests-database-pages.json",
+          "hash": "8566911348778535811"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/quests-text.index",
+          "hash": "7908716558108820093"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/statuses-database-pages.json",
+          "hash": "6037714801667894092"
+        },
+        {
+          "file": "libs/data/src/lib/json/db/traits-database-pages.json",
+          "hash": "7213818302882242698"
+        },
+        {
+          "file": "libs/data/src/lib/json/deprecated-items.json",
+          "hash": "7545215030422226800"
+        },
+        {
+          "file": "libs/data/src/lib/json/desynth.json",
+          "hash": "10670113297788976492"
+        },
+        {
+          "file": "libs/data/src/lib/json/diadem-territory.json",
+          "hash": "10155966185054241020"
+        },
+        {
+          "file": "libs/data/src/lib/json/drop-sources.json",
+          "hash": "6644691017265806650"
+        },
+        {
+          "file": "libs/data/src/lib/json/equip-slot-categories.json",
+          "hash": "10802689969293248022"
+        },
+        {
+          "file": "libs/data/src/lib/json/equipment.json",
+          "hash": "7068369724716230886"
+        },
+        {
+          "file": "libs/data/src/lib/json/event-items.json",
+          "hash": "7259093848392813716"
+        },
+        {
+          "file": "libs/data/src/lib/json/ex-versions.json",
+          "hash": "14398616138351952112"
+        },
+        {
+          "file": "libs/data/src/lib/json/extractable-items.json",
+          "hash": "3250525464017551557"
+        },
+        {
+          "file": "libs/data/src/lib/json/fate-search.index",
+          "hash": "217224902034035846"
+        },
+        {
+          "file": "libs/data/src/lib/json/fate-sources.json",
+          "hash": "16016201139820573186"
+        },
+        {
+          "file": "libs/data/src/lib/json/fates.json",
+          "hash": "4555480249166576426"
+        },
+        {
+          "file": "libs/data/src/lib/json/fish-parameter.json",
+          "hash": "9859655054332859360"
+        },
+        {
+          "file": "libs/data/src/lib/json/fishes.json",
+          "hash": "4728249954495839358"
+        },
+        {
+          "file": "libs/data/src/lib/json/fishing-log-tracker-page-data.json",
+          "hash": "17714692655307161064"
+        },
+        {
+          "file": "libs/data/src/lib/json/fishing-log.json",
+          "hash": "11598473608040899012"
+        },
+        {
+          "file": "libs/data/src/lib/json/fishing-sources.json",
+          "hash": "15478169711913066981"
+        },
+        {
+          "file": "libs/data/src/lib/json/fishing-spot-search.index",
+          "hash": "930941451385058579"
+        },
+        {
+          "file": "libs/data/src/lib/json/fishing-spots.json",
+          "hash": "16128287567786602276"
+        },
+        {
+          "file": "libs/data/src/lib/json/foods.json",
+          "hash": "16414636587102148088"
+        },
+        {
+          "file": "libs/data/src/lib/json/free-company-actions.json",
+          "hash": "18064752495220041578"
+        },
+        {
+          "file": "libs/data/src/lib/json/gardening-sources.json",
+          "hash": "12194820322338620783"
+        },
+        {
+          "file": "libs/data/src/lib/json/gatherer-crafter-lv-adjust-table.json",
+          "hash": "7554337551794983744"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-bonuses.json",
+          "hash": "15910759181605339202"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-items.json",
+          "hash": "4648564487001125917"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-levels.json",
+          "hash": "3494425370977125062"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-log-pages.json",
+          "hash": "3050155680641088952"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-node-search.index",
+          "hash": "5382301435280388961"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-point-to-node-id.json",
+          "hash": "4250894948485689643"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-search-index.json",
+          "hash": "10238829707762815318"
+        },
+        {
+          "file": "libs/data/src/lib/json/gathering-types.json",
+          "hash": "10393805868086147302"
+        },
+        {
+          "file": "libs/data/src/lib/json/gc-names.json",
+          "hash": "10615786630473223235"
+        },
+        {
+          "file": "libs/data/src/lib/json/gc-supply.json",
+          "hash": "3962926660119922300"
+        },
+        {
+          "file": "libs/data/src/lib/json/gil-shop-names.json",
+          "hash": "12258765440891573290"
+        },
+        {
+          "file": "libs/data/src/lib/json/gubal-bnpcs-index.json",
+          "hash": "14472744383962071306"
+        },
+        {
+          "file": "libs/data/src/lib/json/hq-flags.json",
+          "hash": "8380186634906774100"
+        },
+        {
+          "file": "libs/data/src/lib/json/hunts.json",
+          "hash": "11242966359157123595"
+        },
+        {
+          "file": "libs/data/src/lib/json/hwd-inspections.json",
+          "hash": "12590223388141155977"
+        },
+        {
+          "file": "libs/data/src/lib/json/hwd-phases.json",
+          "hash": "14296618293284169484"
+        },
+        {
+          "file": "libs/data/src/lib/json/ilvls.json",
+          "hash": "7306369722186251635"
+        },
+        {
+          "file": "libs/data/src/lib/json/instance-search.index",
+          "hash": "10876557363106396106"
+        },
+        {
+          "file": "libs/data/src/lib/json/instance-sources.json",
+          "hash": "10452861239143081764"
+        },
+        {
+          "file": "libs/data/src/lib/json/instances.json",
+          "hash": "6636063770325584198"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-animals.json",
+          "hash": "2176882257438343231"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-buildings.json",
+          "hash": "9596133448461890441"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-craftworks-theme.json",
+          "hash": "7004582805405223478"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-craftworks.json",
+          "hash": "2360644246665702086"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-crops.json",
+          "hash": "16395789905608148050"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-gathering-items.json",
+          "hash": "2800839112971634490"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-landmarks.json",
+          "hash": "10350036731312111972"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-popularity.json",
+          "hash": "15199854501015886834"
+        },
+        {
+          "file": "libs/data/src/lib/json/island-supply.json",
+          "hash": "9473929310369415565"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-bonuses.json",
+          "hash": "1442758445097315271"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-category.json",
+          "hash": "12874881817137100046"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-equip-slot-category.json",
+          "hash": "17807293188159257433"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-icons.json",
+          "hash": "11510248166852966923"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-level.json",
+          "hash": "2743855581847644230"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-main-attributes.json",
+          "hash": "17057695098657293611"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-melding-data.json",
+          "hash": "2827948940500880111"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-patch.json",
+          "hash": "12656865030750916862"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-search.index",
+          "hash": "7047166434933238660"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-series.json",
+          "hash": "2219356898380081054"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-set-bonuses.json",
+          "hash": "853501153993041793"
+        },
+        {
+          "file": "libs/data/src/lib/json/item-stats.json",
+          "hash": "16842275208394020458"
+        },
+        {
+          "file": "libs/data/src/lib/json/items.json",
+          "hash": "10048862359222090021"
+        },
+        {
+          "file": "libs/data/src/lib/json/job-abbr.json",
+          "hash": "10118976941237161316"
+        },
+        {
+          "file": "libs/data/src/lib/json/job-categories.json",
+          "hash": "6293615584516196762"
+        },
+        {
+          "file": "libs/data/src/lib/json/job-name.json",
+          "hash": "5698927270914493636"
+        },
+        {
+          "file": "libs/data/src/lib/json/job-sort-index.json",
+          "hash": "12578544521122667904"
+        },
+        {
+          "file": "libs/data/src/lib/json/journal-genre.json",
+          "hash": "16636315624945093511"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-achievement-descriptions.json",
+          "hash": "4958073613831019990"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-achievements.json",
+          "hash": "15321269107866681782"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-action-categories.json",
+          "hash": "16230249117013988888"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-action-descriptions.json",
+          "hash": "11926190548557868424"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-actions.json",
+          "hash": "3215214999690145968"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-airship-voyages.json",
+          "hash": "18408366195641594954"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-base-params.json",
+          "hash": "18264189420790882716"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-beast-reputation-ranks.json",
+          "hash": "11195743681012234912"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-content-types.json",
+          "hash": "955424806774590603"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-craft-actions.json",
+          "hash": "7167691049405442668"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-craft-descriptions.json",
+          "hash": "14280792424538123529"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-event-items.json",
+          "hash": "5223344828568481607"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-ex-versions.json",
+          "hash": "11253154162719011757"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-fates.json",
+          "hash": "4130086361410734958"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-free-company-actions.json",
+          "hash": "4553910921169710723"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-gathering-bonuses.json",
+          "hash": "15815912638724082561"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-gathering-types.json",
+          "hash": "10700740772150450984"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-instance-descriptions.json",
+          "hash": "14629851201231884555"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-instances.json",
+          "hash": "10434982574269104949"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-island-craftworks-theme.json",
+          "hash": "11044084294177523279"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-item-descriptions.json",
+          "hash": "13981097182308095809"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-item-kinds.json",
+          "hash": "2388797018811388360"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-item-search-categories.json",
+          "hash": "10149726031653161664"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-item-ui-categories.json",
+          "hash": "14219035072516221233"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-items.json",
+          "hash": "3846470544174444676"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-job-abbr.json",
+          "hash": "17006065655976702402"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-job-categories.json",
+          "hash": "3174074675795618472"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-job-name.json",
+          "hash": "17006065655976702402"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-journal-genre.json",
+          "hash": "9096831059496140323"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-leve-descriptions.json",
+          "hash": "790986746631013539"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-leves.json",
+          "hash": "6975590073673103901"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-maps.json",
+          "hash": "14834708591918130767"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-mobs.json",
+          "hash": "5399571490650114551"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-notebook-division-category.json",
+          "hash": "14697662102378005244"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-notebook-division.json",
+          "hash": "6305836829912232312"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-npc-titles.json",
+          "hash": "3001905731377940993"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-npcs.json",
+          "hash": "14292923549236644112"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-patchs.json",
+          "hash": "5761309316442912730"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-places.json",
+          "hash": "1810899626964833121"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-quest-descriptions.json",
+          "hash": "6287170792196468956"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-quests.json",
+          "hash": "12654116898128341669"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-races.json",
+          "hash": "2112166652882712446"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-recipes.json",
+          "hash": "17805870330519325610"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-shops.json",
+          "hash": "11424835772370145166"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-status-descriptions.json",
+          "hash": "17332149104263032701"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-statuses.json",
+          "hash": "9040249290214428802"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-submarine-voyages.json",
+          "hash": "14282097808035979980"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-trait-descriptions.json",
+          "hash": "12464671613152368479"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-traits.json",
+          "hash": "6292168674209409090"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-tribes.json",
+          "hash": "16255690237095921081"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-triple-triad-rule-descriptions.json",
+          "hash": "4230187816334647132"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-triple-triad-rules.json",
+          "hash": "15160100375561038700"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-ventures.json",
+          "hash": "683500836078107605"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-weathers.json",
+          "hash": "7153456136475844994"
+        },
+        {
+          "file": "libs/data/src/lib/json/ko/ko-world.json",
+          "hash": "2697865138945619554"
+        },
+        {
+          "file": "libs/data/src/lib/json/legendary-fish.json",
+          "hash": "16278301409807991201"
+        },
+        {
+          "file": "libs/data/src/lib/json/leve-search.index",
+          "hash": "14222192542867206"
+        },
+        {
+          "file": "libs/data/src/lib/json/leves-per-item.json",
+          "hash": "2086932620730432661"
+        },
+        {
+          "file": "libs/data/src/lib/json/leves.json",
+          "hash": "17118609948048813688"
+        },
+        {
+          "file": "libs/data/src/lib/json/log-tracker-page-data.json",
+          "hash": "4154380715747611694"
+        },
+        {
+          "file": "libs/data/src/lib/json/loot-sources.json",
+          "hash": "12757449206294364239"
+        },
+        {
+          "file": "libs/data/src/lib/json/map-entries.json",
+          "hash": "16558206036513458211"
+        },
+        {
+          "file": "libs/data/src/lib/json/map-search.index",
+          "hash": "9950437482665673976"
+        },
+        {
+          "file": "libs/data/src/lib/json/maps.json",
+          "hash": "13691554799508746496"
+        },
+        {
+          "file": "libs/data/src/lib/json/market-items.json",
+          "hash": "3257820210129852202"
+        },
+        {
+          "file": "libs/data/src/lib/json/materias.json",
+          "hash": "15529633240326959734"
+        },
+        {
+          "file": "libs/data/src/lib/json/medicines.json",
+          "hash": "5581617111018188733"
+        },
+        {
+          "file": "libs/data/src/lib/json/mobs.json",
+          "hash": "17589696276647264159"
+        },
+        {
+          "file": "libs/data/src/lib/json/mogstation-sources.json",
+          "hash": "886494568784555514"
+        },
+        {
+          "file": "libs/data/src/lib/json/monster-search.index",
+          "hash": "1926338481866597999"
+        },
+        {
+          "file": "libs/data/src/lib/json/monsters.json",
+          "hash": "11352400907267190970"
+        },
+        {
+          "file": "libs/data/src/lib/json/nodes.json",
+          "hash": "15054503481897128322"
+        },
+        {
+          "file": "libs/data/src/lib/json/notebook-division-category.json",
+          "hash": "10876520931266387294"
+        },
+        {
+          "file": "libs/data/src/lib/json/notebook-division.json",
+          "hash": "4830647362160600773"
+        },
+        {
+          "file": "libs/data/src/lib/json/npc-search.index",
+          "hash": "13574676675534618151"
+        },
+        {
+          "file": "libs/data/src/lib/json/npcs.json",
+          "hash": "6355437664630208607"
+        },
+        {
+          "file": "libs/data/src/lib/json/param-grow.json",
+          "hash": "9295568477997419206"
+        },
+        {
+          "file": "libs/data/src/lib/json/patch-content.json",
+          "hash": "7402975002294181449"
+        },
+        {
+          "file": "libs/data/src/lib/json/patch-names.json",
+          "hash": "16971350078737800492"
+        },
+        {
+          "file": "libs/data/src/lib/json/places.json",
+          "hash": "16947648555089633916"
+        },
+        {
+          "file": "libs/data/src/lib/json/quest-search.index",
+          "hash": "5702576544372676054"
+        },
+        {
+          "file": "libs/data/src/lib/json/quest-sources.json",
+          "hash": "15809211751533822239"
+        },
+        {
+          "file": "libs/data/src/lib/json/quests.json",
+          "hash": "9489638700405275879"
+        },
+        {
+          "file": "libs/data/src/lib/json/races.json",
+          "hash": "16288714008006014243"
+        },
+        {
+          "file": "libs/data/src/lib/json/rarities.json",
+          "hash": "16444284332046529262"
+        },
+        {
+          "file": "libs/data/src/lib/json/recipe-level-table.json",
+          "hash": "10860764272547008907"
+        },
+        {
+          "file": "libs/data/src/lib/json/recipes-ingredient-lookup.json",
+          "hash": "2409736207457635959"
+        },
+        {
+          "file": "libs/data/src/lib/json/recipes-per-item.json",
+          "hash": "3041169518506746875"
+        },
+        {
+          "file": "libs/data/src/lib/json/recipes.json",
+          "hash": "15963909504288373261"
+        },
+        {
+          "file": "libs/data/src/lib/json/reduction.json",
+          "hash": "894077140121194775"
+        },
+        {
+          "file": "libs/data/src/lib/json/retainer-tasks.json",
+          "hash": "16659143001740251213"
+        },
+        {
+          "file": "libs/data/src/lib/json/reverse-instance-sources.json",
+          "hash": "13811985126502577414"
+        },
+        {
+          "file": "libs/data/src/lib/json/reverse-reduction.json",
+          "hash": "12489343167062598334"
+        },
+        {
+          "file": "libs/data/src/lib/json/satisfaction-thresholds.json",
+          "hash": "11032914286209718237"
+        },
+        {
+          "file": "libs/data/src/lib/json/scrip-index.json",
+          "hash": "8911256988590871294"
+        },
+        {
+          "file": "libs/data/src/lib/json/search-category.json",
+          "hash": "1275740225516263867"
+        },
+        {
+          "file": "libs/data/src/lib/json/seeds.json",
+          "hash": "2793673349160557517"
+        },
+        {
+          "file": "libs/data/src/lib/json/shop-names.json",
+          "hash": "8308949672809800148"
+        },
+        {
+          "file": "libs/data/src/lib/json/shops-by-npc.json",
+          "hash": "15641087647211266826"
+        },
+        {
+          "file": "libs/data/src/lib/json/shops.json",
+          "hash": "2934220145973685253"
+        },
+        {
+          "file": "libs/data/src/lib/json/spear-fishing-fish.json",
+          "hash": "4969597472761977530"
+        },
+        {
+          "file": "libs/data/src/lib/json/spear-fishing-log.json",
+          "hash": "8738467587204986207"
+        },
+        {
+          "file": "libs/data/src/lib/json/spearfishing-sources.json",
+          "hash": "11065003305525417830"
+        },
+        {
+          "file": "libs/data/src/lib/json/special-shop-names.json",
+          "hash": "368840268447538377"
+        },
+        {
+          "file": "libs/data/src/lib/json/stack-sizes.json",
+          "hash": "12099376820601088825"
+        },
+        {
+          "file": "libs/data/src/lib/json/status-search.index",
+          "hash": "12677781579673497449"
+        },
+        {
+          "file": "libs/data/src/lib/json/statuses.json",
+          "hash": "3642149496772139793"
+        },
+        {
+          "file": "libs/data/src/lib/json/submarine-parts.json",
+          "hash": "9617455094984708044"
+        },
+        {
+          "file": "libs/data/src/lib/json/submarine-ranks.json",
+          "hash": "8652849002209769629"
+        },
+        {
+          "file": "libs/data/src/lib/json/submarine-voyages.json",
+          "hash": "11442686821732900556"
+        },
+        {
+          "file": "libs/data/src/lib/json/telepo-relay.json",
+          "hash": "594896493913732613"
+        },
+        {
+          "file": "libs/data/src/lib/json/territory-layers.json",
+          "hash": "17908805136612919455"
+        },
+        {
+          "file": "libs/data/src/lib/json/territory-type-telepo-relay.json",
+          "hash": "13451649634531182431"
+        },
+        {
+          "file": "libs/data/src/lib/json/titles.json",
+          "hash": "14255598600854230306"
+        },
+        {
+          "file": "libs/data/src/lib/json/topic-select-names.json",
+          "hash": "6368657430687828827"
+        },
+        {
+          "file": "libs/data/src/lib/json/trade-flags.json",
+          "hash": "939825422801522922"
+        },
+        {
+          "file": "libs/data/src/lib/json/trait-search.index",
+          "hash": "1274573489649091522"
+        },
+        {
+          "file": "libs/data/src/lib/json/traits.json",
+          "hash": "16219080276345786350"
+        },
+        {
+          "file": "libs/data/src/lib/json/treasures.json",
+          "hash": "9890919234748444318"
+        },
+        {
+          "file": "libs/data/src/lib/json/tribes.json",
+          "hash": "10548307407466017180"
+        },
+        {
+          "file": "libs/data/src/lib/json/triple-triad-rules.json",
+          "hash": "6944487661730745750"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-achievement-descriptions.json",
+          "hash": "8453005864181297129"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-achievements.json",
+          "hash": "15168323333437324611"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-action-categories.json",
+          "hash": "2255749948063013323"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-action-descriptions.json",
+          "hash": "4850146597601265445"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-actions.json",
+          "hash": "9616221889650250274"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-airship-voyages.json",
+          "hash": "7075793048243093049"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-base-params.json",
+          "hash": "16753150868388651604"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-beast-reputation-ranks.json",
+          "hash": "3296490249397786025"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-content-types.json",
+          "hash": "9149726405118434112"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-craft-actions.json",
+          "hash": "18036972821794463544"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-craft-descriptions.json",
+          "hash": "5366348123461758096"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-event-items.json",
+          "hash": "6283982678556519478"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-ex-versions.json",
+          "hash": "3185918794295482459"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-fates.json",
+          "hash": "15983084138474625655"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-gathering-bonuses.json",
+          "hash": "7928100318196098513"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-gathering-types.json",
+          "hash": "10811038291929620861"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-instance-descriptions.json",
+          "hash": "1412789947566692436"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-instances.json",
+          "hash": "17578514115303890845"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-island-craftworks-theme.json",
+          "hash": "13703782090009660629"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-item-descriptions.json",
+          "hash": "5170346181684248642"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-item-search-categories.json",
+          "hash": "3651914837802654647"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-item-ui-categories.json",
+          "hash": "534362021595492642"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-items.json",
+          "hash": "6586928397696474448"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-job-abbr.json",
+          "hash": "9102428556185170637"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-job-categories.json",
+          "hash": "1021216781649747311"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-job-name.json",
+          "hash": "9102428556185170637"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-journal-genre.json",
+          "hash": "17916183225515974311"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-leve-descriptions.json",
+          "hash": "17947334323210596787"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-leves.json",
+          "hash": "12725045170639321930"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-maps.json",
+          "hash": "2298897725798491984"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-mobs.json",
+          "hash": "844198345406592927"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-notebook-division-category.json",
+          "hash": "13432921962427138724"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-notebook-division.json",
+          "hash": "5051234077965468543"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-npc-titles.json",
+          "hash": "15384556499631978175"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-npcs.json",
+          "hash": "13647220374155745323"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-places.json",
+          "hash": "12428836030727120438"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-quest-descriptions.json",
+          "hash": "14836866278229268498"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-quests.json",
+          "hash": "5881225957293425535"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-races.json",
+          "hash": "6375046107242745121"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-recipes.json",
+          "hash": "7468796255798140063"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-shops.json",
+          "hash": "11567757094323534529"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-status-descriptions.json",
+          "hash": "12220866305972333590"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-statuses.json",
+          "hash": "15010926030726246548"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-submarine-voyages.json",
+          "hash": "15185041789832896893"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-trait-descriptions.json",
+          "hash": "17385970957286325376"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-traits.json",
+          "hash": "4687911722777827689"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-tribes.json",
+          "hash": "11006111764682202912"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-triple-triad-rule-descriptions.json",
+          "hash": "9889189251644241370"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-triple-triad-rules.json",
+          "hash": "3477327485695768826"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-ventures.json",
+          "hash": "9552435945843936390"
+        },
+        {
+          "file": "libs/data/src/lib/json/tw/tw-weathers.json",
+          "hash": "9829563119195411355"
+        },
+        {
+          "file": "libs/data/src/lib/json/ui-categories.json",
+          "hash": "1286051615693502004"
+        },
+        {
+          "file": "libs/data/src/lib/json/used-in-quests.json",
+          "hash": "390024469107825943"
+        },
+        {
+          "file": "libs/data/src/lib/json/venture-sources.json",
+          "hash": "9117677301400792484"
+        },
+        {
+          "file": "libs/data/src/lib/json/ventures.json",
+          "hash": "5690974670326469963"
+        },
+        {
+          "file": "libs/data/src/lib/json/voyage-sources.json",
+          "hash": "2996612909754752296"
+        },
+        {
+          "file": "libs/data/src/lib/json/weathers.json",
+          "hash": "11505077973268807830"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-achievement-descriptions.json",
+          "hash": "8568176150509073354"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-achievements.json",
+          "hash": "15320017819689048581"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-action-categories.json",
+          "hash": "11028964978778941256"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-action-descriptions.json",
+          "hash": "9492111877628153399"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-actions.json",
+          "hash": "10732805062480351222"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-airship-voyages.json",
+          "hash": "753470330621984571"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-base-params.json",
+          "hash": "6474147605674341869"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-beast-reputation-ranks.json",
+          "hash": "9018783272487895026"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-content-types.json",
+          "hash": "18377572791571376838"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-craft-actions.json",
+          "hash": "11294398443703662131"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-craft-descriptions.json",
+          "hash": "7609206097889368014"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-event-items.json",
+          "hash": "16859558373404941916"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-ex-versions.json",
+          "hash": "280413690991366714"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-fates.json",
+          "hash": "7752720601359294071"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-free-company-actions.json",
+          "hash": "11213554697612664736"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-gathering-bonuses.json",
+          "hash": "12986348870500108260"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-gathering-types.json",
+          "hash": "6218115688807886388"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-instance-descriptions.json",
+          "hash": "5127409858943404137"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-instances.json",
+          "hash": "1695305056566668794"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-island-craftworks-theme.json",
+          "hash": "177209836684385659"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-item-descriptions.json",
+          "hash": "6222222292601133371"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-item-kinds.json",
+          "hash": "15758150213079756526"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-item-search-categories.json",
+          "hash": "11359989899267593931"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-item-ui-categories.json",
+          "hash": "16817120741217083958"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-items.json",
+          "hash": "7563493772347263443"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-job-abbr.json",
+          "hash": "7242523952821316235"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-job-categories.json",
+          "hash": "12933803776419290677"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-job-name.json",
+          "hash": "7242523952821316235"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-journal-genre.json",
+          "hash": "16736420029742944237"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-leve-descriptions.json",
+          "hash": "1573985514587478763"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-leves.json",
+          "hash": "12449280511955165531"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-maps.json",
+          "hash": "12736289679100452909"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-mobs.json",
+          "hash": "6048049834547850810"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-notebook-division-category.json",
+          "hash": "6884675347675838915"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-notebook-division.json",
+          "hash": "3898657629049659783"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-npc-titles.json",
+          "hash": "18144263495677153956"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-npcs.json",
+          "hash": "13895451690414743182"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-patchs.json",
+          "hash": "341241566830957643"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-places.json",
+          "hash": "7912110749969310297"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-quest-descriptions.json",
+          "hash": "11145471930549145956"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-quests.json",
+          "hash": "13241457684943365584"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-races.json",
+          "hash": "1905506020518326133"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-recipes.json",
+          "hash": "17805870330519325610"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-shops.json",
+          "hash": "5503150878876580220"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-status-descriptions.json",
+          "hash": "10150025137531747981"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-statuses.json",
+          "hash": "10213170711013162788"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-submarine-voyages.json",
+          "hash": "12164552301793610911"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-trait-descriptions.json",
+          "hash": "17329213479911100523"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-traits.json",
+          "hash": "4181170458289115516"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-tribes.json",
+          "hash": "9433264372163870259"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-triple-triad-rule-descriptions.json",
+          "hash": "16944155017643266631"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-triple-triad-rules.json",
+          "hash": "3718521890348644014"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-ventures.json",
+          "hash": "1166518169158222176"
+        },
+        {
+          "file": "libs/data/src/lib/json/zh/zh-weathers.json",
+          "hash": "9878466579513053421"
+        },
+        {
+          "file": "libs/data/src/lib/lazy-files-list.ts",
+          "hash": "14776841137250549828"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-achievement-search.ts",
+          "hash": "2320082415197346990"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-achievement.ts",
+          "hash": "1321331018138834696"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-achievements-database-page.ts",
+          "hash": "15445727098200244609"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-action-category.ts",
+          "hash": "17777304145503035542"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-action-search.ts",
+          "hash": "18212619546805819008"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-action.ts",
+          "hash": "13236228268050649117"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-actions-database-page.ts",
+          "hash": "8649962031674811772"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-additional-item-data.ts",
+          "hash": "11424098919671229058"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-aetheryte.ts",
+          "hash": "10768061880239419279"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-airship-part.ts",
+          "hash": "4458500385256304341"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-airship-rank.ts",
+          "hash": "9814245130940785450"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-airship-voyage.ts",
+          "hash": "1158400686779636620"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-bait.ts",
+          "hash": "10556711056589617946"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-base-param.ts",
+          "hash": "4041731356025227404"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-beast-reputation-rank.ts",
+          "hash": "13152149868766601536"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-class-jobs-modifier.ts",
+          "hash": "14113526141974128861"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-collectable.ts",
+          "hash": "1164961103929102735"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-collectables-page-data.ts",
+          "hash": "8083612752471607378"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-collectables-shop-item-group.ts",
+          "hash": "3755236128300748850"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-content-type.ts",
+          "hash": "11813484380746321520"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-craft-action.ts",
+          "hash": "8245355422474538567"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-crafting-log-page.ts",
+          "hash": "12429062247946437656"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-data-keys.ts",
+          "hash": "14316711394191384311"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-data.ts",
+          "hash": "14961867320352223103"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-default-talk.ts",
+          "hash": "18436862018151811921"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-diadem-territory.ts",
+          "hash": "13379743554607305369"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-equip-slot-category.ts",
+          "hash": "5860742579595506501"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-equipment.ts",
+          "hash": "9468679209557053524"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-event-item.ts",
+          "hash": "1338060189413852329"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ex-version.ts",
+          "hash": "3340121399793381296"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fate-search.ts",
+          "hash": "12761157814894031022"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fate.ts",
+          "hash": "10420721501953445040"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fates-database-page.ts",
+          "hash": "14222985405371857360"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fish-parameter.ts",
+          "hash": "10989561705273876054"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fishing-log-tracker-page-data.ts",
+          "hash": "11745924484781554722"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fishing-log.ts",
+          "hash": "1641523874767188513"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fishing-source.ts",
+          "hash": "17388715266259053307"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fishing-spot-search.ts",
+          "hash": "4478601724463942606"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fishing-spot.ts",
+          "hash": "930074359417534620"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-fishing-spots-database-page.ts",
+          "hash": "14944563023759716924"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-food.ts",
+          "hash": "1291388343153197751"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-free-company-action.ts",
+          "hash": "7958389086806320668"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gatherer-crafter-level-adjust-table.ts",
+          "hash": "10853521324784314966"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gathering-bonus.ts",
+          "hash": "7986536837636525766"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gathering-item.ts",
+          "hash": "16535795876103449706"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gathering-log-page.ts",
+          "hash": "12668033813152996952"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gathering-node-search.ts",
+          "hash": "1646061896181987953"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gathering-search-index.ts",
+          "hash": "3569363229906988238"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gathering-type.ts",
+          "hash": "17160421685393648100"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gc-name.ts",
+          "hash": "17649022231754148503"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gc-supply.ts",
+          "hash": "9239665333458322153"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-gil-shop-name.ts",
+          "hash": "13210935918717868559"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-hunt.ts",
+          "hash": "5536888295784187755"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-hwd-inspection.ts",
+          "hash": "5505250799968114408"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-hwd-phase.ts",
+          "hash": "14355725683436227150"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-instance-search.ts",
+          "hash": "10918079174069875144"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-instance.ts",
+          "hash": "8078536808261670713"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-animal.ts",
+          "hash": "6846887411255598643"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-building.ts",
+          "hash": "8644562859324654491"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-craftwork.ts",
+          "hash": "4051749888402233231"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-craftworks-theme.ts",
+          "hash": "2742515937339689013"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-crop.ts",
+          "hash": "12240194611327792920"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-gathering-item.ts",
+          "hash": "8661719841038734223"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-landmark.ts",
+          "hash": "14419459579617772880"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-island-popularity.ts",
+          "hash": "16580092964836037342"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-bonus.ts",
+          "hash": "14254923361175767294"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-category.ts",
+          "hash": "7795348684336064152"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-level.ts",
+          "hash": "14091301315694878849"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-main-attribute.ts",
+          "hash": "14252507546335209241"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-melding-data.ts",
+          "hash": "3850729363440726545"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-search.ts",
+          "hash": "5233435883725702369"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-series.ts",
+          "hash": "11429796783745256331"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-set-bonus.ts",
+          "hash": "14557689289098135560"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item-stat.ts",
+          "hash": "12978580597132756363"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-item.ts",
+          "hash": "14915221852253318778"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-items-database-page.ts",
+          "hash": "14948079745157062714"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-job-abbr.ts",
+          "hash": "11864184681372789772"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-job-category.ts",
+          "hash": "1894692701444211910"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-job-name.ts",
+          "hash": "10611174108990561784"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-journal-genre.ts",
+          "hash": "13487765761414922563"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ko-airship-voyage.ts",
+          "hash": "4101537832710541075"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ko-fate.ts",
+          "hash": "14581841169211364513"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ko-gathering-bonus.ts",
+          "hash": "641272818834313956"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ko-recipe.ts",
+          "hash": "14839503577389591829"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ko-status.ts",
+          "hash": "3433084662322749940"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-ko-submarine-voyage.ts",
+          "hash": "13847608105745564757"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-leve-search.ts",
+          "hash": "910779852636270534"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-leve.ts",
+          "hash": "6307838179271066340"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-leves-database-page.ts",
+          "hash": "16332631080248233136"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-leves-per-item.ts",
+          "hash": "9034899833200358013"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-log-tracker-page-data.ts",
+          "hash": "1792115230687318245"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-map-entry.ts",
+          "hash": "7524113754065643993"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-map-search.ts",
+          "hash": "14009114141902225170"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-map.ts",
+          "hash": "2480110730243159213"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-materia.ts",
+          "hash": "6381296841399284366"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-medicine.ts",
+          "hash": "8333214008267571156"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-mob.ts",
+          "hash": "12982738709950930175"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-mobs-database-page.ts",
+          "hash": "2836256633313868457"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-mogstation-source.ts",
+          "hash": "5290531196659964374"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-monster-search.ts",
+          "hash": "2966996966089982487"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-monster.ts",
+          "hash": "13993485719628661910"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-node.ts",
+          "hash": "12185057102620943805"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-nodes-database-page.ts",
+          "hash": "5967765593600795415"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-notebook-division-category.ts",
+          "hash": "12925068973175694143"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-notebook-division.ts",
+          "hash": "5392587785875440293"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-npc-search.ts",
+          "hash": "1554034267818547282"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-npc.ts",
+          "hash": "2192662886987137287"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-npcs-database-page.ts",
+          "hash": "3114307736797538847"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-page-title.ts",
+          "hash": "18167782988007624200"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-param-grow.ts",
+          "hash": "2381587338245326530"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-patch-content.ts",
+          "hash": "10858513185632081209"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-patch-name.ts",
+          "hash": "334602205841514758"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-place.ts",
+          "hash": "12999196338424022046"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-quest-search.ts",
+          "hash": "3105872047885422758"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-quest-source.ts",
+          "hash": "8931329432699399044"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-quest.ts",
+          "hash": "12513895815618619200"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-quests-database-page.ts",
+          "hash": "8134772726937553"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-quests-text.ts",
+          "hash": "12252230977485009367"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-race.ts",
+          "hash": "8843201191199886444"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-recipe-level-table.ts",
+          "hash": "9459533950514940118"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-recipe.ts",
+          "hash": "1659376956101164431"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-recipes-ingredient-lookup.ts",
+          "hash": "3056447926315449015"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-recipes-per-item.ts",
+          "hash": "16145418886127785611"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-retainer-task.ts",
+          "hash": "13161668572558102363"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-search-category.ts",
+          "hash": "14026214384936522432"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-seed.ts",
+          "hash": "8968310484001009412"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-shop-name.ts",
+          "hash": "11229119392077933832"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-shop.ts",
+          "hash": "4867130398458352811"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-shops-by-npc.ts",
+          "hash": "2300497201872199319"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-spear-fishing-log.ts",
+          "hash": "15146899605185620721"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-spearfishing-source.ts",
+          "hash": "11502949308832498468"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-special-shop-name.ts",
+          "hash": "17624254841097283585"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-status-search.ts",
+          "hash": "10584344899554155287"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-status.ts",
+          "hash": "11299740694171716425"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-statuses-database-page.ts",
+          "hash": "9015863595611783561"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-submarine-part.ts",
+          "hash": "7466643254821255454"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-submarine-rank.ts",
+          "hash": "15836680411496340417"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-submarine-voyage.ts",
+          "hash": "17994945129282736479"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-telepo-relay.ts",
+          "hash": "9031183992535574044"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-territory-layer.ts",
+          "hash": "18071594354661174589"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-territory-type-telepo-relay.ts",
+          "hash": "9528912492998282327"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-title.ts",
+          "hash": "2357444029450341780"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-topic-select-name.ts",
+          "hash": "12232766923391065426"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-trait-search.ts",
+          "hash": "7634438817111192412"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-trait.ts",
+          "hash": "7945993223038109559"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-traits-database-page.ts",
+          "hash": "4996855810896165700"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-treasure.ts",
+          "hash": "17135224229526486609"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tribe.ts",
+          "hash": "14194114160440933430"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-triple-triad-rule.ts",
+          "hash": "4928905108512656315"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tw-airship-voyage.ts",
+          "hash": "15133876727592720535"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tw-fate.ts",
+          "hash": "10277628385700745701"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tw-gathering-bonus.ts",
+          "hash": "10947116474156382197"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tw-recipe.ts",
+          "hash": "18252640835869943767"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tw-status.ts",
+          "hash": "11316770915936334000"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-tw-submarine-voyage.ts",
+          "hash": "2685098207212295253"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-venture.ts",
+          "hash": "5499667593128939"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-voyage-source.ts",
+          "hash": "14587586090733229927"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-weather.ts",
+          "hash": "12937123705791211767"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-zh-airship-voyage.ts",
+          "hash": "16257447482579486331"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-zh-fate.ts",
+          "hash": "40283560616522557"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-zh-gathering-bonus.ts",
+          "hash": "2730554290743566"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-zh-recipe.ts",
+          "hash": "16495875888483359026"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-zh-status.ts",
+          "hash": "13158233474026853471"
+        },
+        {
+          "file": "libs/data/src/lib/model/lazy-zh-submarine-voyage.ts",
+          "hash": "1615249972613129555"
+        },
+        {
+          "file": "libs/data/tsconfig.json",
           "hash": "12834038490315927699"
         },
         {
-          "file": "libs/types/tsconfig.lib.json",
+          "file": "libs/data/tsconfig.lib.json",
           "hash": "13034901906147047048"
         },
         {
-          "file": "libs/types/tsconfig.spec.json",
+          "file": "libs/data/tsconfig.spec.json",
           "hash": "2406015174838385060"
+        }
+      ],
+      "api": [
+        {
+          "file": "apps/api/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/api/Dockerfile",
+          "hash": "5027137983398170716"
+        },
+        {
+          "file": "apps/api/cloudbuild.yaml",
+          "hash": "6567158692627723157"
+        },
+        {
+          "file": "apps/api/jest.config.ts",
+          "hash": "16027804269008453577"
+        },
+        {
+          "file": "apps/api/package.json",
+          "hash": "18197695191255786308",
+          "deps": [
+            "npm:flexsearch-ts",
+            "npm:rxjs",
+            "npm:tslib",
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/platform-express",
+            "npm:@nestjs/schematics",
+            "npm:@types/express",
+            "npm:@types/node",
+            "npm:@ungap/structured-clone",
+            "npm:axios",
+            "npm:class-transformer",
+            "npm:class-validator",
+            "npm:colors",
+            "npm:copyfiles",
+            "npm:express",
+            "npm:firebase-admin",
+            "npm:typescript",
+            "npm:reflect-metadata",
+            "npm:http-proxy-middleware",
+            "npm:body-parser-graphql",
+            "npm:object-hash",
+            "npm:@nx/nest",
+            "npm:@nx/node",
+            "npm:@nx/workspace",
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/api/project.json",
+          "hash": "14188154574443861348"
+        },
+        {
+          "file": "apps/api/src/app/app.module.ts",
+          "hash": "4257417803086797622",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/data/data.controller.ts",
+          "hash": "4566730193678210678",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:rxjs",
+            "types",
+            "data"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/fish-train/fish-train.controller.ts",
+          "hash": "7687089396884592870",
+          "deps": [
+            "types",
+            "npm:@nestjs/common",
+            "npm:firebase-admin"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/lazy-data/lazy-data.loader.ts",
+          "hash": "18086557370542009580",
+          "deps": [
+            "npm:rxjs",
+            "types",
+            "data"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/search/search-index.ts",
+          "hash": "9560255049146688837"
+        },
+        {
+          "file": "apps/api/src/app/search/search.controller.ts",
+          "hash": "10249465213197558827",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:rxjs",
+            "types",
+            "search"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/search/search.service.ts",
+          "hash": "7738591697327491644",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:rxjs",
+            "types",
+            "search"
+          ]
+        },
+        {
+          "file": "apps/api/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api/src/environments/environment.prod.ts",
+          "hash": "3435530001453252278"
+        },
+        {
+          "file": "apps/api/src/environments/environment.ts",
+          "hash": "17105350925279257349"
+        },
+        {
+          "file": "apps/api/src/main.ts",
+          "hash": "8007222005804080417",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/api/tsconfig.app.json",
+          "hash": "6721092001370148539"
+        },
+        {
+          "file": "apps/api/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/api/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        },
+        {
+          "file": "apps/api/update_hasura.md",
+          "hash": "11117125475134500853"
+        },
+        {
+          "file": "apps/api/webpack.config.js",
+          "hash": "4162644545684297271",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
         }
       ],
       "electron": [
@@ -17242,300 +17537,6 @@
           "deps": [
             "npm:@nx/webpack"
           ]
-        }
-      ],
-      "api": [
-        {
-          "file": "apps/api/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/api/Dockerfile",
-          "hash": "5027137983398170716"
-        },
-        {
-          "file": "apps/api/cloudbuild.yaml",
-          "hash": "6567158692627723157"
-        },
-        {
-          "file": "apps/api/jest.config.ts",
-          "hash": "16027804269008453577"
-        },
-        {
-          "file": "apps/api/package.json",
-          "hash": "18197695191255786308",
-          "deps": [
-            "npm:flexsearch-ts",
-            "npm:rxjs",
-            "npm:tslib",
-            "npm:@nestjs/common",
-            "npm:@nestjs/core",
-            "npm:@nestjs/platform-express",
-            "npm:@nestjs/schematics",
-            "npm:@types/express",
-            "npm:@types/node",
-            "npm:@ungap/structured-clone",
-            "npm:axios",
-            "npm:class-transformer",
-            "npm:class-validator",
-            "npm:colors",
-            "npm:copyfiles",
-            "npm:express",
-            "npm:firebase-admin",
-            "npm:typescript",
-            "npm:reflect-metadata",
-            "npm:http-proxy-middleware",
-            "npm:body-parser-graphql",
-            "npm:object-hash",
-            "npm:@nx/nest",
-            "npm:@nx/node",
-            "npm:@nx/workspace",
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "apps/api/project.json",
-          "hash": "14188154574443861348"
-        },
-        {
-          "file": "apps/api/src/app/app.module.ts",
-          "hash": "4257417803086797622",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/api/src/app/data/data.controller.ts",
-          "hash": "4566730193678210678",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:rxjs",
-            "types",
-            "data"
-          ]
-        },
-        {
-          "file": "apps/api/src/app/fish-train/fish-train.controller.ts",
-          "hash": "7687089396884592870",
-          "deps": [
-            "types",
-            "npm:@nestjs/common",
-            "npm:firebase-admin"
-          ]
-        },
-        {
-          "file": "apps/api/src/app/lazy-data/lazy-data.loader.ts",
-          "hash": "18086557370542009580",
-          "deps": [
-            "npm:rxjs",
-            "types",
-            "data"
-          ]
-        },
-        {
-          "file": "apps/api/src/app/search/search-index.ts",
-          "hash": "9560255049146688837"
-        },
-        {
-          "file": "apps/api/src/app/search/search.controller.ts",
-          "hash": "10249465213197558827",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:rxjs",
-            "types",
-            "search"
-          ]
-        },
-        {
-          "file": "apps/api/src/app/search/search.service.ts",
-          "hash": "7738591697327491644",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:rxjs",
-            "types",
-            "search"
-          ]
-        },
-        {
-          "file": "apps/api/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/api/src/environments/environment.prod.ts",
-          "hash": "3435530001453252278"
-        },
-        {
-          "file": "apps/api/src/environments/environment.ts",
-          "hash": "17105350925279257349"
-        },
-        {
-          "file": "apps/api/src/main.ts",
-          "hash": "8007222005804080417",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/core"
-          ]
-        },
-        {
-          "file": "apps/api/tsconfig.app.json",
-          "hash": "6721092001370148539"
-        },
-        {
-          "file": "apps/api/tsconfig.json",
-          "hash": "9214820933160915425"
-        },
-        {
-          "file": "apps/api/tsconfig.spec.json",
-          "hash": "10595040461224341030"
-        },
-        {
-          "file": "apps/api/update_hasura.md",
-          "hash": "11117125475134500853"
-        },
-        {
-          "file": "apps/api/webpack.config.js",
-          "hash": "4162644545684297271",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
-        }
-      ],
-      "lodestone-api": [
-        {
-          "file": "apps/lodestone-api/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/lodestone-api/Dockerfile",
-          "hash": "8568493126232137063"
-        },
-        {
-          "file": "apps/lodestone-api/cloudbuild.yaml",
-          "hash": "5879641341341524779"
-        },
-        {
-          "file": "apps/lodestone-api/jest.config.ts",
-          "hash": "14793157475565128206"
-        },
-        {
-          "file": "apps/lodestone-api/package.json",
-          "hash": "15878788384275859829",
-          "deps": [
-            "npm:@xivapi/nodestone",
-            "npm:express",
-            "npm:cors",
-            "npm:redis",
-            "npm:tslib",
-            "npm:class-transformer",
-            "npm:class-validator",
-            "npm:typescript",
-            "npm:reflect-metadata",
-            "npm:@types/express",
-            "npm:@types/node"
-          ]
-        },
-        {
-          "file": "apps/lodestone-api/project.json",
-          "hash": "2849164660855338121"
-        },
-        {
-          "file": "apps/lodestone-api/src/cache/redis-cache.ts",
-          "hash": "11227040717918631451",
-          "deps": [
-            "npm:redis"
-          ]
-        },
-        {
-          "file": "apps/lodestone-api/src/environments/environment.prod.ts",
-          "hash": "10220522844224226756"
-        },
-        {
-          "file": "apps/lodestone-api/src/environments/environment.ts",
-          "hash": "1135292433917692033"
-        },
-        {
-          "file": "apps/lodestone-api/src/main.ts",
-          "hash": "5366608386861423998",
-          "deps": [
-            "npm:express",
-            "npm:cors",
-            "npm:@xivapi/nodestone"
-          ]
-        },
-        {
-          "file": "apps/lodestone-api/tsconfig.app.json",
-          "hash": "15489350182582570456"
-        },
-        {
-          "file": "apps/lodestone-api/tsconfig.json",
-          "hash": "9214820933160915425"
-        },
-        {
-          "file": "apps/lodestone-api/tsconfig.spec.json",
-          "hash": "10595040461224341030"
-        }
-      ],
-      "search": [
-        {
-          "file": "libs/search/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/search/README.md",
-          "hash": "2918268056342767444"
-        },
-        {
-          "file": "libs/search/jest.config.ts",
-          "hash": "1596315547325875044"
-        },
-        {
-          "file": "libs/search/project.json",
-          "hash": "14648880851091903934"
-        },
-        {
-          "file": "libs/search/src/index.ts",
-          "hash": "1595633602278842070"
-        },
-        {
-          "file": "libs/search/src/lib/search-params.ts",
-          "hash": "4199729492579908342",
-          "deps": [
-            "types"
-          ]
-        },
-        {
-          "file": "libs/search/src/lib/xiv-search-filter.ts",
-          "hash": "306592063451189707"
-        },
-        {
-          "file": "libs/search/src/lib/xiv-search.spec.ts",
-          "hash": "2573946209537253582",
-          "deps": [
-            "types"
-          ]
-        },
-        {
-          "file": "libs/search/src/lib/xiv-search.ts",
-          "hash": "11531084729657767519",
-          "deps": [
-            "types",
-            "npm:rxjs",
-            "data",
-            "npm:flexsearch-ts",
-            "npm:lodash"
-          ]
-        },
-        {
-          "file": "libs/search/tsconfig.json",
-          "hash": "2840670722752396445"
-        },
-        {
-          "file": "libs/search/tsconfig.lib.json",
-          "hash": "8188472110264778699"
-        },
-        {
-          "file": "libs/search/tsconfig.spec.json",
-          "hash": "6898991939206723030"
         }
       ]
     },
@@ -17838,7 +17839,7 @@
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "12812357688881570575"
+        "hash": "14925136814313782867"
       },
       {
         "file": "tsconfig.json",

@@ -12,7 +12,7 @@ import { WorldNavigationMapComponent } from './world-navigation-map/world-naviga
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
   exports: [
@@ -24,7 +24,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     FlexLayoutModule,
     FormsModule,
     RouterModule,
-    NzToolTipModule,
+    NzTooltipModule,
     PipesModule,
     CoreModule,
     MapPositionComponent,

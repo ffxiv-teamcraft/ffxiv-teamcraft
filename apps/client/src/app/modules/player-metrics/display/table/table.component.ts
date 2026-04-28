@@ -70,7 +70,7 @@ export class TableComponent extends AbstractMetricDisplayComponent implements On
   public sortState: Record<string, string | null> = {};
 
   constructor(public translate: TranslateService, private ipc: IpcService,
-              private message: NzMessageService, private metricsService: PlayerMetricsService,
+              private message: private metricsService: PlayerMetricsService,
               public settings: SettingsService) {
     super();
   }

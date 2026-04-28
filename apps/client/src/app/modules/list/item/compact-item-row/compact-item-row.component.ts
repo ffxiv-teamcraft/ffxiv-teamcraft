@@ -25,7 +25,7 @@ import { ItemInventoryButtonComponent } from '../../item-inventory-button/item-i
 import { ItemSourcesDisplayComponent } from '../item-sources-display/item-sources-display.component';
 import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
 import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
@@ -35,7 +35,7 @@ import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
     styleUrls: ['./compact-item-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [ItemIconComponent, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, ItemSourcesDisplayComponent, ItemInventoryButtonComponent, CompactAmountInputComponent, NgTemplateOutlet, AlarmButtonComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
+    imports: [ItemIconComponent, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, ItemSourcesDisplayComponent, ItemInventoryButtonComponent, CompactAmountInputComponent, NgTemplateOutlet, AlarmButtonComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
 export class CompactItemRowComponent extends TeamcraftComponent implements OnInit {
   @Input()

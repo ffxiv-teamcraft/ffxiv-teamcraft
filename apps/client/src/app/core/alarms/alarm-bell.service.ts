@@ -27,7 +27,7 @@ export class AlarmBellService {
   constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
               private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
-              private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
+              private notificationService: private i18n: I18nToolsService, private mapService: MapService,
               private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
     this.initBell();
   }

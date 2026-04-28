@@ -7,7 +7,7 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
@@ -23,7 +23,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   styleUrls: ['./inventory-cleanup-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, NzCardModule, ItemIconComponent, I18nNameComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzCardModule, ItemIconComponent, I18nNameComponent, NzButtonModule, NzIconModule, NzTooltipModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class InventoryCleanupPopupComponent extends DialogComponent implements OnInit {
 

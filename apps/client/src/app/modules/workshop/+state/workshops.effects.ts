@@ -193,8 +193,7 @@ export class WorkshopsEffects {
     private workshopService: WorkshopService,
     private authFacade: AuthFacade,
     private workshopsFacade: WorkshopsFacade,
-    private message: NzMessageService,
-    private translate: TranslateService,
+    private message: private translate: TranslateService,
     private listService: FirestoreListStorage,
     private listsFacade: ListsFacade
   ) {

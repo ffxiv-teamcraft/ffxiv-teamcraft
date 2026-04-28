@@ -32,7 +32,7 @@ import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.di
 import { GatheringItemUsesComponent } from '../../node-details/gathering-item-uses/gathering-item-uses.component';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
@@ -45,7 +45,7 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './alarms-sidebar.component.html',
     styleUrls: ['./alarms-sidebar.component.less'],
     standalone: true,
-    imports: [FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzIconModule, NzToolTipModule, ItemIconComponent, NzWaveModule, GatheringItemUsesComponent, ItemNameClipboardDirective, TimerTooltipDirective, FishingBaitComponent, RouterLink, NzPopconfirmModule, NzDividerModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, HooksetActionIdPipe, LazyRowPipe]
+    imports: [FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzIconModule, NzTooltipModule, ItemIconComponent, NzWaveModule, GatheringItemUsesComponent, ItemNameClipboardDirective, TimerTooltipDirective, FishingBaitComponent, RouterLink, NzPopconfirmModule, NzDividerModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, HooksetActionIdPipe, LazyRowPipe]
 })
 export class AlarmsSidebarComponent implements OnInit {
 

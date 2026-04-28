@@ -21,7 +21,7 @@ import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-ico
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NgTemplateOutlet, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -51,7 +51,7 @@ const LS_KEY = 'retainers:prices';
     styleUrls: ['./retainers.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzWaveModule, NgTemplateOutlet, NzDividerModule, NzToolTipModule, NzIconModule, NzCollapseModule, NzGridModule, ItemIconComponent, NzTagModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
+    imports: [PageLoaderComponent, FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzWaveModule, NgTemplateOutlet, NzDividerModule, NzTooltipModule, NzIconModule, NzCollapseModule, NzGridModule, ItemIconComponent, NzTagModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class RetainersComponent {
 

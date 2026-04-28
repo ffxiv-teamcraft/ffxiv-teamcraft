@@ -65,7 +65,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FishingBaitComponent } from '../../../modules/fishing-bait/fishing-bait/fishing-bait.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -77,7 +77,7 @@ import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, LowerCasePipe, DatePipe } fro
     templateUrl: './fish-train.component.html',
     styleUrls: ['./fish-train.component.less'],
     standalone: true,
-    imports: [NgIf, FullpageMessageComponent, NzCardModule, ItemIconComponent, I18nNameComponent, NzToolTipModule, NzDividerModule, NzGridModule, FishingBaitComponent, NzButtonModule, NzWaveModule, NzPopoverModule, NzSpaceModule, ClipboardDirective, MapComponent, NzPageHeaderModule, UserAvatarComponent, NzIconModule, NzInputModule, NzSelectModule, FormsModule, NgFor, NzTagModule, NzSwitchModule, NzPopconfirmModule, NzAlertModule, NzAffixModule, NzSliderModule, NzStepsModule, NgForTrackByIdDirective, MapPositionComponent, NgTemplateOutlet, NzStatisticModule, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent, PageLoaderComponent, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule, I18nPipe, TimerPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, MapNamePipe, HooksetActionIdPipe]
+    imports: [NgIf, FullpageMessageComponent, NzCardModule, ItemIconComponent, I18nNameComponent, NzTooltipModule, NzDividerModule, NzGridModule, FishingBaitComponent, NzButtonModule, NzWaveModule, NzPopoverModule, NzSpaceModule, ClipboardDirective, MapComponent, NzPageHeaderModule, UserAvatarComponent, NzIconModule, NzInputModule, NzSelectModule, FormsModule, NgFor, NzTagModule, NzSwitchModule, NzPopconfirmModule, NzAlertModule, NzAffixModule, NzSliderModule, NzStepsModule, NgForTrackByIdDirective, MapPositionComponent, NgTemplateOutlet, NzStatisticModule, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent, PageLoaderComponent, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule, I18nPipe, TimerPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, MapNamePipe, HooksetActionIdPipe]
 })
 export class FishTrainComponent extends TeamcraftComponent {
 
@@ -229,9 +229,8 @@ export class FishTrainComponent extends TeamcraftComponent {
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
               public translate: TranslateService, private fishDataService: FishDataService,
               public platform: PlatformService, private ipc: IpcService,
-              private dialog: NzModalService, private message: NzMessageService,
-              private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
-              private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
+              private dialog: NzModalService, private message: private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
+              private notificationService: private pushNotificationsService: PushNotificationsService,
               private cd: ChangeDetectorRef, router: Router, private progressPopup: ProgressPopupService,
               private lodestone: LodestoneService, public settings: SettingsService) {
     super();

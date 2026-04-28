@@ -9,7 +9,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FormsModule } from '@angular/forms';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -21,7 +21,7 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./user-rating-display.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzRateModule, FormsModule, NzToolTipModule, NzButtonModule, NzIconModule, NzWaveModule, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzRateModule, FormsModule, NzTooltipModule, NzButtonModule, NzIconModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class UserRatingDisplayComponent implements OnInit {
 

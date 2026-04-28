@@ -5,6 +5,7 @@ import { DialogComponent } from '../../core/dialog.component';
 
 // noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
+  standalone: false,
   template: ''
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix

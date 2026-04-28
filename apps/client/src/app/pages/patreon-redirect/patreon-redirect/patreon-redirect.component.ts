@@ -20,7 +20,7 @@ export class PatreonRedirectComponent {
   public errorCode: string;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private authFacade: AuthFacade,
-              private router: Router, private message: NzMessageService, private translate: TranslateService) {
+              private router: Router, private message: private translate: TranslateService) {
     this.route.queryParams.pipe(
       first()
     ).subscribe(params => {

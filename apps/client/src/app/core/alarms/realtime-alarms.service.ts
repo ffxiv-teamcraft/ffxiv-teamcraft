@@ -29,8 +29,7 @@ export class RealtimeAlarmsService {
 
   constructor(private etime: EorzeanTimeService, private settings: SettingsService,
               private platform: PlatformService, private ipc: IpcService,
-              private pushNotificationsService: PushNotificationsService, private notificationService: NzNotificationService,
-              private translate: TranslateService, private soundNotificationService: SoundNotificationService) {
+              private pushNotificationsService: PushNotificationsService, private notificationService: private translate: TranslateService, private soundNotificationService: SoundNotificationService) {
     this.etime.getEorzeanTime().pipe(
       map(() => {
         const enabledAlarms: RealtimeAlarm[] = JSON.parse(localStorage.getItem('alarms:irl') || '[]')

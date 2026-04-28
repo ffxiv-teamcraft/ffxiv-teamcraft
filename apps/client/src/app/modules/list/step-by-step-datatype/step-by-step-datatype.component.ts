@@ -26,7 +26,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, LowerCasePipe } from '@angular/common';
@@ -39,7 +39,7 @@ import { SettingsService } from '../../settings/settings.service';
     styleUrls: ['./step-by-step-datatype.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, NgSwitch, NgSwitchCase, ItemIconComponent, FlexModule, NgFor, MapPositionComponent, NzDividerModule, LazyScrollComponent, StepByStepRowComponent, AsyncPipe, LowerCasePipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
+    imports: [NzCardModule, NgIf, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, NgSwitch, NgSwitchCase, ItemIconComponent, FlexModule, NgFor, MapPositionComponent, NzDividerModule, LazyScrollComponent, StepByStepRowComponent, AsyncPipe, LowerCasePipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class StepByStepDatatypeComponent {
   DataType = DataType;

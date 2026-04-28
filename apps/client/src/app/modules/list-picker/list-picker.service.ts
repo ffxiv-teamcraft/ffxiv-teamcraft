@@ -20,8 +20,7 @@ export class ListPickerService {
 
   constructor(private nzDrawer: NzDrawerService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService,
-              private progressService: ProgressPopupService, private notificationService: NzNotificationService,
-              private router: Router) {
+              private progressService: ProgressPopupService, private notificationService: private router: Router) {
   }
 
   pickList(workshopView = false): Observable<List> {

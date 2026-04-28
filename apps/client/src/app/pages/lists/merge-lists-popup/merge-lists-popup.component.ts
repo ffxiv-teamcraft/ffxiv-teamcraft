@@ -10,7 +10,7 @@ import { concat } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { AbstractListsSelectionPopupComponent } from '../abstract-lists-selection-popup.component';
 import { ListController } from '../../../modules/list/list-controller';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +27,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     styleUrls: ['./merge-lists-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzAlertModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, NzListModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
+    imports: [NzAlertModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, NzListModule, NzTagModule, NzTooltipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class MergeListsPopupComponent extends AbstractListsSelectionPopupComponent {
 
@@ -38,8 +38,7 @@ export class MergeListsPopupComponent extends AbstractListsSelectionPopupCompone
   ListController = ListController;
 
   constructor(listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private modalRef: NzModalRef, private message: NzMessageService,
-              private translate: TranslateService, workshopsFacade: WorkshopsFacade) {
+              private modalRef: NzModalRef, private message: private translate: TranslateService, workshopsFacade: WorkshopsFacade) {
     super(listsFacade, workshopsFacade);
   }
 

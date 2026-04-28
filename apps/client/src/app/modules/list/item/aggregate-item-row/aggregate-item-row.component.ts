@@ -24,7 +24,7 @@ import { UserAvatarComponent } from '../../../user-avatar/user-avatar/user-avata
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
@@ -38,7 +38,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./aggregate-item-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, NgFor, UserAvatarComponent, NzWaveModule, InventoryPositionComponent, NzDropDownModule, NzMenuModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NzPopoverModule, NzInputNumberModule, FormsModule, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, LazyIconPipe]
+    imports: [NgIf, FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, NgFor, UserAvatarComponent, NzWaveModule, InventoryPositionComponent, NzDropDownModule, NzMenuModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NzPopoverModule, NzInputNumberModule, FormsModule, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, LazyIconPipe]
 })
 export class AggregateItemRowComponent extends AbstractItemRowComponent implements OnInit {
   private aggregate$ = new ReplaySubject<ProcessedListAggregate>();

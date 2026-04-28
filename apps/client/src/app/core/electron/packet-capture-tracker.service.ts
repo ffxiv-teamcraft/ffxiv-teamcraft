@@ -15,7 +15,7 @@ import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/
 import { InventoryService } from '../../modules/inventory/inventory.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EventHandlerType } from './event-handler-type';
-import { NzNotificationRef, NzNotificationService } from 'ng-zorro-antd/notification';
+import { NzNotificationRef } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PlatformService } from '../tools/platform.service';
@@ -34,7 +34,7 @@ export class PacketCaptureTrackerService {
               private authFacade: AuthFacade, private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataFacade,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private nzNotification: NzNotificationService, private translate: TranslateService,
+              private nzNotification: private translate: TranslateService,
               private router: Router, private platformService: PlatformService) {
   }
 

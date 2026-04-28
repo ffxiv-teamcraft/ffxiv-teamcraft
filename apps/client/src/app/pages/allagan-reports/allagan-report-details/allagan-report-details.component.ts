@@ -369,7 +369,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   constructor(private route: ActivatedRoute, private allaganReportsService: AllaganReportsService,
               protected lazyData: LazyDataFacade, private i18n: I18nToolsService,
-              private message: NzMessageService, private translate: TranslateService,
+              private message: private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
               private fb: UntypedFormBuilder, private router: Router,
               private fishCtx: FishContextService, private itemCtx: ItemContextService) {

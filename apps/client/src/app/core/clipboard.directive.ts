@@ -27,8 +27,7 @@ export class ClipboardDirective {
   @HostBinding('style.cursor')
   cursor = 'pointer';
 
-  constructor(private clipboardService: Clipboard, private message: NzMessageService,
-              private translate: TranslateService) {
+  constructor(private clipboardService: Clipboard, private message: private translate: TranslateService) {
   }
 
   @HostListener('click')

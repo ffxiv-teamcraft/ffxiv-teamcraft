@@ -24,7 +24,7 @@ import { NodeDetailsComponent } from '../../node-details/node-details/node-detai
 import { MapComponent } from '../../map/map/map.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { AsyncPipe } from '@angular/common';
 import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
@@ -37,7 +37,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     styleUrls: ['./xivapi-item-tooltip.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzGridModule, FlexModule, ItemRarityDirective, I18nNameComponent, NzToolTipModule, NzButtonModule, NzIconModule, MapComponent, NodeDetailsComponent, AsyncPipe, TranslateModule, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, MapNamePipe, JobUnicodePipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, I18nPipe, I18nRowPipe, NzPipesModule]
+    imports: [NzGridModule, FlexModule, ItemRarityDirective, I18nNameComponent, NzTooltipModule, NzButtonModule, NzIconModule, MapComponent, NodeDetailsComponent, AsyncPipe, TranslateModule, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, MapNamePipe, JobUnicodePipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, I18nPipe, I18nRowPipe, NzPipesModule]
 })
 export class XivapiItemTooltipComponent implements OnInit {
 

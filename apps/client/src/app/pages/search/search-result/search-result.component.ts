@@ -21,7 +21,7 @@ import { CompanyWorkshopTreeButtonComponent } from '../../../modules/company-wor
 import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { RouterLink } from '@angular/router';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
@@ -43,7 +43,7 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
     styleUrls: ['./search-result.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-  imports: [FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, ItemRarityDirective, DbButtonComponent, TutorialStepDirective, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, MarketboardIconComponent, CompanyWorkshopTreeButtonComponent, ItemSourcesDisplayComponent, NzGridModule, NzInputModule, NzInputNumberModule, MouseWheelDirective, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, XivapiL12nPipe, MapNamePipe, IfRegionsPipe, AlarmButtonComponent]
+  imports: [FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, ItemRarityDirective, DbButtonComponent, TutorialStepDirective, NzButtonModule, NzTooltipModule, RouterLink, NzIconModule, MarketboardIconComponent, CompanyWorkshopTreeButtonComponent, ItemSourcesDisplayComponent, NzGridModule, NzInputModule, NzInputNumberModule, MouseWheelDirective, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, XivapiL12nPipe, MapNamePipe, IfRegionsPipe, AlarmButtonComponent]
 })
 export class SearchResultComponent {
 

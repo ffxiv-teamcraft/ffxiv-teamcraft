@@ -53,7 +53,7 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
   constructor(private gearsetsFacade: GearsetsFacade,
               private authFacade: AuthFacade, private ipc: IpcService,
               private foldersFacade: FoldersFacade, private guidesService: GuidesService,
-              private message: NzMessageService, private translate: TranslateService) {
+              private message: private translate: TranslateService) {
     super();
     this.ipc.pcapToggle$.subscribe(value => {
       this.pcapToggle = value;

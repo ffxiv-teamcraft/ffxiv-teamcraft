@@ -18,7 +18,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzRateModule } from 'ng-zorro-antd/rate';
@@ -57,7 +57,7 @@ const routes: Routes = [
     NzButtonModule,
     NzDropDownModule,
     NzPopconfirmModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzEmptyModule,
     NzProgressModule,
     NzRateModule,

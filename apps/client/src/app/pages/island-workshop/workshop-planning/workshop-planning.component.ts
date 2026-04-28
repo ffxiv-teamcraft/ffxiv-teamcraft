@@ -9,7 +9,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { DecimalPipe, DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -20,7 +20,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./workshop-planning.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, ItemIconComponent, NzToolTipModule, NzButtonModule, NzWaveModule, NzIconModule, NzEmptyModule, I18nNameComponent, NzDividerModule, DecimalPipe, DatePipe, TranslateModule]
+    imports: [FlexModule, ItemIconComponent, NzTooltipModule, NzButtonModule, NzWaveModule, NzIconModule, NzEmptyModule, I18nNameComponent, NzDividerModule, DecimalPipe, DatePipe, TranslateModule]
 })
 export class WorkshopPlanningComponent {
 

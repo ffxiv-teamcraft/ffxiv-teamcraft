@@ -15,7 +15,7 @@ import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
@@ -35,7 +35,7 @@ import { NzInputNumberComponent } from 'ng-zorro-antd/input-number';
   templateUrl: './item-picker.component.html',
   styleUrls: ['./item-picker.component.less'],
   standalone: true,
-  imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzToolTipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule, NzInputNumberComponent]
+  imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzTooltipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule, NzInputNumberComponent]
 })
 export class ItemPickerComponent extends DialogComponent implements OnInit {
 

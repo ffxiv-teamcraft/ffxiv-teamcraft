@@ -8,7 +8,7 @@ import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
@@ -20,7 +20,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './inventory-view.component.html',
   styleUrls: ['./inventory-view.component.less'],
   standalone: true,
-  imports: [FlexModule, NzSwitchModule, FormsModule, NzToolTipModule, ItemNameClipboardDirective, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
+  imports: [FlexModule, NzSwitchModule, FormsModule, NzTooltipModule, ItemNameClipboardDirective, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
 })
 export class InventoryViewComponent extends DialogComponent implements OnInit {
 

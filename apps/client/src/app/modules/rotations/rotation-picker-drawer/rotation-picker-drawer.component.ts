@@ -9,7 +9,7 @@ import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-fo
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +25,7 @@ import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
   templateUrl: './rotation-picker-drawer.component.html',
   styleUrls: ['./rotation-picker-drawer.component.less'],
   standalone: true,
-  imports: [NgIf, NzButtonModule, RouterLink, NzIconModule, NzDividerModule, NzInputModule, FormsModule, FlexModule, NzListModule, NzToolTipModule, NgFor, AsyncPipe, DecimalPipe, TranslateModule]
+  imports: [NgIf, NzButtonModule, RouterLink, NzIconModule, NzDividerModule, NzInputModule, FormsModule, FlexModule, NzListModule, NzTooltipModule, NgFor, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPickerDrawerComponent {
 

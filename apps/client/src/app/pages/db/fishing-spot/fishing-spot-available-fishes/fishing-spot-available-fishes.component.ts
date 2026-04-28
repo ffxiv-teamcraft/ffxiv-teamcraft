@@ -14,7 +14,7 @@ import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AlarmButtonComponent } from '../../../../modules/alarm-button/alarm-button/alarm-button.component';
@@ -30,7 +30,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fishing-spot-available-fishes.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, ItemIconComponent, DbButtonComponent, AlarmButtonComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
+    imports: [NzCardModule, FlexModule, ItemIconComponent, DbButtonComponent, AlarmButtonComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
 })
 export class FishingSpotAvailableFishesComponent {
   public readonly fishes$: Observable<{ itemId: number, alarms: PersistedAlarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots'), this.authFacade.logTracking$]).pipe(

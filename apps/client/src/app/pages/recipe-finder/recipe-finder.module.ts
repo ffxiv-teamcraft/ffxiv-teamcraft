@@ -17,7 +17,7 @@ import { ClipboardImportPopupComponent } from './clipboard-import-popup/clipboar
 import { InventoryImportPopupComponent } from './inventory-import-popup/inventory-import-popup.component';
 
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 
 const routes: Routes = [
   {
@@ -44,7 +44,7 @@ const routes: Routes = [
     ItemIconModule,
     MarketboardModule,
     NzPaginationModule,
-    NzToolTipModule,
+    NzTooltipModule,
     RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent
 ]
 })

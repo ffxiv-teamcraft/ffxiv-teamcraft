@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 import { AsyncPipe } from '@angular/common';
 import { FishingSpotDatagridComponent } from '../fishing-spot-datagrid/fishing-spot-datagrid.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
@@ -17,7 +17,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     templateUrl: './fishing-spot-weather-datagrid.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, NzToolTipModule, FishingSpotDatagridComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, WeatherIconPipe]
+    imports: [NzCardModule, NzTooltipModule, FishingSpotDatagridComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, WeatherIconPipe]
 })
 export class FishingSpotWeatherDatagridComponent {
   @Input()

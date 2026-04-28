@@ -2,6 +2,7 @@ import { TeamcraftComponent } from './teamcraft-component';
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   template: ''
 })
 export class TeamcraftOptimizedComponent extends TeamcraftComponent implements AfterViewInit {

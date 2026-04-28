@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, numberAttribute } from '@ang
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { RouterLink } from '@angular/router';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
@@ -11,7 +11,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     styleUrls: ['./db-button.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, TranslateModule]
+    imports: [NzButtonModule, NzTooltipModule, RouterLink, NzIconModule, TranslateModule]
 })
 export class DbButtonComponent {
 

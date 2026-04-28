@@ -16,7 +16,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -27,7 +27,7 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './status.component.html',
     styleUrls: ['./status.component.less'],
     standalone: true,
-    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe]
+    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe]
 })
 export class StatusComponent extends TeamcraftPageComponent {
 

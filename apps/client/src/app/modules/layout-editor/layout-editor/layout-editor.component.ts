@@ -18,7 +18,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -33,7 +33,7 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './layout-editor.component.html',
   styleUrls: ['./layout-editor.component.less'],
   standalone: true,
-  imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzToolTipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzTooltipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
 })
 export class LayoutEditorComponent {
 

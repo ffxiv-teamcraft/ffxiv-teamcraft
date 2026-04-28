@@ -18,7 +18,7 @@ import { ItemCapsTableComponent } from '../../../modules/gearsets/item-caps-tabl
 import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -29,7 +29,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./gearset-display-slot.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, ItemIconComponent, NzToolTipModule, NzCheckboxModule, FormsModule, ItemNameClipboardDirective, ItemCapsTableComponent, NzButtonModule, NzIconModule, NzPopoverModule, MateriaSlotIconComponent, I18nNameComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, IfMobilePipe, IlvlPipe, MateriaBonusPipe]
+    imports: [FlexModule, ItemIconComponent, NzTooltipModule, NzCheckboxModule, FormsModule, ItemNameClipboardDirective, ItemCapsTableComponent, NzButtonModule, NzIconModule, NzPopoverModule, MateriaSlotIconComponent, I18nNameComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, IfMobilePipe, IlvlPipe, MateriaBonusPipe]
 })
 export class GearsetDisplaySlotComponent {
 

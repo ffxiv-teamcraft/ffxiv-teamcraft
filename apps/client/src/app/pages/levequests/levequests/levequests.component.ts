@@ -32,7 +32,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -53,7 +53,7 @@ interface ExpObj {
   templateUrl: './levequests.component.html',
   styleUrls: ['./levequests.component.less'],
   standalone: true,
-  imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
+  imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzTooltipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
@@ -112,8 +112,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   constructor(private listsFacade: ListsFacade,
               private router: Router, private route: ActivatedRoute,
-              private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
+              private listManager: ListManagerService, private notificationService: private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,

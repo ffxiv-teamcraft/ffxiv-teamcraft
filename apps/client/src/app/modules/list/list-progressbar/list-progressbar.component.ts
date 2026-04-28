@@ -3,7 +3,7 @@ import { List } from '../model/list';
 import { Theme } from '../../settings/theme';
 import { ListsFacade } from '../+state/lists.facade';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { DecimalPipe } from '@angular/common';
 
@@ -18,7 +18,7 @@ interface ListProgression {
     styleUrls: ['./list-progressbar.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzProgressModule, NzToolTipModule, DecimalPipe, TranslateModule]
+    imports: [NzProgressModule, NzTooltipModule, DecimalPipe, TranslateModule]
 })
 export class ListProgressbarComponent {
 

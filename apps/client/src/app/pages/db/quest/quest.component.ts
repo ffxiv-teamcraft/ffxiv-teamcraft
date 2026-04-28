@@ -34,7 +34,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -45,7 +45,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     templateUrl: './quest.component.html',
     styleUrls: ['./quest.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, MapPositionComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, RouterLink, NzTagModule, ItemIconComponent, XivapiActionTooltipDirective, ItemRarityDirective, NzButtonModule, NzIconModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe]
+    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, MapPositionComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, RouterLink, NzTagModule, ItemIconComponent, XivapiActionTooltipDirective, ItemRarityDirective, NzButtonModule, NzIconModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe]
 })
 export class QuestComponent extends TeamcraftPageComponent {
 

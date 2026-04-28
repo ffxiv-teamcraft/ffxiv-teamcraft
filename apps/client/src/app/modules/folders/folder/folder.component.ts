@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 import { NgTemplateOutlet } from '@angular/common';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -25,7 +25,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
   styleUrls: ['./folder.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, ClipboardDirective, RouterLink, NzPopconfirmModule, CdkDropList, CdkDrag, NgTemplateOutlet, TranslateModule]
+  imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, ClipboardDirective, RouterLink, NzPopconfirmModule, CdkDropList, CdkDrag, NgTemplateOutlet, TranslateModule]
 })
 export class FolderComponent<T extends DataModel> implements OnInit {
 

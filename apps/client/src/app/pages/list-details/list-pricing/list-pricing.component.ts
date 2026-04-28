@@ -33,7 +33,7 @@ import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-ico
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
@@ -43,7 +43,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     styleUrls: ['./list-pricing.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [RouterLink, NzButtonModule, NzIconModule, NzToolTipModule, NgIf, FlexModule, NzCardModule, ItemIconComponent, NzWaveModule, ClipboardDirective, NzCheckboxModule, FormsModule, NzCollapseModule, NgFor, ListPricingRowComponent, NzInputModule, NzAlertModule, AsyncPipe, DecimalPipe, TranslateModule]
+    imports: [RouterLink, NzButtonModule, NzIconModule, NzTooltipModule, NgIf, FlexModule, NzCardModule, ItemIconComponent, NzWaveModule, ClipboardDirective, NzCheckboxModule, FormsModule, NzCollapseModule, NgFor, ListPricingRowComponent, NzInputModule, NzAlertModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class ListPricingComponent extends TeamcraftComponent {
 

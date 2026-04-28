@@ -4,7 +4,7 @@ import { CompanyWorkshopTreePopupComponent } from '../company-workshop-tree-popu
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzButtonSize } from 'ng-zorro-antd/button/button.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
@@ -14,7 +14,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     styleUrls: ['./company-workshop-tree-button.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, TranslateModule]
+    imports: [NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, TranslateModule]
 })
 export class CompanyWorkshopTreeButtonComponent {
 

@@ -11,7 +11,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { FishingSpotDatagridComponent } from '../fishing-spot-datagrid/fishing-spot-datagrid.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
@@ -38,7 +38,7 @@ type Lure = {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, NzSelectComponent, NzOptionComponent, I18nRowPipe, I18nPipe]
+  imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, NzSelectComponent, NzOptionComponent, I18nRowPipe, I18nPipe]
 })
 export class FishingSpotBaitDatagridComponent {
   @Input()

@@ -33,7 +33,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -46,7 +46,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
     styleUrls: ['./teams.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzCollapseModule, NzPopconfirmModule, NzSelectModule, FormsModule, NzGridModule, NzCheckboxModule, NzAlertModule, NzListModule, ClipboardDirective, NzTagModule, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, TeamcraftLinkPipe]
+    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzCollapseModule, NzPopconfirmModule, NzSelectModule, FormsModule, NzGridModule, NzCheckboxModule, NzAlertModule, NzListModule, ClipboardDirective, NzTagModule, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, TeamcraftLinkPipe]
 })
 export class TeamsComponent implements OnInit {
 
@@ -66,7 +66,7 @@ export class TeamsComponent implements OnInit {
 
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
-              private message: NzMessageService, private route: ActivatedRoute, private router: Router,
+              private message: private route: ActivatedRoute, private router: Router,
               private http: HttpClient, private platform: PlatformService,
               private ipc: IpcService, private oauth: OauthService,
               public settings: SettingsService) {

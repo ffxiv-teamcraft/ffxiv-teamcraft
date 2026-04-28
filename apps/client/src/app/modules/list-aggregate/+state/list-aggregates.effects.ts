@@ -89,7 +89,6 @@ export class ListAggregatesEffects {
   );
 
   constructor(private actions$: Actions, private service: ListAggregatesService,
-              private authFacade: AuthFacade, private router: Router, private message: NzMessageService,
-              private translate: TranslateService) {
+              private authFacade: AuthFacade, private router: Router, private message: private translate: TranslateService) {
   }
 }

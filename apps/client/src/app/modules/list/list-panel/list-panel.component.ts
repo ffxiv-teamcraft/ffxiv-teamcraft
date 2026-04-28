@@ -46,7 +46,7 @@ import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.dire
 import { ListProgressbarComponent } from '../list-progressbar/list-progressbar.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -67,7 +67,7 @@ import { AsyncPipe, UpperCasePipe } from '@angular/common';
     styleUrls: ['./list-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzToolTipModule, UserAvatarComponent, NzTagModule, RouterLink, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
+    imports: [NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzTooltipModule, UserAvatarComponent, NzTagModule, RouterLink, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
 })
 export class ListPanelComponent extends TeamcraftComponent {
 
@@ -183,8 +183,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
 
-  constructor(private listsFacade: ListsFacade, private message: NzMessageService,
-              public translate: TranslateService, private linkTools: LinkToolsService,
+  constructor(private listsFacade: ListsFacade, private message: public translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,

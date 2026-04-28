@@ -40,7 +40,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { MapPositionComponent } from '../../map/map-position/map-position.component';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -60,7 +60,7 @@ import { AsyncPipe, DecimalPipe, NgTemplateOutlet } from '@angular/common';
   styleUrls: ['./list-details-panel.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
+  imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 

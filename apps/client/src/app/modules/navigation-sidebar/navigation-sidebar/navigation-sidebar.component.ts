@@ -9,7 +9,7 @@ import { NavigationSidebarService } from '../navigation-sidebar.service';
 import { NzContextMenuService, NzDropdownMenuComponent, NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -23,7 +23,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     styleUrls: ['./navigation-sidebar.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzMenuModule, NzIconModule, NzButtonModule, NzBadgeModule, NgTemplateOutlet, RouterLinkActive, RouterLink, NzDropDownModule, NzToolTipModule, AsyncPipe, TranslateModule]
+    imports: [NzMenuModule, NzIconModule, NzButtonModule, NzBadgeModule, NgTemplateOutlet, RouterLinkActive, RouterLink, NzDropDownModule, NzTooltipModule, AsyncPipe, TranslateModule]
 })
 export class NavigationSidebarComponent {
 

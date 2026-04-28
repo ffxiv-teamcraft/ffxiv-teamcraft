@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
@@ -29,7 +29,7 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./gearset-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-  imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTagModule, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule, AsyncPipe]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzTagModule, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule, AsyncPipe]
 })
 export class GearsetRowComponent {
 

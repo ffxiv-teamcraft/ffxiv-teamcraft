@@ -32,7 +32,7 @@ import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.d
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -47,7 +47,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
   styleUrls: ['./item-row-buttons.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, MarketboardIconComponent, NzButtonModule, NzWaveModule, ItemNameClipboardDirective, NzIconModule, NzToolTipModule, NzBadgeModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, TutorialStepDirective, RotationResultTagComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
+  imports: [FlexModule, MarketboardIconComponent, NzButtonModule, NzWaveModule, ItemNameClipboardDirective, NzIconModule, NzTooltipModule, NzBadgeModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, TutorialStepDirective, RotationResultTagComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class ItemRowButtonsComponent extends TeamcraftComponent {
 
@@ -197,7 +197,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   @ViewChild('menuHost', { read: ViewContainerRef })
   contextMenuHost: ViewContainerRef;
 
-  constructor(private messageService: NzMessageService, private translate: TranslateService,
+  constructor(private messageService: private translate: TranslateService,
               public settings: SettingsService, private cd: ChangeDetectorRef,
               private rotationsFacade: RotationsFacade, private lazyData: LazyDataFacade,
               private ipc: IpcService, public platform: PlatformService,

@@ -14,7 +14,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { PageLoaderComponent } from '../../page-loader/page-loader/page-loader.component';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FishingBaitComponent } from '../../fishing-bait/fishing-bait/fishing-bait.component';
 import { MapPositionComponent } from '../../map/map-position/map-position.component';
 import { NodeDetailsComponent } from '../../node-details/node-details/node-details.component';
@@ -31,7 +31,7 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./reduced-from.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzCardModule, ItemRarityDirective, ItemIconComponent, NzListModule, NodeDetailsComponent, MapPositionComponent, FishingBaitComponent, NzToolTipModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, NodeTypeIconPipe, ClosestAetherytePipe, LazyIconPipe]
+    imports: [FlexModule, NzCardModule, ItemRarityDirective, ItemIconComponent, NzListModule, NodeDetailsComponent, MapPositionComponent, FishingBaitComponent, NzTooltipModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, NodeTypeIconPipe, ClosestAetherytePipe, LazyIconPipe]
 })
 export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements OnInit {
 

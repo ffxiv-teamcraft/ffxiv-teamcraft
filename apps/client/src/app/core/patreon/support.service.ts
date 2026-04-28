@@ -19,8 +19,7 @@ export class SupportService {
 
   constructor(private http: HttpClient, private authFacade: AuthFacade,
               private dialog: NzModalService, private translate: TranslateService,
-              private platform: PlatformService, private message: NzMessageService,
-              private router: Router, private oauth: OauthService) {
+              private platform: PlatformService, private message: private router: Router, private oauth: OauthService) {
   }
 
   public patreonOauth(): void {

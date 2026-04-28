@@ -21,7 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
@@ -43,7 +43,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './desynth.component.html',
     styleUrls: ['./desynth.component.less'],
     standalone: true,
-    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzToolTipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
+    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzTooltipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
 })
 export class DesynthComponent {
 
@@ -157,8 +157,7 @@ export class DesynthComponent {
 
   constructor(private dataService: DataService, private lazyData: LazyDataFacade,
               private router: Router, private route: ActivatedRoute,
-              private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private i18n: I18nToolsService, private listPicker: ListPickerService,
+              private listManager: ListManagerService, private notificationService: private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
     route.queryParamMap
       .pipe(

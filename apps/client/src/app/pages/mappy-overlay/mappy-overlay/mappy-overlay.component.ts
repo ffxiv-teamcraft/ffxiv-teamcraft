@@ -14,7 +14,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
 
@@ -24,7 +24,7 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
     styleUrls: ['./mappy-overlay.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [OverlayContainerComponent, NzToolTipModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, I18nRowPipe]
+    imports: [OverlayContainerComponent, NzTooltipModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, I18nRowPipe]
 })
 export class MappyOverlayComponent implements OnInit {
 

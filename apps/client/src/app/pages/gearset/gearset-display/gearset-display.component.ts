@@ -48,7 +48,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-button/favorite-button.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -59,7 +59,7 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './gearset-display.component.html',
     styleUrls: ['./gearset-display.component.less'],
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
 })
 export class GearsetDisplayComponent extends TeamcraftComponent {
 
@@ -127,10 +127,9 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private dialog: NzModalService, private materiaService: MateriaService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private notificationService: NzNotificationService, private lazyData: LazyDataFacade,
+              private notificationService: private lazyData: LazyDataFacade,
               private router: Router, private i18n: I18nToolsService,
-              private message: NzMessageService,
-              private authFacade: AuthFacade, private clipboard: Clipboard,
+              private message: private authFacade: AuthFacade, private clipboard: Clipboard,
               private commissionsFacade: CommissionsFacade, private env: EnvironmentService) {
     super();
     this.activatedRoute.paramMap

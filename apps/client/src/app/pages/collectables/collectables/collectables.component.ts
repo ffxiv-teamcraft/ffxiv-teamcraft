@@ -37,7 +37,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -50,7 +50,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
   styleUrls: ['./collectables.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PageLoaderComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
+  imports: [PageLoaderComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzTooltipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
 })
 export class CollectablesComponent {
 

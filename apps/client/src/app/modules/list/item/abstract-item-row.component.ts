@@ -40,6 +40,7 @@ import { RelationshipsComponent } from '../../item-details/relationships/relatio
 import { uniq } from 'lodash';
 
 @Component({
+  standalone: false,
   template: ''
 })
 export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implements OnInit {
@@ -241,7 +242,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
   _layout: ListLayout;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
-              protected messageService: NzMessageService, protected translate: TranslateService,
+              protected messageService: protected translate: TranslateService,
               protected modal: NzModalService,
               protected i18n: I18nToolsService, protected cdRef: ChangeDetectorRef,
               protected userService: UserService,
@@ -252,8 +253,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
               protected rotationPicker: RotationPickerService,
               protected commentsService: CommentsService,
               protected listPicker: ListPickerService,
-              protected notificationService: NzNotificationService,
-              public consumablesService: ConsumablesService,
+              protected notificationService: public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
               protected inventoryService: InventoryService,
               protected simulationService: SimulationService,

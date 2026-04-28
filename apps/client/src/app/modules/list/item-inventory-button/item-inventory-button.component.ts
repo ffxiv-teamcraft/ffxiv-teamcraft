@@ -7,7 +7,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { TranslateModule } from '@ngx-translate/core';
 import { InventoryPositionComponent } from '../../inventory/inventory-position/inventory-position.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
@@ -19,7 +19,7 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './item-inventory-button.component.html',
     styleUrls: ['./item-inventory-button.component.less'],
     standalone: true,
-    imports: [NzTagModule, NzDropDownModule, NzMenuModule, NzButtonModule, NzToolTipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
+    imports: [NzTagModule, NzDropDownModule, NzMenuModule, NzButtonModule, NzTooltipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class ItemInventoryButtonComponent {
 

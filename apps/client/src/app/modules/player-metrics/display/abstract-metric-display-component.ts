@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { MetricsDisplayEntry } from './metrics-display-entry';
 
 @Component({
+  standalone: false,
   template: ''
 })
 export abstract class AbstractMetricDisplayComponent {

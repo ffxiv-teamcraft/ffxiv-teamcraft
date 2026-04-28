@@ -17,7 +17,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -30,7 +30,7 @@ import { DialogComponent } from '../../../core/dialog.component';
     templateUrl: './materias-needed-popup.component.html',
     styleUrls: ['./materias-needed-popup.component.less'],
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzTableModule, ItemIconComponent, ItemNameClipboardDirective, I18nNameComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe]
+    imports: [FlexModule, NzButtonModule, NzInputModule, NzIconModule, NzTooltipModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzTableModule, ItemIconComponent, ItemNameClipboardDirective, I18nNameComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class MateriasNeededPopupComponent extends DialogComponent {
 

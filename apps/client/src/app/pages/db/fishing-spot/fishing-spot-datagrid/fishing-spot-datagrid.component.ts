@@ -4,7 +4,7 @@ import { isNil } from 'lodash';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { Datagrid, DatagridColDef } from '../../service/fish-context.service';
 import { FishingSpotUtilsService } from '../fishing-spot-utils.service';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
@@ -20,7 +20,7 @@ import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [FishingSpotUtilsService],
     standalone: true,
-    imports: [NzTableModule, NgTemplateOutlet, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe]
+    imports: [NzTableModule, NgTemplateOutlet, ItemIconComponent, NzTooltipModule, AsyncPipe, DecimalPipe]
 })
 export class FishingSpotDatagridComponent<T extends string | number = number> {
   public readonly activeFish$ = new BehaviorSubject<number | undefined>(undefined);
