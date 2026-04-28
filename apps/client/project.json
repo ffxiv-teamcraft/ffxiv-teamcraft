@@ -234,7 +234,7 @@
       "defaultConfiguration": "dev"
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/client/**/*.ts", "apps/client/**/*.html"]
       }
