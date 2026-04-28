@@ -169,6 +169,8 @@ export class DatFilesWatcher {
         return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - KOREA`;
       case 'CN':
         return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
+      case 'TW':
+        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - TC`;
       default:
         return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
     }
