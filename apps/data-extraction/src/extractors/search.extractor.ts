@@ -50,7 +50,8 @@ export class SearchExtractor extends AbstractExtractor {
       ja: row.ja,
       fr: row.fr,
       ko: row.ko,
-      zh: row.zh
+      zh: row.zh,
+      tw: row.tw,
     };
   }
 
@@ -295,6 +296,7 @@ export class SearchExtractor extends AbstractExtractor {
       const names = this.getExtendedNames<LazyNpc>('npcs');
       const koTitles = this.requireLazyFileByKey('koNpcTitles');
       const zhTitles = this.requireLazyFileByKey('zhNpcTitles');
+      const twTitles = this.requireLazyFileByKey('twNpcTitles');
       const index = names.map((row) => {
         return {
           ...this.getBaseEntry(row),
@@ -304,7 +306,8 @@ export class SearchExtractor extends AbstractExtractor {
             title: {
               ...row.title,
               ...koTitles[row.id],
-              ...zhTitles[row.id]
+              ...zhTitles[row.id],
+              ...twTitles[row.id]
             }
           }
         };
@@ -413,6 +416,7 @@ export class SearchExtractor extends AbstractExtractor {
       const names = this.getExtendedNames<LazyStatus>('statuses');
       const koDescriptions = this.requireLazyFileByKey('koStatusDescriptions');
       const zhDescriptions = this.requireLazyFileByKey('zhStatusDescriptions');
+      const twDescriptions = this.requireLazyFileByKey('twStatusDescriptions');
       const index = names.map((row) => {
         return {
           ...this.getBaseEntry(row),
@@ -423,7 +427,8 @@ export class SearchExtractor extends AbstractExtractor {
             description: {
               ...row.description,
               ...koDescriptions[row.id],
-              ...zhDescriptions[row.id]
+              ...zhDescriptions[row.id],
+              ...twDescriptions[row.id]
             }
           }
         };

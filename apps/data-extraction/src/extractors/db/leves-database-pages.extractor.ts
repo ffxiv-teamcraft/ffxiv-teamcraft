@@ -26,12 +26,14 @@ export class LevesDatabasePagesExtractor extends AbstractExtractor {
         {
           field: 'Name',
           koSource: 'koLeves',
-          zhSource: 'zhLeves'
+          zhSource: 'zhLeves',
+          twSource: 'twLeves'
         },
         {
           field: 'Description',
           koSource: 'koLeveDescriptions',
           zhSource: 'zhLeveDescriptions',
+          twSource: 'twLeveDescriptions',
           targetField: 'description'
         }
       ]).forEach(({ row, extended }) => {

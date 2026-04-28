@@ -29,12 +29,14 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
           {
             field: 'Name',
             koSource: 'koActions',
-            zhSource: 'zhActions'
+            zhSource: 'zhActions',
+            twSource: 'twActions'
           },
           {
             field: 'Description',
             koSource: 'koActionDescriptions',
             zhSource: 'zhActionDescriptions',
+            twSource: 'twActionDescriptions',
             targetField: 'description'
           }
         ]),
@@ -47,12 +49,14 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
           {
             field: 'Name',
             koSource: 'koCraftActions',
-            zhSource: 'zhCraftActions'
+            zhSource: 'zhCraftActions',
+            twSource: 'twCraftActions'
           },
           {
             field: 'Description',
             koSource: 'koCraftDescriptions',
             zhSource: 'zhCraftDescriptions',
+            twSource: 'twCraftDescriptions',
             targetField: 'description'
           }
         ])
@@ -66,12 +70,14 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
         {
           field: 'Name',
           koSource: 'koTraits',
-          zhSource: 'zhTraits'
+          zhSource: 'zhTraits',
+          twSource: 'twTraits'
         },
         {
           field: 'Description',
           koSource: 'koTraitDescriptions',
           zhSource: 'zhTraitDescriptions',
+          twSource: 'twTraitDescriptions',
           targetField: 'description'
         }
       ]);

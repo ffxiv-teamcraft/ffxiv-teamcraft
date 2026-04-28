@@ -19,7 +19,8 @@ export class FatesDatabasePagesExtractor extends AbstractExtractor {
           {
             field: 'Name',
             koSource: 'koFates',
-            zhSource: 'zhFates'
+            zhSource: 'zhFates',
+            twSource: 'twFates'
           },
           {
             field: 'Description',

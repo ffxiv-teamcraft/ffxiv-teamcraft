@@ -9,12 +9,14 @@ export class AchievementsDbPagesExtractor extends AbstractExtractor {
           {
             field: 'Name',
             koSource: 'koAchievements',
-            zhSource: 'zhAchievements'
+            zhSource: 'zhAchievements',
+            twSource: 'twAchievements'
           },
           {
             field: 'Description',
             koSource: 'koAchievementDescriptions',
             zhSource: 'zhAchievementDescriptions',
+            twSource: 'twAchievementDescriptions',
             targetField: 'description'
           }
         ]).reduce((acc, { row, extended }) => {
