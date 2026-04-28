@@ -9,8 +9,10 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
     const dbData = {};
     const koNames = this.requireLazyFileByKey('koItems');
     const zhNames = this.requireLazyFileByKey('zhItems');
+    const twNames = this.requireLazyFileByKey('twItems');
     const koDescriptions = this.requireLazyFileByKey('koItemDescriptions');
     const zhDescriptions = this.requireLazyFileByKey('zhItemDescriptions');
+    const twDescriptions = this.requireLazyFileByKey('twItemDescriptions');
     const fishes = this.requireLazyFileByKey('fishes');
     const equipment = this.requireLazyFileByKey('equipment');
     const melding = this.requireLazyFileByKey('itemMeldingData');
@@ -148,7 +150,8 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
               de: item.Name_de,
               fr: item.Name_fr,
               ...(koNames[item.index] || {}),
-              ...(zhNames[item.index] || {})
+              ...(zhNames[item.index] || {}),
+              ...(twNames[item.index] || {})
             },
             description: {
               en: item.Description_en,
@@ -156,7 +159,8 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
               de: item.Description_de,
               fr: item.Description_fr,
               ...(koDescriptions[item.index] || {}),
-              ...(zhDescriptions[item.index] || {})
+              ...(zhDescriptions[item.index] || {}),
+              ...(twDescriptions[item.index] || {})
             },
             gcReward: supplyDutyReward.find(r => r.index === item.LevelItem)?.SealsExpertDelivery,
             kind: item.ItemKind,

@@ -24570,10 +24570,10 @@
     "fr": "Le Rivage redoutable"
   },
   "4096": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Archeia Harmonias",
+    "ja": "ハルモニア戦争図書館",
+    "de": "Archeia Harmonias",
+    "fr": "La Bibliothèque Harmonia"
   },
   "4097": {
     "en": "",
@@ -28590,16 +28590,16 @@
     "fr": "Tréno"
   },
   "4766": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Unmaking",
+    "ja": "無の領域",
+    "de": "Nichts-Territorium",
+    "fr": "Domaine du néant"
   },
   "4767": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Nihil",
+    "ja": "無の深淵",
+    "de": "Nichts-Tiefe",
+    "fr": "Abysses du néant"
   },
   "4768": {
     "en": "",
@@ -31788,10 +31788,10 @@
     "fr": "Pont d'aéronef"
   },
   "5299": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shrouded Sanctum",
+    "ja": "隠された小部屋",
+    "de": "隠された小部屋",
+    "fr": "隠された小部屋"
   },
   "5300": {
     "en": "Mech Ops",
@@ -32976,24 +32976,714 @@
     "fr": ""
   },
   "5497": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Commercium",
+    "ja": "コンメルキウム区",
+    "de": "Commercium",
+    "fr": "Commercium"
   },
   "5498": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Manufactory Vallum",
+    "ja": "魔導工廠への道",
+    "de": "Weg zum Klyteum",
+    "fr": "Chemin de l'usine"
   },
   "5499": {
+    "en": "The Clyteum",
+    "ja": "クルティウス魔導工廠",
+    "de": "Klyteum",
+    "fr": "Le Clyteum"
+  },
+  "5500": {
+    "en": "Transeptimum",
+    "ja": "セプティマム駅前通り",
+    "de": "Septium-Straße",
+    "fr": "Transeptimum"
+  },
+  "5501": {
+    "en": "Via Varis",
+    "ja": "ウィア・ヴァリス",
+    "de": "Via Valis",
+    "fr": "Via Varis"
+  },
+  "5502": {
+    "en": "Cardo VI",
+    "ja": "帝都第VI大通り",
+    "de": "Straße der VI. Legion",
+    "fr": "Cardo VI"
+  },
+  "5503": {
+    "en": "Restricted Access",
+    "ja": "工廠連絡路",
+    "de": "Fabrikdurchgang",
+    "fr": "Chemin du personnel d'usine"
+  },
+  "5504": {
+    "en": "North Eblan Timberland",
+    "ja": "北エブラーナ林道",
+    "de": "Waldweg Nord-Eblan",
+    "fr": "Chemin boisé d'Éblana Nord"
+  },
+  "5505": {
+    "en": "Steel Gateway",
+    "ja": "クルティウス魔導工廠入口",
+    "de": "Eingang zum Klyteum",
+    "fr": "Entrée du Clyteum"
+  },
+  "5506": {
+    "en": "Dock I",
+    "ja": "第I飛空艇ドック",
+    "de": "Dock 1",
+    "fr": "Dock I"
+  },
+  "5507": {
+    "en": "Forum Floricomum",
+    "ja": "フォルム・フロリコマム",
+    "de": "Forum Floricomum",
+    "fr": "Forum Floricomum"
+  },
+  "5508": {
+    "en": "Stockyard",
+    "ja": "資材蓄積場",
+    "de": "Materiallager",
+    "fr": "Site de dépôt des ressources"
+  },
+  "5509": {
+    "en": "Secure Test Site",
+    "ja": "兵器試験場",
+    "de": "Waffentestgelände",
+    "fr": "Site d'essai sécurisé"
+  },
+  "5510": {
+    "en": "Windurst: The Third Walk",
+    "ja": "ウィンダス：ザ・サードウォーク",
+    "de": "Windurst: Die dritte Etappe",
+    "fr": "Windurst - La troisième perambulation"
+  },
+  "5511": {
+    "en": "Windurst",
+    "ja": "ウィンダス",
+    "de": "Windurst: Die dritte Etappe",
+    "fr": "Windurst"
+  },
+  "5512": {
+    "en": "Al Zahbi",
+    "ja": "アルザビ",
+    "de": "Al Zahbi",
+    "fr": "Al Zahbi"
+  },
+  "5513": {
+    "en": "Nyzul Isle",
+    "ja": "ナイズル島",
+    "de": "Nyzul-Insel",
+    "fr": "Île de Nyzul"
+  },
+  "5514": {
+    "en": "The Garden of Ru'Hmet",
+    "ja": "ル・メトの園",
+    "de": "Garten von Ru'Hmet",
+    "fr": "Jardin de Ru'Hmet"
+  },
+  "5515": {
+    "en": "Empyreal Paradox",
+    "ja": "天象の鎖",
+    "de": "Empyreal-Paradox",
+    "fr": "Paradoxe empyréen"
+  },
+  "5516": {
+    "en": "Abyssean Empyreal Paradox",
+    "ja": "アビセア-天象の鎖",
+    "de": "Abyssea - Empyreal-Paradox",
+    "fr": "Abyssée - Paradoxe empyréen"
+  },
+  "5517": {
+    "en": "Windurst Walls",
+    "ja": "石の区",
+    "de": "Windurst-Mauern",
+    "fr": "Remparts de Windurst"
+  },
+  "5518": {
+    "en": "Residential Area",
+    "ja": "人民街区",
+    "de": "Volksbezirk",
+    "fr": "Quartier des roturiers"
+  },
+  "5519": {
+    "en": "Nyzul Isle",
+    "ja": "ナイズル島",
+    "de": "Nyzul-Insel",
+    "fr": "Île de Nyzul"
+  },
+  "5520": {
+    "en": "The Garden of Ru'Hmet",
+    "ja": "ル・メトの園",
+    "de": "Garten von Ru'Hmet",
+    "fr": "Jardin de Ru'Hmet"
+  },
+  "5521": {
+    "en": "Empyreal Paradox",
+    "ja": "天象の鎖",
+    "de": "Empyreal-Paradox",
+    "fr": "Paradoxe empyréen"
+  },
+  "5522": {
+    "en": "Abyssean Empyreal Paradox",
+    "ja": "アビセア-天象の鎖",
+    "de": "Abyssea - Empyreal-Paradox",
+    "fr": "Abyssée - Paradoxe empyréen"
+  },
+  "5523": {
+    "en": "Heavens Tower",
+    "ja": "天の塔",
+    "de": "Himmelsturm",
+    "fr": "Tour des cieux"
+  },
+  "5524": {
+    "en": "Dais of Ascension",
+    "ja": "闘舞台",
+    "de": "Kampfplatz",
+    "fr": "Estrade des guerriers"
+  },
+  "5525": {
+    "en": "Victory Gate",
+    "ja": "凱旋門",
+    "de": "Siegestor",
+    "fr": "Porte de la Victoire"
+  },
+  "5526": {
+    "en": "The Bastion",
+    "ja": "稜堡",
+    "de": "Das Bollwerk",
+    "fr": "Bastion"
+  },
+  "5527": {
+    "en": "The Ruin of Light Divine",
+    "ja": "白き神の間",
+    "de": "Reich des Lichtgottes",
+    "fr": "Antichambre du dieu de lumière"
+  },
+  "5528": {
+    "en": "Angels' Fall",
+    "ja": "天使たちの間",
+    "de": "Reich der Engel",
+    "fr": "Antichambre des anges"
+  },
+  "5529": {
+    "en": "The Clyteum",
+    "ja": "クルティウス魔導工廠",
+    "de": "Klyteum",
+    "fr": "Le Clyteum"
+  },
+  "5530": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "5500": {
+  "5531": {
+    "en": "Unnamed Island",
+    "ja": "名もなき島",
+    "de": "Einsame Insel",
+    "fr": "Île sans nom"
+  },
+  "5532": {
+    "en": "Thavnair",
+    "ja": "サベネア島",
+    "de": "Thavnair",
+    "fr": "Thavnair"
+  },
+  "5533": {
+    "en": "Unnamed Margin",
+    "ja": "名もなき島沖合",
+    "de": "Einsamer Saum",
+    "fr": "Large de l'île sans nom"
+  },
+  "5534": {
+    "en": "Unnamed Spectral Current",
+    "ja": "名もなき島沖合：幻海流",
+    "de": "Einsamer Saum - Phantomströmung",
+    "fr": "Courant spectral (large de l'île sans nom)"
+  },
+  "5535": {
+    "en": "Thavnair Margin",
+    "ja": "サベネア島沖合",
+    "de": "Thavnair - Hochsee",
+    "fr": "Large de Thavnair"
+  },
+  "5536": {
+    "en": "Thavnair Spectral Current",
+    "ja": "サベネア島沖合：幻海流",
+    "de": "Thavnair - Phantomströmung",
+    "fr": "Courant spectral (large de Thavnair)"
+  },
+  "5537": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5538": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5539": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5540": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5541": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5542": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5543": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5544": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5545": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5546": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5547": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5548": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5549": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5550": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5551": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5552": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5553": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5554": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5555": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5556": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5557": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5558": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5559": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5560": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5561": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5562": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5563": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5564": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5565": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5566": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5567": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5568": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5569": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5570": {
+    "en": "Ulthalam Parade",
+    "ja": "ウルタラム大通り",
+    "de": "Ulthalam Allee",
+    "fr": "Avenue d'Ulthalam"
+  },
+  "5571": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5572": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5573": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5574": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5575": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5576": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5577": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5578": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5579": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5580": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5581": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5582": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5583": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5584": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5585": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5586": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5587": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5588": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5589": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5590": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5591": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5592": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5593": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5594": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5595": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5596": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5597": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5598": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5599": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5600": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5601": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5602": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5603": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5604": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5605": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5606": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5607": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5608": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5609": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5610": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5611": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5612": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5613": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5614": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "5615": {
     "en": "",
     "ja": "",
     "de": "",

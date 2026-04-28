@@ -769,7 +769,7 @@
   },
   "56": {
     "en": "GLA CNJ THM PLD WHM BLM",
-    "ja": "剣術士 幻術士 呪術士 ナイト 白魔道士 黒魔道士",
+    "ja": "剣術士 幻術士 呪術士 ナイト 白魔道士 黒魔道士 魔獣使い",
     "de": "GLA DRU THM PLD WMA SMA",
     "fr": "GLA ÉLM OCC PLD MBL MNO",
     "jobs": [
@@ -783,7 +783,7 @@
   },
   "57": {
     "en": "GLA THM PLD BLM",
-    "ja": "剣術士 呪術士 ナイト 黒魔道士",
+    "ja": "剣術士 呪術士 ナイト 黒魔道士 魔獣使い",
     "de": "GLA THM PLD SMA",
     "fr": "GLA OCC PLD MNO",
     "jobs": [
@@ -795,7 +795,7 @@
   },
   "58": {
     "en": "GLA CNJ PLD WHM",
-    "ja": "剣術士 幻術士 ナイト 白魔道士",
+    "ja": "剣術士 幻術士 ナイト 白魔道士 魔獣使い",
     "de": "GLA DRU PLD WMA",
     "fr": "GLA ÉLM PLD MBL",
     "jobs": [
@@ -896,7 +896,7 @@
   },
   "65": {
     "en": "PGL MNK SAM",
-    "ja": "格闘士 モンク 侍",
+    "ja": "格闘士 モンク 侍 魔獣使い",
     "de": "FST MÖN SAM",
     "fr": "PGL MOI SAM",
     "jobs": [
@@ -1207,7 +1207,7 @@
   },
   "84": {
     "en": "PGL LNC MNK DRG SAM RPR",
-    "ja": "格闘士 槍術士 モンク 竜騎士 侍 リーパー",
+    "ja": "格闘士 槍術士 モンク 竜騎士 侍 リーパー 魔獣使い",
     "de": "FST PIK MÖN DRG SAM SNT",
     "fr": "PGL HAS MOI DRG SAM FCH",
     "jobs": [
@@ -1464,7 +1464,7 @@
   },
   "102": {
     "en": "PGL ROG MNK NIN SAM VPR",
-    "ja": "格闘士 双剣士 モンク 忍者 侍 ヴァイパー",
+    "ja": "格闘士 双剣士 モンク 忍者 侍 ヴァイパー 魔獣使い",
     "de": "FST SCH MÖN NIN SAM VPR",
     "fr": "PGL SUR MOI NIN SAM VPR",
     "jobs": [

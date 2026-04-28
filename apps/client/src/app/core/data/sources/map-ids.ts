@@ -1212,7 +1212,7 @@ export const mapIds = [
   {
     "zone": 2214,
     "id": 243,
-    "weatherRate": 42
+    "weatherRate": 0
   },
   {
     "zone": 2148,
@@ -5843,5 +5843,495 @@ export const mapIds = [
     "zone": 5405,
     "id": 1169,
     "weatherRate": 0
+  },
+  {
+    "zone": 0,
+    "id": 1170,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1171,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1172,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1173,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1174,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1175,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1176,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1177,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1178,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1179,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1180,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1181,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1182,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1183,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1184,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1185,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1186,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1187,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1188,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1189,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1190,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1191,
+    "weatherRate": null
+  },
+  {
+    "zone": 5510,
+    "id": 1192,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5510,
+    "id": 1193,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5510,
+    "id": 1194,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5510,
+    "id": 1195,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5510,
+    "id": 1196,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5510,
+    "id": 1197,
+    "weatherRate": 150
+  },
+  {
+    "zone": 5529,
+    "id": 1198,
+    "weatherRate": 27
+  },
+  {
+    "zone": 5529,
+    "id": 1199,
+    "weatherRate": 27
+  },
+  {
+    "zone": 5529,
+    "id": 1200,
+    "weatherRate": 27
+  },
+  {
+    "zone": 4766,
+    "id": 1201,
+    "weatherRate": 149
+  },
+  {
+    "zone": 4767,
+    "id": 1202,
+    "weatherRate": 149
+  },
+  {
+    "zone": 5510,
+    "id": 1203,
+    "weatherRate": 150
+  },
+  {
+    "zone": 0,
+    "id": 1204,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1205,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1206,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1207,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1208,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1209,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1210,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1211,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1212,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1213,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1214,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1215,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1216,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1217,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1218,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1219,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1220,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1221,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1222,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1223,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1224,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1225,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1226,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1227,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1228,
+    "weatherRate": null
+  },
+  {
+    "zone": 4096,
+    "id": 1229,
+    "weatherRate": 0
+  },
+  {
+    "zone": 3696,
+    "id": 1230,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4038,
+    "id": 1231,
+    "weatherRate": 149
+  },
+  {
+    "zone": 4382,
+    "id": 1232,
+    "weatherRate": 149
+  },
+  {
+    "zone": 0,
+    "id": 1233,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1234,
+    "weatherRate": null
+  },
+  {
+    "zone": 3696,
+    "id": 1235,
+    "weatherRate": 0
+  },
+  {
+    "zone": 2950,
+    "id": 1236,
+    "weatherRate": 0
+  },
+  {
+    "zone": 2950,
+    "id": 1237,
+    "weatherRate": 0
+  },
+  {
+    "zone": 21,
+    "id": 1238,
+    "weatherRate": 0
+  },
+  {
+    "zone": 21,
+    "id": 1239,
+    "weatherRate": 0
+  },
+  {
+    "zone": 21,
+    "id": 1240,
+    "weatherRate": 0
+  },
+  {
+    "zone": 20,
+    "id": 1241,
+    "weatherRate": 0
+  },
+  {
+    "zone": 20,
+    "id": 1242,
+    "weatherRate": 0
+  },
+  {
+    "zone": 20,
+    "id": 1243,
+    "weatherRate": 0
+  },
+  {
+    "zone": 0,
+    "id": 1244,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1245,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1246,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1247,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1248,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1249,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1250,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1251,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1252,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1253,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1254,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1255,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1256,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1257,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1258,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1259,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1260,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1261,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1262,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1263,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1264,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1265,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 1266,
+    "weatherRate": null
+  },
+  {
+    "zone": 4754,
+    "id": 1267,
+    "weatherRate": 27
   }
 ];

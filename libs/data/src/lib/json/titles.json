@@ -4899,7 +4899,7 @@
     "en": "The Mourner of Light",
     "ja": "the Mourner of Light",
     "de": "Trauernder des Lichts",
-    "fr": "Mortificateur de la Lumière"
+    "fr": "Mortifieur de la Lumière"
   },
   "818": {
     "en": "The White Wraith",
@@ -4950,22 +4950,22 @@
     "fr": "Belligérant des sommets"
   },
   "826": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "CCRC 2026 Champion",
+    "ja": "CCRC2026 Champion",
+    "de": "CCRC 2026 Champion",
+    "fr": "Champion CCRC2026"
   },
   "827": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "CCRC 2026 Finalist",
+    "ja": "CCRC2026 Finalist",
+    "de": "CCRC 2026 Finalist",
+    "fr": "Finaliste CCRC2026"
   },
   "828": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "CCRC 2026 Ranker",
+    "ja": "CCRC2026 Ranker",
+    "de": "CCRC 2026 Rangspieler",
+    "fr": "Classé CCRC2026"
   },
   "829": {
     "en": "Mistcloak",
@@ -4996,5 +4996,365 @@
     "ja": "Designer of Delight",
     "de": "Wonnewirker",
     "fr": "Artiste décorateur"
+  },
+  "834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "835": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "836": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "837": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "838": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "839": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "840": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "844": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "845": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "846": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "847": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "848": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "849": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "850": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "851": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "852": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "853": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "854": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "855": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "856": {
+    "en": "Trailblazer",
+    "ja": "Trailblazer",
+    "de": "der Pfadfinder",
+    "fr": "Silloneur du lointain"
+  },
+  "857": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "858": {
+    "en": "Sun-winged",
+    "ja": "Sun-winged",
+    "de": "der Geflügelte",
+    "fr": "Blanc et doré"
+  },
+  "859": {
+    "en": "South Sea Scourge",
+    "ja": "South Sea Scourge",
+    "de": "Schrecken der Südsee",
+    "fr": "Fléau des mers du sud"
+  },
+  "860": {
+    "en": "Paleoichthyologist",
+    "ja": "Paleoichthyologist",
+    "de": "Paläoichthyologe",
+    "fr": "Paléoichtyologiste"
+  },
+  "861": {
+    "en": "Nautical Knockout",
+    "ja": "Nautical Knockout",
+    "de": "Nautischer K. o.-Schläger",
+    "fr": "K.O. nautique"
+  },
+  "862": {
+    "en": "Globe-trotting Miner",
+    "ja": "Globe-trotting Miner",
+    "de": "Weltenbummelnder Minenarbeiter",
+    "fr": "Mineur globe-trotteur"
+  },
+  "863": {
+    "en": "Globe-trotting Botanist",
+    "ja": "Globe-trotting Botanist",
+    "de": "Weltenbummelnder Gärtner",
+    "fr": "Botaniste globe-trotteur"
+  },
+  "864": {
+    "en": "Globe-trotting Fisher",
+    "ja": "Globe-trotting Fisher",
+    "de": "Weltenbummelnder Fischer",
+    "fr": "Pêcheur globe-trotteur"
+  },
+  "865": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "866": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "867": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "868": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "869": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "870": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "871": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "872": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "873": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "874": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "875": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "876": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "877": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "878": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "879": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "880": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "881": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "882": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "883": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "884": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "885": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "886": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "887": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "888": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "889": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "890": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "891": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "892": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "893": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

@@ -7,6 +7,7 @@ export interface LazyNpcSearch {
   ja:    string;
   ko?:   string;
   patch: number;
+  tw?:   string;
   zh?:   string;
 }
 
@@ -21,6 +22,7 @@ export interface Title {
   fr:  string;
   ja:  Ja;
   ko?: string;
+  tw?: string;
   zh?: string;
 }
 

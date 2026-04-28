@@ -6610,5 +6610,23 @@
     "ja": "コチニール染料",
     "de": "Karmin",
     "fr": "Pigment nopal"
+  },
+  "1110": {
+    "en": "Desert Lapis Ore",
+    "ja": "デザートラピス原石",
+    "de": "Roh-Wüstenlapis",
+    "fr": "Lapis du désert brut"
+  },
+  "1111": {
+    "en": "Cordia Sap",
+    "ja": "コーディア樹液塊",
+    "de": "Cordia-Harz",
+    "fr": "Sève durcie de cordia"
+  },
+  "1112": {
+    "en": "Goldentail",
+    "ja": "ゴールデンイール",
+    "de": "Goldaal",
+    "fr": "Anguille dorée"
   }
 }

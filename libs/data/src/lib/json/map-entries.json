@@ -628,7 +628,7 @@
     "zone": 0,
     "name": "",
     "territory": null,
-    "scale": 100,
+    "scale": 0,
     "weatherRate": null
   },
   {
@@ -1941,7 +1941,7 @@
     "name": "Dusk Vigil",
     "territory": 434,
     "scale": 200,
-    "weatherRate": 42
+    "weatherRate": 0
   },
   {
     "id": 244,
@@ -9350,5 +9350,789 @@
     "territory": 1326,
     "scale": 400,
     "weatherRate": 0
+  },
+  {
+    "id": 1170,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1171,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1172,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1173,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1174,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1175,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1176,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1177,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1178,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1179,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1180,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1181,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1182,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1183,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1184,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1185,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1186,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1187,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1188,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1189,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1190,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1191,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1192,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1193,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1194,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1195,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1196,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1197,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1198,
+    "zone": 5529,
+    "name": "The Clyteum",
+    "territory": 1345,
+    "scale": 200,
+    "weatherRate": 27
+  },
+  {
+    "id": 1199,
+    "zone": 5529,
+    "name": "The Clyteum",
+    "territory": 1345,
+    "scale": 200,
+    "weatherRate": 27
+  },
+  {
+    "id": 1200,
+    "zone": 5529,
+    "name": "The Clyteum",
+    "territory": 1345,
+    "scale": 200,
+    "weatherRate": 27
+  },
+  {
+    "id": 1201,
+    "zone": 4766,
+    "name": "The Unmaking",
+    "territory": 1361,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 1202,
+    "zone": 4767,
+    "name": "Nihil",
+    "territory": 1361,
+    "scale": 200,
+    "weatherRate": 149
+  },
+  {
+    "id": 1203,
+    "zone": 5510,
+    "name": "Windurst: The Third Walk",
+    "territory": 1368,
+    "scale": 200,
+    "weatherRate": 150
+  },
+  {
+    "id": 1204,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1205,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1206,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1207,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1208,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1209,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1210,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1211,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1212,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1213,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1214,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1215,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1216,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1217,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1218,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1219,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1220,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1221,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1222,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1223,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1224,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1225,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1226,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1227,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1228,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1229,
+    "zone": 4096,
+    "name": "Archeia Harmonias",
+    "territory": 1357,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1230,
+    "zone": 3696,
+    "name": "The Phantoms' Feast",
+    "territory": 1369,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 1231,
+    "zone": 4038,
+    "name": "Zero's Domain",
+    "territory": 1077,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 1232,
+    "zone": 4382,
+    "name": "The Red Moon",
+    "territory": 1162,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 1233,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1234,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1235,
+    "zone": 3696,
+    "name": "The Phantoms' Feast",
+    "territory": 1369,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1236,
+    "zone": 2950,
+    "name": "Norvrandt",
+    "territory": 1374,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1237,
+    "zone": 2950,
+    "name": "Norvrandt",
+    "territory": 1374,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1238,
+    "zone": 21,
+    "name": "Eorzea",
+    "territory": 1375,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1239,
+    "zone": 21,
+    "name": "Eorzea",
+    "territory": 1375,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1240,
+    "zone": 21,
+    "name": "Eorzea",
+    "territory": 1375,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1241,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": 1376,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1242,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": 1376,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1243,
+    "zone": 20,
+    "name": "Hydaelyn",
+    "territory": 1376,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 1244,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1245,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1246,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1247,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1248,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1249,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1250,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1251,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1252,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1253,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1254,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1255,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1256,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1257,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1258,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1259,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1260,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1261,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1262,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1263,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1264,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1265,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1266,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 1267,
+    "zone": 4754,
+    "name": "Starlight Stalls",
+    "territory": 1247,
+    "scale": 400,
+    "weatherRate": 27
   }
 ]

@@ -9,6 +9,7 @@ export class NpcsDbPagesExtractor extends AbstractExtractor {
     const pages = {};
     const koTitles = this.requireLazyFileByKey('koNpcTitles');
     const zhTitles = this.requireLazyFileByKey('zhNpcTitles');
+    const twTitles = this.requireLazyFileByKey('twNpcTitles');
     const quests = this.requireLazyFileByKey('quests');
     combineLatest([
       this.getSheet<any>(xiv, 'ENpcBase', ['EnpcData']),
@@ -23,7 +24,8 @@ export class NpcsDbPagesExtractor extends AbstractExtractor {
           title: {
             ...npc.title,
             ...(koTitles[npc.id] || {}),
-            ...(zhTitles[npc.id] || {})
+            ...(zhTitles[npc.id] || {}),
+            ...(twTitles[npc.id] || {})
           },
           quests: base.ENpcData
             .filter(id => id >= 65530 && id <= 70000)

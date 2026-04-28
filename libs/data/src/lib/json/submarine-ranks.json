@@ -1401,53 +1401,53 @@
   },
   "141": {
     "id": 141,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 41885721,
+    "surveillanceBonus": 106,
+    "retrievalBonus": 136,
+    "speedBonus": 96,
+    "rangeBonus": 126,
+    "favorBonus": 100
   },
   "142": {
     "id": 142,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 42932865,
+    "surveillanceBonus": 106,
+    "retrievalBonus": 137,
+    "speedBonus": 96,
+    "rangeBonus": 127,
+    "favorBonus": 100
   },
   "143": {
     "id": 143,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 44006188,
+    "surveillanceBonus": 108,
+    "retrievalBonus": 137,
+    "speedBonus": 98,
+    "rangeBonus": 128,
+    "favorBonus": 102
   },
   "144": {
     "id": 144,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 112765858,
+    "surveillanceBonus": 108,
+    "retrievalBonus": 139,
+    "speedBonus": 98,
+    "rangeBonus": 129,
+    "favorBonus": 103
   },
   "145": {
     "id": 145,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 46234004,
+    "surveillanceBonus": 110,
+    "retrievalBonus": 140,
+    "speedBonus": 100,
+    "rangeBonus": 130,
+    "favorBonus": 105
   },
   "146": {
     "id": 146,

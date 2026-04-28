@@ -7165,7 +7165,10 @@
       "spawn": 17,
       "duration": 4,
       "snagging": false,
-      "minGathering": 335
+      "minGathering": 335,
+      "video": "https://youtu.be/IqjYBT_iHRs",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7696": [
@@ -11079,7 +11082,10 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/lmBiRPt1HNU",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "15631": [
@@ -14209,6 +14215,7 @@
       "duration": 4,
       "snagging": false,
       "minGathering": 1100,
+      "video": "https://youtu.be/nejalJkTRiM",
       "aLure": 0,
       "mLure": 0
     }
@@ -14260,6 +14267,7 @@
       "duration": 4,
       "snagging": false,
       "minGathering": 1050,
+      "video": "https://youtu.be/4YRmPygmD3o",
       "aLure": 0,
       "mLure": 0
     }
@@ -14937,7 +14945,8 @@
       "duration": 8,
       "weathers": [
         3,
-        4
+        4,
+        5
       ],
       "weathersFrom": [
         2
@@ -16926,7 +16935,10 @@
         3
       ],
       "snagging": false,
-      "minGathering": 1500
+      "minGathering": 1500,
+      "video": "https://youtu.be/c_1qSpCdfjk",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "28189": [
@@ -26552,6 +26564,7 @@
       "tug": 0,
       "bait": 43849,
       "minGathering": 0,
+      "video": "https://www.youtube.com/watch?v=VwnQYTCiSok",
       "aLure": 0,
       "mLure": 0
     }
@@ -28221,6 +28234,7 @@
         3
       ],
       "minGathering": 4450,
+      "video": "https://youtu.be/GtJ8_k_6rvA",
       "aLure": 0,
       "mLure": 0
     }
@@ -28240,6 +28254,7 @@
         3
       ],
       "minGathering": 4450,
+      "video": "https://www.youtube.com/watch?v=VwnQYTCiSok",
       "aLure": 0,
       "mLure": 0
     }

@@ -25616,7 +25616,7 @@
     "en": "Scattered Supply Crate",
     "ja": "",
     "de": "Verstreute Frachtkiste",
-    "fr": "Caisse de marchandises éparpillées",
+    "fr": "Caisse de marchandises égarée",
     "icon": "/i/026000/026108.png"
   },
   "2003660": {
@@ -26182,14 +26182,14 @@
   "2003740": {
     "en": "Raw Material",
     "ja": "",
-    "de": "Baumaterial",
+    "de": "Bauteil",
     "fr": "Matériau",
     "icon": "/i/020000/020802.png"
   },
   "2003741": {
     "en": "Processed Material",
     "ja": "",
-    "de": "Veredeltes Baumaterial",
+    "de": "Veredeltes Bauteil",
     "fr": "Produit manufacturé",
     "icon": "/i/020000/020952.png"
   },
@@ -26705,6 +26705,202 @@
     "icon": ""
   },
   "2003815": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "Kinderpunsch chaud",
+    "icon": "/i/053000/053492.png"
+  },
+  "2003816": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003817": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003818": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003819": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "/i/024000/024153.png"
+  },
+  "2003820": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003821": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003822": {
+    "en": "Package of Dumplings",
+    "ja": "",
+    "de": "Piroschki-Paket",
+    "fr": "Sachet de pirojki",
+    "icon": "/i/053000/053302.png"
+  },
+  "2003823": {
+    "en": "Aether Transmitter",
+    "ja": "",
+    "de": "Äthertransmitter",
+    "fr": "Transmetteur d'éther",
+    "icon": "/i/026000/026086.png"
+  },
+  "2003824": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003825": {
+    "en": "Flute of Wings",
+    "ja": "",
+    "de": "Flöte der Flügel",
+    "fr": "Sifflet ailes blanches et dorées",
+    "icon": "/i/026000/026039.png"
+  },
+  "2003826": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003827": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003828": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003829": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003830": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003831": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003832": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003835": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003836": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003837": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003838": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003839": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003840": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003843": {
     "en": "",
     "ja": "",
     "de": "",

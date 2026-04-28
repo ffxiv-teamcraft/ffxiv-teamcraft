@@ -6939,58 +6939,58 @@
     "qualityModifier": 75
   },
   "771": {
-    "difficulty": 6600,
-    "quality": 12000,
-    "durability": 70,
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "772": {
-    "difficulty": 6600,
-    "quality": 12000,
-    "durability": 70,
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "773": {
-    "difficulty": 6600,
-    "quality": 12000,
-    "durability": 70,
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "774": {
-    "difficulty": 6600,
-    "quality": 12000,
-    "durability": 70,
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "775": {
-    "difficulty": 6600,
-    "quality": 12000,
-    "durability": 70,
+    "difficulty": 10000,
+    "quality": 10000,
+    "durability": 80,
     "progressDivider": 170,
     "progressModifier": 90,
     "qualityDivider": 150,
     "qualityModifier": 75
   },
   "776": {
-    "difficulty": 6600,
-    "quality": 12000,
-    "durability": 70,
-    "progressDivider": 170,
-    "progressModifier": 90,
-    "qualityDivider": 150,
-    "qualityModifier": 75
+    "difficulty": 11250,
+    "quality": 31520,
+    "durability": 80,
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "777": {
     "difficulty": 6600,
