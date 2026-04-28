@@ -12,11 +12,11 @@
   "generators": {
     "@nx/angular:application": {
       "style": "less",
-      "linter": "tslint",
+      "linter": "eslint",
       "e2eTestRunner": "cypress"
     },
     "@nx/angular:library": {
-      "linter": "tslint"
+      "linter": "eslint"
     },
     "@nx/angular:component": {
       "style": "less"
