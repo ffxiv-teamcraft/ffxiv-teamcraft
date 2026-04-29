@@ -89,6 +89,8 @@
     "electron:setup:build-dev:dir": "yarn electron:build && electron-builder -w --dir",
     "electron:setup:build-beta": "del-cli release/* && yarn electron:build && yarn build:electron-dev && electron-builder -w",
     "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
+    "build:appimage": "del-cli release/* && yarn build:electron-prod && yarn electron:build && electron-builder --linux",
+    "build:appimage:publish": "yarn build:electron-prod && yarn electron:build && electron-builder --linux -p always",
     "postinstall": "node ./tools/build/postinstall.js",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "del-cli release/* && electron-builder --dir",
