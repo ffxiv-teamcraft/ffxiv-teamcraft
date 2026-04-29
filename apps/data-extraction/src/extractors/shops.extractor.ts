@@ -170,7 +170,7 @@ export class ShopsExtractor extends AbstractExtractor {
               const entry = {
                 id: costItem,
                 amount: row.CurrencyCost[costIndex] || (specialShop.UseCurrencyType === 8 ? row.Item[costIndex]?.PriceMid || 0 : 0),
-                hq: costItem > 50 && row.HqCost[costIndex] > 0,
+                hq: costItem > 50 && row.HqCost?.[costIndex] > 0,
                 collectability: row.CollectabilityCost[costIndex]
               };
 
@@ -389,8 +389,8 @@ export class ShopsExtractor extends AbstractExtractor {
               const tokenizedInstruction = ScriptInstruction.split('_');
               const placeNameEngrish = tokenizedInstruction[tokenizedInstruction.length - 1].slice(0, -1).replace('LAKELAND', 'LAKERAND'); // LAKERAND lmao
               const npcInstructionIndex = [0, 1, 2, 3, 4, 5, 6]
-                .find(j => talk.Script[j].ScriptInstruction === `FATESHOP_ENPCID_${placeNameEngrish}`);
-              preEndwalkerGemstoneShops[shop.index] = [talk.Script[npcInstructionIndex].ScriptArg];
+                .find(j => talk.Script?.[j].ScriptInstruction === `FATESHOP_ENPCID_${placeNameEngrish}`);
+              preEndwalkerGemstoneShops[shop.index] = [talk.Script?.[npcInstructionIndex].ScriptArg];
             }
           }
         } else if (ScriptInstruction.includes('SHOP') || ScriptInstruction.includes('LOGMSG')) {

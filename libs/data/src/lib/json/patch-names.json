@@ -1350,5 +1350,18 @@
     "ko": "Patch 7.4",
     "zh": "Patch 7.4",
     "version": "7.4"
+  },
+  "107": {
+    "id": 107,
+    "banner": null,
+    "ex": 5,
+    "release": 1777447634,
+    "en": "Patch 7.5",
+    "de": "Patch 7.5",
+    "ja": "Patch 7.5",
+    "fr": "Patch 7.5",
+    "ko": "Patch 7.5",
+    "zh": "Patch 7.5",
+    "version": "7.5"
   }
 }

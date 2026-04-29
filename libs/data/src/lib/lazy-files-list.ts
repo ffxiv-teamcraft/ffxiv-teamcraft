@@ -349,7 +349,7 @@ export const lazyFilesList = {
   },
   'itemPatch': {
     'fileName': 'item-patch.json',
-    'hashedFileName': 'item-patch.7d83fbd0e5abfdb727deaf0979b47de83c7482cd.json'
+    'hashedFileName': 'item-patch.a42be4161ef5a4bbfff6e7d10e932b75d2121f5f.json'
   },
   'itemSearch': {
     'fileName': 'item-search.index',
@@ -481,7 +481,7 @@ export const lazyFilesList = {
   },
   'patchContent': {
     'fileName': 'patch-content.json',
-    'hashedFileName': 'patch-content.5d3c600367bd71903d94a90bf84f8084d17603b8.json'
+    'hashedFileName': 'patch-content.9834d253cc685d1626431e8ea30fc38b87024258.json'
   },
   'patchNames': {
     'fileName': 'patch-names.json',
@@ -565,11 +565,11 @@ export const lazyFilesList = {
   },
   'shopsByNpc': {
     'fileName': 'shops-by-npc.json',
-    'hashedFileName': 'shops-by-npc.8bdce8f253c9685afeb3f74d502632c9c49c5dcc.json'
+    'hashedFileName': 'shops-by-npc.4442bbf7f58d2d222f6bd5c9fe1d4ce1fc781a1f.json'
   },
   'shops': {
     'fileName': 'shops.json',
-    'hashedFileName': 'shops.72f302c9f3ce50ef77dfa88fedb5b17372cc81ad.json'
+    'hashedFileName': 'shops.e2b66a4995eb009323497acc21c262ac99c497a8.json'
   },
   'spearFishingFish': {
     'fileName': 'spear-fishing-fish.json',
@@ -673,7 +673,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.8b82be12415532cf98219bd648a21b8c889697af.json'
+    'hashedFileName': 'voyage-sources.c180cc7d2fcd556bdbdc756896b3f4275231a30b.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
