@@ -1,3 +1,8 @@
 {
-  "extends": "../../tsconfig.spec.json"
+  "extends": "../../tsconfig.spec.json",
+  "compilerOptions": {
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "isolatedModules": true
+  }
 }

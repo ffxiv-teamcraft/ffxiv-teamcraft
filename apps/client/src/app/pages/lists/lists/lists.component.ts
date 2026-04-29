@@ -47,7 +47,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
@@ -55,7 +55,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
   templateUrl: './lists.component.html',
   styleUrls: ['./lists.component.less'],
   standalone: true,
-  imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, TutorialStepDirective, RouterLink, NzSwitchModule, FormsModule, NzAlertModule, NzInputModule, NzDividerModule, NgFor, NgForTrackByKeyDirective, ListPanelComponent, CdkDropList, CdkDrag, NzEmptyModule, NzListModule, NzTagModule, ClipboardDirective, NzPopconfirmModule, WorkshopPanelComponent, NzCollapseModule, AsyncPipe, TranslateModule, TeamcraftLinkPipe]
+  imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, TutorialStepDirective, RouterLink, NzSwitchModule, FormsModule, NzAlertModule, NzInputModule, NzDividerModule, NgForTrackByKeyDirective, ListPanelComponent, CdkDropList, CdkDrag, NzEmptyModule, NzListModule, NzTagModule, ClipboardDirective, NzPopconfirmModule, WorkshopPanelComponent, NzCollapseModule, AsyncPipe, TranslateModule, TeamcraftLinkPipe]
 })
 export class ListsComponent extends TeamcraftComponent {
 

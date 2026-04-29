@@ -1,4 +1,4 @@
-import { ApplicationRef, enableProdMode } from '@angular/core';
+import { ApplicationRef, enableProdMode, provideZoneChangeDetection } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -12,7 +12,7 @@ if (environment.production) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppModule, { ngZoneEventCoalescing: true, ngZoneRunCoalescing: true }).then((module) => {
+  platformBrowserDynamic().bootstrapModule(AppModule, { applicationProviders: [provideZoneChangeDetection({ runCoalescing: true, eventCoalescing: true })], }).then((module) => {
     if (!environment.production) {
       const applicationRef = module.injector.get(ApplicationRef);
       const appComponent = applicationRef.components[0];

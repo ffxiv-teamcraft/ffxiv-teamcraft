@@ -7,7 +7,7 @@ import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, of } from 'rxjs';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { XivapiItemTooltipDirective } from '../../tooltip/xivapi-tooltip/xivapi-item-tooltip.directive';
 
 @Component({

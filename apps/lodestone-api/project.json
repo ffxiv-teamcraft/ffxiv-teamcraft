@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/lodestone-api/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
@@ -13,7 +14,8 @@
         "outputPath": "dist/apps/lodestone-api",
         "main": "apps/lodestone-api/src/main.ts",
         "tsConfig": "apps/lodestone-api/tsconfig.app.json",
-        "assets": []
+        "assets": [],
+        "webpackConfig": "apps/lodestone-api/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -54,6 +56,5 @@
         "jestConfig": "apps/lodestone-api/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/client/src",
   "prefix": "app",
+  "tags": [],
   "generators": {
     "@schematics/angular:component": {
       "prefix": "app",
@@ -231,7 +232,8 @@
           "buildTarget": "client:build:preview"
         }
       },
-      "defaultConfiguration": "dev"
+      "defaultConfiguration": "dev",
+      "continuous": true
     },
     "lint": {
       "executor": "@nx/eslint:lint",
@@ -243,9 +245,9 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/client"],
       "options": {
-        "jestConfig": "apps/client/jest.config.ts"
+        "jestConfig": "apps/client/jest.config.ts",
+        "tsConfig": "apps/client/tsconfig.spec.json"
       }
     }
-  },
-  "tags": []
+  }
 }
