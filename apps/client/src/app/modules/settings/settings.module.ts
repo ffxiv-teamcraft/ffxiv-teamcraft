@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SettingsPopupService } from './settings-popup.service';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ColorPickerModule } from 'ngx-color-picker';
+import { ColorPickerDirective } from 'ngx-color-picker';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 
@@ -19,7 +19,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     FlexLayoutModule,
     TranslateModule,
     FormsModule,
-    ColorPickerModule,
+    ColorPickerDirective,
     PipesModule,
     CoreModule,
     NzSliderModule,

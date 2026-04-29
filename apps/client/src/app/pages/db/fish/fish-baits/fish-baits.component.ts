@@ -21,7 +21,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, NgxEchartsModule, NzSpinModule, AsyncPipe, TranslateModule]
 })
 export class FishBaitsComponent {
-  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map(() => false));
 
   public readonly baitsChartData$ = this.fishCtx.baitsByFish$.pipe(
     switchMap((res) => {

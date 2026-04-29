@@ -16,7 +16,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, NzStatisticModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class FishBiteTimesComponent {
-  public readonly loading$ = this.fishCtx.biteTimesByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.biteTimesByFish$.pipe(map(() => false));
 
   public readonly biteTimeChart$ = this.fishCtx.biteTimesByFish$.pipe(
     map((res) => {

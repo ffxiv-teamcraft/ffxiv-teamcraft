@@ -26,7 +26,7 @@ export class FishingSpotWeatherDatagridComponent {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.weathersBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.weathersBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.weathersBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),

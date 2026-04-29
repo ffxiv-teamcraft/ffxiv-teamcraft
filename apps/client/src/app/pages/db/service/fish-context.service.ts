@@ -9,7 +9,7 @@ import { mapIds } from '../../../core/data/sources/map-ids';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { ApolloQueryResult } from '@apollo/client/core';
+import { Apollo } from 'apollo-angular';
 
 export interface Occurrence {
   id: number;
@@ -21,7 +21,7 @@ export interface Occurrences<T = Occurrence, K extends string | number = number>
   byId: Record<K, T>;
 }
 
-export type OccurrencesResult<T = Occurrence, K extends string | number = number> = ApolloQueryResult<Occurrences<T, K>>;
+export type OccurrencesResult<T = Occurrence, K extends string | number = number> = Apollo.QueryResult<Occurrences<T, K>>;
 
 export interface WeatherTransitionOccurrence {
   fromId: number;
@@ -45,9 +45,10 @@ export interface Datagrid<T extends string | number = number> {
 }
 
 const occurrenceResultMapper = <T extends string, I extends string>(key: T, innerKey: I) => (
-  res: ApolloQueryResult<Record<T, Array<Record<I | 'occurences', number>>>>
+  res: Apollo.QueryResult<Record<T, Array<Record<I | 'occurences', number>>>>
 ): OccurrencesResult => {
-  const data = res.data?.[key].reduce(
+  const rawData = res.data as Record<T, Array<Record<I | 'occurences', number>>> | undefined;
+  const data = rawData?.[key].reduce(
     ({ total, byId }, row) => {
       const id: number = row[innerKey];
       const occurences = row.occurences;
@@ -65,15 +66,15 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
   dataKey: DataKey,
   rowKey: RowKey,
   colKey: ColKey
-) => (res: ApolloQueryResult<Record<DataKey, Array<Record<RowKey | ColKey | 'occurences', number>>>>): ApolloQueryResult<Datagrid<number>> => {
-  const rows = res.data?.[dataKey];
+) => (res: Apollo.QueryResult<Record<DataKey, Array<Record<RowKey | ColKey | 'occurences', number>>>>): Apollo.QueryResult<Datagrid<number>> => {
+  const rows = (res.data as Record<DataKey, Array<Record<RowKey | ColKey | 'occurences', number>>> | undefined)?.[dataKey];
   if (!rows) return { ...res, data: undefined };
   const data: Datagrid<number> = { colDefs: [], data: [], totals: {} };
   for (const row of Object.values(rows)) {
-    const colId = row[colKey];
+    const colId = row[colKey] as number;
     if (!data.colDefs.find((i) => i.colId === colId)) data.colDefs.push({ colId: colId });
     let agg = data.data.find((i) => i.rowId === row[rowKey]);
-    const rowId = row[rowKey];
+    const rowId = row[rowKey] as number;
     if (!agg) {
       agg = { rowId, valuesByColId: {} };
       data.data.push(agg);
@@ -355,7 +356,7 @@ export class FishContextService {
   );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
-  public readonly baitsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.baitMoochesBySpot$.pipe(
+  public readonly baitsBySpotByFish$: Observable<Apollo.QueryResult<Datagrid>> = this.baitMoochesBySpot$.pipe(
     map(res => {
       return {
         ...res,
@@ -381,12 +382,12 @@ export class FishContextService {
     switchMap((spotId) => this.data.getHooksets(undefined, spotId))
   );
 
-  public readonly tugsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
+  public readonly tugsBySpotByFish$: Observable<Apollo.QueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
     map(datagridResultMapper('tugs', 'itemId', 'tug')),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  public readonly hooksetsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
+  public readonly hooksetsBySpotByFish$: Observable<Apollo.QueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
     map(datagridResultMapper('hooksets', 'itemId', 'hookset')),
     shareReplay({ bufferSize: 1, refCount: true })
   );
@@ -417,7 +418,7 @@ export class FishContextService {
   }));
 
   /** An observable containing information about the fishes that can be mooched with the active fish. */
-  public readonly moochesByFish$: Observable<ApolloQueryResult<number[]>> = this.baitMoochesByFish$.pipe(
+  public readonly moochesByFish$: Observable<Apollo.QueryResult<number[]>> = this.baitMoochesByFish$.pipe(
     map((res) => {
       const moochList = res.data?.mooches.map((val) => val.itemId);
       const data = moochList ? [...new Set(moochList)] : undefined;
@@ -433,7 +434,7 @@ export class FishContextService {
   );
 
   /** An observable containing information about the weathers during which to catch fish at the active spot. */
-  public readonly weathersBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.weathersBySpot$.pipe(
+  public readonly weathersBySpotByFish$: Observable<Apollo.QueryResult<Datagrid>> = this.weathersBySpot$.pipe(
     map(datagridResultMapper('weathers', 'itemId', 'weatherId')),
     shareReplay({ bufferSize: 1, refCount: true })
   );

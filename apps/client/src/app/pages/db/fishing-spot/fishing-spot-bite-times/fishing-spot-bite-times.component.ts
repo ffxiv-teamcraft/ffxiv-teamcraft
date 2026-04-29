@@ -60,7 +60,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
 
   public readonly baitFilter$ = this.fishCtx.baitId$.pipe(map((i) => (i >= 0 ? i : -1)));
 
-  public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map(() => false));
 
   public readonly biteTimesChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.biteTimesBySpot$.pipe(
     switchMap((res) => {
@@ -94,12 +94,10 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
     switchMap(([res, tugs]) => {
       if (!res.data || !tugs.data) return of([]);
-      const tugByFish = tugs.data.data.reduce((acc, row) => {
+      const tugByFish = tugs.data.data.reduce<Record<number, string>>((acc, row) => {
         const bestTug = Object.entries<number>(row.valuesByColId).sort(([, a], [, b]) => b - a)[0][0];
-        const clone = [...acc];
-        clone[row.rowId] = bestTug;
-        return clone;
-      }, []);
+        return { ...acc, [row.rowId]: bestTug };
+      }, {});
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
         this.i18n.getNameObservable('items', +id).pipe(
           map((name) => ({ id: +id, name: `${name} (${['!!', '!!!', '!'][tugByFish[id]]})` }))

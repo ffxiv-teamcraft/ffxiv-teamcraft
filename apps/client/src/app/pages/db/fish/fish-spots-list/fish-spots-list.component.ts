@@ -18,7 +18,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, MapPositionComponent, DbButtonComponent, AsyncPipe, TranslateModule]
 })
 export class FishSpotsListComponent {
-  public readonly loading$ = this.fishCtx.spotsByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.spotsByFish$.pipe(map(() => false));
 
   public readonly spots$ = this.fishCtx.spotsByFish$.pipe(
     map((res) => res.data ?? []),

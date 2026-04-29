@@ -14,7 +14,7 @@
     "target": "ES2022",
     "useDefineForClassFields": false,
     "typeRoots": ["node_modules/@types"],
-    "lib": ["ES2022", "dom", "dom.iterable"],
+    "lib": ["ES2023", "dom", "dom.iterable"],
     "baseUrl": ".",
     "paths": {
       "@ffxiv-teamcraft/data": ["libs/data/src/lib/index.ts"],

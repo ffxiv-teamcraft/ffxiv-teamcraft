@@ -28,7 +28,7 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map(() => false));
 
   public readonly hoursChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.hoursBySpot$.pipe(
     switchMap((res) => {

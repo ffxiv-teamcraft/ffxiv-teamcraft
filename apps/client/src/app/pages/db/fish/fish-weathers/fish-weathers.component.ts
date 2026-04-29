@@ -22,7 +22,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, NgxEchartsModule, AsyncPipe, TranslateModule]
 })
 export class FishWeathersComponent {
-  public readonly loading$ = this.fishCtx.weathersByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.weathersByFish$.pipe(map(() => false));
 
   public readonly weathersChartView$ = this.fishCtx.spotId$.pipe(
     map((id) => [500, id === -1 ? 300 : 200]),

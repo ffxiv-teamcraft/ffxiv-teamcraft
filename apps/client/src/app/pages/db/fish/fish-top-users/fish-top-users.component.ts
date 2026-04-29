@@ -22,7 +22,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzListModule, UserAvatarComponent, ItemIconComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class FishTopUsersComponent {
-  public readonly loading$ = this.fishCtx.rankingsByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.rankingsByFish$.pipe(map(() => false));
 
   public readonly rankings$ = this.fishCtx.rankingsByFish$.pipe(
     map((res) => res.data?.rankings ?? []),

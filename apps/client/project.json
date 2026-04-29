@@ -50,7 +50,7 @@
           "apps/client/src/oembed.json"
         ],
         "styles": ["apps/client/src/cdk.less", "apps/client/src/styles.less", "apps/client/src/theme.less"],
-        "scripts": ["node_modules/marked/marked.min.js"]
+        "scripts": ["node_modules/marked/lib/marked.umd.js"]
       },
       "configurations": {
         "dev": {
