@@ -47,7 +47,7 @@ export class FishingSpotBaitDatagridComponent {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.baitsBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.baitsBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.baitsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),

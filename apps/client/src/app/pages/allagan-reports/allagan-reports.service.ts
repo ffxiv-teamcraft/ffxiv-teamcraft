@@ -25,11 +25,11 @@ export class AllaganReportsService {
   }
 
   public getItemReports = (itemId: number) => {
-    return this.getItemAllaganReportsQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
+    return this.getItemAllaganReportsQuery.fetch({ variables: { itemId }, fetchPolicy: 'network-only' });
   };
 
   public getItemReportsQueue = (itemId: number) => {
-    return this.getItemAllaganReportsQueueQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
+    return this.getItemAllaganReportsQueueQuery.fetch({ variables: { itemId }, fetchPolicy: 'network-only' });
   };
 
   getDashboardData(): Observable<AllaganMetricsDashboardData> {

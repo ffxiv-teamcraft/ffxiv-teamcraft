@@ -25,7 +25,7 @@ import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
   imports: [NzCardModule, FlexModule, NzDividerModule, NzGridModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, XivapiIconPipe, TugNamePipe, LazyRowPipe, I18nRowPipe]
 })
 export class FishLuresComponent {
-  public readonly loading$ = this.fishCtx.luresByFish$.pipe(map((lures) => lures.loading));
+  public readonly loading$ = this.fishCtx.luresByFish$.pipe(map(() => false));
 
   public readonly lures$ = this.fishCtx.luresByFish$.pipe(
     map((res) => {

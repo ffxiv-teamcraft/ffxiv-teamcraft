@@ -22,7 +22,7 @@ export class FishingSpotTugDatagridComponent {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.tugsBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.tugsBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.tugsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),

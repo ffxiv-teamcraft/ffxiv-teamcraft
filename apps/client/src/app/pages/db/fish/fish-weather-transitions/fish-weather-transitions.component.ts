@@ -26,7 +26,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishWeatherTransitionsComponent {
-  public readonly loading$ = this.fishCtx.weatherTransitionsByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.weatherTransitionsByFish$.pipe(map(() => false));
 
   public readonly weatherTransitions$ = combineLatest([this.fishCtx.weatherTransitionsByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     map(([res, spotId, fishingSpots]) => {

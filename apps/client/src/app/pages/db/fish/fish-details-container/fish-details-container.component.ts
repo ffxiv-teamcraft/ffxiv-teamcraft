@@ -33,9 +33,9 @@ interface FishDetailsStatsSummary {
     imports: [FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzSelectModule, FormsModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class FishDetailsContainerComponent {
-  public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map(() => false));
 
-  public readonly spotsLoading$ = this.fishCtx.spotsByFish$.pipe(map((res) => res.loading));
+  public readonly spotsLoading$ = this.fishCtx.spotsByFish$.pipe(map(() => false));
 
   public readonly spotIdFilter$ = this.fishCtx.spotId$.pipe(map((spotId) => spotId ?? -1));
 

@@ -33,7 +33,7 @@ import { Observable } from 'rxjs';
 })
 export class FishMoochesComponent {
   public readonly loading$ = this.fishCtx.moochesByFish$.pipe(
-    map((res) => res.loading)
+    map(() => false)
   );
 
   public readonly mooches$: Observable<number[]> = this.fishCtx.moochesByFish$.pipe(

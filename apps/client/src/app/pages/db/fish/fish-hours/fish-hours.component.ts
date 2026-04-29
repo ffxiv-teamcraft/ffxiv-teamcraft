@@ -24,7 +24,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzTooltipModule, NzSwitchModule, FormsModule, NgxEchartsModule, AsyncPipe, TranslateModule, XivapiIconPipe, LazyRowPipe]
 })
 export class FishHoursComponent {
-  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map(() => false));
 
   public readonly etimesChartData$ = this.fishCtx.hoursByFish$.pipe(
     map((res) => {

@@ -26,7 +26,7 @@ export class FishingSpotHooksetDatagridComponent {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.hooksetsBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.hooksetsBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.hooksetsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),
