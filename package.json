@@ -33,6 +33,8 @@
     },
     "publish": {
       "provider": "github",
+      "owner": "birkholz",
+      "repo": "ffxiv-teamcraft",
       "releaseType": "release"
     },
     "mac": {
