@@ -8,8 +8,9 @@ console.log(colors.cyan('\nHashing game assets'));
 const baseFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/assets/data/'));
 const koFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/assets/data/ko/')).map(row => `/ko/${row}`);
 const zhFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/assets/data/zh/')).map(row => `/zh/${row}`);
+const twFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/assets/data/tw/')).map(row => `/tw/${row}`);
 
-[...baseFiles, ...koFiles, ...zhFiles]
+[...baseFiles, ...koFiles, ...zhFiles, ...twFiles]
   .filter(row => {
     return row.indexOf('.json') > -1;
   })

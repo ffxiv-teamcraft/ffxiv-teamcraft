@@ -164,6 +164,26 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     shareReplay(1)
   );
 
+  public previousWeeklyResetForDisplay$ = timer(0, 1000).pipe(
+    map(() => {
+      let previousWeeklyReset = new Date();
+      previousWeeklyReset.setUTCSeconds(0);
+      previousWeeklyReset.setUTCMinutes(0);
+      previousWeeklyReset.setUTCMilliseconds(0);
+      if (previousWeeklyReset.getUTCDay() === 2 && previousWeeklyReset.getUTCHours() < 8) {
+        previousWeeklyReset = subDays(previousWeeklyReset, 7);
+      } else {
+        while (previousWeeklyReset.getUTCDay() !== 2) {
+          previousWeeklyReset = subDays(previousWeeklyReset, 1);
+        }
+      }
+      previousWeeklyReset.setUTCHours(8);
+      return previousWeeklyReset.getTime();
+    }),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
+
   public supplies = Object.entries(IslandWorkshopComponent.SUPPLY_KEYS)
     .map(([value, label]) => ({ value: +value, label }));
 

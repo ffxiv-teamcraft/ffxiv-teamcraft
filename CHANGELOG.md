@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.21...v11.4.22) (2026-04-29)
+
+
+### Bug Fixes
+
+* island workshop date display ([094bc34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/094bc34796bab999d7484c16367888366868b112)), closes [#3139](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3139)
+* missing patch data for 7.5 additions ([19140d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19140d82f305a4d51476179251f19b7b2e6d1a2d))
+* tw recipes not loading properly ([a50aad7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a50aad7b612d849c0c34fff18992e376c0c40f69)), closes [#3193](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3193)
+
 ### [11.4.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.20...v11.4.21) (2026-04-28)
 
 
