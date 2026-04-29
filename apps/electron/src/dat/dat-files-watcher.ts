@@ -164,13 +164,18 @@ export class DatFilesWatcher {
     if (customDir) {
       return customDir;
     }
+    if (process.platform === 'linux') {
+      // On Linux, XIVLauncher stores FFXIV config in ~/.xlcore/ffxivConfig by default.
+      // The user can override this via the settings UI (dat:path:set).
+      return join(app.getPath('home'), '.xlcore', 'ffxivConfig');
+    }
     switch (region) {
       case 'KR':
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - KOREA`;
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - KOREA');
       case 'CN':
-        return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
+        return join('C:\\', 'Program Files (x86)', '上海数龙科技有限公司', '最终幻想XIV', 'game', 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
       default:
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
     }
   }
 

@@ -1,10 +1,9 @@
-import { Menu, nativeImage, Tray } from 'electron';
+import { app, Menu, nativeImage, Tray } from 'electron';
 import { MainWindow } from './main-window';
 import { join } from 'path';
 import { Constants } from '../constants';
 import { OverlayManager } from './overlay-manager';
 import { Store } from '../store';
-import { app } from 'electron/main';
 import { PacketCapture } from '../pcap/packet-capture';
 
 export class TrayMenu {

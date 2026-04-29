@@ -13,6 +13,13 @@ export class AutoUpdater {
   }
 
   connectListeners(): void {
+    // Squirrel-based autoUpdater is only supported on Windows and macOS
+    if (process.platform === 'linux') {
+      ipcMain.on('update:check', () => { /* no-op on Linux */ });
+      ipcMain.on('install-update', () => { /* no-op on Linux */ });
+      return;
+    }
+
     if (app.isPackaged) {
       autoUpdater.setFeedURL({
         url: `https://update.ffxivteamcraft.com`

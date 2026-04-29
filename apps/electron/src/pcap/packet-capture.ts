@@ -166,6 +166,11 @@ export class PacketCapture {
   }
 
   private async startGlobalPcap(region: Region): Promise<void> {
+    if (process.platform === 'linux') {
+      log.info('[pcap] Packet capture not yet supported on native Linux — skipping');
+      this.mainWindow.win.webContents.send('pcap:status', 'stopped');
+      return;
+    }
     try {
       const { CaptureInterface, ErrorCodes } = await import('@ffxiv-teamcraft/pcap-ffxiv');
       const options: Partial<CaptureInterfaceOptions> = {
