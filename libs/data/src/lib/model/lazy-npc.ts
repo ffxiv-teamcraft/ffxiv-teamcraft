@@ -2,9 +2,19 @@ export interface LazyNpc {
   de:           string;
   defaultTalks: number[];
   en:           string;
+  festival?:    number;
   fr:           string;
   ja:           string;
+  position?:    Position;
   title:        Title;
+}
+
+export interface Position {
+  map:    number;
+  x:      number;
+  y:      number;
+  z:      number | null;
+  zoneid: number;
 }
 
 export interface Title {

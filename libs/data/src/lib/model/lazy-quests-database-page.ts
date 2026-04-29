@@ -13,7 +13,7 @@ export interface LazyQuestsDatabasePage {
   id:            number;
   ja:            string;
   jobCategory:   number;
-  ko?:           string;
+  ko:            string;
   level:         number;
   next:          number[];
   npcs:          number[];
@@ -22,9 +22,10 @@ export interface LazyQuestsDatabasePage {
   requires:      number[];
   rewards:       Reward[];
   start:         number;
-  startingPoint: null;
+  startingPoint: StartingPoint | null;
   trades?:       Trade[];
-  zh?:           string;
+  tw?:           string;
+  zh:            string;
 }
 
 export interface Description {
@@ -33,6 +34,7 @@ export interface Description {
   fr?: string;
   ja?: string;
   ko?: string;
+  tw?: string;
   zh?: string;
 }
 
@@ -48,6 +50,14 @@ export enum Type {
   Instance = "instance",
   Item = "item",
   Rep = "rep",
+}
+
+export interface StartingPoint {
+  map:    number;
+  x:      number;
+  y:      number;
+  z:      number;
+  zoneid: number;
 }
 
 export interface Trade {
