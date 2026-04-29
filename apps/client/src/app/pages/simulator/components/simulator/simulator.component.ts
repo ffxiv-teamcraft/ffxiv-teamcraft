@@ -108,7 +108,7 @@ import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { AsyncPipe, NgStyle } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { toObservable } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -116,7 +116,7 @@ import { toObservable } from '@angular/core/rxjs-interop';
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.less'],
   standalone: true,
-  imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, TutorialStepDirective, NzIconModule, NzPopconfirmModule, ClipboardDirective, NzBadgeModule, FavoriteButtonComponent, NzTagModule, NzSwitchModule, FormsModule, NzCollapseModule, NzSelectModule, NzAlertModule, ReactiveFormsModule, NzGridModule, NzFormModule, NzInputModule, NzInputNumberModule, NzCheckboxModule, NzListModule, ItemIconComponent, SimulationResultComponent, NzCardModule, CdkDropListGroup, NgStyle, ExtendedModule, CdkDropList, ActionComponent, CdkDrag, FullpageMessageComponent, AsyncPipe, TranslateModule, ItemNamePipe, FloorPipe, ActionNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, TutorialStepDirective, NzIconModule, NzPopconfirmModule, ClipboardDirective, NzBadgeModule, FavoriteButtonComponent, NzTagModule, NzSwitchModule, FormsModule, NzCollapseModule, NzSelectModule, NzAlertModule, ReactiveFormsModule, NzGridModule, NzFormModule, NzInputModule, NzInputNumberModule, NzCheckboxModule, NzListModule, ItemIconComponent, SimulationResultComponent, NzCardModule, CdkDropListGroup, ExtendedModule, CdkDropList, ActionComponent, CdkDrag, FullpageMessageComponent, AsyncPipe, TranslateModule, ItemNamePipe, FloorPipe, ActionNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   settings = inject(SettingsService);

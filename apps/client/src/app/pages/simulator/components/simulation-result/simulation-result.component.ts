@@ -20,7 +20,7 @@ import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.com
 import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
 import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
-import { NgStyle, DecimalPipe } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -30,7 +30,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./simulation-result.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, ItemIconComponent, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, FormsModule, NzProgressModule, NgStyle, ExtendedModule, NzDividerModule, DecimalPipe, TranslateModule, FloorPipe, IfMobilePipe, IngameStarsPipe, I18nPipe, I18nRowPipe]
+    imports: [NzCardModule, FlexModule, ItemIconComponent, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, FormsModule, NzProgressModule, ExtendedModule, NzDividerModule, DecimalPipe, TranslateModule, FloorPipe, IfMobilePipe, IngameStarsPipe, I18nPipe, I18nRowPipe]
 })
 export class SimulationResultComponent {
   private message = inject(NzMessageService);
