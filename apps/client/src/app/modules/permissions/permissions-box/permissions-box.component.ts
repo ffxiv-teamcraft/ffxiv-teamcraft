@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { PermissionDisplayRow } from '../permission-display-row';
@@ -37,6 +37,14 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [NzListModule, NzAvatarModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FlexModule, PageLoaderComponent, AsyncPipe, UpperCasePipe, TranslateModule, IfMobilePipe]
 })
 export class PermissionsBoxComponent extends DialogComponent implements OnInit {
+  private userService = inject(UserService);
+  private userPickerService = inject(UserPickerService);
+  private freecompanyPickerService = inject(FreecompanyPickerService);
+  private authFacade = inject(AuthFacade);
+  private teamsFacade = inject(TeamsFacade);
+  private lodestoneService = inject(LodestoneService);
+  private workshopsFacade = inject(WorkshopsFacade);
+
 
   public data: DataWithPermissions;
 
@@ -64,10 +72,7 @@ export class PermissionsBoxComponent extends DialogComponent implements OnInit {
 
   canAddFc$: Observable<boolean>;
 
-  constructor(private userService: UserService, private userPickerService: UserPickerService,
-              private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private lodestoneService: LodestoneService,
-              private workshopsFacade: WorkshopsFacade) {
+  constructor() {
     super();
     this.canAddFc$ = this.authFacade.mainCharacter$.pipe(map(char => char.ID > 0));
   }

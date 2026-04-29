@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -11,7 +11,7 @@ import { AsyncPipe } from '@angular/common';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -21,10 +21,13 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fish-hours.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NzToolTipModule, NzSwitchModule, FormsModule, NgxEchartsModule, AsyncPipe, TranslateModule, XivapiIconPipe, LazyRowPipe]
+    imports: [NzCardModule, FlexModule, NzTooltipModule, NzSwitchModule, FormsModule, NgxEchartsModule, AsyncPipe, TranslateModule, XivapiIconPipe, LazyRowPipe]
 })
 export class FishHoursComponent {
-  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
+  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map(() => false));
 
   public readonly etimesChartData$ = this.fishCtx.hoursByFish$.pipe(
     map((res) => {
@@ -74,7 +77,4 @@ export class FishHoursComponent {
   );
 
   public readonly fishEyes$ = this.fishCtx.fishEyes$;
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

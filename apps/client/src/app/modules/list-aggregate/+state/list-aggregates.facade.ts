@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { State } from './list-aggregates.reducer';
 import { getAllListAggregates, getSelectedListAggregate } from './list-aggregates.selectors';
@@ -17,6 +17,8 @@ import { UpdateData } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class ListAggregatesFacade {
+  private store = inject<Store<State>>(Store);
+
 
   allListAggregates$ = this.store.pipe(
     select(getAllListAggregates),
@@ -26,9 +28,6 @@ export class ListAggregatesFacade {
   selectedListAggregate$ = this.store.pipe(
     select(getSelectedListAggregate)
   );
-
-  constructor(private store: Store<State>) {
-  }
 
   loadAll(): void {
     this.store.dispatch(loadListAggregates());

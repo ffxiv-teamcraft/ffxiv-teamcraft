@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -18,7 +18,7 @@ import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.compon
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
@@ -34,9 +34,11 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     styleUrls: ['./alarm-group.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, FullpageMessageComponent, NzCardModule, FlexModule, NzAvatarModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzGridModule, ItemIconComponent, I18nNameComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, CharacterNamePipe, LazyIconPipe, CharacterAvatarPipe, MapNamePipe]
+    imports: [PageLoaderComponent, FullpageMessageComponent, NzCardModule, FlexModule, NzAvatarModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzGridModule, ItemIconComponent, I18nNameComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, CharacterNamePipe, LazyIconPipe, CharacterAvatarPipe, MapNamePipe]
 })
 export class AlarmGroupComponent {
+  private alarmsFacade = inject(AlarmsFacade);
+
 
   public group$ = this.alarmsFacade.externalGroup$;
 
@@ -54,7 +56,9 @@ export class AlarmGroupComponent {
 
   public addingGroupAndAlarms = false;
 
-  constructor(route: ActivatedRoute, private alarmsFacade: AlarmsFacade) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+
     route.paramMap.subscribe(paramMap => {
       this.alarmsFacade.loadExternalGroup(paramMap.get('key'));
     });

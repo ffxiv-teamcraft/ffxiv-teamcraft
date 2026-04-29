@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ProgressPopupComponent } from './progress-popup/progress-popup.component';
 import { Observable, of } from 'rxjs';
@@ -7,9 +7,9 @@ import { shareReplay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ProgressPopupService {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
 
-  constructor(private dialog: NzModalService, private translate: TranslateService) {
-  }
 
   public showProgress(operation$: Observable<any>, operationsCount: number, labelKey = 'Please_wait', labelParams = {}): Observable<any> {
     if (operationsCount === 0) {

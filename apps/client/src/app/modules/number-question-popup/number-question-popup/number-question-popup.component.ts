@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -16,11 +16,13 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, NzInputNumberModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class NumberQuestionPopupComponent extends DialogComponent {
+  private modalRef = inject(NzModalRef);
+
 
   @Input()
   value: number;
 
-  constructor(private modalRef: NzModalRef) {
+  constructor() {
     super();
     this.patchData();
   }

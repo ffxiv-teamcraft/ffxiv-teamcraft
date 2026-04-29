@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -33,6 +33,12 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzSelectModule, NzAlertModule, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ImportFromPcapPopupComponent extends TeamcraftComponent {
+  private modalRef = inject(NzModalRef);
+  private ipc = inject(IpcService);
+  private lazyData = inject(LazyDataFacade);
+  private gearsetsFacade = inject(GearsetsFacade);
+  private materiaService = inject(MateriaService);
+
 
   public updateMode = false;
 
@@ -42,8 +48,7 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
 
   public availableJobs = Object.keys(jobAbbrs).map(k => +k).filter(Boolean);
 
-  constructor(private modalRef: NzModalRef, private ipc: IpcService, private lazyData: LazyDataFacade,
-              private gearsetsFacade: GearsetsFacade, private materiaService: MateriaService) {
+  constructor() {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
       takeUntil(this.onDestroy$),

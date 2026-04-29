@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -67,7 +67,7 @@ import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-but
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -81,9 +81,33 @@ import { topologicalSort } from '../../../core/tools/topological-sort';
   styleUrls: ['./list-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzToolTipModule, NzIconModule, NzMenuModule, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzTooltipModule, NzIconModule, NzMenuModule, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+  private layoutsFacade = inject(LayoutsFacade);
+  listsFacade = inject(ListsFacade);
+  private activatedRoute = inject(ActivatedRoute);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private alarmsFacade = inject(AlarmsFacade);
+  private message = inject(NzMessageService);
+  private listManager = inject(ListManagerService);
+  private progressService = inject(ProgressPopupService);
+  private teamsFacade = inject(TeamsFacade);
+  private authFacade = inject(AuthFacade);
+  private discordWebhookService = inject(DiscordWebhookService);
+  private i18n = inject(I18nToolsService);
+  private linkTools = inject(LinkToolsService);
+  protected seoService: SeoService;
+  private media = inject(MediaObserver);
+  ipc = inject(IpcService);
+  private inventoryFacade = inject(InventoryService);
+  settings = inject(SettingsService);
+  platform = inject(PlatformService);
+  private commissionsFacade = inject(CommissionsFacade);
+  private analyticsService = inject(AnalyticsService);
+
 
   public ListDisplayMode = ListDisplayMode;
 
@@ -170,18 +194,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public isDesktop = this.platform.isDesktop();
 
-  constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
-              private activatedRoute: ActivatedRoute, private dialog: NzModalService,
-              private translate: TranslateService, private router: Router,
-              private alarmsFacade: AlarmsFacade, private message: NzMessageService,
-              private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
-              private discordWebhookService: DiscordWebhookService, private i18n: I18nToolsService,
-              private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryService,
-              public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade,
-              private analyticsService: AnalyticsService) {
+  constructor() {
+    const seoService = inject(SeoService);
+
     super(seoService);
+    this.seoService = seoService;
+
     this.ipc.once('toggle-pcap:value', (event, value) => {
       this.machinaToggle = value;
     });

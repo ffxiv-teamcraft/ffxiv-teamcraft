@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -23,6 +23,13 @@ import { DialogComponent } from '../../dialog.component';
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzWaveModule, NzAlertModule, NzDividerModule, TranslateModule]
 })
 export class LoginPopupComponent extends DialogComponent {
+  private fb = inject(UntypedFormBuilder);
+  private authFacade = inject(AuthFacade);
+  private modalRef = inject(NzModalRef);
+  platform = inject(PlatformService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   form: UntypedFormGroup;
 
@@ -30,9 +37,7 @@ export class LoginPopupComponent extends DialogComponent {
 
   isForSensitiveOperation = false;
 
-  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef, public platform: PlatformService,
-              private message: NzMessageService, private translate: TranslateService) {
+  constructor() {
     super();
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

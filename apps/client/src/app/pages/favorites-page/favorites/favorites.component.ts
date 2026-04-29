@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { combineLatest, Observable } from 'rxjs';
 import { List } from '../../../modules/list/model/list';
@@ -26,6 +26,12 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzListModule, WorkshopPanelComponent, ListPanelComponent, RotationPanelComponent, RotationFolderPanelComponent, AsyncPipe, TranslateModule]
 })
 export class FavoritesComponent {
+  private authFacade = inject(AuthFacade);
+  private listsFacade = inject(ListsFacade);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private rotationsFacade = inject(RotationsFacade);
+  private rotationFoldersFacade = inject(RotationFoldersFacade);
+
 
   public workshops$: Observable<WorkshopDisplay[]>;
 
@@ -35,8 +41,7 @@ export class FavoritesComponent {
 
   public rotationFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
 
-  constructor(private authFacade: AuthFacade, private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade,
-              private rotationsFacade: RotationsFacade, private rotationFoldersFacade: RotationFoldersFacade) {
+  constructor() {
     this.lists$ = this.authFacade.favorites$.pipe(
       map(favorites => (favorites.lists || [])),
       tap(lists => lists.forEach(list => this.listsFacade.load(list))),

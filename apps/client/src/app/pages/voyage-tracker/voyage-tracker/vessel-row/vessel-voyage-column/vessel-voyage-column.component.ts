@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { Vessel } from '../../../../../modules/free-company-workshops/model/vessel';
 import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { observeInput } from '../../../../../core/rxjs/observe-input';
@@ -24,6 +24,9 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     imports: [NzPopoverModule, NzBreadCrumbModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, LazyRowPipe, NzPipesModule]
 })
 export class VesselVoyageColumnComponent {
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  private sanitizer = inject(DomSanitizer);
+
   @Input() vessel: Vessel;
 
   VesselType = VesselType;
@@ -38,7 +41,4 @@ export class VesselVoyageColumnComponent {
       );
     })
   );
-
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private sanitizer: DomSanitizer) {
-  }
 }

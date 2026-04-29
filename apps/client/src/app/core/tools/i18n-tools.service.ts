@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -11,11 +11,14 @@ import { withLazyData } from '../rxjs/with-lazy-data';
 
 @Injectable({ providedIn: 'root' })
 export class I18nToolsService {
+  private translator = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+
   private readonly defaultLang = 'en' as const;
 
   public readonly currentLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.defaultLang);
 
-  constructor(private translator: TranslateService, private lazyData: LazyDataFacade) {
+  constructor() {
     // I know, subscriptions are devil, but since we're inside a `providedIn: "root"` service, we know only one instance of this will run at a time, meaning
     // No memory leaks :)
     this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang as Language));

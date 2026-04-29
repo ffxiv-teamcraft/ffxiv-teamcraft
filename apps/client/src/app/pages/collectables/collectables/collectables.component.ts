@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { combineLatest, merge, Observable, Subject } from 'rxjs';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
@@ -37,7 +37,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -50,9 +50,22 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
   styleUrls: ['./collectables.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PageLoaderComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
+  imports: [PageLoaderComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzTooltipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
 })
 export class CollectablesComponent {
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+  private rotationPicker = inject(RotationPickerService);
+  private listPicker = inject(ListPickerService);
+  private listManager = inject(ListManagerService);
+  private progressService = inject(ProgressPopupService);
+  private listsFacade = inject(ListsFacade);
+  private i18n = inject(I18nToolsService);
+  private router = inject(Router);
+  private activeRoute = inject(ActivatedRoute);
+  private location = inject(Location);
+  private alarmsFacade = inject(AlarmsFacade);
+
 
   public form$: Observable<UntypedFormGroup>;
 
@@ -94,12 +107,9 @@ export class CollectablesComponent {
 
   selectedTab$: Observable<number> = merge(this.selectedTabFromRoute$, this.selectedTabFromTabset$);
 
-  constructor(fb: UntypedFormBuilder, private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade, private rotationPicker: RotationPickerService,
-              private listPicker: ListPickerService, private listManager: ListManagerService,
-              private progressService: ProgressPopupService,
-              private listsFacade: ListsFacade, private i18n: I18nToolsService,
-              private router: Router, private activeRoute: ActivatedRoute, private location: Location, private alarmsFacade: AlarmsFacade) {
+  constructor() {
+    const fb = inject(UntypedFormBuilder);
+
 
     this.form$ = this.levels$.pipe(
       map(levels => {

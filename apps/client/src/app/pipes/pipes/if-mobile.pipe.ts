@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 
 @Pipe({
@@ -7,9 +7,8 @@ import { MediaObserver } from '@angular/flex-layout';
     standalone: true
 })
 export class IfMobilePipe implements PipeTransform {
+  private media = inject(MediaObserver);
 
-  constructor(private media: MediaObserver) {
-  }
 
   transform<T, R>(nonMobileValue: T, mobileValue: R, forceMobile = false): T | R {
     return (forceMobile || this.media.isActive('xs') || this.media.isActive('sm')) ? mobileValue : nonMobileValue;

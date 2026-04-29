@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import Dexie, { liveQuery } from 'dexie';
 import { combineLatest, from, Observable } from 'rxjs';
 import { Price } from './model/price';
@@ -32,10 +32,13 @@ interface DBEntry {
   providedIn: 'root'
 })
 export class ListPricingService {
+  private lazyData = inject(LazyDataFacade);
+  private settings = inject(SettingsService);
+
 
   private db: Dexie;
 
-  constructor(private lazyData: LazyDataFacade, private settings: SettingsService) {
+  constructor() {
     this.db = new Dexie('ListPricing');
     this.db.version(2).stores({
       items: 'key, listId, use, custom, itemId, nq, nqServer, hq, hqServer, fromVendor, fromMB, updated, amountNQ, amountHQ'

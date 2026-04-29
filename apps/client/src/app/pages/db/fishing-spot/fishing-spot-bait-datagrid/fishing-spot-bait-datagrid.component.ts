@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
@@ -11,7 +11,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { FishingSpotDatagridComponent } from '../fishing-spot-datagrid/fishing-spot-datagrid.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
@@ -38,16 +38,24 @@ type Lure = {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, NzSelectComponent, NzOptionComponent, I18nRowPipe, I18nPipe]
+  imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, NzSelectComponent, NzOptionComponent, I18nRowPipe, I18nPipe]
 })
 export class FishingSpotBaitDatagridComponent {
+  private readonly fishCtx = inject(FishContextService);
+  private readonly lazyData = inject(LazyDataFacade);
+  private readonly i18n = inject(I18nToolsService);
+  private readonly translate = inject(TranslateService);
+  private readonly authFacade = inject(AuthFacade);
+  private readonly fishDataService = inject(FishDataService);
+  private readonly message = inject(NzMessageService);
+
   @Input()
   public activeFish?: number | undefined;
 
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.baitsBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.baitsBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.baitsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),
@@ -93,17 +101,6 @@ export class FishingSpotBaitDatagridComponent {
   );
 
   compareLures = (a: Lure | null, b: Lure | null) => a?.excludeAll === b?.excludeAll && a?.prop === b?.prop && a?.value === b?.value;
-
-  constructor(
-    private readonly fishCtx: FishContextService,
-    private readonly lazyData: LazyDataFacade,
-    private readonly i18n: I18nToolsService,
-    private readonly translate: TranslateService,
-    private readonly authFacade: AuthFacade,
-    private readonly fishDataService: FishDataService,
-    private readonly message: NzMessageService
-  ) {
-  }
 
   deleteBait(id: number): void {
     this.fishCtx.spotId$.pipe(

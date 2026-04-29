@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/decorators/memoized';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
@@ -20,9 +20,9 @@ import { SettingsService } from '../settings/settings.service';
   providedIn: 'root'
 })
 export class MateriaService {
+  private lazyData = inject(LazyDataFacade);
+  private settings = inject(SettingsService);
 
-  constructor(private lazyData: LazyDataFacade, private settings: SettingsService) {
-  }
 
   @Memoized()
   getMateria(itemId: number): Observable<LazyMateria> {

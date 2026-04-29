@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -16,13 +16,16 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule]
 })
 export class FishingSpotTugDatagridComponent {
+  private readonly fishCtx = inject(FishContextService);
+  private readonly lazyData = inject(LazyDataFacade);
+
   @Input()
   public activeFish?: number | undefined;
 
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.tugsBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.tugsBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.tugsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),
@@ -35,7 +38,4 @@ export class FishingSpotTugDatagridComponent {
       };
     })
   );
-
-  constructor(private readonly fishCtx: FishContextService, private readonly lazyData: LazyDataFacade) {
-  }
 }

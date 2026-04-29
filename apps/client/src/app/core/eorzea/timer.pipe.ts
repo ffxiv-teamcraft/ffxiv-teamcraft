@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EorzeanTimeService } from './eorzean-time.service';
 
@@ -8,9 +8,8 @@ import { EorzeanTimeService } from './eorzean-time.service';
     standalone: true
 })
 export class TimerPipe implements PipeTransform {
+  private etime = inject(EorzeanTimeService);
 
-  constructor(private etime: EorzeanTimeService) {
-  }
 
   transform(duration: number, verbose = false): string {
     return this.etime.toStringTimer(duration, verbose);

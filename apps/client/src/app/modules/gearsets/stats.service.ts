@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BaseParam } from '@ffxiv-teamcraft/types';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
@@ -16,6 +16,10 @@ import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
   providedIn: 'root'
 })
 export class StatsService {
+  private lazyData = inject(LazyDataFacade);
+  private materiasService = inject(MateriaService);
+  private env = inject(EnvironmentService);
+
 
   // Source: https://github.com/SapphireServer/Sapphire/blob/51d29df7ace88feaef1ef329ad3185ed4a5b4384/src/world/Math/CalcStats.cpp
   private static LEVEL_TABLE: number[][] = [
@@ -143,10 +147,6 @@ export class StatsService {
     BaseParam.INTELLIGENCE,
     BaseParam.MIND
   ];
-
-  constructor(private lazyData: LazyDataFacade, private materiasService: MateriaService,
-              private env: EnvironmentService) {
-  }
 
   public getMaxValuesTable(job: number, equipmentPiece: EquipmentPiece): Observable<number[][]> {
     return combineLatest(this.getRelevantBaseStats(job)

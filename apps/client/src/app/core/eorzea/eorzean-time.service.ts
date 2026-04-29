@@ -1,4 +1,4 @@
-import { Inject, Injectable, NgZone, PLATFORM_ID } from '@angular/core';
+import { Injectable, NgZone, PLATFORM_ID, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first, shareReplay, tap } from 'rxjs/operators';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
@@ -9,6 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class EorzeanTimeService {
+  private platform = inject(PLATFORM_ID);
+  private ngZone = inject(NgZone);
+  private translate = inject(TranslateService);
+
 
   public static readonly EPOCH_TIME_FACTOR = 20.571428571428573;
 
@@ -17,7 +21,7 @@ export class EorzeanTimeService {
   // Only used for mocks in dev mode
   private mockTicks = 0;
 
-  constructor(@Inject(PLATFORM_ID) private platform: any, private ngZone: NgZone, private translate: TranslateService) {
+  constructor() {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.ngZone.runOutsideAngular(() => {
         setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);

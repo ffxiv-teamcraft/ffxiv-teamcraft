@@ -8,7 +8,7 @@ import { UseMoreQualityActions } from './tips/use-more-quality-actions';
 import { UsePrudentTouchManipulation } from './tips/use-prudent-touch-manipulation';
 import { AvoidUsingGoodActions } from './tips/avoid-using-good-actions';
 
-export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
+export const ROTATION_TIPS = new InjectionToken<Class<RotationTip>[]>('ROTATION_TIPS');
 
 const tips: Class<RotationTip>[] = [
   UseDurabilityRestorationLater,

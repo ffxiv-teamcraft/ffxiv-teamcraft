@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RealtimeAlarmsService } from '../../../core/alarms/realtime-alarms.service';
 import { TimerPipe } from '../../../core/eorzea/timer.pipe';
@@ -17,10 +17,12 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzListModule, NzSwitchModule, TutorialStepDirective, FormsModule, AsyncPipe, TranslateModule, TimerPipe]
 })
 export class ResetTimersComponent {
+  private realtimeAlarmsService = inject(RealtimeAlarmsService);
+
 
   timers$: Observable<{ enabled: boolean, label: string, time: number }[]>;
 
-  constructor(private realtimeAlarmsService: RealtimeAlarmsService) {
+  constructor() {
     this.timers$ = this.realtimeAlarmsService.getTimers();
   }
 

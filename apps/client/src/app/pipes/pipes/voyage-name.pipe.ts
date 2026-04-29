@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nName } from '@ffxiv-teamcraft/types';
@@ -8,8 +8,8 @@ import { I18nName } from '@ffxiv-teamcraft/types';
     standalone: true
 })
 export class VoyageNamePipe implements PipeTransform {
-  constructor(private lazyData: LazyDataFacade) {
-  }
+  private lazyData = inject(LazyDataFacade);
+
 
   transform(id: number, type: number): Observable<I18nName> {
     if (type === 0) {

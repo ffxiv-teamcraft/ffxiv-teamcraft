@@ -1,12 +1,12 @@
 import { Apollo } from 'apollo-angular';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ModificationEntry } from '../../../../modules/list/model/modification-entry';
 import { EMPTY, Observable, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ListHistoryService {
-  constructor(private readonly apollo: Apollo) {
-  }
+  private readonly apollo = inject(Apollo);
+
 
   getHistory(listId: string): Observable<ModificationEntry[]> {
     return of([]);

@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
+import { Directive, EventEmitter, HostBinding, HostListener, Input, Output, inject } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,6 +11,10 @@ import { first } from 'rxjs/operators';
     standalone: true
 })
 export class ClipboardDirective {
+  private clipboardService = inject(Clipboard);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   @Input('clipboard')
   clipboardInput: string | ((...args: any[]) => string) | ((...args: any[]) => Observable<string>);
@@ -26,10 +30,6 @@ export class ClipboardDirective {
 
   @HostBinding('style.cursor')
   cursor = 'pointer';
-
-  constructor(private clipboardService: Clipboard, private message: NzMessageService,
-              private translate: TranslateService) {
-  }
 
   @HostListener('click')
   click(): boolean {

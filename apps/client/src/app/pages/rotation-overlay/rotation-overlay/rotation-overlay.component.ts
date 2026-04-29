@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -20,11 +20,15 @@ import { AsyncPipe } from '@angular/common';
     imports: [OverlayContainerComponent, FlexModule, ActionComponent, PageLoaderComponent, AsyncPipe]
 })
 export class RotationOverlayComponent {
+  private rotationsFacade = inject(RotationsFacade);
+  private route = inject(ActivatedRoute);
+  private simulationService = inject(SimulationService);
+  private settings = inject(SettingsService);
+
 
   public rotation$: Observable<CraftingRotation>;
 
-  constructor(private rotationsFacade: RotationsFacade, private route: ActivatedRoute,
-              private simulationService: SimulationService, private settings: SettingsService) {
+  constructor() {
     this.rotation$ = this.route.paramMap.pipe(
       tap(params => {
         const id = params.get('rotationId');

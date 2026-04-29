@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
@@ -48,7 +48,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-button/favorite-button.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -59,9 +59,29 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './gearset-display.component.html',
     styleUrls: ['./gearset-display.component.less'],
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
 })
 export class GearsetDisplayComponent extends TeamcraftComponent {
+  private gearsetsFacade = inject(GearsetsFacade);
+  private activatedRoute = inject(ActivatedRoute);
+  translate = inject(TranslateService);
+  private statsService = inject(StatsService);
+  private dialog = inject(NzModalService);
+  private materiaService = inject(MateriaService);
+  private listPicker = inject(ListPickerService);
+  private listManager = inject(ListManagerService);
+  private listsFacade = inject(ListsFacade);
+  private progressService = inject(ProgressPopupService);
+  private notificationService = inject(NzNotificationService);
+  private lazyData = inject(LazyDataFacade);
+  private router = inject(Router);
+  private i18n = inject(I18nToolsService);
+  private message = inject(NzMessageService);
+  private authFacade = inject(AuthFacade);
+  private clipboard = inject(Clipboard);
+  private commissionsFacade = inject(CommissionsFacade);
+  private env = inject(EnvironmentService);
+
 
   public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
 
@@ -122,16 +142,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   includeAllTools = localStorage.getItem('gearsets:include-all-tools') === 'true';
 
-  constructor(private gearsetsFacade: GearsetsFacade, private activatedRoute: ActivatedRoute,
-              public translate: TranslateService, private statsService: StatsService,
-              private dialog: NzModalService, private materiaService: MateriaService,
-              private listPicker: ListPickerService, private listManager: ListManagerService,
-              private listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private notificationService: NzNotificationService, private lazyData: LazyDataFacade,
-              private router: Router, private i18n: I18nToolsService,
-              private message: NzMessageService,
-              private authFacade: AuthFacade, private clipboard: Clipboard,
-              private commissionsFacade: CommissionsFacade, private env: EnvironmentService) {
+  constructor() {
     super();
     this.activatedRoute.paramMap
       .pipe(

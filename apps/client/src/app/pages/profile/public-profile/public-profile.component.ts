@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from '@xivapi/angular-client';
 import { EMPTY, Observable } from 'rxjs';
@@ -31,7 +31,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { UserRatingDisplayComponent } from '../../../modules/commission-board/user-rating-display/user-rating-display.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -42,9 +42,19 @@ import { AsyncPipe, DatePipe } from '@angular/common';
     templateUrl: './public-profile.component.html',
     styleUrls: ['./public-profile.component.less'],
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, UserRatingDisplayComponent, NzDividerModule, NzCollapseModule, NzListModule, ListPanelComponent, RotationPanelComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NzSkeletonModule, ItemIconComponent, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, ItemNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzTagModule, UserRatingDisplayComponent, NzDividerModule, NzCollapseModule, NzListModule, ListPanelComponent, RotationPanelComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NzSkeletonModule, ItemIconComponent, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, ItemNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe]
 })
 export class PublicProfileComponent {
+  private route = inject(ActivatedRoute);
+  private characterService = inject(LodestoneService);
+  private listsService = inject(FirestoreListStorage);
+  private authFacade = inject(AuthFacade);
+  private userService = inject(UserService);
+  private craftingRotationsService = inject(CraftingRotationService);
+  private apollo = inject(Apollo);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   public characterEntry$: Observable<{ character: Character, verified: boolean }>;
 
@@ -62,11 +72,7 @@ export class PublicProfileComponent {
 
   public now = Math.floor(Date.now() / 1000);
 
-  constructor(private route: ActivatedRoute, private characterService: LodestoneService,
-              private listsService: FirestoreListStorage, private authFacade: AuthFacade,
-              private userService: UserService, private craftingRotationsService: CraftingRotationService,
-              private apollo: Apollo, public translate: TranslateService,
-              public settings: SettingsService) {
+  constructor() {
     const userId$ = this.route.paramMap.pipe(
       map(params => params.get('userId')),
       shareReplay({ bufferSize: 1, refCount: true })

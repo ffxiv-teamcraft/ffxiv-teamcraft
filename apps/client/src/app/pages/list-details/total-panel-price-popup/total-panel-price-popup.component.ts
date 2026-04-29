@@ -8,7 +8,7 @@ import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
@@ -21,7 +21,7 @@ import { DialogComponent } from '../../../core/dialog.component';
     templateUrl: './total-panel-price-popup.component.html',
     styleUrls: ['./total-panel-price-popup.component.less'],
     standalone: true,
-    imports: [NzListModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, DecimalPipe, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [NzListModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, DecimalPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class TotalPanelPricePopupComponent extends DialogComponent implements OnInit {
 

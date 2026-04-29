@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -14,6 +14,12 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Injectable()
 export class NotificationsFacade {
+  private store = inject<Store<{
+    notifications: NotificationsState;
+}>>(Store);
+  private translate = inject(TranslateService);
+  private i18n = inject(I18nToolsService);
+
   loaded$ = this.store.select(notificationsQuery.getLoaded);
 
   allNotifications$ = this.store.select(notificationsQuery.getAllNotifications);
@@ -36,10 +42,6 @@ export class NotificationsFacade {
       }));
     })
   );
-
-  constructor(private store: Store<{ notifications: NotificationsState }>, private translate: TranslateService,
-              private i18n: I18nToolsService) {
-  }
 
   removeCommissionNotifications(predicate: (n: CommissionNotification) => boolean): void {
     this.allNotifications$.pipe(

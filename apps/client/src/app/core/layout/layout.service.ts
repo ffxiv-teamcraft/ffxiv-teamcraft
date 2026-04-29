@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { LayoutRow } from './layout-row';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowOrder } from './layout-row-order.enum';
@@ -11,10 +11,24 @@ import { Firestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService,
-              protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
+
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   public get defaultLayout(): ListLayout {

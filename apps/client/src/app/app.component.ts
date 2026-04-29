@@ -1,15 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostListener,
-  Inject,
-  Injector,
-  OnInit,
-  PLATFORM_ID,
-  ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, Injector, OnInit, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
@@ -63,17 +52,51 @@ import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-
 import { Database, objectVal, ref } from '@angular/fire/database';
 import { gameEnv } from '../environments/game-env';
 import { PacketCaptureStatus } from './core/electron/packet-capture-status';
-import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
+import { NzBadgeStatusType } from 'ng-zorro-antd/badge';
 import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
 import { PushNotificationsService } from './core/push-notifications.service';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
+  private document = inject<Document>(DOCUMENT);
+  translate = inject(TranslateService);
+  ipc = inject(IpcService);
+  private router = inject(Router);
+  private firebase = inject(Database);
+  private authFacade = inject(AuthFacade);
+  private dialog = inject(NzModalService);
+  private eorzeanTime = inject(EorzeanTimeService);
+  listsFacade = inject(ListsFacade);
+  settings = inject(SettingsService);
+  teamsFacade = inject(TeamsFacade);
+  private notificationsFacade = inject(NotificationsFacade);
+  private iconService = inject(NzIconService);
+  platformService = inject(PlatformService);
+  private settingsPopupService = inject(SettingsPopupService);
+  private http = inject(HttpClient);
+  private lazyDataFacade = inject(LazyDataFacade);
+  private dirtyFacade = inject(DirtyFacade);
+  private seoService = inject(SeoService);
+  private injector = inject(Injector);
+  private universalis = inject(UniversalisService);
+  private inventoryService = inject(InventoryService);
+  private platform = inject(PLATFORM_ID);
+  private quickSearch = inject(QuickSearchService);
+  mappy = inject(MappyReporterService);
+  private tutorialService = inject(TutorialService);
+  private playerMetricsService = inject(PlayerMetricsService);
+  private patreonService = inject(SupportService);
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  private cd = inject(ChangeDetectorRef);
+  private data = inject(DataService);
+  private allaganReportsService = inject(AllaganReportsService);
+
   public overlay = window.location.href.indexOf('?overlay') > -1;
 
   public childWindow = this.ipc.isChildWindow;
@@ -231,41 +254,11 @@ export class AppComponent implements OnInit {
 
   public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    public translate: TranslateService,
-    public ipc: IpcService,
-    private router: Router,
-    private firebase: Database,
-    private authFacade: AuthFacade,
-    private dialog: NzModalService,
-    private eorzeanTime: EorzeanTimeService,
-    public listsFacade: ListsFacade,
-    public settings: SettingsService,
-    public teamsFacade: TeamsFacade,
-    private notificationsFacade: NotificationsFacade,
-    private iconService: NzIconService,
-    public platformService: PlatformService,
-    private settingsPopupService: SettingsPopupService,
-    private http: HttpClient,
-    private lazyDataFacade: LazyDataFacade,
-    private dirtyFacade: DirtyFacade,
-    private seoService: SeoService,
-    private injector: Injector,
-    private universalis: UniversalisService,
-    private inventoryService: InventoryService,
-    @Inject(PLATFORM_ID) private platform: any,
-    private quickSearch: QuickSearchService,
-    public mappy: MappyReporterService,
-    private tutorialService: TutorialService,
-    private playerMetricsService: PlayerMetricsService,
-    private patreonService: SupportService,
-    private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-    private cd: ChangeDetectorRef,
-    private data: DataService,
-    private allaganReportsService: AllaganReportsService,
-    pushNotificationsService: PushNotificationsService
-  ) {
+  constructor() {
+    const document = this.document;
+    const router = this.router;
+    const pushNotificationsService = inject(PushNotificationsService);
+
     if (pushNotificationsService.isSupported() && pushNotificationsService.permission === 'default') {
       pushNotificationsService.requestPermission();
     }

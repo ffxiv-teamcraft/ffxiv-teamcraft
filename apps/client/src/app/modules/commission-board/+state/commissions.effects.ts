@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { CommissionService } from '../commission.service';
@@ -18,6 +18,16 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable()
 export class CommissionsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private commissionService = inject(CommissionService);
+  private listsFacade = inject(ListsFacade);
+  private lazyData = inject(LazyDataFacade);
+  private firestore = inject(Firestore);
+  private modalService = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+
 
   loadUserCommissions$ = createEffect(() => {
     return this.actions$.pipe(
@@ -138,11 +148,4 @@ export class CommissionsEffects {
       })
     );
   }, { dispatch: false });
-
-  constructor(private actions$: Actions, private authFacade: AuthFacade,
-              private commissionService: CommissionService, private listsFacade: ListsFacade,
-              private lazyData: LazyDataFacade, private firestore: Firestore,
-              private modalService: NzModalService, private translate: TranslateService,
-              private router: Router) {
-  }
 }

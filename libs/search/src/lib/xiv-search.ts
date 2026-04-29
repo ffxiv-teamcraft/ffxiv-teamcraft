@@ -184,7 +184,7 @@ export class XIVSearch {
         if (err) {
           throw err;
         }
-        zlib.inflate(content, { level: 9 }, (err, data) => {
+        zlib.inflate(content as any, { level: 9 }, (err, data) => {
           if (err) {
             observer.error(err);
             observer.complete();

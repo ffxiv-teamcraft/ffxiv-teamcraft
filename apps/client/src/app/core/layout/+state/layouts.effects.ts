@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   createListLayout,
@@ -19,6 +19,11 @@ import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class LayoutsEffects {
+  private actions$ = inject(Actions);
+  private layoutService = inject(LayoutService);
+  private layoutsFacade = inject(LayoutsFacade);
+  private authFacade = inject(AuthFacade);
+
 
 
   loadLayouts$ = createEffect(() => this.actions$.pipe(
@@ -79,13 +84,5 @@ export class LayoutsEffects {
       return selectListLayout({ key: layouts[0].$key });
     })
   ));
-
-  constructor(
-    private actions$: Actions,
-    private layoutService: LayoutService,
-    private layoutsFacade: LayoutsFacade,
-    private authFacade: AuthFacade
-  ) {
-  }
 }
 

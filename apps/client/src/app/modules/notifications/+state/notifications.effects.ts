@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { NotificationsActionTypes, NotificationsLoaded, RemoveNotification } from './notifications.actions';
 import { map, switchMap } from 'rxjs/operators';
@@ -9,6 +9,10 @@ import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class NotificationsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private notificationService = inject(NotificationService);
+
 
 
   loadNotifications$ = createEffect(() => this.actions$.pipe(
@@ -28,11 +32,4 @@ export class NotificationsEffects {
     }),
     switchMap(() => EMPTY)
   ), { dispatch: false });
-
-  constructor(
-    private actions$: Actions,
-    private authFacade: AuthFacade,
-    private notificationService: NotificationService
-  ) {
-  }
 }

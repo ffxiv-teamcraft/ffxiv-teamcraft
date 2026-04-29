@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
 import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
@@ -42,6 +42,15 @@ declare global {
   providedIn: 'root'
 })
 export class IpcService {
+  private platformService = inject(PlatformService);
+  private router = inject(Router);
+  private store = inject<Store<any>>(Store);
+  private zone = inject(NgZone);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private notification = inject(NzNotificationService);
+  private message = inject(NzMessageService);
+
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
 
@@ -75,10 +84,9 @@ export class IpcService {
     return this._isChildWindow;
   }
 
-  constructor(private platformService: PlatformService, private router: Router,
-              private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
-              private translate: TranslateService, private notification: NzNotificationService,
-              private message: NzMessageService) {
+  constructor() {
+    const platformService = this.platformService;
+
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       this._isChildWindow = window.location.toString().includes('?child=true');

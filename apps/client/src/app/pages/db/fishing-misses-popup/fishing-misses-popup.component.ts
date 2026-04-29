@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import gql from 'graphql-tag';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Apollo } from 'apollo-angular';
@@ -12,7 +12,7 @@ import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
 import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
 import { I18nPipe } from '../../../core/i18n.pipe';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -26,9 +26,14 @@ import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
   templateUrl: './fishing-misses-popup.component.html',
   styleUrls: ['./fishing-misses-popup.component.less'],
   standalone: true,
-  imports: [NzTableModule, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe, HourDisplayPipe]
+  imports: [NzTableModule, FlexModule, ItemIconComponent, NzTooltipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe, HourDisplayPipe]
 })
 export class FishingMissesPopupComponent extends DialogComponent implements OnInit {
+  private apollo = inject(Apollo);
+  translate = inject(TranslateService);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+
 
   public loading = true;
 
@@ -43,11 +48,6 @@ export class FishingMissesPopupComponent extends DialogComponent implements OnIn
   public pageIndex = 1;
 
   public pageSize = 10;
-
-  constructor(private apollo: Apollo, public translate: TranslateService,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, forwardRef, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, forwardRef, Input, inject } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
@@ -24,6 +24,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NgTemplateOutlet, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
 export class SearchJobPickerComponent implements ControlValueAccessor {
+  private lazyData = inject(LazyDataFacade);
+
 
   public jobsDisplay$ = this.lazyData.getEntry('jobCategories').pipe(
     switchMap(data => {
@@ -79,9 +81,6 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
 
   @Input()
   public single = false;
-
-  constructor(private lazyData: LazyDataFacade) {
-  }
 
   registerOnChange(fn: (_: any) => void): void {
     this.onChange = fn;

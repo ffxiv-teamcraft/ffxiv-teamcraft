@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { INTEGRITY_CHECKS, IntegrityCheck } from '../integrity-checks/integrity-check';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { UserService } from '../../../../core/database/user.service';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -20,9 +20,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styleUrls: ['./integrity-check-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, NzButtonModule, NzIconModule, NzWaveModule, NzToolTipModule, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzButtonModule, NzIconModule, NzWaveModule, NzTooltipModule, AsyncPipe, TranslateModule]
 })
 export class IntegrityCheckPopupComponent extends DialogComponent {
+  private integrityChecks = inject(INTEGRITY_CHECKS);
+  private userService = inject(UserService);
+
 
   destroyRef = inject(DestroyRef);
 
@@ -40,8 +43,7 @@ export class IntegrityCheckPopupComponent extends DialogComponent {
     takeUntilDestroyed(this.destroyRef)
   );
 
-  constructor(@Inject(INTEGRITY_CHECKS) private integrityChecks: IntegrityCheck[],
-              private userService: UserService) {
+  constructor() {
     super();
     this.patchData();
   }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -15,6 +15,8 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FormsModule, NzInputModule, ReactiveFormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class TextQuestionPopupComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+
 
   @Input()
   baseText = '';
@@ -23,10 +25,6 @@ export class TextQuestionPopupComponent extends DialogComponent implements OnIni
   placeholder = '';
 
   public control: UntypedFormControl;
-
-  constructor(private modalRef: NzModalRef) {
-    super();
-  }
 
   public submit(): void {
     this.modalRef.close(this.control.value);

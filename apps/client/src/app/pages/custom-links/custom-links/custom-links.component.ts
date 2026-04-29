@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { combineLatest, Observable, of } from 'rxjs';
 import { CustomLinksFacade } from '../../../modules/custom-links/+state/custom-links.facade';
@@ -13,7 +13,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTagModule } from 'ng-zorro-antd/tag';
@@ -27,19 +27,21 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './custom-links.component.html',
     styleUrls: ['./custom-links.component.less'],
     standalone: true,
-    imports: [FullpageMessageComponent, NzListModule, FlexModule, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+    imports: [FullpageMessageComponent, NzListModule, FlexModule, NzTagModule, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, NzIconModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CustomLinksComponent {
+  private customLinksFacade = inject(CustomLinksFacade);
+  private listsFacade = inject(ListsFacade);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private rotationsFacade = inject(RotationsFacade);
+  private rotationFoldersFacade = inject(RotationFoldersFacade);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   public linksDisplay$: Observable<{ link: CustomLink, targetName: string }[]>;
 
-  constructor(private customLinksFacade: CustomLinksFacade,
-              private listsFacade: ListsFacade,
-              private workshopsFacade: WorkshopsFacade,
-              private rotationsFacade: RotationsFacade,
-              private rotationFoldersFacade: RotationFoldersFacade,
-              private message: NzMessageService,
-              private translate: TranslateService) {
+  constructor() {
     this.linksDisplay$ = this.customLinksFacade.myCustomLinks$.pipe(
       switchMap(links => {
         if (links.length === 0) {

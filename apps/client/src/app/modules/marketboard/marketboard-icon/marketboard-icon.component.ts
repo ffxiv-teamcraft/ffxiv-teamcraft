@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -9,7 +9,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AsyncPipe } from '@angular/common';
@@ -20,9 +20,15 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./marketboard-icon.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, TranslateModule]
+    imports: [NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class MarketboardIconComponent {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+
 
   @Input()
   itemId: number;
@@ -44,10 +50,6 @@ export class MarketboardIconComponent {
   disabled$ = this.authFacade.loggedIn$.pipe(
     map((loggedIn) => !loggedIn)
   );
-
-  constructor(private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade) {
-  }
 
   openDialog(): void {
     this.i18n.getNameObservable('items', this.itemId).pipe(

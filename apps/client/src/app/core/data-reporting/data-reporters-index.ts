@@ -10,8 +10,9 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { BnpcReporter } from './bnpc-reporter';
 import { FishTrainFacade } from '../../modules/fish-train/fish-train/fish-train.facade';
 import { AuthFacade } from '../../+state/auth.facade';
+import { DataReporter } from './data-reporter';
 
-export const DataReporters = new InjectionToken('DataReporters');
+export const DataReporters = new InjectionToken<DataReporter[]>('DataReporters');
 
 export const DATA_REPORTERS: Provider[] = [
   // { provide: DataReporters, useClass: DesynthResultReporter, multi: true },

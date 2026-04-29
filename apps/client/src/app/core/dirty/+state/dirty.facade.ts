@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -10,13 +10,12 @@ import { DirtyScope } from '../dirty-scope';
 
 @Injectable({ providedIn: 'root' })
 export class DirtyFacade {
+  private store = inject<Store<DirtyPartialState>>(Store);
+
 
   allEntries$ = this.store.pipe(select(dirtyQuery.getAllDirty));
 
   hasEntries$ = this.allEntries$.pipe(map(entries => entries.length > 0));
-
-  constructor(private store: Store<DirtyPartialState>) {
-  }
 
   public addEntry(id: string, scope: DirtyScope): void {
     this.store.dispatch(new AddDirty({ id: id, scope: scope }));

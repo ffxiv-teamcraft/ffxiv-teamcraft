@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmsSidebarComponent } from '../../../modules/alarms-sidebar/alarms-sidebar/alarms-sidebar.component';
 import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
@@ -12,7 +12,9 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
 })
 export class AlarmsOverlayComponent {
 
-  constructor(alarmsFacade: AlarmsFacade) {
+  constructor() {
+    const alarmsFacade = inject(AlarmsFacade);
+
     alarmsFacade.loadAlarms();
   }
 }

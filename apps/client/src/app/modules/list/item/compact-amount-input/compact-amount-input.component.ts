@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ListRow } from '../../model/list-row';
@@ -22,6 +22,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     imports: [NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, FormsModule]
 })
 export class CompactAmountInputComponent extends TeamcraftComponent {
+  private listsFacade = inject(ListsFacade);
+  settings = inject(SettingsService);
+
   @Input()
   checkButtonAfter = false;
 
@@ -39,7 +42,7 @@ export class CompactAmountInputComponent extends TeamcraftComponent {
 
   public itemDoneChange$ = new Subject<number>();
 
-  constructor(private listsFacade: ListsFacade, public settings: SettingsService) {
+  constructor() {
     super();
 
     this.itemDoneChange$.pipe(

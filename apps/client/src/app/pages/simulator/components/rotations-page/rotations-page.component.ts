@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable } from 'rxjs';
@@ -20,7 +20,7 @@ import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
 import { AsyncPipe } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -31,9 +31,17 @@ import { FlexModule } from '@angular/flex-layout/flex';
   styleUrls: ['./rotations-page.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, CdkDropList, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, PageLoaderComponent, CdkDropList, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class RotationsPageComponent {
+  private rotationsFacade = inject(RotationsFacade);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private foldersFacade = inject(RotationFoldersFacade);
+  private guidesService = inject(GuidesService);
+  private message = inject(NzMessageService);
+  private authFacade = inject(AuthFacade);
+
 
   public loading$ = this.rotationsFacade.loading$;
 
@@ -88,9 +96,7 @@ export class RotationsPageComponent {
     })
   );
 
-  constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
-              private foldersFacade: RotationFoldersFacade, private guidesService: GuidesService,
-              private message: NzMessageService, private authFacade: AuthFacade) {
+  constructor() {
     this.rotationsFacade.loadMyRotations();
 
     this.favoriteRotationsFoldersDisplay$ = this.foldersFacade.favoriteRotationFolders$.pipe(

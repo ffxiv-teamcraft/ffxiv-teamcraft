@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { map } from 'rxjs/operators';
 import { SettingsService } from '../../../settings/settings.service';
@@ -18,6 +18,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
     imports: [NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class HistogramComponent extends AbstractMetricDisplayComponent {
+  settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+
 
   options$: Observable<EChartsOption> = this.data$.pipe(
     map(reports => {
@@ -62,8 +65,4 @@ export class HistogramComponent extends AbstractMetricDisplayComponent {
       };
     })
   );
-
-  constructor(public settings: SettingsService, private translate: TranslateService) {
-    super();
-  }
 }

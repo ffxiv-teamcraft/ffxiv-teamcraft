@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   CreateCustomItem,
@@ -19,6 +19,11 @@ import { CustomItemFoldersService } from '../custom-item-folders.service';
 
 @Injectable()
 export class CustomItemsEffects {
+  private actions$ = inject(Actions);
+  private customItemsService = inject(CustomItemsService);
+  private customItemFoldersService = inject(CustomItemFoldersService);
+  private authFacade = inject(AuthFacade);
+
 
   
   loadCustomItems$ = createEffect(() => this.actions$.pipe(
@@ -101,12 +106,4 @@ export class CustomItemsEffects {
     ofType<DeleteCustomItemFolder>(CustomItemsActionTypes.DeleteCustomItemFolder),
     switchMap(action => this.customItemFoldersService.remove(action.key))
   ), { dispatch: false });
-
-  constructor(
-    private actions$: Actions,
-    private customItemsService: CustomItemsService,
-    private customItemFoldersService: CustomItemFoldersService,
-    private authFacade: AuthFacade
-  ) {
-  }
 }

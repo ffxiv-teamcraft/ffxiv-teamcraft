@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { AbstractListsSelectionPopupComponent } from '../abstract-lists-selection-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -23,14 +23,19 @@ import { NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
     styleUrls: ['./delete-multiple-lists-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzListModule, NgForTrackByKeyDirective, NzCheckboxModule, FormsModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
+    imports: [NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzListModule, NgForTrackByKeyDirective, NzCheckboxModule, FormsModule, NzTagModule, NzTooltipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class DeleteMultipleListsPopupComponent extends AbstractListsSelectionPopupComponent {
+  private modalRef = inject(NzModalRef);
+  private authFacade = inject(AuthFacade);
+
 
   public userId$ = this.authFacade.userId$;
 
-  constructor(listsFacade: ListsFacade, private modalRef: NzModalRef,
-              workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade) {
+  constructor() {
+    const listsFacade = inject(ListsFacade);
+    const workshopsFacade = inject(WorkshopsFacade);
+
     super(listsFacade, workshopsFacade);
   }
 

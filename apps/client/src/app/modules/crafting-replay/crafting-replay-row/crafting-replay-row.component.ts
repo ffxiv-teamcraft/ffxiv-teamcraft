@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CraftingReplay } from '../model/crafting-replay';
 import { ReplaySimulationComponent } from '../replay-simulation/replay-simulation.component';
 import { CraftingReplayFacade } from '../+state/crafting-replay.facade';
@@ -18,7 +18,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { RouterLink } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { DatePipe } from '@angular/common';
@@ -30,19 +30,20 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./crafting-replay-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, RouterLink, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, ActionComponent, DatePipe, ItemNamePipe, TeamcraftLinkPipe, CraftingActionPipe, TranslateModule, I18nPipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, RouterLink, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, ActionComponent, DatePipe, ItemNamePipe, TeamcraftLinkPipe, CraftingActionPipe, TranslateModule, I18nPipe]
 })
 export class CraftingReplayRowComponent {
+  private craftingReplayFacade = inject(CraftingReplayFacade);
+  translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  settings = inject(SettingsService);
+
 
   @Input()
   replay: CraftingReplay;
 
   @Input()
   userId: string;
-
-  constructor(private craftingReplayFacade: CraftingReplayFacade, public translate: TranslateService,
-              private dialog: NzModalService, public settings: SettingsService) {
-  }
 
   get permissionLevel(): PermissionLevel {
     return PermissionsController.getPermissionLevel(this.replay, this.userId);

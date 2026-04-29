@@ -9,7 +9,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
@@ -31,7 +31,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
         NzBadgeModule,
         NzButtonModule,
         NzMenuModule,
-        NzToolTipModule,
+        NzTooltipModule,
         NzDropDownModule,
         NavigationSidebarComponent
     ]

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -12,9 +12,9 @@ import { LazyDataEntries, LazyDataRecordKey } from '@ffxiv-teamcraft/types';
     standalone: true
 })
 export class LazyRowPipe implements PipeTransform {
+  private lazyData = inject(LazyDataFacade);
+  private translate = inject(TranslateService);
 
-  constructor(private lazyData: LazyDataFacade, private translate: TranslateService) {
-  }
 
   transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K): Observable<LazyDataEntries[K]>
   transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K, field: F): Observable<LazyDataEntries[K][F]>

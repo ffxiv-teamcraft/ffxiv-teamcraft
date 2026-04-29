@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { List } from '../list/model/list';
@@ -17,12 +17,14 @@ import { ListAdditionRecord } from './list-addition-record';
   providedIn: 'root'
 })
 export class ListPickerService {
+  private nzDrawer = inject(NzDrawerService);
+  private translate = inject(TranslateService);
+  private listsFacade = inject(ListsFacade);
+  private listManager = inject(ListManagerService);
+  private progressService = inject(ProgressPopupService);
+  private notificationService = inject(NzNotificationService);
+  private router = inject(Router);
 
-  constructor(private nzDrawer: NzDrawerService, private translate: TranslateService,
-              private listsFacade: ListsFacade, private listManager: ListManagerService,
-              private progressService: ProgressPopupService, private notificationService: NzNotificationService,
-              private router: Router) {
-  }
 
   pickList(workshopView = false): Observable<List> {
     return this.nzDrawer.create<ListPickerDrawerComponent, Partial<ListPickerDrawerComponent>, List>({

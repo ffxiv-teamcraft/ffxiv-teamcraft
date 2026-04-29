@@ -60,8 +60,7 @@
           <div class="flex-auto"></div>
           <div class="flex-row gap-5">
             @if (!hideAmount) {
-              <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(result.recipe !== undefined?addCrafts:null)"
-                [nzCompact]="true">
+              <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(result.recipe !== undefined?addCrafts:null)">
                 <nz-input-number [(ngModel)]="result.amount" class="amount-input"></nz-input-number>
                 <ng-template #addCrafts>
                   <label [(ngModel)]="result.addCrafts" nz-checkbox>

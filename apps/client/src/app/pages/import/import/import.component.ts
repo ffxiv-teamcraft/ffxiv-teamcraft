@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { combineLatest, Observable } from 'rxjs';
@@ -34,14 +34,19 @@ interface ImportData {
     imports: [FlexModule, ItemIconComponent, I18nNameComponent, NzAlertModule, NzRadioModule, FormsModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ImportComponent {
+  private route = inject(ActivatedRoute);
+  private listPicker = inject(ListPickerService);
+  private lazyData = inject(LazyDataFacade);
+  private router = inject(Router);
+  private http = inject(HttpClient);
+  private linkTools = inject(LinkToolsService);
+
 
   public items$: Observable<ImportData>;
 
   wrongFormat = false;
 
-  constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
-              private lazyData: LazyDataFacade, private router: Router,
-              private http: HttpClient, private linkTools: LinkToolsService) {
+  constructor() {
 
     // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx&url=https://example.org
     this.items$ = combineLatest([this.route.paramMap, this.route.queryParamMap]).pipe(

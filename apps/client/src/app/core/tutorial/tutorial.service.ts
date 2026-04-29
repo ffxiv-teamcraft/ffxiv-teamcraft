@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { Subject } from 'rxjs';
 import { debounceTime, first, skipUntil } from 'rxjs/operators';
@@ -11,6 +11,10 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class TutorialService {
+  private settings = inject(SettingsService);
+  private modal = inject(NzModalService);
+  private translate = inject(TranslateService);
+
 
   private steps: TutorialStepEntry[] = [];
 
@@ -20,8 +24,7 @@ export class TutorialService {
 
   private isPlaying = false;
 
-  constructor(private settings: SettingsService, private modal: NzModalService,
-              private translate: TranslateService) {
+  constructor() {
     this.play$.pipe(
       skipUntil(this.applicationReady$),
       debounceTime(1000)

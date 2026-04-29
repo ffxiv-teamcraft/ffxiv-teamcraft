@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,6 +27,12 @@ import { SearchParams, XIVSearchFilter } from '@ffxiv-teamcraft/search';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
+  private http = inject(HttpClient);
+  private ipc = inject(IpcService);
+  private platform = inject(PlatformService);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+
 
   public readonly availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh', 'tw'];
 
@@ -34,11 +40,7 @@ export class DataService {
 
   public ingesting$ = new BehaviorSubject(false);
 
-  constructor(private http: HttpClient,
-              private ipc: IpcService,
-              private platform: PlatformService,
-              private settings: SettingsService,
-              private translate: TranslateService) {
+  constructor() {
     if (this.platform.isDesktop()) {
       this.ipc.on('search:ingest', (event, ingesting) => {
         this.ingesting$.next(ingesting);

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   ArchivedListsLoaded,
@@ -75,6 +75,27 @@ import { chunk } from 'lodash';
 
 @Injectable()
 export class ListsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private listService = inject(FirestoreListStorage);
+  private listsFacade = inject(ListsFacade);
+  private teamsFacade = inject(TeamsFacade);
+  private router = inject(Router);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private discordWebhookService = inject(DiscordWebhookService);
+  private serializer = inject(NgSerializerService);
+  private notificationService = inject(NzNotificationService);
+  private message = inject(NzMessageService);
+  private platform = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private settings = inject(SettingsService);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private commissionService = inject(CommissionService);
+  private soundNotificationService = inject(SoundNotificationService);
+  private pricingService = inject(ListPricingService);
+
 
   static LAST_HANDLED: SetItemDone;
 
@@ -595,31 +616,6 @@ export class ListsEffects {
       }
     })
   ), { dispatch: false });
-
-
-  constructor(
-    private actions$: Actions,
-    private authFacade: AuthFacade,
-    private listService: FirestoreListStorage,
-    private listsFacade: ListsFacade,
-    private teamsFacade: TeamsFacade,
-    private router: Router,
-    private dialog: NzModalService,
-    private translate: TranslateService,
-    private discordWebhookService: DiscordWebhookService,
-    private serializer: NgSerializerService,
-    private notificationService: NzNotificationService,
-    private message: NzMessageService,
-    private platform: PlatformService,
-    private ipc: IpcService,
-    private settings: SettingsService,
-    private i18n: I18nToolsService,
-    private lazyData: LazyDataFacade,
-    private commissionService: CommissionService,
-    private soundNotificationService: SoundNotificationService,
-    private pricingService: ListPricingService
-  ) {
-  }
 
   private updateCommission(list: List): void {
     this.commissionService.pureUpdate(list.$key, {

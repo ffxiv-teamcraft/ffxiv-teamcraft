@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, TemplateRef, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishContextService } from '../service/fish-context.service';
@@ -28,13 +28,14 @@ import { FishLuresComponent } from './fish-lures/fish-lures.component';
   imports: [PageLoaderComponent, FishDetailsContainerComponent, NgTemplateOutlet, NzDividerModule, FlexModule, FishHoursComponent, FishBaitsComponent, FishHooksetsComponent, FishSpotsListComponent, FishBiteTimesComponent, FishWeathersComponent, FishWeatherTransitionsComponent, FishMoochesComponent, DbCommentsComponent, AsyncPipe, TranslateModule, FishLuresComponent]
 })
 export class FishComponent implements OnDestroy {
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+  platform = inject(PlatformService);
+
   @Input() usedForTpl: TemplateRef<any>;
 
   @Input() obtentionTpl: TemplateRef<any>;
-
-  constructor(public translate: TranslateService, public settings: SettingsService, public readonly fishCtx: FishContextService,
-              public platform: PlatformService) {
-  }
 
   ngOnDestroy() {
     this.fishCtx.setSpotId(undefined);

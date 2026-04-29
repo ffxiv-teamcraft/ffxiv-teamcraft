@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
@@ -26,6 +26,11 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
   imports: [OverlayContainerComponent, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, ListDetailsPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class ListPanelOverlayComponent {
+  private ipc = inject(IpcService);
+  private listsFacade = inject(ListsFacade);
+  private layoutsFacade = inject(LayoutsFacade);
+  private settings = inject(SettingsService);
+
 
   public hideCompleted$ = new BehaviorSubject<boolean>(this.settings.hideOverlayCompleted);
 
@@ -48,8 +53,7 @@ export class ListPanelOverlayComponent {
     })
   );
 
-  constructor(private ipc: IpcService, private listsFacade: ListsFacade,
-              private layoutsFacade: LayoutsFacade, private settings: SettingsService) {
+  constructor() {
     this.layoutsFacade.loadAll();
     this.ipc.mainWindowState$.pipe(
       filter(state => {

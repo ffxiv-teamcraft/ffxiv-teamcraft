@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, inject } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -40,7 +40,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { MapPositionComponent } from '../../map/map-position/map-position.component';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -60,9 +60,21 @@ import { AsyncPipe, DecimalPipe, NgTemplateOutlet } from '@angular/common';
   styleUrls: ['./list-details-panel.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
+  imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private listsFacade = inject(ListsFacade);
+  private layoutOrderService = inject(LayoutOrderService);
+  private eorzeaFacade = inject(EorzeaFacade);
+  private alarmsFacade = inject(AlarmsFacade);
+  settings = inject(SettingsService);
+  private lazyData = inject(LazyDataFacade);
+  private cd = inject(ChangeDetectorRef);
+  private authFacade = inject(AuthFacade);
+
 
   public LayoutRowDisplayMode = LayoutRowDisplayMode;
 
@@ -167,14 +179,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     debounceTime(10),
     map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, this.settings, canSkip))
   );
-
-  constructor(private i18n: I18nToolsService, public translate: TranslateService,
-              private dialog: NzModalService, private listsFacade: ListsFacade,
-              private layoutOrderService: LayoutOrderService,
-              private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private lazyData: LazyDataFacade,
-              private cd: ChangeDetectorRef, private authFacade: AuthFacade) {
-  }
 
   public get displayMode(): LayoutRowDisplayMode {
     if (this.displayRow.zoneBreakdown) {

@@ -26,6 +26,11 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     imports: [NgIf, NzButtonModule, NzWaveModule, NzIconModule, NzDividerModule, NzInputModule, FormsModule, NzListModule, NgFor, AsyncPipe, TranslateModule]
 })
 export class ListPickerDrawerComponent {
+  private listsFacade = inject(ListsFacade);
+  private drawerRef = inject<NzDrawerRef<List>>(NzDrawerRef);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private teamsFacade = inject(TeamsFacade);
+
 
   listsWithWriteAccess$: Observable<List[]>;
 
@@ -37,8 +42,7 @@ export class ListPickerDrawerComponent {
 
   workshopView: boolean = inject(NZ_DRAWER_DATA)?.workshopView;
 
-  constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>,
-              private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade) {
+  constructor() {
 
     this.listsFacade.loadMyLists();
     this.listsFacade.loadListsWithWriteAccess();

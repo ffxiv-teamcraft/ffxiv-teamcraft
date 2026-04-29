@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,7 +22,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -33,9 +33,16 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './achievement.component.html',
     styleUrls: ['./achievement.component.less'],
     standalone: true,
-    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
+    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
 })
 export class AchievementComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  private router = inject(Router);
+  settings = inject(SettingsService);
+
 
   public achievement$= this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -50,11 +57,14 @@ export class AchievementComponent extends TeamcraftPageComponent {
 
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
-  constructor(private route: ActivatedRoute, private i18n: I18nToolsService,
-              public translate: TranslateService, private lazyData: LazyDataFacade,
-              private router: Router, public settings: SettingsService,
-              seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'achievements', 'achievementId');
 
     this.rewards$ = this.achievement$.pipe(

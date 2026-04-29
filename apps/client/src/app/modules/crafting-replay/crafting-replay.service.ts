@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IpcService } from '../../core/electron/ipc.service';
 import { combineLatest, merge, Observable } from 'rxjs';
 import { distinctUntilKeyChanged, filter, map, scan, shareReplay, switchMap, withLatestFrom } from 'rxjs/operators';
@@ -14,6 +14,12 @@ import { collection, doc, Firestore, Timestamp } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class CraftingReplayService {
+  private ipc = inject(IpcService);
+  private firestore = inject(Firestore);
+  private craftingReplayFacade = inject(CraftingReplayFacade);
+  private lazyData = inject(LazyDataFacade);
+  private env = inject(EnvironmentService);
+
 
   public static readonly CRAFTING_EVENT_ID = 0xA0001;
 
@@ -32,10 +38,6 @@ export class CraftingReplayService {
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private ipc: IpcService, private firestore: Firestore, private craftingReplayFacade: CraftingReplayFacade,
-              private lazyData: LazyDataFacade, private env: EnvironmentService) {
-  }
 
   public init(): void {
     if (this.ipc.available) {

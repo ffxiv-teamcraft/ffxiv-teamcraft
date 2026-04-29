@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as CraftingReplayActions from './crafting-replay.actions';
 import { loadCraftingReplays } from './crafting-replay.actions';
@@ -13,6 +13,12 @@ import { from } from 'rxjs';
 
 @Injectable()
 export class CraftingReplayEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private serializer = inject(NgSerializerService);
+  private craftingReplayDbService = inject(CraftingReplayDbService);
+  private afs = inject(Functions);
+
   static readonly LOCALSTORAGE_KEY = 'crafting-replays';
 
   static readonly MAX_LOG_SIZE = 100;
@@ -103,10 +109,6 @@ export class CraftingReplayEffects {
       })
     );
   });
-
-  constructor(private actions$: Actions, private authFacade: AuthFacade, private serializer: NgSerializerService,
-              private craftingReplayDbService: CraftingReplayDbService, private afs: Functions) {
-  }
 
   private getLocalstore(): CraftingReplay[] {
     return this.serializer.deserialize(JSON.parse(localStorage.getItem(CraftingReplayEffects.LOCALSTORAGE_KEY) || '[]'), [CraftingReplay]);

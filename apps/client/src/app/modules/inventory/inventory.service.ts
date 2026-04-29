@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
 import { debounceTime, distinctUntilChanged, filter, first, map, scan, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, connectable, merge, Observable, of, Subject } from 'rxjs';
@@ -42,6 +42,17 @@ import { InventoryCaptureStatus } from './inventory-capture-status';
   providedIn: 'root'
 })
 export class InventoryService {
+  private ipc = inject(IpcService);
+  private authFacade = inject(AuthFacade);
+  private translate = inject(TranslateService);
+  private retainersService = inject(RetainersService);
+  private serializer = inject(NgSerializerService);
+  private http = inject(HttpClient);
+  private settings = inject(SettingsService);
+  private modal = inject(NzModalService);
+  private lazyData = inject(LazyDataFacade);
+  private platform = inject(PlatformService);
+
 
   private _inventoryPatches$ = new Subject<InventoryPatch>();
 
@@ -96,11 +107,7 @@ export class InventoryService {
 
   public status$ = new BehaviorSubject<InventoryCaptureStatus>(InventoryCaptureStatus.RUNNING);
 
-  constructor(private ipc: IpcService, private authFacade: AuthFacade,
-              private translate: TranslateService, private retainersService: RetainersService,
-              private serializer: NgSerializerService, private http: HttpClient,
-              private settings: SettingsService, private modal: NzModalService,
-              private lazyData: LazyDataFacade, private platform: PlatformService) {
+  constructor() {
     if (!this.platform.isDesktop()) {
       this.inventory$ = of(new UserInventory());
       return;

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProfitsService } from '../profits.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -24,7 +24,7 @@ import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-ico
 import { NgTemplateOutlet, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -35,9 +35,15 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./profits-helper.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTableModule, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, NzSpinModule, NzGridModule, NzCardModule, NzCheckboxModule, FormsModule, NgTemplateOutlet, NzInputNumberModule, NzEmptyModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, JobUnicodePipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzTableModule, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, NzSpinModule, NzGridModule, NzCardModule, NzCheckboxModule, FormsModule, NgTemplateOutlet, NzInputNumberModule, NzEmptyModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, JobUnicodePipe]
 })
 export class ProfitsHelperComponent {
+  private profitsService = inject(ProfitsService);
+  private authFacade = inject(AuthFacade);
+  translate = inject(TranslateService);
+  private listPicker = inject(ListPickerService);
+  settings = inject(SettingsService);
+
 
   loadingCrafting = false;
 
@@ -108,11 +114,6 @@ export class ProfitsHelperComponent {
   list: ListAdditionRecord[] = [];
 
   itemsInList: Record<number, 1> = {};
-
-  constructor(private profitsService: ProfitsService, private authFacade: AuthFacade,
-              public translate: TranslateService, private listPicker: ListPickerService,
-              public settings: SettingsService) {
-  }
 
   addItemToList(row: ProfitEntry): void {
     if (!this.list.some(r => r.id === +row.id)) {

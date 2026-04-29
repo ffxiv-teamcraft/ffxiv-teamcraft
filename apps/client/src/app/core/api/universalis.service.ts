@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { MarketboardItem } from './market/marketboard-item';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -20,6 +20,12 @@ import { chunk, compact } from 'lodash';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
+  private http = inject(HttpClient);
+  private lazyData = inject(LazyDataFacade);
+  private authFacade = inject(AuthFacade);
+  private ipc = inject(IpcService);
+  private settings = inject(SettingsService);
+
 
   private cid$: Observable<string> = this.authFacade.user$.pipe(
     map(user => user.cid),
@@ -34,10 +40,6 @@ export class UniversalisService {
     distinctUntilChanged(),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private http: HttpClient, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
-              private ipc: IpcService, private settings: SettingsService) {
-  }
 
   public getDCPrices(dc: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
     return this.http.get<any>(`https://universalis.app/api/${dc}/${itemIds.join(',')}`)

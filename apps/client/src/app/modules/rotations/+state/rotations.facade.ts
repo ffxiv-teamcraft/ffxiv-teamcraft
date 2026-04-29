@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { RotationsState } from './rotations.reducer';
 import { rotationsQuery } from './rotations.selectors';
@@ -21,6 +21,12 @@ import { DefaultConsumables } from '../../../model/user/default-consumables';
 
 @Injectable()
 export class RotationsFacade {
+  private store = inject<Store<{
+    rotations: RotationsState;
+}>>(Store);
+  private authFacade = inject(AuthFacade);
+  private actions$ = inject(Actions);
+
   loading$ = this.store.select(rotationsQuery.getLoading);
 
   allRotations$ = this.store.select(rotationsQuery.getAllRotations);
@@ -38,10 +44,6 @@ export class RotationsFacade {
     ofType<RotationPersisted>(RotationsActionTypes.RotationPersisted),
     map(action => action.key)
   );
-
-  constructor(private store: Store<{ rotations: RotationsState }>,
-              private authFacade: AuthFacade, private actions$: Actions) {
-  }
 
   createRotation(): void {
     this.authFacade.user$.pipe(

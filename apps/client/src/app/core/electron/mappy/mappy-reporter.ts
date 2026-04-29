@@ -71,6 +71,12 @@ export interface MappyReporterState {
   providedIn: 'root'
 })
 export class MappyReporterService {
+  private ipc = inject(IpcService);
+  private lazyData = inject(LazyDataFacade);
+  private authFacade = inject(AuthFacade);
+  private eorzeaFacade = inject(EorzeaFacade);
+  private mapService = inject(MapService);
+
 
   #auth = inject(AuthFacade);
 
@@ -133,10 +139,6 @@ export class MappyReporterService {
     10264,
     13159
   ];
-
-  constructor(private ipc: IpcService, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
-              private eorzeaFacade: EorzeaFacade, private mapService: MapService) {
-  }
 
   public start(): void {
     this.authFacade.user$.pipe(first()).subscribe(user => {

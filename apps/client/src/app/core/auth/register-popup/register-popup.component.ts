@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -21,13 +21,17 @@ import { NzFormModule } from 'ng-zorro-antd/form';
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzWaveModule, NzAlertModule, NzDividerModule, TranslateModule]
 })
 export class RegisterPopupComponent {
+  private fb = inject(UntypedFormBuilder);
+  private authFacade = inject(AuthFacade);
+  private modalRef = inject(NzModalRef);
+  platform = inject(PlatformService);
+
 
   form: UntypedFormGroup;
 
   errorMessageCode: string;
 
-  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef, public platform: PlatformService) {
+  constructor() {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],

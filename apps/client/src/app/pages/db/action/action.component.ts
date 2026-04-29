@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,7 +25,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -36,9 +36,15 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './action.component.html',
   styleUrls: ['./action.component.less'],
   standalone: true,
-  imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, XivapiActionTooltipDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyRowPipe, NzPipesModule]
+  imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, XivapiActionTooltipDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyRowPipe, NzPipesModule]
 })
 export class ActionComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   public action$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -94,10 +100,14 @@ export class ActionComponent extends TeamcraftPageComponent {
     })
   );
 
-  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              router: Router, public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const router = inject(Router);
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+
 
     route.paramMap.pipe(
       takeUntil(this.onDestroy$),

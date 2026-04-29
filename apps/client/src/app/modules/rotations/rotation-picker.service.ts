@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { TranslateService } from '@ngx-translate/core';
 import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation-picker-drawer.component';
@@ -12,9 +12,10 @@ import { Craft } from '@ffxiv-teamcraft/simulator';
   providedIn: 'root'
 })
 export class RotationPickerService {
+  private nzDrawer = inject(NzDrawerService);
+  private translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
 
-  constructor(private nzDrawer: NzDrawerService, private translate: TranslateService, private lazyData: LazyDataFacade) {
-  }
 
   pickRotation(itemId: number, recipeId: string, recipe?: Partial<Craft>, statsStr?: string): Observable<CraftingRotation> {
     return this.nzDrawer.create<RotationPickerDrawerComponent, Partial<RotationPickerDrawerComponent>, CraftingRotation>({

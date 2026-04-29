@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { animalsSpawnData } from '../animals-spawn-data';
@@ -27,6 +27,9 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     imports: [NzPageHeaderModule, NzTableModule, I18nNameComponent, MapPositionComponent, ItemIconComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe]
 })
 export class IslandAnimalsComponent {
+  private lazyData = inject(LazyDataFacade);
+  private alarmsFacade = inject(AlarmsFacade);
+
 
   public animalsWithData$ = this.lazyData.getEntry('islandAnimals').pipe(
     map(animals => {
@@ -65,9 +68,6 @@ export class IslandAnimalsComponent {
   alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
-
-  constructor(private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade) {
-  }
 
   public addAlarm(display: AlarmDisplay, group?: AlarmGroup): void {
     if (display.registered) {

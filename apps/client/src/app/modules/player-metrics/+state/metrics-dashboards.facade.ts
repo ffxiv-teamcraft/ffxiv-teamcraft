@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -17,6 +17,8 @@ import { combineLatest } from 'rxjs';
 
 @Injectable()
 export class MetricsDashboardsFacade {
+  private store = inject<Store<fromMetricsDashboards.MetricsDashboardsPartialState>>(Store);
+
   loaded$ = this.store.pipe(
     select(MetricsDashboardsSelectors.getMetricsDashboardsLoaded)
   );
@@ -35,11 +37,6 @@ export class MetricsDashboardsFacade {
     }),
     shareReplay(1)
   );
-
-  constructor(
-    private store: Store<fromMetricsDashboards.MetricsDashboardsPartialState>
-  ) {
-  }
 
   loadAll(): void {
     this.store.dispatch(loadMetricsDashboards());

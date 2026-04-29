@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ListsFacade } from '../+state/lists.facade';
 import { List } from '../model/list';
@@ -23,11 +23,16 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, LowerCasePipe, TranslateModule]
 })
 export class ListCompletionPopupComponent extends DialogComponent {
+  private ref = inject(NzModalRef);
+  private listsFacade = inject(ListsFacade);
+  private router = inject(Router);
+  private commissionsFacade = inject(CommissionsFacade);
+  private listPricingService = inject(ListPricingService);
+
 
   list: List;
 
-  constructor(private ref: NzModalRef, private listsFacade: ListsFacade, private router: Router,
-              private commissionsFacade: CommissionsFacade, private listPricingService: ListPricingService) {
+  constructor() {
     super();
     this.patchData();
   }

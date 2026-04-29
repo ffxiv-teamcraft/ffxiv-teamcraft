@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform, inject } from '@angular/core';
 import { isNil } from 'lodash';
 import { combineLatest, isObservable, Observable, of, Subscription } from 'rxjs';
 import { I18nName } from '@ffxiv-teamcraft/types';
@@ -28,6 +28,9 @@ type I18nInput =
   standalone: true
 })
 export class I18nPipe implements PipeTransform, OnDestroy {
+  private readonly i18n = inject(I18nToolsService);
+  private readonly cd = inject(ChangeDetectorRef);
+
   private currentValue?: string;
 
   public input?: I18nInput;
@@ -62,9 +65,6 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   ).subscribe((value: string) => {
     this.setCurrentValue(value);
   });
-
-  constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {
-  }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();

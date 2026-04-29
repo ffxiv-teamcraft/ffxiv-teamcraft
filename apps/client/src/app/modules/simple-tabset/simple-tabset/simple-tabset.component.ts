@@ -1,4 +1,4 @@
-import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, QueryList } from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, QueryList, inject } from '@angular/core';
 import { SimpleTabComponent } from '../simple-tab/simple-tab.component';
 
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -12,12 +12,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule]
 })
 export class SimpleTabsetComponent implements AfterContentInit {
+  private cd = inject(ChangeDetectorRef);
+
 
   @ContentChildren(SimpleTabComponent)
   tabs: QueryList<SimpleTabComponent>;
-
-  constructor(private cd: ChangeDetectorRef) {
-  }
 
   selectTab(tab: SimpleTabComponent): void {
     this.tabs.toArray().forEach(t => (t.active = false));

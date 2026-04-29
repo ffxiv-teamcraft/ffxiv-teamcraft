@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { first, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
@@ -23,6 +23,9 @@ import { DialogComponent } from '../../../../core/dialog.component';
   imports: [FlexModule, NzGridModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class StatsPopupComponent extends DialogComponent implements OnInit {
+  private authFacade = inject(AuthFacade);
+  private modalRef = inject(NzModalRef);
+
 
   jobId: number;
 
@@ -30,7 +33,7 @@ export class StatsPopupComponent extends DialogComponent implements OnInit {
 
   allSets$: Observable<GearSet[]>;
 
-  constructor(private authFacade: AuthFacade, private modalRef: NzModalRef) {
+  constructor() {
     super();
     this.patchData();
   }

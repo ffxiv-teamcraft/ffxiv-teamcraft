@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -32,8 +32,11 @@ import { Observable } from 'rxjs';
 ]
 })
 export class FishMoochesComponent {
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
   public readonly loading$ = this.fishCtx.moochesByFish$.pipe(
-    map((res) => res.loading)
+    map(() => false)
   );
 
   public readonly mooches$: Observable<number[]> = this.fishCtx.moochesByFish$.pipe(
@@ -42,7 +45,4 @@ export class FishMoochesComponent {
     map(rows => rows.filter(row => row > -1)),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

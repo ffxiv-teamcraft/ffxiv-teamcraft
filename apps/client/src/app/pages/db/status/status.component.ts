@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,7 +16,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -27,9 +27,16 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './status.component.html',
     styleUrls: ['./status.component.less'],
     standalone: true,
-    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe]
+    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe]
 })
 export class StatusComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  settings = inject(SettingsService);
+
 
   public status$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -40,11 +47,14 @@ export class StatusComponent extends TeamcraftPageComponent {
 
   public links$: Observable<{ title: string, icon: string, url: string }[]> = of([]);
 
-  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService,
-              private translate: TranslateService, private router: Router,
-              public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'statuses', 'statusId');
   }
 

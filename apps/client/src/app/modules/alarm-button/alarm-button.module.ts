@@ -6,7 +6,7 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
@@ -22,7 +22,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
         CoreModule,
         PipesModule,
         NzDropDownModule,
-        NzToolTipModule,
+        NzTooltipModule,
         NzIconModule,
         AlarmButtonComponent
     ]

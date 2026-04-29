@@ -91,7 +91,7 @@
               <div class="quality-bar" fxFlex="1 1 auto">
                 @for (threshold of thresholds; track threshold) {
                   <div
-                    [ngStyle]="{left: 100 * threshold / result.simulation.recipe.quality + '%'}"
+                    [style.left]="100 * threshold / result.simulation.recipe.quality + '%'"
                     class="threshold-marker" fxLayout="row" fxLayoutAlign="flex-start flex-start">
                     <div class="marker"></div>
                     <div class="value">{{(threshold / 10) | number: '1.0-0'}}</div>

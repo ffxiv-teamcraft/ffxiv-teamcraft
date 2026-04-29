@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { catchError, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
@@ -27,6 +27,11 @@ import { uniqBy } from 'lodash';
 
 @Injectable()
 export class FishTrainEffects {
+  private actions$ = inject(Actions);
+  private fishTrainService = inject(FishTrainService);
+  private authFacade = inject(AuthFacade);
+  private facade = inject(FishTrainFacade);
+
 
   loadFishTrains$ = createEffect(() => {
     return this.actions$.pipe(
@@ -134,8 +139,4 @@ export class FishTrainEffects {
       })
     );
   });
-
-  constructor(private actions$: Actions, private fishTrainService: FishTrainService,
-              private authFacade: AuthFacade, private facade: FishTrainFacade) {
-  }
 }

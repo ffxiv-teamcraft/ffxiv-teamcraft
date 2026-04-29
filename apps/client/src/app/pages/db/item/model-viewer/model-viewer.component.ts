@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -8,6 +8,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     standalone: true
 })
 export class ModelViewerComponent implements OnInit {
+  private sanitizer = inject(DomSanitizer);
+
 
   @Input()
   slot: number | string;
@@ -16,9 +18,6 @@ export class ModelViewerComponent implements OnInit {
   models: string[];
 
   url: SafeHtml;
-
-  constructor(private sanitizer: DomSanitizer) {
-  }
 
   ngOnInit() {
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(`https://garlandtools.org/db/3d/viewer.html?id=${this.slot}/${this.models[0]}`);

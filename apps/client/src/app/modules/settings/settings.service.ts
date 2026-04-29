@@ -1,4 +1,4 @@
-import { Injectable, Optional } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
@@ -15,6 +15,9 @@ import { IS_HEADLESS } from '../../../environments/is-headless';
   providedIn: 'root'
 })
 export class SettingsService {
+  private ipc = inject(IpcService, { optional: true })!;
+  private translate = inject(TranslateService);
+
 
   public regionChange$ = new Subject<{ previous: Region, next: Region }>();
 
@@ -24,7 +27,7 @@ export class SettingsService {
 
   public settingsChange$ = new Subject<string>();
 
-  constructor(@Optional() private ipc: IpcService, private translate: TranslateService) {
+  constructor() {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
     if (this.ipc) {
       this.ipc.on('update-settings', (e, settings) => {

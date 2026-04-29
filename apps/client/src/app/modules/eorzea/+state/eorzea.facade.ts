@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { EorzeaPartialState } from './eorzea.reducer';
 import { AddStatus, RemoveStatus, Reset, SetBait, SetMap, SetPcapWeather, SetStatuses, SetZone } from './eorzea.actions';
@@ -21,6 +21,13 @@ type StatBonus = { percent?: number, flat?: number, max?: number };
   providedIn: 'root'
 })
 export class EorzeaFacade {
+  private store = inject<Store<EorzeaPartialState>>(Store);
+  private weatherService = inject(WeatherService);
+  private etime = inject(EorzeanTimeService);
+  private ipc = inject(IpcService);
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+
 
   public zoneId$ = this.store.pipe(select(eorzeaQuery.getZone));
 
@@ -138,12 +145,7 @@ export class EorzeaFacade {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  constructor(private store: Store<EorzeaPartialState>,
-              private weatherService: WeatherService,
-              private etime: EorzeanTimeService,
-              private ipc: IpcService,
-              private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade) {
+  constructor() {
     this.ipc.mainWindowState$.subscribe(state => {
       if (state.eorzea?.mapId) {
         this.setMap(state.eorzea.mapId);

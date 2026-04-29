@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
@@ -23,6 +23,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzAlertModule, NzListModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class AutofillStatsPopupComponent extends TeamcraftComponent {
+  private authFacade = inject(AuthFacade);
+  private eorzeaFacade = inject(EorzeaFacade);
+
 
   private completion$: BehaviorSubject<{ [index: number]: boolean }> = new BehaviorSubject({});
 
@@ -37,8 +40,7 @@ export class AutofillStatsPopupComponent extends TeamcraftComponent {
     })
   );
 
-  constructor(private authFacade: AuthFacade,
-              private eorzeaFacade: EorzeaFacade) {
+  constructor() {
     super();
     this.eorzeaFacade.classJobSet$
       .pipe(takeUntil(this.onDestroy$))

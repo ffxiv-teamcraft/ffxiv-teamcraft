@@ -13,7 +13,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
@@ -34,7 +34,7 @@ import { FavoritesModule } from '../favorites/favorites.module';
     NzCollapseModule,
     NzModalModule,
     NzButtonModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzPopconfirmModule,
     NzIconModule,
     TranslateModule,

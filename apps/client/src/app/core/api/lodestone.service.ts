@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { EMPTY, interval, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
@@ -12,6 +12,13 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({ providedIn: 'root' })
 export class LodestoneService {
+  private userService = inject(UserService);
+  private http = inject(HttpClient);
+  private ipc = inject(IpcService);
+  private ngZone = inject(NgZone);
+  private notification = inject(NzNotificationService);
+  private translate = inject(TranslateService);
+
 
   private static QUEUE: Subject<void>[] = [];
 
@@ -19,9 +26,7 @@ export class LodestoneService {
 
   private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
-  constructor(private userService: UserService, private http: HttpClient,
-              private ipc: IpcService, private ngZone: NgZone, private notification: NzNotificationService,
-              private translate: TranslateService) {
+  constructor() {
     if (!LodestoneService.INTERVAL) {
       LodestoneService.INTERVAL = interval(200).subscribe(() => {
         const subject = LodestoneService.QUEUE.shift();

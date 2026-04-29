@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { CraftingAction, GearSet, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
@@ -36,7 +36,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { ClipboardDirective } from '../../../../core/clipboard.directive';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { RotationResultTagComponent } from '../rotation-result-tag/rotation-result-tag.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTagModule } from 'ng-zorro-antd/tag';
@@ -51,9 +51,25 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     styleUrls: ['./rotation-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, FlexModule, UserAvatarComponent, NzTagModule, NzButtonModule, NzIconModule, NzToolTipModule, RotationResultTagComponent, NzWaveModule, ClipboardDirective, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, ActionComponent, AsyncPipe, DecimalPipe, TranslateModule]
+    imports: [NzCollapseModule, FlexModule, UserAvatarComponent, NzTagModule, NzButtonModule, NzIconModule, NzTooltipModule, RotationResultTagComponent, NzWaveModule, ClipboardDirective, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, ActionComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPanelComponent implements OnInit {
+  private linkTools = inject(LinkToolsService);
+  private rotationsFacade = inject(RotationsFacade);
+  translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  authFacade = inject(AuthFacade);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private router = inject(Router);
+  consumablesService = inject(ConsumablesService);
+  freeCompanyActionsService = inject(FreeCompanyActionsService);
+  private ipc = inject(IpcService);
+  platformService = inject(PlatformService);
+  private simulationService = inject(SimulationService);
+  private settings = inject(SettingsService);
+  private lazyData = inject(LazyDataFacade);
+  private environment = inject(EnvironmentService);
+
 
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
 
@@ -88,14 +104,9 @@ export class RotationPanelComponent implements OnInit {
 
   private syncLinkUrl: string;
 
-  constructor(private linkTools: LinkToolsService,
-              private rotationsFacade: RotationsFacade, private message: NzMessageService,
-              public translate: TranslateService, private dialog: NzModalService,
-              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private router: Router, public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
-              public platformService: PlatformService, private simulationService: SimulationService,
-              private settings: SettingsService, private lazyData: LazyDataFacade, private environment: EnvironmentService) {
+  constructor() {
+    const freeCompanyActionsService = this.freeCompanyActionsService;
+
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
       map(rotation => this.registry.deserializeRotation(rotation.rotation))

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 import { AsyncPipe } from '@angular/common';
 import { FishingSpotDatagridComponent } from '../fishing-spot-datagrid/fishing-spot-datagrid.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
@@ -17,16 +17,19 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     templateUrl: './fishing-spot-weather-datagrid.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, NzToolTipModule, FishingSpotDatagridComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, WeatherIconPipe]
+    imports: [NzCardModule, NzTooltipModule, FishingSpotDatagridComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, WeatherIconPipe]
 })
 export class FishingSpotWeatherDatagridComponent {
+  private readonly fishCtx = inject(FishContextService);
+  private readonly lazyData = inject(LazyDataFacade);
+
   @Input()
   public activeFish?: number | undefined;
 
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.weathersBySpotByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.weathersBySpotByFish$.pipe(map(() => false));
 
   public readonly table$ = combineLatest([this.fishCtx.weathersBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),
@@ -39,7 +42,4 @@ export class FishingSpotWeatherDatagridComponent {
       };
     })
   );
-
-  constructor(private readonly fishCtx: FishContextService, private readonly lazyData: LazyDataFacade) {
-  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
@@ -24,9 +24,12 @@ import { AsyncPipe, DatePipe } from '@angular/common';
     templateUrl: './list-history-popup.component.html',
     styleUrls: ['./list-history-popup.component.less'],
     standalone: true,
-    imports: [NzListModule, LazyScrollComponent, UserAvatarComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
+    imports: [NzListModule, LazyScrollComponent, UserAvatarComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class ListHistoryPopupComponent {
+  private listsFacade = inject(ListsFacade);
+  private modalRef = inject(NzModalRef);
+
 
   loading = false;
 
@@ -34,7 +37,9 @@ export class ListHistoryPopupComponent {
     tap(() => this.loading = false)
   );
 
-  constructor(private listsFacade: ListsFacade, private modalRef: NzModalRef) {
+  constructor() {
+    const modalRef = this.modalRef;
+
     modalRef.afterClose.subscribe(() => modalRef.destroy());
   }
 

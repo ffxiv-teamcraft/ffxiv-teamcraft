@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map, switchMap } from 'rxjs/operators';
@@ -20,6 +20,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, ItemIconComponent, I18nNameComponent, MapComponent, AsyncPipe]
 })
 export class IslandCropComponent extends ItemDetailsPopup<IslandCrop> {
+  private lazyData = inject(LazyDataFacade);
+
 
   public gatheringDetails$ = this.details$.pipe(
     switchMap(details => {
@@ -28,8 +30,4 @@ export class IslandCropComponent extends ItemDetailsPopup<IslandCrop> {
       );
     })
   );
-
-  constructor(private lazyData: LazyDataFacade) {
-    super();
-  }
 }

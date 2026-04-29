@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { AlarmDisplay } from './alarm-display';
 import { PersistedAlarm } from './persisted-alarm';
 import { AlarmsFacade } from './+state/alarms.facade';
@@ -13,10 +13,10 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
     standalone: true
 })
 export class AlarmDisplayPipe implements PipeTransform {
+  private alarmsFacade = inject(AlarmsFacade);
+  private etime = inject(EorzeanTimeService);
+  private lazyData = inject(LazyDataFacade);
 
-  constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService,
-              private lazyData: LazyDataFacade) {
-  }
 
   transform(alarm: Partial<PersistedAlarm>): Observable<AlarmDisplay> {
     if (!alarm) {

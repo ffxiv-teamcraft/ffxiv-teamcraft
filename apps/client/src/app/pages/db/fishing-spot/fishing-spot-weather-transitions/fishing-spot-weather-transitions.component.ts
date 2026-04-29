@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { weatherIndex } from '../../../../core/data/sources/weather-index';
 import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
@@ -27,6 +27,11 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishingSpotWeatherTransitionsComponent {
+  readonly utils = inject(FishingSpotUtilsService);
+  readonly translate = inject(TranslateService);
+  private readonly etime = inject(EorzeanTimeService);
+  private readonly weatherService = inject(WeatherService);
+
   public readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
 
   private readonly spot$ = new BehaviorSubject<LazyFishingSpotsDatabasePage | undefined>(undefined);
@@ -59,14 +64,6 @@ export class FishingSpotWeatherTransitionsComponent {
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(
-    public readonly utils: FishingSpotUtilsService,
-    public readonly translate: TranslateService,
-    private readonly etime: EorzeanTimeService,
-    private readonly weatherService: WeatherService
-  ) {
-  }
 
   @Input()
   public set spot(value: LazyFishingSpotsDatabasePage | undefined) {

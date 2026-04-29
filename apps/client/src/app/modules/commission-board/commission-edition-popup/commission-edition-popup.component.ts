@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { CommissionTag } from '../model/commission-tag';
@@ -6,7 +6,7 @@ import { Commission } from '../model/commission';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -26,9 +26,13 @@ import { DialogComponent } from '../../../core/dialog.component';
     styleUrls: ['./commission-edition-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzAlertModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzSelectModule, NzInputNumberModule, NzCheckboxModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, TranslateModule]
+    imports: [NzAlertModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzSelectModule, NzInputNumberModule, NzCheckboxModule, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, TranslateModule]
 })
 export class CommissionEditionPopupComponent extends DialogComponent implements OnInit {
+  private fb = inject(UntypedFormBuilder);
+  private modalRef = inject(NzModalRef);
+  private linkTools = inject(LinkToolsService);
+
 
   commission: Partial<Commission>;
 
@@ -42,10 +46,6 @@ export class CommissionEditionPopupComponent extends DialogComponent implements 
   });
 
   showWarning = localStorage.getItem('cw:s') === null;
-
-  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef, private linkTools: LinkToolsService) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

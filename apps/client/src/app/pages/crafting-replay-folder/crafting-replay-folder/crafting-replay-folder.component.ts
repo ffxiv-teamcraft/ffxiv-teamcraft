@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -23,6 +23,11 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     imports: [PageLoaderComponent, FolderPageComponent, CraftingReplayRowComponent, AsyncPipe]
 })
 export class CraftingReplayFolderComponent extends TeamcraftComponent {
+  private authFacade = inject(AuthFacade);
+  private craftingReplayFacade = inject(CraftingReplayFacade);
+  private foldersFacade = inject(FoldersFacade);
+  private activatedRoute = inject(ActivatedRoute);
+
 
 
   public userId$ = this.authFacade.userId$;
@@ -31,8 +36,7 @@ export class CraftingReplayFolderComponent extends TeamcraftComponent {
 
   public loading = true;
 
-  constructor(private authFacade: AuthFacade, private craftingReplayFacade: CraftingReplayFacade,
-              private foldersFacade: FoldersFacade, private activatedRoute: ActivatedRoute) {
+  constructor() {
     super();
     this.activatedRoute.paramMap.pipe(
       takeUntil(this.onDestroy$)

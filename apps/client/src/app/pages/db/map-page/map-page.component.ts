@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,7 +30,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 
@@ -39,9 +39,15 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
   templateUrl: './map-page.component.html',
   styleUrls: ['./map-page.component.less'],
   standalone: true,
-  imports: [FlexModule, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
+  imports: [FlexModule, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
 })
 export class MapPageComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+
 
   public mapId$: Observable<number>;
 
@@ -59,10 +65,14 @@ export class MapPageComponent extends TeamcraftPageComponent {
 
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
-  constructor(private route: ActivatedRoute, private i18n: I18nToolsService, private translate: TranslateService,
-              router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
-              seo: SeoService) {
+  constructor() {
+    const router = inject(Router);
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+
     route.paramMap.pipe(
       takeUntil(this.onDestroy$),
       switchMap(params => {

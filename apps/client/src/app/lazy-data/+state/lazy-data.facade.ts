@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, shareReplay, skipWhile, switchMap } from 'rxjs/operators';
 import { I18nElement, I18nName, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts, Region } from '@ffxiv-teamcraft/types';
@@ -16,6 +16,10 @@ import { GAME_SERVERS, GAME_SERVERS_PER_DC } from '@ffxiv-teamcraft/data/handmad
   providedIn: 'root'
 })
 export class LazyDataFacade {
+  private state = inject(LazyDataStateService);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+
 
   public patches$ = this.getEntry('patchNames').pipe(
     map(record => Object.values(record)),
@@ -34,9 +38,7 @@ export class LazyDataFacade {
 
   public isLoading$ = this.state.loading$;
 
-  constructor(private state: LazyDataStateService,
-              private settings: SettingsService,
-              private translate: TranslateService) {
+  constructor() {
     this.isLoading$
       .pipe(
         skipWhile(loading => !loading),

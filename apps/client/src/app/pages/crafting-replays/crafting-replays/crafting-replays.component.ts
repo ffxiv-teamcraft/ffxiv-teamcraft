@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CraftingReplayFacade } from '../../../modules/crafting-replay/+state/crafting-replay.facade';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { CraftingReplayService } from '../../../modules/crafting-replay/crafting-replay.service';
@@ -19,7 +19,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { FolderComponent } from '../../../modules/folders/folder/folder.component';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -34,9 +34,17 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     styleUrls: ['./crafting-replays.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, FlexModule, NzAlertModule, NzDividerModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, NzPopconfirmModule, LazyScrollComponent, CraftingReplayRowComponent, AsyncPipe, TranslateModule]
+    imports: [PageLoaderComponent, FlexModule, NzAlertModule, NzDividerModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, NzPopconfirmModule, LazyScrollComponent, CraftingReplayRowComponent, AsyncPipe, TranslateModule]
 })
 export class CraftingReplaysComponent {
+  private craftingReplayFacade = inject(CraftingReplayFacade);
+  private craftingReplayService = inject(CraftingReplayService);
+  translate = inject(TranslateService);
+  private ipc = inject(IpcService);
+  platform = inject(PlatformService);
+  private foldersFacade = inject(FoldersFacade);
+  private authFacade = inject(AuthFacade);
+
 
   public loading$ = this.craftingReplayFacade.loaded$.pipe(map(loaded => !loaded));
 
@@ -68,9 +76,7 @@ export class CraftingReplaysComponent {
 
   public dndConnections = ['replays-root', 'folder-root'];
 
-  constructor(private craftingReplayFacade: CraftingReplayFacade, private craftingReplayService: CraftingReplayService,
-              public translate: TranslateService, private ipc: IpcService, public platform: PlatformService, private foldersFacade: FoldersFacade,
-              private authFacade: AuthFacade) {
+  constructor() {
     this.foldersFacade.loadFolders(FolderContentType.CRAFTING_REPLAY);
     this.craftingReplayFacade.loadAll();
   }

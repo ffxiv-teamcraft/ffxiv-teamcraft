@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MapComponent } from '../map/map.component';
@@ -10,7 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
@@ -22,9 +22,12 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./map-position.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapPositionComponent {
+  private dialog = inject(NzModalService);
+  private i18n = inject(I18nToolsService);
+
   @Input()
   marker: Vector2;
 
@@ -55,9 +58,6 @@ export class MapPositionComponent {
     distinctUntilChanged(([zoneA, mapA], [zoneB, mapB]) => zoneA === zoneB && mapA === mapB),
     switchMap(([zoneId, mapId]) => this.i18n.getNameObservable('places', zoneId >= 0 ? zoneId : mapId))
   );
-
-  constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
-  }
 
   get zoneId(): number | undefined {
     return this.zoneId$.getValue();

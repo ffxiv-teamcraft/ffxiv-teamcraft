@@ -5,7 +5,7 @@ import { ContainerType } from '../../../model/user/inventory/container-type';
 import { Observable, of } from 'rxjs';
 import { ExtractRow, Extracts, getExtract, LazyDataKey } from '@ffxiv-teamcraft/types';
 
-export const INVENTORY_OPTIMIZER: InjectionToken<InventoryOptimizer> = new InjectionToken('InventoryOptimizer');
+export const INVENTORY_OPTIMIZER: InjectionToken<InventoryOptimizer[]> = new InjectionToken('InventoryOptimizer');
 
 export abstract class InventoryOptimizer {
 

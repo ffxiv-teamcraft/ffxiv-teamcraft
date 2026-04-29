@@ -47,6 +47,16 @@ import { addSeconds, differenceInMinutes, differenceInSeconds } from 'date-fns';
   providedIn: 'root'
 })
 export class AlarmsFacade {
+  private store = inject<Store<{
+    alarms: AlarmsState;
+}>>(Store);
+  private etime = inject(EorzeanTimeService);
+  private settings = inject(SettingsService);
+  private weatherService = inject(WeatherService);
+  private lazyData = inject(LazyDataFacade);
+  private gatheringNodesService = inject(GatheringNodesService);
+  private progressService = inject(ProgressPopupService);
+
 
   regenerating = false;
 
@@ -140,12 +150,6 @@ export class AlarmsFacade {
   private legendaryFish: LazyData['legendaryFish'];
 
   private alarmStatusService = inject(AlarmStatusService);
-
-  constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
-              private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataFacade,
-              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
-  }
 
   public isAlarmDone(alarm: PersistedAlarm, etime: Date): boolean {
     const doneStr = localStorage.getItem(`alarm:${alarm.$key}:done`);

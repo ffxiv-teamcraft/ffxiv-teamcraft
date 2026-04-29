@@ -18,7 +18,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ListModule } from '../../modules/list/list.module';
@@ -51,7 +51,7 @@ const routes: Routes = [
     NzAvatarModule,
     ListModule,
     NzGridModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzButtonModule,
     NzIconModule,
     AlarmButtonModule,

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { MetricsDisplayEntry } from '../metrics-display-entry';
 import { MetricType } from '../../model/metric-type';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../filters/metrics-display-filter';
@@ -36,6 +36,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, TutorialStepDirective, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzDividerModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzInputModule, AsyncPipe, TranslateModule, I18nPipe]
 })
 export class MetricsDisplayEditorComponent {
+  private filters = inject(METRICS_DISPLAY_FILTERS);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+
 
   @Input()
   entry: MetricsDisplayEntry;
@@ -62,10 +66,6 @@ export class MetricsDisplayEditorComponent {
 
   // Component display input
   components: string[] = Object.keys(MetricDisplayComponent.COMPONENTS_REGISTRY);
-
-  constructor(@Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[],
-              private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
-  }
 
   getItemNameCompletion(name: string, itemIds: number[]): Observable<{ id: number, name: I18nName }[]> {
     if (this.completionCache.name !== name) {

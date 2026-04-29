@@ -2,7 +2,7 @@ import { InventoryOptimizer } from './inventory-optimizer';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable, of } from 'rxjs';
@@ -11,10 +11,9 @@ import { ExtractRow, LazyDataKey } from '@ffxiv-teamcraft/types';
 
 @Injectable()
 export class OnlyForOneMaterial extends InventoryOptimizer {
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
 
-  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
-    super();
-  }
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ExtractRow): Observable<{ [p: string]: number | string } | null> {
     return this.lazyData.getEntry('recipesIngredientLookup').pipe(

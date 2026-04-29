@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -33,7 +33,7 @@ import { MapComponent } from '../../../modules/map/map/map.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -45,9 +45,19 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     styleUrls: ['./node.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, ItemRarityDirective, NzTagModule, AlarmButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyRowPipe, AlarmDisplayPipe]
+    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, ItemRarityDirective, NzTagModule, AlarmButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class NodeComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  private alarmsFacade = inject(AlarmsFacade);
+  private gatheringNodesService = inject(GatheringNodesService);
+  private mapService = inject(MapService);
+  settings = inject(SettingsService);
+
 
   public node$ = this.route.paramMap.pipe(
     map(params => params.get('nodeId')),
@@ -69,11 +79,9 @@ export class NodeComponent extends TeamcraftPageComponent {
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
-  constructor(private route: ActivatedRoute,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade,
-              private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
-              private mapService: MapService, public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
 
     this.links$ = this.node$.pipe(

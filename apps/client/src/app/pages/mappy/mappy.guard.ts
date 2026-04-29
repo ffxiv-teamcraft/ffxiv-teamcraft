@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Route, RouterStateSnapshot, UrlSegment } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,15 +9,15 @@ import { SettingsService } from '../../modules/settings/settings.service';
   providedIn: 'root'
 })
 export class MappyGuard  {
+  private authFacade = inject(AuthFacade);
+  private settings = inject(SettingsService);
+
 
   private hasAccess$ = this.authFacade.user$.pipe(
     map(user => {
       return user.sekrit && !!this.settings.xivapiKey;
     })
   );
-
-  constructor(private authFacade: AuthFacade, private settings: SettingsService) {
-  }
 
   canActivate(
     route: ActivatedRouteSnapshot,

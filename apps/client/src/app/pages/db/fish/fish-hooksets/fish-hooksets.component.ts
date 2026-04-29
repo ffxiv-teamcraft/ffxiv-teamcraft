@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -24,7 +24,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzDividerModule, NzGridModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, XivapiIconPipe, TugNamePipe]
 })
 export class FishHooksetsComponent {
-  public readonly loading$ = combineLatest([this.fishCtx.hooksetsByFish$, this.fishCtx.tugsByFish$]).pipe(map(([hook, tug]) => hook.loading || tug.loading));
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
+  public readonly loading$ = combineLatest([this.fishCtx.hooksetsByFish$, this.fishCtx.tugsByFish$]).pipe(map(() => false));
 
   public readonly hooksets$ = this.fishCtx.hooksetsByFish$.pipe(
     map((res) => {
@@ -53,7 +56,4 @@ export class FishHooksetsComponent {
     }),
     startWith([])
   );
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

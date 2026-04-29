@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { MateriaService } from '../materia.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
@@ -16,6 +16,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, AsyncPipe]
 })
 export class MateriaSlotIconComponent {
+  private materiaService = inject(MateriaService);
+
 
   @Input()
   equipmentPiece: EquipmentPiece;
@@ -55,10 +57,6 @@ export class MateriaSlotIconComponent {
       return of(0);
     })
   );
-
-
-  constructor(private materiaService: MateriaService) {
-  }
 
   getSlotType(equipmentPiece: EquipmentPiece, index: number): string {
     if (equipmentPiece.materiaSlots > index) {

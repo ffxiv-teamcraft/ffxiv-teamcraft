@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
@@ -28,7 +28,7 @@ import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
-import { User } from '@firebase/auth-types';
+import { User } from 'firebase/auth';
 import { AuthFacade } from './auth.facade';
 import { SupportService } from '../core/patreon/support.service';
 import { diff } from 'deep-diff';
@@ -41,6 +41,20 @@ import { Auth, signInAnonymously } from '@angular/fire/auth';
 
 @Injectable()
 export class AuthEffects {
+  private actions$ = inject(Actions);
+  private auth = inject(Auth);
+  private userService = inject(UserService);
+  private store = inject<Store<{
+    auth: AuthState;
+}>>(Store);
+  private translate = inject(TranslateService);
+  private notificationService = inject(NzNotificationService);
+  private authFacade = inject(AuthFacade);
+  private supportService = inject(SupportService);
+  private logTrackingService = inject(LogTrackingService);
+  private commissionProfileService = inject(CommissionProfileService);
+  private settings = inject(SettingsService);
+
 
 
   getUser$ = createEffect(() => this.actions$.pipe(
@@ -279,11 +293,4 @@ export class AuthEffects {
     }),
     switchMap(() => EMPTY)
   ), { dispatch: false });
-
-  constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
-              private store: Store<{ auth: AuthState }>,
-              private translate: TranslateService, private notificationService: NzNotificationService, private authFacade: AuthFacade,
-              private supportService: SupportService, private logTrackingService: LogTrackingService,
-              private commissionProfileService: CommissionProfileService, private settings: SettingsService) {
-  }
 }

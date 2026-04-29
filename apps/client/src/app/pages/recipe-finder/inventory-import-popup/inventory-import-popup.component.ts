@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { first, map } from 'rxjs/operators';
@@ -20,6 +20,10 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class InventoryImportPopupComponent {
+  private inventoryFacade = inject(InventoryService);
+  private translate = inject(TranslateService);
+  private ref = inject(NzModalRef);
+
 
   public containers$: Observable<string[]> = this.inventoryFacade.inventory$.pipe(
     map(inventory => {
@@ -39,10 +43,6 @@ export class InventoryImportPopupComponent {
   );
 
   public selectedContainers: string[] = [];
-
-  constructor(private inventoryFacade: InventoryService, private translate: TranslateService,
-              private ref: NzModalRef) {
-  }
 
   confirm(): void {
     this.inventoryFacade.inventory$.pipe(

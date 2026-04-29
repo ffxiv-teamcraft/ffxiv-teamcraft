@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -19,15 +19,15 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class AriyalaImportPopupComponent {
+  private gearsetsFacade = inject(GearsetsFacade);
+  private modalRef = inject(NzModalRef);
+
 
   public importLink: string;
 
   public importLinkSupported: boolean;
 
   public gearsetName: string;
-
-  constructor(private gearsetsFacade: GearsetsFacade, private modalRef: NzModalRef) {
-  }
 
   updateLinkSupport(): void {
     if (this.importLink === undefined) {

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTip } from './rotation-tip';
 import { Class, Instantiable } from '@kaiu/serializer';
@@ -8,9 +8,8 @@ import { ROTATION_TIPS } from './rotation-tips.module';
   providedIn: 'root'
 })
 export class RotationTipsService {
+  private tips = inject(ROTATION_TIPS);
 
-  constructor(@Inject(ROTATION_TIPS) private tips: Class<RotationTip>[]) {
-  }
 
   public getTips(result: SimulationResult): RotationTip[] {
     if (result.steps.length === 0) {

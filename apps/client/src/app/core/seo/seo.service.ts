@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoMetaConfig } from './seo-meta-config';
 
@@ -6,11 +6,11 @@ import { SeoMetaConfig } from './seo-meta-config';
   providedIn: 'root'
 })
 export class SeoService {
+  private meta = inject(Meta);
+  private title = inject(Title);
+
 
   private config: SeoMetaConfig;
-
-  constructor(private meta: Meta, private title: Title) {
-  }
 
   public setConfig(config: Partial<SeoMetaConfig>): void {
     this.config = {

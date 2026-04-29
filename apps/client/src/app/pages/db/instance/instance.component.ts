@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -26,7 +26,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
@@ -36,9 +36,16 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './instance.component.html',
     styleUrls: ['./instance.component.less'],
     standalone: true,
-    imports: [FlexModule, DbButtonComponent, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe]
+    imports: [FlexModule, DbButtonComponent, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe]
 })
 export class InstanceComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  settings = inject(SettingsService);
+
 
   public lazyInstance$: Observable<LazyInstance>;
 
@@ -46,10 +53,14 @@ export class InstanceComponent extends TeamcraftPageComponent {
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
-  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'instances', 'instanceId');
 
     const instanceId$ = this.route.paramMap.pipe(

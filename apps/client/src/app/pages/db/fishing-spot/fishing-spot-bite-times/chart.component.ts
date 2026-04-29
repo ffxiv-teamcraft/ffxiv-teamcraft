@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, OnInit, OnChanges, SimpleChanges, Output, EventEmitter, NgZone } from '@angular/core';
+import { Component, Input, ElementRef, OnInit, OnChanges, SimpleChanges, Output, EventEmitter, NgZone, inject } from '@angular/core';
 import 'chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js';
 
 declare const Chart;
@@ -10,6 +10,9 @@ declare const Chart;
     standalone: true
 })
 export class ChartComponent implements OnInit, OnChanges {
+  private elementRef = inject(ElementRef);
+  private ngZone = inject(NgZone);
+
   chart: any;
 
   @Input() type: string;
@@ -21,8 +24,6 @@ export class ChartComponent implements OnInit, OnChanges {
   @Output() clickElement = new EventEmitter();
 
   private canvas;
-
-  constructor(private elementRef: ElementRef, private ngZone: NgZone) { }
 
   ngOnInit() {
     this.create();

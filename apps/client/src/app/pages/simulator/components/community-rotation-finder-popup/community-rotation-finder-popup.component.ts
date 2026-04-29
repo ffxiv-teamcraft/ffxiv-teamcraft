@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CraftingRotationService } from '../../../../core/database/crafting-rotation/crafting-rotation.service';
 import {
   Craft,
@@ -22,7 +22,7 @@ import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { ActionComponent } from '../action/action.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
@@ -43,9 +43,17 @@ import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.com
   styleUrls: ['./community-rotation-finder-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NzEmptyModule, NzDividerModule, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule, ItemIconComponent, I18nNameComponent]
+  imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NzEmptyModule, NzDividerModule, UserAvatarComponent, NzButtonModule, NzIconModule, NzTooltipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule, ItemIconComponent, I18nNameComponent]
 })
 export class CommunityRotationFinderPopupComponent extends DialogComponent implements OnInit {
+  private rotationsService = inject(CraftingRotationService);
+  private modalRef = inject(NzModalRef);
+  private simulationService = inject(SimulationService);
+  private settings = inject(SettingsService);
+  translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  consumablesService = inject(ConsumablesService);
+
 
   recipe: Craft;
 
@@ -63,13 +71,6 @@ export class CommunityRotationFinderPopupComponent extends DialogComponent imple
   amountToShow$ = new BehaviorSubject(3);
 
   showRotationsAboveStats$ = new BehaviorSubject(false);
-
-  constructor(private rotationsService: CraftingRotationService,
-              private modalRef: NzModalRef, private simulationService: SimulationService,
-              private settings: SettingsService, public translate: TranslateService,
-              private lazyData: LazyDataFacade, public consumablesService: ConsumablesService) {
-    super();
-  }
 
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);

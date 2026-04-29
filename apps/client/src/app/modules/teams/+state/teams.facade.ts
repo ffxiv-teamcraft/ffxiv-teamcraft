@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -16,6 +16,12 @@ import { TeamInvite } from '../../../model/team/team-invite';
   providedIn: 'root'
 })
 export class TeamsFacade {
+  private store = inject<Store<{
+    teams: TeamsState;
+}>>(Store);
+  private authFacade = inject(AuthFacade);
+  private teamInviteService = inject(TeamInviteService);
+
   loading$ = this.store.select(teamsQuery.getLoaded).pipe(map(loaded => !loaded));
 
   allTeams$ = this.store.select(teamsQuery.getAllTeams);
@@ -28,9 +34,6 @@ export class TeamsFacade {
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private store: Store<{ teams: TeamsState }>, private authFacade: AuthFacade, private teamInviteService: TeamInviteService) {
-  }
 
   createTeamInvite(team: Team, infinite = false): void {
     const invite = new TeamInvite();

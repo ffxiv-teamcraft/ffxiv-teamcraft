@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CharacterLinkPopupComponent } from './character-link-popup/character-link-popup.component';
 import { OauthService } from './oauth.service';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -25,7 +25,6 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
         ReactiveFormsModule,
         TranslateModule,
         NzModalModule,
-        NzMessageModule,
         NzFormModule,
         NzAlertModule,
         NzDividerModule,

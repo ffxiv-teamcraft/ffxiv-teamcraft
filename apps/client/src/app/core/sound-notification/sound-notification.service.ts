@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { SoundNotificationType } from './sound-notification-type';
 
@@ -6,9 +6,8 @@ import { SoundNotificationType } from './sound-notification-type';
   providedIn: 'root'
 })
 export class SoundNotificationService {
+  private settings = inject(SettingsService);
 
-  constructor(private settings: SettingsService) {
-  }
 
   public play(type: SoundNotificationType): void {
     const notificationSettings = this.settings.getNotificationSettings(type);

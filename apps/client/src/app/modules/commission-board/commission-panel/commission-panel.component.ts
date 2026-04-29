@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { Commission } from '../model/commission';
 import { Router, RouterLink } from '@angular/router';
 import { ListRow } from '../../list/model/list-row';
@@ -22,7 +22,7 @@ import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
@@ -37,9 +37,15 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     styleUrls: ['./commission-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, FlexModule, NzGridModule, UserAvatarComponent, NzBadgeModule, NzTagModule, NzToolTipModule, ItemIconComponent, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, RouterLink, NzDropDownModule, NzMenuModule, NzPopconfirmModule, LazyScrollComponent, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, TeamcraftLinkPipe, I18nPipe]
+    imports: [NzCollapseModule, FlexModule, NzGridModule, UserAvatarComponent, NzBadgeModule, NzTagModule, NzTooltipModule, ItemIconComponent, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, RouterLink, NzDropDownModule, NzMenuModule, NzPopconfirmModule, LazyScrollComponent, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, TeamcraftLinkPipe, I18nPipe]
 })
 export class CommissionPanelComponent implements OnInit {
+  private router = inject(Router);
+  translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  commissionsFacade = inject(CommissionsFacade);
+  settings = inject(SettingsService);
+
 
   CommissionStatus = CommissionStatus;
 
@@ -54,11 +60,6 @@ export class CommissionPanelComponent implements OnInit {
   hasNotifications$: Observable<boolean>;
 
   public userId$: Observable<string> = this.authFacade.userId$;
-
-  constructor(private router: Router, public translate: TranslateService,
-              private authFacade: AuthFacade, public commissionsFacade: CommissionsFacade,
-              public settings: SettingsService) {
-  }
 
   openCommission(): void {
     this.router.navigate(['/commissions/', this.commission.$key]);

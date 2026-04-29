@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { PlatformService } from './platform.service';
 
 @Injectable()
 export class LinkToolsService {
+  private platformService = inject(PlatformService);
 
-  constructor(private platformService: PlatformService) {
-  }
 
   public getLink(target: string): string {
     if (target[0] !== '/') {

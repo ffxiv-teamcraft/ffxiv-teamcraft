@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { LinkToolsService } from '../../core/tools/link-tools.service';
 
 @Pipe({
@@ -6,9 +6,8 @@ import { LinkToolsService } from '../../core/tools/link-tools.service';
     standalone: true
 })
 export class TeamcraftLinkPipe implements PipeTransform {
+  private linkTools = inject(LinkToolsService);
 
-  constructor(private linkTools: LinkToolsService) {
-  }
 
   transform(path: string): string {
     return this.linkTools.getLink(path);

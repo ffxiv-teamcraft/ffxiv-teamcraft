@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { observeInput } from '../../../../../core/rxjs/observe-input';
 import { combineLatest } from 'rxjs';
@@ -17,6 +17,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzPopoverModule, NzProgressModule, AsyncPipe, TranslateModule]
 })
 export class VesselRankColumnComponent {
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+
   @Input() rank: number;
 
   @Input() currentExperience: number;
@@ -28,9 +30,6 @@ export class VesselRankColumnComponent {
   totalExperienceForNextRank$ = observeInput(this, 'totalExperienceForNextRank');
 
   @Input() maxRank: number;
-
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
-  }
 
   rankupPercent$ = combineLatest([this.currentExperience$, this.totalExperienceForNextRank$]).pipe(
     map(([current, nextRank]) => {

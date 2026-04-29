@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -32,7 +32,7 @@ import { AetheryteNamePipe } from '../../../pipes/pipes/aetheryte-name.pipe';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -40,7 +40,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { ColorPickerModule } from 'ngx-color-picker';
+import { ColorPickerDirective } from 'ngx-color-picker';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { AsyncPipe, NgTemplateOutlet, UpperCasePipe } from '@angular/common';
@@ -59,9 +59,26 @@ import { NzAlertComponent } from 'ng-zorro-antd/alert';
   templateUrl: './settings-popup.component.html',
   styleUrls: ['./settings-popup.component.less'],
   standalone: true,
-  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe, NzAlertComponent]
+  imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerDirective, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzTooltipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe, NzAlertComponent]
 })
 export class SettingsPopupComponent {
+  settings = inject(SettingsService);
+  translate = inject(TranslateService);
+  platform = inject(PlatformService);
+  private authFacade = inject(AuthFacade);
+  private auth = inject(Auth);
+  private message = inject(NzMessageService);
+  ipc = inject(IpcService);
+  private userService = inject(UserService);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private dialog = inject(NzModalService);
+  private inventoryFacade = inject(InventoryService);
+  private lazyData = inject(LazyDataFacade);
+  private mappy = inject(MappyReporterService);
+  private navigationSidebarService = inject(NavigationSidebarService);
+  private patreonService = inject(SupportService);
+  private soundNotificationService = inject(SoundNotificationService);
+
 
   selectedTab = 0;
 
@@ -200,14 +217,7 @@ export class SettingsPopupComponent {
       };
     }, {});
 
-  constructor(public settings: SettingsService, public translate: TranslateService,
-              public platform: PlatformService, private authFacade: AuthFacade,
-              private auth: Auth, private message: NzMessageService,
-              public ipc: IpcService, private userService: UserService, private customLinksFacade: CustomLinksFacade,
-              private dialog: NzModalService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataFacade, private mappy: MappyReporterService,
-              private navigationSidebarService: NavigationSidebarService, private patreonService: SupportService,
-              private soundNotificationService: SoundNotificationService) {
+  constructor() {
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });

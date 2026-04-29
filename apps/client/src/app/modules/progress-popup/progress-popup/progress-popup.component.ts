@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map, scan, skip, startWith } from 'rxjs/operators';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -15,6 +15,8 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [NzProgressModule, NzSpinModule, AsyncPipe]
 })
 export class ProgressPopupComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+
 
   @Input()
   public operation$: Observable<any>;
@@ -23,10 +25,6 @@ export class ProgressPopupComponent extends DialogComponent implements OnInit {
   public count: number;
 
   public progress$: Observable<any>;
-
-  constructor(private modalRef: NzModalRef) {
-    super();
-  }
 
   ngOnInit() {
     this.patchData();

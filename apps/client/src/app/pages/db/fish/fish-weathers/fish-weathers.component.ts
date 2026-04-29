@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { mapIds } from '../../../../core/data/sources/map-ids';
 import { weatherIndex } from '../../../../core/data/sources/weather-index';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
@@ -22,7 +22,12 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, NgxEchartsModule, AsyncPipe, TranslateModule]
 })
 export class FishWeathersComponent {
-  public readonly loading$ = this.fishCtx.weathersByFish$.pipe(map((res) => res.loading));
+  private readonly i18n = inject(I18nToolsService);
+  private readonly lazyData = inject(LazyDataFacade);
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
+  public readonly loading$ = this.fishCtx.weathersByFish$.pipe(map(() => false));
 
   public readonly weathersChartView$ = this.fishCtx.spotId$.pipe(
     map((id) => [500, id === -1 ? 300 : 200]),
@@ -98,14 +103,6 @@ export class FishWeathersComponent {
       };
     })
   );
-
-  constructor(
-    private readonly i18n: I18nToolsService,
-    private readonly lazyData: LazyDataFacade,
-    public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService
-  ) {
-  }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
     const index = weatherIndex[mapIds.find((m) => m.id === mapId).weatherRate];

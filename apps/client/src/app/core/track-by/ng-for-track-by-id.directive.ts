@@ -1,5 +1,5 @@
 import { NgForOf } from '@angular/common';
-import { Directive, Host } from '@angular/core';
+import { Directive, inject } from '@angular/core';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
@@ -7,7 +7,9 @@ import { Directive, Host } from '@angular/core';
     standalone: true
 })
 export class NgForTrackByIdDirective<T extends {id: number | string}>{
-  constructor(@Host() private readonly ngFor: NgForOf<T>) {
+  private readonly ngFor = inject<NgForOf<T>>(NgForOf, { host: true });
+
+  constructor() {
     this.ngFor.ngForTrackBy = (index: number, item: T) => item.id;
   }
 }

@@ -7,7 +7,7 @@ import { distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
 import { EventHandlerType } from '../../../core/electron/event-handler-type';
 import { IpcService } from '../../../core/electron/ipc.service';
 
-export const PLAYER_METRICS_PROBES = new InjectionToken('player-metrics:probes');
+export const PLAYER_METRICS_PROBES = new InjectionToken<PlayerMetricProbe[]>('player-metrics:probes');
 
 export abstract class PlayerMetricProbe {
 

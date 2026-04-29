@@ -11,7 +11,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { MapComponent } from '../../map/map/map.component';
 import { SpearfishingSpeedComponent } from '../../spearfishing-speed-tooltip/spearfishing-speed/spearfishing-speed.component';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { FishingBaitComponent } from '../../fishing-bait/fishing-bait/fishing-bait.component';
 import { NodeDetailsComponent } from '../../node-details/node-details/node-details.component';
@@ -25,7 +25,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./gathered-by.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, DbButtonComponent, NodeDetailsComponent, FishingBaitComponent, NzTagModule, NzToolTipModule, ItemIconComponent, SpearfishingSpeedComponent, MapComponent, NzDividerModule, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, NzPipesModule, YoutubeEmbedPipe]
+    imports: [FlexModule, DbButtonComponent, NodeDetailsComponent, FishingBaitComponent, NzTagModule, NzTooltipModule, ItemIconComponent, SpearfishingSpeedComponent, MapComponent, NzDividerModule, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, NzPipesModule, YoutubeEmbedPipe]
 })
 export class GatheredByComponent extends ItemDetailsPopup {
 

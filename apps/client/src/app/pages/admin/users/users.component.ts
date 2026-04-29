@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserService } from '../../../core/database/user.service';
 import { combineLatest, merge, Observable, of } from 'rxjs';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -34,6 +34,13 @@ import { NzDividerComponent } from 'ng-zorro-antd/divider';
     FullpageMessageComponent, UserAvatarComponent, RouterLink, AsyncPipe, TranslateModule, CharacterNamePipe, NzDividerComponent]
 })
 export class UsersComponent {
+  private userService = inject(UserService);
+  private lazyData = inject(LazyDataFacade);
+  private gcf = inject(Functions);
+  private modal = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private lodestone = inject(LodestoneService);
+
 
   userSearchModes = Object.values(UserSearchMode);
 
@@ -59,9 +66,7 @@ export class UsersComponent {
 
   results$: Observable<TeamcraftUser[]>;
 
-  constructor(private userService: UserService, private lazyData: LazyDataFacade,
-              private gcf: Functions, private modal: NzModalService,
-              private translate: TranslateService, private lodestone: LodestoneService) {
+  constructor() {
 
     // From UID
     const usersFromUid$ = this.uidFilter.valueChanges.pipe(

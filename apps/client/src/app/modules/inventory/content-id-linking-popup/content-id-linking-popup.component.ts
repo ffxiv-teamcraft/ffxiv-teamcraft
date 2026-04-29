@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -10,7 +10,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { DialogComponent } from '../../../core/dialog.component';
@@ -21,9 +21,13 @@ import { DialogComponent } from '../../../core/dialog.component';
     styleUrls: ['./content-id-linking-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzToolTipModule, NzPopconfirmModule, NzAvatarModule, NzTagModule, NzButtonModule, NzWaveModule, NzIconModule, NzDividerModule, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzTooltipModule, NzPopconfirmModule, NzAvatarModule, NzTagModule, NzButtonModule, NzWaveModule, NzIconModule, NzDividerModule, AsyncPipe, TranslateModule]
 })
 export class ContentIdLinkingPopupComponent extends DialogComponent{
+  private authFacade = inject(AuthFacade);
+  private settings = inject(SettingsService);
+  private modalRef = inject(NzModalRef);
+
 
   contentId: string;
 
@@ -31,8 +35,7 @@ export class ContentIdLinkingPopupComponent extends DialogComponent{
 
   characterEntries$ = this.authFacade.characterEntries$;
 
-  constructor(private authFacade: AuthFacade, private settings: SettingsService,
-              private modalRef: NzModalRef) {
+  constructor() {
     super();
     this.patchData();
   }

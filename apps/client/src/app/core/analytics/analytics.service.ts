@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,10 +11,13 @@ import { first, skip } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AnalyticsService {
+  private platformService = inject(PlatformService);
+  private ipc = inject(IpcService);
+
 
   private pirsch: PirschWebClient;
 
-  constructor(private platformService: PlatformService, private ipc: IpcService) {
+  constructor() {
     this.initPirsch(this.platformService.isDesktop());
   }
 

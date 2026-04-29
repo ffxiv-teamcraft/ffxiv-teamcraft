@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -11,7 +11,7 @@ import { I18nPipe } from '../../../../core/i18n.pipe';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -30,12 +30,15 @@ interface FishDetailsStatsSummary {
     styleUrls: ['./fish-details-container.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzSelectModule, FormsModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzSelectModule, FormsModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class FishDetailsContainerComponent {
-  public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map((res) => res.loading));
+  readonly settings = inject(SettingsService);
+  private readonly fishCtx = inject(FishContextService);
 
-  public readonly spotsLoading$ = this.fishCtx.spotsByFish$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map(() => false));
+
+  public readonly spotsLoading$ = this.fishCtx.spotsByFish$.pipe(map(() => false));
 
   public readonly spotIdFilter$ = this.fishCtx.spotId$.pipe(map((spotId) => spotId ?? -1));
 
@@ -52,9 +55,6 @@ export class FishDetailsContainerComponent {
     startWith({}),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(public readonly settings: SettingsService, private readonly fishCtx: FishContextService) {
-  }
 
   public setSpotIdFilter(spotId: number) {
     this.fishCtx.setSpotId(spotId === -1 ? undefined : spotId);

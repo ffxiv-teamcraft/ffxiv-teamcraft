@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommentTargetType } from '../comment-target-type';
 import { CommentsService } from '../comments.service';
 import { ResourceComment } from '../resource-comment';
@@ -28,6 +28,11 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [NzListModule, UserAvatarComponent, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzInputModule, FormsModule, AsyncPipe, DatePipe, TranslateModule]
 })
 export class CommentsPopupComponent extends DialogComponent implements OnInit {
+  private commentsService = inject(CommentsService);
+  private authFacade = inject(AuthFacade);
+  private notificationService = inject(NotificationService);
+  settings = inject(SettingsService);
+
 
   targetType: CommentTargetType;
 
@@ -44,11 +49,6 @@ export class CommentsPopupComponent extends DialogComponent implements OnInit {
   notificationFactory: (comment: ResourceComment) => AbstractNotification;
 
   userId$ = this.authFacade.userId$.pipe(shareReplay({ bufferSize: 1, refCount: true }));
-
-  constructor(private commentsService: CommentsService, private authFacade: AuthFacade,
-              private notificationService: NotificationService, public settings: SettingsService) {
-    super();
-  }
 
   ngOnInit() {
     this.patchData();

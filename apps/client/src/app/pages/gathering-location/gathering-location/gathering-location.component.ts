@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, timer } from 'rxjs';
 import { debounce, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
@@ -35,7 +35,7 @@ import { MapComponent } from '../../../modules/map/map/map.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
@@ -58,9 +58,19 @@ interface ResultRow {
   styleUrls: ['./gathering-location.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, FlexModule, NzButtonModule, NzIconModule, NzInputModule, NzSelectModule, ItemIconComponent, NzSwitchModule, NzToolTipModule, NzWaveModule, NzPaginationModule, NgTemplateOutlet, NzCardModule, MapComponent, NodeDetailsComponent, GatheringItemUsesComponent, FishingBaitComponent, SpearfishingSpeedComponent, NzTagModule, AlarmButtonComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, ActionIconPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
+  imports: [FormsModule, ReactiveFormsModule, FlexModule, NzButtonModule, NzIconModule, NzInputModule, NzSelectModule, ItemIconComponent, NzSwitchModule, NzTooltipModule, NzWaveModule, NzPaginationModule, NgTemplateOutlet, NzCardModule, MapComponent, NodeDetailsComponent, GatheringItemUsesComponent, FishingBaitComponent, SpearfishingSpeedComponent, NzTagModule, AlarmButtonComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, ActionIconPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class GatheringLocationComponent {
+  private dataService = inject(DataService);
+  private alarmsFacade = inject(AlarmsFacade);
+  private router = inject(Router);
+  private settings = inject(SettingsService);
+  private route = inject(ActivatedRoute);
+  translate = inject(TranslateService);
+  private gatheringNodesService = inject(GatheringNodesService);
+  private fb = inject(UntypedFormBuilder);
+  private lazyData = inject(LazyDataFacade);
+
 
   SpearfishingSpeed = SpearfishingSpeed;
 
@@ -165,11 +175,7 @@ export class GatheringLocationComponent {
 
   pageSize = 12;
 
-  constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
-              private router: Router, private settings: SettingsService,
-              private route: ActivatedRoute, public translate: TranslateService,
-              private gatheringNodesService: GatheringNodesService,
-              private fb: UntypedFormBuilder, private lazyData: LazyDataFacade) {
+  constructor() {
 
 
     this.route.queryParams

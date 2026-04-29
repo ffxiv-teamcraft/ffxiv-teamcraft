@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { first } from 'rxjs/operators';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
@@ -20,7 +20,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { TimerTooltipDirective } from '../../../core/alarms/timer-tooltip.directive';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -32,9 +32,12 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./alarm-button.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzButtonModule, TimerTooltipDirective, NzWaveModule, NzToolTipModule, I18nNameComponent, NzIconModule, NzDropDownModule, NzMenuModule, AsyncPipe, AlarmDisplayPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyRowPipe]
+    imports: [NzButtonModule, TimerTooltipDirective, NzWaveModule, NzTooltipModule, I18nNameComponent, NzIconModule, NzDropDownModule, NzMenuModule, AsyncPipe, AlarmDisplayPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyRowPipe]
 })
 export class AlarmButtonComponent {
+  private dialog = inject(NzModalService);
+  private i18n = inject(I18nToolsService);
+
 
   @Input()
   alarm: PersistedAlarm;
@@ -56,9 +59,6 @@ export class AlarmButtonComponent {
 
   @Input()
   useTimerTooltip: boolean;
-
-  constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
-  }
 
   openMap(): void {
     combineLatest([

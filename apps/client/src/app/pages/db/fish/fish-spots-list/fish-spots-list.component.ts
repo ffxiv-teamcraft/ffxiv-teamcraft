@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -18,13 +18,13 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, MapPositionComponent, DbButtonComponent, AsyncPipe, TranslateModule]
 })
 export class FishSpotsListComponent {
-  public readonly loading$ = this.fishCtx.spotsByFish$.pipe(map((res) => res.loading));
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
+  public readonly loading$ = this.fishCtx.spotsByFish$.pipe(map(() => false));
 
   public readonly spots$ = this.fishCtx.spotsByFish$.pipe(
     map((res) => res.data ?? []),
     startWith([])
   );
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

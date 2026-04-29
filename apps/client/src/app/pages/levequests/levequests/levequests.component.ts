@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
@@ -32,7 +32,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -53,9 +53,24 @@ interface ExpObj {
   templateUrl: './levequests.component.html',
   styleUrls: ['./levequests.component.less'],
   standalone: true,
-  imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
+  imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzTooltipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
+  private listsFacade = inject(ListsFacade);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private listManager = inject(ListManagerService);
+  private notificationService = inject(NzNotificationService);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private listPicker = inject(ListPickerService);
+  private progressService = inject(ProgressPopupService);
+  private auth = inject(AuthFacade);
+  private settings = inject(SettingsService);
+  private platformService = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private environment = inject(EnvironmentService);
+
 
   jobList = [8, 9, 10, 11, 12, 13, 14, 15, 18];
 
@@ -110,14 +125,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     shareReplay({ refCount: true, bufferSize: 1 })
   );
 
-  constructor(private listsFacade: ListsFacade,
-              private router: Router, private route: ActivatedRoute,
-              private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              private listPicker: ListPickerService, private progressService: ProgressPopupService,
-              private auth: AuthFacade,
-              private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,
-              private environment: EnvironmentService) {
+  constructor() {
     super();
     this.lazyData.getEntry('paramGrow').pipe(
       first()

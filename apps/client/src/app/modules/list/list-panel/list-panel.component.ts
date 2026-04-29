@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -46,7 +46,7 @@ import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.dire
 import { ListProgressbarComponent } from '../list-progressbar/list-progressbar.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -67,9 +67,25 @@ import { AsyncPipe, UpperCasePipe } from '@angular/common';
     styleUrls: ['./list-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzToolTipModule, UserAvatarComponent, NzTagModule, RouterLink, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
+    imports: [NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzTooltipModule, UserAvatarComponent, NzTagModule, RouterLink, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
 })
 export class ListPanelComponent extends TeamcraftComponent {
+  private listsFacade = inject(ListsFacade);
+  private message = inject(NzMessageService);
+  translate = inject(TranslateService);
+  private linkTools = inject(LinkToolsService);
+  private dialog = inject(NzModalService);
+  private listManager = inject(ListManagerService);
+  authFacade = inject(AuthFacade);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private discordWebhookService = inject(DiscordWebhookService);
+  private teamsFacade = inject(TeamsFacade);
+  private router = inject(Router);
+  private layoutsFacade = inject(LayoutsFacade);
+  private layoutOrderService = inject(LayoutOrderService);
+  private cd = inject(ChangeDetectorRef);
+  settings = inject(SettingsService);
+
 
   //Bound for number of a single item in a list
   minAmount = 1;
@@ -182,16 +198,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   );
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
-
-  constructor(private listsFacade: ListsFacade, private message: NzMessageService,
-              public translate: TranslateService, private linkTools: LinkToolsService,
-              private dialog: NzModalService, private listManager: ListManagerService,
-              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
-              private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
-              private cd: ChangeDetectorRef, public settings: SettingsService) {
-    super();
-  }
 
   public _list: List;
 

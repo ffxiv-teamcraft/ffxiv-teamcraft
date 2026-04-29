@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
@@ -33,7 +33,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
@@ -45,9 +45,17 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     templateUrl: './db-comments.component.html',
     styleUrls: ['./db-comments.component.less'],
     standalone: true,
-    imports: [NzDividerModule, FullpageMessageComponent, NzCommentModule, FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, NzAvatarModule, RouterLink, NzPopconfirmModule, NgTemplateOutlet, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzWaveModule, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, XivapiI18nPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, CommentLinksPipe]
+    imports: [NzDividerModule, FullpageMessageComponent, NzCommentModule, FlexModule, NzTooltipModule, NzButtonModule, NzIconModule, NzAvatarModule, RouterLink, NzPopconfirmModule, NgTemplateOutlet, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzWaveModule, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, XivapiI18nPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, CommentLinksPipe]
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
+  private commentsService = inject(DbCommentsService);
+  private authFacade = inject(AuthFacade);
+  translate = inject(TranslateService);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  private notificationService = inject(NotificationService);
+  settings = inject(SettingsService);
+
   userLevels = UserLevel;
 
   readonly comments$: Observable<DbComment[]>;
@@ -78,15 +86,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   private readonly id$ = new BehaviorSubject<number | undefined>(undefined);
 
-  constructor(
-    private commentsService: DbCommentsService,
-    private authFacade: AuthFacade,
-    public translate: TranslateService,
-    private router: Router,
-    private lazyData: LazyDataFacade,
-    private notificationService: NotificationService,
-    public settings: SettingsService
-  ) {
+  constructor() {
     super();
 
     const comments$ = combineLatest([this.type$, this.id$, this.loggedIn$]).pipe(

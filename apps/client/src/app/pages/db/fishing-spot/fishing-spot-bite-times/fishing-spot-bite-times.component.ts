@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output, inject } from '@angular/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
@@ -53,6 +53,12 @@ interface FishingSpotChartData {
     imports: [NzCardModule, NzSelectModule, FormsModule, FlexModule, ChartComponent, NzEmptyModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe, TugNamePipe]
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
+  private readonly i18n = inject(I18nToolsService);
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+  private readonly translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+
   public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];
 
   @Output()
@@ -60,7 +66,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
 
   public readonly baitFilter$ = this.fishCtx.baitId$.pipe(map((i) => (i >= 0 ? i : -1)));
 
-  public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map(() => false));
 
   public readonly biteTimesChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.biteTimesBySpot$.pipe(
     switchMap((res) => {
@@ -94,12 +100,10 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
     switchMap(([res, tugs]) => {
       if (!res.data || !tugs.data) return of([]);
-      const tugByFish = tugs.data.data.reduce((acc, row) => {
+      const tugByFish = tugs.data.data.reduce<Record<number, string>>((acc, row) => {
         const bestTug = Object.entries<number>(row.valuesByColId).sort(([, a], [, b]) => b - a)[0][0];
-        const clone = [...acc];
-        clone[row.rowId] = bestTug;
-        return clone;
-      }, []);
+        return { ...acc, [row.rowId]: bestTug };
+      }, {});
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
         this.i18n.getNameObservable('items', +id).pipe(
           map((name) => ({ id: +id, name: `${name} (${['!!', '!!!', '!'][tugByFish[id]]})` }))
@@ -224,15 +228,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   );
 
   private readonly unsubscribe$ = new Subject<void>();
-
-  constructor(
-    private readonly i18n: I18nToolsService,
-    public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService,
-    private readonly translate: TranslateService,
-    private lazyData: LazyDataFacade
-  ) {
-  }
 
   @Input()
   public set activeFish(value: number | undefined) {

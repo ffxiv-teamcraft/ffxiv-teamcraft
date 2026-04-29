@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -8,7 +8,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -33,9 +33,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './mappy-dashboard.component.html',
   styleUrls: ['./mappy-dashboard.component.less'],
   standalone: true,
-  imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSwitchModule, FormsModule, NgIf, NgFor, NzCardModule, NzTagModule, RouterLink, AsyncPipe, DatePipe, MapNamePipe, I18nPipe, TranslateModule, NzPageHeaderTitleDirective, NzPageHeaderComponent, NzPageHeaderExtraDirective, NzCheckboxComponent, MapComponent, NzRadioGroupComponent, NzRadioComponent, NzEmptyComponent]
+  imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSwitchModule, FormsModule, NzCardModule, NzTagModule, RouterLink, AsyncPipe, DatePipe, MapNamePipe, I18nPipe, TranslateModule, NzPageHeaderTitleDirective, NzPageHeaderComponent, NzPageHeaderExtraDirective, NzCheckboxComponent, MapComponent, NzRadioGroupComponent, NzRadioComponent, NzEmptyComponent]
 })
 export class MappyDashboardComponent {
+  private lazyData = inject(LazyDataFacade);
+  translate = inject(TranslateService);
+  private mappy = inject(MappyService);
+  settings = inject(SettingsService);
+
 
   public displayMode$ = new BehaviorSubject<'empty' | 'scanned' | 'all'>('all');
 
@@ -83,9 +88,5 @@ export class MappyDashboardComponent {
       }).sort((a, b) => a.id - b.id);
     })
   );
-
-  constructor(private lazyData: LazyDataFacade, public translate: TranslateService,
-              private mappy: MappyService, public settings: SettingsService) {
-  }
 
 }

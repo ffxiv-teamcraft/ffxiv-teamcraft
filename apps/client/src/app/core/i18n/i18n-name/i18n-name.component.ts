@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest } from 'rxjs';
 import { I18nName, LazyDataEntries, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
@@ -18,6 +18,9 @@ import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
     imports: [NzSkeletonModule, I18nPipe]
 })
 export class I18nNameComponent {
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+
 
   public i18nName$ = combineLatest([
     observeInput(this, 'content'),
@@ -48,9 +51,5 @@ export class I18nNameComponent {
 
   @Input()
   field?: keyof Extract<LazyDataEntries[this['content']], I18nName>;
-
-  constructor(private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService) {
-  }
 
 }

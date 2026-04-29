@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -23,12 +23,22 @@ import { differenceInMinutes } from 'date-fns';
   providedIn: 'root'
 })
 export class AlarmBellService {
+  private eorzeanTime = inject(EorzeanTimeService);
+  private alarmsFacade = inject(AlarmsFacade);
+  private eorzeaFacade = inject(EorzeaFacade);
+  private settings = inject(SettingsService);
+  private platform = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private translate = inject(TranslateService);
+  private pushNotificationsService = inject(PushNotificationsService);
+  private notificationService = inject(NzNotificationService);
+  private i18n = inject(I18nToolsService);
+  private mapService = inject(MapService);
+  private lazyData = inject(LazyDataFacade);
+  private soundNotificationService = inject(SoundNotificationService);
 
-  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
-              private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
-              private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
-              private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
+
+  constructor() {
     this.initBell();
   }
 

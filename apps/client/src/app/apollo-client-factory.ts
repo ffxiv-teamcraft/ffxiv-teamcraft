@@ -25,7 +25,6 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
   return {
     link,
     cache: new InMemoryCache({
-      addTypename: false,
       resultCaching: true
     })
   };

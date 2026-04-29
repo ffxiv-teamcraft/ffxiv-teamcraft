@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
@@ -7,7 +7,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { TranslateModule } from '@ngx-translate/core';
 import { InventoryPositionComponent } from '../../inventory/inventory-position/inventory-position.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
@@ -19,9 +19,12 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './item-inventory-button.component.html',
     styleUrls: ['./item-inventory-button.component.less'],
     standalone: true,
-    imports: [NzTagModule, NzDropDownModule, NzMenuModule, NzButtonModule, NzToolTipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
+    imports: [NzTagModule, NzDropDownModule, NzMenuModule, NzButtonModule, NzTooltipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class ItemInventoryButtonComponent {
+  private settings = inject(SettingsService);
+  private inventoryService = inject(InventoryService);
+
 
   @Input()
   itemId: number;
@@ -81,9 +84,6 @@ export class ItemInventoryButtonComponent {
       });
     })
   );
-
-  constructor(private settings: SettingsService, private inventoryService: InventoryService) {
-  }
 
   addAmount(amount: number): void {
     this.add.emit(amount);

@@ -1,4 +1,4 @@
-import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { REQUEST } from '../../../express.tokens';
@@ -8,13 +8,15 @@ import { REQUEST } from '../../../express.tokens';
     standalone: true,
 })
 export class XivapiI18nPipe implements PipeTransform {
-  constructor(private translate: TranslateService, private sanitizer: DomSanitizer, @Inject(REQUEST) @Optional() private request: any) {}
+  private translate = inject(TranslateService);
+  private sanitizer = inject(DomSanitizer);
+
 
   transform(value: any, fieldName = 'Name', sanitized = false): SafeHtml {
     if (!value) {
       return '';
     }
-    let lang = (this.request && this.request.lang) || this.translate.currentLang;
+    let lang = this.translate.currentLang;
     // xivapi uses chs instead of zh
     if (lang === 'zh') {
       lang = 'chs';

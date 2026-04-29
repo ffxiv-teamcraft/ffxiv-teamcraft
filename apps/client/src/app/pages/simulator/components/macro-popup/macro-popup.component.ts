@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ByregotsBlessing, CraftingAction, CraftingJob, FinalAppraisal, HastyTouch, Simulation } from '@ffxiv-teamcraft/simulator';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -31,6 +31,10 @@ import { DialogComponent } from '../../../../core/dialog.component';
   imports: [FlexModule, NzAlertModule, NzCheckboxModule, FormsModule, NzGridModule, NzFormModule, NzInputNumberModule, NzInputModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, TranslateModule]
 })
 export class MacroPopupComponent extends DialogComponent implements OnInit {
+  private i18n = inject(I18nToolsService);
+  private translator = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   public macro: string[][] = [[]];
 
@@ -72,7 +76,7 @@ export class MacroPopupComponent extends DialogComponent implements OnInit {
 
   private readonly maxMacroLines = 15;
 
-  constructor(private i18n: I18nToolsService, private translator: TranslateService, public settings: SettingsService) {
+  constructor() {
     super();
     // TEMP: load settings and clean up localStorage
     if (localStorage.getItem('macros:addecho') !== null) {

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IpcService } from '../electron/ipc.service';
 import { catchError, debounceTime, first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -15,12 +15,17 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class GubalService {
+  private ipc = inject(IpcService);
+  private authFacade = inject(AuthFacade);
+  private envService = inject(EnvironmentService);
+  private reporters = inject(DataReporters);
+  private apollo = inject(Apollo);
+  private platform = inject(PlatformService);
+
 
   private readonly version: number;
 
-  constructor(private ipc: IpcService, private authFacade: AuthFacade, private envService: EnvironmentService,
-              @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo,
-              private platform: PlatformService) {
+  constructor() {
     const versionFragments = environment.version.toString().split('.');
     this.version = (+versionFragments[0] * 100000) + (+versionFragments[1] * 100) + (+versionFragments[2]);
   }

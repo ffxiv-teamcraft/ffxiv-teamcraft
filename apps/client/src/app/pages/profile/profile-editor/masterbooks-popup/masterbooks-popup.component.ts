@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { first, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -22,6 +22,9 @@ import { DialogComponent } from '../../../../core/dialog.component';
   imports: [FlexModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
 })
 export class MasterbooksPopupComponent extends DialogComponent implements OnInit {
+  private authFacade = inject(AuthFacade);
+  private modalRef = inject(NzModalRef);
+
 
   private static BOOKS: { [index: number]: number[] } = {
     //CRP
@@ -51,10 +54,6 @@ export class MasterbooksPopupComponent extends DialogComponent implements OnInit
   masterbooks$: Observable<{ id: number, checked: boolean }[]>;
 
   public jobId: number;
-
-  constructor(private authFacade: AuthFacade, private modalRef: NzModalRef) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

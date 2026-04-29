@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { takeUntil } from 'rxjs/operators';
@@ -24,11 +24,15 @@ import { AsyncPipe, DatePipe } from '@angular/common';
     imports: [FullpageMessageComponent, FlexModule, UserAvatarComponent, ReplaySimulationComponent, PageLoaderComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe]
 })
 export class CraftingReplayComponent extends TeamcraftComponent {
+  private activeRoute = inject(ActivatedRoute);
+  private craftingReplayFacade = inject(CraftingReplayFacade);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   public replay$: Observable<CraftingReplay> = this.craftingReplayFacade.selectedCraftingReplay$;
 
-  constructor(private activeRoute: ActivatedRoute, private craftingReplayFacade: CraftingReplayFacade,
-              public translate: TranslateService, public settings: SettingsService) {
+  constructor() {
     super();
     this.activeRoute.paramMap.pipe(
       takeUntil(this.onDestroy$)

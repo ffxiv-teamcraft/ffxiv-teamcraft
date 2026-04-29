@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 
 
 @Component({
@@ -10,12 +10,11 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@a
     imports: []
 })
 export class SimpleTabComponent {
+  private cd = inject(ChangeDetectorRef);
+
 
   @Input()
   title: string;
-
-  constructor(private cd: ChangeDetectorRef) {
-  }
 
   private _active: boolean;
 

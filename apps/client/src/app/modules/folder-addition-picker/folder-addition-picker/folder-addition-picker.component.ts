@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AdditionPickerEntry } from './addition-picker-entry';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,14 +20,12 @@ import { NzEmptyComponent } from 'ng-zorro-antd/empty';
   imports: [LazyScrollComponent, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, NzEmptyComponent]
 })
 export class FolderAdditionPickerComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+
 
   public elements: AdditionPickerEntry[] = [];
 
   private selected: AdditionPickerEntry[] = [];
-
-  constructor(private modalRef: NzModalRef) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

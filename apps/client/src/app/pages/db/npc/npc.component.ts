@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -24,7 +24,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -35,9 +35,16 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './npc.component.html',
     styleUrls: ['./npc.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, RouterLink, TradesComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
+    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, RouterLink, TradesComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
 })
 export class NpcComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+
 
   public npc$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -54,11 +61,14 @@ export class NpcComponent extends TeamcraftPageComponent {
 
   public leves$: Observable<number[]>;
 
-  constructor(private route: ActivatedRoute,
-              private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
-              seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'npcs', 'npcId');
 
     const shops$ = this.npc$.pipe(

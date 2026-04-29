@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { StatsService } from '../stats.service';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { combineLatest } from 'rxjs';
@@ -18,6 +18,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ItemCapsTableComponent {
+  private statsService = inject(StatsService);
+
 
   @Input()
   job: number;
@@ -33,8 +35,5 @@ export class ItemCapsTableComponent {
       return this.statsService.getMaxValuesTable(job, equipmentPiece);
     })
   );
-
-  constructor(private statsService: StatsService) {
-  }
 
 }

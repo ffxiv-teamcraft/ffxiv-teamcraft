@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Directive, ElementRef, HostListener, Input, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2, inject } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { I18nToolsService } from './tools/i18n-tools.service';
@@ -9,11 +9,17 @@ import { first, map, switchMap } from 'rxjs/operators';
 import { observeInput } from './rxjs/observe-input';
 
 @Directive({
-    // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[itemNameCopy]',
-    standalone: true
+  // eslint-disable-next-line @angular-eslint/directive-selector
+  selector: '[itemNameCopy]',
+  standalone: true
 })
 export class ItemNameClipboardDirective extends NzTooltipDirective implements OnInit {
+  private clipboardService = inject(Clipboard);
+  private i18n = inject(I18nToolsService);
+  private message = inject(NzMessageService);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+
 
   @Input('itemNameCopy')
   itemId: number;
@@ -37,11 +43,11 @@ export class ItemNameClipboardDirective extends NzTooltipDirective implements On
     })
   );
 
-  constructor(private clipboardService: Clipboard, private i18n: I18nToolsService, private message: NzMessageService,
-              private settings: SettingsService, private translate: TranslateService,
-              elementRef: ElementRef, hostView: ViewContainerRef,
-              renderer: Renderer2) {
-    super(elementRef, hostView,  renderer);
+  constructor() {
+    const elementRef = inject(ElementRef);
+    const renderer = inject(Renderer2);
+
+    super();
     renderer.setStyle(
       elementRef.nativeElement,
       'cursor',

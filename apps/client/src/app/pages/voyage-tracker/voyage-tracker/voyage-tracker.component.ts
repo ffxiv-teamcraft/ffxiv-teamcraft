@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -12,7 +12,7 @@ import { FullpageMessageComponent } from '../../../modules/fullpage-message/full
 import { VesselListComponent } from './vessel-list/vessel-list.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
@@ -29,9 +29,14 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./voyage-tracker.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzSwitchModule, FormsModule, PageLoaderComponent, NzCollapseModule, NzGridModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, VesselListComponent, FullpageMessageComponent, AsyncPipe, KeyValuePipe, TranslateModule]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzSwitchModule, FormsModule, PageLoaderComponent, NzCollapseModule, NzGridModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, VesselListComponent, FullpageMessageComponent, AsyncPipe, KeyValuePipe, TranslateModule]
 })
 export class VoyageTrackerComponent extends TeamcraftComponent {
+  ipc = inject(IpcService);
+  translate = inject(TranslateService);
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  settings = inject(SettingsService);
+
   isLoading$ = new BehaviorSubject(false);
 
   airshipMaxRank$ = this.freeCompanyWorkshopFacade.getAirshipMaxRank();
@@ -64,11 +69,6 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
     }),
     takeUntil(this.onDestroy$)
   );
-
-  constructor(public ipc: IpcService, public translate: TranslateService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public settings: SettingsService) {
-    super();
-  }
 
   getAirshipSectorsProgression(sectors: Record<string, SectorExploration>): number {
     // Exclude Diadem sector

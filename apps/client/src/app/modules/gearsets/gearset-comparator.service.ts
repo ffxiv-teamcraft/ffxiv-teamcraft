@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { GearsetsComparison } from '../../model/gearset/gearsets-comparison';
 import { StatsService } from './stats.service';
@@ -16,10 +16,11 @@ import { EnvironmentService } from '../../core/environment.service';
   providedIn: 'root'
 })
 export class GearsetComparatorService {
+  private statsService = inject(StatsService);
+  private materiaService = inject(MateriaService);
+  private lazyData = inject(LazyDataFacade);
+  private env = inject(EnvironmentService);
 
-  constructor(private statsService: StatsService, private materiaService: MateriaService,
-              private lazyData: LazyDataFacade, private env: EnvironmentService) {
-  }
 
   toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
     return [

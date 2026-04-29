@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
@@ -18,7 +18,7 @@ import { EnvironmentService } from '../../../../core/environment.service';
 import { FloorPipe } from '../../../../pipes/pipes/floor.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -27,9 +27,17 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./rotation-result-tag.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzToolTipModule, NzTagModule, AsyncPipe, TranslateModule, FloorPipe]
+    imports: [NzTooltipModule, NzTagModule, AsyncPipe, TranslateModule, FloorPipe]
 })
 export class RotationResultTagComponent implements OnInit {
+  private authFacade = inject(AuthFacade);
+  private consumablesService = inject(ConsumablesService);
+  private lazyData = inject(LazyDataFacade);
+  private freeCompanyActionsService = inject(FreeCompanyActionsService);
+  private simulationService = inject(SimulationService);
+  private settings = inject(SettingsService);
+  private environment = inject(EnvironmentService);
+
 
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
 
@@ -51,12 +59,6 @@ export class RotationResultTagComponent implements OnInit {
   );
 
   freeCompanyActions: FreeCompanyAction[] = [];
-
-  constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,
-              private lazyData: LazyDataFacade, private freeCompanyActionsService: FreeCompanyActionsService,
-              private simulationService: SimulationService, private settings: SettingsService,
-              private environment: EnvironmentService) {
-  }
 
   public get rotation(): CraftingRotation {
     return this.rotation$.value;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
@@ -25,9 +25,12 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './inventory-synthesis-popup.component.html',
   styleUrls: ['./inventory-synthesis-popup.component.less'],
   standalone: true,
-  imports: [FlexModule, NzCheckboxModule, FormsModule, NzCardModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
+  imports: [FlexModule, NzCheckboxModule, FormsModule, NzCardModule, ItemIconComponent, NzButtonModule, NzIconModule, NzTooltipModule, InventoryPositionComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventorySynthesisPopupComponent extends DialogComponent implements OnInit {
+  private inventoryFacade = inject(InventoryService);
+  private settings = inject(SettingsService);
+
 
   list: List;
 
@@ -35,10 +38,6 @@ export class InventorySynthesisPopupComponent extends DialogComponent implements
   synthesis$: Observable<{ containerName: string, isRetainer: boolean, items: any[] }[]>;
 
   removeDone$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.settings.removeDoneInInventorSynthesis);
-
-  constructor(private inventoryFacade: InventoryService, private settings: SettingsService) {
-    super();
-  }
 
   setRemoveDone(remove: boolean): void {
     this.removeDone$.next(remove);

@@ -7,6 +7,7 @@ import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../modules/workshop/+state/workshops.facade';
 
 @Component({
+  standalone: false,
   template: ''
 })
 // tslint:disable-next-line:component-class-suffix

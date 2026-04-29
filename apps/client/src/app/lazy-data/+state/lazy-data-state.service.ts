@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { getExtract, LazyDataEntries, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
 import { LazyDataLoadingState, PartialLoading } from './lazy-data-loading-state';
 import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
@@ -29,6 +29,10 @@ import { LazyDataContent } from './lazy-data-content';
 
 @Injectable({ providedIn: 'root' })
 export class LazyDataStateService {
+  private http = inject(HttpClient);
+  private platformService = inject(PlatformService);
+  private platform = inject(PLATFORM_ID);
+
 
   private static readonly EXTRACTS_PATH = `/assets/extracts/extracts${environment.production && !environment.beta ? '.' + extractsHash : ''}.json`;
 
@@ -47,10 +51,6 @@ export class LazyDataStateService {
     distinctUntilChanged(),
     shareReplay(1)
   );
-
-  constructor(private http: HttpClient, private platformService: PlatformService,
-              @Inject(PLATFORM_ID) private platform: any) {
-  }
 
   public getEntry<K extends LazyDataKey>(propertyKey: K): Observable<LazyDataWithExtracts[K]> {
     const loadingState = this.loadingStates[propertyKey];

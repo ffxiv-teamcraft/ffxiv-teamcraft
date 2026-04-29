@@ -7,7 +7,7 @@ import { CoreModule } from '../../core/core.module';
 import { CompanyWorkshopTreeButtonComponent } from './company-workshop-tree-button/company-workshop-tree-button.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     imports: [
         CommonModule,
         NzButtonModule,
-        NzToolTipModule,
+        NzTooltipModule,
         TranslateModule,
         PipesModule,
         CoreModule,

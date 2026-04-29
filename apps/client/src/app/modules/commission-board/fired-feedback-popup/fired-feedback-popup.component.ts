@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FiredReason } from '../model/fired-reason';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,6 +18,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzRadioModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class FiredFeedbackPopupComponent {
+  private modalRef = inject(NzModalRef);
+
 
   firedReasons = Object.keys(FiredReason).map(key => {
     return {
@@ -27,9 +29,6 @@ export class FiredFeedbackPopupComponent {
   });
 
   pickedReason: string;
-
-  constructor(private modalRef: NzModalRef) {
-  }
 
   submit(): void {
     this.modalRef.close(this.pickedReason);

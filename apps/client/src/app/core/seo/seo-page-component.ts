@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { SeoMetaConfig } from './seo-meta-config';
 
 @Component({
+  standalone: false,
   template: ''
 })
 export abstract class SeoPageComponent implements OnDestroy, OnInit {

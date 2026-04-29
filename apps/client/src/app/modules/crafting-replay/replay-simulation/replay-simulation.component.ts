@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, Optional } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CraftingReplay } from '../model/crafting-replay';
 import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
@@ -29,6 +29,13 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, SimulationResultComponent, NzCardModule, ActionComponent, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class ReplaySimulationComponent extends DialogComponent {
+  private lazyData = inject(LazyDataFacade);
+  private simulationService = inject(SimulationService);
+  private settings = inject(SettingsService);
+  ref = inject(NzModalRef, { optional: true })!;
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+
 
   public replay$: ReplaySubject<CraftingReplay> = new ReplaySubject<CraftingReplay>();
 
@@ -94,9 +101,7 @@ export class ReplaySimulationComponent extends DialogComponent {
     })
   );
 
-  constructor(private lazyData: LazyDataFacade, private simulationService: SimulationService, private settings: SettingsService,
-              @Optional() public ref: NzModalRef, private dialog: NzModalService,
-              private translate: TranslateService) {
+  constructor() {
     super();
     this.patchData();
   }

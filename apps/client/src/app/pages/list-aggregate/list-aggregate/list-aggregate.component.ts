@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
@@ -38,6 +38,14 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
   imports: [NzPageHeaderModule, NzButtonModule, NzIconModule, NzRadioModule, FormsModule, NzInputModule, NzSelectModule, NzWaveModule, NzDropDownModule, NzMenuModule, RouterLink, NzAlertModule, ListDetailsPanelComponent, AsyncPipe, TranslateModule, EncodeUriComponentPipe]
 })
 export class ListAggregateComponent {
+  private listsFacade = inject(ListsFacade);
+  private route = inject(ActivatedRoute);
+  private layoutsFacade = inject(LayoutsFacade);
+  private authFacade = inject(AuthFacade);
+  private teamsFacade = inject(TeamsFacade);
+  private aggregatesFacade = inject(ListAggregatesFacade);
+  private router = inject(Router);
+
 
   public ListDisplayMode = ListDisplayMode;
 
@@ -198,10 +206,7 @@ export class ListAggregateComponent {
     })
   );
 
-  constructor(private listsFacade: ListsFacade, private route: ActivatedRoute,
-              private layoutsFacade: LayoutsFacade, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private aggregatesFacade: ListAggregatesFacade,
-              private router: Router) {
+  constructor() {
     this.layoutsFacade.loadAll();
   }
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, EventEmitter, input, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, EventEmitter, input, Input, Output, inject } from '@angular/core';
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -12,7 +12,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { ExtendedModule } from '@angular/flex-layout/extended';
 import { XivapiActionTooltipDirective } from '../../../../modules/tooltip/xivapi-action-tooltip/xivapi-action-tooltip.directive';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NgClass } from '@angular/common';
+
 
 @Component({
   selector: 'app-action',
@@ -20,9 +20,13 @@ import { NgClass } from '@angular/common';
   styleUrls: ['./action.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzBadgeModule, XivapiActionTooltipDirective, NgClass, ExtendedModule, NzDropDownModule, NzMenuModule, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
+  imports: [NzBadgeModule, XivapiActionTooltipDirective, ExtendedModule, NzDropDownModule, NzMenuModule, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
 })
 export class ActionComponent {
+  private nzDropdownService = inject(NzContextMenuService);
+  private settings = inject(SettingsService);
+  private simulationService = inject(SimulationService);
+
 
   @Output()
   actionclick: EventEmitter<void> = new EventEmitter<void>();
@@ -79,10 +83,6 @@ export class ActionComponent {
   readonly = false;
 
   availableConditions: { condition: number, name: string }[] = [];
-
-  constructor(private nzDropdownService: NzContextMenuService, private settings: SettingsService,
-              private simulationService: SimulationService) {
-  }
 
   private _simulation: Simulation;
 

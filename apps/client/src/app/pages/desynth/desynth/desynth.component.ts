@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { debounce, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,7 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
@@ -43,9 +43,20 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './desynth.component.html',
     styleUrls: ['./desynth.component.less'],
     standalone: true,
-    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzToolTipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
+    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzTooltipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
 })
 export class DesynthComponent {
+  private dataService = inject(DataService);
+  private lazyData = inject(LazyDataFacade);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private listManager = inject(ListManagerService);
+  private notificationService = inject(NzNotificationService);
+  private i18n = inject(I18nToolsService);
+  private listPicker = inject(ListPickerService);
+  private listsFacade = inject(ListsFacade);
+  private progressService = inject(ProgressPopupService);
+
 
   jobList$: Observable<[string, LazyJobAbbr][]> = this.lazyData.getEntry('jobAbbr').pipe(
     map(record => Object.entries(record).filter(([key]) => +key >= 8 && +key < 16))
@@ -155,11 +166,9 @@ export class DesynthComponent {
 
   public totalLength = 0;
 
-  constructor(private dataService: DataService, private lazyData: LazyDataFacade,
-              private router: Router, private route: ActivatedRoute,
-              private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
+  constructor() {
+    const route = this.route;
+
     route.queryParamMap
       .pipe(
         first(),

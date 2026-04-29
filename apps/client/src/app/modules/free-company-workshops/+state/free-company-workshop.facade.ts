@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import * as fromFreeCompanyWorkshop from './freecompany-workshop.reducer';
 import * as FreeCompanyWorkshopActions from './free-company-workshop.actions';
 import * as FreeCompanyWorkshopSelectors from './freecompany-workshop.selectors';
@@ -38,6 +38,15 @@ import { Region } from '@ffxiv-teamcraft/types';
   providedIn: 'root'
 })
 export class FreeCompanyWorkshopFacade {
+  private readonly lazyData = inject(LazyDataFacade);
+  private readonly ipc = inject(IpcService);
+  private readonly store = inject<Store<fromFreeCompanyWorkshop.State>>(Store);
+  private readonly translate = inject(TranslateService);
+  private readonly i18n = inject(I18nToolsService);
+  private env = inject(EnvironmentService);
+  private readonly settings = inject(SettingsService);
+  private soundNotificationService = inject(SoundNotificationService);
+
   public readonly workshops$ = this.store.pipe(
     select(FreeCompanyWorkshopSelectors.selectWorkshops)
   );
@@ -220,12 +229,6 @@ export class FreeCompanyWorkshopFacade {
         .filter((vessel) => vessel.returnTime === now);
     })
   );
-
-  constructor(private readonly lazyData: LazyDataFacade, private readonly ipc: IpcService,
-              private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
-              private readonly i18n: I18nToolsService, private env: EnvironmentService,
-              private readonly settings: SettingsService, private soundNotificationService: SoundNotificationService) {
-  }
 
   private static ISOtoUTF8(input: string): string {
     return input.replace(/Ã©/gmi, 'é')

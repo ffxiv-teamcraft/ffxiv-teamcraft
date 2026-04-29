@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -20,6 +20,12 @@ import { AsyncPipe } from '@angular/common';
     imports: [SimulatorComponent, PageLoaderComponent, AsyncPipe]
 })
 export class SimulatorPageComponent extends AbstractSimulationPage {
+  protected route: ActivatedRoute;
+  private rotationsFacade = inject(RotationsFacade);
+  private router = inject(Router);
+  protected seo: SeoService;
+  private lazyData = inject(LazyDataFacade);
+
 
   itemId$: Observable<number> = this.route.paramMap.pipe(
     map(params => +params.get('itemId'))
@@ -69,10 +75,14 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
     })
   );
 
-  constructor(protected route: ActivatedRoute,
-              private rotationsFacade: RotationsFacade, private router: Router,
-              protected seo: SeoService, private lazyData: LazyDataFacade) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const seo = inject(SeoService);
+
     super(route, seo);
+    this.route = route;
+    this.seo = seo;
+
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
     ).subscribe(id => {

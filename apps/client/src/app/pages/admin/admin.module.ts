@@ -12,7 +12,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
@@ -74,7 +74,7 @@ const userIntegrityChecks: Provider[] = [
     UserAvatarModule,
     FullpageMessageModule,
     NzButtonModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzTabsModule,
     UsersComponent,
     IntegrityCheckPopupComponent,

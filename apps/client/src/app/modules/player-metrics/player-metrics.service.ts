@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PLAYER_METRICS_PROBES, PlayerMetricProbe } from './probes/player-metric-probe';
 import { filter, takeUntil } from 'rxjs/operators';
@@ -15,6 +15,11 @@ import { endOfDay, startOfDay } from 'date-fns';
   providedIn: 'root'
 })
 export class PlayerMetricsService {
+  private ipc = inject(IpcService);
+  private probes = inject(PLAYER_METRICS_PROBES);
+  private settings = inject(SettingsService);
+  private authFacade = inject(AuthFacade);
+
 
   public loading$ = new BehaviorSubject<boolean>(false);
 
@@ -37,8 +42,7 @@ export class PlayerMetricsService {
 
   public events$: Observable<ProbeReport> = this._events$.asObservable();
 
-  constructor(private ipc: IpcService, @Inject(PLAYER_METRICS_PROBES) private probes: PlayerMetricProbe[],
-              private settings: SettingsService, private authFacade: AuthFacade) {
+  constructor() {
     setInterval(() => {
       this.saveLogs();
     }, 10000);

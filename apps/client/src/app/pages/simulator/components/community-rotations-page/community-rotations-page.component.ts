@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, filter, first, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
 import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -32,9 +32,12 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './community-rotations-page.component.html',
     styleUrls: ['./community-rotations-page.component.less'],
     standalone: true,
-    imports: [FlexModule, NzInputModule, FormsModule, TutorialStepDirective, NzSelectModule, NzButtonModule, NzInputNumberModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, RotationPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
+    imports: [FlexModule, NzInputModule, FormsModule, TutorialStepDirective, NzSelectModule, NzButtonModule, NzInputNumberModule, NzWaveModule, NzTooltipModule, NzIconModule, PageLoaderComponent, RotationPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class CommunityRotationsPageComponent {
+  private rotationsService = inject(CraftingRotationService);
+  private authFacade = inject(AuthFacade);
+
 
   public static RLVLS = [
     {
@@ -226,8 +229,10 @@ export class CommunityRotationsPageComponent {
 
   private filters$: Observable<CommunityRotationFilters>;
 
-  constructor(private rotationsService: CraftingRotationService,
-              private authFacade: AuthFacade, route: ActivatedRoute, router: Router) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const router = inject(Router);
+
     this.tags = Object.keys(RotationTag).map(key => {
       return {
         value: key,

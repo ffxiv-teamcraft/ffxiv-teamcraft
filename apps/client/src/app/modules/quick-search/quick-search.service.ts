@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { QuickSearchComponent } from './quick-search/quick-search.component';
 
@@ -6,9 +6,8 @@ import { QuickSearchComponent } from './quick-search/quick-search.component';
   providedIn: 'root'
 })
 export class QuickSearchService {
+  private dialog = inject(NzModalService);
 
-  constructor(private dialog: NzModalService) {
-  }
 
   public openQuickSearch(): void {
     this.dialog.create({

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -27,7 +27,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -38,9 +38,16 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
   templateUrl: './mob.component.html',
   styleUrls: ['./mob.component.less'],
   standalone: true,
-  imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
+  imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
 })
 export class MobComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+  private mapService = inject(MapService);
+
 
   public mob$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -56,11 +63,14 @@ export class MobComponent extends TeamcraftPageComponent {
 
   public spawns$: Observable<{ map: number, zoneid: number, level: number, positions: Vector2[] }[]>;
 
-  constructor(private route: ActivatedRoute,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private lazyData: LazyDataFacade, public settings: SettingsService,
-              private mapService: MapService, seo: SeoService, router: Router) {
+  constructor() {
+    const seo = inject(SeoService);
+    const router = inject(Router);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+
     this.updateSlug(router, i18n, route, 'mobs', 'mobId');
 
     this.drops$ = this.mob$.pipe(

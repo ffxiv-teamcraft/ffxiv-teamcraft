@@ -60,4 +60,5 @@ Thumbs.db
 /ssr/dist/
 /functions/lib/
 
-.nx/cache
+.nx
+.claude/worktrees

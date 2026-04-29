@@ -1,177 +1,218 @@
-<app-page-loader *ngIf="loading$ | async; else lists">
-</app-page-loader>
-<ng-template #lists>
-  <div *ngIf="lists$ | async as lists">
-    <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-      <button (click)="createList()" [nzShape]="'circle'" [nzTooltipTitle]="'New_List' | translate" [nzType]="'primary'" nz-button
-              nz-tooltip>
-        <i nz-icon nzType="file-add"></i>
-      </button>
-      <button (click)="createWorkshop()" [nzShape]="'circle'" [nzTooltipTitle]="'WORKSHOP.Add_workshop' | translate" [nzType]="'primary'" nz-button
-              nz-tooltip>
-        <i nz-icon nzType="folder-add"></i>
-      </button>
-      <button (click)="openMergeDialog()" [nzShape]="'circle'" [nzTooltipTitle]="'LISTS.Merge_lists' | translate" [nzType]="'primary'" nz-button
-              nz-tooltip
-              tutorialStep="TUTORIAL.LISTS.Merge">
-        <i nz-icon nzType="pull-request" nzTheme="outline"></i>
-      </button>
-      <button (click)="importList()" [nzShape]="'circle'" [nzTooltipTitle]="'LISTS.IMPORT.Title' | translate" [nzType]="'primary'" nz-button
-              nz-tooltip
-              tutorialStep="TUTORIAL.LISTS.Import">
-        <i nz-icon nzType="download"></i>
-      </button>
-      <a [nzShape]="'circle'"
-         [nzTooltipTitle]="'LIST_AGGREGATE.Home_subtitle' | translate"
-         routerLink="/list-aggregate"
-         [nzType]="'primary'"
-         nz-button
-         nz-tooltip>
-        <i nz-icon nzType="folder-view"></i>
-      </a>
-      <div class="spacer">
-      </div>
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <nz-switch [ngModel]="archivedListsLoaded$ | async" (ngModelChange)="$event?loadArchivedLists():unLoadArchivedLists()"></nz-switch>
-        <div>{{'LISTS.Load_archived' | translate}}</div>
-      </div>
-      <button (click)="deleteMultipleLists()"
-              nz-button
-              nz-tooltip nzShape="circle"
-              nzTooltipTitle="{{'LISTS.Delete_multiple_lists' | translate}}"
-              nzDanger>
-        <i nz-icon nzType="delete" nzTheme="outline"></i>
-      </button>
-    </div>
-    <nz-alert *ngIf="needsVerification$ | async" [nzMessage]="'LISTS.Needs_verification' | translate"
-              class="fc-check-warning" nzShowIcon nzType="warning"></nz-alert>
-    <h2>{{'LISTS.Your_lists' | translate}}</h2>
-    <nz-input-group [nzSuffix]="suffixIconSearch">
-      <input (ngModelChange)="query$.next($event)" [ngModel]="query$.value" nz-input placeholder="{{'LISTS.Lists_search_placeholder' | translate}}"
-             type="text">
-    </nz-input-group>
-    <ng-template #suffixIconSearch>
-      <i nz-icon nzType="search"></i>
-    </ng-template>
-    <ng-container *ngIf="favoriteLists$ | async as favoriteLists">
-      <ng-container *ngIf="favoriteLists?.length > 0">
-        <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
-        <div *ngIf="favoriteLists.length > 0">
-          <div *ngFor="let list of favoriteLists; trackByKey" class="list-panel">
-            <app-list-panel [list]="list"></app-list-panel>
-          </div>
+@if (loading$ | async) {
+  <app-page-loader>
+  </app-page-loader>
+} @else {
+  @if (lists$ | async; as lists) {
+    <div>
+      <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
+        <button (click)="createList()" [nzShape]="'circle'" [nzTooltipTitle]="'New_List' | translate" [nzType]="'primary'" nz-button
+          nz-tooltip>
+          <i nz-icon nzType="file-add"></i>
+        </button>
+        <button (click)="createWorkshop()" [nzShape]="'circle'" [nzTooltipTitle]="'WORKSHOP.Add_workshop' | translate" [nzType]="'primary'" nz-button
+          nz-tooltip>
+          <i nz-icon nzType="folder-add"></i>
+        </button>
+        <button (click)="openMergeDialog()" [nzShape]="'circle'" [nzTooltipTitle]="'LISTS.Merge_lists' | translate" [nzType]="'primary'" nz-button
+          nz-tooltip
+          tutorialStep="TUTORIAL.LISTS.Merge">
+          <i nz-icon nzType="pull-request" nzTheme="outline"></i>
+        </button>
+        <button (click)="importList()" [nzShape]="'circle'" [nzTooltipTitle]="'LISTS.IMPORT.Title' | translate" [nzType]="'primary'" nz-button
+          nz-tooltip
+          tutorialStep="TUTORIAL.LISTS.Import">
+          <i nz-icon nzType="download"></i>
+        </button>
+        <a [nzShape]="'circle'"
+          [nzTooltipTitle]="'LIST_AGGREGATE.Home_subtitle' | translate"
+          routerLink="/list-aggregate"
+          [nzType]="'primary'"
+          nz-button
+          nz-tooltip>
+          <i nz-icon nzType="folder-view"></i>
+        </a>
+        <div class="spacer">
         </div>
-      </ng-container>
-    </ng-container>
-    <nz-divider [nzText]="'LISTS.Your_lists' | translate" nzOrientation="left"></nz-divider>
-    <div (cdkDropListDropped)="setListIndex($event.item.data, $event.currentIndex, lists.otherLists)"
-         cdkDropList id="lists-group" [cdkDropListConnectedTo]="['ws-lists-group']">
-      <div *ngFor="let list of lists.otherLists; trackByKey"
-           class="list-panel"
-           cdkDrag [cdkDragData]="list">
-        <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
-      </div>
-      <nz-empty *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" [nzNotFoundContent]="'LISTS.No_lists' | translate"
-                nzNotFoundImage="simple"></nz-empty>
-    </div>
-    <ng-container *ngIf="sharedLists$ | async as sharedLists">
-      <div *ngIf="sharedLists.length > 0">
-        <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>
-        <div *ngFor="let list of sharedLists; trackByKey" class="list-panel">
-          <app-list-panel [list]="list"></app-list-panel>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <nz-switch [ngModel]="archivedListsLoaded$ | async" (ngModelChange)="$event?loadArchivedLists():unLoadArchivedLists()"></nz-switch>
+          <div>{{'LISTS.Load_archived' | translate}}</div>
         </div>
+        <button (click)="deleteMultipleLists()"
+          nz-button
+          nz-tooltip nzShape="circle"
+          nzTooltipTitle="{{'LISTS.Delete_multiple_lists' | translate}}"
+          nzDanger>
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
       </div>
-    </ng-container>
-    <ng-container *ngIf="aggregates$ | async as aggregates">
-      <div *ngIf="aggregates.length > 0">
-        <nz-divider [nzText]="'LISTS.List_aggregates' | translate" nzOrientation="left"></nz-divider>
-        <nz-list nzBordered>
-          <nz-list-item *ngFor="let display of aggregates; trackByKey" [nzActions]="[shareLinkTpl, openAggregateTpl, deleteAggregateTpl]"
-                        class="aggregate-list-item">
+      @if (needsVerification$ | async) {
+        <nz-alert [nzMessage]="'LISTS.Needs_verification' | translate"
+        class="fc-check-warning" nzShowIcon nzType="warning"></nz-alert>
+      }
+      <h2>{{'LISTS.Your_lists' | translate}}</h2>
+      <nz-input-group [nzSuffix]="suffixIconSearch">
+        <input (ngModelChange)="query$.next($event)" [ngModel]="query$.value" nz-input placeholder="{{'LISTS.Lists_search_placeholder' | translate}}"
+          type="text">
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <i nz-icon nzType="search"></i>
+      </ng-template>
+      @if (favoriteLists$ | async; as favoriteLists) {
+        @if (favoriteLists?.length > 0) {
+          <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
+          @if (favoriteLists.length > 0) {
             <div>
-              <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{display.layoutName}}</nz-tag>
-              {{display.listNames}}
+              @for (list of favoriteLists; track list) {
+                <div class="list-panel">
+                  <app-list-panel [list]="list"></app-list-panel>
+                </div>
+              }
             </div>
-            <ng-template #shareLinkTpl>
-              <button [clipboard]="('/list-aggregate/saved/'+display.aggregate.$key) | tcLink"
+          }
+        }
+      }
+      <nz-divider [nzText]="'LISTS.Your_lists' | translate" nzOrientation="left"></nz-divider>
+      <div (cdkDropListDropped)="setListIndex($event.item.data, $event.currentIndex, lists.otherLists)"
+        cdkDropList id="lists-group" [cdkDropListConnectedTo]="['ws-lists-group']">
+        @for (list of lists.otherLists; track list) {
+          <div
+            class="list-panel"
+            cdkDrag [cdkDragData]="list">
+            <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
+          </div>
+        }
+        @if (lists.otherLists.length === 0 && (loading$ | async) === false) {
+          <nz-empty [nzNotFoundContent]="'LISTS.No_lists' | translate"
+          nzNotFoundImage="simple"></nz-empty>
+        }
+      </div>
+      @if (sharedLists$ | async; as sharedLists) {
+        @if (sharedLists.length > 0) {
+          <div>
+            <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>
+            @for (list of sharedLists; track list) {
+              <div class="list-panel">
+                <app-list-panel [list]="list"></app-list-panel>
+              </div>
+            }
+          </div>
+        }
+      }
+      @if (aggregates$ | async; as aggregates) {
+        @if (aggregates.length > 0) {
+          <div>
+            <nz-divider [nzText]="'LISTS.List_aggregates' | translate" nzOrientation="left"></nz-divider>
+            <nz-list nzBordered>
+              @for (display of aggregates; track display) {
+                <nz-list-item [nzActions]="[shareLinkTpl, openAggregateTpl, deleteAggregateTpl]"
+                  class="aggregate-list-item">
+                  <div>
+                    <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{display.layoutName}}</nz-tag>
+                    {{display.listNames}}
+                  </div>
+                  <ng-template #shareLinkTpl>
+                    <button [clipboard]="('/list-aggregate/saved/'+display.aggregate.$key) | tcLink"
                       [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
                       nzShape="circle"
                       nz-button nz-tooltip>
-                <i nz-icon nzType="share-alt"></i>
-              </button>
-            </ng-template>
-            <ng-template #openAggregateTpl>
-              <a [nzShape]="'circle'"
-                 [nzTooltipTitle]="'Open' | translate"
-                 [nzType]="'primary'"
-                 nz-button
-                 nz-tooltip
-                 routerLink="/list-aggregate/saved/{{display.aggregate.$key}}">
-                <i nz-icon nzType="folder-open"></i>
-              </a>
-            </ng-template>
-            <ng-template #deleteAggregateTpl>
-              <button (nzOnConfirm)="deleteAggregate(display.aggregate)"
+                      <i nz-icon nzType="share-alt"></i>
+                    </button>
+                  </ng-template>
+                  <ng-template #openAggregateTpl>
+                    <a [nzShape]="'circle'"
+                      [nzTooltipTitle]="'Open' | translate"
+                      [nzType]="'primary'"
+                      nz-button
+                      nz-tooltip
+                      routerLink="/list-aggregate/saved/{{display.aggregate.$key}}">
+                      <i nz-icon nzType="folder-open"></i>
+                    </a>
+                  </ng-template>
+                  <ng-template #deleteAggregateTpl>
+                    <button (nzOnConfirm)="deleteAggregate(display.aggregate)"
                       [nzShape]="'circle'"
                       [nzPopconfirmTitle]="'Confirmation' | translate"
                       nzDanger
                       nz-button nz-popconfirm>
-                <i nz-icon nzType="delete"></i></button>
-            </ng-template>
-          </nz-list-item>
-        </nz-list>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="workshops$ | async as workshops">
-      <div *ngIf="workshops.length > 0">
-        <nz-divider [nzText]="'WORKSHOP.Workshops' | translate" nzOrientation="left"></nz-divider>
-        <div (cdkDropListDropped)="setWorkshopIndex($event, workshops)" cdkDropList>
-          <div *ngFor="let workshopDisplay of workshops; trackByKey" class="workshop-panel" cdkDrag
-               [cdkDragData]="workshopDisplay.workshop">
-            <app-workshop-panel [lists]="workshopDisplay.lists" [workshop]="workshopDisplay.workshop"></app-workshop-panel>
-          </div>
-        </div>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="sharedWorkshops$ | async as sharedWorkshops">
-      <div *ngIf="sharedWorkshops.length > 0">
-        <nz-divider [nzText]="'WORKSHOP.Shared_workshops' | translate" nzOrientation="left"></nz-divider>
-        <div *ngFor="let workshopDisplay of sharedWorkshops; trackByKey" class="workshop-panel">
-          <app-workshop-panel [lists]="workshopDisplay.lists"
-                              [workshop]="workshopDisplay.workshop"></app-workshop-panel>
-        </div>
-      </div>
-    </ng-container>
-    <nz-divider *ngIf="(teamsDisplays$ | async)?.length > 0" [nzText]="'TEAMS.Title' | translate"
-                nzOrientation="left"></nz-divider>
-    <div fxLayout="column" fxLayoutGap="5px">
-      <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async; trackByKey">
-        <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
-          <div (cdkDropListDropped)="setListIndex($event.item.data, $event.currentIndex, teamDisplay.lists)"
-               cdkDropList #teamListsGroup="cdkDropList">
-            <div *ngFor="let list of teamDisplay.lists; trackByKey"
-                 class="list-panel"
-                 cdkDrag [cdkDragData]="list">
-              <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
+                      <i nz-icon nzType="delete"></i></button>
+                    </ng-template>
+                  </nz-list-item>
+                }
+              </nz-list>
             </div>
-          </div>
-        </nz-collapse-panel>
-      </nz-collapse>
-    </div>
-    <nz-divider *ngIf="lists.communityLists.length > 0" [nzText]="'Your_public_lists' | translate"
-                nzOrientation="left"></nz-divider>
-    <nz-collapse *ngIf="lists.communityLists.length > 0">
-      <nz-collapse-panel #communityListsPanel
-                         nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})">
-        <div (cdkDropListDropped)="setListIndex($event.item.data, $event.currentIndex, lists.communityLists)"
-             cdkDropList #communityListGroup="cdkDropList">
-          <div *ngFor="let list of lists.communityLists; trackByKey"
-               class="list-panel"
-               cdkDrag [cdkDragData]="list">
-            <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
-          </div>
+          }
+        }
+        @if (workshops$ | async; as workshops) {
+          @if (workshops.length > 0) {
+            <div>
+              <nz-divider [nzText]="'WORKSHOP.Workshops' | translate" nzOrientation="left"></nz-divider>
+              <div (cdkDropListDropped)="setWorkshopIndex($event, workshops)" cdkDropList>
+                @for (workshopDisplay of workshops; track workshopDisplay) {
+                  <div class="workshop-panel" cdkDrag
+                    [cdkDragData]="workshopDisplay.workshop">
+                    <app-workshop-panel [lists]="workshopDisplay.lists" [workshop]="workshopDisplay.workshop"></app-workshop-panel>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        }
+        @if (sharedWorkshops$ | async; as sharedWorkshops) {
+          @if (sharedWorkshops.length > 0) {
+            <div>
+              <nz-divider [nzText]="'WORKSHOP.Shared_workshops' | translate" nzOrientation="left"></nz-divider>
+              @for (workshopDisplay of sharedWorkshops; track workshopDisplay) {
+                <div class="workshop-panel">
+                  <app-workshop-panel [lists]="workshopDisplay.lists"
+                  [workshop]="workshopDisplay.workshop"></app-workshop-panel>
+                </div>
+              }
+            </div>
+          }
+        }
+        @if ((teamsDisplays$ | async)?.length > 0) {
+          <nz-divider [nzText]="'TEAMS.Title' | translate"
+          nzOrientation="left"></nz-divider>
+        }
+        <div fxLayout="column" fxLayoutGap="5px">
+          @for (teamDisplay of teamsDisplays$ | async; track teamDisplay) {
+            <nz-collapse>
+              <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
+                <div (cdkDropListDropped)="setListIndex($event.item.data, $event.currentIndex, teamDisplay.lists)"
+                  cdkDropList #teamListsGroup="cdkDropList">
+                  @for (list of teamDisplay.lists; track list) {
+                    <div
+                      class="list-panel"
+                      cdkDrag [cdkDragData]="list">
+                      <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
+                    </div>
+                  }
+                </div>
+              </nz-collapse-panel>
+            </nz-collapse>
+          }
         </div>
-      </nz-collapse-panel>
-    </nz-collapse>
-  </div>
-</ng-template>
+        @if (lists.communityLists.length > 0) {
+          <nz-divider [nzText]="'Your_public_lists' | translate"
+          nzOrientation="left"></nz-divider>
+        }
+        @if (lists.communityLists.length > 0) {
+          <nz-collapse>
+            <nz-collapse-panel #communityListsPanel
+              nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})">
+              <div (cdkDropListDropped)="setListIndex($event.item.data, $event.currentIndex, lists.communityLists)"
+                cdkDropList #communityListGroup="cdkDropList">
+                @for (list of lists.communityLists; track list) {
+                  <div
+                    class="list-panel"
+                    cdkDrag [cdkDragData]="list">
+                    <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
+                  </div>
+                }
+              </div>
+            </nz-collapse-panel>
+          </nz-collapse>
+        }
+      </div>
+    }
+  }

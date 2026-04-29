@@ -10,9 +10,9 @@ import { SimulatorModule } from '../../pages/simulator/simulator.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
@@ -30,9 +30,8 @@ import { RouterModule } from '@angular/router';
         PipesModule,
         NzCardModule,
         NzButtonModule,
-        NzToolTipModule,
+        NzTooltipModule,
         NzPopconfirmModule,
-        NzMessageModule,
         NzIconModule,
         FlexLayoutModule,
         TranslateModule,

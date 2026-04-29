@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -21,6 +21,9 @@ import { map, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CraftingReplayFacade {
+  private store = inject<Store<fromCraftingReplay.CraftingReplayPartialState>>(Store);
+  private authFacade = inject(AuthFacade);
+
 
   loaded$ = this.store.pipe(
     select(CraftingReplaySelectors.getCraftingReplayLoaded)
@@ -43,12 +46,6 @@ export class CraftingReplayFacade {
   selectedCraftingReplay$ = this.store.pipe(
     select(CraftingReplaySelectors.getSelected)
   );
-
-  constructor(
-    private store: Store<fromCraftingReplay.CraftingReplayPartialState>,
-    private authFacade: AuthFacade
-  ) {
-  }
 
   loadAll(): void {
     this.store.dispatch(loadCraftingReplays());

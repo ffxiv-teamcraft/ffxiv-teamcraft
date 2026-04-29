@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest } from 'rxjs';
@@ -18,6 +18,9 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     imports: [NzTableModule, AsyncPipe, DecimalPipe, TranslateModule, CharacterNamePipe]
 })
 export class ListContributionsComponent {
+  private listsFacade = inject(ListsFacade);
+  private lazyData = inject(LazyDataFacade);
+
 
   private sort$ = new BehaviorSubject({
     key: 'amount',
@@ -42,9 +45,6 @@ export class ListContributionsComponent {
       return stats;
     })
   );
-
-  constructor(private listsFacade: ListsFacade, private lazyData: LazyDataFacade) {
-  }
 
 
   private getContributionStats(entries: ModificationEntry[], ilvls: LazyDataWithExtracts['ilvls']) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,11 +11,10 @@ import { Router } from '@angular/router';
     standalone: true
 })
 export class SimulatorOpenerComponent implements OnInit {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
 
-  constructor(private dialog: NzModalService,
-              private translate: TranslateService,
-              private router: Router) {
-  }
 
   ngOnInit() {
     setTimeout(() => {

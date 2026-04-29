@@ -1,14 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ComponentFactoryResolver,
-  Input,
-  OnDestroy,
-  ViewChild,
-  ViewContainerRef
-} from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentFactoryResolver, Input, OnDestroy, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { TotalComponent } from '../total/total.component';
 import { Subject } from 'rxjs';
@@ -28,6 +18,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, TranslateModule]
 })
 export class MetricDisplayComponent extends AbstractMetricDisplayComponent implements AfterViewInit, OnDestroy {
+  private resolver = inject(ComponentFactoryResolver);
+  private cdRef = inject(ChangeDetectorRef);
+
 
   public static readonly COMPONENTS_REGISTRY = {
     'total': TotalComponent,
@@ -43,10 +36,6 @@ export class MetricDisplayComponent extends AbstractMetricDisplayComponent imple
 
   @ViewChild('ref', { read: ViewContainerRef })
   private ref: ViewContainerRef;
-
-  constructor(private resolver: ComponentFactoryResolver, private cdRef: ChangeDetectorRef) {
-    super();
-  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

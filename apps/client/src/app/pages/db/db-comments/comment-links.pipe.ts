@@ -1,4 +1,4 @@
-import { Inject, Pipe, PipeTransform, PLATFORM_ID } from '@angular/core';
+import { Pipe, PipeTransform, PLATFORM_ID, inject } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { I18nName } from '@ffxiv-teamcraft/types';
@@ -19,6 +19,12 @@ import { IS_HEADLESS } from '../../../../environments/is-headless';
     standalone: true
 })
 export class CommentLinksPipe implements PipeTransform {
+  private sanitizer = inject(DomSanitizer);
+  private linkTools = inject(LinkToolsService);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private platform = inject(PLATFORM_ID);
+
 
   private xivdbRegexp = /(?:^|\s)https?:\/\/(en|fr|de|ja|www)?\.?xivdb\.com\/(\w+)\/(\d+)\/(\S+)/gmi;
 
@@ -27,11 +33,6 @@ export class CommentLinksPipe implements PipeTransform {
   private linkRegexp = /(?:^|\s)https?:\/\/\S+/gmi;
 
   private customSyntaxRegexp = /(item|map|mob|achievement|leve|npc|instance|quest|trait|action|status):"([^"]+)"/gmi;
-
-  constructor(private sanitizer: DomSanitizer, private linkTools: LinkToolsService,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              @Inject(PLATFORM_ID) private platform: any) {
-  }
 
   transform(value: string, locale: string, comment: DbComment): Observable<SafeHtml> {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {

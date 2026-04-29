@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isNil } from 'lodash';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { Datagrid, DatagridColDef } from '../../service/fish-context.service';
 import { FishingSpotUtilsService } from '../fishing-spot-utils.service';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
@@ -20,9 +20,12 @@ import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [FishingSpotUtilsService],
     standalone: true,
-    imports: [NzTableModule, NgTemplateOutlet, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe]
+    imports: [NzTableModule, NgTemplateOutlet, ItemIconComponent, NzTooltipModule, AsyncPipe, DecimalPipe]
 })
 export class FishingSpotDatagridComponent<T extends string | number = number> {
+  readonly util = inject(FishingSpotUtilsService);
+  readonly translate = inject(TranslateService);
+
   public readonly activeFish$ = new BehaviorSubject<number | undefined>(undefined);
 
   @Output()
@@ -35,9 +38,6 @@ export class FishingSpotDatagridComponent<T extends string | number = number> {
   public colIconRender?: TemplateRef<DatagridColDef>;
 
   public readonly table$ = new ReplaySubject<Datagrid<T>>();
-
-  constructor(public readonly util: FishingSpotUtilsService, public readonly translate: TranslateService) {
-  }
 
   @Input()
   public set activeFish(value: number | undefined) {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
@@ -7,7 +7,7 @@ import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TranslateModule } from '@ngx-translate/core';
 import { AsyncPipe } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
@@ -16,9 +16,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     templateUrl: './favorite-button.component.html',
     styleUrls: ['./favorite-button.component.less'],
     standalone: true,
-    imports: [NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, TranslateModule]
+    imports: [NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class FavoriteButtonComponent implements OnInit {
+  private authFacade = inject(AuthFacade);
+
 
   @Input()
   type: keyof Favorites;
@@ -32,9 +34,6 @@ export class FavoriteButtonComponent implements OnInit {
   isFavorite$: Observable<boolean>;
 
   private favorites$ = this.authFacade.favorites$;
-
-  constructor(private authFacade: AuthFacade) {
-  }
 
   toggleFavorite(): void {
     this.authFacade.toggleFavorite(this.type, this.key);

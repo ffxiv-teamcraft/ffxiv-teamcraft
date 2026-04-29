@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -31,7 +31,7 @@ import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -45,9 +45,16 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './inventory.component.html',
     styleUrls: ['./inventory.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzWaveModule, NzDropDownModule, NzMenuModule, ClipboardDirective, NzPopconfirmModule, NzGridModule, NzSpinModule, NzCardModule, ItemIconComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, NzListModule, CdkVirtualForOf, I18nNameComponent, InventoryPositionComponent, DbButtonComponent, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, LazyIconPipe]
+    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzInputModule, NzIconModule, NzTooltipModule, NzWaveModule, NzDropDownModule, NzMenuModule, ClipboardDirective, NzPopconfirmModule, NzGridModule, NzSpinModule, NzCardModule, ItemIconComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, NzListModule, CdkVirtualForOf, I18nNameComponent, InventoryPositionComponent, DbButtonComponent, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, LazyIconPipe]
 })
 export class InventoryComponent {
+  private inventoryService = inject(InventoryService);
+  private universalis = inject(UniversalisService);
+  private authFacade = inject(AuthFacade);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private settings = inject(SettingsService);
+
 
   public selectedExpansion$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
@@ -173,12 +180,6 @@ export class InventoryComponent {
         });
     })
   );
-
-  constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
-              private authFacade: AuthFacade,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              private settings: SettingsService) {
-  }
 
   public get selectedExpansion() {
     return this.selectedExpansion$.value;

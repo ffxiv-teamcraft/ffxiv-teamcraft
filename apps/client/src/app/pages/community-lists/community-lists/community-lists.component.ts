@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListTag } from '../../../modules/list/model/list-tag.enum';
@@ -15,7 +15,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AsyncPipe } from '@angular/common';
@@ -29,9 +29,14 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './community-lists.component.html',
     styleUrls: ['./community-lists.component.less'],
     standalone: true,
-    imports: [FlexModule, NzInputModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, ListPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzInputModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, PageLoaderComponent, ListPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommunityListsComponent implements OnDestroy {
+  private listsFacade = inject(ListsFacade);
+  private listService = inject(FirestoreListStorage);
+  private teamsFacade = inject(TeamsFacade);
+  private layoutsFacade = inject(LayoutsFacade);
+
 
   public tags: any[];
 
@@ -55,9 +60,10 @@ export class CommunityListsComponent implements OnDestroy {
 
   private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
 
-  constructor(private listsFacade: ListsFacade, private listService: FirestoreListStorage,
-              private teamsFacade: TeamsFacade, private layoutsFacade: LayoutsFacade,
-              route: ActivatedRoute, router: Router) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const router = inject(Router);
+
     this.teamsFacade.loadMyTeams();
     this.layoutsFacade.loadAll();
     this.tags = Object.keys(ListTag).map(key => {

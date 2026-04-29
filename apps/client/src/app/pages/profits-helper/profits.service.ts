@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProfitEntry } from './model/profit-entry';
@@ -7,9 +7,8 @@ import { ProfitEntry } from './model/profit-entry';
   providedIn: 'root'
 })
 export class ProfitsService {
+  private http = inject(HttpClient);
 
-  constructor(private http: HttpClient) {
-  }
 
   public getCraftingProfit(server: string, levels: number[], selfSufficient: boolean, minVelocity: number, maxComplexity: number): Observable<{
     items: ProfitEntry[],

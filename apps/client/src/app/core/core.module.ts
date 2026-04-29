@@ -38,7 +38,7 @@ import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-p
 import { ClipboardDirective } from './clipboard.directive';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { CommissionNotification } from '../model/notification/commission-notification';
@@ -49,7 +49,7 @@ import { I18nNameComponent } from './i18n/i18n-name/i18n-name.component';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { CommonModule } from '@angular/common';
 import { I18nRowPipe } from './i18n/i18n-row.pipe';
-import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive';
 import { NgForTrackByKeyDirective } from './track-by/ng-for-track-by-key.directive';
 import { PirschEventDirective } from './analytics/pirsch-event.directive';
@@ -69,7 +69,7 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
     ItemNameClipboardDirective,
     I18nNameComponent,
     NzButtonModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzIconModule,
     I18nRowPipe,
     PirschEventDirective,
@@ -101,12 +101,11 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
     RouterModule,
     ClipboardModule,
     NzButtonModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzIconModule,
     NzDividerModule,
     NzModalModule,
     NzSkeletonModule,
-    NzNotificationModule,
     I18nPipe,
     TimerPipe,
     DbButtonComponent,

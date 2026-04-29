@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nName } from '@ffxiv-teamcraft/types';
 
@@ -7,8 +7,8 @@ import { I18nName } from '@ffxiv-teamcraft/types';
     standalone: true
 })
 export class WorldNamePipe implements PipeTransform {
-  constructor(private readonly lazyData: LazyDataFacade) {
-  }
+  private readonly lazyData = inject(LazyDataFacade);
+
 
   transform(world: string): I18nName {
     return this.lazyData.getWorldName(world);

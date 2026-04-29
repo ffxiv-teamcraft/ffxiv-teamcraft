@@ -7,7 +7,7 @@
         [appXivdbActionTooltip]="action.getId(getJobId())"
         [appXivdbActionState]="state()"
         [appXivdbActionStateColor]="stateColor()"
-        [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}"
+        [class]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}"
         class="action">
         <img alt="{{getAlt()}}" src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}" class="action-icon">
         @if (notEnoughCp || disabled) {

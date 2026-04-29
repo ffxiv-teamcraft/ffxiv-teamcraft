@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -44,6 +44,11 @@ interface MateriaMenuEntry {
   imports: [FlexModule, ItemCapsTableComponent, NzDividerModule, ItemIconComponent, NzButtonModule, NzIconModule, I18nNameComponent, NzWaveModule, NzDropDownModule, NzSelectModule, FormsModule, NzMenuModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, IfMobilePipe]
 })
 export class MateriasPopupComponent extends DialogComponent {
+  private lazyData = inject(LazyDataFacade);
+  materiasService = inject(MateriaService);
+  private modalRef = inject(NzModalRef);
+  private statsService = inject(StatsService);
+
 
   equipmentPiece: EquipmentPiece;
 
@@ -76,8 +81,7 @@ export class MateriasPopupComponent extends DialogComponent {
 
   meldingChancesCache: Record<string, Observable<number>> = {};
 
-  constructor(private lazyData: LazyDataFacade, public materiasService: MateriaService,
-              private modalRef: NzModalRef, private statsService: StatsService) {
+  constructor() {
     super();
     this.patchData();
   }

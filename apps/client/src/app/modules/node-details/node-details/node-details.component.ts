@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmDetails, GatheringNode } from '@ffxiv-teamcraft/types';
@@ -17,7 +17,7 @@ import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AlarmButtonComponent } from '../../alarm-button/alarm-button/alarm-button.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
@@ -33,9 +33,12 @@ import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
   styleUrls: ['./node-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, DbButtonComponent, NzTagModule, NzToolTipModule, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe, I18nNameComponent, LazyIconPipe, FloorPipe, HourDisplayPipe]
+  imports: [FlexModule, DbButtonComponent, NzTagModule, NzTooltipModule, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe, I18nNameComponent, LazyIconPipe, FloorPipe, HourDisplayPipe]
 })
 export class NodeDetailsComponent {
+  private alarmsFacade = inject(AlarmsFacade);
+  translate = inject(TranslateService);
+
 
   OceanFishingTime = OceanFishingTime;
 
@@ -53,9 +56,6 @@ export class NodeDetailsComponent {
   hideDbButton = false;
 
   public alarms: AlarmDetails[] = [];
-
-  constructor(private alarmsFacade: AlarmsFacade, public translate: TranslateService) {
-  }
 
   private _node: GatheringNode;
 

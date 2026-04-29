@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Character, CharacterSearchResultRow } from '@xivapi/angular-client';
 import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
@@ -31,6 +31,10 @@ import { DialogComponent } from '../../dialog.component';
     imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, NzButtonModule, NzWaveModule, NzListModule, NzDividerModule, NzCheckboxModule, NzSpinModule, AsyncPipe, TranslateModule]
 })
 export class CharacterLinkPopupComponent extends DialogComponent {
+  private store = inject<Store<any>>(Store);
+  private modalRef = inject(NzModalRef);
+  private lodestoneService = inject(LodestoneService);
+
 
   public servers$: Observable<string[]>;
 
@@ -56,8 +60,7 @@ export class CharacterLinkPopupComponent extends DialogComponent {
     return CHINESE_GAME_SERVERS.includes(server) || KOREAN_GAME_SERVERS.includes(server) || TAIWAN_GAME_SERVERS.includes(server);
   }
 
-  constructor(private store: Store<any>, private modalRef: NzModalRef,
-              private lodestoneService: LodestoneService) {
+  constructor() {
     super();
     this.servers$ = of(GAME_SERVERS).pipe(
       map(servers => {

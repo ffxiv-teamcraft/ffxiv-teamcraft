@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { LayoutRowFilter } from '../../../core/layout/layout-row-filter';
 import { LayoutRow } from '../../../core/layout/layout-row';
 import { SettingsService } from '../../settings/settings.service';
@@ -30,6 +30,9 @@ import { uniq } from 'lodash';
     imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzIconModule, NzRadioModule, NzInputModule, NzAutocompleteModule, AsyncPipe, TranslateModule, IfMobilePipe]
 })
 export class LayoutEditorRowComponent implements OnInit {
+  settings = inject(SettingsService);
+  private authFacade = inject(AuthFacade);
+
 
   @Input()
   row: LayoutRow;
@@ -56,9 +59,6 @@ export class LayoutEditorRowComponent implements OnInit {
   );
 
   public filter: { isBooleanGate: boolean, reversed: boolean, value: string }[] = [];
-
-  constructor(public settings: SettingsService, private authFacade: AuthFacade) {
-  }
 
   filterChange(): void {
     this.row.filterName = this.filterToName();

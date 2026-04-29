@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { filter, first, map, shareReplay } from 'rxjs/operators';
@@ -26,7 +26,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { Router, RouterLink } from '@angular/router';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
@@ -40,9 +40,16 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     templateUrl: './profile-editor.component.html',
     styleUrls: ['./profile-editor.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzAvatarModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, RouterLink, NzTagModule, NzGridModule, NzCardModule, NzListModule, NzSliderModule, NzPopconfirmModule, UserAvatarComponent, AsyncPipe, TranslateModule, IfMobilePipe, CharacterNamePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
+    imports: [NgIf, FlexModule, NzAvatarModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzTooltipModule, NzWaveModule, RouterLink, NzTagModule, NzGridModule, NzCardModule, NzListModule, NzSliderModule, NzPopconfirmModule, UserAvatarComponent, AsyncPipe, TranslateModule, IfMobilePipe, CharacterNamePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class ProfileEditorComponent {
+  private authFacade = inject(AuthFacade);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private userPicker = inject(UserPickerService);
+  ipc = inject(IpcService);
+  private router = inject(Router);
+
 
   user$ = this.authFacade.user$;
 
@@ -83,10 +90,6 @@ export class ProfileEditorComponent {
   now = Math.floor(Date.now() / 1000);
 
   private statsReloader$ = new BehaviorSubject(null);
-
-  constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
-              private userPicker: UserPickerService, public ipc: IpcService, private router: Router) {
-  }
 
   saveSet(set: TeamcraftGearsetStats): void {
     this.authFacade.saveSet(set);

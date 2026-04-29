@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CustomLinksFacade } from '../../../modules/custom-links/+state/custom-links.facade';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, first, map, switchMap, tap } from 'rxjs/operators';
@@ -15,11 +15,14 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     imports: [PageLoaderComponent, FullpageMessageComponent, TranslateModule]
 })
 export class LinkComponent {
+  private customLinksFacade = inject(CustomLinksFacade);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+
 
   notFound = false;
 
-  constructor(private customLinksFacade: CustomLinksFacade, private route: ActivatedRoute,
-              private router: Router) {
+  constructor() {
     this.route.paramMap.pipe(
       first(),
       tap(params => {

@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
+  standalone: false,
   template: ''
 })
 export abstract class TeamcraftComponent implements OnDestroy {

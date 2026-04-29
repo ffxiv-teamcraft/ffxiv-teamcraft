@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -21,7 +21,13 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, NgxEchartsModule, NzSpinModule, AsyncPipe, TranslateModule]
 })
 export class FishBaitsComponent {
-  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
+  private readonly i18n = inject(I18nToolsService);
+  private readonly lazyData = inject(LazyDataFacade);
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+  private readonly translate = inject(TranslateService);
+
+  public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map(() => false));
 
   public readonly baitsChartData$ = this.fishCtx.baitsByFish$.pipe(
     switchMap((res) => {
@@ -105,13 +111,4 @@ export class FishBaitsComponent {
       };
     })
   );
-
-  constructor(
-    private readonly i18n: I18nToolsService,
-    private readonly lazyData: LazyDataFacade,
-    public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService,
-    private readonly translate: TranslateService
-  ) {
-  }
 }

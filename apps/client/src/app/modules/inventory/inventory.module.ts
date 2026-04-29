@@ -7,7 +7,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { InventoryPositionComponent } from './inventory-position/inventory-position.component';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { InventoryPositionComponent } from './inventory-position/inventory-posit
         NzDividerModule,
         NzTagModule,
         NzPopconfirmModule,
-        NzToolTipModule,
+        NzTooltipModule,
         FlexLayoutModule,
         ContentIdLinkingPopupComponent, InventoryPositionComponent
     ]

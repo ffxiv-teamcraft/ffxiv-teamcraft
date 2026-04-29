@@ -10,13 +10,13 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { GearsetCreationPopupComponent } from './gearset-creation-popup/gearset-creation-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -50,10 +50,9 @@ import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.
     NzAlertModule,
     NzDividerModule,
     NzModalModule,
-    NzToolTipModule,
+    NzTooltipModule,
     NzPopconfirmModule,
     NzIconModule,
-    NzMessageModule,
     FormsModule,
     ReactiveFormsModule,
     PipesModule,

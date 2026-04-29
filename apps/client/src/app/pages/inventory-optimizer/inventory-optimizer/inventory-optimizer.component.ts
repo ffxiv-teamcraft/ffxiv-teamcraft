@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -24,7 +24,7 @@ import { InventoryPositionComponent } from '../../../modules/inventory/inventory
 import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -45,9 +45,17 @@ import { FlexModule } from '@angular/flex-layout/flex';
   templateUrl: './inventory-optimizer.component.html',
   styleUrls: ['./inventory-optimizer.component.less'],
   standalone: true,
-  imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzSwitchModule, FormsModule, NgIf, FullpageMessageComponent, NzSpinModule, NgFor, NzCollapseModule, ClipboardDirective, NzIconModule, NgSwitch, NgSwitchCase, NzInputModule, NzSelectModule, NzToolTipModule, NzListModule, ItemIconComponent, ItemNameClipboardDirective, InventoryPositionComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzSwitchModule, FormsModule, NgIf, FullpageMessageComponent, NzSpinModule, NgFor, NzCollapseModule, ClipboardDirective, NzIconModule, NgSwitch, NgSwitchCase, NzInputModule, NzSelectModule, NzTooltipModule, NzListModule, ItemIconComponent, ItemNameClipboardDirective, InventoryPositionComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventoryOptimizerComponent {
+  private inventoryFacade = inject(InventoryService);
+  private settings = inject(SettingsService);
+  private optimizers = inject(INVENTORY_OPTIMIZER);
+  private lazyData = inject(LazyDataFacade);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private listPicker = inject(ListPickerService);
+
 
   public pauseTracking$ = new BehaviorSubject<boolean>(false);
 
@@ -175,10 +183,7 @@ export class InventoryOptimizerComponent {
     map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))
   );
 
-  constructor(private inventoryFacade: InventoryService, private settings: SettingsService,
-              @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService,
-              private listPicker: ListPickerService) {
+  constructor() {
     this.optimizers
       .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
       .forEach(optimizer => {

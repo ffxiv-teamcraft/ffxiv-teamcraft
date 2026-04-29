@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { SearchResult } from '@ffxiv-teamcraft/types';
 import { Observable } from 'rxjs';
@@ -7,9 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class ItemPickerService {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
 
-  constructor(private dialog: NzModalService, private translate: TranslateService) {
-  }
 
   public pickItems(): Observable<SearchResult[]> {
     return this.dialog.create({

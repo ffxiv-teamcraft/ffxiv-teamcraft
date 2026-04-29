@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output, inject } from '@angular/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
@@ -25,10 +25,14 @@ interface FishingSpotChartData {
     imports: [NzCardModule, NgxEchartsModule, AsyncPipe, TranslateModule]
 })
 export class FishingSpotHoursComponent implements OnInit, OnDestroy {
+  private readonly i18n = inject(I18nToolsService);
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map((res) => res.loading));
+  public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map(() => false));
 
   public readonly hoursChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.hoursBySpot$.pipe(
     switchMap((res) => {
@@ -117,13 +121,6 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   private readonly activeFish$ = new Subject<number | undefined>();
 
   private readonly unsubscribe$ = new Subject<void>();
-
-  constructor(
-    private readonly i18n: I18nToolsService,
-    public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService
-  ) {
-  }
 
   @Input()
   public set activeFish(value: number | undefined) {

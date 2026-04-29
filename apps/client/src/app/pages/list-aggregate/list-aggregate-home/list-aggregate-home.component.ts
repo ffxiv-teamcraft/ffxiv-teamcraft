@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
@@ -25,6 +25,11 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     imports: [NzPageHeaderModule, NzTableModule, NzInputModule, NzButtonModule, NzSelectModule, FormsModule, NzWaveModule, RouterLink, AsyncPipe, TranslateModule]
 })
 export class ListAggregateHomeComponent {
+  private listsFacade = inject(ListsFacade);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private teamsFacade = inject(TeamsFacade);
+  private layoutsFacade = inject(LayoutsFacade);
+
 
   public lists$ = this.listsFacade.allListDetails$.pipe(
     map(lists => {
@@ -50,8 +55,7 @@ export class ListAggregateHomeComponent {
     return `${this.selectedLists.map(list => list.$key).join(':')}/${this.layoutId}`;
   }
 
-  constructor(private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
-              private layoutsFacade: LayoutsFacade) {
+  constructor() {
     this.listsFacade.loadMyLists();
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadMyWorkshops();

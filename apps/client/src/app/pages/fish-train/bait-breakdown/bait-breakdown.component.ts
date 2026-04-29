@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { combineLatest, ReplaySubject, switchMap } from 'rxjs';
 import { EChartsOption } from 'echarts';
@@ -22,6 +22,9 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     imports: [PageLoaderComponent, NgxEchartsModule, NzEmptyModule, TranslateModule]
 })
 export class BaitBreakdownComponent extends TeamcraftComponent {
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+
   echartsInstance$ = new ReplaySubject<any>();
 
   @Input()
@@ -75,7 +78,7 @@ export class BaitBreakdownComponent extends TeamcraftComponent {
     empty: true
   };
 
-  constructor(private i18n: I18nToolsService, private translate: TranslateService) {
+  constructor() {
     super();
     const reports$ = observeInput(this, 'reports').pipe(
       map(reports => reports.filter(report => !report.mooch))

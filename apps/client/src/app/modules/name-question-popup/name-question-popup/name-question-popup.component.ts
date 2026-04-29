@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup,
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -17,9 +17,12 @@ import { SettingsService } from '../../settings/settings.service';
   templateUrl: './name-question-popup.component.html',
   styleUrls: ['./name-question-popup.component.less'],
   standalone: true,
-  imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzCheckboxModule, NzToolTipModule, NzButtonModule, NzWaveModule, TranslateModule]
+  imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzCheckboxModule, NzTooltipModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class NameQuestionPopupComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+  private fb = inject(UntypedFormBuilder);
+
 
   #settings = inject(SettingsService);
 
@@ -36,10 +39,6 @@ export class NameQuestionPopupComponent extends DialogComponent implements OnIni
   public type = 'text';
 
   public control: UntypedFormGroup;
-
-  constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder) {
-    super();
-  }
 
   public submit(): void {
     if (this.showEphemeralCheckbox || this.showOfflineCheckbox) {

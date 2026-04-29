@@ -1,4 +1,4 @@
-import { booleanAttribute, ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, of } from 'rxjs';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { XivapiItemTooltipDirective } from '../../tooltip/xivapi-tooltip/xivapi-item-tooltip.directive';
 
 @Component({
@@ -19,6 +19,11 @@ import { XivapiItemTooltipDirective } from '../../tooltip/xivapi-tooltip/xivapi-
   imports: [XivapiItemTooltipDirective, NzSkeletonModule, AsyncPipe]
 })
 export class ItemIconComponent {
+  private translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  private ipc = inject(IpcService);
+  private router = inject(Router);
+
 
   /**
    * The id of the icon of the item.
@@ -109,10 +114,6 @@ export class ItemIconComponent {
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private translate: TranslateService, private lazyData: LazyDataFacade,
-              private ipc: IpcService, private router: Router) {
-  }
 
   getLink(): string {
     return `/db/${this.translate.currentLang}/item/${this.itemId}`;

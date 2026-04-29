@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { first, map, switchMap } from 'rxjs/operators';
 import { Team } from '../../model/team/team';
@@ -16,15 +16,17 @@ import { PermissionsController } from '../database/permissions-controller';
 
 @Injectable()
 export class DiscordWebhookService {
+  private http = inject(HttpClient);
+  private translate = inject(TranslateService);
+  private i18n = inject(I18nToolsService);
+  private linkTools = inject(LinkToolsService);
+  private characterService = inject(LodestoneService);
+  private lazyData = inject(LazyDataFacade);
+
 
   public static CLIENT_ID = '514350168678727681';
 
   private static COLOR = 10982232;
-
-  constructor(private http: HttpClient, private translate: TranslateService,
-              private i18n: I18nToolsService, private linkTools: LinkToolsService,
-              private characterService: LodestoneService, private lazyData: LazyDataFacade) {
-  }
 
   sendMessage(team: Team, contentKey: string, contentParams?: any, iconUrl$: Observable<string> = of(''), imageUrl?: string): void {
     if (!team.webhook) {

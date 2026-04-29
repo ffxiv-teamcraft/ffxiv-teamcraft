@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -44,6 +44,11 @@ import { EtroImportStatic } from '../etro-import-popup/etro-import-static';
   providedIn: 'root'
 })
 export class GearsetsFacade {
+  private store = inject<Store<GearsetsPartialState>>(Store);
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+  private http = inject(HttpClient);
+
   loaded$ = this.store.pipe(select(gearsetsQuery.getLoaded));
 
   allGearsets$ = this.store.pipe(
@@ -90,10 +95,6 @@ export class GearsetsFacade {
         return !gearset.notFound && PermissionsController.getPermissionLevel(gearset, userId);
       })
     );
-
-  constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade, private http: HttpClient) {
-  }
 
   toArray(gearset: TeamcraftGearset): { piece: EquipmentPiece, slot: string }[] {
     return [

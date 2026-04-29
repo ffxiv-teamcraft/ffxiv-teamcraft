@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Language } from '../../../core/data/language';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -25,6 +25,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzRadioModule, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzTabsModule, NzAlertModule, TranslateModule]
 })
 export class MacroTranslatorComponent {
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+
   macroToTranslate: string;
 
   macroLanguage: 'en' | 'fr' | 'de' | 'ja' | 'ko' | 'zh';
@@ -50,9 +53,6 @@ export class MacroTranslatorComponent {
 
   private findActionsAutoTranslatedRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
-
-  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
-  }
 
   translateMacro(): void {
     const macroTranslated: { [index: string]: string[] } = {

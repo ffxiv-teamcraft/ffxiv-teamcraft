@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -28,7 +28,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -39,9 +39,17 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     templateUrl: './leve.component.html',
     styleUrls: ['./leve.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, MapPositionComponent, RouterLink, NzTagModule, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
+    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, MapPositionComponent, RouterLink, NzTagModule, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
 })
 export class LeveComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private router = inject(Router);
+  private linkTools = inject(LinkToolsService);
+  settings = inject(SettingsService);
+
 
   public leve$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -62,11 +70,14 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   public npcs$: Observable<{ id: number, issuer?: boolean, client?: boolean }[]>;
 
-  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private linkTools: LinkToolsService,
-              public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'leves', 'leveId');
 
     this.items$ = this.leve$.pipe(

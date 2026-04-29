@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as MetricsDashboardsActions from './metrics-dashboards.actions';
 import { selectMetricsDashboard } from './metrics-dashboards.actions';
@@ -9,6 +9,10 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Injectable()
 export class MetricsDashboardsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private metricsDashboardsService = inject(MetricsDashboardsService);
+
   loadMetricsDashboards$ = createEffect(() =>
     this.actions$.pipe(
       ofType(MetricsDashboardsActions.loadMetricsDashboards),
@@ -56,8 +60,4 @@ export class MetricsDashboardsEffects {
       ),
     { dispatch: false }
   );
-
-  constructor(private actions$: Actions, private authFacade: AuthFacade,
-              private metricsDashboardsService: MetricsDashboardsService) {
-  }
 }

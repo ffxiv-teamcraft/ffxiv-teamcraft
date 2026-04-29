@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { EChartsOption } from 'echarts';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -25,6 +25,12 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     imports: [PageLoaderComponent, NgxEchartsModule, NzEmptyModule, TranslateModule]
 })
 export class FishSizeChartComponent extends TeamcraftComponent {
+  private translate = inject(TranslateService);
+  private settings = inject(SettingsService);
+  private lodestone = inject(LodestoneService);
+  private cd = inject(ChangeDetectorRef);
+  private i18n = inject(I18nToolsService);
+
   echartsInstance$ = new ReplaySubject<any>();
 
   loading = true;
@@ -71,9 +77,7 @@ export class FishSizeChartComponent extends TeamcraftComponent {
     empty: true
   };
 
-  constructor(private translate: TranslateService, private settings: SettingsService,
-              private lodestone: LodestoneService, private cd: ChangeDetectorRef,
-              private i18n: I18nToolsService) {
+  constructor() {
     /**
      * NOTE:
      * If we want to implement chart race replay, it'd be quite easy:

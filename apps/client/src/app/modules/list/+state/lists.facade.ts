@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -61,6 +61,24 @@ import { ListHistoryService } from '../../../core/database/storage/list/list-his
   providedIn: 'root'
 })
 export class ListsFacade {
+  private store = inject<Store<{
+    lists: ListsState;
+}>>(Store);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private teamsFacade = inject(TeamsFacade);
+  private settings = inject(SettingsService);
+  private userInventoryService = inject(InventoryService);
+  private serializer = inject(NgSerializerService);
+  private itemPicker = inject(ItemPickerService);
+  private listManager = inject(ListManagerService);
+  private progress = inject(ProgressPopupService);
+  private ipc = inject(IpcService);
+  private listsService = inject(FirestoreListStorage);
+  private analyticsService = inject(AnalyticsService);
+  private listsHistoryService = inject(ListHistoryService);
+
   loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
 
   connectedTeams$ = this.store.select(listsQuery.getConnectedTeams);
@@ -207,11 +225,9 @@ export class ListsFacade {
 
   private overlay: boolean;
 
-  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
-              router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
-              private listManager: ListManagerService, private progress: ProgressPopupService, private ipc: IpcService,
-              private listsService: FirestoreListStorage, private analyticsService: AnalyticsService, private listsHistoryService: ListHistoryService) {
+  constructor() {
+    const router = inject(Router);
+
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {

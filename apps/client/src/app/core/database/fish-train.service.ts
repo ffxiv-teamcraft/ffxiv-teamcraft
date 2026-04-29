@@ -1,6 +1,6 @@
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { PersistedFishTrain } from '../../model/other/persisted-fish-train';
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { addDoc, collection, collectionData, doc, Firestore, query, writeBatch } from '@angular/fire/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
@@ -12,10 +12,24 @@ import { catchError, map, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FishTrainService extends FirestoreStorage<PersistedFishTrain> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService) {
+
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   addReport(report: TrainFishingReport): Observable<void> {

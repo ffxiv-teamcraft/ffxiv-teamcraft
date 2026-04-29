@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { I18nName, LazyDataEntries, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
@@ -8,9 +8,8 @@ import { Observable } from 'rxjs';
     standalone: true
 })
 export class I18nRowPipe implements PipeTransform {
+  private lazyData = inject(LazyDataFacade);
 
-  constructor(private lazyData: LazyDataFacade) {
-  }
 
   transform<K extends LazyDataI18nKey>(value: number, contentName: K, extendedProperty?: string): Observable<I18nName> {
     // We're going to assume the second param is keyof Extract<LazyDataEntries[K], I18nName> since angular is too stupid to udnerstand it in templates

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
@@ -29,7 +29,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -43,9 +43,18 @@ import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
     styleUrls: ['./commission-details.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FullpageMessageComponent, NzCardModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, NzTagModule, UserRatingDisplayComponent, UserAvatarComponent, NzDividerModule, NzGridModule, ItemIconComponent, NzProgressModule, RouterLink, NzRateModule, FormsModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
+    imports: [FullpageMessageComponent, NzCardModule, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, NzTagModule, UserRatingDisplayComponent, UserAvatarComponent, NzDividerModule, NzGridModule, ItemIconComponent, NzProgressModule, RouterLink, NzRateModule, FormsModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class CommissionDetailsComponent extends TeamcraftComponent implements OnInit {
+  private activatedRoute = inject(ActivatedRoute);
+  private commissionsFacade = inject(CommissionsFacade);
+  private authFacade = inject(AuthFacade);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+  private notificationsFacade = inject(NotificationsFacade);
+  private router = inject(Router);
+  private listsFacade = inject(ListsFacade);
+
 
   CommissionStatus = CommissionStatus;
 
@@ -71,13 +80,6 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
       };
     })
   );
-
-  constructor(private activatedRoute: ActivatedRoute, private commissionsFacade: CommissionsFacade,
-              private authFacade: AuthFacade, public translate: TranslateService,
-              public settings: SettingsService, private notificationsFacade: NotificationsFacade,
-              private router: Router, private listsFacade: ListsFacade) {
-    super();
-  }
 
   deleteCommission(commission: Commission, withLists: boolean): void {
     this.commissionsFacade.delete(commission.$key, withLists);

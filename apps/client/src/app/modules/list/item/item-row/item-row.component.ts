@@ -42,7 +42,7 @@ import { UserAvatarComponent } from '../../../user-avatar/user-avatar/user-avata
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
@@ -56,7 +56,7 @@ import { AsyncPipe } from '@angular/common';
     styleUrls: ['./item-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, UserAvatarComponent, ItemRowButtonsComponent, InventoryPositionComponent, NzDropDownModule, NzMenuModule, NzInputModule, FormsModule, NzAutocompleteModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NgForTrackByIdDirective, NzWaveModule, NzPopoverModule, NzInputNumberModule, CompactAmountInputComponent, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
+    imports: [FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, UserAvatarComponent, ItemRowButtonsComponent, InventoryPositionComponent, NzDropDownModule, NzMenuModule, NzInputModule, FormsModule, NzAutocompleteModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NgForTrackByIdDirective, NzWaveModule, NzPopoverModule, NzInputNumberModule, CompactAmountInputComponent, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class ItemRowComponent extends AbstractItemRowComponent implements OnInit {
 

@@ -15,9 +15,9 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
@@ -55,8 +55,7 @@ const routes: Routes = [
     NzDividerModule,
     NzButtonModule,
     NzIconModule,
-    NzMessageModule,
-    NzToolTipModule,
+    NzTooltipModule,
     FoldersModule,
     DragDropModule,
     NzPopconfirmModule,

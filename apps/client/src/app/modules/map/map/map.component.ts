@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { MapData } from '../map-data';
 import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
@@ -13,7 +13,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { RouterLink } from '@angular/router';
 import { ExtendedModule } from '@angular/flex-layout/extended';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { AsyncPipe, DecimalPipe, NgStyle } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
@@ -25,9 +25,11 @@ import { uniqBy } from 'lodash';
   styleUrls: ['./map.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [DbButtonComponent, NzToolTipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+  imports: [DbButtonComponent, NzTooltipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapComponent extends DialogComponent implements OnInit {
+  private mapService = inject(MapService);
+
 
   public unknownPosition = false;
 
@@ -51,10 +53,6 @@ export class MapComponent extends DialogComponent implements OnInit {
   loaded: EventEmitter<void> = new EventEmitter<void>();
 
   private mapId$: ReplaySubject<number> = new ReplaySubject<number>();
-
-  constructor(private mapService: MapService) {
-    super();
-  }
 
   private _mapId: number;
 

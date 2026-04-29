@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, inject } from '@angular/core';
 import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
@@ -19,7 +19,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { MapComponent } from '../map/map.component';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
@@ -31,9 +31,12 @@ import { ProcessedListAggregate } from '../../list-aggregate/model/processed-lis
   templateUrl: './navigation-map.component.html',
   styleUrls: ['./navigation-map.component.less'],
   standalone: true,
-  imports: [MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe, I18nPipe, TranslateModule, I18nRowPipe]
+  imports: [MapComponent, NzListModule, NzTooltipModule, ClipboardDirective, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class NavigationMapComponent extends DialogComponent implements OnInit {
+  private mapService = inject(MapService);
+  private listsFacade = inject(ListsFacade);
+
 
   @Input()
   mapId: number;
@@ -51,10 +54,6 @@ export class NavigationMapComponent extends DialogComponent implements OnInit {
   markedAsDone = [];
 
   aggregate?: ProcessedListAggregate;
-
-  constructor(private mapService: MapService, private listsFacade: ListsFacade) {
-    super();
-  }
 
   ngOnInit() {
     this.patchData();
