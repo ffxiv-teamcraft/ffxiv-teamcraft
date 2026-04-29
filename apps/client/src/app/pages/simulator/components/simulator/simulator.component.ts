@@ -306,7 +306,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
               public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
               private rotationsFacade: RotationsFacade, private router: Router,
               private dialog: NzModalService, public translate: TranslateService,
-              private message: private rotationPicker: RotationPickerService,
+              private message: NzMessageService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
               private lazyData: LazyDataFacade) {

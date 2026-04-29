@@ -7,16 +7,16 @@ import {
   BiteTimesPerFishPerSpotQuery,
   EorzeaTimesPerFishPerSpotQuery,
   FishStatisticsPerFishPerSpotQuery,
-  HooksetTugsPerFishPerSpotQuery, LuresPerFishPerSpotQuery,
+  HooksetTugsPerFishPerSpotQuery,
+  LuresPerFishPerSpotQuery,
   RankingPerFishQuery,
   SpotsPerFishQuery,
   WeathersPerFishPerSpotQuery
 } from './fish-data.gql';
-import { QueryOptionsAlone } from 'apollo-angular/types';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 
-const qOpts: QueryOptionsAlone<any> = { fetchPolicy: 'network-only' };
+const qOpts = { fetchPolicy: 'network-only' } as const;
 
 /**
  * A service for querying fish data.
@@ -46,7 +46,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about the spots for the given fish.
    */
   public getSpotsByFishId = (fishId: number) => {
-    return this.spotsFishQuery.fetch({ fishId }, qOpts);
+    return this.spotsFishQuery.fetch({ variables: { fishId }, ...qOpts });
   };
 
   /**
@@ -57,7 +57,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about hours that a fish can be caught at.
    */
   public getHours = (fishId?: number, spotId?: number) => {
-    return this.etimeFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+    return this.etimeFishSpotQuery.fetch({ variables: { fishId, spotId }, ...qOpts });
   };
 
   /**
@@ -89,14 +89,16 @@ export class FishDataService {
       }
     }
     return this.baitFishSpotQuery.fetch({
-      fishId,
-      spotId,
-      misses: showMisses ? -2 : 1,
-      aLureMin: aLure.min,
-      aLureMax: aLure.max,
-      mLureMin: mLure.min,
-      mLureMax: mLure.max
-    }, qOpts);
+      variables: {
+        fishId,
+        spotId,
+        misses: showMisses ? -2 : 1,
+        aLureMin: aLure.min,
+        aLureMax: aLure.max,
+        mLureMin: mLure.min,
+        mLureMax: mLure.max
+      }, ...qOpts
+    });
   };
 
   /**
@@ -107,7 +109,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about the hooksets and tugs used to catch the given fish.
    */
   public getLures = (fishId?: number, spotId?: number) => {
-    return this.luresFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+    return this.luresFishSpotQuery.fetch({ variables: { fishId, spotId }, ...qOpts });
   };
 
   /**
@@ -118,7 +120,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about the hooksets and tugs used to catch the given fish.
    */
   public getHooksets = (fishId?: number, spotId?: number) => {
-    return this.hooksFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+    return this.hooksFishSpotQuery.fetch({ variables: { fishId, spotId }, ...qOpts });
   };
 
   /**
@@ -130,7 +132,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about bite times for the given fish.
    */
   public getBiteTimesByBait = (fishId?: number, spotId?: number, baitId?: number) => {
-    return this.biteFishSpotBaitQuery.fetch({ fishId, spotId, baitId }, qOpts);
+    return this.biteFishSpotBaitQuery.fetch({ variables: { fishId, spotId, baitId }, ...qOpts });
   };
 
   /**
@@ -141,7 +143,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about bite times for the given fish.
    */
   public getBiteTimes = (fishId?: number, spotId?: number) => {
-    return this.biteFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+    return this.biteFishSpotQuery.fetch({ variables: { fishId, spotId }, ...qOpts });
   };
 
   /**
@@ -152,7 +154,7 @@ export class FishDataService {
    * @returns An apollo result observable containing aggregate statistics about the given fish.
    */
   public getStatisticsByFishId = (fishId: number, spotId?: number) => {
-    return this.statFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+    return this.statFishSpotQuery.fetch({ variables: { fishId, spotId }, ...qOpts });
   };
 
   /**
@@ -163,7 +165,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about the weathers a fish can be caught during.
    */
   public getWeather = (fishId?: number, spotId?: number) => {
-    return this.weathersFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+    return this.weathersFishSpotQuery.fetch({ variables: { fishId, spotId }, ...qOpts });
   };
 
   /**
@@ -173,7 +175,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about user statistics for the given fish.
    */
   public getRankingByFishId = (fishId: number) => {
-    return this.auth.userId$.pipe(switchMap((userId) => this.rankingFishQuery.fetch({ fishId, userId }, qOpts)));
+    return this.auth.userId$.pipe(switchMap((userId) => this.rankingFishQuery.fetch({ variables: { fishId, userId }, ...qOpts })));
   };
 
   public deleteBaitFromSpot(baitId: number, spot: number): Observable<any> {

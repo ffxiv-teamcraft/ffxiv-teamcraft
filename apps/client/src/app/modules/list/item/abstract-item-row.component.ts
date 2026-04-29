@@ -2,7 +2,7 @@ import { TeamcraftOptimizedComponent } from '../../../core/component/teamcraft-o
 import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { ListRow } from '../model/list-row';
-import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
@@ -242,7 +242,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
   _layout: ListLayout;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
-              protected messageService: protected translate: TranslateService,
+              protected messageService: NzMessageService, protected translate: TranslateService,
               protected modal: NzModalService,
               protected i18n: I18nToolsService, protected cdRef: ChangeDetectorRef,
               protected userService: UserService,
@@ -253,7 +253,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
               protected rotationPicker: RotationPickerService,
               protected commentsService: CommentsService,
               protected listPicker: ListPickerService,
-              protected notificationService: public consumablesService: ConsumablesService,
+              protected notificationService: NzNotificationService, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
               protected inventoryService: InventoryService,
               protected simulationService: SimulationService,

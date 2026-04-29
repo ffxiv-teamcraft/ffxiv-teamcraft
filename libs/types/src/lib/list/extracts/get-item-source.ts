@@ -24,7 +24,7 @@ export function getItemSource(item: ExtractRow, type: DataType.ISLAND_CROP, isOb
 export function getItemSource(item: ExtractRow, type: DataType.TRIPLE_TRIAD_DUELS, isObject?: boolean): TripleTriadDuel[]
 export function getItemSource(item: ExtractRow, type: DataType.TRIPLE_TRIAD_PACK, isObject?: boolean): { id: number, price: number }
 export function getItemSource<T = any>(item: ExtractRow, type: DataType, isObject?: boolean): T
-export function getItemSource<T = any>(item: ExtractRow & { alarms?: AlarmDetails[] }, type: DataType, isObject = false): ItemSource['data'] {
+export function getItemSource(item: ExtractRow & { alarms?: AlarmDetails[] }, type: DataType, isObject = false): ItemSource['data'] {
   if (item.sources === undefined) {
     return (isObject ? {} : []) as any;
   }
@@ -33,7 +33,7 @@ export function getItemSource<T = any>(item: ExtractRow & { alarms?: AlarmDetail
     if (type === DataType.ALARMS && item.alarms && item.alarms.length > 0) {
       return item.alarms;
     } else {
-      return isObject ? {} : [] as any;
+      return isObject ? {} as any : [] as any;
     }
   } else {
     return structuredClone(source.data);

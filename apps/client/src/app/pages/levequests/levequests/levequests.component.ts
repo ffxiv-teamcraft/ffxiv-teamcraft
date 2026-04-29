@@ -112,7 +112,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   constructor(private listsFacade: ListsFacade,
               private router: Router, private route: ActivatedRoute,
-              private listManager: ListManagerService, private notificationService: private i18n: I18nToolsService, private lazyData: LazyDataFacade,
+              private listManager: ListManagerService, private notificationService: NzNotificationService, private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,

@@ -89,7 +89,7 @@ export class RotationPanelComponent implements OnInit {
   private syncLinkUrl: string;
 
   constructor(private linkTools: LinkToolsService,
-              private rotationsFacade: RotationsFacade, private message: public translate: TranslateService, private dialog: NzModalService,
+              private rotationsFacade: RotationsFacade, public translate: TranslateService, private dialog: NzModalService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,

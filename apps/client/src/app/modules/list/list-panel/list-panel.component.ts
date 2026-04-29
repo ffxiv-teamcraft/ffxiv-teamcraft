@@ -183,7 +183,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
 
-  constructor(private listsFacade: ListsFacade, private message: public translate: TranslateService, private linkTools: LinkToolsService,
+  constructor(private listsFacade: ListsFacade, private message: NzMessageService, public translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,

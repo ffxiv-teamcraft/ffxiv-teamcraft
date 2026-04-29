@@ -503,7 +503,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly listsFacade: ListsFacade,
     private readonly progressService: ProgressPopupService,
     private readonly listManager: ListManagerService,
-    private readonly notificationService: private readonly rotationPicker: RotationPickerService,
+    private readonly notificationService: NzNotificationService, private readonly rotationPicker: RotationPickerService,
     private readonly attt: ATTTService,
     private readonly lazyData: LazyDataFacade,
     public readonly settings: SettingsService,

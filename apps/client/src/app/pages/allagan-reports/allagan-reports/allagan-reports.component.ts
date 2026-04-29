@@ -118,7 +118,7 @@ export class AllaganReportsComponent {
   constructor(public allaganReportsService: AllaganReportsService,
               public translate: TranslateService,
               private lazyData: LazyDataFacade, private authFacade: AuthFacade,
-              private message: private cd: ChangeDetectorRef) {
+              private message: NzMessageService, private cd: ChangeDetectorRef) {
   }
 
   public saveSourceFilter(sources: AllaganReportSource[]): void {

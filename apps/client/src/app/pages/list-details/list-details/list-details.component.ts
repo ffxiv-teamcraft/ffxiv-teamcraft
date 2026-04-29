@@ -173,7 +173,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
-              private alarmsFacade: AlarmsFacade, private message: private listManager: ListManagerService, private progressService: ProgressPopupService,
+              private alarmsFacade: AlarmsFacade, private message: NzMessageService, private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18n: I18nToolsService,
               private linkTools: LinkToolsService, protected seoService: SeoService,

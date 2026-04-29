@@ -66,7 +66,7 @@ export class RotationFolderPanelComponent {
   private syncLinkUrl: string;
 
   constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
-              private message: private translate: TranslateService, private dialog: NzModalService,
+              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
               private customLinksFacade: CustomLinksFacade, private rotationsFacade: RotationsFacade) {
 
     this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.folder$]).pipe(

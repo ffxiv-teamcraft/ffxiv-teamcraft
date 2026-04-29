@@ -177,7 +177,7 @@ export class InventoryOptimizerComponent {
 
   constructor(private inventoryFacade: InventoryService, private settings: SettingsService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataFacade, private message: private translate: TranslateService,
+              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService,
               private listPicker: ListPickerService) {
     this.optimizers
       .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))

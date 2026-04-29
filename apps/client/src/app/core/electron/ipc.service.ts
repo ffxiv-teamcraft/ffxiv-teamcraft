@@ -77,7 +77,7 @@ export class IpcService {
 
   constructor(private platformService: PlatformService, private router: Router,
               private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
-              private translate: TranslateService, private notification: private message: NzMessageService) {
+              private translate: TranslateService, private notification: NzNotificationService, private message: NzMessageService) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       this._isChildWindow = window.location.toString().includes('?child=true');

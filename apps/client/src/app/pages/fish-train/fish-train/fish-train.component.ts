@@ -229,8 +229,8 @@ export class FishTrainComponent extends TeamcraftComponent {
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
               public translate: TranslateService, private fishDataService: FishDataService,
               public platform: PlatformService, private ipc: IpcService,
-              private dialog: NzModalService, private message: private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
-              private notificationService: private pushNotificationsService: PushNotificationsService,
+              private dialog: NzModalService, private message: NzMessageService, private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
+              private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
               private cd: ChangeDetectorRef, router: Router, private progressPopup: ProgressPopupService,
               private lodestone: LodestoneService, public settings: SettingsService) {
     super();

@@ -457,7 +457,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
-              private message: private mjiWorkshopStatusService: IslandWorkshopStatusService,
+              private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
               public platformService: PlatformService, public settings: SettingsService,
               private authFacade: AuthFacade, private i18n: I18nToolsService, destroyRef: DestroyRef) {
     super();

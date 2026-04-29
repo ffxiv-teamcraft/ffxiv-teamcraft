@@ -57,5 +57,6 @@
     ]
   },
   "useInferencePlugins": false,
-  "defaultBase": "staging"
+  "defaultBase": "staging",
+  "analytics": false
 }

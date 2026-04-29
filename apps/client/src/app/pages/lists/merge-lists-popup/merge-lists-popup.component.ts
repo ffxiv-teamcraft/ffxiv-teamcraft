@@ -38,7 +38,7 @@ export class MergeListsPopupComponent extends AbstractListsSelectionPopupCompone
   ListController = ListController;
 
   constructor(listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private modalRef: NzModalRef, private message: private translate: TranslateService, workshopsFacade: WorkshopsFacade) {
+              private modalRef: NzModalRef, private message: NzMessageService, private translate: TranslateService, workshopsFacade: WorkshopsFacade) {
     super(listsFacade, workshopsFacade);
   }
 

@@ -37,7 +37,7 @@ export class SimulationSharePopupComponent extends DialogComponent {
 
   freeCompanyActions: FreeCompanyAction[];
 
-  constructor(private linkTools: LinkToolsService, private message: private translate: TranslateService, private modalRef: NzModalRef) {
+  constructor(private linkTools: LinkToolsService, private message: NzMessageService, private translate: TranslateService, private modalRef: NzModalRef) {
     super();
     this.patchData();
   }

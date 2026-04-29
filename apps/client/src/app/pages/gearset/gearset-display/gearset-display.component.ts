@@ -127,9 +127,9 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private dialog: NzModalService, private materiaService: MateriaService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private notificationService: private lazyData: LazyDataFacade,
+              private notificationService: NzNotificationService, private lazyData: LazyDataFacade,
               private router: Router, private i18n: I18nToolsService,
-              private message: private authFacade: AuthFacade, private clipboard: Clipboard,
+              private message: NzMessageService, private authFacade: AuthFacade, private clipboard: Clipboard,
               private commissionsFacade: CommissionsFacade, private env: EnvironmentService) {
     super();
     this.activatedRoute.paramMap

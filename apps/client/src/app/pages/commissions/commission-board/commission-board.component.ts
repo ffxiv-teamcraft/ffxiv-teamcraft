@@ -107,7 +107,7 @@ export class CommissionBoardComponent {
     })
   );
 
-  constructor(private commissionsService: CommissionService, private notificationsService: private messageService: private translate: TranslateService,
+  constructor(private commissionsService: CommissionService,
               private activatedRoute: ActivatedRoute, private router: Router,
               private lazyData: LazyDataFacade, private settings: SettingsService) {
   }

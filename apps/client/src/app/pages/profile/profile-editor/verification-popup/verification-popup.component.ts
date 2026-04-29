@@ -30,7 +30,7 @@ export class VerificationPopupComponent extends DialogComponent implements OnDes
 
   subscription: Subscription;
 
-  constructor(private lodestone: LodestoneService, private authFacade: AuthFacade, private message: private translate: TranslateService) {
+  constructor(private lodestone: LodestoneService, private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
     super();
     this.patchData();
     this.verificationResult$ = this.startVerify$.pipe(

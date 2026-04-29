@@ -157,7 +157,7 @@ export class DesynthComponent {
 
   constructor(private dataService: DataService, private lazyData: LazyDataFacade,
               private router: Router, private route: ActivatedRoute,
-              private listManager: ListManagerService, private notificationService: private i18n: I18nToolsService, private listPicker: ListPickerService,
+              private listManager: ListManagerService, private notificationService: NzNotificationService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
     route.queryParamMap
       .pipe(

@@ -178,14 +178,14 @@ export class LogTrackerImportPopupComponent {
     this.#modalRef.close();
   }
 
-  private isDoHDoLEntryDone(log: Uint8Array, index: number): boolean {
+  private isDoHDoLEntryDone(log: Buffer, index: number): boolean {
     const offset = Math.floor(index / 8);
     const byte = log[offset];
     const mask = 128 >> (index % 8);
     return (byte & mask) > 0;
   }
 
-  private isPlayerSetupEntryDone(log: Uint8Array, index: number): boolean {
+  private isPlayerSetupEntryDone(log: Buffer, index: number): boolean {
     const offset = Math.floor(index / 8);
     const byte = log[offset];
     const mask = 1 << (index % 8);

@@ -20,7 +20,7 @@ export class LodestoneService {
   private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
   constructor(private userService: UserService, private http: HttpClient,
-              private ipc: IpcService, private ngZone: NgZone, private notification: private translate: TranslateService) {
+              private ipc: IpcService, private ngZone: NgZone, private notification: NzNotificationService, private translate: TranslateService) {
     if (!LodestoneService.INTERVAL) {
       LodestoneService.INTERVAL = interval(200).subscribe(() => {
         const subject = LodestoneService.QUEUE.shift();

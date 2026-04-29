@@ -608,7 +608,7 @@ export class ListsEffects {
     private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService,
     private serializer: NgSerializerService,
-    private notificationService: private message: private platform: PlatformService,
+    private notificationService: NzNotificationService, private message: NzMessageService, private platform: PlatformService,
     private ipc: IpcService,
     private settings: SettingsService,
     private i18n: I18nToolsService,

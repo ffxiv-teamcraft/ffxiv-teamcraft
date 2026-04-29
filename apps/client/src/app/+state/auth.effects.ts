@@ -282,7 +282,7 @@ export class AuthEffects {
 
   constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
               private store: Store<{ auth: AuthState }>,
-              private translate: TranslateService, private notificationService: private authFacade: AuthFacade,
+              private translate: TranslateService, private notificationService: NzNotificationService, private authFacade: AuthFacade,
               private supportService: SupportService, private logTrackingService: LogTrackingService,
               private commissionProfileService: CommissionProfileService, private settings: SettingsService) {
   }

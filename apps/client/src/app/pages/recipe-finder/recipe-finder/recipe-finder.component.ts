@@ -147,7 +147,7 @@ export class RecipeFinderComponent implements OnDestroy {
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private ipc: IpcService, private listPicker: ListPickerService, private environmentService: EnvironmentService,
-              private notificationService: private message: private dialog: NzModalService, private authFacade: AuthFacade,
+              private notificationService: NzNotificationService, private message: NzMessageService, private dialog: NzModalService, private authFacade: AuthFacade,
               public platform: PlatformService, public settings: SettingsService) {
     this.pool = JSON.parse(localStorage.getItem('recipe-finder:pool') || '[]');
     const results$ = this.search$.pipe(

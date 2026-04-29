@@ -197,7 +197,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   @ViewChild('menuHost', { read: ViewContainerRef })
   contextMenuHost: ViewContainerRef;
 
-  constructor(private messageService: private translate: TranslateService,
+  constructor(private messageService: NzMessageService, private translate: TranslateService,
               public settings: SettingsService, private cd: ChangeDetectorRef,
               private rotationsFacade: RotationsFacade, private lazyData: LazyDataFacade,
               private ipc: IpcService, public platform: PlatformService,

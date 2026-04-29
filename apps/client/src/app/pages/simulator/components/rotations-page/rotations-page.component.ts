@@ -90,7 +90,7 @@ export class RotationsPageComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
               private foldersFacade: RotationFoldersFacade, private guidesService: GuidesService,
-              private message: private authFacade: AuthFacade) {
+              private message: NzMessageService, private authFacade: AuthFacade) {
     this.rotationsFacade.loadMyRotations();
 
     this.favoriteRotationsFoldersDisplay$ = this.foldersFacade.favoriteRotationFolders$.pipe(

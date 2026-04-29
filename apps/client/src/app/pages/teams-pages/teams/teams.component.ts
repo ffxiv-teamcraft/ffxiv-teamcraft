@@ -66,7 +66,7 @@ export class TeamsComponent implements OnInit {
 
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
-              private message: private route: ActivatedRoute, private router: Router,
+              private message: NzMessageService, private route: ActivatedRoute, private router: Router,
               private http: HttpClient, private platform: PlatformService,
               private ipc: IpcService, private oauth: OauthService,
               public settings: SettingsService) {

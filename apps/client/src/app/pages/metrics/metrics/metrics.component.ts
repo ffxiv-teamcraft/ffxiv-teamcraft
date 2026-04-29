@@ -91,7 +91,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
   constructor(private metricsService: PlayerMetricsService, private translate: TranslateService,
               protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[],
               private pendingChangesService: PendingChangesService, private metricsDashboardsFacade: MetricsDashboardsFacade,
-              private message: private dialog: NzModalService) {
+              private message: NzMessageService, private dialog: NzModalService) {
     super(seoService);
     this.ranges = {};
     this.ranges[this.translate.instant('METRICS.Today')] = [startOfDay(new Date()), new Date()];

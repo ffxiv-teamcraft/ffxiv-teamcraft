@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Directive, ElementRef, inject, Input, OnChanges, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Directive, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NzTooltipDirective } from 'ng-zorro-antd/tooltip';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,9 +18,8 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
 
   #cdr = inject(ChangeDetectorRef);
 
-  constructor(elementRef: ElementRef, hostView: ViewContainerRef, renderer: Renderer2,
-              private datePipe: DatePipe, private translate: TranslateService) {
-    super(elementRef, hostView, renderer);
+  constructor(private datePipe: DatePipe, private translate: TranslateService) {
+    super();
   }
 
   ngOnChanges(changes: SimpleChanges) {

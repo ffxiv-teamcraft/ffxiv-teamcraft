@@ -72,7 +72,7 @@ export class SimulationResultComponent {
 
   snapshotMode = false;
 
-  constructor(private message: private translate: TranslateService,
+  constructor(private message: NzMessageService, private translate: TranslateService,
               public settings: SettingsService) {
   }
 

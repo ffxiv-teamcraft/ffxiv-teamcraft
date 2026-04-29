@@ -30,7 +30,7 @@ export class ListCrystalsPanelComponent {
   @Input()
   crystals: ListRow[] = [];
 
-  constructor(private i18nTools: I18nToolsService, private message: private translate: TranslateService) {
+  constructor(private i18nTools: I18nToolsService, private message: NzMessageService, private translate: TranslateService) {
   }
 
   trackByItem(index: number, item: ListRow): number {

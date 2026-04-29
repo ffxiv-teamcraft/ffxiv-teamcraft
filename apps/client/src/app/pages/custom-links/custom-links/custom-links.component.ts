@@ -38,7 +38,7 @@ export class CustomLinksComponent {
               private workshopsFacade: WorkshopsFacade,
               private rotationsFacade: RotationsFacade,
               private rotationFoldersFacade: RotationFoldersFacade,
-              private message: private translate: TranslateService) {
+              private message: NzMessageService, private translate: TranslateService) {
     this.linksDisplay$ = this.customLinksFacade.myCustomLinks$.pipe(
       switchMap(links => {
         if (links.length === 0) {
