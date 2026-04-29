@@ -126,7 +126,7 @@ export class AllaganReportsService {
           pollInterval: 30000
         }).valueChanges.pipe(
           map(res => {
-            return res.data.allagan_reports_queue_aggregate.aggregate.count;
+            return res.data?.allagan_reports_queue_aggregate.aggregate.count;
           }),
           shareReplay({ bufferSize: 1, refCount: true })
         );
@@ -148,7 +148,7 @@ export class AllaganReportsService {
       pollInterval: 30000
     }).valueChanges.pipe(
       map(res => {
-        return res.data.allagan_reports_aggregate.aggregate.count;
+        return res.data?.allagan_reports_aggregate.aggregate.count || 0;
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );

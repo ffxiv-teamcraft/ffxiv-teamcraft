@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { Directive, ElementRef, inject, Input, numberAttribute, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { TutorialService } from './tutorial.service';
@@ -8,21 +8,24 @@ import { TutorialStepComponent } from './tutorial-step/tutorial-step.component';
 import { tap } from 'rxjs/operators';
 
 @Directive({
-    // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[tutorialStep]',
-    standalone: true
+  // eslint-disable-next-line @angular-eslint/directive-selector
+  selector: '[tutorialStep]',
+  standalone: true
 })
 export class TutorialStepDirective implements OnInit, OnDestroy {
   private tutorialService = inject(TutorialService);
+
   private overlayPositionBuilder = inject(OverlayPositionBuilder);
+
   private elementRef = inject(ElementRef);
+
   private overlay = inject(Overlay);
 
 
   @Input('tutorialStep')
   translationKey: string;
 
-  @Input('tutorialStepIndex')
+  @Input({ transform: numberAttribute, alias: 'tutorialStepIndex' })
   index = 0;
 
   @Input('tutorialStepAlign')

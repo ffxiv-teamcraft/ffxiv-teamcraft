@@ -288,6 +288,7 @@ const nzConfig: NzConfig = {
       useFactory: apolloClientFactory,
       deps: [HttpLink, AuthFacade]
     },
+    Apollo,
     { provide: NZ_I18N, useValue: en_US },
     {
       provide: NZ_CONFIG,
