@@ -1,6 +1,7 @@
 import { MainWindow } from '../window/main-window';
 import log from 'electron-log';
-import { app, autoUpdater, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
+import { autoUpdater } from 'electron-updater';
 import { PacketCapture } from '../pcap/packet-capture';
 
 
@@ -13,18 +14,7 @@ export class AutoUpdater {
   }
 
   connectListeners(): void {
-    // Squirrel-based autoUpdater is only supported on Windows and macOS
-    if (process.platform === 'linux') {
-      ipcMain.on('update:check', () => { /* no-op on Linux */ });
-      ipcMain.on('install-update', () => { /* no-op on Linux */ });
-      return;
-    }
-
-    if (app.isPackaged) {
-      autoUpdater.setFeedURL({
-        url: `https://update.ffxivteamcraft.com`
-      });
-    }
+    autoUpdater.logger = log;
 
     let autoUpdaterRunning = false;
     autoUpdater.on('checking-for-update', () => {
@@ -70,9 +60,8 @@ export class AutoUpdater {
       autoUpdater.quitAndInstall();
     });
 
-
     ipcMain.on('update:check', () => {
-      if (autoUpdaterRunning) {
+      if (autoUpdaterRunning || !app.isPackaged) {
         return;
       }
 
