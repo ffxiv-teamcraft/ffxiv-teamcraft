@@ -266,10 +266,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
   _layout: ListLayout;
 
   constructor() {
-    const cd = inject(ChangeDetectorRef);
-
-    super(cd);
-
+    super();
     this.missingBooks$ = this.masterbooksReloader$.pipe(
       switchMap(() => combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {

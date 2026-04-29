@@ -381,11 +381,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   public hoverId$ = new Subject<string>();
 
   constructor() {
-    const lazyData = inject(LazyDataFacade);
-
-    super(lazyData);
-    this.lazyData = lazyData;
-
+    super();
     this.form.valueChanges.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(value => {
