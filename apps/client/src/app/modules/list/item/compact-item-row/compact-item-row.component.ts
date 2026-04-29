@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit, inject } from '@angular/core';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { ListRow } from '../../model/list-row';
@@ -38,6 +38,12 @@ import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
     imports: [ItemIconComponent, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, ItemSourcesDisplayComponent, ItemInventoryButtonComponent, CompactAmountInputComponent, NgTemplateOutlet, AlarmButtonComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
 export class CompactItemRowComponent extends TeamcraftComponent implements OnInit {
+  settings = inject(SettingsService);
+  private inventoryService = inject(InventoryService);
+  private listsFacade = inject(ListsFacade);
+  private alarmsFacade = inject(AlarmsFacade);
+  private etime = inject(EorzeanTimeService);
+
   @Input()
   permissionLevel: PermissionLevel;
 
@@ -105,13 +111,6 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
   @HostBinding('class.has-all-ingredients')
   get hasAllBaseIngredients(): boolean {
     return !this.done && this.item.hasAllBaseIngredients;
-  }
-
-
-  constructor(public settings: SettingsService, private inventoryService: InventoryService,
-              private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
-              private etime: EorzeanTimeService) {
-    super();
   }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { stats } from '../../../core/data/sources/stats';
@@ -30,6 +30,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzSelectModule, FormsModule, NzListModule, DbButtonComponent, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, LazyIconPipe]
 })
 export class FoodPickerComponent extends TeamcraftComponent {
+  private dataService = inject(DataService);
+  private lazyData = inject(LazyDataFacade);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+
 
   public availableStats = stats;
 
@@ -47,8 +52,7 @@ export class FoodPickerComponent extends TeamcraftComponent {
 
   public loading = false;
 
-  constructor(private dataService: DataService, private lazyData: LazyDataFacade,
-              private route: ActivatedRoute, private router: Router) {
+  constructor() {
     super();
 
     this.results$ = this.stats$.pipe(

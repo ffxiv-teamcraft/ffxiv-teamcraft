@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { StatsService } from '../stats.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -19,6 +19,9 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, NgIf, NgFor, AsyncPipe, DecimalPipe, FloorPipe, TranslateModule]
 })
 export class StatsPopupComponent extends DialogComponent {
+  private statsService = inject(StatsService);
+  translate = inject(TranslateService);
+
 
   @Input()
   gearset: TeamcraftGearset;
@@ -43,7 +46,7 @@ export class StatsPopupComponent extends DialogComponent {
     })
   );
 
-  constructor(private statsService: StatsService, public translate: TranslateService) {
+  constructor() {
     super();
     this.patchData();
   }

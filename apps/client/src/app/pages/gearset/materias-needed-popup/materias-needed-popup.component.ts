@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
@@ -33,6 +33,10 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [FlexModule, NzButtonModule, NzInputModule, NzIconModule, NzTooltipModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzTableModule, ItemIconComponent, ItemNameClipboardDirective, I18nNameComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class MateriasNeededPopupComponent extends DialogComponent {
+  private materiaService = inject(MateriaService);
+  settings = inject(SettingsService);
+  translate = inject(TranslateService);
+
 
   @Input()
   gearset: TeamcraftGearset;
@@ -50,7 +54,7 @@ export class MateriasNeededPopupComponent extends DialogComponent {
 
   totalPerCurrency$: Observable<{ id: number, amount: number }[]>;
 
-  constructor(private materiaService: MateriaService, public settings: SettingsService, public translate: TranslateService) {
+  constructor() {
     super();
     this.totalNeeded$ = combineLatest([
       observeInput(this, 'gearset'),

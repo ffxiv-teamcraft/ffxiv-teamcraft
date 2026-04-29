@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map, Observable, shareReplay, switchMap } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import {
@@ -23,21 +23,19 @@ const qOpts = { fetchPolicy: 'network-only' } as const;
  */
 @Injectable()
 export class FishDataService {
-  constructor(
-    private readonly auth: AuthFacade,
-    private readonly spotsFishQuery: SpotsPerFishQuery,
-    private readonly etimeFishSpotQuery: EorzeaTimesPerFishPerSpotQuery,
-    private readonly baitFishSpotQuery: BaitsPerFishPerSpotQuery,
-    private readonly hooksFishSpotQuery: HooksetTugsPerFishPerSpotQuery,
-    private readonly luresFishSpotQuery: LuresPerFishPerSpotQuery,
-    private readonly biteFishSpotQuery: BiteTimesPerFishPerSpotQuery,
-    private readonly biteFishSpotBaitQuery: BiteTimesPerFishPerSpotPerBaitQuery,
-    private readonly statFishSpotQuery: FishStatisticsPerFishPerSpotQuery,
-    private readonly weathersFishSpotQuery: WeathersPerFishPerSpotQuery,
-    private readonly rankingFishQuery: RankingPerFishQuery,
-    private readonly apollo: Apollo
-  ) {
-  }
+  private readonly auth = inject(AuthFacade);
+  private readonly spotsFishQuery = inject(SpotsPerFishQuery);
+  private readonly etimeFishSpotQuery = inject(EorzeaTimesPerFishPerSpotQuery);
+  private readonly baitFishSpotQuery = inject(BaitsPerFishPerSpotQuery);
+  private readonly hooksFishSpotQuery = inject(HooksetTugsPerFishPerSpotQuery);
+  private readonly luresFishSpotQuery = inject(LuresPerFishPerSpotQuery);
+  private readonly biteFishSpotQuery = inject(BiteTimesPerFishPerSpotQuery);
+  private readonly biteFishSpotBaitQuery = inject(BiteTimesPerFishPerSpotPerBaitQuery);
+  private readonly statFishSpotQuery = inject(FishStatisticsPerFishPerSpotQuery);
+  private readonly weathersFishSpotQuery = inject(WeathersPerFishPerSpotQuery);
+  private readonly rankingFishQuery = inject(RankingPerFishQuery);
+  private readonly apollo = inject(Apollo);
+
 
   /**
    * Creates an observable that contains information about the spots for the given fish.

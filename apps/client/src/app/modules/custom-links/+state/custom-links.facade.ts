@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { CustomLinksPartialState } from './custom-links.reducer';
 import { CreateCustomLink, DeleteCustomLink, LoadCustomLink, LoadMyCustomLinks, UpdateCustomLink } from './custom-links.actions';
@@ -16,6 +16,12 @@ import { lazyLoaded } from '../../../core/rxjs/lazy-loaded';
 
 @Injectable()
 export class CustomLinksFacade {
+  private store = inject<Store<CustomLinksPartialState>>(Store);
+  private authFacade = inject(AuthFacade);
+  private translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private message = inject(NzMessageService);
+
   loaded$ = this.store.pipe(select(customLinksQuery.getLoaded));
 
   allCustomLinks$ = this.store.pipe(
@@ -32,13 +38,6 @@ export class CustomLinksFacade {
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private store: Store<CustomLinksPartialState>,
-              private authFacade: AuthFacade,
-              private translate: TranslateService,
-              private dialog: NzModalService,
-              private message: NzMessageService) {
-  }
 
   createCustomLink(baseName: string, uri: string, user: TeamcraftUser): void {
     if (!user.nickname) {

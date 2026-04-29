@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -30,6 +30,11 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     imports: [NzAlertModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, NzListModule, NzTagModule, NzTooltipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class MergeListsPopupComponent extends AbstractListsSelectionPopupComponent {
+  private progressService = inject(ProgressPopupService);
+  private modalRef = inject(NzModalRef);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   merging = false;
 
@@ -37,8 +42,10 @@ export class MergeListsPopupComponent extends AbstractListsSelectionPopupCompone
 
   ListController = ListController;
 
-  constructor(listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private modalRef: NzModalRef, private message: NzMessageService, private translate: TranslateService, workshopsFacade: WorkshopsFacade) {
+  constructor() {
+    const listsFacade = inject(ListsFacade);
+    const workshopsFacade = inject(WorkshopsFacade);
+
     super(listsFacade, workshopsFacade);
   }
 

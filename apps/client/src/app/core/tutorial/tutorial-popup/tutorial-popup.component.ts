@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -14,9 +14,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class TutorialPopupComponent {
+  private modalRef = inject(NzModalRef);
 
-  constructor(private modalRef: NzModalRef) {
-  }
 
   public close(result: boolean): void {
     this.modalRef.close(result);

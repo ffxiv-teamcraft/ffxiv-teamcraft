@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   CreateRotationFolder,
@@ -22,6 +22,12 @@ import { RotationsFacade } from '../../rotations/+state/rotations.facade';
 
 @Injectable()
 export class RotationFoldersEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private foldersFacade = inject(RotationFoldersFacade);
+  private rotationsFacade = inject(RotationsFacade);
+  private craftingRotationFolderService = inject(CraftingRotationsFolderService);
+
 
 
   loadMyRotationFolders$ = createEffect(() => this.actions$.pipe(
@@ -88,13 +94,4 @@ export class RotationFoldersEffects {
       return new UpdateRotationFolder(folder);
     })
   ));
-
-  constructor(
-    private actions$: Actions,
-    private authFacade: AuthFacade,
-    private foldersFacade: RotationFoldersFacade,
-    private rotationsFacade: RotationsFacade,
-    private craftingRotationFolderService: CraftingRotationsFolderService
-  ) {
-  }
 }

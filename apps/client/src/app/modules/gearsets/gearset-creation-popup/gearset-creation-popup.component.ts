@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -29,6 +29,10 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzGridModule, NzFormModule, NzSelectModule, NzButtonModule, NzWaveModule, AsyncPipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class GearsetCreationPopupComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+  private fb = inject(UntypedFormBuilder);
+  private lazyData = inject(LazyDataFacade);
+
 
   public form: UntypedFormGroup;
 
@@ -54,8 +58,7 @@ export class GearsetCreationPopupComponent extends DialogComponent implements On
     })
   );
 
-  constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder,
-              private lazyData: LazyDataFacade) {
+  constructor() {
     super();
     this.patchData();
   }

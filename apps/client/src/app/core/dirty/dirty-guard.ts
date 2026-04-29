@@ -1,7 +1,7 @@
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of, Subject } from 'rxjs';
 import { DirtyFacade } from './+state/dirty.facade';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { DirtyScope } from './dirty-scope';
@@ -9,9 +9,10 @@ import { first, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class DirtyGuard  {
+  private dirtyFacade = inject(DirtyFacade);
+  private translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
 
-  constructor(private dirtyFacade: DirtyFacade, private translate: TranslateService, private dialog: NzModalService) {
-  }
 
   canDeactivate(component: any, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): Observable<boolean> {
     return this.dirtyFacade.allEntries$.pipe(

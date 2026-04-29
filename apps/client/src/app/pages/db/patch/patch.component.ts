@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
@@ -44,6 +44,13 @@ import { NzIconDirective } from 'ng-zorro-antd/icon';
   imports: [NgIf, FlexModule, I18nDisplayComponent, RouterLink, NzDividerModule, NzIconDirective, NzCardModule, NzListModule, LazyScrollComponent, DbButtonComponent, ItemIconComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe, MapIdPipe, LazyRowPipe, NzButtonComponent, DatePipe]
 })
 export class PatchComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+
 
   public patch$: Observable<LazyPatchName & LazyPatchContent> = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -86,9 +93,9 @@ export class PatchComponent extends TeamcraftPageComponent {
 
   public fallbackIcon = 'https://img.finalfantasyxiv.com/lds/h/k/aL011xxU_6LyWUio1Gi2Fx7-qo.svg';
 
-  constructor(private route: ActivatedRoute, private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade,
-              public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
 
     this.route.paramMap

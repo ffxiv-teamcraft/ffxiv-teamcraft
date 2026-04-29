@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -20,6 +20,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, ActionIconPipe, XivapiIconPipe, HooksetActionIdPipe]
 })
 export class FishingSpotHooksetDatagridComponent {
+  private readonly fishCtx = inject(FishContextService);
+  private readonly lazyData = inject(LazyDataFacade);
+
   @Input()
   public activeFish?: number | undefined;
 
@@ -39,7 +42,4 @@ export class FishingSpotHooksetDatagridComponent {
       };
     })
   );
-
-  constructor(private readonly fishCtx: FishContextService, private readonly lazyData: LazyDataFacade) {
-  }
 }

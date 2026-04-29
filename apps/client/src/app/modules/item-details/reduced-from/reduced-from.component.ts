@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '@ffxiv-teamcraft/types';
@@ -34,6 +34,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [FlexModule, NzCardModule, ItemRarityDirective, ItemIconComponent, NzListModule, NodeDetailsComponent, MapPositionComponent, FishingBaitComponent, NzTooltipModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, NodeTypeIconPipe, ClosestAetherytePipe, LazyIconPipe]
 })
 export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements OnInit {
+  private gatheringNodesService = inject(GatheringNodesService);
+
 
   showEverything$ = new BehaviorSubject(false);
 
@@ -53,10 +55,6 @@ export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements 
       };
     })
   );
-
-  constructor(private gatheringNodesService: GatheringNodesService) {
-    super();
-  }
 
   ngOnInit(): void {
     super.ngOnInit();

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -28,6 +28,12 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzCardModule, NzAvatarModule, FlexModule, FavoriteButtonComponent, NgForTrackByKeyDirective, ListPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class WorkshopDetailsComponent {
+  private route = inject(ActivatedRoute);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private listsFacade = inject(ListsFacade);
+  private userService = inject(UserService);
+  private characterService = inject(LodestoneService);
+
 
   public workshop$: Observable<Workshop> = this.workshopsFacade.selectedWorkshop$.pipe(
     filter(w => w !== undefined),
@@ -66,9 +72,7 @@ export class WorkshopDetailsComponent {
     map(lists => lists.filter(list => list !== undefined && !list.notFound && list.name))
   );
 
-  constructor(private route: ActivatedRoute, private workshopsFacade: WorkshopsFacade,
-              private listsFacade: ListsFacade,
-              private userService: UserService, private characterService: LodestoneService) {
+  constructor() {
     this.route.paramMap.pipe(
       map(params => params.get('id')),
       filter(key => key !== undefined),

@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
@@ -13,14 +13,29 @@ import { addMonths } from 'date-fns';
   providedIn: 'root'
 })
 export class UserService extends FirestoreStorage<TeamcraftUser> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
+  private http = inject(HttpClient);
+
 
   reloader$ = new BehaviorSubject<void>(void 0);
 
   userCache = {};
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private http: HttpClient) {
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {

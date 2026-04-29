@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { Observable } from 'rxjs';
@@ -27,6 +27,9 @@ import { AsyncPipe, DatePipe } from '@angular/common';
     imports: [NzListModule, LazyScrollComponent, UserAvatarComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class ListHistoryPopupComponent {
+  private listsFacade = inject(ListsFacade);
+  private modalRef = inject(NzModalRef);
+
 
   loading = false;
 
@@ -34,7 +37,9 @@ export class ListHistoryPopupComponent {
     tap(() => this.loading = false)
   );
 
-  constructor(private listsFacade: ListsFacade, private modalRef: NzModalRef) {
+  constructor() {
+    const modalRef = this.modalRef;
+
     modalRef.afterClose.subscribe(() => modalRef.destroy());
   }
 

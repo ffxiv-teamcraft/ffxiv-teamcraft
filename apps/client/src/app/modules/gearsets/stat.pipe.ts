@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { MateriaService } from './materia.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/decorators/memoized';
@@ -12,9 +12,9 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
     standalone: true
 })
 export class StatPipe implements PipeTransform {
+  private lazyData = inject(LazyDataFacade);
+  private materiaService = inject(MateriaService);
 
-  constructor(private lazyData: LazyDataFacade, private materiaService: MateriaService) {
-  }
 
   transform(equipmentPiece: EquipmentPiece, baseParamId: number, gearset: TeamcraftGearset): Observable<{ value: number, bonus: number, total: number }> {
     return this.getStatValue(equipmentPiece.itemId, baseParamId, equipmentPiece.hq).pipe(

@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -70,6 +70,24 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzSelectModule, TutorialStepDirective, FormsModule, NzSpinModule, ReactiveFormsModule, NzButtonModule, NzIconModule, NzInputModule, NgTemplateOutlet, NzWaveModule, NzTooltipModule, ClipboardDirective, NzAutocompleteModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCardModule, SearchJobPickerComponent, NzGridModule, SimpleTabsetComponent, SimpleTabComponent, SearchIntroComponent, NzRadioModule, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, ItemDetailsBoxComponent, RouterLink, PageLoaderComponent, NzPaginationModule, SearchResultComponent, FullpageMessageComponent, AsyncPipe, UpperCasePipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiL12nPipe, JobUnicodePipe]
 })
 export class SearchComponent extends TeamcraftComponent implements OnInit {
+  private data = inject(DataService);
+  settings = inject(SettingsService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private listsFacade = inject(ListsFacade);
+  private listManager = inject(ListManagerService);
+  private i18n = inject(I18nToolsService);
+  private listPicker = inject(ListPickerService);
+  private progressService = inject(ProgressPopupService);
+  private fb = inject(UntypedFormBuilder);
+  private rotationPicker = inject(RotationPickerService);
+  private htmlTools = inject(HtmlToolsService);
+  translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  private environment = inject(EnvironmentService);
+  private platformService = inject(PlatformService);
+  private platform = inject(PLATFORM_ID);
+
 
   //Minimum and Maximum values for various nz-input-number elements
   curMaxLevel = this.environment.maxLevel; //max player level
@@ -301,15 +319,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   public ingesting$ = this.data.ingesting$;
 
-  constructor(private data: DataService, public settings: SettingsService,
-              private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
-              private listManager: ListManagerService,
-              private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private fb: UntypedFormBuilder,
-              private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              public translate: TranslateService, private lazyData: LazyDataFacade,
-              private environment: EnvironmentService,
-              private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: any) {
+  constructor() {
     super();
 
     this.uiCategories$ = this.settings.watchSetting('search:language', 'en').pipe(

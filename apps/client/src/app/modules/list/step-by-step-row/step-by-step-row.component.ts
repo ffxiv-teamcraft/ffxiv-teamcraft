@@ -1,4 +1,4 @@
-import { booleanAttribute, ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, HostBinding, Input, inject } from '@angular/core';
 import { ListRow } from '../model/list-row';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 import { combineLatest, Subject } from 'rxjs';
@@ -45,6 +45,11 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
   imports: [NzGridModule, ItemIconComponent, I18nNameComponent, ItemNameClipboardDirective, NzTooltipModule, NzButtonModule, NzIconModule, ItemInventoryButtonComponent, NgForTrackByKeyDirective, AlarmButtonComponent, NzTagModule, ItemSourcesDisplayComponent, NgForTrackByIdDirective, CompactAmountInputComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class StepByStepRowComponent {
+  private alarmsFacade = inject(AlarmsFacade);
+  private etime = inject(EorzeanTimeService);
+  private listsFacade = inject(ListsFacade);
+  private inventoryService = inject(InventoryService);
+
   @Input({ transform: booleanAttribute })
   readonly = false;
 
@@ -125,10 +130,6 @@ export class StepByStepRowComponent {
     map(inventory => inventory.hasItem(this.row.id)),
     shareReplay(1)
   );
-
-  constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService, private listsFacade: ListsFacade,
-              private inventoryService: InventoryService) {
-  }
 
   @HostBinding('class.done')
   get done(): boolean {

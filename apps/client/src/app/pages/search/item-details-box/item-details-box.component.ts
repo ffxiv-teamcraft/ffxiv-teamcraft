@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { SearchResult } from '@ffxiv-teamcraft/types';
 import { observeInput } from '../../../core/rxjs/observe-input';
@@ -19,6 +19,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     imports: [NzButtonModule, NzWaveModule, NzIconModule, XivapiItemTooltipComponent, NzSpinModule, AsyncPipe]
 })
 export class ItemDetailsBoxComponent {
+  private lazyData = inject(LazyDataFacade);
+
 
   @Input({ required: true })
   searchResult: SearchResult;
@@ -38,7 +40,4 @@ export class ItemDetailsBoxComponent {
       );
     })
   );
-
-  constructor(private lazyData: LazyDataFacade) {
-  }
 }

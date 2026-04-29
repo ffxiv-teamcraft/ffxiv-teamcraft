@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { map, switchMap } from 'rxjs/operators';
 import { ProbeReport } from '../../model/probe-report';
@@ -22,6 +22,10 @@ import { NgxEchartsModule } from 'ngx-echarts';
     imports: [NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class PieChartComponent extends AbstractMetricDisplayComponent {
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
   options$: Observable<EChartsOption> = this.data$.pipe(
     switchMap(reports => {
       return safeCombineLatest(reports.map(report => {
@@ -109,11 +113,6 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
       };
     })
   );
-
-  constructor(private i18n: I18nToolsService, private translate: TranslateService,
-              public settings: SettingsService) {
-    super();
-  }
 
 
   private getMetricValue(report: ProbeReport): number {

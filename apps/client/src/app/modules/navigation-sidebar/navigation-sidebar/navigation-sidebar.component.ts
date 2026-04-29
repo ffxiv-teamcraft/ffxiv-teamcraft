@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { SettingsService } from '../../settings/settings.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { Character } from '@xivapi/angular-client';
@@ -26,6 +26,12 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     imports: [NzMenuModule, NzIconModule, NzButtonModule, NzBadgeModule, NgTemplateOutlet, RouterLinkActive, RouterLink, NzDropDownModule, NzTooltipModule, AsyncPipe, TranslateModule]
 })
 export class NavigationSidebarComponent {
+  settings = inject(SettingsService);
+  private media = inject(MediaObserver);
+  private platformService = inject(PlatformService);
+  private navigationSidebarService = inject(NavigationSidebarService);
+  private nzContextMenuService = inject(NzContextMenuService);
+
 
   @Input()
   commissionNotificationsCount: number;
@@ -63,10 +69,6 @@ export class NavigationSidebarComponent {
   public content$ = this.navigationSidebarService.content$;
 
   public isDesktop = this.platformService.isDesktop();
-
-  constructor(public settings: SettingsService, private media: MediaObserver, private platformService: PlatformService,
-              private navigationSidebarService: NavigationSidebarService, private nzContextMenuService: NzContextMenuService) {
-  }
 
   contextMenu($event: MouseEvent, menu: NzDropdownMenuComponent): void {
     this.nzContextMenuService.create($event, menu);

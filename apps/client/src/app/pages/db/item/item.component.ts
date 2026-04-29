@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Apollo } from 'apollo-angular';
@@ -85,6 +85,23 @@ import { AsyncPipe, DecimalPipe, NgFor, NgIf, NgSwitch, NgSwitchCase, NgTemplate
   imports: [NgIf, FlexModule, ItemRarityDirective, I18nNameComponent, DbButtonComponent, NzButtonModule, NzInputModule, FormsModule, NzWaveModule, NzTooltipModule, NzIconModule, NgFor, MarketboardIconComponent, RouterLink, I18nDisplayComponent, FishComponent, NzDividerModule, FullpageMessageComponent, NzCardModule, LazyScrollComponent, ItemIconComponent, NzTableModule, NzListModule, NgSwitch, NgSwitchCase, GardeningComponent, HuntingComponent, IslandAnimalComponent, TradesComponent, TreasuresComponent, FatesComponent, MogstationComponent, GatheredByComponent, InstancesComponent, ReducedFromComponent, DesynthsComponent, VendorsComponent, VoyagesComponent, VenturesComponent, MapPositionComponent, AchievementsComponent, QuestsComponent, DbCommentsComponent, NgTemplateOutlet, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+  private readonly route = inject(ActivatedRoute);
+  private readonly i18n = inject(I18nToolsService);
+  readonly translate = inject(TranslateService);
+  private readonly router = inject(Router);
+  private readonly listPicker = inject(ListPickerService);
+  private readonly listsFacade = inject(ListsFacade);
+  private readonly progressService = inject(ProgressPopupService);
+  private readonly listManager = inject(ListManagerService);
+  private readonly notificationService = inject(NzNotificationService);
+  private readonly rotationPicker = inject(RotationPickerService);
+  private readonly attt = inject(ATTTService);
+  private readonly lazyData = inject(LazyDataFacade);
+  readonly settings = inject(SettingsService);
+  private readonly apollo = inject(Apollo);
+  private readonly itemContext = inject(ItemContextService);
+  private readonly authFacade = inject(AuthFacade);
+
   public noData = false;
 
   public readonly itemId$ = combineLatest([this.route.paramMap, this.itemContext.itemId$]).pipe(
@@ -494,24 +511,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   dataTypes = DataType;
 
-  constructor(
-    private readonly route: ActivatedRoute,
-    private readonly i18n: I18nToolsService,
-    public readonly translate: TranslateService,
-    private readonly router: Router,
-    private readonly listPicker: ListPickerService,
-    private readonly listsFacade: ListsFacade,
-    private readonly progressService: ProgressPopupService,
-    private readonly listManager: ListManagerService,
-    private readonly notificationService: NzNotificationService, private readonly rotationPicker: RotationPickerService,
-    private readonly attt: ATTTService,
-    private readonly lazyData: LazyDataFacade,
-    public readonly settings: SettingsService,
-    private readonly apollo: Apollo,
-    private readonly itemContext: ItemContextService,
-    private readonly authFacade: AuthFacade,
-    seo: SeoService
-  ) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
   }
 

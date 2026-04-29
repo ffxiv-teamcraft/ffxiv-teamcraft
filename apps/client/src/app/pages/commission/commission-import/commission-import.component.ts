@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -35,16 +35,23 @@ import { AsyncPipe } from '@angular/common';
     imports: [FlexModule, ItemIconComponent, FullpageMessageComponent, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class CommissionImportComponent {
+  private route = inject(ActivatedRoute);
+  private listPicker = inject(ListPickerService);
+  private router = inject(Router);
+  private listManager = inject(ListManagerService);
+  private progressService = inject(ProgressPopupService);
+  private listsFacade = inject(ListsFacade);
+  private http = inject(HttpClient);
+  private linkTools = inject(LinkToolsService);
+  private commissionsFacade = inject(CommissionsFacade);
+  private lazyData = inject(LazyDataFacade);
+
 
   public template$: Observable<CommissionImportTemplate>;
 
   wrongFormat = false;
 
-  constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
-              private router: Router,
-              private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService,
-              private commissionsFacade: CommissionsFacade, private lazyData: LazyDataFacade) {
+  constructor() {
 
     // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx&url=https://example.org
     this.template$ = combineLatest([this.route.paramMap, this.route.queryParamMap]).pipe(

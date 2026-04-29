@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -33,6 +33,12 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, ItemIconComponent, DbButtonComponent, AlarmButtonComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
 })
 export class FishingSpotAvailableFishesComponent {
+  private readonly lazyData = inject(LazyDataFacade);
+  private readonly fishCtx = inject(FishContextService);
+  private alarmsFacade = inject(AlarmsFacade);
+  private gatheringNodesService = inject(GatheringNodesService);
+  private authFacade = inject(AuthFacade);
+
   public readonly fishes$: Observable<{ itemId: number, alarms: PersistedAlarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots'), this.authFacade.logTracking$]).pipe(
     filter(([spotId]) => spotId >= 0),
     switchMap(([spotId, spots, logs]) => {
@@ -57,11 +63,6 @@ export class FishingSpotAvailableFishesComponent {
   );
 
   public alarmGroups$ = this.alarmsFacade.allGroups$;
-
-  constructor(private readonly lazyData: LazyDataFacade, private readonly fishCtx: FishContextService,
-              private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
-              private authFacade: AuthFacade) {
-  }
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {

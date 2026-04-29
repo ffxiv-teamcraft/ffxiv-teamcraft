@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsPopupComponent } from './settings-popup/settings-popup.component';
 
 @Injectable()
 export class SettingsPopupService {
-  constructor(private dialog: NzModalService, private translate: TranslateService) {
-  }
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+
 
   public openSettings(): void {
     this.dialog.create({

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -30,6 +30,13 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, SimulatorComponent, AsyncPipe, TranslateModule]
 })
 export class CustomSimulatorPageComponent extends AbstractSimulationPage {
+  private fb = inject(UntypedFormBuilder);
+  protected route: ActivatedRoute;
+  private rotationsFacade = inject(RotationsFacade);
+  protected seo: SeoService;
+  private env = inject(EnvironmentService);
+  private lazyData = inject(LazyDataFacade);
+
 
   curMaxLevel = this.env.maxLevel;
 
@@ -37,10 +44,14 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
   public recipe$: Observable<Craft>;
 
-  constructor(private fb: UntypedFormBuilder, protected route: ActivatedRoute,
-              private rotationsFacade: RotationsFacade, protected seo: SeoService,
-              private env: EnvironmentService, private lazyData: LazyDataFacade) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const seo = inject(SeoService);
+
     super(route, seo);
+    this.route = route;
+    this.seo = seo;
+
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
     ).subscribe(id => {

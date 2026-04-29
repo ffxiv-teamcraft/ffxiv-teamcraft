@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
@@ -26,11 +26,16 @@ import { NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
     imports: [NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzListModule, NgForTrackByKeyDirective, NzCheckboxModule, FormsModule, NzTagModule, NzTooltipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class DeleteMultipleListsPopupComponent extends AbstractListsSelectionPopupComponent {
+  private modalRef = inject(NzModalRef);
+  private authFacade = inject(AuthFacade);
+
 
   public userId$ = this.authFacade.userId$;
 
-  constructor(listsFacade: ListsFacade, private modalRef: NzModalRef,
-              workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade) {
+  constructor() {
+    const listsFacade = inject(ListsFacade);
+    const workshopsFacade = inject(WorkshopsFacade);
+
     super(listsFacade, workshopsFacade);
   }
 

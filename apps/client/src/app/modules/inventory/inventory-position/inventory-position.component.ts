@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { ReplaySubject } from 'rxjs';
@@ -17,6 +17,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [FlexModule, AsyncPipe, TranslateModule]
 })
 export class InventoryPositionComponent {
+  private inventoryFacade = inject(InventoryService);
+
 
   private item$ = new ReplaySubject<ItemSearchResult>();
 
@@ -43,9 +45,6 @@ export class InventoryPositionComponent {
       return container.array;
     })
   );
-
-  constructor(private inventoryFacade: InventoryService) {
-  }
 
   @Input()
   set item(item: ItemSearchResult) {

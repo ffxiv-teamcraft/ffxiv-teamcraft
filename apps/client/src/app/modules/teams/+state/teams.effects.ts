@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CreateTeam, DeleteTeam, LoadMyTeams, LoadTeam, MyTeamsLoaded, TeamLoaded, TeamsActionTypes, UpdateTeam } from './teams.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -10,6 +10,11 @@ import { TeamsFacade } from './teams.facade';
 
 @Injectable()
 export class TeamsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private teamService = inject(TeamService);
+  private teamsFacade = inject(TeamsFacade);
+
 
 
   loadMyTeams$ = createEffect(() => this.actions$.pipe(
@@ -58,12 +63,4 @@ export class TeamsEffects {
     ofType<DeleteTeam>(TeamsActionTypes.DeleteTeam),
     switchMap(action => this.teamService.remove(action.payload))
   ), { dispatch: false });
-
-  constructor(
-    private actions$: Actions,
-    private authFacade: AuthFacade,
-    private teamService: TeamService,
-    private teamsFacade: TeamsFacade
-  ) {
-  }
 }

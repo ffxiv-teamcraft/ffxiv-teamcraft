@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
@@ -22,6 +22,9 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzTagModule, NzDropDownModule, NzMenuModule, NzButtonModule, NzTooltipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class ItemInventoryButtonComponent {
+  private settings = inject(SettingsService);
+  private inventoryService = inject(InventoryService);
+
 
   @Input()
   itemId: number;
@@ -81,9 +84,6 @@ export class ItemInventoryButtonComponent {
       });
     })
   );
-
-  constructor(private settings: SettingsService, private inventoryService: InventoryService) {
-  }
 
   addAmount(amount: number): void {
     this.add.emit(amount);

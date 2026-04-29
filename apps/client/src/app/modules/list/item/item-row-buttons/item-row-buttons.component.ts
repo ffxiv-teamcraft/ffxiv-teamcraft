@@ -1,14 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ComponentFactoryResolver,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-  ViewContainerRef
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentFactoryResolver, EventEmitter, Input, Output, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -50,6 +40,16 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, MarketboardIconComponent, NzButtonModule, NzWaveModule, ItemNameClipboardDirective, NzIconModule, NzTooltipModule, NzBadgeModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, TutorialStepDirective, RotationResultTagComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class ItemRowButtonsComponent extends TeamcraftComponent {
+  private messageService = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  settings = inject(SettingsService);
+  private cd = inject(ChangeDetectorRef);
+  private rotationsFacade = inject(RotationsFacade);
+  private lazyData = inject(LazyDataFacade);
+  private ipc = inject(IpcService);
+  platform = inject(PlatformService);
+  private nzContextMenuService = inject(NzContextMenuService);
+
 
   @Input()
   buttonsCache: { [key: string]: boolean } = {};
@@ -197,11 +197,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   @ViewChild('menuHost', { read: ViewContainerRef })
   contextMenuHost: ViewContainerRef;
 
-  constructor(private messageService: NzMessageService, private translate: TranslateService,
-              public settings: SettingsService, private cd: ChangeDetectorRef,
-              private rotationsFacade: RotationsFacade, private lazyData: LazyDataFacade,
-              private ipc: IpcService, public platform: PlatformService,
-              private nzContextMenuService: NzContextMenuService) {
+  constructor() {
     super();
     this.settings.settingsChange$.pipe(
       takeUntil(this.onDestroy$)

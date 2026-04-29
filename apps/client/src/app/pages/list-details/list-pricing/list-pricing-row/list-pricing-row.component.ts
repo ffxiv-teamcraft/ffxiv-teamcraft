@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { FullPricingRow, ListArray } from '../model/full-pricing-row';
 import { observeInput } from '../../../../core/rxjs/observe-input';
 import { debounceTime, filter, map, switchMap, takeUntil } from 'rxjs/operators';
@@ -40,6 +40,11 @@ import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
     imports: [NzGridModule, FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, I18nNameComponent, ClipboardDirective, MarketboardIconComponent, NzTagModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzSwitchModule, NzIconModule, NzInputModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, WorldNamePipe]
 })
 export class ListPricingRowComponent extends TeamcraftComponent {
+  private lazyData = inject(LazyDataFacade);
+  private listPricingService = inject(ListPricingService);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   @Input()
   listId: string;
@@ -117,8 +122,7 @@ export class ListPricingRowComponent extends TeamcraftComponent {
     })
   );
 
-  constructor(private lazyData: LazyDataFacade, private listPricingService: ListPricingService,
-              public translate: TranslateService, public settings: SettingsService) {
+  constructor() {
     super();
 
     this.updates$.pipe(

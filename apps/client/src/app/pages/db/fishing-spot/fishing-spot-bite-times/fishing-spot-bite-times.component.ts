@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output, inject } from '@angular/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
@@ -53,6 +53,12 @@ interface FishingSpotChartData {
     imports: [NzCardModule, NzSelectModule, FormsModule, FlexModule, ChartComponent, NzEmptyModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe, TugNamePipe]
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
+  private readonly i18n = inject(I18nToolsService);
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+  private readonly translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+
   public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];
 
   @Output()
@@ -222,15 +228,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   );
 
   private readonly unsubscribe$ = new Subject<void>();
-
-  constructor(
-    private readonly i18n: I18nToolsService,
-    public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService,
-    private readonly translate: TranslateService,
-    private lazyData: LazyDataFacade
-  ) {
-  }
 
   @Input()
   public set activeFish(value: number | undefined) {

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { TutorialService } from './tutorial.service';
@@ -13,6 +13,11 @@ import { tap } from 'rxjs/operators';
     standalone: true
 })
 export class TutorialStepDirective implements OnInit, OnDestroy {
+  private tutorialService = inject(TutorialService);
+  private overlayPositionBuilder = inject(OverlayPositionBuilder);
+  private elementRef = inject(ElementRef);
+  private overlay = inject(Overlay);
+
 
   @Input('tutorialStep')
   translationKey: string;
@@ -24,10 +29,6 @@ export class TutorialStepDirective implements OnInit, OnDestroy {
   align: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
 
   private registered = false;
-
-  constructor(private tutorialService: TutorialService, private overlayPositionBuilder: OverlayPositionBuilder,
-              private elementRef: ElementRef, private overlay: Overlay) {
-  }
 
   play(stepIndex: number, totalSteps: number): Observable<void> {
     const positionStrategy = this.overlayPositionBuilder

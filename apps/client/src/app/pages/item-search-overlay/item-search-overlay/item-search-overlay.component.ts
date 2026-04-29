@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { ExtractRow, I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, map, startWith, switchMap } from 'rxjs/operators';
@@ -44,6 +44,12 @@ interface Display {
     imports: [OverlayContainerComponent, FlexModule, FormsModule, NzInputModule, NzAutocompleteModule, ItemIconComponent, I18nNameComponent, InventoryPositionComponent, NzTagModule, NzTooltipModule, NzButtonModule, NzWaveModule, ItemSourcesDisplayComponent, NzDividerModule, MarketboardPopupComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, IfMobilePipe]
 })
 export class ItemSearchOverlayComponent {
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private inventoryFacade = inject(InventoryService);
+  private ipc = inject(IpcService);
+  private translate = inject(TranslateService);
+
 
   public input$: Subject<string> = new Subject<string>();
 
@@ -118,11 +124,6 @@ export class ItemSearchOverlayComponent {
       );
     })
   );
-
-  constructor(private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              private inventoryFacade: InventoryService,
-              private ipc: IpcService, private translate: TranslateService) {
-  }
 
   openInMainWindow(id: number): void {
     this.ipc.send('overlay:open-page', `/db/${this.translate.currentLang}/item/${id}`);

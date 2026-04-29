@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, TemplateRef, inject } from '@angular/core';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { FoldersFacade } from '../+state/folders.facade';
@@ -28,6 +28,10 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
   imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, ClipboardDirective, RouterLink, NzPopconfirmModule, CdkDropList, CdkDrag, NgTemplateOutlet, TranslateModule]
 })
 export class FolderComponent<T extends DataModel> implements OnInit {
+  private foldersFacade = inject(FoldersFacade);
+  private linkTools = inject(LinkToolsService);
+  private settings = inject(SettingsService);
+
 
   @Input()
   display: FolderDisplay<T>;
@@ -57,10 +61,6 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   canDropElement: (drag: CdkDrag) => boolean;
 
   expanded = false;
-
-  constructor(private foldersFacade: FoldersFacade, private linkTools: LinkToolsService,
-              private settings: SettingsService) {
-  }
 
   getLink = () => {
     return this.linkTools.getLink(`/${this.folderPath}/${this.display.folder.$key}`);

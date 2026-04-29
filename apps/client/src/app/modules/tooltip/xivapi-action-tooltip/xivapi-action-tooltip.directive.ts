@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Directive, ElementRef, HostListener, Input, OnDestroy, Optional, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Directive, ElementRef, HostListener, Input, OnDestroy, ViewContainerRef, inject } from '@angular/core';
 import { TooltipDataService } from '../tooltip-data.service';
 import { Subscription } from 'rxjs';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
@@ -16,6 +16,13 @@ import { StepState } from '@ffxiv-teamcraft/simulator';
     standalone: true
 })
 export class XivapiActionTooltipDirective implements OnDestroy {
+  private _detectorRef = inject(ChangeDetectorRef);
+  private _elementRef = inject(ElementRef);
+  private _tooltipData = inject(TooltipDataService);
+  private _viewContainerRef = inject(ViewContainerRef);
+  private _overlay = inject(Overlay);
+  private _directionality = inject(Directionality, { optional: true })!;
+
 
   // Disable TSLint to follow the style guide for directive inputs aliases.
   // See https://angular.io/guide/styleguide#avoid-aliasing-inputs-and-outputs
@@ -37,14 +44,6 @@ export class XivapiActionTooltipDirective implements OnDestroy {
 
   /** Overlay reference used to remove the tooltip. */
   private _overlayRef?: OverlayRef;
-
-  constructor(private _detectorRef: ChangeDetectorRef,
-              private _elementRef: ElementRef,
-              private _tooltipData: TooltipDataService,
-              private _viewContainerRef: ViewContainerRef,
-              private _overlay: Overlay,
-              @Optional() private _directionality: Directionality) {
-  }
 
   ngOnDestroy(): void {
     this.hide();

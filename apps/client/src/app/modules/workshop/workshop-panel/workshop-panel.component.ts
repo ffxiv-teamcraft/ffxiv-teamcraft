@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { Workshop } from '../../../model/other/workshop';
 import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
@@ -44,6 +44,15 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     imports: [NzCollapseModule, CdkDropList, FlexModule, CdkDrag, ListPanelComponent, NzGridModule, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, NzIconModule, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
 })
 export class WorkshopPanelComponent {
+  private workshopsFacade = inject(WorkshopsFacade);
+  private authFacade = inject(AuthFacade);
+  private linkTools = inject(LinkToolsService);
+  private translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private listsFacade = inject(ListsFacade);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private listPicker = inject(ListPickerService);
+
 
   public aggregatedIds: string;
 
@@ -73,10 +82,7 @@ export class WorkshopPanelComponent {
 
   private syncLinkUrl: string;
 
-  constructor(private workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
-              private translate: TranslateService, private dialog: NzModalService,
-              private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade,
-              private listPicker: ListPickerService) {
+  constructor() {
     this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.workshop$]).pipe(
       map(([links, workshop]) => links.find(link => link.redirectTo === `workshop/${workshop.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),

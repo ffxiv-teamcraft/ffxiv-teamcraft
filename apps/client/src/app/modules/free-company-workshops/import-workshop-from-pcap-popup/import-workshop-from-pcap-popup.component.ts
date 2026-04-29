@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { BehaviorSubject, combineLatest, of } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -26,6 +26,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzStepsModule, NzBadgeModule, NgTemplateOutlet, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+  private ipc = inject(IpcService);
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  private authFacade = inject(AuthFacade);
+
   private _freeCompany = new BehaviorSubject(null);
 
   private _airshipList = new BehaviorSubject(Array(4));
@@ -67,13 +72,6 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       return 'wait';
     })
   );
-
-
-  constructor(private modalRef: NzModalRef, private ipc: IpcService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private authFacade: AuthFacade) {
-    super();
-  }
 
   public get freeCompany$() {
     return this._freeCompany.asObservable();

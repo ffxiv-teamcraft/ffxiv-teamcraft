@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { ProbeSource } from '../../model/probe-source';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -26,6 +26,12 @@ import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
     imports: [NzTableModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, WidthBreakpointsPipe, I18nPipe]
 })
 export class TableComponent extends AbstractMetricDisplayComponent implements OnInit {
+  translate = inject(TranslateService);
+  private ipc = inject(IpcService);
+  private message = inject(NzMessageService);
+  private metricsService = inject(PlayerMetricsService);
+  settings = inject(SettingsService);
+
   ProbeSource = ProbeSource;
 
   public columns$ = this.filters$.pipe(
@@ -68,12 +74,6 @@ export class TableComponent extends AbstractMetricDisplayComponent implements On
   };
 
   public sortState: Record<string, string | null> = {};
-
-  constructor(public translate: TranslateService, private ipc: IpcService,
-              private message: NzMessageService, private metricsService: PlayerMetricsService,
-              public settings: SettingsService) {
-    super();
-  }
 
   saveSort(column: string, sort: string | null): void {
     this.sortState[column] = sort;

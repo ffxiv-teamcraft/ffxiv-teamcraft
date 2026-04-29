@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild, inject } from '@angular/core';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { combineLatest, map, Observable } from 'rxjs';
 import { StepByStepList } from './model/step-by-step-list';
@@ -46,6 +46,18 @@ import { NgIf, NgFor, AsyncPipe, LowerCasePipe } from '@angular/common';
     imports: [NgIf, NzGridModule, NzProgressModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzWaveModule, MapComponent, StepByStepDatatypeComponent, NzCardModule, LazyScrollComponent, StepByStepRowComponent, AsyncPipe, LowerCasePipe, I18nPipe, TranslateModule, MapNamePipe]
 })
 export class StepByStepDetailsComponent extends StepByStepComponent implements OnInit {
+  protected eorzeaFacade: EorzeaFacade;
+  protected ipc: IpcService;
+  protected listsFacade: ListsFacade;
+  protected layoutsFacade: LayoutsFacade;
+  settings: SettingsService;
+  protected lazyData: LazyDataFacade;
+  protected mapService: MapService;
+  protected etime: EorzeanTimeService;
+  protected alarmsFacade: AlarmsFacade;
+  private platformService = inject(PlatformService);
+  private layoutOrderService = inject(LayoutOrderService);
+
   DataType = DataType;
 
   @Input()
@@ -69,12 +81,28 @@ export class StepByStepDetailsComponent extends StepByStepComponent implements O
 
   public isDesktop = this.platformService.isDesktop();
 
-  constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
-              protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
-              public settings: SettingsService, protected lazyData: LazyDataFacade,
-              protected mapService: MapService, protected etime: EorzeanTimeService, protected alarmsFacade: AlarmsFacade,
-              private platformService: PlatformService, private layoutOrderService: LayoutOrderService) {
+  constructor() {
+    const eorzeaFacade = inject(EorzeaFacade);
+    const ipc = inject(IpcService);
+    const listsFacade = inject(ListsFacade);
+    const layoutsFacade = inject(LayoutsFacade);
+    const settings = inject(SettingsService);
+    const lazyData = inject(LazyDataFacade);
+    const mapService = inject(MapService);
+    const etime = inject(EorzeanTimeService);
+    const alarmsFacade = inject(AlarmsFacade);
+
     super(eorzeaFacade, ipc, listsFacade, layoutsFacade, settings, lazyData, mapService, etime, alarmsFacade);
+  
+    this.eorzeaFacade = eorzeaFacade;
+    this.ipc = ipc;
+    this.listsFacade = listsFacade;
+    this.layoutsFacade = layoutsFacade;
+    this.settings = settings;
+    this.lazyData = lazyData;
+    this.mapService = mapService;
+    this.etime = etime;
+    this.alarmsFacade = alarmsFacade;
   }
 
   protected onNewStepByStep(list: StepByStepList) {

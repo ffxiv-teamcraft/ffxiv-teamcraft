@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, startWith } from 'rxjs/operators';
@@ -22,15 +22,16 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzListModule, UserAvatarComponent, ItemIconComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class FishTopUsersComponent {
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+  readonly translate = inject(TranslateService);
+
   public readonly loading$ = this.fishCtx.rankingsByFish$.pipe(map(() => false));
 
   public readonly rankings$ = this.fishCtx.rankingsByFish$.pipe(
     map((res) => res.data?.rankings ?? []),
     startWith([])
   );
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService, public readonly translate: TranslateService) {
-  }
 
   getRankIcon(rank: number): string {
     if (rank < 1 || rank > 3) {

@@ -1,6 +1,6 @@
 import { RealtimeAlarm } from './realtime-alarm';
 import { UtcDay } from './utc-day';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { map } from 'rxjs/operators';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -16,6 +16,15 @@ import { PushNotificationsService } from '../push-notifications.service';
 
 @Injectable({ providedIn: 'root' })
 export class RealtimeAlarmsService {
+  private etime = inject(EorzeanTimeService);
+  private settings = inject(SettingsService);
+  private platform = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private pushNotificationsService = inject(PushNotificationsService);
+  private notificationService = inject(NzNotificationService);
+  private translate = inject(TranslateService);
+  private soundNotificationService = inject(SoundNotificationService);
+
 
   public static readonly REAL_TIME_ALARMS: { [index: string]: RealtimeAlarm } = {
     'WEEKLY_RESETS': new RealtimeAlarm([8], 'WEEKLY_RESETS', UtcDay.TUESDAY),
@@ -27,9 +36,7 @@ export class RealtimeAlarmsService {
 
   private reloader$ = new BehaviorSubject(null);
 
-  constructor(private etime: EorzeanTimeService, private settings: SettingsService,
-              private platform: PlatformService, private ipc: IpcService,
-              private pushNotificationsService: PushNotificationsService, private notificationService: NzNotificationService, private translate: TranslateService, private soundNotificationService: SoundNotificationService) {
+  constructor() {
     this.etime.getEorzeanTime().pipe(
       map(() => {
         const enabledAlarms: RealtimeAlarm[] = JSON.parse(localStorage.getItem('alarms:irl') || '[]')

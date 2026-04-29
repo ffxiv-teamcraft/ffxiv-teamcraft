@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -28,6 +28,15 @@ import { createListLayout, deleteListLayout, loadListLayout, loadListLayouts, se
   providedIn: 'root'
 })
 export class LayoutsFacade {
+  private store = inject<Store<{
+    layouts: LayoutsState;
+}>>(Store);
+  private layoutOrder = inject(LayoutOrderService);
+  private layoutService = inject(LayoutService);
+  private authFacade = inject(AuthFacade);
+  private settings = inject(SettingsService);
+  private lazyData = inject(LazyDataFacade);
+
   loaded$ = this.store.select(getLoaded);
 
   allLayouts$ = this.store.select(getAllLayouts);
@@ -50,10 +59,6 @@ export class LayoutsFacade {
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
-
-  constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService,
-              private authFacade: AuthFacade, private settings: SettingsService, private lazyData: LazyDataFacade) {
-  }
 
   public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$, stepByStepDisplay = false): Observable<ListDisplay> {
     const settingsChange$ = this.settings.settingsChange$.pipe(

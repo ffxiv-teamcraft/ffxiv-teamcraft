@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,14 +20,13 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class ApplyPopupComponent extends DialogComponent implements OnInit {
+  private fb = inject(UntypedFormBuilder);
+  private modalRef = inject(NzModalRef);
+
 
   price: number;
 
   form: UntypedFormGroup;
-
-  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

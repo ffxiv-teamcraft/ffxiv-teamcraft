@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -36,6 +36,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSwitchModule, FormsModule, NzCardModule, NzTagModule, RouterLink, AsyncPipe, DatePipe, MapNamePipe, I18nPipe, TranslateModule, NzPageHeaderTitleDirective, NzPageHeaderComponent, NzPageHeaderExtraDirective, NzCheckboxComponent, MapComponent, NzRadioGroupComponent, NzRadioComponent, NzEmptyComponent]
 })
 export class MappyDashboardComponent {
+  private lazyData = inject(LazyDataFacade);
+  translate = inject(TranslateService);
+  private mappy = inject(MappyService);
+  settings = inject(SettingsService);
+
 
   public displayMode$ = new BehaviorSubject<'empty' | 'scanned' | 'all'>('all');
 
@@ -83,9 +88,5 @@ export class MappyDashboardComponent {
       }).sort((a, b) => a.id - b.id);
     })
   );
-
-  constructor(private lazyData: LazyDataFacade, public translate: TranslateService,
-              private mappy: MappyService, public settings: SettingsService) {
-  }
 
 }

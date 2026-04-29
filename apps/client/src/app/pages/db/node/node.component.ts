@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -48,6 +48,16 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, ItemRarityDirective, NzTagModule, AlarmButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class NodeComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  private alarmsFacade = inject(AlarmsFacade);
+  private gatheringNodesService = inject(GatheringNodesService);
+  private mapService = inject(MapService);
+  settings = inject(SettingsService);
+
 
   public node$ = this.route.paramMap.pipe(
     map(params => params.get('nodeId')),
@@ -69,11 +79,9 @@ export class NodeComponent extends TeamcraftPageComponent {
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
-  constructor(private route: ActivatedRoute,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade,
-              private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
-              private mapService: MapService, public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
 
     this.links$ = this.node$.pipe(

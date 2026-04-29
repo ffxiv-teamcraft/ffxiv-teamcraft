@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PlayerMetricsService } from '../../../modules/player-metrics/player-metrics.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { endOfDay, startOfDay, startOfMonth, startOfWeek } from 'date-fns';
@@ -45,6 +45,15 @@ import { AsyncPipe } from '@angular/common';
     imports: [FlexModule, NzCardModule, NzDatePickerModule, TutorialStepDirective, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, NzTooltipModule, NzPopconfirmModule, ClipboardDirective, NzAlertModule, CdkDropListGroup, CdkDropList, MetricsDisplayEditorComponent, CdkDrag, MetricDisplayComponent, TranslateModule, AsyncPipe]
 })
 export class MetricsComponent extends TeamcraftPageComponent {
+  private metricsService = inject(PlayerMetricsService);
+  private translate = inject(TranslateService);
+  protected seoService: SeoService;
+  private filters = inject(METRICS_DISPLAY_FILTERS);
+  private pendingChangesService = inject(PendingChangesService);
+  private metricsDashboardsFacade = inject(MetricsDashboardsFacade);
+  private message = inject(NzMessageService);
+  private dialog = inject(NzModalService);
+
 
   // Date picker premade ranges
   ranges: any;
@@ -88,11 +97,12 @@ export class MetricsComponent extends TeamcraftPageComponent {
 
   layoutBackup: MetricsDashboardLayout;
 
-  constructor(private metricsService: PlayerMetricsService, private translate: TranslateService,
-              protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[],
-              private pendingChangesService: PendingChangesService, private metricsDashboardsFacade: MetricsDashboardsFacade,
-              private message: NzMessageService, private dialog: NzModalService) {
+  constructor() {
+    const seoService = inject(SeoService);
+
     super(seoService);
+    this.seoService = seoService;
+
     this.ranges = {};
     this.ranges[this.translate.instant('METRICS.Today')] = [startOfDay(new Date()), new Date()];
     this.ranges[this.translate.instant('METRICS.This_week')] = [startOfWeek(new Date()), new Date()];

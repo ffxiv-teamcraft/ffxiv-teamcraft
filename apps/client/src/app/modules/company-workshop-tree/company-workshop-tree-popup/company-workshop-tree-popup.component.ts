@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
 import { Ingredient } from '@ffxiv-teamcraft/simulator';
@@ -25,14 +25,12 @@ interface WorkshopTreeNode {
     imports: [AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
 })
 export class CompanyWorkshopTreePopupComponent extends DialogComponent implements OnInit {
+  private lazyData = inject(LazyDataFacade);
+
 
   workshopRecipeId: string;
 
   display$: Observable<WorkshopTreeNode[]>;
-
-  constructor(private lazyData: LazyDataFacade) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ListRow } from '../../list/model/list-row';
@@ -33,6 +33,10 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, ItemIconComponent, I18nNameComponent, NzTagModule, NzTooltipModule, InventoryPositionComponent, NzButtonModule, NzWaveModule, NzIconModule, NzListModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
 export class RelationshipsComponent extends DialogComponent implements OnInit {
+  private listsFacade = inject(ListsFacade);
+  private inventoryService = inject(InventoryService);
+  private platform = inject(PlatformService);
+
 
   public item: ListRow;
 
@@ -46,8 +50,7 @@ export class RelationshipsComponent extends DialogComponent implements OnInit {
 
   public markedAsDone: { [index: number]: boolean } = {};
 
-  constructor(private listsFacade: ListsFacade, private inventoryService: InventoryService,
-              private platform: PlatformService) {
+  constructor() {
     super();
     this.patchData();
     this.list$ = this.list$ || this.listsFacade.selectedList$;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -48,6 +48,13 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, MapPositionComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, RouterLink, NzTagModule, ItemIconComponent, XivapiActionTooltipDirective, ItemRarityDirective, NzButtonModule, NzIconModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe]
 })
 export class QuestComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+
 
   public quest$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -86,11 +93,14 @@ export class QuestComponent extends TeamcraftPageComponent {
     })
   );
 
-  constructor(private route: ActivatedRoute,
-              private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
-              seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'quests', 'questId');
 
     this.startingPoint$ = this.quest$.pipe(

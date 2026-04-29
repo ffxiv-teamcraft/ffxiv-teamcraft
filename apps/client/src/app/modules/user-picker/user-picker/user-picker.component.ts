@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, Validators } from '@angular/forms';
 import { CharacterSearchResultRow } from '@xivapi/angular-client';
@@ -32,6 +32,12 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, PageLoaderComponent, NzListModule, NzButtonModule, NzWaveModule, UserAvatarComponent, NzDividerModule, NzSpinModule, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class UserPickerComponent extends DialogComponent implements OnInit {
+  private lazyData = inject(LazyDataFacade);
+  private lodestone = inject(LodestoneService);
+  private modalRef = inject(NzModalRef);
+  private userService = inject(UserService);
+  private authFacade = inject(AuthFacade);
+
 
   public servers$ = this.lazyData.servers$;
 
@@ -53,8 +59,7 @@ export class UserPickerComponent extends DialogComponent implements OnInit {
     map(user => user.contacts)
   );
 
-  constructor(private lazyData: LazyDataFacade, private lodestone: LodestoneService, private modalRef: NzModalRef,
-              private userService: UserService, private authFacade: AuthFacade) {
+  constructor() {
     super();
 
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])

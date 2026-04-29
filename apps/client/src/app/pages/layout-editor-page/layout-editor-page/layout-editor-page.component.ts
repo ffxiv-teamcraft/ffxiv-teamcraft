@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { filter, first, map, switchMap } from 'rxjs/operators';
@@ -23,6 +23,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, LayoutEditorComponent, NzSelectModule, FormsModule, NzCollapseModule, NzTagModule, ItemIconComponent, I18nNameComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class LayoutEditorPageComponent {
+  private layoutsFacade = inject(LayoutsFacade);
+  private listsFacade = inject(ListsFacade);
+
 
   public lists$ = this.listsFacade.myLists$.pipe(
     map(lists => {
@@ -48,7 +51,7 @@ export class LayoutEditorPageComponent {
     })
   );
 
-  constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade) {
+  constructor() {
     this.listsFacade.loadMyLists();
   }
 

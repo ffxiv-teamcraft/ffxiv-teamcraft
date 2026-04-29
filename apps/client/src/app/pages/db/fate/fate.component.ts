@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -39,6 +39,13 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemRarityDirective, ItemIconComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, UiTextPipe]
 })
 export class FateComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  settings = inject(SettingsService);
+
 
   public fate$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -49,11 +56,14 @@ export class FateComponent extends TeamcraftPageComponent {
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
-  constructor(private route: ActivatedRoute, private i18n: I18nToolsService,
-              private lazyData: LazyDataFacade,
-              private translate: TranslateService, private router: Router,
-              public settings: SettingsService, seo: SeoService) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+    const router = this.router;
+
     this.updateSlug(router, i18n, route, 'fates', 'fateId');
 
     this.links$ = this.fate$.pipe(

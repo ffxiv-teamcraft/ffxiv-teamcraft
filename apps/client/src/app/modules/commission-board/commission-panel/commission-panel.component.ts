@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { Commission } from '../model/commission';
 import { Router, RouterLink } from '@angular/router';
 import { ListRow } from '../../list/model/list-row';
@@ -40,6 +40,12 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     imports: [NzCollapseModule, FlexModule, NzGridModule, UserAvatarComponent, NzBadgeModule, NzTagModule, NzTooltipModule, ItemIconComponent, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, RouterLink, NzDropDownModule, NzMenuModule, NzPopconfirmModule, LazyScrollComponent, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, TeamcraftLinkPipe, I18nPipe]
 })
 export class CommissionPanelComponent implements OnInit {
+  private router = inject(Router);
+  translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  commissionsFacade = inject(CommissionsFacade);
+  settings = inject(SettingsService);
+
 
   CommissionStatus = CommissionStatus;
 
@@ -54,11 +60,6 @@ export class CommissionPanelComponent implements OnInit {
   hasNotifications$: Observable<boolean>;
 
   public userId$: Observable<string> = this.authFacade.userId$;
-
-  constructor(private router: Router, public translate: TranslateService,
-              private authFacade: AuthFacade, public commissionsFacade: CommissionsFacade,
-              public settings: SettingsService) {
-  }
 
   openCommission(): void {
     this.router.navigate(['/commissions/', this.commission.$key]);

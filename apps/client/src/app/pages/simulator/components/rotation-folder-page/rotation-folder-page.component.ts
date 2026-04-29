@@ -28,6 +28,11 @@ import { SeoService } from '../../../../core/seo/seo.service';
     imports: [NzCardModule, UserAvatarComponent, FlexModule, FavoriteButtonComponent, RotationPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class RotationFolderPageComponent {
+  private rotationsFacade = inject(RotationsFacade);
+  private foldersFacade = inject(RotationFoldersFacade);
+  private authFacade = inject(AuthFacade);
+  private route = inject(ActivatedRoute);
+
   folder$: Observable<CraftingRotationsFolder>;
 
   rotations$: Observable<CraftingRotation[]>;
@@ -38,8 +43,7 @@ export class RotationFolderPageComponent {
 
   private seoService = inject(SeoService)
 
-  constructor(private rotationsFacade: RotationsFacade, private foldersFacade: RotationFoldersFacade,
-              private authFacade: AuthFacade, private route: ActivatedRoute) {
+  constructor() {
 
     this.route.paramMap.pipe(
       map(params => params.get('folderId'))

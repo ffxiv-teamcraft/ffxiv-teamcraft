@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { Title } from '@angular/platform-browser';
@@ -18,6 +18,10 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzIconModule, NzSliderModule, FormsModule, NzSwitchModule]
 })
 export class OverlayContainerComponent implements OnInit {
+  private ipc = inject(IpcService);
+  settings = inject(SettingsService);
+  titleService = inject(Title);
+
 
   @Input()
   uri: string;
@@ -28,9 +32,6 @@ export class OverlayContainerComponent implements OnInit {
   public overlayOpacity = 100;
 
   public alwaysOnTop = true;
-
-  constructor(private ipc: IpcService, public settings: SettingsService, public titleService: Title) {
-  }
 
   close(): void {
     this.ipc.send(`overlay:close`, this.uri);

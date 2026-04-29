@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -19,6 +19,11 @@ import { DialogComponent } from '../../../../core/dialog.component';
     imports: [NzAlertModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class VerificationPopupComponent extends DialogComponent implements OnDestroy {
+  private lodestone = inject(LodestoneService);
+  private authFacade = inject(AuthFacade);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   verificationCode: string;
 
@@ -30,7 +35,7 @@ export class VerificationPopupComponent extends DialogComponent implements OnDes
 
   subscription: Subscription;
 
-  constructor(private lodestone: LodestoneService, private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
+  constructor() {
     super();
     this.patchData();
     this.verificationResult$ = this.startVerify$.pipe(

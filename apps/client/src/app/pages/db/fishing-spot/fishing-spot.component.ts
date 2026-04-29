@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -43,6 +43,16 @@ import { AsyncPipe } from '@angular/common';
     imports: [FlexModule, I18nDisplayComponent, NzButtonModule, NzWaveModule, DbCommentsComponent, NzDividerModule, FishingSpotPositionComponent, FishingSpotWeathersComponent, FishingSpotWeatherTransitionsComponent, FishingSpotAvailableFishesComponent, FishingSpotHoursComponent, FishingSpotBaitDatagridComponent, FishingSpotWeatherDatagridComponent, FishingSpotTugDatagridComponent, FishingSpotHooksetDatagridComponent, FishingSpotBiteTimesComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, MapNamePipe]
 })
 export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+  private readonly route = inject(ActivatedRoute);
+  private readonly i18n = inject(I18nToolsService);
+  readonly translate = inject(TranslateService);
+  private readonly router = inject(Router);
+  private readonly lazyData = inject(LazyDataFacade);
+  readonly settings = inject(SettingsService);
+  private readonly dialog = inject(NzModalService);
+  private readonly fishContext = inject(FishContextService);
+  readonly seo: SeoService;
+
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   private readonly loadingSub$ = new BehaviorSubject<boolean>(false);
@@ -59,18 +69,12 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  constructor(
-    private readonly route: ActivatedRoute,
-    private readonly i18n: I18nToolsService,
-    public readonly translate: TranslateService,
-    private readonly router: Router,
-    private readonly lazyData: LazyDataFacade,
-    public readonly settings: SettingsService,
-    private readonly dialog: NzModalService,
-    private readonly fishContext: FishContextService,
-    readonly seo: SeoService
-  ) {
+  constructor() {
+    const seo = inject(SeoService);
+
     super(seo);
+  
+    this.seo = seo;
   }
 
   ngOnInit() {

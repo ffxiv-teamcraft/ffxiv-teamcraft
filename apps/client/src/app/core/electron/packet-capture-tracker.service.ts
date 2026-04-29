@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { buffer, debounce, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, merge, timer } from 'rxjs';
@@ -27,16 +27,21 @@ import { Region } from '@ffxiv-teamcraft/types';
   providedIn: 'root'
 })
 export class PacketCaptureTrackerService {
+  private ipc = inject(IpcService);
+  private inventoryService = inject(InventoryService);
+  private authFacade = inject(AuthFacade);
+  private listsFacade = inject(ListsFacade);
+  private eorzeaFacade = inject(EorzeaFacade);
+  private settings = inject(SettingsService);
+  private lazyData = inject(LazyDataFacade);
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  private nzNotification = inject(NzNotificationService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private platformService = inject(PlatformService);
+
 
   private notificationRef: NzNotificationRef;
-
-  constructor(private ipc: IpcService, private inventoryService: InventoryService,
-              private authFacade: AuthFacade, private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService, private lazyData: LazyDataFacade,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private nzNotification: NzNotificationService, private translate: TranslateService,
-              private router: Router, private platformService: PlatformService) {
-  }
 
   private getStatusStacks(param: number, status: LazyStatus): number {
     if ((param & 0x00FF) === 0x00FF) {

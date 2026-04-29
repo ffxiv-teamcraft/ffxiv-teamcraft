@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { combineLatest, interval, Observable, ReplaySubject } from 'rxjs';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -31,6 +31,9 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
     imports: [OverlayContainerComponent, FlexModule, NzAlertModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzDividerModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, ActionNamePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, LazyRowPipe]
 })
 export class FishingReporterOverlayComponent {
+  private ipc = inject(IpcService);
+  private translate = inject(TranslateService);
+
 
   public state$: ReplaySubject<FishingReporterState> = new ReplaySubject<FishingReporterState>();
 
@@ -64,7 +67,7 @@ export class FishingReporterOverlayComponent {
     map(state => state.spot?.id >= 10000)
   );
 
-  constructor(private ipc: IpcService, private translate: TranslateService) {
+  constructor() {
     this.ipc.on('fishing-state', (event, data) => {
       this.state$.next(data);
     });

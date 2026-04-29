@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { VesselType } from '../../../../modules/free-company-workshops/model/vessel-type';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
@@ -16,6 +16,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NgTemplateOutlet, VesselRowComponent, TranslateModule]
 })
 export class VesselListComponent {
+  translate = inject(TranslateService);
+
   @Input() airships: Airship[];
 
   @Input() submarines: Submarine[];
@@ -23,9 +25,6 @@ export class VesselListComponent {
   @Input() airshipMaxRank: number;
 
   @Input() submarineMaxRank: number;
-
-  constructor(public translate: TranslateService) {
-  }
 
   get isAirshipsEmpty(): boolean {
     return this.airships?.filter((vessel) => vessel?.rank > 0).length === 0;

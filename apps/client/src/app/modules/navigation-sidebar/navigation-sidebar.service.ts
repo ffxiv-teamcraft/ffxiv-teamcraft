@@ -9,12 +9,19 @@ import { IpcService } from '../../core/electron/ipc.service';
 import { SidebarBadgeType } from './sidebar-badge-type';
 import { AuthFacade } from '../../+state/auth.facade';
 import { CommissionsFacade } from '../commission-board/+state/commissions.facade';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationSidebarService {
+  private settings = inject(SettingsService);
+  private sanitizer = inject(DomSanitizer);
+  private platformService = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private authFacade = inject(AuthFacade);
+  private commissionsFacade = inject(CommissionsFacade);
+
 
   public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
     map(notifications => notifications.length),
@@ -463,8 +470,4 @@ export class NavigationSidebarService {
       return [].concat.apply([], content.filter(category => category.name !== 'SIDEBAR.Favorites').map(category => category.children.filter(child => !child.hidden)));
     })
   );
-
-  constructor(private settings: SettingsService, private sanitizer: DomSanitizer, private platformService: PlatformService,
-              private ipc: IpcService, private authFacade: AuthFacade, private commissionsFacade: CommissionsFacade) {
-  }
 }

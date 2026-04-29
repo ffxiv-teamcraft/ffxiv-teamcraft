@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2, inject } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { I18nToolsService } from './tools/i18n-tools.service';
@@ -14,6 +14,12 @@ import { observeInput } from './rxjs/observe-input';
   standalone: true
 })
 export class ItemNameClipboardDirective extends NzTooltipDirective implements OnInit {
+  private clipboardService = inject(Clipboard);
+  private i18n = inject(I18nToolsService);
+  private message = inject(NzMessageService);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+
 
   @Input('itemNameCopy')
   itemId: number;
@@ -37,8 +43,10 @@ export class ItemNameClipboardDirective extends NzTooltipDirective implements On
     })
   );
 
-  constructor(private clipboardService: Clipboard, private i18n: I18nToolsService, private message: NzMessageService, private settings: SettingsService, private translate: TranslateService,
-              elementRef: ElementRef, renderer: Renderer2) {
+  constructor() {
+    const elementRef = inject(ElementRef);
+    const renderer = inject(Renderer2);
+
     super();
     renderer.setStyle(
       elementRef.nativeElement,

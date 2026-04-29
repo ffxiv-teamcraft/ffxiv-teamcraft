@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first, map, switchMap, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -16,11 +16,17 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     imports: [NzAlertModule]
 })
 export class PatreonRedirectComponent {
+  private route = inject(ActivatedRoute);
+  private http = inject(HttpClient);
+  private authFacade = inject(AuthFacade);
+  private router = inject(Router);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   public errorCode: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private authFacade: AuthFacade,
-              private router: Router, private message: NzMessageService, private translate: TranslateService) {
+  constructor() {
     this.route.queryParams.pipe(
       first()
     ).subscribe(params => {

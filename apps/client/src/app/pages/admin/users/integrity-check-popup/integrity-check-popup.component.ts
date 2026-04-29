@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { INTEGRITY_CHECKS, IntegrityCheck } from '../integrity-checks/integrity-check';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
@@ -23,6 +23,9 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [FlexModule, NzButtonModule, NzIconModule, NzWaveModule, NzTooltipModule, AsyncPipe, TranslateModule]
 })
 export class IntegrityCheckPopupComponent extends DialogComponent {
+  private integrityChecks = inject(INTEGRITY_CHECKS);
+  private userService = inject(UserService);
+
 
   destroyRef = inject(DestroyRef);
 
@@ -40,8 +43,7 @@ export class IntegrityCheckPopupComponent extends DialogComponent {
     takeUntilDestroyed(this.destroyRef)
   );
 
-  constructor(@Inject(INTEGRITY_CHECKS) private integrityChecks: IntegrityCheck[],
-              private userService: UserService) {
+  constructor() {
     super();
     this.patchData();
   }

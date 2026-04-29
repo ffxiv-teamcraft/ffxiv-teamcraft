@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit, inject } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -27,6 +27,10 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
     imports: [OverlayContainerComponent, NzTooltipModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, I18nRowPipe]
 })
 export class MappyOverlayComponent implements OnInit {
+  private ipc = inject(IpcService);
+  private mapService = inject(MapService);
+  private sanitizer = inject(DomSanitizer);
+
 
   scale = 1;
 
@@ -89,8 +93,7 @@ export class MappyOverlayComponent implements OnInit {
 
   public imageTransform: SafeStyle;
 
-  constructor(private ipc: IpcService, private mapService: MapService,
-              private sanitizer: DomSanitizer) {
+  constructor() {
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });

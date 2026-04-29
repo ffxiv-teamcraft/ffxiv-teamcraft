@@ -1,4 +1,4 @@
-import { Directive, HostListener, Input } from '@angular/core';
+import { Directive, HostListener, Input, inject } from '@angular/core';
 import { AnalyticsService } from './analytics.service';
 import { Scalar } from 'pirsch-sdk';
 
@@ -8,6 +8,8 @@ import { Scalar } from 'pirsch-sdk';
     standalone: true
 })
 export class PirschEventDirective {
+  private analyticsService = inject(AnalyticsService);
+
 
   @Input('pirschEvent')
   code: string;
@@ -23,9 +25,6 @@ export class PirschEventDirective {
     } else {
       this.analyticsService.event(this.code, this.meta);
     }
-  }
-
-  constructor(private analyticsService: AnalyticsService) {
   }
 
 }

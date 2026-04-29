@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
@@ -44,6 +44,15 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzCollapseModule, CdkDropList, FlexModule, CdkDrag, RotationPanelComponent, NzGridModule, NzButtonModule, NzTooltipModule, RouterLink, NzIconModule, NzWaveModule, ClipboardDirective, FavoriteButtonComponent, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
 })
 export class RotationFolderPanelComponent {
+  private foldersFacade = inject(RotationFoldersFacade);
+  private authFacade = inject(AuthFacade);
+  private linkTools = inject(LinkToolsService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private rotationsFacade = inject(RotationsFacade);
+
 
   @Input()
   rotations: CraftingRotation[] = [];
@@ -65,9 +74,7 @@ export class RotationFolderPanelComponent {
 
   private syncLinkUrl: string;
 
-  constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
-              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
-              private customLinksFacade: CustomLinksFacade, private rotationsFacade: RotationsFacade) {
+  constructor() {
 
     this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.folder$]).pipe(
       map(([links, folder]) => links.find(link => link.redirectTo === `rotation-folder/${folder.$key}`)),

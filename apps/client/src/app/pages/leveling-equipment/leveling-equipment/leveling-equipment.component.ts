@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AbstractControl, FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
@@ -46,6 +46,18 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NzInputNumberModule, NzCheckboxModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, NzTooltipModule, ClipboardDirective, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class LevelingEquipmentComponent extends TeamcraftComponent {
+  private inventoryFacade = inject(InventoryService);
+  private lazyData = inject(LazyDataFacade);
+  private fb = inject(UntypedFormBuilder);
+  private gearsetsFacade = inject(GearsetsFacade);
+  private statsService = inject(StatsService);
+  private listPicker = inject(ListPickerService);
+  private router = inject(Router);
+  platformService = inject(PlatformService);
+  private settings = inject(SettingsService);
+  private route = inject(ActivatedRoute);
+  private environment = inject(EnvironmentService);
+
 
   jobList$: Observable<any[]>;
 
@@ -78,12 +90,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
 
   desktop = this.platformService.isDesktop();
 
-  constructor(private inventoryFacade: InventoryService, private lazyData: LazyDataFacade,
-              private fb: UntypedFormBuilder,
-              private gearsetsFacade: GearsetsFacade, private statsService: StatsService,
-              private listPicker: ListPickerService, private router: Router,
-              public platformService: PlatformService, private settings: SettingsService,
-              private route: ActivatedRoute, private environment: EnvironmentService) {
+  constructor() {
     super();
     this.jobList$ = this.lazyData.getEntry('jobName').pipe(
       map(jobName => {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -32,6 +32,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzWaveModule, NzSwitchModule, FormsModule, PageLoaderComponent, NzCollapseModule, NzGridModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, VesselListComponent, FullpageMessageComponent, AsyncPipe, KeyValuePipe, TranslateModule]
 })
 export class VoyageTrackerComponent extends TeamcraftComponent {
+  ipc = inject(IpcService);
+  translate = inject(TranslateService);
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  settings = inject(SettingsService);
+
   isLoading$ = new BehaviorSubject(false);
 
   airshipMaxRank$ = this.freeCompanyWorkshopFacade.getAirshipMaxRank();
@@ -64,11 +69,6 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
     }),
     takeUntil(this.onDestroy$)
   );
-
-  constructor(public ipc: IpcService, public translate: TranslateService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public settings: SettingsService) {
-    super();
-  }
 
   getAirshipSectorsProgression(sectors: Record<string, SectorExploration>): number {
     // Exclude Diadem sector

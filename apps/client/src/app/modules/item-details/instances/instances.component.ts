@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
@@ -21,9 +21,6 @@ import { NzListModule } from 'ng-zorro-antd/list';
     imports: [NzListModule, FlexModule, DbButtonComponent, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, I18nPipe, I18nRowPipe, MapNamePipe, LazyRowPipe]
 })
 export class InstancesComponent extends ItemDetailsPopup {
-
-  constructor(public translate: TranslateService) {
-    super();
-  }
+  translate = inject(TranslateService);
 
 }

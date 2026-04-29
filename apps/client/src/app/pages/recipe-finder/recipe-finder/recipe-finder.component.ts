@@ -1,4 +1,4 @@
-import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnDestroy, TemplateRef, ViewChild, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -68,6 +68,22 @@ import { uniqBy } from 'lodash';
   imports: [FlexModule, NgIf, NzAlertModule, NzInputModule, NzAutocompleteModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCollapseModule, NzTooltipModule, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, NzDividerModule, NzPaginationModule, NzListModule, MarketboardIconComponent, NzTagModule, NzEmptyModule, DbButtonComponent, RouterLink, AsyncPipe, TranslateModule, ItemNamePipe, IfMobilePipe, IngameStarsPipe, LazyIconPipe, I18nPipe, I18nRowPipe]
 })
 export class RecipeFinderComponent implements OnDestroy {
+  private lazyData = inject(LazyDataFacade);
+  private translate = inject(TranslateService);
+  private i18n = inject(I18nToolsService);
+  private listsFacade = inject(ListsFacade);
+  private listManager = inject(ListManagerService);
+  private progressService = inject(ProgressPopupService);
+  private ipc = inject(IpcService);
+  private listPicker = inject(ListPickerService);
+  private environmentService = inject(EnvironmentService);
+  private notificationService = inject(NzNotificationService);
+  private message = inject(NzMessageService);
+  private dialog = inject(NzModalService);
+  private authFacade = inject(AuthFacade);
+  platform = inject(PlatformService);
+  settings = inject(SettingsService);
+
 
   public maxLevel = this.environmentService.maxLevel;
 
@@ -143,12 +159,7 @@ export class RecipeFinderComponent implements OnDestroy {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
-              private i18n: I18nToolsService, private listsFacade: ListsFacade,
-              private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private ipc: IpcService, private listPicker: ListPickerService, private environmentService: EnvironmentService,
-              private notificationService: NzNotificationService, private message: NzMessageService, private dialog: NzModalService, private authFacade: AuthFacade,
-              public platform: PlatformService, public settings: SettingsService) {
+  constructor() {
     this.pool = JSON.parse(localStorage.getItem('recipe-finder:pool') || '[]');
     const results$ = this.search$.pipe(
       switchMap(() => {

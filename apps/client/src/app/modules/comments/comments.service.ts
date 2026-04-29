@@ -1,7 +1,7 @@
 import { ResourceComment } from './resource-comment';
 import { FirestoreRelationalStorage } from '../../core/database/storage/firestore/firestore-relational-storage';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
 import { CommentTargetType } from './comment-target-type';
 import { Observable } from 'rxjs';
@@ -12,10 +12,24 @@ import { Firestore, where } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class CommentsService extends FirestoreRelationalStorage<ResourceComment> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService) {
+
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   getComments(type: CommentTargetType, id: string, details = 'none'): Observable<ResourceComment[]> {

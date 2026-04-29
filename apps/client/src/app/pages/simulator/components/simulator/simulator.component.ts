@@ -1,16 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  Input,
-  OnDestroy,
-  OnInit,
-  QueryList,
-  signal,
-  ViewChildren,
-  WritableSignal
-} from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, signal, ViewChildren, WritableSignal, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, take } from 'rxjs';
 import {
   catchError,
@@ -131,6 +119,26 @@ import { toObservable } from '@angular/core/rxjs-interop';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, TutorialStepDirective, NzIconModule, NzPopconfirmModule, ClipboardDirective, NzBadgeModule, FavoriteButtonComponent, NzTagModule, NzSwitchModule, FormsModule, NzCollapseModule, NzSelectModule, NzAlertModule, ReactiveFormsModule, NzGridModule, NzFormModule, NzInputModule, NzInputNumberModule, NzCheckboxModule, NzListModule, ItemIconComponent, SimulationResultComponent, NzCardModule, CdkDropListGroup, NgStyle, ExtendedModule, CdkDropList, ActionComponent, CdkDrag, FullpageMessageComponent, AsyncPipe, TranslateModule, ItemNamePipe, FloorPipe, ActionNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
+  settings = inject(SettingsService);
+  private authFacade = inject(AuthFacade);
+  private fb = inject(UntypedFormBuilder);
+  consumablesService = inject(ConsumablesService);
+  freeCompanyActionsService = inject(FreeCompanyActionsService);
+  private i18n = inject(I18nToolsService);
+  private rotationsFacade = inject(RotationsFacade);
+  private router = inject(Router);
+  private dialog = inject(NzModalService);
+  translate = inject(TranslateService);
+  private message = inject(NzMessageService);
+  private rotationPicker = inject(RotationPickerService);
+  private rotationTipsService = inject(RotationTipsService);
+  dirtyFacade = inject(DirtyFacade);
+  private cd = inject(ChangeDetectorRef);
+  private ipc = inject(IpcService);
+  platformService = inject(PlatformService);
+  private simulationService = inject(SimulationService);
+  private lazyData = inject(LazyDataFacade);
+
 
   public dirtyScope = DirtyScope;
 
@@ -301,15 +309,10 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public boxHeight = 40;
 
-  constructor(public settings: SettingsService,
-              private authFacade: AuthFacade, private fb: UntypedFormBuilder, public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
-              private rotationsFacade: RotationsFacade, private router: Router,
-              private dialog: NzModalService, public translate: TranslateService,
-              private message: NzMessageService, private rotationPicker: RotationPickerService,
-              private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
-              private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
-              private lazyData: LazyDataFacade) {
+  constructor() {
+    const consumablesService = this.consumablesService;
+    const freeCompanyActionsService = this.freeCompanyActionsService;
+
     this.lazyData.preloadEntry('actions');
     this.lazyData.preloadEntry('craftActions');
     this.rotationsFacade.loadMyRotations();

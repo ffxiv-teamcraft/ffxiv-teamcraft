@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -81,19 +81,22 @@ import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
   imports: [NgIf, FlexModule, NzButtonModule, NzTooltipModule, RouterLink, NzIconModule, NzWaveModule, TutorialStepDirective, NzPopconfirmModule, NzSwitchModule, FormsModule, NgTemplateOutlet, CdkDropList, NgFor, NzCollapseModule, CdkDrag, ClipboardDirective, NzDropDownModule, NzMenuModule, FullpageMessageComponent, PageLoaderComponent, NzCardModule, ItemIconComponent, NzAvatarModule, I18nNameComponent, GatheringItemUsesComponent, MapPositionComponent, DbButtonComponent, TimerTooltipDirective, NzPopoverModule, FishingBaitComponent, MapComponent, NzGridModule, AsyncPipe, TranslateModule, I18nPipe, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, MapNamePipe, HooksetActionIdPipe, LazyRowPipe, FloorPipe, HourDisplayPipe]
 })
 export class AlarmsPageComponent implements OnInit {
+  alarmsFacade = inject(AlarmsFacade);
+  private _settings = inject(SettingsService);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private ipc = inject(IpcService);
+  private i18n = inject(I18nToolsService);
+  private etime = inject(EorzeanTimeService);
+  platform = inject(PlatformService);
+  private linkService = inject(LinkToolsService);
+
 
   public display$: Observable<AlarmsPageDisplay>;
 
   public loaded$: Observable<boolean>;
 
   public activePanels$ = new LocalStorageBehaviorSubject<Record<string, boolean>>('alarms:groups-collapse', {});
-
-  constructor(public alarmsFacade: AlarmsFacade,
-              private _settings: SettingsService, private dialog: NzModalService,
-              private translate: TranslateService, private ipc: IpcService,
-              private i18n: I18nToolsService, private etime: EorzeanTimeService,
-              public platform: PlatformService, private linkService: LinkToolsService) {
-  }
 
   public get settings(): SettingsService {
     return this._settings;

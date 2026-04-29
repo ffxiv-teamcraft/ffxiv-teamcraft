@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as fromCommissions from './commissions.reducer';
 import * as CommissionsSelectors from './commissions.selectors';
@@ -27,6 +27,14 @@ import { Timestamp } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
+  private store = inject<Store<fromCommissions.CommissionsPartialState>>(Store);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private listsFacade = inject(ListsFacade);
+  private commissionProfileService = inject(CommissionProfileService);
+  private notificationsFacade = inject(NotificationsFacade);
+
   loaded$ = this.store.pipe(select(CommissionsSelectors.getCommissionsLoaded));
 
   allCommissions$ = this.store.pipe(
@@ -88,12 +96,6 @@ export class CommissionsFacade {
       return notifications.filter(n => n.type === NotificationType.COMMISSION);
     })
   );
-
-  constructor(private store: Store<fromCommissions.CommissionsPartialState>, private dialog: NzModalService,
-              private translate: TranslateService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade, private commissionProfileService: CommissionProfileService,
-              private notificationsFacade: NotificationsFacade) {
-  }
 
   create(list?: List, template?: Partial<Commission>): void {
     if (list) {

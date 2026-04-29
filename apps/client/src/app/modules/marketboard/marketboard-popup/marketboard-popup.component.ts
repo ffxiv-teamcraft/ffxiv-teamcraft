@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { catchError, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
@@ -23,6 +23,11 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [NzAlertModule, FlexModule, NzTableModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
 })
 export class MarketboardPopupComponent extends DialogComponent implements OnInit {
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+  private universalis = inject(UniversalisService);
+
 
   @Input()
   itemId: number;
@@ -48,11 +53,6 @@ export class MarketboardPopupComponent extends DialogComponent implements OnInit
     key: 'PricePerUnit',
     value: 'ascend'
   });
-
-  constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade,
-              public settings: SettingsService, private universalis: UniversalisService) {
-    super();
-  }
 
   ngOnInit() {
     this.patchData();

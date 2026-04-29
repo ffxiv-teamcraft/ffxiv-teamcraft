@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -62,6 +62,19 @@ import { DataService } from '../../../core/api/data.service';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzPopconfirmModule, RouterLink, NzAlertModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzInputNumberModule, NzCardModule, NzTagModule, GearsetEditorRowComponent, NzDividerModule, PageLoaderComponent, NzSelectModule, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, FloorPipe, JobUnicodePipe, FoodBonusesPipePipe, StatDisplayPipe]
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
+  private fb = inject(UntypedFormBuilder);
+  private gearsetsFacade = inject(GearsetsFacade);
+  private activatedRoute = inject(ActivatedRoute);
+  private lazyData = inject(LazyDataFacade);
+  private cd = inject(ChangeDetectorRef);
+  translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private statsService = inject(StatsService);
+  private i18n = inject(I18nToolsService);
+  ipc = inject(IpcService);
+  private environment = inject(EnvironmentService);
+  private dataService = inject(DataService);
+
 
   itemFiltersform: UntypedFormGroup = this.fb.group({
     ilvlMin: [this.environment.maxIlvl - 30],
@@ -281,13 +294,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
 
-  constructor(private fb: UntypedFormBuilder, private gearsetsFacade: GearsetsFacade,
-              private activatedRoute: ActivatedRoute,
-              private lazyData: LazyDataFacade, private cd: ChangeDetectorRef,
-              public translate: TranslateService, private dialog: NzModalService,
-              private statsService: StatsService, private i18n: I18nToolsService,
-              public ipc: IpcService, private environment: EnvironmentService,
-              private dataService: DataService) {
+  constructor() {
     super();
     this.gearset$.pipe(
       distinctUntilKeyChanged('$key'),

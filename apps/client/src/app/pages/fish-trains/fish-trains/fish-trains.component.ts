@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FishTrainFacade } from '../../../modules/fish-train/fish-train/fish-train.facade';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { combineLatest, map, switchMap } from 'rxjs';
@@ -35,6 +35,13 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     imports: [NzPageHeaderModule, NzButtonModule, FormsModule, ReactiveFormsModule, NzInputModule, NzSelectModule, NzSegmentedModule, LazyScrollComponent, FullpageMessageComponent, NzDividerModule, NzGridModule, RouterLink, UserAvatarComponent, NzAvatarModule, NzTooltipModule, NzTagModule, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule]
 })
 export class FishTrainsComponent extends TeamcraftComponent {
+  private fishTrainFacade = inject(FishTrainFacade);
+  translate = inject(TranslateService);
+  private cd = inject(ChangeDetectorRef);
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+
 
   FishTrainStatus = FishTrainStatus;
 
@@ -110,10 +117,10 @@ export class FishTrainsComponent extends TeamcraftComponent {
     map(dc => Object.keys(dc))
   );
 
-  constructor(private fishTrainFacade: FishTrainFacade, public translate: TranslateService,
-              private cd: ChangeDetectorRef, private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade, public settings: SettingsService) {
+  constructor() {
     super();
+    const fishTrainFacade = this.fishTrainFacade;
+
     fishTrainFacade.loadAll();
     this.authFacade.mainCharacter$.pipe(
       map(char => char?.Server),

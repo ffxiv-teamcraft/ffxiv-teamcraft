@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { CommissionProfileService } from '../../../core/database/commission-profile.service';
 import { Observable } from 'rxjs';
 import { CommissionProfile } from '../../../model/user/commission-profile';
@@ -24,15 +24,15 @@ import { AsyncPipe } from '@angular/common';
     imports: [FlexModule, NzRateModule, FormsModule, NzTooltipModule, NzButtonModule, NzIconModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class UserRatingDisplayComponent implements OnInit {
+  private commissionProfileService = inject(CommissionProfileService);
+  private modalService = inject(NzModalService);
+  private translate = inject(TranslateService);
+
 
   @Input()
   userId: string;
 
   commissionProfile$: Observable<{ profile: CommissionProfile, avgRating: number }>;
-
-  constructor(private commissionProfileService: CommissionProfileService, private modalService: NzModalService,
-              private translate: TranslateService) {
-  }
 
   ngOnInit(): void {
     this.commissionProfile$ = this.commissionProfileService.get(this.userId)

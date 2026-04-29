@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { SettingsService } from '../../settings/settings.service';
 import * as semver from 'semver';
@@ -17,10 +17,9 @@ import { PirschEventDirective } from '../../../core/analytics/pirsch-event.direc
   imports: [NzDividerModule, MarkdownModule, TranslateModule, PirschEventDirective]
 })
 export class ChangelogPopupComponent implements OnInit {
-  public patchNotes: typeof environment.patchNotes;
+  private settings = inject(SettingsService);
 
-  constructor(private settings: SettingsService) {
-  }
+  public patchNotes: typeof environment.patchNotes;
 
   ngOnInit(): void {
     const notes = environment.patchNotes.filter(entry => {

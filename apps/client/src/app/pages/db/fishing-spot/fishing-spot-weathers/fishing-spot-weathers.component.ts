@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { weatherIndex } from '../../../../core/data/sources/weather-index';
 import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
@@ -25,6 +25,12 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
+  readonly utils = inject(FishingSpotUtilsService);
+  readonly translate = inject(TranslateService);
+  private readonly etime = inject(EorzeanTimeService);
+  private readonly weatherService = inject(WeatherService);
+  private readonly cd = inject(ChangeDetectorRef);
+
   public highlightColor?: string;
 
   private readonly spot$ = new BehaviorSubject<LazyFishingSpotsDatabasePage | undefined>(undefined);
@@ -51,15 +57,6 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
   private readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
 
   private readonly unsubscribe$ = new Subject<void>();
-
-  constructor(
-    public readonly utils: FishingSpotUtilsService,
-    public readonly translate: TranslateService,
-    private readonly etime: EorzeanTimeService,
-    private readonly weatherService: WeatherService,
-    private readonly cd: ChangeDetectorRef
-  ) {
-  }
 
   @Input()
   public set spot(value: LazyFishingSpotsDatabasePage | undefined) {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { switchMap } from 'rxjs/operators';
@@ -20,15 +20,13 @@ import { NzListModule } from 'ng-zorro-antd/list';
     imports: [NzListModule, AsyncPipe, I18nPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class IslandAnimalComponent extends ItemDetailsPopup<IslandAnimal[]> {
+  private lazyData = inject(LazyDataFacade);
+
 
   animalsDetails$: Observable<LazyIslandAnimal[]> = this.details$.pipe(
     switchMap(details => {
       return combineLatest(details.map(animal => this.lazyData.getRow('islandAnimals', animal.id)));
     })
   );
-
-  constructor(private lazyData: LazyDataFacade) {
-    super();
-  }
 
 }

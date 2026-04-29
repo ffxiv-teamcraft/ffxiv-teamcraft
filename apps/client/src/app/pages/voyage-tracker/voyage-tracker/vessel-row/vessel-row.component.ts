@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { Vessel } from '../../../../modules/free-company-workshops/model/vessel';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -27,6 +27,10 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzIconModule, VesselRankColumnComponent, VesselBuildColumnComponent, VesselVoyageColumnComponent, AsyncPipe, DatePipe, TranslateModule, TimerPipe]
 })
 export class VesselRowComponent extends TeamcraftComponent {
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
   @Input()
   maxRank: number;
 
@@ -37,10 +41,6 @@ export class VesselRowComponent extends TeamcraftComponent {
     map(() => this.freeCompanyWorkshopFacade.getRemainingTime(this.vessel.returnTime)),
     takeUntil(this.onDestroy$)
   );
-
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public translate: TranslateService, public settings: SettingsService) {
-    super();
-  }
 
   isVesselBack(vessel: Vessel): boolean {
     if (!vessel) {

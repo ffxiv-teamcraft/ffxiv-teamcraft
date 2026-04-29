@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { WorkshopPlanning } from '../optimizer/workshop-planning';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -23,6 +23,10 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, ItemIconComponent, NzTooltipModule, NzButtonModule, NzWaveModule, NzIconModule, NzEmptyModule, I18nNameComponent, NzDividerModule, DecimalPipe, DatePipe, TranslateModule]
 })
 export class WorkshopPlanningComponent {
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+  private listPicker = inject(ListPickerService);
+
 
   baseCellHeight = 25;
 
@@ -54,10 +58,6 @@ export class WorkshopPlanningComponent {
   ];
 
   workshops = 4;
-
-  constructor(public translate: TranslateService, public settings: SettingsService,
-              private listPicker: ListPickerService) {
-  }
 
   createList(planning: WorkshopPlanning[]): void {
     this.listPicker.addToList(...planning.map(row => {

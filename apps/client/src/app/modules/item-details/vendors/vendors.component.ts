@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, Optional } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { Vendor } from '../../list/model/vendor';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -22,10 +22,8 @@ import { NzListModule } from 'ng-zorro-antd/list';
     imports: [NzListModule, FlexModule, NzTagModule, DbButtonComponent, MapPositionComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ClosestAetherytePipe]
 })
 export class VendorsComponent extends ItemDetailsPopup<Vendor[]> implements OnInit {
+  modalRef = inject(NzModalRef, { optional: true })!;
 
-  constructor(@Optional() public modalRef: NzModalRef) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

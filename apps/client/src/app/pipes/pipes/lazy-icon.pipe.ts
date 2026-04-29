@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform, inject } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -9,6 +9,9 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
     standalone: true
 })
 export class LazyIconPipe implements PipeTransform, OnDestroy {
+  private readonly lazyData = inject(LazyDataFacade);
+  private readonly cd = inject(ChangeDetectorRef);
+
   private readonly itemId$ = new Subject<number | undefined>();
 
   private readonly itemIcon$ = this.itemId$.pipe(
@@ -33,7 +36,7 @@ export class LazyIconPipe implements PipeTransform, OnDestroy {
 
   private iconUrl?: string;
 
-  constructor(private readonly lazyData: LazyDataFacade, private readonly cd: ChangeDetectorRef) {
+  constructor() {
     this.sub = this.itemIcon$.subscribe(this.setIconUrl);
   }
 

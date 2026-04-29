@@ -1,4 +1,4 @@
-import { Directive, HostBinding, Input, OnInit } from '@angular/core';
+import { Directive, HostBinding, Input, OnInit, inject } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
@@ -7,6 +7,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
     standalone: true
 })
 export class ItemRarityDirective implements OnInit {
+  private lazyData = inject(LazyDataFacade);
+
 
   colors = {
     1: '#f3f3f3',
@@ -21,9 +23,6 @@ export class ItemRarityDirective implements OnInit {
 
   @Input()
   appItemRarity: number;
-
-  constructor(private lazyData: LazyDataFacade) {
-  }
 
   ngOnInit(): void {
     this.lazyData.getRow('rarities', this.appItemRarity)

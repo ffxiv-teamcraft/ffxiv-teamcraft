@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { TeamcraftComponent } from '../../core/component/teamcraft-component';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -9,6 +9,8 @@ import { map, shareReplay, switchMap } from 'rxjs/operators';
     standalone: true
 })
 export class ReportsManagementComponent extends TeamcraftComponent {
+  protected lazyData = inject(LazyDataFacade);
+
 
   protected readonly items$ = this.lazyData.getSearchIndex('items');
 
@@ -44,8 +46,4 @@ export class ReportsManagementComponent extends TeamcraftComponent {
   protected readonly airshipVoyages$ = this.lazyData.getSearchIndex('airshipVoyages');
 
   protected readonly mobs$ = this.lazyData.getSearchIndex('mobs');
-
-  constructor(protected lazyData: LazyDataFacade) {
-    super();
-  }
 }

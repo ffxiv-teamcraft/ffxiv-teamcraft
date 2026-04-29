@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -37,6 +37,8 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     imports: [PageLoaderComponent, FullpageMessageComponent, NzCardModule, FlexModule, NzAvatarModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzGridModule, ItemIconComponent, I18nNameComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, CharacterNamePipe, LazyIconPipe, CharacterAvatarPipe, MapNamePipe]
 })
 export class AlarmGroupComponent {
+  private alarmsFacade = inject(AlarmsFacade);
+
 
   public group$ = this.alarmsFacade.externalGroup$;
 
@@ -54,7 +56,9 @@ export class AlarmGroupComponent {
 
   public addingGroupAndAlarms = false;
 
-  constructor(route: ActivatedRoute, private alarmsFacade: AlarmsFacade) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+
     route.paramMap.subscribe(paramMap => {
       this.alarmsFacade.loadExternalGroup(paramMap.get('key'));
     });

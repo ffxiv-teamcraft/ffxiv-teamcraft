@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { map, switchMap, takeUntil, withLatestFrom } from 'rxjs/operators';
@@ -25,13 +25,17 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzAlertModule, NzTimelineModule, TranslateModule]
 })
 export class SyncFromPcapPopupComponent extends TeamcraftComponent {
+  private ipc = inject(IpcService);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  private materiaService = inject(MateriaService);
+  private gearsetsFacade = inject(GearsetsFacade);
+  private translate = inject(TranslateService);
+
 
   public timeline: { color: string, label: string }[] = [];
 
-  constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService, private materiaService: MateriaService,
-              private gearsetsFacade: GearsetsFacade, private translate: TranslateService
-  ) {
+  constructor() {
     super();
     combineLatest([
       this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)),

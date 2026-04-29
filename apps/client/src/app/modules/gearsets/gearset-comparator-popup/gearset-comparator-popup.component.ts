@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
 import { Observable } from 'rxjs';
@@ -34,6 +34,10 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [NzDividerModule, FlexModule, ItemIconComponent, NzAlertModule, NzSelectModule, FormsModule, NzGridModule, NzFormModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, ItemNamePipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class GearsetComparatorPopupComponent extends DialogComponent{
+  private gearsetsFacade = inject(GearsetsFacade);
+  private comparator = inject(GearsetComparatorService);
+  translate = inject(TranslateService);
+
 
   public static EXTERNAL_REGEXP = /https?:\/\/ffxivteamcraft\.com\/gearset\/([a-zA-Z0-9]+)/i;
 
@@ -61,8 +65,7 @@ export class GearsetComparatorPopupComponent extends DialogComponent{
 
   includeAllTools: boolean;
 
-  constructor(private gearsetsFacade: GearsetsFacade, private comparator: GearsetComparatorService,
-              public translate: TranslateService) {
+  constructor() {
     super();
     this.gearsetsFacade.loadAll();
     this.patchData();

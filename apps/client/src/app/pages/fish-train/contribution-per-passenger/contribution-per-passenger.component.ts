@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { EChartsOption } from 'echarts';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -23,6 +23,11 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     imports: [NzSwitchModule, FormsModule, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class ContributionPerPassengerComponent extends TeamcraftComponent {
+  private translate = inject(TranslateService);
+  private settings = inject(SettingsService);
+  private lodestone = inject(LodestoneService);
+  private cd = inject(ChangeDetectorRef);
+
   echartsInstance$ = new ReplaySubject<any>();
 
   onlyAccurate$ = new BehaviorSubject<boolean>(true);
@@ -68,8 +73,7 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
     empty: true
   };
 
-  constructor(private translate: TranslateService, private settings: SettingsService,
-              private lodestone: LodestoneService, private cd: ChangeDetectorRef) {
+  constructor() {
     /**
      * NOTE:
      * If we want to implement chart race replay, it'd be quite easy:

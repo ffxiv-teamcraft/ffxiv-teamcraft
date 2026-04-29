@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { StepState } from '@ffxiv-teamcraft/simulator';
 import { LazyActionsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-actions-database-page';
@@ -18,6 +18,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzGridModule, TranslateModule, I18nPipe, NzPipesModule]
 })
 export class XivapiActionTooltipComponent implements OnInit {
+  private i18n = inject(I18nToolsService);
+
 
   @Input() action: LazyActionsDatabasePage;
 
@@ -26,9 +28,6 @@ export class XivapiActionTooltipComponent implements OnInit {
   @Input() stateColor: string;
 
   details: { name: string, value: any, requiresPipe: boolean }[];
-
-  constructor(private i18n: I18nToolsService) {
-  }
 
   get stateName(): string {
     if (!this.state) {

@@ -1,5 +1,5 @@
 import { isPlatformServer } from '@angular/common';
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
@@ -20,16 +20,13 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, QuickSearchComponent, RouterOutlet]
 })
 export class DbComponent extends TeamcraftComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private settings: SettingsService,
-    private translate: TranslateService,
-    private router: Router,
-    @Inject(PLATFORM_ID) private platform: any,
-    private readonly i18n: I18nToolsService
-  ) {
-    super();
-  }
+  private route = inject(ActivatedRoute);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private platform = inject(PLATFORM_ID);
+  private readonly i18n = inject(I18nToolsService);
+
 
   ngOnInit() {
     this.route.paramMap

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { DataType } from '@ffxiv-teamcraft/types';
 import { ListStep } from '../step-by-step-details/model/map-list-step';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -42,6 +42,11 @@ import { SettingsService } from '../../settings/settings.service';
     imports: [NzCardModule, NgIf, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, NgSwitch, NgSwitchCase, ItemIconComponent, FlexModule, NgFor, MapPositionComponent, NzDividerModule, LazyScrollComponent, StepByStepRowComponent, AsyncPipe, LowerCasePipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class StepByStepDatatypeComponent {
+  private listsFacade = inject(ListsFacade);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  private settings = inject(SettingsService);
+
   DataType = DataType;
 
   @Input()
@@ -88,10 +93,6 @@ export class StepByStepDatatypeComponent {
       );
     })
   );
-
-  constructor(private listsFacade: ListsFacade, private lazyData: LazyDataFacade,
-              private i18n: I18nToolsService, private settings: SettingsService) {
-  }
 
   public getNpcName(id: number): Observable<string> {
     if (id === -1) {

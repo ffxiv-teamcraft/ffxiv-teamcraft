@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -70,6 +70,22 @@ import { AsyncPipe, UpperCasePipe } from '@angular/common';
     imports: [NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzTooltipModule, UserAvatarComponent, NzTagModule, RouterLink, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
 })
 export class ListPanelComponent extends TeamcraftComponent {
+  private listsFacade = inject(ListsFacade);
+  private message = inject(NzMessageService);
+  translate = inject(TranslateService);
+  private linkTools = inject(LinkToolsService);
+  private dialog = inject(NzModalService);
+  private listManager = inject(ListManagerService);
+  authFacade = inject(AuthFacade);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private discordWebhookService = inject(DiscordWebhookService);
+  private teamsFacade = inject(TeamsFacade);
+  private router = inject(Router);
+  private layoutsFacade = inject(LayoutsFacade);
+  private layoutOrderService = inject(LayoutOrderService);
+  private cd = inject(ChangeDetectorRef);
+  settings = inject(SettingsService);
+
 
   //Bound for number of a single item in a list
   minAmount = 1;
@@ -182,15 +198,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   );
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
-
-  constructor(private listsFacade: ListsFacade, private message: NzMessageService, public translate: TranslateService, private linkTools: LinkToolsService,
-              private dialog: NzModalService, private listManager: ListManagerService,
-              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
-              private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
-              private cd: ChangeDetectorRef, public settings: SettingsService) {
-    super();
-  }
 
   public _list: List;
 

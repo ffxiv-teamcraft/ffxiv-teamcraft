@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
@@ -55,6 +55,18 @@ import { LogTrackerImportPopupComponent } from '../log-tracker-import-popup/log-
     imports: [NgIf, NzAlertModule, NzTabsModule, FlexModule, NzSwitchModule, FormsModule, NgFor, I18nNameComponent, NzTooltipModule, NzSpinModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzCheckboxModule, ItemIconComponent, ItemRarityDirective, NzGridModule, MapPositionComponent, NzDropDownModule, NzMenuModule, NzDividerModule, FishingLogTrackerComponent, AsyncPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, AlarmDisplayPipe]
 })
 export class LogTrackerComponent extends TrackerComponent {
+  private authFacade = inject(AuthFacade);
+  private translate = inject(TranslateService);
+  private listPicker = inject(ListPickerService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  protected alarmsFacade: AlarmsFacade;
+  ipc = inject(IpcService);
+  private lazyData = inject(LazyDataFacade);
+  private dialog = inject(NzModalService);
+  settings = inject(SettingsService);
+  private cdr = inject(ChangeDetectorRef);
+
 
   private static PAGE_TABS = ['DoH', 'MIN-BTN', 'FSH'];
 
@@ -89,13 +101,12 @@ export class LogTrackerComponent extends TrackerComponent {
 
   private lastSelectedTabIndex = -1;
 
-  constructor(private authFacade: AuthFacade, private translate: TranslateService,
-              private listPicker: ListPickerService,
-              private router: Router, private route: ActivatedRoute,
-              protected alarmsFacade: AlarmsFacade, public ipc: IpcService,
-              private lazyData: LazyDataFacade, private dialog: NzModalService,
-              public settings: SettingsService, private cdr: ChangeDetectorRef) {
+  constructor() {
+    const alarmsFacade = inject(AlarmsFacade);
+
     super(alarmsFacade);
+    this.alarmsFacade = alarmsFacade;
+
     this.type$ = this.route.paramMap.pipe(
       map(params => {
         const type = params.get('type');

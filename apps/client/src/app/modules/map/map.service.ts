@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { MapData } from './map-data';
 import { Vector2, Vector3 } from '@ffxiv-teamcraft/types';
@@ -20,6 +20,12 @@ import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Injectable()
 export class MapService {
+  private mathService = inject(MathToolsService);
+  private i18n = inject(I18nToolsService);
+  private settings = inject(SettingsService);
+  private lazyData = inject(LazyDataFacade);
+  private eorzea = inject(EorzeaFacade);
+
 
   // Flying mount speed, used as reference for TP over mount comparison, needs a precise recording.
   private static readonly MOUNT_SPEED = 1.5;
@@ -28,10 +34,6 @@ export class MapService {
   private static readonly TP_DURATION = 8;
 
   private cache: { [index: number]: Observable<MapData> } = {};
-
-  constructor(private mathService: MathToolsService, private i18n: I18nToolsService,
-              private settings: SettingsService, private lazyData: LazyDataFacade, private eorzea: EorzeaFacade) {
-  }
 
   getMapById(mapId: number): Observable<MapData> {
     if (this.cache[mapId] === undefined) {

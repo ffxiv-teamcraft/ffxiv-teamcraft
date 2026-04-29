@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommissionService } from '../../../modules/commission-board/commission.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -35,6 +35,12 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzTooltipModule, NzButtonModule, NzIconModule, PageLoaderComponent, NzInputModule, NzSelectModule, FormsModule, NzCheckboxModule, NzInputNumberModule, NzGridModule, CommissionPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommissionBoardComponent {
+  private commissionsService = inject(CommissionService);
+  private activatedRoute = inject(ActivatedRoute);
+  private router = inject(Router);
+  private lazyData = inject(LazyDataFacade);
+  private settings = inject(SettingsService);
+
 
   /**
    * Static data to compute only once.
@@ -106,11 +112,6 @@ export class CommissionBoardComponent {
       );
     })
   );
-
-  constructor(private commissionsService: CommissionService,
-              private activatedRoute: ActivatedRoute, private router: Router,
-              private lazyData: LazyDataFacade, private settings: SettingsService) {
-  }
 
   changeDatacenter(dc: string): void {
     this.router.navigate(['..', dc], { relativeTo: this.activatedRoute });

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
@@ -7,6 +7,8 @@ import { Theme } from '../../../modules/settings/theme';
 
 @Injectable()
 export class FishingSpotUtilsService {
+  private readonly settings = inject(SettingsService);
+
   private highlightColor$ = this.settings.themeChange$.pipe(
     map(({ next }) => {
       return this.themeToColor(next);
@@ -14,9 +16,6 @@ export class FishingSpotUtilsService {
     startWith(this.themeToColor(this.settings.theme)),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private readonly settings: SettingsService) {
-  }
 
   public getHighlightColor(weight = 1) {
     return this.highlightColor$.pipe(

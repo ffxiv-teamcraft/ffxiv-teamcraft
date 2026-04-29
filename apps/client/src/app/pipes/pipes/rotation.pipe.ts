@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RotationsFacade } from '../../modules/rotations/+state/rotations.facade';
 import { filter, map } from 'rxjs/operators';
@@ -9,9 +9,8 @@ import { CraftingRotation } from '../../model/other/crafting-rotation';
     standalone: true
 })
 export class RotationPipe implements PipeTransform {
+  private facade = inject(RotationsFacade);
 
-  constructor(private facade: RotationsFacade) {
-  }
 
   transform(key: string): Observable<CraftingRotation> {
     this.facade.getRotation(key);

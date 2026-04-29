@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -38,6 +38,13 @@ import { NzInputNumberComponent } from 'ng-zorro-antd/input-number';
   imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzTooltipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule, NzInputNumberComponent]
 })
 export class ItemPickerComponent extends DialogComponent implements OnInit {
+  private dataService = inject(DataService);
+  private dialogRef = inject(NzModalRef);
+  private htmlTools = inject(HtmlToolsService);
+  private customItemsFacade = inject(CustomItemsFacade);
+  private translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   public query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -55,10 +62,7 @@ export class ItemPickerComponent extends DialogComponent implements OnInit {
 
   public Region = Region;
 
-  constructor(private dataService: DataService, private dialogRef: NzModalRef,
-              private htmlTools: HtmlToolsService,
-              private customItemsFacade: CustomItemsFacade, private translate: TranslateService,
-              public settings: SettingsService) {
+  constructor() {
     super();
     this.results$ = this.query$.pipe(
       debounceTime(500),

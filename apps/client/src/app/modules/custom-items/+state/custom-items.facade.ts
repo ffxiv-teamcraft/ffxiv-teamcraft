@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -25,6 +25,9 @@ import { collection, doc, Firestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class CustomItemsFacade {
+  private store = inject<Store<CustomItemsPartialState>>(Store);
+  private firestore = inject(Firestore);
+
   loaded$ = this.store.pipe(select(customItemsQuery.getLoaded));
 
   foldersLoaded$ = this.store.pipe(select(customItemsQuery.getFoldersLoaded));
@@ -56,9 +59,6 @@ export class CustomItemsFacade {
       };
     })
   );
-
-  constructor(private store: Store<CustomItemsPartialState>, private firestore: Firestore) {
-  }
 
   addCustomItem(item: CustomItem): void {
     this.store.dispatch(new CreateCustomItem(item));

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { DataType, Extracts, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { TradeSource } from '../../list/model/trade-source';
@@ -28,6 +28,9 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, ItemIconComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, ItemNamePipe, I18nPipe, TranslateModule]
 })
 export class GearsetCostPopupComponent extends DialogComponent {
+  private lazyData = inject(LazyDataFacade);
+  translate = inject(TranslateService);
+
 
   @Input()
   gearset: TeamcraftGearset;
@@ -78,7 +81,7 @@ export class GearsetCostPopupComponent extends DialogComponent {
     })
   );
 
-  constructor(private lazyData: LazyDataFacade, public translate: TranslateService) {
+  constructor() {
     super();
     this.patchData();
   }

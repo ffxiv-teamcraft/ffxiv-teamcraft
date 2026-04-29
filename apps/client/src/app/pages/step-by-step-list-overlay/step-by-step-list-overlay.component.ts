@@ -45,6 +45,16 @@ import { StepByStepRowComponent } from '../../modules/list/step-by-step-row/step
   styleUrls: ['./step-by-step-list-overlay.component.less']
 })
 export class StepByStepListOverlayComponent extends StepByStepComponent implements OnInit {
+  protected eorzeaFacade: EorzeaFacade;
+  protected ipc: IpcService;
+  protected listsFacade: ListsFacade;
+  protected layoutsFacade: LayoutsFacade;
+  protected settings: SettingsService;
+  protected lazyData: LazyDataFacade;
+  protected mapService: MapService;
+  protected etime: EorzeanTimeService;
+  protected alarmsFacade: AlarmsFacade;
+
 
   public mapId$ = this.eorzeaFacade.mapId$.pipe(
     tap(() => this.loading = true)
@@ -75,11 +85,28 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   #cdr = inject(ChangeDetectorRef);
 
-  constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
-              protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
-              protected settings: SettingsService, protected lazyData: LazyDataFacade,
-              protected mapService: MapService, protected etime: EorzeanTimeService, protected alarmsFacade: AlarmsFacade) {
+  constructor() {
+    const eorzeaFacade = inject(EorzeaFacade);
+    const ipc = inject(IpcService);
+    const listsFacade = inject(ListsFacade);
+    const layoutsFacade = inject(LayoutsFacade);
+    const settings = inject(SettingsService);
+    const lazyData = inject(LazyDataFacade);
+    const mapService = inject(MapService);
+    const etime = inject(EorzeanTimeService);
+    const alarmsFacade = inject(AlarmsFacade);
+
     super(eorzeaFacade, ipc, listsFacade, layoutsFacade, settings, lazyData, mapService, etime, alarmsFacade);
+    this.eorzeaFacade = eorzeaFacade;
+    this.ipc = ipc;
+    this.listsFacade = listsFacade;
+    this.layoutsFacade = layoutsFacade;
+    this.settings = settings;
+    this.lazyData = lazyData;
+    this.mapService = mapService;
+    this.etime = etime;
+    this.alarmsFacade = alarmsFacade;
+
     this.layoutsFacade.loadAll();
     this.ipc.send('overlay:pcap', { enabled: true, url: '/step-by-step-list-overlay' });
     this.ipc.send('app-state:get');

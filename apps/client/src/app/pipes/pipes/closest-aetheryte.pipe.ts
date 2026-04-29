@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { MapService } from '../../modules/map/map.service';
 import { Observable } from 'rxjs';
 import { Vector2 } from '@ffxiv-teamcraft/types';
@@ -10,8 +10,8 @@ import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
     standalone: true
 })
 export class ClosestAetherytePipe implements PipeTransform {
-  constructor(private mapService: MapService) {
-  }
+  private mapService = inject(MapService);
+
 
   transform(mapId: number, position: Vector2): Observable<LazyAetheryte | never> {
     return this.mapService.getMapById(mapId).pipe(

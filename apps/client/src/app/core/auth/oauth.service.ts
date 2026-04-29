@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
@@ -10,10 +10,12 @@ import { OAuthProvider } from './o-auth-provider';
 
 @Injectable()
 export class OauthService {
+  private auth = inject(Auth);
+  private userService = inject(UserService);
+  private platformService = inject(PlatformService);
+  private _ipc = inject(IpcService);
+  private http = inject(HttpClient);
 
-  constructor(private auth: Auth, private userService: UserService, private platformService: PlatformService,
-              private _ipc: IpcService, private http: HttpClient) {
-  }
 
   public loginWithGoogle(): Observable<UserCredential> {
     let signIn$: Observable<UserCredential>;

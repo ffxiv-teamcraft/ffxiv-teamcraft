@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { Team } from '../../model/team/team';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -11,10 +11,24 @@ import { Firestore, where } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class TeamService extends FirestoreStorage<Team> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService) {
+
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   public getUserTeams(userId: string): Observable<Team[]> {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { WorkshopsState } from './workshops.reducer';
 import { workshopsQuery } from './workshops.selectors';
@@ -23,6 +23,11 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 
 @Injectable()
 export class WorkshopsFacade {
+  private store = inject<Store<{
+    workshops: WorkshopsState;
+}>>(Store);
+  private authFacade = inject(AuthFacade);
+
   loaded$ = this.store.select(workshopsQuery.getLoaded);
 
   allWorkshops$ = this.store.select(workshopsQuery.getAllWorkshops);
@@ -45,9 +50,6 @@ export class WorkshopsFacade {
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(private store: Store<{ workshops: WorkshopsState }>, private authFacade: AuthFacade) {
-  }
 
   removeListFromWorkshop(listKey: string, workshopKey: string): void {
     this.store.dispatch(new RemoveListFromWorkshop(listKey, workshopKey));

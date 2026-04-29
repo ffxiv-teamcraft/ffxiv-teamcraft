@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { CraftingAction, GearSet, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
@@ -54,6 +54,22 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     imports: [NzCollapseModule, FlexModule, UserAvatarComponent, NzTagModule, NzButtonModule, NzIconModule, NzTooltipModule, RotationResultTagComponent, NzWaveModule, ClipboardDirective, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, ActionComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPanelComponent implements OnInit {
+  private linkTools = inject(LinkToolsService);
+  private rotationsFacade = inject(RotationsFacade);
+  translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  authFacade = inject(AuthFacade);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private router = inject(Router);
+  consumablesService = inject(ConsumablesService);
+  freeCompanyActionsService = inject(FreeCompanyActionsService);
+  private ipc = inject(IpcService);
+  platformService = inject(PlatformService);
+  private simulationService = inject(SimulationService);
+  private settings = inject(SettingsService);
+  private lazyData = inject(LazyDataFacade);
+  private environment = inject(EnvironmentService);
+
 
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
 
@@ -88,13 +104,9 @@ export class RotationPanelComponent implements OnInit {
 
   private syncLinkUrl: string;
 
-  constructor(private linkTools: LinkToolsService,
-              private rotationsFacade: RotationsFacade, public translate: TranslateService, private dialog: NzModalService,
-              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private router: Router, public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
-              public platformService: PlatformService, private simulationService: SimulationService,
-              private settings: SettingsService, private lazyData: LazyDataFacade, private environment: EnvironmentService) {
+  constructor() {
+    const freeCompanyActionsService = this.freeCompanyActionsService;
+
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
       map(rotation => this.registry.deserializeRotation(rotation.rotation))

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { DataService } from '../../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -29,6 +29,12 @@ import { DialogComponent } from '../../../../core/dialog.component';
   imports: [NzAlertModule, NzButtonModule, NzInputModule, NzIconModule, NzListModule, I18nNameComponent, ItemIconComponent, RouterLink, NzWaveModule, NzDividerModule, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
 export class RecipeChoicePopupComponent extends DialogComponent {
+  private dataService = inject(DataService);
+  private dialogRef = inject(NzModalRef);
+  private htmlTools = inject(HtmlToolsService);
+  private translate = inject(TranslateService);
+  private rotationPickerService = inject(RotationPickerService);
+
 
   public query$: ReplaySubject<string> = new ReplaySubject<string>();
 
@@ -46,9 +52,7 @@ export class RecipeChoicePopupComponent extends DialogComponent {
 
   pickRotation: boolean;
 
-  constructor(private dataService: DataService, private dialogRef: NzModalRef,
-              private htmlTools: HtmlToolsService,
-              private translate: TranslateService, private rotationPickerService: RotationPickerService) {
+  constructor() {
     super();
     this.patchData();
     this.results$ = this.query$.pipe(

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
@@ -19,6 +19,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzDividerModule, FlexModule, FullpageMessageComponent, CommissionPanelComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CommissionArchivesComponent implements OnInit {
+  private commissionsFacade = inject(CommissionsFacade);
+
 
   public display$ = this.commissionsFacade.loaded$.pipe(
     filter(loaded => loaded),
@@ -36,9 +38,6 @@ export class CommissionArchivesComponent implements OnInit {
       );
     })
   );
-
-  constructor(private commissionsFacade: CommissionsFacade) {
-  }
 
   ngOnInit(): void {
     this.commissionsFacade.loadArchived();

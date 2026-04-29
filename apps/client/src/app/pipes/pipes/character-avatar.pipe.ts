@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { LodestoneService } from '../../core/api/lodestone.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,8 +8,8 @@ import { map } from 'rxjs/operators';
     standalone: true
 })
 export class CharacterAvatarPipe implements PipeTransform {
-  constructor(private service: LodestoneService) {
-  }
+  private service = inject(LodestoneService);
+
 
   transform(userId: string): Observable<string> {
     return this.service.getUserCharacter(userId).pipe(map((character) => character.character.Avatar));

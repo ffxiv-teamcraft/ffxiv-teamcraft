@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { Database, objectVal, ref } from '@angular/fire/database';
@@ -42,6 +42,14 @@ interface FeatureEntry {
     imports: [NzDividerModule, NzGridModule, NzButtonModule, NzIconModule, NzWaveModule, NzCardModule, NzListModule, PirschEventDirective, RouterLink, NzTypographyModule, AsyncPipe, DecimalPipe, TranslateModule, NzFlexDirective]
 })
 export class SearchIntroComponent {
+  private firebase = inject(Database);
+  translate = inject(TranslateService);
+  platform = inject(PlatformService);
+  private guidesService = inject(GuidesService);
+  private sanitizer = inject(DomSanitizer);
+  private dialog = inject(NzModalService);
+  private authFacade = inject(AuthFacade);
+
 
   SidebarIconType = SidebarIconType;
 
@@ -84,12 +92,6 @@ export class SearchIntroComponent {
       return !user.supporter;
     })
   );
-
-  constructor(private firebase: Database, public translate: TranslateService,
-              public platform: PlatformService, private guidesService: GuidesService,
-              private sanitizer: DomSanitizer, private dialog: NzModalService,
-              private authFacade: AuthFacade) {
-  }
 
   openSupportPopup(): void {
     this.dialog.create({

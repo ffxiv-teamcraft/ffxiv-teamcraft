@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -42,6 +42,13 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NgIf, NzSelectModule, FormsModule, NgFor, NzDividerModule, NzCardModule, NzStatisticModule, NzEmptyModule, LazyScrollComponent, ItemIconComponent, I18nNameComponent, NzButtonModule, NzTooltipModule, RouterLink, NzIconModule, NzWaveModule, NzPopconfirmModule, NzGridModule, NzTagModule, ReportSourceDisplayComponent, ReportSourceCompactDetailsComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class AllaganReportsComponent {
+  allaganReportsService = inject(AllaganReportsService);
+  translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  private authFacade = inject(AuthFacade);
+  private message = inject(NzMessageService);
+  private cd = inject(ChangeDetectorRef);
+
 
   AllaganReportStatus = AllaganReportStatus;
 
@@ -114,12 +121,6 @@ export class AllaganReportsComponent {
 
 
   public sourceFilter$ = this.allaganReportsService.filter$;
-
-  constructor(public allaganReportsService: AllaganReportsService,
-              public translate: TranslateService,
-              private lazyData: LazyDataFacade, private authFacade: AuthFacade,
-              private message: NzMessageService, private cd: ChangeDetectorRef) {
-  }
 
   public saveSourceFilter(sources: AllaganReportSource[]): void {
     this.allaganReportsService.filter$.next(sources);

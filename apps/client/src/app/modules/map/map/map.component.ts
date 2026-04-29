@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { MapData } from '../map-data';
 import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
@@ -28,6 +28,8 @@ import { uniqBy } from 'lodash';
   imports: [DbButtonComponent, NzTooltipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapComponent extends DialogComponent implements OnInit {
+  private mapService = inject(MapService);
+
 
   public unknownPosition = false;
 
@@ -51,10 +53,6 @@ export class MapComponent extends DialogComponent implements OnInit {
   loaded: EventEmitter<void> = new EventEmitter<void>();
 
   private mapId$: ReplaySubject<number> = new ReplaySubject<number>();
-
-  constructor(private mapService: MapService) {
-    super();
-  }
 
   private _mapId: number;
 

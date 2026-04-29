@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { Observable } from 'rxjs';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
@@ -36,6 +36,11 @@ import { AsyncPipe } from '@angular/common';
   imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzTooltipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
 })
 export class LayoutEditorComponent {
+  private layoutsFacade = inject(LayoutsFacade);
+  private translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private serializer = inject(NgSerializerService);
+
 
   selectedLayout$: Observable<ListLayout>;
 
@@ -43,8 +48,7 @@ export class LayoutEditorComponent {
 
   dirty = false;
 
-  constructor(private layoutsFacade: LayoutsFacade, private translate: TranslateService,
-              private dialog: NzModalService, private serializer: NgSerializerService) {
+  constructor() {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$.pipe(
       map(layout => layout.clone())
     );

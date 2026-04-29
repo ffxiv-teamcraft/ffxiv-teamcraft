@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
@@ -24,6 +24,10 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzSliderModule, FormsModule, NzSwitchModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzFormModule, NzSelectModule, TranslateModule]
 })
 export class AlarmsOptionsPopupComponent {
+  settings = inject(SettingsService);
+  platform = inject(PlatformService);
+  private soundNotificationService = inject(SoundNotificationService);
+
 
   public sounds = ['Wondrous_tales', 'LB_charged', 'Notification'];
 
@@ -31,8 +35,7 @@ export class AlarmsOptionsPopupComponent {
 
   public alarmSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
 
-  constructor(public settings: SettingsService, public platform: PlatformService,
-              private soundNotificationService: SoundNotificationService) {
+  constructor() {
     this.enableCustomSound = this.alarmSettings.sound.indexOf(':') > -1;
   }
 

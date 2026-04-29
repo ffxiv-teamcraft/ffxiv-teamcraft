@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -15,9 +15,8 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class UpdateInstallPopupComponent {
+  private modalRef = inject(NzModalRef);
 
-  constructor(private modalRef: NzModalRef) {
-  }
 
   close(): void {
     this.modalRef.close(false);

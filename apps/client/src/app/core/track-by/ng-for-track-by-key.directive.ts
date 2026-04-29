@@ -1,5 +1,5 @@
 import { NgForOf } from '@angular/common';
-import { Directive, Host } from '@angular/core';
+import { Directive, inject } from '@angular/core';
 import { DataModel } from '../database/storage/data-model';
 
 @Directive({
@@ -8,7 +8,9 @@ import { DataModel } from '../database/storage/data-model';
     standalone: true
 })
 export class NgForTrackByKeyDirective<T extends DataModel>{
-  constructor(@Host() private readonly ngFor: NgForOf<T>) {
+  private readonly ngFor = inject<NgForOf<T>>(NgForOf, { host: true });
+
+  constructor() {
     this.ngFor.ngForTrackBy = (index: number, item: T) => item.$key;
   }
 }

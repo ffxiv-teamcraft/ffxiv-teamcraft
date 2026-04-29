@@ -1,4 +1,4 @@
-import { Component, Inject, Input, Optional, PLATFORM_ID } from '@angular/core';
+import { Component, Input, PLATFORM_ID, inject } from '@angular/core';
 import { SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
@@ -28,6 +28,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     imports: [NzButtonModule, NzInputModule, NzSelectModule, FormsModule, FlexModule, AsyncPipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class QuickSearchComponent extends TeamcraftComponent {
+  private route = inject(ActivatedRoute);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private data = inject(DataService);
+  private platform = inject(PLATFORM_ID);
+  private modal = inject(NzModalRef, { optional: true })!;
+
 
   searchTypes = SearchType;
 
@@ -51,13 +59,6 @@ export class QuickSearchComponent extends TeamcraftComponent {
     map(res => res.slice(0, 50)),
     tap(() => this.loading = false)
   ));
-
-  constructor(private route: ActivatedRoute, private settings: SettingsService,
-              private translate: TranslateService, private router: Router,
-              private data: DataService, @Inject(PLATFORM_ID) private platform: any,
-              @Optional() private modal: NzModalRef) {
-    super();
-  }
 
   @Input()
   public set searchType(type: SearchType) {

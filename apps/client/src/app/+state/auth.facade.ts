@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -63,6 +63,18 @@ import { LoginPopupComponent } from '../core/auth/login-popup/login-popup.compon
   providedIn: 'root'
 })
 export class AuthFacade {
+  private store = inject<Store<{
+    auth: AuthState;
+}>>(Store);
+  private auth = inject(Auth);
+  private ipc = inject(IpcService);
+  private userService = inject(UserService);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private oauthService = inject(OauthService);
+  private fns = inject(Functions);
+  private characterService = inject(LodestoneService);
+
 
   firebaseAuthState$ = new ReplaySubject<User>();
 
@@ -254,11 +266,7 @@ export class AuthFacade {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  constructor(private store: Store<{ auth: AuthState }>, private auth: Auth,
-              private ipc: IpcService, private userService: UserService,
-              private dialog: NzModalService, private translate: TranslateService,
-              private oauthService: OauthService, private fns: Functions,
-              private characterService: LodestoneService) {
+  constructor() {
     this.ipc.playerSetupPackets$.subscribe(packet => {
       this.setCID(packet.contentId.toString());
     });

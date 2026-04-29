@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ExternalListLinkParser } from './link-parser/external-list-link-parser';
 import { FfxivCraftingLinkParser } from './link-parser/ffxiv-crafting-link-parser';
 import { AriyalaLinkParser } from './link-parser/ariyala-link-parser';
@@ -29,6 +29,11 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, FlexModule, NzCheckboxModule, NzButtonModule, NzWaveModule, PageLoaderComponent, TranslateModule]
 })
 export class ListImportPopupComponent {
+  private http = inject(HttpClient);
+  private router = inject(Router);
+  private ref = inject(NzModalRef);
+  private lazyData = inject(LazyDataFacade);
+
 
   importLink: string;
 
@@ -48,8 +53,7 @@ export class ListImportPopupComponent {
 
   inProgress = false;
 
-  constructor(private http: HttpClient, private router: Router,
-              private ref: NzModalRef, private lazyData: LazyDataFacade) {
+  constructor() {
     this.linkTypes = this.linkParsers.map(parser => parser.getName()).join(', ');
   }
 

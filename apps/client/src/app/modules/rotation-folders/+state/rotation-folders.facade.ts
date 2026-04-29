@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -22,6 +22,10 @@ import { RotationsFacade } from '../../rotations/+state/rotations.facade';
 
 @Injectable()
 export class RotationFoldersFacade {
+  private store = inject<Store<RotationFoldersPartialState>>(Store);
+  private rotationsFacade = inject(RotationsFacade);
+  private authFacade = inject(AuthFacade);
+
   loaded$ = this.store.pipe(select(rotationFoldersQuery.getLoaded));
 
   allRotationFolders$ = this.store.pipe(
@@ -57,11 +61,6 @@ export class RotationFoldersFacade {
           });
       })
     );
-
-  constructor(private store: Store<RotationFoldersPartialState>,
-              private rotationsFacade: RotationsFacade,
-              private authFacade: AuthFacade) {
-  }
 
   updateFolder(folder: CraftingRotationsFolder): void {
     this.store.dispatch(new UpdateRotationFolder(folder));

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { BehaviorSubject, combineLatest, ReplaySubject, switchMap } from 'rxjs';
 import { EChartsOption } from 'echarts';
@@ -24,6 +24,9 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     imports: [PageLoaderComponent, NzSwitchModule, FormsModule, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class FishBreakdownComponent extends TeamcraftComponent {
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+
   echartsInstance$ = new ReplaySubject<any>();
 
   @Input()
@@ -78,7 +81,7 @@ export class FishBreakdownComponent extends TeamcraftComponent {
 
   onlyAccurate$ = new BehaviorSubject<boolean>(true);
 
-  constructor(private i18n: I18nToolsService, private translate: TranslateService) {
+  constructor() {
     super();
     const reports$ = observeInput(this, 'reports');
     const train$ = observeInput(this, 'train').pipe(

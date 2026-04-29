@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -25,6 +25,9 @@ import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
   imports: [NzCardModule, FlexModule, NzDividerModule, NzGridModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, XivapiIconPipe, TugNamePipe, LazyRowPipe, I18nRowPipe]
 })
 export class FishLuresComponent {
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
   public readonly loading$ = this.fishCtx.luresByFish$.pipe(map(() => false));
 
   public readonly lures$ = this.fishCtx.luresByFish$.pipe(
@@ -74,7 +77,4 @@ export class FishLuresComponent {
       };
     })
   );
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

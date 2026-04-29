@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { CommissionTag } from '../model/commission-tag';
@@ -29,6 +29,10 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [NzAlertModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzSelectModule, NzInputNumberModule, NzCheckboxModule, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, TranslateModule]
 })
 export class CommissionEditionPopupComponent extends DialogComponent implements OnInit {
+  private fb = inject(UntypedFormBuilder);
+  private modalRef = inject(NzModalRef);
+  private linkTools = inject(LinkToolsService);
+
 
   commission: Partial<Commission>;
 
@@ -42,10 +46,6 @@ export class CommissionEditionPopupComponent extends DialogComponent implements 
   });
 
   showWarning = localStorage.getItem('cw:s') === null;
-
-  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef, private linkTools: LinkToolsService) {
-    super();
-  }
 
   ngOnInit(): void {
     this.patchData();

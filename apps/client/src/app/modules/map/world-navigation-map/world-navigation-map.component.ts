@@ -35,6 +35,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, MapComponent, NzListModule, NzTooltipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class WorldNavigationMapComponent extends DialogComponent implements OnInit {
+  private mapService = inject(MapService);
+
   private destroyRef = inject(DestroyRef);
 
   @Input()
@@ -52,7 +54,7 @@ export class WorldNavigationMapComponent extends DialogComponent implements OnIn
 
   public markAsDone$: Subject<NavigationStep> = new Subject<NavigationStep>();
 
-  constructor(private mapService: MapService) {
+  constructor() {
     super();
     fromEvent(window, 'keydown').pipe(
       filter((event: KeyboardEvent) => event.key === 'ArrowRight' || event.key === 'ArrowLeft'),

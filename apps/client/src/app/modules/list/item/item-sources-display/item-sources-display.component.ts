@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input, Input, Type } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, Input, Type, inject } from '@angular/core';
 import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
 import { ListRow } from '../../model/list-row';
 import { GatheredByComponent } from '../../../item-details/gathered-by/gathered-by.component';
@@ -52,6 +52,10 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzWaveModule, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
+  private modal = inject(NzModalService);
+  private i18n = inject(I18nToolsService);
+  private rotationPicker = inject(RotationPickerService);
+
   @Input()
   dbDisplay = false;
 
@@ -87,11 +91,6 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   });
 
   dataTypes = DataType;
-
-  constructor(private modal: NzModalService, private i18n: I18nToolsService,
-              private rotationPicker: RotationPickerService) {
-    super();
-  }
 
   public openGatheredByPopup(item: typeof this['item']): void {
     this.openDetailsPopup(GatheredByComponent, item, DataType.GATHERED_BY);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { combineLatest, Observable, of } from 'rxjs';
 import { CustomLinksFacade } from '../../../modules/custom-links/+state/custom-links.facade';
@@ -30,15 +30,18 @@ import { AsyncPipe } from '@angular/common';
     imports: [FullpageMessageComponent, NzListModule, FlexModule, NzTagModule, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, NzIconModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CustomLinksComponent {
+  private customLinksFacade = inject(CustomLinksFacade);
+  private listsFacade = inject(ListsFacade);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private rotationsFacade = inject(RotationsFacade);
+  private rotationFoldersFacade = inject(RotationFoldersFacade);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   public linksDisplay$: Observable<{ link: CustomLink, targetName: string }[]>;
 
-  constructor(private customLinksFacade: CustomLinksFacade,
-              private listsFacade: ListsFacade,
-              private workshopsFacade: WorkshopsFacade,
-              private rotationsFacade: RotationsFacade,
-              private rotationFoldersFacade: RotationFoldersFacade,
-              private message: NzMessageService, private translate: TranslateService) {
+  constructor() {
     this.linksDisplay$ = this.customLinksFacade.myCustomLinks$.pipe(
       switchMap(links => {
         if (links.length === 0) {

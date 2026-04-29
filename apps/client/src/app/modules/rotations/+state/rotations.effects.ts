@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { DeleteRotation, GetRotation, MyRotationsLoaded, RotationLoaded, RotationPersisted, RotationsActionTypes, UpdateRotation } from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -10,6 +10,10 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 
 @Injectable()
 export class RotationsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private rotationsService = inject(CraftingRotationService);
+
 
 
   loadMyRotations$ = createEffect(() => this.actions$.pipe(
@@ -60,11 +64,4 @@ export class RotationsEffects {
     }),
     switchMap(() => EMPTY)
   ), { dispatch: false });
-
-  constructor(
-    private actions$: Actions,
-    private authFacade: AuthFacade,
-    private rotationsService: CraftingRotationService
-  ) {
-  }
 }

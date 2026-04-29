@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { groupBy } from 'lodash';
 import { BehaviorSubject, combineLatest, interval, Observable } from 'rxjs';
@@ -54,6 +54,13 @@ const LS_KEY = 'retainers:prices';
     imports: [PageLoaderComponent, FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzWaveModule, NgTemplateOutlet, NzDividerModule, NzTooltipModule, NzIconModule, NzCollapseModule, NzGridModule, ItemIconComponent, NzTagModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class RetainersComponent {
+  private retainersService = inject(RetainersService);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+  private auth = inject(AuthFacade);
+  private inventoryService = inject(InventoryService);
+  private universalis = inject(UniversalisService);
+
 
   static FETCH_COOLDOWN = 2 * 3600 * 1000; //2h
 
@@ -134,11 +141,6 @@ export class RetainersComponent {
       }),
       tap(() => this.loading = false)
     );
-
-  constructor(private retainersService: RetainersService, public translate: TranslateService,
-              public settings: SettingsService, private auth: AuthFacade,
-              private inventoryService: InventoryService, private universalis: UniversalisService) {
-  }
 
   checkPrices(characterName: string, server: string, retainers: Retainer[]): void {
     this.retainersPrices$.next({

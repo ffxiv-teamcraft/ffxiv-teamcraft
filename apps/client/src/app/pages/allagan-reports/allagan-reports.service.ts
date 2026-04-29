@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { AllaganReport } from './model/allagan-report';
 import { GetItemAllaganReportsQuery, GetItemAllaganReportsQueueQuery } from './allagan-reports.gql';
@@ -16,13 +16,12 @@ import { uniq } from 'lodash';
   providedIn: 'root'
 })
 export class AllaganReportsService {
+  private getItemAllaganReportsQuery = inject(GetItemAllaganReportsQuery);
+  private getItemAllaganReportsQueueQuery = inject(GetItemAllaganReportsQueueQuery);
+  private apollo = inject(Apollo);
+
 
   public readonly filter$ = new LocalStorageBehaviorSubject<AllaganReportSource[]>('allagan-reports:filter', []);
-
-  constructor(private getItemAllaganReportsQuery: GetItemAllaganReportsQuery,
-              private getItemAllaganReportsQueueQuery: GetItemAllaganReportsQueueQuery,
-              private apollo: Apollo) {
-  }
 
   public getItemReports = (itemId: number) => {
     return this.getItemAllaganReportsQuery.fetch({ variables: { itemId }, fetchPolicy: 'network-only' });

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { BehaviorSubject, combineLatest, EMPTY, interval, ReplaySubject } from 'rxjs';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -29,6 +29,14 @@ export interface Retainer {
   providedIn: 'root'
 })
 export class RetainersService {
+  private ipc = inject(IpcService);
+  private settings = inject(SettingsService);
+  private translate = inject(TranslateService);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private soundNotificationService = inject(SoundNotificationService);
+  private platform = inject(PlatformService);
+
 
   private static readonly LS_KEY = 'retainers';
 
@@ -36,10 +44,7 @@ export class RetainersService {
 
   private contentId$ = new ReplaySubject<string>();
 
-  constructor(private ipc: IpcService, private settings: SettingsService,
-              private translate: TranslateService, private i18n: I18nToolsService,
-              private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService,
-              private platform: PlatformService) {
+  constructor() {
     this.settings.watchSetting('retainerTaskAlarms', false).pipe(
       delay(1000),
       switchMap(() => {

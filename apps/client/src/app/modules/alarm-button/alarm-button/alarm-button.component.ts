@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { first } from 'rxjs/operators';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
@@ -35,6 +35,9 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzButtonModule, TimerTooltipDirective, NzWaveModule, NzTooltipModule, I18nNameComponent, NzIconModule, NzDropDownModule, NzMenuModule, AsyncPipe, AlarmDisplayPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyRowPipe]
 })
 export class AlarmButtonComponent {
+  private dialog = inject(NzModalService);
+  private i18n = inject(I18nToolsService);
+
 
   @Input()
   alarm: PersistedAlarm;
@@ -56,9 +59,6 @@ export class AlarmButtonComponent {
 
   @Input()
   useTimerTooltip: boolean;
-
-  constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
-  }
 
   openMap(): void {
     combineLatest([

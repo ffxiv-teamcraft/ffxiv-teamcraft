@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as FreeCompanyWorkshopActions from './free-company-workshop.actions';
 import * as FreeCompanyWorkshopSelectors from './freecompany-workshop.selectors';
@@ -20,6 +20,14 @@ import { VesselPart } from '../model/vessel-part';
 
 @Injectable()
 export class FreeCompanyWorkshopEffects {
+  private actions$ = inject(Actions);
+  private dialog = inject(NzModalService);
+  private ipc = inject(IpcService);
+  private translate = inject(TranslateService);
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+  private store = inject(Store);
+  private serializer = inject(NgSerializerService);
+
 
   readFromFile$ = createEffect(() => this.actions$.pipe(
     ofType(FreeCompanyWorkshopActions.readFromFile),
@@ -258,12 +266,6 @@ export class FreeCompanyWorkshopEffects {
       return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
-
-  constructor(private actions$: Actions, private dialog: NzModalService,
-              private ipc: IpcService, private translate: TranslateService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private store: Store, private serializer: NgSerializerService) {
-  }
 
   private updateVesselTimers(vesselState, vesselTimersUpdate: VesselTimersUpdate): any {
     if (vesselState) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable } from 'rxjs';
@@ -35,6 +35,14 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
   imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, GearsetRowComponent, NzDividerModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule]
 })
 export class GearsetsPageComponent extends TeamcraftComponent implements OnInit {
+  private gearsetsFacade = inject(GearsetsFacade);
+  private authFacade = inject(AuthFacade);
+  private ipc = inject(IpcService);
+  private foldersFacade = inject(FoldersFacade);
+  private guidesService = inject(GuidesService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   public loading$: Observable<boolean> = this.gearsetsFacade.loaded$.pipe(map(loaded => !loaded));
 
@@ -50,10 +58,7 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
 
   public user$ = this.authFacade.user$;
 
-  constructor(private gearsetsFacade: GearsetsFacade,
-              private authFacade: AuthFacade, private ipc: IpcService,
-              private foldersFacade: FoldersFacade, private guidesService: GuidesService,
-              private message: NzMessageService, private translate: TranslateService) {
+  constructor() {
     super();
     this.ipc.pcapToggle$.subscribe(value => {
       this.pcapToggle = value;

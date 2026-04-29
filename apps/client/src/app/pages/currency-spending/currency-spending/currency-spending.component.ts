@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
@@ -38,6 +38,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzSelectModule, FormsModule, I18nNameComponent, NzInputNumberModule, NzProgressModule, NzListModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
+  private dataService = inject(DataService);
+  private lazyData = inject(LazyDataFacade);
+  private authFacade = inject(AuthFacade);
+  private universalis = inject(UniversalisService);
+
 
   public currencies$: Observable<number[]>;
 
@@ -57,9 +62,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   public loadedPrices = 0;
 
-  constructor(private dataService: DataService, private lazyData: LazyDataFacade,
-              private authFacade: AuthFacade, private universalis: UniversalisService) {
+  constructor() {
     super();
+    const lazyData = this.lazyData;
+
     this.servers$ = lazyData.servers$.pipe(
       map(servers => {
         return servers.sort();

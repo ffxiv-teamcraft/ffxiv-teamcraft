@@ -20,6 +20,9 @@ import { SettingsService } from '../../settings/settings.service';
   imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzCheckboxModule, NzTooltipModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class NameQuestionPopupComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+  private fb = inject(UntypedFormBuilder);
+
 
   #settings = inject(SettingsService);
 
@@ -36,10 +39,6 @@ export class NameQuestionPopupComponent extends DialogComponent implements OnIni
   public type = 'text';
 
   public control: UntypedFormGroup;
-
-  constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder) {
-    super();
-  }
 
   public submit(): void {
     if (this.showEphemeralCheckbox || this.showOfflineCheckbox) {

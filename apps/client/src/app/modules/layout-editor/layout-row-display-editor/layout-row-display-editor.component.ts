@@ -16,6 +16,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, TranslateModule]
 })
 export class LayoutRowDisplayEditorComponent {
+  private modalRef = inject(NzModalRef);
+
 
   types = ItemRowMenuElement;
 
@@ -27,9 +29,6 @@ export class LayoutRowDisplayEditorComponent {
 
   get layout() {
     return this.data.layout;
-  }
-
-  constructor(private modalRef: NzModalRef) {
   }
 
   currentType(type: ItemRowMenuElement): 'button' | 'menu' {

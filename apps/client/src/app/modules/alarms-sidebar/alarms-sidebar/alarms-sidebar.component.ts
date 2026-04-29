@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, inject } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Observable } from 'rxjs';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
@@ -48,6 +48,14 @@ import { AsyncPipe, DecimalPipe } from '@angular/common';
     imports: [FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzIconModule, NzTooltipModule, ItemIconComponent, NzWaveModule, GatheringItemUsesComponent, ItemNameClipboardDirective, TimerTooltipDirective, FishingBaitComponent, RouterLink, NzPopconfirmModule, NzDividerModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, HooksetActionIdPipe, LazyRowPipe]
 })
 export class AlarmsSidebarComponent implements OnInit {
+  private alarmBell = inject(AlarmBellService);
+  private alarmsFacade = inject(AlarmsFacade);
+  private dialog = inject(NzModalService);
+  translate = inject(TranslateService);
+  private i18n = inject(I18nToolsService);
+  settings = inject(SettingsService);
+  private cd = inject(ChangeDetectorRef);
+
 
   public alarms$: Observable<AlarmDisplay[]> = this.alarmsFacade.alarmsSidebarDisplay$.pipe(
     tap(() => this.cd.detectChanges())
@@ -57,12 +65,6 @@ export class AlarmsSidebarComponent implements OnInit {
 
   @Input()
   public overlayMode = false;
-
-  constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
-              private dialog: NzModalService, public translate: TranslateService,
-              private i18n: I18nToolsService, public settings: SettingsService,
-              private cd: ChangeDetectorRef) {
-  }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {
     return display.alarm.$key;

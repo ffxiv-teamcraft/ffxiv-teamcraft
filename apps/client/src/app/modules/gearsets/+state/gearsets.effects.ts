@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetService } from '../../../core/database/gearset.service';
@@ -38,6 +38,14 @@ import { EtroImportPopupComponent } from '../etro-import-popup/etro-import-popup
 
 @Injectable()
 export class GearsetsEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private gearsetService = inject(GearsetService);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+  private gearsetsFacade = inject(GearsetsFacade);
+
 
 
   loadGearsets$ = createEffect(() => this.actions$.pipe(
@@ -283,10 +291,4 @@ export class GearsetsEffects {
   ), {
     dispatch: false
   });
-
-  constructor(private actions$: Actions, private authFacade: AuthFacade,
-              private gearsetService: GearsetService, private dialog: NzModalService,
-              private translate: TranslateService, private router: Router,
-              private gearsetsFacade: GearsetsFacade) {
-  }
 }

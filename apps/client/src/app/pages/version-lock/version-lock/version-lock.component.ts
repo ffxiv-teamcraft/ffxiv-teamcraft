@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import * as semver from 'semver';
 import { first, map } from 'rxjs/operators';
@@ -15,7 +15,10 @@ import { FullpageMessageComponent } from '../../../modules/fullpage-message/full
     imports: [FullpageMessageComponent, TranslateModule]
 })
 export class VersionLockComponent {
-  constructor(private router: Router, private firebase: Database) {
+  private router = inject(Router);
+  private firebase = inject(Database);
+
+  constructor() {
     objectVal<string>(ref(this.firebase, 'version_lock'))
       .pipe(
         map(version => {

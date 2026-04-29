@@ -1,5 +1,5 @@
 import { List } from '../../../../modules/list/model/list';
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { combineLatest, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
@@ -20,6 +20,13 @@ import { uniq } from 'lodash';
   providedIn: 'root'
 })
 export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
+  private lazyData = inject(LazyDataFacade);
+  private http = inject(HttpClient);
+
 
   private static readonly PERSISTED_LIST_ROW_PROPERTIES: (keyof ListRow)[] = [
     'amount',
@@ -41,10 +48,18 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
     'requiredHQ'
   ];
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataFacade,
-              private http: HttpClient) {
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   public prepareData(list: Partial<List>): List {

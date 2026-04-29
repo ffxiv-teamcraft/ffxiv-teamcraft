@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, filter, first, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -35,6 +35,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzInputModule, FormsModule, TutorialStepDirective, NzSelectModule, NzButtonModule, NzInputNumberModule, NzWaveModule, NzTooltipModule, NzIconModule, PageLoaderComponent, RotationPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class CommunityRotationsPageComponent {
+  private rotationsService = inject(CraftingRotationService);
+  private authFacade = inject(AuthFacade);
+
 
   public static RLVLS = [
     {
@@ -226,8 +229,10 @@ export class CommunityRotationsPageComponent {
 
   private filters$: Observable<CommunityRotationFilters>;
 
-  constructor(private rotationsService: CraftingRotationService,
-              private authFacade: AuthFacade, route: ActivatedRoute, router: Router) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const router = inject(Router);
+
     this.tags = Object.keys(RotationTag).map(key => {
       return {
         value: key,

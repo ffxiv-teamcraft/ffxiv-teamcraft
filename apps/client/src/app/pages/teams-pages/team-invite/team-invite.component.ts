@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, filter, first, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
@@ -21,16 +21,18 @@ import { AsyncPipe } from '@angular/common';
     imports: [PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class TeamInviteComponent implements OnInit {
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private teamsFacade = inject(TeamsFacade);
+  private teamInviteService = inject(TeamInviteService);
+  private authFacade = inject(AuthFacade);
+  private discordWebhook = inject(DiscordWebhookService);
+  private characterService = inject(LodestoneService);
+
 
   loading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
   error$: ReplaySubject<string> = new ReplaySubject<string>();
-
-  constructor(private route: ActivatedRoute, private router: Router,
-              private teamsFacade: TeamsFacade, private teamInviteService: TeamInviteService,
-              private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
-              private characterService: LodestoneService) {
-  }
 
   ngOnInit() {
     this.teamsFacade.loadMyTeams();

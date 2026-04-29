@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -48,6 +48,13 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzInputModule, NzIconModule, NzTooltipModule, NzWaveModule, NzDropDownModule, NzMenuModule, ClipboardDirective, NzPopconfirmModule, NzGridModule, NzSpinModule, NzCardModule, ItemIconComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, NzListModule, CdkVirtualForOf, I18nNameComponent, InventoryPositionComponent, DbButtonComponent, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, LazyIconPipe]
 })
 export class InventoryComponent {
+  private inventoryService = inject(InventoryService);
+  private universalis = inject(UniversalisService);
+  private authFacade = inject(AuthFacade);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private settings = inject(SettingsService);
+
 
   public selectedExpansion$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
@@ -173,12 +180,6 @@ export class InventoryComponent {
         });
     })
   );
-
-  constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
-              private authFacade: AuthFacade,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              private settings: SettingsService) {
-  }
 
   public get selectedExpansion() {
     return this.selectedExpansion$.value;

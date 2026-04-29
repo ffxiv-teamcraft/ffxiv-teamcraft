@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Character } from '@xivapi/angular-client';
 import { Observable, of } from 'rxjs';
 import { LodestoneService } from '../../../core/api/lodestone.service';
@@ -22,6 +22,9 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzBadgeModule, RouterLink, NzTooltipModule, NzAvatarModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class UserAvatarComponent implements OnInit {
+  private characterService = inject(LodestoneService);
+  private userService = inject(UserService);
+
 
   @Input()
   disableTooltip = false;
@@ -46,9 +49,6 @@ export class UserAvatarComponent implements OnInit {
   status$: Observable<{ verified: boolean }>;
 
   user$: Observable<TeamcraftUser>;
-
-  constructor(private characterService: LodestoneService, private userService: UserService) {
-  }
 
   ngOnInit(): void {
     this.user$ = this.userService.get(this.userId);

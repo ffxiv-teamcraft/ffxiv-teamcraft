@@ -23,6 +23,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     imports: [PageLoaderComponent, FolderPageComponent, GearsetRowComponent, AsyncPipe]
 })
 export class GearsetFolderComponent {
+  private authFacade = inject(AuthFacade);
+  private gearsetsFacade = inject(GearsetsFacade);
+  private foldersFacade = inject(FoldersFacade);
+  private activatedRoute = inject(ActivatedRoute);
+
   public userId$ = this.authFacade.userId$;
 
   public display$: Observable<FolderDisplay<TeamcraftGearset>>;
@@ -33,8 +38,7 @@ export class GearsetFolderComponent {
 
   private destroyRef = inject(DestroyRef)
 
-  constructor(private authFacade: AuthFacade, private gearsetsFacade: GearsetsFacade,
-              private foldersFacade: FoldersFacade, private activatedRoute: ActivatedRoute) {
+  constructor() {
 
     this.activatedRoute.paramMap.pipe(
       takeUntilDestroyed(this.destroyRef)

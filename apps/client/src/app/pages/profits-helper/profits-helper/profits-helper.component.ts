@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProfitsService } from '../profits.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -38,6 +38,12 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzTableModule, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, NzSpinModule, NzGridModule, NzCardModule, NzCheckboxModule, FormsModule, NgTemplateOutlet, NzInputNumberModule, NzEmptyModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, JobUnicodePipe]
 })
 export class ProfitsHelperComponent {
+  private profitsService = inject(ProfitsService);
+  private authFacade = inject(AuthFacade);
+  translate = inject(TranslateService);
+  private listPicker = inject(ListPickerService);
+  settings = inject(SettingsService);
+
 
   loadingCrafting = false;
 
@@ -108,11 +114,6 @@ export class ProfitsHelperComponent {
   list: ListAdditionRecord[] = [];
 
   itemsInList: Record<number, 1> = {};
-
-  constructor(private profitsService: ProfitsService, private authFacade: AuthFacade,
-              public translate: TranslateService, private listPicker: ListPickerService,
-              public settings: SettingsService) {
-  }
 
   addItemToList(row: ProfitEntry): void {
     if (!this.list.some(r => r.id === +row.id)) {

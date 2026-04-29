@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { List } from '../model/list';
 import { Theme } from '../../settings/theme';
 import { ListsFacade } from '../+state/lists.facade';
@@ -21,6 +21,8 @@ interface ListProgression {
     imports: [NzProgressModule, NzTooltipModule, DecimalPipe, TranslateModule]
 })
 export class ListProgressbarComponent {
+  private listsFacade = inject(ListsFacade);
+
 
   @Input()
   list: List;
@@ -30,9 +32,6 @@ export class ListProgressbarComponent {
 
   @Input()
   locale: string;
-
-  constructor(private listsFacade: ListsFacade) {
-  }
 
   getProgression(): ListProgression {
     return {

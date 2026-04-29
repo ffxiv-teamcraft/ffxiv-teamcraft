@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { CompanyWorkshopTreePopupComponent } from '../company-workshop-tree-popup/company-workshop-tree-popup.component';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -16,15 +16,15 @@ import { NzButtonModule, NzButtonSize } from 'ng-zorro-antd/button';
     imports: [NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, TranslateModule]
 })
 export class CompanyWorkshopTreeButtonComponent {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+
 
   @Input()
   recipeId: string;
 
   @Input()
   size: NzButtonSize = 'default';
-
-  constructor(private dialog: NzModalService, private translate: TranslateService) {
-  }
 
   openPopup(): void {
     this.dialog.create({

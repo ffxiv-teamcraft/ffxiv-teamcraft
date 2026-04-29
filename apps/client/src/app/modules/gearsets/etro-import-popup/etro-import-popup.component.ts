@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { EtroImportStatic } from './etro-import-static';
@@ -20,15 +20,15 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class EtroImportPopupComponent {
+  private gearsetsFacade = inject(GearsetsFacade);
+  private modalRef = inject(NzModalRef);
+
 
   public importLink: string;
 
   public importLinkSupported: boolean;
 
   public gearsetName: string;
-
-  constructor(private gearsetsFacade: GearsetsFacade, private modalRef: NzModalRef) {
-  }
 
   updateLinkSupport(): void {
     if (this.importLink === undefined) {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import {
@@ -26,6 +26,13 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 
 @Injectable()
 export class FoldersEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private foldersService = inject(FoldersService);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private foldersFacade = inject(FoldersFacade);
+
 
   
   loadFolders$ = createEffect(() => this.actions$.pipe(
@@ -123,9 +130,4 @@ export class FoldersEffects {
   ), {
     dispatch: false
   });
-
-  constructor(private actions$: Actions, private authFacade: AuthFacade,
-              private foldersService: FoldersService, private dialog: NzModalService,
-              private translate: TranslateService, private foldersFacade: FoldersFacade) {
-  }
 }

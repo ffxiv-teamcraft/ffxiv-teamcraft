@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ListPricingService } from './list-pricing.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -46,6 +46,19 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     imports: [RouterLink, NzButtonModule, NzIconModule, NzTooltipModule, NgIf, FlexModule, NzCardModule, ItemIconComponent, NzWaveModule, ClipboardDirective, NzCheckboxModule, FormsModule, NzCollapseModule, NgFor, ListPricingRowComponent, NzInputModule, NzAlertModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class ListPricingComponent extends TeamcraftComponent {
+  private pricingService = inject(ListPricingService);
+  private listsFacade = inject(ListsFacade);
+  private activatedRoute = inject(ActivatedRoute);
+  private layoutsFacade = inject(LayoutsFacade);
+  translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private dialog = inject(NzModalService);
+  private universalis = inject(UniversalisService);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+  private progressService = inject(ProgressPopupService);
+  private i18n = inject(I18nToolsService);
+
 
   pricingData$ = this.listsFacade.selectedList$.pipe(
     first(),
@@ -173,12 +186,7 @@ export class ListPricingComponent extends TeamcraftComponent {
     map(char => char.Server)
   );
 
-  constructor(private pricingService: ListPricingService, private listsFacade: ListsFacade,
-              private activatedRoute: ActivatedRoute, private layoutsFacade: LayoutsFacade,
-              public translate: TranslateService, private authFacade: AuthFacade,
-              private dialog: NzModalService, private universalis: UniversalisService,
-              private lazyData: LazyDataFacade, public settings: SettingsService,
-              private progressService: ProgressPopupService, private i18n: I18nToolsService) {
+  constructor() {
     super();
     this.activatedRoute.paramMap
       .pipe(

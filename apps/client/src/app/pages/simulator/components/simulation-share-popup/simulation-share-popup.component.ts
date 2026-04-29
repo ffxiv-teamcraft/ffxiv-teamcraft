@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CrafterStats } from '@ffxiv-teamcraft/simulator';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
@@ -24,6 +24,11 @@ import { DialogComponent } from '../../../../core/dialog.component';
   imports: [FlexModule, NzCheckboxModule, FormsModule, NzButtonModule, NzInputModule, NzWaveModule, ClipboardDirective, TranslateModule]
 })
 export class SimulationSharePopupComponent extends DialogComponent {
+  private linkTools = inject(LinkToolsService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private modalRef = inject(NzModalRef);
+
 
   rotation: CraftingRotation;
 
@@ -37,7 +42,7 @@ export class SimulationSharePopupComponent extends DialogComponent {
 
   freeCompanyActions: FreeCompanyAction[];
 
-  constructor(private linkTools: LinkToolsService, private message: NzMessageService, private translate: TranslateService, private modalRef: NzModalRef) {
+  constructor() {
     super();
     this.patchData();
   }

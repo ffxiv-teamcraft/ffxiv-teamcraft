@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FishTrainFacade } from '../../../modules/fish-train/fish-train/fish-train.facade';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -80,6 +80,24 @@ import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, LowerCasePipe, DatePipe } fro
     imports: [NgIf, FullpageMessageComponent, NzCardModule, ItemIconComponent, I18nNameComponent, NzTooltipModule, NzDividerModule, NzGridModule, FishingBaitComponent, NzButtonModule, NzWaveModule, NzPopoverModule, NzSpaceModule, ClipboardDirective, MapComponent, NzPageHeaderModule, UserAvatarComponent, NzIconModule, NzInputModule, NzSelectModule, FormsModule, NgFor, NzTagModule, NzSwitchModule, NzPopconfirmModule, NzAlertModule, NzAffixModule, NzSliderModule, NzStepsModule, NgForTrackByIdDirective, MapPositionComponent, NgTemplateOutlet, NzStatisticModule, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent, PageLoaderComponent, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule, I18nPipe, TimerPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, MapNamePipe, HooksetActionIdPipe]
 })
 export class FishTrainComponent extends TeamcraftComponent {
+  private fishTrainFacade = inject(FishTrainFacade);
+  private lazyData = inject(LazyDataFacade);
+  private i18n = inject(I18nToolsService);
+  translate = inject(TranslateService);
+  private fishDataService = inject(FishDataService);
+  platform = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private dialog = inject(NzModalService);
+  private message = inject(NzMessageService);
+  private authFacade = inject(AuthFacade);
+  private soundNotificationService = inject(SoundNotificationService);
+  private notificationService = inject(NzNotificationService);
+  private pushNotificationsService = inject(PushNotificationsService);
+  private cd = inject(ChangeDetectorRef);
+  private progressPopup = inject(ProgressPopupService);
+  private lodestone = inject(LodestoneService);
+  settings = inject(SettingsService);
+
 
   timeTravel$ = new BehaviorSubject<number | null>(null);
 
@@ -225,14 +243,10 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   public overlay = false;
 
-  constructor(private fishTrainFacade: FishTrainFacade, route: ActivatedRoute,
-              private lazyData: LazyDataFacade, private i18n: I18nToolsService,
-              public translate: TranslateService, private fishDataService: FishDataService,
-              public platform: PlatformService, private ipc: IpcService,
-              private dialog: NzModalService, private message: NzMessageService, private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
-              private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
-              private cd: ChangeDetectorRef, router: Router, private progressPopup: ProgressPopupService,
-              private lodestone: LodestoneService, public settings: SettingsService) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const router = inject(Router);
+
     super();
     route.paramMap
       .pipe(

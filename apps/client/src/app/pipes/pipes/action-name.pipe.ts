@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { combineLatest, Observable } from 'rxjs';
@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
     standalone: true
 })
 export class ActionNamePipe implements PipeTransform {
-  constructor(private lazyData: LazyDataFacade) {
-  }
+  private lazyData = inject(LazyDataFacade);
+
 
   transform(id: number): Observable<I18nName> {
     return combineLatest([

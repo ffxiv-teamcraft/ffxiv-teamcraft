@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -33,6 +33,9 @@ interface FishDetailsStatsSummary {
     imports: [FlexModule, NzButtonModule, NzIconModule, NzTooltipModule, NzSelectModule, FormsModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class FishDetailsContainerComponent {
+  readonly settings = inject(SettingsService);
+  private readonly fishCtx = inject(FishContextService);
+
   public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map(() => false));
 
   public readonly spotsLoading$ = this.fishCtx.spotsByFish$.pipe(map(() => false));
@@ -52,9 +55,6 @@ export class FishDetailsContainerComponent {
     startWith({}),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(public readonly settings: SettingsService, private readonly fishCtx: FishContextService) {
-  }
 
   public setSpotIdFilter(spotId: number) {
     this.fishCtx.setSpotId(spotId === -1 ? undefined : spotId);

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SettingsService } from '../modules/settings/settings.service';
 import { Region } from '@ffxiv-teamcraft/types';
 import { environment } from '../../environments/environment';
@@ -7,9 +7,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class EnvironmentService {
+  private settings = inject(SettingsService);
 
-  constructor(private settings: SettingsService) {
-  }
 
   public get gameVersion(): number {
     switch (this.settings.region) {

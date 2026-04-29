@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,6 +14,8 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
     imports: [NzStatisticModule, AsyncPipe, DecimalPipe]
 })
 export class TotalComponent extends AbstractMetricDisplayComponent {
+  translate = inject(TranslateService);
+
 
   public total$ = this.data$.pipe(
     map(data => {
@@ -22,8 +24,4 @@ export class TotalComponent extends AbstractMetricDisplayComponent {
       }, 0) || 0;
     })
   );
-
-  constructor(public translate: TranslateService) {
-    super();
-  }
 }

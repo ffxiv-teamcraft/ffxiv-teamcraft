@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
@@ -16,11 +16,15 @@ import { OauthService } from '../auth/oauth.service';
   providedIn: 'root'
 })
 export class SupportService {
+  private http = inject(HttpClient);
+  private authFacade = inject(AuthFacade);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private platform = inject(PlatformService);
+  private message = inject(NzMessageService);
+  private router = inject(Router);
+  private oauth = inject(OauthService);
 
-  constructor(private http: HttpClient, private authFacade: AuthFacade,
-              private dialog: NzModalService, private translate: TranslateService,
-              private platform: PlatformService, private message: NzMessageService, private router: Router, private oauth: OauthService) {
-  }
 
   public patreonOauth(): void {
     if (this.platform.isDesktop()) {

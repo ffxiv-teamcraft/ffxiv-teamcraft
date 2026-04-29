@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { catchError, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
@@ -69,6 +69,19 @@ function durationRequired(control: AbstractControl) {
   imports: [QuickSearchComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzDividerModule, PageLoaderComponent, NzEmptyModule, LazyScrollComponent, AllaganReportRowComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NzInputModule, NzAutocompleteModule, NzButtonModule, NzInputNumberModule, NzAlertModule, NzSpinModule, PredatorsInputComponent, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionNamePipe, AbsolutePipe, MapNamePipe, TugNamePipe, HooksetActionIdPipe]
 })
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
+  private route = inject(ActivatedRoute);
+  private allaganReportsService = inject(AllaganReportsService);
+  protected lazyData: LazyDataFacade;
+  private i18n = inject(I18nToolsService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private cd = inject(ChangeDetectorRef);
+  private fb = inject(UntypedFormBuilder);
+  private router = inject(Router);
+  private fishCtx = inject(FishContextService);
+  private itemCtx = inject(ItemContextService);
+
 
   private reloader$ = new Subject<void>();
 
@@ -367,13 +380,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   public hoverId$ = new Subject<string>();
 
-  constructor(private route: ActivatedRoute, private allaganReportsService: AllaganReportsService,
-              protected lazyData: LazyDataFacade, private i18n: I18nToolsService,
-              private message: NzMessageService, private translate: TranslateService,
-              private authFacade: AuthFacade, private cd: ChangeDetectorRef,
-              private fb: UntypedFormBuilder, private router: Router,
-              private fishCtx: FishContextService, private itemCtx: ItemContextService) {
+  constructor() {
+    const lazyData = inject(LazyDataFacade);
+
     super(lazyData);
+    this.lazyData = lazyData;
+
     this.form.valueChanges.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(value => {

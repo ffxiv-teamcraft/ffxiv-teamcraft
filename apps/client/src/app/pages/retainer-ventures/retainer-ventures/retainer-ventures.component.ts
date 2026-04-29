@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 import { map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
@@ -48,6 +48,18 @@ import { chunk } from 'lodash';
   imports: [FlexModule, NzAlertModule, NzSelectModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, NzButtonModule, NzWaveModule, NzIconModule, PageLoaderComponent, ItemIconComponent, DbButtonComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, LazyIconPipe, JobUnicodePipe]
 })
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
+  private retainersService = inject(RetainersService);
+  private inventoryFacade = inject(InventoryService);
+  private lazyData = inject(LazyDataFacade);
+  private fb = inject(UntypedFormBuilder);
+  private gearsetsFacade = inject(GearsetsFacade);
+  private statsService = inject(StatsService);
+  private universalis = inject(UniversalisService);
+  private authFacade = inject(AuthFacade);
+  platform = inject(PlatformService);
+  translate = inject(TranslateService);
+  private environment = inject(EnvironmentService);
+
 
   loading = false;
 
@@ -203,11 +215,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     })
   );
 
-  constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataFacade, private fb: UntypedFormBuilder, private gearsetsFacade: GearsetsFacade,
-              private statsService: StatsService, private universalis: UniversalisService,
-              private authFacade: AuthFacade, public platform: PlatformService,
-              public translate: TranslateService, private environment: EnvironmentService) {
+  constructor() {
     super();
     this.servers$ = this.lazyData.servers$.pipe(
       map(servers => {

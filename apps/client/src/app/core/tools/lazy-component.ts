@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
@@ -7,15 +7,15 @@ import { distinctUntilChanged } from 'rxjs/operators';
     standalone: true
 })
 export class LazyComponentDirective implements AfterViewInit {
+  private _element = inject(ElementRef);
+  private cdRef = inject(ChangeDetectorRef);
+
 
   private _intersectionObserver?: IntersectionObserver;
 
   private intersects$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(
-    private _element: ElementRef,
-    private cdRef: ChangeDetectorRef
-  ) {
+  constructor() {
     this.intersects$.pipe(
       distinctUntilChanged()
     ).subscribe((visible) => {

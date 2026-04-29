@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -6,9 +6,9 @@ import { UserPickerComponent } from './user-picker/user-picker.component';
 
 @Injectable()
 export class UserPickerService {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
 
-  constructor(private dialog: NzModalService, private translate: TranslateService) {
-  }
 
   public pickUserId(hideContacts = false): Observable<string> {
     return this.dialog.create({

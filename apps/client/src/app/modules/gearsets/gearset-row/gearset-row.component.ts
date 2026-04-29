@@ -32,6 +32,11 @@ import { AsyncPipe } from '@angular/common';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzTagModule, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule, AsyncPipe]
 })
 export class GearsetRowComponent {
+  private gearsetsFacade = inject(GearsetsFacade);
+  private translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private linkTools = inject(LinkToolsService);
+
 
   @Input()
   gearset: TeamcraftGearset;
@@ -44,10 +49,6 @@ export class GearsetRowComponent {
   usedInGuides$ = combineLatest([observeInput(this, 'gearset'), this.authFacade.user$.pipe(map(user => user.editor))]).pipe(
     map(([gearset, userIsEditor]) => userIsEditor && gearset.usedInGuides?.length > 0)
   )
-
-  constructor(private gearsetsFacade: GearsetsFacade, private translate: TranslateService,
-              private dialog: NzModalService, private linkTools: LinkToolsService) {
-  }
 
   getLink = () => {
     return this.linkTools.getLink(`/gearset/${this.gearset.$key}`);

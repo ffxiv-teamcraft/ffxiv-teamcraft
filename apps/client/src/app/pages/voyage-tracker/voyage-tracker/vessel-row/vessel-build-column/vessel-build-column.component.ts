@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { AirshipPartType } from '../../../../../modules/free-company-workshops/model/airship-part-type';
 import { VesselPart } from '../../../../../modules/free-company-workshops/model/vessel-part';
 import { SubmarinePartType } from '../../../../../modules/free-company-workshops/model/submarine-part-type';
@@ -23,6 +23,8 @@ import { NgClass, AsyncPipe } from '@angular/common';
     imports: [NzPopoverModule, NgClass, ExtendedModule, FlexModule, AsyncPipe, TranslateModule]
 })
 export class VesselBuildColumnComponent {
+  private freeCompanyWorkshopFacade = inject(FreeCompanyWorkshopFacade);
+
   @Input() name: string;
 
   name$ = observeInput(this, 'name');
@@ -68,9 +70,6 @@ export class VesselBuildColumnComponent {
       return this.freeCompanyWorkshopFacade.getVesselBuild(type, rank, parts);
     })
   );
-
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
-  }
 
   get condition(): string {
     return Object.keys(this.parts).map((slot) => `${((this.parts[slot].condition || 0) / 300).toFixed(2)}%`).join(' - ');

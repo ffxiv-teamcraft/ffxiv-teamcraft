@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -24,6 +24,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzTooltipModule, NzSwitchModule, FormsModule, NgxEchartsModule, AsyncPipe, TranslateModule, XivapiIconPipe, LazyRowPipe]
 })
 export class FishHoursComponent {
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
   public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map(() => false));
 
   public readonly etimesChartData$ = this.fishCtx.hoursByFish$.pipe(
@@ -74,7 +77,4 @@ export class FishHoursComponent {
   );
 
   public readonly fishEyes$ = this.fishCtx.fishEyes$;
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

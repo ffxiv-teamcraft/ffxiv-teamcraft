@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -16,6 +16,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, NzStatisticModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class FishBiteTimesComponent {
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
   public readonly loading$ = this.fishCtx.biteTimesByFish$.pipe(map(() => false));
 
   public readonly biteTimeChart$ = this.fishCtx.biteTimesByFish$.pipe(
@@ -30,7 +33,4 @@ export class FishBiteTimesComponent {
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 }

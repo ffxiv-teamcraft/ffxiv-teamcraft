@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { filter, map, tap } from 'rxjs/operators';
@@ -57,6 +57,14 @@ import { AsyncPipe, JsonPipe } from '@angular/common';
     imports: [NzTabsModule, FlexModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzSwitchModule, FormsModule, NzMenuModule, DbButtonComponent, MapComponent, NzPopconfirmModule, NzIconModule, NzGridModule, ItemIconComponent, ItemRarityDirective, NzTooltipModule, NzDropDownModule, FishingBaitComponent, NzTagModule, SpearfishingSpeedComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, JsonPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class FishingLogTrackerComponent extends TrackerComponent {
+  private authFacade = inject(AuthFacade);
+  protected alarmsFacade: AlarmsFacade;
+  settings = inject(SettingsService);
+  private fishingLogCacheService = inject(FishingLogCacheService);
+  private modal = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private message = inject(NzMessageService);
+
 
   SpearfishingSpeed = SpearfishingSpeed;
 
@@ -95,11 +103,12 @@ export class FishingLogTrackerComponent extends TrackerComponent {
     })
   );
 
-  constructor(private authFacade: AuthFacade, protected alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private fishingLogCacheService: FishingLogCacheService,
-              private modal: NzModalService, private translate: TranslateService,
-              private message: NzMessageService) {
+  constructor() {
+    const alarmsFacade = inject(AlarmsFacade);
+
     super(alarmsFacade);
+  
+    this.alarmsFacade = alarmsFacade;
   }
 
   public importFromCP(): void {

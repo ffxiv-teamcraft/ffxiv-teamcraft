@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReport } from '../model/allagan-report';
@@ -56,6 +56,10 @@ import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
   imports: [NzGridModule, FlexModule, ReportSourceDisplayComponent, NgIf, NzTagModule, NzTooltipModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NgSwitch, ReportSourceCompactDetailsComponent, NgSwitchCase, DbButtonComponent, NgTemplateOutlet, NgFor, ItemIconComponent, I18nNameComponent, SpearfishingSpeedComponent, NzAvatarModule, RouterLink, AsyncPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, XivapiIconPipe, CharacterNamePipe, WeatherIconPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, MapNamePipe, TugNamePipe, HourDisplayPipe, FloorPipe]
 })
 export class AllaganReportRowComponent {
+  translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+
 
   AllaganReportSource = AllaganReportSource;
 
@@ -118,9 +122,6 @@ export class AllaganReportRowComponent {
       );
     })
   );
-
-  constructor(public translate: TranslateService, private lazyData: LazyDataFacade, public settings: SettingsService) {
-  }
 
   @Input()
   set reportsQueue(queue: AllaganReportQueueEntry[]) {

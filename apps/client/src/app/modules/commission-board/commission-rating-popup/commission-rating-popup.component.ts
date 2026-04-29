@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Commission } from '../model/commission';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -21,16 +21,15 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzRateModule, NzInputModule, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class CommissionRatingPopupComponent extends DialogComponent implements OnInit {
+  private fb = inject(UntypedFormBuilder);
+  private modalRef = inject(NzModalRef);
+
 
   commission: Commission;
 
   authorId: string;
 
   form: UntypedFormGroup;
-
-  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef) {
-    super();
-  }
 
   submit(): void {
     if (this.form.valid) {

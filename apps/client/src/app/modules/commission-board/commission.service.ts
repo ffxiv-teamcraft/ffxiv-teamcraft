@@ -1,6 +1,6 @@
 import { FirestoreRelationalStorage } from '../../core/database/storage/firestore/firestore-relational-storage';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -11,10 +11,24 @@ import { Firestore, QueryConstraint, where } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionService extends FirestoreRelationalStorage<Commission> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService) {
+
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+  
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
   }
 
   public getByCrafterId(userId: string, archived = false): Observable<Commission[]> {

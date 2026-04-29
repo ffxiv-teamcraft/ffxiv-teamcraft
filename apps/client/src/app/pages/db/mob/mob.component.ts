@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -41,6 +41,13 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
   imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzTooltipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
 })
 export class MobComponent extends TeamcraftPageComponent {
+  private route = inject(ActivatedRoute);
+  private i18n = inject(I18nToolsService);
+  private translate = inject(TranslateService);
+  private lazyData = inject(LazyDataFacade);
+  settings = inject(SettingsService);
+  private mapService = inject(MapService);
+
 
   public mob$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
@@ -56,11 +63,14 @@ export class MobComponent extends TeamcraftPageComponent {
 
   public spawns$: Observable<{ map: number, zoneid: number, level: number, positions: Vector2[] }[]>;
 
-  constructor(private route: ActivatedRoute,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private lazyData: LazyDataFacade, public settings: SettingsService,
-              private mapService: MapService, seo: SeoService, router: Router) {
+  constructor() {
+    const seo = inject(SeoService);
+    const router = inject(Router);
+
     super(seo);
+    const route = this.route;
+    const i18n = this.i18n;
+
     this.updateSlug(router, i18n, route, 'mobs', 'mobId');
 
     this.drops$ = this.mob$.pipe(

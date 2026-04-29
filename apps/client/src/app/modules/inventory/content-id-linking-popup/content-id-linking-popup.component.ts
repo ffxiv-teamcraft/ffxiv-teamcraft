@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -24,6 +24,10 @@ import { DialogComponent } from '../../../core/dialog.component';
     imports: [FlexModule, NzTooltipModule, NzPopconfirmModule, NzAvatarModule, NzTagModule, NzButtonModule, NzWaveModule, NzIconModule, NzDividerModule, AsyncPipe, TranslateModule]
 })
 export class ContentIdLinkingPopupComponent extends DialogComponent{
+  private authFacade = inject(AuthFacade);
+  private settings = inject(SettingsService);
+  private modalRef = inject(NzModalRef);
+
 
   contentId: string;
 
@@ -31,8 +35,7 @@ export class ContentIdLinkingPopupComponent extends DialogComponent{
 
   characterEntries$ = this.authFacade.characterEntries$;
 
-  constructor(private authFacade: AuthFacade, private settings: SettingsService,
-              private modalRef: NzModalRef) {
+  constructor() {
     super();
     this.patchData();
   }

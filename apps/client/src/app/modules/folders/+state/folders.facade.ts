@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { FoldersPartialState } from './folders.reducer';
 import { foldersQuery } from './folders.selectors';
@@ -33,6 +33,11 @@ export interface TreeFolderDisplay<T> {
   providedIn: 'root'
 })
 export class FoldersFacade {
+  private store = inject<Store<FoldersPartialState>>(Store);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+
   allFolders$ = this.store.pipe(select(foldersQuery.getAllFolders));
 
   foldersPerTypeCache: { [index: number]: Observable<Folder<any>[]> } = {};
@@ -42,10 +47,6 @@ export class FoldersFacade {
   selectedFoldersCache: { [index: number]: Observable<FolderDisplay<any>> } = {};
 
   favoriteFoldersCache: { [index: number]: Observable<Folder<any>[]> } = {};
-
-  constructor(private store: Store<FoldersPartialState>, private dialog: NzModalService,
-              private translate: TranslateService, private authFacade: AuthFacade) {
-  }
 
   getDisplay<T extends DataModel>(source: Observable<Folder<T>[]>, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void, rootEntityPredicate: (entity: T) => boolean): Observable<TreeFolderDisplay<T>> {
     return combineLatest([source, loadedContent$]).pipe(

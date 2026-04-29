@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListTag } from '../../../modules/list/model/list-tag.enum';
@@ -32,6 +32,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzInputModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, PageLoaderComponent, ListPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommunityListsComponent implements OnDestroy {
+  private listsFacade = inject(ListsFacade);
+  private listService = inject(FirestoreListStorage);
+  private teamsFacade = inject(TeamsFacade);
+  private layoutsFacade = inject(LayoutsFacade);
+
 
   public tags: any[];
 
@@ -55,9 +60,10 @@ export class CommunityListsComponent implements OnDestroy {
 
   private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
 
-  constructor(private listsFacade: ListsFacade, private listService: FirestoreListStorage,
-              private teamsFacade: TeamsFacade, private layoutsFacade: LayoutsFacade,
-              route: ActivatedRoute, router: Router) {
+  constructor() {
+    const route = inject(ActivatedRoute);
+    const router = inject(Router);
+
     this.teamsFacade.loadMyTeams();
     this.layoutsFacade.loadAll();
     this.tags = Object.keys(ListTag).map(key => {

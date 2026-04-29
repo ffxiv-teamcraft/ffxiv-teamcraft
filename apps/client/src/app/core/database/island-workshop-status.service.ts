@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { FirestoreRelationalStorage } from './storage/firestore/firestore-relational-storage';
@@ -11,11 +11,26 @@ import { SettingsService } from '../../modules/settings/settings.service';
   providedIn: 'root'
 })
 export class IslandWorkshopStatusService extends FirestoreRelationalStorage<WorkshopStatusData> {
+  protected firestore: Firestore;
+  protected serializer: NgSerializerService;
+  protected zone: NgZone;
+  protected pendingChangesService: PendingChangesService;
+  private environment = inject(EnvironmentService);
+  private settings = inject(SettingsService);
 
-  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private environment: EnvironmentService,
-              private settings: SettingsService) {
+
+  constructor() {
+    const firestore = inject(Firestore);
+    const serializer = inject(NgSerializerService);
+    const zone = inject(NgZone);
+    const pendingChangesService = inject(PendingChangesService);
+
     super(firestore, serializer, zone, pendingChangesService);
+    this.firestore = firestore;
+    this.serializer = serializer;
+    this.zone = zone;
+    this.pendingChangesService = pendingChangesService;
+
     this.settings.region$.subscribe(() => {
       this.clearCache();
       this.regenerateCollectionRef = true;

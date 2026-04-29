@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   CreateWorkshop,
@@ -30,6 +30,15 @@ import { LoadManyLists } from '../../list/+state/lists.actions';
 
 @Injectable()
 export class WorkshopsEffects {
+  private actions$ = inject(Actions);
+  private workshopService = inject(WorkshopService);
+  private authFacade = inject(AuthFacade);
+  private workshopsFacade = inject(WorkshopsFacade);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private listService = inject(FirestoreListStorage);
+  private listsFacade = inject(ListsFacade);
+
 
   loadMyWorkshops$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.LoadMyWorkshops),
@@ -187,15 +196,4 @@ export class WorkshopsEffects {
     }),
     tap(() => this.message.success(this.translate.instant('PERMISSIONS.Propagate_changes_done')))
   ), { dispatch: false });
-
-  constructor(
-    private actions$: Actions,
-    private workshopService: WorkshopService,
-    private authFacade: AuthFacade,
-    private workshopsFacade: WorkshopsFacade,
-    private message: NzMessageService, private translate: TranslateService,
-    private listService: FirestoreListStorage,
-    private listsFacade: ListsFacade
-  ) {
-  }
 }

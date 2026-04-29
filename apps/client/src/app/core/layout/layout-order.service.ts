@@ -1,5 +1,5 @@
 import { LayoutRowOrder } from './layout-row-order.enum';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ListRow } from '../../modules/list/model/list-row';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { AlarmDetails, DataType, getItemSource } from '@ffxiv-teamcraft/types';
@@ -22,6 +22,11 @@ interface ListRowSortComparison {
 
 @Injectable()
 export class LayoutOrderService {
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+  private alarmsFacade = inject(AlarmsFacade);
+  private etime = inject(EorzeanTimeService);
+
 
 
   alarmsCache: Record<number, { expire: number, score: number }> = {};
@@ -70,11 +75,6 @@ export class LayoutOrderService {
       return this.orderFunctions['JOB'](a, b);
     }
   };
-
-  constructor(private i18n: I18nToolsService,
-              private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade,
-              private etime: EorzeanTimeService) {
-  }
 
   public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): Observable<ListRow[]> {
     if (orderBy === 'TIMER') {

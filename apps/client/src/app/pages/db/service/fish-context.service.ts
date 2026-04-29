@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
@@ -92,6 +92,12 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
  */
 @Injectable()
 export class FishContextService {
+  private readonly itemContext = inject(ItemContextService);
+  private readonly settings = inject(SettingsService);
+  private readonly etime = inject(EorzeanTimeService);
+  private readonly data = inject(FishDataService);
+  private readonly lazyData = inject(LazyDataFacade);
+
 
   private readonly reloader$ = new BehaviorSubject<void>(void 0);
 
@@ -438,15 +444,6 @@ export class FishContextService {
     map(datagridResultMapper('weathers', 'itemId', 'weatherId')),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  constructor(
-    private readonly itemContext: ItemContextService,
-    private readonly settings: SettingsService,
-    private readonly etime: EorzeanTimeService,
-    private readonly data: FishDataService,
-    private readonly lazyData: LazyDataFacade
-  ) {
-  }
 
   public refresh(): void {
     this.reloader$.next(void 0);

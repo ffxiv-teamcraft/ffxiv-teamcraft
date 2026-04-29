@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -48,6 +48,14 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzSwitchModule, FormsModule, NgIf, FullpageMessageComponent, NzSpinModule, NgFor, NzCollapseModule, ClipboardDirective, NzIconModule, NgSwitch, NgSwitchCase, NzInputModule, NzSelectModule, NzTooltipModule, NzListModule, ItemIconComponent, ItemNameClipboardDirective, InventoryPositionComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventoryOptimizerComponent {
+  private inventoryFacade = inject(InventoryService);
+  private settings = inject(SettingsService);
+  private optimizers = inject(INVENTORY_OPTIMIZER);
+  private lazyData = inject(LazyDataFacade);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private listPicker = inject(ListPickerService);
+
 
   public pauseTracking$ = new BehaviorSubject<boolean>(false);
 
@@ -175,10 +183,7 @@ export class InventoryOptimizerComponent {
     map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))
   );
 
-  constructor(private inventoryFacade: InventoryService, private settings: SettingsService,
-              @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService,
-              private listPicker: ListPickerService) {
+  constructor() {
     this.optimizers
       .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
       .forEach(optimizer => {

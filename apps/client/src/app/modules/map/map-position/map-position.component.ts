@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MapComponent } from '../map/map.component';
@@ -25,6 +25,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapPositionComponent {
+  private dialog = inject(NzModalService);
+  private i18n = inject(I18nToolsService);
+
   @Input()
   marker: Vector2;
 
@@ -55,9 +58,6 @@ export class MapPositionComponent {
     distinctUntilChanged(([zoneA, mapA], [zoneB, mapB]) => zoneA === zoneB && mapA === mapB),
     switchMap(([zoneId, mapId]) => this.i18n.getNameObservable('places', zoneId >= 0 ? zoneId : mapId))
   );
-
-  constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
-  }
 
   get zoneId(): number | undefined {
     return this.zoneId$.getValue();

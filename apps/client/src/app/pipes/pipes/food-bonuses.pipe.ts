@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { map } from 'rxjs/operators';
@@ -9,9 +9,8 @@ import { Observable } from 'rxjs';
     standalone: true
 })
 export class FoodBonusesPipePipe implements PipeTransform {
+  private i18n = inject(I18nToolsService);
 
-  constructor(private i18n: I18nToolsService) {
-  }
 
   transform(food: any, compact = false): Observable<string | string[]> {
     return safeCombineLatest(Object.values<any>(food.Bonuses).map((bonus) => {

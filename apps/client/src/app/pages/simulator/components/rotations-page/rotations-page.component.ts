@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable } from 'rxjs';
@@ -34,6 +34,14 @@ import { FlexModule } from '@angular/flex-layout/flex';
   imports: [FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, PageLoaderComponent, CdkDropList, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class RotationsPageComponent {
+  private rotationsFacade = inject(RotationsFacade);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private foldersFacade = inject(RotationFoldersFacade);
+  private guidesService = inject(GuidesService);
+  private message = inject(NzMessageService);
+  private authFacade = inject(AuthFacade);
+
 
   public loading$ = this.rotationsFacade.loading$;
 
@@ -88,9 +96,7 @@ export class RotationsPageComponent {
     })
   );
 
-  constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
-              private foldersFacade: RotationFoldersFacade, private guidesService: GuidesService,
-              private message: NzMessageService, private authFacade: AuthFacade) {
+  constructor() {
     this.rotationsFacade.loadMyRotations();
 
     this.favoriteRotationsFoldersDisplay$ = this.foldersFacade.favoriteRotationFolders$.pipe(

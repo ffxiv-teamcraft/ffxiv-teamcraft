@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { List } from '../model/list';
 import { ListPickerService } from '../../list-picker/list-picker.service';
 import { ListRow } from '../model/list-row';
@@ -29,6 +29,11 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, NzButtonModule, NzWaveModule, LazyScrollComponent, NzCheckboxModule, FormsModule, ItemIconComponent, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class ListSplitPopupComponent extends DialogComponent {
+  private listPicker = inject(ListPickerService);
+  private listsFacade = inject(ListsFacade);
+  private modalRef = inject(NzModalRef);
+  private listManager = inject(ListManagerService);
+
 
   public list: List;
 
@@ -36,8 +41,7 @@ export class ListSplitPopupComponent extends DialogComponent {
 
   public selectedItems = [];
 
-  public constructor(private listPicker: ListPickerService, private listsFacade: ListsFacade,
-                     private modalRef: NzModalRef, private listManager: ListManagerService) {
+  public constructor() {
     super();
     this.patchData();
   }

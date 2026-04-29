@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -23,6 +23,12 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class MarketboardIconComponent {
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private i18n = inject(I18nToolsService);
+  private lazyData = inject(LazyDataFacade);
+
 
   @Input()
   itemId: number;
@@ -44,10 +50,6 @@ export class MarketboardIconComponent {
   disabled$ = this.authFacade.loggedIn$.pipe(
     map((loggedIn) => !loggedIn)
   );
-
-  constructor(private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade) {
-  }
 
   openDialog(): void {
     this.i18n.getNameObservable('items', this.itemId).pipe(

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { getCraftByPriority, ListRow } from './model/list-row';
@@ -32,14 +32,13 @@ export interface ListAdditionParams {
   providedIn: 'root'
 })
 export class ListManagerService {
+  protected db = inject(DataService);
+  protected i18n = inject(I18nToolsService);
+  private discordWebhookService = inject(DiscordWebhookService);
+  private teamsFacade = inject(TeamsFacade);
+  private lazyData = inject(LazyDataFacade);
+  private authFacade = inject(AuthFacade);
 
-  constructor(protected db: DataService,
-              protected i18n: I18nToolsService,
-              private discordWebhookService: DiscordWebhookService,
-              private teamsFacade: TeamsFacade,
-              private lazyData: LazyDataFacade,
-              private authFacade: AuthFacade) {
-  }
 
   public addToList({
                      itemId,

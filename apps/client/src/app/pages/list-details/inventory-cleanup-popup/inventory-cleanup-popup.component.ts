@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -26,15 +26,13 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, NzCardModule, ItemIconComponent, I18nNameComponent, NzButtonModule, NzIconModule, NzTooltipModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class InventoryCleanupPopupComponent extends DialogComponent implements OnInit {
+  private inventoryFacade = inject(InventoryService);
+
 
   list: List;
 
   // items are InventoryItem + needed:number
   cleanup$: Observable<InventoryItem[]>;
-
-  constructor(private inventoryFacade: InventoryService) {
-    super();
-  }
 
   ngOnInit() {
     this.patchData();

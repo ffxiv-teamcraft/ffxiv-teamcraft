@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
@@ -19,10 +19,12 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, ItemIconComponent, NzButtonModule, NzWaveModule, TranslateModule, ItemNamePipe, LazyIconPipe, I18nPipe]
 })
 export class ClipboardImportPopupComponent extends DialogComponent {
+  private ref = inject(NzModalRef);
+
 
   items: { id: number, amount: number }[];
 
-  constructor(private ref: NzModalRef) {
+  constructor() {
     super();
     this.patchData();
   }

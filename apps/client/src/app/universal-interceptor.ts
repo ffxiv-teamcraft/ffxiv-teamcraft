@@ -1,10 +1,11 @@
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { REQUEST } from '../express.tokens';
 
 @Injectable()
 export class UniversalInterceptor implements HttpInterceptor {
-  constructor(@Optional() @Inject(REQUEST) protected request: any) {}
+  protected request = inject(REQUEST, { optional: true })!;
+
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     if (req.url.includes('http')) {

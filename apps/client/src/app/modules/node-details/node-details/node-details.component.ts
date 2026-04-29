@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmDetails, GatheringNode } from '@ffxiv-teamcraft/types';
@@ -36,6 +36,9 @@ import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
   imports: [FlexModule, DbButtonComponent, NzTagModule, NzTooltipModule, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe, I18nNameComponent, LazyIconPipe, FloorPipe, HourDisplayPipe]
 })
 export class NodeDetailsComponent {
+  private alarmsFacade = inject(AlarmsFacade);
+  translate = inject(TranslateService);
+
 
   OceanFishingTime = OceanFishingTime;
 
@@ -53,9 +56,6 @@ export class NodeDetailsComponent {
   hideDbButton = false;
 
   public alarms: AlarmDetails[] = [];
-
-  constructor(private alarmsFacade: AlarmsFacade, public translate: TranslateService) {
-  }
 
   private _node: GatheringNode;
 

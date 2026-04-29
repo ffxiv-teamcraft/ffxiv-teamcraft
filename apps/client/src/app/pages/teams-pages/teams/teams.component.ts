@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Team } from '../../../model/team/team';
@@ -49,6 +49,20 @@ import { AsyncPipe, DatePipe } from '@angular/common';
     imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzCollapseModule, NzPopconfirmModule, NzSelectModule, FormsModule, NzGridModule, NzCheckboxModule, NzAlertModule, NzListModule, ClipboardDirective, NzTagModule, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, TeamcraftLinkPipe]
 })
 export class TeamsComponent implements OnInit {
+  private teamsFacade = inject(TeamsFacade);
+  private dialog = inject(NzModalService);
+  private translate = inject(TranslateService);
+  private authFacade = inject(AuthFacade);
+  private discordWebhook = inject(DiscordWebhookService);
+  private message = inject(NzMessageService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private http = inject(HttpClient);
+  private platform = inject(PlatformService);
+  private ipc = inject(IpcService);
+  private oauth = inject(OauthService);
+  settings = inject(SettingsService);
+
 
   myTeams$: Observable<Team[]> = this.teamsFacade.myTeams$;
 
@@ -64,12 +78,7 @@ export class TeamsComponent implements OnInit {
 
   private redirectUri: string;
 
-  constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
-              private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
-              private message: NzMessageService, private route: ActivatedRoute, private router: Router,
-              private http: HttpClient, private platform: PlatformService,
-              private ipc: IpcService, private oauth: OauthService,
-              public settings: SettingsService) {
+  constructor() {
     this.teamsFacade.loadMyTeams();
   }
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MapMarker } from '../../../modules/map/map-marker';
@@ -28,6 +28,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzButtonModule, NzWaveModule, MapComponent, NzGridModule, NzFormModule, NzSelectModule, FormsModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe]
 })
 export class TreasureFinderComponent {
+  private lazyData = inject(LazyDataFacade);
+  private mapService = inject(MapService);
+
 
   map$: ReplaySubject<number> = new ReplaySubject<number>();
 
@@ -96,8 +99,5 @@ export class TreasureFinderComponent {
       }];
     })
   );
-
-  constructor(private lazyData: LazyDataFacade, private mapService: MapService) {
-  }
 
 }

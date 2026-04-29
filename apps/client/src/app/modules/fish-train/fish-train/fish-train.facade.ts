@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getAllFishTrains, getAllPublicFishingTrains, getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
 import {
@@ -27,6 +27,11 @@ import { FishTrainService } from '../../../core/database/fish-train.service';
   providedIn: 'root'
 })
 export class FishTrainFacade {
+  private store = inject(Store);
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+  private fishTrainService = inject(FishTrainService);
+
 
   time$ = timer(0, 1000).pipe(
     map(() => Date.now()),
@@ -88,10 +93,6 @@ export class FishTrainFacade {
   allPublicTrains$ = this.store.pipe(
     select(getAllPublicFishingTrains)
   );
-
-  constructor(private store: Store, private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade, private fishTrainService: FishTrainService) {
-  }
 
   addReport(report: TrainFishingReport): void {
     this.store.dispatch(addReportToFishTrain({ report }));

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DataType, FishingBait, GatheringNode, getItemSource } from '@ffxiv-teamcraft/types';
 import { Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -11,9 +11,8 @@ import { safeCombineLatest } from '../rxjs/safe-combine-latest';
   providedIn: 'root'
 })
 export class GatheringNodesService {
+  private lazyData = inject(LazyDataFacade);
 
-  constructor(private lazyData: LazyDataFacade) {
-  }
 
   public getItemNodes(itemId: number, onlyDirectGathering = false): Observable<GatheringNode[]> {
     let idsToConsider$ = of([itemId]);

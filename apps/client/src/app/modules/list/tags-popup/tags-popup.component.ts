@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { List } from '../model/list';
 import { ListTag } from '../model/list-tag.enum';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -24,6 +24,9 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class TagsPopupComponent extends DialogComponent implements OnInit {
+  private modalRef = inject(NzModalRef);
+  private listsFacade = inject(ListsFacade);
+
 
   @Input()
   list: Partial<List>;
@@ -34,7 +37,7 @@ export class TagsPopupComponent extends DialogComponent implements OnInit {
 
   tagsBackup: ListTag[] = [];
 
-  constructor(private modalRef: NzModalRef, private listsFacade: ListsFacade) {
+  constructor() {
     super();
     this.patchData();
     this.tagsBackup = this.list.tags;

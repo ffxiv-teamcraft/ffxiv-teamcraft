@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { Region } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 
@@ -8,9 +8,8 @@ import { SettingsService } from '../../modules/settings/settings.service';
     standalone: true
 })
 export class IfRegionsPipe implements PipeTransform {
+  private settings = inject(SettingsService);
 
-  constructor(private settings: SettingsService) {
-  }
 
   transform(input: any, regions: Region[], ifregions: any): any {
     return regions.indexOf(this.settings.region) > -1 ? ifregions : input;

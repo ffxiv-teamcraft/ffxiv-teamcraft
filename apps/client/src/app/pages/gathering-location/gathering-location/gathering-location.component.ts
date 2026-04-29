@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, timer } from 'rxjs';
 import { debounce, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
@@ -61,6 +61,16 @@ interface ResultRow {
   imports: [FormsModule, ReactiveFormsModule, FlexModule, NzButtonModule, NzIconModule, NzInputModule, NzSelectModule, ItemIconComponent, NzSwitchModule, NzTooltipModule, NzWaveModule, NzPaginationModule, NgTemplateOutlet, NzCardModule, MapComponent, NodeDetailsComponent, GatheringItemUsesComponent, FishingBaitComponent, SpearfishingSpeedComponent, NzTagModule, AlarmButtonComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, ActionIconPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class GatheringLocationComponent {
+  private dataService = inject(DataService);
+  private alarmsFacade = inject(AlarmsFacade);
+  private router = inject(Router);
+  private settings = inject(SettingsService);
+  private route = inject(ActivatedRoute);
+  translate = inject(TranslateService);
+  private gatheringNodesService = inject(GatheringNodesService);
+  private fb = inject(UntypedFormBuilder);
+  private lazyData = inject(LazyDataFacade);
+
 
   SpearfishingSpeed = SpearfishingSpeed;
 
@@ -165,11 +175,7 @@ export class GatheringLocationComponent {
 
   pageSize = 12;
 
-  constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
-              private router: Router, private settings: SettingsService,
-              private route: ActivatedRoute, public translate: TranslateService,
-              private gatheringNodesService: GatheringNodesService,
-              private fb: UntypedFormBuilder, private lazyData: LazyDataFacade) {
+  constructor() {
 
 
     this.route.queryParams

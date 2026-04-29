@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   CreateCustomLink,
@@ -19,6 +19,11 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 
 @Injectable()
 export class CustomLinksEffects {
+  private actions$ = inject(Actions);
+  private authFacade = inject(AuthFacade);
+  private linksFacade = inject(CustomLinksFacade);
+  private customLinksService = inject(CustomLinksService);
+
 
 
   loadMyCustomLinks$ = createEffect(() => this.actions$.pipe(
@@ -80,12 +85,4 @@ export class CustomLinksEffects {
     switchMap(action => this.customLinksService.remove(action.key)),
     switchMap(() => EMPTY)
   ), { dispatch: false });
-
-  constructor(
-    private actions$: Actions,
-    private authFacade: AuthFacade,
-    private linksFacade: CustomLinksFacade,
-    private customLinksService: CustomLinksService
-  ) {
-  }
 }

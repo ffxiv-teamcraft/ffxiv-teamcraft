@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -40,6 +40,16 @@ import { uniq } from 'lodash';
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzTooltipModule, NzWaveModule, NzIconModule, FlexModule, NzSelectModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, LazyIconPipe, KeysPipe, JobUnicodePipe]
 })
 export class GcSupplyComponent {
+  private authFacade = inject(AuthFacade);
+  private fb = inject(UntypedFormBuilder);
+  private listPicker = inject(ListPickerService);
+  private listsFacade = inject(ListsFacade);
+  private progressService = inject(ProgressPopupService);
+  private router = inject(Router);
+  private listManager = inject(ListManagerService);
+  private environment = inject(EnvironmentService);
+  private lazyData = inject(LazyDataFacade);
+
 
   public form$: Observable<UntypedFormGroup>;
 
@@ -55,10 +65,10 @@ export class GcSupplyComponent {
 
   private levels$: Subject<any> = new Subject<any>();
 
-  constructor(private authFacade: AuthFacade, private fb: UntypedFormBuilder, private listPicker: ListPickerService,
-              private listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private router: Router, private listManager: ListManagerService, private environment: EnvironmentService,
-              private lazyData: LazyDataFacade) {
+  constructor() {
+    const fb = this.fb;
+    const environment = this.environment;
+
     this.form$ = this.sets$.pipe(
       map(sets => {
         const groupConfig = sets.reduce((group, set) => {

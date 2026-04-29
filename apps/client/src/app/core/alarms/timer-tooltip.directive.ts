@@ -9,6 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: true
 })
 export class TimerTooltipDirective extends NzTooltipDirective implements OnChanges {
+  private datePipe = inject(DatePipe);
+  private translate = inject(TranslateService);
+
 
   @Input('timerTooltip')
   timerSeconds: number;
@@ -17,10 +20,6 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
   prefix = '';
 
   #cdr = inject(ChangeDetectorRef);
-
-  constructor(private datePipe: DatePipe, private translate: TranslateService) {
-    super();
-  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.timerSeconds === null) {

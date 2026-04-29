@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
@@ -46,6 +46,15 @@ import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
     imports: [FullpageMessageComponent, NzCardModule, FlexModule, NzButtonModule, NzWaveModule, NzTooltipModule, NzIconModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, NzTagModule, UserRatingDisplayComponent, UserAvatarComponent, NzDividerModule, NzGridModule, ItemIconComponent, NzProgressModule, RouterLink, NzRateModule, FormsModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class CommissionDetailsComponent extends TeamcraftComponent implements OnInit {
+  private activatedRoute = inject(ActivatedRoute);
+  private commissionsFacade = inject(CommissionsFacade);
+  private authFacade = inject(AuthFacade);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+  private notificationsFacade = inject(NotificationsFacade);
+  private router = inject(Router);
+  private listsFacade = inject(ListsFacade);
+
 
   CommissionStatus = CommissionStatus;
 
@@ -71,13 +80,6 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
       };
     })
   );
-
-  constructor(private activatedRoute: ActivatedRoute, private commissionsFacade: CommissionsFacade,
-              private authFacade: AuthFacade, public translate: TranslateService,
-              public settings: SettingsService, private notificationsFacade: NotificationsFacade,
-              private router: Router, private listsFacade: ListsFacade) {
-    super();
-  }
 
   deleteCommission(commission: Commission, withLists: boolean): void {
     this.commissionsFacade.delete(commission.$key, withLists);

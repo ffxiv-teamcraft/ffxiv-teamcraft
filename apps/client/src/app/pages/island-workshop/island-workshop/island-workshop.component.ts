@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -65,6 +65,17 @@ interface ColumnItem {
     imports: [NzPageHeaderModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, NzTooltipModule, FlexModule, NzInputModule, NzInputNumberModule, NzAlertModule, WorkshopPlanningComponent, NgTemplateOutlet, NzDividerModule, NzGridModule, NzCardModule, ItemIconComponent, I18nNameComponent, NzTableModule, NzSelectModule, AsyncPipe, TranslateModule]
 })
 export class IslandWorkshopComponent extends TeamcraftComponent {
+  private ipc = inject(IpcService);
+  private lazyData = inject(LazyDataFacade);
+  translate = inject(TranslateService);
+  private dialog = inject(NzModalService);
+  private message = inject(NzMessageService);
+  private mjiWorkshopStatusService = inject(IslandWorkshopStatusService);
+  platformService = inject(PlatformService);
+  settings = inject(SettingsService);
+  private authFacade = inject(AuthFacade);
+  private i18n = inject(I18nToolsService);
+
 
   static START_DATE = new Date(1661241600000);
 
@@ -455,11 +466,9 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     return JSON.stringify(this.state$.value);
   };
 
-  constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
-              public translate: TranslateService, private dialog: NzModalService,
-              private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
-              public platformService: PlatformService, public settings: SettingsService,
-              private authFacade: AuthFacade, private i18n: I18nToolsService, destroyRef: DestroyRef) {
+  constructor() {
+    const destroyRef = inject(DestroyRef);
+
     super();
 
     if (this.platformService.isDesktop()) {

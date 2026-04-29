@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SupportService } from '../../../core/patreon/support.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -15,9 +15,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
     imports: [FlexModule, NzDividerModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class RemoveAdsPopupComponent {
+  private supportService = inject(SupportService);
 
-  constructor(private supportService: SupportService) {
-  }
 
   patreonOauth(): void {
     this.supportService.patreonOauth();

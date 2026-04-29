@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommissionProfile } from '../../../model/user/commission-profile';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -23,9 +23,13 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [NzDividerModule, FlexModule, NzRateModule, FormsModule, NzButtonModule, RouterLink, NzEmptyModule, NzIconModule, DatePipe, TranslateModule]
 })
 export class UserRatingDetailsPopupComponent extends DialogComponent {
+  private modalRef = inject(NzModalRef);
+  translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
   profile: CommissionProfile;
 
-  constructor(private modalRef: NzModalRef, public translate: TranslateService, public settings: SettingsService) {
+  constructor() {
     super();
     this.patchData();
   }

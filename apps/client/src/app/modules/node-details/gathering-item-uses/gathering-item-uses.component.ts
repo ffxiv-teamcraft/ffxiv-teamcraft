@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest } from 'rxjs';
@@ -21,6 +21,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [NzPopoverModule, FlexModule, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, LazyIconPipe, I18nPipe]
 })
 export class GatheringItemUsesComponent {
+  private lazyData = inject(LazyDataFacade);
+
 
   @Input()
   compact = false;
@@ -57,8 +59,5 @@ export class GatheringItemUsesComponent {
       );
     })
   );
-
-  constructor(private lazyData: LazyDataFacade) {
-  }
 
 }

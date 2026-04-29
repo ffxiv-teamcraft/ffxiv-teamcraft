@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -24,6 +24,11 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, NgIf, NzListModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class FreecompanyPickerComponent {
+  private lodestone = inject(LodestoneService);
+  private lazyData = inject(LazyDataFacade);
+  private modalRef = inject(NzModalRef);
+  private authFacade = inject(AuthFacade);
+
 
   public servers$ = this.lazyData.servers$;
 
@@ -55,7 +60,7 @@ export class FreecompanyPickerComponent {
     map(res => res.FreeCompany)
   );
 
-  constructor(private lodestone: LodestoneService, private lazyData: LazyDataFacade, private modalRef: NzModalRef, private authFacade: AuthFacade) {
+  constructor() {
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(
         map(([servers, inputValue]) => {

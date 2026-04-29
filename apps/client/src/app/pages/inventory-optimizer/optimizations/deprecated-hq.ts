@@ -1,7 +1,7 @@
 import { InventoryOptimizer } from './inventory-optimizer';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -10,10 +10,9 @@ import { ExtractRow, LazyDataKey } from '@ffxiv-teamcraft/types';
 
 @Injectable()
 export class DeprecatedHq extends InventoryOptimizer {
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
 
-  constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade) {
-    super();
-  }
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ExtractRow): Observable<{ [p: string]: number | string } | null> {
     if (item.hq) {

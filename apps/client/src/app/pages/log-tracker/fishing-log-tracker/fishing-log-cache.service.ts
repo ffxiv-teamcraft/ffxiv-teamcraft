@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -10,6 +10,9 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
   providedIn: 'root'
 })
 export class FishingLogCacheService {
+  private authFacade = inject(AuthFacade);
+  private lazyData = inject(LazyDataFacade);
+
 
   private completion$ = this.authFacade.logTracking$.pipe(
     map(logTracking => logTracking.gathering),
@@ -87,8 +90,5 @@ export class FishingLogCacheService {
     }),
     shareReplay(1)
   );
-
-  constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade) {
-  }
 
 }

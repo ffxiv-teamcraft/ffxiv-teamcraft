@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -26,12 +26,13 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     imports: [NzCollapseModule, FlexModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzTooltipModule, ClipboardDirective, NzIconModule, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class ListCrystalsPanelComponent {
+  private i18nTools = inject(I18nToolsService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+
 
   @Input()
   crystals: ListRow[] = [];
-
-  constructor(private i18nTools: I18nToolsService, private message: NzMessageService, private translate: TranslateService) {
-  }
 
   trackByItem(index: number, item: ListRow): number {
     return item.id;

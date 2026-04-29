@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { weatherIndex } from '../../../../core/data/sources/weather-index';
 import { combineLatest } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -26,6 +26,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishWeatherTransitionsComponent {
+  private readonly lazyData = inject(LazyDataFacade);
+  readonly settings = inject(SettingsService);
+  readonly fishCtx = inject(FishContextService);
+
   public readonly loading$ = this.fishCtx.weatherTransitionsByFish$.pipe(map(() => false));
 
   public readonly weatherTransitions$ = combineLatest([this.fishCtx.weatherTransitionsByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
@@ -50,9 +54,6 @@ export class FishWeatherTransitionsComponent {
     }),
     startWith([])
   );
-
-  constructor(private readonly lazyData: LazyDataFacade, public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
-  }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
     const index = weatherIndex[mapIds.find((m) => m.id === mapId).weatherRate];

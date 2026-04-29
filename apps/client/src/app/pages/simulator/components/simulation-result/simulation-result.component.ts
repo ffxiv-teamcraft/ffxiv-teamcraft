@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { SimulationReliabilityReport, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -33,6 +33,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     imports: [NzCardModule, FlexModule, ItemIconComponent, NzTooltipModule, ItemNameClipboardDirective, I18nNameComponent, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, FormsModule, NzProgressModule, NgStyle, ExtendedModule, NzDividerModule, DecimalPipe, TranslateModule, FloorPipe, IfMobilePipe, IngameStarsPipe, I18nPipe, I18nRowPipe]
 })
 export class SimulationResultComponent {
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  settings = inject(SettingsService);
+
 
   @Input()
   result: SimulationResult;
@@ -71,10 +75,6 @@ export class SimulationResultComponent {
   snapshotModeChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   snapshotMode = false;
-
-  constructor(private message: NzMessageService, private translate: TranslateService,
-              public settings: SettingsService) {
-  }
 
   barFormat(current: number, max: number): () => string {
     return () => `${current}/${max}`;

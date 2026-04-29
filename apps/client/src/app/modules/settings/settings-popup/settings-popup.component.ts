@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -62,6 +62,23 @@ import { NzAlertComponent } from 'ng-zorro-antd/alert';
   imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerDirective, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzTooltipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe, MapNamePipe, NzAlertComponent]
 })
 export class SettingsPopupComponent {
+  settings = inject(SettingsService);
+  translate = inject(TranslateService);
+  platform = inject(PlatformService);
+  private authFacade = inject(AuthFacade);
+  private auth = inject(Auth);
+  private message = inject(NzMessageService);
+  ipc = inject(IpcService);
+  private userService = inject(UserService);
+  private customLinksFacade = inject(CustomLinksFacade);
+  private dialog = inject(NzModalService);
+  private inventoryFacade = inject(InventoryService);
+  private lazyData = inject(LazyDataFacade);
+  private mappy = inject(MappyReporterService);
+  private navigationSidebarService = inject(NavigationSidebarService);
+  private patreonService = inject(SupportService);
+  private soundNotificationService = inject(SoundNotificationService);
+
 
   selectedTab = 0;
 
@@ -200,13 +217,7 @@ export class SettingsPopupComponent {
       };
     }, {});
 
-  constructor(public settings: SettingsService, public translate: TranslateService,
-              public platform: PlatformService, private authFacade: AuthFacade,
-              private auth: Auth, private message: NzMessageService, public ipc: IpcService, private userService: UserService, private customLinksFacade: CustomLinksFacade,
-              private dialog: NzModalService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataFacade, private mappy: MappyReporterService,
-              private navigationSidebarService: NavigationSidebarService, private patreonService: SupportService,
-              private soundNotificationService: SoundNotificationService) {
+  constructor() {
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });

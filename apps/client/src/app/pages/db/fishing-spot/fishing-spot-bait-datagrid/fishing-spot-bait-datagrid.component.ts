@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
@@ -41,6 +41,14 @@ type Lure = {
   imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzTooltipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule, NzSelectComponent, NzOptionComponent, I18nRowPipe, I18nPipe]
 })
 export class FishingSpotBaitDatagridComponent {
+  private readonly fishCtx = inject(FishContextService);
+  private readonly lazyData = inject(LazyDataFacade);
+  private readonly i18n = inject(I18nToolsService);
+  private readonly translate = inject(TranslateService);
+  private readonly authFacade = inject(AuthFacade);
+  private readonly fishDataService = inject(FishDataService);
+  private readonly message = inject(NzMessageService);
+
   @Input()
   public activeFish?: number | undefined;
 
@@ -93,17 +101,6 @@ export class FishingSpotBaitDatagridComponent {
   );
 
   compareLures = (a: Lure | null, b: Lure | null) => a?.excludeAll === b?.excludeAll && a?.prop === b?.prop && a?.value === b?.value;
-
-  constructor(
-    private readonly fishCtx: FishContextService,
-    private readonly lazyData: LazyDataFacade,
-    private readonly i18n: I18nToolsService,
-    private readonly translate: TranslateService,
-    private readonly authFacade: AuthFacade,
-    private readonly fishDataService: FishDataService,
-    private readonly message: NzMessageService
-  ) {
-  }
 
   deleteBait(id: number): void {
     this.fishCtx.spotId$.pipe(

@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   AddAlarms,
@@ -39,6 +39,16 @@ import { arrayUnion } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class AlarmsEffects {
+  private actions$ = inject(Actions);
+  private alarmsFacade = inject(AlarmsFacade);
+  private authFacade = inject(AuthFacade);
+  private alarmsService = inject(AlarmsService);
+  private alarmGroupsService = inject(AlarmGroupService);
+  private message = inject(NzMessageService);
+  private translate = inject(TranslateService);
+  private platform = inject(PLATFORM_ID);
+  private router = inject(Router);
+
 
 
   loadAlarms$ = createEffect(() => this.actions$.pipe(
@@ -284,11 +294,5 @@ export class AlarmsEffects {
       });
     })
   ), { dispatch: false });
-
-  constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
-              private authFacade: AuthFacade, private alarmsService: AlarmsService,
-              private alarmGroupsService: AlarmGroupService, private message: NzMessageService, private translate: TranslateService, @Inject(PLATFORM_ID) private platform: any,
-              private router: Router) {
-  }
 
 }
