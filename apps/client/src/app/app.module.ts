@@ -123,7 +123,7 @@ import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { ListAggregateModule } from './modules/list-aggregate/list-aggregate.module';
 import { BreakpointDebugComponent } from './tools/breakpoint-debug/breakpoint-debug.component';
 import { FishTrainModule } from './modules/fish-train/fish-train.module';
-import { APOLLO_OPTIONS } from 'apollo-angular';
+import { Apollo, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { apolloClientFactory } from './apollo-client-factory';
 import { AuthFacade } from './+state/auth.facade';
@@ -282,6 +282,7 @@ const nzConfig: NzConfig = {
 
   providers: [
     GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
+    Apollo,
     {
       provide: APOLLO_OPTIONS,
       useFactory: apolloClientFactory,
