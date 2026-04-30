@@ -402,8 +402,8 @@
   "Forgot_password": "Esqueci a senha",
   "Email_enter": "Email",
   "Email_not_found": "Email não encontrado",
-  "Email_sent": "Um email foi enviado com as instruções para trocar sua senha.",
-  "Copy_current_link": "",
+  "Email_sent": "Um email foi enviado com as instruções sobre como trocar sua senha.",
+  "Copy_current_link": "Copiar um link para página atual no site para a sua área de transferência",
   "ALARM": {
     "Spawned": "{{itemName}} vai aparecer!",
     "See_on_map": "Localização",
