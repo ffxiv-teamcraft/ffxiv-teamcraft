@@ -34,7 +34,9 @@ This is the directory that contains your `FFXIV_CHR*` character folders. If your
 
 ### Packet capture
 
-Native Linux packet capture is not yet implemented. The app runs fully without it — packet-based features (market board history, inventory sync via network, etc.) will not update automatically until the Linux bridge companion is built.
+Packet capture on Linux is supported via [deucalion-bridge](https://github.com/birkholz/deucalion-bridge), a small Windows executable that runs under Wine alongside the game. It injects [deucalion](https://github.com/ff14wed/deucalion) into the running FFXIV process and forwards packet data to Teamcraft over a local TCP connection.
+
+The app downloads and manages `deucalion-bridge.exe` and `deucalion.dll` automatically — no manual setup is required beyond having XIVLauncher.Core installed. Packet-based features (market board history, inventory sync via network, etc.) will work once the game is running and Teamcraft has connected to the bridge.
 
 ## Development
 
