@@ -1,6 +1,9 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
+import { existsSync, mkdirSync, createWriteStream, readFileSync } from 'fs';
+import { spawn, ChildProcess } from 'child_process';
+import * as https from 'https';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app } from 'electron';
@@ -82,6 +85,7 @@ export class PacketCapture {
   ];
 
   private captureInterface: CaptureInterface;
+  private bridgeProcess: ChildProcess | null = null;
 
   private overlayListeners = [];
 
@@ -100,6 +104,10 @@ export class PacketCapture {
   }
 
   async stop(): Promise<void> {
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
     if (this.captureInterface) {
       await this.captureInterface.stop();
       delete this.captureInterface;
@@ -166,11 +174,6 @@ export class PacketCapture {
   }
 
   private async startGlobalPcap(region: Region): Promise<void> {
-    if (process.platform === 'linux') {
-      log.info('[pcap] Packet capture not yet supported on native Linux — skipping');
-      this.mainWindow.win.webContents.send('pcap:status', 'stopped');
-      return;
-    }
     try {
       const { CaptureInterface, ErrorCodes } = await import('@ffxiv-teamcraft/pcap-ffxiv');
       const options: Partial<CaptureInterfaceOptions> = {
@@ -187,14 +190,27 @@ export class PacketCapture {
         name: 'FFXIV_Teamcraft'
       };
 
-      if (!app.isPackaged) {
+      if (process.platform === 'linux') {
+        // On Linux, deucalion-bridge.exe runs under Wine and forwards the deucalion
+        // named pipe over TCP. We download the DLL automatically and spawn the bridge.
+        try {
+          const dllWinPath = await this.ensureDeucalion();
+          this.spawnBridge(dllWinPath, 31594);
+          options.bridgeTcpPort = 31594;
+        } catch (e) {
+          log.error('[pcap] Failed to set up deucalion bridge:', e);
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_SETUP_FAILED' });
+          return;
+        }
+      } else if (!app.isPackaged) {
         const localDataPath = this.getLocalDataPath();
         if (localDataPath) {
           options.localDataPath = localDataPath;
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
+        options.deucalionDllPath = join(app.getAppPath(), '../../deucalion/deucalion.dll');
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
@@ -256,6 +272,180 @@ export class PacketCapture {
         log.error(e)
       }
     }
+  }
+
+  // ── Linux bridge helpers ────────────────────────────────────────────────────
+
+  /**
+   * Downloads deucalion.dll from GitHub Releases if absent or outdated.
+   * Caches it at $WINEPREFIX/drive_c/deucalion/deucalion.dll and returns
+   * the Windows-style path (C:\deucalion\deucalion.dll) for passing to the bridge.
+   */
+  private async ensureDeucalion(): Promise<string> {
+    const winePrefix = this.store.get<string>('winePrefix', join(app.getPath('home'), '.xlcore', 'wineprefix'));
+    const dllDir = join(winePrefix, 'drive_c', 'deucalion');
+    const dllPath = join(dllDir, 'deucalion.dll');
+    const winDllPath = 'C:\\deucalion\\deucalion.dll';
+
+    let latestTag: string | null = null;
+    try {
+      latestTag = await this.fetchLatestDeucalionTag();
+    } catch (e) {
+      log.warn('[pcap] Could not check deucalion version from GitHub:', e.message);
+    }
+
+    const cachedTag = this.store.get<string>('deucalion:version', null);
+    if (latestTag && cachedTag === latestTag && existsSync(dllPath)) {
+      log.info(`[pcap] deucalion.dll is up to date (${latestTag})`);
+      return winDllPath;
+    }
+
+    if (!latestTag && existsSync(dllPath)) {
+      log.info('[pcap] Using cached deucalion.dll (version check failed)');
+      return winDllPath;
+    }
+
+    const tag = latestTag ?? 'latest';
+    log.info(`[pcap] Downloading deucalion.dll ${tag}…`);
+    this.mainWindow.win.webContents.send('pcap:status', 'downloading-deucalion');
+
+    const downloadUrl = `https://github.com/ff14wed/deucalion/releases/download/${tag}/deucalion.dll`;
+    mkdirSync(dllDir, { recursive: true });
+    await this.downloadFile(downloadUrl, dllPath);
+
+    if (latestTag) {
+      this.store.set('deucalion:version', latestTag);
+    }
+    log.info(`[pcap] deucalion.dll saved to ${dllPath}`);
+    return winDllPath;
+  }
+
+  private fetchLatestDeucalionTag(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const req = https.get(
+        'https://api.github.com/repos/ff14wed/deucalion/releases/latest',
+        { headers: { 'User-Agent': 'ffxiv-teamcraft' } },
+        res => {
+          let body = '';
+          res.on('data', chunk => body += chunk);
+          res.on('end', () => {
+            try {
+              resolve(JSON.parse(body).tag_name);
+            } catch (e) {
+              reject(new Error(`Unexpected response: ${body.slice(0, 120)}`));
+            }
+          });
+        }
+      );
+      req.on('error', reject);
+    });
+  }
+
+  private downloadFile(url: string, dest: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const attempt = (u: string) => {
+        https.get(u, { headers: { 'User-Agent': 'ffxiv-teamcraft' } }, res => {
+          if (res.statusCode === 301 || res.statusCode === 302) {
+            attempt(res.headers.location!);
+            return;
+          }
+          if (res.statusCode !== 200) {
+            reject(new Error(`HTTP ${res.statusCode} downloading ${u}`));
+            return;
+          }
+          const file = createWriteStream(dest);
+          res.pipe(file);
+          file.on('finish', () => file.close(() => resolve()));
+          file.on('error', err => { file.close(); reject(err); });
+        }).on('error', reject);
+      };
+      attempt(url);
+    });
+  }
+
+  /**
+   * Resolves the Wine executable path from XIVLauncher's launcher.ini.
+   *
+   * The bridge must run under the same Wine installation as the game —
+   * using a different Wine would put it in a different Wine session and
+   * the named pipe / process injection would fail.
+   *
+   * Throws if launcher.ini is missing, WineBinaryPath is absent, or the
+   * resolved executable does not exist.
+   */
+  private resolveWineExecutable(): string {
+    const iniPath = join(app.getPath('home'), '.xlcore', 'launcher.ini');
+    let contents: string;
+    try {
+      contents = readFileSync(iniPath, 'utf8');
+    } catch {
+      throw new Error(`Cannot read XIVLauncher config at ${iniPath}. Is XIVLauncher installed?`);
+    }
+
+    for (const line of contents.split(/\r?\n/)) {
+      const match = line.match(/^WineBinaryPath=(.+)$/);
+      if (match) {
+        const wineBin = join(match[1].trim(), 'wine');
+        if (existsSync(wineBin)) {
+          log.info(`[bridge] Using Wine from XIVLauncher config: ${wineBin}`);
+          return wineBin;
+        }
+        throw new Error(`WineBinaryPath in launcher.ini points to a missing executable: ${wineBin}`);
+      }
+    }
+
+    throw new Error(`WineBinaryPath not found in ${iniPath}. Please configure Wine in XIVLauncher settings.`);
+  }
+
+  /**
+   * Spawns deucalion-bridge.exe under Wine. The bridge will:
+   * 1. Wait for ffxiv_dx11.exe to appear
+   * 2. Inject deucalion.dll
+   * 3. Forward the named pipe over TCP on the given port
+   *
+   * The bridge process runs in the background; Deucalion.startTcp() will
+   * keep retrying the TCP connection until the bridge is ready.
+   */
+  private spawnBridge(dllWinPath: string, port: number): void {
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
+
+    const winePrefix = this.store.get<string>('winePrefix', join(app.getPath('home'), '.xlcore', 'wineprefix'));
+    const bridgeExe = app.isPackaged
+      ? join(app.getAppPath(), '../../deucalion-bridge.exe')
+      : join(__dirname, '../../../tools/build/deucalion-bridge.exe');
+
+    const wineExe = this.resolveWineExecutable();
+    log.info(`[bridge] spawning: ${wineExe} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
+
+    this.bridgeProcess = spawn(wineExe, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
+      env: { ...process.env, WINEPREFIX: winePrefix }
+    });
+
+    const onLine = (data: Buffer) => {
+      for (const line of data.toString().split(/\r?\n/).filter(Boolean)) {
+        log.info('[bridge]', line);
+      }
+    };
+
+    this.bridgeProcess.stdout?.on('data', onLine);
+    this.bridgeProcess.stderr?.on('data', onLine);
+    this.bridgeProcess.on('error', err => log.error('[bridge] spawn error:', err));
+    this.bridgeProcess.on('exit', (code, signal) => {
+      log.info(`[bridge] exited code=${code} signal=${signal}`);
+      this.bridgeProcess = null;
+      // code=null means we killed it intentionally (SIGTERM). Any explicit
+      // non-zero exit code means the bridge itself detected an error (e.g.
+      // deucalion timed out waiting for its pipe after a game patch).
+      if (code !== null && code !== 0 && this.captureInterface) {
+        log.error('[bridge] Abnormal exit — deucalion may not support this FFXIV version yet');
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'DEUCALION_OUTDATED' });
+        this.stop();
+      }
+    });
   }
 
 }

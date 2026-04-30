@@ -42,7 +42,13 @@
     },
     "linux": {
       "icon": "./tools/build/icon.png",
-      "target": ["AppImage"]
+      "target": ["AppImage"],
+      "extraFiles": [
+        {
+          "from": "./tools/build/deucalion-bridge.exe",
+          "to": "deucalion-bridge.exe"
+        }
+      ]
     },
     "win": {
       "icon": "./tools/build/icon.ico",
@@ -91,8 +97,9 @@
     "electron:setup:build-dev:dir": "yarn electron:build && electron-builder -w --dir",
     "electron:setup:build-beta": "del-cli release/* && yarn electron:build && yarn build:electron-dev && electron-builder -w",
     "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
-    "build:appimage": "del-cli release/* && yarn build:electron-prod && yarn electron:build && electron-builder --linux",
-    "build:appimage:publish": "yarn build:electron-prod && yarn electron:build && electron-builder --linux -p always",
+    "download:bridge": "node ./tools/build/download-bridge.js",
+    "build:appimage": "del-cli release/* && yarn download:bridge && yarn build:electron-prod && yarn electron:build && electron-builder --linux",
+    "build:appimage:publish": "yarn download:bridge && yarn build:electron-prod && yarn electron:build && electron-builder --linux -p always",
     "postinstall": "node ./tools/build/postinstall.js",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "del-cli release/* && electron-builder --dir",
@@ -117,7 +124,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "1.2.31",
+    "@ffxiv-teamcraft/pcap-ffxiv": "birkholz/pcap-ffxiv#main",
     "@ungap/structured-clone": "^1.3.0",
     "@xivapi/angular-client": "^2.0.1",
     "@xivapi/nodestone": "^0.2.7",
