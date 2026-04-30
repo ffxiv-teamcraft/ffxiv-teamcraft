@@ -3,7 +3,8 @@ name: Build Linux AppImage
 on:
   push:
     tags:
-      - 'v*.*.*-linux'
+      - 'v*.*.*'
+      - 'v*.*.*-linux*'
   workflow_dispatch:
 
 jobs:
