@@ -451,7 +451,7 @@ export class IpcService {
     });
     this.on('update-downloaded', (_, quitTriggered: boolean) => {
       console.log('UPDATE DOWNLOADED');
-      this.translate.get('UPDATER.New_update_available')
+      this.translate.get('UPDATE.New_update_available')
         .pipe(
           first(),
           switchMap(title => {

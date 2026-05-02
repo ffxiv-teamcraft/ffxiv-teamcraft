@@ -14,6 +14,10 @@ export class AutoUpdater {
   }
 
   connectListeners(): void {
+    // Temporary while testing linux builds with github releases
+    // if (app.isPackaged) {
+    //   autoUpdater.setFeedURL({ url: 'https://update.ffxivteamcraft.com' });
+    // }
     autoUpdater.logger = log;
     autoUpdater.autoInstallOnAppQuit = false;
 
@@ -22,6 +26,9 @@ export class AutoUpdater {
 
     autoUpdater.on('checking-for-update', () => {
       log.log('Checking for update');
+      if (this.win) {
+        this.win.webContents.send('checking-for-update');
+      }
     });
 
     autoUpdater.on('update-available', () => {
@@ -32,11 +39,17 @@ export class AutoUpdater {
     autoUpdater.on('update-not-available', () => {
       log.log('No update found');
       autoUpdaterRunning = false;
+      if (this.win) {
+        this.win.webContents.send('update-not-available');
+      }
     });
 
     autoUpdater.on('error', (err) => {
       log.log('Updater Error', err);
       autoUpdaterRunning = false;
+      if (this.win) {
+        this.win.webContents.send('update-not-available');
+      }
     });
 
     autoUpdater.on('update-downloaded', () => {

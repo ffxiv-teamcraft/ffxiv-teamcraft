@@ -30,6 +30,8 @@ const allowedChannels = [
   'navigate',
   'fishing-state',
   'install-npcap-prompt',
+  'checking-for-update',
+  'update-not-available',
   'update-downloaded',
   'rawsock-needs-admin',
   'app-state',

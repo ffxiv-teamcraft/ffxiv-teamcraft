@@ -166,7 +166,7 @@ export class DatFilesWatcher {
     }
     if (process.platform === 'linux') {
       // On Linux, XIVLauncher stores FFXIV config in ~/.xlcore/ffxivConfig by default.
-      // The user can override this via the settings UI (dat:path:set).
+      // The user can override this via the settings UI.
       return join(app.getPath('home'), '.xlcore', 'ffxivConfig');
     }
     switch (region) {

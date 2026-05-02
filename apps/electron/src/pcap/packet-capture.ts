@@ -372,7 +372,7 @@ export class PacketCapture {
       if (code !== null && code !== 0 && this.captureInterface) {
         log.error('[bridge] Abnormal exit — deucalion may not support this FFXIV version yet');
         this.mainWindow.win.webContents.send('pcap:status', 'error');
-        this.mainWindow.win.webContents.send('pcap:error', { message: 'DEUCALION_OUTDATED' });
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'Default' });
         this.stop();
       }
     });

@@ -317,6 +317,12 @@ export class AppComponent implements OnInit {
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
+        this.ipc.on('checking-for-update', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
+        });
+        this.ipc.on('update-not-available', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.NO_UPDATE);
+        });
         this.ipc.on('displayed', () => {
           setTimeout(() => {
             window.resizeBy(100, 100);

@@ -393,7 +393,7 @@ export class IpcListenersManager {
         config.silent = true;
         this.trayMenu.tray.displayBalloon(config);
       } else {
-        // Linux / macOS: use the cross-platform Notification API
+        // Linux: use the cross-platform Notification API
         new Notification({
           title: config.title || 'FFXIV Teamcraft',
           body: config.content || config.body || '',
