@@ -274,6 +274,26 @@ export class PacketCapture {
   }
 
   /**
+   * Walks up the directory tree from __dirname to find deucalion.dll inside
+   * node_modules. This is necessary in dev/unpackaged builds because webpack
+   * compiles require.resolve() to a numeric module ID rather than a real path.
+   */
+  private findDevDeucalionDll(): string {
+    const rel = 'node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion/deucalion.dll';
+    let dir = __dirname;
+    for (let i = 0; i < 8; i++) {
+      const candidate = join(dir, rel);
+      if (existsSync(candidate)) {
+        return candidate;
+      }
+      const parent = join(dir, '..');
+      if (parent === dir) break;
+      dir = parent;
+    }
+    throw new Error(`Cannot find deucalion.dll in node_modules (searched up from ${__dirname})`);
+  }
+
+  /**
    * Copies the bundled deucalion.dll into the Wine prefix and returns
    * the Windows-style path (C:\deucalion\deucalion.dll) for the bridge.
    * The DLL is packaged in extraFiles and is always in sync with pcap-ffxiv.
@@ -285,7 +305,7 @@ export class PacketCapture {
 
     const dllSrc = app.isPackaged
       ? join(app.getAppPath(), '../../deucalion/deucalion.dll')
-      : join(app.getAppPath(), 'node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion/deucalion.dll');
+      : this.findDevDeucalionDll();
 
     mkdirSync(dllDir, { recursive: true });
     copyFileSync(dllSrc, dllDest);
@@ -356,7 +376,7 @@ export class PacketCapture {
 
     const onLine = (data: Buffer) => {
       for (const line of data.toString().split(/\r?\n/).filter(Boolean)) {
-        log.info('[bridge]', line);
+        log.info(line);
       }
     };
 
