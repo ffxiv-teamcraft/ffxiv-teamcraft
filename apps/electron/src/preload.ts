@@ -78,6 +78,7 @@ const allowedChannels = [
   'log',
   'install-npcap',
   'install-update',
+  'quit-without-update',
   'rawsock',
   'app-state:get',
   'app-state:set',

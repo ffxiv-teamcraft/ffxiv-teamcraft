@@ -449,9 +449,9 @@ export class IpcService {
           }
         });
     });
-    this.on('update-downloaded', () => {
+    this.on('update-downloaded', (_, quitTriggered: boolean) => {
       console.log('UPDATE DOWNLOADED');
-      this.translate.get('UPDATE.New_update_available')
+      this.translate.get('UPDATER.New_update_available')
         .pipe(
           first(),
           switchMap(title => {
@@ -465,6 +465,8 @@ export class IpcService {
         .subscribe(res => {
           if (res) {
             this.send('install-update');
+          } else if (quitTriggered) {
+            this.send('quit-without-update');
           }
         });
     });

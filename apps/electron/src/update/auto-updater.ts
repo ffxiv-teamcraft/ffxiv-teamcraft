@@ -15,49 +15,55 @@ export class AutoUpdater {
 
   connectListeners(): void {
     autoUpdater.logger = log;
+    autoUpdater.autoInstallOnAppQuit = false;
 
     let autoUpdaterRunning = false;
+    let updateDownloaded = false;
+
     autoUpdater.on('checking-for-update', () => {
       log.log('Checking for update');
-      if (this.win) {
-        this.win.webContents.send('checking-for-update', true);
-      }
     });
 
     autoUpdater.on('update-available', () => {
       log.log('Update available');
-      if (this.win) {
-        this.win.webContents.send('update-available', true);
-      }
+      autoUpdaterRunning = false;
     });
 
     autoUpdater.on('update-not-available', () => {
       log.log('No update found');
       autoUpdaterRunning = false;
-      if (this.win) {
-        this.win.webContents.send('update-available', false);
-      }
     });
 
     autoUpdater.on('error', (err) => {
       log.log('Updater Error', err);
       autoUpdaterRunning = false;
-      if (this.win) {
-        this.win.webContents.send('update-available', false);
-      }
     });
 
     autoUpdater.on('update-downloaded', () => {
       log.log('Update downloaded');
-      autoUpdaterRunning = false;
+      updateDownloaded = true;
       if (this.win) {
-        this.win.webContents.send('update-downloaded');
+        this.win.webContents.send('update-downloaded', false);
+      }
+    });
+
+    app.on('before-quit', (event) => {
+      if (updateDownloaded) {
+        updateDownloaded = false;
+        event.preventDefault();
+        if (this.win) {
+          this.win.webContents.send('update-downloaded', true);
+        }
       }
     });
 
     ipcMain.on('install-update', () => {
       (<any>app).isQuitting = true;
       autoUpdater.quitAndInstall();
+    });
+
+    ipcMain.on('quit-without-update', () => {
+      app.quit();
     });
 
     ipcMain.on('update:check', () => {

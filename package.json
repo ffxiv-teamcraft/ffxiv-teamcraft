@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "11.4.22-linux",
+  "version": "11.4.23",
   "license": "MIT",
   "main": "dist/apps/electron/main.js",
   "build": {
@@ -100,7 +100,7 @@
     "download:bridge": "node ./tools/build/download-bridge.js",
     "build:appimage": "del-cli release/* && yarn download:bridge && yarn build:electron-prod && yarn electron:build && electron-builder --linux",
     "build:appimage:publish": "yarn download:bridge && yarn build:electron-prod && yarn electron:build && electron-builder --linux -p always",
-    "postinstall": "node ./tools/build/postinstall.js",
+    "postinstall": "electron-builder install-app-deps",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "del-cli release/* && electron-builder --dir",
     "electron-builder": "electron-builder",
