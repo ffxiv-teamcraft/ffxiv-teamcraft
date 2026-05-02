@@ -1,9 +1,8 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
-import { existsSync, mkdirSync, createWriteStream, readFileSync } from 'fs';
+import { existsSync, mkdirSync, copyFileSync, readFileSync } from 'fs';
 import { spawn, ChildProcess } from 'child_process';
-import * as https from 'https';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app } from 'electron';
@@ -192,9 +191,9 @@ export class PacketCapture {
 
       if (process.platform === 'linux') {
         // On Linux, deucalion-bridge.exe runs under Wine and forwards the deucalion
-        // named pipe over TCP. We download the DLL automatically and spawn the bridge.
+        // named pipe over TCP. The DLL is bundled in the app and copied into the Wine prefix.
         try {
-          const dllWinPath = await this.ensureDeucalion();
+          const dllWinPath = this.installDeucalion();
           this.spawnBridge(dllWinPath, 31594);
           options.bridgeTcpPort = 31594;
         } catch (e) {
@@ -274,93 +273,24 @@ export class PacketCapture {
     }
   }
 
-  // ── Linux bridge helpers ────────────────────────────────────────────────────
-
   /**
-   * Downloads deucalion.dll from GitHub Releases if absent or outdated.
-   * Caches it at $WINEPREFIX/drive_c/deucalion/deucalion.dll and returns
-   * the Windows-style path (C:\deucalion\deucalion.dll) for passing to the bridge.
+   * Copies the bundled deucalion.dll into the Wine prefix and returns
+   * the Windows-style path (C:\deucalion\deucalion.dll) for the bridge.
+   * The DLL is packaged in extraFiles and is always in sync with pcap-ffxiv.
    */
-  private async ensureDeucalion(): Promise<string> {
+  private installDeucalion(): string {
     const winePrefix = this.store.get<string>('winePrefix', join(app.getPath('home'), '.xlcore', 'wineprefix'));
     const dllDir = join(winePrefix, 'drive_c', 'deucalion');
-    const dllPath = join(dllDir, 'deucalion.dll');
-    const winDllPath = 'C:\\deucalion\\deucalion.dll';
+    const dllDest = join(dllDir, 'deucalion.dll');
 
-    let latestTag: string | null = null;
-    try {
-      latestTag = await this.fetchLatestDeucalionTag();
-    } catch (e) {
-      log.warn('[pcap] Could not check deucalion version from GitHub:', e.message);
-    }
+    const dllSrc = app.isPackaged
+      ? join(app.getAppPath(), '../../deucalion/deucalion.dll')
+      : join(app.getAppPath(), 'node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion/deucalion.dll');
 
-    const cachedTag = this.store.get<string>('deucalion:version', null);
-    if (latestTag && cachedTag === latestTag && existsSync(dllPath)) {
-      log.info(`[pcap] deucalion.dll is up to date (${latestTag})`);
-      return winDllPath;
-    }
-
-    if (!latestTag && existsSync(dllPath)) {
-      log.info('[pcap] Using cached deucalion.dll (version check failed)');
-      return winDllPath;
-    }
-
-    const tag = latestTag ?? 'latest';
-    log.info(`[pcap] Downloading deucalion.dll ${tag}…`);
-    this.mainWindow.win.webContents.send('pcap:status', 'downloading-deucalion');
-
-    const downloadUrl = `https://github.com/ff14wed/deucalion/releases/download/${tag}/deucalion.dll`;
     mkdirSync(dllDir, { recursive: true });
-    await this.downloadFile(downloadUrl, dllPath);
-
-    if (latestTag) {
-      this.store.set('deucalion:version', latestTag);
-    }
-    log.info(`[pcap] deucalion.dll saved to ${dllPath}`);
-    return winDllPath;
-  }
-
-  private fetchLatestDeucalionTag(): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const req = https.get(
-        'https://api.github.com/repos/ff14wed/deucalion/releases/latest',
-        { headers: { 'User-Agent': 'ffxiv-teamcraft' } },
-        res => {
-          let body = '';
-          res.on('data', chunk => body += chunk);
-          res.on('end', () => {
-            try {
-              resolve(JSON.parse(body).tag_name);
-            } catch (e) {
-              reject(new Error(`Unexpected response: ${body.slice(0, 120)}`));
-            }
-          });
-        }
-      );
-      req.on('error', reject);
-    });
-  }
-
-  private downloadFile(url: string, dest: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const attempt = (u: string) => {
-        https.get(u, { headers: { 'User-Agent': 'ffxiv-teamcraft' } }, res => {
-          if (res.statusCode === 301 || res.statusCode === 302) {
-            attempt(res.headers.location!);
-            return;
-          }
-          if (res.statusCode !== 200) {
-            reject(new Error(`HTTP ${res.statusCode} downloading ${u}`));
-            return;
-          }
-          const file = createWriteStream(dest);
-          res.pipe(file);
-          file.on('finish', () => file.close(() => resolve()));
-          file.on('error', err => { file.close(); reject(err); });
-        }).on('error', reject);
-      };
-      attempt(url);
-    });
+    copyFileSync(dllSrc, dllDest);
+    log.info(`[pcap] deucalion.dll installed from ${dllSrc}`);
+    return 'C:\\deucalion\\deucalion.dll';
   }
 
   /**

@@ -38,27 +38,8 @@ function get(url) {
 }
 
 async function download(url, dest) {
-  return new Promise((resolve, reject) => {
-    function follow(u) {
-      const opts = new URL(u);
-      https.get(
-        { hostname: opts.hostname, path: opts.pathname + opts.search, headers: { 'User-Agent': 'ffxiv-teamcraft-build' } },
-        (res) => {
-          if (res.statusCode === 301 || res.statusCode === 302) {
-            return follow(res.headers.location);
-          }
-          if (res.statusCode !== 200) {
-            return reject(new Error(`HTTP ${res.statusCode} for ${u}`));
-          }
-          const out = fs.createWriteStream(dest);
-          res.pipe(out);
-          out.on('finish', () => out.close(resolve));
-          out.on('error', reject);
-        }
-      ).on('error', reject);
-    }
-    follow(url);
-  });
+  const buffer = await get(url);
+  fs.writeFileSync(dest, buffer);
 }
 
 async function main() {
