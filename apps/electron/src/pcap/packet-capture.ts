@@ -1,11 +1,11 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
-import { existsSync, mkdirSync, copyFileSync, readFileSync } from 'fs';
+import { existsSync, mkdirSync, copyFileSync, readFileSync, readdirSync } from 'fs';
 import { spawn, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
-import { app } from 'electron';
+import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
 
 export class PacketCapture {
 
@@ -91,6 +91,98 @@ export class PacketCapture {
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
+    });
+
+    if (process.platform === 'linux') {
+      this.registerLinuxPathIpc();
+    }
+  }
+
+  /**
+   * Restarts the deucalion bridge with the current resolved paths if packet
+   * capture is already active. Called after any Linux path setting changes.
+   */
+  private restartBridgeIfActive(): void {
+    if (!this.captureInterface) return;
+    const winePrefix = this.resolveWinePrefix();
+    const wineBin = this.resolveWineBin();
+    if (!winePrefix || !wineBin) {
+      log.warn('[bridge] Cannot restart bridge: paths still unresolved after settings change');
+      return;
+    }
+    try {
+      const dllWinPath = this.installDeucalion(winePrefix);
+      this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
+    } catch (e) {
+      log.error('[bridge] Failed to restart bridge after settings change:', e);
+    }
+  }
+
+  private registerLinuxPathIpc(): void {
+    ipcMain.on('linux:wineprefix:get', (event) => {
+      event.sender.send('linux:wineprefix:value', {
+        resolved: this.resolveWinePrefix(),
+        custom: this.store.get<string | null>('winePrefix', null)
+      });
+    });
+
+    ipcMain.on('linux:wineprefix:set', (event) => {
+      const current = this.resolveWinePrefix();
+      const opts: OpenDialogOptions = {
+        defaultPath: current ?? app.getPath('home'),
+        properties: ['openDirectory']
+      };
+      dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
+        if (result.canceled) return;
+        this.store.set('winePrefix', result.filePaths[0]);
+        event.sender.send('linux:wineprefix:value', {
+          resolved: this.resolveWinePrefix(),
+          custom: this.store.get<string | null>('winePrefix', null)
+        });
+        this.restartBridgeIfActive();
+      });
+    });
+
+    ipcMain.on('linux:wineprefix:reset', (event) => {
+      this.store.delete('winePrefix');
+      event.sender.send('linux:wineprefix:value', {
+        resolved: this.resolveWinePrefix(),
+        custom: null
+      });
+      this.restartBridgeIfActive();
+    });
+
+    ipcMain.on('linux:winebin:get', (event) => {
+      event.sender.send('linux:winebin:value', {
+        resolved: this.resolveWineBin(),
+        custom: this.store.get<string | null>('wineBin', null)
+      });
+    });
+
+    ipcMain.on('linux:winebin:set', (event) => {
+      const current = this.resolveWineBin();
+      const opts: OpenDialogOptions = {
+        defaultPath: current ? join(current, '..') : app.getPath('home'),
+        properties: ['openFile']
+      };
+      dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
+        if (result.canceled) return;
+        this.store.set('wineBin', result.filePaths[0]);
+        event.sender.send('linux:winebin:value', {
+          resolved: this.resolveWineBin(),
+          custom: this.store.get<string | null>('wineBin', null)
+        });
+        this.restartBridgeIfActive();
+      });
+    });
+
+    ipcMain.on('linux:winebin:reset', (event) => {
+      this.store.delete('wineBin');
+      event.sender.send('linux:winebin:value', {
+        resolved: this.resolveWineBin(),
+        custom: null
+      });
+      this.restartBridgeIfActive();
     });
   }
 
@@ -190,11 +282,26 @@ export class PacketCapture {
       };
 
       if (process.platform === 'linux') {
+        // Validate all three Linux-specific paths before attempting bridge setup.
+        // If any cannot be resolved, disable pcap and ask the user to configure them.
+        const winePrefix = this.resolveWinePrefix();
+        const wineBin = this.resolveWineBin();
+        const configDir = this.resolveConfigDir();
+
+        if (!winePrefix || !wineBin || !configDir) {
+          log.error('[pcap] One or more Linux paths could not be resolved:', { winePrefix, wineBin, configDir });
+          this.store.set('machina', false);
+          this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          this.mainWindow.win.webContents.send('pcap:error', { message: 'LINUX_PATHS_NOT_CONFIGURED' });
+          return;
+        }
+
         // On Linux, deucalion-bridge.exe runs under Wine and forwards the deucalion
         // named pipe over TCP. The DLL is bundled in the app and copied into the Wine prefix.
         try {
-          const dllWinPath = this.installDeucalion();
-          this.spawnBridge(dllWinPath, 31594);
+          const dllWinPath = this.installDeucalion(winePrefix);
+          this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
           options.bridgeTcpPort = 31594;
         } catch (e) {
           log.error('[pcap] Failed to set up deucalion bridge:', e);
@@ -274,6 +381,156 @@ export class PacketCapture {
   }
 
   /**
+   * Resolves the Wine prefix directory.
+   * Order: manual store override → Steam compatdata → XIVLauncher protonprefix → XIVLauncher wineprefix → null
+   */
+  /**
+   * Determines which installation manages the FFXIV Wine environment.
+   * Steam is identified by the presence of Proton's initialized FFXIV prefix
+   * (compatdata/39210/pfx), which only exists after the game has actually been
+   * launched through Proton. XIVLauncher is identified by ~/.xlcore existing.
+   * Returns null if neither can be found.
+   */
+  private detectAutoSource(): 'steam' | 'xlcore' | null {
+    const home = app.getPath('home');
+    const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
+    if (existsSync(steamPrefix)) return 'steam';
+    if (existsSync(join(home, '.xlcore'))) return 'xlcore';
+    return null;
+  }
+
+  private resolveWinePrefix(): string | null {
+    const custom = this.store.get<string | null>('winePrefix', null);
+    if (custom && existsSync(custom)) return custom;
+
+    const home = app.getPath('home');
+    const source = this.detectAutoSource();
+
+    if (source === 'steam') {
+      return join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
+    }
+
+    if (source === 'xlcore') {
+      const p = join(home, '.xlcore', 'wineprefix');
+      if (existsSync(p)) return p;
+    }
+
+    return null;
+  }
+
+  /**
+   * Resolves the Wine binary path.
+   * The source (Steam or XIVLauncher) is determined once by detectAutoSource() so that
+   * all three Linux paths always come from the same installation.
+   *
+   * XIVLauncher downloads managed wine to ~/.xlcore/compatibilitytool/wine/<version>/bin/.
+   * Custom setups store the bin directory in RB_WineBinaryPath (current) or the legacy
+   * WineBinaryPath key in launcher.ini.
+   */
+  private resolveWineBin(): string | null {
+    const custom = this.store.get<string | null>('wineBin', null);
+    if (custom && existsSync(custom)) return custom;
+
+    const home = app.getPath('home');
+    const source = this.detectAutoSource();
+
+    if (source === 'steam') {
+      const steamCommon = join(home, '.local', 'share', 'Steam', 'steamapps', 'common');
+      try {
+        const protonDirs = readdirSync(steamCommon)
+          .filter(d => d.toLowerCase().startsWith('proton'))
+          .sort()
+          .reverse();
+        for (const dir of protonDirs) {
+          for (const subpath of ['dist/bin/wine', 'files/bin/wine']) {
+            const candidate = join(steamCommon, dir, subpath);
+            if (existsSync(candidate)) {
+              log.info(`[bridge] Using Wine from Steam Proton: ${candidate}`);
+              return candidate;
+            }
+          }
+        }
+      } catch {
+        // steamapps/common unreadable
+      }
+      return null;
+    }
+
+    if (source === 'xlcore') {
+      // XIVLauncher custom binary path from launcher.ini takes priority over managed wine.
+      // RB_WineBinaryPath is the current key; WineBinaryPath is the legacy fallback.
+      const iniPath = join(home, '.xlcore', 'launcher.ini');
+      if (existsSync(iniPath)) {
+        try {
+          const contents = readFileSync(iniPath, 'utf8');
+          const iniValues: Record<string, string> = {};
+          for (const line of contents.split(/\r?\n/)) {
+            const m = line.match(/^([^=]+)=(.+)$/);
+            if (m) iniValues[m[1].trim()] = m[2].trim();
+          }
+          const binDir = iniValues['RB_WineBinaryPath'] ?? iniValues['WineBinaryPath'];
+          if (binDir) {
+            const candidate = join(binDir, 'wine');
+            if (existsSync(candidate)) {
+              log.info(`[bridge] Using Wine from XIVLauncher config: ${candidate}`);
+              return candidate;
+            }
+          }
+        } catch {
+          // launcher.ini unreadable
+        }
+      }
+
+      // Fall back to XIVLauncher managed wine: ~/.xlcore/compatibilitytool/wine/<version>/bin/wine[64]
+      const managedWineDir = join(home, '.xlcore', 'compatibilitytool', 'wine');
+      if (existsSync(managedWineDir)) {
+        try {
+          const versions = readdirSync(managedWineDir).sort().reverse();
+          for (const version of versions) {
+            const candidate = join(managedWineDir, version, 'bin', 'wine');
+            if (existsSync(candidate)) {
+              log.info(`[bridge] Using Wine from XIVLauncher managed: ${candidate}`);
+              return candidate;
+            }
+          }
+        } catch {
+          // unreadable
+        }
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * Resolves the FFXIV config directory (where CHRXXXXXXX folders live).
+   * Uses the same source as the other Linux resolvers (Steam or XIVLauncher).
+   */
+  private resolveConfigDir(): string | null {
+    const custom = this.store.get<string | null>('dat-watcher:dir', null);
+    if (custom && existsSync(custom)) return custom;
+
+    const home = app.getPath('home');
+    const source = this.detectAutoSource();
+
+    if (source === 'steam') {
+      const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
+      for (const docs of ['Documents', 'My Documents']) {
+        const p = join(steamPrefix, 'drive_c', 'users', 'steamuser', docs, 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+        if (existsSync(p)) return p;
+      }
+      return null;
+    }
+
+    if (source === 'xlcore') {
+      const xlcorePath = join(home, '.xlcore', 'ffxivConfig');
+      if (existsSync(xlcorePath)) return xlcorePath;
+    }
+
+    return null;
+  }
+
+  /**
    * Walks up the directory tree from __dirname to find deucalion.dll inside
    * node_modules. This is necessary in dev/unpackaged builds because webpack
    * compiles require.resolve() to a numeric module ID rather than a real path.
@@ -298,8 +555,7 @@ export class PacketCapture {
    * the Windows-style path (C:\deucalion\deucalion.dll) for the bridge.
    * The DLL is packaged in extraFiles and is always in sync with pcap-ffxiv.
    */
-  private installDeucalion(): string {
-    const winePrefix = this.store.get<string>('winePrefix', join(app.getPath('home'), '.xlcore', 'wineprefix'));
+  private installDeucalion(winePrefix: string): string {
     const dllDir = join(winePrefix, 'drive_c', 'deucalion');
     const dllDest = join(dllDir, 'deucalion.dll');
 
@@ -314,40 +570,6 @@ export class PacketCapture {
   }
 
   /**
-   * Resolves the Wine executable path from XIVLauncher's launcher.ini.
-   *
-   * The bridge must run under the same Wine installation as the game —
-   * using a different Wine would put it in a different Wine session and
-   * the named pipe / process injection would fail.
-   *
-   * Throws if launcher.ini is missing, WineBinaryPath is absent, or the
-   * resolved executable does not exist.
-   */
-  private resolveWineExecutable(): string {
-    const iniPath = join(app.getPath('home'), '.xlcore', 'launcher.ini');
-    let contents: string;
-    try {
-      contents = readFileSync(iniPath, 'utf8');
-    } catch {
-      throw new Error(`Cannot read XIVLauncher config at ${iniPath}. Is XIVLauncher installed?`);
-    }
-
-    for (const line of contents.split(/\r?\n/)) {
-      const match = line.match(/^WineBinaryPath=(.+)$/);
-      if (match) {
-        const wineBin = join(match[1].trim(), 'wine');
-        if (existsSync(wineBin)) {
-          log.info(`[bridge] Using Wine from XIVLauncher config: ${wineBin}`);
-          return wineBin;
-        }
-        throw new Error(`WineBinaryPath in launcher.ini points to a missing executable: ${wineBin}`);
-      }
-    }
-
-    throw new Error(`WineBinaryPath not found in ${iniPath}. Please configure Wine in XIVLauncher settings.`);
-  }
-
-  /**
    * Spawns deucalion-bridge.exe under Wine. The bridge will:
    * 1. Wait for ffxiv_dx11.exe to appear
    * 2. Inject deucalion.dll
@@ -356,43 +578,50 @@ export class PacketCapture {
    * The bridge process runs in the background; Deucalion.startTcp() will
    * keep retrying the TCP connection until the bridge is ready.
    */
-  private spawnBridge(dllWinPath: string, port: number): void {
+  private spawnBridge(dllWinPath: string, port: number, winePrefix: string, wineBin: string): void {
     if (this.bridgeProcess) {
       this.bridgeProcess.kill();
       this.bridgeProcess = null;
     }
 
-    const winePrefix = this.store.get<string>('winePrefix', join(app.getPath('home'), '.xlcore', 'wineprefix'));
     const bridgeExe = app.isPackaged
       ? join(app.getAppPath(), '../../deucalion-bridge.exe')
       : join(__dirname, '../../../tools/build/deucalion-bridge.exe');
 
-    const wineExe = this.resolveWineExecutable();
-    log.info(`[bridge] spawning: ${wineExe} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
+    log.info(`[bridge] spawning: ${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
 
-    this.bridgeProcess = spawn(wineExe, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
+    this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
       env: { ...process.env, WINEPREFIX: winePrefix }
     });
 
-    const onLine = (data: Buffer) => {
+    let stderrBuffer = '';
+
+    this.bridgeProcess.stdout?.on('data', (data: Buffer) => {
       for (const line of data.toString().split(/\r?\n/).filter(Boolean)) {
         log.info(line);
       }
-    };
+    });
 
-    this.bridgeProcess.stdout?.on('data', onLine);
-    this.bridgeProcess.stderr?.on('data', onLine);
+    this.bridgeProcess.stderr?.on('data', (data: Buffer) => {
+      const chunk = data.toString();
+      stderrBuffer += chunk;
+      for (const line of chunk.split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
     this.bridgeProcess.on('error', err => log.error('[bridge] spawn error:', err));
     this.bridgeProcess.on('exit', (code, signal) => {
       log.info(`[bridge] exited code=${code} signal=${signal}`);
       this.bridgeProcess = null;
       // code=null means we killed it intentionally (SIGTERM). Any explicit
-      // non-zero exit code means the bridge itself detected an error (e.g.
-      // deucalion timed out waiting for its pipe after a game patch).
+      // non-zero exit code means the bridge itself detected an error.
       if (code !== null && code !== 0 && this.captureInterface) {
-        log.error('[bridge] Abnormal exit — deucalion may not support this FFXIV version yet');
+        log.error(`[bridge] Abnormal exit (stderr: ${stderrBuffer.trim()})`);
+        this.store.set('machina', false);
+        this.mainWindow.win.webContents.send('toggle-pcap:value', false);
         this.mainWindow.win.webContents.send('pcap:status', 'error');
-        this.mainWindow.win.webContents.send('pcap:error', { message: 'Default' });
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'LINUX_BRIDGE_ERROR' });
         this.stop();
       }
     });

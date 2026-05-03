@@ -99,6 +99,11 @@ export class SettingsPopupComponent {
 
   watchFilesPath = '';
 
+  winePrefixResolved = '';
+  winePrefixCustom: string | null = null;
+  wineBinResolved = '';
+  wineBinCustom: string | null = null;
+
   proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
 
   proxyValue = '';
@@ -289,6 +294,18 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-pac:get');
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
+    if (this.platform.isLinux) {
+      this.ipc.on('linux:wineprefix:value', (event, value: { resolved: string | null, custom: string | null }) => {
+        this.winePrefixResolved = value.resolved ?? '';
+        this.winePrefixCustom = value.custom;
+      });
+      this.ipc.on('linux:winebin:value', (event, value: { resolved: string | null, custom: string | null }) => {
+        this.wineBinResolved = value.resolved ?? '';
+        this.wineBinCustom = value.custom;
+      });
+      this.ipc.send('linux:wineprefix:get');
+      this.ipc.send('linux:winebin:get');
+    }
     this.customTheme = this.settings.customTheme;
   }
 
@@ -315,6 +332,22 @@ export class SettingsPopupComponent {
 
   changeWatchFilesPath(): void {
     this.ipc.send('dat:path:set');
+  }
+
+  changeWinePrefix(): void {
+    this.ipc.send('linux:wineprefix:set');
+  }
+
+  resetWinePrefix(): void {
+    this.ipc.send('linux:wineprefix:reset');
+  }
+
+  changeWineBin(): void {
+    this.ipc.send('linux:winebin:set');
+  }
+
+  resetWineBin(): void {
+    this.ipc.send('linux:winebin:reset');
   }
 
   setProxy({ rule = '', pac = '' } = {}): void {

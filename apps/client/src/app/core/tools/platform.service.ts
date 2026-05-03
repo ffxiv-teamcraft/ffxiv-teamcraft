@@ -17,6 +17,10 @@ export class PlatformService {
     return IS_ELECTRON;
   }
 
+  public get isLinux(): boolean {
+    return this.isDesktop() && navigator.userAgent.toLowerCase().includes('linux');
+  }
+
   public isOverlay(): boolean {
     return window.location.href.indexOf('?overlay') > -1;
   }
