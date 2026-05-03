@@ -1,8 +1,8 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
-import { existsSync, readFileSync, readdirSync } from 'fs';
-import { spawn, ChildProcess } from 'child_process';
+import { existsSync } from 'fs';
+import { spawn, execSync, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
@@ -282,18 +282,29 @@ export class PacketCapture {
       };
 
       if (process.platform === 'linux') {
-        // Validate all three Linux-specific paths before attempting bridge setup.
+        // Validate Linux-specific paths before attempting bridge setup.
         // If any cannot be resolved, disable pcap and ask the user to configure them.
         const winePrefix = this.resolveWinePrefix();
         const wineBin = this.resolveWineBin();
-        const configDir = this.resolveConfigDir();
 
-        if (!winePrefix || !wineBin || !configDir) {
-          log.error('[pcap] One or more Linux paths could not be resolved:', { winePrefix, wineBin, configDir });
+        if (!winePrefix || !wineBin) {
+          log.error('[pcap] One or more Linux paths could not be resolved:', { winePrefix, wineBin });
           this.store.set('machina', false);
           this.mainWindow.win.webContents.send('toggle-pcap:value', false);
           this.mainWindow.win.webContents.send('pcap:status', 'error');
           this.mainWindow.win.webContents.send('pcap:error', { message: 'LINUX_PATHS_NOT_CONFIGURED' });
+          return;
+        }
+
+        // On Linux with Steam the bridge process (Wine) prevents the game from
+        // booting if it starts before ffxiv_dx11.exe is already running.  Fail
+        // fast with a clear error so the user knows to launch the game first.
+        if (!this.isGameRunningOnLinux()) {
+          log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start bridge');
+          this.store.set('machina', false);
+          this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          this.mainWindow.win.webContents.send('pcap:error', { message: 'LINUX_GAME_NOT_RUNNING' });
           return;
         }
 
@@ -341,6 +352,7 @@ export class PacketCapture {
       this.captureInterface.on('ready', () => {
         // Give it 200ms to make sure pipe is created
         setTimeout(() => {
+          if (!this.captureInterface) return;
           this.captureInterface.start()
             .then(() => {
               this.mainWindow.win.webContents.send('pcap:status', 'running');
@@ -381,151 +393,28 @@ export class PacketCapture {
   }
 
   /**
-   * Resolves the Wine prefix directory.
-   * Order: manual store override → Steam compatdata → XIVLauncher protonprefix → XIVLauncher wineprefix → null
+   * Returns true if ffxiv_dx11.exe is currently running as a Wine process.
+   * Uses pgrep to search the full command line so it matches regardless of
+   * how Wine surfaces the executable name in the process table.
    */
-  /**
-   * Determines which installation manages the FFXIV Wine environment.
-   * Steam is identified by the presence of Proton's initialized FFXIV prefix
-   * (compatdata/39210/pfx), which only exists after the game has actually been
-   * launched through Proton. XIVLauncher is identified by ~/.xlcore existing.
-   * Returns null if neither can be found.
-   */
-  private detectAutoSource(): 'steam' | 'xlcore' | null {
-    const home = app.getPath('home');
-    const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
-    if (existsSync(steamPrefix)) return 'steam';
-    if (existsSync(join(home, '.xlcore'))) return 'xlcore';
-    return null;
+  private isGameRunningOnLinux(): boolean {
+    try {
+      execSync('pgrep -f ffxiv_dx11.exe', { stdio: 'ignore' });
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   private resolveWinePrefix(): string | null {
     const custom = this.store.get<string | null>('winePrefix', null);
     if (custom && existsSync(custom)) return custom;
-
-    const home = app.getPath('home');
-    const source = this.detectAutoSource();
-
-    if (source === 'steam') {
-      return join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
-    }
-
-    if (source === 'xlcore') {
-      const p = join(home, '.xlcore', 'wineprefix');
-      if (existsSync(p)) return p;
-    }
-
     return null;
   }
 
-  /**
-   * Resolves the Wine binary path.
-   * The source (Steam or XIVLauncher) is determined once by detectAutoSource() so that
-   * all three Linux paths always come from the same installation.
-   *
-   * XIVLauncher downloads managed wine to ~/.xlcore/compatibilitytool/wine/<version>/bin/.
-   * Custom setups store the bin directory in RB_WineBinaryPath (current) or the legacy
-   * WineBinaryPath key in launcher.ini.
-   */
   private resolveWineBin(): string | null {
     const custom = this.store.get<string | null>('wineBin', null);
     if (custom && existsSync(custom)) return custom;
-
-    const home = app.getPath('home');
-    const source = this.detectAutoSource();
-
-    if (source === 'steam') {
-      const steamCommon = join(home, '.local', 'share', 'Steam', 'steamapps', 'common');
-      try {
-        const protonDirs = readdirSync(steamCommon)
-          .filter(d => d.toLowerCase().startsWith('proton'))
-          .sort()
-          .reverse();
-        for (const dir of protonDirs) {
-          for (const subpath of ['dist/bin/wine', 'files/bin/wine']) {
-            const candidate = join(steamCommon, dir, subpath);
-            if (existsSync(candidate)) {
-              log.info(`[bridge] Using Wine from Steam Proton: ${candidate}`);
-              return candidate;
-            }
-          }
-        }
-      } catch {
-        // steamapps/common unreadable
-      }
-      return null;
-    }
-
-    if (source === 'xlcore') {
-      // XIVLauncher custom binary path from launcher.ini takes priority over managed wine.s
-      const iniPath = join(home, '.xlcore', 'launcher.ini');
-      if (existsSync(iniPath)) {
-        try {
-          const contents = readFileSync(iniPath, 'utf8');
-          const iniValues: Record<string, string> = {};
-          for (const line of contents.split(/\r?\n/)) {
-            const m = line.match(/^([^=]+)=(.+)$/);
-            if (m) iniValues[m[1].trim()] = m[2].trim();
-          }
-          const binDir = iniValues['RB_WineBinaryPath'] ?? iniValues['WineBinaryPath'];
-          if (binDir) {
-            const candidate = join(binDir, 'wine');
-            if (existsSync(candidate)) {
-              log.info(`[bridge] Using Wine from XIVLauncher config: ${candidate}`);
-              return candidate;
-            }
-          }
-        } catch {
-          // launcher.ini unreadable
-        }
-      }
-
-      // Fall back to XIVLauncher managed wine: ~/.xlcore/compatibilitytool/wine/<version>/bin/wine
-      const managedWineDir = join(home, '.xlcore', 'compatibilitytool', 'wine');
-      if (existsSync(managedWineDir)) {
-        try {
-          const versions = readdirSync(managedWineDir).sort().reverse();
-          for (const version of versions) {
-            const candidate = join(managedWineDir, version, 'bin', 'wine');
-            if (existsSync(candidate)) {
-              log.info(`[bridge] Using Wine from XIVLauncher managed: ${candidate}`);
-              return candidate;
-            }
-          }
-        } catch {
-          // unreadable
-        }
-      }
-    }
-
-    return null;
-  }
-
-  /**
-   * Resolves the FFXIV config directory (where CHRXXXXXXX folders live).
-   * Uses the same source as the other Linux resolvers (Steam or XIVLauncher).
-   */
-  private resolveConfigDir(): string | null {
-    const custom = this.store.get<string | null>('dat-watcher:dir', null);
-    if (custom && existsSync(custom)) return custom;
-
-    const home = app.getPath('home');
-    const source = this.detectAutoSource();
-
-    if (source === 'steam') {
-      const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
-      for (const docs of ['Documents', 'My Documents']) {
-        const p = join(steamPrefix, 'drive_c', 'users', 'steamuser', docs, 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
-        if (existsSync(p)) return p;
-      }
-      return null;
-    }
-
-    if (source === 'xlcore') {
-      const xlcorePath = join(home, '.xlcore', 'ffxivConfig');
-      if (existsSync(xlcorePath)) return xlcorePath;
-    }
-
     return null;
   }
 
@@ -591,7 +480,7 @@ export class PacketCapture {
     log.info(`[bridge] spawning: ${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
 
     this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
-      env: { ...process.env, WINEPREFIX: winePrefix }
+      env: { ...process.env, WINEPREFIX: winePrefix, WINEFSYNC: '1', WINESYNC: '1' }
     });
 
     let stderrBuffer = '';

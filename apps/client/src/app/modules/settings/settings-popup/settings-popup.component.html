@@ -766,9 +766,6 @@
             <nz-form-control>
               <nz-input-group [nzAddOnBefore]="winePrefixResolved || ('SETTINGS.Linux_path_not_found' | translate)">
                 <button nz-button nzType="primary" (click)="changeWinePrefix()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
-                @if (winePrefixCustom) {
-                  <button nz-button nzDanger (click)="resetWinePrefix()">{{ 'SETTINGS.Reset_to_auto' | translate }}</button>
-                }
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
@@ -777,9 +774,6 @@
             <nz-form-control>
               <nz-input-group [nzAddOnBefore]="wineBinResolved || ('SETTINGS.Linux_path_not_found' | translate)">
                 <button nz-button nzType="primary" (click)="changeWineBin()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
-                @if (wineBinCustom) {
-                  <button nz-button nzDanger (click)="resetWineBin()">{{ 'SETTINGS.Reset_to_auto' | translate }}</button>
-                }
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
@@ -836,7 +830,7 @@
             {{ 'SETTINGS.Enable_autofill_nq_filter' | translate }}
           </label>
         </div>
-        @if (pcapToggle) {
+        @if (platform.isLinux) {
           <nz-form-item nzFlex fxLayoutAlign="flex-start center">
             <nz-form-label nzFor="ignored-inventories">{{ 'SETTINGS.Char_data_folder' | translate }}</nz-form-label>
             <nz-form-control>

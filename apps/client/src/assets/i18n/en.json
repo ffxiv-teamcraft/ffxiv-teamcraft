@@ -548,11 +548,10 @@
     "Reload_auth_token": "Reload auth token",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
-    "Wine_prefix": "Wine prefix directory",
+    "Wine_prefix": "Wine/Proton prefix directory",
     "Wine_binary": "Wine binary",
 
     "Linux_path_not_found": "Not found",
-    "Reset_to_auto": "Reset to auto-detect",
     "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
@@ -3110,14 +3109,16 @@
     "MISSING_INJECTOR": "Packet capture tooling is blocked by Antivirus",
     "LINUX_PATHS_NOT_CONFIGURED": "Linux paths not configured",
     "LINUX_BRIDGE_ERROR": "Packet capture failed to start",
+    "LINUX_GAME_NOT_RUNNING": "Packet capture failed to start",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
       "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
       "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it.",
-      "LINUX_PATHS_NOT_CONFIGURED": "One or more Linux paths (Wine prefix, Wine binary, or FFXIV config directory) could not be found. Please configure them in Settings.",
-      "LINUX_BRIDGE_ERROR": "Check your Wine settings and re-enable packet capture. If the issue persists, check the application logs for more details."
+      "LINUX_PATHS_NOT_CONFIGURED": "One or more Linux paths (Wine/Proton prefix, Wine binary, or FFXIV config directory) could not be found. Please configure them in Settings.",
+      "LINUX_BRIDGE_ERROR": "Check your Wine settings and re-enable packet capture. If the issue persists, check the application logs for more details.",
+      "LINUX_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
     }
   },
   "ISLAND_SANCTUARY": {
