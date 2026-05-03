@@ -1,7 +1,7 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
-import { existsSync, mkdirSync, copyFileSync, readFileSync, readdirSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import { spawn, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
@@ -111,7 +111,7 @@ export class PacketCapture {
       return;
     }
     try {
-      const dllWinPath = this.installDeucalion(winePrefix);
+      const dllWinPath = this.toWinePath(this.getDeucalionDllPath());
       this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
     } catch (e) {
       log.error('[bridge] Failed to restart bridge after settings change:', e);
@@ -298,9 +298,9 @@ export class PacketCapture {
         }
 
         // On Linux, deucalion-bridge.exe runs under Wine and forwards the deucalion
-        // named pipe over TCP. The DLL is bundled in the app and copied into the Wine prefix.
+        // named pipe over TCP.
         try {
-          const dllWinPath = this.installDeucalion(winePrefix);
+          const dllWinPath = this.toWinePath(this.getDeucalionDllPath());
           this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
           options.bridgeTcpPort = 31594;
         } catch (e) {
@@ -316,7 +316,7 @@ export class PacketCapture {
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = join(app.getAppPath(), '../../deucalion/deucalion.dll');
+        options.deucalionDllPath = this.getDeucalionDllPath();
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
@@ -457,8 +457,7 @@ export class PacketCapture {
     }
 
     if (source === 'xlcore') {
-      // XIVLauncher custom binary path from launcher.ini takes priority over managed wine.
-      // RB_WineBinaryPath is the current key; WineBinaryPath is the legacy fallback.
+      // XIVLauncher custom binary path from launcher.ini takes priority over managed wine.s
       const iniPath = join(home, '.xlcore', 'launcher.ini');
       if (existsSync(iniPath)) {
         try {
@@ -481,7 +480,7 @@ export class PacketCapture {
         }
       }
 
-      // Fall back to XIVLauncher managed wine: ~/.xlcore/compatibilitytool/wine/<version>/bin/wine[64]
+      // Fall back to XIVLauncher managed wine: ~/.xlcore/compatibilitytool/wine/<version>/bin/wine
       const managedWineDir = join(home, '.xlcore', 'compatibilitytool', 'wine');
       if (existsSync(managedWineDir)) {
         try {
@@ -551,22 +550,23 @@ export class PacketCapture {
   }
 
   /**
-   * Copies the bundled deucalion.dll into the Wine prefix and returns
-   * the Windows-style path (C:\deucalion\deucalion.dll) for the bridge.
-   * The DLL is packaged in extraFiles and is always in sync with pcap-ffxiv.
+   * Returns the native (Linux/Windows) path to the bundled deucalion.dll.
+   * Packaged builds find it in extraFiles next to the app; dev builds walk up
+   * from __dirname to locate it inside node_modules.
    */
-  private installDeucalion(winePrefix: string): string {
-    const dllDir = join(winePrefix, 'drive_c', 'deucalion');
-    const dllDest = join(dllDir, 'deucalion.dll');
+  private getDeucalionDllPath(): string {
+    if (app.isPackaged) {
+      return join(app.getAppPath(), '../../deucalion/deucalion.dll');
+    }
+    return this.findDevDeucalionDll();
+  }
 
-    const dllSrc = app.isPackaged
-      ? join(app.getAppPath(), '../../deucalion/deucalion.dll')
-      : this.findDevDeucalionDll();
-
-    mkdirSync(dllDir, { recursive: true });
-    copyFileSync(dllSrc, dllDest);
-    log.info(`[pcap] deucalion.dll installed from ${dllSrc}`);
-    return 'C:\\deucalion\\deucalion.dll';
+  /**
+   * Converts a Linux absolute path to a Wine Z: drive path.
+   * Wine's Z: drive maps directly to the Linux root filesystem.
+   */
+  private toWinePath(linuxPath: string): string {
+    return 'Z:' + linuxPath.replace(/\//g, '\\');
   }
 
   /**
