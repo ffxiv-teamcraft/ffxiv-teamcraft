@@ -99,10 +99,9 @@ export class SettingsPopupComponent {
 
   watchFilesPath = '';
 
-  winePrefixResolved = '';
-  winePrefixCustom: string | null = null;
-  wineBinResolved = '';
-  wineBinCustom: string | null = null;
+  winePrefixPath = '';
+
+  wineBinPath = '';
 
   proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
 
@@ -295,13 +294,11 @@ export class SettingsPopupComponent {
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
     if (this.platform.isLinux) {
-      this.ipc.on('linux:wineprefix:value', (event, value: { resolved: string | null, custom: string | null }) => {
-        this.winePrefixResolved = value.resolved ?? '';
-        this.winePrefixCustom = value.custom;
+      this.ipc.on('linux:wineprefix:value', (event, value: string) => {
+        this.winePrefixPath = value ?? '';
       });
-      this.ipc.on('linux:winebin:value', (event, value: { resolved: string | null, custom: string | null }) => {
-        this.wineBinResolved = value.resolved ?? '';
-        this.wineBinCustom = value.custom;
+      this.ipc.on('linux:winebin:value', (event, value: string) => {
+        this.wineBinPath = value ?? '';
       });
       this.ipc.send('linux:wineprefix:get');
       this.ipc.send('linux:winebin:get');

@@ -764,7 +764,7 @@
           <nz-form-item nzFlex fxLayoutAlign="flex-start center">
             <nz-form-label>{{ 'SETTINGS.Wine_prefix' | translate }}</nz-form-label>
             <nz-form-control>
-              <nz-input-group [nzAddOnBefore]="winePrefixResolved || ('SETTINGS.Linux_path_not_found' | translate)">
+              <nz-input-group [nzAddOnBefore]="winePrefixPath || ('SETTINGS.Linux_path_not_found' | translate)">
                 <button nz-button nzType="primary" (click)="changeWinePrefix()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
               </nz-input-group>
             </nz-form-control>
@@ -772,7 +772,7 @@
           <nz-form-item nzFlex fxLayoutAlign="flex-start center">
             <nz-form-label>{{ 'SETTINGS.Wine_binary' | translate }}</nz-form-label>
             <nz-form-control>
-              <nz-input-group [nzAddOnBefore]="wineBinResolved || ('SETTINGS.Linux_path_not_found' | translate)">
+              <nz-input-group [nzAddOnBefore]="wineBinPath || ('SETTINGS.Linux_path_not_found' | translate)">
                 <button nz-button nzType="primary" (click)="changeWineBin()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
               </nz-input-group>
             </nz-form-control>

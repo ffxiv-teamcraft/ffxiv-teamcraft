@@ -99,15 +99,15 @@ export class PacketCapture {
   }
 
   /**
-   * Restarts the deucalion bridge with the current resolved paths if packet
-   * capture is already active. Called after any Linux path setting changes.
+   * Restarts the deucalion bridge with the current paths if packet capture is
+   * already active. Called after any Linux path setting changes.
    */
   private restartBridgeIfActive(): void {
     if (!this.captureInterface) return;
-    const winePrefix = this.resolveWinePrefix();
-    const wineBin = this.resolveWineBin();
+    const winePrefix = this.store.get<string>('winePrefix', '');
+    const wineBin = this.store.get<string>('wineBin', '');
     if (!winePrefix || !wineBin) {
-      log.warn('[bridge] Cannot restart bridge: paths still unresolved after settings change');
+      log.warn('[bridge] Cannot restart bridge: paths not configured after settings change');
       return;
     }
     try {
@@ -120,47 +120,35 @@ export class PacketCapture {
 
   private registerLinuxPathIpc(): void {
     ipcMain.on('linux:wineprefix:get', (event) => {
-      event.sender.send('linux:wineprefix:value', {
-        resolved: this.resolveWinePrefix(),
-        custom: this.store.get<string | null>('winePrefix', null)
-      });
+      event.sender.send('linux:wineprefix:value', this.store.get<string>('winePrefix', ''));
     });
 
     ipcMain.on('linux:wineprefix:set', (event) => {
-      const current = this.resolveWinePrefix();
+      const current = this.store.get<string>('winePrefix', '');
       const opts: OpenDialogOptions = {
-        defaultPath: current ?? app.getPath('home'),
+        defaultPath: current || app.getPath('home'),
         properties: ['openDirectory']
       };
       dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
         if (result.canceled) return;
         this.store.set('winePrefix', result.filePaths[0]);
-        event.sender.send('linux:wineprefix:value', {
-          resolved: this.resolveWinePrefix(),
-          custom: this.store.get<string | null>('winePrefix', null)
-        });
+        event.sender.send('linux:wineprefix:value', this.store.get<string>('winePrefix', ''));
         this.restartBridgeIfActive();
       });
     });
 
     ipcMain.on('linux:wineprefix:reset', (event) => {
       this.store.delete('winePrefix');
-      event.sender.send('linux:wineprefix:value', {
-        resolved: this.resolveWinePrefix(),
-        custom: null
-      });
+      event.sender.send('linux:wineprefix:value', '');
       this.restartBridgeIfActive();
     });
 
     ipcMain.on('linux:winebin:get', (event) => {
-      event.sender.send('linux:winebin:value', {
-        resolved: this.resolveWineBin(),
-        custom: this.store.get<string | null>('wineBin', null)
-      });
+      event.sender.send('linux:winebin:value', this.store.get<string>('wineBin', ''));
     });
 
     ipcMain.on('linux:winebin:set', (event) => {
-      const current = this.resolveWineBin();
+      const current = this.store.get<string>('wineBin', '');
       const opts: OpenDialogOptions = {
         defaultPath: current ? join(current, '..') : app.getPath('home'),
         properties: ['openFile']
@@ -168,20 +156,14 @@ export class PacketCapture {
       dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
         if (result.canceled) return;
         this.store.set('wineBin', result.filePaths[0]);
-        event.sender.send('linux:winebin:value', {
-          resolved: this.resolveWineBin(),
-          custom: this.store.get<string | null>('wineBin', null)
-        });
+        event.sender.send('linux:winebin:value', this.store.get<string>('wineBin', ''));
         this.restartBridgeIfActive();
       });
     });
 
     ipcMain.on('linux:winebin:reset', (event) => {
       this.store.delete('wineBin');
-      event.sender.send('linux:winebin:value', {
-        resolved: this.resolveWineBin(),
-        custom: null
-      });
+      event.sender.send('linux:winebin:value', '');
       this.restartBridgeIfActive();
     });
   }
@@ -282,13 +264,11 @@ export class PacketCapture {
       };
 
       if (process.platform === 'linux') {
-        // Validate Linux-specific paths before attempting bridge setup.
-        // If any cannot be resolved, disable pcap and ask the user to configure them.
-        const winePrefix = this.resolveWinePrefix();
-        const wineBin = this.resolveWineBin();
+        const winePrefix = this.store.get<string>('winePrefix', '');
+        const wineBin = this.store.get<string>('wineBin', '');
 
         if (!winePrefix || !wineBin) {
-          log.error('[pcap] One or more Linux paths could not be resolved:', { winePrefix, wineBin });
+          log.error('[pcap] One or more Linux paths are not configured:', { winePrefix, wineBin });
           this.store.set('machina', false);
           this.mainWindow.win.webContents.send('toggle-pcap:value', false);
           this.mainWindow.win.webContents.send('pcap:status', 'error');
@@ -406,18 +386,6 @@ export class PacketCapture {
     } catch {
       return false;
     }
-  }
-
-  private resolveWinePrefix(): string | null {
-    const custom = this.store.get<string | null>('winePrefix', null);
-    if (custom && existsSync(custom)) return custom;
-    return null;
-  }
-
-  private resolveWineBin(): string | null {
-    const custom = this.store.get<string | null>('wineBin', null);
-    if (custom && existsSync(custom)) return custom;
-    return null;
   }
 
   /**
