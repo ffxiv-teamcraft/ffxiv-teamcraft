@@ -760,7 +760,7 @@
             </div>
           </div>
         </nz-card>
-        @if (platform.isLinux) {
+        @if (pcapToggle) {
           <nz-form-item nzFlex fxLayoutAlign="flex-start center">
             <nz-form-label>{{ 'SETTINGS.Wine_prefix' | translate }}</nz-form-label>
             <nz-form-control>
