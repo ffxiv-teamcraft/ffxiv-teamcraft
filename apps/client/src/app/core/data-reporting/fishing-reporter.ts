@@ -52,13 +52,14 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.category === 320)
     );
 
-    const fishCaught$ = actorControlSelf$.pipe(
+    const fishCaught$ = packets$.pipe(
+      ofMessageType('fishCaught'),
       map(packet => {
         return {
-          id: packet.param1,
-          hq: (packet.param3 >> 4 & 1) === 1,
-          moochable: (packet.param3 & 0x0000000F) === 5,
-          size: packet.param2 >> 16
+          id: packet.itemId,
+          hq: (packet.flags >> 6 & 1) === 1,
+          moochable: (packet.flags & 5) === 5,
+          size: packet.size
         };
       })
     );
@@ -362,6 +363,7 @@ export class FishingReporter implements DataReporter {
           ) && throwData.weatherId !== null && baitId > 0;
       }),
       map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name]) => {
+        console.log([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name])
         const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
         const entry: FishingReport = {
           itemId: fish.id,
