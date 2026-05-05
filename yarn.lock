@@ -3019,24 +3019,17 @@
     nan "^2.22.0"
     prebuild-install "^7.1.2"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.30":
-  version "1.2.30"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.30.tgz#8a71036b3a171b28281d3a3606421fb4d760fc73"
-  integrity sha512-91ho6VSsFa3KJwi1sa9xswbCFWW5HUn4tCIJj4EZinwMLoIRvqnekkLr9ORbIFJVgg4TTqs3XTF6T2p5unPdzg==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.31":
+  version "1.2.31"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.31.tgz#491e8592bd99295d7b70f510dc78ea6f71a67abd"
+  integrity sha512-TXLWpspxwrfgR29BxsEq69JsEzETmX/qmghRkb/T8hom6lV5ShIIoCg5zxWgOmG8b7aSC5P/lvDXTqyfNTx3dw==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.15"
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.7.3", "@ffxiv-teamcraft/simulator@^3.7.3":
+"@ffxiv-teamcraft/simulator@^3.7.3":
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.7.3.tgz#38cb2bb4605665a9cd20cd86c265f6ec81485ed4"
   integrity sha512-hXr0YwGwEFwNqkoBrQiJ4q/+nKRHVzIPSKQxGNeykT8o+ymyT/bufZx9ioB1nwb1e7wse9Tt8PTehaYBIfhSTA==
-  dependencies:
-    "@kaiu/serializer" "^1.4.0"
-
-"@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.6.0.tgz#16aac748708e6001091dd6034b3d2758c922074a"
-  integrity sha512-ttWs/dKUo6UL5Z/9fEQLmuVRYdnRBPJFo31d6XcBb9GM/IkPnngco7CNWr/CispjlqXwFr+PTLVLOawQOlPTsg==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
@@ -22675,7 +22668,6 @@ wordwrapjs@^4.0.0:
     typical "^5.2.0"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
-  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==

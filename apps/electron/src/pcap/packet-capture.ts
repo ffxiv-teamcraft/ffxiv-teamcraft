@@ -27,6 +27,7 @@ export class PacketCapture {
     'eventPlay4',
     'eventPlay8',
     'eventStart',
+    'fishCaught',
     'freeCompanyInfo',
     'freeCompanyDialog',
     'gatheringLog',

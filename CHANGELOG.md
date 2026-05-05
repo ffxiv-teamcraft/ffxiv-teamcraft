@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.22...v11.4.23) (2026-05-05)
+
+
+### Bug Fixes
+
+* support for new fishing-related packet ([73706ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73706ce112ec8bf1429c09a723f5ad1341a78a7e))
+* support for new fishing-related packet ([f34757a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f34757a3ab4ddf59ad0b323f40d77fc123b1f143))
+
 ### [11.4.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.21...v11.4.22) (2026-04-29)
 
 

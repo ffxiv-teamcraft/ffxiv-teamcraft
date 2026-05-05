@@ -46,19 +46,16 @@ export class FishingReporter implements DataReporter {
     const packets$ = _packets$.pipe(
       filter(packet => packet.header.sourceActor === packet.header.targetActor)
     );
-    const actorControlSelf$ = packets$.pipe(
-      ofMessageType('actorControlSelf'),
-      toIpcData(),
-      filter(packet => packet.category === 320)
-    );
 
-    const fishCaught$ = actorControlSelf$.pipe(
+    const fishCaught$ = packets$.pipe(
+      ofMessageType('fishCaught'),
+      toIpcData(),
       map(packet => {
         return {
-          id: packet.param1,
-          hq: (packet.param3 >> 4 & 1) === 1,
-          moochable: (packet.param3 & 0x0000000F) === 5,
-          size: packet.param2 >> 16
+          id: packet.itemId,
+          hq: (packet.flags >> 6 & 1) === 1,
+          moochable: (packet.flags & 5) === 5,
+          size: packet.size
         };
       })
     );
