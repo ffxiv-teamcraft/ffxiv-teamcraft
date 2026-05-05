@@ -335,16 +335,8 @@ export class SettingsPopupComponent {
     this.ipc.send('linux:wineprefix:set');
   }
 
-  resetWinePrefix(): void {
-    this.ipc.send('linux:wineprefix:reset');
-  }
-
   changeWineBin(): void {
     this.ipc.send('linux:winebin:set');
-  }
-
-  resetWineBin(): void {
-    this.ipc.send('linux:winebin:reset');
   }
 
   setProxy({ rule = '', pac = '' } = {}): void {

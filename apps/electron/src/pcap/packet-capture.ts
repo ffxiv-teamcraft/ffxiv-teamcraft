@@ -137,12 +137,6 @@ export class PacketCapture {
       });
     });
 
-    ipcMain.on('linux:wineprefix:reset', (event) => {
-      this.store.delete('winePrefix');
-      event.sender.send('linux:wineprefix:value', '');
-      this.restartBridgeIfActive();
-    });
-
     ipcMain.on('linux:winebin:get', (event) => {
       event.sender.send('linux:winebin:value', this.store.get<string>('wineBin', ''));
     });
@@ -159,12 +153,6 @@ export class PacketCapture {
         event.sender.send('linux:winebin:value', this.store.get<string>('wineBin', ''));
         this.restartBridgeIfActive();
       });
-    });
-
-    ipcMain.on('linux:winebin:reset', (event) => {
-      this.store.delete('wineBin');
-      event.sender.send('linux:winebin:value', '');
-      this.restartBridgeIfActive();
     });
   }
 
