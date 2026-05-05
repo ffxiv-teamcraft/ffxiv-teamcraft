@@ -3019,9 +3019,9 @@
     node-abi "^4.28.0"
     prebuild-install "^7.1.3"
 
-"@ffxiv-teamcraft/pcap-ffxiv@birkholz/pcap-ffxiv#main":
-  version "1.2.29"
-  resolved "https://codeload.github.com/birkholz/pcap-ffxiv/tar.gz/8f8c4ce11bb29138691818f8b4b3c87ba1afc397"
+"@ffxiv-teamcraft/pcap-ffxiv@birkholz/pcap-ffxiv#pr/tcp-bridge":
+  version "1.2.30"
+  resolved "https://codeload.github.com/birkholz/pcap-ffxiv/tar.gz/f54a2375f6f7330cdefff50a9add7eec156269e2"
   optionalDependencies:
     "@ffxiv-teamcraft/dll-inject" "git+https://github.com/birkholz/dll-inject.git#main"
 

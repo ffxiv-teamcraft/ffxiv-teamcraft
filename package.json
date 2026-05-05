@@ -124,7 +124,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "birkholz/pcap-ffxiv#main",
+    "@ffxiv-teamcraft/pcap-ffxiv": "birkholz/pcap-ffxiv#pr/tcp-bridge",
     "@ungap/structured-clone": "^1.3.0",
     "@xivapi/angular-client": "^2.0.1",
     "@xivapi/nodestone": "^0.2.7",
