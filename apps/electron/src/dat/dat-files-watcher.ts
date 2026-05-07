@@ -1,5 +1,5 @@
 import log from 'electron-log';
-import { FSWatcher, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
+import { existsSync, FSWatcher, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
 import { join } from 'path';
 import { MainWindow } from '../window/main-window';
 import BufferReader from 'buffer-reader';
@@ -164,13 +164,19 @@ export class DatFilesWatcher {
     if (customDir) {
       return customDir;
     }
+    if (process.platform === 'darwin') {
+      const xivOnMacConfigPath = join(app.getPath('appData'), 'XIV on Mac', 'ffxivConfig');
+      if (existsSync(xivOnMacConfigPath)) {
+        return xivOnMacConfigPath;
+      }
+    }
     switch (region) {
       case 'KR':
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - KOREA`;
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - KOREA');
       case 'CN':
         return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
       default:
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
     }
   }
 

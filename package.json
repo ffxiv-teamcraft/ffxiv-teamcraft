@@ -32,7 +32,8 @@
       ]
     },
     "mac": {
-      "category": "public.app-category.games"
+      "category": "public.app-category.games",
+      "icon": "./tools/build/icon.icns"
     },
     "win": {
       "icon": "./tools/build/icon.ico",
@@ -85,6 +86,8 @@
     "electron:setup:build-dev:dir": "yarn electron:build && electron-builder -w --dir",
     "electron:setup:build-beta": "del-cli release/* && yarn electron:build && yarn build:electron-dev && electron-builder -w",
     "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
+    "electron:setup:build-mac": "del-cli release/* && yarn electron:build && yarn build:electron-prod && electron-builder -m -c.npmRebuild=false",
+    "electron:setup:build-mac:dir": "yarn electron:build && yarn build:electron-prod && electron-builder -m --dir -c.npmRebuild=false",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "del-cli release/* && electron-builder --dir",
