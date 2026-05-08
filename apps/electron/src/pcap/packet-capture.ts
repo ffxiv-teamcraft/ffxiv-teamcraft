@@ -167,6 +167,15 @@ export class PacketCapture {
 
   private async startGlobalPcap(region: Region): Promise<void> {
     try {
+      if (process.platform === 'darwin') {
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error', {
+          message: 'MACOS_PCAP_UNSUPPORTED'
+        });
+        log.warn('[pcap] Packet capture is not supported on macOS yet.');
+        return;
+      }
+      
       const { CaptureInterface, ErrorCodes } = await import('@ffxiv-teamcraft/pcap-ffxiv');
       const options: Partial<CaptureInterfaceOptions> = {
         region: region,

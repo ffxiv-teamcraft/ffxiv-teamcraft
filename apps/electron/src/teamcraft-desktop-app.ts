@@ -8,6 +8,7 @@ import { PacketCapture } from './pcap/packet-capture';
 import log from 'electron-log';
 import { Constants } from './constants';
 import { join } from 'path';
+import { pathToFileURL } from 'url';
 import { parse } from 'url';
 import { MetricsSystem } from './ipc/metrics-system';
 
@@ -160,10 +161,8 @@ export class TeamcraftDesktopApp {
       });
     });
 
-    const resolveHtmlPath = (htmlFileName) => {
-      const url = new URL(join(__dirname, htmlFileName));
-      url.pathname = htmlFileName;
-      return url.href;
+    const resolveHtmlPath = (htmlFileName: string): string => {
+      return pathToFileURL(join(__dirname, htmlFileName)).href;
     };
 
     loaderWindow.loadURL(resolveHtmlPath('loader.html'));
