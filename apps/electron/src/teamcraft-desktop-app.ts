@@ -8,7 +8,7 @@ import { PacketCapture } from './pcap/packet-capture';
 import log from 'electron-log';
 import { Constants } from './constants';
 import { join } from 'path';
-import { parse } from 'url';
+import { parse, pathToFileURL } from 'url';
 import { MetricsSystem } from './ipc/metrics-system';
 
 export class TeamcraftDesktopApp {
@@ -109,7 +109,7 @@ export class TeamcraftDesktopApp {
       show: false,
       frame: false,
       backgroundColor: '#2f3237',
-      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
+      icon: join(Constants.BASE_APP_PATH, 'assets', 'app-icon.png'),
       webPreferences: {
         preload: join(__dirname, 'src/preload.js')
       }
@@ -160,10 +160,8 @@ export class TeamcraftDesktopApp {
       });
     });
 
-    const resolveHtmlPath = (htmlFileName) => {
-      const url = new URL(join(__dirname, htmlFileName));
-      url.pathname = htmlFileName;
-      return url.href;
+    const resolveHtmlPath = (htmlFileName: string): string => {
+      return pathToFileURL(join(__dirname, htmlFileName)).href;
     };
 
     loaderWindow.loadURL(resolveHtmlPath('loader.html'));

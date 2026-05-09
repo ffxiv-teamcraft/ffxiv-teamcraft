@@ -24,6 +24,17 @@
         ]
       }
     ],
+    "linux": {
+      "extraFiles": [
+        {
+          "from": "./deucalion-bridge",
+          "to": "deucalion-bridge",
+          "filter": [
+            "**/*.exe"
+          ]
+        }
+      ]
+    },
     "asarUnpack": "./dist/apps/electron/workers/lodestone.js",
     "protocols": {
       "name": "ffxiv-teamcraft",
@@ -32,7 +43,16 @@
       ]
     },
     "mac": {
-      "category": "public.app-category.games"
+      "category": "public.app-category.games",
+      "extraFiles": [
+        {
+          "from": "./deucalion-bridge",
+          "to": "deucalion-bridge",
+          "filter": [
+            "**/*.exe"
+          ]
+        }
+      ]
     },
     "win": {
       "icon": "./tools/build/icon.ico",
@@ -109,7 +129,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "1.2.31",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.2.32",
     "@ungap/structured-clone": "^1.3.0",
     "@xivapi/angular-client": "^2.0.1",
     "@xivapi/nodestone": "^0.2.7",
@@ -117,6 +137,7 @@
     "electron-log": "^5.1.4",
     "electron-store": "^8.2.0",
     "electron-fetch": "^1.9.1",
+    "electron-updater": "^6.8.3",
     "flexsearch-ts": "^0.7.35",
     "fs-extra": "^11.2.0",
     "jwt-decode": "^4.0.0",

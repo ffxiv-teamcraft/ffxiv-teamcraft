@@ -1,6 +1,8 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
+import { existsSync } from 'fs';
+import { spawn, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app } from 'electron';
@@ -83,6 +85,8 @@ export class PacketCapture {
 
   private captureInterface: CaptureInterface;
 
+  private bridgeProcess: ChildProcess | null = null;
+
   private overlayListeners = [];
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
@@ -104,6 +108,12 @@ export class PacketCapture {
       await this.captureInterface.stop();
       delete this.captureInterface;
     }
+
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
+
     return Promise.resolve();
   }
 
@@ -189,7 +199,7 @@ export class PacketCapture {
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
+        options.deucalionDllPath = this.getDeucalionDllPath();
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
@@ -214,6 +224,7 @@ export class PacketCapture {
       this.captureInterface.on('ready', () => {
         // Give it 200ms to make sure pipe is created
         setTimeout(() => {
+          if (!this.captureInterface) return;
           this.captureInterface.start()
             .then(() => {
               this.mainWindow.win.webContents.send('pcap:status', 'running');
@@ -244,13 +255,111 @@ export class PacketCapture {
       if (e.message.includes('dll-inject')) {
         this.mainWindow.win.webContents.send('pcap:status', 'error');
         this.mainWindow.win.webContents.send('pcap:error', {
-          message: "MISSING_INJECTOR"
+          message: 'MISSING_INJECTOR'
         });
-        log.error("[pcap] MISSING_INJECTOR");
+        log.error('[pcap] MISSING_INJECTOR');
       } else {
-        log.error(e)
+        log.error(e);
       }
     }
+  }
+
+  /**
+   * Walks up the directory tree from __dirname to find a file at the given
+   * relative path. Used in dev/unpackaged builds where webpack compiles
+   * require.resolve() to a numeric module ID rather than a real path.
+   */
+  private findDevFile(relativePath: string): string {
+    let dir = __dirname;
+    for (let i = 0; i < 8; i++) {
+      const candidate = join(dir, relativePath);
+      if (existsSync(candidate)) {
+        return candidate;
+      }
+      const parent = join(dir, '..');
+      if (parent === dir) break;
+      dir = parent;
+    }
+    throw new Error(`Cannot find ${relativePath} in dev tree, searched up from ${__dirname}`);
+  }
+
+  /**
+   * Returns the native path to the bundled deucalion.dll.
+   * Packaged builds find it in extraFiles next to the app; dev builds walk
+   * up from __dirname to locate it inside node_modules.
+   */
+  private getDeucalionDllPath(): string {
+    if (app.isPackaged) {
+      return join(app.getAppPath(), '../../deucalion/deucalion.dll');
+    }
+    return this.findDevFile('node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion/deucalion.dll');
+  }
+
+  /**
+   * Returns the path to deucalion-bridge.exe.
+   * Packaged builds find it via extraFiles (same layout as deucalion.dll);
+   * dev builds walk up from __dirname to the repo-root deucalion-bridge folder.
+   */
+  private getBridgeExePath(): string {
+    if (app.isPackaged) {
+      return join(app.getAppPath(), '../../deucalion-bridge/deucalion-bridge.exe');
+    }
+    return this.findDevFile('deucalion-bridge/deucalion-bridge.exe');
+  }
+
+  /**
+   * Spawns deucalion-bridge.exe under the given Wine binary and prefix.
+   * The bridge injects deucalion.dll into the game process and forwards
+   * the named pipe over TCP on the given port.
+   *
+   * The bridge process runs in the background; pcap-ffxiv will retry the
+   * TCP connection until the bridge is ready.
+   */
+  protected spawnBridge(dllWinPath: string, port: number, winePrefix: string, wineBin: string, extraEnv: Record<string, string> = {}): void {
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
+
+    const bridgeExe = this.getBridgeExePath();
+    log.info(`[bridge] spawning: ${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
+
+    this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
+      env: { ...process.env, WINEPREFIX: winePrefix, ...extraEnv }
+    });
+
+    let stderrBuffer = '';
+
+    this.bridgeProcess.stdout?.on('data', (data: Buffer) => {
+      for (const line of data.toString().split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
+    this.bridgeProcess.stderr?.on('data', (data: Buffer) => {
+      const chunk = data.toString();
+      stderrBuffer += chunk;
+      for (const line of chunk.split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
+    this.bridgeProcess.on('error', (err) => log.error('[bridge] spawn error:', err));
+
+    this.bridgeProcess.on('exit', (code, signal) => {
+      log.info(`[bridge] exited code=${code} signal=${signal}`);
+      this.bridgeProcess = null;
+      // code=null means we killed it intentionally (SIGTERM). Any explicit
+      // non-zero exit code means the bridge itself detected an error.
+      if (code !== null && code !== 0 && this.captureInterface) {
+        log.error(`[bridge] Abnormal exit (stderr: ${stderrBuffer.trim()})`);
+        this.store.set('machina', false);
+        this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_ERROR' });
+        this.stop();
+      }
+    });
   }
 
 }
