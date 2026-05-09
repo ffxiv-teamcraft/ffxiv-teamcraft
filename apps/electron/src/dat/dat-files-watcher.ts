@@ -92,7 +92,7 @@ export class DatFilesWatcher {
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
-    if (event === 'change' && filename?.includes('FFXIV_CHR')) {
+    if ((event === 'change' || event === 'rename') && filename?.includes('FFXIV_CHR')) {
       const contentId = DatFilesWatcher.CONTENT_ID_REGEXP.exec(filename)[1];
       if (this.mainWindow.win) {
         if (filename.endsWith('ITEMODR.DAT')) {
@@ -184,6 +184,12 @@ export class DatFilesWatcher {
       if (existsSync(xlcorePath)) return xlcorePath;
       // Nothing found
       return null;
+    }
+    if (process.platform === 'darwin') {
+      const xivOnMacConfigDir = join(app.getPath('appData'), 'XIV on Mac', 'ffxivConfig');
+      if (existsSync(xivOnMacConfigDir)) {
+        return xivOnMacConfigDir;
+      }
     }
     switch (region) {
       case 'KR':
