@@ -42,7 +42,9 @@
     },
     "linux": {
       "icon": "./tools/build/icon.png",
-      "target": ["AppImage"],
+      "target": [
+        "AppImage"
+      ],
       "extraFiles": [
         {
           "from": "./tools/build/deucalion-bridge.exe",
@@ -124,7 +126,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "birkholz/pcap-ffxiv#main",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.2.32",
     "@ungap/structured-clone": "^1.3.0",
     "@xivapi/angular-client": "^2.0.1",
     "@xivapi/nodestone": "^0.2.7",
