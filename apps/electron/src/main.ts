@@ -76,6 +76,10 @@ const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager,
 const squirrelEventHandler = new SquirrelEventHandler(pcapManager, store);
 const isUpdating = squirrelEventHandler.handleSquirrelEvent();
 
+if (process.platform === 'darwin') {
+  app.disableHardwareAcceleration();
+}
+
 if (!isUpdating) {
   app.whenReady().then(() => {
     mainWindow.whenReady();

@@ -61,3 +61,6 @@ Thumbs.db
 /functions/lib/
 
 .nx/cache
+# Downloaded macOS/XIV-on-Mac pcap bridge build artifacts
+tools/build/deucalion-bridge.exe
+tools/build/bcryptprimitives.dll

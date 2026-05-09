@@ -1,12 +1,13 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
+import { copyFileSync, existsSync, mkdirSync } from 'fs';
+import { spawn, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app } from 'electron';
 
 export class PacketCapture {
-
   private static readonly ACCEPTED_PACKETS: Message['type'][] = [
     'actorCast',
     'actorControl',
@@ -63,7 +64,7 @@ export class PacketCapture {
     'updatePositionHandler',
     'updatePositionInstance',
     'weatherChange',
-    'statusEffectList'
+    'statusEffectList',
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [
@@ -78,10 +79,12 @@ export class PacketCapture {
     'eventPlay64',
     'systemLogMessage',
     'npcSpawn',
-    'objectSpawn'
+    'objectSpawn',
   ];
 
   private captureInterface: CaptureInterface;
+
+  private bridgeProcess: ChildProcess | null = null;
 
   private overlayListeners = [];
 
@@ -104,28 +107,34 @@ export class PacketCapture {
       await this.captureInterface.stop();
       delete this.captureInterface;
     }
+
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
+
     return Promise.resolve();
   }
 
   public registerOverlayListener(id: string, listener: (packet: Message) => void): void {
-    if (this.overlayListeners.some(l => l.id === id)) {
+    if (this.overlayListeners.some((l) => l.id === id)) {
       this.unregisterOverlayListener(id);
     }
     this.overlayListeners.push({
       id,
-      listener
+      listener,
     });
   }
 
   public unregisterOverlayListener(id: string): void {
-    this.overlayListeners = this.overlayListeners.filter(l => l.id === id);
+    this.overlayListeners = this.overlayListeners.filter((l) => l.id === id);
   }
 
   sendToRenderer(packet: Message): void {
     if (this.mainWindow?.win) {
       try {
         this.mainWindow.win.webContents.send('packet', packet);
-        this.overlayListeners.forEach(l => {
+        this.overlayListeners.forEach((l) => {
           try {
             l.listener(packet);
           } catch (e) {
@@ -176,28 +185,33 @@ export class PacketCapture {
           }
           return PacketCapture.PACKETS_FROM_OTHERS.includes(typeName);
         },
-        logger: message => {
+        logger: (message) => {
           log[message.type || 'warn'](message.message);
         },
-        name: 'FFXIV_Teamcraft'
+        name: 'FFXIV_Teamcraft',
       };
 
-      if (!app.isPackaged) {
+      if (process.platform === 'darwin') {
+        this.spawnXivOnMacBridge(31594);
+        options.bridgeTcpPort = 31594;
+        log.info('[pcap] Using macOS TCP bridge mode on port:', options.bridgeTcpPort);
+      } else if (!app.isPackaged) {
         const localDataPath = this.getLocalDataPath();
         if (localDataPath) {
           options.localDataPath = localDataPath;
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
+        options.deucalionDllPath =
+          region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
       this.captureInterface = new CaptureInterface(options);
-      this.captureInterface.on('error', err => {
+      this.captureInterface.on('error', (err) => {
         this.mainWindow.win.webContents.send('pcap:status', 'error');
         this.mainWindow.win.webContents.send('pcap:error:raw', {
-          message: err
+          message: err,
         });
         log.error(err);
       });
@@ -214,7 +228,8 @@ export class PacketCapture {
       this.captureInterface.on('ready', () => {
         // Give it 200ms to make sure pipe is created
         setTimeout(() => {
-          this.captureInterface.start()
+          this.captureInterface
+            .start()
             .then(() => {
               this.mainWindow.win.webContents.send('pcap:status', 'running');
               log.info('Packet capture started');
@@ -226,15 +241,15 @@ export class PacketCapture {
 
               if (ErrorCodes[errCode]) {
                 this.mainWindow.win.webContents.send('pcap:error', {
-                  message: ErrorCodes[errCode]
+                  message: ErrorCodes[errCode],
                 });
               } else if (errCode.toString().includes('ENOENT')) {
                 this.mainWindow.win.webContents.send('pcap:error', {
-                  message: 'RESTART_GAME'
+                  message: 'RESTART_GAME',
                 });
               } else {
                 this.mainWindow.win.webContents.send('pcap:error', {
-                  message: 'Default'
+                  message: 'Default',
                 });
               }
             });
@@ -244,13 +259,143 @@ export class PacketCapture {
       if (e.message.includes('dll-inject')) {
         this.mainWindow.win.webContents.send('pcap:status', 'error');
         this.mainWindow.win.webContents.send('pcap:error', {
-          message: "MISSING_INJECTOR"
+          message: 'MISSING_INJECTOR',
         });
-        log.error("[pcap] MISSING_INJECTOR");
+        log.error('[pcap] MISSING_INJECTOR');
       } else {
-        log.error(e)
+        log.error(e);
       }
     }
   }
 
+  private findDevFile(relativePath: string): string {
+    let dir = __dirname;
+    for (let i = 0; i < 8; i++) {
+      const candidate = join(dir, relativePath);
+      if (existsSync(candidate)) {
+        return candidate;
+      }
+
+      const parent = join(dir, '..');
+      if (parent === dir) {
+        break;
+      }
+      dir = parent;
+    }
+
+    throw new Error(`Cannot find ${relativePath} in dev tree, searched up from ${__dirname}`);
+  }
+
+  private getDeucalionDllPath(): string {
+    if (app.isPackaged) {
+      return join(app.getAppPath(), '../../deucalion/deucalion.dll');
+    }
+
+    return this.findDevFile('node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion/deucalion.dll');
+  }
+
+  private getBcryptPrimitivesDllPath(): string {
+    if (app.isPackaged) {
+      return join(app.getAppPath(), '../../deucalion/bcryptprimitives.dll');
+    }
+
+    return this.findDevFile('tools/build/bcryptprimitives.dll');
+  }
+
+  private getBridgeExePath(): string {
+    if (app.isPackaged) {
+      return join(app.getAppPath(), '../../deucalion-bridge.exe');
+    }
+
+    return this.findDevFile('tools/build/deucalion-bridge.exe');
+  }
+
+  private getXivOnMacWinePrefix(): string {
+    return join(app.getPath('appData'), 'XIV on Mac', 'wineprefix');
+  }
+
+  private getXivOnMacWineBin(): string {
+    return '/Applications/XIV on Mac.app/Contents/Resources/wine/bin/wine64';
+  }
+
+  private stageXivOnMacDeucalionFiles(): string {
+    const winePrefix = this.getXivOnMacWinePrefix();
+    const targetDir = join(winePrefix, 'drive_c', 'deucalion');
+
+    mkdirSync(targetDir, { recursive: true });
+
+    copyFileSync(this.getDeucalionDllPath(), join(targetDir, 'deucalion.dll'));
+    copyFileSync(this.getBcryptPrimitivesDllPath(), join(targetDir, 'bcryptprimitives.dll'));
+
+    return 'C:\\deucalion\\deucalion.dll';
+  }
+
+  private spawnXivOnMacBridge(port: number): void {
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
+
+    const winePrefix = this.getXivOnMacWinePrefix();
+    const wineBin = this.getXivOnMacWineBin();
+    const bridgeExe = this.getBridgeExePath();
+    const dllWinPath = this.stageXivOnMacDeucalionFiles();
+
+    if (!existsSync(winePrefix)) {
+      throw new Error(`XIV-on-Mac Wine prefix not found: ${winePrefix}`);
+    }
+
+    if (!existsSync(wineBin)) {
+      throw new Error(`XIV-on-Mac Wine binary not found: ${wineBin}`);
+    }
+
+    if (!existsSync(bridgeExe)) {
+      throw new Error(`deucalion-bridge.exe not found: ${bridgeExe}`);
+    }
+
+    log.info(`[bridge] spawning XIV-on-Mac bridge on port ${port}`);
+
+    this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
+      env: {
+        ...process.env,
+        WINEPREFIX: winePrefix,
+        WINEDEBUG: '-all',
+        WINEESYNC: '1',
+        WINEMSYNC: '1',
+        WINEDLLOVERRIDES: 'bcryptprimitives=n,b',
+      },
+    });
+
+    let stderrBuffer = '';
+
+    this.bridgeProcess.stdout?.on('data', (data: Buffer) => {
+      for (const line of data.toString().split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
+    this.bridgeProcess.stderr?.on('data', (data: Buffer) => {
+      const chunk = data.toString();
+      stderrBuffer += chunk;
+      for (const line of chunk.split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
+    this.bridgeProcess.on('error', (err) => log.error('[bridge] spawn error:', err));
+
+    this.bridgeProcess.on('exit', (code, signal) => {
+      log.info(`[bridge] exited code=${code} signal=${signal}`);
+      this.bridgeProcess = null;
+
+      if (code !== null && code !== 0 && this.captureInterface) {
+        log.error(`[bridge] Abnormal exit (stderr: ${stderrBuffer.trim()})`);
+        this.store.set('machina', false);
+        this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'MACOS_BRIDGE_ERROR' });
+        this.stop();
+      }
+    });
+  }
 }
