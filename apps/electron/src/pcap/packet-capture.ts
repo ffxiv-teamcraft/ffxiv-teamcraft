@@ -274,7 +274,7 @@ export class PacketCapture {
         // With some launchers, the bridge process (Wine) prevents the game from
         // booting if it starts before ffxiv_dx11.exe is already running.  Fail
         // fast with a clear error so the user knows to launch the game first.
-        if (!this.isGameRunningViaWine()) {
+        if (process.platform !== 'darwin' && !this.isGameRunningViaWine()) {
           log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start bridge');
           this.store.set('machina', false);
           this.mainWindow.win.webContents.send('toggle-pcap:value', false);
