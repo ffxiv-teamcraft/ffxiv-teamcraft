@@ -326,7 +326,7 @@ export class AppComponent implements OnInit {
         this.ipc.on('update-downloaded', () => {
           this.checkingForUpdate$.next(UpdaterStatus.UPDATE_AVAILABLE);
         });
-        if (this.platformService.isLinux) {
+        if (this.platformService.isLinux && !this.platformService.isOverlay()) {
           this.ipc.on('update-available', () => {
             this.newVersionAvailable$ = of(true);
             this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
