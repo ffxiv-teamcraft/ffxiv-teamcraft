@@ -317,6 +317,22 @@ export class AppComponent implements OnInit {
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
+        this.ipc.on('checking-for-update', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
+        });
+        this.ipc.on('update-not-available', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.NO_UPDATE);
+        });
+        this.ipc.on('update-downloaded', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.UPDATE_AVAILABLE);
+        });
+        if (this.platformService.isLinux) {
+          this.ipc.on('update-available', () => {
+            this.newVersionAvailable$ = of(true);
+            this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
+          });
+          setTimeout(() => this.ipc.send('update:check'), 5000);
+        }
         this.ipc.on('displayed', () => {
           setTimeout(() => {
             window.resizeBy(100, 100);

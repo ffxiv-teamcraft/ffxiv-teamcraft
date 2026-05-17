@@ -1,7 +1,7 @@
 import { MainWindow } from '../window/main-window';
 import log from 'electron-log';
-import { app, autoUpdater, BrowserWindow, ipcMain } from 'electron';
-import { PacketCapture } from '../pcap/packet-capture';
+import { app, autoUpdater as squirrelUpdater, BrowserWindow, ipcMain } from 'electron';
+import { autoUpdater as linuxUpdater } from 'electron-updater';
 
 
 export class AutoUpdater {
@@ -9,69 +9,91 @@ export class AutoUpdater {
     return this.mainWindow.win;
   }
 
-  constructor(private mainWindow: MainWindow, private pcap: PacketCapture) {
+  constructor(private mainWindow: MainWindow) {
   }
 
   connectListeners(): void {
-    if (app.isPackaged) {
-      autoUpdater.setFeedURL({
-        url: `https://update.ffxivteamcraft.com`
-      });
+    const isLinux = process.platform === 'linux';
+    const updater: any = isLinux ? linuxUpdater : squirrelUpdater;
+
+    if (isLinux) {
+      linuxUpdater.logger = log;
+      linuxUpdater.autoInstallOnAppQuit = false;
+    }
+
+    if (!isLinux && app.isPackaged) {
+      squirrelUpdater.setFeedURL({ url: 'https://update.ffxivteamcraft.com' });
     }
 
     let autoUpdaterRunning = false;
-    autoUpdater.on('checking-for-update', () => {
+    let updateDownloaded = false;
+
+    updater.on('checking-for-update', () => {
       log.log('Checking for update');
       if (this.win) {
-        this.win.webContents.send('checking-for-update', true);
+        this.win.webContents.send('checking-for-update');
       }
     });
 
-    autoUpdater.on('update-available', () => {
+    updater.on('update-available', () => {
       log.log('Update available');
+      autoUpdaterRunning = false;
       if (this.win) {
-        this.win.webContents.send('update-available', true);
+        this.win.webContents.send('update-available');
       }
     });
 
-    autoUpdater.on('update-not-available', () => {
+    updater.on('update-not-available', () => {
       log.log('No update found');
       autoUpdaterRunning = false;
       if (this.win) {
-        this.win.webContents.send('update-available', false);
+        this.win.webContents.send('update-not-available');
       }
     });
 
-    autoUpdater.on('error', (err) => {
+    updater.on('error', (err) => {
       log.log('Updater Error', err);
       autoUpdaterRunning = false;
       if (this.win) {
-        this.win.webContents.send('update-available', false);
+        this.win.webContents.send('update-not-available');
       }
     });
 
-    autoUpdater.on('update-downloaded', () => {
+    updater.on('update-downloaded', () => {
       log.log('Update downloaded');
-      autoUpdaterRunning = false;
+      updateDownloaded = true;
       if (this.win) {
-        this.win.webContents.send('update-downloaded');
+        this.win.webContents.send('update-downloaded', false);
+      }
+    });
+
+    app.on('before-quit', (event) => {
+      if (updateDownloaded) {
+        updateDownloaded = false;
+        event.preventDefault();
+        if (this.win) {
+          this.win.webContents.send('update-downloaded', true);
+        }
       }
     });
 
     ipcMain.on('install-update', () => {
       (<any>app).isQuitting = true;
-      autoUpdater.quitAndInstall();
+      updater.quitAndInstall();
     });
 
+    ipcMain.on('quit-without-update', () => {
+      app.quit();
+    });
 
     ipcMain.on('update:check', () => {
-      if (autoUpdaterRunning) {
+      if (autoUpdaterRunning || !app.isPackaged) {
         return;
       }
 
       log.log('Run update setup');
       autoUpdaterRunning = true;
-      autoUpdater.checkForUpdates();
+      updater.checkForUpdates();
     });
 
   }
