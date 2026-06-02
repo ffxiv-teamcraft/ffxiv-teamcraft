@@ -406,7 +406,7 @@ export class PacketCapture {
    */
   private getDeucalionDllPath(): string {
     if (app.isPackaged) {
-      return join(app.getAppPath(), '../../deucalion/deucalion.dll');
+      return region === 'TW' ? join(app.getAppPath(), '../../deucalion/deucalion_12.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
     }
     return this.findDevDeucalionDll();
   }
