@@ -10,6 +10,7 @@ export interface LazyAchievementsDatabasePage {
   ko?:         string;
   patch:       number;
   title:       number;
+  tw?:         string;
   zh?:         string;
 }
 
@@ -19,5 +20,6 @@ export interface Description {
   fr:  string;
   ja:  string;
   ko?: string;
+  tw?: string;
   zh?: string;
 }

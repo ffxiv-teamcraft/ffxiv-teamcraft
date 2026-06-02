@@ -13,6 +13,7 @@ export interface LazyStatusesDatabasePage {
   lockMovement: boolean;
   patch:        number;
   stacks:       number;
+  tw?:          string;
   zh?:          string;
 }
 
@@ -22,5 +23,6 @@ export interface Description {
   fr:  string;
   ja:  string;
   ko?: string;
+  tw?: string;
   zh?: string;
 }

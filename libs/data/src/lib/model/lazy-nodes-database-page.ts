@@ -21,6 +21,7 @@ export interface LazyNodesDatabasePage {
   radius:        number;
   spawns:        number[];
   sublimeItems?: SublimeItem[];
+  tw:            string;
   type:          number;
   x:             number;
   y:             number;
@@ -66,6 +67,7 @@ export interface ConditionClass {
   fr: string;
   ja: string;
   ko: string;
+  tw: string;
   zh: string;
 }
 

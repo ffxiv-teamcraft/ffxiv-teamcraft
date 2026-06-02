@@ -28,6 +28,7 @@ export interface LazyItemSearch {
   patch?:       number;
   repair?:      number;
   stats?:       { [key: string]: number };
+  tw?:          string;
   zh?:          string;
 }
 

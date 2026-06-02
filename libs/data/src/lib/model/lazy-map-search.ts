@@ -5,9 +5,10 @@ export interface LazyMapSearch {
   fr:    string;
   id:    number;
   ja:    string;
-  ko?:   string;
+  ko:    string;
   patch: number;
-  zh?:   string;
+  tw?:   string;
+  zh:    string;
 }
 
 export interface Data {

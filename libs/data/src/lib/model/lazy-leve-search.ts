@@ -9,6 +9,7 @@ export interface LazyLeveSearch {
   ko:    string;
   lvl:   number;
   patch: number;
+  tw:    string;
   zh:    string;
 }
 

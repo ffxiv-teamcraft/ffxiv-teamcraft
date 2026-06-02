@@ -12,6 +12,7 @@ export interface LazyNpcsDatabasePage {
   position?:    Position;
   quests:       Quest[];
   title:        Title;
+  tw?:          string;
   zh?:          string;
 }
 
@@ -136,6 +137,7 @@ export interface Title {
   fr:  string;
   ja:  Ja;
   ko?: string;
+  tw?: string;
   zh?: string;
 }
 

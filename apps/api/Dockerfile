@@ -1,6 +1,6 @@
-# Use the official Node.js 16 image.
+# Use the official Node.js 20 image.
 # https://hub.docker.com/_/node
-FROM node:16-alpine
+FROM node:20-alpine
 # Create and change to the app directory.
 WORKDIR /usr/src/app
 COPY --chown=node:node ./apps/api/package.json ./

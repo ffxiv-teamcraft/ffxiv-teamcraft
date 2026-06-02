@@ -33,7 +33,7 @@ export class MainWindow {
       backgroundColor: '#2f3237',
       autoHideMenuBar: true,
       frame: true,
-      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
+      icon: join(Constants.BASE_APP_PATH, 'assets', 'app-icon.png'),
       title: title,
       webPreferences: {
         backgroundThrottling: false,
@@ -201,7 +201,7 @@ export class MainWindow {
       setTimeout(() => this.win.setTitle(`${title} - Main Window`));
     });
 
-    this.win.on('minimize', (event) => {
+    this.win.on('minimize' as any, (event) => {
       if (this.store.get<boolean>('enable-minimize-reduction-button', false)) {
         event.preventDefault();
         this.win.hide();

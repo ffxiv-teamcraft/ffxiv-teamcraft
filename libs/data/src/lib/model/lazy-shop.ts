@@ -9,11 +9,16 @@ export interface LazyShop {
 
 export interface Trade {
   currencies:      Currency[];
-  items:           Currency[];
+  items:           Item[];
   requiredGCRank?: number;
 }
 
 export interface Currency {
+  amount: number;
+  id:     number;
+}
+
+export interface Item {
   amount: number;
   hq?:    boolean;
   id:     number;

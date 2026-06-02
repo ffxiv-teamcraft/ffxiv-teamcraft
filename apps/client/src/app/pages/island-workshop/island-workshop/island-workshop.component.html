@@ -72,7 +72,7 @@
   @if (optimizerResult.planning !== null) {
     <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score"
                            [today]="today$ | async"
-                           [weeklyReset]="previousWeeklyReset$ | async"
+                           [weeklyReset]="previousWeeklyResetForDisplay$ | async"
                            [displayItemMetadata]="displayItemMetadata$ | async"></app-workshop-planning>
   }
   @if (optimizerResult.planning === null) {

@@ -7,6 +7,7 @@ export interface LazyAchievementSearch {
   ja:    string;
   ko?:   string;
   patch: number;
+  tw?:   string;
   zh?:   string;
 }
 

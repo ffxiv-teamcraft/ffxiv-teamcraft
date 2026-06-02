@@ -13,7 +13,7 @@ export interface LazyQuestsDatabasePage {
   id:            number;
   ja:            string;
   jobCategory:   number;
-  ko?:           string;
+  ko:            string;
   level:         number;
   next:          number[];
   npcs:          number[];
@@ -24,7 +24,8 @@ export interface LazyQuestsDatabasePage {
   start:         number;
   startingPoint: StartingPoint | null;
   trades?:       Trade[];
-  zh?:           string;
+  tw?:           string;
+  zh:            string;
 }
 
 export interface Description {
@@ -33,6 +34,7 @@ export interface Description {
   fr?: string;
   ja?: string;
   ko?: string;
+  tw?: string;
   zh?: string;
 }
 
