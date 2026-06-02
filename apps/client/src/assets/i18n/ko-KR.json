@@ -603,7 +603,10 @@
       "Voyage_tracker": "탐사 동기화",
       "Reset_timer": "초기화 타이머",
       "Fish_train": "낚시런 이름"
-    }
+    },
+    "Wine_prefix": "Wine/Proton prefix directory",
+    "Wine_binary": "Wine binary",
+    "Path_not_found": "Not found"
   },
   "PROFILE": {
     "Account": "계정",
@@ -3108,8 +3111,14 @@
       "GAME_NOT_RUNNING": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요). <br> 만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.",
       "RESTART_GAME": "패킷 캡쳐가 올바르게 작동하도록 게임을 다시 시작하세요.",
       "GAME_RUNNING_AS_ADMIN": "게임이 관리자 권한으로 실행 중이므로 게임을 관리자 권한 없이 다시 실행하시거나 팀크래프트를 관리자 권한으로 실행하세요.",
-      "MISSING_INJECTOR": "패킷 캡처 도구가 누락되어 있으며, 바이러스 백신으로 인해 잘못된 양성 반응으로 인해 제거되었을 가능성이 높습니다. Teamcraft의 설치 폴더를 화이트리스트에 올리고 다시 설치하세요."
-    }
+      "MISSING_INJECTOR": "패킷 캡처 도구가 누락되어 있으며, 바이러스 백신으로 인해 잘못된 양성 반응으로 인해 제거되었을 가능성이 높습니다. Teamcraft의 설치 폴더를 화이트리스트에 올리고 다시 설치하세요.",
+      "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
+      "BRIDGE_BRIDGE_ERROR": "Check your Wine settings and re-enable packet capture. If the issue persists, check the application logs for more details.",
+      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
+    },
+    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
+    "BRIDGE_BRIDGE_ERROR": "Packet capture failed to start",
+    "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "당신은 이 아이템을 무인도 목장의 동물들에게서 채집해야 합니다",
