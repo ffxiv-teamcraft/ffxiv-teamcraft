@@ -25,7 +25,7 @@ export interface LazyQuestsDatabasePage {
   startingPoint: StartingPoint | null;
   trades?:       Trade[];
   tw?:           string;
-  zh:            string;
+  zh?:           string;
 }
 
 export interface Description {
