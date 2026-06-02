@@ -9344,6 +9344,9 @@
   "42066": {
     "ko": "반중력 에너지를 띤 물질을 회수하는 데 특화된 우주 흡인기입니다. 전방에 있는 소형 레비테트스톤을 수집합니다. 커다란 레비테트스톤에는 효과가 없습니다."
   },
+  "42068": {
+    "ko": "화려한 낚싯대 기술을 발휘하여 '낚아채기 성공률 감소' 효과를 무시하고 물고기를 낚아챕니다.\n물고기를 상처 없이 낚음으로써 높은 평가를 받을 수 있습니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[우주 임무 전용]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
   "42071": {
     "ko": "전방으로 돌진하며, 로더 앞쪽에 달린 삽날로 범위 안에 있는 변이 버섯을 분쇄합니다."
   },
@@ -9361,6 +9364,27 @@
   },
   "42194": {
     "ko": "대상과 그 주위 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 8000\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고백 기도 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "42250": {
+    "ko": "마도 서슬발톱을 휘둘러 전방 부채꼴 범위 안에 있는 독성 꽃가루 식물과 공격성 꽃가루 식물을 벱니다."
+  },
+  "42251": {
+    "ko": "전방으로 돌진하며, 마도 서슬발톱으로 범위 안에 있는 독성 꽃가루 식물과 공격성 꽃가루 식물을 벱니다."
+  },
+  "42252": {
+    "ko": "액체 연료를 이용한 화염 방사기로 전방 부채꼴 범위 안에 있는 작은 독성 꽃가루 식물을 소각합니다.\n단, 대형 독성 꽃가루 식물과 공격성 식물에는 효과가 없습니다."
+  },
+  "42254": {
+    "ko": "특수 조합한 성장 촉진제를 분사하여, 전방 부채꼴 범위 안에 있는 고대 식물에 에너지를 공급해 승화를 촉진합니다."
+  },
+  "42255": {
+    "ko": "촉진제 물자함에서 얻은 보충 연금제를 분사하여, 자신을 중심으로 원형 범위 안에 있는 고대 식물에 에너지를 공급해 승화를 발생시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>촉진제 물자함<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "42256": {
+    "ko": "촉진제 탱크에서 보충한 연금제를 분사하여, 전방 부채꼴 범위 안에 있는 소형 고대 식물에 에너지를 공급해 승화를 촉진합니다.\n단, 대형 고대 식물에는 효과가 없습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>예비용 촉진제 1<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "42257": {
+    "ko": "우주 흡인기를 이용해 만든 연금제 분사 기기. 전방 부채꼴 범위 안에 있는 고대 식물에 에너지를 공급해 승화를 촉진합니다.\n단, 대형 고대 식물에는 효과가 없습니다."
   },
   "42258": {
     "ko": "액체 연료를 이용한 화염 방사기로 전방 부채꼴 범위 안에 있는 작은 변이 버섯을 소각합니다.\n단, 거대한 버섯에는 효과가 없습니다."
@@ -9592,5 +9616,11 @@
   },
   "48516": {
     "ko": "星屑の光を発生させる。\n※演出用アクション。特に効果は発生しない。"
+  },
+  "49904": {
+    "ko": "특수 조합한 성장 촉진제를 분사하여, 대상 식물에 에너지를 공급합니다."
+  },
+  "50732": {
+    "ko": "삽으로 땅을 팝니다.\n※ 전투 효과는 없습니다."
   }
 }
