@@ -86,7 +86,7 @@ export class ItemIconComponent {
       return this.lazyData.getRow('itemIcons', itemId).pipe(
         map(xivapiIcon => {
           if (xivapiIcon) {
-            return `https://xivapi.com${xivapiIcon}`;
+            return `https://v2.xivapi.com${xivapiIcon}`;
           }
           return undefined;
         })

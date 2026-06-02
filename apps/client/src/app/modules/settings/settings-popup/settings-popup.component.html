@@ -760,6 +760,24 @@
             </div>
           </div>
         </nz-card>
+        @if (!platform.isWindows) {
+          <nz-form-item nzFlex fxLayoutAlign="flex-start center">
+            <nz-form-label>{{ 'SETTINGS.Wine_prefix' | translate }}</nz-form-label>
+            <nz-form-control>
+              <nz-input-group [nzAddOnBefore]="winePrefixPath || ('SETTINGS.Path_not_found' | translate)">
+                <button nz-button nzType="primary" (click)="changeWinePrefix()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nzFlex fxLayoutAlign="flex-start center">
+            <nz-form-label>{{ 'SETTINGS.Wine_binary' | translate }}</nz-form-label>
+            <nz-form-control>
+              <nz-input-group [nzAddOnBefore]="wineBinPath || ('SETTINGS.Path_not_found' | translate)">
+                <button nz-button nzType="primary" (click)="changeWineBin()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        }
         <div>
           <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Character_tracking' | translate"></nz-divider>
         </div>

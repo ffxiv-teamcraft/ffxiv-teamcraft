@@ -37622,7 +37622,7 @@
   "6271": {
     "en": "the worm's heart",
     "ja": "神龍の心核",
-    "de": "Shinryus Herz",
+    "de": "Shinryus Herz[p]",
     "fr": "cœur du dragon"
   },
   "6272": {
@@ -86772,10 +86772,10 @@
     "fr": "berger des Braves"
   },
   "14463": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Yuffie",
+    "ja": "マメット・ユフィ",
+    "de": "Aufzieh-Yuffie",
+    "fr": "Yuffie miniature"
   },
   "14464": {
     "en": "",
@@ -88964,7 +88964,7 @@
   "14828": {
     "en": "Medusa Swarmsinger",
     "ja": "Medusa Swarmsinger",
-    "de": "Medusa Schwarmsängerin",
+    "de": "Medusa-Schwarmsängerin",
     "fr": "Medusa Swarmsinger"
   },
   "14829": {
@@ -89070,10 +89070,10 @@
     "fr": "jinbei"
   },
   "14846": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "lite-loader",
+    "ja": "ホイットローダー",
+    "de": "Sternchenebner",
+    "fr": "mini-déblayeuse cosmique"
   },
   "14847": {
     "en": "caprino",
@@ -89118,10 +89118,10 @@
     "fr": ""
   },
   "14854": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "budvi",
+    "ja": "ナギュリィ・ジャーム",
+    "de": "Nagy",
+    "fr": "Germylvi"
   },
   "14855": {
     "en": "",

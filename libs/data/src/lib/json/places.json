@@ -33014,7 +33014,7 @@
   "5503": {
     "en": "Restricted Access",
     "ja": "工廠連絡路",
-    "de": "Fabrikdurchgang",
+    "de": "Fabrikzufahrt",
     "fr": "Chemin du personnel d'usine"
   },
   "5504": {
@@ -33216,52 +33216,52 @@
     "fr": "Courant spectral (large de Thavnair)"
   },
   "5537": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Timberpond",
+    "ja": "ティンバーポンド",
+    "de": "Bäumebad",
+    "fr": "Étang forestier"
   },
   "5538": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "New Growth Tapwaters",
+    "ja": "ニューグロウス・タップウォーター",
+    "de": "Hainingen-Teich",
+    "fr": "Bassin de la Feuillaison"
   },
   "5539": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Emerald Springs",
+    "ja": "翠の円泉",
+    "de": "Tiefgrüne Quellen",
+    "fr": "Bassin d'Émeraude"
   },
   "5540": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Western Nervure",
+    "ja": "ナーヴュア緑道西",
+    "de": "Westliche Nervatur",
+    "fr": "Nervure routière ouest"
   },
   "5541": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Full Bloom Fountain",
+    "ja": "フルブルーム・ファウンテン",
+    "de": "Prachtblüh-Born",
+    "fr": "Fontaine luxuriante"
   },
   "5542": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sylvan Soaking Pool",
+    "ja": "シルヴァン・ソーキングプール",
+    "de": "Sylvan-Tunkbecken",
+    "fr": "Cuvette sylvestre"
   },
   "5543": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stratostone Shores",
+    "ja": "石蒼き湖畔",
+    "de": "Stratofels-Ufer",
+    "fr": "Parcelle du rivage"
   },
   "5544": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sprouting Cisterns",
+    "ja": "子葉の用水",
+    "de": "Spross-Zysternen",
+    "fr": "Source épanouie"
   },
   "5545": {
     "en": "",
@@ -33270,148 +33270,148 @@
     "fr": ""
   },
   "5546": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Timberlodge",
+    "ja": "ティンバーロッジ基地",
+    "de": "Baumesruh",
+    "fr": "Havre forestier"
   },
   "5547": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Full Bloom Gardens",
+    "ja": "フルブルーム・ガーデン",
+    "de": "Prachtblüh-Gärten",
+    "fr": "Jardins luxuriants"
   },
   "5548": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pileus Pergola",
+    "ja": "パイレウス・パーゴラ",
+    "de": "Pileus-Pergola",
+    "fr": "Pileus Pergola"
   },
   "5549": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sylvan Stacks",
+    "ja": "シルヴァン・スタックス",
+    "de": "Sylvan-Archive",
+    "fr": "Bibliothèques sylvestres"
   },
   "5550": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stratostone Stand",
+    "ja": "石蒼き林班",
+    "de": "Stratofels-Stellung",
+    "fr": "Parcelle verdoyante"
   },
   "5551": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Auxesia",
+    "ja": "惑星アウクセシア",
+    "de": "Auxesia",
+    "fr": "Auxesia"
   },
   "5552": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Core Shroud",
+    "ja": "コア・シュラウド",
+    "de": "Kernmantelwald",
+    "fr": "Écosystème central"
   },
   "5553": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Timberpond",
+    "ja": "ティンバーポンド",
+    "de": "Bäumebad",
+    "fr": "Bois dormant"
   },
   "5554": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Netroot Radius",
+    "ja": "翠枝の円森",
+    "de": "Netzwurzel-Perimeter",
+    "fr": "Répertoire racine"
   },
   "5555": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sylvan Stacks",
+    "ja": "シルヴァン・スタックス",
+    "de": "Sylvan-Archive",
+    "fr": "Bibliothèques sylvestres"
   },
   "5556": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Full Bloom Gardens",
+    "ja": "フルブルーム・ガーデン",
+    "de": "Prachtblüh-Gärten",
+    "fr": "Jardins luxuriants"
   },
   "5557": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Emerald Nervure",
+    "ja": "ナーヴュア緑道",
+    "de": "Smaragdnervatur",
+    "fr": "Nervure routière"
   },
   "5558": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stratostone Stand",
+    "ja": "石蒼き林班",
+    "de": "Stratofels-Stellung",
+    "fr": "Parcelle verdoyante"
   },
   "5559": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Grandma Laurel",
+    "ja": "グランマ・ローレル",
+    "de": "Großmütterchen Lorbeer",
+    "fr": "Le Laurier-Mère"
   },
   "5560": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Highwood Estates",
+    "ja": "ハイウッド・エステート",
+    "de": "Wohnwipfelkronen",
+    "fr": "Haute pépinière"
   },
   "5561": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Timberlodge",
+    "ja": "ティンバーロッジ基地",
+    "de": "Baumesruh",
+    "fr": "Havre forestier"
   },
   "5562": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sprouting Towerling",
+    "ja": "子葉の塔",
+    "de": "Keimturmling",
+    "fr": "Pousse épanouie"
   },
   "5563": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Scrambling Ways",
+    "ja": "スクランブリングウェイズ",
+    "de": "Weggewirr",
+    "fr": "L'Entrelacement"
   },
   "5564": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "New Growth City",
+    "ja": "ニューグロウス・シティ",
+    "de": "Neu-Hainingen",
+    "fr": "Cité de la Feuillaison"
   },
   "5565": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Orchidelirium",
+    "ja": "春蘭舞う木場",
+    "de": "Orchidelirium",
+    "fr": "Orchidelirium"
   },
   "5566": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pileus Pergola",
+    "ja": "パイレウス・パーゴラ",
+    "de": "Pileus-Pergola",
+    "fr": "Pileus Pergola"
   },
   "5567": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sunning Towerling",
+    "ja": "常葉の塔",
+    "de": "Blütenturmling",
+    "fr": "Pousse fleurie"
   },
   "5568": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Blossomingway Beds",
+    "ja": "ブロッサミングウェイの百花壇",
+    "de": "Blossomingways Beete",
+    "fr": "Parterre de Blossomingway"
   },
   "5569": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Rooting Towerling",
+    "ja": "末葉の塔",
+    "de": "Wurzelturmling",
+    "fr": "Pousse vivace"
   },
   "5570": {
     "en": "Ulthalam Parade",

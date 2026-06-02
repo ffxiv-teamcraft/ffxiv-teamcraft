@@ -17,6 +17,9 @@ export class PlatformService {
     return IS_ELECTRON;
   }
 
+  public get isWindows(): boolean {
+    return this.isDesktop() && navigator.userAgent.toLowerCase().includes('windows');
+  }
   public isOverlay(): boolean {
     return window.location.href.indexOf('?overlay') > -1;
   }

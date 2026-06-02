@@ -244,7 +244,7 @@
     "de": "Verbesserter Gewaltiger Schuss",
     "ja": "ヘヴィショット効果アップ",
     "fr": "Tir à l'arc puissant amélioré",
-    "icon": "/i/005000/005321.png",
+    "icon": "/api/asset?path=ui/icon/005000/005321.tex&format=png",
     "level": 2,
     "job": 5,
     "description": {
@@ -259,7 +259,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージアップ",
     "fr": "Dégâts des actions augmentés",
-    "icon": "/i/005000/005302.png",
+    "icon": "/api/asset?path=ui/icon/005000/005302.tex&format=png",
     "level": 20,
     "job": 5,
     "description": {
@@ -289,7 +289,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージアップII",
     "fr": "Dégâts des actions augmentés II",
-    "icon": "/i/005000/005303.png",
+    "icon": "/api/asset?path=ui/icon/005000/005303.tex&format=png",
     "level": 40,
     "job": 5,
     "description": {
@@ -334,7 +334,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 20,
     "job": 6,
     "description": {
@@ -364,7 +364,7 @@
     "de": "Verbessertes Vita",
     "ja": "ケアル効果アップ",
     "fr": "Soin amélioré",
-    "icon": "/i/005000/005330.png",
+    "icon": "/api/asset?path=ui/icon/005000/005330.tex&format=png",
     "level": 32,
     "job": 6,
     "description": {
@@ -379,7 +379,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 40,
     "job": 6,
     "description": {
@@ -424,7 +424,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité éthérée augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 20,
     "job": 7,
     "description": {
@@ -454,7 +454,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité éthérée augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 40,
     "job": 7,
     "description": {
@@ -469,7 +469,7 @@
     "de": "Verbessertes Feuer",
     "ja": "ファイア効果アップ",
     "fr": "Pyromane",
-    "icon": "/i/005000/005352.png",
+    "icon": "/api/asset?path=ui/icon/005000/005352.tex&format=png",
     "level": 42,
     "job": 7,
     "description": {
@@ -484,7 +484,7 @@
     "de": "Verbesserte Blitzzauber",
     "ja": "サンダー系魔法効果アップ",
     "fr": "Nuage d'orage",
-    "icon": "/i/005000/005355.png",
+    "icon": "/api/asset?path=ui/icon/005000/005355.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -499,7 +499,7 @@
     "de": "Auto-Geodäsie",
     "ja": "オートトライアングレート",
     "fr": "Auto Forestier",
-    "icon": "/i/005000/005451.png",
+    "icon": "/api/asset?path=ui/icon/005000/005451.tex&format=png",
     "level": 2,
     "job": 17,
     "description": {
@@ -559,7 +559,7 @@
     "de": "Auto-Prospektion",
     "ja": "オートプロスペクト",
     "fr": "Auto Prospecteur",
-    "icon": "/i/005000/005426.png",
+    "icon": "/api/asset?path=ui/icon/005000/005426.tex&format=png",
     "level": 2,
     "job": 16,
     "description": {
@@ -619,7 +619,7 @@
     "de": "Bäumeflüsterer",
     "ja": "ツリーウィスパラー",
     "fr": "Amoureux des arbres",
-    "icon": "/i/005000/005455.png",
+    "icon": "/api/asset?path=ui/icon/005000/005455.tex&format=png",
     "level": 11,
     "job": 17,
     "description": {
@@ -634,7 +634,7 @@
     "de": "Bäumeflüsterer II",
     "ja": "ツリーウィスパラーII",
     "fr": "Amoureux des arbres II",
-    "icon": "/i/005000/005456.png",
+    "icon": "/api/asset?path=ui/icon/005000/005456.tex&format=png",
     "level": 16,
     "job": 17,
     "description": {
@@ -649,7 +649,7 @@
     "de": "Bäumeflüsterer III",
     "ja": "ツリーウィスパラーIII",
     "fr": "Amoureux des arbres III",
-    "icon": "/i/005000/005457.png",
+    "icon": "/api/asset?path=ui/icon/005000/005457.tex&format=png",
     "level": 21,
     "job": 17,
     "description": {
@@ -664,7 +664,7 @@
     "de": "Bäumeflüsterer IV",
     "ja": "ツリーウィスパラーIV",
     "fr": "Amoureux des arbres IV",
-    "icon": "/i/005000/005458.png",
+    "icon": "/api/asset?path=ui/icon/005000/005458.tex&format=png",
     "level": 26,
     "job": 17,
     "description": {
@@ -679,7 +679,7 @@
     "de": "Verbesserte Gunst der Zwölf",
     "ja": "十二神の加護効果アップ",
     "fr": "Bénédiction des Douze améliorée",
-    "icon": "/i/005000/005459.png",
+    "icon": "/api/asset?path=ui/icon/005000/005459.tex&format=png",
     "level": 41,
     "job": 17,
     "description": {
@@ -694,7 +694,7 @@
     "de": "Verbesserte Gunst der Zwölf II",
     "ja": "十二神の加護効果アップII",
     "fr": "Bénédiction des Douze améliorée II",
-    "icon": "/i/005000/005460.png",
+    "icon": "/api/asset?path=ui/icon/005000/005460.tex&format=png",
     "level": 50,
     "job": 17,
     "description": {
@@ -709,7 +709,7 @@
     "de": "Steineflüsterer",
     "ja": "ストーンウィスパラー",
     "fr": "Amoureux des pierres",
-    "icon": "/i/005000/005430.png",
+    "icon": "/api/asset?path=ui/icon/005000/005430.tex&format=png",
     "level": 11,
     "job": 16,
     "description": {
@@ -724,7 +724,7 @@
     "de": "Steineflüsterer II",
     "ja": "ストーンウィスパラーII",
     "fr": "Amoureux des pierres II",
-    "icon": "/i/005000/005431.png",
+    "icon": "/api/asset?path=ui/icon/005000/005431.tex&format=png",
     "level": 16,
     "job": 16,
     "description": {
@@ -739,7 +739,7 @@
     "de": "Steineflüsterer III",
     "ja": "ストーンウィスパラーIII",
     "fr": "Amoureux des pierres III",
-    "icon": "/i/005000/005432.png",
+    "icon": "/api/asset?path=ui/icon/005000/005432.tex&format=png",
     "level": 21,
     "job": 16,
     "description": {
@@ -754,7 +754,7 @@
     "de": "Steineflüsterer IV",
     "ja": "ストーンウィスパラーIV",
     "fr": "Amoureux des pierres IV",
-    "icon": "/i/005000/005433.png",
+    "icon": "/api/asset?path=ui/icon/005000/005433.tex&format=png",
     "level": 26,
     "job": 16,
     "description": {
@@ -769,7 +769,7 @@
     "de": "Verbesserte Gunst der Zwölf",
     "ja": "十二神の加護効果アップ",
     "fr": "Bénédiction des Douze améliorée",
-    "icon": "/i/005000/005434.png",
+    "icon": "/api/asset?path=ui/icon/005000/005434.tex&format=png",
     "level": 41,
     "job": 16,
     "description": {
@@ -784,7 +784,7 @@
     "de": "Verbesserte Gunst der Zwölf II",
     "ja": "十二神の加護効果アップII",
     "fr": "Bénédiction des Douze améliorée II",
-    "icon": "/i/005000/005435.png",
+    "icon": "/api/asset?path=ui/icon/005000/005435.tex&format=png",
     "level": 50,
     "job": 16,
     "description": {
@@ -799,7 +799,7 @@
     "de": "Dünenfischer",
     "ja": "砂海釣り",
     "fr": "Pêcheur des sables",
-    "icon": "/i/005000/005483.png",
+    "icon": "/api/asset?path=ui/icon/005000/005483.tex&format=png",
     "level": 35,
     "job": 18,
     "description": {
@@ -814,7 +814,7 @@
     "de": "Wolkenfischer",
     "ja": "雲海釣り",
     "fr": "Pêcheur des nuages",
-    "icon": "/i/005000/005484.png",
+    "icon": "/api/asset?path=ui/icon/005000/005484.tex&format=png",
     "level": 45,
     "job": 18,
     "description": {
@@ -874,7 +874,7 @@
     "de": "Möwenauge",
     "ja": "ガルアイ",
     "fr": "Œil du goéland",
-    "icon": "/i/005000/005479.png",
+    "icon": "/api/asset?path=ui/icon/005000/005479.tex&format=png",
     "level": 15,
     "job": 18,
     "description": {
@@ -919,7 +919,7 @@
     "de": "Verbessertes Köderfisch-Angeln",
     "ja": "泳がせ釣り効果アップ",
     "fr": "Pêche au vif améliorée",
-    "icon": "/i/005000/005482.png",
+    "icon": "/api/asset?path=ui/icon/005000/005482.tex&format=png",
     "level": 40,
     "job": 18,
     "description": {
@@ -979,7 +979,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 20,
     "job": 26,
     "description": {
@@ -1024,7 +1024,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 40,
     "job": 26,
     "description": {
@@ -1054,7 +1054,7 @@
     "de": "STR-Schub",
     "ja": "ＳＴＲアップ",
     "fr": "Force améliorée",
-    "icon": "/i/009000/009004.png",
+    "icon": "/api/asset?path=ui/icon/009000/009004.tex&format=png",
     "level": 2,
     "job": 0,
     "description": {
@@ -1069,7 +1069,7 @@
     "de": "Erhöhte LP",
     "ja": "最大ＨＰアップ",
     "fr": "PV améliorés",
-    "icon": "/i/009000/009001.png",
+    "icon": "/api/asset?path=ui/icon/009000/009001.tex&format=png",
     "level": 3,
     "job": 0,
     "description": {
@@ -1084,7 +1084,7 @@
     "de": "Erhöhte Präzision",
     "ja": "命中率アップ",
     "fr": "Précision améliorée",
-    "icon": "/i/009000/009010.png",
+    "icon": "/api/asset?path=ui/icon/009000/009010.tex&format=png",
     "level": 5,
     "job": 0,
     "description": {
@@ -1099,7 +1099,7 @@
     "de": "Verbesserte Kritische Treffer",
     "ja": "クリティカルアップ",
     "fr": "Critique amélioré",
-    "icon": "/i/009000/009012.png",
+    "icon": "/api/asset?path=ui/icon/009000/009012.tex&format=png",
     "level": 6,
     "job": 0,
     "description": {
@@ -1114,7 +1114,7 @@
     "de": "STR-Schub",
     "ja": "ＳＴＲアップ",
     "fr": "Force améliorée",
-    "icon": "/i/009000/009004.png",
+    "icon": "/api/asset?path=ui/icon/009000/009004.tex&format=png",
     "level": 8,
     "job": 0,
     "description": {
@@ -1129,7 +1129,7 @@
     "de": "Erhöhte LP",
     "ja": "最大ＨＰアップ",
     "fr": "PV améliorés",
-    "icon": "/i/009000/009001.png",
+    "icon": "/api/asset?path=ui/icon/009000/009001.tex&format=png",
     "level": 9,
     "job": 0,
     "description": {
@@ -1144,7 +1144,7 @@
     "de": "STR-Schub",
     "ja": "ＳＴＲアップ",
     "fr": "Force améliorée",
-    "icon": "/i/009000/009004.png",
+    "icon": "/api/asset?path=ui/icon/009000/009004.tex&format=png",
     "level": 2,
     "job": 0,
     "description": {
@@ -1159,7 +1159,7 @@
     "de": "Erhöhte LP",
     "ja": "最大ＨＰアップ",
     "fr": "PV améliorés",
-    "icon": "/i/009000/009001.png",
+    "icon": "/api/asset?path=ui/icon/009000/009001.tex&format=png",
     "level": 3,
     "job": 0,
     "description": {
@@ -1174,7 +1174,7 @@
     "de": "Erhöhte Präzision",
     "ja": "命中率アップ",
     "fr": "Précision améliorée",
-    "icon": "/i/009000/009010.png",
+    "icon": "/api/asset?path=ui/icon/009000/009010.tex&format=png",
     "level": 5,
     "job": 0,
     "description": {
@@ -1189,7 +1189,7 @@
     "de": "Verbesserte Kritische Treffer",
     "ja": "クリティカルアップ",
     "fr": "Critique amélioré",
-    "icon": "/i/009000/009012.png",
+    "icon": "/api/asset?path=ui/icon/009000/009012.tex&format=png",
     "level": 6,
     "job": 0,
     "description": {
@@ -1204,7 +1204,7 @@
     "de": "STR-Schub II",
     "ja": "ＳＴＲアップ",
     "fr": "Force améliorée",
-    "icon": "/i/009000/009004.png",
+    "icon": "/api/asset?path=ui/icon/009000/009004.tex&format=png",
     "level": 8,
     "job": 0,
     "description": {
@@ -1219,7 +1219,7 @@
     "de": "Angriffsgeschwindigkeit +",
     "ja": "攻撃速度アップ",
     "fr": "Vitesse améliorée",
-    "icon": "/i/009000/009013.png",
+    "icon": "/api/asset?path=ui/icon/009000/009013.tex&format=png",
     "level": 9,
     "job": 0,
     "description": {
@@ -1234,7 +1234,7 @@
     "de": "WLK-Schub",
     "ja": "ＭＮＤアップ",
     "fr": "Esprit amélioré",
-    "icon": "/i/009000/009008.png",
+    "icon": "/api/asset?path=ui/icon/009000/009008.tex&format=png",
     "level": 2,
     "job": 0,
     "description": {
@@ -1249,7 +1249,7 @@
     "de": "Erhöhte LP",
     "ja": "最大ＨＰアップ",
     "fr": "PV améliorés",
-    "icon": "/i/009000/009001.png",
+    "icon": "/api/asset?path=ui/icon/009000/009001.tex&format=png",
     "level": 3,
     "job": 0,
     "description": {
@@ -1264,7 +1264,7 @@
     "de": "Erhöhte Präzision",
     "ja": "命中率アップ",
     "fr": "Précision améliorée",
-    "icon": "/i/009000/009010.png",
+    "icon": "/api/asset?path=ui/icon/009000/009010.tex&format=png",
     "level": 5,
     "job": 0,
     "description": {
@@ -1279,7 +1279,7 @@
     "de": "Verbesserte Kritische Treffer",
     "ja": "クリティカルアップ",
     "fr": "Critique amélioré",
-    "icon": "/i/009000/009012.png",
+    "icon": "/api/asset?path=ui/icon/009000/009012.tex&format=png",
     "level": 6,
     "job": 0,
     "description": {
@@ -1294,7 +1294,7 @@
     "de": "WLK-Schub II",
     "ja": "ＭＮＤアップ",
     "fr": "Esprit amélioré",
-    "icon": "/i/009000/009008.png",
+    "icon": "/api/asset?path=ui/icon/009000/009008.tex&format=png",
     "level": 8,
     "job": 0,
     "description": {
@@ -1309,7 +1309,7 @@
     "de": "Erhöhte LP",
     "ja": "最大ＨＰアップ",
     "fr": "PV améliorés",
-    "icon": "/i/009000/009001.png",
+    "icon": "/api/asset?path=ui/icon/009000/009001.tex&format=png",
     "level": 9,
     "job": 0,
     "description": {
@@ -1339,7 +1339,7 @@
     "de": "Alle Viere",
     "ja": "落下ダメージ軽減",
     "fr": "Sur ses pattes",
-    "icon": "/i/005000/005401.png",
+    "icon": "/api/asset?path=ui/icon/005000/005401.tex&format=png",
     "level": 14,
     "job": 29,
     "description": {
@@ -1384,7 +1384,7 @@
     "de": "Bewegungsgeschwindigkeit +",
     "ja": "移動速度アップ",
     "fr": "Vive allure",
-    "icon": "/i/005000/005403.png",
+    "icon": "/api/asset?path=ui/icon/005000/005403.tex&format=png",
     "level": 20,
     "job": 29,
     "description": {
@@ -1399,7 +1399,7 @@
     "de": "Nymeias Segen",
     "ja": "ニメーヤの加護",
     "fr": "Grâce de Nymeia",
-    "icon": "/i/005000/005436.png",
+    "icon": "/api/asset?path=ui/icon/005000/005436.tex&format=png",
     "level": 42,
     "job": 16,
     "description": {
@@ -1414,7 +1414,7 @@
     "de": "Steineflüsterer V",
     "ja": "ストーンウィスパラーV",
     "fr": "Amoureux des pierres V",
-    "icon": "/i/005000/005437.png",
+    "icon": "/api/asset?path=ui/icon/005000/005437.tex&format=png",
     "level": 53,
     "job": 16,
     "description": {
@@ -1474,7 +1474,7 @@
     "de": "Nymeias Segen",
     "ja": "ニメーヤの加護",
     "fr": "Grâce de Nymeia",
-    "icon": "/i/005000/005461.png",
+    "icon": "/api/asset?path=ui/icon/005000/005461.tex&format=png",
     "level": 42,
     "job": 17,
     "description": {
@@ -1489,7 +1489,7 @@
     "de": "Baumflüsterer V",
     "ja": "ツリーウィスパラーV",
     "fr": "Amoureux des arbres V",
-    "icon": "/i/005000/005462.png",
+    "icon": "/api/asset?path=ui/icon/005000/005462.tex&format=png",
     "level": 53,
     "job": 17,
     "description": {
@@ -1579,7 +1579,7 @@
     "de": "Himmelsfischen",
     "ja": "浮島釣り",
     "fr": "Pêcheur des cieux",
-    "icon": "/i/005000/005488.png",
+    "icon": "/api/asset?path=ui/icon/005000/005488.tex&format=png",
     "level": 53,
     "job": 18,
     "description": {
@@ -1639,7 +1639,7 @@
     "de": "Höllenfischen",
     "ja": "溶岩釣り",
     "fr": "Pêcheur des enfers",
-    "icon": "/i/005000/005489.png",
+    "icon": "/api/asset?path=ui/icon/005000/005489.tex&format=png",
     "level": 55,
     "job": 18,
     "description": {
@@ -1654,7 +1654,7 @@
     "de": "Ätherfischen",
     "ja": "魔泉釣り",
     "fr": "Pêcheur de l'éther",
-    "icon": "/i/005000/005490.png",
+    "icon": "/api/asset?path=ui/icon/005000/005490.tex&format=png",
     "level": 58,
     "job": 18,
     "description": {
@@ -1744,7 +1744,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージアップ",
     "fr": "Dégâts des actions augmentés",
-    "icon": "/i/006000/006002.png",
+    "icon": "/api/asset?path=ui/icon/006000/006002.tex&format=png",
     "level": 20,
     "job": 31,
     "description": {
@@ -1774,7 +1774,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージアップII",
     "fr": "Dégâts des actions augmentés II",
-    "icon": "/i/006000/006003.png",
+    "icon": "/api/asset?path=ui/icon/006000/006003.tex&format=png",
     "level": 40,
     "job": 31,
     "description": {
@@ -1819,7 +1819,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/006000/006102.png",
+    "icon": "/api/asset?path=ui/icon/006000/006102.tex&format=png",
     "level": 20,
     "job": 33,
     "description": {
@@ -1849,7 +1849,7 @@
     "de": "Verbesserter Harmonieaspekt",
     "ja": "ベネフィク効果アップ",
     "fr": "Bienfaisance améliorée",
-    "icon": "/i/006000/006105.png",
+    "icon": "/api/asset?path=ui/icon/006000/006105.tex&format=png",
     "level": 36,
     "job": 33,
     "description": {
@@ -1864,7 +1864,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/006000/006103.png",
+    "icon": "/api/asset?path=ui/icon/006000/006103.tex&format=png",
     "level": 40,
     "job": 33,
     "description": {
@@ -2014,7 +2014,7 @@
     "de": "Salzseefischen",
     "ja": "塩湖釣り",
     "fr": "Pêcheur des lacs salés",
-    "icon": "/i/005000/005499.png",
+    "icon": "/api/asset?path=ui/icon/005000/005499.tex&format=png",
     "level": 68,
     "job": 18,
     "description": {
@@ -2059,7 +2059,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 8,
     "description": {
@@ -2074,7 +2074,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 9,
     "description": {
@@ -2089,7 +2089,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 10,
     "description": {
@@ -2104,7 +2104,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 11,
     "description": {
@@ -2119,7 +2119,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 12,
     "description": {
@@ -2134,7 +2134,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 13,
     "description": {
@@ -2149,7 +2149,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 14,
     "description": {
@@ -2164,7 +2164,7 @@
     "de": "Materialprüfung",
     "ja": "品質精査",
     "fr": "Examen des matériaux",
-    "icon": "/i/006000/006976.png",
+    "icon": "/api/asset?path=ui/icon/006000/006976.tex&format=png",
     "level": 63,
     "job": 15,
     "description": {
@@ -2299,7 +2299,7 @@
     "de": "Auto-Ausloten",
     "ja": "オートファゾム",
     "fr": "Sondage automatique",
-    "icon": "/i/005000/005497.png",
+    "icon": "/api/asset?path=ui/icon/005000/005497.tex&format=png",
     "level": 61,
     "job": 18,
     "description": {
@@ -2329,7 +2329,7 @@
     "de": "Verbesserte Deckung",
     "ja": "かばう効果アップ",
     "fr": "Couverture améliorée",
-    "icon": "/i/005000/005209.png",
+    "icon": "/api/asset?path=ui/icon/005000/005209.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2344,7 +2344,7 @@
     "de": "Verbesserter Schlachtruf",
     "ja": "ウォークライ効果アップ",
     "fr": "Cri de guerre amélioré",
-    "icon": "/i/005000/005259.png",
+    "icon": "/api/asset?path=ui/icon/005000/005259.tex&format=png",
     "level": 66,
     "job": 21,
     "description": {
@@ -2359,7 +2359,7 @@
     "de": "Schwarzblut",
     "ja": "ブラックブラッド",
     "fr": "Sang noir",
-    "icon": "/i/006000/006059.png",
+    "icon": "/api/asset?path=ui/icon/006000/006059.tex&format=png",
     "level": 62,
     "job": 32,
     "description": {
@@ -2374,7 +2374,7 @@
     "de": "Schwarzblut II",
     "ja": "ブラックブラッドII",
     "fr": "Sang noir II",
-    "icon": "/i/006000/006060.png",
+    "icon": "/api/asset?path=ui/icon/006000/006060.tex&format=png",
     "level": 66,
     "job": 32,
     "description": {
@@ -2389,7 +2389,7 @@
     "de": "Tiefe Meditation",
     "ja": "闘気充填アップ",
     "fr": "Méditation profonde",
-    "icon": "/i/005000/005234.png",
+    "icon": "/api/asset?path=ui/icon/005000/005234.tex&format=png",
     "level": 38,
     "job": 20,
     "description": {
@@ -2404,7 +2404,7 @@
     "de": "Rakshasas Meister",
     "ja": "羅刹衝マスタリー",
     "fr": "Maîtrise de Coup d'épaule",
-    "icon": "/i/005000/005235.png",
+    "icon": "/api/asset?path=ui/icon/005000/005235.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2419,7 +2419,7 @@
     "de": "Meister der Lanze",
     "ja": "ランスマスタリー",
     "fr": "Maîtrise de la lance",
-    "icon": "/i/005000/005284.png",
+    "icon": "/api/asset?path=ui/icon/005000/005284.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2434,7 +2434,7 @@
     "de": "Drachengeist",
     "ja": "紅の竜血",
     "fr": "Vie du dragon",
-    "icon": "/i/005000/005289.png",
+    "icon": "/api/asset?path=ui/icon/005000/005289.tex&format=png",
     "level": 70,
     "job": 22,
     "description": {
@@ -2464,7 +2464,7 @@
     "de": "Shukiho",
     "ja": "集気法",
     "fr": "Shûkihô",
-    "icon": "/i/005000/005411.png",
+    "icon": "/api/asset?path=ui/icon/005000/005411.tex&format=png",
     "level": 62,
     "job": 30,
     "description": {
@@ -2479,7 +2479,7 @@
     "de": "Verbessertes Shukuchi",
     "ja": "縮地効果アップ",
     "fr": "Shukuchi amélioré",
-    "icon": "/i/005000/005412.png",
+    "icon": "/api/asset?path=ui/icon/005000/005412.tex&format=png",
     "level": 64,
     "job": 30,
     "description": {
@@ -2509,7 +2509,7 @@
     "de": "Meister der Bisse",
     "ja": "バイトマスタリー",
     "fr": "Maîtrise des Morsures",
-    "icon": "/i/005000/005309.png",
+    "icon": "/api/asset?path=ui/icon/005000/005309.tex&format=png",
     "level": 64,
     "job": 23,
     "description": {
@@ -2524,7 +2524,7 @@
     "de": "Verbesserter Empyreischer Pfeil",
     "ja": "エンピリアルアロー効果アップ",
     "fr": "Flèche empyréenne améliorée",
-    "icon": "/i/005000/005310.png",
+    "icon": "/api/asset?path=ui/icon/005000/005310.tex&format=png",
     "level": 68,
     "job": 23,
     "description": {
@@ -2554,7 +2554,7 @@
     "de": "Blitzmeister",
     "ja": "サンダーマスタリー",
     "fr": "Maîtrise de Foudre",
-    "icon": "/i/005000/005357.png",
+    "icon": "/api/asset?path=ui/icon/005000/005357.tex&format=png",
     "level": 45,
     "job": 25,
     "description": {
@@ -2569,7 +2569,7 @@
     "de": "Blitzmeister II",
     "ja": "サンダーマスタリーII",
     "fr": "Maîtrise de Foudre II",
-    "icon": "/i/005000/005358.png",
+    "icon": "/api/asset?path=ui/icon/005000/005358.tex&format=png",
     "level": 64,
     "job": 25,
     "description": {
@@ -2584,7 +2584,7 @@
     "de": "Verbessertes Schattenherz",
     "ja": "アンブラルハート効果アップ",
     "fr": "Cœur ombral amélioré",
-    "icon": "/i/005000/005359.png",
+    "icon": "/api/asset?path=ui/icon/005000/005359.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2599,7 +2599,7 @@
     "de": "Verbessertes Henochisch",
     "ja": "エノキアン効果アップ",
     "fr": "Énochien amélioré",
-    "icon": "/i/005000/005360.png",
+    "icon": "/api/asset?path=ui/icon/005000/005360.tex&format=png",
     "level": 70,
     "job": 25,
     "description": {
@@ -2614,7 +2614,7 @@
     "de": "Biologischer Abbau",
     "ja": "コラプションマスタリー",
     "fr": "Maîtrise des infections",
-    "icon": "/i/005000/005376.png",
+    "icon": "/api/asset?path=ui/icon/005000/005376.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2629,7 +2629,7 @@
     "de": "Verbessertes Ruinra",
     "ja": "ルインラ効果アップ",
     "fr": "Extra Ruine améliorée",
-    "icon": "/i/005000/005377.png",
+    "icon": "/api/asset?path=ui/icon/005000/005377.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2644,7 +2644,7 @@
     "de": "Biologischer Abbau II",
     "ja": "コラプションマスタリーII",
     "fr": "Maîtrise des infections II",
-    "icon": "/i/005000/005378.png",
+    "icon": "/api/asset?path=ui/icon/005000/005378.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2659,7 +2659,7 @@
     "de": "Verbesserte Bahamut-Trance",
     "ja": "トランス・バハムート効果アップ",
     "fr": "Transe-Bahamut améliorée",
-    "icon": "/i/005000/005380.png",
+    "icon": "/api/asset?path=ui/icon/005000/005380.tex&format=png",
     "level": 70,
     "job": 27,
     "description": {
@@ -2674,7 +2674,7 @@
     "de": "Steinmeister",
     "ja": "ストーンマスタリー",
     "fr": "Maîtrise de Terre",
-    "icon": "/i/005000/005333.png",
+    "icon": "/api/asset?path=ui/icon/005000/005333.tex&format=png",
     "level": 18,
     "job": 6,
     "description": {
@@ -2689,7 +2689,7 @@
     "de": "Windmeister",
     "ja": "エアロマスタリー",
     "fr": "Maîtrise de Vent",
-    "icon": "/i/005000/005334.png",
+    "icon": "/api/asset?path=ui/icon/005000/005334.tex&format=png",
     "level": 46,
     "job": 6,
     "description": {
@@ -2704,7 +2704,7 @@
     "de": "Steinmeister II",
     "ja": "ストーンマスタリーII",
     "fr": "Maîtrise de Terre II",
-    "icon": "/i/005000/005336.png",
+    "icon": "/api/asset?path=ui/icon/005000/005336.tex&format=png",
     "level": 54,
     "job": 24,
     "description": {
@@ -2719,7 +2719,7 @@
     "de": "Steinmeister III",
     "ja": "ストーンマスタリーIII",
     "fr": "Maîtrise de Terre III",
-    "icon": "/i/005000/005337.png",
+    "icon": "/api/asset?path=ui/icon/005000/005337.tex&format=png",
     "level": 64,
     "job": 24,
     "description": {
@@ -2734,7 +2734,7 @@
     "de": "Geheimnis der Lilie II",
     "ja": "シークレットリリーII",
     "fr": "Secret des Lys II",
-    "icon": "/i/005000/005338.png",
+    "icon": "/api/asset?path=ui/icon/005000/005338.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -2749,7 +2749,7 @@
     "de": "Meister der Bravade II",
     "ja": "炎法マスタリーII",
     "fr": "Maîtrise de Loi de l'ébullition II",
-    "icon": "/i/005000/005392.png",
+    "icon": "/api/asset?path=ui/icon/005000/005392.tex&format=png",
     "level": 64,
     "job": 28,
     "description": {
@@ -2779,7 +2779,7 @@
     "de": "Meister der Konjunktion",
     "ja": "コンバスマスタリー",
     "fr": "Maîtrise de Conjonction supérieure",
-    "icon": "/i/006000/006109.png",
+    "icon": "/api/asset?path=ui/icon/006000/006109.tex&format=png",
     "level": 46,
     "job": 33,
     "description": {
@@ -2794,7 +2794,7 @@
     "de": "Meister des Spannungsaspekts",
     "ja": "マレフィクマスタリー",
     "fr": "Maîtrise de Malfaisance",
-    "icon": "/i/006000/006110.png",
+    "icon": "/api/asset?path=ui/icon/006000/006110.tex&format=png",
     "level": 54,
     "job": 33,
     "description": {
@@ -2809,7 +2809,7 @@
     "de": "Meister des Spannungsaspekts II",
     "ja": "マレフィクマスタリーII",
     "fr": "Maîtrise de Malfaisance II",
-    "icon": "/i/006000/006111.png",
+    "icon": "/api/asset?path=ui/icon/006000/006111.tex&format=png",
     "level": 64,
     "job": 33,
     "description": {
@@ -2824,7 +2824,7 @@
     "de": "Überlichtgeschwindigkeit",
     "ja": "ライトスピード効果アップ",
     "fr": "Vitesse de la lumière accélérée",
-    "icon": "/i/006000/006101.png",
+    "icon": "/api/asset?path=ui/icon/006000/006101.tex&format=png",
     "level": 68,
     "job": 33,
     "description": {
@@ -2869,7 +2869,7 @@
     "de": "Sammelregeneration",
     "ja": "GP回復量アップ",
     "fr": "Auto-récupération de PR augmentée",
-    "icon": "/i/005000/005444.png",
+    "icon": "/api/asset?path=ui/icon/005000/005444.tex&format=png",
     "level": 70,
     "job": 16,
     "description": {
@@ -2884,7 +2884,7 @@
     "de": "Sammelregeneration",
     "ja": "GP回復量アップ",
     "fr": "Auto-récupération de PR augmentée",
-    "icon": "/i/005000/005469.png",
+    "icon": "/api/asset?path=ui/icon/005000/005469.tex&format=png",
     "level": 70,
     "job": 17,
     "description": {
@@ -2899,7 +2899,7 @@
     "de": "Sammelregeneration",
     "ja": "GP回復量アップ",
     "fr": "Auto-récupération de PR augmentée",
-    "icon": "/i/005000/005498.png",
+    "icon": "/api/asset?path=ui/icon/005000/005498.tex&format=png",
     "level": 70,
     "job": 18,
     "description": {
@@ -2914,7 +2914,7 @@
     "de": "Verbesserter Stoß",
     "ja": "ジョルト効果アップ",
     "fr": "À-coup amélioré",
-    "icon": "/i/006000/006201.png",
+    "icon": "/api/asset?path=ui/icon/006000/006201.tex&format=png",
     "level": 62,
     "job": 35,
     "description": {
@@ -2929,7 +2929,7 @@
     "de": "Geheimnis der Lilie",
     "ja": "シークレットリリー",
     "fr": "Secret des Lys",
-    "icon": "/i/005000/005335.png",
+    "icon": "/api/asset?path=ui/icon/005000/005335.tex&format=png",
     "level": 52,
     "job": 24,
     "description": {
@@ -2989,7 +2989,7 @@
     "de": "Hauen und Heilen",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 20,
     "job": 35,
     "description": {
@@ -3004,7 +3004,7 @@
     "de": "Hauen und Heilen II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 40,
     "job": 35,
     "description": {
@@ -3094,7 +3094,7 @@
     "de": "Meister der Göttlichen Magie",
     "ja": "神聖魔法マスタリー",
     "fr": "Maîtrise de la magie divine",
-    "icon": "/i/005000/005210.png",
+    "icon": "/api/asset?path=ui/icon/005000/005210.tex&format=png",
     "level": 64,
     "job": 19,
     "description": {
@@ -3109,7 +3109,7 @@
     "de": "Kenki-Meister II",
     "ja": "剣気マスタリーII",
     "fr": "Maîtrise de Kenki II",
-    "icon": "/i/006000/006151.png",
+    "icon": "/api/asset?path=ui/icon/006000/006151.tex&format=png",
     "level": 62,
     "job": 34,
     "description": {
@@ -3124,7 +3124,7 @@
     "de": "Eidmeister",
     "ja": "忠義マスタリー",
     "fr": "Maîtrise du serment",
-    "icon": "/i/005000/005211.png",
+    "icon": "/api/asset?path=ui/icon/005000/005211.tex&format=png",
     "level": 35,
     "job": 19,
     "description": {
@@ -3184,7 +3184,7 @@
     "de": "Verbesserte Entflammung",
     "ja": "エンキンドル効果アップ",
     "fr": "Galvanisation améliorée",
-    "icon": "/i/005000/005379.png",
+    "icon": "/api/asset?path=ui/icon/005000/005379.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -3199,7 +3199,7 @@
     "de": "Meister der Bravade",
     "ja": "炎法マスタリー",
     "fr": "Maîtrise de Loi de l'ébullition",
-    "icon": "/i/005000/005394.png",
+    "icon": "/api/asset?path=ui/icon/005000/005394.tex&format=png",
     "level": 54,
     "job": 28,
     "description": {
@@ -3214,7 +3214,7 @@
     "de": "Kenki-Meister",
     "ja": "剣気マスタリー",
     "fr": "Maîtrise de Kenki",
-    "icon": "/i/006000/006152.png",
+    "icon": "/api/asset?path=ui/icon/006000/006152.tex&format=png",
     "level": 52,
     "job": 34,
     "description": {
@@ -3229,7 +3229,7 @@
     "de": "Doppelzauber",
     "ja": "連続魔",
     "fr": "Chaîne de sorts",
-    "icon": "/i/006000/006203.png",
+    "icon": "/api/asset?path=ui/icon/006000/006203.tex&format=png",
     "level": 1,
     "job": 35,
     "description": {
@@ -3244,7 +3244,7 @@
     "de": "Meister des Ruins",
     "ja": "ルインマスタリー",
     "fr": "Maîtrise de Ruine",
-    "icon": "/i/005000/005395.png",
+    "icon": "/api/asset?path=ui/icon/005000/005395.tex&format=png",
     "level": 30,
     "job": 26,
     "description": {
@@ -3259,7 +3259,7 @@
     "de": "Meister der Tollwut",
     "ja": "バーサクマスタリー",
     "fr": "Maîtrise de Berserk",
-    "icon": "/i/005000/005260.png",
+    "icon": "/api/asset?path=ui/icon/005000/005260.tex&format=png",
     "level": 70,
     "job": 21,
     "description": {
@@ -3274,7 +3274,7 @@
     "de": "Erlernen",
     "ja": "ラーニング",
     "fr": "Apprentissage",
-    "icon": "/i/006000/006251.png",
+    "icon": "/api/asset?path=ui/icon/006000/006251.tex&format=png",
     "level": 1,
     "job": 36,
     "description": {
@@ -3289,7 +3289,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 10,
     "job": 36,
     "description": {
@@ -3304,7 +3304,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 20,
     "job": 36,
     "description": {
@@ -3319,7 +3319,7 @@
     "de": "Verbesserte Kommandos III",
     "ja": "アクションダメージ・回復量アップIII",
     "fr": "Efficacité des actions augmentée III",
-    "icon": "/i/005000/005187.png",
+    "icon": "/api/asset?path=ui/icon/005000/005187.tex&format=png",
     "level": 30,
     "job": 36,
     "description": {
@@ -3334,7 +3334,7 @@
     "de": "Verbesserte Kommandos IV",
     "ja": "アクションダメージ・回復量アップIV",
     "fr": "Efficacité des actions augmentée IV",
-    "icon": "/i/005000/005188.png",
+    "icon": "/api/asset?path=ui/icon/005000/005188.tex&format=png",
     "level": 40,
     "job": 36,
     "description": {
@@ -3349,7 +3349,7 @@
     "de": "Verbesserte Kommandos V",
     "ja": "アクションダメージ・回復量アップV",
     "fr": "Efficacité des actions augmentée V",
-    "icon": "/i/005000/005189.png",
+    "icon": "/api/asset?path=ui/icon/005000/005189.tex&format=png",
     "level": 50,
     "job": 36,
     "description": {
@@ -3529,7 +3529,7 @@
     "de": "Sammelregeneration II",
     "ja": "GP回復量アップII",
     "fr": "Auto-récupération de PR augmentée II",
-    "icon": "/i/005000/005449.png",
+    "icon": "/api/asset?path=ui/icon/005000/005449.tex&format=png",
     "level": 80,
     "job": 16,
     "description": {
@@ -3544,7 +3544,7 @@
     "de": "Sammelregeneration II",
     "ja": "GP回復量アップII",
     "fr": "Auto-récupération de PR augmentée II",
-    "icon": "/i/005000/005474.png",
+    "icon": "/api/asset?path=ui/icon/005000/005474.tex&format=png",
     "level": 80,
     "job": 17,
     "description": {
@@ -3559,7 +3559,7 @@
     "de": "Sammelregeneration II",
     "ja": "GP回復量アップII",
     "fr": "Auto-récupération de PR augmentée II",
-    "icon": "/i/005000/005496.png",
+    "icon": "/api/asset?path=ui/icon/005000/005496.tex&format=png",
     "level": 80,
     "job": 18,
     "description": {
@@ -3574,7 +3574,7 @@
     "de": "Sammelregeneration III",
     "ja": "GP回復量アップIII",
     "fr": "Auto-récupération de PR augmentée III",
-    "icon": "/i/005000/005441.png",
+    "icon": "/api/asset?path=ui/icon/005000/005441.tex&format=png",
     "level": 83,
     "job": 16,
     "description": {
@@ -3589,7 +3589,7 @@
     "de": "Sammelregeneration III",
     "ja": "GP回復量アップIII",
     "fr": "Auto-récupération de PR augmentée III",
-    "icon": "/i/005000/005466.png",
+    "icon": "/api/asset?path=ui/icon/005000/005466.tex&format=png",
     "level": 83,
     "job": 17,
     "description": {
@@ -3604,7 +3604,7 @@
     "de": "Sammelregeneration III",
     "ja": "GP回復量アップIII",
     "fr": "Auto-récupération de PR augmentée III",
-    "icon": "/i/005000/005486.png",
+    "icon": "/api/asset?path=ui/icon/005000/005486.tex&format=png",
     "level": 83,
     "job": 18,
     "description": {
@@ -3619,7 +3619,7 @@
     "de": "Verbesserte Felsenfeste Überzeugung",
     "ja": "石工の理効果アップ",
     "fr": "Raison solide améliorée",
-    "icon": "/i/005000/005442.png",
+    "icon": "/api/asset?path=ui/icon/005000/005442.tex&format=png",
     "level": 90,
     "job": 16,
     "description": {
@@ -3634,7 +3634,7 @@
     "de": "Verbesserte Bauernschläue",
     "ja": "老農の知効果アップ",
     "fr": "Sagesse du fermier améliorée",
-    "icon": "/i/005000/005467.png",
+    "icon": "/api/asset?path=ui/icon/005000/005467.tex&format=png",
     "level": 90,
     "job": 17,
     "description": {
@@ -3649,7 +3649,7 @@
     "de": "Fischversessen",
     "ja": "ビッグフィッシャー",
     "fr": "Féru de pêche",
-    "icon": "/i/005000/005485.png",
+    "icon": "/api/asset?path=ui/icon/005000/005485.tex&format=png",
     "level": 15,
     "job": 18,
     "description": {
@@ -3664,7 +3664,7 @@
     "de": "Tiefe Meditation II",
     "ja": "闘気充填アップII",
     "fr": "Méditation profonde II",
-    "icon": "/i/005000/005238.png",
+    "icon": "/api/asset?path=ui/icon/005000/005238.tex&format=png",
     "level": 74,
     "job": 20,
     "description": {
@@ -3679,7 +3679,7 @@
     "de": "Ritterlichkeit",
     "ja": "シバルリー",
     "fr": "Chevalerie",
-    "icon": "/i/005000/005212.png",
+    "icon": "/api/asset?path=ui/icon/005000/005212.tex&format=png",
     "level": 58,
     "job": 19,
     "description": {
@@ -3694,7 +3694,7 @@
     "de": "Meister der Lanze",
     "ja": "ランスマスタリー",
     "fr": "Maîtrise de la lance",
-    "icon": "/i/005000/005284.png",
+    "icon": "/api/asset?path=ui/icon/005000/005284.tex&format=png",
     "level": 76,
     "job": 22,
     "description": {
@@ -3724,7 +3724,7 @@
     "de": "Wildes Geblüt",
     "ja": "インナービースト",
     "fr": "Jauge de la bête",
-    "icon": "/i/005000/005261.png",
+    "icon": "/api/asset?path=ui/icon/005000/005261.tex&format=png",
     "level": 35,
     "job": 21,
     "description": {
@@ -3739,7 +3739,7 @@
     "de": "Verbessertes Kassatsu",
     "ja": "活殺自在効果アップ",
     "fr": "Kassatsu amélioré",
-    "icon": "/i/005000/005414.png",
+    "icon": "/api/asset?path=ui/icon/005000/005414.tex&format=png",
     "level": 76,
     "job": 30,
     "description": {
@@ -3754,7 +3754,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージアップ",
     "fr": "Dégâts des actions augmentés",
-    "icon": "/i/006000/006351.png",
+    "icon": "/api/asset?path=ui/icon/006000/006351.tex&format=png",
     "level": 50,
     "job": 38,
     "description": {
@@ -3769,7 +3769,7 @@
     "de": "Plume Burlesque",
     "ja": "幻扇",
     "fr": "Éventail onirique",
-    "icon": "/i/006000/006352.png",
+    "icon": "/api/asset?path=ui/icon/006000/006352.tex&format=png",
     "level": 30,
     "job": 38,
     "description": {
@@ -3784,7 +3784,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージアップII",
     "fr": "Dégâts des actions augmentés II",
-    "icon": "/i/006000/006353.png",
+    "icon": "/api/asset?path=ui/icon/006000/006353.tex&format=png",
     "level": 60,
     "job": 38,
     "description": {
@@ -3799,7 +3799,7 @@
     "de": "Verbesserter En Avant",
     "ja": "アン・アヴァン効果アップ",
     "fr": "En avant amélioré",
-    "icon": "/i/006000/006354.png",
+    "icon": "/api/asset?path=ui/icon/006000/006354.tex&format=png",
     "level": 68,
     "job": 38,
     "description": {
@@ -3814,7 +3814,7 @@
     "de": "Tanzfieber",
     "ja": "エスプリ",
     "fr": "Fascination",
-    "icon": "/i/006000/006355.png",
+    "icon": "/api/asset?path=ui/icon/006000/006355.tex&format=png",
     "level": 76,
     "job": 38,
     "description": {
@@ -3829,7 +3829,7 @@
     "de": "Verbesserter En Avant II",
     "ja": "アン・アヴァン効果アップII",
     "fr": "En avant amélioré II",
-    "icon": "/i/006000/006356.png",
+    "icon": "/api/asset?path=ui/icon/006000/006356.tex&format=png",
     "level": 78,
     "job": 38,
     "description": {
@@ -3844,7 +3844,7 @@
     "de": "Erda-Patronen",
     "ja": "ソイルチャージ",
     "fr": "Chargement de cartouches",
-    "icon": "/i/006000/006301.png",
+    "icon": "/api/asset?path=ui/icon/006000/006301.tex&format=png",
     "level": 30,
     "job": 37,
     "description": {
@@ -3859,7 +3859,7 @@
     "de": "Verbesserter Brutaler Einschlag",
     "ja": "ブルータルシェル効果アップ",
     "fr": "Impact brutal amélioré",
-    "icon": "/i/006000/006302.png",
+    "icon": "/api/asset?path=ui/icon/006000/006302.tex&format=png",
     "level": 52,
     "job": 37,
     "description": {
@@ -3874,7 +3874,7 @@
     "de": "Meister der Sprengzone",
     "ja": "デンジャーゾーンマスタリー",
     "fr": "Maîtrise de Zone de danger",
-    "icon": "/i/006000/006303.png",
+    "icon": "/api/asset?path=ui/icon/006000/006303.tex&format=png",
     "level": 80,
     "job": 37,
     "description": {
@@ -3889,7 +3889,7 @@
     "de": "Meister des Grolls",
     "ja": "レイジ・オブ・ハルオーネマスタリー",
     "fr": "Maîtrise de Rage de Halone",
-    "icon": "/i/005000/005213.png",
+    "icon": "/api/asset?path=ui/icon/005000/005213.tex&format=png",
     "level": 60,
     "job": 19,
     "description": {
@@ -3904,7 +3904,7 @@
     "de": "Verbesserte Protuberanz",
     "ja": "プロミネンス効果アップ",
     "fr": "Évidence améliorée",
-    "icon": "/i/005000/005214.png",
+    "icon": "/api/asset?path=ui/icon/005000/005214.tex&format=png",
     "level": 72,
     "job": 19,
     "description": {
@@ -3919,7 +3919,7 @@
     "de": "Verbessertes Schiltron",
     "ja": "シェルトロン効果アップ",
     "fr": "Schiltron amélioré",
-    "icon": "/i/005000/005215.png",
+    "icon": "/api/asset?path=ui/icon/005000/005215.tex&format=png",
     "level": 74,
     "job": 19,
     "description": {
@@ -3934,7 +3934,7 @@
     "de": "Verbessertes Requiescat",
     "ja": "レクイエスカット効果アップ",
     "fr": "Requiescat amélioré",
-    "icon": "/i/005000/005216.png",
+    "icon": "/api/asset?path=ui/icon/005000/005216.tex&format=png",
     "level": 80,
     "job": 19,
     "description": {
@@ -3949,7 +3949,7 @@
     "de": "Schwert-Eid",
     "ja": "忠義の剣",
     "fr": "Serment de l'épée",
-    "icon": "/i/005000/005217.png",
+    "icon": "/api/asset?path=ui/icon/005000/005217.tex&format=png",
     "level": 76,
     "job": 19,
     "description": {
@@ -3964,7 +3964,7 @@
     "de": "Meister der Urkraft",
     "ja": "原初の魂マスタリー",
     "fr": "Maîtrise de Bête intérieure",
-    "icon": "/i/005000/005262.png",
+    "icon": "/api/asset?path=ui/icon/005000/005262.tex&format=png",
     "level": 54,
     "job": 21,
     "description": {
@@ -3979,7 +3979,7 @@
     "de": "Meister der Kreiselklinge",
     "ja": "スチールサイクロンマスタリー",
     "fr": "Maîtrise de Cyclone de fer",
-    "icon": "/i/005000/005263.png",
+    "icon": "/api/asset?path=ui/icon/005000/005263.tex&format=png",
     "level": 60,
     "job": 21,
     "description": {
@@ -3994,7 +3994,7 @@
     "de": "Saat des Chaos",
     "ja": "原初の混沌",
     "fr": "Chaos naissant",
-    "icon": "/i/005000/005264.png",
+    "icon": "/api/asset?path=ui/icon/005000/005264.tex&format=png",
     "level": 72,
     "job": 21,
     "description": {
@@ -4009,7 +4009,7 @@
     "de": "Meister des Inneren Tiers",
     "ja": "インナービーストマスタリー",
     "fr": "Maîtrise de la Jauge de la bête",
-    "icon": "/i/005000/005265.png",
+    "icon": "/api/asset?path=ui/icon/005000/005265.tex&format=png",
     "level": 74,
     "job": 21,
     "description": {
@@ -4024,7 +4024,7 @@
     "de": "Verbesserter Kampfrausch",
     "ja": "スリル・オブ・バトル効果アップ",
     "fr": "Frisson de la bataille amélioré",
-    "icon": "/i/005000/005258.png",
+    "icon": "/api/asset?path=ui/icon/005000/005258.tex&format=png",
     "level": 78,
     "job": 21,
     "description": {
@@ -4054,7 +4054,7 @@
     "de": "Meister der Dunklen Seite",
     "ja": "暗黒マスタリー",
     "fr": "Maîtrise de Ténèbres intérieures",
-    "icon": "/i/006000/006062.png",
+    "icon": "/api/asset?path=ui/icon/006000/006062.tex&format=png",
     "level": 74,
     "job": 32,
     "description": {
@@ -4069,7 +4069,7 @@
     "de": "Verbesserter Hiebsprung",
     "ja": "プランジカット効果アップ",
     "fr": "Coupe plongeante améliorée",
-    "icon": "/i/006000/006063.png",
+    "icon": "/api/asset?path=ui/icon/006000/006063.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4099,7 +4099,7 @@
     "de": "Verbesserte Sengende Aura",
     "ja": "紅蓮の構え効果アップ",
     "fr": "Poings de feu améliorés",
-    "icon": "/i/005000/005237.png",
+    "icon": "/api/asset?path=ui/icon/005000/005237.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4114,7 +4114,7 @@
     "de": "Meister der Sprünge",
     "ja": "ジャンプマスタリー",
     "fr": "Maîtrise de Saut",
-    "icon": "/i/005000/005286.png",
+    "icon": "/api/asset?path=ui/icon/005000/005286.tex&format=png",
     "level": 74,
     "job": 22,
     "description": {
@@ -4129,7 +4129,7 @@
     "de": "Meister des Drachenbluts",
     "ja": "竜血マスタリー",
     "fr": "Maîtrise de Sang du dragon",
-    "icon": "/i/005000/005287.png",
+    "icon": "/api/asset?path=ui/icon/005000/005287.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4144,7 +4144,7 @@
     "de": "Verbessertes Iaijutsu",
     "ja": "居合術効果アップ",
     "fr": "Iaijutsu amélioré",
-    "icon": "/i/006000/006153.png",
+    "icon": "/api/asset?path=ui/icon/006000/006153.tex&format=png",
     "level": 74,
     "job": 34,
     "description": {
@@ -4159,7 +4159,7 @@
     "de": "Verbessertes Fugetsu und Fuka",
     "ja": "風月・風花効果アップ",
     "fr": "Fûgetsu/Fûka améliorés",
-    "icon": "/i/006000/006154.png",
+    "icon": "/api/asset?path=ui/icon/006000/006154.tex&format=png",
     "level": 78,
     "job": 34,
     "description": {
@@ -4174,7 +4174,7 @@
     "de": "Verbessertes Shukuchi II",
     "ja": "縮地効果アップII",
     "fr": "Shukuchi amélioré II",
-    "icon": "/i/005000/005415.png",
+    "icon": "/api/asset?path=ui/icon/005000/005415.tex&format=png",
     "level": 74,
     "job": 30,
     "description": {
@@ -4189,7 +4189,7 @@
     "de": "Shukiho II",
     "ja": "集気法II",
     "fr": "Shûkihô II",
-    "icon": "/i/005000/005416.png",
+    "icon": "/api/asset?path=ui/icon/005000/005416.tex&format=png",
     "level": 78,
     "job": 30,
     "description": {
@@ -4219,7 +4219,7 @@
     "de": "Meister des Direkten Schusses",
     "ja": "ストレートショットマスタリー",
     "fr": "Maîtrise de Tir droit",
-    "icon": "/i/005000/005311.png",
+    "icon": "/api/asset?path=ui/icon/005000/005311.tex&format=png",
     "level": 70,
     "job": 23,
     "description": {
@@ -4234,7 +4234,7 @@
     "de": "Verbesserte Pfeilsalve",
     "ja": "クイックノック効果アップ",
     "fr": "Salve fulgurante améliorée",
-    "icon": "/i/005000/005304.png",
+    "icon": "/api/asset?path=ui/icon/005000/005304.tex&format=png",
     "level": 25,
     "job": 5,
     "description": {
@@ -4249,7 +4249,7 @@
     "de": "Meister der Bisse II",
     "ja": "バイトマスタリーII",
     "fr": "Maîtrise des Morsures II",
-    "icon": "/i/005000/005312.png",
+    "icon": "/api/asset?path=ui/icon/005000/005312.tex&format=png",
     "level": 76,
     "job": 23,
     "description": {
@@ -4264,7 +4264,7 @@
     "de": "Meister des Gewaltigen Schusses",
     "ja": "ヘヴィショットマスタリー",
     "fr": "Maîtrise de Tir à l'arc puissant",
-    "icon": "/i/005000/005306.png",
+    "icon": "/api/asset?path=ui/icon/005000/005306.tex&format=png",
     "level": 76,
     "job": 23,
     "description": {
@@ -4279,7 +4279,7 @@
     "de": "Verbesserte Hymne der Krieger",
     "ja": "軍神のパイオン効果アップ",
     "fr": "Péan martial amélioré",
-    "icon": "/i/005000/005314.png",
+    "icon": "/api/asset?path=ui/icon/005000/005314.tex&format=png",
     "level": 78,
     "job": 23,
     "description": {
@@ -4294,7 +4294,7 @@
     "de": "Klang der Seelenstimme",
     "ja": "ソウルボイス",
     "fr": "Voix de l'âme",
-    "icon": "/i/005000/005315.png",
+    "icon": "/api/asset?path=ui/icon/005000/005315.tex&format=png",
     "level": 80,
     "job": 23,
     "description": {
@@ -4309,7 +4309,7 @@
     "de": "Feuer Frei-Meisterschaft",
     "ja": "スプリットショットマスタリー",
     "fr": "Maîtrise de Tir scindé",
-    "icon": "/i/006000/006010.png",
+    "icon": "/api/asset?path=ui/icon/006000/006010.tex&format=png",
     "level": 54,
     "job": 31,
     "description": {
@@ -4324,7 +4324,7 @@
     "de": "Flintenlaufgeschoss-Meisterschaft",
     "ja": "スラッグショットマスタリー",
     "fr": "Maîtrise de Tir de balle",
-    "icon": "/i/006000/006011.png",
+    "icon": "/api/asset?path=ui/icon/006000/006011.tex&format=png",
     "level": 60,
     "job": 31,
     "description": {
@@ -4339,7 +4339,7 @@
     "de": "Sauberer Schuss-Meisterschaft",
     "ja": "クリーンショットマスタリー",
     "fr": "Maîtrise de Tir net",
-    "icon": "/i/006000/006012.png",
+    "icon": "/api/asset?path=ui/icon/006000/006012.tex&format=png",
     "level": 64,
     "job": 31,
     "description": {
@@ -4354,7 +4354,7 @@
     "de": "Explosivgeschoss-Meisterschaft",
     "ja": "ホットショットマスタリー",
     "fr": "Maîtrise de Tir déchaîné",
-    "icon": "/i/006000/006016.png",
+    "icon": "/api/asset?path=ui/icon/006000/006016.tex&format=png",
     "level": 76,
     "job": 31,
     "description": {
@@ -4369,7 +4369,7 @@
     "de": "Verbesserte Ladungen",
     "ja": "チャージアクション効果アップ",
     "fr": "Actions à charges améliorées",
-    "icon": "/i/006000/006013.png",
+    "icon": "/api/asset?path=ui/icon/006000/006013.tex&format=png",
     "level": 74,
     "job": 31,
     "description": {
@@ -4384,7 +4384,7 @@
     "de": "Verbessertes Wildfeuer",
     "ja": "ワイルドファイア効果アップ",
     "fr": "Flambée améliorée",
-    "icon": "/i/006000/006014.png",
+    "icon": "/api/asset?path=ui/icon/006000/006014.tex&format=png",
     "level": 78,
     "job": 31,
     "description": {
@@ -4399,7 +4399,7 @@
     "de": "Umwandlung",
     "ja": "プロモーション",
     "fr": "Promotion",
-    "icon": "/i/006000/006015.png",
+    "icon": "/api/asset?path=ui/icon/006000/006015.tex&format=png",
     "level": 80,
     "job": 31,
     "description": {
@@ -4414,7 +4414,7 @@
     "de": "Schattenherz",
     "ja": "アンブラルハート",
     "fr": "Cœur ombral",
-    "icon": "/i/005000/005656.png",
+    "icon": "/api/asset?path=ui/icon/005000/005656.tex&format=png",
     "level": 58,
     "job": 25,
     "description": {
@@ -4429,7 +4429,7 @@
     "de": "Elementare Meisterschaft",
     "ja": "極性マスタリー",
     "fr": "Maîtrise des polarités",
-    "icon": "/i/005000/005362.png",
+    "icon": "/api/asset?path=ui/icon/005000/005362.tex&format=png",
     "level": 1,
     "job": 7,
     "description": {
@@ -4444,7 +4444,7 @@
     "de": "Verbessertes Polyglott",
     "ja": "ポリグロット効果アップ",
     "fr": "Polyglotte amélioré",
-    "icon": "/i/005000/005363.png",
+    "icon": "/api/asset?path=ui/icon/005000/005363.tex&format=png",
     "level": 80,
     "job": 25,
     "description": {
@@ -4459,7 +4459,7 @@
     "de": "Verbesserte Bahamut-Trance II",
     "ja": "トランス・バハムート効果アップII",
     "fr": "Transe-Bahamut améliorée II",
-    "icon": "/i/005000/005676.png",
+    "icon": "/api/asset?path=ui/icon/005000/005676.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4474,7 +4474,7 @@
     "de": "Verbesserte Egi-Attacke",
     "ja": "エギアサルト効果アップ",
     "fr": "Frappe Egi améliorée",
-    "icon": "/i/005000/005677.png",
+    "icon": "/api/asset?path=ui/icon/005000/005677.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4489,7 +4489,7 @@
     "de": "Verbessertes Trisaster",
     "ja": "トライディザスター効果アップ",
     "fr": "Tri-désastre amélioré",
-    "icon": "/i/005000/005678.png",
+    "icon": "/api/asset?path=ui/icon/005000/005678.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4504,7 +4504,7 @@
     "de": "Verbesserter Bann",
     "ja": "ベイン効果アップ",
     "fr": "Fléau amélioré",
-    "icon": "/i/005000/005679.png",
+    "icon": "/api/asset?path=ui/icon/005000/005679.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4519,7 +4519,7 @@
     "de": "Verbesserte Phönix-Trance",
     "ja": "トランス・フェニックス効果アップ ",
     "fr": "Transe-Phénix améliorée",
-    "icon": "/i/005000/005680.png",
+    "icon": "/api/asset?path=ui/icon/005000/005680.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4534,7 +4534,7 @@
     "de": "Meister des Zerstreuens",
     "ja": "スキャッターマスタリー",
     "fr": "Maîtrise d'Éparpillement",
-    "icon": "/i/006000/006207.png",
+    "icon": "/api/asset?path=ui/icon/006000/006207.tex&format=png",
     "level": 66,
     "job": 35,
     "description": {
@@ -4549,7 +4549,7 @@
     "de": "Meister der Körperparade",
     "ja": "デプラスマン効果アップ",
     "fr": "Déplacement amélioré",
-    "icon": "/i/006000/006204.png",
+    "icon": "/api/asset?path=ui/icon/006000/006204.tex&format=png",
     "level": 72,
     "job": 35,
     "description": {
@@ -4564,7 +4564,7 @@
     "de": "Verbesserte Manafizierung",
     "ja": "マナフィケーション効果アップ",
     "fr": "Manafication améliorée",
-    "icon": "/i/006000/006205.png",
+    "icon": "/api/asset?path=ui/icon/006000/006205.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4579,7 +4579,7 @@
     "de": "Meister der Rotmagie",
     "ja": "赤魔法マスタリー",
     "fr": "Maîtrise de la magie rouge",
-    "icon": "/i/006000/006206.png",
+    "icon": "/api/asset?path=ui/icon/006000/006206.tex&format=png",
     "level": 74,
     "job": 35,
     "description": {
@@ -4594,7 +4594,7 @@
     "de": "Windmeister II",
     "ja": "エアロマスタリーII",
     "fr": "Maîtrise de Vent II",
-    "icon": "/i/005000/005339.png",
+    "icon": "/api/asset?path=ui/icon/005000/005339.tex&format=png",
     "level": 72,
     "job": 24,
     "description": {
@@ -4609,7 +4609,7 @@
     "de": "Steinmeister IV",
     "ja": "ストーンマスタリーIV",
     "fr": "Maîtrise de Terre IV",
-    "icon": "/i/005000/005340.png",
+    "icon": "/api/asset?path=ui/icon/005000/005340.tex&format=png",
     "level": 72,
     "job": 24,
     "description": {
@@ -4624,7 +4624,7 @@
     "de": "Verbessertes Afflatus solatii",
     "ja": "ハート・オブ・ソラス効果アップ",
     "fr": "Offrande de réconfort améliorée",
-    "icon": "/i/005000/005341.png",
+    "icon": "/api/asset?path=ui/icon/005000/005341.tex&format=png",
     "level": 74,
     "job": 24,
     "description": {
@@ -4639,7 +4639,7 @@
     "de": "Verbessertes Refugium",
     "ja": "アサイラム効果アップ",
     "fr": "Asile amélioré",
-    "icon": "/i/005000/005342.png",
+    "icon": "/api/asset?path=ui/icon/005000/005342.tex&format=png",
     "level": 78,
     "job": 24,
     "description": {
@@ -4654,7 +4654,7 @@
     "de": "Biologischer Abbau II",
     "ja": "コラプションマスタリーII",
     "fr": "Maîtrise des infections II",
-    "icon": "/i/005000/005701.png",
+    "icon": "/api/asset?path=ui/icon/005000/005701.tex&format=png",
     "level": 72,
     "job": 28,
     "description": {
@@ -4669,7 +4669,7 @@
     "de": "Meister der Bravade III",
     "ja": "炎法マスタリーIII",
     "fr": "Maîtrise de Loi de l'ébullition III",
-    "icon": "/i/005000/005702.png",
+    "icon": "/api/asset?path=ui/icon/005000/005702.tex&format=png",
     "level": 72,
     "job": 28,
     "description": {
@@ -4684,7 +4684,7 @@
     "de": "Verbesserte Geweihte Erde",
     "ja": "野戦治療の陣効果アップ",
     "fr": "Dogme de survie amélioré",
-    "icon": "/i/005000/005703.png",
+    "icon": "/api/asset?path=ui/icon/005000/005703.tex&format=png",
     "level": 78,
     "job": 28,
     "description": {
@@ -4699,7 +4699,7 @@
     "de": "Meister der Konjunktion II",
     "ja": "コンバスマスタリーII",
     "fr": "Maîtrise de Conjonction supérieure II",
-    "icon": "/i/006000/006112.png",
+    "icon": "/api/asset?path=ui/icon/006000/006112.tex&format=png",
     "level": 72,
     "job": 33,
     "description": {
@@ -4714,7 +4714,7 @@
     "de": "Meister des Spannungsaspekts III",
     "ja": "マレフィクマスタリーIII",
     "fr": "Maîtrise de Malfaisance III",
-    "icon": "/i/006000/006113.png",
+    "icon": "/api/asset?path=ui/icon/006000/006113.tex&format=png",
     "level": 72,
     "job": 33,
     "description": {
@@ -4729,7 +4729,7 @@
     "de": "Verbesserte Essenzielle Würde",
     "ja": "ディグニティ効果アップ",
     "fr": "Dignité essentielle améliorée",
-    "icon": "/i/006000/006114.png",
+    "icon": "/api/asset?path=ui/icon/006000/006114.tex&format=png",
     "level": 78,
     "job": 33,
     "description": {
@@ -4744,7 +4744,7 @@
     "de": "Meister der Verteidigung",
     "ja": "タンクマスタリー",
     "fr": "Maîtrise du protecteur",
-    "icon": "/i/005000/005190.png",
+    "icon": "/api/asset?path=ui/icon/005000/005190.tex&format=png",
     "level": 1,
     "job": 1,
     "description": {
@@ -4759,7 +4759,7 @@
     "de": "Meister der Verteidigung",
     "ja": "タンクマスタリー",
     "fr": "Maîtrise du protecteur",
-    "icon": "/i/005000/005190.png",
+    "icon": "/api/asset?path=ui/icon/005000/005190.tex&format=png",
     "level": 1,
     "job": 3,
     "description": {
@@ -4774,7 +4774,7 @@
     "de": "Meister der Verteidigung",
     "ja": "タンクマスタリー",
     "fr": "Maîtrise du protecteur",
-    "icon": "/i/005000/005190.png",
+    "icon": "/api/asset?path=ui/icon/005000/005190.tex&format=png",
     "level": 1,
     "job": 32,
     "description": {
@@ -4789,7 +4789,7 @@
     "de": "Meister der Verteidigung",
     "ja": "タンクマスタリー",
     "fr": "Maîtrise du protecteur",
-    "icon": "/i/005000/005190.png",
+    "icon": "/api/asset?path=ui/icon/005000/005190.tex&format=png",
     "level": 1,
     "job": 37,
     "description": {
@@ -4804,7 +4804,7 @@
     "de": "Verbesserte Augmentierung ",
     "ja": "激成魔効果アップ",
     "fr": "Dynamisation améliorée",
-    "icon": "/i/005000/005364.png",
+    "icon": "/api/asset?path=ui/icon/005000/005364.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -4819,7 +4819,7 @@
     "de": "Verbessertes Henochisch II",
     "ja": "エノキアン効果アップII",
     "fr": "Énochien amélioré II",
-    "icon": "/i/005000/005365.png",
+    "icon": "/api/asset?path=ui/icon/005000/005365.tex&format=png",
     "level": 78,
     "job": 25,
     "description": {
@@ -4849,7 +4849,7 @@
     "de": "Biologischer Abbau",
     "ja": "コラプションマスタリー",
     "fr": "Maîtrise des infections",
-    "icon": "/i/005000/005376.png",
+    "icon": "/api/asset?path=ui/icon/005000/005376.tex&format=png",
     "level": 26,
     "job": 28,
     "description": {
@@ -4864,7 +4864,7 @@
     "de": "Tellurische Meisterschaft",
     "ja": "オートトゥルー・オブ・ミネラル",
     "fr": "Auto Science des minéraux",
-    "icon": "/i/005000/005427.png",
+    "icon": "/api/asset?path=ui/icon/005000/005427.tex&format=png",
     "level": 60,
     "job": 16,
     "description": {
@@ -4879,7 +4879,7 @@
     "de": "Meisterschaft der Flure",
     "ja": "オートトゥルー・オブ・フォレスト",
     "fr": "Auto Science des végétaux",
-    "icon": "/i/005000/005452.png",
+    "icon": "/api/asset?path=ui/icon/005000/005452.tex&format=png",
     "level": 60,
     "job": 17,
     "description": {
@@ -4894,7 +4894,7 @@
     "de": "Meisterschaft der Meere",
     "ja": "オートトゥルー・オブ・オーシャン",
     "fr": "Auto Science des océans",
-    "icon": "/i/005000/005476.png",
+    "icon": "/api/asset?path=ui/icon/005000/005476.tex&format=png",
     "level": 70,
     "job": 18,
     "description": {
@@ -4909,7 +4909,7 @@
     "de": "Auto-Verstohlenheit",
     "ja": "オートスニーク",
     "fr": "Auto Discrétion",
-    "icon": "/i/005000/005428.png",
+    "icon": "/api/asset?path=ui/icon/005000/005428.tex&format=png",
     "level": 27,
     "job": 16,
     "description": {
@@ -4924,7 +4924,7 @@
     "de": "Auto-Verstohlenheit",
     "ja": "オートスニーク",
     "fr": "Auto Discrétion",
-    "icon": "/i/005000/005453.png",
+    "icon": "/api/asset?path=ui/icon/005000/005453.tex&format=png",
     "level": 27,
     "job": 17,
     "description": {
@@ -4939,7 +4939,7 @@
     "de": "Auto-Verstohlenheit",
     "ja": "オートスニーク",
     "fr": "Auto Discrétion",
-    "icon": "/i/005000/005477.png",
+    "icon": "/api/asset?path=ui/icon/005000/005477.tex&format=png",
     "level": 27,
     "job": 18,
     "description": {
@@ -4954,7 +4954,7 @@
     "de": "Verbesserte Gunst der Zwölf III",
     "ja": "十二神の加護効果アップIII",
     "fr": "Bénédiction des Douze améliorée III",
-    "icon": "/i/005000/005440.png",
+    "icon": "/api/asset?path=ui/icon/005000/005440.tex&format=png",
     "level": 71,
     "job": 16,
     "description": {
@@ -4969,7 +4969,7 @@
     "de": "Verbesserte Gunst der Zwölf III",
     "ja": "十二神の加護効果アップIII",
     "fr": "Bénédiction des Douze améliorée III",
-    "icon": "/i/005000/005465.png",
+    "icon": "/api/asset?path=ui/icon/005000/005465.tex&format=png",
     "level": 71,
     "job": 17,
     "description": {
@@ -4984,7 +4984,7 @@
     "de": "Reichste Ausbeute",
     "ja": "バウンティフルイールドマスタリー",
     "fr": "Maîtrise d'Extraction abondante",
-    "icon": "/i/005000/005429.png",
+    "icon": "/api/asset?path=ui/icon/005000/005429.tex&format=png",
     "level": 68,
     "job": 16,
     "description": {
@@ -5029,7 +5029,7 @@
     "de": "Reichste Ernte",
     "ja": "バウンティフルハーベストマスタリー",
     "fr": "Maîtrise de Récolte abondante",
-    "icon": "/i/005000/005454.png",
+    "icon": "/api/asset?path=ui/icon/005000/005454.tex&format=png",
     "level": 68,
     "job": 17,
     "description": {
@@ -5074,7 +5074,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006979.png",
+    "icon": "/api/asset?path=ui/icon/006000/006979.tex&format=png",
     "level": 31,
     "job": 8,
     "description": {
@@ -5089,7 +5089,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006980.png",
+    "icon": "/api/asset?path=ui/icon/006000/006980.tex&format=png",
     "level": 31,
     "job": 9,
     "description": {
@@ -5104,7 +5104,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006981.png",
+    "icon": "/api/asset?path=ui/icon/006000/006981.tex&format=png",
     "level": 31,
     "job": 10,
     "description": {
@@ -5119,7 +5119,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006982.png",
+    "icon": "/api/asset?path=ui/icon/006000/006982.tex&format=png",
     "level": 31,
     "job": 11,
     "description": {
@@ -5134,7 +5134,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006983.png",
+    "icon": "/api/asset?path=ui/icon/006000/006983.tex&format=png",
     "level": 31,
     "job": 12,
     "description": {
@@ -5149,7 +5149,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006984.png",
+    "icon": "/api/asset?path=ui/icon/006000/006984.tex&format=png",
     "level": 31,
     "job": 13,
     "description": {
@@ -5164,7 +5164,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006985.png",
+    "icon": "/api/asset?path=ui/icon/006000/006985.tex&format=png",
     "level": 31,
     "job": 14,
     "description": {
@@ -5179,7 +5179,7 @@
     "de": "Meister der Bearbeitung",
     "ja": "作業マスタリー",
     "fr": "Maîtrise de Travail de base",
-    "icon": "/i/006000/006986.png",
+    "icon": "/api/asset?path=ui/icon/006000/006986.tex&format=png",
     "level": 31,
     "job": 15,
     "description": {
@@ -5194,7 +5194,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 8,
     "description": {
@@ -5209,7 +5209,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 9,
     "description": {
@@ -5224,7 +5224,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 10,
     "description": {
@@ -5239,7 +5239,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 11,
     "description": {
@@ -5254,7 +5254,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 12,
     "description": {
@@ -5269,7 +5269,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 13,
     "description": {
@@ -5284,7 +5284,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 14,
     "description": {
@@ -5299,7 +5299,7 @@
     "de": "Meister der Schnellen Bearbeitung",
     "ja": "突貫作業マスタリー",
     "fr": "Maîtrise de Travail rapide",
-    "icon": "/i/006000/006978.png",
+    "icon": "/api/asset?path=ui/icon/006000/006978.tex&format=png",
     "level": 63,
     "job": 15,
     "description": {
@@ -5314,7 +5314,7 @@
     "de": "Verbesserte Elementarkorona",
     "ja": "アウトバースト効果アップ",
     "fr": "Fracas élémentaire amélioré",
-    "icon": "/i/005000/005681.png",
+    "icon": "/api/asset?path=ui/icon/005000/005681.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -5329,7 +5329,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 8,
     "description": {
@@ -5344,7 +5344,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 9,
     "description": {
@@ -5359,7 +5359,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 10,
     "description": {
@@ -5374,7 +5374,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 11,
     "description": {
@@ -5389,7 +5389,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 12,
     "description": {
@@ -5404,7 +5404,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 13,
     "description": {
@@ -5419,7 +5419,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 14,
     "description": {
@@ -5434,7 +5434,7 @@
     "de": "Übung macht den Meister",
     "ja": "製作練習",
     "fr": "Synthèse d'essai",
-    "icon": "/i/006000/006987.png",
+    "icon": "/api/asset?path=ui/icon/006000/006987.tex&format=png",
     "level": 15,
     "job": 15,
     "description": {
@@ -5449,7 +5449,7 @@
     "de": "Geölter Blitz",
     "ja": "疾風迅雷",
     "fr": "Vitesse de l'éclair",
-    "icon": "/i/005000/005239.png",
+    "icon": "/api/asset?path=ui/icon/005000/005239.tex&format=png",
     "level": 1,
     "job": 2,
     "description": {
@@ -5464,7 +5464,7 @@
     "de": "Verbesserter Geölter Blitz",
     "ja": "疾風迅雷効果アップ",
     "fr": "Vitesse de l'éclair améliorée",
-    "icon": "/i/005000/005230.png",
+    "icon": "/api/asset?path=ui/icon/005000/005230.tex&format=png",
     "level": 20,
     "job": 2,
     "description": {
@@ -5479,7 +5479,7 @@
     "de": "Verbesserter Geölter Blitz II",
     "ja": "疾風迅雷効果アップII",
     "fr": "Vitesse de l'éclair améliorée II",
-    "icon": "/i/005000/005231.png",
+    "icon": "/api/asset?path=ui/icon/005000/005231.tex&format=png",
     "level": 40,
     "job": 20,
     "description": {
@@ -5494,7 +5494,7 @@
     "de": "Verbesserter Geölter Blitz III",
     "ja": "疾風迅雷効果アップIII",
     "fr": "Vitesse de l'éclair améliorée III",
-    "icon": "/i/005000/005240.png",
+    "icon": "/api/asset?path=ui/icon/005000/005240.tex&format=png",
     "level": 76,
     "job": 20,
     "description": {
@@ -5509,7 +5509,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 20,
     "job": 40,
     "description": {
@@ -5524,7 +5524,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 40,
     "job": 40,
     "description": {
@@ -5539,7 +5539,7 @@
     "de": "Humor",
     "ja": "アダーガル",
     "fr": "Bile de vipère",
-    "icon": "/i/006000/006451.png",
+    "icon": "/api/asset?path=ui/icon/006000/006451.tex&format=png",
     "level": 45,
     "job": 40,
     "description": {
@@ -5554,7 +5554,7 @@
     "de": "Eid der Weisen",
     "ja": "賢学の誓い",
     "fr": "Serment des sages",
-    "icon": "/i/006000/006452.png",
+    "icon": "/api/asset?path=ui/icon/006000/006452.tex&format=png",
     "level": 54,
     "job": 40,
     "description": {
@@ -5569,7 +5569,7 @@
     "de": "Eid der Weisen II",
     "ja": "賢学の誓いII",
     "fr": "Serment des sages II",
-    "icon": "/i/006000/006453.png",
+    "icon": "/api/asset?path=ui/icon/006000/006453.tex&format=png",
     "level": 64,
     "job": 40,
     "description": {
@@ -5584,7 +5584,7 @@
     "de": "Komplexion",
     "ja": "アダースティング",
     "fr": "Croc de vipère",
-    "icon": "/i/006000/006454.png",
+    "icon": "/api/asset?path=ui/icon/006000/006454.tex&format=png",
     "level": 66,
     "job": 40,
     "description": {
@@ -5599,7 +5599,7 @@
     "de": "Meister der Offensivmagie",
     "ja": "攻撃魔法マスタリー",
     "fr": "Maîtrise de la magie offensive",
-    "icon": "/i/006000/006455.png",
+    "icon": "/api/asset?path=ui/icon/006000/006455.tex&format=png",
     "level": 72,
     "job": 40,
     "description": {
@@ -5614,7 +5614,7 @@
     "de": "Verbessertes Kerachole",
     "ja": "ケーラコレ効果アップ",
     "fr": "Kerachole amélioré",
-    "icon": "/i/006000/006456.png",
+    "icon": "/api/asset?path=ui/icon/006000/006456.tex&format=png",
     "level": 78,
     "job": 40,
     "description": {
@@ -5629,7 +5629,7 @@
     "de": "Meister der Offensivmagie II",
     "ja": "攻撃魔法マスタリーII",
     "fr": "Maîtrise de la magie offensive II",
-    "icon": "/i/006000/006457.png",
+    "icon": "/api/asset?path=ui/icon/006000/006457.tex&format=png",
     "level": 82,
     "job": 40,
     "description": {
@@ -5644,7 +5644,7 @@
     "de": "Meister der Heilmagie",
     "ja": "回復アクション効果アップ",
     "fr": "Magie curative améliorée",
-    "icon": "/i/006000/006826.png",
+    "icon": "/api/asset?path=ui/icon/006000/006826.tex&format=png",
     "level": 85,
     "job": 40,
     "description": {
@@ -5659,7 +5659,7 @@
     "de": "Verbessertes Zoe",
     "ja": "ゾーエ効果アップ",
     "fr": "Zoe amélioré",
-    "icon": "/i/006000/006458.png",
+    "icon": "/api/asset?path=ui/icon/006000/006458.tex&format=png",
     "level": 88,
     "job": 40,
     "description": {
@@ -5674,7 +5674,7 @@
     "de": "Erntereif",
     "ja": "ソウルゲージ",
     "fr": "Jauge des âmes",
-    "icon": "/i/006000/006401.png",
+    "icon": "/api/asset?path=ui/icon/006000/006401.tex&format=png",
     "level": 50,
     "job": 39,
     "description": {
@@ -5689,7 +5689,7 @@
     "de": "Verbesserte Ernte",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 60,
     "job": 39,
     "description": {
@@ -5704,7 +5704,7 @@
     "de": "Verbesserter Avatar",
     "ja": "アヴァターアビリティ効果アップ",
     "fr": "Avatar amélioré",
-    "icon": "/i/006000/006403.png",
+    "icon": "/api/asset?path=ui/icon/006000/006403.tex&format=png",
     "level": 70,
     "job": 39,
     "description": {
@@ -5719,7 +5719,7 @@
     "de": "Verbessertes Höllentor",
     "ja": "ヘルズゲート効果アップ",
     "fr": "Portail infernal amélioré",
-    "icon": "/i/006000/006404.png",
+    "icon": "/api/asset?path=ui/icon/006000/006404.tex&format=png",
     "level": 74,
     "job": 39,
     "description": {
@@ -5734,7 +5734,7 @@
     "de": "Verbesserte Seelenernte",
     "ja": "ソウルスキル効果アップ",
     "fr": "Tranchage animique et Faux animique améliorés",
-    "icon": "/i/006000/006405.png",
+    "icon": "/api/asset?path=ui/icon/006000/006405.tex&format=png",
     "level": 78,
     "job": 39,
     "description": {
@@ -5749,7 +5749,7 @@
     "de": "Verschleierung",
     "ja": "シュラウドゲージ",
     "fr": "Jauge du linceul",
-    "icon": "/i/006000/006406.png",
+    "icon": "/api/asset?path=ui/icon/006000/006406.tex&format=png",
     "level": 80,
     "job": 39,
     "description": {
@@ -5764,7 +5764,7 @@
     "de": "Verbessertes Arkanes Wappen",
     "ja": "アルケインクレスト効果アップ",
     "fr": "Blason arcanique amélioré",
-    "icon": "/i/006000/006407.png",
+    "icon": "/api/asset?path=ui/icon/006000/006407.tex&format=png",
     "level": 84,
     "job": 39,
     "description": {
@@ -5779,7 +5779,7 @@
     "de": "Nichtsseele",
     "ja": "ヴォイドソウル",
     "fr": "Âme du néant",
-    "icon": "/i/006000/006408.png",
+    "icon": "/api/asset?path=ui/icon/006000/006408.tex&format=png",
     "level": 86,
     "job": 39,
     "description": {
@@ -5794,7 +5794,7 @@
     "de": "Verbesserter Arkaner Kreis",
     "ja": "アルケインサークル効果アップ",
     "fr": "Cercle arcanique amélioré",
-    "icon": "/i/006000/006409.png",
+    "icon": "/api/asset?path=ui/icon/006000/006409.tex&format=png",
     "level": 88,
     "job": 39,
     "description": {
@@ -5809,7 +5809,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 8,
     "description": {
@@ -5824,7 +5824,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 9,
     "description": {
@@ -5839,7 +5839,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 10,
     "description": {
@@ -5854,7 +5854,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 11,
     "description": {
@@ -5869,7 +5869,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 12,
     "description": {
@@ -5884,7 +5884,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 13,
     "description": {
@@ -5899,7 +5899,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 14,
     "description": {
@@ -5914,7 +5914,7 @@
     "de": "Innere Ruhe",
     "ja": "インナークワイエット",
     "fr": "Calme intérieur",
-    "icon": "/i/006000/006988.png",
+    "icon": "/api/asset?path=ui/icon/006000/006988.tex&format=png",
     "level": 11,
     "job": 15,
     "description": {
@@ -5929,7 +5929,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 8,
     "description": {
@@ -5944,7 +5944,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 9,
     "description": {
@@ -5959,7 +5959,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 10,
     "description": {
@@ -5974,7 +5974,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 11,
     "description": {
@@ -5989,7 +5989,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 12,
     "description": {
@@ -6004,7 +6004,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 13,
     "description": {
@@ -6019,7 +6019,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 14,
     "description": {
@@ -6034,7 +6034,7 @@
     "de": "Meister der Sorgfältigen Bearbeitung",
     "ja": "模範作業マスタリー",
     "fr": "Maîtrise de Travail prudent",
-    "icon": "/i/006000/006989.png",
+    "icon": "/api/asset?path=ui/icon/006000/006989.tex&format=png",
     "level": 82,
     "job": 15,
     "description": {
@@ -6049,7 +6049,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006990.png",
+    "icon": "/api/asset?path=ui/icon/006000/006990.tex&format=png",
     "level": 86,
     "job": 8,
     "description": {
@@ -6064,7 +6064,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006991.png",
+    "icon": "/api/asset?path=ui/icon/006000/006991.tex&format=png",
     "level": 86,
     "job": 9,
     "description": {
@@ -6079,7 +6079,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006992.png",
+    "icon": "/api/asset?path=ui/icon/006000/006992.tex&format=png",
     "level": 86,
     "job": 10,
     "description": {
@@ -6094,7 +6094,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006993.png",
+    "icon": "/api/asset?path=ui/icon/006000/006993.tex&format=png",
     "level": 86,
     "job": 11,
     "description": {
@@ -6109,7 +6109,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006994.png",
+    "icon": "/api/asset?path=ui/icon/006000/006994.tex&format=png",
     "level": 86,
     "job": 12,
     "description": {
@@ -6124,7 +6124,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006995.png",
+    "icon": "/api/asset?path=ui/icon/006000/006995.tex&format=png",
     "level": 86,
     "job": 13,
     "description": {
@@ -6139,7 +6139,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006996.png",
+    "icon": "/api/asset?path=ui/icon/006000/006996.tex&format=png",
     "level": 86,
     "job": 14,
     "description": {
@@ -6154,7 +6154,7 @@
     "de": "Meister der Vorarbeit",
     "ja": "下地作業マスタリー",
     "fr": "Maîtrise de Travail préparatoire",
-    "icon": "/i/006000/006997.png",
+    "icon": "/api/asset?path=ui/icon/006000/006997.tex&format=png",
     "level": 86,
     "job": 15,
     "description": {
@@ -6169,7 +6169,7 @@
     "de": "Meister des Schiltron",
     "ja": "シェルトロンマスタリー",
     "fr": "Maîtrise de Schiltron",
-    "icon": "/i/005000/005218.png",
+    "icon": "/api/asset?path=ui/icon/005000/005218.tex&format=png",
     "level": 82,
     "job": 19,
     "description": {
@@ -6184,7 +6184,7 @@
     "de": "Verbesserte Intervention",
     "ja": "インターベンション効果アップ",
     "fr": "Intervention améliorée",
-    "icon": "/i/005000/005219.png",
+    "icon": "/api/asset?path=ui/icon/005000/005219.tex&format=png",
     "level": 82,
     "job": 19,
     "description": {
@@ -6199,7 +6199,7 @@
     "de": "Meister der Göttlichen Magie II",
     "ja": "神聖魔法マスタリーII",
     "fr": "Maîtrise de la magie divine II",
-    "icon": "/i/005000/005220.png",
+    "icon": "/api/asset?path=ui/icon/005000/005220.tex&format=png",
     "level": 84,
     "job": 19,
     "description": {
@@ -6214,7 +6214,7 @@
     "de": "Meister des Selbsterhaltungstriebs",
     "ja": "スピリッツウィズインマスタリー",
     "fr": "Maîtrise d'Esprits intérieurs",
-    "icon": "/i/005000/005221.png",
+    "icon": "/api/asset?path=ui/icon/005000/005221.tex&format=png",
     "level": 86,
     "job": 19,
     "description": {
@@ -6229,7 +6229,7 @@
     "de": "Verbesserter Heiliger Quell",
     "ja": "ディヴァインヴェール効果アップ",
     "fr": "Voile divin amélioré",
-    "icon": "/i/005000/005222.png",
+    "icon": "/api/asset?path=ui/icon/005000/005222.tex&format=png",
     "level": 88,
     "job": 19,
     "description": {
@@ -6244,7 +6244,7 @@
     "de": "Verbessertes Abschütteln",
     "ja": "シェイクオフ効果アップ",
     "fr": "Débarrassage amélioré",
-    "icon": "/i/005000/005266.png",
+    "icon": "/api/asset?path=ui/icon/005000/005266.tex&format=png",
     "level": 76,
     "job": 21,
     "description": {
@@ -6259,7 +6259,7 @@
     "de": "Meister des Urinstinkts",
     "ja": "原初の直感マスタリー",
     "fr": "Maîtrise d'Intuition pure",
-    "icon": "/i/005000/005267.png",
+    "icon": "/api/asset?path=ui/icon/005000/005267.tex&format=png",
     "level": 82,
     "job": 21,
     "description": {
@@ -6274,7 +6274,7 @@
     "de": "Verbessertes Urflackern",
     "ja": "原初の猛り効果アップ",
     "fr": "Exaltation naissante améliorée",
-    "icon": "/i/005000/005268.png",
+    "icon": "/api/asset?path=ui/icon/005000/005268.tex&format=png",
     "level": 82,
     "job": 21,
     "description": {
@@ -6289,7 +6289,7 @@
     "de": "Verbessertes Äquilibrium",
     "ja": "エクリブリウム効果アップ",
     "fr": "Équilibre amélioré",
-    "icon": "/i/005000/005269.png",
+    "icon": "/api/asset?path=ui/icon/005000/005269.tex&format=png",
     "level": 84,
     "job": 21,
     "description": {
@@ -6304,7 +6304,7 @@
     "de": "Verbesserter Sturmlauf",
     "ja": "オンスロート効果アップ",
     "fr": "Assaut violent amélioré",
-    "icon": "/i/005000/005270.png",
+    "icon": "/api/asset?path=ui/icon/005000/005270.tex&format=png",
     "level": 88,
     "job": 21,
     "description": {
@@ -6319,7 +6319,7 @@
     "de": "Verbesserter Zerfall",
     "ja": "アンメンド効果アップ",
     "fr": "Détérioration améliorée",
-    "icon": "/i/006000/006064.png",
+    "icon": "/api/asset?path=ui/icon/006000/006064.tex&format=png",
     "level": 84,
     "job": 32,
     "description": {
@@ -6334,7 +6334,7 @@
     "de": "Verbesserter Schattenschemen II",
     "ja": "影身具現効果アップII",
     "fr": "Ombre vivante améliorée II",
-    "icon": "/i/006000/006066.png",
+    "icon": "/api/asset?path=ui/icon/006000/006066.tex&format=png",
     "level": 90,
     "job": 32,
     "description": {
@@ -6349,7 +6349,7 @@
     "de": "Meister des Steinernen Herzens",
     "ja": "ハート・オブ・ストーンマスタリー",
     "fr": "Maîtrise de Cœur de pierre",
-    "icon": "/i/006000/006304.png",
+    "icon": "/api/asset?path=ui/icon/006000/006304.tex&format=png",
     "level": 82,
     "job": 37,
     "description": {
@@ -6364,7 +6364,7 @@
     "de": "Verbesserte Aurora",
     "ja": "オーロラ効果アップ",
     "fr": "Aurore améliorée",
-    "icon": "/i/006000/006305.png",
+    "icon": "/api/asset?path=ui/icon/006000/006305.tex&format=png",
     "level": 84,
     "job": 37,
     "description": {
@@ -6379,7 +6379,7 @@
     "de": "Verbesserte Triggerfolge",
     "ja": "コンティニュエーション効果アップ",
     "fr": "Consécution améliorée",
-    "icon": "/i/006000/006306.png",
+    "icon": "/api/asset?path=ui/icon/006000/006306.tex&format=png",
     "level": 86,
     "job": 37,
     "description": {
@@ -6394,7 +6394,7 @@
     "de": "Verbesserte Erda-Patronen",
     "ja": "ソイルチャージ効果アップ",
     "fr": "Chargement de cartouches amélioré",
-    "icon": "/i/006000/006307.png",
+    "icon": "/api/asset?path=ui/icon/006000/006307.tex&format=png",
     "level": 88,
     "job": 37,
     "description": {
@@ -6409,7 +6409,7 @@
     "de": "Meister der Stahlzinnen",
     "ja": "鉄山靠マスタリー",
     "fr": "Maîtrise de Charge d'acier",
-    "icon": "/i/005000/005241.png",
+    "icon": "/api/asset?path=ui/icon/005000/005241.tex&format=png",
     "level": 54,
     "job": 20,
     "description": {
@@ -6424,7 +6424,7 @@
     "de": "Meister der Heulenden Faust",
     "ja": "空鳴拳マスタリー",
     "fr": "Maîtrise de Poing hurlant",
-    "icon": "/i/005000/005242.png",
+    "icon": "/api/asset?path=ui/icon/005000/005242.tex&format=png",
     "level": 74,
     "job": 20,
     "description": {
@@ -6439,7 +6439,7 @@
     "de": "Meister des Zerstörers",
     "ja": "壊神衝マスタリー",
     "fr": "Maîtrise de Frappe du Destructeur",
-    "icon": "/i/005000/005243.png",
+    "icon": "/api/asset?path=ui/icon/005000/005243.tex&format=png",
     "level": 82,
     "job": 20,
     "description": {
@@ -6454,7 +6454,7 @@
     "de": "Verbesserter Donnersprung",
     "ja": "抜重歩法効果アップ",
     "fr": "Élan fulgurant amélioré",
-    "icon": "/i/005000/005244.png",
+    "icon": "/api/asset?path=ui/icon/005000/005244.tex&format=png",
     "level": 84,
     "job": 20,
     "description": {
@@ -6469,7 +6469,7 @@
     "de": "Verbesserte Bruderschaft",
     "ja": "桃園結義効果アップ",
     "fr": "Fraternité améliorée",
-    "icon": "/i/005000/005245.png",
+    "icon": "/api/asset?path=ui/icon/005000/005245.tex&format=png",
     "level": 88,
     "job": 20,
     "description": {
@@ -6484,7 +6484,7 @@
     "de": "Verbesserte Improvisation",
     "ja": "踏鳴効果アップ",
     "fr": "Équilibre parfait amélioré",
-    "icon": "/i/005000/005246.png",
+    "icon": "/api/asset?path=ui/icon/005000/005246.tex&format=png",
     "level": 60,
     "job": 20,
     "description": {
@@ -6499,7 +6499,7 @@
     "de": "Verbesserter Sprung",
     "ja": "ジャンプ効果アップ",
     "fr": "Saut amélioré",
-    "icon": "/i/005000/005294.png",
+    "icon": "/api/asset?path=ui/icon/005000/005294.tex&format=png",
     "level": 54,
     "job": 22,
     "description": {
@@ -6514,7 +6514,7 @@
     "de": "Verbesserte Coerthische Folter",
     "ja": "クルザントーメント効果アップ",
     "fr": "Tourment du Coerthas amélioré",
-    "icon": "/i/005000/005290.png",
+    "icon": "/api/asset?path=ui/icon/005000/005290.tex&format=png",
     "level": 82,
     "job": 22,
     "description": {
@@ -6529,7 +6529,7 @@
     "de": "Verbesserter Wirbelsprenger",
     "ja": "スパインダイブ効果アップ",
     "fr": "Piqué brise-échine amélioré",
-    "icon": "/i/005000/005291.png",
+    "icon": "/api/asset?path=ui/icon/005000/005291.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -6544,7 +6544,7 @@
     "de": "Meister der Lanze II",
     "ja": "ランスマスタリーII",
     "fr": "Maîtrise de la lance II",
-    "icon": "/i/005000/005288.png",
+    "icon": "/api/asset?path=ui/icon/005000/005288.tex&format=png",
     "level": 86,
     "job": 22,
     "description": {
@@ -6559,7 +6559,7 @@
     "de": "Verbesserte Vitalwallung",
     "ja": "ライフサージ効果アップ",
     "fr": "Souffle de vie amélioré",
-    "icon": "/i/005000/005277.png",
+    "icon": "/api/asset?path=ui/icon/005000/005277.tex&format=png",
     "level": 88,
     "job": 22,
     "description": {
@@ -6574,7 +6574,7 @@
     "de": "Shukiho III",
     "ja": "集気法III",
     "fr": "Shûkihô III",
-    "icon": "/i/005000/005417.png",
+    "icon": "/api/asset?path=ui/icon/005000/005417.tex&format=png",
     "level": 84,
     "job": 30,
     "description": {
@@ -6589,7 +6589,7 @@
     "de": "Verbessertes Meisui",
     "ja": "命水効果アップ",
     "fr": "Meisui amélioré",
-    "icon": "/i/005000/005418.png",
+    "icon": "/api/asset?path=ui/icon/005000/005418.tex&format=png",
     "level": 88,
     "job": 30,
     "description": {
@@ -6604,7 +6604,7 @@
     "de": "Verbessertes Raiton",
     "ja": "雷遁の術効果アップ",
     "fr": "Raiton amélioré",
-    "icon": "/i/005000/005419.png",
+    "icon": "/api/asset?path=ui/icon/005000/005419.tex&format=png",
     "level": 90,
     "job": 30,
     "description": {
@@ -6619,7 +6619,7 @@
     "de": "Verbessertes Tsubamegaeshi",
     "ja": "燕返し効果アップ",
     "fr": "Tsubamegaeshi amélioré",
-    "icon": "/i/006000/006155.png",
+    "icon": "/api/asset?path=ui/icon/006000/006155.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -6634,7 +6634,7 @@
     "de": "Verbessertes Meikyo Shisui",
     "ja": "明鏡止水効果アップ",
     "fr": "Meikyô Shisui amélioré",
-    "icon": "/i/006000/006156.png",
+    "icon": "/api/asset?path=ui/icon/006000/006156.tex&format=png",
     "level": 76,
     "job": 34,
     "description": {
@@ -6649,7 +6649,7 @@
     "de": "Meister der Pfeilsalve",
     "ja": "クイックノックマスタリー",
     "fr": "Maîtrise de Salve fulgurante",
-    "icon": "/i/005000/005316.png",
+    "icon": "/api/asset?path=ui/icon/005000/005316.tex&format=png",
     "level": 82,
     "job": 23,
     "description": {
@@ -6664,7 +6664,7 @@
     "de": "Verbesserter Aderlass",
     "ja": "ブラッドレッター効果アップ",
     "fr": "Hémorragie améliorée",
-    "icon": "/i/005000/005317.png",
+    "icon": "/api/asset?path=ui/icon/005000/005317.tex&format=png",
     "level": 84,
     "job": 23,
     "description": {
@@ -6679,7 +6679,7 @@
     "de": "Verbesserter Apex-Pfeil",
     "ja": "エイペックスアロー効果アップ",
     "fr": "Trait alpha amélioré",
-    "icon": "/i/005000/005318.png",
+    "icon": "/api/asset?path=ui/icon/005000/005318.tex&format=png",
     "level": 86,
     "job": 23,
     "description": {
@@ -6694,7 +6694,7 @@
     "de": "Verbesserter Troubadour",
     "ja": "トルバドゥール効果アップ",
     "fr": "Troubadour amélioré",
-    "icon": "/i/005000/005319.png",
+    "icon": "/api/asset?path=ui/icon/005000/005319.tex&format=png",
     "level": 88,
     "job": 23,
     "description": {
@@ -6709,7 +6709,7 @@
     "de": "Verbesserte Lieder",
     "ja": "戦歌効果アップ",
     "fr": "Chants guerriers améliorés",
-    "icon": "/i/005000/005320.png",
+    "icon": "/api/asset?path=ui/icon/005000/005320.tex&format=png",
     "level": 90,
     "job": 23,
     "description": {
@@ -6724,7 +6724,7 @@
     "de": "Meister des Splitterschusses",
     "ja": "スプレッドショットマスタリー",
     "fr": "Maîtrise de Tir dispersé",
-    "icon": "/i/006000/006017.png",
+    "icon": "/api/asset?path=ui/icon/006000/006017.tex&format=png",
     "level": 82,
     "job": 31,
     "description": {
@@ -6739,7 +6739,7 @@
     "de": "Verbessertes Justieren",
     "ja": "整備効果アップ",
     "fr": "Réassemblage amélioré",
-    "icon": "/i/006000/006018.png",
+    "icon": "/api/asset?path=ui/icon/006000/006018.tex&format=png",
     "level": 84,
     "job": 31,
     "description": {
@@ -6754,7 +6754,7 @@
     "de": "Damengambit",
     "ja": "クイーンズ・ガンビット",
     "fr": "Gambit de la Reine",
-    "icon": "/i/006000/006019.png",
+    "icon": "/api/asset?path=ui/icon/006000/006019.tex&format=png",
     "level": 86,
     "job": 31,
     "description": {
@@ -6769,7 +6769,7 @@
     "de": "Verbesserter Taktiker",
     "ja": "タクティシャン効果アップ",
     "fr": "Tacticien amélioré",
-    "icon": "/i/006000/006020.png",
+    "icon": "/api/asset?path=ui/icon/006000/006020.tex&format=png",
     "level": 88,
     "job": 31,
     "description": {
@@ -6784,7 +6784,7 @@
     "de": "Verbessertes Komplexes Finale",
     "ja": "テクニカルフィニッシュ効果アップ",
     "fr": "Final technique amélioré",
-    "icon": "/i/006000/006357.png",
+    "icon": "/api/asset?path=ui/icon/006000/006357.tex&format=png",
     "level": 82,
     "job": 38,
     "description": {
@@ -6799,7 +6799,7 @@
     "de": "Verbessertes Tanzfieber",
     "ja": "エスプリ効果アップ",
     "fr": "Fascination croissante",
-    "icon": "/i/006000/006358.png",
+    "icon": "/api/asset?path=ui/icon/006000/006358.tex&format=png",
     "level": 84,
     "job": 38,
     "description": {
@@ -6814,7 +6814,7 @@
     "de": "Verbesserte Trance",
     "ja": "フラリッシュ効果アップ",
     "fr": "Apothéose améliorée",
-    "icon": "/i/006000/006359.png",
+    "icon": "/api/asset?path=ui/icon/006000/006359.tex&format=png",
     "level": 86,
     "job": 38,
     "description": {
@@ -6829,7 +6829,7 @@
     "de": "Verbesserter Schildsamba",
     "ja": "守りのサンバ効果アップ",
     "fr": "Samba protectrice améliorée",
-    "icon": "/i/006000/006360.png",
+    "icon": "/api/asset?path=ui/icon/006000/006360.tex&format=png",
     "level": 88,
     "job": 38,
     "description": {
@@ -6844,7 +6844,7 @@
     "de": "Verbesserter Todestango",
     "ja": "攻めのタンゴ効果アップ",
     "fr": "Tango endiablé amélioré",
-    "icon": "/i/006000/006361.png",
+    "icon": "/api/asset?path=ui/icon/006000/006361.tex&format=png",
     "level": 90,
     "job": 38,
     "description": {
@@ -6859,7 +6859,7 @@
     "de": "Elementare Meisterschaft II",
     "ja": "極性マスタリーII",
     "fr": "Maîtrise des polarités II",
-    "icon": "/i/005000/005366.png",
+    "icon": "/api/asset?path=ui/icon/005000/005366.tex&format=png",
     "level": 20,
     "job": 7,
     "description": {
@@ -6874,7 +6874,7 @@
     "de": "Elementare Meisterschaft III",
     "ja": "極性マスタリーIII",
     "fr": "Maîtrise des polarités III",
-    "icon": "/i/005000/005367.png",
+    "icon": "/api/asset?path=ui/icon/005000/005367.tex&format=png",
     "level": 35,
     "job": 7,
     "description": {
@@ -6889,7 +6889,7 @@
     "de": "Henochisch",
     "ja": "エノキアン",
     "fr": "Énochien",
-    "icon": "/i/005000/005368.png",
+    "icon": "/api/asset?path=ui/icon/005000/005368.tex&format=png",
     "level": 56,
     "job": 25,
     "description": {
@@ -6904,7 +6904,7 @@
     "de": "Verbesserter Moder",
     "ja": "ファウル効果アップ",
     "fr": "Infect amélioré",
-    "icon": "/i/005000/005369.png",
+    "icon": "/api/asset?path=ui/icon/005000/005369.tex&format=png",
     "level": 80,
     "job": 25,
     "description": {
@@ -6919,7 +6919,7 @@
     "de": "Elementare Meisterschaft IV",
     "ja": "極性マスタリーIV",
     "fr": "Maîtrise des polarités IV",
-    "icon": "/i/005000/005370.png",
+    "icon": "/api/asset?path=ui/icon/005000/005370.tex&format=png",
     "level": 82,
     "job": 25,
     "description": {
@@ -6934,7 +6934,7 @@
     "de": "Verbesserter Mana-Brunnen",
     "ja": "マナフォント効果アップ",
     "fr": "Vasque de mana améliorée",
-    "icon": "/i/005000/005371.png",
+    "icon": "/api/asset?path=ui/icon/005000/005371.tex&format=png",
     "level": 84,
     "job": 25,
     "description": {
@@ -6949,7 +6949,7 @@
     "de": "Verbesserte Augmentierung II",
     "ja": "激成魔効果アップII",
     "fr": "Dynamisation améliorée II",
-    "icon": "/i/005000/005372.png",
+    "icon": "/api/asset?path=ui/icon/005000/005372.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -6964,7 +6964,7 @@
     "de": "Elementare Meisterschaft V",
     "ja": "極性マスタリーV",
     "fr": "Maîtrise des polarités V",
-    "icon": "/i/005000/005373.png",
+    "icon": "/api/asset?path=ui/icon/005000/005373.tex&format=png",
     "level": 90,
     "job": 25,
     "description": {
@@ -6979,7 +6979,7 @@
     "de": "Verbesserte Ätherinfusion",
     "ja": "エーテルチャージ効果アップ",
     "fr": "Infusion d'éther améliorée",
-    "icon": "/i/005000/005396.png",
+    "icon": "/api/asset?path=ui/icon/005000/005396.tex&format=png",
     "level": 15,
     "job": 26,
     "description": {
@@ -6994,7 +6994,7 @@
     "de": "Verbesserte Ätherinfusion II",
     "ja": "エーテルチャージ効果アップII",
     "fr": "Infusion d'éther améliorée II",
-    "icon": "/i/005000/005397.png",
+    "icon": "/api/asset?path=ui/icon/005000/005397.tex&format=png",
     "level": 22,
     "job": 26,
     "description": {
@@ -7009,7 +7009,7 @@
     "de": "Meister der Rubin-Beschwörung",
     "ja": "サモン・ルビーマスタリー",
     "fr": "Maîtrise d'Invocation Rubis",
-    "icon": "/i/005000/005682.png",
+    "icon": "/api/asset?path=ui/icon/005000/005682.tex&format=png",
     "level": 30,
     "job": 27,
     "description": {
@@ -7024,7 +7024,7 @@
     "de": "Meister der Topas-Beschwörung",
     "ja": "サモン・トパーズマスタリー",
     "fr": "Maîtrise d'Invocation Topaze",
-    "icon": "/i/005000/005683.png",
+    "icon": "/api/asset?path=ui/icon/005000/005683.tex&format=png",
     "level": 35,
     "job": 27,
     "description": {
@@ -7039,7 +7039,7 @@
     "de": "Meister der Smaragd-Beschwörung",
     "ja": "サモン・エメラルドマスタリー",
     "fr": "Maîtrise d'Invocation Émeraude",
-    "icon": "/i/005000/005684.png",
+    "icon": "/api/asset?path=ui/icon/005000/005684.tex&format=png",
     "level": 45,
     "job": 27,
     "description": {
@@ -7054,7 +7054,7 @@
     "de": "Entflammung",
     "ja": "エンキンドル",
     "fr": "Galvanisation",
-    "icon": "/i/005000/005685.png",
+    "icon": "/api/asset?path=ui/icon/005000/005685.tex&format=png",
     "level": 50,
     "job": 27,
     "description": {
@@ -7084,7 +7084,7 @@
     "de": "Meister des Ruins II",
     "ja": "ルインマスタリーII",
     "fr": "Maîtrise de Ruine II",
-    "icon": "/i/005000/005687.png",
+    "icon": "/api/asset?path=ui/icon/005000/005687.tex&format=png",
     "level": 54,
     "job": 27,
     "description": {
@@ -7099,7 +7099,7 @@
     "de": "Meister der Ätherinfusion",
     "ja": "エーテルチャージマスタリー",
     "fr": "Maîtrise d'Infusion d'éther",
-    "icon": "/i/005000/005690.png",
+    "icon": "/api/asset?path=ui/icon/005000/005690.tex&format=png",
     "level": 58,
     "job": 27,
     "description": {
@@ -7114,7 +7114,7 @@
     "de": "Verbesserter Energiesiphon",
     "ja": "エナジーサイフォン効果アップ",
     "fr": "Siphon d'énergie amélioré",
-    "icon": "/i/005000/005691.png",
+    "icon": "/api/asset?path=ui/icon/005000/005691.tex&format=png",
     "level": 62,
     "job": 27,
     "description": {
@@ -7129,7 +7129,7 @@
     "de": "Meister des Ruins III",
     "ja": "ルインマスタリーIII",
     "fr": "Maîtrise de Ruine III",
-    "icon": "/i/005000/005688.png",
+    "icon": "/api/asset?path=ui/icon/005000/005688.tex&format=png",
     "level": 72,
     "job": 27,
     "description": {
@@ -7144,7 +7144,7 @@
     "de": "Meister der Elementarkorona",
     "ja": "アウトバーストマスタリー",
     "fr": "Maîtrise de Fracas élémentaire",
-    "icon": "/i/005000/005692.png",
+    "icon": "/api/asset?path=ui/icon/005000/005692.tex&format=png",
     "level": 74,
     "job": 27,
     "description": {
@@ -7159,7 +7159,7 @@
     "de": "Meister der Elementarkorona II",
     "ja": "アウトバーストマスタリーII",
     "fr": "Maîtrise de Fracas élémentaire II",
-    "icon": "/i/005000/005693.png",
+    "icon": "/api/asset?path=ui/icon/005000/005693.tex&format=png",
     "level": 82,
     "job": 27,
     "description": {
@@ -7174,7 +7174,7 @@
     "de": "Meister des Ruins IV",
     "ja": "ルインマスタリーIV",
     "fr": "Maîtrise de Ruine IV",
-    "icon": "/i/005000/005689.png",
+    "icon": "/api/asset?path=ui/icon/005000/005689.tex&format=png",
     "level": 84,
     "job": 27,
     "description": {
@@ -7189,7 +7189,7 @@
     "de": "Verbesserter Schimmerschild",
     "ja": "守りの光効果アップ",
     "fr": "Égide rayonnante améliorée",
-    "icon": "/i/005000/005694.png",
+    "icon": "/api/asset?path=ui/icon/005000/005694.tex&format=png",
     "level": 88,
     "job": 27,
     "description": {
@@ -7204,7 +7204,7 @@
     "de": "Hohe Beschwörung",
     "ja": "エンキンドルII",
     "fr": "Galvanisation II",
-    "icon": "/i/005000/005695.png",
+    "icon": "/api/asset?path=ui/icon/005000/005695.tex&format=png",
     "level": 90,
     "job": 27,
     "description": {
@@ -7219,7 +7219,7 @@
     "de": "Verbesserte Magieklinge",
     "ja": "魔法剣効果アップ",
     "fr": "Magilame améliorée",
-    "icon": "/i/006000/006208.png",
+    "icon": "/api/asset?path=ui/icon/006000/006208.tex&format=png",
     "level": 68,
     "job": 35,
     "description": {
@@ -7234,7 +7234,7 @@
     "de": "Meister der Rotmagie II",
     "ja": "赤魔法マスタリーII",
     "fr": "Maîtrise de la magie rouge II",
-    "icon": "/i/006000/006209.png",
+    "icon": "/api/asset?path=ui/icon/006000/006209.tex&format=png",
     "level": 82,
     "job": 35,
     "description": {
@@ -7249,7 +7249,7 @@
     "de": "Meister der Rotmagie III",
     "ja": "赤魔法マスタリーIII",
     "fr": "Maîtrise de la magie rouge III",
-    "icon": "/i/006000/006210.png",
+    "icon": "/api/asset?path=ui/icon/006000/006210.tex&format=png",
     "level": 84,
     "job": 35,
     "description": {
@@ -7264,7 +7264,7 @@
     "de": "Verbesserte Präparation",
     "ja": "アクセラレーション効果アップ",
     "fr": "Accélération améliorée",
-    "icon": "/i/006000/006211.png",
+    "icon": "/api/asset?path=ui/icon/006000/006211.tex&format=png",
     "level": 88,
     "job": 35,
     "description": {
@@ -7279,7 +7279,7 @@
     "de": "Verbesserte Manafizierung II",
     "ja": "マナフィケーション効果アップII",
     "fr": "Manafication améliorée II",
-    "icon": "/i/006000/006212.png",
+    "icon": "/api/asset?path=ui/icon/006000/006212.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -7294,7 +7294,7 @@
     "de": "Meister der Blendung",
     "ja": "グレアマスタリー",
     "fr": "Maîtrise de Chatoiement",
-    "icon": "/i/005000/005343.png",
+    "icon": "/api/asset?path=ui/icon/005000/005343.tex&format=png",
     "level": 82,
     "job": 24,
     "description": {
@@ -7309,7 +7309,7 @@
     "de": "Verbessertes Sanctus",
     "ja": "ホーリーマスタリー",
     "fr": "Maîtrise de Miracle",
-    "icon": "/i/005000/005344.png",
+    "icon": "/api/asset?path=ui/icon/005000/005344.tex&format=png",
     "level": 82,
     "job": 24,
     "description": {
@@ -7324,7 +7324,7 @@
     "de": "Meister der Heilmagie",
     "ja": "回復アクション効果アップ",
     "fr": "Magie curative améliorée",
-    "icon": "/i/006000/006826.png",
+    "icon": "/api/asset?path=ui/icon/006000/006826.tex&format=png",
     "level": 85,
     "job": 24,
     "description": {
@@ -7339,7 +7339,7 @@
     "de": "Verbesserter Göttlicher Segen",
     "ja": "ディヴァインベニゾン効果アップ",
     "fr": "Faveur divine améliorée",
-    "icon": "/i/005000/005345.png",
+    "icon": "/api/asset?path=ui/icon/005000/005345.tex&format=png",
     "level": 88,
     "job": 24,
     "description": {
@@ -7354,7 +7354,7 @@
     "de": "Meister der Bravade IV",
     "ja": "炎法マスタリーIV",
     "fr": "Maîtrise de Loi de l'ébullition IV",
-    "icon": "/i/005000/005704.png",
+    "icon": "/api/asset?path=ui/icon/005000/005704.tex&format=png",
     "level": 82,
     "job": 28,
     "description": {
@@ -7369,7 +7369,7 @@
     "de": "Meister des Krieges",
     "ja": "破陣法マスタリー",
     "fr": "Maîtrise de Loi de la guerre",
-    "icon": "/i/005000/005705.png",
+    "icon": "/api/asset?path=ui/icon/005000/005705.tex&format=png",
     "level": 82,
     "job": 28,
     "description": {
@@ -7384,7 +7384,7 @@
     "de": "Meister der Heilmagie",
     "ja": "回復アクション効果アップ",
     "fr": "Magie curative améliorée",
-    "icon": "/i/006000/006826.png",
+    "icon": "/api/asset?path=ui/icon/006000/006826.tex&format=png",
     "level": 85,
     "job": 28,
     "description": {
@@ -7399,7 +7399,7 @@
     "de": "Verbesserte Dislokation",
     "ja": "展開戦術効果アップ",
     "fr": "Stratagème du déploiement amélioré",
-    "icon": "/i/005000/005706.png",
+    "icon": "/api/asset?path=ui/icon/005000/005706.tex&format=png",
     "level": 88,
     "job": 28,
     "description": {
@@ -7414,7 +7414,7 @@
     "de": "Verbessertes Ziehen",
     "ja": "ドロー効果アップ",
     "fr": "Tirage amélioré",
-    "icon": "/i/006000/006115.png",
+    "icon": "/api/asset?path=ui/icon/006000/006115.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -7429,7 +7429,7 @@
     "de": "Verbessertes Ziehen II",
     "ja": "ドロー効果アップII",
     "fr": "Tirage amélioré II",
-    "icon": "/i/006000/006116.png",
+    "icon": "/api/asset?path=ui/icon/006000/006116.tex&format=png",
     "level": 0,
     "job": 0,
     "description": {
@@ -7444,7 +7444,7 @@
     "de": "Meister des Spannungsaspekts IV",
     "ja": "マレフィクマスタリーIV",
     "fr": "Maîtrise de Malfaisance IV",
-    "icon": "/i/006000/006117.png",
+    "icon": "/api/asset?path=ui/icon/006000/006117.tex&format=png",
     "level": 82,
     "job": 33,
     "description": {
@@ -7459,7 +7459,7 @@
     "de": "Meister des Gravitas",
     "ja": "グラビデマスタリー",
     "fr": "Maîtrise de Gravité",
-    "icon": "/i/006000/006118.png",
+    "icon": "/api/asset?path=ui/icon/006000/006118.tex&format=png",
     "level": 82,
     "job": 33,
     "description": {
@@ -7474,7 +7474,7 @@
     "de": "Meister der Heilmagie",
     "ja": "回復アクション効果アップ",
     "fr": "Magie curative améliorée",
-    "icon": "/i/006000/006826.png",
+    "icon": "/api/asset?path=ui/icon/006000/006826.tex&format=png",
     "level": 85,
     "job": 33,
     "description": {
@@ -7489,7 +7489,7 @@
     "de": "Verbesserte Kongruenz",
     "ja": "星天交差効果アップ",
     "fr": "Rencontre céleste améliorée",
-    "icon": "/i/006000/006119.png",
+    "icon": "/api/asset?path=ui/icon/006000/006119.tex&format=png",
     "level": 88,
     "job": 33,
     "description": {
@@ -7504,7 +7504,7 @@
     "de": "Sternenfischen",
     "ja": "宙泉釣り",
     "fr": "Pêcheur de l'espace",
-    "icon": "/i/005000/005487.png",
+    "icon": "/api/asset?path=ui/icon/005000/005487.tex&format=png",
     "level": 89,
     "job": 18,
     "description": {
@@ -7519,7 +7519,7 @@
     "de": "Verbesserte Bahamut-Beschwörung",
     "ja": "サモン・バハムート効果アップ",
     "fr": "Invocation Bahamut améliorée",
-    "icon": "/i/005000/005696.png",
+    "icon": "/api/asset?path=ui/icon/005000/005696.tex&format=png",
     "level": 80,
     "job": 27,
     "description": {
@@ -7534,7 +7534,7 @@
     "de": "Meister der Elemente",
     "ja": "エレメントマスタリー",
     "fr": "Maîtrise des éléments",
-    "icon": "/i/005000/005697.png",
+    "icon": "/api/asset?path=ui/icon/005000/005697.tex&format=png",
     "level": 86,
     "job": 27,
     "description": {
@@ -7549,7 +7549,7 @@
     "de": "Verbesserte Ritterlichkeit",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 84,
     "job": 19,
     "description": {
@@ -7564,7 +7564,7 @@
     "de": "Verbesserte Axtkunst",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 84,
     "job": 21,
     "description": {
@@ -7579,7 +7579,7 @@
     "de": "Verbesserter Schwertkampf",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 84,
     "job": 32,
     "description": {
@@ -7594,7 +7594,7 @@
     "de": "Verbesserte Revolverklinge",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 84,
     "job": 37,
     "description": {
@@ -7609,7 +7609,7 @@
     "de": "Meister der Lanze III",
     "ja": "ランスマスタリーIII",
     "fr": "Maîtrise de la lance III",
-    "icon": "/i/005000/005292.png",
+    "icon": "/api/asset?path=ui/icon/005000/005292.tex&format=png",
     "level": 90,
     "job": 22,
     "description": {
@@ -7624,7 +7624,7 @@
     "de": "Verbessertes Henochisch III",
     "ja": "エノキアン効果アップIII",
     "fr": "Énochien amélioré III",
-    "icon": "/i/005000/005374.png",
+    "icon": "/api/asset?path=ui/icon/005000/005374.tex&format=png",
     "level": 86,
     "job": 25,
     "description": {
@@ -7639,7 +7639,7 @@
     "de": "Meister der Physis",
     "ja": "ピュシスマスタリー",
     "fr": "Maîtrise de Physis",
-    "icon": "/i/006000/006459.png",
+    "icon": "/api/asset?path=ui/icon/006000/006459.tex&format=png",
     "level": 60,
     "job": 40,
     "description": {
@@ -7654,7 +7654,7 @@
     "de": "Verbesserter Schattenschemen",
     "ja": "影身具現効果アップ",
     "fr": "Ombre vivante améliorée",
-    "icon": "/i/006000/006065.png",
+    "icon": "/api/asset?path=ui/icon/006000/006065.tex&format=png",
     "level": 88,
     "job": 32,
     "description": {
@@ -7669,7 +7669,7 @@
     "de": "Meister des Zündschlags",
     "ja": "爆裂脚マスタリー",
     "fr": "Maîtrise de Départ de flammes",
-    "icon": "/i/005000/005248.png",
+    "icon": "/api/asset?path=ui/icon/005000/005248.tex&format=png",
     "level": 86,
     "job": 20,
     "description": {
@@ -7684,7 +7684,7 @@
     "de": "Meister des Tornadotritts",
     "ja": "闘魂旋風脚マスタリー",
     "fr": "Maîtrise de Coup de pied tornade",
-    "icon": "/i/005000/005247.png",
+    "icon": "/api/asset?path=ui/icon/005000/005247.tex&format=png",
     "level": 90,
     "job": 20,
     "description": {
@@ -7699,7 +7699,7 @@
     "de": "Verbessertes Ikishoten",
     "ja": "意気衝天効果アップ",
     "fr": "Ikishôten amélioré",
-    "icon": "/i/006000/006157.png",
+    "icon": "/api/asset?path=ui/icon/006000/006157.tex&format=png",
     "level": 90,
     "job": 34,
     "description": {
@@ -7714,7 +7714,7 @@
     "de": "Meister des Meuchelsprungs",
     "ja": "終撃皆伝",
     "fr": "Maîtrise d'Assassinement",
-    "icon": "/i/005000/005420.png",
+    "icon": "/api/asset?path=ui/icon/005000/005420.tex&format=png",
     "level": 56,
     "job": 30,
     "description": {
@@ -7729,7 +7729,7 @@
     "de": "Verbessertes Ninjutsu",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 74,
     "job": 30,
     "description": {
@@ -7744,7 +7744,7 @@
     "de": "Verbessertes Schützentum",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 84,
     "job": 31,
     "description": {
@@ -7759,7 +7759,7 @@
     "de": "Verbesserter Faustkampf",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 84,
     "job": 20,
     "description": {
@@ -7774,7 +7774,7 @@
     "de": "Meister des Fuga",
     "ja": "風雅皆伝",
     "fr": "Maîtrise de Fûga",
-    "icon": "/i/006000/006158.png",
+    "icon": "/api/asset?path=ui/icon/006000/006158.tex&format=png",
     "level": 86,
     "job": 34,
     "description": {
@@ -7789,7 +7789,7 @@
     "de": "Verbessertes Bushido",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 66,
     "job": 34,
     "description": {
@@ -7804,7 +7804,7 @@
     "de": "Verbessertes Bushido II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 84,
     "job": 34,
     "description": {
@@ -7819,7 +7819,7 @@
     "de": "Verbessertes Ninjutsu II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 84,
     "job": 30,
     "description": {
@@ -7834,7 +7834,7 @@
     "de": "Verbesserte Ernte II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 84,
     "job": 39,
     "description": {
@@ -7849,7 +7849,7 @@
     "de": "Verbesserte Fänge",
     "ja": "牙の技効果アップ",
     "fr": "Crochets améliorés",
-    "icon": "/i/006000/006501.png",
+    "icon": "/api/asset?path=ui/icon/006000/006501.tex&format=png",
     "level": 55,
     "job": 41,
     "description": {
@@ -7864,7 +7864,7 @@
     "de": "Verbesserte Kiefer",
     "ja": "大牙の技効果アップ",
     "fr": "Mâchoires améliorées",
-    "icon": "/i/006000/006502.png",
+    "icon": "/api/asset?path=ui/icon/006000/006502.tex&format=png",
     "level": 60,
     "job": 41,
     "description": {
@@ -7879,7 +7879,7 @@
     "de": "Verbesserter Otterngriff",
     "ja": "蛇の技効果アップ",
     "fr": "Anneaux améliorés",
-    "icon": "/i/006000/006503.png",
+    "icon": "/api/asset?path=ui/icon/006000/006503.tex&format=png",
     "level": 75,
     "job": 41,
     "description": {
@@ -7894,7 +7894,7 @@
     "de": "Verbesserte Otterngrube",
     "ja": "大蛇の技効果アップ",
     "fr": "Tanière améliorée",
-    "icon": "/i/006000/006504.png",
+    "icon": "/api/asset?path=ui/icon/006000/006504.tex&format=png",
     "level": 80,
     "job": 41,
     "description": {
@@ -7909,7 +7909,7 @@
     "de": "Schlangenseele",
     "ja": "飛蛇の魂",
     "fr": "Esprits des serpents",
-    "icon": "/i/006000/006505.png",
+    "icon": "/api/asset?path=ui/icon/006000/006505.tex&format=png",
     "level": 82,
     "job": 41,
     "description": {
@@ -7924,7 +7924,7 @@
     "de": "Verbesserter Schuppensprung",
     "ja": "蛇行効果アップ",
     "fr": "Reptation améliorée",
-    "icon": "/i/006000/006506.png",
+    "icon": "/api/asset?path=ui/icon/006000/006506.tex&format=png",
     "level": 84,
     "job": 41,
     "description": {
@@ -7939,7 +7939,7 @@
     "de": "Verbesserte Schlangenseele",
     "ja": "飛蛇の魂効果アップ",
     "fr": "Esprits des serpents améliorés",
-    "icon": "/i/006000/006507.png",
+    "icon": "/api/asset?path=ui/icon/006000/006507.tex&format=png",
     "level": 88,
     "job": 41,
     "description": {
@@ -7954,7 +7954,7 @@
     "de": "Wissen der Ahnen",
     "ja": "祖霊の魂",
     "fr": "Esprits des anciens",
-    "icon": "/i/006000/006508.png",
+    "icon": "/api/asset?path=ui/icon/006000/006508.tex&format=png",
     "level": 90,
     "job": 41,
     "description": {
@@ -7969,7 +7969,7 @@
     "de": "Verbesserte Schlangenschwinge",
     "ja": "飛蛇の尾効果アップ",
     "fr": "Assaut amélioré",
-    "icon": "/i/006000/006510.png",
+    "icon": "/api/asset?path=ui/icon/006000/006510.tex&format=png",
     "level": 92,
     "job": 41,
     "description": {
@@ -7984,7 +7984,7 @@
     "de": "Verbessertes Wissen der Ahnen",
     "ja": "祖霊の魂効果アップ",
     "fr": "Esprit des anciens améliorés",
-    "icon": "/i/006000/006511.png",
+    "icon": "/api/asset?path=ui/icon/006000/006511.tex&format=png",
     "level": 96,
     "job": 41,
     "description": {
@@ -7999,7 +7999,7 @@
     "de": "Meister des Blutes",
     "ja": "祖霊の牙マスタリー",
     "fr": "Maîtrise des esprits",
-    "icon": "/i/006000/006509.png",
+    "icon": "/api/asset?path=ui/icon/006000/006509.tex&format=png",
     "level": 100,
     "job": 41,
     "description": {
@@ -8044,7 +8044,7 @@
     "de": "Palettenbalken",
     "ja": "パレットゲージ",
     "fr": "Jauge de palette",
-    "icon": "/i/006000/006551.png",
+    "icon": "/api/asset?path=ui/icon/006000/006551.tex&format=png",
     "level": 60,
     "job": 42,
     "description": {
@@ -8059,7 +8059,7 @@
     "de": "Verbesserte Farben",
     "ja": "絵画魔法効果アップ",
     "fr": "Magie picturale améliorée",
-    "icon": "/i/006000/006552.png",
+    "icon": "/api/asset?path=ui/icon/006000/006552.tex&format=png",
     "level": 80,
     "job": 42,
     "description": {
@@ -8074,7 +8074,7 @@
     "de": "Verbessserter Schmierschritt",
     "ja": "スマッジ効果アップ",
     "fr": "Barbouillage amélioré",
-    "icon": "/i/006000/006553.png",
+    "icon": "/api/asset?path=ui/icon/006000/006553.tex&format=png",
     "level": 84,
     "job": 42,
     "description": {
@@ -8089,7 +8089,7 @@
     "de": "Verbesserte Piktomantie II",
     "ja": "ピクト効果アップII",
     "fr": "Sorts Picto améliorés II",
-    "icon": "/i/006000/006554.png",
+    "icon": "/api/asset?path=ui/icon/006000/006554.tex&format=png",
     "level": 86,
     "job": 42,
     "description": {
@@ -8104,7 +8104,7 @@
     "de": "Verbesserte Tempera",
     "ja": "テンペラ効果アップ",
     "fr": "Tempera améliorée",
-    "icon": "/i/006000/006555.png",
+    "icon": "/api/asset?path=ui/icon/006000/006555.tex&format=png",
     "level": 88,
     "job": 42,
     "description": {
@@ -8119,7 +8119,7 @@
     "de": "Verbesserte Palette",
     "ja": "サブトラクト効果アップ",
     "fr": "Palette soustractive améliorée",
-    "icon": "/i/006000/006556.png",
+    "icon": "/api/asset?path=ui/icon/006000/006556.tex&format=png",
     "level": 90,
     "job": 42,
     "description": {
@@ -8134,7 +8134,7 @@
     "de": "Verbesserte Piktomantie III",
     "ja": "ピクト効果アップIII",
     "fr": "Sorts Picto améliorés III",
-    "icon": "/i/006000/006560.png",
+    "icon": "/api/asset?path=ui/icon/006000/006560.tex&format=png",
     "level": 92,
     "job": 42,
     "description": {
@@ -8149,7 +8149,7 @@
     "de": "Verbesserte Piktomantie V",
     "ja": "ピクト効果アップV",
     "fr": "Sorts Picto améliorés V",
-    "icon": "/i/006000/006561.png",
+    "icon": "/api/asset?path=ui/icon/006000/006561.tex&format=png",
     "level": 100,
     "job": 42,
     "description": {
@@ -8164,7 +8164,7 @@
     "de": "Verbesserte Piktomantie IV",
     "ja": "ピクト効果アップIV",
     "fr": "Sorts Picto améliorés IV",
-    "icon": "/i/006000/006559.png",
+    "icon": "/api/asset?path=ui/icon/006000/006559.tex&format=png",
     "level": 96,
     "job": 42,
     "description": {
@@ -8179,7 +8179,7 @@
     "de": "Verbesserte Piktomantie",
     "ja": "ピクト効果アップ",
     "fr": "Sorts Picto améliorés",
-    "icon": "/i/006000/006558.png",
+    "icon": "/api/asset?path=ui/icon/006000/006558.tex&format=png",
     "level": 82,
     "job": 42,
     "description": {
@@ -8209,7 +8209,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006951.png",
+    "icon": "/api/asset?path=ui/icon/006000/006951.tex&format=png",
     "level": 94,
     "job": 8,
     "description": {
@@ -8224,7 +8224,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006952.png",
+    "icon": "/api/asset?path=ui/icon/006000/006952.tex&format=png",
     "level": 94,
     "job": 9,
     "description": {
@@ -8239,7 +8239,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006953.png",
+    "icon": "/api/asset?path=ui/icon/006000/006953.tex&format=png",
     "level": 94,
     "job": 10,
     "description": {
@@ -8254,7 +8254,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006954.png",
+    "icon": "/api/asset?path=ui/icon/006000/006954.tex&format=png",
     "level": 94,
     "job": 11,
     "description": {
@@ -8269,7 +8269,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006955.png",
+    "icon": "/api/asset?path=ui/icon/006000/006955.tex&format=png",
     "level": 94,
     "job": 12,
     "description": {
@@ -8284,7 +8284,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006956.png",
+    "icon": "/api/asset?path=ui/icon/006000/006956.tex&format=png",
     "level": 94,
     "job": 13,
     "description": {
@@ -8299,7 +8299,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006957.png",
+    "icon": "/api/asset?path=ui/icon/006000/006957.tex&format=png",
     "level": 94,
     "job": 14,
     "description": {
@@ -8314,7 +8314,7 @@
     "de": "Meister der Akribischen Bearbeitung",
     "ja": "精密作業マスタリー",
     "fr": "Maîtrise de Travail minutieux",
-    "icon": "/i/006000/006958.png",
+    "icon": "/api/asset?path=ui/icon/006000/006958.tex&format=png",
     "level": 94,
     "job": 15,
     "description": {
@@ -8329,7 +8329,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 8,
     "description": {
@@ -8344,7 +8344,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 9,
     "description": {
@@ -8359,7 +8359,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 10,
     "description": {
@@ -8374,7 +8374,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 11,
     "description": {
@@ -8389,7 +8389,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 12,
     "description": {
@@ -8404,7 +8404,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 13,
     "description": {
@@ -8419,7 +8419,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 14,
     "description": {
@@ -8434,7 +8434,7 @@
     "de": "Kühne Hand",
     "ja": "匠の好機",
     "fr": "Opportunité experte",
-    "icon": "/i/006000/006975.png",
+    "icon": "/api/asset?path=ui/icon/006000/006975.tex&format=png",
     "level": 96,
     "job": 15,
     "description": {
@@ -8449,7 +8449,7 @@
     "de": "Sentinel-Meister",
     "ja": "センチネルマスタリー",
     "fr": "Maîtrise de Sentinelle",
-    "icon": "/i/005000/005202.png",
+    "icon": "/api/asset?path=ui/icon/005000/005202.tex&format=png",
     "level": 92,
     "job": 19,
     "description": {
@@ -8464,7 +8464,7 @@
     "de": "Requiescat-Meister",
     "ja": "レクイエスカットマスタリー",
     "fr": "Maîtrise de Requiescat",
-    "icon": "/i/005000/005223.png",
+    "icon": "/api/asset?path=ui/icon/005000/005223.tex&format=png",
     "level": 96,
     "job": 19,
     "description": {
@@ -8479,7 +8479,7 @@
     "de": "Verbesserte Klinge der Tapferkeit",
     "ja": "ブレード・オブ・ヴァラー効果アップ",
     "fr": "Lame de vaillance améliorée",
-    "icon": "/i/005000/005224.png",
+    "icon": "/api/asset?path=ui/icon/005000/005224.tex&format=png",
     "level": 100,
     "job": 19,
     "description": {
@@ -8494,7 +8494,7 @@
     "de": "Meister der Rachsucht",
     "ja": "ヴェンジェンスマスタリー",
     "fr": "Maîtrise de Représailles",
-    "icon": "/i/005000/005271.png",
+    "icon": "/api/asset?path=ui/icon/005000/005271.tex&format=png",
     "level": 92,
     "job": 21,
     "description": {
@@ -8509,7 +8509,7 @@
     "de": "Verbesserte Urbefreiung",
     "ja": "原初の解放効果アップ",
     "fr": "Relâchement bestial amélioré",
-    "icon": "/i/005000/005272.png",
+    "icon": "/api/asset?path=ui/icon/005000/005272.tex&format=png",
     "level": 96,
     "job": 21,
     "description": {
@@ -8524,7 +8524,7 @@
     "de": "Verbesserte Brachiale Gewalt",
     "ja": "プライマルレンド効果アップ",
     "fr": "Griffade primitive améliorée",
-    "icon": "/i/005000/005273.png",
+    "icon": "/api/asset?path=ui/icon/005000/005273.tex&format=png",
     "level": 100,
     "job": 21,
     "description": {
@@ -8539,7 +8539,7 @@
     "de": "Meister der Blutwaffe",
     "ja": "ブラッドウェポンマスタリー",
     "fr": "Maîtrise d'Arme de sang",
-    "icon": "/i/006000/006053.png",
+    "icon": "/api/asset?path=ui/icon/006000/006053.tex&format=png",
     "level": 68,
     "job": 32,
     "description": {
@@ -8554,7 +8554,7 @@
     "de": "Meister der Schattenwand",
     "ja": "シャドウウォールマスタリー",
     "fr": "Maîtrise de Mur d'ombre",
-    "icon": "/i/006000/006068.png",
+    "icon": "/api/asset?path=ui/icon/006000/006068.tex&format=png",
     "level": 92,
     "job": 32,
     "description": {
@@ -8569,7 +8569,7 @@
     "de": "Verbessertes Blutdelirium",
     "ja": "ブラッドデリリアム効果アップ",
     "fr": "Delirium de sang amélioré",
-    "icon": "/i/006000/006069.png",
+    "icon": "/api/asset?path=ui/icon/006000/006069.tex&format=png",
     "level": 96,
     "job": 32,
     "description": {
@@ -8584,7 +8584,7 @@
     "de": "Verbesserter Schattenschemen III",
     "ja": "影身具現効果アップIII",
     "fr": "Ombre vivante améliorée III",
-    "icon": "/i/006000/006070.png",
+    "icon": "/api/asset?path=ui/icon/006000/006070.tex&format=png",
     "level": 100,
     "job": 32,
     "description": {
@@ -8599,7 +8599,7 @@
     "de": "Meister der Nebula",
     "ja": "ネビュラマスタリー",
     "fr": "Maîtrise de Nébuleuse",
-    "icon": "/i/006000/006308.png",
+    "icon": "/api/asset?path=ui/icon/006000/006308.tex&format=png",
     "level": 92,
     "job": 37,
     "description": {
@@ -8614,7 +8614,7 @@
     "de": "Verbesserte Triggerfolge II",
     "ja": "コンティニュエーション効果アップII",
     "fr": "Consécution améliorée II",
-    "icon": "/i/006000/006309.png",
+    "icon": "/api/asset?path=ui/icon/006000/006309.tex&format=png",
     "level": 96,
     "job": 37,
     "description": {
@@ -8629,7 +8629,7 @@
     "de": "Verbesserte Blutpatronen",
     "ja": "ブラッドソイル効果アップ",
     "fr": "Cartouche de sang améliorée",
-    "icon": "/i/006000/006310.png",
+    "icon": "/api/asset?path=ui/icon/006000/006310.tex&format=png",
     "level": 100,
     "job": 37,
     "description": {
@@ -8644,7 +8644,7 @@
     "de": "Meister des Tierchakra",
     "ja": "象形拳",
     "fr": "Maîtrise des chakras bestiaux",
-    "icon": "/i/005000/005249.png",
+    "icon": "/api/asset?path=ui/icon/005000/005249.tex&format=png",
     "level": 92,
     "job": 20,
     "description": {
@@ -8659,7 +8659,7 @@
     "de": "Verbessertes Stürmendes Enigma",
     "ja": "疾風の極意効果アップ",
     "fr": "Énigme du vent améliorée",
-    "icon": "/i/005000/005526.png",
+    "icon": "/api/asset?path=ui/icon/005000/005526.tex&format=png",
     "level": 96,
     "job": 20,
     "description": {
@@ -8674,7 +8674,7 @@
     "de": "Verbessertes Flammendes Enigma",
     "ja": "紅蓮の極意効果アップ",
     "fr": "Énigme du feu améliorée",
-    "icon": "/i/005000/005527.png",
+    "icon": "/api/asset?path=ui/icon/005000/005527.tex&format=png",
     "level": 100,
     "job": 20,
     "description": {
@@ -8689,7 +8689,7 @@
     "de": "Verbesserter Gleitflügel",
     "ja": "ウィンググライド効果アップ",
     "fr": "Glissade aérienne améliorée",
-    "icon": "/i/005000/005295.png",
+    "icon": "/api/asset?path=ui/icon/005000/005295.tex&format=png",
     "level": 84,
     "job": 22,
     "description": {
@@ -8704,7 +8704,7 @@
     "de": "Verbesserter Wyrmodem",
     "ja": "ドラゴンダイブ効果アップ",
     "fr": "Piqué du dragon amélioré",
-    "icon": "/i/005000/005296.png",
+    "icon": "/api/asset?path=ui/icon/005000/005296.tex&format=png",
     "level": 92,
     "job": 22,
     "description": {
@@ -8719,7 +8719,7 @@
     "de": "Meister der Lanze IV",
     "ja": "ランスマスタリーIV",
     "fr": "Maîtrise de la lance IV",
-    "icon": "/i/005000/005293.png",
+    "icon": "/api/asset?path=ui/icon/005000/005293.tex&format=png",
     "level": 96,
     "job": 22,
     "description": {
@@ -8734,7 +8734,7 @@
     "de": "Verbesserter Sternensturz",
     "ja": "スターダイバー効果アップ",
     "fr": "Plongeon céleste amélioré",
-    "icon": "/i/005000/005298.png",
+    "icon": "/api/asset?path=ui/icon/005000/005298.tex&format=png",
     "level": 100,
     "job": 22,
     "description": {
@@ -8749,7 +8749,7 @@
     "de": "Angriffsgeschwindigkeit +",
     "ja": "攻撃速度アップ",
     "fr": "Vitesse améliorée",
-    "icon": "/i/005000/005421.png",
+    "icon": "/api/asset?path=ui/icon/005000/005421.tex&format=png",
     "level": 45,
     "job": 30,
     "description": {
@@ -8764,7 +8764,7 @@
     "de": "Meister des Ausraubens",
     "ja": "ぶんどる皆伝",
     "fr": "Maîtrise de Rapine",
-    "icon": "/i/005000/005422.png",
+    "icon": "/api/asset?path=ui/icon/005000/005422.tex&format=png",
     "level": 66,
     "job": 30,
     "description": {
@@ -8779,7 +8779,7 @@
     "de": "Meister der Trickattacke",
     "ja": "だまし討ち皆伝",
     "fr": "Maîtrise d'Attaque sournoise",
-    "icon": "/i/005000/005423.png",
+    "icon": "/api/asset?path=ui/icon/005000/005423.tex&format=png",
     "level": 92,
     "job": 30,
     "description": {
@@ -8794,7 +8794,7 @@
     "de": "Verbessertes Dokumori",
     "ja": "毒盛の術効果アップ",
     "fr": "Dokumori amélioré",
-    "icon": "/i/005000/005424.png",
+    "icon": "/api/asset?path=ui/icon/005000/005424.tex&format=png",
     "level": 96,
     "job": 30,
     "description": {
@@ -8809,7 +8809,7 @@
     "de": "Verbessertes Ten Chi Jin",
     "ja": "天地人効果アップ",
     "fr": "Ten Chi Jin amélioré",
-    "icon": "/i/005000/005726.png",
+    "icon": "/api/asset?path=ui/icon/005000/005726.tex&format=png",
     "level": 100,
     "job": 30,
     "description": {
@@ -8824,7 +8824,7 @@
     "de": "Meister des Dritten Auges",
     "ja": "心眼皆伝",
     "fr": "Maîtrise de Troisième œil",
-    "icon": "/i/006000/006159.png",
+    "icon": "/api/asset?path=ui/icon/006000/006159.tex&format=png",
     "level": 82,
     "job": 34,
     "description": {
@@ -8839,7 +8839,7 @@
     "de": "Hakaze-Meister",
     "ja": "刃風皆伝",
     "fr": "Maîtrise de Hakaze",
-    "icon": "/i/006000/006160.png",
+    "icon": "/api/asset?path=ui/icon/006000/006160.tex&format=png",
     "level": 92,
     "job": 34,
     "description": {
@@ -8854,7 +8854,7 @@
     "de": "Verbessertes Hissatsu",
     "ja": "必殺剣効果アップ",
     "fr": "Hissatsu amélioré",
-    "icon": "/i/006000/006161.png",
+    "icon": "/api/asset?path=ui/icon/006000/006161.tex&format=png",
     "level": 94,
     "job": 34,
     "description": {
@@ -8869,7 +8869,7 @@
     "de": "Verbessertes Ikishoten II",
     "ja": "意気衝天効果アップII",
     "fr": "Ikishôten amélioré II",
-    "icon": "/i/006000/006162.png",
+    "icon": "/api/asset?path=ui/icon/006000/006162.tex&format=png",
     "level": 96,
     "job": 34,
     "description": {
@@ -8884,7 +8884,7 @@
     "de": "Verbessertes Meikyo Shisui II",
     "ja": "明鏡止水効果アップII",
     "fr": "Meikyô Shisui amélioré II",
-    "icon": "/i/006000/006163.png",
+    "icon": "/api/asset?path=ui/icon/006000/006163.tex&format=png",
     "level": 100,
     "job": 34,
     "description": {
@@ -8899,7 +8899,7 @@
     "de": "Verbesserter Lemurenschleier",
     "ja": "レムールシュラウド効果アップ",
     "fr": "Linceul du lémure amélioré",
-    "icon": "/i/006000/006411.png",
+    "icon": "/api/asset?path=ui/icon/006000/006411.tex&format=png",
     "level": 92,
     "job": 39,
     "description": {
@@ -8929,7 +8929,7 @@
     "de": "Verbesserte Völlerei",
     "ja": "グラトニー効果アップ",
     "fr": "Gloutonnerie améliorée",
-    "icon": "/i/006000/006413.png",
+    "icon": "/api/asset?path=ui/icon/006000/006413.tex&format=png",
     "level": 96,
     "job": 39,
     "description": {
@@ -8944,7 +8944,7 @@
     "de": "Verbesserte Große Mahd",
     "ja": "プレンティフルハーベスト効果アップ",
     "fr": "Moisson abondante améliorée",
-    "icon": "/i/006000/006414.png",
+    "icon": "/api/asset?path=ui/icon/006000/006414.tex&format=png",
     "level": 100,
     "job": 39,
     "description": {
@@ -8959,7 +8959,7 @@
     "de": "Meister des Sternenhagels",
     "ja": "ワイドボレーマスタリー",
     "fr": "Maîtrise de Rafale impitoyable",
-    "icon": "/i/005000/005322.png",
+    "icon": "/api/asset?path=ui/icon/005000/005322.tex&format=png",
     "level": 72,
     "job": 23,
     "description": {
@@ -8974,7 +8974,7 @@
     "de": "Meister des Aderlasses",
     "ja": "ブラッドレッターマスタリー",
     "fr": "Maîtrise d'Hémorragie",
-    "icon": "/i/005000/005323.png",
+    "icon": "/api/asset?path=ui/icon/005000/005323.tex&format=png",
     "level": 92,
     "job": 23,
     "description": {
@@ -8989,7 +8989,7 @@
     "de": "Verbessertes Sperrfeuer",
     "ja": "乱れ撃ち効果アップ",
     "fr": "Rafale de coups améliorée",
-    "icon": "/i/005000/005301.png",
+    "icon": "/api/asset?path=ui/icon/005000/005301.tex&format=png",
     "level": 96,
     "job": 23,
     "description": {
@@ -9004,7 +9004,7 @@
     "de": "Verbesserter Troubadour II",
     "ja": "トルバドゥール効果アップII",
     "fr": "Troubadour amélioré II",
-    "icon": "/i/005000/005324.png",
+    "icon": "/api/asset?path=ui/icon/005000/005324.tex&format=png",
     "level": 98,
     "job": 23,
     "description": {
@@ -9019,7 +9019,7 @@
     "de": "Verbessertes Luminöses Finale",
     "ja": "光神のフィナーレ効果アップ",
     "fr": "Final radieux amélioré",
-    "icon": "/i/005000/005601.png",
+    "icon": "/api/asset?path=ui/icon/005000/005601.tex&format=png",
     "level": 100,
     "job": 23,
     "description": {
@@ -9034,7 +9034,7 @@
     "de": "Meister des Hitzeschusses",
     "ja": "ヒートブラストマスタリー",
     "fr": "Maîtrise de Pyro-explosion",
-    "icon": "/i/006000/006021.png",
+    "icon": "/api/asset?path=ui/icon/006000/006021.tex&format=png",
     "level": 68,
     "job": 31,
     "description": {
@@ -9049,7 +9049,7 @@
     "de": "Meister des Schachs",
     "ja": "チャージアクションマスタリー",
     "fr": "Maîtrise des actions à charge",
-    "icon": "/i/006000/006022.png",
+    "icon": "/api/asset?path=ui/icon/006000/006022.tex&format=png",
     "level": 92,
     "job": 31,
     "description": {
@@ -9064,7 +9064,7 @@
     "de": "Verbesserte Multiwaffe",
     "ja": "マルチウェポン効果アップ",
     "fr": "Multiarmes améliorées",
-    "icon": "/i/006000/006023.png",
+    "icon": "/api/asset?path=ui/icon/006000/006023.tex&format=png",
     "level": 94,
     "job": 31,
     "description": {
@@ -9079,7 +9079,7 @@
     "de": "Verbesserte Multiwaffe II",
     "ja": "マルチウェポン効果アップII",
     "fr": "Multiarmes améliorées II",
-    "icon": "/i/006000/006024.png",
+    "icon": "/api/asset?path=ui/icon/006000/006024.tex&format=png",
     "level": 96,
     "job": 31,
     "description": {
@@ -9094,7 +9094,7 @@
     "de": "Verbesserter Taktiker II",
     "ja": "タクティシャン効果アップII",
     "fr": "Tacticien amélioré",
-    "icon": "/i/006000/006025.png",
+    "icon": "/api/asset?path=ui/icon/006000/006025.tex&format=png",
     "level": 98,
     "job": 31,
     "description": {
@@ -9109,7 +9109,7 @@
     "de": "Verbesserter Laufstabilisator",
     "ja": "バレルヒーター効果アップ",
     "fr": "Stabilisateur de canon amélioré",
-    "icon": "/i/006000/006026.png",
+    "icon": "/api/asset?path=ui/icon/006000/006026.tex&format=png",
     "level": 100,
     "job": 31,
     "description": {
@@ -9124,7 +9124,7 @@
     "de": "Verbessertes Einfaches Finale",
     "ja": "スタンダードフィニッシュ効果アップ",
     "fr": "Final classique amélioré",
-    "icon": "/i/006000/006362.png",
+    "icon": "/api/asset?path=ui/icon/006000/006362.tex&format=png",
     "level": 92,
     "job": 38,
     "description": {
@@ -9139,7 +9139,7 @@
     "de": "Verbesserte Trance II",
     "ja": "フラリッシュ効果アップII",
     "fr": "Apothéose améliorée II",
-    "icon": "/i/006000/006363.png",
+    "icon": "/api/asset?path=ui/icon/006000/006363.tex&format=png",
     "level": 96,
     "job": 38,
     "description": {
@@ -9154,7 +9154,7 @@
     "de": "Verbesserter Schildsamba II",
     "ja": "守りのサンバ効果アップII",
     "fr": "Samba protectrice améliorée II",
-    "icon": "/i/006000/006364.png",
+    "icon": "/api/asset?path=ui/icon/006000/006364.tex&format=png",
     "level": 98,
     "job": 38,
     "description": {
@@ -9169,7 +9169,7 @@
     "de": "Verbessertes Komplexes Finale II",
     "ja": "テクニカルフィニッシュ効果アップII",
     "fr": "Final technique amélioré II",
-    "icon": "/i/006000/006365.png",
+    "icon": "/api/asset?path=ui/icon/006000/006365.tex&format=png",
     "level": 100,
     "job": 38,
     "description": {
@@ -9184,7 +9184,7 @@
     "de": "Blitzmeister III",
     "ja": "サンダーマスタリーIII",
     "fr": "Maîtrise de Foudre III",
-    "icon": "/i/005000/005651.png",
+    "icon": "/api/asset?path=ui/icon/005000/005651.tex&format=png",
     "level": 92,
     "job": 25,
     "description": {
@@ -9199,7 +9199,7 @@
     "de": "Verbesserte Ley-Linien",
     "ja": "黒魔紋効果アップ",
     "fr": "Manalignements améliorés",
-    "icon": "/i/005000/005652.png",
+    "icon": "/api/asset?path=ui/icon/005000/005652.tex&format=png",
     "level": 96,
     "job": 25,
     "description": {
@@ -9214,7 +9214,7 @@
     "de": "Verbessertes Polyglott II",
     "ja": "ポリグロット効果アップII",
     "fr": "Polyglotte amélioré II",
-    "icon": "/i/005000/005653.png",
+    "icon": "/api/asset?path=ui/icon/005000/005653.tex&format=png",
     "level": 98,
     "job": 25,
     "description": {
@@ -9229,7 +9229,7 @@
     "de": "Verbessertes Lichtfeuer",
     "ja": "アストラルファイア効果アップ",
     "fr": "Feu astral amélioré",
-    "icon": "/i/005000/005654.png",
+    "icon": "/api/asset?path=ui/icon/005000/005654.tex&format=png",
     "level": 100,
     "job": 25,
     "description": {
@@ -9244,7 +9244,7 @@
     "de": "Meister der Schwäre",
     "ja": "ミアズマバーストマスタリー",
     "fr": "Maîtrise de Suppuration",
-    "icon": "/i/005000/005398.png",
+    "icon": "/api/asset?path=ui/icon/005000/005398.tex&format=png",
     "level": 92,
     "job": 27,
     "description": {
@@ -9259,7 +9259,7 @@
     "de": "Verbesserter Gleißender Schein",
     "ja": "シアリングライト効果アップ",
     "fr": "Éclat ardent amélioré",
-    "icon": "/i/005000/005399.png",
+    "icon": "/api/asset?path=ui/icon/005000/005399.tex&format=png",
     "level": 96,
     "job": 27,
     "description": {
@@ -9274,7 +9274,7 @@
     "de": "Verbesserte Bahamut-Beschwörung II",
     "ja": "サモン・バハムート効果アップII",
     "fr": "Invocation Bahamut améliorée II",
-    "icon": "/i/005000/005698.png",
+    "icon": "/api/asset?path=ui/icon/005000/005698.tex&format=png",
     "level": 100,
     "job": 27,
     "description": {
@@ -9289,7 +9289,7 @@
     "de": "Verbessertes Ermutigen",
     "ja": "エンボルデン効果アップ",
     "fr": "Enhardissement amélioré",
-    "icon": "/i/006000/006213.png",
+    "icon": "/api/asset?path=ui/icon/006000/006213.tex&format=png",
     "level": 92,
     "job": 35,
     "description": {
@@ -9304,7 +9304,7 @@
     "de": "Verbesserte Präparation II",
     "ja": "アクセラレーション効果アップII",
     "fr": "Accélération améliorée II",
-    "icon": "/i/006000/006214.png",
+    "icon": "/api/asset?path=ui/icon/006000/006214.tex&format=png",
     "level": 96,
     "job": 35,
     "description": {
@@ -9319,7 +9319,7 @@
     "de": "Verbesserte Manafizierung",
     "ja": "マナフィケーション効果アップ",
     "fr": "Manafication améliorée",
-    "icon": "/i/006000/006216.png",
+    "icon": "/api/asset?path=ui/icon/006000/006216.tex&format=png",
     "level": 100,
     "job": 35,
     "description": {
@@ -9334,7 +9334,7 @@
     "de": "Verbesserte Geistesgegenwart",
     "ja": "神速魔効果アップ",
     "fr": "Présence d'esprit améliorée",
-    "icon": "/i/005000/005346.png",
+    "icon": "/api/asset?path=ui/icon/005000/005346.tex&format=png",
     "level": 92,
     "job": 24,
     "description": {
@@ -9349,7 +9349,7 @@
     "de": "Resedra-Meister",
     "ja": "メディカラマスタリー",
     "fr": "Maîtrise d'Extra Médica",
-    "icon": "/i/005000/005347.png",
+    "icon": "/api/asset?path=ui/icon/005000/005347.tex&format=png",
     "level": 96,
     "job": 24,
     "description": {
@@ -9364,7 +9364,7 @@
     "de": "Verbessertes Tetragrammaton",
     "ja": "テトラグラマトン効果アップ",
     "fr": "Tétragramme amélioré",
-    "icon": "/i/005000/005349.png",
+    "icon": "/api/asset?path=ui/icon/005000/005349.tex&format=png",
     "level": 98,
     "job": 24,
     "description": {
@@ -9379,7 +9379,7 @@
     "de": "Verbesserte Linderung",
     "ja": "テンパランス効果アップ",
     "fr": "Tempérance améliorée",
-    "icon": "/i/005000/005348.png",
+    "icon": "/api/asset?path=ui/icon/005000/005348.tex&format=png",
     "level": 100,
     "job": 24,
     "description": {
@@ -9394,7 +9394,7 @@
     "de": "Verbesserte Kritische Strategie",
     "ja": "連環計効果アップ",
     "fr": "Stratagèmes entrelacés améliorés",
-    "icon": "/i/005000/005707.png",
+    "icon": "/api/asset?path=ui/icon/005000/005707.tex&format=png",
     "level": 92,
     "job": 28,
     "description": {
@@ -9409,7 +9409,7 @@
     "de": "Meister des Kurierens",
     "ja": "士気高揚の策マスタリー",
     "fr": "Maîtrise de Traité du soulagement",
-    "icon": "/i/005000/005708.png",
+    "icon": "/api/asset?path=ui/icon/005000/005708.tex&format=png",
     "level": 96,
     "job": 28,
     "description": {
@@ -9424,7 +9424,7 @@
     "de": "Verbesserte Raffinesse",
     "ja": "秘策効果アップ",
     "fr": "Récitation améliorée",
-    "icon": "/i/005000/005710.png",
+    "icon": "/api/asset?path=ui/icon/005000/005710.tex&format=png",
     "level": 98,
     "job": 28,
     "description": {
@@ -9454,7 +9454,7 @@
     "de": "Meister der Kleinen Arkana",
     "ja": "マイナーアルカナマスタリー",
     "fr": "Maîtrise d'Arcane mineur",
-    "icon": "/i/006000/006120.png",
+    "icon": "/api/asset?path=ui/icon/006000/006120.tex&format=png",
     "level": 70,
     "job": 33,
     "description": {
@@ -9469,7 +9469,7 @@
     "de": "Verbesserte Weissagung",
     "ja": "ディヴィネーション効果アップ",
     "fr": "Divination améliorée",
-    "icon": "/i/006000/006121.png",
+    "icon": "/api/asset?path=ui/icon/006000/006121.tex&format=png",
     "level": 92,
     "job": 33,
     "description": {
@@ -9484,7 +9484,7 @@
     "de": "Meister des Aspektierten Helios",
     "ja": "アスペクト・ヘリオスマスタリー",
     "fr": "Maîtrise d'Hélios aspecté",
-    "icon": "/i/006000/006122.png",
+    "icon": "/api/asset?path=ui/icon/006000/006122.tex&format=png",
     "level": 96,
     "job": 33,
     "description": {
@@ -9499,7 +9499,7 @@
     "de": "Verbesserte Essenzielle Würde II",
     "ja": "ディグニティ効果アップII",
     "fr": "Dignité essentielle améliorée II",
-    "icon": "/i/006000/006124.png",
+    "icon": "/api/asset?path=ui/icon/006000/006124.tex&format=png",
     "level": 98,
     "job": 33,
     "description": {
@@ -9514,7 +9514,7 @@
     "de": "Verbessertes Neutral",
     "ja": "ニュートラルセクト効果アップ",
     "fr": "Adepte de la neutralité amélioré",
-    "icon": "/i/006000/006123.png",
+    "icon": "/api/asset?path=ui/icon/006000/006123.tex&format=png",
     "level": 100,
     "job": 33,
     "description": {
@@ -9529,7 +9529,7 @@
     "de": "Verbesserte Soteria",
     "ja": "ソーテリア効果アップ",
     "fr": "Soteria améliorée",
-    "icon": "/i/006000/006461.png",
+    "icon": "/api/asset?path=ui/icon/006000/006461.tex&format=png",
     "level": 94,
     "job": 40,
     "description": {
@@ -9544,7 +9544,7 @@
     "de": "Meister der Eukratischen Prognose",
     "ja": "エウクラシア・プログノシスマスタリー",
     "fr": "Maîtrise de Prognosis eucrasique",
-    "icon": "/i/006000/006460.png",
+    "icon": "/api/asset?path=ui/icon/006000/006460.tex&format=png",
     "level": 96,
     "job": 40,
     "description": {
@@ -9559,7 +9559,7 @@
     "de": "Verbessertes Physis II",
     "ja": "ピュシスII効果アップ",
     "fr": "Physis II améliorée",
-    "icon": "/i/006000/006462.png",
+    "icon": "/api/asset?path=ui/icon/006000/006462.tex&format=png",
     "level": 98,
     "job": 40,
     "description": {
@@ -9574,7 +9574,7 @@
     "de": "Verbesserter Schutzwall",
     "ja": "ランパート効果アップ",
     "fr": "Rempart amélioré",
-    "icon": "/i/006000/006804.png",
+    "icon": "/api/asset?path=ui/icon/006000/006804.tex&format=png",
     "level": 94,
     "job": 113,
     "description": {
@@ -9589,7 +9589,7 @@
     "de": "Verbesserte Reflexion",
     "ja": "リプライザル効果アップ",
     "fr": "Rétorsion améliorée",
-    "icon": "/i/006000/006805.png",
+    "icon": "/api/asset?path=ui/icon/006000/006805.tex&format=png",
     "level": 98,
     "job": 113,
     "description": {
@@ -9604,7 +9604,7 @@
     "de": "Verbessertes Zermürben",
     "ja": "牽制効果アップ",
     "fr": "Restreinte améliorée",
-    "icon": "/i/006000/006851.png",
+    "icon": "/api/asset?path=ui/icon/006000/006851.tex&format=png",
     "level": 98,
     "job": 114,
     "description": {
@@ -9619,7 +9619,7 @@
     "de": "Verbessertes Chakra",
     "ja": "内丹効果アップ",
     "fr": "Second souffle amélioré",
-    "icon": "/i/006000/006852.png",
+    "icon": "/api/asset?path=ui/icon/006000/006852.tex&format=png",
     "level": 94,
     "job": 118,
     "description": {
@@ -9634,7 +9634,7 @@
     "de": "Verbesserter Stumpfsinn",
     "ja": "アドル効果アップ",
     "fr": "Embrouillement amélioré",
-    "icon": "/i/006000/006827.png",
+    "icon": "/api/asset?path=ui/icon/006000/006827.tex&format=png",
     "level": 98,
     "job": 198,
     "description": {
@@ -9649,7 +9649,7 @@
     "de": "Verbesserte Spontaneität",
     "ja": "迅速魔効果アップ",
     "fr": "Magie prompte améliorée",
-    "icon": "/i/006000/006828.png",
+    "icon": "/api/asset?path=ui/icon/006000/006828.tex&format=png",
     "level": 94,
     "job": 199,
     "description": {
@@ -9664,7 +9664,7 @@
     "de": "Höchste Akribie",
     "ja": "強活眼",
     "fr": "Œil vif puissant",
-    "icon": "/i/005000/005447.png",
+    "icon": "/api/asset?path=ui/icon/005000/005447.tex&format=png",
     "level": 100,
     "job": 16,
     "description": {
@@ -9679,7 +9679,7 @@
     "de": "Höchste Akribie",
     "ja": "強活眼",
     "fr": "Œil vif puissant",
-    "icon": "/i/005000/005472.png",
+    "icon": "/api/asset?path=ui/icon/005000/005472.tex&format=png",
     "level": 100,
     "job": 17,
     "description": {
@@ -9694,7 +9694,7 @@
     "de": "Wiederentdeckung",
     "ja": "再発見",
     "fr": "Redécouverte",
-    "icon": "/i/005000/005446.png",
+    "icon": "/api/asset?path=ui/icon/005000/005446.tex&format=png",
     "level": 91,
     "job": 16,
     "description": {
@@ -9709,7 +9709,7 @@
     "de": "Wiederentdeckung",
     "ja": "再発見",
     "fr": "Redécouverte",
-    "icon": "/i/005000/005471.png",
+    "icon": "/api/asset?path=ui/icon/005000/005471.tex&format=png",
     "level": 91,
     "job": 17,
     "description": {
@@ -9724,7 +9724,7 @@
     "de": "Fischers Scharfsinn",
     "ja": "漁師の慧眼",
     "fr": "Clairvoyance du pêcheur",
-    "icon": "/i/005000/005480.png",
+    "icon": "/api/asset?path=ui/icon/005000/005480.tex&format=png",
     "level": 50,
     "job": 18,
     "description": {
@@ -9739,7 +9739,7 @@
     "de": "Verbesserte Ritterlichkeit II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 94,
     "job": 19,
     "description": {
@@ -9754,7 +9754,7 @@
     "de": "Verbesserte Weißmagie",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006831.png",
+    "icon": "/api/asset?path=ui/icon/006000/006831.tex&format=png",
     "level": 94,
     "job": 24,
     "description": {
@@ -9769,7 +9769,7 @@
     "de": "Verbessertes Magiefechten",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006831.png",
+    "icon": "/api/asset?path=ui/icon/006000/006831.tex&format=png",
     "level": 94,
     "job": 35,
     "description": {
@@ -9784,7 +9784,7 @@
     "de": "Verbesserte Lanzenkunst",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006806.png",
+    "icon": "/api/asset?path=ui/icon/006000/006806.tex&format=png",
     "level": 94,
     "job": 22,
     "description": {
@@ -9799,7 +9799,7 @@
     "de": "Verbesserte Axtkunst II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 94,
     "job": 21,
     "description": {
@@ -9814,7 +9814,7 @@
     "de": "Verbessertes Bushido III",
     "ja": "アクション威力アップIII",
     "fr": "Actions améliorées III",
-    "icon": "/i/006000/006803.png",
+    "icon": "/api/asset?path=ui/icon/006000/006803.tex&format=png",
     "level": 94,
     "job": 34,
     "description": {
@@ -9829,7 +9829,7 @@
     "de": "Verbessertes Strategentum",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006831.png",
+    "icon": "/api/asset?path=ui/icon/006000/006831.tex&format=png",
     "level": 94,
     "job": 28,
     "description": {
@@ -9844,7 +9844,7 @@
     "de": "Verbesserte Ernte III",
     "ja": "アクション威力アップIII",
     "fr": "Actions améliorées III",
-    "icon": "/i/006000/006803.png",
+    "icon": "/api/asset?path=ui/icon/006000/006803.tex&format=png",
     "level": 94,
     "job": 39,
     "description": {
@@ -9859,7 +9859,7 @@
     "de": "Verbessertes Schützentum II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 94,
     "job": 31,
     "description": {
@@ -9874,7 +9874,7 @@
     "de": "Verbessertes Henochisch IV",
     "ja": "エノキアン効果アップIV",
     "fr": "Énochien amélioré IV",
-    "icon": "/i/005000/005655.png",
+    "icon": "/api/asset?path=ui/icon/005000/005655.tex&format=png",
     "level": 96,
     "job": 25,
     "description": {
@@ -9889,7 +9889,7 @@
     "de": "Verbesserter Faustkampf II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 94,
     "job": 20,
     "description": {
@@ -9904,7 +9904,7 @@
     "de": "Verbessertes Ninjutsu III",
     "ja": "アクション威力アップIII",
     "fr": "Actions améliorées III",
-    "icon": "/i/006000/006803.png",
+    "icon": "/api/asset?path=ui/icon/006000/006803.tex&format=png",
     "level": 94,
     "job": 30,
     "description": {
@@ -9919,7 +9919,7 @@
     "de": "Verbesserter Rhythmus",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006806.png",
+    "icon": "/api/asset?path=ui/icon/006000/006806.tex&format=png",
     "level": 94,
     "job": 38,
     "description": {
@@ -9934,7 +9934,7 @@
     "de": "Verbesserter Schwertkampf II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 94,
     "job": 32,
     "description": {
@@ -9949,7 +9949,7 @@
     "de": "Verbessertes Arkanum",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006831.png",
+    "icon": "/api/asset?path=ui/icon/006000/006831.tex&format=png",
     "level": 94,
     "job": 27,
     "description": {
@@ -9964,7 +9964,7 @@
     "de": "Verbesserte Verwegenheit",
     "ja": "ファイト・オア・フライト効果アップ",
     "fr": "Combat acharné amélioré",
-    "icon": "/i/005000/005205.png",
+    "icon": "/api/asset?path=ui/icon/005000/005205.tex&format=png",
     "level": 54,
     "job": 19,
     "description": {
@@ -9979,7 +9979,7 @@
     "de": "Verbessertes Ohne Gnade",
     "ja": "ノー・マーシー効果アップ",
     "fr": "Sans pitié amélioré",
-    "icon": "/i/006000/006311.png",
+    "icon": "/api/asset?path=ui/icon/006000/006311.tex&format=png",
     "level": 54,
     "job": 37,
     "description": {
@@ -9994,7 +9994,7 @@
     "de": "Verbesserte Revolverklinge II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 94,
     "job": 37,
     "description": {
@@ -10009,7 +10009,7 @@
     "de": "Verbesserte Zielsicherheit",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006806.png",
+    "icon": "/api/asset?path=ui/icon/006000/006806.tex&format=png",
     "level": 94,
     "job": 23,
     "description": {
@@ -10024,7 +10024,7 @@
     "de": "Verbesserte Äthergrammkunst",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006831.png",
+    "icon": "/api/asset?path=ui/icon/006000/006831.tex&format=png",
     "level": 94,
     "job": 40,
     "description": {
@@ -10039,7 +10039,7 @@
     "de": "Verbesserte Kommandos",
     "ja": "アクションダメージ・回復量アップ",
     "fr": "Efficacité des actions augmentée",
-    "icon": "/i/005000/005185.png",
+    "icon": "/api/asset?path=ui/icon/005000/005185.tex&format=png",
     "level": 20,
     "job": 42,
     "description": {
@@ -10054,7 +10054,7 @@
     "de": "Verbesserte Kommandos II",
     "ja": "アクションダメージ・回復量アップII",
     "fr": "Efficacité des actions augmentée II",
-    "icon": "/i/005000/005186.png",
+    "icon": "/api/asset?path=ui/icon/005000/005186.tex&format=png",
     "level": 40,
     "job": 42,
     "description": {
@@ -10069,7 +10069,7 @@
     "de": "Verbesserte Pikto-Farben",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006829.png",
+    "icon": "/api/asset?path=ui/icon/006000/006829.tex&format=png",
     "level": 54,
     "job": 42,
     "description": {
@@ -10084,7 +10084,7 @@
     "de": "Verbesserte Astrologie",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006831.png",
+    "icon": "/api/asset?path=ui/icon/006000/006831.tex&format=png",
     "level": 94,
     "job": 33,
     "description": {
@@ -10099,7 +10099,7 @@
     "de": "Verbesserte Zwillingsfänge I",
     "ja": "アクション威力アップ",
     "fr": "Actions améliorées",
-    "icon": "/i/006000/006801.png",
+    "icon": "/api/asset?path=ui/icon/006000/006801.tex&format=png",
     "level": 74,
     "job": 41,
     "description": {
@@ -10114,7 +10114,7 @@
     "de": "Verbesserte Zwillingsfänge II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006802.png",
+    "icon": "/api/asset?path=ui/icon/006000/006802.tex&format=png",
     "level": 84,
     "job": 41,
     "description": {
@@ -10129,7 +10129,7 @@
     "de": "Verbesserte Pikto-Farben II",
     "ja": "アクション威力アップII",
     "fr": "Actions améliorées II",
-    "icon": "/i/006000/006830.png",
+    "icon": "/api/asset?path=ui/icon/006000/006830.tex&format=png",
     "level": 74,
     "job": 42,
     "description": {
@@ -10144,7 +10144,7 @@
     "de": "Verbesserte Pikto-Farben III",
     "ja": "アクション威力アップIII",
     "fr": "Actions améliorées III",
-    "icon": "/i/006000/006832.png",
+    "icon": "/api/asset?path=ui/icon/006000/006832.tex&format=png",
     "level": 84,
     "job": 42,
     "description": {
@@ -10159,7 +10159,7 @@
     "de": "Verbesserte Pikto-Farben IV",
     "ja": "アクション威力アップIV",
     "fr": "Actions améliorées IV",
-    "icon": "/i/006000/006833.png",
+    "icon": "/api/asset?path=ui/icon/006000/006833.tex&format=png",
     "level": 94,
     "job": 42,
     "description": {

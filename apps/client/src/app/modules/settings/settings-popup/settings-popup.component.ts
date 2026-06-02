@@ -99,6 +99,10 @@ export class SettingsPopupComponent {
 
   watchFilesPath = '';
 
+  winePrefixPath = '';
+
+  wineBinPath = '';
+
   proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
 
   proxyValue = '';
@@ -289,6 +293,16 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-pac:get');
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
+    if (!this.platform.isWindows) {
+      this.ipc.on('bridge:wineprefix:value', (event, value: string) => {
+        this.winePrefixPath = value ?? '';
+      });
+      this.ipc.on('bridge:winebin:value', (event, value: string) => {
+        this.wineBinPath = value ?? '';
+      });
+      this.ipc.send('bridge:wineprefix:get');
+      this.ipc.send('bridge:winebin:get');
+    }
     this.customTheme = this.settings.customTheme;
   }
 
@@ -315,6 +329,14 @@ export class SettingsPopupComponent {
 
   changeWatchFilesPath(): void {
     this.ipc.send('dat:path:set');
+  }
+
+  changeWinePrefix(): void {
+    this.ipc.send('bridge:wineprefix:set');
+  }
+
+  changeWineBin(): void {
+    this.ipc.send('bridge:winebin:set');
   }
 
   setProxy({ rule = '', pac = '' } = {}): void {

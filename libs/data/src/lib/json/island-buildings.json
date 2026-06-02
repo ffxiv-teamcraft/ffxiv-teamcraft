@@ -1,7 +1,7 @@
 {
   "-10000": {
     "key": "0.0",
-    "icon": "/i/053000/053919_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053919_hr1.tex&format=png",
     "en": "Cozy Cabin I",
     "de": "Strandhütte I",
     "ja": "アイランドホール I",
@@ -31,7 +31,7 @@
   },
   "-10010": {
     "key": "0.1",
-    "icon": "/i/053000/053920_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053920_hr1.tex&format=png",
     "en": "Cozy Cabin II",
     "de": "Strandhütte II",
     "ja": "アイランドホール II",
@@ -61,7 +61,7 @@
   },
   "-10020": {
     "key": "0.2",
-    "icon": "/i/053000/053921_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053921_hr1.tex&format=png",
     "en": "Cozy Cabin III",
     "de": "Strandhütte III",
     "ja": "アイランドホール III",
@@ -91,7 +91,7 @@
   },
   "-10030": {
     "key": "0.3",
-    "icon": "/i/053000/053928_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053928_hr1.tex&format=png",
     "en": "Cozy Cabin IV",
     "de": "Strandhütte IV",
     "ja": "アイランドホール IV",
@@ -121,7 +121,7 @@
   },
   "-10040": {
     "key": "0.4",
-    "icon": "/i/053000/053936_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053936_hr1.tex&format=png",
     "en": "Cozy Cabin V",
     "de": "Strandhütte V",
     "ja": "アイランドホール V",
@@ -151,7 +151,7 @@
   },
   "-10100": {
     "key": "1.0",
-    "icon": "/i/053000/053916_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053916_hr1.tex&format=png",
     "en": "Workshop I",
     "de": "Inselatelier I",
     "ja": "開拓工房 I",
@@ -181,7 +181,7 @@
   },
   "-10110": {
     "key": "1.1",
-    "icon": "/i/053000/053917_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053917_hr1.tex&format=png",
     "en": "Workshop II",
     "de": "Inselatelier II",
     "ja": "開拓工房 II",
@@ -211,7 +211,7 @@
   },
   "-10120": {
     "key": "1.2",
-    "icon": "/i/053000/053918_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053918_hr1.tex&format=png",
     "en": "Workshop III",
     "de": "Inselatelier III",
     "ja": "開拓工房 III",
@@ -241,7 +241,7 @@
   },
   "-10130": {
     "key": "1.3",
-    "icon": "/i/053000/053929_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053929_hr1.tex&format=png",
     "en": "Workshop IV",
     "de": "Inselatelier IV",
     "ja": "開拓工房 IV",
@@ -271,7 +271,7 @@
   },
   "-10140": {
     "key": "1.4",
-    "icon": "/i/053000/053937_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053937_hr1.tex&format=png",
     "en": "Workshop V",
     "de": "Inselatelier V",
     "ja": "開拓工房 V",
@@ -301,7 +301,7 @@
   },
   "-10200": {
     "key": "2.0",
-    "icon": "/i/053000/053922_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053922_hr1.tex&format=png",
     "en": "Granary I",
     "de": "Kornkammer I",
     "ja": "グラナリーオフィス I",
@@ -331,7 +331,7 @@
   },
   "-10210": {
     "key": "2.1",
-    "icon": "/i/053000/053923_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053923_hr1.tex&format=png",
     "en": "Granary II",
     "de": "Kornkammer II",
     "ja": "グラナリーオフィス II",
@@ -361,7 +361,7 @@
   },
   "-10220": {
     "key": "2.2",
-    "icon": "/i/053000/053924_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053924_hr1.tex&format=png",
     "en": "Granary III",
     "de": "Kornkammer III",
     "ja": "グラナリーオフィス III",
@@ -391,7 +391,7 @@
   },
   "-10230": {
     "key": "2.3",
-    "icon": "/i/053000/053930_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053930_hr1.tex&format=png",
     "en": "Granary IV",
     "de": "Kornkammer IV",
     "ja": "グラナリーオフィス IV",
@@ -421,7 +421,7 @@
   },
   "-10240": {
     "key": "2.4",
-    "icon": "/i/053000/053938_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053938_hr1.tex&format=png",
     "en": "Granary V",
     "de": "Kornkammer V",
     "ja": "グラナリーオフィス V",

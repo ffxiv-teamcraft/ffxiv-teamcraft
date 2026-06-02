@@ -9,7 +9,7 @@ export interface LazyMobsDatabasePage {
   monster?: Monster;
   patch:    number;
   tw?:      string;
-  zh:       string;
+  zh?:      string;
 }
 
 export interface Monster {

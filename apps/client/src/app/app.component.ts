@@ -390,6 +390,9 @@ export class AppComponent implements OnInit {
             case Region.China:
               key = 'chineseGameVersion';
               break;
+            case Region.Taiwan:
+              key = 'traditionalChineseGameVersion';
+              break;
             default:
               key = 'globalGameVersion';
               break;
@@ -406,6 +409,9 @@ export class AppComponent implements OnInit {
             break;
           case 'zh':
             suggestedRegion = Region.China;
+            break;
+          case 'tw':
+            suggestedRegion = Region.Taiwan;
             break;
           default:
             suggestedRegion = Region.Global;

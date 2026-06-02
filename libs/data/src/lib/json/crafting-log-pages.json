@@ -3347,36 +3347,6 @@
           "recipeId": 38254,
           "itemId": 52254,
           "rlvl": 30
-        },
-        {
-          "recipeId": 38283,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38284,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38285,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38286,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38287,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38288,
-          "itemId": 52254,
-          "rlvl": 30
         }
       ]
     },
@@ -8116,6 +8086,213 @@
           "recipeId": 37785,
           "itemId": 50004,
           "rlvl": 690
+        },
+        {
+          "recipeId": 37958,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37959,
+          "itemId": 52506,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37960,
+          "itemId": 52483,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37961,
+          "itemId": 52484,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37962,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37963,
+          "itemId": 52506,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37964,
+          "itemId": 52487,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37965,
+          "itemId": 52507,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37966,
+          "itemId": 52488,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37967,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37968,
+          "itemId": 52506,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37969,
+          "itemId": 52487,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37970,
+          "itemId": 52507,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37971,
+          "itemId": 52488,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37972,
+          "itemId": 52508,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37973,
+          "itemId": 52485,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37974,
+          "itemId": 52482,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37975,
+          "itemId": 52506,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37976,
+          "itemId": 52477,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37977,
+          "itemId": 52499,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37978,
+          "itemId": 52498,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37979,
+          "itemId": 52508,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37980,
+          "itemId": 52485,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 37981,
+          "itemId": 52500,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 37982,
+          "itemId": 52501,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 37983,
+          "itemId": 52502,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 37984,
+          "itemId": 52478,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 37985,
+          "itemId": 52505,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 37986,
+          "itemId": 52503,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 37987,
+          "itemId": 52504,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38198,
+          "itemId": 52541,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38199,
+          "itemId": 52542,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38200,
+          "itemId": 52543,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38222,
+          "itemId": 52565,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38223,
+          "itemId": 52566,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1536,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37918,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37919,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37920,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37921,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37922,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -14263,36 +14440,6 @@
           "recipeId": 38255,
           "itemId": 52254,
           "rlvl": 30
-        },
-        {
-          "recipeId": 38289,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38290,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38291,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38292,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38293,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38294,
-          "itemId": 52254,
-          "rlvl": 30
         }
       ]
     },
@@ -18137,6 +18284,213 @@
           "recipeId": 37787,
           "itemId": 50006,
           "rlvl": 690
+        },
+        {
+          "recipeId": 37988,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37989,
+          "itemId": 52465,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37990,
+          "itemId": 52466,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37991,
+          "itemId": 52467,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37992,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37993,
+          "itemId": 52468,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37994,
+          "itemId": 52471,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37995,
+          "itemId": 52475,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37996,
+          "itemId": 52472,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37997,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37998,
+          "itemId": 52469,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 37999,
+          "itemId": 52473,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38000,
+          "itemId": 52476,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38001,
+          "itemId": 52474,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38002,
+          "itemId": 52476,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38003,
+          "itemId": 52470,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38004,
+          "itemId": 52464,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38005,
+          "itemId": 52451,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38006,
+          "itemId": 52454,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38007,
+          "itemId": 52455,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38008,
+          "itemId": 52452,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38009,
+          "itemId": 52462,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38010,
+          "itemId": 52453,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38011,
+          "itemId": 52456,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38012,
+          "itemId": 52457,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38013,
+          "itemId": 52458,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38014,
+          "itemId": 52459,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38015,
+          "itemId": 52463,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38016,
+          "itemId": 52460,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38017,
+          "itemId": 52461,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38201,
+          "itemId": 52544,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38202,
+          "itemId": 52545,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38203,
+          "itemId": 52546,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38224,
+          "itemId": 52567,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38225,
+          "itemId": 52568,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1537,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37923,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37924,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37925,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37926,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37927,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -22069,36 +22423,6 @@
           "recipeId": 38256,
           "itemId": 52254,
           "rlvl": 30
-        },
-        {
-          "recipeId": 38295,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38296,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38297,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38298,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38299,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38300,
-          "itemId": 52254,
-          "rlvl": 30
         }
       ]
     },
@@ -25710,6 +26034,213 @@
           "recipeId": 37789,
           "itemId": 50008,
           "rlvl": 690
+        },
+        {
+          "recipeId": 38018,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38019,
+          "itemId": 52465,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38020,
+          "itemId": 52466,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38021,
+          "itemId": 52467,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38022,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38023,
+          "itemId": 52468,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38024,
+          "itemId": 52471,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38025,
+          "itemId": 52475,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38026,
+          "itemId": 52472,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38027,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38028,
+          "itemId": 52469,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38029,
+          "itemId": 52473,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38030,
+          "itemId": 52476,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38031,
+          "itemId": 52474,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38032,
+          "itemId": 52476,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38033,
+          "itemId": 52470,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38034,
+          "itemId": 52464,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38035,
+          "itemId": 52451,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38036,
+          "itemId": 52454,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38037,
+          "itemId": 52455,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38038,
+          "itemId": 52452,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38039,
+          "itemId": 52462,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38040,
+          "itemId": 52453,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38041,
+          "itemId": 52456,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38042,
+          "itemId": 52457,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38043,
+          "itemId": 52458,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38044,
+          "itemId": 52459,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38045,
+          "itemId": 52463,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38046,
+          "itemId": 52460,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38047,
+          "itemId": 52461,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38204,
+          "itemId": 52547,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38205,
+          "itemId": 52548,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38206,
+          "itemId": 52549,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38226,
+          "itemId": 52569,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38227,
+          "itemId": 52570,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1538,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37928,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37929,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37930,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37931,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37932,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -32877,36 +33408,6 @@
           "recipeId": 38257,
           "itemId": 52254,
           "rlvl": 30
-        },
-        {
-          "recipeId": 38301,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38302,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38303,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38304,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38305,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38306,
-          "itemId": 52254,
-          "rlvl": 30
         }
       ]
     },
@@ -37158,6 +37659,213 @@
           "recipeId": 37791,
           "itemId": 50010,
           "rlvl": 690
+        },
+        {
+          "recipeId": 38048,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38049,
+          "itemId": 52465,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38050,
+          "itemId": 52466,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38051,
+          "itemId": 52467,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38052,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38053,
+          "itemId": 52468,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38054,
+          "itemId": 52471,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38055,
+          "itemId": 52475,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38056,
+          "itemId": 52472,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38057,
+          "itemId": 52464,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38058,
+          "itemId": 52469,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38059,
+          "itemId": 52473,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38060,
+          "itemId": 52476,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38061,
+          "itemId": 52474,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38062,
+          "itemId": 52476,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38063,
+          "itemId": 52470,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38064,
+          "itemId": 52464,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38065,
+          "itemId": 52451,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38066,
+          "itemId": 52454,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38067,
+          "itemId": 52455,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38068,
+          "itemId": 52452,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38069,
+          "itemId": 52462,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38070,
+          "itemId": 52453,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38071,
+          "itemId": 52456,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38072,
+          "itemId": 52457,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38073,
+          "itemId": 52458,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38074,
+          "itemId": 52459,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38075,
+          "itemId": 52463,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38076,
+          "itemId": 52460,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38077,
+          "itemId": 52461,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38207,
+          "itemId": 52550,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38208,
+          "itemId": 52551,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38209,
+          "itemId": 52552,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38228,
+          "itemId": 52571,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38229,
+          "itemId": 52572,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1539,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37933,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37934,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37935,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37936,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37937,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -43130,36 +43838,6 @@
           "recipeId": 38258,
           "itemId": 52254,
           "rlvl": 30
-        },
-        {
-          "recipeId": 38307,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38308,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38309,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38310,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38311,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38312,
-          "itemId": 52254,
-          "rlvl": 30
         }
       ]
     },
@@ -46746,6 +47424,213 @@
           "recipeId": 37793,
           "itemId": 50012,
           "rlvl": 690
+        },
+        {
+          "recipeId": 38078,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38079,
+          "itemId": 52486,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38080,
+          "itemId": 52483,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38081,
+          "itemId": 52484,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38082,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38083,
+          "itemId": 52486,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38084,
+          "itemId": 52487,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38085,
+          "itemId": 52489,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38086,
+          "itemId": 52488,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38087,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38088,
+          "itemId": 52486,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38089,
+          "itemId": 52487,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38090,
+          "itemId": 52489,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38091,
+          "itemId": 52488,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38092,
+          "itemId": 52490,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38093,
+          "itemId": 52485,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38094,
+          "itemId": 52482,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38095,
+          "itemId": 52486,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38096,
+          "itemId": 52477,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38097,
+          "itemId": 52479,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38098,
+          "itemId": 52509,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38099,
+          "itemId": 52490,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38100,
+          "itemId": 52485,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38101,
+          "itemId": 52510,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38102,
+          "itemId": 52511,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38103,
+          "itemId": 52480,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38104,
+          "itemId": 52478,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38105,
+          "itemId": 52513,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38106,
+          "itemId": 52512,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38107,
+          "itemId": 52481,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38210,
+          "itemId": 52553,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38211,
+          "itemId": 52554,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38212,
+          "itemId": 52555,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38230,
+          "itemId": 52573,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38231,
+          "itemId": 52574,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1540,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37938,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37939,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37940,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37941,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37942,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -52763,36 +53648,6 @@
           "recipeId": 38259,
           "itemId": 52254,
           "rlvl": 30
-        },
-        {
-          "recipeId": 38313,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38314,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38315,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38316,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38317,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38318,
-          "itemId": 52254,
-          "rlvl": 30
         }
       ]
     },
@@ -56954,6 +57809,213 @@
           "recipeId": 37795,
           "itemId": 50014,
           "rlvl": 690
+        },
+        {
+          "recipeId": 38108,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38109,
+          "itemId": 52486,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38110,
+          "itemId": 52483,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38111,
+          "itemId": 52484,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38112,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38113,
+          "itemId": 52486,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38114,
+          "itemId": 52487,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38115,
+          "itemId": 52489,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38116,
+          "itemId": 52488,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38117,
+          "itemId": 52482,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38118,
+          "itemId": 52486,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38119,
+          "itemId": 52487,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38120,
+          "itemId": 52489,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38121,
+          "itemId": 52488,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38122,
+          "itemId": 52490,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38123,
+          "itemId": 52485,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38124,
+          "itemId": 52482,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38125,
+          "itemId": 52486,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38126,
+          "itemId": 52477,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38127,
+          "itemId": 52479,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38128,
+          "itemId": 52514,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38129,
+          "itemId": 52490,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38130,
+          "itemId": 52485,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38131,
+          "itemId": 52515,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38132,
+          "itemId": 52516,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38133,
+          "itemId": 52480,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38134,
+          "itemId": 52478,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38135,
+          "itemId": 52518,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38136,
+          "itemId": 52517,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38137,
+          "itemId": 52481,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38213,
+          "itemId": 52556,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38214,
+          "itemId": 52557,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38215,
+          "itemId": 52558,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38232,
+          "itemId": 52575,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38233,
+          "itemId": 52576,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1541,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37943,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37944,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37945,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37946,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37947,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -60244,36 +61306,6 @@
       "recipes": [
         {
           "recipeId": 38260,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38319,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38320,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38321,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38322,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38323,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38324,
           "itemId": 52254,
           "rlvl": 30
         }
@@ -65291,6 +66323,213 @@
           "recipeId": 37797,
           "itemId": 50016,
           "rlvl": 690
+        },
+        {
+          "recipeId": 38138,
+          "itemId": 52493,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38139,
+          "itemId": 52494,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38140,
+          "itemId": 52526,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38141,
+          "itemId": 52495,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38142,
+          "itemId": 52493,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38143,
+          "itemId": 52494,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38144,
+          "itemId": 52528,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38145,
+          "itemId": 52497,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38146,
+          "itemId": 52496,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38147,
+          "itemId": 52493,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38148,
+          "itemId": 52494,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38149,
+          "itemId": 52528,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38150,
+          "itemId": 52497,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38151,
+          "itemId": 52496,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38152,
+          "itemId": 52529,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38153,
+          "itemId": 52527,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38154,
+          "itemId": 52493,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38155,
+          "itemId": 52494,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38156,
+          "itemId": 52528,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38157,
+          "itemId": 52520,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38158,
+          "itemId": 52519,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38159,
+          "itemId": 52529,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38160,
+          "itemId": 52527,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38161,
+          "itemId": 52521,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38162,
+          "itemId": 52522,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38163,
+          "itemId": 52491,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38164,
+          "itemId": 52523,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38165,
+          "itemId": 52525,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38166,
+          "itemId": 52524,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38167,
+          "itemId": 52492,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38216,
+          "itemId": 52559,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38217,
+          "itemId": 52560,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38218,
+          "itemId": 52561,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38234,
+          "itemId": 52577,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38235,
+          "itemId": 52578,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1542,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37948,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37949,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37950,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37951,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37952,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }
@@ -67609,36 +68848,6 @@
       "recipes": [
         {
           "recipeId": 38261,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38325,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38326,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38327,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38328,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38329,
-          "itemId": 52254,
-          "rlvl": 30
-        },
-        {
-          "recipeId": 38330,
           "itemId": 52254,
           "rlvl": 30
         }
@@ -70914,6 +72123,213 @@
           "recipeId": 37799,
           "itemId": 50018,
           "rlvl": 690
+        },
+        {
+          "recipeId": 38168,
+          "itemId": 52493,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38169,
+          "itemId": 52494,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38170,
+          "itemId": 52537,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38171,
+          "itemId": 52495,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38172,
+          "itemId": 52493,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38173,
+          "itemId": 52494,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38174,
+          "itemId": 52539,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38175,
+          "itemId": 52497,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38176,
+          "itemId": 52496,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38177,
+          "itemId": 52493,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38178,
+          "itemId": 52494,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38179,
+          "itemId": 52539,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38180,
+          "itemId": 52497,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38181,
+          "itemId": 52496,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38182,
+          "itemId": 52540,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38183,
+          "itemId": 52538,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38184,
+          "itemId": 52493,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38185,
+          "itemId": 52494,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38186,
+          "itemId": 52539,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38187,
+          "itemId": 52531,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38188,
+          "itemId": 52530,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38189,
+          "itemId": 52540,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38190,
+          "itemId": 52538,
+          "rlvl": 701
+        },
+        {
+          "recipeId": 38191,
+          "itemId": 52532,
+          "rlvl": 727
+        },
+        {
+          "recipeId": 38192,
+          "itemId": 52533,
+          "rlvl": 728
+        },
+        {
+          "recipeId": 38193,
+          "itemId": 52491,
+          "rlvl": 729
+        },
+        {
+          "recipeId": 38194,
+          "itemId": 52534,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38195,
+          "itemId": 52536,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38196,
+          "itemId": 52535,
+          "rlvl": 772
+        },
+        {
+          "recipeId": 38197,
+          "itemId": 52492,
+          "rlvl": 771
+        },
+        {
+          "recipeId": 38219,
+          "itemId": 52562,
+          "rlvl": 773
+        },
+        {
+          "recipeId": 38220,
+          "itemId": 52563,
+          "rlvl": 774
+        },
+        {
+          "recipeId": 38221,
+          "itemId": 52564,
+          "rlvl": 775
+        },
+        {
+          "recipeId": 38236,
+          "itemId": 52579,
+          "rlvl": 690
+        },
+        {
+          "recipeId": 38237,
+          "itemId": 52580,
+          "rlvl": 690
+        }
+      ]
+    },
+    {
+      "id": 1543,
+      "masterbook": null,
+      "startLevel": 650,
+      "recipes": [
+        {
+          "recipeId": 37953,
+          "itemId": 52022,
+          "rlvl": 650
+        },
+        {
+          "recipeId": 37954,
+          "itemId": 52023,
+          "rlvl": 653
+        },
+        {
+          "recipeId": 37955,
+          "itemId": 52024,
+          "rlvl": 656
+        },
+        {
+          "recipeId": 37956,
+          "itemId": 52025,
+          "rlvl": 665
+        },
+        {
+          "recipeId": 37957,
+          "itemId": 52026,
+          "rlvl": 675
         }
       ]
     }

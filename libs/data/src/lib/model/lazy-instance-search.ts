@@ -9,7 +9,7 @@ export interface LazyInstanceSearch {
   lvl:   number;
   patch: number;
   tw?:   string;
-  zh:    string;
+  zh?:   string;
 }
 
 export interface Data {
@@ -20,19 +20,19 @@ export interface Data {
 }
 
 export enum Icon {
-  I061000061801PNG = "/i/061000/061801.png",
-  I061000061802PNG = "/i/061000/061802.png",
-  I061000061803PNG = "/i/061000/061803.png",
-  I061000061804PNG = "/i/061000/061804.png",
-  I061000061805PNG = "/i/061000/061805.png",
-  I061000061806PNG = "/i/061000/061806.png",
-  I061000061808PNG = "/i/061000/061808.png",
-  I061000061815PNG = "/i/061000/061815.png",
-  I061000061820PNG = "/i/061000/061820.png",
-  I061000061823PNG = "/i/061000/061823.png",
-  I061000061824PNG = "/i/061000/061824.png",
-  I061000061832PNG = "/i/061000/061832.png",
-  I061000061836PNG = "/i/061000/061836.png",
-  I061000061846PNG = "/i/061000/061846.png",
-  I061000061850PNG = "/i/061000/061850.png",
+  APIAssetPathUIIcon061000061801TexFormatPNG = "/api/asset?path=ui/icon/061000/061801.tex&format=png",
+  APIAssetPathUIIcon061000061802TexFormatPNG = "/api/asset?path=ui/icon/061000/061802.tex&format=png",
+  APIAssetPathUIIcon061000061803TexFormatPNG = "/api/asset?path=ui/icon/061000/061803.tex&format=png",
+  APIAssetPathUIIcon061000061804TexFormatPNG = "/api/asset?path=ui/icon/061000/061804.tex&format=png",
+  APIAssetPathUIIcon061000061805TexFormatPNG = "/api/asset?path=ui/icon/061000/061805.tex&format=png",
+  APIAssetPathUIIcon061000061806TexFormatPNG = "/api/asset?path=ui/icon/061000/061806.tex&format=png",
+  APIAssetPathUIIcon061000061808TexFormatPNG = "/api/asset?path=ui/icon/061000/061808.tex&format=png",
+  APIAssetPathUIIcon061000061815TexFormatPNG = "/api/asset?path=ui/icon/061000/061815.tex&format=png",
+  APIAssetPathUIIcon061000061820TexFormatPNG = "/api/asset?path=ui/icon/061000/061820.tex&format=png",
+  APIAssetPathUIIcon061000061823TexFormatPNG = "/api/asset?path=ui/icon/061000/061823.tex&format=png",
+  APIAssetPathUIIcon061000061824TexFormatPNG = "/api/asset?path=ui/icon/061000/061824.tex&format=png",
+  APIAssetPathUIIcon061000061832TexFormatPNG = "/api/asset?path=ui/icon/061000/061832.tex&format=png",
+  APIAssetPathUIIcon061000061836TexFormatPNG = "/api/asset?path=ui/icon/061000/061836.tex&format=png",
+  APIAssetPathUIIcon061000061846TexFormatPNG = "/api/asset?path=ui/icon/061000/061846.tex&format=png",
+  APIAssetPathUIIcon061000061850TexFormatPNG = "/api/asset?path=ui/icon/061000/061850.tex&format=png",
 }

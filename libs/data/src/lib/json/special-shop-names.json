@@ -8793,19 +8793,19 @@
     "en": "Phantom Weapon Replication (DoW) I",
     "ja": "「ファントムウェポン」の複製（ファイター1）",
     "de": "Repliken von Phantomwaffen (Krieger I)",
-    "fr": "「ファントムウェポン」の複製（ファイター1）"
+    "fr": "Répliques d'armes fantômes (guerre 1)"
   },
   "1771017": {
     "en": "Phantom Weapon Replication (DoW) II",
     "ja": "「ファントムウェポン」の複製（ファイター2）",
     "de": "Repliken von Phantomwaffen (Krieger II)",
-    "fr": "「ファントムウェポン」の複製（ファイター2）"
+    "fr": "Répliques d'armes fantômes (guerre 2)"
   },
   "1771018": {
     "en": "Phantom Weapon Replication (DoM) I",
     "ja": "「ファントムウェポン」の複製（ソーサラー）",
     "de": "Repliken von Phantomwaffen (Magier)",
-    "fr": "「ファントムウェポン」の複製（ソーサラー）"
+    "fr": "Répliques d'armes fantômes (magie)"
   },
   "1771019": {
     "en": "",
@@ -8916,10 +8916,10 @@
     "fr": ""
   },
   "1771037": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cosmic Exploration Token Exchange",
+    "ja": "探索計画の手形の取引",
+    "de": "Kosmo-Marken",
+    "fr": "Avoirs de l'exploration cosmique"
   },
   "1771038": {
     "en": "",
@@ -8928,9 +8928,9 @@
     "fr": ""
   },
   "1771039": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Totem Gear (Kefka)",
+    "ja": "報酬装備の取引（妖星乱舞）",
+    "de": "Tanzender Wahn-Ausrüstung",
+    "fr": "Équipements totémiques (Kefka)"
   }
 }

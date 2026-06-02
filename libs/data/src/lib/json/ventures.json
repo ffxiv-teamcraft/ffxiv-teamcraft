@@ -701,48 +701,6 @@
     "de": "Wyvern-Obsidian",
     "fr": "Éclat d'obsidienne de wyverne"
   },
-  "119": {
-    "en": "Blue Pigment",
-    "ja": "ブルーピグメント",
-    "de": "Blaue Farbpigmente",
-    "fr": "Pigment bleu"
-  },
-  "120": {
-    "en": "Red Pigment",
-    "ja": "レッドピグメント",
-    "de": "Rote Farbpigmente",
-    "fr": "Pigment rouge"
-  },
-  "121": {
-    "en": "Yellow Pigment",
-    "ja": "イエローピグメント",
-    "de": "Gelbe Farbpigmente",
-    "fr": "Pigment jaune"
-  },
-  "122": {
-    "en": "Grey Pigment",
-    "ja": "グレイピグメント",
-    "de": "Graue Farbpigmente",
-    "fr": "Pigment gris"
-  },
-  "123": {
-    "en": "Brown Pigment",
-    "ja": "ブラウンピグメント",
-    "de": "Braune Farbpigmente",
-    "fr": "Pigment brun"
-  },
-  "124": {
-    "en": "Green Pigment",
-    "ja": "グリーンピグメント",
-    "de": "Grüne Farbpigmente",
-    "fr": "Pigment vert"
-  },
-  "125": {
-    "en": "Purple Pigment",
-    "ja": "パープルピグメント",
-    "de": "Violette Farbpigmente",
-    "fr": "Pigment violet"
-  },
   "126": {
     "en": "Brimstone",
     "ja": "硫黄",
@@ -1498,48 +1456,6 @@
     "ja": "ミッドランドキャベツの種",
     "de": "Wiesland-Kohlkopfsamen",
     "fr": "Graines de chou hyurois"
-  },
-  "255": {
-    "en": "Blue Pigment",
-    "ja": "ブルーピグメント",
-    "de": "Blaue Farbpigmente",
-    "fr": "Pigment bleu"
-  },
-  "256": {
-    "en": "Red Pigment",
-    "ja": "レッドピグメント",
-    "de": "Rote Farbpigmente",
-    "fr": "Pigment rouge"
-  },
-  "257": {
-    "en": "Yellow Pigment",
-    "ja": "イエローピグメント",
-    "de": "Gelbe Farbpigmente",
-    "fr": "Pigment jaune"
-  },
-  "258": {
-    "en": "Grey Pigment",
-    "ja": "グレイピグメント",
-    "de": "Graue Farbpigmente",
-    "fr": "Pigment gris"
-  },
-  "259": {
-    "en": "Brown Pigment",
-    "ja": "ブラウンピグメント",
-    "de": "Braune Farbpigmente",
-    "fr": "Pigment brun"
-  },
-  "260": {
-    "en": "Green Pigment",
-    "ja": "グリーンピグメント",
-    "de": "Grüne Farbpigmente",
-    "fr": "Pigment vert"
-  },
-  "261": {
-    "en": "Purple Pigment",
-    "ja": "パープルピグメント",
-    "de": "Violette Farbpigmente",
-    "fr": "Pigment violet"
   },
   "262": {
     "en": "Chocobo Feather",
@@ -6628,5 +6544,17 @@
     "ja": "ゴールデンイール",
     "de": "Goldaal",
     "fr": "Anguille dorée"
+  },
+  "1113": {
+    "en": "All-purpose Pigment",
+    "ja": "ピグメント",
+    "de": "Universalpigmente",
+    "fr": "Pigment universel"
+  },
+  "1114": {
+    "en": "All-purpose Pigment",
+    "ja": "ピグメント",
+    "de": "Universalpigmente",
+    "fr": "Pigment universel"
   }
 }

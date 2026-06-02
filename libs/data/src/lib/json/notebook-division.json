@@ -2161,10 +2161,10 @@
   },
   "1067": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tiisol Ja",
+      "ja": "チーソジャ",
+      "de": "Tiisol Ja",
+      "fr": "Tiisol Ja"
     },
     "pages": [
       1536,
@@ -2176,8 +2176,8 @@
       1542,
       1543
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 90,
+    "gatheringLevel": 255
   },
   "1068": {
     "name": {

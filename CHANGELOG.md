@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.23...v11.4.24) (2026-06-02)
+
+
+### Features
+
+* **db:** support for korean v7.51 update ([35732e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35732e02d4d3d80219a309fb2ba6ca6df13c7a6f))
+* **electron:** add shared cross-platform desktop plumbing and bundled bridge ([6c95dca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c95dca0925fa545733bc5186742b186ad32bdaa)), closes [#3197](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3197) [#3201](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3201)
+* **pcap:** Add bridge start logic and wine settings ([08811de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08811de3a957792a1d7121dbe49d45f4c2921f82))
+* **pcap:** support TW version ([805486e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/805486e34598d20c6b7ea1e271cdcdd6f12cfedc))
+* use XIVAPI v2 as icons source ([2b46d5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b46d5aa93ea420665142a4e9cfe2de71de06d04))
+
 ### [11.4.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.22...v11.4.23) (2026-05-05)
 
 
