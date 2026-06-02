@@ -175,9 +175,9 @@ export class DatFilesWatcher {
       case 'KR':
         return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - KOREA');
       case 'CN':
-        return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
-      case 'TW':
         return join('C:\\', 'Program Files (x86)', '上海数龙科技有限公司', '最终幻想XIV', 'game', 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+      case 'TW':
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - TC');
       default:
         return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
     }
