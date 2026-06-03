@@ -602,7 +602,17 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               predators: report.data.predators,
               oceanFishingTime: report.data.oceanFishingTime,
               minGathering: report.data.minGathering,
-              fruityVideo: report.data.fruityVideo
+              fruityVideo: report.data.fruityVideo,
+              lure: report.data.aLure > 0 ? 3972
+                : report.data.mLure > 0
+                  ? 3973
+                  : null,
+
+              lureStacks: report.data.aLure > 0
+                ? report.data.aLure
+                : report.data.mLure > 0
+                  ? report.data.mLure
+                  : null,
             }, value => value !== undefined && value !== null);
           })
         );
