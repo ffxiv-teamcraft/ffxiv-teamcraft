@@ -94,7 +94,8 @@ export class PacketCapture {
     });
 
     if (process.platform !== 'win32') {
-      this.registerWinePathIpc();
+      const region = this.store.get<Region>('region', 'Global');
+      this.registerWinePathIpc(region);
     }
   }
 
@@ -102,17 +103,17 @@ export class PacketCapture {
    * Starts the deucalion bridge using the Wine paths from the store.
    * Throws if the paths are not configured or if spawning fails.
    */
-  private startBridge(): void {
+  private startBridge(region: Region): void {
     const winePrefix = this.store.get<string>('winePrefix', '');
     const wineBin = this.store.get<string>('wineBin', '');
     if (!winePrefix || !wineBin) {
       throw new Error('Wine paths not configured');
     }
-    const dllWinPath = this.toWinePath(this.getDeucalionDllPath());
+    const dllWinPath = this.toWinePath(this.getDeucalionDllPath(region));
     this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
   }
 
-  private registerWinePathIpc(): void {
+  private registerWinePathIpc(region: Region): void {
     ipcMain.on('bridge:wineprefix:get', (event) => {
       event.sender.send('bridge:wineprefix:value', this.store.get<string>('winePrefix', ''));
     });
@@ -129,7 +130,7 @@ export class PacketCapture {
         event.sender.send('bridge:wineprefix:value', this.store.get<string>('winePrefix', ''));
         if (this.captureInterface) {
           try {
-            this.startBridge();
+            this.startBridge(region);
           } catch (e) {
             log.error('[bridge] Failed to restart bridge after settings change:', e);
           }
@@ -153,7 +154,7 @@ export class PacketCapture {
         event.sender.send('bridge:winebin:value', this.store.get<string>('wineBin', ''));
         if (this.captureInterface) {
           try {
-            this.startBridge();
+            this.startBridge(region);
           } catch (e) {
             log.error('[bridge] Failed to restart bridge after settings change:', e);
           }
@@ -285,7 +286,7 @@ export class PacketCapture {
         // deucalion-bridge.exe runs under Wine and forwards the deucalion
         // named pipe over TCP.
         try {
-          this.startBridge();
+          this.startBridge(region);
           options.bridgeTcpPort = 31594;
         } catch (e) {
           log.error('[pcap] Failed to set up deucalion bridge:', e);
@@ -300,7 +301,7 @@ export class PacketCapture {
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = this.getDeucalionDllPath();
+        options.deucalionDllPath = this.getDeucalionDllPath(region);
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
@@ -404,7 +405,7 @@ export class PacketCapture {
    * Packaged builds find it in extraFiles next to the app; dev builds walk up
    * from __dirname to locate it inside node_modules.
    */
-  private getDeucalionDllPath(): string {
+  private getDeucalionDllPath(region: Region): string {
     if (app.isPackaged) {
       return region === 'TW' ? join(app.getAppPath(), '../../deucalion/deucalion_12.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
     }
