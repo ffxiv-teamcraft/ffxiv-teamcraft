@@ -22,7 +22,7 @@ export class MapsExtractor extends AbstractExtractor {
           id: mapData.index,
           hierarchy: mapData.Hierarchy,
           priority_ui: mapData.PriorityUI,
-          image: `https://xivapi.com${filename}`,
+          image: `https://v2.xivapi.com${filename}`,
           offset_x: +mapData.OffsetX,
           offset_y: +mapData.OffsetY,
           offset_z: offsetZ === -10000 ? 0 : offsetZ,

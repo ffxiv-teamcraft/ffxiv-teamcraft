@@ -54,7 +54,7 @@ export class FishBaitsComponent {
       const legendData = entries.map(entry => {
         return {
           name: entry.name,
-          icon: `image://https://xivapi.com${entry.icon}`
+          icon: `image://https://v2.xivapi.com${entry.icon}`
         };
       });
       return <EChartsOption>{
