@@ -376,7 +376,7 @@ export class FishTrainComponent extends TeamcraftComponent {
     ]).pipe(
       first(),
       switchMap(([lazyIcon, itemName, placeName]) => {
-        const icon = `https://xivapi.com${lazyIcon}`;
+        const icon = `https://v2.xivapi.com${lazyIcon}`;
         const coords = `X: ${fish.node.x} - Y: ${fish.node.y}`;
         const title = this.translate.instant('FISH_TRAIN.Moving_notification_title');
         const body = this.translate.instant('FISH_TRAIN.Moving_notification', {

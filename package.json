@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "11.4.24",
+  "version": "11.4.25",
   "license": "MIT",
   "main": "dist/apps/electron/main.js",
   "build": {
@@ -33,7 +33,16 @@
             "**/*.exe"
           ]
         }
-      ]
+      ],
+      "icon": "./tools/build/icon.png",
+      "artifactName": "${productName}.AppImage",
+      "target": [
+        "AppImage"
+      ],
+      "publish": {
+        "provider": "github",
+        "releaseType": "release"
+      }
     },
     "asarUnpack": "./dist/apps/electron/workers/lodestone.js",
     "protocols": {
@@ -105,6 +114,8 @@
     "electron:setup:build-dev:dir": "yarn electron:build && electron-builder -w --dir",
     "electron:setup:build-beta": "del-cli release/* && yarn electron:build && yarn build:electron-dev && electron-builder -w",
     "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
+    "build:appimage": "del-cli release/* && yarn build:electron-prod && yarn electron:build && electron-builder --linux",
+    "build:appimage:publish": "yarn build:electron-prod && yarn electron:build && electron-builder --linux -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "del-cli release/* && electron-builder --dir",
@@ -137,6 +148,7 @@
     "electron-log": "^5.1.4",
     "electron-store": "^8.2.0",
     "electron-fetch": "^1.9.1",
+    "electron-updater": "^6.8.3",
     "flexsearch-ts": "^0.7.35",
     "fs-extra": "^11.2.0",
     "jwt-decode": "^4.0.0",

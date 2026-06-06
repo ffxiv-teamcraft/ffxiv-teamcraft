@@ -101,7 +101,7 @@ export class AlarmBellService {
         }),
         first(),
         switchMap(([alarm, icon, itemName, aetheryteName, placeName]) => {
-          const notificationIcon = `https://xivapi.com${icon}`;
+          const notificationIcon = `https://v2.xivapi.com${icon}`;
           const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
           const notificationBody = `${placeName} - `
             + `${aetheryteName ? aetheryteName : ''}`;

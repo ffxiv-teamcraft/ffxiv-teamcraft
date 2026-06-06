@@ -24,7 +24,7 @@ export class LazyIconPipe implements PipeTransform, OnDestroy {
       } else if (!itemIcon) {
         return 'https://xivapi.com/img-misc/code-regular.svg';
       } else {
-        return `https://xivapi.com${itemIcon}`;
+        return `https://v2.xivapi.com${itemIcon}`;
       }
     })
   );

@@ -34,14 +34,35 @@ export class OverlayManager {
       }
     };
     Object.assign(opts, this.store.get(`overlay:${url}:bounds`, {}));
-    opts.opacity = this.store.get(`overlay:${url}:opacity`, 1) || 1;
+    const storedOpacity = this.store.get(`overlay:${url}:opacity`, 1) || 1;
+    if (process.platform === 'linux') {
+      // setOpacity() is a no-op on Linux. Use a transparent window and control
+      // opacity via CSS on the renderer side instead.
+      opts.transparent = true;
+      opts.backgroundColor = '#00000000';
+    } else {
+      opts.opacity = storedOpacity;
+    }
     const alwaysOnTop = this.store.get(`overlay:${url}:on-top`, true);
     const overlay = new BrowserWindow(opts);
-    overlay.setAlwaysOnTop(alwaysOnTop, 'screen-saver');
     overlay.setIgnoreMouseEvents(this.store.get('clickthrough', false));
 
     overlay.once('ready-to-show', () => {
+      if (process.platform === 'linux') {
+        // Clear the opaque #292929 body background from the ng-zorro theme so
+        // that the transparent OS window actually shows the game through. Also
+        // pre-apply the stored opacity so there's no full-opacity flash before
+        // the Angular component initialises and sets the inline style.
+        const opacity = storedOpacity;
+        overlay.webContents.insertCSS(
+          `html, body { background: transparent !important; }` +
+          (opacity < 1 ? ` body { opacity: ${opacity}; }` : '')
+        );
+      }
       overlay.show();
+      // On Linux/X11 the always-on-top hint must be (re-)applied after the
+      // window is mapped; doing it before show() is unreliable.
+      overlay.setAlwaysOnTop(alwaysOnTop, 'screen-saver');
     });
 
     // save window size and position
@@ -60,7 +81,11 @@ export class OverlayManager {
       return;
     }
     this.store.set(`overlay:${url}:bounds`, overlay.getBounds());
-    this.store.set(`overlay:${url}:opacity`, overlay.getOpacity());
+    // getOpacity() always returns 1 on Linux, so skip it — the correct value
+    // is already in the store (written by the overlay:set-opacity IPC handler).
+    if (process.platform !== 'linux') {
+      this.store.set(`overlay:${url}:opacity`, overlay.getOpacity());
+    }
     this.store.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
     delete this.openedOverlays[url];
     this.openedOverlayUris = this.openedOverlayUris.filter(uri => uri !== url);

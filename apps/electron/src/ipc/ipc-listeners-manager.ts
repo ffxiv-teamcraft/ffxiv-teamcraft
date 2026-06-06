@@ -216,7 +216,14 @@ export class IpcListenersManager {
     ipcMain.on('overlay:set-opacity', (event, data) => {
       const overlayWindow = this.overlayManager.getOverlay(data.uri);
       if (overlayWindow !== undefined && overlayWindow) {
-        overlayWindow.setOpacity(data.opacity);
+        if (process.platform === 'linux') {
+          // setOpacity() is a no-op on Linux; persist the value and let the
+          // renderer apply it as a CSS opacity instead.
+          this.store.set(`overlay:${data.uri}:opacity`, data.opacity);
+          this.overlayManager.sendToOverlay(data.uri, 'overlay:css-opacity', data.opacity);
+        } else {
+          overlayWindow.setOpacity(data.opacity);
+        }
       }
     });
 
@@ -228,7 +235,11 @@ export class IpcListenersManager {
     ipcMain.on('overlay:get-opacity', (event, data) => {
       const overlayWindow = this.overlayManager.getOverlay(data.uri);
       if (overlayWindow !== undefined) {
-        event.sender.send(`overlay:${data.uri}:opacity`, overlayWindow.getOpacity());
+        // getOpacity() always returns 1 on Linux, so read from the store instead.
+        const opacity = process.platform === 'linux'
+          ? (this.store.get(`overlay:${data.uri}:opacity`, 1) || 1)
+          : overlayWindow.getOpacity();
+        event.sender.send(`overlay:${data.uri}:opacity`, opacity);
       }
     });
 

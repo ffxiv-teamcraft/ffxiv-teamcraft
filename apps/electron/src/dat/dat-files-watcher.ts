@@ -1,5 +1,5 @@
 import log from 'electron-log';
-import { existsSync, FSWatcher, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
+import { FSWatcher, existsSync, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
 import { join } from 'path';
 import { MainWindow } from '../window/main-window';
 import BufferReader from 'buffer-reader';
@@ -170,6 +170,20 @@ export class DatFilesWatcher {
     const customDir = this.store.get('dat-watcher:dir', null);
     if (customDir) {
       return customDir;
+    }
+    if (process.platform === 'linux') {
+      const home = app.getPath('home');
+      // Steam first: try both Documents and My Documents (varies by Proton version)
+      const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
+      for (const docs of ['Documents', 'My Documents']) {
+        const p = join(steamPrefix, 'drive_c', 'users', 'steamuser', docs, 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+        if (existsSync(p)) return p;
+      }
+      // XIVLauncher second
+      const xlcorePath = join(home, '.xlcore', 'ffxivConfig');
+      if (existsSync(xlcorePath)) return xlcorePath;
+      // Nothing found
+      return null;
     }
     switch (region) {
       case 'KR':

@@ -465,7 +465,7 @@ export class ListsEffects {
                 itemName,
                 listName: list.name
               });
-              const notificationIcon = `https://xivapi.com${icon}`;
+              const notificationIcon = `https://v2.xivapi.com${icon}`;
               this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
               if (this.platform.isDesktop()) {
                 this.ipc.send('notification', {
