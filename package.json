@@ -52,6 +52,7 @@
       ]
     },
     "mac": {
+      "icon": "./tools/build/app.icns",
       "category": "public.app-category.games",
       "extraFiles": [
         {
