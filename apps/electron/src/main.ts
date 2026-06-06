@@ -23,6 +23,12 @@ log.log(`START`);
 
 // Small optimizations
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
+
+// Force XWayland on Wayland sessions so that setAlwaysOnTop() works for overlay windows
+if (process.platform === 'linux' &&
+    (process.env.WAYLAND_DISPLAY || process.env.XDG_SESSION_TYPE === 'wayland')) {
+  app.commandLine.appendSwitch('ozone-platform', 'x11');
+}
 ipcMain.setMaxListeners(0);
 
 // Options formatting
@@ -81,7 +87,7 @@ if (!isUpdating) {
     mainWindow.whenReady();
   });
 
-  const autoUpdater = new AutoUpdater(mainWindow, pcapManager);
+  const autoUpdater = new AutoUpdater(mainWindow);
   autoUpdater.connectListeners();
 
   // Then, create the Electron application
