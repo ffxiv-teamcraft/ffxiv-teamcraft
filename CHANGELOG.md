@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.24...v11.4.25) (2026-06-06)
+
+
+### Bug Fixes
+
+* icons not loading in many features ([1711e06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1711e06f3a3202afa0fc4c772f8f1cdeb77e1085))
+
 ### [11.4.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.23...v11.4.24) (2026-06-02)
 
 
