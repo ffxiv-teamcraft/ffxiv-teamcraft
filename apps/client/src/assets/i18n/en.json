@@ -606,7 +606,9 @@
     },
     "Wine_prefix": "Wine/Proton prefix directory",
     "Wine_binary": "Wine binary",
-    "Path_not_found": "Not found"
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "Account",

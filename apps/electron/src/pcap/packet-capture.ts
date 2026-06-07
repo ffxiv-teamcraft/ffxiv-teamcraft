@@ -6,6 +6,7 @@ import { spawn, execSync, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
+import { WineResolver } from './wine-resolver';
 
 export class PacketCapture {
 
@@ -85,10 +86,13 @@ export class PacketCapture {
 
   private captureInterface: CaptureInterface;
   private bridgeProcess: ChildProcess | null = null;
+  private wineResolver: WineResolver;
 
   private overlayListeners = [];
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
+    this.wineResolver = new WineResolver(store);
+
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
     });
@@ -100,34 +104,75 @@ export class PacketCapture {
   }
 
   /**
-   * Starts the deucalion bridge using the Wine paths from the store.
-   * Throws if the paths are not configured or if spawning fails.
+   * Starts the deucalion bridge. Resolves Wine paths from user overrides first,
+   * then falls back to autodetection (XIVLauncher or Steam Proton).
+   * Throws if the paths cannot be resolved or if spawning fails.
    */
   private startBridge(region: Region): void {
-    const winePrefix = this.store.get<string>('winePrefix', '');
-    const wineBin = this.store.get<string>('wineBin', '');
+    const { prefix: winePrefix, bin: wineBin } = this.wineResolver.resolveWinePaths();
     if (!winePrefix || !wineBin) {
-      throw new Error('Wine paths not configured');
+      throw new Error('Wine paths not configured and could not be auto-detected');
     }
     const dllWinPath = this.toWinePath(this.getDeucalionDllPath(region));
     this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
   }
 
   private registerWinePathIpc(region: Region): void {
+    // Combined handler: resolves once and sends both prefix and bin values.
+    // Used on initial settings load and after resetting both paths together.
+    ipcMain.on('bridge:winepaths:get', (event) => {
+      const paths = this.wineResolver.resolveWinePaths();
+      event.sender.send('bridge:wineprefix:value', {
+        resolved: paths.prefix,
+        custom: this.store.get<string | null>('winePrefix', null)
+      });
+      event.sender.send('bridge:winebin:value', {
+        resolved: paths.bin,
+        custom: this.store.get<string | null>('wineBin', null)
+      });
+    });
+
+    ipcMain.on('bridge:winepaths:reset', (event) => {
+      this.store.delete('winePrefix');
+      this.store.delete('wineBin');
+      const paths = this.wineResolver.resolveWinePaths();
+      event.sender.send('bridge:wineprefix:value', {
+        resolved: paths.prefix,
+        custom: null
+      });
+      event.sender.send('bridge:winebin:value', {
+        resolved: paths.bin,
+        custom: null
+      });
+      if (this.captureInterface) {
+        try {
+          this.startBridge(region);
+        } catch (e) {
+          log.error('[bridge] Failed to restart bridge after settings change:', e);
+        }
+      }
+    });
+
     ipcMain.on('bridge:wineprefix:get', (event) => {
-      event.sender.send('bridge:wineprefix:value', this.store.get<string>('winePrefix', ''));
+      event.sender.send('bridge:wineprefix:value', {
+        resolved: this.wineResolver.resolveWinePaths().prefix,
+        custom: this.store.get<string | null>('winePrefix', null)
+      });
     });
 
     ipcMain.on('bridge:wineprefix:set', (event) => {
-      const current = this.store.get<string>('winePrefix', '');
+      const current = this.wineResolver.resolveWinePaths().prefix;
       const opts: OpenDialogOptions = {
-        defaultPath: current || app.getPath('home'),
+        defaultPath: current ?? app.getPath('home'),
         properties: ['openDirectory']
       };
       dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
         if (result.canceled) return;
         this.store.set('winePrefix', result.filePaths[0]);
-        event.sender.send('bridge:wineprefix:value', this.store.get<string>('winePrefix', ''));
+        event.sender.send('bridge:wineprefix:value', {
+          resolved: this.wineResolver.resolveWinePaths().prefix,
+          custom: this.store.get<string | null>('winePrefix', null)
+        });
         if (this.captureInterface) {
           try {
             this.startBridge(region);
@@ -138,12 +183,16 @@ export class PacketCapture {
       });
     });
 
+
     ipcMain.on('bridge:winebin:get', (event) => {
-      event.sender.send('bridge:winebin:value', this.store.get<string>('wineBin', ''));
+      event.sender.send('bridge:winebin:value', {
+        resolved: this.wineResolver.resolveWinePaths().bin,
+        custom: this.store.get<string | null>('wineBin', null)
+      });
     });
 
     ipcMain.on('bridge:winebin:set', (event) => {
-      const current = this.store.get<string>('wineBin', '');
+      const current = this.wineResolver.resolveWinePaths().bin;
       const opts: OpenDialogOptions = {
         defaultPath: current ? join(current, '..') : app.getPath('home'),
         properties: ['openFile']
@@ -151,7 +200,10 @@ export class PacketCapture {
       dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
         if (result.canceled) return;
         this.store.set('wineBin', result.filePaths[0]);
-        event.sender.send('bridge:winebin:value', this.store.get<string>('wineBin', ''));
+        event.sender.send('bridge:winebin:value', {
+          resolved: this.wineResolver.resolveWinePaths().bin,
+          custom: this.store.get<string | null>('wineBin', null)
+        });
         if (this.captureInterface) {
           try {
             this.startBridge(region);
@@ -259,11 +311,10 @@ export class PacketCapture {
       };
 
       if (process.platform !== 'win32') {
-        const winePrefix = this.store.get<string>('winePrefix', '');
-        const wineBin = this.store.get<string>('wineBin', '');
+        const { prefix: winePrefix, bin: wineBin } = this.wineResolver.resolveWinePaths();
 
         if (!winePrefix || !wineBin) {
-          log.error('[pcap] One or more Wine paths are not configured:', { winePrefix, wineBin });
+          log.error('[pcap] Wine paths could not be resolved (not configured and autodetection failed):', { winePrefix, wineBin });
           this.store.set('machina', false);
           this.mainWindow.win.webContents.send('toggle-pcap:value', false);
           this.mainWindow.win.webContents.send('pcap:status', 'error');
@@ -271,11 +322,11 @@ export class PacketCapture {
           return;
         }
 
-        // With some launchers, the bridge process (Wine) prevents the game from
-        // booting if it starts before ffxiv_dx11.exe is already running.  Fail
-        // fast with a clear error so the user knows to launch the game first.
-        if (!this.isGameRunningViaWine()) {
-          log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start bridge');
+        // Steam's Proton session prevents the game from booting if the bridge
+        // (Wine) starts before ffxiv_dx11.exe is already running. XIVLauncher
+        // manages its own Wine session and doesn't have this constraint.
+        if (this.wineResolver.detectAutoSource() === 'steam' && !this.isGameRunningViaWine()) {
+          log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start bridge under Steam Proton');
           this.store.set('machina', false);
           this.mainWindow.win.webContents.send('toggle-pcap:value', false);
           this.mainWindow.win.webContents.send('pcap:status', 'error');

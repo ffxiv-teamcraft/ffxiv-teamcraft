@@ -764,7 +764,7 @@
           <nz-form-item nzFlex fxLayoutAlign="flex-start center">
             <nz-form-label>{{ 'SETTINGS.Wine_prefix' | translate }}</nz-form-label>
             <nz-form-control>
-              <nz-input-group [nzAddOnBefore]="winePrefixPath || ('SETTINGS.Path_not_found' | translate)">
+              <nz-input-group [nzAddOnBefore]="winePrefixResolved || ('SETTINGS.Path_not_found' | translate)">
                 <button nz-button nzType="primary" (click)="changeWinePrefix()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
               </nz-input-group>
             </nz-form-control>
@@ -772,9 +772,15 @@
           <nz-form-item nzFlex fxLayoutAlign="flex-start center">
             <nz-form-label>{{ 'SETTINGS.Wine_binary' | translate }}</nz-form-label>
             <nz-form-control>
-              <nz-input-group [nzAddOnBefore]="wineBinPath || ('SETTINGS.Path_not_found' | translate)">
+              <nz-input-group [nzAddOnBefore]="wineBinResolved || ('SETTINGS.Path_not_found' | translate)">
                 <button nz-button nzType="primary" (click)="changeWineBin()" class="corners-left">{{ 'COMMON.Change' | translate }}</button>
               </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nzFlex fxLayoutAlign="flex-start center">
+            <nz-form-label>{{ 'SETTINGS.Reset_to_auto' | translate }}</nz-form-label>
+            <nz-form-control>
+              <button nz-button (click)="resetWinePaths()">{{ 'SETTINGS.Reset_to_auto_button' | translate }}</button>
             </nz-form-control>
           </nz-form-item>
         }
