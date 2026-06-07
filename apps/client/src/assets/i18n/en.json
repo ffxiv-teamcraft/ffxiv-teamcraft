@@ -606,6 +606,9 @@
     },
     "Wine_prefix": "Wine/Proton prefix directory",
     "Wine_binary": "Wine binary",
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
     "Path_not_found": "Not found. Did you boot the game at least once?",
     "Reset_to_auto": "Auto-detect Wine settings",
     "Reset_to_auto_button": "Detect"

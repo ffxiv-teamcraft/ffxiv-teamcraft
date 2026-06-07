@@ -783,6 +783,15 @@
               <button nz-button (click)="resetWinePaths()">{{ 'SETTINGS.Reset_to_auto_button' | translate }}</button>
             </nz-form-control>
           </nz-form-item>
+          <nz-form-item nzFlex fxLayoutAlign="flex-start center">
+            <nz-form-label nzTooltipTitle="{{ 'SETTINGS.Wine_extra_env_tooltip' | translate }}" nzTooltipIcon="info-circle">{{ 'SETTINGS.Wine_extra_env' | translate }}</nz-form-label>
+            <nz-form-control>
+              <input nz-input
+                     [(ngModel)]="wineExtraEnv"
+                     (blur)="setWineExtraEnv(wineExtraEnv)"
+                     [placeholder]="'SETTINGS.Wine_extra_env_placeholder' | translate" />
+            </nz-form-control>
+          </nz-form-item>
         }
         <div>
           <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Character_tracking' | translate"></nz-divider>

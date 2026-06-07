@@ -114,7 +114,24 @@ export class PacketCapture {
       throw new Error('Wine paths not configured and could not be auto-detected');
     }
     const dllWinPath = this.toWinePath(this.getDeucalionDllPath(region));
-    this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin);
+    const extraEnv = this.parseWineExtraEnv(this.store.get<string>('wineExtraEnv', ''));
+    this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin, extraEnv);
+  }
+
+  /**
+   * Parses a whitespace-separated list of KEY=VALUE pairs into an env record.
+   * e.g. "WINESYNC=1 WINEFSYNC=1" → { WINESYNC: '1', WINEFSYNC: '1' }
+   * Entries that don't match KEY=VALUE are silently ignored.
+   */
+  private parseWineExtraEnv(raw: string): Record<string, string> {
+    const result: Record<string, string> = {};
+    for (const token of raw.trim().split(/\s+/)) {
+      const eq = token.indexOf('=');
+      if (eq > 0) {
+        result[token.slice(0, eq)] = token.slice(eq + 1);
+      }
+    }
+    return result;
   }
 
   private registerWinePathIpc(region: Region): void {
@@ -212,6 +229,22 @@ export class PacketCapture {
           }
         }
       });
+    });
+
+    ipcMain.on('bridge:wineenv:get', (event) => {
+      event.sender.send('bridge:wineenv:value', this.store.get<string>('wineExtraEnv', ''));
+    });
+
+    ipcMain.on('bridge:wineenv:set', (event, value: string) => {
+      this.store.set('wineExtraEnv', value ?? '');
+      event.sender.send('bridge:wineenv:value', this.store.get<string>('wineExtraEnv', ''));
+      if (this.captureInterface) {
+        try {
+          this.startBridge(region);
+        } catch (e) {
+          log.error('[bridge] Failed to restart bridge after settings change:', e);
+        }
+      }
     });
   }
 
@@ -490,7 +523,8 @@ export class PacketCapture {
       ? join(app.getAppPath(), '../../deucalion-bridge/deucalion-bridge.exe')
       : join(__dirname, '../../../deucalion-bridge/deucalion-bridge.exe');
 
-    log.info(`[bridge] spawning: ${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
+    const extraEnvStr = Object.entries(extraEnv).map(([k, v]) => `${k}=${v}`).join(' ');
+    log.info(`[bridge] spawning: ${extraEnvStr ? `${extraEnvStr} ` : ''}${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
 
     this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
       env: { ...process.env, WINEPREFIX: winePrefix, ...extraEnv }

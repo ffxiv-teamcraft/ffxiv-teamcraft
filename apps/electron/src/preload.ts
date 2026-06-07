@@ -120,6 +120,8 @@ const allowedChannels = [
   ...twoWayBinding('bridge:winebin'),
   'bridge:winebin:set',
   'bridge:winebin:reset',
+  ...twoWayBinding('bridge:wineenv'),
+  'bridge:wineenv:set',
   'proxy-rule',
   'proxy-pac',
   'always-on-top',
