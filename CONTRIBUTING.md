@@ -148,6 +148,18 @@ For this you'll need two terminals opened, bash, cmd, ps, as you want.
  - In the second terminal, run `yarn electron:start` to start electron using the built files.
  - If you're modifying the electron files or the angular files and you want to see the result in the app, simply close the app or kill the `electron:start` process and restart it.
 
+> **Note:** `yarn electron:start` only builds and runs the Electron *main process*. The window stays blank until the Angular *client* is built too, which is what `yarn build:watch` (first terminal) produces — so wait for its first output before starting Electron.
+
+### Building a Distributable
+
+To produce an installable package, use the script matching your OS:
+
+ - Windows: `yarn electron:setup:build-dev` (or `:dir` for an unpackaged build)
+ - Linux: `yarn build:appimage`
+ - macOS: `yarn build:dmg` (or `yarn build:dmg:dir` for a quick unpackaged `.app`)
+
+On macOS the game runs under Wine via [XIV on Mac](https://www.xivmac.com/); the desktop app auto-detects its FFXIV config directory and bundled Wine for file watching and packet capture.
+
 ## Important Note: Fishing Data and Allagan Reports
 
 Fishing data and allagan reports won't work in a dev env, this is due to the fact that dev env uses a separate firebase instance, which isn't able to produce the same oauth token that's used in production to communicate with the graphql API. 

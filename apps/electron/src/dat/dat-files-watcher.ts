@@ -185,6 +185,26 @@ export class DatFilesWatcher {
       // Nothing found
       return null;
     }
+    if (process.platform === 'darwin') {
+      const home = app.getPath('home');
+      // XIV on Mac (xivmac.com) runs the game under Wine and exposes the live
+      // FFXIV config — including ITEMODR.DAT — here, mirroring XIVLauncher's
+      // ffxivConfig directory on Linux.
+      const xomConfig = join(home, 'Library', 'Application Support', 'XIV on Mac', 'ffxivConfig');
+      if (existsSync(xomConfig)) return xomConfig;
+      // Fall back to the raw Wine prefix Documents location in case a future
+      // XIV on Mac version stops mirroring the config out. Wine names the user
+      // folder after the OS user, so scan whatever users the prefix contains.
+      const usersDir = join(home, 'Library', 'Application Support', 'XIV on Mac', 'wineprefix', 'drive_c', 'users');
+      if (existsSync(usersDir)) {
+        for (const user of readdirSync(usersDir)) {
+          const p = join(usersDir, user, 'Documents', 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+          if (existsSync(p)) return p;
+        }
+      }
+      // Nothing found
+      return null;
+    }
     switch (region) {
       case 'KR':
         return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - KOREA');

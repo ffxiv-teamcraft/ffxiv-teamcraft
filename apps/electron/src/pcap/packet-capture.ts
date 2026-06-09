@@ -100,12 +100,54 @@ export class PacketCapture {
   }
 
   /**
+   * Default Wine paths for XIV on Mac (xivmac.com), used when the user has not
+   * configured them manually. XIV on Mac installs to a fixed location, so we can
+   * resolve both the bundled Wine binary and the game's Wine prefix.
+   *
+   * NOTE: these defaults are unverified against a live game session — Deucalion
+   * injection requires the bridge to run in the same wineserver as ffxiv_dx11.exe
+   * and XIV on Mac's bundled Wine may need extra launch env. Treat as a starting
+   * point; the user can always override via Settings.
+   */
+  private getDefaultMacWineBin(): string {
+    return '/Applications/XIV on Mac.app/Contents/Resources/wine/bin/wine';
+  }
+
+  private getDefaultMacWinePrefix(): string {
+    return join(app.getPath('home'), 'Library', 'Application Support', 'XIV on Mac', 'wineprefix');
+  }
+
+  /**
+   * Resolves the Wine prefix/binary: an explicit store value always wins;
+   * otherwise on macOS we fall back to the XIV on Mac defaults if they exist.
+   */
+  private resolveWinePrefix(): string {
+    const configured = this.store.get<string>('winePrefix', '');
+    if (configured) return configured;
+    if (process.platform === 'darwin') {
+      const def = this.getDefaultMacWinePrefix();
+      if (existsSync(def)) return def;
+    }
+    return '';
+  }
+
+  private resolveWineBin(): string {
+    const configured = this.store.get<string>('wineBin', '');
+    if (configured) return configured;
+    if (process.platform === 'darwin') {
+      const def = this.getDefaultMacWineBin();
+      if (existsSync(def)) return def;
+    }
+    return '';
+  }
+
+  /**
    * Starts the deucalion bridge using the Wine paths from the store.
    * Throws if the paths are not configured or if spawning fails.
    */
   private startBridge(region: Region): void {
-    const winePrefix = this.store.get<string>('winePrefix', '');
-    const wineBin = this.store.get<string>('wineBin', '');
+    const winePrefix = this.resolveWinePrefix();
+    const wineBin = this.resolveWineBin();
     if (!winePrefix || !wineBin) {
       throw new Error('Wine paths not configured');
     }
@@ -115,7 +157,7 @@ export class PacketCapture {
 
   private registerWinePathIpc(region: Region): void {
     ipcMain.on('bridge:wineprefix:get', (event) => {
-      event.sender.send('bridge:wineprefix:value', this.store.get<string>('winePrefix', ''));
+      event.sender.send('bridge:wineprefix:value', this.resolveWinePrefix());
     });
 
     ipcMain.on('bridge:wineprefix:set', (event) => {
@@ -139,7 +181,7 @@ export class PacketCapture {
     });
 
     ipcMain.on('bridge:winebin:get', (event) => {
-      event.sender.send('bridge:winebin:value', this.store.get<string>('wineBin', ''));
+      event.sender.send('bridge:winebin:value', this.resolveWineBin());
     });
 
     ipcMain.on('bridge:winebin:set', (event) => {
@@ -259,8 +301,8 @@ export class PacketCapture {
       };
 
       if (process.platform !== 'win32') {
-        const winePrefix = this.store.get<string>('winePrefix', '');
-        const wineBin = this.store.get<string>('wineBin', '');
+        const winePrefix = this.resolveWinePrefix();
+        const wineBin = this.resolveWineBin();
 
         if (!winePrefix || !wineBin) {
           log.error('[pcap] One or more Wine paths are not configured:', { winePrefix, wineBin });
