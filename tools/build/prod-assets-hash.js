@@ -31,7 +31,14 @@ const twFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/asse
 const extractsPath = path.join(__dirname, '../../dist/apps/client/assets/extracts/extracts.json');
 const extractsContentPath = path.join(__dirname, '../../libs/data/src/lib/extracts/extracts.json');
 const extractsHash = hashFiles.sync({ files: [extractsContentPath] });
-fs.renameSync(extractsPath, extractsPath.replace('.json', `.${extractsHash}.json`));
+const hashedExtractsPath = extractsPath.replace('.json', `.${extractsHash}.json`);
+// Idempotent: a re-run over a cached client build (e.g. build:dmg:dir) leaves the
+// already-hashed file in place and no plain extracts.json to rename.
+if (fs.existsSync(extractsPath)) {
+  fs.renameSync(extractsPath, hashedExtractsPath);
+} else if (!fs.existsSync(hashedExtractsPath)) {
+  throw new Error(`extracts.json missing and no hashed copy found at ${hashedExtractsPath}`);
+}
 
 
 console.log(colors.green('\nGame assets hashed successfully!'));
