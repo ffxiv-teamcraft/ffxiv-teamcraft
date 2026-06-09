@@ -160,6 +160,8 @@ To produce an installable package, use the script matching your OS:
 
 On macOS the game runs under Wine via [XIV on Mac](https://www.xivmac.com/); the desktop app auto-detects its FFXIV config directory and bundled Wine for file watching and packet capture.
 
+> **Google login & the prod build:** the OAuth client and Cloud Function are hardcoded to the production project. The `:dir`/`-dev` builds use the **beta** Firebase project, so `signInWithCredential` rejects the prod-issued token with `auth/invalid-credential` ("access_token audience is not for this project"). Use the production build (`yarn build:dmg`) for a working Google login. Packet capture requires being logged in to a registered (non-Anonymous) account.
+
 ## Important Note: Fishing Data and Allagan Reports
 
 Fishing data and allagan reports won't work in a dev env, this is due to the fact that dev env uses a separate firebase instance, which isn't able to produce the same oauth token that's used in production to communicate with the graphql API. 
