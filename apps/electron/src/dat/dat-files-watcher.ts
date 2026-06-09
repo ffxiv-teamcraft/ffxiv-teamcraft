@@ -92,7 +92,11 @@ export class DatFilesWatcher {
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
-    if (event === 'change' && filename?.includes('FFXIV_CHR')) {
+    // The game saves ITEMODR.DAT atomically (write .new, rename .DAT->.old,
+    // rename .new->.DAT). Windows/Linux surface this as a 'change' event, but
+    // macOS (FSEvents) reports only 'rename'. Accept both; the .endsWith() and
+    // content-hash dedupe below already ignore the transient .old/.new files.
+    if ((event === 'change' || event === 'rename') && filename?.includes('FFXIV_CHR')) {
       const contentId = DatFilesWatcher.CONTENT_ID_REGEXP.exec(filename)[1];
       if (this.mainWindow.win) {
         if (filename.endsWith('ITEMODR.DAT')) {
