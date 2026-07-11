@@ -603,7 +603,15 @@
       "Voyage_tracker": "Control de viajes",
       "Reset_timer": "Reiniciar el temporizador",
       "Fish_train": "Fish train"
-    }
+    },
+    "Wine_prefix": "Wine/Proton prefix directory",
+    "Wine_binary": "Wine binary",
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "Cuenta",
@@ -1980,12 +1988,16 @@
     "Title": "Guía de Gastos de Monedas",
     "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Elija una moneda",
-    "You_can_buy": "Puede comprar {{amount}}",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "La guía de gasto de monedas no está funcionando más",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Loading trades data for the selected currency",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "X_sold_last_week": "{{amount}} sold last week",
     "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
@@ -3108,8 +3120,14 @@
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
       "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
-      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it."
-    }
+      "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it.",
+      "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
+      "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
+      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
+    },
+    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
+    "BRIDGE_CRASHED": "Packet capture crashed",
+    "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",

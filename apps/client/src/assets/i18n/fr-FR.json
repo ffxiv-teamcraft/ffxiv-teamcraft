@@ -603,7 +603,15 @@
       "Voyage_tracker": "Notifications de voyages",
       "Reset_timer": "Rappels",
       "Fish_train": "Trains de pêche"
-    }
+    },
+    "Wine_prefix": "Wine/Proton prefix directory",
+    "Wine_binary": "Wine binary",
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "Compte",
@@ -1980,12 +1988,16 @@
     "Title": "Dépense de devises",
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
-    "You_can_buy": "Vous pouvez en acheter {{amount}}",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "Le guide de dépense de devises ne fonctionne plus",
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix.",
     "Loading_data": "Chargement des données d'échange pour la devise sélectionnée",
     "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets",
-    "X_sold_last_week": "{{amount}} vendu la semaine dernière",
     "No_trades": "Cette devise ne peut pas être échangée avec quelque chose qui peut être vendu au tableau des ventes"
   },
   "FOOD_PICKER": {
@@ -3108,8 +3120,14 @@
       "GAME_NOT_RUNNING": "Vérifiez que le jeu est bien démarré et qu'il n'a pas été lancé en tant qu'administrateur (ou, dans ce cas, démarrez Teamcraft en tant qu'administrateur). <br>Si ce problème persiste, signalez le problème dans le salon #troubleshooting sur Discord avec une capture d'écran des messages précédents.",
       "RESTART_GAME": "Veuillez redémarrer le jeu pour pouvoir exécuter la capture de paquets correctement.",
       "GAME_RUNNING_AS_ADMIN": "Le jeu est lancé en tant qu'administrateur, veuillez le redémarrer normalement ou redémarrer Teamcraft en tant qu'administrateur.",
-      "MISSING_INJECTOR": "L'outil de capture de paquets est manquant, probablement supprimé par votre antivirus à cause d'un faux positif, assurez-vous d'en exclure le dossier d'installation de Teamcraft et de le réinstaller."
-    }
+      "MISSING_INJECTOR": "L'outil de capture de paquets est manquant, probablement supprimé par votre antivirus à cause d'un faux positif, assurez-vous d'en exclure le dossier d'installation de Teamcraft et de le réinstaller.",
+      "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
+      "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
+      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
+    },
+    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
+    "BRIDGE_CRASHED": "Packet capture crashed",
+    "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "Vous devez récolter cet objet auprès de l'un des animaux suivants dans le pâturage de votre Félicité Insulaire",

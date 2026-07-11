@@ -603,7 +603,15 @@
       "Voyage_tracker": "远航探索",
       "Reset_timer": "重置计时器",
       "Fish_train": "渔车"
-    }
+    },
+    "Wine_prefix": "Wine/Proton prefix directory",
+    "Wine_binary": "Wine binary",
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "账号",
@@ -1980,12 +1988,16 @@
     "Title": "货币消费指南",
     "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
     "Pick_currency": "选择一个币种",
-    "You_can_buy": "您可以购买 {{amount}}",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "货币消费指南已失效",
     "Disabled_description": "由于 Square Enix 禁止我们读取交易板信息，此功能已关闭。如您有意见，请向 Square Enix 投诉。",
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
-    "X_sold_last_week": "上周已售出 {{amount}} 个",
     "No_trades": "该货币无法与可在交易板上出售的物品交换"
   },
   "FOOD_PICKER": {
@@ -3108,8 +3120,14 @@
       "GAME_NOT_RUNNING": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
       "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
       "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。",
-      "MISSING_INJECTOR": "数据包捕获工具丢失，极有可能因为误报病毒而被杀毒软件移除。 确保将Teamcraft的安装文件夹加入白名单并重新安装。"
-    }
+      "MISSING_INJECTOR": "数据包捕获工具丢失，极有可能因为误报病毒而被杀毒软件移除。 确保将Teamcraft的安装文件夹加入白名单并重新安装。",
+      "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
+      "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
+      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
+    },
+    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
+    "BRIDGE_CRASHED": "Packet capture crashed",
+    "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "您需要从以下的牧场动物中获取该物品",

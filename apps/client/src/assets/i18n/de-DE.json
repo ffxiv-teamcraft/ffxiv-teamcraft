@@ -603,7 +603,15 @@
       "Voyage_tracker": "Erkundungs-Tracker",
       "Reset_timer": "Timer-Zurücksetzung",
       "Fish_train": "Fischereizug"
-    }
+    },
+    "Wine_prefix": "Wine/Proton prefix directory",
+    "Wine_binary": "Wine binary",
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "Konto",
@@ -1980,12 +1988,16 @@
     "Title": "Währungsumrechner",
     "Description": "Du hast zu viel von einer bestimmten Währung? Wähle die Währung aus, gib die Anzahl ein, wähle einen Server aus und wir zeigen dir, mit welchem Gegenstand du am meisten Gil bekommst!",
     "Pick_currency": "Währung auswählen",
-    "You_can_buy": "Du kannst {{amount}} kaufen",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix, da wir nichts daran ändern können.",
     "Loading_data": "Lade Handelsdaten für die ausgewählte Währung",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
-    "X_sold_last_week": "{{amount}} verkauft in der letzten Woche",
     "No_trades": "Diese Währung kann nicht mit etwas gehandelt werden, das auf dem Marktbrett verkauft werden kann"
   },
   "FOOD_PICKER": {
@@ -3108,8 +3120,14 @@
       "GAME_NOT_RUNNING": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.",
       "RESTART_GAME": "Bitte starte das Spiel neu, um die Paketerfassung korrekt ausführen zu können.",
       "GAME_RUNNING_AS_ADMIN": "Das Spiel läuft als Admin. Bitte starte es entweder normal neu oder starte Teamcraft als Administrator neu.",
-      "MISSING_INJECTOR": "Die Werkzeuge zur Paketerfassung fehlen, wahrscheinlich wurde sie vom Antivirus wegen eines Falschalarms entfernt. Vergewissere dich, dass du den Installationsordner von Teamcraft auf der Whitelist hast und installiere sie neu."
-    }
+      "MISSING_INJECTOR": "Die Werkzeuge zur Paketerfassung fehlen, wahrscheinlich wurde sie vom Antivirus wegen eines Falschalarms entfernt. Vergewissere dich, dass du den Installationsordner von Teamcraft auf der Whitelist hast und installiere sie neu.",
+      "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
+      "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
+      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
+    },
+    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
+    "BRIDGE_CRASHED": "Packet capture crashed",
+    "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "Du musst diesen Gegenstand von einem der folgenden Tiere in der Weide deines Inselparadieses sammeln",
