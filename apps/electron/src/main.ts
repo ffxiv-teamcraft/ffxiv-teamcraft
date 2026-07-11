@@ -9,6 +9,7 @@ import { TeamcraftDesktopApp } from './teamcraft-desktop-app';
 import { ProxyManager } from './tools/proxy-manager';
 import log from 'electron-log';
 import { app, ipcMain } from 'electron';
+import { readFileSync } from 'fs';
 import { DatFilesWatcher } from './dat/dat-files-watcher';
 import { MetricsSystem } from './ipc/metrics-system';
 import { AutoUpdater } from './update/auto-updater';
@@ -24,10 +25,26 @@ log.log(`START`);
 // Small optimizations
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
-// Force XWayland on Wayland sessions so that setAlwaysOnTop() works for overlay windows
-if (process.platform === 'linux' &&
-    (process.env.WAYLAND_DISPLAY || process.env.XDG_SESSION_TYPE === 'wayland')) {
-  app.commandLine.appendSwitch('ozone-platform', 'x11');
+if (process.platform === 'linux') {
+  // Ubuntu 23.10+ enables an AppArmor policy that restricts unprivileged user
+  // namespaces, which breaks the Chromium sandbox. Detect this at runtime by
+  // reading the kernel knob so we only disable the sandbox on distros that
+  // actually need it (e.g. Ubuntu/Kubuntu), leaving it intact on Arch, Fedora,
+  // etc. where it works correctly.
+  try {
+    const restricted = readFileSync('/proc/sys/kernel/apparmor_restrict_unprivileged_userns', 'utf8').trim();
+    if (restricted === '1') {
+      log.info('[sandbox] AppArmor unprivileged userns restriction detected; disabling Chromium sandbox');
+      app.commandLine.appendSwitch('no-sandbox');
+    }
+  } catch {
+    // Kernel knob absent — distro does not apply the restriction; leave sandbox enabled.
+  }
+
+  // Force XWayland on Wayland sessions so that setAlwaysOnTop() works for overlay windows.
+  if (process.env.WAYLAND_DISPLAY || process.env.XDG_SESSION_TYPE === 'wayland') {
+    app.commandLine.appendSwitch('ozone-platform', 'x11');
+  }
 }
 ipcMain.setMaxListeners(0);
 
