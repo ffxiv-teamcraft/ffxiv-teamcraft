@@ -606,7 +606,12 @@
     },
     "Wine_prefix": "Wine/Proton prefix directory",
     "Wine_binary": "Wine binary",
-    "Path_not_found": "Not found"
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "계정",
@@ -1983,12 +1988,16 @@
     "Title": "화폐 소비 가이드",
     "Description": "석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
     "Pick_currency": "교환용 아이템 선택",
-    "You_can_buy": "{{amount}}개 구매 가능",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
     "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 작업할 수 없습니다.",
     "Loading_data": "선택된 화폐의 데이터 로딩 중",
     "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
-    "X_sold_last_week": "지난 주 {{amount}} 개 판매",
     "No_trades": "이 화폐는 교환하여 장터에 판매 가능한 아이템을 얻을 수 없습니다."
   },
   "FOOD_PICKER": {
