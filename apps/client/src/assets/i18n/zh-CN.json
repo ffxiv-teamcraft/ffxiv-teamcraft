@@ -3122,11 +3122,11 @@
       "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。",
       "MISSING_INJECTOR": "数据包捕获工具丢失，极有可能因为误报病毒而被杀毒软件移除。 确保将Teamcraft的安装文件夹加入白名单并重新安装。",
       "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
-      "BRIDGE_BRIDGE_ERROR": "Check your Wine settings and re-enable packet capture. If the issue persists, check the application logs for more details.",
+      "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
       "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
     },
     "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
-    "BRIDGE_BRIDGE_ERROR": "Packet capture failed to start",
+    "BRIDGE_CRASHED": "Packet capture crashed",
     "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
