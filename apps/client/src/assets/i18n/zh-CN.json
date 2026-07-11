@@ -606,7 +606,12 @@
     },
     "Wine_prefix": "Wine/Proton prefix directory",
     "Wine_binary": "Wine binary",
-    "Path_not_found": "Not found"
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "账号",
@@ -1983,12 +1988,16 @@
     "Title": "货币消费指南",
     "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
     "Pick_currency": "选择一个币种",
-    "You_can_buy": "您可以购买 {{amount}}",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "货币消费指南已失效",
     "Disabled_description": "由于 Square Enix 禁止我们读取交易板信息，此功能已关闭。如您有意见，请向 Square Enix 投诉。",
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
-    "X_sold_last_week": "上周已售出 {{amount}} 个",
     "No_trades": "该货币无法与可在交易板上出售的物品交换"
   },
   "FOOD_PICKER": {
