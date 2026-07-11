@@ -551,14 +551,14 @@ export class PacketCapture {
     this.bridgeProcess.on('exit', (code, signal) => {
       log.info(`[bridge] exited code=${code} signal=${signal}`);
       this.bridgeProcess = null;
-      // code=null means we killed it intentionally (SIGTERM). Any explicit
-      // non-zero exit code means the bridge itself detected an error.
-      if (code !== null && code !== 0 && this.captureInterface) {
+      // We only ever kill the bridge ourselves with the default SIGTERM, so any other
+      // signal (e.g. SIGFPE, SIGSEGV) means it actually crashed, not that we stopped it.
+      if (((code !== null && code !== 0) || (signal !== null && signal !== 'SIGTERM')) && this.captureInterface) {
         log.error(`[bridge] Abnormal exit (stderr: ${stderrBuffer.trim()})`);
         this.store.set('machina', false);
         this.mainWindow.win.webContents.send('toggle-pcap:value', false);
         this.mainWindow.win.webContents.send('pcap:status', 'error');
-        this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_ERROR' });
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_CRASHED' });
         this.stop();
       }
     });
