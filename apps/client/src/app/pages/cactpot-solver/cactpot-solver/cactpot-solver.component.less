@@ -1,29 +1,74 @@
+@import '../../../../common';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .header {
-  padding: 16px;
-  border-bottom: 2px solid #0f3460;
+  padding: 24px 20px;
+  border-bottom: 1px solid #444;
   flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.02);
 
   h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
-    color: #e2e8f0;
-    letter-spacing: 1px;
+    color: fade(#fff, 85%);
+    letter-spacing: 0.5px;
+  }
+
+  @media @mobile {
+    padding: 16px 12px;
+    
+    h2 {
+      font-size: 22px;
+    }
   }
 }
 
 .board-section {
-  padding: 20px;
-  min-height: 500px; // Erhöht von 400px
+  padding: 24px;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 550px;
+
+  @media @mobile {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  @media @tablet {
+    padding: 20px;
+  }
 }
 
 .payout-section {
-  padding: 20px;
-  min-height: 500px; // Erhöht von 400px
+  padding: 24px;
+  flex: 1;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding-top: 40px;
+  min-height: 550px;
+
+  @media @mobile {
+    padding: 16px;
+    padding-top: 16px;
+    min-height: auto;
+  }
+
+  @media @tablet {
+    padding: 20px;
+  }
+}
+
+@media @mobile {
+  div[fxLayout="row"] {
+    flex-direction: column !important;
+  }
 }
