@@ -25,6 +25,15 @@ export class BoardAreaComponent implements OnChanges {
   }
 
   onCellChange(row: number, col: number, value: number | null): void {
+    const revealedCount = this.solver.getRevealedCount(this.board);
+    const oldValue = this.board[row][col].value;
+    
+    // Prevent adding a new number when already 4 numbers are revealed
+    if (value !== null && oldValue === null && revealedCount >= 4) {
+      this.errorMessage = 'Maximum of 4 numbers reached. Click Reset to start over.';
+      return;
+    }
+
     this.board[row][col].value = value;
     this.errorMessage = '';
 
@@ -44,15 +53,17 @@ export class BoardAreaComponent implements OnChanges {
   updateSuggestions(): void {
     const count = this.solver.getRevealedCount(this.board);
 
-    if (count < 4) {
+    // Only show suggestions after at least one number is revealed
+    if (count > 0 && count < 4) {
       this.suggestedCell = this.solver.suggestNextReveal(this.board);
       this.bestLine = null;
     } else if (count === 4) {
       this.suggestedCell = null;
       this.bestLine = this.solver.getBestLine(this.board);
-    } else if (count > 4) {
-      this.errorMessage = 'Only a maximum of 4 numbers allowed';
-      this.resetBoard();
+    } else {
+      // count === 0 or count > 4
+      this.suggestedCell = null;
+      this.bestLine = null;
     }
   }
 

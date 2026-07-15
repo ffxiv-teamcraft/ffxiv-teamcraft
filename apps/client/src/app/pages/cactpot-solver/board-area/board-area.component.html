@@ -25,6 +25,7 @@
         <select [(ngModel)]="cell.value"
                 (ngModelChange)="onCellChange(cell.row, cell.col, $event)"
                 class="number-picker"
+                [disabled]="getRevealedCount() >= 4 && cell.value === null"
                 [style.background]="cell.value !== null ? 'rgba(72, 187, 120, 0.15)' : 'transparent'">
           <option [value]="null">-</option>
           <option *ngFor="let num of availableNumbers" [value]="num">{{ num }}</option>
