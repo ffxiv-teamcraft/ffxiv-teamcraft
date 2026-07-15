@@ -3297,7 +3297,8 @@
     "Reminders": "Rappels",
     "About": "À propos",
     "Fish_Train": "Train de pêche",
-    "Inventory": "Inventaire"
+    "Inventory": "Inventaire",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",

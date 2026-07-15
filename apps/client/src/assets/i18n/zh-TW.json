@@ -3297,7 +3297,8 @@
     "Reminders": "重置倒計時",
     "About": "關於",
     "Fish_Train": "漁旅",
-    "Inventory": "背包"
+    "Inventory": "背包",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "宣佈 Teamcrafter：一款專注於製作與採集的 Roguelike 遊戲",
