@@ -2,16 +2,23 @@
 
 .board-container {
   width: 100%;
-  max-width: 600px;
-  padding: 0;
+  max-width: 100%;
+  padding: 16px;
   margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 
   @media @mobile {
     max-width: 100%;
+    padding: 12px;
   }
 
   @media @tablet {
-    max-width: 550px;
+    max-width: 100%;
+    padding: 14px;
   }
 }
 
@@ -31,17 +38,25 @@
 
 .board-grid {
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 1;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid #444;
-  padding: 20px;
+  padding: 32px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 
   @media @mobile {
-    padding: 12px;
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
     border-radius: 10px;
+  }
+
+  @media @tablet {
+    padding: 24px;
   }
 }
 
@@ -206,5 +221,3 @@
     font-size: 13px;
   }
 }
-
-// Bereits in den einzelnen Selektoren definiert

@@ -8,37 +8,38 @@
 
   <!-- Board Grid - Jetzt mit Zeilen und Spalten -->
   <div class="board-grid" fxLayout="column" fxLayoutGap="8px" fxLayoutAlign="center center">
-    <div *ngFor="let row of board; let rowIndex = index" 
-         fxLayout="row" 
-         fxLayoutGap="8px" 
-         fxLayoutAlign="center center"
-         class="board-row">
-      
-      <div *ngFor="let cell of row; let colIndex = index"
-           fxFlex="0 0 calc(33.333% - 8px)"
-           fxLayout="row"
-           fxLayoutAlign="center center"
-           class="cell"
-           [class.suggested]="isSuggestedCell(cell.row, cell.col)"
-           [class.in-best-line]="isInBestLine(cell.row, cell.col)">
+    @for (row of board; track $index) {
+      <div fxLayout="row" 
+          fxLayoutGap="8px" 
+          fxLayoutAlign="center center"
+          class="board-row">
+        
+        <div *ngFor="let cell of row; let colIndex = index"
+            fxFlex="0 0 calc(33.333% - 8px)"
+            fxLayout="row"
+            fxLayoutAlign="center center"
+            class="cell"
+            [class.suggested]="isSuggestedCell(cell.row, cell.col)"
+            [class.in-best-line]="isInBestLine(cell.row, cell.col)">
 
-        <select [(ngModel)]="cell.value"
-                (ngModelChange)="onCellChange(cell.row, cell.col, $event)"
-                class="number-picker"
-                [disabled]="getRevealedCount() >= 4 && cell.value === null"
-                [style.background]="cell.value !== null ? 'rgba(72, 187, 120, 0.15)' : 'transparent'">
-          <option [value]="null">-</option>
-          <option *ngFor="let num of availableNumbers" [value]="num">{{ num }}</option>
-        </select>
+          <select [(ngModel)]="cell.value"
+                  (ngModelChange)="onCellChange(cell.row, cell.col, $event)"
+                  class="number-picker"
+                  [disabled]="getRevealedCount() >= 4 && cell.value === null"
+                  [style.background]="cell.value !== null ? 'rgba(72, 187, 120, 0.15)' : 'transparent'">
+            <option [value]="null">-</option>
+            <option *ngFor="let num of availableNumbers" [value]="num">{{ num }}</option>
+          </select>
+        </div>
       </div>
-    </div>
+    }
   </div>
 
   <!-- Actions -->
   <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" class="action-bar">
-    <button class="btn-reset" (click)="resetBoard()" [nzTooltipTitle]="'New_List' | translate" [nzType]="'primary'" nz-button
+    <button (click)="resetBoard()" [nzType]="'primary'" nz-button
               nz-tooltip>
-      Reset
+      {{ 'CACTPOT_SOLVER.Reset_Button' | translate }}
     </button>
   </div>
 </div>

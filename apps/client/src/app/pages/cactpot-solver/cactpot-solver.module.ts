@@ -9,6 +9,7 @@ import { BoardAreaComponent } from './board-area/board-area.component';
 import { PayoutAreaComponent } from './payout-area/payout-area.component';
 import { FormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipComponent } from "ng-zorro-antd/tooltip";
 
 const routes: Routes = [{
   path: '',
@@ -31,6 +32,7 @@ const routes: Routes = [{
     FlexLayoutModule,
     TranslateModule,
     NzButtonModule,
+    NzToolTipComponent,
     PipesModule,
     FormsModule,
     RouterModule.forChild(routes)
