@@ -27,11 +27,102 @@ export class CactpotSolverService {
   ];
 
   /**
+   * Findes the best line based on the expected value
+   * @param board The Board with all values
+   * @returns Returns the best Line or null
+   */
+  getBestLine(board: BoardCell[][]): LineResult | null {
+    const lines = this.calculateAllLines(board);
+
+    //Debug Output
+    console.log('=== All Lines with expected values');
+    lines.forEach((line, index) => {
+      const cellPositions = line.cells.map(c => `(${c.row+1},${c.col+1})`).join(',');
+      const knownValues = line.cells.filter(c => c.value !== null && c.value !== undefined).map(c => this.getCellValue(c));
+      const unknownCount = line.cells.filter(c => c.value === null).length;
+      console.log(`${index + 1}: ${cellPositions} | Bekannt: [${knownValues.join(',')}] | Unbekannt: ${unknownCount} | Erwarteter Wert: ${line.expectedValue.toFixed(2)} | Aktuelle Summe: ${line.sum}`);
+    })
+
+    return lines.length > 0 ? lines[0] : null;
+  }
+
+  /**
+   * Suggests the next position to reveal
+   * @param board The Board with all values
+   * @returns Returns the next cell to reveal
+   */
+  suggestNextReveal(board: BoardCell[][]): { row: number; col: number } | null {
+    const emptyCells: { row: number; col: number; }[] = [];
+    for (let row = 0; row < 3; row++)
+      for (let col = 0; col < 3; col++)
+        if (board[row][col].value === null)
+          emptyCells.push({ row, col });
+    
+    if (emptyCells.length === 0) return null;
+
+    // If less then 4 numbers, choose the cell with highest priority
+    const knownCount = board.flat().filter(c => c.value !== null).length;
+
+    if (knownCount < 4) {
+      // Choose the cell, with the most promising lines
+      const lines = this.calculateAllLines(board);
+      const cellScores = new Map<string, number>();
+
+      for (const line of lines)
+        for (const cell of line.cells)
+          if (cell.value === null) {
+            const key = `${cell.row},${cell.col}`;
+            cellScores.set(key, (cellScores.get(key) || 0) + line.expectedValue);
+          }
+
+      let bestScore = -1;
+      let bestCell: { row: number; col: number; } | null = null;
+
+      console.log('=== Cell Scores for next Draw ===');
+      for (const [key, score] of cellScores) {
+        const [row, col] = key.split(',').map(Number);
+        console.log(`(${row+1},${col+1}): ${score.toFixed(2)}`);
+        if (score > bestScore) {
+          bestScore = score;
+          bestCell = { row, col };
+        }
+      }
+
+      return bestCell || emptyCells[0];
+    }
+
+    return emptyCells[0];
+  }
+
+  /**
+   * Checks if the board is valid (no double numbers)
+   * @param board The Board with all values
+   * @returns Returns true if the board is valid, false if not
+   */
+  isValidBoard(board: BoardCell[][]): boolean {
+    const values = board.flat()
+        .filter(cell => cell.value !== null && cell.value !== undefined)
+        .map(cell => this.getCellValue(cell));
+
+    const uniqueValues = new Set(values);
+    return values.length === uniqueValues.size;
+  }
+
+  /**
+   * Returns the Count of revealed numbers
+   * @param board The Board with all values
+   * @returns Returns the amount of revealed numbers
+   */
+  getRevealedCount(board: BoardCell[][]): number {
+    return board.flat().filter(cell => cell.value !== null).length;
+  }
+
+  /**
    * Calculates the payout for a given sum
    * @param sum The Sum that needs to be calculated
    * @returns Returns the calculated MGP Value for the sum
    */
-  getPayoutForSum(sum: number): number {
+  private getPayoutForSum(sum: number): number {
     return this.payoutMap.get(sum) || 0;
   }
 
@@ -40,7 +131,7 @@ export class CactpotSolverService {
    * @param board The Board with the used numbers
    * @returns Returns a list of unused numbers
    */
-  getAvailableNumbers(board: BoardCell[][]): number[] {
+  private getAvailableNumbers(board: BoardCell[][]): number[] {
     const usedNumbers = new Set<number>();
     board.flat().forEach(cell => {
       if (cell.value !== null && cell.value !== undefined)
@@ -53,28 +144,6 @@ export class CactpotSolverService {
         available.push(i);
 
     return available;
-  }
-
-  /**
-   * Calculates all combinations of k numbers from an array
-   * @param arr The Array to calculate from
-   * @param k The amount of numbers that present possible calculations
-   * @returns Returns all possible Combinations for the given numbers
-   */
-  private getPermutations(arr: number[], k: number): number[][] {
-    if (k === 0) return [[]];
-    if (arr.length === 0) return [];
-
-    const result: number[][] = [];
-    for (let i = 0; i < arr.length; i++) {
-      const current = arr[i];
-      const remaining = [...arr.slice(0, i), ...arr.slice(i + 1)];
-      const perms = this.getPermutations(remaining, k - 1);
-      for (const perm of perms)
-        result.push([current, ...perm]);
-    }
-
-    return result;
   }
 
   /**
@@ -93,7 +162,7 @@ export class CactpotSolverService {
    * @param availableNumbers The available numbers
    * @returns Returns the expected Payout Value of the Line
    */
-  calculateExpectedValue(line: BoardCell[], availableNumbers: number[]): number {
+  private calculateExpectedValue(line: BoardCell[], availableNumbers: number[]): number {
     const a = this.getCellValue(line[0]);
     const b = this.getCellValue(line[1]);
     const c = this.getCellValue(line[2]);
@@ -235,7 +304,7 @@ export class CactpotSolverService {
    * @param board The Board with the corresponding values
    * @returns Returns the Results of the Lines
    */
-  calculateAllLines(board: BoardCell[][]): LineResult[] {
+  private calculateAllLines(board: BoardCell[][]): LineResult[] {
     const availableNumbers = this.getAvailableNumbers(board);
     const results: LineResult[] = [];
 
@@ -255,107 +324,5 @@ export class CactpotSolverService {
     }
 
     return results.sort((a, b) => b.expectedValue - a.expectedValue);
-  }
-
-  /**
-   * Findes the best line based on the expected value
-   * @param board The Board with all values
-   * @returns Returns the best Line or null
-   */
-  getBestLine(board: BoardCell[][]): LineResult | null {
-    const lines = this.calculateAllLines(board);
-
-    //Debug Output
-    console.log('=== All Lines with expected values');
-    lines.forEach((line, index) => {
-      const cellPositions = line.cells.map(c => `(${c.row+1},${c.col+1})`).join(',');
-      const knownValues = line.cells.filter(c => c.value !== null && c.value !== undefined).map(c => this.getCellValue(c));
-      const unknownCount = line.cells.filter(c => c.value === null).length;
-      console.log(`${index + 1}: ${cellPositions} | Bekannt: [${knownValues.join(',')}] | Unbekannt: ${unknownCount} | Erwarteter Wert: ${line.expectedValue.toFixed(2)} | Aktuelle Summe: ${line.sum}`);
-    })
-
-    return lines.length > 0 ? lines[0] : null;
-  }
-
-  /**
-   * Suggests the next position to reveal
-   * @param board The Board with all values
-   * @returns Returns the next cell to reveal
-   */
-  suggestNextReveal(board: BoardCell[][]): { row: number; col: number } | null {
-    const emptyCells: { row: number; col: number; }[] = [];
-    for (let row = 0; row < 3; row++)
-      for (let col = 0; col < 3; col++)
-        if (board[row][col].value === null)
-          emptyCells.push({ row, col });
-    
-    if (emptyCells.length === 0) return null;
-
-    // If less then 4 numbers, choose the cell with highest priority
-    const knownCount = board.flat().filter(c => c.value !== null).length;
-
-    if (knownCount < 4) {
-      // Choose the cell, with the most promising lines
-      const lines = this.calculateAllLines(board);
-      const cellScores = new Map<string, number>();
-
-      for (const line of lines)
-        for (const cell of line.cells)
-          if (cell.value === null) {
-            const key = `${cell.row},${cell.col}`;
-            cellScores.set(key, (cellScores.get(key) || 0) + line.expectedValue);
-          }
-
-      let bestScore = -1;
-      let bestCell: { row: number; col: number; } | null = null;
-
-      console.log('=== Cell Scores for next Draw ===');
-      for (const [key, score] of cellScores) {
-        const [row, col] = key.split(',').map(Number);
-        console.log(`(${row+1},${col+1}): ${score.toFixed(2)}`);
-        if (score > bestScore) {
-          bestScore = score;
-          bestCell = { row, col };
-        }
-      }
-
-      return bestCell || emptyCells[0];
-    }
-
-    return emptyCells[0];
-  }
-
-  /**
-   * Calculates the expected value for a specified line (for display purposes)
-   * @param line The line that needs to be shown
-   * @param board The Board containing all Values
-   * @returns The Expected Value of the Line
-   */
-  calculateLineExpectedValue(line: BoardCell[], board: BoardCell[][]): number {
-    const availableNumbers = this.getAvailableNumbers(board);
-    return this.calculateExpectedValue(line, availableNumbers);
-  }
-
-  /**
-   * Checks if the board is valid (no double numbers)
-   * @param board The Board with all values
-   * @returns Returns true if the board is valid, false if not
-   */
-  isValidBoard(board: BoardCell[][]): boolean {
-    const values = board.flat()
-        .filter(cell => cell.value !== null && cell.value !== undefined)
-        .map(cell => this.getCellValue(cell));
-
-    const uniqueValues = new Set(values);
-    return values.length === uniqueValues.size;
-  }
-
-  /**
-   * Returns the Count of revealed numbers
-   * @param board The Board with all values
-   * @returns Returns the amount of revealed numbers
-   */
-  getRevealedCount(board: BoardCell[][]): number {
-    return board.flat().filter(cell => cell.value !== null).length;
   }
 }

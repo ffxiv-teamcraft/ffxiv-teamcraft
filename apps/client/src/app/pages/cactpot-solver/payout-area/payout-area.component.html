@@ -9,26 +9,28 @@
           <span>Sum</span>
           <span>MGP</span>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" 
-             class="payout-row" 
-             *ngFor="let entry of leftColumn">
-          <span class="sum">{{ entry.sum }}</span>
-          <span class="mgp">{{ entry.mgp }}</span>
-        </div>
+        @for (entry of leftColumn; track $index) {
+          <div fxLayout="row" fxLayoutAlign="space-between center" 
+              class="payout-row">
+            <span class="sum">{{ entry.sum }}</span>
+            <span class="mgp">{{ entry.mgp }}</span>
+          </div>
+        }
       </div>
       
-      <!-- Rechte Spalte -->
+      <!-- Right Column -->
       <div fxFlex="0 1 auto" fxLayout="column" fxLayoutGap="1px" class="payout-column">
         <div fxLayout="row" fxLayoutAlign="space-between center" class="payout-header">
           <span>Sum</span>
           <span>MGP</span>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" 
-             class="payout-row" 
-             *ngFor="let entry of rightColumn">
-          <span class="sum">{{ entry.sum }}</span>
-          <span class="mgp">{{ entry.mgp }}</span>
-        </div>
+        @for (entry of rightColumn; track $index) {
+          <div fxLayout="row" fxLayoutAlign="space-between center" 
+             class="payout-row">
+            <span class="sum">{{ entry.sum }}</span>
+            <span class="mgp">{{ entry.mgp }}</span>
+          </div>
+        }
       </div>
     </div>
   </div>

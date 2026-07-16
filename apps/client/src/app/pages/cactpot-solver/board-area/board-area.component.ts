@@ -17,7 +17,6 @@ export class BoardAreaComponent implements OnChanges {
   availableNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   suggestedCell: { row: number; col: number } | null = null;
   bestLine: LineResult | null = null;
-  errorMessage = '';
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['board'])
@@ -29,17 +28,12 @@ export class BoardAreaComponent implements OnChanges {
     const oldValue = this.board[row][col].value;
     
     // Prevent adding a new number when already 4 numbers are revealed
-    if (value !== null && oldValue === null && revealedCount >= 4) {
-      this.errorMessage = 'Maximum of 4 numbers reached. Click Reset to start over.';
-      return;
-    }
+    if (value !== null && oldValue === null && revealedCount >= 4) return;
 
     this.board[row][col].value = value;
-    this.errorMessage = '';
 
     // Check for duplicate numbers
     if (!this.solver.isValidBoard(this.board)) {
-      this.errorMessage = 'No double numbers allowed';
       // Reset the value
       this.board[row][col].value = null;
       this.boardChange.emit(this.board);
@@ -74,7 +68,6 @@ export class BoardAreaComponent implements OnChanges {
 
     this.suggestedCell = null;
     this.bestLine = null;
-    this.errorMessage = '';
     this.boardChange.emit(this.board);
     this.boardReset.emit();
   }
@@ -96,13 +89,5 @@ export class BoardAreaComponent implements OnChanges {
 
   formatLine(cells: BoardCell[]): string {
     return cells.map(cell => `(${cell.row + 1},${cell.col + 1})`).join(', ');
-  }
-
-  // Debug Method for Console
-  logBoardState(): void {
-    console.log('Board:', this.board);
-    console.log('Revealed count:', this.getRevealedCount());
-    console.log('Suggested Cell:', this.suggestedCell);
-    console.log('Best Line:', this.bestLine);
   }
 }
