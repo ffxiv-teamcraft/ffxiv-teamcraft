@@ -47,7 +47,7 @@ import { Region } from '@ffxiv-teamcraft/types';
 import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
 import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
-//import { version } from '../environments/version';
+import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { SupportService } from './core/patreon/support.service';
 import { UpdaterStatus } from './model/other/updater-status';
@@ -585,7 +585,7 @@ export class AppComponent implements OnInit {
             })
             .afterClose.pipe(
               tap(() => {
-                this.settings.lastChangesSeen = "11.4.25";
+                this.settings.lastChangesSeen = version;
               })
             );
         })
@@ -687,7 +687,7 @@ export class AppComponent implements OnInit {
     }
 
     const lastChangesSeen = this.settings.lastChangesSeen;
-    if (this.settings.autoShowPatchNotes && semver.gt("11.4.25", lastChangesSeen) && !this.overlay && !IS_HEADLESS) {
+    if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay && !IS_HEADLESS) {
       this.showPatchNotes();
     }
     this.dataLoaded = true;
