@@ -26,6 +26,10 @@
   "Guides_links": "Guias da Teamcraft",
   "Db_ban": "Você não tem permissão para postar comentários no banco de dados devido a sua atividade anterior nos comentários do banco de dados. Se você gostaria de discutir este banimento, por favor envie uma mensagem direta a Miu no Discord.",
   "Sensitive_operation": "Este procedimento requer confirmação. Por favor, inicie a sessão novamente",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já em uso",
     "auth/email-already-in-use": "E-mail já em uso",

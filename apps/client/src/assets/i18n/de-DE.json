@@ -26,6 +26,10 @@
   "Guides_links": "Teamcraft Guides",
   "Db_ban": "Du hast aufgrund deiner vorherigen Aktivitäten keine Berechtigung, Kommentare in den Datenbank zu veröffentlichen. Wenn du die Sperre diskutieren möchtest, schreibe Miu#1568 auf Discord eine Nachricht.",
   "Sensitive_operation": "Für die gewünschte Operation, musst du dich erneut anmelden, um zu bestätigen, dass du derjenige bist, der es tut. Bitte melde dich erneut an.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Auszahlung",
+    "Reset_Button": "Zurücksetzen"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",

@@ -26,6 +26,10 @@
   "Guides_links": "Teamcraft 指南",
   "Db_ban": "由於您先前在資料庫評論中的活動，您沒有權限在資料庫上發佈評論。如果您想討論這次封禁，請在 Discord 上私訊 Miu#1568。",
   "Sensitive_operation": "您必須重新登入以確認此操作是您本人執行的。請再次登入。",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "帳號已被使用",
     "auth/email-already-in-use": "電子郵件已被使用",

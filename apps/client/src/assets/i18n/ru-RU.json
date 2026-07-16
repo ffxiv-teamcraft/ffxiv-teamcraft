@@ -26,6 +26,10 @@
   "Guides_links": "Руоководства Teamcraft",
   "Db_ban": "У вас нет прав на публикацию комментариев в базе данных из-за вашей предыдущей активности. Если вы хотите обсудить этот бан, напишите Miu#1568 в Discord.",
   "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
