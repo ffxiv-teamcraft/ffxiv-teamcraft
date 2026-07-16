@@ -3,7 +3,7 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list-details of which env maps to which file can be found in `.angular-cli.json`.
 
-//import { version } from './version';
+import { version } from './version';
 import { gameEnv } from './game-env';
 import patchNotes from './patch-notes.json';
 
@@ -11,7 +11,7 @@ export const environment = {
   production: false,
   beta: false,
   useLocalAPI: false, // Should we use localhost:333 as API for search?
-  version: "11.4.25",
+  version: version,
   patchNotes: patchNotes as unknown as {version: string, content: string}[],
   ssrHost: 'https://beta.ffxivteamcraft.com',
   startTimestamp: Date.now(),
