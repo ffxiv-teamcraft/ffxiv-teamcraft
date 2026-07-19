@@ -26,6 +26,10 @@
   "Guides_links": "TC引导手册",
   "Db_ban": "由于您之前在数据库评论的活动，您当前没有发表评论的权限。如果您对此有任何意见，请到Discord联系Miu#1568。",
   "Sensitive_operation": "您正在进行的操作需要重新登录以确认是您本人在执行操作。请重新登录。",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -1988,7 +1992,7 @@
     "Title": "货币消费指南",
     "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
     "Pick_currency": "选择一个币种",
-    "You_can_buy": "You can buy",
+    "You_can_buy": "您可以购买 {{amount}}",
     "Exchange_rate": "Exchange rate",
     "Price": "Price",
     "Total_earnings": "Total earnings",
@@ -3315,7 +3319,8 @@
     "Reminders": "CD计时器",
     "About": "关于",
     "Fish_Train": "渔车",
-    "Inventory": "物品栏"
+    "Inventory": "物品栏",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "隆重介绍 Teamcrafter ：一款注重于制作和采集的 roguelike 游戏",
