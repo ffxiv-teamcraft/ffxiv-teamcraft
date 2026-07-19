@@ -26,6 +26,10 @@
   "Guides_links": "Teamcraft-gidsen",
   "Db_ban": "Je hebt geen toestemming om opmerkingen over de database te plaatsen vanwege je eerdere activiteit in database-opmerkingen. DM Miu#1568 op Discord als je dit verbod wilt bespreken.",
   "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account is al in gebruik",
     "auth/email-already-in-use": "E-mailadres is al in gebruik",
@@ -3297,7 +3301,8 @@
     "Reminders": "Reminders",
     "About": "About",
     "Fish_Train": "Fish Train",
-    "Inventory": "Inventory"
+    "Inventory": "Inventory",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",

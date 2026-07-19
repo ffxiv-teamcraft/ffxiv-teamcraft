@@ -26,6 +26,10 @@
   "Guides_links": "팀크래프트 가이드",
   "Db_ban": "이전에 작성한 데이터베이스 코멘트로 인하여 코멘트 권한이 제한된 상태입니다. 만약 제한에 대한 이의제기가 있는 경우에는 디스코드 Miu#1568 에게 DM을 주세요.",
   "Sensitive_operation": "이 작업을 수행하려면 먼저 본인 확인을 위해 다시 로그인해야 합니다. 다시 로그인해 주세요.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -3297,7 +3301,8 @@
     "Reminders": "Reminders",
     "About": "About",
     "Fish_Train": "Fish Train",
-    "Inventory": "Inventory"
+    "Inventory": "Inventory",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter 발표: 제작과 채집에 중점을 둔 로그라이크 게임",

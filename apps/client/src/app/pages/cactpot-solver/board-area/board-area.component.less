@@ -1,0 +1,223 @@
+@import '../../../../common';
+
+.board-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+
+  @media @mobile {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  @media @tablet {
+    max-width: 100%;
+    padding: 14px;
+  }
+}
+
+.error-message {
+  width: 100%;
+  padding: 12px 16px;
+  background: fade(@error-color, 10%);
+  border: 1px solid fade(@error-color, 60%);
+  border-radius: 8px;
+  color: lighten(@error-color, 10%);
+  font-weight: 500;
+  font-size: 14px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.board-grid {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #444;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  @media @mobile {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  @media @tablet {
+    padding: 24px;
+  }
+}
+
+.board-row {
+  width: 100%;
+  flex: 1;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid #444;
+
+  &:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #555;
+    z-index: 2;
+  }
+
+  &.suggested {
+    border-color: @info-color;
+    background: fade(@info-color, 8%);
+    animation: pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 20px fade(@info-color, 30%);
+  }
+
+  &.in-best-line {
+    border-color: @success-color;
+    background: fade(@success-color, 12%);
+    box-shadow: 0 0 15px fade(@success-color, 25%);
+  }
+
+  @media @mobile {
+    border-radius: 8px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.number-picker {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: fade(#fff, 85%);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-family: inherit;
+
+  &:focus {
+    background: fade(@info-color, 15%);
+    box-shadow: 0 0 0 2px fade(@info-color, 40%);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.02) !important;
+  }
+
+  option {
+    background: #1a1a1a;
+    color: fade(#fff, 85%);
+    font-size: 16px;
+    padding: 8px;
+    font-weight: 500;
+  }
+
+  @media @mobile {
+    font-size: 28px;
+  }
+}
+
+.status-bar {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #444;
+  border-radius: 8px;
+  min-height: 44px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+
+  .label {
+    color: fade(#fff, 60%);
+    font-weight: 500;
+  }
+
+  .value {
+    color: fade(#fff, 85%);
+    font-weight: 600;
+  }
+
+  &.suggested .value {
+    color: @info-color;
+  }
+
+  &.best-line .value {
+    color: @success-color;
+  }
+
+  &.hint .value {
+    color: @warning-color;
+  }
+
+  .payout {
+    background: linear-gradient(135deg, @success-color, darken(@success-color, 15%));
+    color: white;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+}
+
+.action-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-reset {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: @error-color;
+  color: white;
+  
+  &:hover {
+    background: lighten(@error-color, 5%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px fade(@error-color, 40%);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media @mobile {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+}

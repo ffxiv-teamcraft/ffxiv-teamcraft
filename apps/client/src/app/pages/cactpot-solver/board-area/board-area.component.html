@@ -1,0 +1,39 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px" class="board-container">
+  <div class="board-grid" fxLayout="column" fxLayoutGap="8px" fxLayoutAlign="center center">
+    @for (row of board; track $index) {
+      <div fxLayout="row" 
+          fxLayoutGap="8px" 
+          fxLayoutAlign="center center"
+          class="board-row">
+        
+        @for (cell of row; track $index) {
+          <div fxFlex="0 0 calc(33.333% - 8px)"
+              fxLayout="row"
+              fxLayoutAlign="center center"
+              class="cell"
+              [class.suggested]="isSuggestedCell(cell.row, cell.col)"
+              [class.in-best-line]="isInBestLine(cell.row, cell.col)">
+
+            <select [(ngModel)]="cell.value"
+                    (ngModelChange)="onCellChange(cell.row, cell.col, $event)"
+                    class="number-picker"
+                    [disabled]="getRevealedCount() >= 4 && cell.value === null"
+                    [style.background]="cell.value !== null ? 'rgba(72, 187, 120, 0.15)' : 'transparent'">
+              <option [value]="null">-</option>
+              @for (num of availableNumbers; track $index) {
+                <option [value]="num">{{ num }}</option>
+              }
+            </select>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" class="action-bar">
+    <button (click)="resetBoard()" [nzType]="'primary'" nz-button
+              nz-tooltip>
+      {{ 'CACTPOT_SOLVER.Reset_Button' | translate }}
+    </button>
+  </div>
+</div>

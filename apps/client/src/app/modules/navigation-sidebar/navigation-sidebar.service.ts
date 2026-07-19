@@ -117,6 +117,14 @@ export class NavigationSidebarService {
                 content: 'reconciliation'
               },
               link: '/allagan-reports'
+            },
+            {
+              name: 'TITLE.Cactpot_Solver',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'red-envelope'
+              },
+              link: '/cactpot-solver'
             }
           ]
         },
