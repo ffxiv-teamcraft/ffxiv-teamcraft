@@ -26,6 +26,10 @@
   "Guides_links": "Guides Teamcraft",
   "Db_ban": "Vous n'avez pas la permission de poster des commentaires sur la base de données en raison de votre activité antérieure. Si vous souhaitez discuter de ce bannissement, veuillez DM Miu#1568 sur Discord.",
   "Sensitive_operation": "L'opération que vous effectuez nécessite que vous vous connectiez à nouveau pour la confirmer. Veuillez vous reconnecter.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -1988,7 +1992,7 @@
     "Title": "Dépense de devises",
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
-    "You_can_buy": "You can buy",
+    "You_can_buy": "Vous pouvez en acheter {{amount}}",
     "Exchange_rate": "Exchange rate",
     "Price": "Price",
     "Total_earnings": "Total earnings",
@@ -3315,7 +3319,8 @@
     "Reminders": "Rappels",
     "About": "À propos",
     "Fish_Train": "Train de pêche",
-    "Inventory": "Inventaire"
+    "Inventory": "Inventaire",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter : un jeu roguelike axé sur l'artisanat et la collecte",
