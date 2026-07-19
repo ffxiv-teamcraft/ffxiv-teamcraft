@@ -26,6 +26,10 @@
   "Guides_links": "Teamcraft 指南",
   "Db_ban": "由於您先前在資料庫評論中的活動，您沒有權限在資料庫上發佈評論。如果您想討論這次封禁，請在 Discord 上私訊 Miu#1568。",
   "Sensitive_operation": "您必須重新登入以確認此操作是您本人執行的。請再次登入。",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "帳號已被使用",
     "auth/email-already-in-use": "電子郵件已被使用",
@@ -1988,7 +1992,7 @@
     "Title": "貨幣使用指南",
     "Description": "貨幣太多了嗎？選擇您的貨幣、設定數量、選擇伺服器，就能找出最值得購買並換取金幣的物品！",
     "Pick_currency": "選擇貨幣",
-    "You_can_buy": "You can buy",
+    "You_can_buy": "你可以購買 {{amount}} 個",
     "Exchange_rate": "Exchange rate",
     "Price": "Price",
     "Total_earnings": "Total earnings",
@@ -3315,7 +3319,8 @@
     "Reminders": "重置倒計時",
     "About": "關於",
     "Fish_Train": "漁旅",
-    "Inventory": "背包"
+    "Inventory": "背包",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "宣佈 Teamcrafter：一款專注於製作與採集的 Roguelike 遊戲",
