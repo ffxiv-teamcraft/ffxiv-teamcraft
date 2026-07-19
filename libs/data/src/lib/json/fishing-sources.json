@@ -17035,7 +17035,10 @@
         1
       ],
       "snagging": false,
-      "minGathering": 1850
+      "minGathering": 1850,
+      "video": "https://youtu.be/add6Ck94hXQ",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "28928": [
@@ -20523,10 +20526,12 @@
     {
       "spot": 246,
       "hookset": 2,
-      "tug": 0,
+      "tug": 1,
       "bait": 29715,
       "oceanFishingTime": 0,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "32064": [
@@ -27835,6 +27840,7 @@
         1
       ],
       "minGathering": 3500,
+      "video": "https://youtu.be/yUYYms1X46s",
       "aLure": 0,
       "mLure": 0
     }
@@ -28703,6 +28709,28 @@
       ],
       "minGathering": 4450,
       "video": "https://youtu.be/MN_KLTu_-tM",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52013": [
+    {
+      "spot": 296,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52016": [
+    {
+      "spot": 324,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 28634,
+      "minGathering": 0,
       "aLure": 0,
       "mLure": 0
     }

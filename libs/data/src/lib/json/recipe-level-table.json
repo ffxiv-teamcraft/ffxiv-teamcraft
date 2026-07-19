@@ -6952,9 +6952,9 @@
     "quality": 10000,
     "durability": 80,
     "progressDivider": 170,
-    "progressModifier": 90,
+    "progressModifier": 100,
     "qualityDivider": 150,
-    "qualityModifier": 75
+    "qualityModifier": 100
   },
   "773": {
     "difficulty": 10000,
