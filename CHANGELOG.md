@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.25...v11.4.26) (2026-07-19)
+
+
+### Features
+
+* **db:** new reports import ([46dde90](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46dde90c0b070fb13197977fb01fdf288fd56aec))
+* **linux:** autodetect Wine prefix and binary from Steam and XIVLauncher ([4d9eb55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d9eb5502284924b2da3e0631e941616e794ebc9))
+* Mini-Cactpot Solver by PawanaMcKay ([f68557c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f68557c3e9535e43290003e5397597827a62d436))
+* **pcap:** Add setting for extra Wine env for older Wine versions ([011e287](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/011e287524ab6d658bdc2468ab8a910402e8d764))
+
+
+### Bug Fixes
+
+* AppArmor error on boot in Ubuntu ([0cdf6aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cdf6aa102157c2a7beb554d8f41d22e67cd4e42))
+* capture signals from linux pcap bridge crashes and show error ([349aa92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/349aa924df71b3d34a90fdcb8d94cd2e9e86f2ec))
+
 ### [11.4.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.24...v11.4.25) (2026-06-06)
 
 
