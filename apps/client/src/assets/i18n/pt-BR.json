@@ -26,6 +26,10 @@
   "Guides_links": "Guias da Teamcraft",
   "Db_ban": "Você não tem permissão para postar comentários no banco de dados devido a sua atividade anterior nos comentários do banco de dados. Se você gostaria de discutir este banimento, por favor envie uma mensagem direta a Miu no Discord.",
   "Sensitive_operation": "Este procedimento requer confirmação. Por favor, inicie a sessão novamente",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já em uso",
     "auth/email-already-in-use": "E-mail já em uso",
@@ -1988,7 +1992,7 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy",
+    "You_can_buy": "You can buy {{amount}}",
     "Exchange_rate": "Exchange rate",
     "Price": "Price",
     "Total_earnings": "Total earnings",
@@ -3315,7 +3319,8 @@
     "Reminders": "Reminders",
     "About": "About",
     "Fish_Train": "Fish Train",
-    "Inventory": "Inventory"
+    "Inventory": "Inventory",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
