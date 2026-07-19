@@ -26,6 +26,10 @@
   "Guides_links": "Teamcraft Guides",
   "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "Sensitive_operation":  "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account already in use",
     "auth/email-already-in-use": "Email already in use",
@@ -606,7 +610,12 @@
     },
     "Wine_prefix": "Wine/Proton prefix directory",
     "Wine_binary": "Wine binary",
-    "Path_not_found": "Not found"
+    "Wine_extra_env": "Extra Wine env",
+    "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
+    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Reset_to_auto": "Auto-detect Wine settings",
+    "Reset_to_auto_button": "Detect"
   },
   "PROFILE": {
     "Account": "Account",
@@ -1983,12 +1992,16 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}",
+    "You_can_buy": "You can buy",
+    "Exchange_rate": "Exchange rate",
+    "Price": "Price",
+    "Total_earnings": "Total earnings",
+    "Sold_last_week": "Amount sold last week",
+    "Npc": "NPC",
     "Disabled": "The currency spending guide isn't working anymore",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Loading trades data for the selected currency",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "X_sold_last_week": "{{amount}} sold last week",
     "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
@@ -3113,11 +3126,11 @@
       "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
       "MISSING_INJECTOR": "Packet capture tooling is missing, most likely removed by your antivirus due to a false positive, make sure to whitelist Teamcraft's install folder and reinstall it.",
       "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
-      "BRIDGE_BRIDGE_ERROR": "Check your Wine settings and re-enable packet capture. If the issue persists, check the application logs for more details.",
+      "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
       "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
     },
     "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
-    "BRIDGE_BRIDGE_ERROR": "Packet capture failed to start",
+    "BRIDGE_CRASHED": "Packet capture crashed",
     "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
@@ -3306,7 +3319,8 @@
     "Reminders": "Reminders",
     "About": "About",
     "Fish_Train": "Fish Train",
-    "Inventory": "Inventory"
+    "Inventory": "Inventory",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",

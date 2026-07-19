@@ -1,14 +1,14 @@
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { bufferCount, delay, mergeMap, tap } from 'rxjs/operators';
 
-export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit: true): Observable<any>
-export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit ?: false): Observable<any[]>
-export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit = false): Observable<any | any[]> {
+export function requestsWithDelay<T>(requests: Observable<T>[], _delay: number, emit: true): Observable<T>
+export function requestsWithDelay<T>(requests: Observable<T>[], _delay: number, emit ?: false): Observable<T[]>
+export function requestsWithDelay<T>(requests: Observable<T>[], _delay: number, emit = false): Observable<T | T[]> {
   if (requests.length === 0) {
     return of([]);
   }
   const index$ = new BehaviorSubject(0);
-  return index$.pipe(
+  const pipeline = index$.pipe(
     delay(_delay),
     mergeMap(index => {
       return requests[index].pipe(
@@ -18,7 +18,7 @@ export function requestsWithDelay(requests: Observable<any>[], _delay: number, e
           }
         })
       );
-    }),
-    emit ? tap() : bufferCount(requests.length)
+    })
   );
+  return emit ? pipeline : pipeline.pipe(bufferCount(requests.length));
 }
