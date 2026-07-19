@@ -26,6 +26,10 @@
   "Guides_links": "Teamcraft ガイド",
   "Db_ban": "以前に作成したデータベースのコメントにより、コメント機能が制限された状態です。もしこれに関する意義申し立てを行うにはDiscordのMiu#1568にお問い合わせください。",
   "Sensitive_operation": "The operation you're doing requires you to log in again to confirm that you are indeed the one doing it. Please log in again.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -1988,7 +1992,7 @@
     "Title": "通貨消費ガイド",
     "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "交換用アイテム追加",
-    "You_can_buy": "You can buy",
+    "You_can_buy": "{{amount}} 個購入可能",
     "Exchange_rate": "Exchange rate",
     "Price": "Price",
     "Total_earnings": "Total earnings",
@@ -3315,7 +3319,8 @@
     "Reminders": "タイマーのリセット",
     "About": "当サイトについて",
     "Fish_Train": "Fish Train",
-    "Inventory": "Inventory"
+    "Inventory": "Inventory",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Announcing Teamcrafter: a roguelike game focused on crafting and gathering",
