@@ -26,6 +26,10 @@
   "Guides_links": "팀크래프트 가이드",
   "Db_ban": "이전에 작성한 데이터베이스 코멘트로 인하여 코멘트 권한이 제한된 상태입니다. 만약 제한에 대한 이의제기가 있는 경우에는 디스코드 Miu#1568 에게 DM을 주세요.",
   "Sensitive_operation": "이 작업을 수행하려면 먼저 본인 확인을 위해 다시 로그인해야 합니다. 다시 로그인해 주세요.",
+  "CACTPOT_SOLVER": {
+    "Payout_Title": "Payout",
+    "Reset_Button": "Reset"
+  },
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -1988,7 +1992,7 @@
     "Title": "화폐 소비 가이드",
     "Description": "석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
     "Pick_currency": "교환용 아이템 선택",
-    "You_can_buy": "You can buy",
+    "You_can_buy": "{{amount}}개 구매 가능",
     "Exchange_rate": "Exchange rate",
     "Price": "Price",
     "Total_earnings": "Total earnings",
@@ -3315,7 +3319,8 @@
     "Reminders": "초기화 타이머",
     "About": "TC에 대하여",
     "Fish_Train": "낚시런",
-    "Inventory": "소지품"
+    "Inventory": "소지품",
+    "Cactpot_Solver": "Mini-Cactpot Solver"
   },
   "TEAMCRAFTER": {
     "Teamcrafter_description": "Teamcrafter 발표: 제작과 채집에 중점을 둔 로그라이크 게임",
