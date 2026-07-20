@@ -425,7 +425,7 @@ export const lazyFilesList = {
   },
   'maps': {
     'fileName': 'maps.json',
-    'hashedFileName': 'maps.c0469cee9bc813b8afa1aa7bab7d868427f10f95.json'
+    'hashedFileName': 'maps.37fcf304f4fbe6c8a908f3ad5109bb6ade5fff63.json'
   },
   'marketItems': {
     'fileName': 'market-items.json',
