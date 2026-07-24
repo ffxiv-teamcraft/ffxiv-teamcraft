@@ -189,6 +189,19 @@
               <span>{{ 'SIMULATOR.Find_rotation' | translate }}</span>
             }
           </button>
+          <button (click)="openSolver()"
+                  [nzTooltipTitle]="'SIMULATOR.SOLVER.Title' | translate"
+                  [nzType]="'primary'"
+                  nz-button
+                  nz-tooltip
+                  nzTooltipPlacement="right"
+                  [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+                  [class.full-button]="showFullButton$ |async">
+            <i nz-icon nzType="thunderbolt"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{ 'SIMULATOR.SOLVER.Title' | translate }}</span>
+            }
+          </button>
         }
         @if (tips$ | async; as tips) {
           <nz-badge [nzCount]="tips.length">
