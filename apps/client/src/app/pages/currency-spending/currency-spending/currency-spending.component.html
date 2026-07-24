@@ -24,7 +24,7 @@
       }
     </nz-select>
     <nz-input-number (ngModelChange)="amount$.next($event)" [ngModel]="amount$ | async" [nzPlaceHolder]="'COMMON.Amount' | translate"
-    [nzStep]="1"></nz-input-number>
+    [nzStep]="1" [nzMin]="0"></nz-input-number>
     <nz-select
       (ngModelChange)="server$.next($event)"
       [ngModel]="server$ | async"
@@ -59,49 +59,51 @@
 
 @if (results$ | async; as results) {
   @if (!loading) {
-    <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzNoResult]="noTrades">
+    <nz-table #currencySpendingTable [nzData]="results" [nzNoResult]="noTrades" class="spending-table" nzSize="small">
       <ng-template #noTrades>
         <nz-empty [nzNotFoundContent]="'CURRENCY_SPENDING.No_trades' | translate"></nz-empty>
       </ng-template>
-      <ng-template #item let-item>
-        <nz-list-item [nzContent]="content" class="result-item">
-          <ng-template #content>
-            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div>{{item.npcs[0] | i18nRow:'npcs' | i18n}}</div>
-              <app-db-button [id]="item.npcs[0]" type="npc"></app-db-button>
-            </div>
-          </ng-template>
-          <nz-list-item-meta
-            [nzAvatar]="avatar"
-            [nzDescription]="description"
-            [nzTitle]="nzTitle"
-            >
-            <ng-template #description>
-              <div fxLayout="row" fxLayoutAlign="flex-start center">
-                <div>{{'CURRENCY_SPENDING.You_can_buy' | translate: { amount: (item.rate * (amount$ | async) | floor) } }},&nbsp;</div>
-                <div>{{'MARKETBOARD.Unit_price' | translate}}:</div>
-                <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
-                <div>x {{item.price | number}},&nbsp;</div>
-                <div>{{'COMMON.Total' | translate}}:</div>
-                <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
-                <div>x {{(item.price * (item.rate * (amount$ | async) | floor)) | number}}</div>
-                <div>&nbsp;({{'CURRENCY_SPENDING.X_sold_last_week' | translate:{ amount: item.amountSoldLastWeek } }})</div>
-              </div>
-            </ng-template>
-            <ng-template #avatar>
+      <thead (nzSortOrderChange)="sort($event)">
+        <tr>
+          <th>Name</th>
+          <th nzShowSort [nzSortFn]="true" nzColumnKey="amount">{{ 'CURRENCY_SPENDING.You_can_buy' | translate }}</th>
+          <th nzShowSort [nzSortFn]="true" nzColumnKey="exchangeRate">{{ 'CURRENCY_SPENDING.Exchange_rate' | translate }}</th>
+          <th nzShowSort [nzSortFn]="true" nzColumnKey="price">
+            {{ 'CURRENCY_SPENDING.Price' | translate }}
+            <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+          </th>
+          <th nzShowSort [nzSortFn]="true" nzColumnKey="total">
+            {{ 'CURRENCY_SPENDING.Total_earnings' | translate }}
+            <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+          </th>
+          <th nzShowSort [nzSortFn]="true" nzColumnKey="amountSoldLastWeek">{{ 'CURRENCY_SPENDING.Sold_last_week' | translate }}</th>
+          <th>{{ 'CURRENCY_SPENDING.Npc' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of currencySpendingTable.data; track item) {
+          <tr>
+            <td fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <app-item-icon [hq]="item.HQ" [icon]="item.item | lazyIcon" [itemId]="item.item"
               [width]="32"></app-item-icon>
-            </ng-template>
-            <ng-template #nzTitle>
+              <app-i18n-name [id]="item.item" content="items"></app-i18n-name>
+              <app-db-button [id]="item.item" type="item"></app-db-button>
+              <app-marketboard-icon [itemId]="item.item" [showHistory]="true"></app-marketboard-icon>
+            </td>
+            <td>{{ item.amount | number }}</td>
+            <td>{{ item.exchangeRate | number }}</td>
+            <td>{{ item.price | number }}</td>
+            <td>{{ item.total | number }}</td>
+            <td>{{ item.amountSoldLastWeek }}</td>
+            <td>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <div><app-i18n-name [id]="item.item" content="items"></app-i18n-name></div>
-                <app-db-button [id]="item.item" type="item"></app-db-button>
-                <app-marketboard-icon [itemId]="item.item" [showHistory]="true"></app-marketboard-icon>
+                <div>{{item.npcs[0] | i18nRow:'npcs' | i18n}}</div>
+                <app-db-button [id]="item.npcs[0]" type="npc"></app-db-button>
               </div>
-            </ng-template>
-          </nz-list-item-meta>
-        </nz-list-item>
-      </ng-template>
-    </nz-list>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </nz-table>
   }
 }

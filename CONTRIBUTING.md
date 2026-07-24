@@ -16,6 +16,7 @@
 
 * Install [Node.js](http://nodejs.org/) (>= 22.14) and Yarn (`npm i -g yarn`)
 * Install local dev dependencies: `yarn` while current directory is this repo
+* Set up environment: `yarn prebuild` while current directory is this repo
 
 #### Windows 10 environment
 
