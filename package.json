@@ -53,6 +53,11 @@
     },
     "mac": {
       "category": "public.app-category.games",
+      "icon": "./tools/build/icon-mac.png",
+      "artifactName": "${productName}.${ext}",
+      "target": [
+        "dmg"
+      ],
       "extraFiles": [
         {
           "from": "./deucalion-bridge",
@@ -116,6 +121,8 @@
     "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
     "build:appimage": "del-cli release/* && yarn build:electron-prod && yarn electron:build && electron-builder --linux",
     "build:appimage:publish": "yarn build:electron-prod && yarn electron:build && electron-builder --linux -p always",
+    "build:dmg": "del-cli release/* && yarn build:electron-prod && yarn electron:build && electron-builder --mac",
+    "build:dmg:dir": "del-cli release/* && yarn build:electron-dev && yarn assets:hash && yarn electron:build && electron-builder --mac --dir",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "del-cli release/* && electron-builder --dir",

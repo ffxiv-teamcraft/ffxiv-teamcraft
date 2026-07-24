@@ -104,8 +104,28 @@ export class PacketCapture {
   }
 
   /**
+   * A Wine `wineserver` is shared per-prefix, but esync/msync synchronization
+   * must match between every `wine` process and the already-running server.
+   * XIV on Mac launches the game with WINEESYNC=1 WINEMSYNC=1 WINEFSYNC=0; if the
+   * bridge's `wine` starts without these, it spins up a mismatched/second
+   * wineserver and cannot enumerate or inject into ffxiv_dx11.exe. Mirror them
+   * (darwin only) so the bridge attaches to the same server as the live game.
+   */
+  private getMacWineSyncEnv(): Record<string, string> {
+    if (process.platform !== 'darwin') {
+      return {};
+    }
+    return {
+      WINEESYNC: '1',
+      WINEMSYNC: '1',
+      WINEFSYNC: '0',
+      WINEDEBUG: '-all'
+    };
+  }
+
+  /**
    * Starts the deucalion bridge. Resolves Wine paths from user overrides first,
-   * then falls back to autodetection (XIVLauncher or Steam Proton).
+   * then falls back to autodetection (XIVLauncher, Steam Proton or XIV on Mac).
    * Throws if the paths cannot be resolved or if spawning fails.
    */
   private startBridge(region: Region): void {
@@ -527,7 +547,7 @@ export class PacketCapture {
     log.info(`[bridge] spawning: ${extraEnvStr ? `${extraEnvStr} ` : ''}${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
 
     this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
-      env: { ...process.env, WINEPREFIX: winePrefix, ...extraEnv }
+      env: { ...process.env, WINEPREFIX: winePrefix, ...this.getMacWineSyncEnv(), ...extraEnv }
     });
 
     let stderrBuffer = '';

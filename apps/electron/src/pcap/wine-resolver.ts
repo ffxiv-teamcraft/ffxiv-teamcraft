@@ -6,9 +6,10 @@ import { Store } from '../store';
 
 /**
  * Resolves the Wine prefix and binary paths needed to run deucalion-bridge
- * on Linux. Supports two launchers:
+ * on Linux and macOS. Supports three launchers:
  *   - Steam (Proton / Proton-GE / custom compat tools)
  *   - XIVLauncher Core (~/.xlcore)
+ *   - XIV on Mac (fixed install location, macOS only)
  *
  * The primary API is resolveWinePaths(), which detects the active launcher
  * once and returns both paths from that same source. This ensures the prefix
@@ -22,13 +23,17 @@ export class WineResolver {
 
   /**
    * Detects which launcher manages the FFXIV Wine environment.
+   * On macOS, XIV on Mac is identified by its wine prefix in Application Support.
    * Steam is identified by an initialized Proton prefix for FFXIV (appid 39210),
    * which only exists after the game has been launched through Steam at least once.
    * XIVLauncher is identified by the presence of ~/.xlcore.
-   * Returns null if neither is found.
+   * Returns null if none is found.
    */
-  detectAutoSource(): 'steam' | 'xlcore' | null {
+  detectAutoSource(): 'steam' | 'xlcore' | 'xivonmac' | null {
     const home = app.getPath('home');
+    if (process.platform === 'darwin') {
+      return existsSync(this.xivOnMacPrefix(home)) ? 'xivonmac' : null;
+    }
     const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
     if (existsSync(steamPrefix)) return 'steam';
     if (existsSync(join(home, '.xlcore'))) return 'xlcore';
@@ -60,7 +65,7 @@ export class WineResolver {
   // Source-specific prefix/binary detectors
   // ---------------------------------------------------------------------------
 
-  private detectPrefix(source: 'steam' | 'xlcore' | null, home: string): string | null {
+  private detectPrefix(source: 'steam' | 'xlcore' | 'xivonmac' | null, home: string): string | null {
     if (source === 'steam') {
       const p = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
       if (existsSync(p)) return p;
@@ -69,10 +74,14 @@ export class WineResolver {
       const p = join(home, '.xlcore', 'wineprefix');
       if (existsSync(p)) return p;
     }
+    if (source === 'xivonmac') {
+      const p = this.xivOnMacPrefix(home);
+      if (existsSync(p)) return p;
+    }
     return null;
   }
 
-  private detectBin(source: 'steam' | 'xlcore' | null, home: string): string | null {
+  private detectBin(source: 'steam' | 'xlcore' | 'xivonmac' | null, home: string): string | null {
     if (source === 'steam') {
       const steamRoot = join(home, '.local', 'share', 'Steam');
       return this.findSteamProtonWineBin(steamRoot);
@@ -80,7 +89,22 @@ export class WineResolver {
     if (source === 'xlcore') {
       return this.findXlcoreWineBin(home);
     }
+    if (source === 'xivonmac') {
+      const bin = '/Applications/XIV on Mac.app/Contents/Resources/wine/bin/wine';
+      if (existsSync(bin)) {
+        log.info(`[bridge] Auto-detected Wine from XIV on Mac: ${bin}`);
+        return bin;
+      }
+    }
     return null;
+  }
+
+  /**
+   * XIV on Mac installs to fixed locations: the app bundle in /Applications
+   * and the wine prefix under ~/Library/Application Support.
+   */
+  private xivOnMacPrefix(home: string): string {
+    return join(home, 'Library', 'Application Support', 'XIV on Mac', 'wineprefix');
   }
 
   // ---------------------------------------------------------------------------

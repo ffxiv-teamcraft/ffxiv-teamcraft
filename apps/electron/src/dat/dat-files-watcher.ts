@@ -92,7 +92,11 @@ export class DatFilesWatcher {
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
-    if (event === 'change' && filename?.includes('FFXIV_CHR')) {
+    // The game saves ITEMODR.DAT atomically (write .new, rename .DAT->.old,
+    // rename .new->.DAT). Windows/Linux surface this as a 'change' event, but
+    // macOS (FSEvents) reports only 'rename'. Accept both; the .endsWith() and
+    // content-hash dedupe below already ignore the transient .old/.new files.
+    if ((event === 'change' || event === 'rename') && filename?.includes('FFXIV_CHR')) {
       const contentId = DatFilesWatcher.CONTENT_ID_REGEXP.exec(filename)[1];
       if (this.mainWindow.win) {
         if (filename.endsWith('ITEMODR.DAT')) {
@@ -182,6 +186,26 @@ export class DatFilesWatcher {
       // XIVLauncher second
       const xlcorePath = join(home, '.xlcore', 'ffxivConfig');
       if (existsSync(xlcorePath)) return xlcorePath;
+      // Nothing found
+      return null;
+    }
+    if (process.platform === 'darwin') {
+      const home = app.getPath('home');
+      // XIV on Mac (xivmac.com) runs the game under Wine and exposes the live
+      // FFXIV config — including ITEMODR.DAT — here, mirroring XIVLauncher's
+      // ffxivConfig directory on Linux.
+      const xomConfig = join(home, 'Library', 'Application Support', 'XIV on Mac', 'ffxivConfig');
+      if (existsSync(xomConfig)) return xomConfig;
+      // Fall back to the raw Wine prefix Documents location in case a future
+      // XIV on Mac version stops mirroring the config out. Wine names the user
+      // folder after the OS user, so scan whatever users the prefix contains.
+      const usersDir = join(home, 'Library', 'Application Support', 'XIV on Mac', 'wineprefix', 'drive_c', 'users');
+      if (existsSync(usersDir)) {
+        for (const user of readdirSync(usersDir)) {
+          const p = join(usersDir, user, 'Documents', 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+          if (existsSync(p)) return p;
+        }
+      }
       // Nothing found
       return null;
     }
