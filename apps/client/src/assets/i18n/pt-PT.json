@@ -1179,7 +1179,13 @@
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug.",
+      "Title": "Auto-solve rotation",
+      "Searching": "Searching for the best rotation…",
+      "Depth": "Step",
+      "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
+      "Done": "Solver finished",
+      "Apply": "Use this rotation"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",

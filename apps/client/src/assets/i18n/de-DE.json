@@ -1179,7 +1179,13 @@
     "SOLVER": {
       "Hq_target": "Zielwert für HQ%",
       "Use_rotation_as_seed": "Aktuelle Rotation als Startpunkt verwenden",
-      "Disclaimer": "Der Löser ist noch in Arbeit. Denke bitte daran, dass er nicht entwickelt wurde um die perfekte Rotation zu erzeugen. Er ist eine KI, welche sich mit der Zeit verbessert und daher sehr schlechte oder sehr gute Resultate liefern kann. Bitte melde ein schlechtes Resultat nicht als Fehler."
+      "Disclaimer": "Der Löser ist noch in Arbeit. Denke bitte daran, dass er nicht entwickelt wurde um die perfekte Rotation zu erzeugen. Er ist eine KI, welche sich mit der Zeit verbessert und daher sehr schlechte oder sehr gute Resultate liefern kann. Bitte melde ein schlechtes Resultat nicht als Fehler.",
+      "Title": "Auto-Lösen der Rotation",
+      "Searching": "Suche nach der Besten Rotation...",
+      "Depth": "Schritt",
+      "Valid_rotation_found": "Eine valide Rotation wurde gefunden, optimiere...",
+      "Done": "Rotation fertig",
+      "Apply": "Nutze diese Rotation"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotationen",

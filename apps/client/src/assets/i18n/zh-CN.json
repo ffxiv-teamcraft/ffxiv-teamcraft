@@ -1179,7 +1179,13 @@
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "用现在的手法起手",
-      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。"
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。",
+      "Title": "Auto-solve rotation",
+      "Searching": "Searching for the best rotation…",
+      "Depth": "Step",
+      "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
+      "Done": "Solver finished",
+      "Apply": "Use this rotation"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "共享手法",
