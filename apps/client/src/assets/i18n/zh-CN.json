@@ -608,14 +608,14 @@
       "Reset_timer": "重置计时器",
       "Fish_train": "渔车"
     },
-    "Wine_prefix": "Wine/Proton prefix directory",
-    "Wine_binary": "Wine binary",
-    "Wine_extra_env": "Extra Wine env",
+    "Wine_prefix": "Wine/Proton perfix 目录",
+    "Wine_binary": "Wine 二进制文件",
+    "Wine_extra_env": "额外的 Wine 环境变量",
     "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
-    "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
-    "Path_not_found": "Not found. Did you boot the game at least once?",
-    "Reset_to_auto": "Auto-detect Wine settings",
-    "Reset_to_auto_button": "Detect"
+    "Wine_extra_env_placeholder": "例如：WINESYNC=1 WINEFSYNC=1",
+    "Path_not_found": "找不到。您是否至少启动过一次游戏？",
+    "Reset_to_auto": "自动检测 Wine 设置",
+    "Reset_to_auto_button": "检测"
   },
   "PROFILE": {
     "Account": "账号",
@@ -3125,13 +3125,13 @@
       "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
       "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。",
       "MISSING_INJECTOR": "数据包捕获工具丢失，极有可能因为误报病毒而被杀毒软件移除。 确保将Teamcraft的安装文件夹加入白名单并重新安装。",
-      "BRIDGE_PATHS_NOT_CONFIGURED": "One or more required settings for packet capture (Wine/Proton prefix, Wine binary, or FFXIV config directory) are missing. Please change them in Settings.",
+      "BRIDGE_PATHS_NOT_CONFIGURED": "缺少一个或多个所需的数据包捕获设置 (Wine/Proton prefix、Wine 二进制文件 或 FFXIV配置目录) 。请在“设置”中更改这些设置。",
       "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
       "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
     },
-    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
-    "BRIDGE_CRASHED": "Packet capture crashed",
-    "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
+    "BRIDGE_PATHS_NOT_CONFIGURED": "Wine 路径未配置",
+    "BRIDGE_CRASHED": "数据包捕获已崩溃",
+    "BRIDGE_GAME_NOT_RUNNING": "数据包捕获启动失败"
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "您需要从以下的牧场动物中获取该物品",
