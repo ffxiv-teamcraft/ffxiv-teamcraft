@@ -1,5 +1,5 @@
 /// <reference lib="webworker" />
-import { runSolver, SolverInput } from "../model/solver-core";
+import { runSolver } from "../model/solver-core";
 import * as Simulator from "@ffxiv-teamcraft/simulator";
 
 addEventListener('message', ({ data }) => {
@@ -17,11 +17,7 @@ addEventListener('message', ({ data }) => {
   
     const registry = Simulator.CraftingActionsRegistry;
   
-    console.log('[solver.worker] candidateActions:',
-      registry.getActionsByType(Simulator.ActionType.PROGRESSION).length,
-      registry.getActionsByType(Simulator.ActionType.QUALITY).length);
-  
-    const input: SolverInput = {
+    const actions = runSolver({
       Simulation: Simulator.Simulation,
       registry,
       ActionType: Simulator.ActionType,
@@ -30,19 +26,22 @@ addEventListener('message', ({ data }) => {
       hqIngredients: data.hqIngredients,
       beamWidth: data.beamWidth,
       maxSteps: data.maxSteps
-    };
-  
-    const actions = runSolver(input, progress => {
-      console.log('[solver.worker] progress')
+    }, progress => {
       postMessage({ type: 'progress', progress });
     });
-  
+
+    // Runs the found simulation through the reliability-analysis like in
+    // the CommunityRotationFinderPopupComponent
+    const finalSimulation = new Simulator.Simulation(data.recipe, actions, stats, data.hqIngredients || []);
+    finalSimulation.run(true, Infinity, true);
+    const reliablity = finalSimulation.getReliabilityReport();
+
     postMessage({
       type: 'done',
-      serializedActions: registry.serializeRotation(actions)
+      serializedActions: registry.serializeRotation(actions),
+      reliablity
     });
   } catch (err) {
-    console.log('[solver.worker] error', err);
-    postMessage({ type: 'error', message: (err as Error).message});
+    postMessage({ type: 'error', message: (err as Error).message });
   }
 });
