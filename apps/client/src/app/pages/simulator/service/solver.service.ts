@@ -2,11 +2,12 @@ import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Craft, CrafterStats, CraftingAction } from "@ffxiv-teamcraft/simulator";
 import { SettingsService } from "../../../modules/settings/settings.service";
-import { SimulationService } from "../../../core/simulation/simulation.service";
+import { SimulationReliabilityReport, SimulationService } from "../../../core/simulation/simulation.service";
 
 export interface SolverEvent {
-  progress?: { depth: number; bestQuality: number; bestSuccess: boolean };
+  progress?: { depth: number; bestQuality: number; bestSuccess: boolean; qualityComplete: boolean };
   result?: CraftingAction[];
+  reliablity?: SimulationReliabilityReport
 }
 
 @Injectable({
@@ -18,10 +19,10 @@ export class SolverService {
 
   solve(recipe: Craft, stats: CrafterStats,
     hqIngredients: { id: number; amount: number }[] = [],
-    beamWidth = 300, maxSteps = 28): Observable<SolverEvent> {
+    beamWidth = 500, maxSteps = 30): Observable<SolverEvent> {
     return new Observable(subscriber => {
       if (typeof Worker === 'undefined') {
-        subscriber.error(new Error('Web Workers werden in dieser Umgebung nicht unterstützt.'));
+        subscriber.error(new Error('Web Workers are not supported in this environment.'));
         return;
       }
 
@@ -32,7 +33,10 @@ export class SolverService {
         if (data.type === 'progress') {
           subscriber.next({ progress: data.progress });
         } else if (data.type === 'done') {
-          subscriber.next({ result: registry.deserializeRotation(data.serializedActions) });
+          subscriber.next({
+            result: registry.deserializeRotation(data.serializedActions),
+            reliablity: data.reliablity
+          });
           subscriber.complete();
           worker.terminate();
         } else if (data.type === 'error') {
