@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from "@angular/core";
 import { FlexModule } from "@angular/flex-layout";
 import { TranslateModule } from "@ngx-translate/core";
 import { NzButtonModule } from "ng-zorro-antd/button";
@@ -38,6 +38,7 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   private sub: Subscription;
   private solver: SolverService = inject(SolverService);
   private modalRef: NzModalRef = inject(NzModalRef);
+  private cd: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   constructor() {
     super();
@@ -56,8 +57,12 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
           this.resultActions = result;
           this.running = false;
         }
+        this.cd.markForCheck();
       },
-      error: () => this.running = false
+      error: () => {
+        this.running = false;
+        this.cd.markForCheck();
+      }
     });
   }
 
