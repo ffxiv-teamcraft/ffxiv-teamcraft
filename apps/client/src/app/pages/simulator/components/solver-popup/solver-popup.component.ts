@@ -65,6 +65,10 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
     this.modalRef.close(this.resultActions);
   }
 
+  progressFormat(): () => string {
+    return () => `${this.bestQuality} / ${this.recipe.quality}`;
+  }
+
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }

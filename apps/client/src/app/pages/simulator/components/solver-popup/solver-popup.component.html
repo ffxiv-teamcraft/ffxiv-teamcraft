@@ -2,7 +2,7 @@
   @if (running) {
     <div fxLayout="column" fxLayoutGap="5px">
       <div>{{ 'SIMULATOR.SOLVER.Searching' | translate }} ({{ 'SIMULATOR.SOLVER.Depth' | translate }}: {{ depth }})</div>
-      <nz-progress [nzPercent]="bestQuality / recipe.quality * 100" [nzFormat]="() => bestQuality + ' / ' + recipe.quality"></nz-progress>
+      <nz-progress [nzPercent]="bestQuality / recipe.quality * 100" [nzFormat]="progressFormat()"></nz-progress>
       @if (bestSuccess) {
         <div>{{ 'SIMULATOR.SOLVER.Valid_rotation_found' | translate }}</div>
       }
