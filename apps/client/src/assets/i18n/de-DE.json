@@ -1185,7 +1185,8 @@
       "Depth": "Schritt",
       "Valid_rotation_found": "Eine valide Rotation wurde gefunden, optimiere...",
       "Done": "Rotation fertig",
-      "Apply": "Nutze diese Rotation"
+      "Apply": "Nutze diese Rotation",
+      "Quality_maxed": "Maximale Qualität erreicht"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotationen",

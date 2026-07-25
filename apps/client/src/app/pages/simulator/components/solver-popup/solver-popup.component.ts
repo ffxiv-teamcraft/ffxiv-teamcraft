@@ -9,6 +9,8 @@ import { Craft, CraftingAction, CrafterStats } from "@ffxiv-teamcraft/simulator"
 import { Subscription } from "rxjs";
 import { SolverService } from "../../service/solver.service";
 import { NzModalRef } from "ng-zorro-antd/modal";
+import { NzTagModule } from "ng-zorro-antd/tag";
+import { SimulationReliabilityReport } from "../../../../core/simulation/simulation.service";
 
 @Component({
   selector: 'app-solver-popup',
@@ -20,6 +22,7 @@ import { NzModalRef } from "ng-zorro-antd/modal";
     FlexModule,
     NzProgressModule,
     NzButtonModule,
+    NzTagModule,
     TranslateModule,
     ActionComponent
   ]
@@ -28,12 +31,16 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   recipe: Craft;
   stats: CrafterStats;
   hqIngredients: { id: number; amount: number }[] = [];
+  beamWidth = 500;
+  maxSteps = 30;
 
   running = true;
   depth = 0;
   bestQuality = 0;
   bestSuccess = false;
+  qualityComplete = false;
   resultActions: CraftingAction[] = [];
+  reliablity?: SimulationReliabilityReport;
 
   private sub: Subscription;
   private solver: SolverService = inject(SolverService);
@@ -46,15 +53,17 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
 
   ngOnInit(): void {
     this.patchData();
-    this.sub = this.solver.solve(this.recipe, this.stats, this.hqIngredients).subscribe({
-      next: ({ progress, result }) => {
+    this.sub = this.solver.solve(this.recipe, this.stats, this.hqIngredients, this.beamWidth, this.maxSteps).subscribe({
+      next: ({ progress, result, reliablity }) => {
         if (progress) {
           this.depth = progress.depth;
           this.bestQuality = progress.bestQuality;
           this.bestSuccess = progress.bestSuccess;
+          this.qualityComplete = progress.qualityComplete;
         }
         if (result) {
           this.resultActions = result;
+          this.reliablity = reliablity;
           this.running = false;
         }
         this.cd.markForCheck();

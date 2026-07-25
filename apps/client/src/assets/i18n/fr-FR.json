@@ -1185,7 +1185,8 @@
       "Depth": "Step",
       "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
       "Done": "Solver finished",
-      "Apply": "Use this rotation"
+      "Apply": "Use this rotation",
+      "Quality_maxed": "Max quality reached"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
