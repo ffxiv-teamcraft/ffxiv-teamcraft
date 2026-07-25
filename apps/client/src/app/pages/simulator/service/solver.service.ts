@@ -19,7 +19,7 @@ export class SolverService {
 
   solve(recipe: Craft, stats: CrafterStats,
     hqIngredients: { id: number; amount: number }[] = [],
-    beamWidth = 500, maxSteps = 30): Observable<SolverEvent> {
+    beamWidth = 4000, maxSteps = 45, maxComputeMs = 55000): Observable<SolverEvent> {
     return new Observable(subscriber => {
       if (typeof Worker === 'undefined') {
         subscriber.error(new Error('Web Workers are not supported in this environment.'));
@@ -63,7 +63,8 @@ export class SolverService {
         },
         hqIngredients,
         beamWidth,
-        maxSteps
+        maxSteps,
+        maxComputeMs
       });
 
       return () => worker.terminate();

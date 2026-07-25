@@ -25,7 +25,8 @@ addEventListener('message', ({ data }) => {
       stats,
       hqIngredients: data.hqIngredients,
       beamWidth: data.beamWidth,
-      maxSteps: data.maxSteps
+      maxSteps: data.maxSteps,
+      maxComputeMs: data.maxComputeMs
     }, progress => {
       postMessage({ type: 'progress', progress });
     });

@@ -33,6 +33,7 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   hqIngredients: { id: number; amount: number }[] = [];
   beamWidth = 500;
   maxSteps = 30;
+  maxComputeMs = 55000;
 
   running = true;
   depth = 0;
@@ -53,7 +54,7 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
 
   ngOnInit(): void {
     this.patchData();
-    this.sub = this.solver.solve(this.recipe, this.stats, this.hqIngredients, this.beamWidth, this.maxSteps).subscribe({
+    this.sub = this.solver.solve(this.recipe, this.stats, this.hqIngredients, this.beamWidth, this.maxSteps, this.maxComputeMs).subscribe({
       next: ({ progress, result, reliablity }) => {
         if (progress) {
           this.depth = progress.depth;
