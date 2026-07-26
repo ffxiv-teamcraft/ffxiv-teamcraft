@@ -3,6 +3,7 @@ import { runSolver } from "../model/solver-core";
 import * as Simulator from "@ffxiv-teamcraft/simulator";
 
 addEventListener('message', ({ data }) => {
+  console.log('[solver.worker] received message', data);
   try {
     const stats = new Simulator.CrafterStats(
       data.stats.jobId,
@@ -14,13 +15,16 @@ addEventListener('message', ({ data }) => {
       data.stats.level,
       data.stats.levels
     );
+    console.log('[solver.worker] stats built', stats);
   
     const registry = Simulator.CraftingActionsRegistry;
+    console.log('[solver-core] Buff enum keys:', Object.keys(Simulator.Buff));
   
     const actions = runSolver({
       Simulation: Simulator.Simulation,
       registry,
       ActionType: Simulator.ActionType,
+      Buff: Simulator.Buff,
       recipe: data.recipe,
       stats,
       hqIngredients: data.hqIngredients,
@@ -28,8 +32,11 @@ addEventListener('message', ({ data }) => {
       maxSteps: data.maxSteps,
       maxComputeMs: data.maxComputeMs
     }, progress => {
+      console.log('[solver.worker] progress', progress);
       postMessage({ type: 'progress', progress });
     });
+
+    console.log('[solver.worker] runSolver finished, actions.length =', actions.length);
 
     // Runs the found simulation through the reliability-analysis like in
     // the CommunityRotationFinderPopupComponent
@@ -43,6 +50,7 @@ addEventListener('message', ({ data }) => {
       reliablity
     });
   } catch (err) {
+    console.error('[solver.worker] CAUGHT ERROR', err, (err as Error)?.stack);
     postMessage({ type: 'error', message: (err as Error).message });
   }
 });

@@ -33,4 +33,8 @@
       </button>
     </div>
   }
+
+  @if (error) {
+    <div style="color: red;">{{ errorMessage }}</div>
+  }
 </div>

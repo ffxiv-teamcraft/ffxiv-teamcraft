@@ -31,7 +31,7 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   recipe: Craft;
   stats: CrafterStats;
   hqIngredients: { id: number; amount: number }[] = [];
-  beamWidth = 500;
+  beamWidth = 1000;
   maxSteps = 30;
   maxComputeMs = 55000;
 
@@ -42,6 +42,9 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   qualityComplete = false;
   resultActions: CraftingAction[] = [];
   reliablity?: SimulationReliabilityReport;
+
+  error = false;
+  errorMessage = '';
 
   private sub: Subscription;
   private solver: SolverService = inject(SolverService);
@@ -69,7 +72,10 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
         }
         this.cd.markForCheck();
       },
-      error: () => {
+      error: (err) => {
+        console.error('[SolverPopupComponent] error', err);
+        this.error = true;
+        this.errorMessage = err?.message ?? String(err);
         this.running = false;
         this.cd.markForCheck();
       }
