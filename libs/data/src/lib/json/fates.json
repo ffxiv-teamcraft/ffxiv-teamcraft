@@ -4319,7 +4319,7 @@
     "description": {
       "en": "The Yellowjackets stationed in middle La Noscea have a royal problem. Wespes so large the smallfolk have dubbed them “kings” are terrorizing the countryside and need to be dethroned immediately.",
       "ja": "巨大蜂が興奮して飛び回っている<br>イエロージャケット警備兵と協力し<br>キング・ヴェスパを倒せ",
-      "de": "Die Gelbjacken im unteren La Noscea haben ein majestätisches Problem. Eine Wespe so riesig, dass die Landbewohner sie ehrfurchtsvoll „Königin“ nennen, hat sich in ihrem Einsatzgebiet eingenistet. Stoße die Königin von ihrem Thron.",
+      "de": "Die Gelbjacken im unteren La Noscea haben ein majestätisches Problem. Eine Vespula-Art so riesig, dass die Landbewohner sie ehrfurchtsvoll „Königin“ nennen, hat sich in ihrem Einsatzgebiet eingenistet. Stoße die Königin von ihrem Thron.",
       "fr": "Les casaques jaunes stationnées dans la Noscea centrale ont un gros problème. Des frelons royaux attaquent les habitants du coin ainsi que leur bétail. Il faut immédiatement les exterminer."
     },
     "icon": "/api/asset?path=ui/icon/060000/060501.tex&format=png",
@@ -38452,7 +38452,7 @@
       "en": "Survivors of the civil war have excavated several days' worth of valuable provisions from the rubble of the capital. Unfortunately, they did not have the foresight to store the supplies beyond the reach of inquisitive beasts such as the jotnar, and it will take more than a bit of shouting and aggressive hand-waving to deter them.",
       "ja": "ヨトゥンの群れが食料を狙っている<br>難民たちが掻き集めた生活物資を守り<br>迫りくる「スカブラス・ヨトゥン」を倒せ",
       "de": "Eine Jötnar-Meute sucht nach Nahrung. Beschütze die Lebensmittel und besiege die schuppigen Jötnar!",
-      "fr": "Des jötnar sanguinaires cherchent à s'emparer des vivres que les habitants des environs gardent dans de grosses caisses. Vainquez les monstres&nbsp;!"
+      "fr": "Des jötunn sanguinaires cherchent à s'emparer des vivres que les habitants des environs gardent dans de grosses caisses. Vainquez les monstres&nbsp;!"
     },
     "icon": "/api/asset?path=ui/icon/060000/060504.tex&format=png",
     "level": 82,
@@ -44483,224 +44483,224 @@
   },
   "2072": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Daylight Pottery",
+      "ja": "隠されのマジックポット",
+      "de": "Versteckt im Pott",
+      "fr": "Cache-cache avec le pot"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A poor persistent pot has had their precious elixir pinched by pernicious pilferers. Defeat the thieves and restore the stolen property to its rightful, pot-bound owner.",
+      "ja": "グレムリンたちにエリクサーを隠され<br>探し回るマジックポットを見つけた<br>クレセント・グレムリンたちを倒し、マジックポットを助けろ",
+      "de": "Eine Gruppe von Gremlins hat sich einen Spaß erlaubt und die Elixiere des Wunderpotts versteckt, nach welchen das dusselige Behältnis nun wie verrückt sucht. Erledige die Kreszentia-Gremlins und hilf bei seiner Suche.",
+      "fr": "Des gremlins facétieux ont volé les élixirs d'un pot magique et les ont cachés à divers endroits. Donnez une correction aux chenapans et aidez le malheureux à retrouver ses biens."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060958.tex&format=png",
+    "level": 1,
+    "location": 12536463
   },
   "2073": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In a Pot of Bother",
+      "ja": "飛ばされのマジックポット",
+      "de": "Wind im Pott",
+      "fr": "Se prendre un vent, c'est pas de pot"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In their never-ending quest for elixir, several persistent pots have found themselves beset by the isle's wildlife. What brave band of adventurers will cease the crescent fans' cruel sport?",
+      "ja": "魔法生物にしつこく話しかけては<br>吹き飛ばされるマジックポットを見つけた<br>クレセント・ファンたちを倒し、マジックポットを助けろ",
+      "de": "Von ihrem unstillbaren Durst nach Elixieren geleitet sehen sich die Wunderpotts dieses Mal einer Schaar Kreszentia-Ventilatoren gegenüber. Beschütze die dusseligen Behältnisse, bevor sie vom Wind ihrer Gegner von der Insel gepustet werden.",
+      "fr": "L'insistance des pots magiques leur a encore joué des tours : cette fois, ils subissent le courroux de créatures aériennes qui ne cessent de les projeter au loin à coup de rafales de vent. Montrez à ces ventilateurs ambulants ce qu'il en coûte de s'en prendre à vos protégés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060958.tex&format=png",
+    "level": 1,
+    "location": 12536961
   },
   "2074": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Raging Thrall",
+      "ja": "暴力の牛魔「ミノタウロス・マキア」",
+      "de": "Mit Kraft und Keule",
+      "fr": "Défi : quand le dopage fait des ravages"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Driven to a state of permanent, magically induced frenzy, this hulking familiar threatens to lay waste to the isle. With the North Horn already in a sorry state, putting an end to its wrathful violence is of top priority.",
+      "ja": "魔法により過剰なまでに<br>暴力性を高められた使い魔が現れた<br>暴力の牛魔、ミノタウロス・マキアを倒せ",
+      "de": "Die physische Kraft und Zerstörungswut dieses Familiars wurde mithilfe von Magie bis ans Maximum verstärkt. Kümmere dich um die Bestie, bevor sie komplett außer Kontrolle gerät.",
+      "fr": "Un familier dopé magiquement pour décupler sa sauvagerie cause ruine et destruction sur son passage. Quelqu'un doit se dévouer pour calmer ses ardeurs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12317484
   },
   "2075": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eye to Eye",
+      "ja": "呪いの宝珠「イビルシーア」",
+      "de": "Auge um Auge",
+      "fr": "Défi : voyant malveillant"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "With a single cursed gemstone in place of an eye, this dread beast prowls the wastes of the North Horn. Dispense with the creature before you succumb to its baleful gaze.",
+      "ja": "呪詛の籠もった宝玉を<br>眼球に埋め込まれた獣が現れた<br>呪いの宝珠、イビルシーアを倒せ",
+      "de": "Eine Bestie, in dessen Auge ein verfluchter Edelstein eingelassen wurde, ist in Kreszentia aufgetaucht. Pass auf, wo du im Kampf hinsiehst!",
+      "fr": "Une vile créature dont l'œil sinistre recèle un joyau porteur de malédictions a décidé de s'en servir... Apprenez-lui que c'est malpoli de fixer du regard."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12245467
   },
   "2076": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Shoreline Showdown",
+      "ja": "水辺の暴君「レグナントキマイラ」",
+      "de": "Wassertyrannei",
+      "fr": "Défi : chasse gardée"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "This domineering beast stalks the shores of Shadowdeep for fresh prey. Nothing but death will quell its ravenous hunger.",
+      "ja": "数少ない水場を支配し<br>狩り場とする魔獣が現れた<br>水辺の暴君、レグナントキマイラを倒せ",
+      "de": "Dieses Ungetüm versucht, die wenigen Wasserstellen der Insel als sein Revier zu markieren. Zeige ihm, was passiert, wenn man nicht teilen möchte!",
+      "fr": "Une bête effroyable a décidé de faire des rares points d'eau ses terrains de chasse. Mettez fin à son règne de terreur."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12416758
   },
   "2077": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Waved Away",
+      "ja": "歴戦水馬「アーチケルピー」",
+      "de": "Mit allen Wassern gewaschen",
+      "fr": "Défi : une vie de combats"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A long, harsh life spent upon the Occult Crescent has toughened this aqueous beast beyond comprehension. Yet even the toughest of hides are no match for a coordinated attack.",
+      "ja": "厳しい環境で生き延びてきた<br>獰猛な魔獣が現れた<br>歴戦水馬、アーチケルピーを倒せ",
+      "de": "Nach vielen Jahren in den kargsten Gegenden von Kreszentia ist diese Bestie auch die unwirtlichsten Bedingungen gewohnt. Nimm dich vor ihren Wellen in Acht!",
+      "fr": "Certains animaux développent un caractère féroce à cause de l'environnement cruel et hostile dans lequel ils grandissent. C'est le cas de ce kelpie, qui n'a fait que combattre toute sa vie. Apprenez-lui donc la défaite."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12268689
   },
   "2078": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Allure of the Occult",
+      "ja": "ため息モルボル「センシュアル・サンディ」",
+      "de": "Auf den Atem kommt es an",
+      "fr": "Défi : je t'aime... moi non plus"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In some parts of the North Horn, a near-constant stream of seductive sighs can be heard on the breeze, beckoning wayward souls closer. Few can believe their eyes when they discover the source of these breathy enticements─fewer still survive the ordeal.",
+      "ja": "悪環境に生息する巨大モルボルが<br>艶かしくため息を吐き続けている<br>ため息モルボル、センシュアル・サンディを倒せ",
+      "de": "Um sich von ihrem tristen Alltag abzulenken, lockt dieses Ungeheuer andere Lebewesen mit verführerischen Seufzern an. Vorsicht vor ihrer toxischen Seite!",
+      "fr": "Sandy, comme la plupart de ses congénères morbols, possède une haleine toxique qui afflige ses victimes de toutes sortes de maladies. Mais elle s'en sert aussi pour mettre en avant ses charmes. Refusez poliment ses avances."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12430435
   },
   "2079": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Inconstant Gardener",
+      "ja": "自滅の歌い手「イアムベー」",
+      "de": "Sing mir das Lied vom Tod",
+      "fr": "Défi : la diva destructrice"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "This leaf-clad familiar once labored to maintain the island's delicate ecological balance. Alas, when aetherial anomalies began to plague the North Horn, Iambe was corrupted─much like the land they once nurtured. Ensure they can do no further harm.",
+      "ja": "植物の育成を担う使い魔が<br>異常環境で暴走している<br>自滅の歌い手、イアムベーを倒せ",
+      "de": "Dieses Familiar wurde ursprünglich mit der Züchtung von Pflanzen beauftragt, doch nun läuft es auf Kreszentia Amok. Hüte dich vor ihrem unheilvollem Gesang!",
+      "fr": "Iambé était un simple familier chargé de la culture des plantes, mais elle a mal tourné lorsque son environnement a été chamboulé. Remettez-la dans le droit chemin."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12349657
   },
   "2080": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Territorial Dispute",
+      "ja": "遺跡荒らしの氷狼「ルーインハウンド」",
+      "de": "Der Hund von Kreszentia",
+      "fr": "Défi : un froid de loup"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Though the North Horn is a barren, inhospitable place, some beasts thrive here, laying claim to swaths of rubble-strewn territory. The ruin hound is one such creature, and it will not take kindly to those who intrude upon its desolate domain.",
+      "ja": "崩れた遺跡をねぐらとする凶暴な魔獣が現れた<br>遺跡荒らしの氷狼、ルーインハウンドを倒せ",
+      "de": "Eine grausame Bestie hat sich in der Nähe der schwebenden Ruine eingenistet. Erledige sie, bevor sie die gesamte Insel zu Eis erstarren lässt!",
+      "fr": "Un loup des glaces a fait des ruines son territoire et en profite pour laisser libre cours à son instinct destructeur. Calmez-le au plus vite afin de préserver ce qu'il reste des précieux vestiges."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12471604
   },
   "2081": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Rotten Affair",
+      "ja": "腐都の守護者「ペイシェント・クリブ」",
+      "de": "Die ewige Wächterin",
+      "fr": "Défi&nbsp;: pas de patience pour la pourriture"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Undeterred by the fetid pall that chokes the air, this statuesque guardian endures, deadly and vengeful. Though its graceful winged form is a sight to behold, its dominion must be brought to an end.",
+      "ja": "異常環境でなおも稼働し続ける<br>強力な彫像型守護者が現れた<br>腐都の守護者、ペイシェント・クリブを倒せ",
+      "de": "Auch nach unzähligen Jahren geht diese steinerne Wächterin ihrer ursprünglichen Aufgabe rigoros nach. Schenke ihr die Ruhe, die sie sich verdient hat.",
+      "fr": "Une puissante statue gardienne poursuit sa garde éternelle malgré la dégradation avancée de son domaine. Mettez fin à sa domination malvenue."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12478505
   },
   "2082": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gale-force Encounter",
+      "ja": "暴風の操者「ストームコーラー」",
+      "de": "Stürmischer Empfang",
+      "fr": "Défi&nbsp;: autant en emporte la tempête"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Proud of bearing and sharp of claw, this mighty griffin wields the very wind as its weapon. Tread with care, lest a sudden gust sends you flying.",
+      "ja": "風を操り獲物を狩る<br>大型のグリフィンが現れた<br>暴風の操者、ストームコーラーを倒せ",
+      "de": "Diese große Vogelbestie nutzt die Macht des Windes, um ihre Beute zu jagen. Lass dich nicht von den Füßen reißen!",
+      "fr": "Un griffon géant manipule les vents à sa guise pour chasser ses proies impuissantes. Coupez-lui les ailes pour arrêter le carnage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12290419
   },
   "2083": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Scale Model",
+      "ja": "模造の蛇人形「デミメデューサ」",
+      "de": "Stein zu Stein",
+      "fr": "Défi&nbsp;: rideau sur la méduse"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Contrary to its lithe, organic form, this entity is, in fact, a complex, finely wrought golem built in the likeness of an ancient serpentine creature. On an island of replicas, this is one recreation best consigned to oblivion.",
+      "ja": "太古の生体兵器を模して作られた<br>精巧なゴーレムが現れた<br>模造の蛇人形「デミメデューサ」を倒せ",
+      "de": "Ein Golem, der ursprünglich nach dem Bild eines antiken Schlangenwesens entwickelt wurde, ist auf Kreszentia aufgetaucht. Sieh ihm auf keinen Fall in die Augen!",
+      "fr": "Un golem serpentin créé à l'image d'une arme biologique des temps anciens menace la région. Faites-en de la charpie avant qu'un drame ne se produise."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12354274
   },
   "2084": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Thunderregnum",
+      "ja": "気高き雷獣「クレセントレギナ」",
+      "de": "Königliche Arroganz",
+      "fr": "Défi&nbsp;: la reine des coeurls brisés"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "This regal beast rules over the North Horn, subjugating its kingdom with shocking displays of violence. It is high time the tyrant was toppled from their throne.",
+      "ja": "三日月島北部を縄張りとする<br>魔獣たちの女王が現れた<br>気高き雷獣、クレセントレギナを倒せ",
+      "de": "Die Königin des nördlichen Kreszentias ist aus den Schatten hervorgetreten, um ihr Revier zu verteidigen. Nimm dich vor ihren Blitzen in Acht!",
+      "fr": "La souveraine de toutes les créatures de l'île de Lunule septentrionale fait régner la terreur avec ses pouvoirs foudroyants. Montrez-lui qui fait la loi dans la région."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
+    "level": 1,
+    "location": 12462056
   },
   "2085": {
     "name": {

@@ -96161,27 +96161,51 @@
   },
   "70998": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Touring Tural",
+      "ja": "トラルの風を知る、あなたに",
+      "de": "Einmal quer durch Tural",
+      "fr": "À la turalienne"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101481.tex&format=png"
   },
   "70999": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hero's Day Off",
+      "ja": "なんでもない休日、母なる大地の片隅で",
+      "de": "Ein Moment der Entspannung, ein Moment des Glücks",
+      "fr": "Instant de détente, instant de bonheur"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "rewards": [
+      {
+        "id": 52290,
+        "amount": 1
+      },
+      {
+        "id": 52634,
+        "amount": 1
+      },
+      {
+        "id": 52635,
+        "amount": 1
+      },
+      {
+        "id": 52636,
+        "amount": 1
+      },
+      {
+        "id": 52637,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101482.tex&format=png"
   },
   "71000": {
     "name": {
-      "en": "星芒祭と友だちのためのソリ",
+      "en": "Dashing through the Starlight",
       "ja": "星芒祭と友だちのためのソリ",
-      "de": "星芒祭と友だちのためのソリ",
+      "de": "Rasantes Sternenlichtfest",
       "fr": "Un traîneau pour mon amie"
     },
     "icon": "/api/asset?path=ui/icon/080000/080106.tex&format=png",
@@ -96189,9 +96213,9 @@
   },
   "71001": {
     "name": {
-      "en": "星芒祭と子どものためのベル",
+      "en": "Sleigh Bells Ring",
       "ja": "星芒祭と子どものためのベル",
-      "de": "星芒祭と子どものためのベル",
+      "de": "Schöner die Glocken nie läuten",
       "fr": "Le tintement des étoiles"
     },
     "icon": "/api/asset?path=ui/icon/080000/080106.tex&format=png",
@@ -96205,29 +96229,29 @@
   },
   "71002": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Keyward Bound",
+      "ja": "打って撃って、守り抜け！",
+      "de": "Tippen bis zum Umkippen",
+      "fr": "Avalanche de mots"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/080000/080136.tex&format=png"
   },
   "71003": {
     "name": {
-      "en": "守護天節と面妖な着ぐるみたち",
+      "en": "We Scare Bears",
       "ja": "守護天節と面妖な着ぐるみたち",
-      "de": "守護天節と面妖な着ぐるみたち",
-      "fr": "守護天節と面妖な着ぐるみたち"
+      "de": "Bärenkinder",
+      "fr": "Mignons oursons"
     },
     "icon": "/api/asset?path=ui/icon/080000/080103.tex&format=png",
     "banner": "/api/asset?path=ui/icon/101000/101479.tex&format=png"
   },
   "71004": {
     "name": {
-      "en": "守護天節と面妖なかくれんぼ",
+      "en": "Grim and Grisly Games",
       "ja": "守護天節と面妖なかくれんぼ",
-      "de": "守護天節と面妖なかくれんぼ",
-      "fr": "守護天節と面妖なかくれんぼ"
+      "de": "Gruseliges Versteckspiel",
+      "fr": "Cache-cache monstrueux"
     },
     "icon": "/api/asset?path=ui/icon/080000/080103.tex&format=png",
     "rewards": [
@@ -96440,21 +96464,37 @@
   },
   "71017": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Detecting a Lead",
+      "ja": "ともに進む捜査線",
+      "de": "Recherche hier, Recherche da",
+      "fr": "Double enquête, double omelette"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101484.tex&format=png"
   },
   "71018": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Clotted Crime",
+      "ja": "つわものふたり",
+      "de": "Ein goldiges Ende",
+      "fr": "Les deux durs à cuire"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "rewards": [
+      {
+        "id": 52260,
+        "amount": 1
+      },
+      {
+        "id": 46784,
+        "amount": 1
+      },
+      {
+        "id": 52361,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101485.tex&format=png"
   },
   "71019": {
     "name": {
@@ -96652,48 +96692,664 @@
   },
   "71038": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Under No Illusion",
+      "ja": "幻影を切り裂く術",
+      "de": "Hinter dem Schleier der Illusionen",
+      "fr": "Aux frontières du mirage"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101499.tex&format=png"
   },
   "71039": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Phantoms to Fillet",
+      "ja": "ファントム包丁の創造",
+      "de": "Auf Küchenmessers Schneide",
+      "fr": "Les dissipateurs spirituels"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71040": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Phantom Unveiled",
+      "ja": " 真のファントムウェポン",
+      "de": " Die wahre Macht des Phantoms",
+      "fr": " Pureté fantôme"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 50032,
+            "amount": 1
+          },
+          {
+            "id": 50053,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50978,
+            "amount": 1
+          },
+          {
+            "id": 50999,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50033,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50979,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50034,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50980,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50035,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50981,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50036,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50982,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50037,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50983,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50038,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50984,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50039,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50985,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50040,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50986,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50041,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50987,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50042,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50988,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50043,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50989,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50044,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50990,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50045,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50991,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50046,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50992,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50047,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50993,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50048,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50994,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50049,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50995,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50050,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50996,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50051,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50997,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50052,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 50998,
+            "amount": 1
+          }
+        ]
+      }
+    ]
   },
   "71041": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Final Phantasm",
+      "ja": " ファントムウェポンの最終形",
+      "de": " Unzureichende Individualität",
+      "fr": " Les mémentos martiaux"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 50978,
+            "amount": 1
+          },
+          {
+            "id": 50999,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51000,
+            "amount": 1
+          },
+          {
+            "id": 51021,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50979,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51001,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50980,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51002,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50981,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51003,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50982,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51004,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50983,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51005,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50984,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51006,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50985,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51007,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50986,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51008,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50987,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51009,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50988,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51010,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50989,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51011,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50990,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51012,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50991,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51013,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50992,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51014,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50993,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51015,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50994,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51016,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50995,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51017,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50996,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51018,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50997,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51019,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 50998,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 51020,
+            "amount": 1
+          }
+        ]
+      }
+    ]
   },
   "71042": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "All Too Fleeting",
+      "ja": "すべては蜃気楼の如し",
+      "de": "Aus der Traum",
+      "fr": "Finale fantasmagorie"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "rewards": [
+      {
+        "id": 52582,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101500.tex&format=png"
   },
   "71043": {
     "name": {
@@ -96724,84 +97380,94 @@
   },
   "71046": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Symphony of Life",
+      "ja": "新生祭と音色の軌跡",
+      "de": "Die Symphonie des Lebens",
+      "fr": "La symphonie de la vie"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/080000/080113.tex&format=png",
+    "rewards": [
+      {
+        "id": 52279,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101483.tex&format=png"
   },
   "71047": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Occult Reunion",
+      "ja": "ふたたび三日月島へ",
+      "de": "Rückkehr nach Kreszentia",
+      "fr": "Retour au croissant"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101502.tex&format=png"
   },
   "71048": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The North Horn Beckons",
+      "ja": "探査再開",
+      "de": "Die nördliche Seite des Halbmonds",
+      "fr": "Au nord, c'est l'exploration"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71049": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Confluence Conundrum",
+      "ja": "フォークタワーの謎",
+      "de": "Versiegelt mit Blut und Magie",
+      "fr": "Un nœud à démêler"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71050": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Aetherial Oddities",
+      "ja": "異常地脈の調査",
+      "de": "Quell der Zerstörung",
+      "fr": "Courants alternatifs"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71051": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Familiar Issue",
+      "ja": "主の痕跡",
+      "de": "Ätherische Spurensuche",
+      "fr": "La chasse au familier"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71052": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Observant Servant",
+      "ja": "すべてを知るもの",
+      "de": "Die Last des Wissens",
+      "fr": "L'omniscience incarnée"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71053": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In the Shadow of the Tower",
+      "ja": "「魔の塔」へ",
+      "de": "Der Turm ruft",
+      "fr": "Le maître à l'index"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101503.tex&format=png"
   },
   "71054": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Wisdom's End",
+      "ja": "最後の知識",
+      "de": "Wofür es sich zu träumen lohnt",
+      "fr": "Le dernier enseignement"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101504.tex&format=png"
   },
   "71055": {
     "name": {
@@ -96814,12 +97480,27 @@
   },
   "71056": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Prelude's Call",
+      "ja": "プレリュードに誘われて",
+      "de": "Der Ruf des Präludiums",
+      "fr": "L'appel du prélude "
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/080000/080113.tex&format=png",
+    "rewards": [
+      {
+        "id": 52363,
+        "amount": 1
+      },
+      {
+        "id": 52364,
+        "amount": 1
+      },
+      {
+        "id": 52365,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101501.tex&format=png"
   },
   "71057": {
     "name": {
