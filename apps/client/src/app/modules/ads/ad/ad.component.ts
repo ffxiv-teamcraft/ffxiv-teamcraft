@@ -21,6 +21,8 @@ export class AdComponent extends TeamcraftComponent {
 
   private router = inject(Router);
 
+  protected shouldShowTeamcrafter = false;
+
   constructor() {
     super();
     if (!this.platform.isOverlay()) {
@@ -67,6 +69,7 @@ export class AdComponent extends TeamcraftComponent {
       ramp2CDNScript.async = true;
       ramp2CDNScript.setAttribute('src', `https://cdn.intergient.com/1024627/${this.platform.isDesktop() ? 73554 : 73498}/ramp.js`);
       document.head.appendChild(ramp2CDNScript);
+      ramp2CDNScript.onerror = () => this.showTC();
       this.router.events
         .pipe(
           skip(1),
@@ -99,6 +102,10 @@ export class AdComponent extends TeamcraftComponent {
   private removeAd(): void {
     ramp.changePath('no-ads');
     ramp.destroyUnits('all');
+  }
+
+  private showTC(): void {
+    this.shouldShowTeamcrafter = true;
   }
 
   private enableDesktopAd(): void {
