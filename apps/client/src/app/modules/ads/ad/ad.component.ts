@@ -23,6 +23,8 @@ export class AdComponent extends TeamcraftComponent {
 
   protected shouldShowTeamcrafter = false;
 
+  private adPlatform = 'desktop';
+
   constructor() {
     super();
     if (!this.platform.isOverlay()) {
@@ -78,14 +80,22 @@ export class AdComponent extends TeamcraftComponent {
           })
         )
         .subscribe((event: NavigationEnd) => {
-          if (ramp?.spaNewPage) {
-            ramp.spaNewPage(event.url);
-          }
+          this.newPage(event.url);
         });
     }
   }
 
+  private newPage(url: string): void {
+    if (Math.random() > 0.10 && ramp?.spaNewPage) {
+      ramp.spaNewPage(url);
+    } else {
+      this.showTC();
+    }
+  }
+
+
   private applyPlatform(platform: string | null): void {
+    this.adPlatform = platform;
     switch (platform) {
       case 'mobile':
         this.enableMobileAd();
@@ -105,10 +115,14 @@ export class AdComponent extends TeamcraftComponent {
   }
 
   private showTC(): void {
-    this.shouldShowTeamcrafter = true;
+    this.removeAd();
+    if (this.adPlatform != 'mobile') {
+      this.shouldShowTeamcrafter = true;
+    }
   }
 
   private enableDesktopAd(): void {
+    this.shouldShowTeamcrafter = false;
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'desktop';
       ramp.isMobile = false;
@@ -126,6 +140,7 @@ export class AdComponent extends TeamcraftComponent {
   }
 
   private enableMobileAd(): void {
+    this.shouldShowTeamcrafter = false;
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'mobile';
       ramp.isMobile = true;
