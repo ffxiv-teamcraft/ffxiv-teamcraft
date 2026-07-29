@@ -3115,7 +3115,7 @@
     "en": "The Strayborough Deadwalk",
     "ja": "悪夢遊園 ストレイバロー",
     "de": "Mahrlingen-Promenade",
-    "fr": "le Parc-aux-Errants",
+    "fr": "Le Parc-aux-Errants",
     "description": {
       "en": "Dreamborough─a district of Living Memory long thought lost to interdimensional fusion─rises from the rift after decades of disconnection. Yet what lies beyond its gates is not the dazzling paradise of Constancy's memory, but a land marred by shadow and haunted by vestiges of the Endless who once called it home. You must venture into the twisted grounds and quell the lost souls' agony once and for all...but the phantoms within do not take kindly to the living.",
       "ja": "かつてリビング・メモリーに存在した5番目のエリア、遊園区画ドリーマーバロー。原初世界との局所的世界統合の過程で次元の狭間に消えたはずのこの場所が、「世界を繋ぐ力」の発動に伴って奇跡的に繋がりを回復する。<br>しかし長きに亘る次元漂流の果てに永久人たちは消え去り、その内部はいまや不気味な変貌を遂げていた。案内係とノスタルジアの願いに応え、冒険者は調査に向かうが――。",
@@ -5520,6 +5520,32 @@
     "contentText": [
       42884,
       42851
+    ]
+  },
+  "5084": {
+    "id": 5084,
+    "en": "Clotted Crime",
+    "ja": "つわものふたり",
+    "de": "Hartgesotten",
+    "fr": "Les deux durs à cuire",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061805.tex&format=png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 1166,
+    "contentText": [
+      44047,
+      44000
     ]
   },
   "10001": {
@@ -17300,6 +17326,28 @@
       43000,
       43000
     ]
+  },
+  "57001": {
+    "id": 57001,
+    "en": "Keybound Brawler",
+    "ja": "キーバウンド・ブロウラー",
+    "de": "Tastenschläger",
+    "fr": "Frappe Fatale",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061820.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/112000/112663.tex&format=png",
+    "contentType": 19,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 0
   },
   "60001": {
     "id": 60001,

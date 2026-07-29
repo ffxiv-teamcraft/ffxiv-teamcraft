@@ -26279,6 +26279,71 @@
     "folklore": 43886,
     "recordType": 1
   },
+  "52007": {
+    "id": 1517,
+    "itemId": 52007,
+    "level": 100,
+    "icon": "/api/asset?path=ui/icon/028000/028786.tex&format=png",
+    "mapId": 857,
+    "zoneId": 4505,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 4,
+    "folklore": 43884,
+    "recordType": 3
+  },
+  "52008": {
+    "id": 1518,
+    "itemId": 52008,
+    "level": 100,
+    "icon": "/api/asset?path=ui/icon/028000/028787.tex&format=png",
+    "mapId": 858,
+    "zoneId": 4506,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 4,
+    "folklore": 43884,
+    "recordType": 2
+  },
+  "52009": {
+    "id": 1519,
+    "itemId": 52009,
+    "level": 100,
+    "icon": "/api/asset?path=ui/icon/028000/028788.tex&format=png",
+    "mapId": 859,
+    "zoneId": 4507,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 4,
+    "folklore": 43884,
+    "recordType": 3
+  },
+  "52010": {
+    "id": 1520,
+    "itemId": 52010,
+    "level": 100,
+    "icon": "/api/asset?path=ui/icon/028000/028789.tex&format=png",
+    "mapId": 860,
+    "zoneId": 4508,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 4,
+    "folklore": 43885,
+    "recordType": 3
+  },
+  "52011": {
+    "id": 1522,
+    "itemId": 52011,
+    "level": 100,
+    "icon": "/api/asset?path=ui/icon/028000/028168.tex&format=png",
+    "mapId": 862,
+    "zoneId": 4510,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 4,
+    "folklore": 43886,
+    "recordType": 1
+  },
   "52012": {
     "id": 1512,
     "itemId": 52012,
@@ -27737,6 +27802,19 @@
     "weathered": 0,
     "stars": 0,
     "recordType": 44
+  },
+  "52297": {
+    "id": 1521,
+    "itemId": 52297,
+    "level": 100,
+    "icon": "/api/asset?path=ui/icon/028000/028790.tex&format=png",
+    "mapId": 861,
+    "zoneId": 4509,
+    "timed": 0,
+    "weathered": 2,
+    "stars": 4,
+    "folklore": 43886,
+    "recordType": 2
   },
   "2001398": {
     "id": 15005,

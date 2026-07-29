@@ -28602,10 +28602,10 @@
     "fr": "Abysses du néant"
   },
   "4768": {
-    "en": "",
+    "en": "The Dire Deepcroft",
     "ja": "",
-    "de": "",
-    "fr": ""
+    "de": "Düsterer Totenacker",
+    "fr": "Cimetière désaffecté"
   },
   "4769": {
     "en": "",
@@ -29766,10 +29766,10 @@
     "fr": "Relais des Cimes"
   },
   "4962": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Keybound Square",
+    "ja": "キーバウンドスクウェア",
+    "de": "Ring der Tasten",
+    "fr": "Square des clavistes"
   },
   "4963": {
     "en": "",
@@ -31790,8 +31790,8 @@
   "5299": {
     "en": "Shrouded Sanctum",
     "ja": "隠された小部屋",
-    "de": "隠された小部屋",
-    "fr": "隠された小部屋"
+    "de": "Verstecktes Heiligtum",
+    "fr": "Petite pièce cachée"
   },
   "5300": {
     "en": "Mech Ops",
@@ -32790,10 +32790,10 @@
     "fr": "Place annexe"
   },
   "5466": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kanilokka Corpus Substructure",
+    "ja": "カニロッカ技研地下",
+    "de": "Tiefen von Kanilokkas Institut",
+    "fr": "Sous-sol de l'Institut Kanilokka"
   },
   "5467": {
     "en": "Dorgerwor the Astute",
@@ -32844,136 +32844,136 @@
     "fr": "Contes du Camelot annexes"
   },
   "5475": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Tower of Magic",
+    "ja": "フォークタワー：魔の塔",
+    "de": "Turm der Magie",
+    "fr": "Tour fourchue de la Magie"
   },
   "5476": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Tower Base",
+    "ja": "下層",
+    "de": "Fuß des Turmes",
+    "fr": "Quartiers inférieurs"
   },
   "5477": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Vestibule",
+    "ja": "下層回廊入口",
+    "de": "Eingangskorridor",
+    "fr": "Vestibule inférieur"
   },
   "5478": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower West Passage",
+    "ja": "下層西部回廊",
+    "de": "Westkorridor",
+    "fr": "Passage inférieur ouest"
   },
   "5479": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower East Passage",
+    "ja": "下層東部回廊",
+    "de": "Ostkorridor",
+    "fr": "Passage inférieur est"
   },
   "5480": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Central Passage",
+    "ja": "下層中央回廊",
+    "de": "Hauptkorridor",
+    "fr": "Passage inférieur central"
   },
   "5481": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central Mezzanine",
+    "ja": "中層1",
+    "de": "Mitte des Turmes 1",
+    "fr": "Quartiers intermédiaires I"
   },
   "5482": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Veil of Ignorance",
+    "ja": "中層警戒区画",
+    "de": "Mittlerer Wachbezirk",
+    "fr": "Salle de garde intermédiaire"
   },
   "5483": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Secret Nook",
+    "ja": "中層秘匿区画",
+    "de": "Mittlerer Geheimbezirk",
+    "fr": "Coin caché"
   },
   "5484": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Central Hall",
+    "ja": "中層2",
+    "de": "Mitte des Turmes 2",
+    "fr": "Quartiers intermédiaires II"
   },
   "5485": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Passage",
+    "ja": "上層1",
+    "de": "Obergeschoß des Turmes 1",
+    "fr": "Quartiers supérieurs I"
   },
   "5486": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Veil",
+    "ja": "上層警戒区画",
+    "de": "Oberer Wachbezirk",
+    "fr": "Salle de garde supérieure"
   },
   "5487": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Transcendence",
+    "ja": "上層2",
+    "de": "Obergeschoß des Turmes 2",
+    "fr": "Quartiers supérieurs II"
   },
   "5488": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pinnacle of Knowledge",
+    "ja": "知の頂き",
+    "de": "Krone des Wissens",
+    "fr": "Summum du savoir"
   },
   "5489": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pinnacle of Knowledge",
+    "ja": "知の頂き",
+    "de": "Krone des Wissens",
+    "fr": "Summum du savoir"
   },
   "5490": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Concealed Collection",
+    "ja": "隠者の収蔵庫",
+    "de": "Schatzkammer des Einsiedlers",
+    "fr": "Collection oubliée"
   },
   "5491": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Herpetology Forum",
+    "ja": "蛇の間",
+    "de": "Raum der Herpetologie",
+    "fr": "Salle d'herpétologie"
   },
   "5492": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Choreology Room",
+    "ja": "舞踏の間",
+    "de": "Raum der Choreologie",
+    "fr": "Salle de choréologie"
   },
   "5493": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Thanatology Room",
+    "ja": "死の間",
+    "de": "Raum der Thanatologie",
+    "fr": "Salle de thanatologie"
   },
   "5494": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Epistemology Theater",
+    "ja": "全知の間",
+    "de": "Raum der Epistemologie",
+    "fr": "Salle d'épistémologie"
   },
   "5495": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Agnoiology Room",
+    "ja": "幻体の間",
+    "de": "Raum der Agnoiologie",
+    "fr": "Salle d'agnotologie"
   },
   "5496": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Horology Room",
+    "ja": "時操の間",
+    "de": "Raum der Horologie",
+    "fr": "Salle d'horlogerie"
   },
   "5497": {
     "en": "The Commercium",
@@ -33264,10 +33264,10 @@
     "fr": "Source épanouie"
   },
   "5545": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Gold Saucer",
+    "ja": "ゴールドソーサー",
+    "de": "Gold Saucer",
+    "fr": "Gold Saucer"
   },
   "5546": {
     "en": "The Timberlodge",
@@ -33420,154 +33420,154 @@
     "fr": "Avenue d'Ulthalam"
   },
   "5571": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "North Horn Base Camp",
+    "ja": "探査隊の北部ベースキャンプ",
+    "de": "Nördliches Basislager der Expedition",
+    "fr": "Camp de base nord"
   },
   "5572": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sinking Sanctuary",
+    "ja": "沈んだ聖堂前",
+    "de": "Versunkener Kircheneingang",
+    "fr": "Sanctuaire englouti"
   },
   "5573": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Suspended Masonry",
+    "ja": "浮遊遺跡",
+    "de": "Schwebende Ruine",
+    "fr": "Structures suspendues"
   },
   "5574": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Moldering Outskirts",
+    "ja": "腐敗した市街地前",
+    "de": "Eingang des Verdorbenen Viertels",
+    "fr": "Faubourgs décrépis"
   },
   "5575": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unhallowed Hamlet",
+    "ja": "妖火の漁村",
+    "de": "Finsterflammen-Fischerdorf",
+    "fr": "Hameau hanté"
   },
   "5576": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Crown of Karnak",
+    "ja": "カルナック城塞",
+    "de": "Festung Karnak",
+    "fr": "Couronne de Karnak"
   },
   "5577": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "North Horn",
+    "ja": "三日月島北部",
+    "de": "Nördliches Kreszentia",
+    "fr": "Île de Lunule septentrionale"
   },
   "5578": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Tower of Magic",
+    "ja": "フォークタワー：魔の塔",
+    "de": "Turm der Magie",
+    "fr": "Tour fourchue de la Magie"
   },
   "5579": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Crown of Karnak",
+    "ja": "カルナック城塞",
+    "de": "Festung Karnak",
+    "fr": "La Couronne de Karnak"
   },
   "5580": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "South Shadowdeep Shore",
+    "ja": "妖火の湖南岸",
+    "de": "Finsterflammen-Südufer",
+    "fr": "Rive sud du Lac spectral"
   },
   "5581": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "North Shadowdeep Shore",
+    "ja": "妖火の湖北岸",
+    "de": "Finsterflammen-Nordufer",
+    "fr": "Rive nord du Lac spectral"
   },
   "5582": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sinking Sanctuary",
+    "ja": "沈んだ聖堂",
+    "de": "Versunkene Kirche",
+    "fr": "Sanctuaire englouti"
   },
   "5583": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Marrowood",
+    "ja": "野晒し森",
+    "de": "Witterwald",
+    "fr": "Bois ballotés"
   },
   "5584": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Suspended Masonry",
+    "ja": "浮遊遺跡",
+    "de": "Schwebende Ruine",
+    "fr": "Structures suspendues"
   },
   "5585": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shrine of Spheres",
+    "ja": "球体像の神殿",
+    "de": "Sphärenpalast",
+    "fr": "Temple des sphères"
   },
   "5586": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Moldering Streets",
+    "ja": "腐敗した市街地",
+    "de": "Verdorbenes Viertel",
+    "fr": "Cité décrépie"
   },
   "5587": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unhallowed Hamlet",
+    "ja": "妖火の漁村",
+    "de": "Finsterflammen-Fischerdorf",
+    "fr": "Hameau hanté"
   },
   "5588": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dark Territory",
+    "ja": "暗闇の領域",
+    "de": "Nichtssphäre",
+    "fr": "Territoire ténébreux"
   },
   "5589": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Panoptical Pillar",
+    "ja": "見晴らし塔",
+    "de": "Aussichtsturm",
+    "fr": "Mirador paisible"
   },
   "5590": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shadowdeep",
+    "ja": "妖火の湖",
+    "de": "See Finsterflamme",
+    "fr": "Lac spectral"
   },
   "5591": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Labyrinth of the Damned",
+    "ja": "青光の地下監獄",
+    "de": "Phosphor-Kerker",
+    "fr": "Labyrinthe des damnés"
   },
   "5592": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "North Basin",
+    "ja": "北部盆地",
+    "de": "Nordsenke",
+    "fr": "Bassin septentrional"
   },
   "5593": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Subterrane",
+    "ja": "地下空洞",
+    "de": "Unterirdische Aushöhlung",
+    "fr": "Spélonque perdue"
   },
   "5594": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Concealed Collection",
+    "ja": "隠者の収蔵庫",
+    "de": "Schatzkammer des Einsiedlers",
+    "fr": "Collection oubliée"
   },
   "5595": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "North Horn Base Camp",
+    "ja": "探査隊の北部ベースキャンプ",
+    "de": "Nördliches Basislager der Expedition",
+    "fr": "Camp de base nord"
   },
   "5596": {
     "en": "",

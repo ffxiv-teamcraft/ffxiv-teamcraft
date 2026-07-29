@@ -4928,7 +4928,7 @@
   "822": {
     "en": "greater demon",
     "ja": "グレートデーモン",
-    "de": "Erzdämon",
+    "de": "höher[a] Dämon",
     "fr": "mégadémon"
   },
   "823": {
@@ -9404,7 +9404,7 @@
   "1568": {
     "en": "dung wespe",
     "ja": "ダンヴェスパ",
-    "de": "Dungwespe",
+    "de": "Dung-Vespula",
     "fr": "guêpe de fumier"
   },
   "1569": {
@@ -17024,7 +17024,7 @@
   "2838": {
     "en": "arch demon",
     "ja": "アークデーモン",
-    "de": "gehörnt[a] Dämon",
+    "de": "Erzdämon",
     "fr": "archidémon"
   },
   "2839": {
@@ -83205,7 +83205,7 @@
     "en": "sanguine recluse",
     "ja": "ハーミット・オブ・パワー",
     "de": "blutig[a] Einsiedler",
-    "fr": "hermite de la Force"
+    "fr": "ermite de la Force"
   },
   "13869": {
     "en": "gale sphere",
@@ -85533,7 +85533,7 @@
     "en": "oglop",
     "ja": "ブリ虫",
     "de": "Schabe",
-    "fr": "ブリ虫"
+    "fr": "puluche"
   },
   "14257": {
     "en": "",
@@ -85842,10 +85842,10 @@
     "fr": "maelström"
   },
   "14308": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut"
   },
   "14309": {
     "en": "Mistwake crawler",
@@ -86778,10 +86778,10 @@
     "fr": "Yuffie miniature"
   },
   "14464": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Vincent",
+    "ja": "マメット・ヴィンセント",
+    "de": "Aufzieh-Vincent",
+    "fr": "Vincent miniature"
   },
   "14465": {
     "en": "wind-up Red XIII",
@@ -86862,34 +86862,34 @@
     "fr": "sentinelle défectueuse R9"
   },
   "14478": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Carnelian",
+    "ja": "カーネリアン",
+    "de": "Carnelian",
+    "fr": "Carnelian"
   },
   "14479": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "rotten walker",
+    "ja": "ロトン・ワーカー",
+    "de": "verrottet[a] Versuchsobjekt",
+    "fr": "marcheur putride"
   },
   "14480": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "illicit aerostat",
+    "ja": "クリミナルズ・エアロスタット",
+    "de": "Verbrecher-Aerostat",
+    "fr": "aérostat illégal"
   },
   "14481": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "illicit turret",
+    "ja": "クリミナルズ・レーザータレット",
+    "de": "Verbrecher-Geschützdrohne",
+    "fr": "tourelle laser illégale"
   },
   "14482": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
   },
   "14483": {
     "en": "soothing sea-beast",
@@ -86928,64 +86928,64 @@
     "fr": "brigand"
   },
   "14489": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "two-headed aevis",
+    "ja": "ツーヘッド・エイビス",
+    "de": "zweiköpfig[a] Avis",
+    "fr": "eibis bicéphale"
   },
   "14490": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "green head",
+    "ja": "グリーンヘッド",
+    "de": "grün[a] Kopf",
+    "fr": "tête verte"
   },
   "14491": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "blue head",
+    "ja": "ブルーヘッド",
+    "de": "blau[a] Kopf",
+    "fr": "tête bleue"
   },
   "14492": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball lightning",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
   },
   "14493": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "swirling orb",
+    "ja": "氷球",
+    "de": "Eissphäre",
+    "fr": "orbe de glace"
   },
   "14494": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "charmed lightning",
+    "ja": "導流雷球",
+    "de": "leitend[a] Elektrosphäre",
+    "fr": "orbe de foudre conducteur"
   },
   "14495": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "charmed ice",
+    "ja": "導流氷球",
+    "de": "leitend[a] Eissphäre",
+    "fr": "orbe de glace conducteur"
   },
   "14496": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "【未使用】",
+    "ja": "【未使用】",
+    "de": "Lichtsphäre",
+    "fr": "【未使用】"
   },
   "14497": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane font",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Sphäre",
+    "fr": "sphère arcanique"
   },
   "14498": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane font",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Sphäre",
+    "fr": "sphère arcanique"
   },
   "14499": {
     "en": "coffinmaker",
@@ -87012,82 +87012,82 @@
     "fr": "nuage de foudre"
   },
   "14503": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Necrophobia",
+    "ja": "ネクロフォビア",
+    "de": "Nekrophobia",
+    "fr": "Nécrophobie"
   },
   "14504": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "severing head",
+    "ja": "バリアヘッド",
+    "de": "Barrierenkopf",
+    "fr": "tête-barrière"
   },
   "14505": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Abductor",
+    "ja": "アブダクター",
+    "de": "Abduktor",
+    "fr": "Ravisseur"
   },
   "14506": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "biting wind",
+    "ja": "烈風",
+    "de": "Bö",
+    "fr": "tornade"
   },
   "14507": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Abductor's plume",
+    "ja": "アブダクター・プルーム",
+    "de": "Abduktor-Feder",
+    "fr": "plumes du Ravisseur"
   },
   "14508": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "elm gigas",
+    "ja": "エルムギガース",
+    "de": "Elm-Gigas",
+    "fr": "gigas d'orme"
   },
   "14509": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alabaster Blade",
+    "ja": "アラバスターブレード",
+    "de": "Alabaster-Klinge",
+    "fr": "Lame d'albâtre"
   },
   "14510": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "alabaster golem",
+    "ja": "アラバスターゴーレム",
+    "de": "Alabaster-Golem",
+    "fr": "golem d'albâtre"
   },
   "14511": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "light aether",
+    "ja": "光の魔力",
+    "de": "Lichtäther",
+    "fr": "énergie magique de Lumière"
   },
   "14512": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "phantom necromancer",
+    "ja": "マギ・ネクロマンサー",
+    "de": "kreszent[a] Nekromant",
+    "fr": "nécromancien magi"
   },
   "14513": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "long-dead seafarer",
+    "ja": "古き船乗りの死霊",
+    "de": "alt[a] Matrosengeist",
+    "fr": "spectre d'ancien marin"
   },
   "14514": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "long-dead pirate",
+    "ja": "古き海賊の死霊",
+    "de": "alt[a] Piratengeist",
+    "fr": "spectre d'ancien pirate"
   },
   "14515": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "long-dead explorer",
+    "ja": "古き探検家の死霊",
+    "de": "alt[a] Entdeckergeist",
+    "fr": "spectre d'ancien explorateur"
   },
   "14516": {
     "en": "seaborn speaker",
@@ -87096,76 +87096,76 @@
     "fr": "messager marin"
   },
   "14517": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "conjured Calofisteri",
+    "ja": "カロフィステリ・ダブル",
+    "de": "Calofisteri-Doppelgängerin",
+    "fr": "clone de Calofisteri"
   },
   "14518": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "entanglement",
+    "ja": "魔髪の縛め",
+    "de": "Verfilzung",
+    "fr": "emmêlement"
   },
   "14519": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "lithe lock",
+    "ja": "魔髪",
+    "de": "Locke",
+    "fr": "mêche envoûtée"
   },
   "14520": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arbatel",
+    "ja": "アルバテル",
+    "de": "Arbatel",
+    "fr": "Arbatel"
   },
   "14521": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "page 16",
+    "ja": "16ページ",
+    "de": "Seite[p] 16",
+    "fr": "page seize"
   },
   "14522": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "page 8",
+    "ja": "8ページ",
+    "de": "Seite[p] 8",
+    "fr": "page huit"
   },
   "14523": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "phantom hydra",
+    "ja": "マギ・ヒュドラ",
+    "de": "kreszent[a] Hydra",
+    "fr": "hydre magi"
   },
   "14524": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "holy sphere",
+    "ja": "光球",
+    "de": "Lichtsphäre",
+    "fr": "orbe de lumière"
   },
   "14525": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of fire",
+    "ja": "火球",
+    "de": "Feuersphäre",
+    "fr": "orbe de feu"
   },
   "14526": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "swirling orb",
+    "ja": "氷球",
+    "de": "Eissphäre",
+    "fr": "orbe de glace"
   },
   "14527": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
   },
   "14528": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "page 512",
+    "ja": "512ページ",
+    "de": "Seite[p] 512",
+    "fr": "page cinq-cent-douze"
   },
   "14529": {
     "en": "Alexander Resurrected",
@@ -88278,16 +88278,16 @@
     "fr": "succube visiteur"
   },
   "14714": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pallmagia",
+    "ja": "ペイルマギア",
+    "de": "bleich[a] Magia",
+    "fr": "Palimagia"
   },
   "14715": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "pallkeeper",
+    "ja": "呪力の形代",
+    "de": "Fluchwächter",
+    "fr": "talisman maudit"
   },
   "14716": {
     "en": "eye of the scorpion",
@@ -88296,76 +88296,76 @@
     "fr": "œil blindé"
   },
   "14717": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Index",
+    "ja": "インデックス",
+    "de": "Index",
+    "fr": "Index"
   },
   "14718": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "transcribed Index",
+    "ja": "インデックスの幻影",
+    "de": "Index-Phantom",
+    "fr": "illusion d'Index"
   },
   "14719": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "summoned bomb",
+    "ja": "サモンド・ボム",
+    "de": "gerufen[a] Bombe",
+    "fr": "bombo invoqué"
   },
   "14720": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "summoned bird",
+    "ja": "サモンド・バード",
+    "de": "gerufen[a] Vogel",
+    "fr": "oiseau invoqué"
   },
   "14721": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "holy lance",
+    "ja": "ホーリーランス",
+    "de": "heilig[a] Lanze",
+    "fr": "lance sacrée"
   },
   "14722": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "foretold phenomenon",
+    "ja": "予言の事象",
+    "de": "düster[a] Prophezeiung",
+    "fr": "prophétie"
   },
   "14723": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "swirling orb",
+    "ja": "氷球",
+    "de": "Eissphäre",
+    "fr": "orbe de glace"
   },
   "14724": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of fire",
+    "ja": "火球",
+    "de": "Feuersphäre",
+    "fr": "orbe de feu"
   },
   "14725": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
   },
   "14726": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "evil-seer",
+    "ja": "イビルシーア",
+    "de": "Schreckensseher",
+    "fr": "voyant maléfique"
   },
   "14727": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "accursed orb",
+    "ja": "呪詛の眼球",
+    "de": "verflucht[a] Augapfel",
+    "fr": "globe maudit"
   },
   "14728": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arch kelpie",
+    "ja": "アーチケルピー",
+    "de": "Erz-Kelpie",
+    "fr": "arch-kelpie"
   },
   "14729": {
     "en": "Shinryu Paradox",
@@ -88404,34 +88404,34 @@
     "fr": "chort"
   },
   "14735": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "machetaur",
+    "ja": "ミノタウロス・マキア",
+    "de": "Minotaurus-Machia",
+    "fr": "makhiataure"
   },
   "14736": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Demi-Medusa",
+    "ja": "デミメデューサ",
+    "de": "Demi-Medusa",
+    "fr": "Demi-méduse"
   },
   "14737": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "defective lamia",
+    "ja": "ディフェクティブ・ラミア",
+    "de": "defekt[a] Lamia",
+    "fr": "lamia déficiente"
   },
   "14738": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sensual Sandy",
+    "ja": "センシュアル・サンディ",
+    "de": "sinnlich[a] Sandy",
+    "fr": "Sandy la sulfureuse"
   },
   "14739": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "poison cloud",
+    "ja": "毒気塊",
+    "de": "toxisch[a] Kugel",
+    "fr": "amas de gaz toxique"
   },
   "14740": {
     "en": "",
@@ -88476,10 +88476,10 @@
     "fr": ""
   },
   "14747": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "pelekys",
+    "ja": "ペレキュス",
+    "de": "Pelekos",
+    "fr": "Pélekus"
   },
   "14748": {
     "en": "",
@@ -88566,100 +88566,100 @@
     "fr": "amas de débris"
   },
   "14762": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ruin hound",
+    "ja": "ルーインハウンド",
+    "de": "Ruinen-Bluthund",
+    "fr": "limier de la désolation"
   },
   "14763": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ice pillar",
+    "ja": "氷柱",
+    "de": "Eissäule",
+    "fr": "pilier de glace"
   },
   "14764": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "patient Kuribu",
+    "ja": "ペイシェント・クリブ",
+    "de": "geduldig[a] Kuribu",
+    "fr": "kuribu patiente"
   },
   "14765": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Iambe",
+    "ja": "イアムベー",
+    "de": "Iambe",
+    "fr": "Iambé"
   },
   "14766": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "winsome seed",
+    "ja": "イアムベーズシード",
+    "de": "Iambe-Samen",
+    "fr": "graine d'Iambé"
   },
   "14767": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "regnant chimera",
+    "ja": "レグナントキマイラ",
+    "de": "Herrscher-Chimäre",
+    "fr": "chimère souveraine"
   },
   "14768": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "fulmipotent orb",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
   },
   "14769": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "glacipotent orb",
+    "ja": "氷球",
+    "de": "Eissphäre",
+    "fr": "orbe de glace"
   },
   "14770": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "persistent pot",
+    "ja": "おねだりポット",
+    "de": "Wunderpott",
+    "fr": "pot persistant"
   },
   "14771": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent gremlin",
+    "ja": "クレセント・グレムリン",
+    "de": "Kreszentia-Gremlin",
+    "fr": "gremlin de Lunule"
   },
   "14772": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crimson gremlin",
+    "ja": "クリムゾン・グレムリン",
+    "de": "Purpur-Gremlin",
+    "fr": "gremlin cramoisi"
   },
   "14773": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "persistent pot",
+    "ja": "おねだりポット",
+    "de": "Wunderpott",
+    "fr": "pot persistant"
   },
   "14774": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent fan",
+    "ja": "クレセント・ファン",
+    "de": "Kreszentia-Ventilator",
+    "fr": "ventilateur de Lunule"
   },
   "14775": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "greater fan",
+    "ja": "グレート・ファン",
+    "de": "groß[a] Ventilator",
+    "fr": "grand ventilateur"
   },
   "14776": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "stormcaller",
+    "ja": "ストームコーラー",
+    "de": "Sturmbeschwörer",
+    "fr": "déchaîneur de tempêtes"
   },
   "14777": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "biting wind",
+    "ja": "烈風",
+    "de": "Bö",
+    "fr": "tornade"
   },
   "14778": {
     "en": "Shantotto the Demon",
@@ -88704,58 +88704,58 @@
     "fr": "Empty Thinker"
   },
   "14785": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cresceregina",
+    "ja": "クレセントレギナ",
+    "de": "Kreszentia-Königin",
+    "fr": "Regina coeurl du Croissant"
   },
   "14786": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
   },
   "14787": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "claret dragon",
+    "ja": "ルブルムドラゴン",
+    "de": "Rubrum-Drache",
+    "fr": "dragon rubrum"
   },
   "14788": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "necrohaze",
+    "ja": "ゾンビーガス",
+    "de": "Zombiegas-Wolke",
+    "fr": "amas de gaz zombi"
   },
   "14789": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "aetherial ward",
+    "ja": "魔法障壁",
+    "de": "Barriere",
+    "fr": "barrière magique"
   },
   "14790": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Algol",
+    "ja": "アルゴル",
+    "de": "Algol",
+    "fr": "Algol"
   },
   "14791": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Atlas Carbuncle",
+    "ja": "アトラス・カーバンクル",
+    "de": "Atlas-Karfunkel",
+    "fr": "Carbuncle atlas"
   },
   "14792": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "topaz stone",
+    "ja": "トパーズストーン",
+    "de": "Topasstein",
+    "fr": "topaze"
   },
   "14793": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "●イミテーション",
+    "ja": "●イミテーション",
+    "de": "●イミテーション",
+    "fr": "●イミテーション"
   },
   "14794": {
     "en": "",
@@ -88764,190 +88764,190 @@
     "fr": ""
   },
   "14795": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tiny mage",
+    "ja": "タイニーメイジ",
+    "de": "winzig[a] Magier",
+    "fr": "petit mage"
   },
   "14796": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tiny apprentice",
+    "ja": "タイニーアプレンティス",
+    "de": "winzig[a] Lehrling",
+    "fr": "petit apprenti"
   },
   "14797": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "flare sphere",
+    "ja": "フレアスフィア",
+    "de": "Flaresphäre",
+    "fr": "sphère de Brasier"
   },
   "14798": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "holy sphere",
+    "ja": "ホーリースフィア",
+    "de": "Sanctussphäre",
+    "fr": "sphère de Miracle"
   },
   "14799": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane sphere",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Sphäre",
+    "fr": "sphère arcanique"
   },
   "14800": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arcane sphere",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Sphäre",
+    "fr": "sphère arcanique"
   },
   "14801": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "metamorph",
+    "ja": "メタモルファ",
+    "de": "Metamorpha",
+    "fr": "métamorphe"
   },
   "14802": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower armor",
+    "ja": "タワー・イビルアーマー",
+    "de": "Magie-Kampfmaschine",
+    "fr": "armure maléfique de la Tour"
   },
   "14803": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower crusader",
+    "ja": "タワー・クルセイダー",
+    "de": "Magie-Düsterritter",
+    "fr": "conquérant de la Tour"
   },
   "14804": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower barmuu",
+    "ja": "タワー・バルムー",
+    "de": "Magie-Barmu",
+    "fr": "valmuh de la Tour"
   },
   "14805": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower mantis",
+    "ja": "タワー・マンティス",
+    "de": "Magie-Mantis",
+    "fr": "mante de la Tour"
   },
   "14806": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower idol",
+    "ja": "タワー・マナアイドル",
+    "de": "Magie-Manatotem",
+    "fr": "idole de mana de la Tour"
   },
   "14807": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower yarzon",
+    "ja": "タワー・ヤーゾン",
+    "de": "Magie-Yarzon",
+    "fr": "yarzon de la Tour"
   },
   "14808": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower ochu",
+    "ja": "タワー・オチュー",
+    "de": "Magie-Ochu",
+    "fr": "otyugh de la Tour"
   },
   "14809": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower pot",
+    "ja": "タワー・マナポット",
+    "de": "Magie-Manatopf",
+    "fr": "pot de mana de la Tour"
   },
   "14810": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower purbol",
+    "ja": "タワー・プルボル",
+    "de": "Magie-Purbol",
+    "fr": "purbol de la Tour"
   },
   "14811": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower purbol hip",
+    "ja": "タワー・プルボルヒップ",
+    "de": "Magie-Purbolhüfte",
+    "fr": "spore de purbol de la Tour"
   },
   "14812": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower plasma",
+    "ja": "タワー・プラズマ",
+    "de": "Magie-Plasma",
+    "fr": "plasma de la Tour"
   },
   "14813": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower wood golem",
+    "ja": "タワー・ウッドゴーレム",
+    "de": "Magie-Holzgolem",
+    "fr": "golem sylvestre de la Tour"
   },
   "14814": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "storm generator",
+    "ja": "サンダーメーカー",
+    "de": "Donnermacher",
+    "fr": "foudroyeur"
   },
   "14815": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "scale-smasher",
+    "ja": "スマッシャー",
+    "de": "Schmetterer",
+    "fr": "écraseur"
   },
   "14816": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower slime",
+    "ja": "タワー・スライム",
+    "de": "Magie-Schleim",
+    "fr": "gluant de la Tour"
   },
   "14817": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower curseclock",
+    "ja": "タワー・クロックゴースト",
+    "de": "Magie-Uhrgeist",
+    "fr": "fantôme horloger de la Tour"
   },
   "14818": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent tomato",
+    "ja": "クレセント・トマト",
+    "de": "Kreszentia-Tomate",
+    "fr": "tomate de Lunule"
   },
   "14819": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent onion",
+    "ja": "クレセント・オニオン",
+    "de": "Kreszentia-Zwiebel",
+    "fr": "oignon de Lunule"
   },
   "14820": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sword dancer",
+    "ja": "ソードダンサー",
+    "de": "Schwerttänzer",
+    "fr": "danseur aux épées"
   },
   "14821": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "dancing sword",
+    "ja": "ダンシングソード",
+    "de": "tanzend[a] Schwert",
+    "fr": "épée dansante"
   },
   "14822": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "dancing sword",
+    "ja": "ダンシングソード",
+    "de": "tanzend[a] Schwert",
+    "fr": "épée dansante"
   },
   "14823": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "dancing sword",
+    "ja": "ダンシングソード",
+    "de": "tanzend[a] Schwert",
+    "fr": "épée dansante"
   },
   "14824": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "dancing sword",
+    "ja": "ダンシングソード",
+    "de": "tanzend[a] Schwert",
+    "fr": "épée dansante"
   },
   "14825": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "dancing sword",
+    "ja": "ダンシングソード",
+    "de": "tanzend[a] Schwert",
+    "fr": "épée dansante"
   },
   "14826": {
     "en": "Jullus pyr Norbanus",
@@ -89034,16 +89034,16 @@
     "fr": "Aw'zdei"
   },
   "14840": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent arachne",
+    "ja": "クレセント・アルケニー",
+    "de": "Kreszentia-Arachne",
+    "fr": "arachné de Lunule"
   },
   "14841": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "arachne daughter",
+    "ja": "アルケニー・ドーター",
+    "de": "Arachne-Tochter",
+    "fr": "fille d'arachné"
   },
   "14842": {
     "en": "visitant jester",
@@ -89082,22 +89082,22 @@
     "fr": "caprin"
   },
   "14848": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tiny omniscient",
+    "ja": "すべてをしおるもの",
+    "de": "Register[p] [t] Belesen[a]",
+    "fr": "Naindex"
   },
   "14849": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "puny mage",
+    "ja": "ピューニィメイジ",
+    "de": "mickrig[a] Magier",
+    "fr": "p'tit mage"
   },
   "14850": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Wuk Lamat",
+    "ja": "マメット・ウクラマト",
+    "de": "Wuk Lamat-Puppe",
+    "fr": "Wuk Lamat miniature"
   },
   "14851": {
     "en": "",
@@ -89112,10 +89112,10 @@
     "fr": "Prishe miniature"
   },
   "14853": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up köttr",
+    "ja": "マメット・コットル",
+    "de": "Köttr-Puppe",
+    "fr": "köttr miniature"
   },
   "14854": {
     "en": "budvi",
@@ -89124,418 +89124,418 @@
     "fr": "Germylvi"
   },
   "14855": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up Barret",
+    "ja": "マメット・バレット",
+    "de": "Aufzieh-Barret",
+    "fr": "Barret miniature"
   },
   "14856": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Nymian uolosapa",
+    "ja": "ニーム・オーロサパ",
+    "de": "Nym-Uolosapa",
+    "fr": "uolosapa de Nym"
   },
   "14857": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent cliffkite",
+    "ja": "クレセント・クリフカイト",
+    "de": "Kreszentia-Gratgleiter",
+    "fr": "milan des falaises de Lunule"
   },
   "14858": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent urolith",
+    "ja": "クレセント・ウロリス",
+    "de": "Kreszentia-Urolith",
+    "fr": "urolithe de Lunule"
   },
   "14859": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent dhara",
+    "ja": "クレセント・ダラ",
+    "de": "Kreszentia-Dhara",
+    "fr": "dhara de Lunule"
   },
   "14860": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent bibliotaph",
+    "ja": "クレセント・ビブリオタフ",
+    "de": "Kreszentia-Bibliotaph",
+    "fr": "bibliotaphe de Lunule"
   },
   "14861": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent weapon",
+    "ja": "クレセント・ウェポン",
+    "de": "Kreszentia-Waffe",
+    "fr": "arme de Lunule"
   },
   "14862": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent cingulata",
+    "ja": "クレセント・シングラータ",
+    "de": "Kreszentia-Gürteltier",
+    "fr": "tatou de Lunule"
   },
   "14863": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent worm",
+    "ja": "クレセント・ウォーム",
+    "de": "Kreszentia-Wurm",
+    "fr": "ver de Lunule"
   },
   "14864": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent zu",
+    "ja": "クレセント・ズー",
+    "de": "Kreszentia-Montisaurus",
+    "fr": "zu de Lunule"
   },
   "14865": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent tomato",
+    "ja": "クレセント・トマト",
+    "de": "Kreszentia-Tomate",
+    "fr": "tomate de Lunule"
   },
   "14866": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent onion",
+    "ja": "クレセント・オニオン",
+    "de": "Kreszentia-Zwiebel",
+    "fr": "oignon de Lunule"
   },
   "14867": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent vinegaroon",
+    "ja": "クレセント・ビネガロン",
+    "de": "Kreszentia-Geißelskorpion",
+    "fr": "vinaigrier de Lunule"
   },
   "14868": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent opken",
+    "ja": "クレセント・オプケン",
+    "de": "Kreszentia-Opken",
+    "fr": "opken de Lunule"
   },
   "14869": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent belladonna",
+    "ja": "クレセント・ベラドンナ",
+    "de": "Kreszentia-Belladonna",
+    "fr": "belladone de Lunule"
   },
   "14870": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent sapria",
+    "ja": "クレセント・サプリア",
+    "de": "Kreszentia-Sapria",
+    "fr": "sapria de Lunule"
   },
   "14871": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent melia",
+    "ja": "クレセント・メリアエ",
+    "de": "Kreszentia-Meliade",
+    "fr": "mélia de Lunule"
   },
   "14872": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent lorelei",
+    "ja": "クレセント・ローレライ",
+    "de": "Kreszentia-Loreley",
+    "fr": "lorelei de Lunule"
   },
   "14873": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent wraith",
+    "ja": "クレセント・レイス",
+    "de": "Kreszentia-Geist",
+    "fr": "spectre de Lunule"
   },
   "14874": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent salt swallow",
+    "ja": "クレセント・ソルトスワロー",
+    "de": "Kreszentia-Salzschwalbe",
+    "fr": "hirondelle de sel de Lunule"
   },
   "14875": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent soblyn",
+    "ja": "クレセント・ソブラン",
+    "de": "Kreszentia-Sobalos",
+    "fr": "soblyn de Lunule"
   },
   "14876": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent huwasi",
+    "ja": "クレセント・フワシ",
+    "de": "Kreszentia-Huwasi",
+    "fr": "huwasi de Lunule"
   },
   "14877": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent bile",
+    "ja": "クレセント・バイル",
+    "de": "Kreszentia-Galle",
+    "fr": "bile de Lunule"
   },
   "14878": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent medusa",
+    "ja": "クレセント・メデューサ",
+    "de": "Kreszentia-Medusa",
+    "fr": "méduse de Lunule"
   },
   "14879": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent elftoad",
+    "ja": "クレセント・エルフトード",
+    "de": "Kreszentia-Elfenkröte",
+    "fr": "crapaud elfique de Lunule"
   },
   "14880": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent kargas",
+    "ja": "クレセント・カルガス",
+    "de": "Kreszentia-Kargas",
+    "fr": "kargas de Lunule"
   },
   "14881": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent sand serpent",
+    "ja": "クレセント・サンドサーペント",
+    "de": "Kreszentia-Sandschlange",
+    "fr": "serpent des sables de Lunule"
   },
   "14882": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent coeurl",
+    "ja": "クレセント・クァール",
+    "de": "Kreszentia-Coeurl",
+    "fr": "coeurl de Lunule"
   },
   "14883": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent gazellehawk",
+    "ja": "クレセント・ガゼルホーク",
+    "de": "Kreszentia-Gazellenfalke",
+    "fr": "frelon gazelle de Lunule"
   },
   "14884": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent harpeia",
+    "ja": "クレセント・ハルペイア",
+    "de": "Kreszentia-Harpeia",
+    "fr": "harpie de Lunule"
   },
   "14885": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent kaluk",
+    "ja": "クレセント・カルク",
+    "de": "Kreszentia-Kaluk",
+    "fr": "kaluk de Lunule"
   },
   "14886": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent woolback",
+    "ja": "クレセント・ウールバック",
+    "de": "Kreszentia-Wollrücken",
+    "fr": "dos-laineux de Lunule"
   },
   "14887": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent big horn",
+    "ja": "クレセント・ビッグホーン",
+    "de": "Kreszentia-Großhorn",
+    "fr": "encorné de Lunule"
   },
   "14888": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent ratel",
+    "ja": "クレセント・ラーテル",
+    "de": "Kreszentia-Ratel",
+    "fr": "ratel de Lunule"
   },
   "14889": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent adamantoise",
+    "ja": "クレセント・アダマンタス",
+    "de": "Kreszentia-Adaman-Taimai",
+    "fr": "adamankhélone de Lunule"
   },
   "14890": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent regolith",
+    "ja": "クレセント・レゴリス",
+    "de": "Kreszentia-Regolith",
+    "fr": "régolithe de Lunule"
   },
   "14891": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent rock",
+    "ja": "クレセント・リビングロック",
+    "de": "Kreszentia-Stein",
+    "fr": "rocher vivant de Lunule"
   },
   "14892": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent gremlin",
+    "ja": "クレセント・グレムリン",
+    "de": "Kreszentia-Gremlin",
+    "fr": "gremlin de Lunule"
   },
   "14893": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent rot-eyes",
+    "ja": "クレセント・ロットアイズ",
+    "de": "Kreszentia-Fäulauge",
+    "fr": "sapioculus de Lunule"
   },
   "14894": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent moss fungus",
+    "ja": "クレセント・モスフングス",
+    "de": "Kreszentia-Moosfungus",
+    "fr": "mycose moisie de Lunule"
   },
   "14895": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent banemite",
+    "ja": "クレセント・ベーンマイト",
+    "de": "Kreszentia-Terrormilbe",
+    "fr": "sarcopte de Lunule"
   },
   "14896": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent blackguard",
+    "ja": "クレセント・ブラックガード",
+    "de": "Kreszentia-Düsterwächter",
+    "fr": "garde noir de Lunule"
   },
   "14897": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent hellhound",
+    "ja": "クレセント・ヘルハウンド",
+    "de": "Kreszentia-Höllenhund",
+    "fr": "limier de Lunule"
   },
   "14898": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent parthenope",
+    "ja": "クレセント・コムサベラ",
+    "de": "Kreszentia-Parthenope",
+    "fr": "parthénope de Lunule"
   },
   "14899": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent gargoyle",
+    "ja": "クレセント・ガーゴイル",
+    "de": "Kreszentia-Gargoyle",
+    "fr": "gargouille de Lunule"
   },
   "14900": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent craklaw",
+    "ja": "クレセント・クラックロー",
+    "de": "Kreszentia-Kraklaw",
+    "fr": "craqulov de Lunule"
   },
   "14901": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent haunt",
+    "ja": "クレセント・ハウント",
+    "de": "Kreszentia-Spuk",
+    "fr": "tourmenteur de Lunule"
   },
   "14902": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent nanka",
+    "ja": "クレセント・ナンカ",
+    "de": "Kreszentia-Nanka",
+    "fr": "nanka de Lunule"
   },
   "14903": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent accursed",
+    "ja": "クレセント・アカースド",
+    "de": "Kreszentia-Fluchträger",
+    "fr": "damné de Lunule"
   },
   "14904": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "bird of the crescent",
+    "ja": "バード・オブ・クレセント",
+    "de": "Kreszentia-Vogel",
+    "fr": "oiseau de Lunule"
   },
   "14905": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent anila",
+    "ja": "クレセント・アニラ",
+    "de": "Kreszentia-Anila",
+    "fr": "anila de Lunule"
   },
   "14906": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent zirnitra",
+    "ja": "クレセント・ジルニトラ",
+    "de": "Kreszentia-Zirnitra",
+    "fr": "zirnitra de Lunule"
   },
   "14907": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent Arioch",
+    "ja": "クレセント・アリオク",
+    "de": "Kreszentia-Arioch",
+    "fr": "arioch de Lunule"
   },
   "14908": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent wamoura",
+    "ja": "クレセント・ワモーラ",
+    "de": "Kreszentia-Wamoura",
+    "fr": "wamoura de Lunule"
   },
   "14909": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent carrier",
+    "ja": "クレセント・キャリアー",
+    "de": "Kreszentia-Träger",
+    "fr": "transporteur de Lunule"
   },
   "14910": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent oiseau rare",
+    "ja": "クレセント・オワゾーラール",
+    "de": "Kreszentia-Leierschwanz",
+    "fr": "oiseau rare de Lunule"
   },
   "14911": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent jester",
+    "ja": "クレセント・ジェスター",
+    "de": "Kreszentia-Gaukler",
+    "fr": "bouffon de Lunule"
   },
   "14912": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent succubus",
+    "ja": "クレセント・サキュバス",
+    "de": "Kreszentia-Sukkubus",
+    "fr": "succube de Lunule"
   },
   "14913": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent Gusion",
+    "ja": "クレセント・グシオン",
+    "de": "Kreszentia-Gusion",
+    "fr": "gusion de Lunule"
   },
   "14914": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent Bombadeel",
+    "ja": "クレセント・ボンバディール",
+    "de": "Kreszentia-Bombadeel",
+    "fr": "bombadeel de Lunule"
   },
   "14915": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent rothound",
+    "ja": "クレセント・ロトンハウンド",
+    "de": "Kreszentia-Fäulhund",
+    "fr": "chien putride de Lunule"
   },
   "14916": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent skatene",
+    "ja": "クレセント・スカネテ",
+    "de": "Kreszentia-Skatene",
+    "fr": "skate'ne de Lunule"
   },
   "14917": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent geshunpest",
+    "ja": "クレセント・ゲシュンペスト",
+    "de": "Kreszentia-Gespenst",
+    "fr": "gespenst de Lunule"
   },
   "14918": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent necrodium",
+    "ja": "クレセント・コープスヘイト",
+    "de": "Kreszentia-Nekrodium",
+    "fr": "nécromant de Lunule"
   },
   "14919": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent bicephalus",
+    "ja": "クレセント・ダブルヘッド",
+    "de": "Kreszentia-Doppelkopf",
+    "fr": "bicéphale de Lunule"
   },
   "14920": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent ankou",
+    "ja": "クレセント・アンクー",
+    "de": "Kreszentia-Ankou",
+    "fr": "ankou de Lunule"
   },
   "14921": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent glutton",
+    "ja": "クレセント・グラットン",
+    "de": "Kreszentia-Schlemmerschemen",
+    "fr": "glouton de Lunule"
   },
   "14922": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent stoneshell",
+    "ja": "クレセント・ストーンシェル",
+    "de": "Kreszentia-Steinschale",
+    "fr": "coquepierre de Lunule"
   },
   "14923": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "crescent flame",
+    "ja": "クレセント・ホワイトフレイム",
+    "de": "weiß[a] Kreszentia-Flamme",
+    "fr": "flamme blanche de Lunule"
   },
   "14924": {
     "en": "visitant bomb",
@@ -89568,34 +89568,34 @@
     "fr": ""
   },
   "14929": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower catoblepas",
+    "ja": "タワー・カトブレパス",
+    "de": "Magie-Catblepus",
+    "fr": "catoblépas de la Tour"
   },
   "14930": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "towerhander",
+    "ja": "タワー・アインハンダー",
+    "de": "Magie-Einhänder",
+    "fr": "einhänder de la Tour"
   },
   "14931": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower skatene",
+    "ja": "タワー・スカネテ",
+    "de": "Magie-Skatene",
+    "fr": "skate'ne de la Tour"
   },
   "14932": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tower Humbaba",
+    "ja": "タワー・フンババ",
+    "de": "Magie-Hunbaba",
+    "fr": "humbaba de la Tour"
   },
   "14933": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "airbuster",
+    "ja": "エアバスター",
+    "de": "Airbuster",
+    "fr": "Aérodestructeur"
   },
   "14934": {
     "en": "Aht Urhgan guard",
@@ -89622,10 +89622,10 @@
     "fr": ""
   },
   "14938": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "hermetic recluse",
+    "ja": "ハーミット・オブ・マジック",
+    "de": "magisch[a] Einsiedler",
+    "fr": "ermite de la Magie"
   },
   "14939": {
     "en": "musical paca",
@@ -89634,7 +89634,7 @@
     "fr": "cria alpaga d'orchestre"
   },
   "14940": {
-    "en": "sweetkit",
+    "en": "lolly cat",
     "ja": "スウィートキャット",
     "de": "Naschkatze",
     "fr": "minou sucré"

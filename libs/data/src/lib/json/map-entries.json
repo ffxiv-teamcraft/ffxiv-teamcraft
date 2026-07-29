@@ -9073,19 +9073,19 @@
   },
   {
     "id": 1135,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5577,
+    "name": "North Horn",
+    "territory": 1346,
+    "scale": 100,
+    "weatherRate": 168
   },
   {
     "id": 1136,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1137,
@@ -9321,11 +9321,11 @@
   },
   {
     "id": 1166,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5466,
+    "name": "Kanilokka Corpus Substructure",
+    "territory": 1329,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1167,
@@ -9417,115 +9417,115 @@
   },
   {
     "id": 1178,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1179,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1180,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1181,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1182,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1183,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1184,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1185,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1186,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1187,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1188,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1189,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1190,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1191,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5578,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1192,
@@ -9857,11 +9857,11 @@
   },
   {
     "id": 1233,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4962,
+    "name": "Keybound Square",
+    "territory": 1360,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1234,
@@ -9945,11 +9945,11 @@
   },
   {
     "id": 1244,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5577,
+    "name": "North Horn",
+    "territory": 1346,
+    "scale": 100,
+    "weatherRate": 168
   },
   {
     "id": 1245,

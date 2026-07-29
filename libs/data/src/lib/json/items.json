@@ -77125,7 +77125,7 @@
   },
   "12855": {
     "en": "Grilled Sweetfish",
-    "de": "Gegrillte Purpur-Forelle",
+    "de": "Gegrillter Süßfisch",
     "ja": "グリルドスイートフィッシュ",
     "fr": "Poisson-sucre grillé"
   },
@@ -110280,7 +110280,7 @@
     "fr": "Tunique de pisteur en kudzu"
   },
   "18381": {
-    "en": "Tigerskin Gloves of Aiming",
+    "en": "Tigerskin Wristgloves of Aiming",
     "de": "Tigerleder-Handschuhe des Zielens",
     "ja": "タイガー・レンジャーリストグローブ",
     "fr": "Couvre-poignets de pisteur en cuir de tigre"
@@ -110316,7 +110316,7 @@
     "fr": "Tunique d'éclaireur en kudzu"
   },
   "18387": {
-    "en": "Tigerskin Gloves of Scouting",
+    "en": "Tigerskin Wristgloves of Scouting",
     "de": "Tigerleder-Handschuhe des Spähens",
     "ja": "タイガー・スカウトリストグローブ",
     "fr": "Couvre-poignets d'éclaireur en cuir de tigre"
@@ -202395,109 +202395,109 @@
     "en": "Matte Replica Blade's Honor",
     "de": "Gunnhildrs Ehre (matte Replik)",
     "ja": "レプリカ・ブレイズオナーMF",
-    "fr": "Réplique de l'Honneur de Gunnhildr mat"
+    "fr": "Réplique mate de l'Honneur de Gunnhildr"
   },
   "33734": {
     "en": "Matte Replica Blade's Fortitude",
     "de": "Gunnhildrs Unbeugsamkeit (matte Replik)",
     "ja": "レプリカ・ブレイズフォーティチュードMF",
-    "fr": "Réplique du Courage de Gunnhildr mat"
+    "fr": "Réplique mate du Courage de Gunnhildr"
   },
   "33735": {
     "en": "Matte Replica Blade's Serenity",
     "de": "Gunnhildrs Erhabenheit (matte Replik)",
     "ja": "レプリカ・ブレイズセレネティーMF",
-    "fr": "Répliques des Sérénités de Gunnhildr mates"
+    "fr": "Répliques mates des Sérénités de Gunnhildr"
   },
   "33736": {
     "en": "Matte Replica Blade's Valor",
     "de": "Gunnhildrs Mut (matte Replik)",
     "ja": "レプリカ・ブレイズヴァラーMF",
-    "fr": "Réplique de la Bravoure de Gunnhildr mate"
+    "fr": "Réplique mate de la Bravoure de Gunnhildr"
   },
   "33737": {
     "en": "Matte Replica Blade's Glory",
     "de": "Gunnhildrs Ruhm (matte Replik)",
     "ja": "レプリカ・ブレイズグローリーMF",
-    "fr": "Réplique de la Gloire de Gunnhildr mate"
+    "fr": "Réplique mate de la Gloire de Gunnhildr"
   },
   "33738": {
     "en": "Matte Replica Blade's Muse",
     "de": "Gunnhildrs Muse (matte Replik)",
     "ja": "レプリカ・ブレイズミューズMF",
-    "fr": "Réplique de la Muse de Gunnhildr mate"
+    "fr": "Réplique mate de la Muse de Gunnhildr"
   },
   "33739": {
     "en": "Matte Replica Blade's Subtlety",
     "de": "Gunnhildrs Geschick (matte Replik)",
     "ja": "レプリカ・ブレイズサトゥルティーMF",
-    "fr": "Répliques des Subtilités de Gunnhildr mates"
+    "fr": "Répliques mates des Subtilités de Gunnhildr"
   },
   "33740": {
     "en": "Matte Replica Blade's Justice",
     "de": "Gunnhildrs Rechtschaffenheit (matte Replik)",
     "ja": "レプリカ・ブレイズジャスティスMF",
-    "fr": "Réplique de la Justice de Gunnhildr mate"
+    "fr": "Réplique mate de la Justice de Gunnhildr"
   },
   "33741": {
     "en": "Matte Replica Blade's Ingenuity",
     "de": "Gunnhildrs Brillanz (matte Replik)",
     "ja": "レプリカ・ブレイズインジェヌイティーMF",
-    "fr": "Réplique de l'Ingéniosité de Gunnhildr mate"
+    "fr": "Réplique mate de l'Ingéniosité de Gunnhildr"
   },
   "33742": {
     "en": "Matte Replica Blade's Mercy",
     "de": "Gunnhildrs Gnade (matte Replik)",
     "ja": "レプリカ・ブレイズマーシーMF",
-    "fr": "Réplique de la Clémence de Gunnhildr mate"
+    "fr": "Réplique mate de la Clémence de Gunnhildr"
   },
   "33743": {
     "en": "Matte Replica Blade's Fury",
     "de": "Gunnhildrs Zorn (matte Replik)",
     "ja": "レプリカ・ブレイズフューリーMF",
-    "fr": "Réplique de la Fureur de Gunnhildr mate"
+    "fr": "Réplique mate de la Fureur de Gunnhildr"
   },
   "33744": {
     "en": "Matte Replica Blade's Acumen",
     "de": "Gunnhildrs Scharfsinn (matte Replik)",
     "ja": "レプリカ・ブレイズアキュメンMF",
-    "fr": "Réplique de la Sagacité de Gunnhildr mate"
+    "fr": "Réplique mate de la Sagacité de Gunnhildr"
   },
   "33745": {
     "en": "Matte Replica Blade's Wisdom",
     "de": "Gunnhildrs Weisheit (matte Replik)",
     "ja": "レプリカ・ブレイズウィズダムMF",
-    "fr": "Réplique de la Sagesse de Gunnhildr mate"
+    "fr": "Réplique mate de la Sagesse de Gunnhildr"
   },
   "33746": {
     "en": "Matte Replica Blade's Providence",
     "de": "Gunnhildrs Vorsehung (matte Replik)",
     "ja": "レプリカ・ブレイズプロヴェデンスMF",
-    "fr": "Réplique de la Providence de Gunnhildr mate"
+    "fr": "Réplique mate de la Providence de Gunnhildr"
   },
   "33747": {
     "en": "Matte Replica Blade's Fealty",
     "de": "Gunnhildrs Loyalität (matte Replik)",
     "ja": "レプリカ・ブレイズフィアルティーMF",
-    "fr": "Réplique de la Loyauté de Gunnhildr mate"
+    "fr": "Réplique mate de la Loyauté de Gunnhildr"
   },
   "33748": {
     "en": "Matte Replica Blade's Temperance",
     "de": "Gunnhildrs Disziplin (matte Replik)",
     "ja": "レプリカ・ブレイズテンペランスMF",
-    "fr": "Réplique de la Tempérance de Gunnhildr mate"
+    "fr": "Réplique mate de la Tempérance de Gunnhildr"
   },
   "33749": {
     "en": "Matte Replica Blade's Resolve",
     "de": "Gunnhildrs Entschlossenheit (matte Replik)",
     "ja": "レプリカ・ブレイズリゾルヴMF",
-    "fr": "Réplique de la Détermination de Gunnhildr mate"
+    "fr": "Réplique mate de la Détermination de Gunnhildr"
   },
   "33750": {
     "en": "Matte Replica Blade's Euphoria",
     "de": "Gunnhildrs Grazie (matte Replik)",
     "ja": "レプリカ・ブレイズユーフォリアMF",
-    "fr": "Répliques des Euphories de Gunnhildr mates"
+    "fr": "Répliques mates des Euphories de Gunnhildr"
   },
   "33751": {
     "en": "Oracle Top",
@@ -224143,7 +224143,7 @@
   },
   "37358": {
     "en": "Sweetfish Skewers",
-    "de": "Gegrillter Süßfisch",
+    "de": "Süßfisch am Spieß",
     "ja": "香魚の塩焼き",
     "fr": "Poisson-sucre grillé et salé"
   },
@@ -245829,121 +245829,121 @@
     "en": "Majestic Manderville Sword Matte Replica",
     "de": "Majestätisches Manderville-Schwert (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ソードMF",
-    "fr": "Réplique d'épée majestueuse des Manderville mate"
+    "fr": "Réplique mate d'épée majestueuse des Manderville"
   },
   "40973": {
     "en": "Matte Replica Majestic Manderville Fists",
     "de": "Majestätische Manderville-Fäuste (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・フィストMF",
-    "fr": "Répliques de poings majestueux des Manderville mats"
+    "fr": "Répliques mates de poings majestueux des Manderville"
   },
   "40974": {
     "en": "Majestic Manderville Bardiche Matte Replica",
     "de": "Majestätische Manderville-Berdysch (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・バルディッシュMF",
-    "fr": "Réplique de bardiche majestueuse des Manderville mate"
+    "fr": "Réplique mate de bardiche majestueuse des Manderville"
   },
   "40975": {
     "en": "Majestic Manderville Spear Matte Replica",
     "de": "Majestätischer Manderville-Speer (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・スピアMF",
-    "fr": "Réplique d'hast majestueux des Manderville mat"
+    "fr": "Réplique mate d'hast majestueux des Manderville"
   },
   "40976": {
     "en": "Majestic Manderville Harp Bow Matte Replica",
     "de": "Majestätischer Manderville-Harfenbogen (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ハープボウMF",
-    "fr": "Réplique d'arc-harpe majestueux des Manderville mat"
+    "fr": "Réplique mate d'arc-harpe majestueux des Manderville"
   },
   "40977": {
     "en": "Matte Replica Majestic Manderville Knives",
     "de": "Majestätische Manderville-Messer (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ナイフMF",
-    "fr": "Répliques de couteaux majestueux des Manderville mats"
+    "fr": "Répliques mates de couteaux majestueux des Manderville"
   },
   "40978": {
     "en": "Majestic Manderville Greatsword Matte Replica",
     "de": "Majestätisches Manderville-Großschwert (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・グレートソードMF",
-    "fr": "Réplique de grande épée majestueuse des Manderville mate"
+    "fr": "Réplique mate de grande épée majestueuse des Manderville"
   },
   "40979": {
     "en": "Majestic Manderville Pistol Matte Replica",
     "de": "Majestätische Manderville-Pistole (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ハンドガンMF",
-    "fr": "Réplique de pistolet majestueux des Manderville mat"
+    "fr": "Réplique mate de pistolet majestueux des Manderville"
   },
   "40980": {
     "en": "Majestic Manderville Wand Matte Replica",
     "de": "Majestätischer Manderville-Zweig (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ワンドMF",
-    "fr": "Réplique de baguette majestueuse des Manderville mate"
+    "fr": "Réplique mate de baguette majestueuse des Manderville"
   },
   "40981": {
     "en": "Majestic Manderville Staff Matte Replica",
     "de": "Majestätischer Manderville-Stab (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・スタッフMF",
-    "fr": "Réplique de bâton majestueux des Manderville mat"
+    "fr": "Réplique mate de bâton majestueux des Manderville"
   },
   "40982": {
     "en": "Majestic Manderville Index Matte Replica",
     "de": "Majestätischer Manderville-Index (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・インデックスMF",
-    "fr": "Réplique d'index majestueux des Manderville mat"
+    "fr": "Réplique mate d'index majestueux des Manderville"
   },
   "40983": {
     "en": "Majestic Manderville Codex Matte Replica",
     "de": "Majestätischer Manderville-Kodex (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・コーデックスMF",
-    "fr": "Réplique de codex majestueux des Manderville mat"
+    "fr": "Réplique mate de codex majestueux des Manderville"
   },
   "40984": {
     "en": "Majestic Manderville Orrery Matte Replica",
     "de": "Majestätisches Manderville-Orrery (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・オーラリーMF",
-    "fr": "Réplique de planétaire majestueux des Manderville mat"
+    "fr": "Réplique mate de planétaire majestueux des Manderville"
   },
   "40985": {
     "en": "Majestic Manderville Samurai Blade Matte Replica",
     "de": "Majestätische Manderville-Samuraiklinge (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・サムライブレードMF",
-    "fr": "Réplique de lame de samouraï majestueuse des Manderville mate"
+    "fr": "Réplique mate de lame de samouraï majestueuse des Manderville"
   },
   "40986": {
     "en": "Majestic Manderville Degen Matte Replica",
     "de": "Majestätischer Manderville-Degen (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・デーゲンMF",
-    "fr": "Réplique d'alfange majestueuse des Manderville mate"
+    "fr": "Réplique mate d'alfange majestueuse des Manderville"
   },
   "40987": {
     "en": "Majestic Manderville Bayonet Matte Replica",
     "de": "Majestätisches Manderville-Bajonett (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・バヨネットMF",
-    "fr": "Réplique de baïonnette majestueuse des Manderville mate"
+    "fr": "Réplique mate de baïonnette majestueuse des Manderville"
   },
   "40988": {
     "en": "Matte Replica Majestic Manderville Chakrams",
     "de": "Majestätische Manderville-Chakrams (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・チャクラムMF",
-    "fr": "Répliques de chakrams majestueux des Manderville mats"
+    "fr": "Répliques mates de chakrams majestueux des Manderville"
   },
   "40989": {
     "en": "Matte Replica Majestic Manderville Wings",
     "de": "Majestätische Manderville-Schwingen (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ウィングMF",
-    "fr": "Répliques d'ailes majestueuses des Manderville mates"
+    "fr": "Répliques mates d'ailes majestueuses des Manderville"
   },
   "40990": {
     "en": "Majestic Manderville War Scythe Matte Replica",
     "de": "Majestätische Manderville-Kriegssense (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・ウォーサイズMF",
-    "fr": "Réplique de faux de guerre majestueuse des Manderville mate"
+    "fr": "Réplique mate de faux de guerre majestueuse des Manderville"
   },
   "40991": {
     "en": "Majestic Manderville Shield Matte Replica",
     "de": "Majestätischer Manderville-Schild (matte Replik)",
     "ja": "レプリカ・マンダヴィル・マジェスティック・シールドMF",
-    "fr": "Réplique de bouclier majestueux des Manderville mat"
+    "fr": "Réplique mate de bouclier majestueux des Manderville"
   },
   "40992": {
     "en": "Mandervillous Falchion Replica",
@@ -251478,7 +251478,7 @@
     "fr": "Épée longue fluviatile"
   },
   "41914": {
-    "en": "Riversbreath Tonfas",
+    "en": "Riversbreath Tonfa",
     "de": "Flussatem-Tonfa",
     "ja": "リバーズブレス・トンファー",
     "fr": "Tonfas fluviatiles"
@@ -251940,7 +251940,7 @@
     "fr": "Cimeterre en ruthénium"
   },
   "41991": {
-    "en": "Ruthenium Tonfas",
+    "en": "Ruthenium Tonfa",
     "de": "Ruthenium-Tonfas",
     "ja": "ルテニウム・トンファー",
     "fr": "Tonfas en ruthénium"
@@ -252402,7 +252402,7 @@
     "fr": "Épée Zormor"
   },
   "42068": {
-    "en": "Zormor Tonfas",
+    "en": "Zormor Tonfa",
     "de": "Zormor-Tonfas",
     "ja": "ゾーモーの旋棍",
     "fr": "Tonfas Zormor"
@@ -254712,7 +254712,7 @@
     "fr": "Katzbalger de Ra'Kaznar"
   },
   "42453": {
-    "en": "Ra'Kaznar Tonfas",
+    "en": "Ra'Kaznar Tonfa",
     "de": "Ra'Kaznar-Tonfas",
     "ja": "カザナル・トンファー",
     "fr": "Tonfas de Ra'Kaznar"
@@ -280698,10 +280698,10 @@
     "fr": "Yok Huy miniature"
   },
   "46784": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Oglop",
+    "de": "Schabe",
+    "ja": "ブリ虫",
+    "fr": "Puluche"
   },
   "46785": {
     "en": "Wind-up Feo Ul",
@@ -282043,7 +282043,7 @@
   },
   "47008": {
     "en": "Phantom Bardiche Umbrae",
-    "de": "Phantomberdysch Umbrae",
+    "de": "Phantom-Berdysch Umbrae",
     "ja": "ファントムアンブラ・バルディッシュ",
     "fr": "Bardiche fantôme umbra"
   },
@@ -287221,7 +287221,7 @@
   },
   "47871": {
     "en": "Phantom Bardiche Penumbrae",
-    "de": "Phantomberdysch Penumbrae",
+    "de": "Phantom-Berdysch Penumbrae",
     "ja": "ファントムペンアンブレー・バルディッシュ",
     "fr": "Bardiche fantôme penumbra"
   },
@@ -294601,7 +294601,7 @@
   },
   "49101": {
     "en": "Phantom Bardiche Penumbrae Replica",
-    "de": "Phantomberdysch Penumbrae (Replik)",
+    "de": "Phantom-Berdysch Penumbrae (Replik)",
     "ja": "レプリカ・ファントムペンアンブレー・バルディッシュ",
     "fr": "Réplique de bardiche fantôme penumbra"
   },
@@ -299209,7 +299209,7 @@
   },
   "49869": {
     "en": "Authentic All Saints' Wake MMXXIV Advertisement",
-    "de": "守護天節のポスター2024EX",
+    "de": "Exklusives Allerschutzheiligen-Plakat 2024",
     "ja": "守護天節のポスター2024EX",
     "fr": "Affiche de la Veillée des saints 2024 spéciale"
   },
@@ -300199,7 +300199,7 @@
   },
   "50034": {
     "en": "Phantom Bardiche Obscurum",
-    "de": "Phantomberdysch Obscurum",
+    "de": "Phantom-Berdysch Obscurum",
     "ja": "ファントムオブスキュラム・バルディッシュ",
     "fr": "Bardiche fantôme obscurum"
   },
@@ -300367,7 +300367,7 @@
   },
   "50062": {
     "en": "Phantom Bardiche Umbrae Replica",
-    "de": "Phantomberdysch Umbrae (Replik)",
+    "de": "Phantom-Berdysch Umbrae (Replik)",
     "ja": "レプリカ・ファントムアンブラ・バルディッシュ",
     "fr": "Réplique de bardiche fantôme umbra"
   },
@@ -301896,10 +301896,10 @@
     "fr": "Yuffie miniature"
   },
   "50317": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wind-up Vincent",
+    "de": "Aufzieh-Vincent",
+    "ja": "マメット・ヴィンセント",
+    "fr": "Vincent miniature"
   },
   "50318": {
     "en": "Wind-up Red XIII",
@@ -305814,844 +305814,844 @@
     "fr": "Bague d'incantateur praemagitek"
   },
   "50970": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Monarch Whetstone",
+    "de": "Küchenmesser-Wetzstein",
+    "ja": "包丁研磨用砥石",
+    "fr": "Pierre à aiguiser opaline"
   },
   "50971": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ascendant Twine",
+    "de": "Küchenmesser-Griffmaterial",
+    "ja": "包丁強化用グリップ材",
+    "fr": "Ficelle inusable"
   },
   "50972": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ancestral Alloy Ingot",
+    "de": "Küchenmesser-Legierung",
+    "ja": "包丁強化用合金",
+    "fr": "Alliage atypique"
   },
   "50973": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Majestic Polish",
+    "de": "Küchenmesser-Öl",
+    "ja": "包丁研磨用オイル",
+    "fr": "Huile de camélia"
   },
   "50974": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Dispeller α",
+    "de": "Entphantomisierer α",
+    "ja": "ファントムディスペラーα",
+    "fr": "Dissipateur spirituel alpha"
   },
   "50975": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Dispeller β",
+    "de": "Entphantomisierer β",
+    "ja": "ファントムディスペラーβ",
+    "fr": "Dissipateur spirituel bêta"
   },
   "50976": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Dispeller γ",
+    "de": "Entphantomisierer γ",
+    "ja": "ファントムディスペラーγ",
+    "fr": "Dissipateur spirituel gamma"
   },
   "50977": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ecliptic Arcanite",
+    "de": "Neu-Kreszentia-Erz",
+    "ja": "新月鉱石",
+    "fr": "Écliptite"
   },
   "50978": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Sword Eclipticum",
+    "de": "Phantomschwert Eclipticum",
+    "ja": "ファントムイクリプティカム・ソード",
+    "fr": "Épée fantôme eclipticum"
   },
   "50979": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Tonfa Eclipticum",
+    "de": "Phantom-Tonfa Eclipticum",
+    "ja": "ファントムイクリプティカム・トンファー",
+    "fr": "Tonfas fantômes eclipticum"
   },
   "50980": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Hammer Eclipticum",
+    "de": "Phantom-Kriegshammer Eclipticum",
+    "ja": "ファントムイクリプティカム・ウォーハンマー",
+    "fr": "Marteau de guerre fantôme eclipticum"
   },
   "50981": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Spear Eclipticum",
+    "de": "Phantomspeer Eclipticum",
+    "ja": "ファントムイクリプティカム・スピア",
+    "fr": "Hast fantôme eclipticum"
   },
   "50982": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Harp Bow Eclipticum",
+    "de": "Phantom-Harfenbogen Eclipticum",
+    "ja": "ファントムイクリプティカム・ハープボウ",
+    "fr": "Arc-harpe fantôme eclipticum"
   },
   "50983": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Cane Eclipticum",
+    "de": "Phantom-Hirtenstock Eclipticum",
+    "ja": "ファントムイクリプティカム・ケーン",
+    "fr": "Canne fantôme eclipticum"
   },
   "50984": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Staff Eclipticum",
+    "de": "Phantomstab Eclipticum",
+    "ja": "ファントムイクリプティカム・スタッフ",
+    "fr": "Bâton fantôme eclipticum"
   },
   "50985": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Index Eclipticum",
+    "de": "Phantomindex Eclipticum",
+    "ja": "ファントムイクリプティカム・インデックス",
+    "fr": "Index fantôme eclipticum"
   },
   "50986": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Codex Eclipticum",
+    "de": "Phantomkodex Eclipticum",
+    "ja": "ファントムイクリプティカム・コーデックス",
+    "fr": "Codex fantôme eclipticum"
   },
   "50987": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Knives Eclipticum",
+    "de": "Phantommesser Eclipticum",
+    "ja": "ファントムイクリプティカム・ナイフ",
+    "fr": "Couteaux fantômes eclipticum"
   },
   "50988": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Guillotine Eclipticum",
+    "de": "Phantom-Guillotine Eclipticum",
+    "ja": "ファントムイクリプティカム・ディバイダー",
+    "fr": "Fendoir fantôme eclipticum"
   },
   "50989": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Revolver Eclipticum",
+    "de": "Phantom-Revolver Eclipticum",
+    "ja": "ファントムイクリプティカム・リボルバー",
+    "fr": "Revolver fantôme eclipticum"
   },
   "50990": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Star Globe Eclipticum",
+    "de": "Phantom-Sternenglobus Eclipticum",
+    "ja": "ファントムイクリプティカム・スターグローブ",
+    "fr": "Globe céleste fantôme eclipticum"
   },
   "50991": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Blade Eclipticum",
+    "de": "Phantomklinge Eclipticum",
+    "ja": "ファントムイクリプティカム・ブレード",
+    "fr": "Lame fantôme eclipticum"
   },
   "50992": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Degen Eclipticum",
+    "de": "Phantomdegen Eclipticum",
+    "ja": "ファントムイクリプティカム・デーゲン",
+    "fr": "Alfange fantôme eclipticum"
   },
   "50993": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Gunblade Eclipticum",
+    "de": "Phantom-Revolverklinge Eclipticum",
+    "ja": "ファントムイクリプティカム・ガンブレード",
+    "fr": "Pistolame fantôme eclipticum"
   },
   "50994": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Fans Eclipticum",
+    "de": "Phantom-Fächer Eclipticum",
+    "ja": "ファントムイクリプティカム・ファン",
+    "fr": "Éventails fantômes eclipticum"
   },
   "50995": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Scythe Eclipticum",
+    "de": "Phantom-Kriegssense Eclipticum",
+    "ja": "ファントムイクリプティカム・ウォーサイズ",
+    "fr": "Faux de guerre fantôme eclipticum"
   },
   "50996": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Pendulums Eclipticum",
+    "de": "Phantom-Perpendikel Eclipticum",
+    "ja": "ファントムイクリプティカム・ペンデュラム",
+    "fr": "Pendules fantômes eclipticum"
   },
   "50997": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Twinfangs Eclipticum",
+    "de": "Phantom-Zwillingsfänge Eclipticum",
+    "ja": "ファントムイクリプティカム・ツインファング",
+    "fr": "Crochets fantômes eclipticum"
   },
   "50998": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Round Brush Eclipticum",
+    "de": "Phantom-Rundpinsel Eclipticum",
+    "ja": "ファントムイクリプティカム・ラウンドブラシ",
+    "fr": "Pinceau rond fantôme eclipticum"
   },
   "50999": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Shield Eclipticum",
+    "de": "Phantom-Schild Eclipticum",
+    "ja": "ファントムイクリプティカム・シールド",
+    "fr": "Bouclier fantôme eclipticum"
   },
   "51000": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Sword Occultum",
+    "de": "Phantomschwert Occultum",
+    "ja": "ファントムオカルタム・ソード",
+    "fr": "Épée fantôme occultum"
   },
   "51001": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Tonfa Occultum",
+    "de": "Phantom-Tonfa Occultum",
+    "ja": "ファントムオカルタム・トンファー",
+    "fr": "Tonfas fantômes occultum"
   },
   "51002": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Hammer Occultum",
+    "de": "Phantom-Kriegshammer Occultum",
+    "ja": "ファントムオカルタム・ウォーハンマー",
+    "fr": "Marteau de guerre fantôme occultum"
   },
   "51003": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Spear Occultum",
+    "de": "Phantomspeer Occultum",
+    "ja": "ファントムオカルタム・スピア",
+    "fr": "Hast fantôme occultum"
   },
   "51004": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Harp Bow Occultum",
+    "de": "Phantom-Harfenbogen Occultum",
+    "ja": "ファントムオカルタム・ハープボウ",
+    "fr": "Arc-harpe fantôme occultum"
   },
   "51005": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Cane Occultum",
+    "de": "Phantom-Hirtenstock Occultum",
+    "ja": "ファントムオカルタム・ケーン",
+    "fr": "Canne fantôme occultum"
   },
   "51006": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Staff Occultum",
+    "de": "Phantomstab Occultum",
+    "ja": "ファントムオカルタム・スタッフ",
+    "fr": "Bâton fantôme occultum"
   },
   "51007": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Index Occultum",
+    "de": "Phantomindex Occultum",
+    "ja": "ファントムオカルタム・インデックス",
+    "fr": "Index fantôme occultum"
   },
   "51008": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Codex Occultum",
+    "de": "Phantomkodex Occultum",
+    "ja": "ファントムオカルタム・コーデックス",
+    "fr": "Codex fantôme occultum"
   },
   "51009": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Knives Occultum",
+    "de": "Phantommesser Occultum",
+    "ja": "ファントムオカルタム・ナイフ",
+    "fr": "Couteaux fantômes occultum"
   },
   "51010": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Guillotine Occultum",
+    "de": "Phantom-Guillotine Occultum",
+    "ja": "ファントムオカルタム・ディバイダー",
+    "fr": "Fendoir fantôme occultum"
   },
   "51011": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Revolver Occultum",
+    "de": "Phantom-Revolver Occultum",
+    "ja": "ファントムオカルタム・リボルバー",
+    "fr": "Revolver fantôme occultum"
   },
   "51012": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Star Globe Occultum",
+    "de": "Phantom-Sternenglobus Occultum",
+    "ja": "ファントムオカルタム・スターグローブ",
+    "fr": "Globe céleste fantôme occultum"
   },
   "51013": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Blade Occultum",
+    "de": "Phantomklinge Occultum",
+    "ja": "ファントムオカルタム・ブレード",
+    "fr": "Lame fantôme occultum"
   },
   "51014": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Degen Occultum",
+    "de": "Phantomdegen Occultum",
+    "ja": "ファントムオカルタム・デーゲン",
+    "fr": "Alfange fantôme occultum"
   },
   "51015": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Gunblade Occultum",
+    "de": "Phantom-Revolverklinge Occultum",
+    "ja": "ファントムオカルタム・ガンブレード",
+    "fr": "Pistolame fantôme occultum"
   },
   "51016": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Fans Occultum",
+    "de": "Phantom-Fächer Occultum",
+    "ja": "ファントムオカルタム・ファン",
+    "fr": "Éventails fantômes occultum"
   },
   "51017": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Scythe Occultum",
+    "de": "Phantom-Kriegssense Occultum",
+    "ja": "ファントムオカルタム・ウォーサイズ",
+    "fr": "Faux de guerre fantôme occultum"
   },
   "51018": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Pendulums Occultum",
+    "de": "Phantom-Perpendikel Occultum",
+    "ja": "ファントムオカルタム・ペンデュラム",
+    "fr": "Pendules fantômes occultum"
   },
   "51019": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Twinfangs Occultum",
+    "de": "Phantom-Zwillingsfänge Occultum",
+    "ja": "ファントムオカルタム・ツインファング",
+    "fr": "Crochets fantômes occultum"
   },
   "51020": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Round Brush Occultum",
+    "de": "Phantom-Rundpinsel Occultum",
+    "ja": "ファントムオカルタム・ラウンドブラシ",
+    "fr": "Pinceau rond fantôme occultum"
   },
   "51021": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Shield Occultum",
+    "de": "Phantom-Schild Occultum",
+    "ja": "ファントムオカルタム・シールド",
+    "fr": "Bouclier fantôme occultum"
   },
   "51022": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Sword Obscurum Matte Replica",
+    "de": "Phantomschwert Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ソードMF",
+    "fr": "Réplique mate d'épée fantôme obscurum"
   },
   "51023": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Matte Replica Phantom Jamadhars Obscurum",
+    "de": "Phantom-Jamadhars Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ジャマダルMF",
+    "fr": "Répliques mates de jamadhars fantômes obscurum"
   },
   "51024": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Bardiche Obscurum Matte Replica",
+    "de": "Phantom-Berdysch Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・バルディッシュMF",
+    "fr": "Réplique mate de bardiche fantôme obscurum"
   },
   "51025": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Fork Obscurum Matte Replica",
+    "de": "Phantom-Kriegsgabel Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・フォークMF",
+    "fr": "Réplique mate de fourche fantôme obscurum"
   },
   "51026": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Longbow Obscurum Matte Replica",
+    "de": "Phantom-Langbogen Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ロングボウMF",
+    "fr": "Réplique mate d'arc long fantôme obscurum"
   },
   "51027": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Cane Obscurum Matte Replica",
+    "de": "Phantom-Hirtenstock Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ケーンMF",
+    "fr": "Réplique mate de canne fantôme obscurum"
   },
   "51028": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Longpole Obscurum Matte Replica",
+    "de": "Phantom-Langstab Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ロングポールMF",
+    "fr": "Réplique mate d'échalas fantôme obscurum"
   },
   "51029": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Index Obscurum Matte Replica",
+    "de": "Phantomindex Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・インデックスMF",
+    "fr": "Réplique mate d'index fantôme obscurum"
   },
   "51030": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Codex Obscurum Matte Replica",
+    "de": "Phantomkodex Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・コーデックスMF",
+    "fr": "Réplique mate de codex fantôme obscurum"
   },
   "51031": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Matte Replica Phantom Khukuri Obscurum",
+    "de": "Phantomspalter Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ククリMF",
+    "fr": "Répliques mates de khukuris fantômes obscurum"
   },
   "51032": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Guillotine Obscurum Matte Replica",
+    "de": "Phantom-Guillotine Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ディバイダーMF",
+    "fr": "Réplique mate de fendoir fantôme obscurum"
   },
   "51033": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Musketoon Obscurum Matte Replica",
+    "de": "Phantom-Muskete Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・マスケトンMF",
+    "fr": "Réplique mate de mousqueton fantôme obscurum"
   },
   "51034": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Star Pendant Obscurum Matte Replica",
+    "de": "Phantom-Sternenglobus Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・スターペンダントMF",
+    "fr": "Réplique mate de mobile stellaire fantôme obscurum"
   },
   "51035": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Blade Obscurum Matte Replica",
+    "de": "Phantomklinge Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ブレードMF",
+    "fr": "Réplique mate de lame fantôme obscurum"
   },
   "51036": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Hanger Obscurum Matte Replica",
+    "de": "Phantomdegen Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ハンガーMF",
+    "fr": "Réplique mate de ballante fantôme obscurum"
   },
   "51037": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Gunblade Obscurum Matte Replica",
+    "de": "Phantom-Revolverklinge Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ガンブレードMF",
+    "fr": "Réplique mate de pistolame fantôme obscurum"
   },
   "51038": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Matte Replica Phantom Tathlums Obscurum",
+    "de": "Phantom-Tathlums Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・タスラムMF",
+    "fr": "Répliques mates de tathlums fantômes obscurum"
   },
   "51039": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Scythe Obscurum Matte Replica",
+    "de": "Phantom-Kriegssense Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ウォーサイズMF",
+    "fr": "Réplique mate de faux de guerre fantôme obscurum"
   },
   "51040": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Matte Replica Phantom Wings Obscurum",
+    "de": "Phantom-Schwingen Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ウィングMF",
+    "fr": "Répliques mates d'ailes fantômes obscurum"
   },
   "51041": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Matte Replica Phantom Twinfangs Obscurum",
+    "de": "Phantom-Zwillingsfänge Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ツインファングMF",
+    "fr": "Répliques mates de crochets jumeaux fantômes obscurum"
   },
   "51042": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Round Brush Obscurum Matte Replica",
+    "de": "Phantom-Rundpinsel Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ラウンドブラシMF",
+    "fr": "Réplique mate de pinceau rond fantôme obscurum"
   },
   "51043": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Shield Obscurum Matte Replica",
+    "de": "Phantom-Schild Obscurum (matte Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・シールドMF",
+    "fr": "Réplique mate de bouclier fantôme obscurum"
   },
   "51044": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Sword Obscurum Replica",
+    "de": "Phantomschwert Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ソード",
+    "fr": "Réplique d'épée fantôme obscurum"
   },
   "51045": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Jamadhars Obscurum",
+    "de": "Phantom-Jamadhars Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ジャマダル",
+    "fr": "Répliques de jamadhars fantômes obscurum"
   },
   "51046": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Bardiche Obscurum Replica",
+    "de": "Phantom-Berdysch Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・バルディッシュ",
+    "fr": "Réplique de bardiche fantôme obscurum"
   },
   "51047": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Fork Obscurum Replica",
+    "de": "Phantom-Kriegsgabel Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・フォーク",
+    "fr": "Réplique de fourche fantôme obscurum"
   },
   "51048": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Longbow Obscurum Replica",
+    "de": "Phantom-Langbogen Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ロングボウ",
+    "fr": "Réplique d'arc long fantôme obscurum"
   },
   "51049": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Cane Obscurum Replica",
+    "de": "Phantom-Hirtenstock Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ケーン",
+    "fr": "Réplique de canne fantôme obscurum"
   },
   "51050": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Longpole Obscurum Replica",
+    "de": "Phantom-Langstab Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ロングポール",
+    "fr": "Réplique d'échalas fantôme obscurum"
   },
   "51051": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Index Obscurum Replica",
+    "de": "Phantomindex Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・インデックス",
+    "fr": "Réplique d'index fantôme obscurum"
   },
   "51052": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Codex Obscurum Replica",
+    "de": "Phantomkodex Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・コーデックス",
+    "fr": "Réplique de codex fantôme obscurum"
   },
   "51053": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Khukuri Obscurum",
+    "de": "Phantomspalter Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ククリ",
+    "fr": "Répliques de khukuris fantômes obscurum"
   },
   "51054": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Guillotine Obscurum Replica",
+    "de": "Phantom-Guillotine Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ディバイダー",
+    "fr": "Réplique de fendoir fantôme obscurum"
   },
   "51055": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Musketoon Obscurum Replica",
+    "de": "Phantom-Muskete Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・マスケトン",
+    "fr": "Réplique de mousqueton fantôme obscurum"
   },
   "51056": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Star Pendant Obscurum Replica",
+    "de": "Phantom-Sternenglobus Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・スターペンダント",
+    "fr": "Réplique de mobile stellaire fantôme obscurum"
   },
   "51057": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Blade Obscurum Replica",
+    "de": "Phantomklinge Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ブレード",
+    "fr": "Réplique de lame fantôme obscurum"
   },
   "51058": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Hanger Obscurum Replica",
+    "de": "Phantomdegen Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ハンガー",
+    "fr": "Réplique de ballante fantôme obscurum"
   },
   "51059": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Gunblade Obscurum Replica",
+    "de": "Phantom-Revolverklinge Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ガンブレード",
+    "fr": "Réplique de pistolame fantôme obscurum"
   },
   "51060": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Tathlums Obscurum",
+    "de": "Phantom-Tathlums Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・タスラム",
+    "fr": "Répliques de tathlums fantômes obscurum"
   },
   "51061": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Scythe Obscurum Replica",
+    "de": "Phantom-Kriegssense Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ウォーサイズ",
+    "fr": "Réplique de faux de guerre fantôme obscurum"
   },
   "51062": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Wings Obscurum",
+    "de": "Phantom-Schwingen Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ウィング",
+    "fr": "Répliques d'ailes fantômes obscurum"
   },
   "51063": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Twinfangs Obscurum",
+    "de": "Phantom-Zwillingsfänge Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ツインファング",
+    "fr": "Répliques de crochets jumeaux fantômes obscurum"
   },
   "51064": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Round Brush Obscurum Replica",
+    "de": "Phantom-Rundpinsel Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・ラウンドブラシ",
+    "fr": "Réplique de pinceau rond fantôme obscurum"
   },
   "51065": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Shield Obscurum Replica",
+    "de": "Phantom-Schild Obscurum (Replik)",
+    "ja": "レプリカ・ファントムオブスキュラム・シールド",
+    "fr": "Réplique de bouclier fantôme obscurum"
   },
   "51066": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Sword Eclipticum Replica",
+    "de": "Phantomschwert Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ソード",
+    "fr": "Réplique d'épée fantôme eclipticum"
   },
   "51067": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Tonfa Eclipticum",
+    "de": "Phantom-Tonfa Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・トンファー",
+    "fr": "Répliques de tonfas fantômes eclipticum"
   },
   "51068": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Hammer Eclipticum Replica",
+    "de": "Phantom-Kriegshammer Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ウォーハンマー",
+    "fr": "Réplique de marteau de guerre fantôme eclipticum"
   },
   "51069": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Spear Eclipticum Replica",
+    "de": "Phantomspeer Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・スピア",
+    "fr": "Réplique d'hast fantôme eclipticum"
   },
   "51070": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Harp Bow Eclipticum Replica",
+    "de": "Phantom-Harfenbogen Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ハープボウ",
+    "fr": "Réplique d'arc-harpe fantôme eclipticum"
   },
   "51071": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Cane Eclipticum Replica",
+    "de": "Phantom-Hirtenstock Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ケーン",
+    "fr": "Réplique de canne fantôme eclipticum"
   },
   "51072": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Staff Eclipticum Replica",
+    "de": "Phantomstab Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・スタッフ",
+    "fr": "Réplique de bâton fantôme eclipticum"
   },
   "51073": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Index Eclipticum Replica",
+    "de": "Phantomindex Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・インデックス",
+    "fr": "Réplique d'index fantôme eclipticum"
   },
   "51074": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Codex Eclipticum Replica",
+    "de": "Phantomkodex Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・コーデックス",
+    "fr": "Réplique de codex fantôme eclipticum"
   },
   "51075": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Knives Eclipticum",
+    "de": "Phantommesser Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ナイフ",
+    "fr": "Répliques de couteaux fantômes eclipticum"
   },
   "51076": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Guillotine Eclipticum Replica",
+    "de": "Phantom-Guillotine Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ディバイダー",
+    "fr": "Réplique de fendoir fantôme eclipticum"
   },
   "51077": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Revolver Eclipticum Replica",
+    "de": "Phantom-Revolver Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・リボルバー",
+    "fr": "Réplique de revolver fantôme eclipticum"
   },
   "51078": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Star Globe Eclipticum Replica",
+    "de": "Phantom-Sternenglobus Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・スターグローブ",
+    "fr": "Réplique de globe céleste fantôme eclipticum"
   },
   "51079": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Blade Eclipticum Replica",
+    "de": "Phantomklinge Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ブレード",
+    "fr": "Réplique de lame fantôme eclipticum"
   },
   "51080": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Degen Eclipticum Replica",
+    "de": "Phantomdegen Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・デーゲン",
+    "fr": "Réplique d'alfange fantôme eclipticum"
   },
   "51081": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Gunblade Eclipticum Replica",
+    "de": "Phantom-Revolverklinge Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ガンブレード",
+    "fr": "Réplique de pistolame fantôme eclipticum"
   },
   "51082": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Fans Eclipticum",
+    "de": "Phantom-Fächer Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ファン",
+    "fr": "Répliques d'éventails fantômes eclipticum"
   },
   "51083": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Scythe Eclipticum Replica",
+    "de": "Phantom-Kriegssense Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ウォーサイズ",
+    "fr": "Réplique de faux de guerre fantôme eclipticum"
   },
   "51084": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Pendulums Eclipticum",
+    "de": "Phantom-Perpendikel Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ペンデュラム",
+    "fr": "Répliques de pendules fantômes eclipticum"
   },
   "51085": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Twinfangs Eclipticum",
+    "de": "Phantom-Zwillingsfänge Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ツインファング",
+    "fr": "Répliques de crochets fantômes eclipticum"
   },
   "51086": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Round Brush Eclipticum Replica",
+    "de": "Phantom-Rundpinsel Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・ラウンドブラシ",
+    "fr": "Réplique de pinceau rond fantôme eclipticum"
   },
   "51087": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Shield Eclipticum Replica",
+    "de": "Phantom-Schild Eclipticum (Replik)",
+    "ja": "レプリカ・ファントムイクリプティカム・シールド",
+    "fr": "Réplique de bouclier fantôme eclipticum"
   },
   "51088": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Sword Occultum Replica",
+    "de": "Phantomschwert Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ソード",
+    "fr": "Réplique d'épée fantôme occultum"
   },
   "51089": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Tonfa Occultum",
+    "de": "Phantom-Tonfa Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・トンファー",
+    "fr": "Répliques de tonfas fantômes occultum"
   },
   "51090": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Hammer Occultum Replica",
+    "de": "Phantom-Kriegshammer Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ウォーハンマー",
+    "fr": "Réplique de marteau de guerre fantôme occultum"
   },
   "51091": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Spear Occultum Replica",
+    "de": "Phantomspeer Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・スピア",
+    "fr": "Réplique d'hast fantôme occultum"
   },
   "51092": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Harp Bow Occultum Replica",
+    "de": "Phantom-Harfenbogen Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ハープボウ",
+    "fr": "Réplique d'arc-harpe fantôme occultum"
   },
   "51093": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Cane Occultum Replica",
+    "de": "Phantom-Hirtenstock Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ケーン",
+    "fr": "Réplique de canne fantôme occultum"
   },
   "51094": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Staff Occultum Replica",
+    "de": "Phantomstab Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・スタッフ",
+    "fr": "Réplique de bâton fantôme occultum"
   },
   "51095": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Index Occultum Replica",
+    "de": "Phantomindex Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・インデックス",
+    "fr": "Réplique d'index fantôme occultum"
   },
   "51096": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Codex Occultum Replica",
+    "de": "Phantomkodex Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・コーデックス",
+    "fr": "Réplique de codex fantôme occultum"
   },
   "51097": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Knives Occultum",
+    "de": "Phantommesser Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ナイフ",
+    "fr": "Répliques de couteaux fantômes occultum"
   },
   "51098": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Guillotine Occultum Replica",
+    "de": "Phantom-Guillotine Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ディバイダー",
+    "fr": "Réplique de fendoir fantôme occultum"
   },
   "51099": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Revolver Occultum Replica",
+    "de": "Phantom-Revolver Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・リボルバー",
+    "fr": "Réplique de revolver fantôme occultum"
   },
   "51100": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Star Globe Occultum Replica",
+    "de": "Phantom-Sternenglobus Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・スターグローブ",
+    "fr": "Réplique de globe céleste fantôme occultum"
   },
   "51101": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Blade Occultum Replica",
+    "de": "Phantomklinge Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ブレード",
+    "fr": "Réplique de lame fantôme occultum"
   },
   "51102": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Degen Occultum Replica",
+    "de": "Phantomdegen Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・デーゲン",
+    "fr": "Réplique d'alfange fantôme occultum"
   },
   "51103": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Gunblade Occultum Replica",
+    "de": "Phantom-Revolverklinge Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ガンブレード",
+    "fr": "Réplique de pistolame fantôme occultum"
   },
   "51104": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Fans Occultum",
+    "de": "Phantom-Fächer Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ファン",
+    "fr": "Répliques d'éventails fantômes occultum"
   },
   "51105": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom War Scythe Occultum Replica",
+    "de": "Phantom-Kriegssense Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ウォーサイズ",
+    "fr": "Réplique de faux de guerre fantôme occultum"
   },
   "51106": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Pendulums Occultum",
+    "de": "Phantom-Perpendikel Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ペンデュラム",
+    "fr": "Répliques de pendules fantômes occultum"
   },
   "51107": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Replica Phantom Twinfangs Occultum",
+    "de": "Phantom-Zwillingsfänge Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ツインファング",
+    "fr": "Répliques de crochets fantômes occultum"
   },
   "51108": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Round Brush Occultum Replica",
+    "de": "Phantom-Rundpinsel Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・ラウンドブラシ",
+    "fr": "Réplique de pinceau rond fantôme occultum"
   },
   "51109": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Shield Occultum Replica",
+    "de": "Phantom-Schild Occultum (Replik)",
+    "ja": "レプリカ・ファントムオカルタム・シールド",
+    "fr": "Réplique de bouclier fantôme occultum"
   },
   "51110": {
     "en": "Augmented Courtly Lover's Sword",
@@ -307614,10 +307614,10 @@
     "fr": "Éclairage festif de jardin"
   },
   "51270": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Garden Canal",
+    "de": "Garten-Kanal",
+    "ja": "ガーデン・カナル",
+    "fr": "Canal de jardin"
   },
   "51271": {
     "en": "Semicircular Outdoor Stage",
@@ -307626,10 +307626,10 @@
     "fr": "Scène de jardin en demi-cercle"
   },
   "51272": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crumbling Aqueduct",
+    "de": "Bröckelndes Aquädukt",
+    "ja": "ルインド・アクアダクト",
+    "fr": "Aqueduc en ruines"
   },
   "51273": {
     "en": "",
@@ -307686,46 +307686,46 @@
     "fr": "Mât d'éclairage des nervures d'Auxesia"
   },
   "51282": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Winged Scalekin Fossil",
+    "de": "Flugsaurier-Wandfossil",
+    "ja": "翼竜の化石標本",
+    "fr": "Cadre de fossile de ptérosaure"
   },
   "51283": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crescent Stone Pillar",
+    "de": "Kreszentia-Säule",
+    "ja": "クレセント・ストーンピラー",
+    "fr": "Colonne de pierre de Lunule"
   },
   "51284": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crescent Wall Rack",
+    "de": "Kreszentia-Wandregal",
+    "ja": "クレセント・ウォールラック",
+    "fr": "Étagère murale de Lunule"
   },
   "51285": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crescent Display Case",
+    "de": "Kreszentia-Schaukasten",
+    "ja": "クレセント・ディスプレイケース",
+    "fr": "Vitrine de Lunule"
   },
   "51286": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Blue Crescent Moon",
+    "de": "Blauer Kreszentia-Stein",
+    "ja": "クレセント・ブルーストーン",
+    "fr": "Pierre bleue de Lunule"
   },
   "51287": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Yellow Crescent Cube",
+    "de": "Gelber Kreszentia-Stein",
+    "ja": "クレセント・イエローストーン",
+    "fr": "Pierre jaune de Lunule"
   },
   "51288": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Red Crescent Crystal",
+    "de": "Roter Kreszentia-Stein",
+    "ja": "クレセント・レッドストーン",
+    "fr": "Pierre rouge de Lunule"
   },
   "51289": {
     "en": "Wibbly-wobbly Jibanyan",
@@ -307746,28 +307746,28 @@
     "fr": "Wib Wob Usapyon"
   },
   "51292": {
-    "en": "スマイリング・ウェイクマッシュルーム",
-    "de": "スマイリング・ウェイクマッシュルーム",
+    "en": "Smiling Wakeshroom",
+    "de": "Grinse-Spukpilz",
     "ja": "スマイリング・ウェイクマッシュルーム",
-    "fr": "スマイリング・ウェイクマッシュルーム"
+    "fr": "Champignon souriant des saints"
   },
   "51293": {
-    "en": "ステアリング・ウェイクマッシュルーム",
-    "de": "ステアリング・ウェイクマッシュルーム",
+    "en": "Staring Wakeshroom",
+    "de": "Starrblick-Spukpilz",
     "ja": "ステアリング・ウェイクマッシュルーム",
-    "fr": "ステアリング・ウェイクマッシュルーム"
+    "fr": "Champignon inquisiteur des saints"
   },
   "51294": {
-    "en": "ウェイクゴースト・バギー",
-    "de": "ウェイクゴースト・バギー",
+    "en": "Wakesoul Buggy",
+    "de": "Wachseelen-Kinderwagen",
     "ja": "ウェイクゴースト・バギー",
-    "fr": "ウェイクゴースト・バギー"
+    "fr": "Charrette fantôme des saints"
   },
   "51295": {
-    "en": "スターライト・スレッド",
-    "de": "スターライト・スレッド",
+    "en": "Starlight Sled",
+    "de": "Sternenlicht-Schlitten",
     "ja": "スターライト・スレッド",
-    "fr": "スターライト・スレッド"
+    "fr": "Traîneau des étoiles"
   },
   "51296": {
     "en": "",
@@ -307788,58 +307788,58 @@
     "fr": "Affiche “Le chemin vers le lointain” spéciale"
   },
   "51299": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Rising MMXXV Advertisement",
+    "de": "Fest der Wiedergeburt-Plakat 2025",
+    "ja": "新生祭のポスター2025",
+    "fr": "Affiche de la fête de la Commémoration 2025"
   },
   "51300": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tabletop Rising MMXXV Advertisement",
+    "de": "Fest der Wiedergeburt-Tischgemälde 2025",
+    "ja": "新生祭の卓上絵画2025",
+    "fr": "Petit tableau de la fête de la Commémoration 2025"
   },
   "51301": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Rising MMXXIV Advertisement",
+    "de": "Fest der Wiedergeburt-Plakat 2024",
+    "ja": "新生祭のポスター2024",
+    "fr": "Affiche de la fête de la Commémoration 2024"
   },
   "51302": {
-    "en": "守護天節のポスター2025",
+    "en": "All Saints' Wake MMXXV Advertisement",
     "de": "Allerschutzheiligen-Plakat 2025",
     "ja": "守護天節のポスター2025",
-    "fr": "守護天節のポスター2025"
+    "fr": "Affiche de la Veillée des saints 2025"
   },
   "51303": {
-    "en": "守護天節の卓上絵画2025",
+    "en": "Tabletop All Saints' Wake MMXXV Advertisement",
     "de": "Allerschutzheiligen-Tischgemälde 2025",
     "ja": "守護天節の卓上絵画2025",
-    "fr": "守護天節の卓上絵画2025"
+    "fr": "Petit tableau de la Veillée des saints 2025"
   },
   "51304": {
-    "en": "守護天節のポスター2016",
+    "en": "All Saints' Wake MMXVI Advertisement",
     "de": "Allerschutzheiligen-Plakat 2016",
     "ja": "守護天節のポスター2016",
-    "fr": "守護天節のポスター2016"
+    "fr": "Affiche de la Veillée des saints 2016"
   },
   "51305": {
-    "en": "星芒祭のポスター2025",
+    "en": "Starlight Celebration MMXXV Advertisement",
     "de": "Sternenlichtfest-Plakat 2025",
     "ja": "星芒祭のポスター2025",
-    "fr": "星芒祭のポスター2025"
+    "fr": "Affiche de la fête des étoiles 2025"
   },
   "51306": {
-    "en": "星芒祭の卓上絵画2025",
+    "en": "Tabletop Starlight Celebration MMXXV Advertisement",
     "de": "Sternenlichtfest-Tischgemälde 2025",
     "ja": "星芒祭の卓上絵画2025",
-    "fr": "星芒祭の卓上絵画2025"
+    "fr": "Petit tableau de la fête des étoiles 2025"
   },
   "51307": {
-    "en": "星芒祭のポスター2022",
+    "en": "Starlight Celebration MMXXII Advertisement",
     "de": "Sternenlichtfest-Plakat 2022",
     "ja": "星芒祭のポスター2022",
-    "fr": "星芒祭のポスター2022"
+    "fr": "Affiche de la fête des étoiles 2022"
   },
   "51308": {
     "en": "",
@@ -308316,7 +308316,7 @@
     "fr": "Tenue dravanienne de protecteur"
   },
   "51387": {
-    "en": "Dravanian Attire of Slaying",
+    "en": "Dravanian Attire of Maiming",
     "de": "Dravanisches Kleidungsset des Verstümmelns",
     "ja": "ドラヴァニアン・スレイヤー・アタイア",
     "fr": "Tenue dravanienne d'abatteur"
@@ -309366,7 +309366,7 @@
     "fr": "Tenue de protecteur manusya"
   },
   "51562": {
-    "en": "Manusya Attire of Slaying",
+    "en": "Manusya Attire of Maiming",
     "de": "Manusya-Kleidungsset des Verstümmelns",
     "ja": "マヌシャ・スレイヤー・アタイア",
     "fr": "Tenue d'abatteur manusya"
@@ -310860,844 +310860,844 @@
     "fr": "Réplique de canne à pêche des constellations"
   },
   "51811": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Fending",
+    "de": "Phantomtraum-Maske der Verteidigung",
+    "ja": "ファントムヴィジョン・ディフェンダーマスク",
+    "fr": "Masque de protecteur de vision fantomatique"
   },
   "51812": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Fending",
+    "de": "Phantomtraum-Brustpanzer der Verteidigung",
+    "ja": "ファントムヴィジョン・ディフェンダーコースリット",
+    "fr": "Jaseran de protecteur de vision fantomatique"
   },
   "51813": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Fending",
+    "de": "Phantomtraum-Unterarmschienen der Verteidigung",
+    "ja": "ファントムヴィジョン・ディフェンダーヴァンブレイス",
+    "fr": "Canons d'avant-bras de protecteur de vision fantomatique"
   },
   "51814": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Fending",
+    "de": "Phantomtraum-Beinschützer der Verteidigung",
+    "ja": "ファントムヴィジョン・ディフェンダーボトム",
+    "fr": "Bas-de-corps de protecteur de vision fantomatique"
   },
   "51815": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Fending",
+    "de": "Phantomtraum-Sollerets der Verteidigung",
+    "ja": "ファントムヴィジョン・ディフェンダーソルレット",
+    "fr": "Solerets de protecteur de vision fantomatique"
   },
   "51816": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Fending +1",
+    "de": "Phantomtraum-Maske der Verteidigung +1",
+    "ja": "ファントムヴィジョン・ディフェンダーマスク+1",
+    "fr": "Masque de protecteur de vision fantomatique +1"
   },
   "51817": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Fending +1",
+    "de": "Phantomtraum-Brustpanzer der Verteidigung +1",
+    "ja": "ファントムヴィジョン・ディフェンダーコースリット+1",
+    "fr": "Jaseran de protecteur de vision fantomatique +1"
   },
   "51818": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Fending +1",
+    "de": "Phantomtraum-Unterarmschienen der Verteidigung +1",
+    "ja": "ファントムヴィジョン・ディフェンダーヴァンブレイス+1",
+    "fr": "Canons d'avant-bras de protecteur de vision fantomatique +1"
   },
   "51819": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Fending +1",
+    "de": "Phantomtraum-Beinschützer der Verteidigung +1",
+    "ja": "ファントムヴィジョン・ディフェンダーボトム+1",
+    "fr": "Bas-de-corps de protecteur de vision fantomatique +1"
   },
   "51820": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Fending +1",
+    "de": "Phantomtraum-Sollerets der Verteidigung +1",
+    "ja": "ファントムヴィジョン・ディフェンダーソルレット+1",
+    "fr": "Solerets de protecteur de vision fantomatique +1"
   },
   "51821": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Fending +2",
+    "de": "Phantomtraum-Maske der Verteidigung +2",
+    "ja": "ファントムヴィジョン・ディフェンダーマスク+2",
+    "fr": "Masque de protecteur de vision fantomatique +2"
   },
   "51822": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Fending +2",
+    "de": "Phantomtraum-Brustpanzer der Verteidigung +2",
+    "ja": "ファントムヴィジョン・ディフェンダーコースリット+2",
+    "fr": "Jaseran de protecteur de vision fantomatique +2"
   },
   "51823": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Fending +2",
+    "de": "Phantomtraum-Unterarmschienen der Verteidigung +2",
+    "ja": "ファントムヴィジョン・ディフェンダーヴァンブレイス+2",
+    "fr": "Canons d'avant-bras de protecteur de vision fantomatique +2"
   },
   "51824": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Fending +2",
+    "de": "Phantomtraum-Beinschützer der Verteidigung +2",
+    "ja": "ファントムヴィジョン・ディフェンダーボトム+2",
+    "fr": "Bas-de-corps de protecteur de vision fantomatique +2"
   },
   "51825": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Fending +2",
+    "de": "Phantomtraum-Sollerets der Verteidigung +2",
+    "ja": "ファントムヴィジョン・ディフェンダーソルレット+2",
+    "fr": "Solerets de protecteur de vision fantomatique +2"
   },
   "51826": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Fending +3",
+    "de": "Phantomtraum-Maske der Verteidigung +3",
+    "ja": "ファントムヴィジョン・ディフェンダーマスク+3",
+    "fr": "Masque de protecteur de vision fantomatique +3"
   },
   "51827": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Fending +3",
+    "de": "Phantomtraum-Brustpanzer der Verteidigung +3",
+    "ja": "ファントムヴィジョン・ディフェンダーコースリット+3",
+    "fr": "Jaseran de protecteur de vision fantomatique +3"
   },
   "51828": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Fending +3",
+    "de": "Phantomtraum-Unterarmschienen der Verteidigung +3",
+    "ja": "ファントムヴィジョン・ディフェンダーヴァンブレイス+3",
+    "fr": "Canons d'avant-bras de protecteur de vision fantomatique +3"
   },
   "51829": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Fending +3",
+    "de": "Phantomtraum-Beinschützer der Verteidigung +3",
+    "ja": "ファントムヴィジョン・ディフェンダーボトム+3",
+    "fr": "Bas-de-corps de protecteur de vision fantomatique +3"
   },
   "51830": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Fending +3",
+    "de": "Phantomtraum-Sollerets der Verteidigung +3",
+    "ja": "ファントムヴィジョン・ディフェンダーソルレット+3",
+    "fr": "Solerets de protecteur de vision fantomatique +3"
   },
   "51831": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Maiming",
+    "de": "Phantomtraum-Maske des Verstümmelns",
+    "ja": "ファントムヴィジョン・スレイヤーマスク",
+    "fr": "Masque d'abatteur de vision fantomatique"
   },
   "51832": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Maiming",
+    "de": "Phantomtraum-Brustpanzer des Verstümmelns",
+    "ja": "ファントムヴィジョン・スレイヤーコースリット",
+    "fr": "Jaseran d'abatteur de vision fantomatique"
   },
   "51833": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Maiming",
+    "de": "Phantomtraum-Unterarmschienen des Verstümmelns",
+    "ja": "ファントムヴィジョン・スレイヤーヴァンブレイス",
+    "fr": "Canons d'avant-bras d'abatteur de vision fantomatique"
   },
   "51834": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Maiming",
+    "de": "Phantomtraum-Beinschützer des Verstümmelns",
+    "ja": "ファントムヴィジョン・スレイヤーボトム",
+    "fr": "Bas-de-corps d'abatteur de vision fantomatique"
   },
   "51835": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Maiming",
+    "de": "Phantomtraum-Sollerets des Verstümmelns",
+    "ja": "ファントムヴィジョン・スレイヤーソルレット",
+    "fr": "Solerets d'abatteur de vision fantomatique"
   },
   "51836": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Maiming +1",
+    "de": "Phantomtraum-Maske des Verstümmelns +1",
+    "ja": "ファントムヴィジョン・スレイヤーマスク+1",
+    "fr": "Masque d'abatteur de vision fantomatique +1"
   },
   "51837": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Maiming +1",
+    "de": "Phantomtraum-Brustpanzer des Verstümmelns +1",
+    "ja": "ファントムヴィジョン・スレイヤーコースリット+1",
+    "fr": "Jaseran d'abatteur de vision fantomatique +1"
   },
   "51838": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Maiming +1",
+    "de": "Phantomtraum-Unterarmschienen des Verstümmelns +1",
+    "ja": "ファントムヴィジョン・スレイヤーヴァンブレイス+1",
+    "fr": "Canons d'avant-bras d'abatteur de vision fantomatique +1"
   },
   "51839": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Maiming +1",
+    "de": "Phantomtraum-Beinschützer des Verstümmelns +1",
+    "ja": "ファントムヴィジョン・スレイヤーボトム+1",
+    "fr": "Bas-de-corps d'abatteur de vision fantomatique +1"
   },
   "51840": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Maiming +1",
+    "de": "Phantomtraum-Sollerets des Verstümmelns +1",
+    "ja": "ファントムヴィジョン・スレイヤーソルレット+1",
+    "fr": "Solerets d'abatteur de vision fantomatique +1"
   },
   "51841": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Maiming +2",
+    "de": "Phantomtraum-Maske des Verstümmelns +2",
+    "ja": "ファントムヴィジョン・スレイヤーマスク+2",
+    "fr": "Masque d'abatteur de vision fantomatique +2"
   },
   "51842": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Maiming +2",
+    "de": "Phantomtraum-Brustpanzer des Verstümmelns +2",
+    "ja": "ファントムヴィジョン・スレイヤーコースリット+2",
+    "fr": "Jaseran d'abatteur de vision fantomatique +2"
   },
   "51843": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Maiming +2",
+    "de": "Phantomtraum-Unterarmschienen des Verstümmelns +2",
+    "ja": "ファントムヴィジョン・スレイヤーヴァンブレイス+2",
+    "fr": "Canons d'avant-bras d'abatteur de vision fantomatique +2"
   },
   "51844": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Maiming +2",
+    "de": "Phantomtraum-Beinschützer des Verstümmelns +2",
+    "ja": "ファントムヴィジョン・スレイヤーボトム+2",
+    "fr": "Bas-de-corps d'abatteur de vision fantomatique +2"
   },
   "51845": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Maiming +2",
+    "de": "Phantomtraum-Sollerets des Verstümmelns +2",
+    "ja": "ファントムヴィジョン・スレイヤーソルレット+2",
+    "fr": "Solerets d'abatteur de vision fantomatique +2"
   },
   "51846": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Mask of Maiming +3",
+    "de": "Phantomtraum-Maske des Verstümmelns +3",
+    "ja": "ファントムヴィジョン・スレイヤーマスク+3",
+    "fr": "Masque d'abatteur de vision fantomatique +3"
   },
   "51847": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Corselet of Maiming +3",
+    "de": "Phantomtraum-Brustpanzer des Verstümmelns +3",
+    "ja": "ファントムヴィジョン・スレイヤーコースリット+3",
+    "fr": "Jaseran d'abatteur de vision fantomatique +3"
   },
   "51848": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Vambraces of Maiming +3",
+    "de": "Phantomtraum-Unterarmschienen des Verstümmelns +3",
+    "ja": "ファントムヴィジョン・スレイヤーヴァンブレイス+3",
+    "fr": "Canons d'avant-bras d'abatteur de vision fantomatique +3"
   },
   "51849": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Bottoms of Maiming +3",
+    "de": "Phantomtraum-Beinschützer des Verstümmelns +3",
+    "ja": "ファントムヴィジョン・スレイヤーボトム+3",
+    "fr": "Bas-de-corps d'abatteur de vision fantomatique +3"
   },
   "51850": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sollerets of Maiming +3",
+    "de": "Phantomtraum-Sollerets des Verstümmelns +3",
+    "ja": "ファントムヴィジョン・スレイヤーソルレット+3",
+    "fr": "Solerets d'abatteur de vision fantomatique +3"
   },
   "51851": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Striking",
+    "de": "Phantomtraum-Turban des Schlagens",
+    "ja": "ファントムヴィジョン・ストライカーターバン",
+    "fr": "Turban d'agresseur de vision fantomatique"
   },
   "51852": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Striking",
+    "de": "Phantomtraum-Robe des Schlagens",
+    "ja": "ファントムヴィジョン・ストライカーローブ",
+    "fr": "Robe d'agresseur de vision fantomatique"
   },
   "51853": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Striking",
+    "de": "Phantomtraum-Handgelenkschützer des Schlagens",
+    "ja": "ファントムヴィジョン・ストライカーリストラップ",
+    "fr": "Bandages d'agresseur de vision fantomatique"
   },
   "51854": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Striking",
+    "de": "Phantomtraum-Sarouel des Schlagens",
+    "ja": "ファントムヴィジョン・ストライカーサルエル",
+    "fr": "Saroual d'agresseur de vision fantomatique"
   },
   "51855": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Striking",
+    "de": "Phantomtraum-Stiefel des Schlagens",
+    "ja": "ファントムヴィジョン・ストライカーブーツ",
+    "fr": "Bottes d'agresseur de vision fantomatique"
   },
   "51856": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Striking +1",
+    "de": "Phantomtraum-Turban des Schlagens +1",
+    "ja": "ファントムヴィジョン・ストライカーターバン+1",
+    "fr": "Turban d'agresseur de vision fantomatique +1"
   },
   "51857": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Striking +1",
+    "de": "Phantomtraum-Robe des Schlagens +1",
+    "ja": "ファントムヴィジョン・ストライカーローブ+1",
+    "fr": "Robe d'agresseur de vision fantomatique +1"
   },
   "51858": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Striking +1",
+    "de": "Phantomtraum-Handgelenkschützer des Schlagens +1",
+    "ja": "ファントムヴィジョン・ストライカーリストラップ+1",
+    "fr": "Bandages d'agresseur de vision fantomatique +1"
   },
   "51859": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Striking +1",
+    "de": "Phantomtraum-Sarouel des Schlagens +1",
+    "ja": "ファントムヴィジョン・ストライカーサルエル+1",
+    "fr": "Saroual d'agresseur de vision fantomatique +1"
   },
   "51860": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Striking +1",
+    "de": "Phantomtraum-Stiefel des Schlagens +1",
+    "ja": "ファントムヴィジョン・ストライカーブーツ+1",
+    "fr": "Bottes d'agresseur de vision fantomatique +1"
   },
   "51861": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Striking +2",
+    "de": "Phantomtraum-Turban des Schlagens +2",
+    "ja": "ファントムヴィジョン・ストライカーターバン+2",
+    "fr": "Turban d'agresseur de vision fantomatique +2"
   },
   "51862": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Striking +2",
+    "de": "Phantomtraum-Robe des Schlagens +2",
+    "ja": "ファントムヴィジョン・ストライカーローブ+2",
+    "fr": "Robe d'agresseur de vision fantomatique +2"
   },
   "51863": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Striking +2",
+    "de": "Phantomtraum-Handgelenkschützer des Schlagens +2",
+    "ja": "ファントムヴィジョン・ストライカーリストラップ+2",
+    "fr": "Bandages d'agresseur de vision fantomatique +2"
   },
   "51864": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Striking +2",
+    "de": "Phantomtraum-Sarouel des Schlagens +2",
+    "ja": "ファントムヴィジョン・ストライカーサルエル+2",
+    "fr": "Saroual d'agresseur de vision fantomatique +2"
   },
   "51865": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Striking +2",
+    "de": "Phantomtraum-Stiefel des Schlagens +2",
+    "ja": "ファントムヴィジョン・ストライカーブーツ+2",
+    "fr": "Bottes d'agresseur de vision fantomatique +2"
   },
   "51866": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Striking +3",
+    "de": "Phantomtraum-Turban des Schlagens +3",
+    "ja": "ファントムヴィジョン・ストライカーターバン+3",
+    "fr": "Turban d'agresseur de vision fantomatique +3"
   },
   "51867": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Striking +3",
+    "de": "Phantomtraum-Robe des Schlagens +3",
+    "ja": "ファントムヴィジョン・ストライカーローブ+3",
+    "fr": "Robe d'agresseur de vision fantomatique +3"
   },
   "51868": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Striking +3",
+    "de": "Phantomtraum-Handgelenkschützer des Schlagens +3",
+    "ja": "ファントムヴィジョン・ストライカーリストラップ+3",
+    "fr": "Bandages d'agresseur de vision fantomatique +3"
   },
   "51869": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Striking +3",
+    "de": "Phantomtraum-Sarouel des Schlagens +3",
+    "ja": "ファントムヴィジョン・ストライカーサルエル+3",
+    "fr": "Saroual d'agresseur de vision fantomatique +3"
   },
   "51870": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Striking +3",
+    "de": "Phantomtraum-Stiefel des Schlagens +3",
+    "ja": "ファントムヴィジョン・ストライカーブーツ+3",
+    "fr": "Bottes d'agresseur de vision fantomatique +3"
   },
   "51871": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Aiming",
+    "de": "Phantomtraum-Turban des Zielens",
+    "ja": "ファントムヴィジョン・レンジャーターバン",
+    "fr": "Turban de pisteur de vision fantomatique"
   },
   "51872": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Aiming",
+    "de": "Phantomtraum-Robe des Zielens",
+    "ja": "ファントムヴィジョン・レンジャーローブ",
+    "fr": "Robe de pisteur de vision fantomatique"
   },
   "51873": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Aiming",
+    "de": "Phantomtraum-Handgelenkschützer des Zielens",
+    "ja": "ファントムヴィジョン・レンジャーリストラップ",
+    "fr": "Bandages de pisteur de vision fantomatique"
   },
   "51874": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Aiming",
+    "de": "Phantomtraum-Sarouel des Zielens",
+    "ja": "ファントムヴィジョン・レンジャーサルエル",
+    "fr": "Saroual de pisteur de vision fantomatique"
   },
   "51875": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Aiming",
+    "de": "Phantomtraum-Stiefel des Zielens",
+    "ja": "ファントムヴィジョン・レンジャーブーツ",
+    "fr": "Bottes de pisteur de vision fantomatique"
   },
   "51876": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Aiming +1",
+    "de": "Phantomtraum-Turban des Zielens +1",
+    "ja": "ファントムヴィジョン・レンジャーターバン+1",
+    "fr": "Turban de pisteur de vision fantomatique +1"
   },
   "51877": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Aiming +1",
+    "de": "Phantomtraum-Robe des Zielens +1",
+    "ja": "ファントムヴィジョン・レンジャーローブ+1",
+    "fr": "Robe de pisteur de vision fantomatique +1"
   },
   "51878": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Aiming +1",
+    "de": "Phantomtraum-Handgelenkschützer des Zielens +1",
+    "ja": "ファントムヴィジョン・レンジャーリストラップ+1",
+    "fr": "Bandages de pisteur de vision fantomatique +1"
   },
   "51879": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Aiming +1",
+    "de": "Phantomtraum-Sarouel des Zielens +1",
+    "ja": "ファントムヴィジョン・レンジャーサルエル+1",
+    "fr": "Saroual de pisteur de vision fantomatique +1"
   },
   "51880": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Aiming +1",
+    "de": "Phantomtraum-Stiefel des Zielens +1",
+    "ja": "ファントムヴィジョン・レンジャーブーツ+1",
+    "fr": "Bottes de pisteur de vision fantomatique +1"
   },
   "51881": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Aiming +2",
+    "de": "Phantomtraum-Turban des Zielens +2",
+    "ja": "ファントムヴィジョン・レンジャーターバン+2",
+    "fr": "Turban de pisteur de vision fantomatique +2"
   },
   "51882": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Aiming +2",
+    "de": "Phantomtraum-Robe des Zielens +2",
+    "ja": "ファントムヴィジョン・レンジャーローブ+2",
+    "fr": "Robe de pisteur de vision fantomatique +2"
   },
   "51883": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Aiming +2",
+    "de": "Phantomtraum-Handgelenkschützer des Zielens +2",
+    "ja": "ファントムヴィジョン・レンジャーリストラップ+2",
+    "fr": "Bandages de pisteur de vision fantomatique +2"
   },
   "51884": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Aiming +2",
+    "de": "Phantomtraum-Sarouel des Zielens +2",
+    "ja": "ファントムヴィジョン・レンジャーサルエル+2",
+    "fr": "Saroual de pisteur de vision fantomatique +2"
   },
   "51885": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Aiming +2",
+    "de": "Phantomtraum-Stiefel des Zielens +2",
+    "ja": "ファントムヴィジョン・レンジャーブーツ+2",
+    "fr": "Bottes de pisteur de vision fantomatique +2"
   },
   "51886": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Aiming +3",
+    "de": "Phantomtraum-Turban des Zielens +3",
+    "ja": "ファントムヴィジョン・レンジャーターバン+3",
+    "fr": "Turban de pisteur de vision fantomatique +3"
   },
   "51887": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Aiming +3",
+    "de": "Phantomtraum-Robe des Zielens +3",
+    "ja": "ファントムヴィジョン・レンジャーローブ+3",
+    "fr": "Robe de pisteur de vision fantomatique +3"
   },
   "51888": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Aiming +3",
+    "de": "Phantomtraum-Handgelenkschützer des Zielens +3",
+    "ja": "ファントムヴィジョン・レンジャーリストラップ+3",
+    "fr": "Bandages de pisteur de vision fantomatique +3"
   },
   "51889": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Aiming +3",
+    "de": "Phantomtraum-Sarouel des Zielens +3",
+    "ja": "ファントムヴィジョン・レンジャーサルエル+3",
+    "fr": "Saroual de pisteur de vision fantomatique +3"
   },
   "51890": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Aiming +3",
+    "de": "Phantomtraum-Stiefel des Zielens +3",
+    "ja": "ファントムヴィジョン・レンジャーブーツ+3",
+    "fr": "Bottes de pisteur de vision fantomatique +3"
   },
   "51891": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Scouting",
+    "de": "Phantomtraum-Turban des Spähens",
+    "ja": "ファントムヴィジョン・スカウトターバン",
+    "fr": "Turban d'éclaireur de vision fantomatique"
   },
   "51892": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Scouting",
+    "de": "Phantomtraum-Robe des Spähens",
+    "ja": "ファントムヴィジョン・スカウトローブ",
+    "fr": "Robe d'éclaireur de vision fantomatique"
   },
   "51893": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Scouting",
+    "de": "Phantomtraum-Handgelenkschützer des Spähens",
+    "ja": "ファントムヴィジョン・スカウトリストラップ",
+    "fr": "Bandages d'éclaireur de vision fantomatique"
   },
   "51894": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Scouting",
+    "de": "Phantomtraum-Sarouel des Spähens",
+    "ja": "ファントムヴィジョン・スカウトサルエル",
+    "fr": "Saroual d'éclaireur de vision fantomatique"
   },
   "51895": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Scouting",
+    "de": "Phantomtraum-Stiefel des Spähens",
+    "ja": "ファントムヴィジョン・スカウトブーツ",
+    "fr": "Bottes d'éclaireur de vision fantomatique"
   },
   "51896": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Scouting +1",
+    "de": "Phantomtraum-Turban des Spähens +1",
+    "ja": "ファントムヴィジョン・スカウトターバン+1",
+    "fr": "Turban d'éclaireur de vision fantomatique +1"
   },
   "51897": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Scouting +1",
+    "de": "Phantomtraum-Robe des Spähens +1",
+    "ja": "ファントムヴィジョン・スカウトローブ+1",
+    "fr": "Robe d'éclaireur de vision fantomatique +1"
   },
   "51898": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Scouting +1",
+    "de": "Phantomtraum-Handgelenkschützer des Spähens +1",
+    "ja": "ファントムヴィジョン・スカウトリストラップ+1",
+    "fr": "Bandages d'éclaireur de vision fantomatique +1"
   },
   "51899": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Scouting +1",
+    "de": "Phantomtraum-Sarouel des Spähens +1",
+    "ja": "ファントムヴィジョン・スカウトサルエル+1",
+    "fr": "Saroual d'éclaireur de vision fantomatique +1"
   },
   "51900": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Scouting +1",
+    "de": "Phantomtraum-Stiefel des Spähens +1",
+    "ja": "ファントムヴィジョン・スカウトブーツ+1",
+    "fr": "Bottes d'éclaireur de vision fantomatique +1"
   },
   "51901": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Scouting +2",
+    "de": "Phantomtraum-Turban des Spähens +2",
+    "ja": "ファントムヴィジョン・スカウトターバン+2",
+    "fr": "Turban d'éclaireur de vision fantomatique +2"
   },
   "51902": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Scouting +2",
+    "de": "Phantomtraum-Robe des Spähens +2",
+    "ja": "ファントムヴィジョン・スカウトローブ+2",
+    "fr": "Robe d'éclaireur de vision fantomatique +2"
   },
   "51903": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Scouting +2",
+    "de": "Phantomtraum-Handgelenkschützer des Spähens +2",
+    "ja": "ファントムヴィジョン・スカウトリストラップ+2",
+    "fr": "Bandages d'éclaireur de vision fantomatique +2"
   },
   "51904": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Scouting +2",
+    "de": "Phantomtraum-Sarouel des Spähens +2",
+    "ja": "ファントムヴィジョン・スカウトサルエル+2",
+    "fr": "Saroual d'éclaireur de vision fantomatique +2"
   },
   "51905": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Scouting +2",
+    "de": "Phantomtraum-Stiefel des Spähens +2",
+    "ja": "ファントムヴィジョン・スカウトブーツ+2",
+    "fr": "Bottes d'éclaireur de vision fantomatique +2"
   },
   "51906": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Turban of Scouting +3",
+    "de": "Phantomtraum-Turban des Spähens +3",
+    "ja": "ファントムヴィジョン・スカウトターバン+3",
+    "fr": "Turban d'éclaireur de vision fantomatique +3"
   },
   "51907": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Robe of Scouting +3",
+    "de": "Phantomtraum-Robe des Spähens +3",
+    "ja": "ファントムヴィジョン・スカウトローブ+3",
+    "fr": "Robe d'éclaireur de vision fantomatique +3"
   },
   "51908": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Scouting +3",
+    "de": "Phantomtraum-Handgelenkschützer des Spähens +3",
+    "ja": "ファントムヴィジョン・スカウトリストラップ+3",
+    "fr": "Bandages d'éclaireur de vision fantomatique +3"
   },
   "51909": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Scouting +3",
+    "de": "Phantomtraum-Sarouel des Spähens +3",
+    "ja": "ファントムヴィジョン・スカウトサルエル+3",
+    "fr": "Saroual d'éclaireur de vision fantomatique +3"
   },
   "51910": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Boots of Scouting +3",
+    "de": "Phantomtraum-Stiefel des Spähens +3",
+    "ja": "ファントムヴィジョン・スカウトブーツ+3",
+    "fr": "Bottes d'éclaireur de vision fantomatique +3"
   },
   "51911": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Healing",
+    "de": "Phantomtraum-Nachtkappe der Heilung",
+    "ja": "ファントムヴィジョン・ヒーラーナイトキャップ",
+    "fr": "Bonnet de nuit de soigneur de vision fantomatique"
   },
   "51912": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Healing",
+    "de": "Phantomtraum-Gambeson der Heilung",
+    "ja": "ファントムヴィジョン・ヒーラーアクトン",
+    "fr": "Doublet armant de soigneur de vision fantomatique"
   },
   "51913": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Healing",
+    "de": "Phantomtraum-Handgelenkschützer der Heilung",
+    "ja": "ファントムヴィジョン・ヒーラーリストラップ",
+    "fr": "Bandages de soigneur de vision fantomatique"
   },
   "51914": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Healing",
+    "de": "Phantomtraum-Sarouel der Heilung",
+    "ja": "ファントムヴィジョン・ヒーラーサルエル",
+    "fr": "Saroual de soigneur de vision fantomatique"
   },
   "51915": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Healing",
+    "de": "Phantomtraum-Poulaines der Heilung",
+    "ja": "ファントムヴィジョン・ヒーラークラコー",
+    "fr": "Souliers à poulaines de soigneur de vision fantomatique"
   },
   "51916": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Healing +1",
+    "de": "Phantomtraum-Nachtkappe der Heilung +1",
+    "ja": "ファントムヴィジョン・ヒーラーナイトキャップ+1",
+    "fr": "Bonnet de nuit de soigneur de vision fantomatique +1"
   },
   "51917": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Healing +1",
+    "de": "Phantomtraum-Gambeson der Heilung +1",
+    "ja": "ファントムヴィジョン・ヒーラーアクトン+1",
+    "fr": "Doublet armant de soigneur de vision fantomatique +1"
   },
   "51918": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Healing +1",
+    "de": "Phantomtraum-Handgelenkschützer der Heilung +1",
+    "ja": "ファントムヴィジョン・ヒーラーリストラップ+1",
+    "fr": "Bandages de soigneur de vision fantomatique +1"
   },
   "51919": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Healing +1",
+    "de": "Phantomtraum-Sarouel der Heilung +1",
+    "ja": "ファントムヴィジョン・ヒーラーサルエル+1",
+    "fr": "Saroual de soigneur de vision fantomatique +1"
   },
   "51920": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Healing +1",
+    "de": "Phantomtraum-Poulaines der Heilung +1",
+    "ja": "ファントムヴィジョン・ヒーラークラコー+1",
+    "fr": "Souliers à poulaines de soigneur de vision fantomatique +1"
   },
   "51921": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Healing +2",
+    "de": "Phantomtraum-Nachtkappe der Heilung +2",
+    "ja": "ファントムヴィジョン・ヒーラーナイトキャップ+2",
+    "fr": "Bonnet de nuit de soigneur de vision fantomatique +2"
   },
   "51922": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Healing +2",
+    "de": "Phantomtraum-Gambeson der Heilung +2",
+    "ja": "ファントムヴィジョン・ヒーラーアクトン+2",
+    "fr": "Doublet armant de soigneur de vision fantomatique +2"
   },
   "51923": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Healing +2",
+    "de": "Phantomtraum-Handgelenkschützer der Heilung +2",
+    "ja": "ファントムヴィジョン・ヒーラーリストラップ+2",
+    "fr": "Bandages de soigneur de vision fantomatique +2"
   },
   "51924": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Healing +2",
+    "de": "Phantomtraum-Sarouel der Heilung +2",
+    "ja": "ファントムヴィジョン・ヒーラーサルエル+2",
+    "fr": "Saroual de soigneur de vision fantomatique +2"
   },
   "51925": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Healing +2",
+    "de": "Phantomtraum-Poulaines der Heilung +2",
+    "ja": "ファントムヴィジョン・ヒーラークラコー+2",
+    "fr": "Souliers à poulaines de soigneur de vision fantomatique +2"
   },
   "51926": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Healing +3",
+    "de": "Phantomtraum-Nachtkappe der Heilung +3",
+    "ja": "ファントムヴィジョン・ヒーラーナイトキャップ+3",
+    "fr": "Bonnet de nuit de soigneur de vision fantomatique +3"
   },
   "51927": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Healing +3",
+    "de": "Phantomtraum-Gambeson der Heilung +3",
+    "ja": "ファントムヴィジョン・ヒーラーアクトン+3",
+    "fr": "Doublet armant de soigneur de vision fantomatique +3"
   },
   "51928": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Healing +3",
+    "de": "Phantomtraum-Handgelenkschützer der Heilung +3",
+    "ja": "ファントムヴィジョン・ヒーラーリストラップ+3",
+    "fr": "Bandages de soigneur de vision fantomatique +3"
   },
   "51929": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Healing +3",
+    "de": "Phantomtraum-Sarouel der Heilung +3",
+    "ja": "ファントムヴィジョン・ヒーラーサルエル+3",
+    "fr": "Saroual de soigneur de vision fantomatique +3"
   },
   "51930": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Healing +3",
+    "de": "Phantomtraum-Poulaines der Heilung +3",
+    "ja": "ファントムヴィジョン・ヒーラークラコー+3",
+    "fr": "Souliers à poulaines de soigneur de vision fantomatique +3"
   },
   "51931": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Casting",
+    "de": "Phantomtraum-Nachtkappe der Magie",
+    "ja": "ファントムヴィジョン・キャスターナイトキャップ",
+    "fr": "Bonnet de nuit d'incantateur de vision fantomatique"
   },
   "51932": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Casting",
+    "de": "Phantomtraum-Gambeson der Magie",
+    "ja": "ファントムヴィジョン・キャスターアクトン",
+    "fr": "Doublet armant d'incantateur de vision fantomatique"
   },
   "51933": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Casting",
+    "de": "Phantomtraum-Handgelenkschützer der Magie",
+    "ja": "ファントムヴィジョン・キャスターリストラップ",
+    "fr": "Bandages d'incantateur de vision fantomatique"
   },
   "51934": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Casting",
+    "de": "Phantomtraum-Sarouel der Magie",
+    "ja": "ファントムヴィジョン・キャスターサルエル",
+    "fr": "Saroual d'incantateur de vision fantomatique"
   },
   "51935": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Casting",
+    "de": "Phantomtraum-Poulaines der Magie",
+    "ja": "ファントムヴィジョン・キャスタークラコー",
+    "fr": "Souliers à poulaines d'incantateur de vision fantomatique"
   },
   "51936": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Casting +1",
+    "de": "Phantomtraum-Nachtkappe der Magie +1",
+    "ja": "ファントムヴィジョン・キャスターナイトキャップ+1",
+    "fr": "Bonnet de nuit d'incantateur de vision fantomatique +1"
   },
   "51937": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Casting +1",
+    "de": "Phantomtraum-Gambeson der Magie +1",
+    "ja": "ファントムヴィジョン・キャスターアクトン+1",
+    "fr": "Doublet armant d'incantateur de vision fantomatique +1"
   },
   "51938": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Casting +1",
+    "de": "Phantomtraum-Handgelenkschützer der Magie +1",
+    "ja": "ファントムヴィジョン・キャスターリストラップ+1",
+    "fr": "Bandages d'incantateur de vision fantomatique +1"
   },
   "51939": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Casting +1",
+    "de": "Phantomtraum-Sarouel der Magie +1",
+    "ja": "ファントムヴィジョン・キャスターサルエル+1",
+    "fr": "Saroual d'incantateur de vision fantomatique +1"
   },
   "51940": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Casting +1",
+    "de": "Phantomtraum-Poulaines der Magie +1",
+    "ja": "ファントムヴィジョン・キャスタークラコー+1",
+    "fr": "Souliers à poulaines d'incantateur de vision fantomatique +1"
   },
   "51941": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Casting +2",
+    "de": "Phantomtraum-Nachtkappe der Magie +2",
+    "ja": "ファントムヴィジョン・キャスターナイトキャップ+2",
+    "fr": "Bonnet de nuit d'incantateur de vision fantomatique +2"
   },
   "51942": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Casting +2",
+    "de": "Phantomtraum-Gambeson der Magie +2",
+    "ja": "ファントムヴィジョン・キャスターアクトン+2",
+    "fr": "Doublet armant d'incantateur de vision fantomatique +2"
   },
   "51943": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Casting +2",
+    "de": "Phantomtraum-Handgelenkschützer der Magie +2",
+    "ja": "ファントムヴィジョン・キャスターリストラップ+2",
+    "fr": "Bandages d'incantateur de vision fantomatique +2"
   },
   "51944": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Casting +2",
+    "de": "Phantomtraum-Sarouel der Magie +2",
+    "ja": "ファントムヴィジョン・キャスターサルエル+2",
+    "fr": "Saroual d'incantateur de vision fantomatique +2"
   },
   "51945": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Casting +2",
+    "de": "Phantomtraum-Poulaines der Magie +2",
+    "ja": "ファントムヴィジョン・キャスタークラコー+2",
+    "fr": "Souliers à poulaines d'incantateur de vision fantomatique +2"
   },
   "51946": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Nightcap of Casting +3",
+    "de": "Phantomtraum-Nachtkappe der Magie +3",
+    "ja": "ファントムヴィジョン・キャスターナイトキャップ+3",
+    "fr": "Bonnet de nuit d'incantateur de vision fantomatique +3"
   },
   "51947": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Acton of Casting +3",
+    "de": "Phantomtraum-Gambeson der Magie +3",
+    "ja": "ファントムヴィジョン・キャスターアクトン+3",
+    "fr": "Doublet armant d'incantateur de vision fantomatique +3"
   },
   "51948": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Wristwraps of Casting +3",
+    "de": "Phantomtraum-Handgelenkschützer der Magie +3",
+    "ja": "ファントムヴィジョン・キャスターリストラップ+3",
+    "fr": "Bandages d'incantateur de vision fantomatique +3"
   },
   "51949": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Sarouel of Casting +3",
+    "de": "Phantomtraum-Sarouel der Magie +3",
+    "ja": "ファントムヴィジョン・キャスターサルエル+3",
+    "fr": "Saroual d'incantateur de vision fantomatique +3"
   },
   "51950": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Vision Crakows of Casting +3",
+    "de": "Phantomtraum-Poulaines der Magie +3",
+    "ja": "ファントムヴィジョン・キャスタークラコー+3",
+    "fr": "Souliers à poulaines d'incantateur de vision fantomatique +3"
   },
   "51951": {
     "en": "",
@@ -311706,28 +311706,28 @@
     "fr": ""
   },
   "51952": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tule Tunic",
+    "de": "Tule-Tunika",
+    "ja": "トゥール・チュニック",
+    "fr": "Tunique de Tule"
   },
   "51953": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tule Halfgloves",
+    "de": "Tule-Kurzfingerhandschuhe",
+    "ja": "トゥール・ハーフグローブ",
+    "fr": "Mitaines de Tule"
   },
   "51954": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tule Trousers",
+    "de": "Tule-Hose",
+    "ja": "トゥール・トラウザー",
+    "fr": "Pantalon de Tule"
   },
   "51955": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tule Longboots",
+    "de": "Tule-Langstiefel",
+    "ja": "トゥール・ロングブーツ",
+    "fr": "Bottes de Tule"
   },
   "51956": {
     "en": "",
@@ -311736,16 +311736,16 @@
     "fr": ""
   },
   "51957": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Torna Tunic",
+    "de": "Torna-Tunika",
+    "ja": "トルナ・チュニック",
+    "fr": "Tunique de Torna"
   },
   "51958": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Torna Wristlets",
+    "de": "Torna-Armbänder",
+    "ja": "トルナ・リストレット",
+    "fr": "Gourmettes de Torna"
   },
   "51959": {
     "en": "",
@@ -311754,202 +311754,202 @@
     "fr": ""
   },
   "51960": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Torna Boots",
+    "de": "Torna-Stiefel",
+    "ja": "トルナ・ブーツ",
+    "fr": "Bottes de Torna"
   },
   "51961": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Carwen Bandana",
+    "de": "Carwen-Bandana",
+    "ja": "カーウェン・バンダナ",
+    "fr": "Bandana de Carwen"
   },
   "51962": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Carwen Tunic",
+    "de": "Carwen-Tunika",
+    "ja": "カーウェン・チュニック",
+    "fr": "Tunique de Carwen"
   },
   "51963": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Carwen Armlets",
+    "de": "Carwen-Armreife",
+    "ja": "カーウェン・アームレット",
+    "fr": "Brassards de Carwen"
   },
   "51964": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Carwen Tights",
+    "de": "Carwen-Hose",
+    "ja": "カーウェン・タイツ",
+    "fr": "Collants de Carwen"
   },
   "51965": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Carwen Boots",
+    "de": "Carwen-Stiefel",
+    "ja": "カーウェン・ブーツ",
+    "fr": "Bottes de Carwen"
   },
   "51966": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "North Horn Riding Map",
+    "de": "Karte der Reitwege im nördlichen Kreszentia",
+    "ja": "詳細地図:三日月島北部",
+    "fr": "Carte détaillée de l'île de Lunule septentrionale"
   },
   "51967": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ninja's Soul Shard",
+    "de": "Ninja-Seelensplitter",
+    "ja": "ソウルシャード:忍者",
+    "fr": "Éclat d'âme de ninja"
   },
   "51968": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Black Mage's Soul Shard",
+    "de": "Schwarzmagier-Seelensplitter",
+    "ja": "ソウルシャード:黒魔道士",
+    "fr": "Éclat d'âme de mage noir"
   },
   "51969": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "White Mage's Soul Shard",
+    "de": "Weißmagier-Seelensplitter",
+    "ja": "ソウルシャード:白魔道士",
+    "fr": "Éclat d'âme de mage blanc"
   },
   "51970": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dragoon's Soul Shard",
+    "de": "Dragoon-Seelensplitter",
+    "ja": "ソウルシャード:竜騎士",
+    "fr": "Éclat d'âme de chevalier dragon"
   },
   "51971": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Summoner's Soul Shard",
+    "de": "Beschwörer-Seelensplitter",
+    "ja": "ソウルシャード:召喚士",
+    "fr": "Éclat d'âme d'invocateur"
   },
   "51972": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Blue Mage's Soul Shard",
+    "de": "Blaumagier-Seelensplitter",
+    "ja": "ソウルシャード:青魔道士",
+    "fr": "Éclat d'âme de mage bleu"
   },
   "51973": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Red Mage's Soul Shard",
+    "de": "Rotmagier-Seelensplitter",
+    "ja": "ソウルシャード:赤魔道士",
+    "fr": "Éclat d'âme de mage rouge"
   },
   "51974": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Necromancer's Soul Shard",
+    "de": "Nekromanten-Seelensplitter",
+    "ja": "ソウルシャード:ネクロマンサー",
+    "fr": "Éclat d'âme de nécromancien"
   },
   "51975": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Enlightenment Silver Obol",
+    "de": "Weißsilbermünze der Zwölf Städte",
+    "ja": "十二都市白銀貨",
+    "fr": "Pièce de nickel des douze cités"
   },
   "51976": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Enlightenment Gold Obol",
+    "de": "Weißgoldmünze der Zwölf Städte",
+    "ja": "十二都市白金貨",
+    "fr": "Pièce de platine des douze cités"
   },
   "51977": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Arcane Amulet",
+    "de": "Talisman der Magie",
+    "ja": "魔の護符",
+    "fr": "Talisman de la Magie"
   },
   "51978": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Final Final Fixative",
+    "de": "Finalfixiermittel",
+    "ja": "ラストフィキサチーフ",
+    "fr": "Agent fixant ultime"
   },
   "51979": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on Arbatel",
+    "de": "Chronikeintrag „Arbatel“",
+    "ja": "探査記録:アルバテル",
+    "fr": "Article sur Arbatel"
   },
   "51980": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Tiny Mage",
+    "de": "Chronikeintrag „Winzige Magier“",
+    "ja": "探査記録:タイニーメイジ",
+    "fr": "Article sur le petit mage"
   },
   "51981": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on Algol",
+    "de": "Chronikeintrag „Algol“",
+    "ja": "探査記録:アルゴル",
+    "fr": "Article sur Algol"
   },
   "51982": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Metamorph",
+    "de": "Chronikeintrag „Metamorpha“",
+    "ja": "探査記録:メタモルファ",
+    "fr": "Article sur le métamorphe"
   },
   "51983": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Pallmagia",
+    "de": "Chronikeintrag „Bleicher Magia“",
+    "ja": "探査記録:ペイルマギア",
+    "fr": "Article sur Palimagia"
   },
   "51984": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Phantom Necromancer",
+    "de": "Chronikeintrag „Kreszenter Nekromant“",
+    "ja": "探査記録:マギ・ネクロマンサー",
+    "fr": "Article sur le nécromancien magi"
   },
   "51985": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Abductor",
+    "de": "Chronikeintrag „Abduktor“",
+    "ja": "探査記録:アブダクター",
+    "fr": "Article sur le Ravisseur"
   },
   "51986": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Claret Dragon",
+    "de": "Chronikeintrag „Rubrum-Drache“",
+    "ja": "探査記録:ルブルムドラゴン",
+    "fr": "Article sur le dragon rubrum"
   },
   "51987": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Alabaster Blade",
+    "de": "Chronikeintrag „Alabaster-Klinge“",
+    "ja": "探査記録:アラバスターブレード",
+    "fr": "Article sur la Lame d'albâtre"
   },
   "51988": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on Conjured Calofisteri",
+    "de": "Chronikeintrag „Calofisteri-Doppelgängerin“",
+    "ja": "探査記録:カロフィステリ・ダブル",
+    "fr": "Article sur le clone de Calofisteri"
   },
   "51989": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Two-headed Aevis",
+    "de": "Chronikeintrag „Zweiköpfige Avis“",
+    "ja": "探査記録:ツーヘッド・エイビス",
+    "fr": "Article sur l'eibis bicéphale"
   },
   "51990": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Sword Dancer",
+    "de": "Chronikeintrag „Schwerttänzer“",
+    "ja": "探査記録:ソードダンサー",
+    "fr": "Article sur le danseur aux épées"
   },
   "51991": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on Necrophobia",
+    "de": "Chronikeintrag „Nekrophobia“",
+    "ja": "探査記録:ネクロフォビア",
+    "fr": "Article sur Nécrophobie"
   },
   "51992": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Notes on the Index",
+    "de": "Chronikeintrag „Index“",
+    "ja": "探査記録:インデックス",
+    "fr": "Article sur Index"
   },
   "51993": {
     "en": "Echoes of Vana'diel Framer's Kit",
@@ -311964,10 +311964,10 @@
     "fr": ""
   },
   "51995": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Occult Omniscience Framer's Kit",
+    "de": "Portraitmaterial (Kreszentia 2)",
+    "ja": "ポートレート教材:クレセントアイル2",
+    "fr": "L'Art du portrait&nbsp;: Île de Lunule 2"
   },
   "51996": {
     "en": "Cosmic Growth Framer's Kit",
@@ -311976,10 +311976,10 @@
     "fr": "L'Art du portrait&nbsp;: Exploration cosmique 4"
   },
   "51997": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Keybound Brawler Framer's Kit",
+    "de": "Portraitmaterial (Tastenschläger)",
+    "ja": "ポートレート教材:キーバウンド・ブロウラー",
+    "fr": "L'Art du portrait&nbsp;: Frappe fatale"
   },
   "51998": {
     "en": "Dragon Quest X Framer's Kit",
@@ -312036,34 +312036,34 @@
     "fr": "Requin cuivré brillant"
   },
   "52007": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ner Lar Dor",
+    "de": "Ner Lar Dor",
+    "ja": "ネー・ラァ・ドー",
+    "fr": "Ner lar dor"
   },
   "52008": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Xehabopo'u",
+    "de": "Xehabopo'u",
+    "ja": "ヂェファ・ボポル",
+    "fr": "Xehabopo'u"
   },
   "52009": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyfrond",
+    "de": "Himmelsherz",
+    "ja": "スカイライトハート",
+    "fr": "Cœur céleste"
   },
   "52010": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Rroneek Bichir",
+    "de": "Rroneek-Hecht",
+    "ja": "ロネークポリプテルス",
+    "fr": "Rroneek polyptériforme"
   },
   "52011": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Triple Threat",
+    "de": "Dreiklinge",
+    "ja": "三刃の鯱",
+    "fr": "Trilame"
   },
   "52012": {
     "en": "Pote'uka",
@@ -312171,7 +312171,7 @@
     "en": "Neomasher Supplies",
     "de": "Neostampfer-Materialien",
     "ja": "ネオタコス調理用具の材料",
-    "fr": "Ustensiles pour la préparation de néo-tacos"
+    "fr": "Matériaux pour ustensile de cuisine"
   },
   "52030": {
     "en": "Assorted Turali Pigments",
@@ -312552,22 +312552,22 @@
     "fr": "Avoir de l'exploration cosmique (Auxesia)"
   },
   "52093": {
-    "en": "Botanic Gold Voyagers' Record",
+    "en": "Botanic Gold Ancient Record",
     "de": "Smaragdgoldene Aufzeichnung des Vergangenen",
-    "ja": "先駆者文明の記録:緑金",
-    "fr": "Relique des pionniers (or vert)"
+    "ja": "古代の記録:緑金",
+    "fr": "Relique archéologique (or vert)"
   },
   "52094": {
-    "en": "Civic Silver Voyagers' Record",
+    "en": "Civic Silver Ancient Record",
     "de": "Saphirsilberne Aufzeichnung des Vergangenen",
-    "ja": "先駆者文明の記録:青銀",
-    "fr": "Relique des pionniers (argent bleu)"
+    "ja": "古代の記録:青銀",
+    "fr": "Relique archéologique (argent bleu)"
   },
   "52095": {
-    "en": "Arboreal Bronze Voyagers' Record",
+    "en": "Arboreal Bronze Ancient Record",
     "de": "Weißkupferne Aufzeichnung des Vergangenen",
-    "ja": "先駆者文明の記録:白銅",
-    "fr": "Relique des pionniers (bronze blanc)"
+    "ja": "古代の記録:白銅",
+    "fr": "Relique archéologique (bronze blanc)"
   },
   "52096": {
     "en": "Timberpond Skipper",
@@ -313554,16 +313554,16 @@
     "fr": "Ailes de l'héritage"
   },
   "52260": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Night Stallion Activation Key",
+    "de": "Nachthengst-Zündschlüssel",
+    "ja": "ナイトスタリオン起動鍵",
+    "fr": "Clef de contact de l'Étalon nocturne"
   },
   "52261": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Magitek Scorpion Identification Key",
+    "de": "Wachskorpion-Kennschlüssel",
+    "ja": "ガードスコーピオン認証鍵",
+    "fr": "Clef d'activation de scorpion gardien"
   },
   "52262": {
     "en": "Rocket Punch Identification Key",
@@ -313578,10 +313578,10 @@
     "fr": ""
   },
   "52264": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Colibri Callado Whistle",
+    "de": "Schweigsamer-Kolibri-Pfeife",
+    "ja": "クワイエット・コリブリ・ホイッスル",
+    "fr": "Sifflet colibri silencieux"
   },
   "52265": {
     "en": "",
@@ -313590,10 +313590,10 @@
     "fr": ""
   },
   "52266": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Duck-billed Porter Whistle",
+    "de": "Schnabelpförtner-Pfeife",
+    "ja": "ダックポーター・ホイッスル",
+    "fr": "Sifflet ornithorynque porteur"
   },
   "52267": {
     "en": "Cosmic Armored Weapon Beta Identification Key",
@@ -313656,22 +313656,22 @@
     "fr": "Caprin"
   },
   "52277": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tiny Omniscient",
+    "de": "Register der Belesene",
+    "ja": "すべてをしおるもの",
+    "fr": "Naindex"
   },
   "52278": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Puny Mage",
+    "de": "Mickriger Magier",
+    "ja": "ピューニィメイジ",
+    "fr": "P'tit mage"
   },
   "52279": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wind-up Wuk Lamat",
+    "de": "Wuk Lamat-Puppe",
+    "ja": "マメット・ウクラマト",
+    "fr": "Wuk Lamat miniature"
   },
   "52280": {
     "en": "Wind-up Prishe",
@@ -313680,10 +313680,10 @@
     "fr": "Prishe miniature"
   },
   "52281": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wind-up Köttr",
+    "de": "Köttr-Puppe",
+    "ja": "マメット・コットル",
+    "fr": "Köttr miniature"
   },
   "52282": {
     "en": "Budvi",
@@ -313692,16 +313692,16 @@
     "fr": "Germylvi"
   },
   "52283": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wind-up Barret",
+    "de": "Aufzieh-Barret",
+    "ja": "マメット・バレット",
+    "fr": "Barret miniature"
   },
   "52284": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Nymian Uolosapa",
+    "de": "Nym-Uolosapa",
+    "ja": "ニーム・オーロサパ",
+    "fr": "Uolosapa de Nym"
   },
   "52285": {
     "en": "Barding of Naught",
@@ -313710,16 +313710,16 @@
     "fr": "Barde de nihiliste"
   },
   "52286": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Picnicker's Barding",
+    "de": "Picknick-Rossharnisch",
+    "ja": "ピクニック・バード",
+    "fr": "Barde de pique-nique"
   },
   "52287": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Gatling Gun",
+    "de": "Avalanche-Gatling-Gewehr",
+    "ja": "アバランチ・ガトリングガン",
+    "fr": "Mitrailleuse rotative d'Avalanche"
   },
   "52288": {
     "en": "Shovel",
@@ -313728,22 +313728,22 @@
     "fr": "Pelle"
   },
   "52289": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Antique Lantern",
+    "de": "Antike Laterne ",
+    "ja": "アンティーク・ランタン",
+    "fr": "Lanterne ancienne"
   },
   "52290": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ballroom Etiquette - Geographic Guesswork",
+    "de": "Ballsaal-Etikette: Karte lesen",
+    "ja": "演技教本:地図を見る",
+    "fr": "L'Étiquette éorzéenne&nbsp;: Consulter la carte"
   },
   "52291": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ballroom Etiquette - Intrepid Inputs",
+    "de": "Ballsaal-Etikette: Magitipp-Tastatur",
+    "ja": "演技教本:魔法盤を叩く",
+    "fr": "L'Étiquette éorzéenne&nbsp;: Taper au clavier"
   },
   "52292": {
     "en": "Ballroom Etiquette - Dignified Derision",
@@ -313764,10 +313764,10 @@
     "fr": "L'Étiquette éorzéenne&nbsp;: Manger un taco"
   },
   "52295": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ballroom Etiquette - Rearward Regards",
+    "de": "Ballsaal-Etikette: Zurückblicken",
+    "ja": "演技教本:後ろを振り返る",
+    "fr": "L'Étiquette éorzéenne&nbsp;: Regarder en arrière"
   },
   "52296": {
     "en": "",
@@ -313776,16 +313776,16 @@
     "fr": ""
   },
   "52297": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Great Ball of Lightning",
+    "de": "Gewitterkugel",
+    "ja": "ライトニングボール",
+    "fr": "Sphère de foudre"
   },
   "52298": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Occult Apocrytaph",
+    "de": "Kreszenter Apokryph",
+    "ja": "マギ・アポクリファ",
+    "fr": "Magi apocryphe"
   },
   "52299": {
     "en": "Palazzo Diamond Sword",
@@ -313926,70 +313926,70 @@
     "fr": "Totem du bouffon dément"
   },
   "52322": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "MGC",
+    "de": "Manderville-Goldmarke",
+    "ja": "マンダヴィル・ゴールドソーサークレジット",
+    "fr": "Devise du Gold Saucer"
   },
   "52323": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Brawler's Top",
+    "de": "Avalanche-Oberteil der Kämpferin",
+    "ja": "アバランチブロウラー・トップス",
+    "fr": "Haut-de-corps de combattante d'Avalanche"
   },
   "52324": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Brawler's Halfgloves",
+    "de": "Avalanche-Kurzfingerhandschuhe der Kämpferin",
+    "ja": "アバランチブロウラー・ハーフグローブ",
+    "fr": "Mitaines de combattante d'Avalanche"
   },
   "52325": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Brawler's Bottoms",
+    "de": "Avalanche-Rock der Kämpferin",
+    "ja": "アバランチブロウラー・ボトム",
+    "fr": "Bas-de-corps de combattante d'Avalanche"
   },
   "52326": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Brawler's Boots",
+    "de": "Avalanche-Stiefel der Kämpferin",
+    "ja": "アバランチブロウラー・ブーツ",
+    "fr": "Bottes de combattante d'Avalanche"
   },
   "52327": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Brawler's Earring",
+    "de": "Avalanche-Ohrring der Kämpferin",
+    "ja": "アバランチブロウラー・イヤリング",
+    "fr": "Boucle d'oreille de combattante d'Avalanche"
   },
   "52328": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Sunglasses",
+    "de": "Avalanche-Sonnenbrille des Anführers",
+    "ja": "アバランチリーダー・サングラス",
+    "fr": "Lunettes de soleil de chef d'Avalanche"
   },
   "52329": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Vest",
+    "de": "Avalanche-Weste des Anführers",
+    "ja": "アバランチリーダー・ベスト",
+    "fr": "Gilet de chef d'Avalanche"
   },
   "52330": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Halfgloves",
+    "de": "Avalanche-Kurzfingerhandschuhe des Anführers",
+    "ja": "アバランチリーダー・ハーフグローブ",
+    "fr": "Mitaines de chef d'Avalanche"
   },
   "52331": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Cargo Trousers",
+    "de": "Avalanche-Cargohose des Anführers",
+    "ja": "アバランチリーダー・カーゴパンツ",
+    "fr": "Pantalon cargo de chef d'Avalanche"
   },
   "52332": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Boots",
+    "de": "Avalanche-Stiefel des Anführers",
+    "ja": "アバランチリーダー・ブーツ",
+    "fr": "Bottes de chef d'Avalanche"
   },
   "52333": {
     "en": "FINAL FANTASY V: The Final Battle (Dawntrail) Orchestrion Roll",
@@ -314118,22 +314118,22 @@
     "fr": "Rouleau “The Republic of Bastok”"
   },
   "52354": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Welcome to the Gold Saucer Orchestrion Roll",
+    "de": "Notenrolle von „Welcome to the Gold Saucer“",
+    "ja": "オーケストリオン譜:ウェルカム・トゥ・ゴールドソーサー",
+    "fr": "Rouleau “Welcome to the Gold Saucer”"
   },
   "52355": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Let the Battles Begin! Orchestrion Roll",
+    "de": "Notenrolle von „Let the Battles Begin!“",
+    "ja": "オーケストリオン譜:闘う者達",
+    "fr": "Rouleau “Let the Battles Begin!”"
   },
   "52356": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fight On! Orchestrion Roll",
+    "de": "Notenrolle von „Fight On!“",
+    "ja": "オーケストリオン譜:更に闘う者達",
+    "fr": "Rouleau “Fight On!”"
   },
   "52357": {
     "en": "For Hope and Happiness Orchestrion Roll",
@@ -314160,52 +314160,52 @@
     "fr": "Rouleau “Dancing Mad (Distant Worlds)”"
   },
   "52361": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Pulper of Inquiry Orchestrion Roll",
+    "de": "Notenrolle von „Pulper of Inquiry“",
+    "ja": "オーケストリオン譜:探偵のアレ",
+    "fr": "Rouleau “Pulper of Inquiry”"
   },
   "52362": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "FINAL FANTASY IX: Battle 2 Orchestrion Roll",
+    "de": "Notenrolle von „FINAL FANTASY IX: Battle 2“",
+    "ja": "オーケストリオン譜:バトル2 from FINAL FANTASY IX",
+    "fr": "Rouleau “FINAL FANTASY IX: Battle 2”"
   },
   "52363": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Matoya's Cave (Modulation) Orchestrion Roll",
+    "de": "Notenrolle von „Matoya's Cave (Modulation)“",
+    "ja": "オーケストリオン譜:メイン・テーマ ～ マトーヤの洞窟（MODULATION）",
+    "fr": "Rouleau “Matoya's Cave (Modulation)”"
   },
   "52364": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Eternal Wind (Modulation) Orchestrion Roll",
+    "de": "Notenrolle von „Eternal Wind (Modulation)“",
+    "ja": "オーケストリオン譜:悠久の風（MODULATION）",
+    "fr": "Rouleau “Eternal Wind (Modulation)”"
   },
   "52365": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Zanarkand (Modulation) Orchestrion Roll",
+    "de": "Notenrolle von „Zanarkand (Modulation)“",
+    "ja": "オーケストリオン譜:ザナルカンドにて（MODULATION）",
+    "fr": "Rouleau “Zanarkand (Modulation)”"
   },
   "52366": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dungeon (Dawntrail) Orchestrion Roll",
+    "de": "Notenrolle von „Dungeon (Dawntrail)“",
+    "ja": "オーケストリオン譜:ダンジョン",
+    "fr": "Rouleau “Dungeon (Dawntrail)”"
   },
   "52367": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sealed Away (Dawntrail) Orchestrion Roll",
+    "de": "Notenrolle von „Sealed Away (Dawntrail)“",
+    "ja": "オーケストリオン譜:封印されしもの",
+    "fr": "Rouleau “Sealed Away (Dawntrail)”"
   },
   "52368": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "To the North Mountain (Dawntrail) Orchestrion Roll",
+    "de": "Notenrolle von „To the North Mountain (Dawntrail)“",
+    "ja": "オーケストリオン譜:銀嶺を行く",
+    "fr": "Rouleau “To the North Mountain (Dawntrail)”"
   },
   "52369": {
     "en": "",
@@ -314256,64 +314256,64 @@
     "fr": "Rouleau “Give It All (Orchestral Version)”"
   },
   "52377": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Smile (Till Dawn My Tears Flow) Orchestrion Roll",
+    "de": "Notenrolle von „Smile (Till Dawn My Tears Flow)“",
+    "ja": "オーケストリオン譜:Smile（Till Dawn My Tears Flow）",
+    "fr": "Rouleau “Smile (Till Dawn My Tears Flow)”"
   },
   "52378": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Morrow's Might & Magic (Till Dawn My Tears Flow) Orchestrion Roll",
+    "de": "Notenrolle von „Morrow's Might & Magic (Till Dawn My Tears Flow)“",
+    "ja": "オーケストリオン譜:金煌なる都（Till Dawn My Tears Flow）",
+    "fr": "Rouleau “Morrow's Might & Magic (Till Dawn My Tears Flow)”"
   },
   "52379": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Bee My Honey (Till Dawn My Tears Flow) Orchestrion Roll",
+    "de": "Notenrolle von „Bee My Honey (Till Dawn My Tears Flow)“",
+    "ja": "オーケストリオン譜:Bee My Honey（Till Dawn My Tears Flow）",
+    "fr": "Rouleau “Bee My Honey (Till Dawn My Tears Flow)”"
   },
   "52380": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Promises to Keep (Till Dawn My Tears Flow) Orchestrion Roll",
+    "de": "Notenrolle von „Promises to Keep (Till Dawn My Tears Flow)“",
+    "ja": "オーケストリオン譜:消せない約束（Till Dawn My Tears Flow）",
+    "fr": "Rouleau “Promises to Keep (Till Dawn My Tears Flow)”"
   },
   "52381": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Roses of May (Till Dawn My Tears Flow) Orchestrion Roll",
+    "de": "Notenrolle von „Roses of May (Till Dawn My Tears Flow)“",
+    "ja": "オーケストリオン譜:ローズ・オブ・メイ（Till Dawn My Tears Flow）",
+    "fr": "Rouleau “Roses of May (Till Dawn My Tears Flow)”"
   },
   "52382": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sinister (Back in the Ring) Orchestrion Roll",
+    "de": "Notenrolle von „Sinister (Back in the Ring)“",
+    "ja": "オーケストリオン譜:Sinister（Back in the Ring）",
+    "fr": "Rouleau “Sinister (Back in the Ring)”"
   },
   "52383": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Mirror (Back in the Ring) Orchestrion Roll",
+    "de": "Notenrolle von „The Mirror (Back in the Ring)“",
+    "ja": "オーケストリオン譜:The Mirror（Back in the Ring）",
+    "fr": "Rouleau “The Mirror (Back in the Ring)”"
   },
   "52384": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Tyranny (Back in the Ring) Orchestrion Roll",
+    "de": "Notenrolle von „Absolute Tyranny (Back in the Ring)“",
+    "ja": "オーケストリオン譜:Absolute Tyranny（Back in the Ring）",
+    "fr": "Rouleau “Absolute Tyranny (Back in the Ring)”"
   },
   "52385": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Smile (Back in the Ring) Orchestrion Roll",
+    "de": "Notenrolle von „Smile (Back in the Ring)“",
+    "ja": "オーケストリオン譜:Smile（Back in the Ring）",
+    "fr": "Rouleau “Smile (Back in the Ring)”"
   },
   "52386": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Primal Judgment - De Novo (Back in the Ring) Orchestrion Roll",
+    "de": "Notenrolle von „Primal Judgment - De Novo (Back in the Ring)“",
+    "ja": "オーケストリオン譜:原初の審判：覆審（Back in the Ring）",
+    "fr": "Rouleau “Primal Judgment - De Novo (Back in the Ring)”"
   },
   "52387": {
     "en": "Shadowhound Helm",
@@ -314544,7 +314544,7 @@
     "fr": "Casquette d'opérateur cosmique"
   },
   "52425": {
-    "en": "Cosmic Operator's Coverall Top",
+    "en": "Cosmic Operator's Coveralls",
     "de": "Kosmo-Mechaniker-Overall",
     "ja": "コスモオペレーター・カバーオール",
     "fr": "Combinaison d'opérateur cosmique"
@@ -314610,40 +314610,40 @@
     "fr": "Néo-tunique graffiti serrée"
   },
   "52436": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Festival Neotunic",
+    "de": "Festival-Alltagstunika",
+    "ja": "フェスティバル・ネオチュニック",
+    "fr": "Néo-tunique festive"
   },
   "52437": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Oversized Festival Neotunic",
+    "de": "Festival-Alltagstunika in Übergröße",
+    "ja": "フェスティバル・ネオチュニック:オーバーサイズ",
+    "fr": "Néo-tunique festive large"
   },
   "52438": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Form-fitting Festival Neotunic",
+    "de": "Extra enge Festival-Alltagstunika",
+    "ja": "フェスティバル・ネオチュニック:タイトサイズ",
+    "fr": "Néo-tunique festive serrée"
   },
   "52439": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Halone's Earring",
+    "de": "Halone-Ohrring",
+    "ja": "ハルオーネイヤリング",
+    "fr": "Boucle d'oreille de Halone"
   },
   "52440": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Modern Aesthetics - Bun and the Beautiful",
+    "de": "Magazin „Moderne Ästhetik - Geflochtener Dutt“",
+    "ja": "ヘアカタログ:ブレイドバン",
+    "fr": "Méthode de coiffure “Chignon tressé”"
   },
   "52441": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Faces We Wear - Simple Oval Spectacles",
+    "de": "Magazin „Der Durchblick - Schlichte Ovale Brille“",
+    "ja": "スタイルカタログ:ベーシック・オーバルグラス",
+    "fr": "Lunettes ovales basiques (magazine de mode)"
   },
   "52442": {
     "en": "The Faces We Wear - Sash Blinder (Left)",
@@ -314676,10 +314676,10 @@
     "fr": ""
   },
   "52447": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Faces We Wear - Thick-rimmed Goggles",
+    "de": "Magazin „Der Durchblick - Breitrandbrille“",
+    "ja": "スタイルカタログ:シックフレーム・ゴーグル",
+    "fr": "Lunettes de sécurité épaisses (magazine de mode)"
   },
   "52448": {
     "en": "The Faces We Wear - Half-rim Spectacles",
@@ -314694,10 +314694,10 @@
     "fr": "Lunettes enveloppantes (magazine de mode)"
   },
   "52450": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Keybound Coffer",
+    "de": "Tastenschläger-Schatulle",
+    "ja": "キーバウンド・ブロウラーの宝箱",
+    "fr": "Coffre au trésor de Frappe fatale"
   },
   "52451": {
     "en": "Standard Treated Platinum Ingot",
@@ -314930,7 +314930,7 @@
   "52489": {
     "en": "Standard High-density Bonded Fabric",
     "de": "Projektstandard-Sonder-Dichtfilzstoff",
-    "ja": "統一規格の高密不織布",
+    "ja": "統一規格の高密度不織布",
     "fr": "Tissu serré standard"
   },
   "52490": {
@@ -315038,7 +315038,7 @@
   "52507": {
     "en": "Standard High-density Plywood",
     "de": "Projektstandard-Presssperrholzplatte",
-    "ja": "統一規格の高密合板",
+    "ja": "統一規格の高密度合板",
     "fr": "Bois contreplaqué dense standard"
   },
   "52508": {
@@ -315078,7 +315078,7 @@
     "fr": "Étoffe épaisse standard"
   },
   "52514": {
-    "en": "Habitat Cushion",
+    "en": "Habitat Cushions",
     "de": "Baumesruh-Kissen",
     "ja": "基地生活用のクッション",
     "fr": "Pile de coussins pour la vie dans la base"
@@ -315486,10 +315486,10 @@
     "fr": "L'Art du portrait&nbsp;: Red Hot"
   },
   "52582": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Phantom Philleter",
+    "de": "Phantom-Küchenmesser",
+    "ja": "ファントム包丁",
+    "fr": "Couteau de cuisine fantôme"
   },
   "52583": {
     "en": "Shredded Toxic Expulser",
@@ -315510,34 +315510,34 @@
     "fr": "Rouleau “Serenity Unending: A Bygone Medley (Orchestral Version)”"
   },
   "52586": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tule Attire",
+    "de": "Tule-Kleidungsset",
+    "ja": "トゥール・アタイア",
+    "fr": "Tenue de Tule"
   },
   "52587": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Torna Attire",
+    "de": "Torna-Kleidungsset",
+    "ja": "トルナ・アタイア",
+    "fr": "Tenue de Torna"
   },
   "52588": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Carwen Attire",
+    "de": "Carwen-Kleidungsset",
+    "ja": "カーウェン・アタイア",
+    "fr": "Tenue de Carwen"
   },
   "52589": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Brawler's Attire",
+    "de": "Avalanche-Kämpferinnen-Set",
+    "ja": "アバランチブロウラー・アタイア",
+    "fr": "Tenue de combattante d'Avalanche"
   },
   "52590": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Attire",
+    "de": "Avalanche-Anführer-Set",
+    "ja": "アバランチリーダー・アタイア",
+    "fr": "Tenue de chef d'Avalanche"
   },
   "52591": {
     "en": "Shadowhound Attire",
@@ -315798,31 +315798,31 @@
     "fr": "Tentacule du néant"
   },
   "52634": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tradewinds Tunic",
+    "de": "Passatwind-Tunika",
+    "ja": "トレードウィンズ・チュニック",
+    "fr": "Tunique des alizés"
   },
   "52635": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tradewinds Wristgloves",
+    "de": "Passatwind-Handgelenkschützer",
+    "ja": "トレードウィンズ・リストグローブ",
+    "fr": "Couvre-poignets des alizés"
   },
   "52636": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tradewinds Gaskins",
+    "de": "Passatwind-Gaskin",
+    "ja": "トレードウィンズ・ガスキン",
+    "fr": "Grègues des alizés"
   },
   "52637": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tradewinds Shoes",
+    "de": "Passatwind-Schuhe",
+    "ja": "トレードウィンズ・シューズ",
+    "fr": "Chaussures des alizés"
   },
   "52638": {
-    "en": "Sweetkit",
+    "en": "Lolly Cat",
     "de": "Naschkatze",
     "ja": "スウィートキャット",
     "fr": "Minou sucré"
@@ -315840,22 +315840,22 @@
     "fr": "Clochette de traîneau des étoiles"
   },
   "52641": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crumbling Aqueduct Fragment",
+    "de": "Material für ein bröckelndes Aquädukt",
+    "ja": "ルインド・アクアダクトの部材",
+    "fr": "Poutre pour aqueduc en ruines"
   },
   "52642": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crumbling Aqueduct Metal",
+    "de": "Bröckelndes-Aquädukt-Metallteile",
+    "ja": "ルインド・アクアダクトの金属材",
+    "fr": "Métaux pour aqueduc en ruines"
   },
   "52643": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crumbling Aqueduct Resin",
+    "de": "Bröckelndes-Aquädukt-Kunstharz",
+    "ja": "ルインド・アクアダクトの錬金樹脂",
+    "fr": "Résine alchimique pour aqueduc en ruines"
   },
   "52644": {
     "en": "",
@@ -315876,10 +315876,10 @@
     "fr": ""
   },
   "52647": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Avalanche Leader's Earring",
+    "de": "Avalanche-Ohrring des Anführers",
+    "ja": "アバランチリーダー・イヤリング",
+    "fr": "Boucle d'oreille de chef d'Avalanche"
   },
   "52648": {
     "en": "Carrots of Brilliance Orchestrion Roll",
@@ -315912,10 +315912,10 @@
     "fr": ""
   },
   "52653": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tradewinds Attire",
+    "de": "Passatwind-Set",
+    "ja": "トレードウィンズ・アタイア",
+    "fr": "Tenue des alizés"
   },
   "52654": {
     "en": "Musical Paca",

@@ -88063,17 +88063,17 @@
   },
   "3875": {
     "id": 3875,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/026000/026107.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Thankful Thirteen",
+    "de": "Dankbare Dreizehn",
+    "ja": "ありがとう13周年！",
+    "fr": "Treize ans de musique",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “The Symphony of Life.”",
+      "de": "Den Auftrag „Die Symphonie des Lebens“ abgeschlossen.",
+      "ja": "クエスト「新生祭と音色の軌跡」をコンプリートする",
+      "fr": "Accomplir la quête “La symphonie de la vie”."
     },
     "item": 0,
     "title": 0
@@ -89303,51 +89303,51 @@
   },
   "3937": {
     "id": 3937,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Universally Crescentialed",
+    "de": "Hinterm goldenen Horizont",
+    "ja": "黄金の海路の先に",
+    "fr": "Le périple sans fin",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Wisdom's End.”",
+      "de": "Den Auftrag „Wofür es sich zu träumen lohnt“ erfolgreich abgeschlossen.",
+      "ja": "クエスト「最後の知識」をコンプリートする",
+      "fr": "Accomplir la quête “Le dernier enseignement”."
     },
     "item": 0,
     "title": 0
   },
   "3938": {
     "id": 3938,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Knife to Remember",
+    "de": "Phantomenale Küchenmesserkunst",
+    "ja": "ファントム包丁の研ぎ師",
+    "fr": "Affûteur fantôme",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “All Too Fleeting.”",
+      "de": "Den Auftrag „Aus der Traum“ erfolgreich abgeschlossen.",
+      "ja": "クエスト「すべては蜃気楼の如し」をコンプリートする",
+      "fr": "Accomplir la quête “Finale fantasmagorie”."
     },
     "item": 0,
     "title": 0
   },
   "3939": {
     "id": 3939,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/060000/060033.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Beautiful Day in the Neighborhood",
+    "de": "Auf gute Nachbarschaft",
+    "ja": "トラルの隣人たち",
+    "fr": "La fraternité turalienne",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Hero's Day Off.”",
+      "de": "Den Auftrag „Ein Moment der Entspannung, ein Moment des Glücks“ erfolgreich abgeschlossen.",
+      "ja": "クエスト「なんでもない休日、母なる大地の片隅で」をコンプリートする",
+      "fr": "Accomplir la quête “Instant de détente, instant de bonheur”."
     },
     "item": 0,
     "title": 0
@@ -89375,17 +89375,17 @@
   },
   "3941": {
     "id": 3941,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Gently Does It",
+    "de": "Hartgesotten",
+    "ja": "タフに紳士たらんことを",
+    "fr": "Dur, mais gentilhomme avant tout",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Clotted Crime.”",
+      "de": "Den Auftrag „Ein goldiges Ende“ abgeschlossen.",
+      "ja": "クエスト「つわものふたり」をコンプリートする",
+      "fr": "Accomplir la quête “Les deux durs à cuire”."
     },
     "item": 0,
     "title": 0
@@ -89453,17 +89453,17 @@
     "id": 3945,
     "icon": "/api/asset?path=ui/icon/056000/056959.tex&format=png",
     "patch": 107,
-    "en": "トモダチドコダ",
-    "de": "トモダチドコダ",
+    "en": "Dire, Dire Deepcroft",
+    "de": "Friedhof der Bärenkinder",
     "ja": "トモダチドコダ",
-    "fr": "トモダチドコダ",
+    "fr": "Cimetière des oursons",
     "ko": "숨은 친구 찾기",
     "zh": "找呀找呀找朋友",
     "description": {
-      "en": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
-      "de": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
+      "en": "Complete the quest “Grim and Grisly Games.”",
+      "de": "Den Auftrag „Gruseliges Versteckspiel“ abgeschlossen.",
       "ja": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
-      "fr": "クエスト「守護天節と面妖なかくれんぼ」をコンプリートする",
+      "fr": "Accomplir la quête “Cache-cache monstrueux”.",
       "ko": "퀘스트 '수호천절과 이상야릇한 숨바꼭질' 완료",
       "zh": "完成任务“守护天节与奇妙的捉迷藏”。"
     },
@@ -89474,15 +89474,15 @@
     "id": 3946,
     "icon": "/api/asset?path=ui/icon/026000/026104.tex&format=png",
     "patch": 107,
-    "en": "祝祭告げる鐘の音",
-    "de": "祝祭告げる鐘の音",
+    "en": "Are You Listening?",
+    "de": "Hörst du sie?",
     "ja": "祝祭告げる鐘の音",
     "fr": "Traîneau et grelots",
     "ko": "축제를 알리는 종소리",
     "zh": "铃儿响叮当",
     "description": {
-      "en": "クエスト「星芒祭と子どものためのベル」をコンプリートする",
-      "de": "クエスト「星芒祭と子どものためのベル」をコンプリートする",
+      "en": "Complete the quest “Sleigh Bells Ring.”",
+      "de": "Den Auftrag „Schöner die Glocken nie läuten“ abgeschlossen.",
       "ja": "クエスト「星芒祭と子どものためのベル」をコンプリートする",
       "fr": "Accomplir la quête “Le tintement des étoiles”.",
       "ko": "퀘스트 '별빛축제와 아이들을 위한 종' 완료",
@@ -89527,357 +89527,357 @@
   },
   "3949": {
     "id": 3949,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/030000/030704.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Sword & Shield Occultum",
+    "de": "Okkulte Macht: Phantomschwert Occultum und Phantom-Schild Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ソード＆ファントムオカルタム・シールド",
+    "fr": "Armes fantômes : épée fantôme occultum et bouclier fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom sword occultum and phantom shield occultum.",
+      "de": "Das Phantomschwert Occultum und den Phantom-Schild Occultum erhalten.",
+      "ja": "ファントムオカルタム・ソード＆ファントムオカルタム・シールドを入手する",
+      "fr": "Obtenir l'épée fantôme occultum et le bouclier fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3950": {
     "id": 3950,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/031000/031278.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: War Hammer Occultum",
+    "de": "Okkulte Macht: Phantom-Kriegshammer Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ウォーハンマー",
+    "fr": "Armes fantômes : marteau de guerre fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom war hammer occultum.",
+      "de": "Den Phantom-Kriegshammer Occultum erhalten.",
+      "ja": "ファントムオカルタム・ウォーハンマーを入手する",
+      "fr": "Obtenir le marteau de guerre fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3951": {
     "id": 3951,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/034000/034033.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Guillotine Occultum",
+    "de": "Okkulte Macht: Phantom-Guillotine Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ディバイダー",
+    "fr": "Armes fantômes : fendoir fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom guillotine occultum.",
+      "de": "Die Phantom-Guillotine Occultum erhalten.",
+      "ja": "ファントムオカルタム・ディバイダーを入手する",
+      "fr": "Obtenir le fendoir fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3952": {
     "id": 3952,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/036000/036124.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Gunblade Occultum",
+    "de": "Okkulte Macht: Phantom-Revolverklinge Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ガンブレード",
+    "fr": "Armes fantômes : pistolame fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom gunblade occultum.",
+      "de": "Die Phantom-Revolverklinge Occultum erhalten.",
+      "ja": "ファントムオカルタム・ガンブレードを入手する",
+      "fr": "Obtenir la pistolame fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3953": {
     "id": 3953,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/031000/031680.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Spear Occultum",
+    "de": "Okkulte Macht: Phantomspeer Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・スピア",
+    "fr": "Armes fantômes : l'hast fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom spear occultum.",
+      "de": "Den Phantomspeer Occultum erhalten.",
+      "ja": "ファントムオカルタム・スピアを入手する",
+      "fr": "Obtenir l'hast fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3954": {
     "id": 3954,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/030000/030868.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Tonfa Occultum",
+    "de": "Okkulte Macht: Phantom-Tonfa Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・トンファー",
+    "fr": "Armes fantômes : tonfas fantômes occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom tonfa occultum.",
+      "de": "Die Phantom-Tonfa Occultum erhalten.",
+      "ja": "ファントムオカルタム・トンファーを入手する",
+      "fr": "Obtenir les tonfas fantômes occultum."
     },
     "item": 0,
     "title": 0
   },
   "3955": {
     "id": 3955,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/033000/033654.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Knives Occultum",
+    "de": "Okkulte Macht: Phantommesser Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ナイフ",
+    "fr": "Armes fantômes : couteaux fantômes occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom knives occultum.",
+      "de": "Die Phantommesser Occultum erhalten.",
+      "ja": "ファントムオカルタム・ナイフを入手する",
+      "fr": "Obtenir les couteaux fantômes occultum."
     },
     "item": 0,
     "title": 0
   },
   "3956": {
     "id": 3956,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/037000/037457.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Twinfangs Occultum",
+    "de": "Okkulte Macht: Phantom-Zwillingsfänge Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ツインファング",
+    "fr": "Armes fantômes : crochets fantômes occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom twinfangs occultum.",
+      "de": "Die Phantom-Zwillingsfänge Occultum erhalten.",
+      "ja": "ファントムオカルタム・ツインファングを入手する",
+      "fr": "Obtenir les crochets fantômes occultum."
     },
     "item": 0,
     "title": 0
   },
   "3957": {
     "id": 3957,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/036000/036582.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Blade Occultum",
+    "de": "Okkulte Macht: Phantomklinge Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ブレード",
+    "fr": "Armes fantômes : lame fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom blade occultum.",
+      "de": "Die Phantomklinge Occultum erhalten.",
+      "ja": "ファントムオカルタム・ブレードを入手する",
+      "fr": "Obtenir la lame fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3958": {
     "id": 3958,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/037000/037294.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: War Scythe Occultum",
+    "de": "Okkulte Macht: Phantom-Kriegssense Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ウォーサイズ",
+    "fr": "Armes fantômes : faux de guerre fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom war scythe occultum.",
+      "de": "Die Phantom-Kriegssense Occultum erhalten.",
+      "ja": "ファントムオカルタム・ウォーサイズを入手する",
+      "fr": "Obtenir la faux de guerre fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3959": {
     "id": 3959,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/032000/032068.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Harp Bow Occultum",
+    "de": "Okkulte Macht: Phantom-Harfenbogen Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ハープボウ",
+    "fr": "Armes fantômes : arc-harpe fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom harp bow occultum.",
+      "de": "Den Phantom-Harfenbogen Occultum erhalten.",
+      "ja": "ファントムオカルタム・ハープボウを入手する",
+      "fr": "Obtenir l'arc-harpe fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3960": {
     "id": 3960,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/034000/034527.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Revolver Occultum",
+    "de": "Okkulte Macht: Phantom-Revolver Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・リボルバー",
+    "fr": "Armes fantômes : revolver fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom revolver occultum.",
+      "de": "Den Phantom-Revolver Occultum erhalten.",
+      "ja": "ファントムオカルタム・リボルバーを入手する",
+      "fr": "Obtenir le revolver fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3961": {
     "id": 3961,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/036000/036323.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Fans Occultum",
+    "de": "Okkulte Macht: Phantom-Fächer Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ファン",
+    "fr": "Armes fantômes : éventails fantômes occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of phantom fans occultum.",
+      "de": "Die Phantom-Fächer Occultum erhalten.",
+      "ja": "ファントムオカルタム・ファンを入手する",
+      "fr": "Obtenir les éventails fantômes occultum."
     },
     "item": 0,
     "title": 0
   },
   "3962": {
     "id": 3962,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/032000/032914.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Staff Occultum",
+    "de": "Okkulte Macht: Phantomstab Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・スタッフ",
+    "fr": "Armes fantômes : bâton fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom staff occultum.",
+      "de": "Den Phantomstab Occultum erhalten.",
+      "ja": "ファントムオカルタム・スタッフを入手する",
+      "fr": "Obtenir le bâton fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3963": {
     "id": 3963,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/037000/037859.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Index Occultum",
+    "de": "Okkulte Macht: Phantomindex Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・インデックス",
+    "fr": "Armes fantômes : index fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom index occultum.",
+      "de": "Den Phantomindex Occultum erhalten.",
+      "ja": "ファントムオカルタム・インデックスを入手する",
+      "fr": "Obtenir l'index fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3964": {
     "id": 3964,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/036000/036881.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Degen Occultum",
+    "de": "Okkulte Macht: Phantomdegen Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・デーゲン",
+    "fr": "Armes fantômes : alfange fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom degen occultum.",
+      "de": "Den Phantomdegen Occultum erhalten.",
+      "ja": "ファントムオカルタム・デーゲンを入手する",
+      "fr": "Obtenir l'alfange fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3965": {
     "id": 3965,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/037000/037667.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Round Brush Occultum",
+    "de": "Okkulte Macht: Phantom-Rundpinsel Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ラウンドブラシ",
+    "fr": "Armes fantômes : pinceau rond fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom round brush occultum.",
+      "de": "Den Phantom-Rundpinsel Occultum erhalten.",
+      "ja": "ファントムオカルタム・ラウンドブラシを入手する",
+      "fr": "Obtenir le pinceau rond fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3966": {
     "id": 3966,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/032000/032499.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Cane Occultum",
+    "de": "Okkulte Macht: Phantom-Hirtenstock Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ケーン",
+    "fr": "Armes fantômes : canne fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom cane occultum.",
+      "de": "Den Phantom-Hirtenstock Occultum erhalten.",
+      "ja": "ファントムオカルタム・ケーンを入手する",
+      "fr": "Obtenir la canne fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3967": {
     "id": 3967,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/037000/037858.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Codex Occultum",
+    "de": "Okkulte Macht: Phantomkodex Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・コーデックス",
+    "fr": "Armes fantômes : codex fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom codex occultum.",
+      "de": "Den Phantomkodex Occultum erhalten.",
+      "ja": "ファントムオカルタム・コーデックスを入手する",
+      "fr": "Obtenir le codex fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3968": {
     "id": 3968,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/034000/034726.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Star Globe Occultum",
+    "de": "Okkulte Macht: Phantom-Sternenglobus Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・スターグローブ",
+    "fr": "Armes fantômes : globe céleste fantôme occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a phantom star globe occultum.",
+      "de": "Den Phantom-Sternenglobus Occultum erhalten.",
+      "ja": "ファントムオカルタム・スターグローブを入手する",
+      "fr": "Obtenir le globe céleste fantôme occultum."
     },
     "item": 0,
     "title": 0
   },
   "3969": {
     "id": 3969,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/037000/037090.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cut Above the Rest: Pendulums Occultum",
+    "de": "Okkulte Macht: Phantom-Perpendikel Occultum",
+    "ja": "ファントムウェポン：ファントムオカルタム・ペンデュラム",
+    "fr": "Armes fantômes : pendules fantômes occultum",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain an array of phantom pendulums occultum.",
+      "de": "Die Phantom-Perpendikel Occultum erhalten.",
+      "ja": "ファントムオカルタム・ペンデュラムを入手する",
+      "fr": "Obtenir les pendules fantômes occultum."
     },
     "item": 0,
     "title": 0
@@ -90178,37 +90178,37 @@
   },
   "3984": {
     "id": 3984,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/001000/001102.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Go Big on the Trail III",
+    "de": "Kapitalbeschaffung auf Tural III",
+    "ja": "黄金の太公望：ランク3",
+    "fr": "Pêcheur de légendes éternel III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Catch 46 different varieties of big fish in areas explored during Dawntrail.",
+      "de": "46 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
+      "ja": "黄金のレガシーのエリアにいるヌシを46種類、釣り上げる",
+      "fr": "Pêcher 46 prises légendaires différentes dans les zones explorées lors de Dawntrail."
     },
     "item": 0,
-    "title": 0
+    "title": 893
   },
   "3985": {
     "id": 3985,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/001000/001145.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "I Came, I Saw, I Fished",
+    "de": "Maximale Kapitalbeschaffung",
+    "ja": "極太公望への道",
+    "fr": "Calamité des mers",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the achievements “Fish Fear Me” and “Go Big on the Trail III.”",
+      "de": "Die Errungenschaften „Ultimative Kapitalbeschaffung“ und „Kapitalbeschaffung auf Tural III“ erlangt.",
+      "ja": "アチーブメント「超太公望への道」「黄金の太公望：ランク3」をすべて達成する",
+      "fr": "Accomplir les hauts faits “Fléau des mers” et “Pêcheur de légendes éternel III”."
     },
     "item": 0,
-    "title": 0
+    "title": 890
   },
   "3986": {
     "id": 3986,
@@ -90421,377 +90421,377 @@
   },
   "3997": {
     "id": 3997,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/026000/026184.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Archiving the Arcane",
+    "de": "Allwissender Chronist",
+    "ja": "三日月島北部の記録員",
+    "fr": "Archiviste septentrional",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unlock all entries in the Occult Record pertaining to the North Horn.",
+      "de": "Alle Einträge der Kreszentia-Chronik des nördlichen Kreszentias freigeschaltet.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編における三日月島探査記録帳の全項目を開示する",
+      "fr": "Remplir toutes les entrées du calepin du croissant sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "3998": {
     "id": 3998,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Analysis I",
+    "de": "Autorität des Halbmonds I",
+    "ja": "孤島の卓越者：ランク1",
+    "fr": "Critique averti I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 10 critical encounters on the Occult Crescent: North Horn.",
+      "de": "10 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを10回コンプリートする",
+      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "3999": {
     "id": 3999,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Analysis II",
+    "de": "Autorität des Halbmonds II",
+    "ja": "孤島の卓越者：ランク2",
+    "fr": "Critique averti II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 50 critical encounters on the Occult Crescent: North Horn.",
+      "de": "50 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを50回コンプリートする",
+      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4000": {
     "id": 4000,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Analysis III",
+    "de": "Autorität des Halbmonds III",
+    "ja": "孤島の卓越者：ランク3",
+    "fr": "Critique averti III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 100 critical encounters on the Occult Crescent: North Horn.",
+      "de": "100 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを100回コンプリートする",
+      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4001": {
     "id": 4001,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Critical Analysis IV",
+    "de": "Autorität des Halbmonds IV",
+    "ja": "孤島の卓越者：ランク4",
+    "fr": "Critique averti IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 500 critical encounters on the Occult Crescent: North Horn.",
+      "de": "500 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを500回コンプリートする",
+      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule septentrionale."
     },
     "item": 0,
-    "title": 0
+    "title": 867
   },
   "4002": {
     "id": 4002,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Enlightenment I",
+    "de": "Krone des Heldenmuts I",
+    "ja": "豪傑者の高み：ランク1",
+    "fr": "Destinée défiée I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 10 FATEs on the Occult Crescent: North Horn.",
+      "de": "10 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を10回コンプリートする",
+      "fr": "Accomplir 10 ALÉA sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4003": {
     "id": 4003,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Enlightenment II",
+    "de": "Krone des Heldenmuts II",
+    "ja": "豪傑者の高み：ランク2",
+    "fr": "Destinée défiée II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 50 FATEs on the Occult Crescent: North Horn.",
+      "de": "50 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を50回コンプリートする",
+      "fr": "Accomplir 50 ALÉA sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4004": {
     "id": 4004,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Enlightenment III",
+    "de": "Krone des Heldenmuts III",
+    "ja": "豪傑者の高み：ランク3",
+    "fr": "Destinée défiée III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 100 FATEs on the Occult Crescent: North Horn.",
+      "de": "100 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を100回コンプリートする",
+      "fr": "Accomplir 100 ALÉA sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4005": {
     "id": 4005,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Occult Enlightenment IV",
+    "de": "Krone des Heldenmuts IV",
+    "ja": "豪傑者の高み：ランク4",
+    "fr": "Destinée défiée IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete 500 FATEs on the Occult Crescent: North Horn.",
+      "de": "500 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を500回コンプリートする",
+      "fr": "Accomplir 500 ALÉA sur l'île de Lunule septentrionale."
     },
     "item": 0,
-    "title": 0
+    "title": 868
   },
   "4006": {
     "id": 4006,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Show of Fork I",
+    "de": "Wissen ist Macht I",
+    "ja": "魔の塔を制覇せし者：ランク1",
+    "fr": "Tour de magie I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic for the first time.",
+      "de": "Den Fork-Turm - Magie erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を初めて攻略する",
+      "fr": "Finir la Tour fourchue de la Magie."
     },
     "item": 0,
     "title": 0
   },
   "4007": {
     "id": 4007,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Show of Fork II",
+    "de": "Wissen ist Macht II",
+    "ja": "魔の塔を制覇せし者：ランク2",
+    "fr": "Tour de magie II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic 5 times.",
+      "de": "Den Fork-Turm - Magie 5 Mal erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を累計5回攻略する",
+      "fr": "Finir 5 fois la Tour fourchue de la Magie."
     },
     "item": 0,
     "title": 0
   },
   "4008": {
     "id": 4008,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Show of Fork III",
+    "de": "Wissen ist Macht III",
+    "ja": "魔の塔を制覇せし者：ランク3",
+    "fr": "Tour de magie III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic 20 times.",
+      "de": "Den Fork-Turm - Magie 20 Mal erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を累計20回攻略する",
+      "fr": "Finir 20 fois la Tour fourchue de la Magie."
     },
     "item": 0,
     "title": 0
   },
   "4009": {
     "id": 4009,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "A Show of Fork IV",
+    "de": "Wissen ist Macht IV",
+    "ja": "魔の塔を制覇せし者：ランク4",
+    "fr": "Tour de magie IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic 50 times.",
+      "de": "Den Fork-Turm - Magie 50 Mal erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を累計50回攻略する",
+      "fr": "Finir 50 fois la Tour fourchue de la Magie."
     },
     "item": 0,
-    "title": 0
+    "title": 869
   },
   "4010": {
     "id": 4010,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Tour de Fork I",
+    "de": "Wissen ist extreme Macht I",
+    "ja": "魔の塔を完全制覇せし者：ランク1",
+    "fr": "Indexation terminée I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic (Extreme) for the first time.",
+      "de": "Den Fork-Turm - Magie (extrem) erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を初めて攻略する",
+      "fr": "Finir la Tour fourchue de la Magie (extrême)."
     },
     "item": 0,
-    "title": 0
+    "title": 870
   },
   "4011": {
     "id": 4011,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Tour de Fork II",
+    "de": "Wissen ist extreme Macht II",
+    "ja": "魔の塔を完全制覇せし者：ランク2",
+    "fr": "Indexation terminée II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic (Extreme) 5 times.",
+      "de": "Den Fork-Turm - Magie (extrem) 5 Mal erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を累計5回攻略する",
+      "fr": "Finir 5 fois la Tour fourchue de la Magie (extrême)."
     },
     "item": 0,
     "title": 0
   },
   "4012": {
     "id": 4012,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Tour de Fork III",
+    "de": "Wissen ist extreme Macht III",
+    "ja": "魔の塔を完全制覇せし者：ランク3",
+    "fr": "Indexation terminée III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic (Extreme) 20 times.",
+      "de": "Den Fork-Turm - Magie (extrem) 20 Mal erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を累計20回攻略する",
+      "fr": "Finir 20 fois la Tour fourchue de la Magie (extrême)."
     },
     "item": 0,
     "title": 0
   },
   "4013": {
     "id": 4013,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Tour de Fork IV",
+    "de": "Wissen ist extreme Macht IV",
+    "ja": "魔の塔を完全制覇せし者：ランク4",
+    "fr": "Indexation terminée IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the Forked Tower: Magic (Extreme) 50 times.",
+      "de": "Den Fork-Turm - Magie (extrem) 50 Mal erobert.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を累計50回攻略する",
+      "fr": "Finir 50 fois la Tour fourchue de la Magie (extrême)."
     },
     "item": 0,
-    "title": 0
+    "title": 871
   },
   "4014": {
     "id": 4014,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064556.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantom Physicking I",
+    "de": "Kreszentias Meisterarzt I",
+    "ja": "三角海域の名医：ランク1",
+    "fr": "Défibrilateur septentrional I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrect another player on the Occult Crescent: North Horn 10 times.",
+      "de": "10 Mal einen Spieler (außer sich selbst) im nördlichen Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、自分以外の戦闘不能状態のプレイヤーを10回蘇生する",
+      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4015": {
     "id": 4015,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064556.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantom Physicking II",
+    "de": "Kreszentias Meisterarzt II",
+    "ja": "三角海域の名医：ランク2",
+    "fr": "Défibrilateur septentrional II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrect another player on the Occult Crescent: North Horn 100 times.",
+      "de": "100 Mal einen Spieler (außer sich selbst) im nördlichen Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、自分以外の戦闘不能状態のプレイヤーを100回蘇生する",
+      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0
   },
   "4016": {
     "id": 4016,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064556.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantom Physicking III",
+    "de": "Kreszentias Meisterarzt III",
+    "ja": "三角海域の名医：ランク3",
+    "fr": "Défibrilateur septentrional III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resurrect another player on the Occult Crescent: North Horn 500 times.",
+      "de": "500 Mal einen Spieler (außer sich selbst) im nördlichen Kreszentia wiederbelebt.",
+      "ja": "蜃気楼の島 クレセントアイル：北征編にて、自分以外の戦闘不能状態のプレイヤーを500回蘇生する",
+      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule septentrionale."
     },
     "item": 0,
-    "title": 0
+    "title": 872
   },
   "4017": {
     "id": 4017,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064571.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantomastery IV",
+    "de": "Meister der Phantome IV",
+    "ja": "サポートジョブマスター：ランク4",
+    "fr": "Maître fantôme IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Master 16 phantom jobs.",
+      "de": "16 Phantomjobs gemeistert.",
+      "ja": "サポートジョブを16種類マスターする",
+      "fr": "Maîtriser 16 jobs de soutien."
     },
     "item": 0,
     "title": 0
   },
   "4018": {
     "id": 4018,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/064000/064571.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Phantomastery V",
+    "de": "König der Phantome",
+    "ja": "サポートジョブキング",
+    "fr": "Tyran fantôme",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Master 24 phantom jobs.",
+      "de": "24 Phantomjobs gemeistert.",
+      "ja": "サポートジョブを24種類マスターする",
+      "fr": "Maîtriser 24 jobs de soutien."
     },
     "item": 0,
-    "title": 0
+    "title": 873
   },
   "4019": {
     "id": 4019,
@@ -90852,17 +90852,17 @@
   },
   "4022": {
     "id": 4022,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/062000/062969.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Fifth Astral Blues",
+    "de": "Das Wissen der Kreszenten Künste",
+    "ja": "三日月島のラーニングマスター",
+    "fr": "Incollable insulaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Learn all possible actions as a Phantom Blue Mage.",
+      "de": "Mit Phantom-Blaumagier alle von Gegnern erlernbaren Kommandos erlernt.",
+      "ja": "サポートジョブ青魔道士で、敵からラーニング可能な青魔法をすべてラーニングする",
+      "fr": "Apprendre toutes les actions de magie bleue du mage bleu fantôme."
     },
     "item": 0,
     "title": 0
@@ -91738,17 +91738,17 @@
   },
   "4074": {
     "id": 4074,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/001000/001001.tex&format=png",
     "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Mapping the Realm: The Occult Crescent: North Horn",
+    "de": "Kartograph: Nördliches Kreszentia",
+    "ja": "三日月島北部を踏破せし者",
+    "fr": "Cartographe du continent : Île de Lunule septentrionale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Discover every location on the Occult Crescent: North Horn.",
+      "de": "Alle Orte im nördlichen Kreszentia erkundet.",
+      "ja": "三日月島北部を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de l'île de Lunule septentrionale."
     },
     "item": 0,
     "title": 0

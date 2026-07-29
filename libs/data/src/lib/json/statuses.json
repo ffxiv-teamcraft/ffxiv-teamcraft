@@ -14941,7 +14941,7 @@
     "en": "Assimilation",
     "de": "Assimilation",
     "ja": "徐々に浸食",
-    "fr": "Assimilation progressive",
+    "fr": "Érosion progressive",
     "icon": "/api/asset?path=ui/icon/218000/218721.tex&format=png",
     "maxStacks": 4,
     "description": {
@@ -14955,7 +14955,7 @@
     "en": "Assimilated",
     "de": "Assimiliert",
     "ja": "浸食",
-    "fr": "Assimilation",
+    "fr": "Érosion",
     "icon": "/api/asset?path=ui/icon/215000/215724.tex&format=png",
     "maxStacks": 0,
     "description": {
@@ -32704,10 +32704,10 @@
     }
   },
   "2337": {
-    "en": "Lost Reflect",
-    "de": "Verschollene Reflexion",
+    "en": "Reflect",
+    "de": "Reflexion",
     "ja": "ロスト・リフレク",
-    "fr": "Miroir oublié",
+    "fr": "Miroir",
     "icon": "/api/asset?path=ui/icon/216000/216680.tex&format=png",
     "maxStacks": 0,
     "description": {
@@ -40351,14 +40351,14 @@
     "en": "スロウ",
     "de": "スロウ",
     "ja": "スロウ",
-    "fr": "スロウ",
+    "fr": "Lenteur",
     "icon": "/api/asset?path=ui/icon/215000/215009.tex&format=png",
     "maxStacks": 0,
     "description": {
       "en": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長された状態。",
       "de": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長された状態。",
       "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長された状態。",
-      "fr": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長された状態。"
+      "fr": "La vitesse des attaques automatiques est réduite, et les temps de lancement et de recharge des sorts et des techniques d'arme sont allongés."
     }
   },
   "2884": {
@@ -59272,7 +59272,7 @@
       "en": "Impervious to most damage for one strike.",
       "de": "Einmalig immun gegen fast alle Attacken.",
       "ja": "一部を除くすべての攻撃を一度だけ無効化する状態。",
-      "fr": "Insensible à la plupart des attaques."
+      "fr": "Insensible une seule fois à la plupart des attaques."
     }
   },
   "4235": {
@@ -59426,7 +59426,7 @@
       "en": "Impervious to most physical damage for one strike.",
       "de": "Einmalig immun gegen fast allen physischen Schaden.",
       "ja": "一部を除く物理ダメージを一度だけ無効化する状態。",
-      "fr": "Insensible une seule fois à la plupart des attaques physiques."
+      "fr": "Insensible une seule fois à la plupart des dégâts physiques."
     }
   },
   "4246": {
@@ -63855,7 +63855,7 @@
   },
   "4562": {
     "en": "Chains of Condemnation",
-    "de": "Flammenfessel",
+    "de": "Joch der Flammen",
     "ja": "焔の枷",
     "fr": "Chaînes de flammes",
     "icon": "/api/asset?path=ui/icon/214000/214297.tex&format=png",
@@ -67648,45 +67648,45 @@
     }
   },
   "4833": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fission Chamber",
+    "de": "Hart aber schmerzlich",
+    "ja": "ハードスパーク実行可",
+    "fr": "Décharge dure préparée",
+    "icon": "/api/asset?path=ui/icon/214000/214356.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wielding a fully charged Molt Python Maximum. Able to execute <span style=\"color:#ffffff\">Pulp Fission</span>.",
+      "de": "Ermöglicht einen schmerzhaften Angriff mit der blitz-geladenen Pistole.",
+      "ja": "銃に雷属性エーテルが充填され、強力な攻撃を実行できる状態。",
+      "fr": "Le pistolet est suffisamment chargé en éther de foudre, une puissante attaque peut être lancée."
     }
   },
   "4834": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Electrified Gentleman",
+    "de": "Blitzgewitter des Chevaliers",
+    "ja": "紳士の雷",
+    "fr": "Gentilhomme survolté",
+    "icon": "/api/asset?path=ui/icon/214000/214358.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Releasing an ordinarily fatal accumulation of lightning-aspected aether.",
+      "de": "Entlädt den angesammelten Blitzäther auf das Gentlehaftigste.",
+      "ja": "体内に蓄積された雷属性エーテルを放出している状態。",
+      "fr": "Le corps expulse l'électricité accumulée sous forme d'éther de foudre."
     }
   },
   "4835": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hard-boiled",
+    "de": "Hartgesotten",
+    "ja": "ハードボイルド",
+    "fr": "Dur comme fer",
+    "icon": "/api/asset?path=ui/icon/214000/214357.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Temporarily fortified by the consumption of a hard-boiled egg. Damage taken is reduced.",
+      "de": "Isst ein hartgekochtes Ei und verringert erlittenen Schaden.",
+      "ja": "固ゆで卵を食べたことで、受けるダメージが軽減される状態。",
+      "fr": "Les dégâts reçus sont réduits après avoir mangé un délicieux œuf dur."
     }
   },
   "4836": {
@@ -68208,17 +68208,17 @@
     }
   },
   "4873": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Image",
+    "de": "Doppelgänger",
+    "ja": "ぶんしん",
+    "fr": "Bunshin",
+    "icon": "/api/asset?path=ui/icon/218000/218957.tex&format=png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Impervious to most physical attacks for one strike.",
+      "de": "Die meisten erlittenen physischen Angriffe sind wirkungslos.",
+      "ja": "一部を除く物理攻撃を一度だけ無効化する状態。",
+      "fr": "Insensible une seule fois à la plupart des attaques physiques."
     }
   },
   "4874": {
@@ -68236,17 +68236,17 @@
     }
   },
   "4875": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Invincibility",
+    "de": "Unverwundbar",
+    "ja": "無敵",
+    "fr": "Invulnérable",
+    "icon": "/api/asset?path=ui/icon/215000/215024.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Invulnerable to all damage.",
+      "de": "Erleidet keinen Schaden. ",
+      "ja": "被ダメージを無効化する状態。",
+      "fr": "Aucun dégât n'est subi."
     }
   },
   "4876": {
@@ -70182,73 +70182,73 @@
     }
   },
   "5014": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "+1 Correction",
+    "de": "Übermalt +1",
+    "ja": "塗りつぶし＋1",
+    "fr": "Barbouillage +1",
+    "icon": "/api/asset?path=ui/icon/219000/219426.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Knowledge level has been increased by one via a scrawled revision.",
+      "de": "Dem Effekt von Arbatels Tinte ausgesetzt. Zur eigenen Wissensstufe wird 1 Stufe dazugerechnet.",
+      "ja": "アルバテルのインクの影響を受けた状態。自身のナレッジレベルが、1レベルぶん加算する。",
+      "fr": "Sous l'influence de l'encre d'Arbatel, le niveau de savoir est augmenté de 1."
     }
   },
   "5015": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "+2 Correction",
+    "de": "Übermalt +2",
+    "ja": "塗りつぶし＋2",
+    "fr": "Barbouillage +2",
+    "icon": "/api/asset?path=ui/icon/219000/219427.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Knowledge level has been increased by two via a scrawled revision.",
+      "de": "Dem Effekt von Arbatels Tinte ausgesetzt. Zur eigenen Wissensstufe werden 2 Stufen dazugerechnet.",
+      "ja": "アルバテルのインクの影響を受けた状態。自身のナレッジレベルが、2レベルぶん加算する。",
+      "fr": "Sous l'influence de l'encre d'Arbatel, le niveau de savoir est augmenté de 2."
     }
   },
   "5016": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "+3 Correction",
+    "de": "Übermalt +3",
+    "ja": "塗りつぶし＋3",
+    "fr": "Barbouillage +3",
+    "icon": "/api/asset?path=ui/icon/219000/219428.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Knowledge level has been increased by three via a scrawled revision.",
+      "de": "Dem Effekt von Arbatels Tinte ausgesetzt. Zur eigenen Wissensstufe werden 3 Stufen dazugerechnet.",
+      "ja": "アルバテルのインクの影響を受けた状態。自身のナレッジレベルが、3レベルぶん加算する。",
+      "fr": "Sous l'influence de l'encre d'Arbatel, le niveau de savoir est augmenté de 3."
     }
   },
   "5017": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "+4 Correction",
+    "de": "Übermalt +4",
+    "ja": "塗りつぶし＋4",
+    "fr": "Barbouillage +4",
+    "icon": "/api/asset?path=ui/icon/219000/219429.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Knowledge level has been increased by four via a scrawled revision.",
+      "de": "Dem Effekt von Arbatels Tinte ausgesetzt. Zur eigenen Wissensstufe werden 4 Stufen dazugerechnet.",
+      "ja": "アルバテルのインクの影響を受けた状態。自身のナレッジレベルが、4レベルぶん加算する。",
+      "fr": "Sous l'influence de l'encre d'Arbatel, le niveau de savoir est augmenté de 4."
     }
   },
   "5018": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "+5 Correction",
+    "de": "Übermalt +5",
+    "ja": "塗りつぶし＋5",
+    "fr": "Barbouillage +5",
+    "icon": "/api/asset?path=ui/icon/219000/219430.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Knowledge level has been increased by five via a scrawled revision.",
+      "de": "Dem Effekt von Arbatels Tinte ausgesetzt. Zur eigenen Wissensstufe werden 5 Stufen dazugerechnet.",
+      "ja": "アルバテルのインクの影響を受けた状態。自身のナレッジレベルが、5レベルぶん加算する。",
+      "fr": "Sous l'influence de l'encre d'Arbatel, le niveau de savoir est augmenté de 5."
     }
   },
   "5019": {
@@ -70658,17 +70658,17 @@
     }
   },
   "5048": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Guilty as Charged",
+    "de": "Elektrisch geladen",
+    "ja": "エレクトリックチャージ",
+    "fr": "Charge électrique",
+    "icon": "/api/asset?path=ui/icon/214000/214396.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Able to execute unrestricted <span style=\"color:#ffffff\">Pulp Fission</span> attacks against deserving mooks thanks to a steady supply of Hildi-brand lightning energy.",
+      "de": "Erhält Blitzenergie von Hildibrand und kann unbegrenzt mit mandervillescher Macht angreifen.",
+      "ja": "ヒルディブランドから雷力を供給され、強力な攻撃を無制限に実行できる状態。",
+      "fr": "Une puissante attaque peut être utilisée sans aucune limite grâce à l'électricité envoyée par Hildibrand."
     }
   },
   "5049": {
@@ -70714,87 +70714,87 @@
     }
   },
   "5052": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Green Noise: Easterly",
+    "de": "Grüner Resonanzfluch: Ostwind",
+    "ja": "緑の共鳴呪詛・東風",
+    "fr": "Malédiction résonnante verte&nbsp;: vent d'est",
+    "icon": "/api/asset?path=ui/icon/229000/229993.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attacks from foe's green head will resound with the body's frequency, resulting in a surge of wind from the east.",
+      "de": "Wird von einer Windböe aus Osten getroffen, wenn der grüne Kopf einen Angriff ausführt.",
+      "ja": "緑の共鳴呪詛が刻まれた状態。グリーンヘッドの攻撃に反応して、東から突風を受ける。",
+      "fr": "Suite à une attaque de la tête verte, un puissant vent d'est est subi."
     }
   },
   "5053": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Green Noise: Westerly",
+    "de": "Grüner Resonanzfluch: Westwind",
+    "ja": "緑の共鳴呪詛・西風",
+    "fr": "Malédiction résonnante verte&nbsp;: vent d'ouest",
+    "icon": "/api/asset?path=ui/icon/229000/229994.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attacks from foe's green head will resound with the body's frequency, resulting in a surge of wind from the west.",
+      "de": "Wird von einer Windböe aus Westen getroffen, wenn der grüne Kopf einen Angriff ausführt.",
+      "ja": "緑の共鳴呪詛が刻まれた状態。グリーンヘッドの攻撃に反応して、西から突風を受ける。",
+      "fr": "Suite à une attaque de la tête verte, un puissant vent d'ouest est subi."
     }
   },
   "5054": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blue Noise: Easterly",
+    "de": "Blauer Resonanzfluch: Ostwind",
+    "ja": "青の共鳴呪詛・東風",
+    "fr": "Malédiction résonnante bleue&nbsp;: vent d'est",
+    "icon": "/api/asset?path=ui/icon/229000/229995.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attacks from foe's blue head will resound with the body's frequency, resulting in a surge of wind from the east.",
+      "de": "Wird von einer Windböe aus Osten getroffen, wenn der blaue Kopf einen Angriff ausführt.",
+      "ja": "青の共鳴呪詛が刻まれた状態。ブルーヘッドの攻撃に反応して、東から突風を受ける。",
+      "fr": "Suite à une attaque de la tête bleue, un puissant vent d'est est subi."
     }
   },
   "5055": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blue Noise: Westerly",
+    "de": "Blauer Resonanzfluch: Westwind",
+    "ja": "青の共鳴呪詛・西風",
+    "fr": "Malédiction résonnante bleue&nbsp;: vent d'ouest",
+    "icon": "/api/asset?path=ui/icon/229000/229996.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attacks from foe's blue head will resound with the body's frequency, resulting in a surge of wind from the west.",
+      "de": "Wird von einer Windböe aus Westen getroffen, wenn der blaue Kopf einen Angriff ausführt.",
+      "ja": "青の共鳴呪詛が刻まれた状態。ブルーヘッドの攻撃に反応して、西から突風を受ける。",
+      "fr": "Suite à une attaque de la tête bleue, un puissant vent d'ouest est subi."
     }
   },
   "5056": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "時限呪詛・北風",
+    "de": "Befristeter Fluch: Nordwind",
+    "ja": "時限呪詛・北風",
+    "fr": "Malédiction temporelle&nbsp;: vent du nord",
+    "icon": "/api/asset?path=ui/icon/229000/229997.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "時限の呪詛が刻まれた状態。効果時間終了時に、北から突風を受ける。",
+      "de": "Wird bei Ablauf der Wirkungsdauer von einer Windböe aus Norden getroffen.",
+      "ja": "時限の呪詛が刻まれた状態。効果時間終了時に、北から突風を受ける。",
+      "fr": "Un puissant vent du nord est subi à la fin de l'effet."
     }
   },
   "5057": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "時限呪詛・南風",
+    "de": "Befristeter Fluch: Südwind",
+    "ja": "時限呪詛・南風",
+    "fr": "Malédiction temporelle&nbsp;: vent du sud",
+    "icon": "/api/asset?path=ui/icon/229000/229998.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "時限の呪詛が刻まれた状態。効果時間終了時に、南から突風を受ける。",
+      "de": "Wird bei Ablauf der Wirkungsdauer von einer Windböe aus Süden getroffen.",
+      "ja": "時限の呪詛が刻まれた状態。効果時間終了時に、南から突風を受ける。",
+      "fr": "Un puissant vent du sud est subi à la fin de l'effet."
     }
   },
   "5058": {
@@ -70812,17 +70812,17 @@
     }
   },
   "5059": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Gradual Zombification",
+    "de": "Zombifikation",
+    "ja": "徐々にゾンビー",
+    "fr": "Zombification progressive",
+    "icon": "/api/asset?path=ui/icon/215000/215728.tex&format=png",
+    "maxStacks": 2,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Slowly transforming into a brain-craving zombie. A stack of 2 will result in zombification.",
+      "de": "Verwandelt sich nach und nach in einen Zombie. Werden 2 Stapel erhalten, ist die Verwandlung abgeschlossen.",
+      "ja": "ゾンビー化しつつある状態。2スタック付与されるとゾンビー状態になる。",
+      "fr": "L'être se transforme petit à petit en zombi. Au deuxième degré, la transformation est accomplie."
     }
   },
   "5060": {
@@ -71475,7 +71475,7 @@
     "ja": "",
     "fr": "",
     "icon": "",
-    "maxStacks": 0,
+    "maxStacks": 1,
     "description": {
       "en": "",
       "de": "",
@@ -71489,7 +71489,7 @@
     "ja": "",
     "fr": "",
     "icon": "",
-    "maxStacks": 0,
+    "maxStacks": 3,
     "description": {
       "en": "",
       "de": "",
@@ -71876,59 +71876,59 @@
     }
   },
   "5135": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dig Three Graves",
+    "de": "Dreifaches Grab",
+    "ja": "ディグ・スリー・グレイヴズ",
+    "fr": "Creuse trois tombes",
+    "icon": "/api/asset?path=ui/icon/214000/214388.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Performing a specific action thrice.",
+      "de": "Führt eine bestimmte Handlung 3 Mal in Folge aus.",
+      "ja": "特定の行動を3回連続で実行する状態。",
+      "fr": "Une certaine action est effectuée 3 fois consécutivement."
     }
   },
   "5136": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Growing Dread",
+    "de": "Terrorsaat",
+    "ja": "ソーイングドレッド",
+    "fr": "Emprise de la crainte",
+    "icon": "/api/asset?path=ui/icon/214000/214389.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Riddled with dread roots. Will take high damage if hit by <span style=\"color:#ffffff\">Sowing Dread</span> again.",
+      "de": "Von Terrorsaat betroffen. Nimmt großen Schaden, wenn derselbe Angriff erneut erlitten wird.",
+      "ja": "「ソーイングドレッド」を受けた状態。再度同じ攻撃を受けると大ダメージを受ける。",
+      "fr": "Subir de nouveau Semer la crainte provoquera d'importants dégâts."
     }
   },
   "5137": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Growing Panic",
+    "de": "Paniksaat",
+    "ja": "ソーイングパニック",
+    "fr": "Emprise de la panique",
+    "icon": "/api/asset?path=ui/icon/214000/214390.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Riddled with panic-inducing roots. Will take high damage if hit by <span style=\"color:#ffffff\">Sowing Panic</span> again.",
+      "de": "Von Paniksaat betroffen. Nimmt großen Schaden, wenn derselbe Angriff erneut erlitten wird.",
+      "ja": "「ソーイングパニック」を受けた状態。再度同じ攻撃を受けると大ダメージを受ける。",
+      "fr": "Subir de nouveau Semer la panique provoquera d'importants dégâts."
     }
   },
   "5138": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Zombie-proof",
+    "de": "Zombie-Antikörper",
+    "ja": "ゾンビー抗体",
+    "fr": "Anti-zombification",
+    "icon": "/api/asset?path=ui/icon/229000/229999.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Temporarily immune to <span style=\"color:#ffffff\">Gradual Zombification</span>.",
+      "de": "Kann zeitweise nicht von „Zombifikation“ betroffen werden.",
+      "ja": "一定時間、「徐々にゾンビー」にかからない状態。",
+      "fr": "Le corps est temporairement immunisé contre Zombification progressive."
     }
   },
   "5139": {
@@ -71974,31 +71974,31 @@
     }
   },
   "5142": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Forward March",
+    "de": "Geistlenkung vorwärts",
+    "ja": "移動命令：前",
+    "fr": "Contrainte mentale&nbsp;: avancer",
+    "icon": "/api/asset?path=ui/icon/215000/215774.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to advance. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, geradeaus weiterzugehen.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、前方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'avant."
     }
   },
   "5143": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "About Face",
+    "de": "Geistlenkung rückwärts",
+    "ja": "移動命令：後",
+    "fr": "Contrainte mentale&nbsp;: reculer",
+    "icon": "/api/asset?path=ui/icon/215000/215775.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to retreat. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, in die umgekehrte Richtung zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、後方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'arrière."
     }
   },
   "5144": {
@@ -72128,17 +72128,17 @@
     }
   },
   "5153": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Elementary Deficiency",
+    "de": "Elementarmangel",
+    "ja": "元素欠乏",
+    "fr": "Insuffisance élémentaire",
+    "icon": "/api/asset?path=ui/icon/218000/218947.tex&format=png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Biological composition is missing stabilizing elements, resulting in high damage taken from <span style=\"color:#ffffff\">Elementary Chemistry</span>. Taking damage of the applicable elemental aspect will reduce stacks, dispelling this effect when stack count reaches 0.",
+      "de": "Zur Aufrechterhaltung des Körpers notwendige Elemente wurden entzogen. Nimmt schweren Schaden durch <span style=\"color:#ffffff\">Elementarfusion</span>. Stapelanzahl sinkt, wenn bestimmte elementare Angriffe erlitten werden. Sinkt die Stapelanzahl auf 0, wird der Status entfernt.",
+      "ja": "肉体の維持に必要な元素が失われ、「元素統合」で大ダメージを受ける状態。特定の属性攻撃を受けるとスタック数が減少し、0になると解除される。",
+      "fr": "Subir Intégration élémentaire provoquera d'importants dégâts. Subir une certaine attaque élémentaire permet de réduire les degrés de l'effet, qui s'annule lorsqu'ils tombent à zéro."
     }
   },
   "5154": {
@@ -72618,45 +72618,45 @@
     }
   },
   "5188": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Pacification",
+    "de": "Pacem",
+    "ja": "ＷＳ不可",
+    "fr": "Pacification",
+    "icon": "/api/asset?path=ui/icon/215000/215017.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to use weaponskills.",
+      "de": "Waffenfertigkeiten können nicht eingesetzt werden.",
+      "ja": "ウェポンスキルを使用できなくなった状態。",
+      "fr": "L'utilisation de techniques d'arme est impossible."
     }
   },
   "5189": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Astral Realignment",
+    "de": "Astralkörper",
+    "ja": "アストラル体",
+    "fr": "Alignement astral",
+    "icon": "/api/asset?path=ui/icon/229000/229992.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Existentially aligned to the astral realm.",
+      "de": "Nur noch halb der physischen Welt verhaftet.",
+      "ja": "半分次元がズレた状態。",
+      "fr": "Le corps est partiellement aligné sur le monde astral."
     }
   },
   "5190": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Astral Eye",
+    "de": "Astralsicht",
+    "ja": "アストラルビジョン",
+    "fr": "Vision astrale",
+    "icon": "/api/asset?path=ui/icon/229000/229991.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magicks are facilitating the perception of extradimensional beings.",
+      "de": "Mit einer speziellen Magie belegt, die es erlaubt, Existenzen auf anderen Astralebenen wahrzunehmen",
+      "ja": "特殊な魔法により、次元がズレた存在を視認できる状態。",
+      "fr": "En capacité de visualiser l'alignement sur le monde astral."
     }
   },
   "5191": {
@@ -74382,311 +74382,311 @@
     }
   },
   "5314": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Lighting Up",
+    "de": "Blitzgescheit",
+    "ja": "雷気充填",
+    "fr": "Cuisson survoltée",
+    "icon": "/api/asset?path=ui/icon/217000/217378.tex&format=png",
+    "maxStacks": 2,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Charging up the Molt Python Maximum with lightning-aspected aether. Will grant the effect <span style=\"color:#ffffff\">Fission Chamber</span> when 2 stacks are accumulated.",
+      "de": "Lädt eine Blitzpatrone ins Magazin der Pistole. Bei 2 Stapeln ändert sich der Status zu <span style=\"color:#ffffff\">Hart aber schmerzlich</span>.",
+      "ja": "銃に雷属性エーテルを充填している状態。2スタック付与されると、ハードスパーク実行可に変化する。",
+      "fr": "Le pistolet est chargé en éther de foudre. L'effet devient Décharge dure préparée s'il est accumulé 2 fois."
     }
   },
   "5315": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "First Strike",
+    "de": "Erstschlag",
+    "ja": "せんせいこうげき",
+    "fr": "Préséance",
+    "icon": "/api/asset?path=ui/icon/229000/229977.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are reduced.",
+      "de": "Auto-Attacke-Intervall und (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verkürzt.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが短縮された状態。",
+      "fr": "La vitesse des attaques automatiques est augmentée, et les temps de lancement et de recharge des sorts et des techniques d'arme sont réduits."
     }
   },
   "5316": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Blink",
+    "de": "Kreszentes Blink",
+    "ja": "マギ・ブリンク",
+    "fr": "Magi Leurre",
+    "icon": "/api/asset?path=ui/icon/229000/229978.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Impervious to most magic attacks for one strike.",
+      "de": "Einmalig immun gegen fast allen magischen Schaden.",
+      "ja": "一部を除く魔法攻撃を一度だけ無効化する状態。",
+      "fr": "Insensible une seule fois à la plupart des attaques magiques."
     }
   },
   "5317": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Toad",
+    "de": "Kreszenter Frosch",
+    "ja": "マギ・トード",
+    "fr": "Magi Crapaud",
+    "icon": "/api/asset?path=ui/icon/215000/215580.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Transformed into a toad most magical, but nevertheless unable to execute actions.",
+      "de": "In einen Frosch verwandelt. Kommandos können nicht ausgeführt werden.",
+      "ja": "カエルに変身した状態。アクション実行不可。",
+      "fr": "La transformation en crapaud empêche toute action."
     }
   },
   "5318": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vulnerability Down",
+    "de": "Verringerte Verwundbarkeit",
+    "ja": "被ダメージ低下",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/api/asset?path=ui/icon/229000/229979.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージが軽減される状態。",
+      "fr": "Les dégâts subis sont réduits."
     }
   },
   "5319": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Lance",
+    "de": "Lanzenschutz",
+    "ja": "りゅうけん",
+    "fr": "Ryûken",
+    "icon": "/api/asset?path=ui/icon/229000/229980.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A highly effective weapons maneuver is nullifying damage.",
+      "de": "Erlittener Schaden ist um einen bestimmten Betrag verringert.",
+      "ja": "一定量のダメージを軽減する状態。",
+      "fr": "Insensible à un certain montant de dégâts."
     }
   },
   "5320": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Earthen Wall",
+    "de": "Irdener Wall",
+    "ja": "アースウォール",
+    "fr": "Muraille",
+    "icon": "/api/asset?path=ui/icon/229000/229981.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Lithified flesh is absorbing damage.",
+      "de": "Erlittener Schaden ist um einen bestimmten Betrag verringert.",
+      "ja": "一定量のダメージを軽減する状態。",
+      "fr": "Insensible à un certain montant de dégâts."
     }
   },
   "5321": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Occult Mighty Guard",
+    "de": "Kreszente Totalabwehr",
+    "ja": "マギ・マイティガード",
+    "fr": "Magi Garde puissante",
+    "icon": "/api/asset?path=ui/icon/229000/229982.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージが軽減される状態。",
+      "fr": "Les dégâts subis sont réduits."
     }
   },
   "5322": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fire Weakness",
+    "de": "Offenbarte Feuerschwäche",
+    "ja": "弱点看破［火］",
+    "fr": "Faiblesse élémentaire&nbsp;: feu",
+    "icon": "/api/asset?path=ui/icon/229000/229983.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental weakness has been made apparent. Damage from fire-aspected phantom actions is increased.",
+      "de": "Der eigene elementare Schwachpunkt wurde durchschaut. Nimmt erhöhten Schaden durch feuerbasierte Phantomkommandos.",
+      "ja": "弱点を看破された状態。火属性のサポートアクションで受けるダメージが増加する。",
+      "fr": "La sensibilité au feu est révélée. Les dégâts subis suite à une attaque de cet élément sont augmentés."
     }
   },
   "5323": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ice Weakness",
+    "de": "Offenbarte Eisschwäche",
+    "ja": "弱点看破［氷］",
+    "fr": "Faiblesse élémentaire&nbsp;: glace",
+    "icon": "/api/asset?path=ui/icon/229000/229984.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental weakness has been made apparent. Damage from ice-aspected phantom actions is increased.",
+      "de": "Der eigene elementare Schwachpunkt wurde durchschaut. Nimmt erhöhten Schaden durch eisbasierte Phantomkommandos.",
+      "ja": "弱点を看破された状態。氷属性のサポートアクションで受けるダメージが増加する。",
+      "fr": "La sensibilité à la glace est révélée. Les dégâts subis suite à une attaque de cet élément sont augmentés."
     }
   },
   "5324": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Lightning Weakness",
+    "de": "Offenbarte Blitzschwäche",
+    "ja": "弱点看破［雷］",
+    "fr": "Faiblesse élémentaire&nbsp;: foudre",
+    "icon": "/api/asset?path=ui/icon/229000/229985.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental weakness has been made apparent. Damage from lightning-aspected phantom actions is increased.",
+      "de": "Der eigene elementare Schwachpunkt wurde durchschaut. Nimmt erhöhten Schaden durch blitzbasierte Phantomkommandos.",
+      "ja": "弱点を看破された状態。雷属性のサポートアクションで受けるダメージが増加する。",
+      "fr": "La sensibilité à la foudre est révélée. Les dégâts subis suite à une attaque de cet élément sont augmentés."
     }
   },
   "5325": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wind Weakness",
+    "de": "Offenbarte Windschwäche",
+    "ja": "弱点看破［風］",
+    "fr": "Faiblesse élémentaire&nbsp;: vent",
+    "icon": "/api/asset?path=ui/icon/229000/229986.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental weakness has been made apparent. Damage from wind-aspected phantom actions is increased.",
+      "de": "Der eigene elementare Schwachpunkt wurde durchschaut. Nimmt erhöhten Schaden durch windbasierte Phantomkommandos.",
+      "ja": "弱点を看破された状態。風属性のサポートアクションで受けるダメージが増加する。",
+      "fr": "La sensibilité au vent est révélée. Les dégâts subis suite à une attaque de cet élément sont augmentés."
     }
   },
   "5326": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Drain Touch",
+    "de": "Saugtatscher",
+    "ja": "ドレインタッチ",
+    "fr": "Sangsue",
+    "icon": "/api/asset?path=ui/icon/229000/229987.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Most attacks cannot reduce own HP to less than 1.",
+      "de": "Die meisten Attacken verringern die LP auf nicht weniger als 1.",
+      "ja": "一部を除くすべての攻撃に対してＨＰが1より減ることがない状態。",
+      "fr": "Les PV ne peuvent pas être réduits en dessous de 1 par la plupart des attaques."
     }
   },
   "5327": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Smoke",
+    "de": "Rauchbombe",
+    "ja": "けむりだま",
+    "fr": "Kemuri",
+    "icon": "/api/asset?path=ui/icon/229000/229988.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Evasion is enhanced.",
+      "de": "Ausweichrate ist erhöht.",
+      "ja": "回避率が向上した状態。",
+      "fr": "L'esquive est augmentée."
     }
   },
   "5328": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Ninja",
+    "de": "Phantom-Ninja",
+    "ja": "サポート忍者",
+    "fr": "Ninja fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216887.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a ninja of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Ninja und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き忍者の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien ninja permettent l'utilisation d'actions de soutien."
     }
   },
   "5329": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom White Mage",
+    "de": "Phantom-Weißmagier",
+    "ja": "サポート白魔道士",
+    "fr": "Mage blanc fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216888.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a white mage of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Weißmagier und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き白魔道士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien mage blanc permettent l'utilisation d'actions de soutien."
     }
   },
   "5330": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Black Mage",
+    "de": "Phantom-Schwarzmagier",
+    "ja": "サポート黒魔道士",
+    "fr": "Mage noir fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216889.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a black mage of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Schwarzmagier und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き黒魔道士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien mage noir permettent l'utilisation d'actions de soutien."
     }
   },
   "5331": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Dragoon",
+    "de": "Phantom-Dragoon",
+    "ja": "サポート竜騎士",
+    "fr": "Chevalier dragon fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216890.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a dragoon of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Dragoons und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き竜騎士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien chevalier dragon permettent l'utilisation d'actions de soutien."
     }
   },
   "5332": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Summoner",
+    "de": "Phantom-Beschwörer",
+    "ja": "サポート召喚士",
+    "fr": "Invocateur fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216891.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a summoner of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Beschwörer und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き召喚士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien invocateur permettent l'utilisation d'actions de soutien."
     }
   },
   "5333": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Blue Mage",
+    "de": "Phantom-Blaumagier",
+    "ja": "サポート青魔道士",
+    "fr": "Mage bleu fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216892.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a blue mage of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Blaumagier und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き青魔道士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien mage bleu permettent l'utilisation d'actions de soutien."
     }
   },
   "5334": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Red Mage",
+    "de": "Phantom-Rotmagier",
+    "ja": "サポート赤魔道士",
+    "fr": "Mage rouge fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216893.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a red mage of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Rotmagier und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古き赤魔道士の記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien mage rouge permettent l'utilisation d'actions de soutien."
     }
   },
   "5335": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Phantom Necromancer",
+    "de": "Phantom-Nekromant",
+    "ja": "サポートネクロマンサー",
+    "fr": "Nécromancien fantôme",
+    "icon": "/api/asset?path=ui/icon/216000/216894.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ruminating on the knowledge of a necromancer of eld. Ready to use select phantom actions.",
+      "de": "Kämpft mit dem Wissen der alten Nekromanten und hat Zugriff auf bestimmte Phantom-Kommandos.",
+      "ja": "一時的に古きネクロマンサーの記憶を継承した状態。特定のサポートアクションが使用可能になる。",
+      "fr": "Les souvenirs d'un ancien nécromancien permettent l'utilisation d'actions de soutien."
     }
   },
   "5336": {
@@ -74774,10 +74774,10 @@
     }
   },
   "5342": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Impassioned Inputs",
+    "de": "Tipp-Parade",
+    "ja": "バーストタイム",
+    "fr": "Frappes frénétiques",
     "icon": "",
     "maxStacks": 0,
     "description": {
@@ -74844,10 +74844,10 @@
     }
   },
   "5347": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Letterlocked",
+    "de": "Schreibblockade",
+    "ja": "タイピング不可",
+    "fr": "Saisie entravée",
     "icon": "",
     "maxStacks": 0,
     "description": {
@@ -74858,10 +74858,10 @@
     }
   },
   "5348": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cryptic Communications",
+    "de": "Anzeigefehler",
+    "ja": "視覚妨害",
+    "fr": "Texte brouillé",
     "icon": "",
     "maxStacks": 0,
     "description": {
@@ -74872,17 +74872,17 @@
     }
   },
   "5349": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fetters",
+    "de": "Gefesselt",
+    "ja": "拘束",
+    "fr": "Attache",
+    "icon": "/api/asset?path=ui/icon/215000/215545.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to execute actions.",
+      "de": "Ist handlungsunfähig.",
+      "ja": "行動できなくなった状態。",
+      "fr": "Toute action est impossible."
     }
   },
   "5350": {
@@ -74947,7 +74947,7 @@
     "ja": "",
     "fr": "",
     "icon": "",
-    "maxStacks": 0,
+    "maxStacks": 99,
     "description": {
       "en": "",
       "de": "",
@@ -75222,31 +75222,31 @@
     }
   },
   "5374": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ensorcelled: Aero III",
+    "de": "Windga-Erinnerung",
+    "ja": "マジックメモリー：エアロガ",
+    "fr": "Souvenir de Méga Vent",
+    "icon": "/api/asset?path=ui/icon/229000/229989.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wind magicks are at the ready.",
+      "de": "Mit einer Ansammlung an Windäther erfüllt.",
+      "ja": "風属性の魔力を蓄積した状態。",
+      "fr": "Le corps est empli d'une puissante énergie de vent."
     }
   },
   "5375": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ensorcelled: Stone III",
+    "de": "Steinga-Erinnerung",
+    "ja": "マジックメモリー：ストンガ",
+    "fr": "Souvenir de Méga Terre",
+    "icon": "/api/asset?path=ui/icon/229000/229990.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earth magicks are at the ready.",
+      "de": "Mit einer Ansammlung an Erdäther erfüllt.",
+      "ja": "土属性の魔力を蓄積した状態。",
+      "fr": "Le corps est empli d'une puissante énergie de terre."
     }
   },
   "5376": {
@@ -75586,31 +75586,31 @@
     }
   },
   "5400": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Epic Villain",
+    "de": "Entscheidungsschlacht α",
+    "ja": "決戦α",
+    "fr": "Combat décisif α",
+    "icon": "/api/asset?path=ui/icon/214000/214252.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Dueling in a decisive battle. Damage from those who have not been dubbed Epic Hero is nullified.",
+      "de": "Eine Entscheidungsschlacht muss bestritten werden. Angriffe auf andere Ziele als „α“ sind wirkungslos.",
+      "ja": "決戦を強制した状態。「決戦α［被］」が付与された対象以外からの攻撃が無効化される。",
+      "fr": "Un combat décisif est imposé. Les attaques sur des cibles autres que “α” n'ont aucun effet."
     }
   },
   "5401": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fated Villain",
+    "de": "Entscheidungsschlacht β",
+    "ja": "決戦β",
+    "fr": "Combat décisif β",
+    "icon": "/api/asset?path=ui/icon/214000/214253.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Dueling in a decisive battle. Damage from those who have not been dubbed Fated Hero is nullified.",
+      "de": "Eine Entscheidungsschlacht muss bestritten werden. Angriffe auf andere Ziele als „β“ sind wirkungslos.",
+      "ja": "決戦を強制した状態。「決戦β［被］」が付与された対象以外からの攻撃が無効化される。",
+      "fr": "Un combat décisif est imposé. Les attaques sur des cibles autres que “β” n'ont aucun effet."
     }
   },
   "5402": {
@@ -75628,31 +75628,31 @@
     }
   },
   "5403": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Easterly Reprise",
+    "de": "Befristeter Fluch: Ostwind",
+    "ja": "時限呪詛・東風",
+    "fr": "Malédiction temporelle&nbsp;: vent d'est",
+    "icon": "/api/asset?path=ui/icon/229000/229993.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Will be hit by a surge of wind from the east when this effect expires.",
+      "de": "Mit einem zeitlich befristeten Fluch belegt. Wird bei Ablauf der Wirkungsdauer von einer Windböe aus Osten getroffen.",
+      "ja": "時限の呪詛が刻まれた状態。効果時間終了時に、東から突風を受ける。",
+      "fr": "Un puissant vent d'est est subi à la fin de l'effet."
     }
   },
   "5404": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Westerly Reprise",
+    "de": "Befristeter Fluch: Westwind",
+    "ja": "時限呪詛・西風",
+    "fr": "Malédiction temporelle&nbsp;: vent d'ouest",
+    "icon": "/api/asset?path=ui/icon/229000/229994.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Will be hit by a surge of wind from the east when this effect expires.",
+      "de": "Mit einem zeitlich befristeten Fluch belegt. Wird bei Ablauf der Wirkungsdauer von einer Windböe aus Westen getroffen.",
+      "ja": "時限の呪詛が刻まれた状態。効果時間終了時に、西から突風を受ける。",
+      "fr": "Un puissant vent d'ouest est subi à la fin de l'effet."
     }
   },
   "5405": {
@@ -75698,17 +75698,17 @@
     }
   },
   "5408": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Incapacitated",
+    "de": "Entkräftung",
+    "ja": "無力化",
+    "fr": "Neutralisation",
+    "icon": "/api/asset?path=ui/icon/215000/215405.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to perform any actions.",
+      "de": "Ist so entkräftet, dass keine Handlung möglich ist.",
+      "ja": "無力化され、すべての行動ができない状態。",
+      "fr": "Le corps est incapable de bouger."
     }
   },
   "5409": {
@@ -75740,17 +75740,17 @@
     }
   },
   "5411": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Stun",
+    "de": "Betäubung",
+    "ja": "スタン",
+    "fr": "Étourdissement",
+    "icon": "/api/asset?path=ui/icon/215000/215004.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to execute actions.",
+      "de": "Ist handlungsunfähig.",
+      "ja": "行動できなくなった状態。",
+      "fr": "Toute action est impossible."
     }
   },
   "5412": {
@@ -75936,17 +75936,17 @@
     }
   },
   "5425": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Poison",
+    "de": "Gift",
+    "ja": "毒",
+    "fr": "Poison",
+    "icon": "/api/asset?path=ui/icon/215000/215007.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5426": {
@@ -76118,17 +76118,17 @@
     }
   },
   "5438": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dualcast",
+    "de": "Doppelzauber",
+    "ja": "連続魔",
+    "fr": "Chaîne de sorts",
+    "icon": "/api/asset?path=ui/icon/213000/213406.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The next spell will be cast immediately.",
+      "de": "Nächster Zauber kann sofort gewirkt werden.",
+      "ja": "魔法を連続で放てる状態。",
+      "fr": "Le prochain sort est instantané."
     }
   },
   "5439": {
@@ -76538,31 +76538,31 @@
     }
   },
   "5468": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "アクション実行不可",
+    "de": "アクション実行不可",
+    "ja": "アクション実行不可",
+    "fr": "Actions bloquées",
+    "icon": "/api/asset?path=ui/icon/215000/215045.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "アクションが実行できなくなった状態。",
+      "de": "アクションが実行できなくなった状態。",
+      "ja": "アクションが実行できなくなった状態。",
+      "fr": "Impossible d'utiliser des actions."
     }
   },
   "5469": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Poison",
+    "de": "Gift",
+    "ja": "毒",
+    "fr": "Poison",
+    "icon": "/api/asset?path=ui/icon/215000/215007.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5470": {
@@ -76594,10 +76594,10 @@
     }
   },
   "5472": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "Cryptic Communications",
+    "de": "Anzeigefehler",
+    "ja": "視覚妨害",
+    "fr": "Texte brouillé",
     "icon": "",
     "maxStacks": 0,
     "description": {
@@ -77434,59 +77434,59 @@
     }
   },
   "5532": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seal of the Bell",
+    "de": "Siegelwaffe: Glocke",
+    "ja": "封印されし武器：ベル",
+    "fr": "Armes scellées&nbsp;: cloche",
+    "icon": "/api/asset?path=ui/icon/214000/214415.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wielding a bell from among the stock of sealed implements.",
+      "de": "Bereitet einen Angriff mit einer versiegelten Glocke vor.",
+      "ja": "封印されし武器のうち、ベルを使って攻撃しようとしている状態。",
+      "fr": "A choisi une cloche parmi les armes scellées pour attaquer."
     }
   },
   "5533": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seal of the Blade",
+    "de": "Siegelwaffe: Schwert",
+    "ja": "封印されし武器：刀",
+    "fr": "Armes scellées&nbsp;: sabre",
+    "icon": "/api/asset?path=ui/icon/214000/214416.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wielding a blade from among the stock of sealed implements.",
+      "de": "Bereitet einen Angriff mit einem versiegelten Schwert vor.",
+      "ja": "封印されし武器のうち、刀を使って攻撃しようとしている状態。",
+      "fr": "A choisi un sabre parmi les armes scellées pour attaquer."
     }
   },
   "5534": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seal of the Bow",
+    "de": "Siegelwaffe: Bogen",
+    "ja": "封印されし武器：弓",
+    "fr": "Armes scellées&nbsp;: arc",
+    "icon": "/api/asset?path=ui/icon/214000/214417.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wielding a bow from among the stock of sealed implements.",
+      "de": "Bereitet einen Angriff mit einem versiegelten Bogen vor.",
+      "ja": "封印されし武器のうち、弓を使って攻撃しようとしている状態。",
+      "fr": "A choisi un arc parmi les armes scellées pour attaquer."
     }
   },
   "5535": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seal of the Harp",
+    "de": "Siegelwaffe: Harfe",
+    "ja": "封印されし武器：ハープ",
+    "fr": "Armes scellées&nbsp;: harpe",
+    "icon": "/api/asset?path=ui/icon/214000/214418.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wielding a harp from among the stock of sealed implements.",
+      "de": "Bereitet einen Angriff mit einer versiegelten Harfe vor.",
+      "ja": "封印されし武器のうち、ハープを使って攻撃しようとしている状態。",
+      "fr": "A choisi une harpe parmi les armes scellées pour attaquer."
     }
   },
   "5536": {

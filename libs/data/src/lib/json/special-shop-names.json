@@ -8778,16 +8778,16 @@
     "fr": "Équipements totémiques (Énuo)"
   },
   "1771014": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Weapons Eclipticum",
+    "ja": "ファントムウェポン+3の取引",
+    "de": "Phantomwaffen Eclipticum",
+    "fr": "Armes fantômes +3"
   },
   "1771015": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Weapons Occultum",
+    "ja": "ファントムウェポン+4の取引",
+    "de": "Phantomwaffen Occultum",
+    "fr": "Armes fantômes +4"
   },
   "1771016": {
     "en": "Phantom Weapon Replication (DoW) I",
@@ -8802,7 +8802,7 @@
     "fr": "Répliques d'armes fantômes (guerre 2)"
   },
   "1771018": {
-    "en": "Phantom Weapon Replication (DoM) I",
+    "en": "Phantom Weapon Replication (DoM)",
     "ja": "「ファントムウェポン」の複製（ソーサラー）",
     "de": "Repliken von Phantomwaffen (Magier)",
     "fr": "Répliques d'armes fantômes (magie)"
@@ -8856,58 +8856,58 @@
     "fr": "Amélioration d'accessoires de courtisan assidu"
   },
   "1771027": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Enlightenment Silver Obol Exchange (IL 780)",
+    "ja": "十二都市白銀貨の取引（ILv780装備）",
+    "de": "Weißsilbermünzen der Zwölf Städte (Ausrüstung, G.-St. 780)",
+    "fr": "Pièces de nickel des douze cités (NvObj 780)"
   },
   "1771028": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Enlightenment Silver Obol Exchange (Other)",
+    "ja": "十二都市白銀貨の取引（その他）",
+    "de": "Weißsilbermünzen der Zwölf Städte (Anderes)",
+    "fr": "Pièces de nickel des douze cités (autre)"
   },
   "1771029": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Enlightenment Gold Obol Exchange",
+    "ja": "十二都市白金貨の取引",
+    "de": "Weißgoldmünzen der Zwölf Städte",
+    "fr": "Pièces de platine des douze cités"
   },
   "1771030": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arcane Amulet Exchange",
+    "ja": "魔の護符の取引",
+    "de": "Talismane der Magie",
+    "fr": "Talismans de la Magie"
   },
   "1771031": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Vision Gear Augmentation I",
+    "ja": "「ファントムヴィジョン装備」の強化（未強化→+1）",
+    "de": "Verstärkung für Phantomtraum-Ausrüstung I",
+    "fr": "Amélioration d'équipements de vision fantomatique (premier degré)"
   },
   "1771032": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Vision Gear Augmentation II",
+    "ja": "「ファントムヴィジョン装備」の強化（+1→+2）",
+    "de": "Verstärkung für Phantomtraum-Ausrüstung II",
+    "fr": "Amélioration d'équipements de vision fantomatique (deuxième degré)"
   },
   "1771033": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Phantom Vision Gear Augmentation III",
+    "ja": "「ファントムヴィジョン装備」の強化（+2→+3）",
+    "de": "Verstärkung für Phantomtraum-Ausrüstung III",
+    "fr": "Amélioration d'équipements de vision fantomatique (troisième degré)"
   },
   "1771034": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arcanaut's Gear +1 Exchange",
+    "ja": "「クレセントノート装備+1」の交換",
+    "de": "Tausch für Arkanaut-Ausrüstung +1",
+    "fr": "Échange d'équipements de naufragé du croissant +1"
   },
   "1771035": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arcanaut's Gear +2 Exchange",
+    "ja": "「クレセントノート装備+2」の交換",
+    "de": "Tausch für Arkanaut-Ausrüstung +2",
+    "fr": "Échange d'équipements de naufragé du croissant +2"
   },
   "1771036": {
     "en": "",

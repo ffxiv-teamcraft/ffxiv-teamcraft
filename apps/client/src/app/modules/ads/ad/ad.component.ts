@@ -21,6 +21,10 @@ export class AdComponent extends TeamcraftComponent {
 
   private router = inject(Router);
 
+  protected shouldShowTeamcrafter = false;
+
+  private adPlatform = 'desktop';
+
   constructor() {
     super();
     if (!this.platform.isOverlay()) {
@@ -67,6 +71,7 @@ export class AdComponent extends TeamcraftComponent {
       ramp2CDNScript.async = true;
       ramp2CDNScript.setAttribute('src', `https://cdn.intergient.com/1024627/${this.platform.isDesktop() ? 73554 : 73498}/ramp.js`);
       document.head.appendChild(ramp2CDNScript);
+      ramp2CDNScript.onerror = () => this.showTC();
       this.router.events
         .pipe(
           skip(1),
@@ -75,14 +80,22 @@ export class AdComponent extends TeamcraftComponent {
           })
         )
         .subscribe((event: NavigationEnd) => {
-          if (ramp?.spaNewPage) {
-            ramp.spaNewPage(event.url);
-          }
+          this.newPage(event.url);
         });
     }
   }
 
+  private newPage(url: string): void {
+    if (Math.random() > 0.10 && ramp?.spaNewPage) {
+      ramp.spaNewPage(url);
+    } else {
+      this.showTC();
+    }
+  }
+
+
   private applyPlatform(platform: string | null): void {
+    this.adPlatform = platform;
     switch (platform) {
       case 'mobile':
         this.enableMobileAd();
@@ -101,7 +114,15 @@ export class AdComponent extends TeamcraftComponent {
     ramp.destroyUnits('all');
   }
 
+  private showTC(): void {
+    this.removeAd();
+    if (this.adPlatform != 'mobile') {
+      this.shouldShowTeamcrafter = true;
+    }
+  }
+
   private enableDesktopAd(): void {
+    this.shouldShowTeamcrafter = false;
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'desktop';
       ramp.isMobile = false;
@@ -119,6 +140,7 @@ export class AdComponent extends TeamcraftComponent {
   }
 
   private enableMobileAd(): void {
+    this.shouldShowTeamcrafter = false;
     ramp.destroyUnits('all').then(() => {
       ramp.settings.device = 'mobile';
       ramp.isMobile = true;

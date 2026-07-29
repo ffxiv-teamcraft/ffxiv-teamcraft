@@ -34722,7 +34722,7 @@
   {
     "itemId": 52007,
     "level": 93,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/028000/028786_hr1.tex&format=png",
     "mapId": 857,
     "placeId": 4505,
     "zoneId": 5042,
@@ -35042,7 +35042,7 @@
   {
     "itemId": 52008,
     "level": 93,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/028000/028787_hr1.tex&format=png",
     "mapId": 858,
     "placeId": 4506,
     "zoneId": 5045,
@@ -36210,7 +36210,7 @@
   {
     "itemId": 52009,
     "level": 94,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/028000/028788_hr1.tex&format=png",
     "mapId": 859,
     "placeId": 4507,
     "zoneId": 5058,
@@ -36674,7 +36674,7 @@
   {
     "itemId": 52010,
     "level": 96,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/028000/028789_hr1.tex&format=png",
     "mapId": 860,
     "placeId": 4508,
     "zoneId": 5063,
@@ -37282,7 +37282,7 @@
   {
     "itemId": 52297,
     "level": 98,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/028000/028790_hr1.tex&format=png",
     "mapId": 861,
     "placeId": 4509,
     "zoneId": 5069,
@@ -37810,7 +37810,7 @@
   {
     "itemId": 52011,
     "level": 100,
-    "icon": "",
+    "icon": "/api/asset?path=ui/icon/028000/028168_hr1.tex&format=png",
     "mapId": 862,
     "placeId": 4510,
     "zoneId": 5075,
