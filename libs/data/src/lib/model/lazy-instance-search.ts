@@ -9,7 +9,7 @@ export interface LazyInstanceSearch {
   lvl:   number;
   patch: number;
   tw?:   string;
-  zh?:   string;
+  zh:    string;
 }
 
 export interface Data {
