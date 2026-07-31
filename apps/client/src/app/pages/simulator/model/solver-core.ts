@@ -1,5 +1,6 @@
-// apps/client/src/app/pages/simulator/model/solver/solver-core.ts
 import { Craft, CraftingAction, CrafterStats } from '@ffxiv-teamcraft/simulator';
+
+const SOLVER_VERSION = 'v3-fixed-buff-names-no-speculative-bonus';
 
 export interface SolverInput {
   Simulation: any;
@@ -33,12 +34,21 @@ interface Node {
 
 const PRUNE_SAFETY_MULTIPLIER = 3;
 const MIN_DEPTH_BEFORE_PRUNING = 4;
-const SOLVER_VERSION = 'v1-buff-potential';
+
+const BUFF_ACTION_TO_BUFF_KEY: Record<string, string> = {
+  Veneration2: 'VENERATION',
+  Innovation2: 'INNOVATION',
+  GreatStrides2: 'GREAT_STRIDES',
+  Manipulation2: 'MANIPULATION',
+  WasteNot2: 'WASTE_NOT',
+  WasteNotII2: 'WASTE_NOT_II'
+};
 
 export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) => void): CraftingAction[] {
-  console.log('[solver-core] VERSION:', SOLVER_VERSION);
   const { Simulation, registry, ActionType, Buff, recipe, stats, hqIngredients, beamWidth, maxSteps, maxComputeMs } = input;
   const startTime = performance.now();
+
+  console.log('[solver-core] VERSION:', SOLVER_VERSION);
 
   const candidateActions: CraftingAction[] = [
     ...registry.getActionsByType(ActionType.PROGRESSION),
@@ -49,7 +59,11 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     ...registry.getActionsByType(ActionType.CP_RECOVERY)
   ];
   const progressionActions = registry.getActionsByType(ActionType.PROGRESSION);
-  const qualityActions = registry.getActionsByType(ActionType.QUALITY);
+  const buffActions = registry.getActionsByType(ActionType.BUFF);
+  const repairActions = registry.getActionsByType(ActionType.REPAIR);
+
+  console.log('[solver-core] Buff action class names:', buffActions.map((a: any) => a.constructor?.name));
+  console.log('[solver-core] Repair action class names:', repairActions.map((a: any) => a.constructor?.name));
 
   const evaluate = (actions: CraftingAction[]) => {
     const sim = new Simulation(recipe, actions, stats, hqIngredients || []);
@@ -67,22 +81,16 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     return max;
   };
 
-  // NEU: analoge Schätzung für Quality, um Buff-Potential bewerten zu können
-  const estimateMaxQualityPerStep = (simulation: any): number => {
-    let max = 0;
-    for (const action of qualityActions) {
-      if (!action.canBeUsed(simulation, true)) continue;
-      if (action.getSuccessRate(simulation) < 100) continue;
-      if (!action.getBaseQuality) continue;
-      const value = action.getBaseQuality(simulation);
-      if (value > max) max = value;
-    }
-    return max;
-  };
-
-  // Gibt den aktiven Buff-Eintrag zurück (inkl. verbleibender Dauer), oder undefined
   const findActiveBuff = (simulation: any, buffKeyName: string): any => {
     return simulation.buffs.find((b: any) => Buff[b.buff] === buffKeyName);
+  };
+
+  const isRedundantBuffActivation = (action: CraftingAction, simulation: any): boolean => {
+    const buffKey = BUFF_ACTION_TO_BUFF_KEY[action.constructor?.name];
+    if (!buffKey) return false;
+    const active = findActiveBuff(simulation, buffKey);
+    if (!active) return false;
+    return (active.duration ?? 0) > 1;
   };
 
   let nodesEvaluated = 0;
@@ -95,33 +103,22 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     const qualityComplete = cappedQuality >= recipe.quality;
     const progressComplete = result.success;
 
-    const qualityFraction = cappedQuality / recipe.quality;
-    const progressFraction = Math.min(sim.progression / recipe.progress, 1);
-    const stepsUsedFraction = actions.length / maxSteps;
-    const urgency = 1 + stepsUsedFraction * 1;
+    let score: number;
 
-    // NEU: Buff-Potential-Bonus, damit "Investitions"-Züge (Buff aktivieren) nicht
-    // sofort im Score abgestraft werden, nur weil ihr Nutzen erst später eintritt.
-    let buffPotential = 0;
-    const maxQualityStep = estimateMaxQualityPerStep(sim);
-    const maxProgressStep = estimateMaxProgressPerStep(sim);
+    if (progressComplete) {
+      score = 1e12 + cappedQuality * 1e3 - actions.length;
+    } else {
+      const qualityFraction = cappedQuality / recipe.quality;
+      const progressFraction = Math.min(sim.progression / recipe.progress, 1);
 
-    const greatStrides = findActiveBuff(sim, 'GREAT_STRIDES');
-    if (greatStrides) buffPotential += maxQualityStep * 1.0;
+      const durabilityRatio = sim.durability / recipe.durability;
+      const durabilityPenalty = durabilityRatio < 0.3 ? (0.3 - durabilityRatio) * 2000 : 0;
 
-    const innovation = findActiveBuff(sim, 'INNOVATION');
-    if (innovation) buffPotential += maxQualityStep * 0.5 * Math.min(innovation.duration ?? 1, remainingStepsGuess(maxSteps, actions.length));
-
-    const veneration = findActiveBuff(sim, 'VENERATION');
-    if (veneration) buffPotential += maxProgressStep * 0.5 * Math.min(veneration.duration ?? 1, remainingStepsGuess(maxSteps, actions.length));
-
-    const innerQuiet = findActiveBuff(sim, 'INNER_QUIET');
-    if (innerQuiet)
-      buffPotential += (innerQuiet.stacks ?? 0) * (recipe.quality * 0.01);
-
-    const score = progressComplete
-          ? 1e9 + qualityFraction * 1e6 - result.steps.length - sim.availableCP * 2
-          : progressFraction * 500 * urgency + qualityFraction * 500 - result.steps.length * 0.1 + buffPotential * 0.4;
+      score = progressFraction * 400
+            + qualityFraction * 400
+            - durabilityPenalty
+            - actions.length * 0.1
+    }
 
     return {
       actions,
@@ -129,15 +126,13 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
       score,
       qualityComplete,
       progressComplete,
-      maxRemainingProgress: maxProgressStep
+      maxRemainingProgress: estimateMaxProgressPerStep(sim)
     };
   };
 
-  // Buff-Signatur einbeziehen, damit Zustände mit unterschiedlichen aktiven Buffs
-  // NICHT mehr fälschlich zusammengelegt und gegeneinander verworfen werden.
   const buffSignature = (simulation: any): string => {
     return simulation.buffs
-      .map((b: any) => `${b.buff}:${Math.round((b.duration ?? 0))}:${b.stacks ?? 0}`)
+      .map((b: any) => `${b.buff}:${Math.round(b.duration ?? 0)}:${b.stacks ?? 0}`)
       .sort()
       .join(',');
   };
@@ -174,6 +169,8 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
         if (!action.canBeUsed(node.result.simulation, true)) continue;
         if (action.getSuccessRate(node.result.simulation) < 100) continue;
         if (action.getBaseCPCost(node.result.simulation) > node.result.simulation.availableCP) continue;
+
+        if (isRedundantBuffActivation(action, node.result.simulation)) continue;
 
         const newActions = [...node.actions, action];
         const child = buildNode(newActions);
@@ -217,11 +214,13 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     return best.actions;
   }
 
-  return greedyFinish(frontier[0]?.actions ?? [], evaluate, candidateActions, recipe, maxSteps);
-}
+  console.warn('[solver-core] Beam search fand keine fertige Rotation, greife auf greedyFinish zurück.', {
+    nodesEvaluated,
+    depth,
+    frontierSize: frontier.length
+  });
 
-function remainingStepsGuess(maxSteps: number, usedSteps: number): number {
-  return Math.max(1, maxSteps - usedSteps);
+  return greedyFinish(frontier[0]?.actions ?? [], evaluate, candidateActions, recipe, maxSteps);
 }
 
 function greedyFinish(
