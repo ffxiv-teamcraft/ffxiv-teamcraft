@@ -1,3 +1,4 @@
+// apps/client/src/app/pages/simulator/model/solver/solver-core.ts
 import { Craft, CraftingAction, CrafterStats } from '@ffxiv-teamcraft/simulator';
 
 export interface SolverInput {
@@ -32,8 +33,10 @@ interface Node {
 
 const PRUNE_SAFETY_MULTIPLIER = 3;
 const MIN_DEPTH_BEFORE_PRUNING = 4;
+const SOLVER_VERSION = 'v1-buff-potential';
 
 export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) => void): CraftingAction[] {
+  console.log('[solver-core] VERSION:', SOLVER_VERSION);
   const { Simulation, registry, ActionType, Buff, recipe, stats, hqIngredients, beamWidth, maxSteps, maxComputeMs } = input;
   const startTime = performance.now();
 
@@ -64,6 +67,7 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     return max;
   };
 
+  // NEU: analoge Schätzung für Quality, um Buff-Potential bewerten zu können
   const estimateMaxQualityPerStep = (simulation: any): number => {
     let max = 0;
     for (const action of qualityActions) {
@@ -76,6 +80,7 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     return max;
   };
 
+  // Gibt den aktiven Buff-Eintrag zurück (inkl. verbleibender Dauer), oder undefined
   const findActiveBuff = (simulation: any, buffKeyName: string): any => {
     return simulation.buffs.find((b: any) => Buff[b.buff] === buffKeyName);
   };
@@ -93,28 +98,30 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     const qualityFraction = cappedQuality / recipe.quality;
     const progressFraction = Math.min(sim.progression / recipe.progress, 1);
     const stepsUsedFraction = actions.length / maxSteps;
-    const urgency = 1 + stepsUsedFraction * 3;
+    const urgency = 1 + stepsUsedFraction * 1;
 
+    // NEU: Buff-Potential-Bonus, damit "Investitions"-Züge (Buff aktivieren) nicht
+    // sofort im Score abgestraft werden, nur weil ihr Nutzen erst später eintritt.
     let buffPotential = 0;
     const maxQualityStep = estimateMaxQualityPerStep(sim);
     const maxProgressStep = estimateMaxProgressPerStep(sim);
 
     const greatStrides = findActiveBuff(sim, 'GREAT_STRIDES');
-    if (greatStrides) {
-      buffPotential += maxQualityStep * 1.0;
-    }
+    if (greatStrides) buffPotential += maxQualityStep * 1.0;
+
     const innovation = findActiveBuff(sim, 'INNOVATION');
-    if (innovation) {
-      buffPotential += maxQualityStep * 0.5 * Math.min(innovation.duration ?? 1, remainingStepsGuess(maxSteps, actions.length));
-    }
+    if (innovation) buffPotential += maxQualityStep * 0.5 * Math.min(innovation.duration ?? 1, remainingStepsGuess(maxSteps, actions.length));
+
     const veneration = findActiveBuff(sim, 'VENERATION');
-    if (veneration) {
-      buffPotential += maxProgressStep * 0.5 * Math.min(veneration.duration ?? 1, remainingStepsGuess(maxSteps, actions.length));
-    }
+    if (veneration) buffPotential += maxProgressStep * 0.5 * Math.min(veneration.duration ?? 1, remainingStepsGuess(maxSteps, actions.length));
+
+    const innerQuiet = findActiveBuff(sim, 'INNER_QUIET');
+    if (innerQuiet)
+      buffPotential += (innerQuiet.stacks ?? 0) * (recipe.quality * 0.01);
 
     const score = progressComplete
-          ? 1e9 + qualityFraction * 1e6 - result.steps.length
-          : progressFraction * 500 * urgency + qualityFraction * 300 - result.steps.length * 0.1 + buffPotential * 0.4;
+          ? 1e9 + qualityFraction * 1e6 - result.steps.length - sim.availableCP * 2
+          : progressFraction * 500 * urgency + qualityFraction * 500 - result.steps.length * 0.1 + buffPotential * 0.4;
 
     return {
       actions,
@@ -126,6 +133,8 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     };
   };
 
+  // Buff-Signatur einbeziehen, damit Zustände mit unterschiedlichen aktiven Buffs
+  // NICHT mehr fälschlich zusammengelegt und gegeneinander verworfen werden.
   const buffSignature = (simulation: any): string => {
     return simulation.buffs
       .map((b: any) => `${b.buff}:${Math.round((b.duration ?? 0))}:${b.stacks ?? 0}`)
