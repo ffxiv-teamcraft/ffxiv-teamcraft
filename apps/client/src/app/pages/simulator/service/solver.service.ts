@@ -1,15 +1,14 @@
 import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Craft, CrafterStats, CraftingAction } from "@ffxiv-teamcraft/simulator";
+import { Craft, CrafterStats } from "@ffxiv-teamcraft/simulator";
 import { SettingsService } from "../../../modules/settings/settings.service";
-import { SimulationReliabilityReport, SimulationService } from "../../../core/simulation/simulation.service";
+import { SimulationService } from "../../../core/simulation/simulation.service";
+import { SolverEvent } from '../model/solver-event';
 
-export interface SolverEvent {
-  progress?: { depth: number; bestQuality: number; bestSuccess: boolean; qualityComplete: boolean };
-  result?: CraftingAction[];
-  reliablity?: SimulationReliabilityReport
-}
-
+/**
+ * Service that runs the crafting rotation solver in a background Web Worker
+ * and exposes its progress/result as an observable stream.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -17,9 +16,30 @@ export class SolverService {
   private settings: SettingsService = inject(SettingsService);
   private simulationService: SimulationService = inject(SimulationService);
 
+  /**
+   * Starts a solver run in a dedicated Web Worker for the given recipe and crafter
+   * stats, and streams progress updates followed by the final result.
+   * 
+   * @param recipe The recipe/craft to solve for
+   * @param stats The crafter's stats (craftsmanship, control, CP, level, specialist)
+   * @param hqIngredients Optional starting HQ ingredient quality contributions
+   * @param beamWidth Maximum number of candidate branches kept per search depth. High
+   *        values explore more alternatives at the cost of more compution time
+   * @param maxSteps Hard cap on the number of steps a generated rotation may contain
+   * @param maxComputeMs Wall-clock time budget for the search, in milliseconds
+   * @param shouldUseCosmicExploration Whether Cosmic Exploration-only Actions (e.g.
+   *        Material Miracle, etc) may be used. Defaults to false
+   * @param shouldUseSpecialistCommands Whether Specialist-only actions (e.g. Careful
+   *        Observation, etc) may be used. Only takes effect if
+   *        'stats.specialist' is also true. Defaults to false
+   * @returns An observable emitting {@link SolverEvent}s. Completes after the final
+   *        result event, or errors if the worker fails or Web Workers are unsupported
+   */
   solve(recipe: Craft, stats: CrafterStats,
     hqIngredients: { id: number; amount: number }[] = [],
-    beamWidth = 4000, maxSteps = 45, maxComputeMs = 55000): Observable<SolverEvent> {
+    beamWidth = 4000, maxSteps = 45, maxComputeMs = 55000,
+    shouldUseCosmicExploration = false,
+    shouldUseSpecialistCommands = false): Observable<SolverEvent> {
     return new Observable(subscriber => {
       if (typeof Worker === 'undefined') {
         subscriber.error(new Error('Web Workers are not supported in this environment.'));
@@ -64,7 +84,9 @@ export class SolverService {
         hqIngredients,
         beamWidth,
         maxSteps,
-        maxComputeMs
+        maxComputeMs,
+        shouldUseCosmicExploration,
+        shouldUseSpecialistCommands
       });
 
       return () => worker.terminate();

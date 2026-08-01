@@ -2,6 +2,18 @@
 import { runSolver } from "../model/solver-core";
 import * as Simulator from "@ffxiv-teamcraft/simulator";
 
+/**
+ * Web Worker entry point for the crafting rotation solver. Runs entirely off the main
+ * thread so the beam search (which can evaluate hunderds or thousands to millions of 
+ * simulated crafting states) never blocks the UI.
+ * 
+ * Expects a single 'message' event carrying a plain-object payload (see
+ * {@link SolverService.solve} for the exact shape sent), and replies with one or more
+ * 'postMessage' calls of the following shapes:
+ * - '{ type: 'progress', progress: SolverProgress }' - emitted periodically while searching
+ * - '{ type: 'done', serializedActions, reliablity }' - emitted once with the final result
+ * - '{ type: 'error', message }' - emitted if an exception occurs during the search
+ */
 addEventListener('message', ({ data }) => {
   console.log('[solver.worker] received message', data);
   try {
@@ -15,10 +27,8 @@ addEventListener('message', ({ data }) => {
       data.stats.level,
       data.stats.levels
     );
-    console.log('[solver.worker] stats built', stats);
   
     const registry = Simulator.CraftingActionsRegistry;
-    console.log('[solver-core] Buff enum keys:', Object.keys(Simulator.Buff));
   
     const actions = runSolver({
       Simulation: Simulator.Simulation,
@@ -30,16 +40,15 @@ addEventListener('message', ({ data }) => {
       hqIngredients: data.hqIngredients,
       beamWidth: data.beamWidth,
       maxSteps: data.maxSteps,
-      maxComputeMs: data.maxComputeMs
+      maxComputeMs: data.maxComputeMs,
+      shouldUseCosmicExploration: data.shouldUseCosmicExploration,
+      shouldUseSpecialistCommands: data.shouldUseSpecialistCommands
     }, progress => {
-      console.log('[solver.worker] progress', progress);
       postMessage({ type: 'progress', progress });
     });
 
-    console.log('[solver.worker] runSolver finished, actions.length =', actions.length);
-
     // Runs the found simulation through the reliability-analysis like in
-    // the CommunityRotationFinderPopupComponent
+    // the CommunityRotationFinderPopupComponent, so the UI can display a confidence report
     const finalSimulation = new Simulator.Simulation(data.recipe, actions, stats, data.hqIngredients || []);
     finalSimulation.run(true, Infinity, true);
     const reliablity = finalSimulation.getReliabilityReport();
