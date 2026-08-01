@@ -188,6 +188,7 @@ export enum Ja {
   IshgardianLeves = "ISHGARDIAN LEVES",
   Island = "ISLAND",
   KUPOOfFORTUNE = "KUPO of FORTUNE",
+  Keyboundbrawler = "KEYBOUNDBRAWLER",
   LORDOfVERMINION = "LORD of VERMINION",
   Land = "LAND",
   Linkshell = "LINKSHELL",

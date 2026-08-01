@@ -26705,25 +26705,25 @@
     "icon": ""
   },
   "2003815": {
-    "en": "",
+    "en": "Warm Kinderpunsch",
     "ja": "",
-    "de": "",
+    "de": "Warmer Kinderpunsch",
     "fr": "Kinderpunsch chaud",
     "icon": "/api/asset?path=ui/icon/053000/053492.tex&format=png"
   },
   "2003816": {
-    "en": "",
+    "en": "Liplu's Letter",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Brief von Liplu",
+    "fr": "Lettre de Liplu",
+    "icon": "/api/asset?path=ui/icon/025000/025918.tex&format=png"
   },
   "2003817": {
-    "en": "",
+    "en": "Hefty Packed Meal",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Randvolles Essenspaket von Wawkesa",
+    "fr": "Panier-repas de Wawkesa",
+    "icon": "/api/asset?path=ui/icon/023000/023001.tex&format=png"
   },
   "2003818": {
     "en": "",
@@ -26733,10 +26733,10 @@
     "icon": ""
   },
   "2003819": {
-    "en": "",
+    "en": "All-seeing Gourd",
     "ja": "",
-    "de": "",
-    "fr": "",
+    "de": "Allsehender Kürbis",
+    "fr": "Courge révélatrice",
     "icon": "/api/asset?path=ui/icon/024000/024153.tex&format=png"
   },
   "2003820": {
@@ -26792,14 +26792,14 @@
     "en": "Growth Formula Cartridge",
     "ja": "",
     "de": "Wachstumspatrone",
-    "fr": "Formule de croissance",
+    "fr": "Cartouche de formule de croissance",
     "icon": "/api/asset?path=ui/icon/023000/023569.tex&format=png"
   },
   "2003828": {
     "en": "Growth Formula Cartridge",
     "ja": "",
     "de": "Wachstumspatrone",
-    "fr": "Formule de croissance",
+    "fr": "Cartouche de formule de croissance",
     "icon": "/api/asset?path=ui/icon/023000/023569.tex&format=png"
   },
   "2003829": {
@@ -26852,11 +26852,11 @@
     "icon": ""
   },
   "2003836": {
-    "en": "",
+    "en": "Knowledge Crystal",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Wissenskristall",
+    "fr": "Cristal de savoir",
+    "icon": "/api/asset?path=ui/icon/026000/026087.tex&format=png"
   },
   "2003837": {
     "en": "",
@@ -26866,11 +26866,11 @@
     "icon": ""
   },
   "2003838": {
-    "en": "",
+    "en": "Abductor's Horn",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Abduktor-Horn",
+    "fr": "Corne du Ravisseur",
+    "icon": "/api/asset?path=ui/icon/022000/022204.tex&format=png"
   },
   "2003839": {
     "en": "",

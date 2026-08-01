@@ -2990,10 +2990,10 @@
     }
   },
   "319": {
-    "value": 15,
-    "conditionValue": 1,
+    "value": 30,
+    "conditionValue": 240,
     "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
       "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
@@ -3001,72 +3001,52 @@
   },
   "320": {
     "value": 30,
-    "conditionValue": 1,
+    "conditionValue": 235,
     "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "321": {
-    "value": 15,
-    "conditionValue": 1,
+    "value": 70,
+    "conditionValue": 4300,
     "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+      "tw": "收藏價值＋<Value>IntegerParameter(1)</Value>"
     },
     "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "322": {
-    "value": 30,
-    "conditionValue": 1,
+    "value": 70,
+    "conditionValue": 5460,
     "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+      "tw": "收藏價值＋<Value>IntegerParameter(1)</Value>"
     },
     "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "323": {
-    "value": 15,
-    "conditionValue": 1,
+    "value": 10,
+    "conditionValue": 4300,
     "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "324": {
-    "value": 30,
-    "conditionValue": 1,
+    "value": 10,
+    "conditionValue": 5460,
     "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
-    }
-  },
-  "325": {
-    "value": 15,
-    "conditionValue": 1,
-    "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
-    },
-    "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
-    }
-  },
-  "326": {
-    "value": 30,
-    "conditionValue": 1,
-    "bonus": {
-      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
-    },
-    "condition": {
-      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "327": {
@@ -3660,10 +3640,40 @@
     }
   },
   "386": {
-    "value": 75,
-    "conditionValue": 2930,
+    "value": 140,
+    "conditionValue": 2500,
     "bonus": {
       "tw": "收藏價值＋<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "387": {
+    "value": 30,
+    "conditionValue": 2400,
+    "bonus": {
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "388": {
+    "value": 10,
+    "conditionValue": 4550,
+    "bonus": {
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "389": {
+    "value": 10,
+    "conditionValue": 4750,
+    "bonus": {
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
       "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
@@ -3714,6 +3724,36 @@
     "conditionValue": 515,
     "bonus": {
       "tw": "獲得數＋<Value>IntegerParameter(1)</Value>個（上升型）"
+    },
+    "condition": {
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "395": {
+    "value": 30,
+    "conditionValue": 240,
+    "bonus": {
+      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "396": {
+    "value": 30,
+    "conditionValue": 2400,
+    "bonus": {
+      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "397": {
+    "value": 30,
+    "conditionValue": 235,
+    "bonus": {
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
       "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
@@ -5577,6 +5617,46 @@
     },
     "condition": {
       "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "600": {
+    "value": 70,
+    "conditionValue": 5090,
+    "bonus": {
+      "tw": "收藏價值＋<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "601": {
+    "value": 10,
+    "conditionValue": 5090,
+    "bonus": {
+      "tw": "慎重提煉：追加效果發生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "tw": "獲得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "602": {
+    "value": 15,
+    "conditionValue": 5090,
+    "bonus": {
+      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "603": {
+    "value": 30,
+    "conditionValue": 5090,
+    "bonus": {
+      "tw": "額外採集獎勵發生率＋<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "tw": "鑑別力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "609": {

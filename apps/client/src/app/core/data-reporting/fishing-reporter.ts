@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { debounceTime, delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
@@ -17,6 +17,7 @@ import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-
 import { FishingReport } from './fishing-report';
 import { AuthFacade } from '../../+state/auth.facade';
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
+import { buildMoochState } from './mooch-state';
 
 
 export class FishingReporter implements DataReporter {
@@ -45,6 +46,11 @@ export class FishingReporter implements DataReporter {
 
     const packets$ = _packets$.pipe(
       filter(packet => packet.header.sourceActor === packet.header.targetActor)
+    );
+
+    const baitIds$ = this.lazyData.getEntry('baits').pipe(
+      map(baits => new Set(baits.map(bait => bait.id))),
+      shareReplay({ bufferSize: 1, refCount: false })
     );
 
     const fishCaught$ = packets$.pipe(
@@ -164,22 +170,6 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const moochSelection$ = packets$.pipe(
-      ofMessageType('systemLogMessage'),
-      toIpcData(),
-      // 1121: Cast with hooked fish
-      // 3522: You apply <bait> to your line
-      // 1129: Nothing bites
-      filter(packet => [1121, 3522, 1129].includes(packet.param1)),
-      map(packet => {
-        if (packet.param1 === 1121 || packet.param1 === 3522) {
-          return packet.param3;
-        }
-        return null;
-      }),
-      startWith(null)
-    );
-
     const misses$ = combineLatest([
       packets$.pipe(
         ofMessageType('systemLogMessage'),
@@ -237,17 +227,12 @@ export class FishingReporter implements DataReporter {
 
     const reset$ = merge(resetFromLogMessage$, resetFromAction$);
 
-    const resetMooch$ = merge(packets$.pipe(
-        ofMessageType('actorControlSelf', 'fishingBaitMsg')
-      ),
-      misses$,
-      reset$,
-      fishCaught$.pipe(debounceTime(750))
-    ).pipe(
-      map(() => null)
-    );
-
-    const mooch$ = merge(moochSelection$, resetMooch$);
+    const mooch$ = buildMoochState({
+      packets$,
+      baitIds$,
+      fishCaught$,
+      reset$: merge(misses$, reset$)
+    });
 
     const hookset$ = actionTimeline$.pipe(
       filter(key => key !== 'fishing/idle'),
@@ -350,7 +335,8 @@ export class FishingReporter implements DataReporter {
         this.authFacade.mainCharacter$.pipe(
           map(char => char?.Name),
           startWith(null)
-        )
+        ),
+        baitIds$.pipe(startWith(new Set<number>()))
       ),
       filter(([fish, baitId, throwData, biteData, , spot, stats]) => {
         return (fish.id === -1 && stats?.gp > 1)
@@ -358,8 +344,10 @@ export class FishingReporter implements DataReporter {
             && spot.fishes.indexOf(fish.id) > -1
           ) && throwData.weatherId !== null && baitId > 0;
       }),
-      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name]) => {
+      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name, baitIds]) => {
         const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
+        // A regular bait can never be a mooch, never let one through even if the state machine let it slip.
+        const moochId = mooch !== null && !baitIds.has(mooch) ? mooch : null;
         const entry: FishingReport = {
           itemId: fish.id,
           etime: Math.round(throwData.etime.getTime() % 86400000 / 3600) / 1000,
@@ -376,7 +364,7 @@ export class FishingReporter implements DataReporter {
           intuition: throwData.statuses.some(({ id }) => id === 568),
           aLure: biteData.statuses.find(({ id }) => id === 3972)?.stacks || 0,
           mLure: biteData.statuses.find(({ id }) => id === 3973)?.stacks || 0,
-          mooch: mooch !== null,
+          mooch: moochId !== null,
           tug: biteData.tug,
           hookset,
           spot: spot.id,
@@ -384,8 +372,8 @@ export class FishingReporter implements DataReporter {
           trainId: shouldAddTrain ? train?.$key : null,
           ...stats
         };
-        if (mooch) {
-          entry.baitId = mooch;
+        if (moochId) {
+          entry.baitId = moochId;
         }
         if (entry.trainId) {
           this.fishTrainFacade.addReport({
