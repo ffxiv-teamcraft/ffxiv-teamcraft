@@ -31,9 +31,9 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   recipe: Craft;
   stats: CrafterStats;
   hqIngredients: { id: number; amount: number }[] = [];
-  beamWidth = 1000;
-  maxSteps = 30;
-  maxComputeMs = 55000;
+  beamWidth = 3000;
+  maxSteps = 45;
+  maxComputeMs = 58000;
 
   running = true;
   depth = 0;
