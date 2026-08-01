@@ -1,40 +1,35 @@
 import { Craft, CraftingAction, CrafterStats } from '@ffxiv-teamcraft/simulator';
+import { SolverInput } from './solver-input';
+import { SolverProgress } from './solver-progress';
+import { Node } from './node';
 
-const SOLVER_VERSION = 'v3-fixed-buff-names-no-speculative-bonus';
+/**
+ * Class names (as reported by `action.constructor.name`) of actions, that are only available
+ * through the Cosmic Exploration content and only applies to specific recipes there. These must never be part
+ * of a generated rotation unless the caller explicitly opts in via {@link SolverInput["shouldUseCosmicExploration"]}.
+ */
+const COSMIC_EXPLORATION_ACTION_NAMES = new Set<string>([
+  'MaterialMiracle2',
+  'StellarSteadyHand2'
+]);
 
-export interface SolverInput {
-  Simulation: any;
-  registry: any;
-  ActionType: any;
-  Buff: any;
-  recipe: Craft;
-  stats: CrafterStats;
-  hqIngredients?: { id: number; amount: number }[];
-  beamWidth: number;
-  maxSteps: number;
-  maxComputeMs: number;
-}
+/**
+ * Class names of Specialist-only actions. These require both the crafter's "Specialist"
+ * flag to be active (see {@link CrafterStats.specialist}) AND the caller opting in
+ * via {@link SolverInput["shouldUseSpecialistCommands"]}. Without both conditions, these
+ * actions are excluded from the candidate action pool entirely.
+ */
+const SPECIALIST_ACTION_NAMES = new Set<string>([
+  'CarefulObservation2',
+  'HeartAndSoul2',
+  'QuickInnovation2'
+]);
 
-export interface SolverProgress {
-  depth: number;
-  bestQuality: number;
-  bestSuccess: boolean;
-  qualityComplete: boolean;
-  nodesEvaluated: number;
-}
-
-interface Node {
-  actions: CraftingAction[];
-  result: any;
-  score: number;
-  qualityComplete: boolean;
-  progressComplete: boolean;
-  maxRemainingProgress: number;
-}
-
-const PRUNE_SAFETY_MULTIPLIER = 3;
-const MIN_DEPTH_BEFORE_PRUNING = 4;
-
+/**
+ * Maps a crafting-action class name to the {@link Buff} enum key it activates, so the
+ * solver can detet when re-activating a buff would be redundant (i.e. the buff is 
+ * already active and not close to expiring).)
+ */
 const BUFF_ACTION_TO_BUFF_KEY: Record<string, string> = {
   Veneration2: 'VENERATION',
   Innovation2: 'INNOVATION',
@@ -44,11 +39,23 @@ const BUFF_ACTION_TO_BUFF_KEY: Record<string, string> = {
   WasteNotII2: 'WASTE_NOT_II'
 };
 
+/**
+ * How much larger a branch's worst-case remaining progress estimate must be treated
+ * (as a safety margin) to avoid pruning away branches, that would still succeed once
+ * buffs like Veneration are factored in. This in intentionally generous/optimistic
+ */
+const PRUNE_SAFETY_MULTIPLIER = 3;
+
+/**
+ * Minimum search depth before branch-and-boun pruning kicks in. Early steps are often
+ * spent on buff setup (Muscle Memory, Veneration, etc.) which temporarily produces low/no
+ * progress. Pruning too early would incorrectly discard these necessary setup branches.
+ */
+const MIN_DEPTH_BEFORE_PRUNING = 4;
+
 export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) => void): CraftingAction[] {
   const { Simulation, registry, ActionType, Buff, recipe, stats, hqIngredients, beamWidth, maxSteps, maxComputeMs } = input;
   const startTime = performance.now();
-
-  console.log('[solver-core] VERSION:', SOLVER_VERSION);
 
   const candidateActions: CraftingAction[] = [
     ...registry.getActionsByType(ActionType.PROGRESSION),
