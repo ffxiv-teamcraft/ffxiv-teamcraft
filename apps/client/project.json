@@ -22,7 +22,6 @@
         "main": "apps/client/src/main.ts",
         "polyfills": "apps/client/src/polyfills.ts",
         "tsConfig": "apps/client/tsconfig.app.json",
-        "webWorkerTsConfig": "apps/client/tsconfig.worker.json",
         "assets": [
           "apps/client/src/favicon.ico",
           "apps/client/src/sitemap.xml",
