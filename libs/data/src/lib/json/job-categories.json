@@ -768,10 +768,10 @@
     ]
   },
   "56": {
-    "en": "GLA CNJ THM PLD WHM BLM",
+    "en": "GLA CNJ THM PLD WHM BLM BST",
     "ja": "剣術士 幻術士 呪術士 ナイト 白魔道士 黒魔道士 魔獣使い",
-    "de": "GLA DRU THM PLD WMA SMA",
-    "fr": "GLA ÉLM OCC PLD MBL MNO",
+    "de": "GLA DRU THM PLD WMA SMA BST",
+    "fr": "GLA ÉLM OCC PLD MBL MNO DRE",
     "jobs": [
       "GLA",
       "CNJ",
@@ -782,10 +782,10 @@
     ]
   },
   "57": {
-    "en": "GLA THM PLD BLM",
+    "en": "GLA THM PLD BLM BST",
     "ja": "剣術士 呪術士 ナイト 黒魔道士 魔獣使い",
-    "de": "GLA THM PLD SMA",
-    "fr": "GLA OCC PLD MNO",
+    "de": "GLA THM PLD SMA BST",
+    "fr": "GLA OCC PLD MNO DRE",
     "jobs": [
       "GLA",
       "THM",
@@ -794,10 +794,10 @@
     ]
   },
   "58": {
-    "en": "GLA CNJ PLD WHM",
+    "en": "GLA CNJ PLD WHM BST",
     "ja": "剣術士 幻術士 ナイト 白魔道士 魔獣使い",
-    "de": "GLA DRU PLD WMA",
-    "fr": "GLA ÉLM PLD MBL",
+    "de": "GLA DRU PLD WMA BST",
+    "fr": "GLA ÉLM PLD MBL DRE",
     "jobs": [
       "GLA",
       "CNJ",
@@ -895,10 +895,10 @@
     ]
   },
   "65": {
-    "en": "PGL MNK SAM",
+    "en": "PGL MNK SAM BST",
     "ja": "格闘士 モンク 侍 魔獣使い",
-    "de": "FST MÖN SAM",
-    "fr": "PGL MOI SAM",
+    "de": "FST MÖN SAM BST",
+    "fr": "PGL MOI SAM DRE",
     "jobs": [
       "PGL",
       "MNK",
@@ -1206,10 +1206,10 @@
     ]
   },
   "84": {
-    "en": "PGL LNC MNK DRG SAM RPR",
+    "en": "PGL LNC MNK DRG SAM RPR BST",
     "ja": "格闘士 槍術士 モンク 竜騎士 侍 リーパー 魔獣使い",
-    "de": "FST PIK MÖN DRG SAM SNT",
-    "fr": "PGL HAS MOI DRG SAM FCH",
+    "de": "FST PIK MÖN DRG SAM SNT BST",
+    "fr": "PGL HAS MOI DRG SAM FCH DRE",
     "jobs": [
       "PGL",
       "LNC",
@@ -1463,10 +1463,10 @@
     ]
   },
   "102": {
-    "en": "PGL ROG MNK NIN SAM VPR",
+    "en": "PGL ROG MNK NIN SAM VPR BST",
     "ja": "格闘士 双剣士 モンク 忍者 侍 ヴァイパー 魔獣使い",
-    "de": "FST SCH MÖN NIN SAM VPR",
-    "fr": "PGL SUR MOI NIN SAM VPR",
+    "de": "FST SCH MÖN NIN SAM VPR BST",
+    "fr": "PGL SUR MOI NIN SAM VPR DRE",
     "jobs": [
       "PGL",
       "MNK",

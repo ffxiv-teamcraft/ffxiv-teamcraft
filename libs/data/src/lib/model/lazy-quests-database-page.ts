@@ -13,7 +13,7 @@ export interface LazyQuestsDatabasePage {
   id:            number;
   ja:            string;
   jobCategory:   number;
-  ko:            string;
+  ko?:           string;
   level:         number;
   next:          number[];
   npcs:          number[];

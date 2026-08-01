@@ -1028551,10 +1028551,10 @@
     "defaultTalks": []
   },
   "1057924": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Noirshu",
+    "ja": "ノワーシュ",
+    "de": "Noirshu",
+    "fr": "Noirshu",
     "title": {
       "en": "",
       "ja": "",
@@ -1034557,10 +1034557,10 @@
     "defaultTalks": []
   },
   "1058386": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Genuhanu",
+    "ja": "ゲヌハヌ",
+    "de": "Genuhanu",
+    "fr": "Genuhanu",
     "title": {
       "en": "",
       "ja": "",
@@ -1034570,9 +1034570,9 @@
     "defaultTalks": []
   },
   "1058387": {
-    "en": "アイトケン",
+    "en": "Aitken",
     "ja": "アイトケン",
-    "de": "アイトケン",
+    "de": "Aitken",
     "fr": "Aitken",
     "title": {
       "en": "",
@@ -1034583,9 +1034583,9 @@
     "defaultTalks": []
   },
   "1058388": {
-    "en": "お手伝いの少年",
+    "en": "helpful boy",
     "ja": "お手伝いの少年",
-    "de": "お手伝いの少年",
+    "de": "hilfreich[a] Junge",
     "fr": "jeune garçon volontaire",
     "title": {
       "en": "",
@@ -1034596,9 +1034596,9 @@
     "defaultTalks": []
   },
   "1058389": {
-    "en": "お手伝いの少女",
+    "en": "helpful girl",
     "ja": "お手伝いの少女",
-    "de": "お手伝いの少女",
+    "de": "hilfreich[a] Mädchen",
     "fr": "jeune fille volontaire",
     "title": {
       "en": "",
@@ -1034609,9 +1034609,9 @@
     "defaultTalks": []
   },
   "1058390": {
-    "en": "友だちの少女",
+    "en": "Aitken's friend",
     "ja": "友だちの少女",
-    "de": "友だちの少女",
+    "de": "Aitkens Freundin",
     "fr": "amie d'Aitken",
     "title": {
       "en": "",
@@ -1035129,9 +1035129,9 @@
     "defaultTalks": []
   },
   "1058430": {
-    "en": "アム・ガランジ",
+    "en": "Amh Garanjy",
     "ja": "アム・ガランジ",
-    "de": "アム・ガランジ",
+    "de": "Amh Garanjy",
     "fr": "Amh Garanjy",
     "title": {
       "en": "",
@@ -1035142,22 +1035142,22 @@
     "defaultTalks": []
   },
   "1058431": {
-    "en": "星芒マーケットの案内係",
+    "en": "Starlight Stalls guide",
     "ja": "星芒マーケットの案内係",
-    "de": "星芒マーケットの案内係",
+    "de": "Mitarbeiter[p] der Sternenlicht-Stände",
     "fr": "accompagnateur du marché des étoiles",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
+      "de": "",
       "fr": "Guide"
     },
     "defaultTalks": []
   },
   "1058432": {
-    "en": "アイトケン",
+    "en": "Aitken",
     "ja": "アイトケン",
-    "de": "アイトケン",
+    "de": "Aitken",
     "fr": "Aitken",
     "title": {
       "en": "",
@@ -1035168,9 +1035168,9 @@
     "defaultTalks": []
   },
   "1058433": {
-    "en": "ローレンセン",
+    "en": "Laurenssen",
     "ja": "ローレンセン",
-    "de": "ローレンセン",
+    "de": "Laurenssen",
     "fr": "Laurenssen",
     "title": {
       "en": "",
@@ -1035181,9 +1035181,9 @@
     "defaultTalks": []
   },
   "1058434": {
-    "en": "ベアティヌ",
+    "en": "Beatin",
     "ja": "ベアティヌ",
-    "de": "ベアティヌ",
+    "de": "Beatin",
     "fr": "Beatin",
     "title": {
       "en": "",
@@ -1035194,9 +1035194,9 @@
     "defaultTalks": []
   },
   "1058435": {
-    "en": "ゲヴァ",
+    "en": "Geva",
     "ja": "ゲヴァ",
-    "de": "ゲヴァ",
+    "de": "Geva",
     "fr": "Geva",
     "title": {
       "en": "",
@@ -1035207,9 +1035207,9 @@
     "defaultTalks": []
   },
   "1058436": {
-    "en": "星神の聖人",
+    "en": "Saint of Nymeia",
     "ja": "星神の聖人",
-    "de": "星神の聖人",
+    "de": "Heilig[a] von Nymeia",
     "fr": "saint de Nymeia",
     "title": {
       "en": "",
@@ -1035220,9 +1035220,9 @@
     "defaultTalks": []
   },
   "1058437": {
-    "en": "アイトケン",
+    "en": "Aitken",
     "ja": "アイトケン",
-    "de": "アイトケン",
+    "de": "Aitken",
     "fr": "Aitken",
     "title": {
       "en": "",
@@ -1035233,9 +1035233,9 @@
     "defaultTalks": []
   },
   "1058438": {
-    "en": "お手伝いの少年",
+    "en": "helpful boy",
     "ja": "お手伝いの少年",
-    "de": "お手伝いの少年",
+    "de": "hilfreich[a] Junge",
     "fr": "jeune garçon volontaire",
     "title": {
       "en": "",
@@ -1035246,9 +1035246,9 @@
     "defaultTalks": []
   },
   "1058439": {
-    "en": "お手伝いの少女",
+    "en": "helpful girl",
     "ja": "お手伝いの少女",
-    "de": "お手伝いの少女",
+    "de": "hilfreich[a] Mädchen",
     "fr": "jeune fille volontaire",
     "title": {
       "en": "",
@@ -1035259,9 +1035259,9 @@
     "defaultTalks": []
   },
   "1058440": {
-    "en": "おっとりした星芒祭実行委員",
+    "en": "saturnine Starlight celebrant",
     "ja": "おっとりした星芒祭実行委員",
-    "de": "おっとりした星芒祭実行委員",
+    "de": "zurückhaltend[a] Klein[a] Helferlein",
     "fr": "disciple du saint calme",
     "title": {
       "en": "",
@@ -1035272,9 +1035272,9 @@
     "defaultTalks": []
   },
   "1058441": {
-    "en": "ローレンセン",
+    "en": "Laurenssen",
     "ja": "ローレンセン",
-    "de": "ローレンセン",
+    "de": "Laurenssen",
     "fr": "Laurenssen",
     "title": {
       "en": "",
@@ -1035285,9 +1035285,9 @@
     "defaultTalks": []
   },
   "1058442": {
-    "en": "ローレンセン",
+    "en": "Laurenssen",
     "ja": "ローレンセン",
-    "de": "ローレンセン",
+    "de": "Laurenssen",
     "fr": "Laurenssen",
     "title": {
       "en": "",
@@ -1035298,9 +1035298,9 @@
     "defaultTalks": []
   },
   "1058443": {
-    "en": "アイトケン",
+    "en": "Aitken",
     "ja": "アイトケン",
-    "de": "アイトケン",
+    "de": "Aitken",
     "fr": "Aitken",
     "title": {
       "en": "",
@@ -1035311,9 +1035311,9 @@
     "defaultTalks": []
   },
   "1058444": {
-    "en": "星神の聖人",
+    "en": "Saint of Nymeia",
     "ja": "星神の聖人",
-    "de": "星神の聖人",
+    "de": "Heilig[a] von Nymeia",
     "fr": "saint de Nymeia",
     "title": {
       "en": "",
@@ -1035350,9 +1035350,9 @@
     "defaultTalks": []
   },
   "1058447": {
-    "en": "お手伝いの少年",
+    "en": "helpful boy",
     "ja": "お手伝いの少年",
-    "de": "お手伝いの少年",
+    "de": "hilfreich[a] Junge",
     "fr": "jeune garçon volontaire",
     "title": {
       "en": "",
@@ -1035363,9 +1035363,9 @@
     "defaultTalks": []
   },
   "1058448": {
-    "en": "お手伝いの少女",
+    "en": "helpful girl",
     "ja": "お手伝いの少女",
-    "de": "お手伝いの少女",
+    "de": "hilfreich[a] Mädchen",
     "fr": "jeune fille volontaire",
     "title": {
       "en": "",
@@ -1035376,9 +1035376,9 @@
     "defaultTalks": []
   },
   "1058449": {
-    "en": "アイトケン",
+    "en": "Aitken",
     "ja": "アイトケン",
-    "de": "アイトケン",
+    "de": "Aitken",
     "fr": "Aitken",
     "title": {
       "en": "",
@@ -1035389,9 +1035389,9 @@
     "defaultTalks": []
   },
   "1058450": {
-    "en": "友だちの少女",
+    "en": "Aitken's friend",
     "ja": "友だちの少女",
-    "de": "友だちの少女",
+    "de": "Aitkens Freundin",
     "fr": "amie d'Aitken",
     "title": {
       "en": "",
@@ -1035402,9 +1035402,9 @@
     "defaultTalks": []
   },
   "1058451": {
-    "en": "興奮気味の少年",
+    "en": "excitable boy",
     "ja": "興奮気味の少年",
-    "de": "興奮気味の少年",
+    "de": "aufgeregt[a] Junge",
     "fr": "garçon tout excité",
     "title": {
       "en": "",
@@ -1035415,9 +1035415,9 @@
     "defaultTalks": []
   },
   "1058452": {
-    "en": "冷静な様子の少年",
+    "en": "unruffled girl",
     "ja": "冷静な様子の少年",
-    "de": "冷静な様子の少年",
+    "de": "gelassen[a] Mädchen",
     "fr": "garçon conservant son sang-froid",
     "title": {
       "en": "",
@@ -1035428,9 +1035428,9 @@
     "defaultTalks": []
   },
   "1058453": {
-    "en": "大人しそうな少女",
+    "en": "placid girl",
     "ja": "大人しそうな少女",
-    "de": "大人しそうな少女",
+    "de": "ruhig[a] Mädchen",
     "fr": "fillette sage",
     "title": {
       "en": "",
@@ -1035441,9 +1035441,9 @@
     "defaultTalks": []
   },
   "1058454": {
-    "en": "ローレンセン",
+    "en": "Laurenssen",
     "ja": "ローレンセン",
-    "de": "ローレンセン",
+    "de": "Laurenssen",
     "fr": "Laurenssen",
     "title": {
       "en": "",
@@ -1035454,9 +1035454,9 @@
     "defaultTalks": []
   },
   "1058455": {
-    "en": "アイトケン",
+    "en": "Aitken",
     "ja": "アイトケン",
-    "de": "アイトケン",
+    "de": "Aitken",
     "fr": "Aitken",
     "title": {
       "en": "",
@@ -1035467,9 +1035467,9 @@
     "defaultTalks": []
   },
   "1058456": {
-    "en": "友だちの少女",
+    "en": "Aitken's friend",
     "ja": "友だちの少女",
-    "de": "友だちの少女",
+    "de": "Aitkens Freundin",
     "fr": "amie d'Aitken",
     "title": {
       "en": "",
@@ -1035480,101 +1035480,101 @@
     "defaultTalks": []
   },
   "1058457": {
-    "en": "星芒祭実行委員",
+    "en": "Starlight supplier",
     "ja": "星芒祭実行委員",
-    "de": "星芒祭実行委員",
+    "de": "Klein[a] Helferlein",
     "fr": "disciple du saint",
     "title": {
-      "en": "SEASONAL",
+      "en": "",
       "ja": "SEASONAL",
-      "de": "SEASONAL",
+      "de": "Sternenlichtfest",
       "fr": "Saisonnière"
     },
     "defaultTalks": []
   },
   "1058458": {
-    "en": "星芒祭実行委員",
+    "en": "Starlight supplier",
     "ja": "星芒祭実行委員",
-    "de": "星芒祭実行委員",
+    "de": "Klein[a] Helferlein",
     "fr": "disciple du saint",
     "title": {
-      "en": "SEASONAL",
+      "en": "",
       "ja": "SEASONAL",
-      "de": "SEASONAL",
+      "de": "Sternenlichtfest",
       "fr": "Saisonnière"
     },
     "defaultTalks": []
   },
   "1058459": {
-    "en": "雑貨屋",
+    "en": "sundries vendor",
     "ja": "雑貨屋",
-    "de": "雑貨屋",
+    "de": "Krämer",
     "fr": "quincailler",
     "title": {
-      "en": "SHOP",
+      "en": "",
       "ja": "SHOP",
-      "de": "SHOP",
+      "de": "",
       "fr": "Objets"
     },
     "defaultTalks": []
   },
   "1058460": {
-    "en": "料理屋",
+    "en": "food vendor",
     "ja": "料理屋",
-    "de": "料理屋",
+    "de": "Lebensmittelhändler",
     "fr": "cuisinier",
     "title": {
-      "en": "SHOP",
+      "en": "",
       "ja": "SHOP",
-      "de": "SHOP",
+      "de": "",
       "fr": "Objets"
     },
     "defaultTalks": []
   },
   "1058461": {
-    "en": "花屋",
+    "en": "flower vendor",
     "ja": "花屋",
-    "de": "花屋",
+    "de": "Blumenhändlerin",
     "fr": "fleuriste",
     "title": {
-      "en": "SHOP",
+      "en": "",
       "ja": "SHOP",
-      "de": "SHOP",
+      "de": "",
       "fr": "Objets"
     },
     "defaultTalks": []
   },
   "1058462": {
-    "en": "星芒祭実行委員",
+    "en": "Starlight supplier",
     "ja": "星芒祭実行委員",
-    "de": "星芒祭実行委員",
+    "de": "Klein[a] Helferlein",
     "fr": "disciple du saint",
     "title": {
-      "en": "SEASONAL",
+      "en": "",
       "ja": "SEASONAL",
-      "de": "SEASONAL",
+      "de": "Sternenlichtfest",
       "fr": "Saisonnière"
     },
     "defaultTalks": []
   },
   "1058463": {
-    "en": "星芒祭実行委員",
+    "en": "Starlight supplier",
     "ja": "星芒祭実行委員",
-    "de": "星芒祭実行委員",
+    "de": "Klein[a] Helferlein",
     "fr": "disciple du saint",
     "title": {
-      "en": "SEASONAL",
+      "en": "",
       "ja": "SEASONAL",
-      "de": "SEASONAL",
+      "de": "Sternenlichtfest",
       "fr": "Saisonnière"
     },
     "defaultTalks": []
   },
   "1058464": {
-    "en": "星芒祭の広報係",
+    "en": "Starlight Celebration crier",
     "ja": "星芒祭の広報係",
-    "de": "星芒祭の広報係",
-    "fr": "démarcheuse de la fête des étoiles",
+    "de": "Sternenlichtfest-Verwalter",
+    "fr": "démarcheur de la fête des étoiles",
     "title": {
       "en": "",
       "ja": "",
@@ -1035584,10 +1035584,10 @@
     "defaultTalks": []
   },
   "1058465": {
-    "en": "星芒祭の広報係",
+    "en": "Starlight Celebration crier",
     "ja": "星芒祭の広報係",
-    "de": "星芒祭の広報係",
-    "fr": "démarcheuse de la fête des étoiles",
+    "de": "Sternenlichtfest-Verwalter",
+    "fr": "démarcheur de la fête des étoiles",
     "title": {
       "en": "",
       "ja": "",
@@ -1035597,10 +1035597,10 @@
     "defaultTalks": []
   },
   "1058466": {
-    "en": "星芒祭の広報係",
+    "en": "Starlight Celebration crier",
     "ja": "星芒祭の広報係",
-    "de": "星芒祭の広報係",
-    "fr": "démarcheuse de la fête des étoiles",
+    "de": "Sternenlichtfest-Verwalter",
+    "fr": "démarcheur de la fête des étoiles",
     "title": {
       "en": "",
       "ja": "",
@@ -1035610,9 +1035610,9 @@
     "defaultTalks": []
   },
   "1058467": {
-    "en": "ローレンセン",
+    "en": "Laurenssen",
     "ja": "ローレンセン",
-    "de": "ローレンセン",
+    "de": "Laurenssen",
     "fr": "Laurenssen",
     "title": {
       "en": "",
@@ -1035623,14 +1035623,14 @@
     "defaultTalks": []
   },
   "1058468": {
-    "en": "星芒マーケットの案内係",
+    "en": "Starlight Stalls guide",
     "ja": "星芒マーケットの案内係",
-    "de": "星芒マーケットの案内係",
+    "de": "Mitarbeiter[p] der Sternenlicht-Stände",
     "fr": "accompagnateur du marché des étoiles",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
+      "de": "",
       "fr": "Guide"
     },
     "defaultTalks": []
@@ -1035662,9 +1035662,9 @@
     "defaultTalks": []
   },
   "1058471": {
-    "en": "パメカ",
+    "en": "Pameka",
     "ja": "パメカ",
-    "de": "パメカ",
+    "de": "Pameka",
     "fr": "Pameka",
     "title": {
       "en": "",
@@ -1035675,9 +1035675,9 @@
     "defaultTalks": []
   },
   "1058472": {
-    "en": "デモウェニ",
+    "en": "Zemoweni",
     "ja": "デモウェニ",
-    "de": "デモウェニ",
+    "de": "Zemoweni",
     "fr": "Zemoweni",
     "title": {
       "en": "",
@@ -1035688,9 +1035688,9 @@
     "defaultTalks": []
   },
   "1058473": {
-    "en": "ローペリ",
+    "en": "Ropli",
     "ja": "ローペリ",
-    "de": "ローペリ",
+    "de": "Ropli",
     "fr": "Ropli",
     "title": {
       "en": "",
@@ -1035701,9 +1035701,9 @@
     "defaultTalks": []
   },
   "1058474": {
-    "en": "ローレンセン",
+    "en": "Laurenssen",
     "ja": "ローレンセン",
-    "de": "ローレンセン",
+    "de": "Laurenssen",
     "fr": "Laurenssen",
     "title": {
       "en": "",
@@ -1035714,9 +1035714,9 @@
     "defaultTalks": []
   },
   "1058475": {
-    "en": "星神の聖人",
+    "en": "Saint of Nymeia",
     "ja": "星神の聖人",
-    "de": "星神の聖人",
+    "de": "Heilig[a] von Nymeia",
     "fr": "saint de Nymeia",
     "title": {
       "en": "",
@@ -1035727,9 +1035727,9 @@
     "defaultTalks": []
   },
   "1058476": {
-    "en": "ゲヴァ",
+    "en": "Geva",
     "ja": "ゲヴァ",
-    "de": "ゲヴァ",
+    "de": "Geva",
     "fr": "Geva",
     "title": {
       "en": "",
@@ -1035740,9 +1035740,9 @@
     "defaultTalks": []
   },
   "1058477": {
-    "en": "ベアティヌ",
+    "en": "Beatin",
     "ja": "ベアティヌ",
-    "de": "ベアティヌ",
+    "de": "Beatin",
     "fr": "Beatin",
     "title": {
       "en": "",
@@ -1035948,10 +1035948,10 @@
     "defaultTalks": []
   },
   "1058493": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Zelihali",
+    "ja": "ゼリハリ",
+    "de": "Zelihali",
+    "fr": "Zelihali",
     "title": {
       "en": "",
       "ja": "",
@@ -1035961,10 +1035961,10 @@
     "defaultTalks": []
   },
   "1058494": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Liplu",
+    "ja": "リープル",
+    "de": "Liplu",
+    "fr": "Liplu",
     "title": {
       "en": "",
       "ja": "",
@@ -1035974,10 +1035974,10 @@
     "defaultTalks": []
   },
   "1058495": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ryoqor Terteh",
+    "ja": "リョコー・テーテ",
+    "de": "Ryoqor Terteh",
+    "fr": "Ryoqor Terteh",
     "title": {
       "en": "",
       "ja": "",
@@ -1035987,10 +1035987,10 @@
     "defaultTalks": []
   },
   "1058496": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nopli",
+    "ja": "ノーペリ",
+    "de": "Nopli",
+    "fr": "Nopli",
     "title": {
       "en": "",
       "ja": "",
@@ -1036000,10 +1036000,10 @@
     "defaultTalks": []
   },
   "1058497": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Murfurlur",
+    "ja": "ムーフールー",
+    "de": "Murfurlur",
+    "fr": "Murfurlur",
     "title": {
       "en": "",
       "ja": "",
@@ -1036013,10 +1036013,10 @@
     "defaultTalks": []
   },
   "1058498": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ruvoll Ja",
+    "ja": "ルヴォージャ",
+    "de": "Ruvoll Ja",
+    "fr": "Ruvoll Ja",
     "title": {
       "en": "",
       "ja": "",
@@ -1036026,10 +1036026,10 @@
     "defaultTalks": []
   },
   "1058499": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ty'at Roh",
+    "ja": "チャタロー",
+    "de": "Ty'at Roh",
+    "fr": "Ty'at Roh",
     "title": {
       "en": "",
       "ja": "",
@@ -1036039,10 +1036039,10 @@
     "defaultTalks": []
   },
   "1058500": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Anggir",
+    "ja": "アンギル",
+    "de": "Anggir",
+    "fr": "Anggir",
     "title": {
       "en": "",
       "ja": "",
@@ -1036052,10 +1036052,10 @@
     "defaultTalks": []
   },
   "1058501": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bol Tst'ei",
+    "ja": "ボツテイ",
+    "de": "Bol Tst'ei",
+    "fr": "Bol Tst'ei",
     "title": {
       "en": "",
       "ja": "",
@@ -1036065,10 +1036065,10 @@
     "defaultTalks": []
   },
   "1058502": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Gotoll Ja",
+    "ja": "ゴトージャ",
+    "de": "Gotoll Ja",
+    "fr": "Gotoll Ja",
     "title": {
       "en": "",
       "ja": "",
@@ -1036078,10 +1036078,10 @@
     "defaultTalks": []
   },
   "1058503": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Genuhanu",
+    "ja": "ゲヌハヌ",
+    "de": "Genuhanu",
+    "fr": "Genuhanu",
     "title": {
       "en": "",
       "ja": "",
@@ -1036091,10 +1036091,10 @@
     "defaultTalks": []
   },
   "1058504": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Liplu",
+    "ja": "リープル",
+    "de": "Liplu",
+    "fr": "Liplu",
     "title": {
       "en": "",
       "ja": "",
@@ -1036104,10 +1036104,10 @@
     "defaultTalks": []
   },
   "1058505": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Fahrafahr",
+    "ja": "ファーラファー",
+    "de": "Fahrafahr",
+    "fr": "Fahrafahr",
     "title": {
       "en": "",
       "ja": "",
@@ -1036117,10 +1036117,10 @@
     "defaultTalks": []
   },
   "1058506": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nopli",
+    "ja": "ノーペリ",
+    "de": "Nopli",
+    "fr": "Nopli",
     "title": {
       "en": "",
       "ja": "",
@@ -1036130,10 +1036130,10 @@
     "defaultTalks": []
   },
   "1058507": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Murfurlur",
+    "ja": "ムーフールー",
+    "de": "Murfurlur",
+    "fr": "Murfurlur",
     "title": {
       "en": "",
       "ja": "",
@@ -1036143,10 +1036143,10 @@
     "defaultTalks": []
   },
   "1058508": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ruvoll Ja",
+    "ja": "ルヴォージャ",
+    "de": "Ruvoll Ja",
+    "fr": "Ruvoll Ja",
     "title": {
       "en": "",
       "ja": "",
@@ -1036156,10 +1036156,10 @@
     "defaultTalks": []
   },
   "1058509": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Anggir",
+    "ja": "アンギル",
+    "de": "Anggir",
+    "fr": "Anggir",
     "title": {
       "en": "",
       "ja": "",
@@ -1036169,10 +1036169,10 @@
     "defaultTalks": []
   },
   "1058510": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Liplu",
+    "ja": "リープル",
+    "de": "Liplu",
+    "fr": "Liplu",
     "title": {
       "en": "",
       "ja": "",
@@ -1036182,10 +1036182,10 @@
     "defaultTalks": []
   },
   "1058511": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Fahrafahr",
+    "ja": "ファーラファー",
+    "de": "Fahrafahr",
+    "fr": "Fahrafahr",
     "title": {
       "en": "",
       "ja": "",
@@ -1036195,10 +1036195,10 @@
     "defaultTalks": []
   },
   "1058512": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nopli",
+    "ja": "ノーペリ",
+    "de": "Nopli",
+    "fr": "Nopli",
     "title": {
       "en": "",
       "ja": "",
@@ -1036208,10 +1036208,10 @@
     "defaultTalks": []
   },
   "1058513": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Murfurlur",
+    "ja": "ムーフールー",
+    "de": "Murfurlur",
+    "fr": "Murfurlur",
     "title": {
       "en": "",
       "ja": "",
@@ -1036221,10 +1036221,10 @@
     "defaultTalks": []
   },
   "1058514": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Anggir",
+    "ja": "アンギル",
+    "de": "Anggir",
+    "fr": "Anggir",
     "title": {
       "en": "",
       "ja": "",
@@ -1036234,10 +1036234,10 @@
     "defaultTalks": []
   },
   "1058515": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ruvoll Ja",
+    "ja": "ルヴォージャ",
+    "de": "Ruvoll Ja",
+    "fr": "Ruvoll Ja",
     "title": {
       "en": "",
       "ja": "",
@@ -1036328,7 +1036328,7 @@
     "en": "yowling cat",
     "ja": "ふくよかな野良ネコ",
     "de": "maunzend[a] Katze",
-    "fr": "chat rondelet",
+    "fr": "minette rondelette",
     "title": {
       "en": "",
       "ja": "",
@@ -1037404,9 +1037404,9 @@
     "defaultTalks": []
   },
   "1058605": {
-    "en": "ベアティヌ",
+    "en": "Beatin",
     "ja": "ベアティヌ",
-    "de": "ベアティヌ",
+    "de": "Beatin",
     "fr": "Beatin",
     "title": {
       "en": "",
@@ -1037417,9 +1037417,9 @@
     "defaultTalks": []
   },
   "1058606": {
-    "en": "ゲヴァ",
+    "en": "Geva",
     "ja": "ゲヴァ",
-    "de": "ゲヴァ",
+    "de": "Geva",
     "fr": "Geva",
     "title": {
       "en": "",
@@ -1037443,10 +1037443,10 @@
     "defaultTalks": []
   },
   "1058608": {
-    "en": "パッティン",
+    "en": "Pattin",
     "ja": "パッティン",
-    "de": "パッティン",
-    "fr": "パッティン",
+    "de": "Pattin",
+    "fr": "Pattin",
     "title": {
       "en": "",
       "ja": "",
@@ -1037456,10 +1037456,10 @@
     "defaultTalks": []
   },
   "1058609": {
-    "en": "ベア",
+    "en": "Bea",
     "ja": "ベア",
-    "de": "ベア",
-    "fr": "ベア",
+    "de": "Bea",
+    "fr": "Bea",
     "title": {
       "en": "",
       "ja": "",
@@ -1037469,10 +1037469,10 @@
     "defaultTalks": []
   },
   "1058610": {
-    "en": "ドッド",
+    "en": "Dodd",
     "ja": "ドッド",
-    "de": "ドッド",
-    "fr": "ドッド",
+    "de": "Dodd",
+    "fr": "Dodd",
     "title": {
       "en": "",
       "ja": "",
@@ -1037482,10 +1037482,10 @@
     "defaultTalks": []
   },
   "1058611": {
-    "en": "熱心な冒険者",
+    "en": "adamant adventurer",
     "ja": "熱心な冒険者",
-    "de": "熱心な冒険者",
-    "fr": "熱心な冒険者",
+    "de": "beharrlich[a] Abenteurerin",
+    "fr": "aventurière enthousiaste",
     "title": {
       "en": "",
       "ja": "",
@@ -1037495,10 +1037495,10 @@
     "defaultTalks": []
   },
   "1058612": {
-    "en": "浮かれた冒険者",
+    "en": "ebullient adventurer",
     "ja": "浮かれた冒険者",
-    "de": "浮かれた冒険者",
-    "fr": "浮かれた冒険者",
+    "de": "überschwänglich[a] Abenteurer",
+    "fr": "aventurier extatique",
     "title": {
       "en": "",
       "ja": "",
@@ -1037716,10 +1037716,10 @@
     "defaultTalks": []
   },
   "1058629": {
-    "en": "熱心な冒険者",
+    "en": "adamant adventurer",
     "ja": "熱心な冒険者",
-    "de": "熱心な冒険者",
-    "fr": "熱心な冒険者",
+    "de": "beharrlich[a] Abenteurerin",
+    "fr": "aventurière enthousiaste",
     "title": {
       "en": "",
       "ja": "",
@@ -1037729,10 +1037729,10 @@
     "defaultTalks": []
   },
   "1058630": {
-    "en": "浮かれた冒険者",
+    "en": "ebullient adventurer",
     "ja": "浮かれた冒険者",
-    "de": "浮かれた冒険者",
-    "fr": "浮かれた冒険者",
+    "de": "überschwänglich[a] Abenteurer",
+    "fr": "aventurier extatique",
     "title": {
       "en": "",
       "ja": "",
@@ -1037742,10 +1037742,10 @@
     "defaultTalks": []
   },
   "1058631": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Noirshu",
+    "ja": "ノワーシュ",
+    "de": "Noirshu",
+    "fr": "Noirshu",
     "title": {
       "en": "",
       "ja": "",
@@ -1037755,10 +1037755,10 @@
     "defaultTalks": []
   },
   "1058632": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Mymond",
+    "ja": "マイモンド",
+    "de": "Mymond",
+    "fr": "Mymond",
     "title": {
       "en": "",
       "ja": "",
@@ -1037768,10 +1037768,10 @@
     "defaultTalks": []
   },
   "1058633": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildiboiled",
+    "ja": "ヒルディボイルド",
+    "de": "Hildibründ",
+    "fr": "Super Hildidur",
     "title": {
       "en": "",
       "ja": "",
@@ -1037781,10 +1037781,10 @@
     "defaultTalks": []
   },
   "1058634": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1037794,10 +1037794,10 @@
     "defaultTalks": []
   },
   "1058635": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1037846,10 +1037846,10 @@
     "defaultTalks": []
   },
   "1058639": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Kacia",
+    "ja": "カシア",
+    "de": "Kacia",
+    "fr": "Kacia",
     "title": {
       "en": "",
       "ja": "",
@@ -1037937,10 +1037937,10 @@
     "defaultTalks": []
   },
   "1058646": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Saralla",
+    "ja": "サララ",
+    "de": "Saralla",
+    "fr": "Saralla",
     "title": {
       "en": "",
       "ja": "",
@@ -1037950,10 +1037950,10 @@
     "defaultTalks": []
   },
   "1058647": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Carnelian",
+    "ja": "カーネリアン",
+    "de": "Carnelian",
+    "fr": "Carnelian",
     "title": {
       "en": "",
       "ja": "",
@@ -1037976,10 +1037976,10 @@
     "defaultTalks": []
   },
   "1058649": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Circine",
+    "ja": "サーカイン",
+    "de": "Circine",
+    "fr": "Circine",
     "title": {
       "en": "",
       "ja": "",
@@ -1038314,23 +1038314,23 @@
     "defaultTalks": []
   },
   "1058675": {
-    "en": "守護天節の売り子",
+    "en": "bespectacled peddler",
     "ja": "守護天節の売り子",
-    "de": "守護天節の売り子",
-    "fr": "守護天節の売り子",
+    "de": "Allerschutzheiligen-Verkäuferin",
+    "fr": "vendeuse de la Veillée des saints",
     "title": {
-      "en": "SEASONAL",
+      "en": "All Saints' Wake Vendor",
       "ja": "SEASONAL",
-      "de": "SEASONAL",
-      "fr": "SEASONAL"
+      "de": "Saisonales Geschäft",
+      "fr": "Saisonnière"
     },
     "defaultTalks": []
   },
   "1058676": {
-    "en": "守護天節の広報係",
+    "en": "All Saints' Wake crier",
     "ja": "守護天節の広報係",
-    "de": "守護天節の広報係",
-    "fr": "守護天節の広報係",
+    "de": "Allerschutzheiligen-Ausrufer",
+    "fr": "démarcheur de la Veillée des saints",
     "title": {
       "en": "",
       "ja": "",
@@ -1038340,10 +1038340,10 @@
     "defaultTalks": []
   },
   "1058677": {
-    "en": "守護天節の広報係",
+    "en": "All Saints' Wake crier",
     "ja": "守護天節の広報係",
-    "de": "守護天節の広報係",
-    "fr": "守護天節の広報係",
+    "de": "Allerschutzheiligen-Ausrufer",
+    "fr": "démarcheur de la Veillée des saints",
     "title": {
       "en": "",
       "ja": "",
@@ -1038353,10 +1038353,10 @@
     "defaultTalks": []
   },
   "1058678": {
-    "en": "守護天節の広報係",
+    "en": "All Saints' Wake crier",
     "ja": "守護天節の広報係",
-    "de": "守護天節の広報係",
-    "fr": "守護天節の広報係",
+    "de": "Allerschutzheiligen-Ausrufer",
+    "fr": "démarcheur de la Veillée des saints",
     "title": {
       "en": "",
       "ja": "",
@@ -1038366,36 +1038366,36 @@
     "defaultTalks": []
   },
   "1058679": {
-    "en": "不思議な案内人",
+    "en": "unusual usher",
     "ja": "不思議な案内人",
-    "de": "不思議な案内人",
-    "fr": "不思議な案内人",
+    "de": "ominös[a] Bedienstet[a]",
+    "fr": "guide étrange",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
-      "fr": "GATEKEEPER"
+      "de": "",
+      "fr": "Guide"
     },
     "defaultTalks": []
   },
   "1058680": {
-    "en": "廃墓所の案内人",
+    "en": "grave guide",
     "ja": "廃墓所の案内人",
-    "de": "廃墓所の案内人",
-    "fr": "廃墓所の案内人",
+    "de": "Totengräber",
+    "fr": "gardien du cimetière",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
-      "fr": "GATEKEEPER"
+      "de": "",
+      "fr": "Gardien"
     },
     "defaultTalks": []
   },
   "1058681": {
-    "en": "パンプキンヘッドの女",
+    "en": "pumpkin-headed apparition",
     "ja": "パンプキンヘッドの女",
-    "de": "パンプキンヘッドの女",
-    "fr": "パンプキンヘッドの女",
+    "de": "Kürbishexe",
+    "fr": "femme à tête de citrouille",
     "title": {
       "en": "",
       "ja": "",
@@ -1038405,10 +1038405,10 @@
     "defaultTalks": []
   },
   "1058682": {
-    "en": "パンプキンヘッドの女",
+    "en": "pumpkin-headed apparition",
     "ja": "パンプキンヘッドの女",
-    "de": "パンプキンヘッドの女",
-    "fr": "パンプキンヘッドの女",
+    "de": "Kürbishexe",
+    "fr": "femme à tête de citrouille",
     "title": {
       "en": "",
       "ja": "",
@@ -1038418,10 +1038418,10 @@
     "defaultTalks": []
   },
   "1058683": {
-    "en": "熱心な冒険者",
+    "en": "adamant adventurer",
     "ja": "熱心な冒険者",
-    "de": "熱心な冒険者",
-    "fr": "熱心な冒険者",
+    "de": "beharrlich[a] Abenteurerin",
+    "fr": "aventurière enthousiaste",
     "title": {
       "en": "",
       "ja": "",
@@ -1038431,10 +1038431,10 @@
     "defaultTalks": []
   },
   "1058684": {
-    "en": "浮かれた冒険者",
+    "en": "ebullient adventurer",
     "ja": "浮かれた冒険者",
-    "de": "浮かれた冒険者",
-    "fr": "浮かれた冒険者",
+    "de": "überschwänglich[a] Abenteurer",
+    "fr": "aventurier extatique",
     "title": {
       "en": "",
       "ja": "",
@@ -1038444,10 +1038444,10 @@
     "defaultTalks": []
   },
   "1058685": {
-    "en": "パンプキンヘッドの女",
+    "en": "pumpkin-headed apparition",
     "ja": "パンプキンヘッドの女",
-    "de": "パンプキンヘッドの女",
-    "fr": "パンプキンヘッドの女",
+    "de": "Kürbishexe",
+    "fr": "femme à tête de citrouille",
     "title": {
       "en": "",
       "ja": "",
@@ -1038457,10 +1038457,10 @@
     "defaultTalks": []
   },
   "1058686": {
-    "en": "パッティン",
+    "en": "Pattin",
     "ja": "パッティン",
-    "de": "パッティン",
-    "fr": "パッティン",
+    "de": "Pattin",
+    "fr": "Pattin",
     "title": {
       "en": "",
       "ja": "",
@@ -1038470,10 +1038470,10 @@
     "defaultTalks": []
   },
   "1058687": {
-    "en": "ベア",
+    "en": "Bea",
     "ja": "ベア",
-    "de": "ベア",
-    "fr": "ベア",
+    "de": "Bea",
+    "fr": "Bea",
     "title": {
       "en": "",
       "ja": "",
@@ -1038483,10 +1038483,10 @@
     "defaultTalks": []
   },
   "1058688": {
-    "en": "ドッド",
+    "en": "Dodd",
     "ja": "ドッド",
-    "de": "ドッド",
-    "fr": "ドッド",
+    "de": "Dodd",
+    "fr": "Dodd",
     "title": {
       "en": "",
       "ja": "",
@@ -1038496,23 +1038496,23 @@
     "defaultTalks": []
   },
   "1058689": {
-    "en": "廃墓所の案内人",
+    "en": "grave guide",
     "ja": "廃墓所の案内人",
-    "de": "廃墓所の案内人",
-    "fr": "廃墓所の案内人",
+    "de": "Totengräber",
+    "fr": "gardien du cimetière",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
-      "fr": "GATEKEEPER"
+      "de": "",
+      "fr": "Gardien"
     },
     "defaultTalks": []
   },
   "1058690": {
-    "en": "ベア",
+    "en": "Bea",
     "ja": "ベア",
-    "de": "ベア",
-    "fr": "ベア",
+    "de": "Bea",
+    "fr": "Bea",
     "title": {
       "en": "",
       "ja": "",
@@ -1038522,10 +1038522,10 @@
     "defaultTalks": []
   },
   "1058691": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038535,10 +1038535,10 @@
     "defaultTalks": []
   },
   "1058692": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038548,10 +1038548,10 @@
     "defaultTalks": []
   },
   "1058693": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038561,10 +1038561,10 @@
     "defaultTalks": []
   },
   "1058694": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038574,10 +1038574,10 @@
     "defaultTalks": []
   },
   "1058695": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038587,10 +1038587,10 @@
     "defaultTalks": []
   },
   "1058696": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038600,10 +1038600,10 @@
     "defaultTalks": []
   },
   "1058697": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038613,10 +1038613,10 @@
     "defaultTalks": []
   },
   "1058698": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038626,10 +1038626,10 @@
     "defaultTalks": []
   },
   "1058699": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038639,10 +1038639,10 @@
     "defaultTalks": []
   },
   "1058700": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038652,10 +1038652,10 @@
     "defaultTalks": []
   },
   "1058701": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038665,10 +1038665,10 @@
     "defaultTalks": []
   },
   "1058702": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038678,10 +1038678,10 @@
     "defaultTalks": []
   },
   "1058703": {
-    "en": "怪しげな着ぐるみ",
+    "en": "curious costume",
     "ja": "怪しげな着ぐるみ",
-    "de": "怪しげな着ぐるみ",
-    "fr": "怪しげな着ぐるみ",
+    "de": "kurios[a] Kostüm",
+    "fr": "costume étrange",
     "title": {
       "en": "",
       "ja": "",
@@ -1038691,10 +1038691,10 @@
     "defaultTalks": []
   },
   "1058704": {
-    "en": "ドッド",
+    "en": "Dodd",
     "ja": "ドッド",
-    "de": "ドッド",
-    "fr": "ドッド",
+    "de": "Dodd",
+    "fr": "Dodd",
     "title": {
       "en": "",
       "ja": "",
@@ -1038704,10 +1038704,10 @@
     "defaultTalks": []
   },
   "1058705": {
-    "en": "パッティン",
+    "en": "Pattin",
     "ja": "パッティン",
-    "de": "パッティン",
-    "fr": "パッティン",
+    "de": "Pattin",
+    "fr": "Pattin",
     "title": {
       "en": "",
       "ja": "",
@@ -1038717,10 +1038717,10 @@
     "defaultTalks": []
   },
   "1058706": {
-    "en": "ベア",
+    "en": "Bea",
     "ja": "ベア",
-    "de": "ベア",
-    "fr": "ベア",
+    "de": "Bea",
+    "fr": "Bea",
     "title": {
       "en": "",
       "ja": "",
@@ -1038730,10 +1038730,10 @@
     "defaultTalks": []
   },
   "1058707": {
-    "en": "熱心な冒険者",
+    "en": "adamant adventurer",
     "ja": "熱心な冒険者",
-    "de": "熱心な冒険者",
-    "fr": "熱心な冒険者",
+    "de": "beharrlich[a] Abenteurerin",
+    "fr": "aventurière enthousiaste",
     "title": {
       "en": "",
       "ja": "",
@@ -1038743,10 +1038743,10 @@
     "defaultTalks": []
   },
   "1058708": {
-    "en": "浮かれた冒険者",
+    "en": "ebullient adventurer",
     "ja": "浮かれた冒険者",
-    "de": "浮かれた冒険者",
-    "fr": "浮かれた冒険者",
+    "de": "überschwänglich[a] Abenteurer",
+    "fr": "aventurier extatique",
     "title": {
       "en": "",
       "ja": "",
@@ -1038756,10 +1038756,10 @@
     "defaultTalks": []
   },
   "1058709": {
-    "en": "熱心な冒険者",
+    "en": "adamant adventurer",
     "ja": "熱心な冒険者",
-    "de": "熱心な冒険者",
-    "fr": "熱心な冒険者",
+    "de": "beharrlich[a] Abenteurerin",
+    "fr": "aventurière enthousiaste",
     "title": {
       "en": "",
       "ja": "",
@@ -1038769,10 +1038769,10 @@
     "defaultTalks": []
   },
   "1058710": {
-    "en": "浮かれた冒険者",
+    "en": "ebullient adventurer",
     "ja": "浮かれた冒険者",
-    "de": "浮かれた冒険者",
-    "fr": "浮かれた冒険者",
+    "de": "überschwänglich[a] Abenteurer",
+    "fr": "aventurier extatique",
     "title": {
       "en": "",
       "ja": "",
@@ -1038782,10 +1038782,10 @@
     "defaultTalks": []
   },
   "1058711": {
-    "en": "レオファード",
+    "en": "Leofard",
     "ja": "レオファード",
-    "de": "レオファード",
-    "fr": "レオファード",
+    "de": "Leofard",
+    "fr": "Leofard",
     "title": {
       "en": "",
       "ja": "",
@@ -1038795,10 +1038795,10 @@
     "defaultTalks": []
   },
   "1058712": {
-    "en": "ケット・シー",
+    "en": "Cait Sith",
     "ja": "ケット・シー",
-    "de": "ケット・シー",
-    "fr": "ケット・シー",
+    "de": "Cait Sith",
+    "fr": "Cait Sith",
     "title": {
       "en": "",
       "ja": "",
@@ -1038808,10 +1038808,10 @@
     "defaultTalks": []
   },
   "1058713": {
-    "en": "勝気そうな着ぐるみ",
+    "en": "costumed captain",
     "ja": "勝気そうな着ぐるみ",
-    "de": "勝気そうな着ぐるみ",
-    "fr": "勝気そうな着ぐるみ",
+    "de": "kostümiert[a] Hauptmann",
+    "fr": "ours remonté à bloc",
     "title": {
       "en": "",
       "ja": "",
@@ -1038821,10 +1038821,10 @@
     "defaultTalks": []
   },
   "1058714": {
-    "en": "冒険者ギルドの調査員",
+    "en": "Adventurers' Guild investigator",
     "ja": "冒険者ギルドの調査員",
-    "de": "冒険者ギルドの調査員",
-    "fr": "冒険者ギルドの調査員",
+    "de": "Abenteurergilden-Gesandt[a]",
+    "fr": "enquêteur",
     "title": {
       "en": "",
       "ja": "",
@@ -1039185,36 +1039185,36 @@
     "defaultTalks": []
   },
   "1058742": {
-    "en": "胡散臭いインプ",
+    "en": "unsavory imp",
     "ja": "胡散臭いインプ",
-    "de": "胡散臭いインプ",
-    "fr": "胡散臭いインプ",
+    "de": "dubios[a] Imp",
+    "fr": "imp louche",
     "title": {
-      "en": "SEASONAL EVENT",
+      "en": "",
       "ja": "SEASONAL EVENT",
-      "de": "SEASONAL EVENT",
-      "fr": "SEASONAL EVENT"
+      "de": "Saisonales Ereignis",
+      "fr": "Saisonnier"
     },
     "defaultTalks": []
   },
   "1058743": {
-    "en": "仮装パーティーの招待係",
+    "en": "genial guiser",
     "ja": "仮装パーティーの招待係",
-    "de": "仮装パーティーの招待係",
-    "fr": "仮装パーティーの招待係",
+    "de": "Kostümparty-Concierge",
+    "fr": "guide du bal costumé",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
-      "fr": "GATEKEEPER"
+      "de": "",
+      "fr": ""
     },
     "defaultTalks": []
   },
   "1058744": {
-    "en": "ドッド",
+    "en": "Dodd",
     "ja": "ドッド",
-    "de": "ドッド",
-    "fr": "ドッド",
+    "de": "Dodd",
+    "fr": "Dodd",
     "title": {
       "en": "",
       "ja": "",
@@ -1039302,75 +1039302,75 @@
     "defaultTalks": []
   },
   "1058751": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound registrar",
+    "ja": "参加受付",
+    "de": "Rezeptionistin",
+    "fr": "préposée aux inscriptions",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "ja": "KEYBOUNDBRAWLER",
+      "de": "Tastenschläger",
+      "fr": "Frappe fatale"
     },
     "defaultTalks": []
   },
   "1058752": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "magitype master",
+    "ja": "案内窓口",
+    "de": "Tippexperte",
+    "fr": "réceptionniste ",
     "title": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Keybound Guide",
+      "ja": "KEYBOUNDBRAWLER",
+      "de": "Tastenschläger",
+      "fr": "Frappe fatale"
     },
     "defaultTalks": []
   },
   "1058753": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "MGC trader",
+    "ja": "MGC交換窓口",
+    "de": "Gold Saucer-Diener",
+    "fr": "préposé aux lots",
     "title": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Prize Claim",
+      "ja": "TRADE",
+      "de": "MGM",
+      "fr": "Échange de DGS"
     },
     "defaultTalks": []
   },
   "1058754": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "W'zazanh",
+    "ja": "ワ・ザザン",
+    "de": "W'zazanh",
+    "fr": "W'zazanh",
     "title": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Keybound Gatekeeper",
+      "ja": "GATEKEEPER",
+      "de": "Aufzug",
+      "fr": "Guide"
     },
     "defaultTalks": []
   },
   "1058755": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Quabin",
+    "ja": "クアビン",
+    "de": "Quabin",
+    "fr": "Quabin",
     "title": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Keybound Gatekeeper",
+      "ja": "GATEKEEPER",
+      "de": "Aufzug",
+      "fr": "Guide"
     },
     "defaultTalks": []
   },
   "1058756": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "catlike mammet",
+    "ja": "猫型の魔法人形",
+    "de": "Katzenmarionette",
+    "fr": "mascotte féline",
     "title": {
       "en": "",
       "ja": "",
@@ -1039380,10 +1039380,10 @@
     "defaultTalks": []
   },
   "1058757": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "captivated customer",
+    "ja": "興味津々な男性客",
+    "de": "äußerst interessiert[a] Besucher[p]",
+    "fr": "visiteur curieux",
     "title": {
       "en": "",
       "ja": "",
@@ -1039393,10 +1039393,10 @@
     "defaultTalks": []
   },
   "1058758": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "entertainment enthusiast",
+    "ja": "遊戯好きの貴婦人",
+    "de": "Spielliebhaberin",
+    "fr": "amatrice de jeux",
     "title": {
       "en": "",
       "ja": "",
@@ -1039406,92 +1039406,92 @@
     "defaultTalks": []
   },
   "1058759": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führer",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1058760": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führerin",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1058761": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führer",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1058762": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führerin",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1058763": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führer",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1058764": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führerin",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1058765": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keybound Brawler attendant",
+    "ja": "キーバウンド・ブロウラー案内人",
+    "de": "Tastenschläger-Führer",
+    "fr": "guide de Frappe fatale",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
+      "ja": "TRANSPORTATION",
+      "de": "Transport",
       "fr": ""
     },
     "defaultTalks": []
@@ -1041707,10 +1041707,10 @@
     "defaultTalks": []
   },
   "1058936": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Wawkesa",
+    "ja": "ワーケサ",
+    "de": "Wawkesa",
+    "fr": "Wawkesa",
     "title": {
       "en": "",
       "ja": "",
@@ -1041733,10 +1041733,10 @@
     "defaultTalks": []
   },
   "1058938": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1041746,10 +1041746,10 @@
     "defaultTalks": []
   },
   "1058939": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1041772,10 +1041772,10 @@
     "defaultTalks": []
   },
   "1058941": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Circine",
+    "ja": "サーカイン",
+    "de": "Circine",
+    "fr": "Circine",
     "title": {
       "en": "",
       "ja": "",
@@ -1041785,10 +1041785,10 @@
     "defaultTalks": []
   },
   "1058942": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut",
     "title": {
       "en": "",
       "ja": "",
@@ -1041811,10 +1041811,10 @@
     "defaultTalks": []
   },
   "1058944": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1041824,10 +1041824,10 @@
     "defaultTalks": []
   },
   "1058945": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1041850,10 +1041850,10 @@
     "defaultTalks": []
   },
   "1058947": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut",
     "title": {
       "en": "",
       "ja": "",
@@ -1041876,10 +1041876,10 @@
     "defaultTalks": []
   },
   "1058949": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1041889,10 +1041889,10 @@
     "defaultTalks": []
   },
   "1058950": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1041915,10 +1041915,10 @@
     "defaultTalks": []
   },
   "1058952": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut",
     "title": {
       "en": "",
       "ja": "",
@@ -1041941,10 +1041941,10 @@
     "defaultTalks": []
   },
   "1058954": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1041954,10 +1041954,10 @@
     "defaultTalks": []
   },
   "1058955": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1041980,10 +1041980,10 @@
     "defaultTalks": []
   },
   "1058957": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut",
     "title": {
       "en": "",
       "ja": "",
@@ -1042006,10 +1042006,10 @@
     "defaultTalks": []
   },
   "1058959": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut",
     "title": {
       "en": "",
       "ja": "",
@@ -1042019,10 +1042019,10 @@
     "defaultTalks": []
   },
   "1058960": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1042032,10 +1042032,10 @@
     "defaultTalks": []
   },
   "1058961": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Noirshu",
+    "ja": "ノワーシュ",
+    "de": "Noirshu",
+    "fr": "Noirshu",
     "title": {
       "en": "",
       "ja": "",
@@ -1042253,10 +1042253,10 @@
     "defaultTalks": []
   },
   "1058978": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1042266,10 +1042266,10 @@
     "defaultTalks": []
   },
   "1058979": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1042279,10 +1042279,10 @@
     "defaultTalks": []
   },
   "1058980": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Carnelian",
+    "ja": "カーネリアン",
+    "de": "Carnelian",
+    "fr": "Carnelian",
     "title": {
       "en": "",
       "ja": "",
@@ -1047089,10 +1047089,10 @@
     "defaultTalks": []
   },
   "1059350": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "mellow musician",
+    "ja": "ノビノビした音楽家",
+    "de": "sanft[a] Musiker",
+    "fr": "musicien détendu",
     "title": {
       "en": "",
       "ja": "",
@@ -1047115,10 +1047115,10 @@
     "defaultTalks": []
   },
   "1059352": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Index",
+    "ja": "インデックス",
+    "de": "Index",
+    "fr": "Index",
     "title": {
       "en": "",
       "ja": "",
@@ -1047349,10 +1047349,10 @@
     "defaultTalks": []
   },
   "1059370": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Lydirceil",
+    "ja": "リディルセイル",
+    "de": "Lydirceil",
+    "fr": "Lydirceil",
     "title": {
       "en": "",
       "ja": "",
@@ -1047895,15 +1047895,15 @@
     "defaultTalks": []
   },
   "1059412": {
-    "en": "不思議な案内人",
+    "en": "unusual usher",
     "ja": "不思議な案内人",
-    "de": "不思議な案内人",
-    "fr": "不思議な案内人",
+    "de": "ominös[a] Bedienstet[a]",
+    "fr": "guide étrange",
     "title": {
-      "en": "GATEKEEPER",
+      "en": "",
       "ja": "GATEKEEPER",
-      "de": "GATEKEEPER",
-      "fr": "GATEKEEPER"
+      "de": "",
+      "fr": "Gardien"
     },
     "defaultTalks": []
   },
@@ -1048038,23 +1048038,23 @@
     "defaultTalks": []
   },
   "1059423": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Rising vendor",
+    "ja": "新生祭販売担当",
+    "de": "Festverkäuferin",
+    "fr": "vendeuse de la Commémoration",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "ja": "SEASONAL",
+      "de": "Saisonales Geschäft",
+      "fr": "Saisonnière"
     },
     "defaultTalks": []
   },
   "1059424": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Rising attendant",
+    "ja": "新生祭実行委員",
+    "de": "Festkomiteemitglied",
+    "fr": "organisatrice de la Commémoration",
     "title": {
       "en": "",
       "ja": "",
@@ -1048064,10 +1048064,10 @@
     "defaultTalks": []
   },
   "1059425": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Rising attendant",
+    "ja": "新生祭実行委員",
+    "de": "Festkomiteemitglied",
+    "fr": "organisatrice de la Commémoration",
     "title": {
       "en": "",
       "ja": "",
@@ -1048077,10 +1048077,10 @@
     "defaultTalks": []
   },
   "1059426": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Rising attendant",
+    "ja": "新生祭実行委員",
+    "de": "Festkomiteemitglied",
+    "fr": "organisatrice de la Commémoration",
     "title": {
       "en": "",
       "ja": "",
@@ -1048090,10 +1048090,10 @@
     "defaultTalks": []
   },
   "1059427": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "wandering minstrel",
+    "ja": "異邦の詩人",
+    "de": "Fahrend[a] Sänger",
+    "fr": "ménestrel errant",
     "title": {
       "en": "",
       "ja": "",
@@ -1048103,10 +1048103,10 @@
     "defaultTalks": []
   },
   "1059428": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bathu Molkoh",
+    "ja": "バツ・モルコー",
+    "de": "Bathu Molkoh",
+    "fr": "Bathu Molkoh",
     "title": {
       "en": "",
       "ja": "",
@@ -1048142,10 +1048142,10 @@
     "defaultTalks": []
   },
   "1059431": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ayoyo",
+    "ja": "アヨヨ",
+    "de": "Ayoyo",
+    "fr": "Ayoyo",
     "title": {
       "en": "",
       "ja": "",
@@ -1048155,10 +1048155,10 @@
     "defaultTalks": []
   },
   "1059432": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bathu Molkoh",
+    "ja": "バツ・モルコー",
+    "de": "Bathu Molkoh",
+    "fr": "Bathu Molkoh",
     "title": {
       "en": "",
       "ja": "",
@@ -1048168,10 +1048168,10 @@
     "defaultTalks": []
   },
   "1059433": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "R'tcha",
+    "ja": "ル・チャ",
+    "de": "R'tcha",
+    "fr": "R'tcha",
     "title": {
       "en": "",
       "ja": "",
@@ -1048181,10 +1048181,10 @@
     "defaultTalks": []
   },
   "1059434": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Dorathia",
+    "ja": "ドラシア",
+    "de": "Dorathia",
+    "fr": "Dorathia",
     "title": {
       "en": "",
       "ja": "",
@@ -1048194,10 +1048194,10 @@
     "defaultTalks": []
   },
   "1059435": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bathu Molkoh",
+    "ja": "バツ・モルコー",
+    "de": "Bathu Molkoh",
+    "fr": "Bathu Molkoh",
     "title": {
       "en": "",
       "ja": "",
@@ -1048207,10 +1048207,10 @@
     "defaultTalks": []
   },
   "1059436": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bathu Molkoh",
+    "ja": "バツ・モルコー",
+    "de": "Bathu Molkoh",
+    "fr": "Bathu Molkoh",
     "title": {
       "en": "",
       "ja": "",
@@ -1048220,10 +1048220,10 @@
     "defaultTalks": []
   },
   "1059437": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "A'nimuili",
+    "ja": "ア・ニミウィリ",
+    "de": "A'nimuili",
+    "fr": "A'nimuili",
     "title": {
       "en": "",
       "ja": "",
@@ -1048233,10 +1048233,10 @@
     "defaultTalks": []
   },
   "1059438": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bathu Molkoh",
+    "ja": "バツ・モルコー",
+    "de": "Bathu Molkoh",
+    "fr": "Bathu Molkoh",
     "title": {
       "en": "",
       "ja": "",
@@ -1048246,10 +1048246,10 @@
     "defaultTalks": []
   },
   "1059439": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "A'nimuili",
+    "ja": "ア・ニミウィリ",
+    "de": "A'nimuili",
+    "fr": "A'nimuili",
     "title": {
       "en": "",
       "ja": "",
@@ -1048259,10 +1048259,10 @@
     "defaultTalks": []
   },
   "1059440": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Deryk",
+    "ja": "デリック",
+    "de": "Deryk",
+    "fr": "Deryk",
     "title": {
       "en": "",
       "ja": "",
@@ -1048272,10 +1048272,10 @@
     "defaultTalks": []
   },
   "1059441": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "baby opo-opo",
+    "ja": "ベイビーオポオポ",
+    "de": "Opo-Opo-Jungtier",
+    "fr": "bébé opo-opo",
     "title": {
       "en": "",
       "ja": "",
@@ -1048441,10 +1048441,10 @@
     "defaultTalks": []
   },
   "1059454": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1048480,10 +1048480,10 @@
     "defaultTalks": []
   },
   "1059457": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition metallurgist",
+    "ja": "探査隊の資材加工係",
+    "de": "Metallurg[p] der Expedition",
+    "fr": "métallurgiste de l'expédition",
     "title": {
       "en": "",
       "ja": "",
@@ -1048493,10 +1048493,10 @@
     "defaultTalks": []
   },
   "1059458": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition escort",
+    "ja": "探査隊の護衛",
+    "de": "Leibwächterin[p] der Expedition",
+    "fr": "garde de l'expédition",
     "title": {
       "en": "",
       "ja": "",
@@ -1048506,10 +1048506,10 @@
     "defaultTalks": []
   },
   "1059459": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Naoki Yoshida",
+    "ja": "ヨシダ・ナオキ",
+    "de": "Naoki Yoshida",
+    "fr": "Naoki Yoshida",
     "title": {
       "en": "",
       "ja": "",
@@ -1048519,10 +1048519,10 @@
     "defaultTalks": []
   },
   "1059460": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Gerolt",
+    "ja": "ゲロルト",
+    "de": "Gerolt",
+    "fr": "Gerolt",
     "title": {
       "en": "",
       "ja": "",
@@ -1048623,10 +1048623,10 @@
     "defaultTalks": []
   },
   "1059468": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Dorathia",
+    "ja": "ドラシア",
+    "de": "Dorathia",
+    "fr": "Dorathia",
     "title": {
       "en": "",
       "ja": "",
@@ -1048636,10 +1048636,10 @@
     "defaultTalks": []
   },
   "1059469": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "A'nimuili",
+    "ja": "ア・ニミウィリ",
+    "de": "A'nimuili",
+    "fr": "A'nimuili",
     "title": {
       "en": "",
       "ja": "",
@@ -1048649,10 +1048649,10 @@
     "defaultTalks": []
   },
   "1059470": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Roegadyn merchant",
+    "ja": "商人風の男性",
+    "de": "Roegadyn-Händler",
+    "fr": "marchand roegadyn",
     "title": {
       "en": "",
       "ja": "",
@@ -1048779,10 +1048779,10 @@
     "defaultTalks": []
   },
   "1059480": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bathu Molkoh",
+    "ja": "バツ・モルコー",
+    "de": "Bathu Molkoh",
+    "fr": "Bathu Molkoh",
     "title": {
       "en": "",
       "ja": "",
@@ -1048818,88 +1048818,88 @@
     "defaultTalks": []
   },
   "1059483": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition armorer",
+    "ja": "探査隊の被服係",
+    "de": "Rüstmeister[p] der Expedition",
+    "fr": "équipementier de l'expédition",
     "title": {
       "en": "",
-      "ja": "",
+      "ja": "TRADE",
       "de": "",
-      "fr": ""
+      "fr": "Améliorations"
     },
     "defaultTalks": []
   },
   "1059484": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition supplier",
+    "ja": "探査隊の補給係",
+    "de": "Quartiermeisterin[p] der Expedition",
+    "fr": "ravitailleuse de l'expédition",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "ja": "SHOP & REPAIRS",
+      "de": "Reparatur",
+      "fr": "Objets et réparations"
     },
     "defaultTalks": []
   },
   "1059485": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition antiquarian",
+    "ja": "探査隊の古銭鑑定士",
+    "de": "Antiquarin[p] der Expedition",
+    "fr": "numismate de l'expédition",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "ja": "TRADE",
+      "de": "Münztausch",
+      "fr": "Échanges"
     },
     "defaultTalks": []
   },
   "1059486": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition skywatcher",
+    "ja": "探査隊の天気予報士",
+    "de": "Meteorologin[p] der Expedition",
+    "fr": "météorologue de l'expédition",
     "title": {
       "en": "",
-      "ja": "",
+      "ja": "WEATHER",
       "de": "",
       "fr": ""
     },
     "defaultTalks": []
   },
   "1059487": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition trader",
+    "ja": "探査隊の備品係",
+    "de": "Händler[p] der Expedition",
+    "fr": "fournisseur de l'expédition",
     "title": {
       "en": "",
-      "ja": "",
+      "ja": "TRADE",
       "de": "",
-      "fr": ""
+      "fr": "Échanges"
     },
     "defaultTalks": []
   },
   "1059488": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition advisor",
+    "ja": "探査隊の案内係",
+    "de": "Beraterin[p] der Expedition",
+    "fr": "conseillère de l'expédition",
     "title": {
       "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "ja": "OCCULT CRESCENT",
+      "de": "Kreszentia",
+      "fr": "Guide"
     },
     "defaultTalks": []
   },
   "1059489": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hardiboiled",
+    "ja": "ハルディボイルド",
+    "de": "Hildibrüh",
+    "fr": "Hildibrut",
     "title": {
       "en": "",
       "ja": "",
@@ -1048935,10 +1048935,10 @@
     "defaultTalks": []
   },
   "1059492": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "querying Keeper of the Moon",
+    "ja": "人探し中のミコッテ族",
+    "de": "suchend[a] Monstreunerin",
+    "fr": "Miqo'te en pleine recherche",
     "title": {
       "en": "",
       "ja": "",
@@ -1048974,10 +1048974,10 @@
     "defaultTalks": []
   },
   "1059495": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "wandering minstrel",
+    "ja": "異邦の詩人",
+    "de": "Fahrend[a] Sänger",
+    "fr": "ménestrel errant",
     "title": {
       "en": "",
       "ja": "",
@@ -1049377,10 +1049377,10 @@
     "defaultTalks": []
   },
   "1059526": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Brigid",
+    "ja": "ブリギッド",
+    "de": "Brigid",
+    "fr": "Brigid",
     "title": {
       "en": "",
       "ja": "",
@@ -1049949,10 +1049949,10 @@
     "defaultTalks": []
   },
   "1059570": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand",
     "title": {
       "en": "",
       "ja": "",
@@ -1049962,10 +1049962,10 @@
     "defaultTalks": []
   },
   "1059571": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca",
     "title": {
       "en": "",
       "ja": "",
@@ -1049990,7 +1049990,7 @@
   "1059573": {
     "en": "unspoken voice",
     "ja": "意識に届く声",
-    "de": "thelepathisch[a] Stimme",
+    "de": "telepathisch[a] Stimme",
     "fr": "voix intérieure",
     "title": {
       "en": "",
@@ -1050001,10 +1050001,10 @@
     "defaultTalks": []
   },
   "1059574": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050443,10 +1050443,10 @@
     "defaultTalks": []
   },
   "1059608": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Gerolt",
+    "ja": "ゲロルト",
+    "de": "Gerolt",
+    "fr": "Gerolt",
     "title": {
       "en": "",
       "ja": "",
@@ -1050456,7 +1050456,7 @@
     "defaultTalks": []
   },
   "1059609": {
-    "en": "星神の聖人",
+    "en": "Saint of Nymeia",
     "ja": "星神の聖人",
     "de": "Heilig[a] von Nymeia",
     "fr": "saint de Nymeia",
@@ -1050495,10 +1050495,10 @@
     "defaultTalks": []
   },
   "1059612": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Keshkayi",
+    "ja": "ケシュカイ",
+    "de": "Keshkayi",
+    "fr": "Keshkayi",
     "title": {
       "en": "",
       "ja": "",
@@ -1050586,10 +1050586,10 @@
     "defaultTalks": []
   },
   "1059619": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "wandering minstrel",
+    "ja": "異邦の詩人",
+    "de": "Fahrend[a] Sänger",
+    "fr": "ménestrel errant",
     "title": {
       "en": "",
       "ja": "",
@@ -1050625,10 +1050625,10 @@
     "defaultTalks": []
   },
   "1059622": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050638,10 +1050638,10 @@
     "defaultTalks": []
   },
   "1059623": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050651,10 +1050651,10 @@
     "defaultTalks": []
   },
   "1059624": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050664,10 +1050664,10 @@
     "defaultTalks": []
   },
   "1059625": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050677,10 +1050677,10 @@
     "defaultTalks": []
   },
   "1059626": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050690,10 +1050690,10 @@
     "defaultTalks": []
   },
   "1059627": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050703,10 +1050703,10 @@
     "defaultTalks": []
   },
   "1059628": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050716,10 +1050716,10 @@
     "defaultTalks": []
   },
   "1059629": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050729,10 +1050729,10 @@
     "defaultTalks": []
   },
   "1059630": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050742,10 +1050742,10 @@
     "defaultTalks": []
   },
   "1059631": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050755,10 +1050755,10 @@
     "defaultTalks": []
   },
   "1059632": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050768,10 +1050768,10 @@
     "defaultTalks": []
   },
   "1059633": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050781,10 +1050781,10 @@
     "defaultTalks": []
   },
   "1059634": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050794,10 +1050794,10 @@
     "defaultTalks": []
   },
   "1059635": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050807,10 +1050807,10 @@
     "defaultTalks": []
   },
   "1059636": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050820,10 +1050820,10 @@
     "defaultTalks": []
   },
   "1059637": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050833,10 +1050833,10 @@
     "defaultTalks": []
   },
   "1059638": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050846,10 +1050846,10 @@
     "defaultTalks": []
   },
   "1059639": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050859,10 +1050859,10 @@
     "defaultTalks": []
   },
   "1059640": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050872,10 +1050872,10 @@
     "defaultTalks": []
   },
   "1059641": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050885,10 +1050885,10 @@
     "defaultTalks": []
   },
   "1059642": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050898,10 +1050898,10 @@
     "defaultTalks": []
   },
   "1059643": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050911,10 +1050911,10 @@
     "defaultTalks": []
   },
   "1059644": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ofangeim",
+    "ja": "オファンゲイム",
+    "de": "Ofangeim",
+    "fr": "Ofangeim",
     "title": {
       "en": "",
       "ja": "",
@@ -1050924,10 +1050924,10 @@
     "defaultTalks": []
   },
   "1059645": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050937,10 +1050937,10 @@
     "defaultTalks": []
   },
   "1059646": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050950,10 +1050950,10 @@
     "defaultTalks": []
   },
   "1059647": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1050963,10 +1050963,10 @@
     "defaultTalks": []
   },
   "1059648": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1050976,10 +1050976,10 @@
     "defaultTalks": []
   },
   "1059649": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1050989,10 +1050989,10 @@
     "defaultTalks": []
   },
   "1059650": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1051002,10 +1051002,10 @@
     "defaultTalks": []
   },
   "1059651": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ketenramm",
+    "ja": "ケテンラム",
+    "de": "Ketenramm",
+    "fr": "Ketenramm",
     "title": {
       "en": "",
       "ja": "",
@@ -1051015,10 +1051015,10 @@
     "defaultTalks": []
   },
   "1059652": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Archive",
+    "ja": "アーカイブ",
+    "de": "Archiv",
+    "fr": "Archive",
     "title": {
       "en": "",
       "ja": "",
@@ -1051028,10 +1051028,10 @@
     "defaultTalks": []
   },
   "1059653": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1051057,7 +1051057,7 @@
     "en": "Cait Sith",
     "ja": "ケット・シー",
     "de": "Cait Sith",
-    "fr": "ケット・シー",
+    "fr": "Cait Sith",
     "title": {
       "en": "",
       "ja": "",
@@ -1051704,10 +1051704,10 @@
     "defaultTalks": []
   },
   "1059705": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition lancer",
+    "ja": "探査隊の戦闘要員",
+    "de": "Streiterin[p] der Expedition",
+    "fr": "combattante de l'expédition",
     "title": {
       "en": "",
       "ja": "",
@@ -1051717,10 +1051717,10 @@
     "defaultTalks": []
   },
   "1059706": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "expedition botanist",
+    "ja": "探査隊の園芸師",
+    "de": "Botanistin[p] der Expedition",
+    "fr": "botaniste de l'expédition",
     "title": {
       "en": "",
       "ja": "",
@@ -1052380,10 +1052380,10 @@
     "defaultTalks": []
   },
   "1059757": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Gerolt",
+    "ja": "ゲロルト",
+    "de": "Gerolt",
+    "fr": "Gerolt",
     "title": {
       "en": "",
       "ja": "",
@@ -1052497,10 +1052497,10 @@
     "defaultTalks": []
   },
   "1059766": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Ofangeim",
+    "ja": "オファンゲイム",
+    "de": "Ofangeim",
+    "fr": "Ofangeim",
     "title": {
       "en": "",
       "ja": "",
@@ -1053121,10 +1053121,10 @@
     "defaultTalks": []
   },
   "1059814": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Iris",
+    "ja": "アイリス",
+    "de": "Iris",
+    "fr": "Iris",
     "title": {
       "en": "",
       "ja": "",
@@ -1053134,10 +1053134,10 @@
     "defaultTalks": []
   },
   "1059815": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Gerolt",
+    "ja": "ゲロルト",
+    "de": "Gerolt",
+    "fr": "Gerolt",
     "title": {
       "en": "",
       "ja": "",
