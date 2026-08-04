@@ -1187,7 +1187,14 @@
     "SOLVER": {
       "Hq_target": "% HQ ciblé",
       "Use_rotation_as_seed": "Utiliser la rotation actuelle comme point de départ",
-      "Disclaimer": "Le solveur est encore en cours d'amélioration, veuillez garder à l'esprit qu'il n'est pas fait pour créer des rotations parfaites, c'est une IA qui essaie de s'améliorer avec le temps et qui peut produire des résultats très mauvais ainsi que de très bons résultats. Veuillez ne pas signaler de mauvais résultats comme un bug."
+      "Disclaimer": "Le solveur est encore en cours d'amélioration, veuillez garder à l'esprit qu'il n'est pas fait pour créer des rotations parfaites, c'est une IA qui essaie de s'améliorer avec le temps et qui peut produire des résultats très mauvais ainsi que de très bons résultats. Veuillez ne pas signaler de mauvais résultats comme un bug.",
+      "Title": "Auto-solve rotation",
+      "Searching": "Searching for the best rotation…",
+      "Depth": "Step",
+      "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
+      "Done": "Solver finished",
+      "Apply": "Use this rotation",
+      "Quality_maxed": "Max quality reached"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
