@@ -1187,7 +1187,14 @@
     "SOLVER": {
       "Hq_target": "% de HQ objetivo",
       "Use_rotation_as_seed": "Usar rotación actual como punto de partida",
-      "Disclaimer": "El resolvedor es un trabajo en progreso, por favor tenga en cuenta que no está hecho para crear rotaciones perfectas, es una IA tratando de mejorar con el tiempo que puede producir resultados muy malos así como muy buenos. Por favor, no informe de resultados malos como un error."
+      "Disclaimer": "El resolvedor es un trabajo en progreso, por favor tenga en cuenta que no está hecho para crear rotaciones perfectas, es una IA tratando de mejorar con el tiempo que puede producir resultados muy malos así como muy buenos. Por favor, no informe de resultados malos como un error.",
+      "Title": "Auto-solve rotation",
+      "Searching": "Searching for the best rotation…",
+      "Depth": "Step",
+      "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
+      "Done": "Solver finished",
+      "Apply": "Use this rotation",
+      "Quality_maxed": "Max quality reached"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotaciones de la comunidad",
