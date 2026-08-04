@@ -59,8 +59,10 @@ export class LoginPopupComponent extends DialogComponent {
 
   public googleOauth(): void {
     delete this.errorMessageCode;
-    this.authFacade.googleOauth().subscribe(() => {
-      this.modalRef.close(true);
+    this.authFacade.googleOauth().subscribe({
+      next: () => this.modalRef.close(true),
+      // Surface sign-in failures instead of leaving the modal hanging silently.
+      error: (error) => this.onError(error)
     });
   }
 
