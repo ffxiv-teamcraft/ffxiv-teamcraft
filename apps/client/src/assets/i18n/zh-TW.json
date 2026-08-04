@@ -1179,7 +1179,14 @@
     "SOLVER": {
       "Hq_target": "目標高品質 %",
       "Use_rotation_as_seed": "以目前工序起手",
-      "Disclaimer": "此解算器仍在開發中，請注意它並非用來生成完美工序，而是一個隨時間學習改進的 AI，可能產生非常好的結果，也可能出現非常糟的結果。請不要將不理想的結果回報為錯誤。"
+      "Disclaimer": "此解算器仍在開發中，請注意它並非用來生成完美工序，而是一個隨時間學習改進的 AI，可能產生非常好的結果，也可能出現非常糟的結果。請不要將不理想的結果回報為錯誤。",
+      "Title": "Auto-solve rotation",
+      "Searching": "Searching for the best rotation…",
+      "Depth": "Step",
+      "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
+      "Done": "Solver finished",
+      "Apply": "Use this rotation",
+      "Quality_maxed": "Max quality reached"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "社群工序",
