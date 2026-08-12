@@ -111,6 +111,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { FavoriteButtonComponent } from '../../../../modules/favorites/favorite-button/favorite-button.component';
+import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { ClipboardDirective } from '../../../../core/clipboard.directive';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
@@ -1232,6 +1233,27 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   trackByAction(index: number, step: ActionResult): string {
     return step.action.getId(8) + ' ' + index;
+  }
+
+  openSolver(): void {
+    combineLatest([this.simulation$, this.stats$]).pipe(first()).subscribe(([simulation, stats]) => {
+      this.dialog.create({
+        nzContent: SolverPopupComponent,
+        nzData: {
+          recipe: simulation.recipe,
+          stats,
+          hqIngredients: this.hqIngredients$.value
+        },
+        nzTitle: this.translate.instant('SIMULATOR.SOLVER.Title'),
+        nzFooter: null
+      }).afterClose.subscribe((actions: CraftingAction[]) => {
+        if (actions && actions.length > 0) {
+          this.actions$.next(actions);
+          this.stepStates.set({});
+          this.markAsDirty();
+        }
+      });
+    });
   }
 
   private consumablesSortFn = (a, b) => {

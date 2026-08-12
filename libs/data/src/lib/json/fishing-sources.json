@@ -26508,8 +26508,10 @@
       "spot": 302,
       "hookset": 1,
       "tug": 0,
-      "bait": 43849,
-      "minGathering": 0
+      "bait": 43855,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "43698": [
@@ -27018,8 +27020,10 @@
       "spot": 315,
       "hookset": 1,
       "tug": 0,
-      "bait": 43852,
-      "minGathering": 0
+      "bait": 43858,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "43741": [
@@ -27399,7 +27403,7 @@
       "spot": 326,
       "hookset": 1,
       "tug": 0,
-      "bait": 43855,
+      "bait": 43858,
       "minGathering": 0,
       "video": "https://youtu.be/Jk0NOIwX4eI",
       "aLure": 1,
@@ -28715,6 +28719,128 @@
       "mLure": 0
     }
   ],
+  "52007": [
+    {
+      "spot": 299,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 15,
+      "duration": 1,
+      "weathers": [
+        5
+      ],
+      "weathersFrom": [
+        4
+      ],
+      "minGathering": 4570,
+      "aLure": 0,
+      "mLure": 3
+    }
+  ],
+  "52008": [
+    {
+      "spot": 302,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43697,
+      "spawn": 13,
+      "duration": 2,
+      "weathers": [
+        8
+      ],
+      "weathersFrom": [
+        3
+      ],
+      "predators": [
+        {
+          "id": 43697,
+          "amount": 6
+        }
+      ],
+      "minGathering": 4570,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52009": [
+    {
+      "spot": 315,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43740,
+      "spawn": 16,
+      "duration": 5,
+      "weathers": [
+        7
+      ],
+      "weathersFrom": [
+        1
+      ],
+      "predators": [
+        {
+          "id": 43740,
+          "amount": 3
+        },
+        {
+          "id": 52002,
+          "amount": 1
+        }
+      ],
+      "minGathering": 4570,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52010": [
+    {
+      "spot": 320,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 47993,
+      "spawn": 22,
+      "duration": 2,
+      "weathers": [
+        11
+      ],
+      "weathersFrom": [
+        2
+      ],
+      "minGathering": 4570,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52011": [
+    {
+      "spot": 332,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43859,
+      "spawn": 8,
+      "duration": 5,
+      "weathers": [
+        4
+      ],
+      "weathersFrom": [
+        3
+      ],
+      "predators": [
+        {
+          "id": 43795,
+          "amount": 2
+        },
+        {
+          "id": 52006,
+          "amount": 1
+        }
+      ],
+      "minGathering": 4570,
+      "video": "https://youtu.be/aB9r8BGOn7s",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "52013": [
     {
       "spot": 296,
@@ -28733,6 +28859,31 @@
       "tug": 0,
       "bait": 28634,
       "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52297": [
+    {
+      "spot": 326,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 43858,
+      "spawn": 2,
+      "duration": 2,
+      "weathers": [
+        50
+      ],
+      "weathersFrom": [
+        10
+      ],
+      "predators": [
+        {
+          "id": 43775,
+          "amount": 1
+        }
+      ],
+      "minGathering": 4570,
       "aLure": 0,
       "mLure": 0
     }

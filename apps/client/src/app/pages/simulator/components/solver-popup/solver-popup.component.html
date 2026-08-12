@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  @if (running) {
+    <div fxLayout="column" fxLayoutGap="5px">
+      <div>{{ 'SIMULATOR.SOLVER.Searching' | translate }} ({{ 'SIMULATOR.SOLVER.Depth' | translate }}: {{ depth }})</div>
+      <nz-progress [nzPercent]="bestQuality / recipe.quality * 100" [nzFormat]="progressFormat()"></nz-progress>
+      @if (qualityComplete) {
+        <nz-tag [nzColor]="'green'">{{ 'SIMULATOR.SOLVER.Quality_maxed' | translate }}</nz-tag>
+      }
+      @if (bestSuccess) {
+        <div>{{ 'SIMULATOR.SOLVER.Valid_rotation_found' | translate }}</div>
+      }
+    </div>
+  } @else {
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div>{{ 'SIMULATOR.SOLVER.Done' | translate }}</div>
+      @if (reliability) {
+        <div fxLayout="row wrap" fxLayoutGap="10px">
+          <nz-tag [nzColor]="'geekblue'">
+            {{ 'SIMULATOR.Reliability' | translate }}: {{ reliability.successPercent }}%
+          </nz-tag>
+          <nz-tag [nzColor]="'purple'">
+            {{ 'SIMULATOR.Average_hq' | translate }}: {{ reliability.averageHQPercent }}%
+          </nz-tag>
+        </div>
+      }
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        @for (action of resultActions; track $index) {
+          <app-action [action]="action" [hideCost]="true"></app-action>
+        }
+      </div>
+      <button (click)="apply()" nz-button nzType="primary">
+        {{ 'SIMULATOR.SOLVER.Apply' | translate }}
+      </button>
+    </div>
+  }
+
+  @if (error) {
+    <div style="color: red;">{{ errorMessage }}</div>
+  }
+</div>

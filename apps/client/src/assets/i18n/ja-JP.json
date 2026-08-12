@@ -1179,7 +1179,14 @@
     "SOLVER": {
       "Hq_target": "HQ目標値",
       "Use_rotation_as_seed": "現在ローテーションを開始点から使用",
-      "Disclaimer": "この機能は、現在開発中です。この機能は、時間に応じて発電するAIであり、完璧なローテーションを構成するために作られたものはありません。悪い結果が出ることもありますが、良い結果も出てくることがあります。良くない結果が出ても、その結果をバグとして提出しないでください。"
+      "Disclaimer": "この機能は、現在開発中です。この機能は、時間に応じて発電するAIであり、完璧なローテーションを構成するために作られたものはありません。悪い結果が出ることもありますが、良い結果も出てくることがあります。良くない結果が出ても、その結果をバグとして提出しないでください。",
+      "Title": "Auto-solve rotation",
+      "Searching": "Searching for the best rotation…",
+      "Depth": "Step",
+      "Valid_rotation_found": "A valid rotation has been found, still optimizing…",
+      "Done": "Solver finished",
+      "Apply": "Use this rotation",
+      "Quality_maxed": "Max quality reached"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
