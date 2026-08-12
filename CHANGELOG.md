@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.29...v11.4.30) (2026-08-12)
+
+
+### Features
+
+* **db:** allagan reports import ([88f8a83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88f8a8357f2a85e5710c83e223d2471adea9327a))
+
+
+### Bug Fixes
+
+* **fishing-reporter:** stop reporting the applied bait as a mooch ([015be9e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/015be9e78991950baaafb82fd8d94a31797296d1))
+
 ### [11.4.29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.28...v11.4.29) (2026-07-30)
 
 
