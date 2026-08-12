@@ -53,7 +53,7 @@ export class FishingReporter implements DataReporter {
       map(packet => {
         return {
           id: packet.itemId,
-          hq: (packet.flags >> 6 & 1) === 1,
+          hq: (packet.flags >> 4 & 1) === 1,
           moochable: (packet.flags & 5) === 5,
           size: packet.size
         };
