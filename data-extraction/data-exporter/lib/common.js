@@ -166,4 +166,17 @@ const translate = function (dbName, value, from, nKey = 'Name') {
   return row ? i18n(dbName, row['#'], nKey) : null
 }
 
-module.exports = { init, db, output, translate, i18n }
+/**
+ * Convert icon ID to asset API URL string
+ * @param {number|string} iconId Icon ID (e.g. 215001 or "215001")
+ * @param {string} [format='png'] Target image format (defaults to 'png')
+ * @returns {string|null}
+ */
+const getIconAssetUrl = function (iconId, format = 'png') {
+  if (!iconId) return null
+  const file = String(iconId).padStart(6, '0')
+  const folder = file.slice(0, -3) + '000'
+  return `/api/asset?path=ui/icon/${folder}/${file}.tex&format=${format}`
+}
+
+module.exports = { init, db, output, translate, i18n, getIconAssetUrl }

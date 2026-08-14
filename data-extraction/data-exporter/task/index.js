@@ -1,4 +1,4 @@
-const { output, db, i18n } = require('../lib/common')
+const { output, db, i18n, getIconAssetUrl } = require('../lib/common')
 
 output('achievement-descriptions', () => db('Achievement').simpleObject('Description'))
 output('achievements', () => db('Achievement').simpleObject('Name'))
@@ -15,11 +15,10 @@ output('ex-versions', () => db('ExVersion').simpleObject('Name'))
 output('fates', () => db('Fate').toObject(row => {
   if (!row.Name) return
 
-  let icon = ('000000' + row['Icon{Map}']).slice(-6)
   return row.Name ? {
     name: i18n('Fate', row['#'], 'Name'),
     description: i18n('Fate', row['#'], 'Description'),
-    icon: `/i/${icon.substring(0, 3)}000/${icon}.png`
+    icon: getIconAssetUrl(row['Icon{Map}'])
   } : undefined
 }))
 output('gathering-bonuses', () => db('GatheringPointBonus', false).toObject(row => {
@@ -156,8 +155,7 @@ output('statuses', () => db('Status').toObject(row => {
   if (!row.Name) return
 
   let status = i18n('Status', row['#'], 'Name')
-  let icon = ('000000' + row['Icon']).slice(-6)
-  status.icon = `/i/${icon.substring(0, 3)}000/${icon}.png`
+  status.icon = getIconAssetUrl(row['Icon'])
   return row.Name ? status: undefined
 }))
 output('trait-descriptions', () => db('TraitTransient').simpleObject('Description'))
