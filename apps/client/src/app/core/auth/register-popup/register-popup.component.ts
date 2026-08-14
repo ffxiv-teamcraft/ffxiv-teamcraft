@@ -48,8 +48,10 @@ export class RegisterPopupComponent {
   public googleOauth(): void {
     delete this.errorMessageCode;
     this.authFacade.googleOauth()
-      .subscribe(() => {
-        this.modalRef.close();
+      .subscribe({
+        next: () => this.modalRef.close(),
+        // Surface sign-in failures instead of leaving the modal hanging silently.
+        error: (error) => this.onError(error)
       });
   }
 
