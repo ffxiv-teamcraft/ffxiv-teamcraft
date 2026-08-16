@@ -14,6 +14,11 @@ import { Store } from '../store';
  * once and returns both paths from that same source. This ensures the prefix
  * and binary always come from the same Wine installation.
  *
+ * For XIVLauncher the prefix depends on the wine configuration in
+ * launcher.ini: a Wine prefix (wineprefix) for Wine setups and a Proton
+ * prefix (protonprefix) for Proton setups, mirroring the launcher's own
+ * prefix selection.
+ *
  * User-supplied overrides stored in the Electron store take priority over
  * autodetection for each path independently.
  */
@@ -66,8 +71,13 @@ export class WineResolver {
       if (existsSync(p)) return p;
     }
     if (source === 'xlcore') {
-      const p = join(home, '.xlcore', 'wineprefix');
+      const iniValues = this.readXlcoreIniValues(home);
+      const proton = this.isXlcoreProtonConfig(iniValues);
+      const p = join(home, '.xlcore', proton ? 'protonprefix' : 'wineprefix');
       if (existsSync(p)) return p;
+      if (proton) {
+        log.warn(`[bridge] XIVLauncher is configured for Proton but ~/.xlcore/protonprefix does not exist yet; launch the game through XIVLauncher to create it`);
+      }
     }
     return null;
   }
@@ -108,94 +118,130 @@ export class WineResolver {
    * ~/.xlcore is a symlink to the XDG data directory used by the RB fork
    * (~/.local/share/dev.goats.xivlauncher), so both launchers share the same
    * on-disk wine store and no separate path derivation is needed.
+   *
+   * When the active mode is Proton the matching prefix is
+   * ~/.xlcore/protonprefix instead of ~/.xlcore/wineprefix (see
+   * detectPrefix()), which applies the same mode detection.
    */
   private findXlcoreWineBin(home: string): string | null {
     const wineBaseDir = join(home, '.xlcore', 'compatibilitytool', 'wine');
-    const iniPath = join(home, '.xlcore', 'launcher.ini');
+    const iniValues = this.readXlcoreIniValues(home);
 
-    if (existsSync(iniPath)) {
-      try {
-        const contents = readFileSync(iniPath, 'utf8');
-        const iniValues: Record<string, string> = {};
-        for (const line of contents.split(/\r?\n/)) {
-          const m = line.match(/^([^=]+)=(.+)$/);
-          if (m) iniValues[m[1].trim()] = m[2].trim();
+    // ── RB fork block ─────────────────────────────────────────────────
+    // If RB_WineStartupType is present the user runs the RB fork.
+    // Evaluate all RB_* settings before touching standard keys.
+    if (iniValues['RB_WineStartupType']) {
+      // 1a. RB Proton mode: find the named tool in Steam's compat dirs
+      if (iniValues['RB_WineStartupType'] === 'Proton' && iniValues['RB_ProtonVersion']) {
+        const protonVersion = iniValues['RB_ProtonVersion'];
+        const steamRoot = join(home, '.local', 'share', 'Steam');
+        const bin = this.findProtonWineBinByToolName(steamRoot, protonVersion);
+        if (bin) {
+          log.info(`[bridge] Auto-detected Wine from XIVLauncher RB Proton selection (${protonVersion}): ${bin}`);
+          return bin;
         }
+      }
 
-        // ── RB fork block ─────────────────────────────────────────────────
-        // If RB_WineStartupType is present the user runs the RB fork.
-        // Evaluate all RB_* settings before touching standard keys.
-        if (iniValues['RB_WineStartupType']) {
-          // 1a. RB Proton mode: find the named tool in Steam's compat dirs
-          if (iniValues['RB_WineStartupType'] === 'Proton' && iniValues['RB_ProtonVersion']) {
-            const protonVersion = iniValues['RB_ProtonVersion'];
-            const steamRoot = join(home, '.local', 'share', 'Steam');
-            const bin = this.findProtonWineBinByToolName(steamRoot, protonVersion);
-            if (bin) {
-              log.info(`[bridge] Auto-detected Wine from XIVLauncher RB Proton selection (${protonVersion}): ${bin}`);
-              return bin;
-            }
-          }
-
-          // 1b. RB Custom mode: explicit binary directory
-          if (iniValues['RB_WineStartupType'] === 'Custom' && iniValues['RB_WineBinaryPath']) {
-            const candidate = join(iniValues['RB_WineBinaryPath'], 'wine');
-            if (existsSync(candidate)) {
-              log.info(`[bridge] Auto-detected Wine from XIVLauncher RB custom config: ${candidate}`);
-              return candidate;
-            }
-          }
-
-          // 1c. RB Managed mode: use the version name to find the exact directory.
-          // If the version isn't installed yet (XIVLauncher downloads it on first
-          // game launch), return null rather than silently using a stale version
-          // from a previous session.
-          if (iniValues['RB_WineStartupType'] === 'Managed') {
-            if (iniValues['RB_WineVersion']) {
-              const versionDir = join(wineBaseDir, iniValues['RB_WineVersion']);
-              for (const exe of ['bin/wine64', 'bin/wine']) {
-                const candidate = join(versionDir, exe);
-                if (existsSync(candidate)) {
-                  log.info(`[bridge] Auto-detected Wine from XIVLauncher RB managed version (${iniValues['RB_WineVersion']}): ${candidate}`);
-                  return candidate;
-                }
-              }
-              log.warn(`[bridge] XIVLauncher RB managed wine '${iniValues['RB_WineVersion']}' not installed yet; launch the game through XIVLauncher to download it`);
-              return null;
-            }
-            // No version configured; return null.
-            return null;
-          }
+      // 1b. RB Custom mode: explicit binary directory
+      if (iniValues['RB_WineStartupType'] === 'Custom' && iniValues['RB_WineBinaryPath']) {
+        const candidate = join(iniValues['RB_WineBinaryPath'], 'wine');
+        if (existsSync(candidate)) {
+          log.info(`[bridge] Auto-detected Wine from XIVLauncher RB custom config: ${candidate}`);
+          return candidate;
         }
+      }
 
-        // ── Standard XIVLauncher block ────────────────────────────────────
-        // 2a. Custom mode: explicit binary directory
-        if (iniValues['WineStartupType'] === 'Custom' && iniValues['WineBinaryPath']) {
-          const candidate = join(iniValues['WineBinaryPath'], 'wine');
-          if (existsSync(candidate)) {
-            log.info(`[bridge] Auto-detected Wine from XIVLauncher custom config: ${candidate}`);
-            return candidate;
-          }
-        }
-
-        // 2b. Managed: use the explicitly stored version name
-        if (iniValues['WineManagedVersion']) {
-          const versionDir = join(wineBaseDir, iniValues['WineManagedVersion']);
+      // 1c. RB Managed mode: use the version name to find the exact directory.
+      // If the version isn't installed yet (XIVLauncher downloads it on first
+      // game launch), return null rather than silently using a stale version
+      // from a previous session.
+      if (iniValues['RB_WineStartupType'] === 'Managed') {
+        if (iniValues['RB_WineVersion']) {
+          const versionDir = join(wineBaseDir, iniValues['RB_WineVersion']);
           for (const exe of ['bin/wine64', 'bin/wine']) {
             const candidate = join(versionDir, exe);
             if (existsSync(candidate)) {
-              log.info(`[bridge] Auto-detected Wine from XIVLauncher managed version (${iniValues['WineManagedVersion']}): ${candidate}`);
+              log.info(`[bridge] Auto-detected Wine from XIVLauncher RB managed version (${iniValues['RB_WineVersion']}): ${candidate}`);
               return candidate;
             }
           }
+          log.warn(`[bridge] XIVLauncher RB managed wine '${iniValues['RB_WineVersion']}' not installed yet; launch the game through XIVLauncher to download it`);
+          return null;
         }
-      } catch {
-        // launcher.ini unreadable
+        // No version configured; return null.
+        return null;
+      }
+    }
+
+    // ── Standard XIVLauncher block ────────────────────────────────────
+    // 2a. Custom mode: explicit binary directory
+    if (iniValues['WineStartupType'] === 'Custom' && iniValues['WineBinaryPath']) {
+      const candidate = join(iniValues['WineBinaryPath'], 'wine');
+      if (existsSync(candidate)) {
+        log.info(`[bridge] Auto-detected Wine from XIVLauncher custom config: ${candidate}`);
+        return candidate;
+      }
+    }
+
+    // 2b. Managed: use the explicitly stored version name
+    if (iniValues['WineManagedVersion']) {
+      const versionDir = join(wineBaseDir, iniValues['WineManagedVersion']);
+      for (const exe of ['bin/wine64', 'bin/wine']) {
+        const candidate = join(versionDir, exe);
+        if (existsSync(candidate)) {
+          log.info(`[bridge] Auto-detected Wine from XIVLauncher managed version (${iniValues['WineManagedVersion']}): ${candidate}`);
+          return candidate;
+        }
       }
     }
 
     // Last resort: scan the managed wine directory for the newest version
     return this.scanManagedWineDir(wineBaseDir);
+  }
+
+  /**
+   * Parses ~/.xlcore/launcher.ini into a flat key/value map. Returns an
+   * empty object when the file is missing or unreadable.
+   */
+  private readXlcoreIniValues(home: string): Record<string, string> {
+    const iniPath = join(home, '.xlcore', 'launcher.ini');
+    if (!existsSync(iniPath)) return {};
+    try {
+      const contents = readFileSync(iniPath, 'utf8');
+      const values: Record<string, string> = {};
+      for (const line of contents.split(/\r?\n/)) {
+        const m = line.match(/^([^=]+)=(.+)$/);
+        if (m) values[m[1].trim()] = m[2].trim();
+      }
+      return values;
+    } catch {
+      // launcher.ini unreadable
+      return {};
+    }
+  }
+
+  /**
+   * Whether XIVLauncher will run the game in a Proton prefix (protonprefix)
+   * instead of a Wine prefix (wineprefix). Mirrors the RB fork's own check
+   * in CreateCompatToolsInstance(): the startup type is "Proton", or
+   * "Custom" with a Proton binary path (a "proton" launcher script inside
+   * the configured binary directory). When RB_WineStartupType is absent the
+   * user runs standard XIVLauncher, which has no Proton mode; the
+   * WineStartupType check is a defensive fallback for it.
+   */
+  private isXlcoreProtonConfig(iniValues: Record<string, string>): boolean {
+    if (iniValues['RB_WineStartupType']) {
+      if (iniValues['RB_WineStartupType'] === 'Proton') return true;
+      if (
+        iniValues['RB_WineStartupType'] === 'Custom' &&
+        iniValues['RB_WineBinaryPath'] &&
+        existsSync(join(iniValues['RB_WineBinaryPath'], 'proton'))
+      ) {
+        return true;
+      }
+      return false;
+    }
+    return iniValues['WineStartupType'] === 'Proton';
   }
 
   /**
