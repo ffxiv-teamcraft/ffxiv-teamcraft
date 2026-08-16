@@ -104,7 +104,8 @@ export class WineResolver {
    * standard XIVLauncher and RB_-prefixed keys for the RB fork. Each set
    * has its own WineStartupType. Supported modes:
    *   Custom  – explicit bin directory in WineBinaryPath / RB_WineBinaryPath
-   *   Managed – a named wine build under ~/.xlcore/compatibilitytool/wine/
+   *             (RB: a Proton distribution root is also accepted; its
+   *             standalone wine binary is used, as with Steam's Proton)
    *   Proton  – (RB fork only) a Proton/GE-Proton tool from Steam's
    *             compatibilitytools.d, named in RB_ProtonVersion
    *
@@ -142,12 +143,24 @@ export class WineResolver {
         }
       }
 
-      // 1b. RB Custom mode: explicit binary directory
+      // 1b. RB Custom mode: explicit binary directory. A wine build is
+      // addressed by its bin directory (contains wine/wine64); a Proton
+      // distribution is addressed by its root (contains the `proton`
+      // wrapper), in which case the standalone wine binary lives in the
+      // same layout as Steam's Proton installations.
       if (iniValues['RB_WineStartupType'] === 'Custom' && iniValues['RB_WineBinaryPath']) {
-        const candidate = join(iniValues['RB_WineBinaryPath'], 'wine');
+        const customPath = iniValues['RB_WineBinaryPath'];
+        const candidate = join(customPath, 'wine');
         if (existsSync(candidate)) {
           log.info(`[bridge] Auto-detected Wine from XIVLauncher RB custom config: ${candidate}`);
           return candidate;
+        }
+        if (existsSync(join(customPath, 'proton'))) {
+          const bin = this.findWineBinInProtonDir(customPath);
+          if (bin) {
+            log.info(`[bridge] Auto-detected Wine from XIVLauncher RB custom Proton distro: ${bin}`);
+            return bin;
+          }
         }
       }
 
