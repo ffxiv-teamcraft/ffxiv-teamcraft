@@ -39,7 +39,7 @@
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <div>{{'DB.FISH.OVERLAY.Throw_etime' | translate}}</div>
-            @if (settings.timeFormat == '12H') {
+            @if (settings.timeFormat === '12H') {
               <div>{{throwTime$ | async | date:'hh:mm:ss a':'UTC'}}</div>
             } @else {
               <div>{{throwTime$ | async | date:'HH:mm:ss':'UTC'}}</div>
