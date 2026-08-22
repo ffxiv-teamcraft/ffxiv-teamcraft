@@ -8,7 +8,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { pickBy, uniq } from 'lodash';
+import { pickBy, uniq, uniqBy } from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReportStatus } from '../model/allagan-report-status';
@@ -264,10 +264,22 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     startWith([])
   );
 
-  public mapWeathers$ = this.fishingSpot$.pipe(
-    filter(spot => !!spot),
-    map((spot) => {
-      return uniq((weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate] || []).map(row => +row.weatherId)) as number[];
+  public mapWeathers$ = this.isOceanFishing$.pipe(
+    switchMap(isOceanFishing => {
+      if (isOceanFishing) {
+        return this.lazyData.getEntry('weathers').pipe(
+          map(weathers => {
+            const ids = Object.keys(weathers).map(Number);
+            return uniqBy(ids, id => this.i18n.getName(weathers[id].name));
+          })
+        );
+      }
+      return this.fishingSpot$.pipe(
+        filter(spot => !!spot),
+        map((spot) => {
+          return uniq((weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate] || []).map(row => +row.weatherId)) as number[];
+        })
+      );
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
