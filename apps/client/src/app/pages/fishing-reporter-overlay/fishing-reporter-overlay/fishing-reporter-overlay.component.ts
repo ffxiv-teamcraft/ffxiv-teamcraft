@@ -22,6 +22,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
     selector: 'app-fishing-reporter-overlay',
@@ -64,7 +65,7 @@ export class FishingReporterOverlayComponent {
     map(state => state.spot?.id >= 10000)
   );
 
-  constructor(private ipc: IpcService, private translate: TranslateService) {
+  constructor(private ipc: IpcService, private translate: TranslateService, public settings: SettingsService) {
     this.ipc.on('fishing-state', (event, data) => {
       this.state$.next(data);
     });
