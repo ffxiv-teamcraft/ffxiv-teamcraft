@@ -119,17 +119,16 @@ export class FishingReporter implements DataReporter {
 
     const throw$ = packets$.pipe(
       ofMessageType('eventPlay4'),
-      toIpcData(),
-      filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001 && packet.parsedIpcData.scene === 1),
       delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
         this.eorzea.weatherId$,
         this.eorzea.previousWeatherId$
       ),
-      map(([, statuses, weatherId, previousWeatherId]) => {
+      map(([packet, statuses, weatherId, previousWeatherId]) => {
         return {
-          timestamp: Date.now(),
+          timestamp: parseInt(packet.header.ipcTimestamp),
           etime: this.etime.toEorzeanDate(new Date()),
           statuses,
           weatherId,
@@ -138,14 +137,15 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-
-    const bite$ = eventPlay$.pipe(
-      filter(packet => packet.scene === 5),
+    const bite$ = packets$.pipe(
+      ofMessageType('eventPlay'),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001),
+      filter(packet => packet.parsedIpcData.scene === 5),
       withLatestFrom(this.eorzea.statuses$),
       map(([packet, statuses]) => {
         return {
-          timestamp: Date.now(),
-          tug: this.getTug(packet.param5),
+          timestamp: parseInt(packet.header.ipcTimestamp),
+          tug: this.getTug(packet.parsedIpcData.param5),
           statuses
         };
       })
@@ -183,11 +183,10 @@ export class FishingReporter implements DataReporter {
     const misses$ = combineLatest([
       packets$.pipe(
         ofMessageType('systemLogMessage'),
-        toIpcData(),
         map(packet => {
           return {
-            logMessage: packet.param1,
-            timestamp: Date.now()
+            logMessage: packet.parsedIpcData.param1,
+            timestamp: parseInt(packet.header.ipcTimestamp)
           };
         })
       ),
