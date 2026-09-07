@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnDestro
 import { FlexModule } from "@angular/flex-layout";
 import { TranslateModule } from "@ngx-translate/core";
 import { NzButtonModule } from "ng-zorro-antd/button";
-import { NzProgressModule } from "ng-zorro-antd/progress";
 import { ActionComponent } from "../action/action.component";
 import { DialogComponent } from "../../../../../app/core/dialog.component";
 import { Craft, CraftingAction, CrafterStats } from "@ffxiv-teamcraft/simulator";
@@ -14,6 +13,7 @@ import { SimulationReliabilityReport, SimulationService } from "../../../../core
 import { ActionCategory } from '../../model/action-category';
 import { SettingsService } from "apps/client/src/app/modules/settings/settings.service";
 import { NzIconModule } from "ng-zorro-antd/icon";
+import { NzSpinModule } from "ng-zorro-antd/spin";
 
 /**
  * Class names (as reported by `action.constructor.name`) of Cosmic Exploration-only
@@ -59,10 +59,10 @@ type SolverPhase = 'selection' | 'running' | 'done';
   standalone: true,
   imports: [
     FlexModule,
-    NzProgressModule,
     NzButtonModule,
     NzTagModule,
     NzIconModule,
+    NzSpinModule,
     TranslateModule,
     ActionComponent
   ]
@@ -225,6 +225,8 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   startSolving(): void {
     this.phase = 'running';
     this.running = true;
+    this.cd.detectChanges();
+
     this.sub = this.solver
         .solve(
           this.recipe,
@@ -237,25 +239,27 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
         )
         .subscribe({
           next: ({ progress, result, reliablity }) => {
-            console.log('[SolverPopupComponent] event received', { progress, result });
             if (progress) {
+              console.log('[SolverPopupComponent] Progress Result: ', progress);
               this.depth = progress.depth;
               this.bestQuality = progress.bestQuality;
               this.bestSuccess = progress.bestSuccess;
               this.qualityComplete = progress.qualityComplete;
+              this.cd.markForCheck();
             } 
             if (result) {
               this.resultActions = result;
               this.reliablity = reliablity;
               this.running = false;
               this.phase = 'done';
+              this.cd.markForCheck();
             }
-            this.cd.markForCheck();
           },
           error: (err) => {
             this.error = true;
             this.errorMessage = err?.message ?? String(err);
             this.running = false;
+            console.error('[SolverPopupComponent] Progress Error: ', err);
             this.cd.markForCheck();
           }
         });
@@ -264,11 +268,6 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   /** Closes the modal, returning the found rotation to the caller (e.g. the simulator) */
   apply(): void {
     this.modalRef.close(this.resultActions);
-  }
-
-  /** Formats the quality progress bar label as "current / target" */
-  progressFormat(): () => string {
-    return () => `${this.bestQuality} / ${this.recipe.quality}`;
   }
 
   ngOnDestroy(): void {

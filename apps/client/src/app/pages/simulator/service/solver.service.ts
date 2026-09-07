@@ -1,4 +1,4 @@
-import { inject, Injectable, NgZone } from "@angular/core";
+import { ApplicationRef, inject, Injectable, NgZone } from "@angular/core";
 import { Observable } from "rxjs";
 import { Craft, CrafterStats } from "@ffxiv-teamcraft/simulator";
 import { SettingsService } from "../../../modules/settings/settings.service";
@@ -16,6 +16,7 @@ export class SolverService {
   private settings: SettingsService = inject(SettingsService);
   private simulationService: SimulationService = inject(SimulationService);
   private zone: NgZone = inject(NgZone);
+  private appRef: ApplicationRef = inject(ApplicationRef);
 
   /**
    * Starts a solver run in a dedicated Web Worker for the given recipe and crafter

@@ -34,16 +34,9 @@
   }
 
   @if (phase === 'running') {
-    <div fxLayout="column" fxLayoutGap="5px">
-      <div>{{ 'SIMULATOR.SOLVER.Searching' | translate }}</div>
-      <nz-progress [nzPercent]="bestQuality / recipe.quality * 100"
-          [nzFormat]="progressFormat()"></nz-progress>
-      @if (qualityComplete) {
-        <nz-tag [nzColor]="'green'">{{ 'SIMULATOR.SOLVER.Quality_maxed' | translate}}</nz-tag>
-      }
-      @if (bestSuccess) {
-        <div>{{ 'SIMULATION.SOLVER.Valid_rotation_found' | translate }}</div>
-      }
+    <div class="running-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+      <nz-spin nzSize="large"></nz-spin>
+      <div class="running-hint">{{ 'SIMULATOR.SOLVER.Searching_indeterminate' | translate }}</div>
     </div>
   }
 
