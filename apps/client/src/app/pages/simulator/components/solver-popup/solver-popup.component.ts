@@ -11,7 +11,7 @@ import { NzModalRef } from "ng-zorro-antd/modal";
 import { NzTagModule } from "ng-zorro-antd/tag";
 import { SimulationReliabilityReport, SimulationService } from "../../../../core/simulation/simulation.service";
 import { ActionCategory } from '../../model/action-category';
-import { SettingsService } from "apps/client/src/app/modules/settings/settings.service";
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { NzIconModule } from "ng-zorro-antd/icon";
 import { NzSpinModule } from "ng-zorro-antd/spin";
 
