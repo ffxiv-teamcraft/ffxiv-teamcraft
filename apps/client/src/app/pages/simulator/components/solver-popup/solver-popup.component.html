@@ -1,25 +1,55 @@
 <div fxLayout="column" fxLayoutGap="10px">
-  @if (running) {
-    <div fxLayout="column" fxLayoutGap="5px">
-      <div>{{ 'SIMULATOR.SOLVER.Searching' | translate }} ({{ 'SIMULATOR.SOLVER.Depth' | translate }}: {{ depth }})</div>
-      <nz-progress [nzPercent]="bestQuality / recipe.quality * 100" [nzFormat]="progressFormat()"></nz-progress>
-      @if (qualityComplete) {
-        <nz-tag [nzColor]="'green'">{{ 'SIMULATOR.SOLVER.Quality_maxed' | translate }}</nz-tag>
+  @if (phase === 'selection') {
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div>{{ 'SIMULATOR.SOLVER.Select_actions_hint' | translate }}</div>
+
+      @for (category of categories; track category.titleKey) {
+        <div fxLayout="column" fxLayoutGap="5px">
+          <h4>{{ category.titleKey | translate }}</h4>
+          <div fxLayout="row wrap" fxLayoutGap="10px">
+            @for (action of category.actions; track action.getIds()[0]) {
+              <div class="action-toggle"
+                    [class.locked]="isLevelLocked(action)"
+                    (click)="toggleAction(action)">
+                <app-action
+                    [action]="action"
+                    [hideCost]="true"
+                    [disabled]="isLevelLocked(action)"
+                    [safe]="isEnabled(action) || isLevelLocked(action)"
+                    [ignoreDisabled]="false"
+                    [tooltipDisabled]="false"></app-action>
+                @if (isEnabled(action) && !isLevelLocked(action)) {
+                  <i nz-icon nzType="check-circle" nzTheme="twotone" [nzTwotoneColor]="'#52c41a'" class="toggle-icon"></i>
+                }
+              </div>
+            }
+          </div>
+        </div>
       }
-      @if (bestSuccess) {
-        <div>{{ 'SIMULATOR.SOLVER.Valid_rotation_found' | translate }}</div>
-      }
+
+      <button (click)="startSolving()" nz-button nzType="primary" nzBlock>
+        {{ 'SIMULATOR.SOLVER.Start' | translate }}
+      </button>
     </div>
-  } @else {
+  }
+
+  @if (phase === 'running') {
+    <div class="running-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+      <nz-spin nzSize="large"></nz-spin>
+      <div class="running-hint">{{ 'SIMULATOR.SOLVER.Searching_indeterminate' | translate }}</div>
+    </div>
+  }
+
+  @if (phase === 'done') {
     <div fxLayout="column" fxLayoutGap="10px">
       <div>{{ 'SIMULATOR.SOLVER.Done' | translate }}</div>
-      @if (reliability) {
+      @if (reliablity) {
         <div fxLayout="row wrap" fxLayoutGap="10px">
           <nz-tag [nzColor]="'geekblue'">
-            {{ 'SIMULATOR.Reliability' | translate }}: {{ reliability.successPercent }}%
+            {{ 'SIMULATOR.Reliablity' | translate}}: {{ reliablity.successPercent }}
           </nz-tag>
           <nz-tag [nzColor]="'purple'">
-            {{ 'SIMULATOR.Average_hq' | translate }}: {{ reliability.averageHQPercent }}%
+            {{ 'SIMULATOR.Average_hq' | translate }}: {{ reliablity.averageHQPercent}}
           </nz-tag>
         </div>
       }
@@ -35,6 +65,6 @@
   }
 
   @if (error) {
-    <div style="color: red;">{{ errorMessage }}</div>
+    <div class="error-message">{{ errorMessage }}</div>
   }
 </div>

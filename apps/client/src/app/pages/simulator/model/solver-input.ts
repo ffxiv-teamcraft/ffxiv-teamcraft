@@ -22,13 +22,24 @@ export interface SolverInput {
   maxSteps: number;
   /** Wall-clock time budget for the search in milliseconds */
   maxComputeMs: number;
+
   /**
+   * Explicit set of allowed action class names, typically produced by the solver
+   * popup's action-selection step. When provided, this is authorative and only
+   * actions whose class name is included, are considered by the search - the
+   * 'shouldUseCosmicExploration' / 'shouldUseSpecialistCommands' flags are ignored.
+   */
+  enabledActionNames?: string[] | Set<string>;
+
+  /**
+   * @deprecated
    * Whether Cosmic Exploration-only actions (e.g. Stellar Steady Hand, Material Miracle)
    * may be used by the solver. Defaults to false. These actions are not available for most
    * recipes and should not be suggested unless the caller explicitly opts in
    */
   shouldUseCosmicExploration?: boolean;
   /**
+   * @deprecated
    * Whether Specialist-only actions (e.g. Heart and Soul) may be used by the solver. This
    * flag alone is not sufficient - the crafter's stats must also have the 'specialist: true'
    * for this actions to be considered. Defaults to false

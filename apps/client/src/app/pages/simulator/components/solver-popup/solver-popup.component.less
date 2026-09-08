@@ -1,3 +1,37 @@
 nz-progress {
   width: 100%;
 }
+
+.action-toggle {
+  position: relative;
+  cursor: pointer;
+
+  &.locked {
+    cursor: not-allowed;
+  }
+
+  .toggle-icon {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    z-index: 5;
+    font-size: 16px;
+    background: #1f1f1f;
+    border-radius: 50%;
+  }
+}
+
+.running-container {
+  min-height: 160px;
+  padding: 20px;
+}
+
+.running-hint {
+  text-align: center;
+  opacity: 0.8;
+  max-width: 320px;
+}
+
+.error-message {
+  color: red;
+}

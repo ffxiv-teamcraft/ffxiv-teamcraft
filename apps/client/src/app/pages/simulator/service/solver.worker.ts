@@ -41,8 +41,7 @@ addEventListener('message', ({ data }) => {
       beamWidth: data.beamWidth,
       maxSteps: data.maxSteps,
       maxComputeMs: data.maxComputeMs,
-      shouldUseCosmicExploration: data.shouldUseCosmicExploration,
-      shouldUseSpecialistCommands: data.shouldUseSpecialistCommands
+      enabledActionNames: data.enabledActionNames
     }, progress => {
       postMessage({ type: 'progress', progress });
     });

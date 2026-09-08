@@ -1,4 +1,4 @@
-import { inject, Injectable } from "@angular/core";
+import { ApplicationRef, inject, Injectable, NgZone } from "@angular/core";
 import { Observable } from "rxjs";
 import { Craft, CrafterStats } from "@ffxiv-teamcraft/simulator";
 import { SettingsService } from "../../../modules/settings/settings.service";
@@ -15,6 +15,8 @@ import { SolverEvent } from '../model/solver-event';
 export class SolverService {
   private settings: SettingsService = inject(SettingsService);
   private simulationService: SimulationService = inject(SimulationService);
+  private zone: NgZone = inject(NgZone);
+  private appRef: ApplicationRef = inject(ApplicationRef);
 
   /**
    * Starts a solver run in a dedicated Web Worker for the given recipe and crafter
@@ -38,8 +40,8 @@ export class SolverService {
   solve(recipe: Craft, stats: CrafterStats,
     hqIngredients: { id: number; amount: number }[] = [],
     beamWidth = 4000, maxSteps = 45, maxComputeMs = 55000,
-    shouldUseCosmicExploration = false,
-    shouldUseSpecialistCommands = false): Observable<SolverEvent> {
+    enabledActionNames: string[] = []
+  ): Observable<SolverEvent> {
     return new Observable(subscriber => {
       if (typeof Worker === 'undefined') {
         subscriber.error(new Error('Web Workers are not supported in this environment.'));
@@ -50,23 +52,29 @@ export class SolverService {
       const registry = this.simulationService.getSimulator(this.settings.region).CraftingActionsRegistry;
 
       worker.onmessage = ({ data }) => {
-        if (data.type === 'progress') {
-          subscriber.next({ progress: data.progress });
-        } else if (data.type === 'done') {
-          subscriber.next({
-            result: registry.deserializeRotation(data.serializedActions),
-            reliablity: data.reliablity
-          });
-          subscriber.complete();
-          worker.terminate();
-        } else if (data.type === 'error') {
-          subscriber.error(new Error(data.message));
-        }
+        // Web Worker messages run outside Angular's zone by default, so change
+        // detection would otherwise never be triggered by these updates
+        this.zone.run(() => {
+          if (data.type === 'progress') {
+            subscriber.next({ progress: data.progress });
+          } else if (data.type === 'done') {
+            subscriber.next({
+              result: registry.deserializeRotation(data.serializedActions),
+              reliablity: data.reliablity
+            });
+            subscriber.complete();
+            worker.terminate();
+          } else if (data.type === 'error') {
+            subscriber.error(new Error(data.message));
+          }
+        });
       };
 
       worker.onerror = err => {
-        subscriber.error(err);
-        worker.terminate();
+        this.zone.run(() => {
+          subscriber.error(err);
+          worker.terminate();
+        });
       };
 
       worker.postMessage({
@@ -85,8 +93,7 @@ export class SolverService {
         beamWidth,
         maxSteps,
         maxComputeMs,
-        shouldUseCosmicExploration,
-        shouldUseSpecialistCommands
+        enabledActionNames
       });
 
       return () => worker.terminate();
