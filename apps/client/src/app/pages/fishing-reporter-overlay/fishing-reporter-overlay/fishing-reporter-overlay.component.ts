@@ -22,6 +22,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
     selector: 'app-fishing-reporter-overlay',
@@ -42,7 +43,10 @@ export class FishingReporterOverlayComponent {
       }
       // If they threw but no bite yet
       if (!state.biteData || state.throwData.timestamp > state.biteData.timestamp) {
-        return Math.floor((Date.now() - state.throwData.timestamp) / 1000);
+        const time_since = Math.floor((Date.now() - state.throwData.timestamp) / 1000);
+        // because cast-time is always floored, extremely small negative values display as -1 entire seconds
+        // let's just say 0 for those
+        return time_since < 0 ? 0 : time_since
       }
       // If they threw and bite happened
       return Math.floor((state.biteData.timestamp - state.throwData.timestamp) / 1000);
@@ -64,7 +68,7 @@ export class FishingReporterOverlayComponent {
     map(state => state.spot?.id >= 10000)
   );
 
-  constructor(private ipc: IpcService, private translate: TranslateService) {
+  constructor(private ipc: IpcService, private translate: TranslateService, public settings: SettingsService) {
     this.ipc.on('fishing-state', (event, data) => {
       this.state$.next(data);
     });

@@ -42,6 +42,7 @@ export enum Ja {
   CosmicFortune = "COSMIC FORTUNE",
   CosmoExplorer = "COSMO EXPLORER",
   Crops = "CROPS",
+  Crucible = "CRUCIBLE",
   CrystallineConflict = "CRYSTALLINE CONFLICT",
   DeepDungeon = "DEEP DUNGEON",
   DeliveryQuests = "DELIVERY QUESTS",

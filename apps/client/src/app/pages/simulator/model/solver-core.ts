@@ -83,6 +83,10 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     shouldUseSpecialistCommands = false } = input;
   const startTime = performance.now();
 
+  const enabledActionNames = input.enabledActionNames
+    ? new Set(input.enabledActionNames)
+    : null;
+
   /**
    * Determines whether a given action is allowed to be used by the solver, based on
    * the Cosmic Exploration / Specialist opt-in flagss and the crafter's specialist status
@@ -91,10 +95,10 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
    */
   const isActionAllowed = (action: CraftingAction): boolean => {
     const name = (action as any).constructor?.name;
-    if (COSMIC_EXPLORATION_ACTION_NAMES.has(name))
-      return shouldUseCosmicExploration;
-    if (SPECIALIST_ACTION_NAMES.has(name))
-      return shouldUseSpecialistCommands && !!stats.specialist;
+    if (enabledActionNames)
+      return enabledActionNames.has(name);
+    if (COSMIC_EXPLORATION_ACTION_NAMES.has(name)) return shouldUseCosmicExploration;
+    if (SPECIALIST_ACTION_NAMES.has(name)) return shouldUseSpecialistCommands && !!stats.specialist;
     return true;
   }
 

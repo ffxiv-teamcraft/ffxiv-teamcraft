@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
@@ -17,7 +17,6 @@ import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-
 import { FishingReport } from './fishing-report';
 import { AuthFacade } from '../../+state/auth.facade';
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
-import { buildMoochState } from './mooch-state';
 
 
 export class FishingReporter implements DataReporter {
@@ -48,18 +47,13 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.header.sourceActor === packet.header.targetActor)
     );
 
-    const baitIds$ = this.lazyData.getEntry('baits').pipe(
-      map(baits => new Set(baits.map(bait => bait.id))),
-      shareReplay({ bufferSize: 1, refCount: false })
-    );
-
     const fishCaught$ = packets$.pipe(
       ofMessageType('fishCaught'),
       toIpcData(),
       map(packet => {
         return {
           id: packet.itemId,
-          hq: (packet.flags >> 6 & 1) === 1,
+          hq: (packet.flags >> 4 & 1) === 1,
           moochable: (packet.flags & 5) === 5,
           size: packet.size
         };
@@ -125,17 +119,16 @@ export class FishingReporter implements DataReporter {
 
     const throw$ = packets$.pipe(
       ofMessageType('eventPlay4'),
-      toIpcData(),
-      filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001 && packet.parsedIpcData.scene === 1),
       delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
         this.eorzea.weatherId$,
         this.eorzea.previousWeatherId$
       ),
-      map(([, statuses, weatherId, previousWeatherId]) => {
+      map(([packet, statuses, weatherId, previousWeatherId]) => {
         return {
-          timestamp: Date.now(),
+          timestamp: parseInt(packet.header.ipcTimestamp),
           etime: this.etime.toEorzeanDate(new Date()),
           statuses,
           weatherId,
@@ -144,14 +137,15 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-
-    const bite$ = eventPlay$.pipe(
-      filter(packet => packet.scene === 5),
+    const bite$ = packets$.pipe(
+      ofMessageType('eventPlay'),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001),
+      filter(packet => packet.parsedIpcData.scene === 5),
       withLatestFrom(this.eorzea.statuses$),
       map(([packet, statuses]) => {
         return {
-          timestamp: Date.now(),
-          tug: this.getTug(packet.param5),
+          timestamp: parseInt(packet.header.ipcTimestamp),
+          tug: this.getTug(packet.parsedIpcData.param5),
           statuses
         };
       })
@@ -170,14 +164,29 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    const moochSelection$ = packets$.pipe(
+      ofMessageType('systemLogMessage'),
+      toIpcData(),
+      // 1121: Cast with hooked fish
+      // 3522: You apply <bait> to your line
+      // 1129: Nothing bites
+      filter(packet => [1121, 3522, 1129].includes(packet.param1)),
+      map(packet => {
+        if (packet.param1 === 1121 || packet.param1 === 3522) {
+          return packet.param3;
+        }
+        return null;
+      }),
+      startWith(null)
+    );
+
     const misses$ = combineLatest([
       packets$.pipe(
         ofMessageType('systemLogMessage'),
-        toIpcData(),
         map(packet => {
           return {
-            logMessage: packet.param1,
-            timestamp: Date.now()
+            logMessage: packet.parsedIpcData.param1,
+            timestamp: parseInt(packet.header.ipcTimestamp)
           };
         })
       ),
@@ -185,10 +194,28 @@ export class FishingReporter implements DataReporter {
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
         /**
-         * 1119: snap?
-         * 1120: Fish left
+         * systemLogMessage types
+         * fisher ignored bite (by waiting):
+         *  bait: 1117
+         *  lure: 1119
+         *
+         * fisher rested bite:
+         *  bait: 1117
+         *  lure: 1119
+         *
+         * hooked but fish slipped:
+         *  bait: 1119
+         *  lure: 1119
+         *
+         * lost your lure: 1118
+         * line snapped: 1120
          */
-        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 ) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
+        return (
+          rodAnimation.logMessage === 1117 ||
+          rodAnimation.logMessage === 1118 ||
+          rodAnimation.logMessage === 1119 ||
+          rodAnimation.logMessage === 1120
+        ) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {
@@ -199,40 +226,24 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const resetFromLogMessage$ = packets$.pipe(
-      ofMessageType('systemLogMessage'),
-      toIpcData(),
-      map(packet => {
-        return {
-          logMessage: packet.param1,
-          timestamp: Date.now()
-        };
-      }),
-      filter(rodAnimation => {
-        /**
-         * 1111: Early hook
-         * 1117: Ignored the fish
-         */
-        return rodAnimation.logMessage === 1111 || rodAnimation.logMessage === 1117
-      }),
-      map(() => true)
-    );
-
-    const resetFromAction$ = packets$.pipe(
+    const reset$ = packets$.pipe(
       ofMessageType('eventPlay4'),
       toIpcData(),
       // 271 = fishing idle
       filter(packet => packet.eventId === 0x150001 && packet.params[0] === 271)
     );
 
-    const reset$ = merge(resetFromLogMessage$, resetFromAction$);
+    const resetMooch$ = merge(packets$.pipe(
+        ofMessageType('actorControlSelf', 'fishingBaitMsg')
+      ),
+      misses$,
+      reset$,
+      fishCaught$.pipe(debounceTime(750))
+    ).pipe(
+      map(() => null)
+    );
 
-    const mooch$ = buildMoochState({
-      packets$,
-      baitIds$,
-      fishCaught$,
-      reset$: merge(misses$, reset$)
-    });
+    const mooch$ = merge(moochSelection$, resetMooch$);
 
     const hookset$ = actionTimeline$.pipe(
       filter(key => key !== 'fishing/idle'),
@@ -335,8 +346,7 @@ export class FishingReporter implements DataReporter {
         this.authFacade.mainCharacter$.pipe(
           map(char => char?.Name),
           startWith(null)
-        ),
-        baitIds$.pipe(startWith(new Set<number>()))
+        )
       ),
       filter(([fish, baitId, throwData, biteData, , spot, stats]) => {
         return (fish.id === -1 && stats?.gp > 1)
@@ -344,10 +354,8 @@ export class FishingReporter implements DataReporter {
             && spot.fishes.indexOf(fish.id) > -1
           ) && throwData.weatherId !== null && baitId > 0;
       }),
-      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name, baitIds]) => {
+      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name]) => {
         const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
-        // A regular bait can never be a mooch, never let one through even if the state machine let it slip.
-        const moochId = mooch !== null && !baitIds.has(mooch) ? mooch : null;
         const entry: FishingReport = {
           itemId: fish.id,
           etime: Math.round(throwData.etime.getTime() % 86400000 / 3600) / 1000,
@@ -364,7 +372,7 @@ export class FishingReporter implements DataReporter {
           intuition: throwData.statuses.some(({ id }) => id === 568),
           aLure: biteData.statuses.find(({ id }) => id === 3972)?.stacks || 0,
           mLure: biteData.statuses.find(({ id }) => id === 3973)?.stacks || 0,
-          mooch: moochId !== null,
+          mooch: mooch !== null,
           tug: biteData.tug,
           hookset,
           spot: spot.id,
@@ -372,8 +380,8 @@ export class FishingReporter implements DataReporter {
           trainId: shouldAddTrain ? train?.$key : null,
           ...stats
         };
-        if (moochId) {
-          entry.baitId = moochId;
+        if (mooch) {
+          entry.baitId = mooch;
         }
         if (entry.trainId) {
           this.fishTrainFacade.addReport({

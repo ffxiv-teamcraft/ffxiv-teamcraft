@@ -9,7 +9,7 @@ export interface LazyInstanceSearch {
   lvl:   number;
   patch: number;
   tw?:   string;
-  zh:    string;
+  zh?:   string;
 }
 
 export interface Data {
@@ -35,4 +35,5 @@ export enum Icon {
   APIAssetPathUIIcon061000061836TexFormatPNG = "/api/asset?path=ui/icon/061000/061836.tex&format=png",
   APIAssetPathUIIcon061000061846TexFormatPNG = "/api/asset?path=ui/icon/061000/061846.tex&format=png",
   APIAssetPathUIIcon061000061850TexFormatPNG = "/api/asset?path=ui/icon/061000/061850.tex&format=png",
+  APIAssetPathUIIcon061000061854TexFormatPNG = "/api/asset?path=ui/icon/061000/061854.tex&format=png",
 }

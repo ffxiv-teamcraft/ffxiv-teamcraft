@@ -1186,7 +1186,10 @@
       "Valid_rotation_found": "Eine valide Rotation wurde gefunden, optimiere...",
       "Done": "Rotation fertig",
       "Apply": "Nutze diese Rotation",
-      "Quality_maxed": "Maximale Qualität erreicht"
+      "Quality_maxed": "Maximale Qualität erreicht",
+      "Select_actions_hint": "Wähle die Aktionen aus, die für den Löser genutzt werden sollen",
+      "Start": "Beginne Lösen",
+      "Searching_indeterminate": "Löse die Rotation... es kann bis zu einer Minute dauern, bis eine Lösung erscheint. Bitte schließe das Fenster nicht."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotationen",

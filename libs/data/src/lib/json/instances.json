@@ -5548,6 +5548,32 @@
       44000
     ]
   },
+  "5085": {
+    "id": 5085,
+    "en": "A Rush of Cold Wind",
+    "ja": "寒風の吹くとき",
+    "de": "Wo die kalten Winde wehen",
+    "fr": "L'heure de briser la glace",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061805.tex&format=png",
+    "banner": "",
+    "contentType": 7,
+    "levelReq": 100,
+    "ilvlReq": 0,
+    "sync": 100,
+    "exp": 0,
+    "map": 1234,
+    "contentText": [
+      45235,
+      45200
+    ]
+  },
   "10001": {
     "id": 10001,
     "en": "Basic Training: Enemy Parties",
@@ -17325,6 +17351,157 @@
     "contentText": [
       43000,
       43000
+    ]
+  },
+  "56001": {
+    "id": 56001,
+    "en": "First Board of the Unbroken",
+    "ja": "闘獣練 第一盤",
+    "de": "Erstes Brett der Bestie",
+    "fr": "Dédale bestial - 1er plateau",
+    "description": {
+      "en": "Shades of myriad beasts await all who attempt the Crucible of the Unbroken, a tool conceived by a certain tradition of beastmasters. Navigating these intricately crafted boards requires no little skill and fortitude─especially should your soul be on the line. Hold fast to your teachings and to the bonds with your familiars as you weather the trials within...",
+      "ja": "闘獣練――それは、ある魔獣使いの一派が編み出した特殊な試練。闘獣盤と呼ばれる魔具の盤上に立ち、魔獣たちの幻体と戦いを繰り広げる行である。<br>さあ、戦いの時は来た。魔獣との絆を紡ぐ者よ、いまこそ選りすぐった仲間たちとともに激闘を戦い抜け！",
+      "de": "Das Brett der Bestie, ein von der Schule der Lhu zu Übungszwecken ersonnenes Spiel, bietet Bestienbändigern die Möglichkeit, sich in simulierten Kämpfen mit den Ebenbildern zahlloser Gegner zu messen. Dies ist deine Chance, dich zu bewähren. Erbringe den Beweis, dass die Bande zwischen dir und deinen Bestien jeder noch so großen Herausforderung gewachsen sind.",
+      "fr": "Le Dédale bestial, cet outil d'entraînement conçu par une certaine école de dressage, a permis de former nombre d'apprentis à l'art du combat assisté de bêtes sauvages. Ceux qui s'y aventurent doivent avancer sur le plateau tel un pion et affronter les créatures illusoires qui se dressent sur leur chemin. Choisissez vos plus fidèles compagnons et plongez dans l'arène&nbsp;: il est temps de prouver que vous avez bien assimilé les leçons de votre mentor&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061854.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/112000/112664.tex&format=png",
+    "contentType": 40,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 30,
+    "exp": 0,
+    "map": 1204,
+    "contentText": [
+      45404,
+      45400
+    ]
+  },
+  "56002": {
+    "id": 56002,
+    "en": "Second Board of the Unbroken",
+    "ja": "闘獣練 第二盤",
+    "de": "Zweites Brett der Bestie",
+    "fr": "Dédale bestial - 2e plateau",
+    "description": {
+      "en": "Shades of myriad beasts await all who attempt the Crucible of the Unbroken, a tool conceived by a certain tradition of beastmasters. Navigating these intricately crafted boards requires no little skill and fortitude─especially should your soul be on the line. Hold fast to your teachings and to the bonds with your familiars as you weather the trials within...",
+      "ja": "闘獣練――それは、ある魔獣使いの一派が編み出した特殊な試練。闘獣盤と呼ばれる魔具の盤上に立ち、魔獣たちの幻体と戦いを繰り広げる行である。<br>さあ、戦いの時は来た。魔獣との絆を紡ぐ者よ、いまこそ選りすぐった仲間たちとともに激闘を戦い抜け！",
+      "de": "Das Brett der Bestie, ein von der Schule der Lhu zu Übungszwecken ersonnenes Spiel, bietet Bestienbändigern die Möglichkeit, sich in simulierten Kämpfen mit den Ebenbildern zahlloser Gegner zu messen. Dies ist deine Chance, dich zu bewähren. Erbringe den Beweis, dass die Bande zwischen dir und deinen Bestien jeder noch so großen Herausforderung gewachsen sind.",
+      "fr": "Le Dédale bestial, cet outil d'entraînement conçu par une certaine école de dressage, a permis de former nombre d'apprentis à l'art du combat assisté de bêtes sauvages. Ceux qui s'y aventurent doivent avancer sur le plateau tel un pion et affronter les créatures illusoires qui se dressent sur leur chemin. Choisissez vos plus fidèles compagnons et plongez dans l'arène&nbsp;: il est temps de prouver que vous avez bien assimilé les leçons de votre mentor&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061854.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/112000/112665.tex&format=png",
+    "contentType": 40,
+    "levelReq": 40,
+    "ilvlReq": 0,
+    "sync": 40,
+    "exp": 0,
+    "map": 1209,
+    "contentText": [
+      44810,
+      44800
+    ]
+  },
+  "56003": {
+    "id": 56003,
+    "en": "Third Board of the Unbroken",
+    "ja": "闘獣練 第三盤",
+    "de": "Drittes Brett der Bestie",
+    "fr": "Dédale bestial - 3e plateau",
+    "description": {
+      "en": "Shades of myriad beasts await all who attempt the Crucible of the Unbroken, a tool conceived by a certain tradition of beastmasters. Navigating these intricately crafted boards requires no little skill and fortitude─especially should your soul be on the line. Hold fast to your teachings and to the bonds with your familiars as you weather the trials within...",
+      "ja": "闘獣練――それは、ある魔獣使いの一派が編み出した特殊な試練。闘獣盤と呼ばれる魔具の盤上に立ち、魔獣たちの幻体と戦いを繰り広げる行である。<br>さあ、戦いの時は来た。魔獣との絆を紡ぐ者よ、いまこそ選りすぐった仲間たちとともに激闘を戦い抜け！",
+      "de": "Das Brett der Bestie, ein von der Schule der Lhu zu Übungszwecken ersonnenes Spiel, bietet Bestienbändigern die Möglichkeit, sich in simulierten Kämpfen mit den Ebenbildern zahlloser Gegner zu messen. Dies ist deine Chance, dich zu bewähren. Erbringe den Beweis, dass die Bande zwischen dir und deinen Bestien jeder noch so großen Herausforderung gewachsen sind.",
+      "fr": "Le Dédale bestial, cet outil d'entraînement conçu par une certaine école de dressage, a permis de former nombre d'apprentis à l'art du combat assisté de bêtes sauvages. Ceux qui s'y aventurent doivent avancer sur le plateau tel un pion et affronter les créatures illusoires qui se dressent sur leur chemin. Choisissez vos plus fidèles compagnons et plongez dans l'arène&nbsp;: il est temps de prouver que vous avez bien assimilé les leçons de votre mentor&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061854.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/112000/112666.tex&format=png",
+    "contentType": 40,
+    "levelReq": 50,
+    "ilvlReq": 0,
+    "sync": 50,
+    "exp": 0,
+    "map": 1214,
+    "contentText": [
+      44906,
+      44900
+    ]
+  },
+  "56004": {
+    "id": 56004,
+    "en": "First Master's Board",
+    "ja": "闘獣練 特一盤",
+    "de": "Erstes Meisterbrett der Bestie",
+    "fr": "Dédale bestial - 1er plateau expert",
+    "description": {
+      "en": "Thanks to your unparalleled skill and unwavering faith, Lauda and Guttler have embarked together upon a different path. The Crucible has been reimagined into training grounds for beast and mankind alike, allowing all to freely hone their skills in battle. Join the joyful fray and realize your true potential as a beastmaster!",
+      "ja": "冒険者と仲間たちの活躍によって魔獣ガトラーの怨念は晴れ、ラウダは新たな絆を結ぶことに成功した。かくして闘獣練は、「魔獣使いの修練の場」という本来の役割を取り戻すこととなる。<br>新たな盤面に集うは、闘争本能を存分に発揮すべく奮い立つ魔獣たちの魂。さあ、相棒の魔獣たちとともに、いまこそさらなる試練に挑め！",
+      "de": "Euer beherzter Einsatz hat Guttler von seinem Hass befreit und einen Pakt zwischen ihm und Lauda ermöglicht. Nicht mehr länger dazu verdammt, als Gefängnis des erzürnten Gottes dienen zu müssen, kann das Brett der Bestie endlich wieder seine eigentliche Bestimmung erfüllen. Und es wartet direkt mit einer neuen Herausforderung auf dich und deine treuen Begleiter. Werdet ihr auch diese bewältigen können?",
+      "fr": "Grâce à vos prouesses au sein du Dédale, Dévoreuse a accepté de renoncer à sa rancœur contre les dresseurs et a forgé un pacte avec Lauda. Depuis, cette dernière a souhaité vous proposer de nouveaux plateaux à traverser, bien plus corsés que les précédents. Saurez-vous relever le défi une fois de plus&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061854.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/112000/112667.tex&format=png",
+    "contentType": 40,
+    "levelReq": 50,
+    "ilvlReq": 0,
+    "sync": 50,
+    "exp": 0,
+    "map": 1219
+  },
+  "56005": {
+    "id": 56005,
+    "en": "Second Master's Board",
+    "ja": "闘獣練 特二盤",
+    "de": "Zweites Meisterbrett der Bestie",
+    "fr": "Dédale bestial - 2e plateau expert",
+    "description": {
+      "en": "Thanks to your unparalleled skill and unwavering faith, Lauda and Guttler have embarked together upon a different path. The Crucible has been reimagined into training grounds for beast and mankind alike, allowing all to freely hone their skills in battle. Join the joyful fray and realize your true potential as a beastmaster!",
+      "ja": "冒険者と仲間たちの活躍によって魔獣ガトラーの怨念は晴れ、ラウダは新たな絆を結ぶことに成功した。かくして闘獣練は、「魔獣使いの修練の場」という本来の役割を取り戻すこととなる。<br>新たな盤面に集うは、闘争本能を存分に発揮すべく奮い立つ魔獣たちの魂。さあ、相棒の魔獣たちとともに、いまこそさらなる試練に挑め！",
+      "de": "Euer beherzter Einsatz hat Guttler von seinem Hass befreit und einen Pakt zwischen ihm und Lauda ermöglicht. Nicht mehr länger dazu verdammt, als Gefängnis des erzürnten Gottes dienen zu müssen, kann das Brett der Bestie endlich wieder seine eigentliche Bestimmung erfüllen. Und es wartet direkt mit einer neuen Herausforderung auf dich und deine treuen Begleiter. Werdet ihr auch diese bewältigen können?",
+      "fr": "Grâce à vos prouesses au sein du Dédale, Dévoreuse a accepté de renoncer à sa rancœur contre les dresseurs et a forgé un pacte avec Lauda. Depuis, cette dernière a souhaité vous proposer de nouveaux plateaux à traverser, bien plus corsés que les précédents. Saurez-vous relever le défi une fois de plus&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/api/asset?path=ui/icon/061000/061854.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/112000/112668.tex&format=png",
+    "contentType": 40,
+    "levelReq": 50,
+    "ilvlReq": 0,
+    "sync": 50,
+    "exp": 0,
+    "map": 1224,
+    "contentText": [
+      45132,
+      45100
     ]
   },
   "57001": {

@@ -23025,7 +23025,7 @@
       "fr": "Accomplir la quête “Il était une fois un explorateur”.",
       "ko": "퀘스트 '와인버드의 수수께끼' 완료",
       "zh": "完成任务“瓦因博德的谜题”。",
-      "tw": "完成任務「瓦因博多的謎題」。"
+      "tw": "完成任務「瓦因博德的謎題」。"
     },
     "item": 0,
     "title": 0
@@ -34491,13 +34491,15 @@
     "fr": "Ami de Jibanyan",
     "ko": "지바냥의 친구",
     "zh": "地缚猫之友",
+    "tw": "吉胖喵之友",
     "description": {
       "en": "Obtain a Jibanyan minion.",
       "de": "Einen Jibanyan-Begleiter erhalten.",
       "ja": "ミニオン：ジバニャンを入手する",
       "fr": "Obtenir la mascotte Jibanyan.",
       "ko": "꼬마 친구 지바냥 입수",
-      "zh": "获得宠物地缚猫。"
+      "zh": "获得宠物地缚猫。",
+      "tw": "獲得寵物吉胖喵。"
     },
     "item": 0,
     "title": 0
@@ -34512,13 +34514,15 @@
     "fr": "Ami de Komasan",
     "ko": "백멍이의 친구",
     "zh": "小狛之友",
+    "tw": "小石獅之友",
     "description": {
       "en": "Obtain a Komasan minion.",
       "de": "Einen Komasan-Begleiter erhalten.",
       "ja": "ミニオン：コマさんを入手する",
       "fr": "Obtenir la mascotte Komasan.",
       "ko": "꼬마 친구 백멍이 입수",
-      "zh": "获得宠物小狛。"
+      "zh": "获得宠物小狛。",
+      "tw": "獲得寵物小石獅。"
     },
     "item": 0,
     "title": 0
@@ -34533,13 +34537,15 @@
     "fr": "Ami de Whisper",
     "ko": "위스퍼의 친구",
     "zh": "维斯帕之友",
+    "tw": "威斯帕之友",
     "description": {
       "en": "Obtain a Whisper minion.",
       "de": "Einen Whisper-Begleiter erhalten.",
       "ja": "ミニオン：ウィスパーを入手する",
       "fr": "Obtenir la mascotte Whisper.",
       "ko": "꼬마 친구 위스퍼 입수",
-      "zh": "获得宠物维斯帕。"
+      "zh": "获得宠物维斯帕。",
+      "tw": "獲得寵物威斯帕。"
     },
     "item": 0,
     "title": 0
@@ -34554,13 +34560,15 @@
     "fr": "Ami de Blizzaria",
     "ko": "눈보라 공주의 친구",
     "zh": "吹雪公主之友",
+    "tw": "吹雪姬之友",
     "description": {
       "en": "Obtain a Blizzaria minion.",
       "de": "Einen Glazia-Begleiter erhalten.",
       "ja": "ミニオン：ふぶき姫を入手する",
       "fr": "Obtenir la mascotte Blizzaria.",
       "ko": "꼬마 친구 눈보라 공주 입수",
-      "zh": "获得宠物吹雪公主。"
+      "zh": "获得宠物吹雪公主。",
+      "tw": "獲得寵物吹雪姬。"
     },
     "item": 0,
     "title": 0
@@ -34575,13 +34583,15 @@
     "fr": "Ami de Kyubi",
     "ko": "구미의 친구",
     "zh": "九尾之友",
+    "tw": "九尾之友",
     "description": {
       "en": "Obtain a Kyubi minion.",
       "de": "Einen Kyubi-Begleiter erhalten.",
       "ja": "ミニオン：キュウビを入手する",
       "fr": "Obtenir la mascotte Kyubi.",
       "ko": "꼬마 친구 구미 입수",
-      "zh": "获得宠物九尾。"
+      "zh": "获得宠物九尾。",
+      "tw": "獲得寵物九尾。"
     },
     "item": 0,
     "title": 0
@@ -34596,13 +34606,15 @@
     "fr": "Ami de Komajiro",
     "ko": "황멍이의 친구",
     "zh": "狛次郎之友",
+    "tw": "小石次郎之友",
     "description": {
       "en": "Obtain a Komajiro minion.",
       "de": "Einen Komajiro-Begleiter erhalten.",
       "ja": "ミニオン：コマじろうを入手する",
       "fr": "Obtenir la mascotte Komajiro.",
       "ko": "꼬마 친구 황멍이 입수",
-      "zh": "获得宠物狛次郎。"
+      "zh": "获得宠物狛次郎。",
+      "tw": "獲得寵物小石次郎。"
     },
     "item": 0,
     "title": 0
@@ -34617,13 +34629,15 @@
     "fr": "Ami de Corniot",
     "ko": "인면견의 친구",
     "zh": "人面犬之友",
+    "tw": "人面犬之友",
     "description": {
       "en": "Obtain a Manjimutt minion.",
       "de": "Einen Möter-Begleiter erhalten.",
       "ja": "ミニオン：じんめん犬を入手する",
       "fr": "Obtenir la mascotte Corniot.",
       "ko": "꼬마 친구 인면견 입수",
-      "zh": "获得宠物人面犬。"
+      "zh": "获得宠物人面犬。",
+      "tw": "獲得寵物人面犬。"
     },
     "item": 0,
     "title": 0
@@ -34638,13 +34652,15 @@
     "fr": "Ami de Noko",
     "ko": "럭키 스네이크의 친구",
     "zh": "野槌蛇之友",
+    "tw": "小土龍之友",
     "description": {
       "en": "Obtain a Noko minion.",
       "de": "Einen Noko-Begleiter erhalten.",
       "ja": "ミニオン：ツチノコを入手する",
       "fr": "Obtenir la mascotte Noko.",
       "ko": "꼬마 친구 럭키 스네이크 입수",
-      "zh": "获得宠物野槌蛇。"
+      "zh": "获得宠物野槌蛇。",
+      "tw": "獲得寵物小土龍。"
     },
     "item": 0,
     "title": 0
@@ -34659,13 +34675,15 @@
     "fr": "Ami d'Octorgone",
     "ko": "이무기의 친구",
     "zh": "大蛇之友",
+    "tw": "大蛇之友",
     "description": {
       "en": "Obtain a Venoct minion.",
       "de": "Einen Viptor-Begleiter erhalten.",
       "ja": "ミニオン：オロチを入手する",
       "fr": "Obtenir la mascotte Octorgone.",
       "ko": "꼬마 친구 이무기 입수",
-      "zh": "获得宠物大蛇。"
+      "zh": "获得宠物大蛇。",
+      "tw": "獲得寵物大蛇。"
     },
     "item": 0,
     "title": 0
@@ -34680,13 +34698,15 @@
     "fr": "Ami de Shogunyan",
     "ko": "무사냥의 친구",
     "zh": "武士猫之友",
+    "tw": "武士喵之友",
     "description": {
       "en": "Obtain a Shogunyan minion.",
       "de": "Einen Shogunyan-Begleiter erhalten.",
       "ja": "ミニオン：ブシニャンを入手する",
       "fr": "Obtenir la mascotte Shogunyan.",
       "ko": "꼬마 친구 무사냥 입수",
-      "zh": "获得宠物武士猫。"
+      "zh": "获得宠物武士猫。",
+      "tw": "獲得寵物武士喵。"
     },
     "item": 0,
     "title": 0
@@ -34701,13 +34721,15 @@
     "fr": "Ami d'Hovernyan",
     "ko": "부유냥의 친구",
     "zh": "浮游猫之友",
+    "tw": "浮游喵之友",
     "description": {
       "en": "Obtain a Hovernyan minion.",
       "de": "Einen Hovernyan-Begleiter erhalten.",
       "ja": "ミニオン：フユニャンを入手する",
       "fr": "Obtenir la mascotte Hovernyan.",
       "ko": "꼬마 친구 부유냥 입수",
-      "zh": "获得宠物浮游猫。"
+      "zh": "获得宠物浮游猫。",
+      "tw": "獲得寵物浮游喵。"
     },
     "item": 0,
     "title": 0
@@ -34722,13 +34744,15 @@
     "fr": "Ami de Robonyan F-Type",
     "ko": "로보냥 F의 친구",
     "zh": "机器猫F型之友",
+    "tw": "機器貓F型之友",
     "description": {
       "en": "Obtain a Robonyan F-type minion.",
       "de": "Einen Robonyan F-Type-Begleiter erhalten.",
       "ja": "ミニオン：ロボニャンＦ型を入手する",
       "fr": "Obtenir la mascotte Robonyan F-Type.",
       "ko": "꼬마 친구 로보냥 F 입수",
-      "zh": "获得宠物机器猫F型。"
+      "zh": "获得宠物机器猫F型。",
+      "tw": "獲得寵物機器貓F型。"
     },
     "item": 0,
     "title": 0
@@ -34743,13 +34767,15 @@
     "fr": "Ami d'Usapyon",
     "ko": "우사뿅의 친구",
     "zh": "USA蹦之友",
+    "tw": "USA蹦之友",
     "description": {
       "en": "Obtain an USApyon minion.",
       "de": "Einen Usapyon-Begleiter erhalten.",
       "ja": "ミニオン：ＵＳＡピョンを入手する",
       "fr": "Obtenir la mascotte Usapyon.",
       "ko": "꼬마 친구 우사뿅 입수",
-      "zh": "获得宠物USA蹦。"
+      "zh": "获得宠物USA蹦。",
+      "tw": "獲得寵物USA蹦。"
     },
     "item": 0,
     "title": 0
@@ -34764,13 +34790,15 @@
     "fr": "Arme-toi d'un Yo-kai : hache",
     "ko": "요괴 무기: 붉은고양이 도끼",
     "zh": "赤猫之斩",
+    "tw": "赤貓之斬",
     "description": {
       "en": "Obtain a Paw of the Crimson Cat.",
       "de": "Eine Tatze der roten Katze erhalten.",
       "ja": "百斬斧・赤猫を入手する",
       "fr": "Obtenir une grosse patte du chat vermeil.",
       "ko": "붉은고양이 도끼 입수",
-      "zh": "获得百斩斧·赤猫。"
+      "zh": "获得百斩斧·赤猫。",
+      "tw": "獲得百斬斧·赤貓。"
     },
     "item": 0,
     "title": 0
@@ -34785,13 +34813,15 @@
     "fr": "Arme-toi d'un Yo-kai : canne",
     "ko": "요괴 무기: 백구 지팡이",
     "zh": "白犬之愈",
+    "tw": "白犬之癒",
     "description": {
       "en": "Obtain a Cane of the Shrine Guardian.",
       "de": "Eine Rute des großen Schreinwächters erhalten.",
       "ja": "白犬の杖を入手する",
       "fr": "Obtenir une canne du gardien du temple.",
       "ko": "백구 지팡이 입수",
-      "zh": "获得白犬杖。"
+      "zh": "获得白犬杖。",
+      "tw": "獲得白犬杖。"
     },
     "item": 0,
     "title": 0
@@ -34806,13 +34836,15 @@
     "fr": "Arme-toi d'un Yo-kai : arc",
     "ko": "요괴 무기: 지식인의 대궁",
     "zh": "幽魂之吟",
+    "tw": "幽魂之吟",
     "description": {
       "en": "Obtain a Bow of the White Wisp.",
       "de": "Einen Bogen des weißen Butlers erhalten.",
       "ja": "知識人の大弓を入手する",
       "fr": "Obtenir un arc du spectre pédant.",
       "ko": "지식인의 대궁 입수",
-      "zh": "获得智者大弓。"
+      "zh": "获得智者大弓。",
+      "tw": "獲得智者大弓。"
     },
     "item": 0,
     "title": 0
@@ -34827,13 +34859,15 @@
     "fr": "Arme-toi d'un Yo-kai : bâton",
     "ko": "요괴 무기: 설녀 지팡이",
     "zh": "雪姬之咒",
+    "tw": "雪姬之咒",
     "description": {
       "en": "Obtain a Staff of the Snow Maiden.",
       "de": "Einen Stab der Schneemaid erhalten.",
       "ja": "雪姫の杖を入手する",
       "fr": "Obtenir un bâton de la princesse des neiges.",
       "ko": "설녀 지팡이 입수",
-      "zh": "获得雪姬杖。"
+      "zh": "获得雪姬杖。",
+      "tw": "獲得雪姬杖。"
     },
     "item": 0,
     "title": 0
@@ -34848,13 +34882,15 @@
     "fr": "Arme-toi d'un Yo-kai : dagues",
     "ko": "요괴 무기: 아홉꼬리 쌍검",
     "zh": "九尾之忍",
+    "tw": "九尾之忍",
     "description": {
       "en": "Obtain a pair of Twintails of the Flame Fox.",
       "de": "Ein Paar Kitzelfedern des Flammenfuchses erhalten.",
       "ja": "九尾の双剣を入手する",
       "fr": "Obtenir une paire de griffes du renard ardent.",
       "ko": "아홉꼬리 쌍검 입수",
-      "zh": "获得九尾双剑。"
+      "zh": "获得九尾双剑。",
+      "tw": "獲得九尾雙劍。"
     },
     "item": 0,
     "title": 0
@@ -34869,13 +34905,15 @@
     "fr": "Arme-toi d'un Yo-kai : codex",
     "ko": "요괴 무기: 황구의 서",
     "zh": "朱犬之识",
+    "tw": "朱犬之識",
     "description": {
       "en": "Obtain a Codex of the Shrine Guardian.",
       "de": "Einen Kodex des kleinen Schreinwächters erhalten.",
       "ja": "朱犬の書を入手する",
       "fr": "Obtenir un codex du gardien du temple.",
       "ko": "황구의 서 입수",
-      "zh": "获得朱犬之书。"
+      "zh": "获得朱犬之书。",
+      "tw": "獲得朱犬之書。"
     },
     "item": 0,
     "title": 0
@@ -34890,13 +34928,15 @@
     "fr": "Arme-toi d'un Yo-kai : grimoire",
     "ko": "요괴 무기: 빙의 교리서",
     "zh": "人面之灵",
+    "tw": "人面之靈",
     "description": {
       "en": "Obtain a Book of the Eerie Mutt.",
       "de": "Ein Buch des Brillenköters erhalten.",
       "ja": "憑依教典を入手する",
       "fr": "Obtenir un grimoire du chien repoussant.",
       "ko": "빙의 교리서 입수",
-      "zh": "获得凭依教典。"
+      "zh": "获得凭依教典。",
+      "tw": "獲得憑依教典。"
     },
     "item": 0,
     "title": 0
@@ -34911,13 +34951,15 @@
     "fr": "Arme-toi d'un Yo-kai : sphère",
     "ko": "요괴 무기: 행운뱀 천구의",
     "zh": "土龙之卜",
+    "tw": "土龍之蔔",
     "description": {
       "en": "Obtain a Globe of the Lucky Snake.",
       "de": "Einen Globus der Glücksschlange erhalten.",
       "ja": "幸運の天球儀を入手する",
       "fr": "Obtenir une sphère céleste du serpent porte-bonheur.",
       "ko": "행운뱀 천구의 입수",
-      "zh": "获得幸运天球仪。"
+      "zh": "获得幸运天球仪。",
+      "tw": "獲得幸運天球儀。"
     },
     "item": 0,
     "title": 0
@@ -34932,13 +34974,15 @@
     "fr": "Arme-toi d'un Yo-kai : lance",
     "ko": "요괴 무기: 큰구렁이 창",
     "zh": "大蛇之刺",
+    "tw": "大蛇之刺",
     "description": {
       "en": "Obtain a Spear of the Spark Serpent.",
       "de": "Einen Speer der glitschigen Schlange erhalten.",
       "ja": "蛇鎗・からす丸を入手する",
       "fr": "Obtenir une lance du dragon foudroyant.",
       "ko": "큰구렁이 창 입수",
-      "zh": "获得蛇枪·鸦丸。"
+      "zh": "获得蛇枪·鸦丸。",
+      "tw": "獲得蛇槍·鴉丸。"
     },
     "item": 0,
     "title": 0
@@ -34953,13 +34997,15 @@
     "fr": "Arme-toi d'un Yo-kai : épée et bouclier",
     "ko": "요괴 무기: 고양이 요괴검과 고양이 둥근방패",
     "zh": "武猫之韧",
+    "tw": "武貓之韌",
     "description": {
       "en": "Obtain a Whisker of the Brave Cat and a Buckler of the Legendary Cat.",
       "de": "Einen Kratzstab der mutigen Katze erhalten.",
       "ja": "妖刀・猫丸と円陣猫盾を入手する",
       "fr": "Obtenir une moustache du chat courageux et une rondache du chat légendaire.",
       "ko": "고양이 요괴검과 고양이 둥근방패 입수",
-      "zh": "获得妖刀·猫丸和圆阵猫盾。"
+      "zh": "获得妖刀·猫丸和圆阵猫盾。",
+      "tw": "獲得妖刀·貓丸和圓陣貓盾。"
     },
     "item": 0,
     "title": 0
@@ -34974,13 +35020,15 @@
     "fr": "Arme-toi d'un Yo-kai : claymore",
     "ko": "요괴 무기: 십자흉터 대검",
     "zh": "冬猫之刚",
+    "tw": "冬貓之剛",
     "description": {
       "en": "Obtain a Fang of the Fearless Cat.",
       "de": "Eine Kralle der furchtlosen Katze erhalten.",
       "ja": "同田貫・冬猫を入手する",
       "fr": "Obtenir un croc du chat intrépide.",
       "ko": "십자흉터 대검 입수",
-      "zh": "获得同田贯·冬猫。"
+      "zh": "获得同田贯·冬猫。",
+      "tw": "獲得同田貫·冬貓。"
     },
     "item": 0,
     "title": 0
@@ -34995,13 +35043,15 @@
     "fr": "Arme-toi d'un Yo-kai : mousqueton",
     "ko": "요괴 무기: F형 파동포",
     "zh": "钢猫之炮",
+    "tw": "鋼貓之砲",
     "description": {
       "en": "Obtain a Musket of the Metal Cat.",
       "de": "Eine Muskete der Metallkatze erhalten.",
       "ja": "Ｆ型波動砲を入手する",
       "fr": "Obtenir un mousqueton du chat métallique.",
       "ko": "F형 파동포 입수",
-      "zh": "获得F型波动炮。"
+      "zh": "获得F型波动炮。",
+      "tw": "獲得F型波動砲。"
     },
     "item": 0,
     "title": 0
@@ -35016,13 +35066,15 @@
     "fr": "Arme-toi d'un Yo-kai : poings",
     "ko": "요괴 무기: 우주 펀치",
     "zh": "蓝兔之拳",
+    "tw": "藍兔之拳",
     "description": {
       "en": "Obtain a pair of Ears of the Moon Rabbit.",
       "de": "Ein Paar Ohren des Raumhasen erhalten.",
       "ja": "宇宙パンチを入手する",
       "fr": "Obtenir une paire d'oreilles du lièvre lunaire.",
       "ko": "우주 펀치 입수",
-      "zh": "获得宇宙拳套。"
+      "zh": "获得宇宙拳套。",
+      "tw": "獲得宇宙拳套。"
     },
     "item": 0,
     "title": 0
@@ -35037,13 +35089,15 @@
     "fr": "Collectionneur d'armes Yo-kai",
     "ko": "요괴 무기 수집가",
     "zh": "妖怪武器收藏家",
+    "tw": "妖怪武器收藏家",
     "description": {
       "en": "Obtain 13 Yo-kai weapons.",
       "de": "13 Yo-kai-Waffen erhalten.",
       "ja": "妖怪武器を13種入手する",
       "fr": "Obtenir 13 armes Yo-kai.",
       "ko": "요괴 무기 13종류 입수",
-      "zh": "获得13种妖怪武器。"
+      "zh": "获得13种妖怪武器。",
+      "tw": "獲得13種妖怪武器。"
     },
     "item": 15946,
     "title": 0
@@ -35817,13 +35871,15 @@
     "fr": "Les Yo-kai sont nos amis !♪",
     "ko": "요괴들의 친구",
     "zh": "妖怪之友",
+    "tw": "妖怪之友",
     "description": {
       "en": "Obtain 13 Yo-kai minions.",
       "de": "13 Yo-kai-Begleiter erhalten.",
       "ja": "妖怪ミニオンを13種入手する",
       "fr": "Obtenir 13 mascottes Yo-kai.",
       "ko": "요괴 꼬마 친구 13종류 입수",
-      "zh": "获得13种妖怪宠物。"
+      "zh": "获得13种妖怪宠物。",
+      "tw": "獲得13種妖怪寵物。"
     },
     "item": 15431,
     "title": 0
@@ -36390,13 +36446,15 @@
     "fr": "Ils sont parmi nous !",
     "ko": "반가워, 요괴 꼬마 친구",
     "zh": "欢迎，妖怪宠物",
+    "tw": "歡迎，妖怪寵物",
     "description": {
       "en": "Complete the quest “A Complete Game Changer.”",
       "de": "Den Auftrag „Die Yo-kai sind los!“ abgeschlossen.",
       "ja": "クエスト「ようこそ、妖怪ミニオン」をコンプリートする",
       "fr": "Accomplir la quête “Whisper sur la ville”.",
       "ko": "퀘스트 '반가워, 요괴 꼬마 친구' 완료",
-      "zh": "完成任务“欢迎，妖怪宠物”。"
+      "zh": "完成任务“欢迎，妖怪宠物”。",
+      "tw": "完成任務「歡迎，妖怪寵物」。"
     },
     "item": 0,
     "title": 0
@@ -59510,13 +59568,15 @@
     "fr": "Ami du baron Enma",
     "ko": "염라대왕의 친구",
     "zh": "阎魔之友",
+    "tw": "閻魔之友",
     "description": {
       "en": "Obtain a Lord Enma minion.",
       "de": "Einen Meister Enma-Begleiter erhalten.",
       "ja": "ミニオン：エンマを入手する",
       "fr": "Obtenir la mascotte Baron Enma.",
       "ko": "꼬마 친구 염라대왕 입수",
-      "zh": "获得宠物阎魔。"
+      "zh": "获得宠物阎魔。",
+      "tw": "獲得寵物閻魔。"
     },
     "item": 0,
     "title": 0
@@ -59531,13 +59591,15 @@
     "fr": "Ami de Zazel",
     "ko": "아수라의 친구",
     "zh": "滑头鬼之友",
+    "tw": "滑頭鬼之友",
     "description": {
       "en": "Obtain a Zazel minion.",
       "de": "Einen Sasel-Begleiter erhalten.",
       "ja": "ミニオン：ぬらりひょんを入手する",
       "fr": "Obtenir la mascotte Zazel.",
       "ko": "꼬마 친구 아수라 입수",
-      "zh": "获得宠物滑头鬼。"
+      "zh": "获得宠物滑头鬼。",
+      "tw": "獲得寵物滑頭鬼。"
     },
     "item": 0,
     "title": 0
@@ -59552,13 +59614,15 @@
     "fr": "Ami du baron Ananta",
     "ko": "뱀왕 카이라의 친구",
     "zh": "蛇王凯拉之友",
+    "tw": "蛇王凱拉之友",
     "description": {
       "en": "Obtain a Lord Ananta minion.",
       "de": "Einen Meister Ananta-Begleiter erhalten.",
       "ja": "ミニオン：蛇王カイラを入手する",
       "fr": "Obtenir la mascotte Baron Ananta.",
       "ko": "꼬마 친구 뱀왕 카이라 입수",
-      "zh": "获得宠物蛇王凯拉。"
+      "zh": "获得宠物蛇王凯拉。",
+      "tw": "獲得寵物蛇王凱拉。"
     },
     "item": 0,
     "title": 0
@@ -59573,13 +59637,15 @@
     "fr": "Ami de Damona",
     "ko": "백귀공주의 친구",
     "zh": "百鬼公主之友",
+    "tw": "百鬼姬之友",
     "description": {
       "en": "Obtain a Damona minion.",
       "de": "Einen Dämona-Begleiter erhalten.",
       "ja": "ミニオン：百鬼姫を入手する",
       "fr": "Obtenir la mascotte Damona.",
       "ko": "꼬마 친구 백귀공주 입수",
-      "zh": "获得宠物百鬼公主。"
+      "zh": "获得宠物百鬼公主。",
+      "tw": "獲得寵物百鬼姬。"
     },
     "item": 0,
     "title": 0
@@ -59594,13 +59660,15 @@
     "fr": "Ami des Yo-kai pour la vie !♪",
     "ko": "요괴들의 단짝 친구",
     "zh": "妖怪挚友",
+    "tw": "妖怪摯友",
     "description": {
       "en": "Obtain 17 Yo-kai minions.",
       "de": "Alle Yo-kai-Begleiter erhalten.",
       "ja": "妖怪ミニオンを17種入手する",
       "fr": "Obtenir 17 mascottes Yo-kai.",
       "ko": "요괴 꼬마 친구 17종류 입수",
-      "zh": "获得17种妖怪宠物。"
+      "zh": "获得17种妖怪宠物。",
+      "tw": "獲得17種妖怪寵物。"
     },
     "item": 0,
     "title": 0
@@ -59615,13 +59683,15 @@
     "fr": "Arme-toi d'un Yo-kai : pistolame",
     "ko": "요괴 무기: 염라 건블레이드",
     "zh": "阎魔枪刃",
+    "tw": "閻魔槍刃",
     "description": {
       "en": "Obtain a Gunblade of the Yo-kai King.",
       "de": "Eine Revolverklinge des Königs der Yo-kai erhalten.",
       "ja": "エンマガンブレードを入手する",
       "fr": "Obtenir une pistolame du roi des Yo-kai.",
       "ko": "염라 건블레이드 입수",
-      "zh": "获得阎魔枪刃。"
+      "zh": "获得阎魔枪刃。",
+      "tw": "獲得閻魔槍刃。"
     },
     "item": 0,
     "title": 0
@@ -59636,13 +59706,15 @@
     "fr": "Arme-toi d'un Yo-kai : katana",
     "ko": "요괴 무기: 아수라 요괴검",
     "zh": "怪刀·浮世丸",
+    "tw": "怪刀·浮世丸",
     "description": {
       "en": "Obtain a Katana of the King's Counsel.",
       "de": "Ein Katana des königlichen Beraters erhalten.",
       "ja": "怪刀・浮世丸を入手する",
       "fr": "Obtenir un katana du conseiller royal.",
       "ko": "아수라 요괴검 입수",
-      "zh": "获得怪刀·浮世丸。"
+      "zh": "获得怪刀·浮世丸。",
+      "tw": "獲得怪刀·浮世丸。"
     },
     "item": 0,
     "title": 0
@@ -59657,13 +59729,15 @@
     "fr": "Arme-toi d'un Yo-kai : rapière",
     "ko": "요괴 무기: 뱀왕 레이피어",
     "zh": "蛇王刺剑",
+    "tw": "蛇王刺劍",
     "description": {
       "en": "Obtain a Rapier of the Serpent Lord.",
       "de": "Ein Rapier des Schlangenkönigs erhalten.",
       "ja": "蛇王のレイピアを入手する",
       "fr": "Obtenir une rapière du seigneur des serpents.",
       "ko": "뱀왕 레이피어 입수",
-      "zh": "获得蛇王刺剑。"
+      "zh": "获得蛇王刺剑。",
+      "tw": "獲得蛇王刺劍。"
     },
     "item": 0,
     "title": 0
@@ -59678,13 +59752,15 @@
     "fr": "Arme-toi d'un Yo-kai : armes de jet",
     "ko": "요괴 무기: 백귀 원반",
     "zh": "百鬼圆阵",
+    "tw": "百鬼圓陣",
     "description": {
       "en": "Obtain a pair of Glaives of the Dark Princess.",
       "de": "Ein Paar Chakrams der Prinzessin der Unterwelt erhalten.",
       "ja": "百鬼円陣を入手する",
       "fr": "Obtenir une paire de gladius de la princesse des ombres.",
       "ko": "백귀 원반 입수",
-      "zh": "获得百鬼圆阵。"
+      "zh": "获得百鬼圆阵。",
+      "tw": "獲得百鬼圓陣。"
     },
     "item": 0,
     "title": 0
@@ -59699,13 +59775,15 @@
     "fr": "Fana d'armes Yo-kai",
     "ko": "요괴 무기 수집광",
     "zh": "妖怪武器爱好者",
+    "tw": "妖怪武器愛好者",
     "description": {
       "en": "Obtain 17 Yo-kai weapons.",
       "de": "Alle Yo-kai-Waffen erhalten.",
       "ja": "妖怪武器を17種入手する",
       "fr": "Obtenir 17 armes Yo-kai.",
       "ko": "요괴 무기 17종류 입수",
-      "zh": "获得17种妖怪武器。"
+      "zh": "获得17种妖怪武器。",
+      "tw": "獲得17種妖怪武器。"
     },
     "item": 30864,
     "title": 0
@@ -77901,7 +77979,7 @@
     "fr": "L'étoile de Valisthéa",
     "ko": "발리스제아로 향하는 별에게",
     "zh": "瓦利斯泽亚的征服者",
-    "tw": "瓦利斯澤亞的征服者",
+    "tw": "征服伐利斯傑亞之星",
     "description": {
       "en": "Complete the quest “The Path Infernal.”",
       "de": "Den Auftrag „Der Pfad der Flammen“ abgeschlossen.",
@@ -77909,7 +77987,7 @@
       "fr": "Accomplir la quête “Flammes primordiales”.",
       "ko": "퀘스트 '염영의 여로' 완료",
       "zh": "完成任务“纵使前路狱火焰毒”。",
-      "tw": "完成任務「縱使前路獄火焰毒」。"
+      "tw": "完成任務「焰影燼途」。"
     },
     "item": 0,
     "title": 710
@@ -81589,7 +81667,7 @@
       "fr": "Accomplir la quête “Commémoration sous les lumières de l'avenir”.",
       "ko": "퀘스트 '신생제와 내일을 향해 쏘아올리는 불꽃' 완료",
       "zh": "完成任务“新生庆典与迈向明日的烟花”。",
-      "tw": "完成任務「新生祭與邁向明日的煙花」。"
+      "tw": "完成任務「新生祭與邁向明日的煙火」。"
     },
     "item": 0,
     "title": 0
@@ -82110,13 +82188,15 @@
     "fr": "Train-train quotidien I",
     "ko": "니토위퀘: 1단계",
     "zh": "尼托维凯的信任1",
+    "tw": "尼托維凱的信任1",
     "description": {
       "en": "Achieve a satisfaction level of 1 with Nitowikwe.",
       "de": "Zufriedenheitsrang 1 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを1にする",
       "fr": "Atteindre le rang 1 de satisfaction auprès de Nitowikwe.",
       "ko": "니토위퀘의 신뢰도 1단계 달성",
-      "zh": "尼托维凯的信赖等级达到1级。"
+      "zh": "尼托维凯的信赖等级达到1级。",
+      "tw": "尼托維凱的信賴等級達到1級。"
     },
     "item": 0,
     "title": 0
@@ -82131,13 +82211,15 @@
     "fr": "Train-train quotidien II",
     "ko": "니토위퀘: 2단계",
     "zh": "尼托维凯的信任2",
+    "tw": "尼托維凱的信任2",
     "description": {
       "en": "Achieve a satisfaction level of 2 with Nitowikwe.",
       "de": "Zufriedenheitsrang 2 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを2にする",
       "fr": "Atteindre le rang 2 de satisfaction auprès de Nitowikwe.",
       "ko": "니토위퀘의 신뢰도 2단계 달성",
-      "zh": "尼托维凯的信赖等级达到2级。"
+      "zh": "尼托维凯的信赖等级达到2级。",
+      "tw": "尼托維凱的信賴等級達到2級。"
     },
     "item": 0,
     "title": 0
@@ -82152,13 +82234,15 @@
     "fr": "Train-train quotidien III",
     "ko": "니토위퀘: 3단계",
     "zh": "尼托维凯的信任3",
+    "tw": "尼托維凱的信任3",
     "description": {
       "en": "Achieve a satisfaction level of 3 with Nitowikwe.",
       "de": "Zufriedenheitsrang 3 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを3にする",
       "fr": "Atteindre le rang 3 de satisfaction auprès de Nitowikwe.",
       "ko": "니토위퀘의 신뢰도 3단계 달성",
-      "zh": "尼托维凯的信赖等级达到3级。"
+      "zh": "尼托维凯的信赖等级达到3级。",
+      "tw": "尼托維凱的信賴等級達到3級。"
     },
     "item": 0,
     "title": 0
@@ -82173,13 +82257,15 @@
     "fr": "Train-train quotidien IV",
     "ko": "니토위퀘: 4단계",
     "zh": "尼托维凯的信任4",
+    "tw": "尼托維凱的信任4",
     "description": {
       "en": "Achieve a satisfaction level of 4 with Nitowikwe.",
       "de": "Zufriedenheitsrang 4 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを4にする",
       "fr": "Atteindre le rang 4 de satisfaction auprès de Nitowikwe.",
       "ko": "니토위퀘의 신뢰도 4단계 달성",
-      "zh": "尼托维凯的信赖等级达到4级。"
+      "zh": "尼托维凯的信赖等级达到4级。",
+      "tw": "尼托維凱的信賴等級達到4級。"
     },
     "item": 0,
     "title": 0
@@ -82194,13 +82280,15 @@
     "fr": "Train-train quotidien V",
     "ko": "니토위퀘: 5단계",
     "zh": "尼托维凯的信任5",
+    "tw": "尼托維凱的信任5",
     "description": {
       "en": "Achieve a satisfaction level of 5 with Nitowikwe.",
       "de": "Zufriedenheitsrang 5 bei Nitowikwe erlangt.",
       "ja": "ニトウィケの信頼ランクを5にする",
       "fr": "Atteindre le rang 5 de satisfaction auprès de Nitowikwe.",
       "ko": "니토위퀘의 신뢰도 5단계 달성",
-      "zh": "尼托维凯的信赖等级达到5级。"
+      "zh": "尼托维凯的信赖等级达到5级。",
+      "tw": "尼托維凱的信賴等級達到5級。"
     },
     "item": 0,
     "title": 763
@@ -82215,13 +82303,15 @@
     "fr": "Fournisseur officiel de Nitowikwe I",
     "ko": "니토위퀘의 단골: 1단계",
     "zh": "尼托维凯的老主顾1",
+    "tw": "尼托維凱的老主顧1",
     "description": {
       "en": "Deliver 36 collectables to Nitowikwe.",
       "de": "Nitowikwe 36 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計36回納品する",
       "fr": "Échanger 36 objets collectionnables à Nitowikwe.",
       "ko": "니토위퀘에게 소장품 36회 납품",
-      "zh": "在尼托维凯处累计交纳收藏品36次。"
+      "zh": "在尼托维凯处累计交纳收藏品36次。",
+      "tw": "在尼托維凱處累計交納收藏品36次。"
     },
     "item": 0,
     "title": 0
@@ -82236,13 +82326,15 @@
     "fr": "Fournisseur officiel de Nitowikwe II",
     "ko": "니토위퀘의 단골: 2단계",
     "zh": "尼托维凯的老主顾2",
+    "tw": "尼托維凱的老主顧2",
     "description": {
       "en": "Deliver 48 collectables to Nitowikwe.",
       "de": "Nitowikwe 48 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計48回納品する",
       "fr": "Échanger 48 objets collectionnables à Nitowikwe.",
       "ko": "니토위퀘에게 소장품 48회 납품",
-      "zh": "在尼托维凯处累计交纳收藏品48次。"
+      "zh": "在尼托维凯处累计交纳收藏品48次。",
+      "tw": "在尼托維凱處累計交納收藏品48次。"
     },
     "item": 0,
     "title": 0
@@ -82257,13 +82349,15 @@
     "fr": "Fournisseur officiel de Nitowikwe III",
     "ko": "니토위퀘의 단골: 3단계",
     "zh": "尼托维凯的老主顾3",
+    "tw": "尼托維凱的老主顧3",
     "description": {
       "en": "Deliver 60 collectables to Nitowikwe.",
       "de": "Nitowikwe 60 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計60回納品する",
       "fr": "Échanger 60 objets collectionnables à Nitowikwe.",
       "ko": "니토위퀘에게 소장품 60회 납품",
-      "zh": "在尼托维凯处累计交纳收藏品60次。"
+      "zh": "在尼托维凯处累计交纳收藏品60次。",
+      "tw": "在尼托維凱處累計交納收藏品60次。"
     },
     "item": 0,
     "title": 0
@@ -82278,13 +82372,15 @@
     "fr": "Fournisseur officiel de Nitowikwe IV",
     "ko": "니토위퀘의 단골: 4단계",
     "zh": "尼托维凯的老主顾4",
+    "tw": "尼托維凱的老主顧4",
     "description": {
       "en": "Deliver 90 collectables to Nitowikwe.",
       "de": "Nitowikwe 90 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計90回納品する",
       "fr": "Échanger 90 objets collectionnables à Nitowikwe.",
       "ko": "니토위퀘에게 소장품 90회 납품",
-      "zh": "在尼托维凯处累计交纳收藏品90次。"
+      "zh": "在尼托维凯处累计交纳收藏品90次。",
+      "tw": "在尼托維凱處累計交納收藏品90次。"
     },
     "item": 0,
     "title": 0
@@ -82299,13 +82395,15 @@
     "fr": "Fournisseur officiel de Nitowikwe V",
     "ko": "니토위퀘의 단골: 5단계",
     "zh": "尼托维凯的老主顾5",
+    "tw": "尼托維凱的老主顧5",
     "description": {
       "en": "Deliver 120 collectables to Nitowikwe.",
       "de": "Nitowikwe 120 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計120回納品する",
       "fr": "Échanger 120 objets collectionnables à Nitowikwe.",
       "ko": "니토위퀘에게 소장품 120회 납품",
-      "zh": "在尼托维凯处累计交纳收藏品120次。"
+      "zh": "在尼托维凯处累计交纳收藏品120次。",
+      "tw": "在尼托維凱處累計交納收藏品120次。"
     },
     "item": 0,
     "title": 0
@@ -82320,13 +82418,15 @@
     "fr": "Fournisseur officiel de Nitowikwe VI",
     "ko": "니토위퀘의 단골: 6단계",
     "zh": "尼托维凯的老主顾6",
+    "tw": "尼托維凱的老主顧6",
     "description": {
       "en": "Deliver 150 collectables to Nitowikwe.",
       "de": "Nitowikwe 150 Sammlerstücke geliefert.",
       "ja": "ニトウィケに収集品を計150回納品する",
       "fr": "Échanger 150 objets collectionnables à Nitowikwe.",
       "ko": "니토위퀘에게 소장품 150회 납품",
-      "zh": "在尼托维凯处累计交纳收藏品150次。"
+      "zh": "在尼托维凯处累计交纳收藏品150次。",
+      "tw": "在尼托維凱處累計交納收藏品150次。"
     },
     "item": 0,
     "title": 764
@@ -82456,13 +82556,15 @@
     "fr": "Affranchis sans frontières",
     "ko": "'자유의 문'이여, 영원하라",
     "zh": "关上自由之门",
+    "tw": "關上自由之門",
     "description": {
       "en": "Complete the quest “Bar the Passage.”",
       "de": "Den Auftrag „Kampf an Zorgor der Weiten“ abgeschlossen.",
       "ja": "クエスト「決戦、ゾーゴー永結橋」をコンプリートする",
       "fr": "Accomplir la quête “Pour s'affranchir de la tyrannie, tout s'appelle vertu”.",
       "ko": "퀘스트 '결전, 조고 영결교' 완료",
-      "zh": "完成任务“决战！佐戈永结桥”。"
+      "zh": "完成任务“决战！佐戈永结桥”。",
+      "tw": "完成任務「決戰！佐戈永結橋」。"
     },
     "item": 0,
     "title": 766
@@ -82477,13 +82579,15 @@
     "fr": "On est tous un peu Wachumeqimeqi",
     "ko": "다 함께 와추메키메키!",
     "zh": "把你的心我的心串一串",
+    "tw": "把你的心我的心串一串",
     "description": {
       "en": "Complete the quest “Appreciated Value.”",
       "de": "Den Auftrag „Das Wachumeqimeqi-Dankesspektakel“ abgeschlossen.",
       "ja": "クエスト「ワチュメキメキ大感謝祭」をコンプリートする",
       "fr": "Accomplir la quête “La grande foire aux mille mercis”.",
       "ko": "퀘스트 '와추메키메키 감사 대축제' 완료",
-      "zh": "完成任务“珠串万货街感恩大酬宾”。"
+      "zh": "完成任务“珠串万货街感恩大酬宾”。",
+      "tw": "完成任務「珠串萬貨街大感謝祭」。"
     },
     "item": 0,
     "title": 767
@@ -82636,13 +82740,15 @@
     "fr": "Nuage dissipé",
     "ko": "어둠의 구름을 걷어낸 자",
     "zh": "祓暗的诛云者",
+    "tw": "祓暗的誅雲者",
     "description": {
       "en": "Defeat the Cloud of Darkness in the Cloud of Darkness (Chaotic).",
       "de": "Die Wolke der Dunkelheit in „Die Wolke der Dunkelheit (chaotisch)“ besiegt.",
       "ja": "滅暗闇の雲激闘戦で、暗闇の雲を討伐する",
       "fr": "Vaincre le Nuage de Ténèbres dans le raid “La Tour de Ténèbres (chaotique)”.",
       "ko": "멸 어둠의 구름 격투전에 참가하여 어둠의 구름 처치",
-      "zh": "在暗黑之云诛灭战中战胜暗黑之云。"
+      "zh": "在暗黑之云诛灭战中战胜暗黑之云。",
+      "tw": "在滅 黑暗之雲激鬥戰中戰勝黑暗之雲。"
     },
     "item": 0,
     "title": 0
@@ -82657,13 +82763,15 @@
     "fr": "Nous ne ferons plus qu'un",
     "ko": "절 또 하나의 미래를 지켜본 자",
     "zh": "征服绝境·另一个未来",
+    "tw": "見證絕 光暗未來殲滅戰之人",
     "description": {
       "en": "Bear witness to a different future for the Oracles of Light and Darkness.",
       "de": "Die Schicksale des Orakels des Lichts und des Orakels der Dunkelheit vereinigt.",
       "ja": "光と闇の巫女の運命を集約させる",
       "fr": "Fusionner les destins des prêtresses de la Lumière et des Ténèbres.",
       "ko": "빛과 어둠의 무녀의 모든 운명을 목도",
-      "zh": "在光暗未来绝境战中收束光之巫女与暗之巫女的命运。"
+      "zh": "在光暗未来绝境战中收束光之巫女与暗之巫女的命运。",
+      "tw": "在絕光暗未來殲滅戰中收束光之巫女與暗之巫女的命運。"
     },
     "item": 0,
     "title": 768
@@ -82678,13 +82786,15 @@
     "fr": "Roi du conflit : saison 14",
     "ko": "컨플릭트의 제왕: 시즌 14",
     "zh": "冲突的王者第14赛季",
+    "tw": "衝突的王者第14賽季",
     "description": {
       "en": "Complete Crystalline Conflict Season Fourteen ranked #1.",
       "de": "Die 14. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで1位になる",
       "fr": "Terminer la saison 14 de Crystalline Conflict à la 1re place du classement.",
       "ko": "크리스탈라인 컨플릭트 시즌 14에서 1위 입상",
-      "zh": "在水晶冲突的第14赛季中取得排名第1名的成绩。"
+      "zh": "在水晶冲突的第14赛季中取得排名第1名的成绩。",
+      "tw": "在水晶衝突的第14賽季中取得排名第1名的成績。"
     },
     "item": 0,
     "title": 769
@@ -82699,13 +82809,15 @@
     "fr": "Prince du conflit : saison 14",
     "ko": "컨플릭트의 용자: 시즌 14",
     "zh": "冲突的勇者第14赛季",
+    "tw": "衝突的勇者第14賽季",
     "description": {
       "en": "Achieve high ranking rewards in Crystalline Conflict Season Fourteen.",
       "de": "Die 14. Saison von „Crystalline Conflict“ mit einer hohen Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで上位に入賞する",
       "fr": "Terminer la saison 14 de Crystalline Conflict dans les 30 premières places du classement.",
       "ko": "크리스탈라인 컨플릭트 시즌 14에서 상위 랭킹에 입상",
-      "zh": "在水晶冲突的第14赛季中取得排名前列的成绩。"
+      "zh": "在水晶冲突的第14赛季中取得排名前列的成绩。",
+      "tw": "在水晶衝突的第14賽季中取得排名前30名的成績。"
     },
     "item": 0,
     "title": 770
@@ -82720,13 +82832,15 @@
     "fr": "As du conflit : saison 14",
     "ko": "컨플릭트의 입상자: 시즌 14",
     "zh": "冲突的获奖者第14赛季",
+    "tw": "衝突的獲獎者第14賽季",
     "description": {
       "en": "Achieve ranked rewards in Crystalline Conflict Season Fourteen.",
       "de": "Die 14. Saison von „Crystalline Conflict“ mit einer Auszeichnung abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン14にて、ランキングで入賞する",
       "fr": "Terminer la saison 14 de Crystalline Conflict dans les 100 premières places du classement.",
       "ko": "크리스탈라인 컨플릭트 시즌 14에서 랭킹에 입상",
-      "zh": "在水晶冲突的第14赛季中取得排名。"
+      "zh": "在水晶冲突的第14赛季中取得排名。",
+      "tw": "在水晶衝突的第14賽季中取得排名前100名的成績。"
     },
     "item": 0,
     "title": 771
@@ -82825,13 +82939,15 @@
     "fr": "Cartographe du continent : La Gardienne de l'Immémorial",
     "ko": "언더킵 탐험가",
     "zh": "踏遍永护塔底",
+    "tw": "踏遍永護塔底",
     "description": {
       "en": "Discover every location within the Underkeep.",
       "de": "Alle Orte in den Unterfried-Ruinen erkundet.",
       "ja": "アンダーキープ（王城旧跡）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de la Gardienne de l'Immémorial.",
       "ko": "언더킵을 탐험하여 모든 지역 발견",
-      "zh": "成功探索永护塔底（王城古迹）的所有地区。"
+      "zh": "成功探索永护塔底（王城古迹）的所有地区。",
+      "tw": "成功探索永護塔底（王城遺跡）的所有地區。"
     },
     "item": 0,
     "title": 0
@@ -82846,13 +82962,15 @@
     "fr": "Honneur préservé",
     "ko": "영원한 기사를 쓰러뜨린 자",
     "zh": "永恒的弑臣者",
+    "tw": "狩獵永恆騎士之人",
     "description": {
       "en": "Defeat Zelenia in Recollection (Extreme).",
       "de": "Zelenia in Gok Tajaal - Zelenia bezwungen.",
       "ja": "極ゼレニア討滅戦で、ゼレニアを討伐する",
       "fr": "Vaincre Zelenia dans le défi “Le Sanctuaire du Serment (extrême)”.",
       "ko": "극 젤레니아 토벌전에 참가하여 젤레니아 처치",
-      "zh": "在泽莲尼娅歼殛战中战胜泽莲尼娅。"
+      "zh": "在泽莲尼娅歼殛战中战胜泽莲尼娅。",
+      "tw": "在極 澤蓮尼亞殲滅戰中戰勝澤蓮尼亞。"
     },
     "item": 0,
     "title": 0
@@ -82867,13 +82985,15 @@
     "fr": "Champion poids lourds-légers de l'Arcadion I",
     "ko": "아르카디아 크루저급을 제패한 자: 1단계",
     "zh": "称霸登天斗技场中量级1",
+    "tw": "稱霸登天鬥技場次重量級1",
     "description": {
       "en": "Complete AAC Cruiserweight Tier.",
       "de": "Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を攻略する",
       "fr": "Conquérir la catégorie poids lourds-légers CCA 1 fois.",
       "ko": "아르카디아 선수권: 크루저급 완료",
-      "zh": "成功挑战阿卡狄亚登天斗技场中量级。"
+      "zh": "成功挑战阿卡狄亚登天斗技场中量级。",
+      "tw": "成功挑戰阿卡狄亞登天鬥技場次重量級。"
     },
     "item": 0,
     "title": 0
@@ -82888,13 +83008,15 @@
     "fr": "Champion poids lourds-légers de l'Arcadion II",
     "ko": "아르카디아 크루저급을 제패한 자: 2단계",
     "zh": "称霸登天斗技场中量级2",
+    "tw": "稱霸登天鬥技場次重量級2",
     "description": {
       "en": "Complete AAC Cruiserweight Tier 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計5回攻略する",
       "fr": "Conquérir la catégorie poids lourds-légers CCA 5 fois.",
       "ko": "아르카디아 선수권: 크루저급 5회 완료",
-      "zh": "累计成功挑战阿卡狄亚登天斗技场中量级5次。"
+      "zh": "累计成功挑战阿卡狄亚登天斗技场中量级5次。",
+      "tw": "累計成功挑戰阿卡狄亞登天鬥技場次重量級5次。"
     },
     "item": 0,
     "title": 0
@@ -82909,13 +83031,15 @@
     "fr": "Champion poids lourds-légers de l'Arcadion III",
     "ko": "아르카디아 크루저급을 제패한 자: 3단계",
     "zh": "称霸登天斗技场中量级3",
+    "tw": "稱霸登天鬥技場次重量級3",
     "description": {
       "en": "Complete AAC Cruiserweight Tier 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア：クルーザー級を計10回攻略する",
       "fr": "Conquérir la catégorie poids lourds-légers CCA 10 fois.",
       "ko": "아르카디아 선수권: 크루저급 10회 완료",
-      "zh": "累计成功挑战阿卡狄亚登天斗技场中量级10次。"
+      "zh": "累计成功挑战阿卡狄亚登天斗技场中量级10次。",
+      "tw": "累計成功挑戰阿卡狄亞登天鬥技場次重量級10次。"
     },
     "item": 0,
     "title": 0
@@ -82930,13 +83054,15 @@
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion I",
     "ko": "아르카디아 크루저급을 완벽히 제패한 자: 1단계",
     "zh": "完全称霸登天斗技场中量级1",
+    "tw": "完全稱霸登天鬥技場次重量級1",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage).",
       "de": "Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を攻略する",
       "fr": "Conquérir la catégorie poids lourds-légers CCA (sadique) 1 fois.",
       "ko": "아르카디아 선수권: 크루저급(영웅) 완료",
-      "zh": "成功挑战阿卡狄亚零式登天斗技场中量级。"
+      "zh": "成功挑战阿卡狄亚零式登天斗技场中量级。",
+      "tw": "成功挑戰阿卡狄亞零式登天鬥技場次重量級。"
     },
     "item": 0,
     "title": 0
@@ -82951,13 +83077,15 @@
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion II",
     "ko": "아르카디아 크루저급을 완벽히 제패한 자: 2단계",
     "zh": "完全称霸登天斗技场中量级2",
+    "tw": "完全稱霸登天鬥技場次重量級2",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage) 5 times.",
       "de": "5 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計5回攻略する",
       "fr": "Conquérir la catégorie poids lourds-légers CCA (sadique) 5 fois.",
       "ko": "아르카디아 선수권: 크루저급(영웅) 5회 완료",
-      "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级5次。"
+      "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级5次。",
+      "tw": "累計成功挑戰阿卡狄亞零式登天鬥技場次重量級5次。"
     },
     "item": 0,
     "title": 0
@@ -82972,13 +83100,15 @@
     "fr": "Champion poids lourds-légers incontesté de l'Arcadion III",
     "ko": "아르카디아 크루저급을 완벽히 제패한 자: 3단계",
     "zh": "完全称霸登天斗技场中量级3",
+    "tw": "完全稱霸登天鬥技場次重量級3",
     "description": {
       "en": "Complete AAC Cruiserweight Tier (Savage) 10 times.",
       "de": "10 Mal Arkadion - Schwergewicht (episch) erfolgreich abgeschlossen.",
       "ja": "至天の座アルカディア零式：クルーザー級を計10回攻略する",
       "fr": "Conquérir la catégorie poids lourds-légers CCA (sadique) 10 fois.",
       "ko": "아르카디아 선수권: 크루저급(영웅) 10회 완료",
-      "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级10次。"
+      "zh": "累计成功挑战阿卡狄亚零式登天斗技场中量级10次。",
+      "tw": "累計成功挑戰阿卡狄亞零式登天鬥技場次重量級10次。"
     },
     "item": 0,
     "title": 0
@@ -82993,13 +83123,15 @@
     "fr": "Explorateurs de l'éternité",
     "ko": "영원의 탐구자",
     "zh": "永久探求者",
+    "tw": "探究永久之人",
     "description": {
       "en": "Complete the main scenario quest “Seekers of Eternity.”",
       "de": "Den Auftrag „Auf der Suche nach Endlosigkeit“ erfolgreich abgeschlossen.",
       "ja": "クエスト「永久の探求者」をコンプリートする",
       "fr": "Accomplir la quête “Explorateurs de l'éternité”.",
       "ko": "퀘스트 '영원의 탐구자' 완료",
-      "zh": "完成任务“永久探求者”。"
+      "zh": "完成任务“永久探求者”。",
+      "tw": "完成任務「探究永久之人」。"
     },
     "item": 0,
     "title": 773
@@ -83035,13 +83167,15 @@
     "fr": "Quand il rêve, il est un Roi",
     "ko": "킹의 숭고한 진상",
     "zh": "幻卡王的重要真相",
+    "tw": "幻卡王的重要真相",
     "description": {
       "en": "Complete the quest “Royal Rumblings.”",
       "de": "Den Auftrag „Der falsche König“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとキングの噂」をコンプリートする",
       "fr": "Accomplir la quête “Le Roi singé”.",
       "ko": "퀘스트 '골드 소서와 킹에 관한 소문' 완료",
-      "zh": "完成任务“金碟游乐场与幻卡王的传闻”。"
+      "zh": "完成任务“金碟游乐场与幻卡王的传闻”。",
+      "tw": "完成任務「金碟遊樂場與幻卡王的傳聞」。"
     },
     "item": 0,
     "title": 0
@@ -84190,13 +84324,15 @@
     "fr": "Explorateur sélénien aguerri",
     "ko": "월면 개척 전문가",
     "zh": "月面探索大师",
+    "tw": "月面探索大師",
     "description": {
       "en": "Successfully complete all stellar missions in Sinus Ardorum with the highest rating possible.",
       "de": "Alle Stellarmissionen auf dem Mond mit der höchsten Wertung abgeschlossen.",
       "ja": "焦がれの入江のコスモミッションを、すべて最高評価でコンプリートする",
       "fr": "Terminer toutes les missions cosmiques de Sinus Ardorum avec la meilleure évaluation possible.",
       "ko": "동경의 만의 모든 우주 임무를 최고 평가로 완료",
-      "zh": "以最高评价完成憧憬湾的所有探索任务。"
+      "zh": "以最高评价完成憧憬湾的所有探索任务。",
+      "tw": "以最高評價完成渴望灣的所有探索任務。"
     },
     "item": 0,
     "title": 781
@@ -84211,13 +84347,15 @@
     "fr": "Outil cosmique : scie cosmique",
     "ko": "우주 도구: 우주 톱",
     "zh": "宇宙工具：宇宙手锯",
+    "tw": "宇宙工具：宇宙手鋸",
     "description": {
       "en": "Obtain a cosmic saw.",
       "de": "Eine Kosmo-Säge erlangt.",
       "ja": "コスモ・ソーを入手する",
       "fr": "Obtenir la scie cosmique.",
       "ko": "우주 톱 입수",
-      "zh": "获得宇宙手锯。"
+      "zh": "获得宇宙手锯。",
+      "tw": "獲得宇宙手鋸。"
     },
     "item": 0,
     "title": 0
@@ -84232,13 +84370,15 @@
     "fr": "Outil cosmique : marteau à panne croisée cosmique",
     "ko": "우주 도구: 우주 단조망치",
     "zh": "宇宙工具：宇宙横头锤",
+    "tw": "宇宙工具：宇宙橫頭錘",
     "description": {
       "en": "Obtain a cosmic cross-pein hammer.",
       "de": "Einen Kosmo-Kreuzschlaghammer erlangt.",
       "ja": "コスモ・クロスペインハンマーを入手する",
       "fr": "Obtenir le marteau à panne croisée cosmique.",
       "ko": "우주 단조망치 입수",
-      "zh": "获得宇宙横头锤。"
+      "zh": "获得宇宙横头锤。",
+      "tw": "獲得宇宙橫頭錘。"
     },
     "item": 0,
     "title": 0
@@ -84253,13 +84393,15 @@
     "fr": "Outil cosmique : marteau de batteur cosmique",
     "ko": "우주 도구: 우주 돋을무늬 망치",
     "zh": "宇宙工具：宇宙圆头锤",
+    "tw": "宇宙工具：宇宙圓頭錘",
     "description": {
       "en": "Obtain a cosmic raising hammer.",
       "de": "Einen Kosmo-Schlichthammer erlangt.",
       "ja": "コスモ・レイジングハンマーを入手する",
       "fr": "Obtenir le marteau de batteur cosmique.",
       "ko": "우주 돋을무늬 망치 입수",
-      "zh": "获得宇宙圆头锤。"
+      "zh": "获得宇宙圆头锤。",
+      "tw": "獲得宇宙圓頭錘。"
     },
     "item": 0,
     "title": 0
@@ -84274,13 +84416,15 @@
     "fr": "Outil cosmique : massette cosmique",
     "ko": "우주 도구: 우주 세공망치",
     "zh": "宇宙工具：宇宙工艺锤",
+    "tw": "宇宙工具：宇宙工藝錘",
     "description": {
       "en": "Obtain a cosmic mallet.",
       "de": "Einen Kosmo-Fäustel erlangt.",
       "ja": "コスモ・マレットを入手する",
       "fr": "Obtenir la massette cosmique.",
       "ko": "우주 세공망치 입수",
-      "zh": "获得宇宙工艺锤。"
+      "zh": "获得宇宙工艺锤。",
+      "tw": "獲得宇宙工藝錘。"
     },
     "item": 0,
     "title": 0
@@ -84295,13 +84439,15 @@
     "fr": "Outil cosmique : couteau arrondi cosmique",
     "ko": "우주 도구: 우주 둥근칼",
     "zh": "宇宙工具：宇宙圆革刀",
+    "tw": "宇宙工具：宇宙圓革刀",
     "description": {
       "en": "Obtain a cosmic round knife.",
       "de": "Ein Kosmo-Rundmesser erlangt.",
       "ja": "コスモ・ラウンドナイフを入手する",
       "fr": "Obtenir le couteau arrondi cosmique.",
       "ko": "우주 둥근칼 입수",
-      "zh": "获得宇宙圆革刀。"
+      "zh": "获得宇宙圆革刀。",
+      "tw": "獲得宇宙圓革刀。"
     },
     "item": 0,
     "title": 0
@@ -84316,13 +84462,15 @@
     "fr": "Outil cosmique : aiguille cosmique",
     "ko": "우주 도구: 우주 바늘",
     "zh": "宇宙工具：宇宙缝针",
+    "tw": "宇宙工具：宇宙縫針",
     "description": {
       "en": "Obtain a cosmic needle.",
       "de": "Eine Kosmo-Nadel erlangt.",
       "ja": "コスモ・ニードルを入手する",
       "fr": "Obtenir l'aiguille cosmique.",
       "ko": "우주 바늘 입수",
-      "zh": "获得宇宙缝针。"
+      "zh": "获得宇宙缝针。",
+      "tw": "獲得宇宙縫針。"
     },
     "item": 0,
     "title": 0
@@ -84337,13 +84485,15 @@
     "fr": "Outil cosmique : alambic cosmique",
     "ko": "우주 도구: 우주 증류기",
     "zh": "宇宙工具：宇宙蒸馏器",
+    "tw": "宇宙工具：宇宙蒸餾器",
     "description": {
       "en": "Obtain a cosmic alembic.",
       "de": "Einen Kosmo-Destillierkolben erlangt.",
       "ja": "コスモ・アレンビックを入手する",
       "fr": "Obtenir l'alambic cosmique.",
       "ko": "우주 증류기 입수",
-      "zh": "获得宇宙蒸馏器。"
+      "zh": "获得宇宙蒸馏器。",
+      "tw": "獲得宇宙蒸餾器。"
     },
     "item": 0,
     "title": 0
@@ -84358,13 +84508,15 @@
     "fr": "Outil cosmique : poêle à frire cosmique",
     "ko": "우주 도구: 우주 프라이팬",
     "zh": "宇宙工具：宇宙煎锅",
+    "tw": "宇宙工具：宇宙煎鍋",
     "description": {
       "en": "Obtain a cosmic frypan.",
       "de": "Eine Kosmo-Bratpfanne erlangt.",
       "ja": "コスモ・フライパンを入手する",
       "fr": "Obtenir la poêle à frire cosmique.",
       "ko": "우주 프라이팬 입수",
-      "zh": "获得宇宙煎锅。"
+      "zh": "获得宇宙煎锅。",
+      "tw": "獲得宇宙煎鍋。"
     },
     "item": 0,
     "title": 0
@@ -84379,13 +84531,15 @@
     "fr": "Outil cosmique : pioche cosmique",
     "ko": "우주 도구: 우주 곡괭이",
     "zh": "宇宙工具：宇宙鹤嘴锄",
+    "tw": "宇宙工具：宇宙十字鎬",
     "description": {
       "en": "Obtain a cosmic pickaxe.",
       "de": "Eine Kosmo-Spitzhacke erlangt.",
       "ja": "コスモ・ピックを入手する",
       "fr": "Obtenir la pioche cosmique.",
       "ko": "우주 곡괭이 입수",
-      "zh": "获得宇宙鹤嘴锄。"
+      "zh": "获得宇宙鹤嘴锄。",
+      "tw": "獲得宇宙十字鎬。"
     },
     "item": 0,
     "title": 0
@@ -84400,13 +84554,15 @@
     "fr": "Outil cosmique : hachette cosmique",
     "ko": "우주 도구: 우주 손도끼",
     "zh": "宇宙工具：宇宙手斧",
+    "tw": "宇宙工具：宇宙手斧",
     "description": {
       "en": "Obtain a cosmic hatchet.",
       "de": "Ein Kosmo-Handbeil erlangt.",
       "ja": "コスモ・ハチェットを入手する",
       "fr": "Obtenir la hachette cosmique.",
       "ko": "우주 손도끼 입수",
-      "zh": "获得宇宙手斧。"
+      "zh": "获得宇宙手斧。",
+      "tw": "獲得宇宙手斧。"
     },
     "item": 0,
     "title": 0
@@ -84421,13 +84577,15 @@
     "fr": "Outil cosmique : canne à pêche cosmique",
     "ko": "우주 도구: 우주 낚싯대",
     "zh": "宇宙工具：宇宙钓竿",
+    "tw": "宇宙工具：宇宙釣竿",
     "description": {
       "en": "Obtain a cosmic fishing rod.",
       "de": "Eine Kosmo-Angelrute erlangt.",
       "ja": "コスモ・フィッシングロッドを入手する",
       "fr": "Obtenir la canne à pêche cosmique.",
       "ko": "우주 낚싯대 입수",
-      "zh": "获得宇宙钓竿。"
+      "zh": "获得宇宙钓竿。",
+      "tw": "獲得宇宙釣竿。"
     },
     "item": 0,
     "title": 0
@@ -84442,13 +84600,15 @@
     "fr": "Menuisier du cosmos I",
     "ko": "별을 건너는 목수: 1단계",
     "zh": "星际刻木匠1",
+    "tw": "星際木工師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que menuisier.",
       "ko": "우주 개척에서 목수로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用刻木匠累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用刻木匠累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用木工師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84463,13 +84623,15 @@
     "fr": "Menuisier du cosmos II",
     "ko": "별을 건너는 목수: 2단계",
     "zh": "星际刻木匠2",
+    "tw": "星際木工師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que menuisier.",
       "ko": "우주 개척에서 목수로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用刻木匠累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用刻木匠累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用木工師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84484,13 +84646,15 @@
     "fr": "Maître menuisier du cosmos",
     "ko": "별을 건너는 명인 목수",
     "zh": "星际刻木大师",
+    "tw": "星際木工大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que menuisier.",
       "ko": "우주 개척에서 목수로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用刻木匠累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用刻木匠累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用木工師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 782
@@ -84505,13 +84669,15 @@
     "fr": "Forgeron du cosmos I",
     "ko": "별을 건너는 대장장이: 1단계",
     "zh": "星际锻铁匠1",
+    "tw": "星際鍛造師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que forgeron.",
       "ko": "우주 개척에서 대장장이로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用锻铁匠累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用锻铁匠累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用鍛造師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84526,13 +84692,15 @@
     "fr": "Forgeron du cosmos II",
     "ko": "별을 건너는 대장장이: 2단계",
     "zh": "星际锻铁匠2",
+    "tw": "星際鍛造師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que forgeron.",
       "ko": "우주 개척에서 대장장이로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用锻铁匠累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用锻铁匠累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用鍛造師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84547,13 +84715,15 @@
     "fr": "Maître forgeron du cosmos",
     "ko": "별을 건너는 명인 대장장이",
     "zh": "星际锻铁大师",
+    "tw": "星際鍛造大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que forgeron.",
       "ko": "우주 개척에서 대장장이로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用锻铁匠累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用锻铁匠累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用鍛造師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 783
@@ -84568,13 +84738,15 @@
     "fr": "Armurier du cosmos I",
     "ko": "별을 건너는 갑주제작사: 1단계",
     "zh": "星际铸甲匠1",
+    "tw": "星際甲冑師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant qu'armurier.",
       "ko": "우주 개척에서 갑주제작사로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用铸甲匠累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用铸甲匠累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用甲冑師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84589,13 +84761,15 @@
     "fr": "Armurier du cosmos II",
     "ko": "별을 건너는 갑주제작사: 2단계",
     "zh": "星际铸甲匠2",
+    "tw": "星際甲冑師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant qu'armurier.",
       "ko": "우주 개척에서 갑주제작사로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用铸甲匠累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用铸甲匠累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用甲冑師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84610,13 +84784,15 @@
     "fr": "Maître armurier du cosmos",
     "ko": "별을 건너는 명인 갑주제작사",
     "zh": "星际铸甲大师",
+    "tw": "星際甲冑大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant qu'armurier.",
       "ko": "우주 개척에서 갑주제작사로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用铸甲匠累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用铸甲匠累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用甲冑師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 784
@@ -84631,13 +84807,15 @@
     "fr": "Orfèvre du cosmos I",
     "ko": "별을 건너는 보석공예가: 1단계",
     "zh": "星际雕金匠1",
+    "tw": "星際金工師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant qu'orfèvre.",
       "ko": "우주 개척에서 보석공예가로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用雕金匠累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用雕金匠累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用金工師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84652,13 +84830,15 @@
     "fr": "Orfèvre du cosmos II",
     "ko": "별을 건너는 보석공예가: 2단계",
     "zh": "星际雕金匠2",
+    "tw": "星際金工師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant qu'orfèvre.",
       "ko": "우주 개척에서 보석공예가로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用雕金匠累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用雕金匠累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用金工師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84673,13 +84853,15 @@
     "fr": "Maître orfèvre du cosmos",
     "ko": "별을 건너는 명인 보석공예가",
     "zh": "星际雕金大师",
+    "tw": "星際金工大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant qu'orfèvre.",
       "ko": "우주 개척에서 보석공예가로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用雕金匠累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用雕金匠累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用金工師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 785
@@ -84694,13 +84876,15 @@
     "fr": "Tanneur du cosmos I",
     "ko": "별을 건너는 가죽공예가: 1단계",
     "zh": "星际制革匠1",
+    "tw": "星際皮革師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que tanneur.",
       "ko": "우주 개척에서 가죽공예가로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用制革匠累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用制革匠累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用皮革師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84715,13 +84899,15 @@
     "fr": "Tanneur du cosmos II",
     "ko": "별을 건너는 가죽공예가: 2단계",
     "zh": "星际制革匠2",
+    "tw": "星際皮革師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que tanneur.",
       "ko": "우주 개척에서 가죽공예가로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用制革匠累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用制革匠累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用皮革師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84736,13 +84922,15 @@
     "fr": "Maître tanneur du cosmos",
     "ko": "별을 건너는 명인 가죽공예가",
     "zh": "星际制革大师",
+    "tw": "星際皮革大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que tanneur.",
       "ko": "우주 개척에서 가죽공예가로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用制革匠累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用制革匠累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用皮革師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 786
@@ -84757,13 +84945,15 @@
     "fr": "Couturier du cosmos I",
     "ko": "별을 건너는 재봉사: 1단계",
     "zh": "星际裁衣匠1",
+    "tw": "星際裁縫師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que couturier.",
       "ko": "우주 개척에서 재봉사로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用裁衣匠累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用裁衣匠累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用裁縫師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84778,13 +84968,15 @@
     "fr": "Couturier du cosmos II",
     "ko": "별을 건너는 재봉사: 2단계",
     "zh": "星际裁衣匠2",
+    "tw": "星際裁縫師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que couturier.",
       "ko": "우주 개척에서 재봉사로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用裁衣匠累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用裁衣匠累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用裁縫師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84799,13 +84991,15 @@
     "fr": "Maître couturier du cosmos",
     "ko": "별을 건너는 명인 재봉사",
     "zh": "星际裁衣大师",
+    "tw": "星際裁縫大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que couturier.",
       "ko": "우주 개척에서 재봉사로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用裁衣匠累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用裁衣匠累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用裁縫師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 787
@@ -84820,13 +85014,15 @@
     "fr": "Alchimiste du cosmos I",
     "ko": "별을 건너는 연금술사: 1단계",
     "zh": "星际炼金术士1",
+    "tw": "星際鍊金術師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant qu'alchimiste.",
       "ko": "우주 개척에서 연금술사로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用炼金术士累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用炼金术士累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用鍊金術師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84841,13 +85037,15 @@
     "fr": "Alchimiste du cosmos II",
     "ko": "별을 건너는 연금술사: 2단계",
     "zh": "星际炼金术士2",
+    "tw": "星際鍊金術師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant qu'alchimiste.",
       "ko": "우주 개척에서 연금술사로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用炼金术士累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用炼金术士累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用鍊金術師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84862,13 +85060,15 @@
     "fr": "Maître alchimiste du cosmos",
     "ko": "별을 건너는 명인 연금술사",
     "zh": "星际炼金术大师",
+    "tw": "星際鍊金大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant qu'alchimiste.",
       "ko": "우주 개척에서 연금술사로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用炼金术士累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用炼金术士累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用鍊金術師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 788
@@ -84883,13 +85083,15 @@
     "fr": "Cuisinier du cosmos I",
     "ko": "별을 건너는 요리사: 1단계",
     "zh": "星际烹调师1",
+    "tw": "星際烹調師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que cuisinier.",
       "ko": "우주 개척에서 요리사로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用烹调师累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用烹调师累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用烹調師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84904,13 +85106,15 @@
     "fr": "Cuisinier du cosmos II",
     "ko": "별을 건너는 요리사: 2단계",
     "zh": "星际烹调师2",
+    "tw": "星際烹調師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que cuisinier.",
       "ko": "우주 개척에서 요리사로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用烹调师累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用烹调师累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用烹調師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84925,13 +85129,15 @@
     "fr": "Maître cuisinier du cosmos",
     "ko": "별을 건너는 명인 요리사",
     "zh": "星际烹调大师",
+    "tw": "星際烹調大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que cuisinier.",
       "ko": "우주 개척에서 요리사로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用烹调师累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用烹调师累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用烹調師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 789
@@ -84946,13 +85152,15 @@
     "fr": "Mineur du cosmos I",
     "ko": "별을 건너는 광부: 1단계",
     "zh": "星际采矿工1",
+    "tw": "星際採掘師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que mineur.",
       "ko": "우주 개척에서 광부로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用采矿工累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用采矿工累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用採掘師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84967,13 +85175,15 @@
     "fr": "Mineur du cosmos II",
     "ko": "별을 건너는 광부: 2단계",
     "zh": "星际采矿工2",
+    "tw": "星際採掘師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que mineur.",
       "ko": "우주 개척에서 광부로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用采矿工累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用采矿工累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用採掘師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -84988,13 +85198,15 @@
     "fr": "Maître mineur du cosmos",
     "ko": "별을 건너는 명인 광부",
     "zh": "星际采矿大师",
+    "tw": "星際採掘大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que mineur.",
       "ko": "우주 개척에서 광부로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用采矿工累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用采矿工累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用採掘師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 790
@@ -85009,13 +85221,15 @@
     "fr": "Botaniste du cosmos I",
     "ko": "별을 건너는 원예가: 1단계",
     "zh": "星际园艺工1",
+    "tw": "星際園藝師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que botaniste.",
       "ko": "우주 개척에서 원예가로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用园艺工累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用园艺工累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用園藝師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -85030,13 +85244,15 @@
     "fr": "Botaniste du cosmos II",
     "ko": "별을 건너는 원예가: 2단계",
     "zh": "星际园艺工2",
+    "tw": "星際園藝師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que botaniste.",
       "ko": "우주 개척에서 원예가로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用园艺工累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用园艺工累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用園藝師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -85051,13 +85267,15 @@
     "fr": "Maître botaniste du cosmos",
     "ko": "별을 건너는 명인 원예가",
     "zh": "星际园艺大师",
+    "tw": "星際園藝大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que botaniste.",
       "ko": "우주 개척에서 원예가로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用园艺工累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用园艺工累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用園藝師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 791
@@ -85072,13 +85290,15 @@
     "fr": "Pêcheur du cosmos I",
     "ko": "별을 건너는 어부: 1단계",
     "zh": "星际捕鱼人1",
+    "tw": "星際漁師1",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師で技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que pêcheur.",
       "ko": "우주 개척에서 어부로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用捕鱼人累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用捕鱼人累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用漁師累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -85093,13 +85313,15 @@
     "fr": "Pêcheur du cosmos II",
     "ko": "별을 건너는 어부: 2단계",
     "zh": "星际捕鱼人2",
+    "tw": "星際漁師2",
     "description": {
       "en": "Earn a cosmic class score of 150,000 points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 150.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師で技巧点を150,000点獲得する",
       "fr": "Gagner un total de 150 000 points cosmiques en tant que pêcheur.",
       "ko": "우주 개척에서 어부로 기술 점수 150,000점 획득",
-      "zh": "在宇宙探索中，使用捕鱼人累计获得150,000点技巧点。"
+      "zh": "在宇宙探索中，使用捕鱼人累计获得150,000点技巧点。",
+      "tw": "在宇宙探索中，使用漁師累計獲得150,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -85114,13 +85336,15 @@
     "fr": "Maître pêcheur du cosmos",
     "ko": "별을 건너는 명인 어부",
     "zh": "星际捕鱼大师",
+    "tw": "星際捕魚大師",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師で技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques en tant que pêcheur.",
       "ko": "우주 개척에서 어부로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，使用捕鱼人累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，使用捕鱼人累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，使用漁師累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 792
@@ -85135,13 +85359,15 @@
     "fr": "Maître artisan du cosmos",
     "ko": "별을 건너는 제작 명인",
     "zh": "星际制作大师",
+    "tw": "星際製作大師",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points with any Disciple of the Hand.",
       "de": "Bei der Kosmo-Erkundung als Handwerker eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、いずれかのクラフタークラスで技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant qu'artisan.",
       "ko": "우주 개척에서 제작자 클래스로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用任意制作职业累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用任意制作职业累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用任意製作職業累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -85156,13 +85382,15 @@
     "fr": "Maître récolteur du cosmos",
     "ko": "별을 건너는 채집 명인",
     "zh": "星际采集大师",
+    "tw": "星際採集大師",
     "description": {
       "en": "Earn a cosmic class score of 50,000 points with any Disciple of the Land.",
       "de": "Bei der Kosmo-Erkundung als Sammler eine Wertung von mindestens 50.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、いずれかのギャザラークラスで技巧点を50,000点獲得する",
       "fr": "Gagner un total de 50 000 points cosmiques en tant que récolteur.",
       "ko": "우주 개척에서 채집가 클래스로 기술 점수 50,000점 획득",
-      "zh": "在宇宙探索中，使用任意采集职业累计获得50,000点技巧点。"
+      "zh": "在宇宙探索中，使用任意采集职业累计获得50,000点技巧点。",
+      "tw": "在宇宙探索中，使用任意採集職業累計獲得50,000點技巧點。"
     },
     "item": 0,
     "title": 0
@@ -85177,13 +85405,15 @@
     "fr": "Artisan en chef du cosmos",
     "ko": "별을 건너는 제작왕",
     "zh": "星际制作之王",
+    "tw": "星際製作之王",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Hand.",
       "de": "Bei der Kosmo-Erkundung in allen Handwerkerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのクラフタークラスで技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat.",
       "ko": "우주 개척에서 모든 제작자 클래스로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，所有的制作职业均累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，所有的制作职业均累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，所有的製作職業均累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 793
@@ -85198,13 +85428,15 @@
     "fr": "Récolteur en chef du cosmos",
     "ko": "별을 건너는 채집왕",
     "zh": "星际采集之王",
+    "tw": "星際採集之王",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Land.",
       "de": "Bei der Kosmo-Erkundung in allen Sammlerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのギャザラークラスで技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes de récolte.",
       "ko": "우주 개척에서 모든 채집가 클래스로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，所有的采集职业均累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，所有的采集职业均累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，所有的採集職業均累計獲得500,000點技巧點。"
     },
     "item": 0,
     "title": 794
@@ -85219,13 +85451,15 @@
     "fr": "Grand explorateur du cosmos",
     "ko": "별을 건너는 탐색왕",
     "zh": "星际探索之王",
+    "tw": "星際探索之王",
     "description": {
       "en": "Earn a cosmic class score of 500,000 points as every Disciple of the Hand and Land.",
       "de": "Bei der Kosmo-Erkundung in allen Handwerker- und Sammlerklassen eine Wertung von mindestens 500.000 Punkten erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのクラフター・ギャザラークラスで技巧点を500,000点獲得する",
       "fr": "Gagner un total de 500 000 points cosmiques avec toutes les classes d'artisanat et de récolte.",
       "ko": "우주 개척에서 모든 제작자 및 채집가 클래스로 기술 점수 500,000점 획득",
-      "zh": "在宇宙探索中，所有的制作职业和采集职业均累计获得500,000点技巧点。"
+      "zh": "在宇宙探索中，所有的制作职业和采集职业均累计获得500,000点技巧点。",
+      "tw": "在宇宙探索中，所有的製作職業和採集職業均累計獲得500,000點技巧點。"
     },
     "item": 48232,
     "title": 0
@@ -85240,13 +85474,15 @@
     "fr": "Une chance cosmique",
     "ko": "우주 복권에 이끌린 자: 1단계",
     "zh": "勇闯好运道1",
+    "tw": "勇闖好運道1",
     "description": {
       "en": "Draw 10 cosmic fortunes.",
       "de": "10 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに10回挑戦する",
       "fr": "Jouer 10 fois à la Roue de la fortune cosmique.",
       "ko": "우주 복권에 10번 도전",
-      "zh": "挑战10次宇宙好运道。"
+      "zh": "挑战10次宇宙好运道。",
+      "tw": "挑戰10次宇宙好運道。"
     },
     "item": 0,
     "title": 0
@@ -85261,13 +85497,15 @@
     "fr": "Une chance stellaire",
     "ko": "우주 복권에 이끌린 자: 2단계",
     "zh": "勇闯好运道2",
+    "tw": "勇闖好運道2",
     "description": {
       "en": "Draw 100 cosmic fortunes.",
       "de": "100 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに100回挑戦する",
       "fr": "Jouer 100 fois à la Roue de la fortune cosmique.",
       "ko": "우주 복권에 100번 도전",
-      "zh": "挑战100次宇宙好运道。"
+      "zh": "挑战100次宇宙好运道。",
+      "tw": "挑戰100次宇宙好運道。"
     },
     "item": 0,
     "title": 0
@@ -85282,13 +85520,15 @@
     "fr": "Une chance galactique",
     "ko": "우주 복권에 이끌린 자: 3단계",
     "zh": "勇闯好运道3",
+    "tw": "勇闖好運道3",
     "description": {
       "en": "Draw 1,000 cosmic fortunes.",
       "de": "1000 Mal am Kosmo-Glück versucht.",
       "ja": "コスモフォーチュンに1,000回挑戦する",
       "fr": "Jouer 1 000 fois à la Roue de la fortune cosmique.",
       "ko": "우주 복권에 1,000번 도전",
-      "zh": "挑战1,000次宇宙好运道。"
+      "zh": "挑战1,000次宇宙好运道。",
+      "tw": "挑戰1,000次宇宙好運道。"
     },
     "item": 0,
     "title": 795
@@ -88064,16 +88304,20 @@
   "3875": {
     "id": 3875,
     "icon": "/api/asset?path=ui/icon/026000/026107.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Thankful Thirteen",
     "de": "Dankbare Dreizehn",
     "ja": "ありがとう13周年！",
     "fr": "Treize ans de musique",
+    "ko": "11주년 고맙습니다!",
+    "zh": "承上启下的周年庆",
     "description": {
       "en": "Complete the quest “The Symphony of Life.”",
       "de": "Den Auftrag „Die Symphonie des Lebens“ abgeschlossen.",
       "ja": "クエスト「新生祭と音色の軌跡」をコンプリートする",
-      "fr": "Accomplir la quête “La symphonie de la vie”."
+      "fr": "Accomplir la quête “La symphonie de la vie”.",
+      "ko": "퀘스트 '신생제와 음색의 궤적' 완료",
+      "zh": "完成任务“新生庆典与音乐的轨迹”。"
     },
     "item": 0,
     "title": 0
@@ -88602,18 +88846,20 @@
   "3901": {
     "id": 3901,
     "icon": "/api/asset?path=ui/icon/064000/064875.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Goldilocks Zone",
     "de": "Auxesia-Erkundungsmeister",
     "ja": "惑星アウクセシアのマスターエクスプローラー",
     "fr": "Explorateur auxesien aguerri",
     "ko": "행성 아욱세시아 개척 전문가",
+    "zh": "奥克塞西亚探索大师",
     "description": {
       "en": "Successfully complete all stellar missions on Auxesia with the highest rating possible.",
       "de": "Alle Stellarmissionen auf Auxesia mit der höchsten Wertung abgeschlossen.",
       "ja": "惑星アウクセシアのコスモミッションを、すべて最高評価でコンプリートする",
       "fr": "Terminer toutes les missions cosmiques d'Auxesia avec la meilleure évaluation possible.",
-      "ko": "행성 아욱세시아의 모든 우주 임무를 최고 평가로 완료"
+      "ko": "행성 아욱세시아의 모든 우주 임무를 최고 평가로 완료",
+      "zh": "以最高评价完成奥克塞西亚行星的所有探索任务。"
     },
     "item": 0,
     "title": 834
@@ -88621,18 +88867,20 @@
   "3902": {
     "id": 3902,
     "icon": "/api/asset?path=ui/icon/001000/001503.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Carpenter",
     "de": "Zimmerer der unendlichen Weiten IV",
     "ja": "宙駆ける木工マスター",
     "fr": "Menuisier intersidéral",
     "ko": "우주를 달리는 명인 목수",
+    "zh": "穿越宇宙的刻木大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a carpenter.",
       "de": "Bei der Kosmo-Erkundung als Zimmerer 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、木工師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que menuisier.",
-      "ko": "우주 개척에서 목수로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 목수로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用刻木匠累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 835
@@ -88640,18 +88888,20 @@
   "3903": {
     "id": 3903,
     "icon": "/api/asset?path=ui/icon/001000/001553.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Blacksmith",
     "de": "Grobschmied der unendlichen Weiten IV",
     "ja": "宙駆ける鍛冶マスター",
     "fr": "Forgeron intersidéral",
     "ko": "우주를 달리는 명인 대장장이",
+    "zh": "穿越宇宙的锻铁大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a blacksmith.",
       "de": "Bei der Kosmo-Erkundung als Grobschmied  500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、鍛冶師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que forgeron.",
-      "ko": "우주 개척에서 대장장이로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 대장장이로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用锻铁匠累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 836
@@ -88659,18 +88909,20 @@
   "3904": {
     "id": 3904,
     "icon": "/api/asset?path=ui/icon/001000/001603.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Armorer",
     "de": "Plattner der unendlichen Weiten IV",
     "ja": "宙駆ける甲冑マスター",
     "fr": "Armurier intersidéral",
     "ko": "우주를 달리는 명인 갑주제작사",
+    "zh": "穿越宇宙的铸甲大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as an armorer.",
       "de": "Bei der Kosmo-Erkundung als Plattner 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、甲冑師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant qu'armurier.",
-      "ko": "우주 개척에서 갑주제작사로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 갑주제작사로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用铸甲匠累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 837
@@ -88678,18 +88930,20 @@
   "3905": {
     "id": 3905,
     "icon": "/api/asset?path=ui/icon/001000/001653.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Goldsmith",
     "de": "Goldschmied der unendlichen Weiten IV",
     "ja": "宙駆ける彫金マスター",
     "fr": "Orfèvre intersidéral",
     "ko": "우주를 달리는 명인 보석공예가",
+    "zh": "穿越宇宙的雕金大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a goldsmith.",
       "de": "Bei der Kosmo-Erkundung als Goldschmied 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、彫金師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant qu'orfèvre.",
-      "ko": "우주 개척에서 보석공예가로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 보석공예가로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用雕金匠累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 838
@@ -88697,18 +88951,20 @@
   "3906": {
     "id": 3906,
     "icon": "/api/asset?path=ui/icon/001000/001703.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Leatherworker",
     "de": "Gerber der unendlichen Weiten IV",
     "ja": "宙駆ける革細工マスター",
     "fr": "Tanneur intersidéral",
     "ko": "우주를 달리는 명인 가죽공예가",
+    "zh": "穿越宇宙的制革大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a leatherworker.",
       "de": "Bei der Kosmo-Erkundung als Gerber 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、革細工師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que tanneur.",
-      "ko": "우주 개척에서 가죽공예가로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 가죽공예가로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用制革匠累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 839
@@ -88716,18 +88972,20 @@
   "3907": {
     "id": 3907,
     "icon": "/api/asset?path=ui/icon/001000/001753.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Weaver",
     "de": "Weber der unendlichen Weiten IV",
     "ja": "宙駆ける裁縫マスター",
     "fr": "Couturier intersidéral",
     "ko": "우주를 달리는 명인 재봉사",
+    "zh": "穿越宇宙的裁衣大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a weaver.",
       "de": "Bei der Kosmo-Erkundung als Weber 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、裁縫師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que couturier.",
-      "ko": "우주 개척에서 재봉사로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 재봉사로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用裁衣匠累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 840
@@ -88735,18 +88993,20 @@
   "3908": {
     "id": 3908,
     "icon": "/api/asset?path=ui/icon/001000/001803.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Alchemist",
     "de": "Alchemist der unendlichen Weiten IV",
     "ja": "宙駆ける錬金術マスター",
     "fr": "Alchimiste intersidéral",
     "ko": "우주를 달리는 명인 연금술사",
+    "zh": "穿越宇宙的炼金术大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as an alchemist.",
       "de": "Bei der Kosmo-Erkundung als Alchemist 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、錬金術師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant qu'alchimiste.",
-      "ko": "우주 개척에서 연금술사로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 연금술사로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用炼金术士累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 841
@@ -88754,18 +89014,20 @@
   "3909": {
     "id": 3909,
     "icon": "/api/asset?path=ui/icon/001000/001853.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Culinarian",
     "de": "Gourmet der unendlichen Weiten IV",
     "ja": "宙駆ける調理マスター",
     "fr": "Cuisinier intersidéral",
     "ko": "우주를 달리는 명인 요리사",
+    "zh": "穿越宇宙的烹调大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a culinarian.",
       "de": "Bei der Kosmo-Erkundung als Gourmet 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、調理師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que cuisinier.",
-      "ko": "우주 개척에서 요리사로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 요리사로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用烹调师累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 842
@@ -88773,18 +89035,20 @@
   "3910": {
     "id": 3910,
     "icon": "/api/asset?path=ui/icon/001000/001021.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Miner",
     "de": "Minenarbeiter der unendlichen Weiten IV",
     "ja": "宙駆ける採掘マスター",
     "fr": "Mineur intersidéral",
     "ko": "우주를 달리는 명인 광부",
+    "zh": "穿越宇宙的采矿大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a miner.",
       "de": "Bei der Kosmo-Erkundung als Minenarbeiter 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、採掘師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que mineur.",
-      "ko": "우주 개척에서 광부로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 광부로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用采矿工累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 843
@@ -88792,18 +89056,20 @@
   "3911": {
     "id": 3911,
     "icon": "/api/asset?path=ui/icon/001000/001071.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Botanist",
     "de": "Gärtner der unendlichen Weiten IV",
     "ja": "宙駆ける園芸マスター",
     "fr": "Botaniste intersidéral",
     "ko": "우주를 달리는 명인 원예가",
+    "zh": "穿越宇宙的园艺大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a botanist.",
       "de": "Bei der Kosmo-Erkundung als Gärtner 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、園芸師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que botaniste.",
-      "ko": "우주 개척에서 원예가로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 원예가로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用园艺工累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 844
@@ -88811,18 +89077,20 @@
   "3912": {
     "id": 3912,
     "icon": "/api/asset?path=ui/icon/001000/001126.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Master of the Universe: Fisher",
     "de": "Fischer der unendlichen Weiten IV",
     "ja": "宙駆ける漁師マスター",
     "fr": "Pêcheur intersidéral",
     "ko": "우주를 달리는 명인 어부",
+    "zh": "穿越宇宙的捕鱼大师",
     "description": {
       "en": "Earn 500,000 tool mastery points as a fisher.",
       "de": "Bei der Kosmo-Erkundung als Fischer 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、漁師でマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise en tant que pêcheur.",
-      "ko": "우주 개척에서 어부로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 어부로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，使用捕鱼人累计获得500,000点熟练点。"
     },
     "item": 0,
     "title": 845
@@ -88830,18 +89098,20 @@
   "3913": {
     "id": 3913,
     "icon": "/api/asset?path=ui/icon/061000/061277.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Universal Acclaim",
     "de": "Galaktastische Kraft der unendlichen Weiten",
     "ja": "宙駆ける探索王",
     "fr": "Grand maître intersidéral",
     "ko": "우주를 달리는 탐색왕",
+    "zh": "穿越宇宙的探索王",
     "description": {
       "en": "Earn 500,000 tool mastery points as every Disciple of the Hand and Land.",
       "de": "Bei der Kosmo-Erkundung mit allen Handwerker- und Sammlerklassen 500.000 Meisterpunkte erreicht.",
       "ja": "コスモエクスプローラーにおいて、全てのクラフター・ギャザラークラスでマスターシップポイントを500,000点獲得する",
       "fr": "Gagner un total de 500 000 points de maîtrise avec toutes les classes d'artisanat et de récolte.",
-      "ko": "우주 개척에서 모든 제작자 및 채집가 클래스로 명인 점수 500,000점 획득"
+      "ko": "우주 개척에서 모든 제작자 및 채집가 클래스로 명인 점수 500,000점 획득",
+      "zh": "在宇宙探索中，所有的制作职业和采集职业均累计获得500,000点熟练点。"
     },
     "item": 51276,
     "title": 0
@@ -88849,18 +89119,20 @@
   "3914": {
     "id": 3914,
     "icon": "/api/asset?path=ui/icon/039000/039014.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Saw of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Säge",
     "ja": "コスモツール：ソー・オブ・スターズ",
     "fr": "Outil cosmique : scie des constellations",
     "ko": "우주 도구: 별들의 톱",
+    "zh": "宇宙工具：群星手锯",
     "description": {
       "en": "Obtain a saw of stars.",
       "de": "Eine Sternen-Säge erlangt.",
       "ja": "ソー・オブ・スターズを入手する",
       "fr": "Obtenir la scie des constellations.",
-      "ko": "별들의 톱 입수"
+      "ko": "별들의 톱 입수",
+      "zh": "获得群星手锯。"
     },
     "item": 0,
     "title": 0
@@ -88868,18 +89140,20 @@
   "3915": {
     "id": 3915,
     "icon": "/api/asset?path=ui/icon/039000/039113.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Cross-pein Hammer of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Kreuzschlaghammer",
     "ja": "コスモツール：クロスペインハンマー・オブ・スターズ",
     "fr": "Outil cosmique : marteau à panne croisée des constellations",
     "ko": "우주 도구: 별들의 단조망치",
+    "zh": "宇宙工具：群星横头锤",
     "description": {
       "en": "Obtain a cross-pein hammer of stars.",
       "de": "Einen Sternen-Kreuzschlaghammer erlangt.",
       "ja": "クロスペインハンマー・オブ・スターズを入手する",
       "fr": "Obtenir le marteau à panne croisée des constellations.",
-      "ko": "별들의 단조망치 입수"
+      "ko": "별들의 단조망치 입수",
+      "zh": "获得群星横头锤。"
     },
     "item": 0,
     "title": 0
@@ -88887,18 +89161,20 @@
   "3916": {
     "id": 3916,
     "icon": "/api/asset?path=ui/icon/039000/039213.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Raising Hammer of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Schlichthammer",
     "ja": "コスモツール：レイジングハンマー・オブ・スターズ",
     "fr": "Outil cosmique : marteau de batteur des constellations",
     "ko": "우주 도구: 별들의 돋을무늬 망치",
+    "zh": "宇宙工具：群星圆头锤",
     "description": {
       "en": "Obtain a raising hammer of stars.",
       "de": "Einen Sternen-Schlichthammer erlangt.",
       "ja": "レイジングハンマー・オブ・スターズを入手する",
       "fr": "Obtenir le marteau de batteur des constellations.",
-      "ko": "별들의 돋을무늬 망치 입수"
+      "ko": "별들의 돋을무늬 망치 입수",
+      "zh": "获得群星圆头锤。"
     },
     "item": 0,
     "title": 0
@@ -88906,18 +89182,20 @@
   "3917": {
     "id": 3917,
     "icon": "/api/asset?path=ui/icon/039000/039312.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Mallet of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Fäustel",
     "ja": "コスモツール：マレット・オブ・スターズ",
     "fr": "Outil cosmique : massette des constellations",
     "ko": "우주 도구: 별들의 세공망치",
+    "zh": "宇宙工具：群星工艺锤",
     "description": {
       "en": "Obtain a mallet of stars.",
       "de": "Einen Sternen-Fäustel erlangt.",
       "ja": "マレット・オブ・スターズを入手する",
       "fr": "Obtenir la massette des constellations.",
-      "ko": "별들의 세공망치 입수"
+      "ko": "별들의 세공망치 입수",
+      "zh": "获得群星工艺锤。"
     },
     "item": 0,
     "title": 0
@@ -88925,18 +89203,20 @@
   "3918": {
     "id": 3918,
     "icon": "/api/asset?path=ui/icon/039000/039413.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Round Knife of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Rundmesser",
     "ja": "コスモツール：ラウンドナイフ・オブ・スターズ",
     "fr": "Outil cosmique : couteau arrondi des constellations",
     "ko": "우주 도구: 별들의 둥근칼",
+    "zh": "宇宙工具：群星圆革刀",
     "description": {
       "en": "Obtain a round knife of stars.",
       "de": "Ein Sternen-Rundmesser erlangt.",
       "ja": "ラウンドナイフ・オブ・スターズを入手する",
       "fr": "Obtenir le couteau arrondi des constellations.",
-      "ko": "별들의 둥근칼 입수"
+      "ko": "별들의 둥근칼 입수",
+      "zh": "获得群星圆革刀。"
     },
     "item": 0,
     "title": 0
@@ -88944,18 +89224,20 @@
   "3919": {
     "id": 3919,
     "icon": "/api/asset?path=ui/icon/039000/039513.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Needle of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Nadel",
     "ja": "コスモツール：ニードル・オブ・スターズ",
     "fr": "Outil cosmique : aiguille des constellations",
     "ko": "우주 도구: 별들의 바늘",
+    "zh": "宇宙工具：群星缝针",
     "description": {
       "en": "Obtain a needle of stars.",
       "de": "Eine Sternen-Nadel erlangt.",
       "ja": "ニードル・オブ・スターズを入手する",
       "fr": "Obtenir l'aiguille des constellations.",
-      "ko": "별들의 바늘 입수"
+      "ko": "별들의 바늘 입수",
+      "zh": "获得群星缝针。"
     },
     "item": 0,
     "title": 0
@@ -88963,18 +89245,20 @@
   "3920": {
     "id": 3920,
     "icon": "/api/asset?path=ui/icon/039000/039612.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Alembic of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Destillierkolben",
     "ja": "コスモツール：アレンビック・オブ・スターズ",
     "fr": "Outil cosmique : alambic des constellations",
     "ko": "우주 도구: 별들의 증류기",
+    "zh": "宇宙工具：群星蒸馏器",
     "description": {
       "en": "Obtain an alembic of stars.",
       "de": "Einen Sternen-Destillierkolben erlangt.",
       "ja": "アレンビック・オブ・スターズを入手する",
       "fr": "Obtenir l'alambic des constellations.",
-      "ko": "별들의 증류기 입수"
+      "ko": "별들의 증류기 입수",
+      "zh": "获得群星蒸馏器。"
     },
     "item": 0,
     "title": 0
@@ -88982,18 +89266,20 @@
   "3921": {
     "id": 3921,
     "icon": "/api/asset?path=ui/icon/039000/039715.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Frypan of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Bratpfanne",
     "ja": "コスモツール：フライパン・オブ・スターズ",
     "fr": "Outil cosmique : poêle à frire des constellations",
     "ko": "우주 도구: 별들의 프라이팬",
+    "zh": "宇宙工具：群星煎锅",
     "description": {
       "en": "Obtain a frypan of stars.",
       "de": "Eine Sternen-Bratpfanne erlangt.",
       "ja": "フライパン・オブ・スターズを入手する",
       "fr": "Obtenir la poêle à frire des constellations.",
-      "ko": "별들의 프라이팬 입수"
+      "ko": "별들의 프라이팬 입수",
+      "zh": "获得群星煎锅。"
     },
     "item": 0,
     "title": 0
@@ -89001,18 +89287,20 @@
   "3922": {
     "id": 3922,
     "icon": "/api/asset?path=ui/icon/038000/038315.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Pickaxe of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Spitzhacke",
     "ja": "コスモツール：ピック・オブ・スターズ",
     "fr": "Outil cosmique : pioche des constellations",
     "ko": "우주 도구: 별들의 곡괭이",
+    "zh": "宇宙工具：群星鹤嘴锄",
     "description": {
       "en": "Obtain a pickaxe of stars.",
       "de": "Eine Sternen-Spitzhacke erlangt.",
       "ja": "ピック・オブ・スターズを入手する",
       "fr": "Obtenir la pioche des constellations.",
-      "ko": "별들의 곡괭이 입수"
+      "ko": "별들의 곡괭이 입수",
+      "zh": "获得群星鹤嘴锄。"
     },
     "item": 0,
     "title": 0
@@ -89020,18 +89308,20 @@
   "3923": {
     "id": 3923,
     "icon": "/api/asset?path=ui/icon/038000/038413.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Hatchet of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Handbeil",
     "ja": "コスモツール：ハチェット・オブ・スターズ",
     "fr": "Outil cosmique : hachette des constellations",
     "ko": "우주 도구: 별들의 손도끼",
+    "zh": "宇宙工具：群星手斧",
     "description": {
       "en": "Obtain a hatchet of stars.",
       "de": "Ein Sternen-Handbeil erlangt.",
       "ja": "ハチェット・オブ・スターズを入手する",
       "fr": "Obtenir la hachette des constellations.",
-      "ko": "별들의 손도끼 입수"
+      "ko": "별들의 손도끼 입수",
+      "zh": "获得群星手斧。"
     },
     "item": 0,
     "title": 0
@@ -89039,18 +89329,20 @@
   "3924": {
     "id": 3924,
     "icon": "/api/asset?path=ui/icon/038000/038516.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "R&D: Fishing Rod of Stars",
     "de": "Kosmo-Werkzeug: Sternen-Angelrute",
     "ja": "コスモツール：フィッシングロッド・オブ・スターズ",
     "fr": "Outil cosmique : canne à pêche des constellations",
     "ko": "우주 도구: 별들의 낚싯대",
+    "zh": "宇宙工具：群星钓竿",
     "description": {
       "en": "Obtain a fishing rod of stars.",
       "de": "Eine Sternen-Angelrute erlangt.",
       "ja": "フィッシングロッド・オブ・スターズを入手する",
       "fr": "Obtenir la canne à pêche des constellations.",
-      "ko": "별들의 낚싯대 입수"
+      "ko": "별들의 낚싯대 입수",
+      "zh": "获得群星钓竿。"
     },
     "item": 0,
     "title": 0
@@ -89058,18 +89350,20 @@
   "3925": {
     "id": 3925,
     "icon": "/api/asset?path=ui/icon/064000/064909.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Outer Researches",
     "de": "Promovierter Kosmo-Forscher",
     "ja": "コスモリサーチ・プロフェッサー",
     "fr": "Professeur intersidéral",
     "ko": "우주 연구 교수",
+    "zh": "宇宙研究所教授",
     "description": {
       "en": "Fully upgrade any cosmic tool.",
       "de": "Ein Kosmo-Werkzeug vervollständigt.",
       "ja": "コスモツールのいずれかを最終段階まで強化する",
       "fr": "Améliorer un outil cosmique jusqu'au niveau maximum.",
-      "ko": "우주 도구 중 하나 이상 최종 단계까지 강화"
+      "ko": "우주 도구 중 하나 이상 최종 단계까지 강화",
+      "zh": "将任一宇宙工具强化至最终阶段。"
     },
     "item": 0,
     "title": 846
@@ -89266,18 +89560,20 @@
   "3935": {
     "id": 3935,
     "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Witness to the Stars",
     "de": "Rechte Hand des Meisterbenenners",
     "ja": "星々の共同発見者",
     "fr": "Nom d'une étoile !",
     "ko": "별들의 공동 발견자",
+    "zh": "群星的共同发现者",
     "description": {
       "en": "Complete the quest “His Gift, His Way.”",
       "de": "Den Auftrag „Essen, schlafen, benennen, wiederholen“ abgeschlossen.",
       "ja": "クエスト「辿る旅路に名前を」をコンプリートする",
       "fr": "Accomplir la quête “Toujours à point nommé&nbsp;!”.",
-      "ko": "퀘스트 '되짚어 보는 여로에 이름을' 완료"
+      "ko": "퀘스트 '되짚어 보는 여로에 이름을' 완료",
+      "zh": "完成任务“名遍命途”。"
     },
     "item": 0,
     "title": 0
@@ -89285,18 +89581,20 @@
   "3936": {
     "id": 3936,
     "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Assistant Manager",
     "de": "Ehrenamtlicher Aushilfsprojektleiter",
     "ja": "マネジメントコンサルタント",
     "fr": "Consultant gestionnaire",
     "ko": "프로젝트 관리 자문 위원",
+    "zh": "项目经理的顾问",
     "description": {
       "en": "Complete the quest “A Manager's Fulfillment.”",
       "de": "Den Auftrag „Hör mal, wer da projektleitert“ abgeschlossen.",
       "ja": "クエスト「プロジェクトマネージャーの献身なお仕事」をコンプリートする",
       "fr": "Accomplir la quête “Dans la peau de la gestionnaire”.",
-      "ko": "퀘스트 '프로젝트 매니저의 헌신적인 일 처리' 완료"
+      "ko": "퀘스트 '프로젝트 매니저의 헌신적인 일 처리' 완료",
+      "zh": "完成任务“项目经理的实践之旅”。"
     },
     "item": 0,
     "title": 0
@@ -89304,16 +89602,20 @@
   "3937": {
     "id": 3937,
     "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Universally Crescentialed",
     "de": "Hinterm goldenen Horizont",
     "ja": "黄金の海路の先に",
     "fr": "Le périple sans fin",
+    "ko": "황금빛 바닷길 끝에",
+    "zh": "知海无涯，探索无价",
     "description": {
       "en": "Complete the quest “Wisdom's End.”",
       "de": "Den Auftrag „Wofür es sich zu träumen lohnt“ erfolgreich abgeschlossen.",
       "ja": "クエスト「最後の知識」をコンプリートする",
-      "fr": "Accomplir la quête “Le dernier enseignement”."
+      "fr": "Accomplir la quête “Le dernier enseignement”.",
+      "ko": "퀘스트 '마지막 지식' 완료",
+      "zh": "完成任务“最后的知识”。"
     },
     "item": 0,
     "title": 0
@@ -89321,16 +89623,20 @@
   "3938": {
     "id": 3938,
     "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "A Knife to Remember",
     "de": "Phantomenale Küchenmesserkunst",
     "ja": "ファントム包丁の研ぎ師",
     "fr": "Affûteur fantôme",
+    "ko": "팬텀 식칼 연마공",
+    "zh": "幻境菜刀锻造师",
     "description": {
       "en": "Complete the quest “All Too Fleeting.”",
       "de": "Den Auftrag „Aus der Traum“ erfolgreich abgeschlossen.",
       "ja": "クエスト「すべては蜃気楼の如し」をコンプリートする",
-      "fr": "Accomplir la quête “Finale fantasmagorie”."
+      "fr": "Accomplir la quête “Finale fantasmagorie”.",
+      "ko": "퀘스트 '모든 것은 신기루처럼' 완료",
+      "zh": "完成任务“幻境难常在”。"
     },
     "item": 0,
     "title": 0
@@ -89338,16 +89644,20 @@
   "3939": {
     "id": 3939,
     "icon": "/api/asset?path=ui/icon/060000/060033.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "A Beautiful Day in the Neighborhood",
     "de": "Auf gute Nachbarschaft",
     "ja": "トラルの隣人たち",
     "fr": "La fraternité turalienne",
+    "ko": "투랄의 이웃들",
+    "zh": "图拉尔的邻居们",
     "description": {
       "en": "Complete the quest “Hero's Day Off.”",
       "de": "Den Auftrag „Ein Moment der Entspannung, ein Moment des Glücks“ erfolgreich abgeschlossen.",
       "ja": "クエスト「なんでもない休日、母なる大地の片隅で」をコンプリートする",
-      "fr": "Accomplir la quête “Instant de détente, instant de bonheur”."
+      "fr": "Accomplir la quête “Instant de détente, instant de bonheur”.",
+      "ko": "퀘스트 '평범한 휴일, 어머니인 대지의 한구석에서' 완료",
+      "zh": "完成任务“在大地一隅的寻常假日”。"
     },
     "item": 0,
     "title": 0
@@ -89376,16 +89686,20 @@
   "3941": {
     "id": 3941,
     "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Gently Does It",
     "de": "Hartgesotten",
     "ja": "タフに紳士たらんことを",
     "fr": "Dur, mais gentilhomme avant tout",
+    "ko": "터프한 신사가 되기를",
+    "zh": "硬汉绅士",
     "description": {
       "en": "Complete the quest “Clotted Crime.”",
       "de": "Den Auftrag „Ein goldiges Ende“ abgeschlossen.",
       "ja": "クエスト「つわものふたり」をコンプリートする",
-      "fr": "Accomplir la quête “Les deux durs à cuire”."
+      "fr": "Accomplir la quête “Les deux durs à cuire”.",
+      "ko": "퀘스트 '나란히 선 두 사람' 완료",
+      "zh": "完成任务“绅士与硬汉”。"
     },
     "item": 0,
     "title": 0
@@ -89413,20 +89727,20 @@
   },
   "3943": {
     "id": 3943,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/026000/026002.tex&format=png",
+    "patch": 108,
+    "en": "Onward and Upward",
+    "de": "Mit Wind in den Segeln",
+    "ja": "風の向かう先へ",
+    "fr": "Portés par le vent",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the main scenario quest “Windborne.”",
+      "de": "Den Auftrag „Wohin der Wind weht“ abgeschlossen.",
+      "ja": "クエスト「風の向かう先へ」をコンプリートする",
+      "fr": "Accomplir la quête “Portés par le vent”."
     },
     "item": 0,
-    "title": 0
+    "title": 857
   },
   "3944": {
     "id": 3944,
@@ -89528,16 +89842,20 @@
   "3949": {
     "id": 3949,
     "icon": "/api/asset?path=ui/icon/030000/030704.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Sword & Shield Occultum",
     "de": "Okkulte Macht: Phantomschwert Occultum und Phantom-Schild Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ソード＆ファントムオカルタム・シールド",
     "fr": "Armes fantômes : épée fantôme occultum et bouclier fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 한손검과 팬텀 숨은그림자 방패",
+    "zh": "幻境之骑士·秘影",
     "description": {
       "en": "Obtain a phantom sword occultum and phantom shield occultum.",
       "de": "Das Phantomschwert Occultum und den Phantom-Schild Occultum erhalten.",
       "ja": "ファントムオカルタム・ソード＆ファントムオカルタム・シールドを入手する",
-      "fr": "Obtenir l'épée fantôme occultum et le bouclier fantôme occultum."
+      "fr": "Obtenir l'épée fantôme occultum et le bouclier fantôme occultum.",
+      "ko": "팬텀 숨은그림자 한손검과 팬텀 숨은그림자 방패 입수",
+      "zh": "获得幻境利剑·秘影和幻境盾·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89545,16 +89863,20 @@
   "3950": {
     "id": 3950,
     "icon": "/api/asset?path=ui/icon/031000/031278.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: War Hammer Occultum",
     "de": "Okkulte Macht: Phantom-Kriegshammer Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ウォーハンマー",
     "fr": "Armes fantômes : marteau de guerre fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 전투망치",
+    "zh": "幻境之战士·秘影",
     "description": {
       "en": "Obtain a phantom war hammer occultum.",
       "de": "Den Phantom-Kriegshammer Occultum erhalten.",
       "ja": "ファントムオカルタム・ウォーハンマーを入手する",
-      "fr": "Obtenir le marteau de guerre fantôme occultum."
+      "fr": "Obtenir le marteau de guerre fantôme occultum.",
+      "ko": "팬텀 숨은그림자 전투망치 입수",
+      "zh": "获得幻境战锤·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89562,16 +89884,20 @@
   "3951": {
     "id": 3951,
     "icon": "/api/asset?path=ui/icon/034000/034033.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Guillotine Occultum",
     "de": "Okkulte Macht: Phantom-Guillotine Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ディバイダー",
     "fr": "Armes fantômes : fendoir fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 단두검",
+    "zh": "幻境之暗黑骑士·秘影",
     "description": {
       "en": "Obtain a phantom guillotine occultum.",
       "de": "Die Phantom-Guillotine Occultum erhalten.",
       "ja": "ファントムオカルタム・ディバイダーを入手する",
-      "fr": "Obtenir le fendoir fantôme occultum."
+      "fr": "Obtenir le fendoir fantôme occultum.",
+      "ko": "팬텀 숨은그림자 단두검 입수",
+      "zh": "获得幻境断头剑·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89579,16 +89905,20 @@
   "3952": {
     "id": 3952,
     "icon": "/api/asset?path=ui/icon/036000/036124.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Gunblade Occultum",
     "de": "Okkulte Macht: Phantom-Revolverklinge Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ガンブレード",
     "fr": "Armes fantômes : pistolame fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 건블레이드",
+    "zh": "幻境之绝枪战士·秘影",
     "description": {
       "en": "Obtain a phantom gunblade occultum.",
       "de": "Die Phantom-Revolverklinge Occultum erhalten.",
       "ja": "ファントムオカルタム・ガンブレードを入手する",
-      "fr": "Obtenir la pistolame fantôme occultum."
+      "fr": "Obtenir la pistolame fantôme occultum.",
+      "ko": "팬텀 숨은그림자 건블레이드 입수",
+      "zh": "获得幻境枪刃·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89596,16 +89926,20 @@
   "3953": {
     "id": 3953,
     "icon": "/api/asset?path=ui/icon/031000/031680.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Spear Occultum",
     "de": "Okkulte Macht: Phantomspeer Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・スピア",
     "fr": "Armes fantômes : l'hast fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 창",
+    "zh": "幻境之龙骑士·秘影",
     "description": {
       "en": "Obtain a phantom spear occultum.",
       "de": "Den Phantomspeer Occultum erhalten.",
       "ja": "ファントムオカルタム・スピアを入手する",
-      "fr": "Obtenir l'hast fantôme occultum."
+      "fr": "Obtenir l'hast fantôme occultum.",
+      "ko": "팬텀 숨은그림자 창 입수",
+      "zh": "获得幻境长枪·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89613,16 +89947,20 @@
   "3954": {
     "id": 3954,
     "icon": "/api/asset?path=ui/icon/030000/030868.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Tonfa Occultum",
     "de": "Okkulte Macht: Phantom-Tonfa Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・トンファー",
     "fr": "Armes fantômes : tonfas fantômes occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 톤파",
+    "zh": "幻境之武僧·秘影",
     "description": {
       "en": "Obtain a pair of phantom tonfa occultum.",
       "de": "Die Phantom-Tonfa Occultum erhalten.",
       "ja": "ファントムオカルタム・トンファーを入手する",
-      "fr": "Obtenir les tonfas fantômes occultum."
+      "fr": "Obtenir les tonfas fantômes occultum.",
+      "ko": "팬텀 숨은그림자 톤파 입수",
+      "zh": "获得幻境旋棍·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89630,16 +89968,20 @@
   "3955": {
     "id": 3955,
     "icon": "/api/asset?path=ui/icon/033000/033654.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Knives Occultum",
     "de": "Okkulte Macht: Phantommesser Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ナイフ",
     "fr": "Armes fantômes : couteaux fantômes occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 단검",
+    "zh": "幻境之忍者·秘影",
     "description": {
       "en": "Obtain a pair of phantom knives occultum.",
       "de": "Die Phantommesser Occultum erhalten.",
       "ja": "ファントムオカルタム・ナイフを入手する",
-      "fr": "Obtenir les couteaux fantômes occultum."
+      "fr": "Obtenir les couteaux fantômes occultum.",
+      "ko": "팬텀 숨은그림자 단검 입수",
+      "zh": "获得幻境匕首·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89647,16 +89989,20 @@
   "3956": {
     "id": 3956,
     "icon": "/api/asset?path=ui/icon/037000/037457.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Twinfangs Occultum",
     "de": "Okkulte Macht: Phantom-Zwillingsfänge Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ツインファング",
     "fr": "Armes fantômes : crochets fantômes occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 쌍송곳니",
+    "zh": "幻境之蝰蛇剑士·秘影",
     "description": {
       "en": "Obtain a pair of phantom twinfangs occultum.",
       "de": "Die Phantom-Zwillingsfänge Occultum erhalten.",
       "ja": "ファントムオカルタム・ツインファングを入手する",
-      "fr": "Obtenir les crochets fantômes occultum."
+      "fr": "Obtenir les crochets fantômes occultum.",
+      "ko": "팬텀 숨은그림자 쌍송곳니 입수",
+      "zh": "获得幻境双牙·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89664,16 +90010,20 @@
   "3957": {
     "id": 3957,
     "icon": "/api/asset?path=ui/icon/036000/036582.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Blade Occultum",
     "de": "Okkulte Macht: Phantomklinge Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ブレード",
     "fr": "Armes fantômes : lame fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 외날검",
+    "zh": "幻境之武士·秘影",
     "description": {
       "en": "Obtain a phantom blade occultum.",
       "de": "Die Phantomklinge Occultum erhalten.",
       "ja": "ファントムオカルタム・ブレードを入手する",
-      "fr": "Obtenir la lame fantôme occultum."
+      "fr": "Obtenir la lame fantôme occultum.",
+      "ko": "팬텀 숨은그림자 외날검 입수",
+      "zh": "获得幻境武士刀·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89681,16 +90031,20 @@
   "3958": {
     "id": 3958,
     "icon": "/api/asset?path=ui/icon/037000/037294.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: War Scythe Occultum",
     "de": "Okkulte Macht: Phantom-Kriegssense Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ウォーサイズ",
     "fr": "Armes fantômes : faux de guerre fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 전투낫",
+    "zh": "幻境之钐镰客·秘影",
     "description": {
       "en": "Obtain a phantom war scythe occultum.",
       "de": "Die Phantom-Kriegssense Occultum erhalten.",
       "ja": "ファントムオカルタム・ウォーサイズを入手する",
-      "fr": "Obtenir la faux de guerre fantôme occultum."
+      "fr": "Obtenir la faux de guerre fantôme occultum.",
+      "ko": "팬텀 숨은그림자 전투낫 입수",
+      "zh": "获得幻境战镰·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89698,16 +90052,20 @@
   "3959": {
     "id": 3959,
     "icon": "/api/asset?path=ui/icon/032000/032068.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Harp Bow Occultum",
     "de": "Okkulte Macht: Phantom-Harfenbogen Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ハープボウ",
     "fr": "Armes fantômes : arc-harpe fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 현악궁",
+    "zh": "幻境之吟游诗人·秘影",
     "description": {
       "en": "Obtain a phantom harp bow occultum.",
       "de": "Den Phantom-Harfenbogen Occultum erhalten.",
       "ja": "ファントムオカルタム・ハープボウを入手する",
-      "fr": "Obtenir l'arc-harpe fantôme occultum."
+      "fr": "Obtenir l'arc-harpe fantôme occultum.",
+      "ko": "팬텀 숨은그림자 현악궁 입수",
+      "zh": "获得幻境琴弓·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89715,16 +90073,20 @@
   "3960": {
     "id": 3960,
     "icon": "/api/asset?path=ui/icon/034000/034527.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Revolver Occultum",
     "de": "Okkulte Macht: Phantom-Revolver Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・リボルバー",
     "fr": "Armes fantômes : revolver fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 연발권총",
+    "zh": "幻境之机工士·秘影",
     "description": {
       "en": "Obtain a phantom revolver occultum.",
       "de": "Den Phantom-Revolver Occultum erhalten.",
       "ja": "ファントムオカルタム・リボルバーを入手する",
-      "fr": "Obtenir le revolver fantôme occultum."
+      "fr": "Obtenir le revolver fantôme occultum.",
+      "ko": "팬텀 숨은그림자 연발권총 입수",
+      "zh": "获得幻境左轮枪·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89732,16 +90094,20 @@
   "3961": {
     "id": 3961,
     "icon": "/api/asset?path=ui/icon/036000/036323.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Fans Occultum",
     "de": "Okkulte Macht: Phantom-Fächer Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ファン",
     "fr": "Armes fantômes : éventails fantômes occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 부채",
+    "zh": "幻境之舞者·秘影",
     "description": {
       "en": "Obtain a pair of phantom fans occultum.",
       "de": "Die Phantom-Fächer Occultum erhalten.",
       "ja": "ファントムオカルタム・ファンを入手する",
-      "fr": "Obtenir les éventails fantômes occultum."
+      "fr": "Obtenir les éventails fantômes occultum.",
+      "ko": "팬텀 숨은그림자 부채 입수",
+      "zh": "获得幻境折扇·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89749,16 +90115,20 @@
   "3962": {
     "id": 3962,
     "icon": "/api/asset?path=ui/icon/032000/032914.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Staff Occultum",
     "de": "Okkulte Macht: Phantomstab Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・スタッフ",
     "fr": "Armes fantômes : bâton fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 주술봉",
+    "zh": "幻境之黑魔法师·秘影",
     "description": {
       "en": "Obtain a phantom staff occultum.",
       "de": "Den Phantomstab Occultum erhalten.",
       "ja": "ファントムオカルタム・スタッフを入手する",
-      "fr": "Obtenir le bâton fantôme occultum."
+      "fr": "Obtenir le bâton fantôme occultum.",
+      "ko": "팬텀 숨은그림자 주술봉 입수",
+      "zh": "获得幻境咒杖·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89766,16 +90136,20 @@
   "3963": {
     "id": 3963,
     "icon": "/api/asset?path=ui/icon/037000/037859.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Index Occultum",
     "de": "Okkulte Macht: Phantomindex Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・インデックス",
     "fr": "Armes fantômes : index fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 금서",
+    "zh": "幻境之召唤师·秘影",
     "description": {
       "en": "Obtain a phantom index occultum.",
       "de": "Den Phantomindex Occultum erhalten.",
       "ja": "ファントムオカルタム・インデックスを入手する",
-      "fr": "Obtenir l'index fantôme occultum."
+      "fr": "Obtenir l'index fantôme occultum.",
+      "ko": "팬텀 숨은그림자 금서 입수",
+      "zh": "获得幻境魔导书·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89783,16 +90157,20 @@
   "3964": {
     "id": 3964,
     "icon": "/api/asset?path=ui/icon/036000/036881.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Degen Occultum",
     "de": "Okkulte Macht: Phantomdegen Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・デーゲン",
     "fr": "Armes fantômes : alfange fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 데겐",
+    "zh": "幻境之赤魔法师·秘影",
     "description": {
       "en": "Obtain a phantom degen occultum.",
       "de": "Den Phantomdegen Occultum erhalten.",
       "ja": "ファントムオカルタム・デーゲンを入手する",
-      "fr": "Obtenir l'alfange fantôme occultum."
+      "fr": "Obtenir l'alfange fantôme occultum.",
+      "ko": "팬텀 숨은그림자 데겐 입수",
+      "zh": "获得幻境刺剑·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89800,16 +90178,20 @@
   "3965": {
     "id": 3965,
     "icon": "/api/asset?path=ui/icon/037000/037667.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Round Brush Occultum",
     "de": "Okkulte Macht: Phantom-Rundpinsel Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ラウンドブラシ",
     "fr": "Armes fantômes : pinceau rond fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 둥근붓",
+    "zh": "幻境之绘灵法师·秘影",
     "description": {
       "en": "Obtain a phantom round brush occultum.",
       "de": "Den Phantom-Rundpinsel Occultum erhalten.",
       "ja": "ファントムオカルタム・ラウンドブラシを入手する",
-      "fr": "Obtenir le pinceau rond fantôme occultum."
+      "fr": "Obtenir le pinceau rond fantôme occultum.",
+      "ko": "팬텀 숨은그림자 둥근붓 입수",
+      "zh": "获得幻境圆笔·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89817,16 +90199,20 @@
   "3966": {
     "id": 3966,
     "icon": "/api/asset?path=ui/icon/032000/032499.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Cane Occultum",
     "de": "Okkulte Macht: Phantom-Hirtenstock Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ケーン",
     "fr": "Armes fantômes : canne fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 환술봉",
+    "zh": "幻境之白魔法师·秘影",
     "description": {
       "en": "Obtain a phantom cane occultum.",
       "de": "Den Phantom-Hirtenstock Occultum erhalten.",
       "ja": "ファントムオカルタム・ケーンを入手する",
-      "fr": "Obtenir la canne fantôme occultum."
+      "fr": "Obtenir la canne fantôme occultum.",
+      "ko": "팬텀 숨은그림자 환술봉 입수",
+      "zh": "获得幻境牧杖·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89834,16 +90220,20 @@
   "3967": {
     "id": 3967,
     "icon": "/api/asset?path=ui/icon/037000/037858.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Codex Occultum",
     "de": "Okkulte Macht: Phantomkodex Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・コーデックス",
     "fr": "Armes fantômes : codex fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 치유서",
+    "zh": "幻境之学者·秘影",
     "description": {
       "en": "Obtain a phantom codex occultum.",
       "de": "Den Phantomkodex Occultum erhalten.",
       "ja": "ファントムオカルタム・コーデックスを入手する",
-      "fr": "Obtenir le codex fantôme occultum."
+      "fr": "Obtenir le codex fantôme occultum.",
+      "ko": "팬텀 숨은그림자 치유서 입수",
+      "zh": "获得幻境魔导典·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89851,16 +90241,20 @@
   "3968": {
     "id": 3968,
     "icon": "/api/asset?path=ui/icon/034000/034726.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Star Globe Occultum",
     "de": "Okkulte Macht: Phantom-Sternenglobus Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・スターグローブ",
     "fr": "Armes fantômes : globe céleste fantôme occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 천구의",
+    "zh": "幻境之占星术士·秘影",
     "description": {
       "en": "Obtain a phantom star globe occultum.",
       "de": "Den Phantom-Sternenglobus Occultum erhalten.",
       "ja": "ファントムオカルタム・スターグローブを入手する",
-      "fr": "Obtenir le globe céleste fantôme occultum."
+      "fr": "Obtenir le globe céleste fantôme occultum.",
+      "ko": "팬텀 숨은그림자 천구의 입수",
+      "zh": "获得幻境天球仪·秘影。"
     },
     "item": 0,
     "title": 0
@@ -89868,16 +90262,20 @@
   "3969": {
     "id": 3969,
     "icon": "/api/asset?path=ui/icon/037000/037090.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Cut Above the Rest: Pendulums Occultum",
     "de": "Okkulte Macht: Phantom-Perpendikel Occultum",
     "ja": "ファントムウェポン：ファントムオカルタム・ペンデュラム",
     "fr": "Armes fantômes : pendules fantômes occultum",
+    "ko": "팬텀 웨폰 - 팬텀 숨은그림자 진자",
+    "zh": "幻境之贤者·秘影",
     "description": {
       "en": "Obtain an array of phantom pendulums occultum.",
       "de": "Die Phantom-Perpendikel Occultum erhalten.",
       "ja": "ファントムオカルタム・ペンデュラムを入手する",
-      "fr": "Obtenir les pendules fantômes occultum."
+      "fr": "Obtenir les pendules fantômes occultum.",
+      "ko": "팬텀 숨은그림자 진자 입수",
+      "zh": "获得幻境振空摆·秘影。"
     },
     "item": 0,
     "title": 0
@@ -90179,16 +90577,20 @@
   "3984": {
     "id": 3984,
     "icon": "/api/asset?path=ui/icon/001000/001102.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Go Big on the Trail III",
     "de": "Kapitalbeschaffung auf Tural III",
     "ja": "黄金の太公望：ランク3",
     "fr": "Pêcheur de légendes éternel III",
+    "ko": "황금의 강태공: 3단계",
+    "zh": "金曦太公3",
     "description": {
       "en": "Catch 46 different varieties of big fish in areas explored during Dawntrail.",
       "de": "46 verschiedene Kapitalfische in den Arealen von Dawntrail gefangen.",
       "ja": "黄金のレガシーのエリアにいるヌシを46種類、釣り上げる",
-      "fr": "Pêcher 46 prises légendaires différentes dans les zones explorées lors de Dawntrail."
+      "fr": "Pêcher 46 prises légendaires différentes dans les zones explorées lors de Dawntrail.",
+      "ko": "황금의 유산 지역의 터주 46종류 낚기",
+      "zh": "在金曦区域钓上46种钓场之王。"
     },
     "item": 0,
     "title": 893
@@ -90196,16 +90598,20 @@
   "3985": {
     "id": 3985,
     "icon": "/api/asset?path=ui/icon/001000/001145.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "I Came, I Saw, I Fished",
     "de": "Maximale Kapitalbeschaffung",
     "ja": "極太公望への道",
     "fr": "Calamité des mers",
+    "ko": "극한의 강태공이 되는 길",
+    "zh": "太公奇绝",
     "description": {
       "en": "Obtain the achievements “Fish Fear Me” and “Go Big on the Trail III.”",
       "de": "Die Errungenschaften „Ultimative Kapitalbeschaffung“ und „Kapitalbeschaffung auf Tural III“ erlangt.",
       "ja": "アチーブメント「超太公望への道」「黄金の太公望：ランク3」をすべて達成する",
-      "fr": "Accomplir les hauts faits “Fléau des mers” et “Pêcheur de légendes éternel III”."
+      "fr": "Accomplir les hauts faits “Fléau des mers” et “Pêcheur de légendes éternel III”.",
+      "ko": "업적 '초월한 강태공이 되는 길', '황금의 강태공: 3단계' 모두 달성",
+      "zh": "达成“太公封神”“金曦太公3”成就。"
     },
     "item": 0,
     "title": 890
@@ -90213,18 +90619,20 @@
   "3986": {
     "id": 3986,
     "icon": "/api/asset?path=ui/icon/025000/025507.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Satisfaction Guaranteed: Aunt Tii's Tacos I",
     "de": "Taco-Liebhaber I",
     "ja": "チーソジャ：ランク1",
     "fr": "Aficionado du taco I",
     "ko": "티소쟈: 1단계",
+    "zh": "缇索加的信任1",
     "description": {
       "en": "Achieve a satisfaction level of 1 with Tiisol Ja.",
       "de": "Zufriedenheitsrang 1 bei Tiisol Ja erlangt.",
       "ja": "チーソジャの信頼ランクを1にする",
       "fr": "Atteindre le rang 1 de satisfaction auprès de Tiisol Ja.",
-      "ko": "티소쟈의 신뢰도 1단계 달성"
+      "ko": "티소쟈의 신뢰도 1단계 달성",
+      "zh": "缇索加的信赖等级达到1级。"
     },
     "item": 0,
     "title": 0
@@ -90232,18 +90640,20 @@
   "3987": {
     "id": 3987,
     "icon": "/api/asset?path=ui/icon/025000/025507.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Satisfaction Guaranteed: Aunt Tii's Tacos II",
     "de": "Taco-Liebhaber II",
     "ja": "チーソジャ：ランク2",
     "fr": "Aficionado du taco II",
     "ko": "티소쟈: 2단계",
+    "zh": "缇索加的信任2",
     "description": {
       "en": "Achieve a satisfaction level of 2 with Tiisol Ja.",
       "de": "Zufriedenheitsrang 2 bei Tiisol Ja erlangt.",
       "ja": "チーソジャの信頼ランクを2にする",
       "fr": "Atteindre le rang 2 de satisfaction auprès de Tiisol Ja.",
-      "ko": "티소쟈의 신뢰도 2단계 달성"
+      "ko": "티소쟈의 신뢰도 2단계 달성",
+      "zh": "缇索加的信赖等级达到2级。"
     },
     "item": 0,
     "title": 0
@@ -90251,18 +90661,20 @@
   "3988": {
     "id": 3988,
     "icon": "/api/asset?path=ui/icon/025000/025507.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Satisfaction Guaranteed: Aunt Tii's Tacos III",
     "de": "Taco-Liebhaber III",
     "ja": "チーソジャ：ランク3",
     "fr": "Aficionado du taco III",
     "ko": "티소쟈: 3단계",
+    "zh": "缇索加的信任3",
     "description": {
       "en": "Achieve a satisfaction level of 3 with Tiisol Ja.",
       "de": "Zufriedenheitsrang 3 bei Tiisol Ja erlangt.",
       "ja": "チーソジャの信頼ランクを3にする",
       "fr": "Atteindre le rang 3 de satisfaction auprès de Tiisol Ja.",
-      "ko": "티소쟈의 신뢰도 3단계 달성"
+      "ko": "티소쟈의 신뢰도 3단계 달성",
+      "zh": "缇索加的信赖等级达到3级。"
     },
     "item": 0,
     "title": 0
@@ -90270,18 +90682,20 @@
   "3989": {
     "id": 3989,
     "icon": "/api/asset?path=ui/icon/025000/025507.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Satisfaction Guaranteed: Aunt Tii's Tacos IV",
     "de": "Taco-Liebhaber IV",
     "ja": "チーソジャ：ランク4",
     "fr": "Aficionado du taco IV",
     "ko": "티소쟈: 4단계",
+    "zh": "缇索加的信任4",
     "description": {
       "en": "Achieve a satisfaction level of 4 with Tiisol Ja.",
       "de": "Zufriedenheitsrang 4 bei Tiisol Ja erlangt.",
       "ja": "チーソジャの信頼ランクを4にする",
       "fr": "Atteindre le rang 4 de satisfaction auprès de Tiisol Ja.",
-      "ko": "티소쟈의 신뢰도 4단계 달성"
+      "ko": "티소쟈의 신뢰도 4단계 달성",
+      "zh": "缇索加的信赖等级达到4级。"
     },
     "item": 0,
     "title": 0
@@ -90289,18 +90703,20 @@
   "3990": {
     "id": 3990,
     "icon": "/api/asset?path=ui/icon/025000/025507.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Satisfaction Guaranteed: Aunt Tii's Tacos V",
     "de": "Taco-Liebhaber V",
     "ja": "チーソジャ：ランク5",
     "fr": "Aficionado du taco V",
     "ko": "티소쟈: 5단계",
+    "zh": "缇索加的信任5",
     "description": {
       "en": "Achieve a satisfaction level of 5 with Tiisol Ja.",
       "de": "Zufriedenheitsrang 5 bei Tiisol Ja erlangt.",
       "ja": "チーソジャの信頼ランクを5にする",
       "fr": "Atteindre le rang 5 de satisfaction auprès de Tiisol Ja.",
-      "ko": "티소쟈의 신뢰도 5단계 달성"
+      "ko": "티소쟈의 신뢰도 5단계 달성",
+      "zh": "缇索加的信赖等级达到5级。"
     },
     "item": 0,
     "title": 865
@@ -90308,18 +90724,20 @@
   "3991": {
     "id": 3991,
     "icon": "/api/asset?path=ui/icon/026000/026551.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Customer Is Always Right: Aunt Tii's Tacos I",
     "de": "Tante Tii zu Diensten I",
     "ja": "チーソジャの得意先：ランク1",
     "fr": "Fournisseur officiel de Tiisol Ja I",
     "ko": "티소쟈의 단골: 1단계",
+    "zh": "缇索加的老主顾1",
     "description": {
       "en": "Deliver 36 collectables to Tiisol Ja.",
       "de": "Tiisol Ja 36 Sammlerstücke geliefert.",
       "ja": "チーソジャに収集品を計36回納品する",
       "fr": "Échanger 36 objets collectionnables à Tiisol Ja.",
-      "ko": "티소쟈에게 소장품 36회 납품"
+      "ko": "티소쟈에게 소장품 36회 납품",
+      "zh": "在缇索加处累计交纳收藏品36次。"
     },
     "item": 0,
     "title": 0
@@ -90327,18 +90745,20 @@
   "3992": {
     "id": 3992,
     "icon": "/api/asset?path=ui/icon/026000/026551.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Customer Is Always Right: Aunt Tii's Tacos II",
     "de": "Tante Tii zu Diensten II",
     "ja": "チーソジャの得意先：ランク2",
     "fr": "Fournisseur officiel de Tiisol Ja II",
     "ko": "티소쟈의 단골: 2단계",
+    "zh": "缇索加的老主顾2",
     "description": {
       "en": "Deliver 48 collectables to Tiisol Ja.",
       "de": "Tiisol Ja 48 Sammlerstücke geliefert.",
       "ja": "チーソジャに収集品を計48回納品する",
       "fr": "Échanger 48 objets collectionnables à Tiisol Ja.",
-      "ko": "티소쟈에게 소장품 48회 납품"
+      "ko": "티소쟈에게 소장품 48회 납품",
+      "zh": "在缇索加处累计交纳收藏品48次。"
     },
     "item": 0,
     "title": 0
@@ -90346,18 +90766,20 @@
   "3993": {
     "id": 3993,
     "icon": "/api/asset?path=ui/icon/026000/026551.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Customer Is Always Right: Aunt Tii's Tacos III",
     "de": "Tante Tii zu Diensten III",
     "ja": "チーソジャの得意先：ランク3",
     "fr": "Fournisseur officiel de Tiisol Ja III",
     "ko": "티소쟈의 단골: 3단계",
+    "zh": "缇索加的老主顾3",
     "description": {
       "en": "Deliver 60 collectables to Tiisol Ja.",
       "de": "Tiisol Ja 60 Sammlerstücke geliefert.",
       "ja": "チーソジャに収集品を計60回納品する",
       "fr": "Échanger 60 objets collectionnables à Tiisol Ja.",
-      "ko": "티소쟈에게 소장품 60회 납품"
+      "ko": "티소쟈에게 소장품 60회 납품",
+      "zh": "在缇索加处累计交纳收藏品60次。"
     },
     "item": 0,
     "title": 0
@@ -90365,18 +90787,20 @@
   "3994": {
     "id": 3994,
     "icon": "/api/asset?path=ui/icon/026000/026551.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Customer Is Always Right: Aunt Tii's Tacos IV",
     "de": "Tante Tii zu Diensten IV",
     "ja": "チーソジャの得意先：ランク4",
     "fr": "Fournisseur officiel de Tiisol Ja IV",
     "ko": "티소쟈의 단골: 4단계",
+    "zh": "缇索加的老主顾4",
     "description": {
       "en": "Deliver 90 collectables to Tiisol Ja.",
       "de": "Tiisol Ja 90 Sammlerstücke geliefert.",
       "ja": "チーソジャに収集品を計90回納品する",
       "fr": "Échanger 90 objets collectionnables à Tiisol Ja.",
-      "ko": "티소쟈에게 소장품 90회 납품"
+      "ko": "티소쟈에게 소장품 90회 납품",
+      "zh": "在缇索加处累计交纳收藏品90次。"
     },
     "item": 0,
     "title": 0
@@ -90384,18 +90808,20 @@
   "3995": {
     "id": 3995,
     "icon": "/api/asset?path=ui/icon/026000/026551.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Customer Is Always Right: Aunt Tii's Tacos V",
     "de": "Tante Tii zu Diensten V",
     "ja": "チーソジャの得意先：ランク5",
     "fr": "Fournisseur officiel de Tiisol Ja V",
     "ko": "티소쟈의 단골: 5단계",
+    "zh": "缇索加的老主顾5",
     "description": {
       "en": "Deliver 120 collectables to Tiisol Ja.",
       "de": "Tiisol Ja 120 Sammlerstücke geliefert.",
       "ja": "チーソジャに収集品を計120回納品する",
       "fr": "Échanger 120 objets collectionnables à Tiisol Ja.",
-      "ko": "티소쟈에게 소장품 120회 납품"
+      "ko": "티소쟈에게 소장품 120회 납품",
+      "zh": "在缇索加处累计交纳收藏品120次。"
     },
     "item": 0,
     "title": 0
@@ -90403,18 +90829,20 @@
   "3996": {
     "id": 3996,
     "icon": "/api/asset?path=ui/icon/026000/026551.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "The Customer Is Always Right: Aunt Tii's Tacos VI",
     "de": "Tante Tii zu Diensten VI",
     "ja": "チーソジャの得意先：ランク6",
     "fr": "Fournisseur officiel de Tiisol Ja VI",
     "ko": "티소쟈의 단골: 6단계",
+    "zh": "缇索加的老主顾6",
     "description": {
       "en": "Deliver 150 collectables to Tiisol Ja.",
       "de": "Tiisol Ja 150 Sammlerstücke geliefert.",
       "ja": "チーソジャに収集品を計150回納品する",
       "fr": "Échanger 150 objets collectionnables à Tiisol Ja.",
-      "ko": "티소쟈에게 소장품 150회 납품"
+      "ko": "티소쟈에게 소장품 150회 납품",
+      "zh": "在缇索加处累计交纳收藏品150次。"
     },
     "item": 0,
     "title": 866
@@ -90422,16 +90850,20 @@
   "3997": {
     "id": 3997,
     "icon": "/api/asset?path=ui/icon/026000/026184.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Archiving the Arcane",
     "de": "Allwissender Chronist",
     "ja": "三日月島北部の記録員",
     "fr": "Archiviste septentrional",
+    "ko": "초승달 섬 북부 기록원",
+    "zh": "新月岛北部的记录员",
     "description": {
       "en": "Unlock all entries in the Occult Record pertaining to the North Horn.",
       "de": "Alle Einträge der Kreszentia-Chronik des nördlichen Kreszentias freigeschaltet.",
       "ja": "蜃気楼の島 クレセントアイル：北征編における三日月島探査記録帳の全項目を開示する",
-      "fr": "Remplir toutes les entrées du calepin du croissant sur l'île de Lunule septentrionale."
+      "fr": "Remplir toutes les entrées du calepin du croissant sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편 관련 초승달 섬 탐사기록장의 모든 항목 기록",
+      "zh": "完成蜃景幻界新月岛北征之章调查笔记中的所有项目。"
     },
     "item": 0,
     "title": 0
@@ -90439,16 +90871,20 @@
   "3998": {
     "id": 3998,
     "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Critical Analysis I",
     "de": "Autorität des Halbmonds I",
     "ja": "孤島の卓越者：ランク1",
     "fr": "Critique averti I",
+    "ko": "외딴섬의 초월자: 1단계",
+    "zh": "威扬孤岛1",
     "description": {
       "en": "Complete 10 critical encounters on the Occult Crescent: North Horn.",
       "de": "10 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを10回コンプリートする",
-      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule septentrionale."
+      "fr": "Remporter 10 confrontations critiques sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 비상 조우 10회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成10次紧急遭遇战。"
     },
     "item": 0,
     "title": 0
@@ -90456,16 +90892,20 @@
   "3999": {
     "id": 3999,
     "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Critical Analysis II",
     "de": "Autorität des Halbmonds II",
     "ja": "孤島の卓越者：ランク2",
     "fr": "Critique averti II",
+    "ko": "외딴섬의 초월자: 2단계",
+    "zh": "威扬孤岛2",
     "description": {
       "en": "Complete 50 critical encounters on the Occult Crescent: North Horn.",
       "de": "50 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを50回コンプリートする",
-      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule septentrionale."
+      "fr": "Remporter 50 confrontations critiques sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 비상 조우 50회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成50次紧急遭遇战。"
     },
     "item": 0,
     "title": 0
@@ -90473,16 +90913,20 @@
   "4000": {
     "id": 4000,
     "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Critical Analysis III",
     "de": "Autorität des Halbmonds III",
     "ja": "孤島の卓越者：ランク3",
     "fr": "Critique averti III",
+    "ko": "외딴섬의 초월자: 3단계",
+    "zh": "威扬孤岛3",
     "description": {
       "en": "Complete 100 critical encounters on the Occult Crescent: North Horn.",
       "de": "100 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを100回コンプリートする",
-      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule septentrionale."
+      "fr": "Remporter 100 confrontations critiques sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 비상 조우 100회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成100次紧急遭遇战。"
     },
     "item": 0,
     "title": 0
@@ -90490,16 +90934,20 @@
   "4001": {
     "id": 4001,
     "icon": "/api/asset?path=ui/icon/064000/064836.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Critical Analysis IV",
     "de": "Autorität des Halbmonds IV",
     "ja": "孤島の卓越者：ランク4",
     "fr": "Critique averti IV",
+    "ko": "외딴섬의 초월자: 4단계",
+    "zh": "威扬孤岛4",
     "description": {
       "en": "Complete 500 critical encounters on the Occult Crescent: North Horn.",
       "de": "500 kritische Begegnungen im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、クリティカルエンカウントを500回コンプリートする",
-      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule septentrionale."
+      "fr": "Remporter 500 confrontations critiques sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 비상 조우 500회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成500次紧急遭遇战。"
     },
     "item": 0,
     "title": 867
@@ -90507,16 +90955,20 @@
   "4002": {
     "id": 4002,
     "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Occult Enlightenment I",
     "de": "Krone des Heldenmuts I",
     "ja": "豪傑者の高み：ランク1",
     "fr": "Destinée défiée I",
+    "ko": "호걸의 정점: 1단계",
+    "zh": "豪者高杰1",
     "description": {
       "en": "Complete 10 FATEs on the Occult Crescent: North Horn.",
       "de": "10 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を10回コンプリートする",
-      "fr": "Accomplir 10 ALÉA sur l'île de Lunule septentrionale."
+      "fr": "Accomplir 10 ALÉA sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 돌발 임무 10회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成10次危命任务。"
     },
     "item": 0,
     "title": 0
@@ -90524,16 +90976,20 @@
   "4003": {
     "id": 4003,
     "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Occult Enlightenment II",
     "de": "Krone des Heldenmuts II",
     "ja": "豪傑者の高み：ランク2",
     "fr": "Destinée défiée II",
+    "ko": "호걸의 정점: 2단계",
+    "zh": "豪者高杰2",
     "description": {
       "en": "Complete 50 FATEs on the Occult Crescent: North Horn.",
       "de": "50 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を50回コンプリートする",
-      "fr": "Accomplir 50 ALÉA sur l'île de Lunule septentrionale."
+      "fr": "Accomplir 50 ALÉA sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 돌발 임무 50회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成50次危命任务。"
     },
     "item": 0,
     "title": 0
@@ -90541,16 +90997,20 @@
   "4004": {
     "id": 4004,
     "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Occult Enlightenment III",
     "de": "Krone des Heldenmuts III",
     "ja": "豪傑者の高み：ランク3",
     "fr": "Destinée défiée III",
+    "ko": "호걸의 정점: 3단계",
+    "zh": "豪者高杰3",
     "description": {
       "en": "Complete 100 FATEs on the Occult Crescent: North Horn.",
       "de": "100 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を100回コンプリートする",
-      "fr": "Accomplir 100 ALÉA sur l'île de Lunule septentrionale."
+      "fr": "Accomplir 100 ALÉA sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 돌발 임무 100회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成100次危命任务。"
     },
     "item": 0,
     "title": 0
@@ -90558,16 +91018,20 @@
   "4005": {
     "id": 4005,
     "icon": "/api/asset?path=ui/icon/003000/003126.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Occult Enlightenment IV",
     "de": "Krone des Heldenmuts IV",
     "ja": "豪傑者の高み：ランク4",
     "fr": "Destinée défiée IV",
+    "ko": "호걸의 정점: 4단계",
+    "zh": "豪者高杰4",
     "description": {
       "en": "Complete 500 FATEs on the Occult Crescent: North Horn.",
       "de": "500 FATEs im nördlichen Kreszentia erfolgreich abgeschlossen.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、F.A.T.E.を500回コンプリートする",
-      "fr": "Accomplir 500 ALÉA sur l'île de Lunule septentrionale."
+      "fr": "Accomplir 500 ALÉA sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 돌발 임무 500회 완료",
+      "zh": "在蜃景幻界新月岛北征之章中完成500次危命任务。"
     },
     "item": 0,
     "title": 868
@@ -90575,16 +91039,20 @@
   "4006": {
     "id": 4006,
     "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "A Show of Fork I",
     "de": "Wissen ist Macht I",
     "ja": "魔の塔を制覇せし者：ランク1",
     "fr": "Tour de magie I",
+    "ko": "마의 탑을 제패한 자: 1단계",
+    "zh": "魔镇两歧1",
     "description": {
       "en": "Complete the Forked Tower: Magic for the first time.",
       "de": "Den Fork-Turm - Magie erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を初めて攻略する",
-      "fr": "Finir la Tour fourchue de la Magie."
+      "fr": "Finir la Tour fourchue de la Magie.",
+      "ko": "초승달 섬: 북부편에서 포크 타워: 마의 탑 1회 완료",
+      "zh": "首次成功挑战两歧塔 魔之塔。"
     },
     "item": 0,
     "title": 0
@@ -90592,16 +91060,20 @@
   "4007": {
     "id": 4007,
     "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "A Show of Fork II",
     "de": "Wissen ist Macht II",
     "ja": "魔の塔を制覇せし者：ランク2",
     "fr": "Tour de magie II",
+    "ko": "마의 탑을 제패한 자: 2단계",
+    "zh": "魔镇两歧2",
     "description": {
       "en": "Complete the Forked Tower: Magic 5 times.",
       "de": "Den Fork-Turm - Magie 5 Mal erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を累計5回攻略する",
-      "fr": "Finir 5 fois la Tour fourchue de la Magie."
+      "fr": "Finir 5 fois la Tour fourchue de la Magie.",
+      "ko": "초승달 섬: 북부편에서 포크 타워: 마의 탑 5회 완료",
+      "zh": "累计成功挑战两歧塔 魔之塔5次。"
     },
     "item": 0,
     "title": 0
@@ -90609,16 +91081,20 @@
   "4008": {
     "id": 4008,
     "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "A Show of Fork III",
     "de": "Wissen ist Macht III",
     "ja": "魔の塔を制覇せし者：ランク3",
     "fr": "Tour de magie III",
+    "ko": "마의 탑을 제패한 자: 3단계",
+    "zh": "魔镇两歧3",
     "description": {
       "en": "Complete the Forked Tower: Magic 20 times.",
       "de": "Den Fork-Turm - Magie 20 Mal erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を累計20回攻略する",
-      "fr": "Finir 20 fois la Tour fourchue de la Magie."
+      "fr": "Finir 20 fois la Tour fourchue de la Magie.",
+      "ko": "초승달 섬: 북부편에서 포크 타워: 마의 탑 20회 완료",
+      "zh": "累计成功挑战两歧塔 魔之塔20次。"
     },
     "item": 0,
     "title": 0
@@ -90626,16 +91102,20 @@
   "4009": {
     "id": 4009,
     "icon": "/api/asset?path=ui/icon/064000/064591.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "A Show of Fork IV",
     "de": "Wissen ist Macht IV",
     "ja": "魔の塔を制覇せし者：ランク4",
     "fr": "Tour de magie IV",
+    "ko": "마의 탑을 제패한 자: 4단계",
+    "zh": "魔镇两歧4",
     "description": {
       "en": "Complete the Forked Tower: Magic 50 times.",
       "de": "Den Fork-Turm - Magie 50 Mal erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔を累計50回攻略する",
-      "fr": "Finir 50 fois la Tour fourchue de la Magie."
+      "fr": "Finir 50 fois la Tour fourchue de la Magie.",
+      "ko": "초승달 섬: 북부편에서 포크 타워: 마의 탑 50회 완료",
+      "zh": "累计成功挑战两歧塔 魔之塔50次。"
     },
     "item": 0,
     "title": 869
@@ -90643,16 +91123,20 @@
   "4010": {
     "id": 4010,
     "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Tour de Fork I",
     "de": "Wissen ist extreme Macht I",
     "ja": "魔の塔を完全制覇せし者：ランク1",
     "fr": "Indexation terminée I",
+    "ko": "마의 탑을 완벽히 제패한 자: 1단계",
+    "zh": "超魔镇两歧1",
     "description": {
       "en": "Complete the Forked Tower: Magic (Extreme) for the first time.",
       "de": "Den Fork-Turm - Magie (extrem) erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を初めて攻略する",
-      "fr": "Finir la Tour fourchue de la Magie (extrême)."
+      "fr": "Finir la Tour fourchue de la Magie (extrême).",
+      "ko": "초승달 섬: 북부편에서 극 포크 타워: 마의 탑 1회 완료",
+      "zh": "首次成功挑战两歧塔 超魔之塔。"
     },
     "item": 0,
     "title": 870
@@ -90660,16 +91144,20 @@
   "4011": {
     "id": 4011,
     "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Tour de Fork II",
     "de": "Wissen ist extreme Macht II",
     "ja": "魔の塔を完全制覇せし者：ランク2",
     "fr": "Indexation terminée II",
+    "ko": "마의 탑을 완벽히 제패한 자: 2단계",
+    "zh": "超魔镇两歧2",
     "description": {
       "en": "Complete the Forked Tower: Magic (Extreme) 5 times.",
       "de": "Den Fork-Turm - Magie (extrem) 5 Mal erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を累計5回攻略する",
-      "fr": "Finir 5 fois la Tour fourchue de la Magie (extrême)."
+      "fr": "Finir 5 fois la Tour fourchue de la Magie (extrême).",
+      "ko": "초승달 섬: 북부편에서 극 포크 타워: 마의 탑 5회 완료",
+      "zh": "累计成功挑战两歧塔 超魔之塔5次。"
     },
     "item": 0,
     "title": 0
@@ -90677,16 +91165,20 @@
   "4012": {
     "id": 4012,
     "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Tour de Fork III",
     "de": "Wissen ist extreme Macht III",
     "ja": "魔の塔を完全制覇せし者：ランク3",
     "fr": "Indexation terminée III",
+    "ko": "마의 탑을 완벽히 제패한 자: 3단계",
+    "zh": "超魔镇两歧3",
     "description": {
       "en": "Complete the Forked Tower: Magic (Extreme) 20 times.",
       "de": "Den Fork-Turm - Magie (extrem) 20 Mal erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を累計20回攻略する",
-      "fr": "Finir 20 fois la Tour fourchue de la Magie (extrême)."
+      "fr": "Finir 20 fois la Tour fourchue de la Magie (extrême).",
+      "ko": "초승달 섬: 북부편에서 극 포크 타워: 마의 탑 20회 완료",
+      "zh": "累计成功挑战两歧塔 超魔之塔20次。"
     },
     "item": 0,
     "title": 0
@@ -90694,16 +91186,20 @@
   "4013": {
     "id": 4013,
     "icon": "/api/asset?path=ui/icon/064000/064566.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Tour de Fork IV",
     "de": "Wissen ist extreme Macht IV",
     "ja": "魔の塔を完全制覇せし者：ランク4",
     "fr": "Indexation terminée IV",
+    "ko": "마의 탑을 완벽히 제패한 자: 4단계",
+    "zh": "超魔镇两歧4",
     "description": {
       "en": "Complete the Forked Tower: Magic (Extreme) 50 times.",
       "de": "Den Fork-Turm - Magie (extrem) 50 Mal erobert.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、フォークタワー：魔の塔（極フォークタワー：魔の塔）を累計50回攻略する",
-      "fr": "Finir 50 fois la Tour fourchue de la Magie (extrême)."
+      "fr": "Finir 50 fois la Tour fourchue de la Magie (extrême).",
+      "ko": "초승달 섬: 북부편에서 극 포크 타워: 마의 탑 50회 완료",
+      "zh": "累计成功挑战两歧塔 超魔之塔50次。"
     },
     "item": 0,
     "title": 871
@@ -90711,16 +91207,20 @@
   "4014": {
     "id": 4014,
     "icon": "/api/asset?path=ui/icon/064000/064556.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Phantom Physicking I",
     "de": "Kreszentias Meisterarzt I",
     "ja": "三角海域の名医：ランク1",
     "fr": "Défibrilateur septentrional I",
+    "ko": "삼각해역 명의: 1단계",
+    "zh": "三角区的名医1",
     "description": {
       "en": "Resurrect another player on the Occult Crescent: North Horn 10 times.",
       "de": "10 Mal einen Spieler (außer sich selbst) im nördlichen Kreszentia wiederbelebt.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、自分以外の戦闘不能状態のプレイヤーを10回蘇生する",
-      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule septentrionale."
+      "fr": "Ressusciter 10 fois un autre joueur sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 전투불능 상태의 다른 플레이어 10회 부활",
+      "zh": "在蜃景幻界新月岛北征之章相关任务中，救助10位除自身外处于无法战斗状态的玩家。"
     },
     "item": 0,
     "title": 0
@@ -90728,16 +91228,20 @@
   "4015": {
     "id": 4015,
     "icon": "/api/asset?path=ui/icon/064000/064556.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Phantom Physicking II",
     "de": "Kreszentias Meisterarzt II",
     "ja": "三角海域の名医：ランク2",
     "fr": "Défibrilateur septentrional II",
+    "ko": "삼각해역 명의: 2단계",
+    "zh": "三角区的名医2",
     "description": {
       "en": "Resurrect another player on the Occult Crescent: North Horn 100 times.",
       "de": "100 Mal einen Spieler (außer sich selbst) im nördlichen Kreszentia wiederbelebt.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、自分以外の戦闘不能状態のプレイヤーを100回蘇生する",
-      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule septentrionale."
+      "fr": "Ressusciter 100 fois un autre joueur sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 전투불능 상태의 다른 플레이어 100회 부활",
+      "zh": "在蜃景幻界新月岛北征之章相关任务中，救助100位除自身外处于无法战斗状态的玩家。"
     },
     "item": 0,
     "title": 0
@@ -90745,16 +91249,20 @@
   "4016": {
     "id": 4016,
     "icon": "/api/asset?path=ui/icon/064000/064556.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Phantom Physicking III",
     "de": "Kreszentias Meisterarzt III",
     "ja": "三角海域の名医：ランク3",
     "fr": "Défibrilateur septentrional III",
+    "ko": "삼각해역 명의: 3단계",
+    "zh": "三角区的名医3",
     "description": {
       "en": "Resurrect another player on the Occult Crescent: North Horn 500 times.",
       "de": "500 Mal einen Spieler (außer sich selbst) im nördlichen Kreszentia wiederbelebt.",
       "ja": "蜃気楼の島 クレセントアイル：北征編にて、自分以外の戦闘不能状態のプレイヤーを500回蘇生する",
-      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule septentrionale."
+      "fr": "Ressusciter 500 fois un autre joueur sur l'île de Lunule septentrionale.",
+      "ko": "초승달 섬: 북부편에서 전투불능 상태의 다른 플레이어 500회 부활",
+      "zh": "在蜃景幻界新月岛北征之章相关任务中，救助500位除自身外处于无法战斗状态的玩家。"
     },
     "item": 0,
     "title": 872
@@ -90762,16 +91270,20 @@
   "4017": {
     "id": 4017,
     "icon": "/api/asset?path=ui/icon/064000/064571.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Phantomastery IV",
     "de": "Meister der Phantome IV",
     "ja": "サポートジョブマスター：ランク4",
     "fr": "Maître fantôme IV",
+    "ko": "서포트 잡 통달: 4단계",
+    "zh": "辅助职业大师4",
     "description": {
       "en": "Master 16 phantom jobs.",
       "de": "16 Phantomjobs gemeistert.",
       "ja": "サポートジョブを16種類マスターする",
-      "fr": "Maîtriser 16 jobs de soutien."
+      "fr": "Maîtriser 16 jobs de soutien.",
+      "ko": "서포트 잡 16종류 통달",
+      "zh": "将16种辅助职业提升到满级。"
     },
     "item": 0,
     "title": 0
@@ -90779,16 +91291,20 @@
   "4018": {
     "id": 4018,
     "icon": "/api/asset?path=ui/icon/064000/064571.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Phantomastery V",
     "de": "König der Phantome",
     "ja": "サポートジョブキング",
     "fr": "Tyran fantôme",
+    "ko": "서포트 잡 제패",
+    "zh": "辅助职业之王",
     "description": {
       "en": "Master 24 phantom jobs.",
       "de": "24 Phantomjobs gemeistert.",
       "ja": "サポートジョブを24種類マスターする",
-      "fr": "Maîtriser 24 jobs de soutien."
+      "fr": "Maîtriser 24 jobs de soutien.",
+      "ko": "서포트 잡 24종류 통달",
+      "zh": "将24种辅助职业提升到满级。"
     },
     "item": 0,
     "title": 873
@@ -90796,18 +91312,20 @@
   "4019": {
     "id": 4019,
     "icon": "/api/asset?path=ui/icon/000000/000115.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Shades' Treasury",
     "de": "Das Dreieck des Glücks",
     "ja": "幸運の宝物王",
     "fr": "Trésorier insulaire",
     "ko": "행운의 보물왕",
+    "zh": "幸运寻宝王",
     "description": {
       "en": "Open 10,000 treasure coffers found during your excursions on the Occult Crescent.",
       "de": "10.000 Schatztruhen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、探し出した宝箱を10,000回開ける",
       "fr": "Ouvrir 10 000 coffres au trésor sur l'île de Lunule.",
-      "ko": "초승달 섬에서 찾아낸 보물상자 10,000회 열기"
+      "ko": "초승달 섬에서 찾아낸 보물상자 10,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启场景内的宝箱10000次。"
     },
     "item": 0,
     "title": 874
@@ -90815,18 +91333,20 @@
   "4020": {
     "id": 4020,
     "icon": "/api/asset?path=ui/icon/000000/000115.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Pot in the Act",
     "de": "Des Pottes bester Freund",
     "ja": "ポットの大親友",
     "fr": "Despote des pots",
     "ko": "항아리의 단짝 친구",
+    "zh": "撒娇罐最好的朋友",
     "description": {
       "en": "Open 2,000 treasure coffers revealed to you by persistent pots on the Occult Crescent.",
       "de": "2.000 Schatztruhen des Wunderpotts auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、おねだりポットの宝箱を2,000回開ける",
       "fr": "Ouvrir 2 000 coffres de pot persistant sur l'île de Lunule.",
-      "ko": "초승달 섬에서 떼쟁이 항아리의 보물상자 2,000회 열기"
+      "ko": "초승달 섬에서 떼쟁이 항아리의 보물상자 2,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启撒娇罐宝箱2000次。"
     },
     "item": 0,
     "title": 875
@@ -90834,18 +91354,20 @@
   "4021": {
     "id": 4021,
     "icon": "/api/asset?path=ui/icon/000000/000115.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "...Riches Abound",
     "de": "Öhrchen voller Möhrchen",
     "ja": "カロット大喰らい",
     "fr": "Carotteur en série",
     "ko": "당근 대식가",
+    "zh": "满肚胡萝卜",
     "description": {
       "en": "Open 2,000 treasure coffers revealed to you by happy bunnies on the Occult Crescent.",
       "de": "2.000 Schatztruhen des Glückshasen auf Kreszentia geöffnet.",
       "ja": "蜃気楼の島 クレセントアイルにて、しあわせうさぎの宝箱を2,000回開ける",
       "fr": "Ouvrir 2 000 coffres de lapin du bonheur sur l'île de Lunule.",
-      "ko": "초승달 섬에서 행운토끼의 보물상자 2,000회 열기"
+      "ko": "초승달 섬에서 행운토끼의 보물상자 2,000회 열기",
+      "zh": "累计在蜃景幻界新月岛找到并开启幸福兔宝箱2000次。"
     },
     "item": 0,
     "title": 876
@@ -90853,955 +91375,965 @@
   "4022": {
     "id": 4022,
     "icon": "/api/asset?path=ui/icon/062000/062969.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Fifth Astral Blues",
     "de": "Das Wissen der Kreszenten Künste",
     "ja": "三日月島のラーニングマスター",
     "fr": "Incollable insulaire",
+    "ko": "초승달 섬의 체득 달인",
+    "zh": "新月岛学习大师",
     "description": {
       "en": "Learn all possible actions as a Phantom Blue Mage.",
       "de": "Mit Phantom-Blaumagier alle von Gegnern erlernbaren Kommandos erlernt.",
       "ja": "サポートジョブ青魔道士で、敵からラーニング可能な青魔法をすべてラーニングする",
-      "fr": "Apprendre toutes les actions de magie bleue du mage bleu fantôme."
+      "fr": "Apprendre toutes les actions de magie bleue du mage bleu fantôme.",
+      "ko": "서포트 잡 청마도사로 적에게서 체득할 수 있는 청마법을 모두 체득",
+      "zh": "使用辅助职业青魔法师，从敌人那里学会所有可以掌握的青魔法。"
     },
     "item": 0,
     "title": 0
   },
   "4023": {
     "id": 4023,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/039000/039932.tex&format=png",
+    "patch": 108,
+    "en": "Wild Child I",
+    "de": "Von der wilden Seite I",
+    "ja": "魔獣使い：レベル10",
+    "fr": "Apprenti dresseur",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve beastmaster level 10.",
+      "de": "Erfahrungsstufe 10 als Bestienbändiger erreicht.",
+      "ja": "魔獣使いのレベルが10に到達する",
+      "fr": "Atteindre le niveau 10 avec le job dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4024": {
     "id": 4024,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/039000/039932.tex&format=png",
+    "patch": 108,
+    "en": "Wild Child II",
+    "de": "Von der wilden Seite II",
+    "ja": "魔獣使い：レベル20",
+    "fr": "Dresseur novice",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve beastmaster level 20.",
+      "de": "Erfahrungsstufe 20 als Bestienbändiger erreicht.",
+      "ja": "魔獣使いのレベルが20に到達する",
+      "fr": "Atteindre le niveau 20 avec le job dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4025": {
     "id": 4025,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/039000/039932.tex&format=png",
+    "patch": 108,
+    "en": "Wild Child III",
+    "de": "Von der wilden Seite III",
+    "ja": "魔獣使い：レベル30",
+    "fr": "Dresseur intermédiaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve beastmaster level 30.",
+      "de": "Erfahrungsstufe 30 als Bestienbändiger erreicht.",
+      "ja": "魔獣使いのレベルが30に到達する",
+      "fr": "Atteindre le niveau 30 avec le job dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4026": {
     "id": 4026,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/039000/039932.tex&format=png",
+    "patch": 108,
+    "en": "Wild Child IV",
+    "de": "Von der wilden Seite IV",
+    "ja": "魔獣使い：レベル40",
+    "fr": "Dresseur confirmé",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve beastmaster level 40.",
+      "de": "Erfahrungsstufe 40 als Bestienbändiger erreicht.",
+      "ja": "魔獣使いのレベルが40に到達する",
+      "fr": "Atteindre le niveau 40 avec le job dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4027": {
     "id": 4027,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/039000/039932.tex&format=png",
+    "patch": 108,
+    "en": "Wild Child V",
+    "de": "Von der wilden Seite V",
+    "ja": "魔獣使い：レベル50",
+    "fr": "Dresseur vétéran",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve beastmaster level 50.",
+      "de": "Erfahrungsstufe 50 als Bestienbändiger erreicht.",
+      "ja": "魔獣使いのレベルが50に到達する",
+      "fr": "Atteindre le niveau 50 avec le job dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4028": {
     "id": 4028,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003905.tex&format=png",
+    "patch": 108,
+    "en": "A Beast in the Hand I",
+    "de": "Ein Herz für Bestien I",
+    "ja": "ビーストマニア：ランク1",
+    "fr": "Adepte des bêtes I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Befriend 10 unique beasts.",
+      "de": "Mit 10 Bestienarten angefreundet.",
+      "ja": "ペットを10種類仲間にする",
+      "fr": "Obtenir 10 bêtes dans le bestiaire de dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4029": {
     "id": 4029,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003905.tex&format=png",
+    "patch": 108,
+    "en": "A Beast in the Hand II",
+    "de": "Ein Herz für Bestien II",
+    "ja": "ビーストマニア：ランク2",
+    "fr": "Adepte des bêtes II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Befriend 20 unique beasts.",
+      "de": "Mit 20 Bestienarten angefreundet.",
+      "ja": "ペットを20種類仲間にする",
+      "fr": "Obtenir 20 bêtes dans le bestiaire de dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4030": {
     "id": 4030,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003905.tex&format=png",
+    "patch": 108,
+    "en": "A Beast in the Hand III",
+    "de": "Ein Herz für Bestien III",
+    "ja": "ビーストマニア：ランク3",
+    "fr": "Adepte des bêtes III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Befriend 30 unique beasts.",
+      "de": "Mit 30 Bestienarten angefreundet.",
+      "ja": "ペットを30種類仲間にする",
+      "fr": "Obtenir 30 bêtes dans le bestiaire de dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4031": {
     "id": 4031,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003905.tex&format=png",
+    "patch": 108,
+    "en": "A Beast in the Hand IV",
+    "de": "Ein Herz für Bestien IV",
+    "ja": "ビーストマニア：ランク4",
+    "fr": "Adepte des bêtes IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Befriend 40 unique beasts.",
+      "de": "Mit 40 Bestienarten angefreundet.",
+      "ja": "ペットを40種類仲間にする",
+      "fr": "Obtenir 40 bêtes dans le bestiaire de dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4032": {
     "id": 4032,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003905.tex&format=png",
+    "patch": 108,
+    "en": "A Beast in the Hand V",
+    "de": "Ein Herz für Bestien V",
+    "ja": "ビーストマニア：ランク5",
+    "fr": "Adepte des bêtes V",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Befriend 50 unique beasts.",
+      "de": "Mit 50 Bestienarten angefreundet.",
+      "ja": "ペットを50種類仲間にする",
+      "fr": "Obtenir 50 bêtes dans le bestiaire de dresseur."
     },
     "item": 0,
     "title": 0
   },
   "4033": {
     "id": 4033,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003901.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Checkmate I",
+    "de": "Ungestümer Stratege I",
+    "ja": "闘獣練 第一盤を制覇せし者",
+    "fr": "Échec et mat I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the First Board of the Unbroken.",
+      "de": "Das Erste Brett der Bestie abgeschlossen.",
+      "ja": "闘獣練 第一盤を攻略する",
+      "fr": "Finir le Dédale bestial - 1er plateau."
     },
     "item": 0,
     "title": 0
   },
   "4034": {
     "id": 4034,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003901.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Checkmate II",
+    "de": "Ungestümer Stratege II",
+    "ja": "闘獣練 第二盤を制覇せし者",
+    "fr": "Échec et mat II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Second Board of the Unbroken.",
+      "de": "Das Zweite Brett der Bestie abgeschlossen.",
+      "ja": "闘獣練 第二盤を攻略する",
+      "fr": "Finir le Dédale bestial - 2e plateau."
     },
     "item": 0,
     "title": 0
   },
   "4035": {
     "id": 4035,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003901.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Checkmate III",
+    "de": "Ungestümer Stratege III",
+    "ja": "闘獣練 第三盤を制覇せし者",
+    "fr": "Échec et mat III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Third Board of the Unbroken.",
+      "de": "Das Dritte Brett der Bestie abgeschlossen.",
+      "ja": "闘獣練 第三盤を攻略する",
+      "fr": "Finir le Dédale bestial - 3e plateau."
     },
     "item": 0,
     "title": 0
   },
   "4036": {
     "id": 4036,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003901.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Reforged I",
+    "de": "Ungestümer Meisterstratege I",
+    "ja": "闘獣練 特一盤を制覇せし者",
+    "fr": "Expert et mat I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the First Master's Board.",
+      "de": "Das Erste Meisterbrett der Bestie abgeschlossen.",
+      "ja": "闘獣練 特一盤を攻略する",
+      "fr": "Finir le Dédale bestial - 1er plateau expert."
     },
     "item": 0,
     "title": 0
   },
   "4037": {
     "id": 4037,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003901.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Reforged II",
+    "de": "Ungestümer Meisterstratege II",
+    "ja": "闘獣練 特二盤を制覇せし者",
+    "fr": "Expert et mat II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Second Master's Board.",
+      "de": "Das Zweite Meisterbrett der Bestie abgeschlossen.",
+      "ja": "闘獣練 特二盤を攻略する",
+      "fr": "Finir le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
     "title": 0
   },
   "4038": {
     "id": 4038,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003929.tex&format=png",
+    "patch": 108,
+    "en": "Hot in Here I",
+    "de": "Unbeherrschter Stratege I",
+    "ja": "闘獣練 第一盤を完全制覇せし者",
+    "fr": "Arpenteur du sentier I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the First Board of the Unbroken under the third degree.",
+      "de": "Das Erste Brett der Bestie auf „Bestialisch III“ abgeschlossen.",
+      "ja": "闘獣練 第一盤を獣道IIIで攻略する",
+      "fr": "Finir le Dédale bestial - 1er plateau dans le mode de jeu “Sentier bestial III”."
     },
     "item": 0,
     "title": 0
   },
   "4039": {
     "id": 4039,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003929.tex&format=png",
+    "patch": 108,
+    "en": "Hot in Here II",
+    "de": "Unbeherrschter Stratege II",
+    "ja": "闘獣練 第二盤を完全制覇せし者",
+    "fr": "Arpenteur du sentier II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Second Board of the Unbroken under the third degree.",
+      "de": "Das Zweite Brett der Bestie auf „Bestialisch III“ abgeschlossen.",
+      "ja": "闘獣練 第二盤を獣道IIIで攻略する",
+      "fr": "Finir le Dédale bestial - 2e plateau dans le mode de jeu “Sentier bestial III”."
     },
     "item": 0,
     "title": 0
   },
   "4040": {
     "id": 4040,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003929.tex&format=png",
+    "patch": 108,
+    "en": "Hot in Here III",
+    "de": "Unbeherrschter Stratege III",
+    "ja": "闘獣練 第三盤を完全制覇せし者",
+    "fr": "Arpenteur du sentier III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Third Board of the Unbroken under the third degree.",
+      "de": "Das Dritte Brett der Bestie auf „Bestialisch III“ abgeschlossen.",
+      "ja": "闘獣練 第三盤を獣道IIIで攻略する",
+      "fr": "Finir le Dédale bestial - 3e plateau dans le mode de jeu “Sentier bestial III”."
     },
     "item": 0,
     "title": 0
   },
   "4041": {
     "id": 4041,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003929.tex&format=png",
+    "patch": 108,
+    "en": "Calcination I",
+    "de": "Unbeherrschter Meisterstratege I",
+    "ja": "闘獣練 特一盤を完全制覇せし者",
+    "fr": "Expert du sentier I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the First Master's Board under the third degree.",
+      "de": "Das Erste Meisterbrett der Bestie auf „Bestialisch III“ abgeschlossen.",
+      "ja": "闘獣練 特一盤を獣道IIIで攻略する",
+      "fr": "Finir le Dédale bestial - 1er plateau expert dans le mode de jeu “Sentier bestial III”."
     },
     "item": 0,
     "title": 0
   },
   "4042": {
     "id": 4042,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003929.tex&format=png",
+    "patch": 108,
+    "en": "Calcination II",
+    "de": "Unbeherrschter Meisterstratege II",
+    "ja": "闘獣練 特二盤を完全制覇せし者",
+    "fr": "Expert du sentier II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Second Master's Board under the third degree.",
+      "de": "Das Zweite Meisterbrett der Bestie auf „Bestialisch III“ abgeschlossen.",
+      "ja": "闘獣練 特二盤を獣道IIIで攻略する",
+      "fr": "Finir le Dédale bestial - 2e plateau expert dans le mode de jeu “Sentier bestial III”."
     },
     "item": 0,
     "title": 0
   },
   "4043": {
     "id": 4043,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Eighth Rank I",
+    "de": "Meister des Bretts I",
+    "ja": "魅了せし勝利：闘獣練 第一盤",
+    "fr": "Traversée éclatante I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Apex rank or above on the First Board of the Unbroken.",
+      "de": "Das Erste Brett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
+      "ja": "闘獣練 第一盤で評価「特級魔獣使い」以上を獲得する",
+      "fr": "Finir le Dédale bestial - 1er plateau en obtenant le rang “dresseur d'exception” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4044": {
     "id": 4044,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Unbreakable I",
+    "de": "Legende des Bretts I",
+    "ja": "華麗なる勝利：闘獣練 第一盤",
+    "fr": "Traversée exceptionnelle I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Legendary rank on the First Board of the Unbroken.",
+      "de": "Das Erste Brett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
+      "ja": "闘獣練 第一盤で評価「伝説の魔獣使い」を獲得する",
+      "fr": "Finir le Dédale bestial - 1er plateau en obtenant le rang “dresseur légendaire” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4045": {
     "id": 4045,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Eighth Rank II",
+    "de": "Meister des Bretts II",
+    "ja": "魅了せし勝利：闘獣練 第二盤",
+    "fr": "Traversée éclatante II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Apex rank or above on the Second Board of the Unbroken.",
+      "de": "Das Zweite Brett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
+      "ja": "闘獣練 第二盤で評価「特級魔獣使い」以上を獲得する",
+      "fr": "Finir le Dédale bestial - 2e plateau en obtenant le rang “dresseur d'exception” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4046": {
     "id": 4046,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Unbreakable II",
+    "de": "Legende des Bretts II",
+    "ja": "華麗なる勝利：闘獣練 第二盤",
+    "fr": "Traversée exceptionnelle II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Legendary rank on the Second Board of the Unbroken.",
+      "de": "Das Zweite Brett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
+      "ja": "闘獣練 第二盤で評価「伝説の魔獣使い」を獲得する",
+      "fr": "Finir le Dédale bestial - 2e plateau en obtenant le rang “dresseur légendaire” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4047": {
     "id": 4047,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Eighth Rank III",
+    "de": "Meister des Bretts III",
+    "ja": "魅了せし勝利：闘獣練 第三盤",
+    "fr": "Traversée éclatante III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Apex rank or above on the Third Board of the Unbroken.",
+      "de": "Das Dritte Brett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
+      "ja": "闘獣練 第三盤で評価「特級魔獣使い」以上を獲得する",
+      "fr": "Finir le Dédale bestial - 3e plateau en obtenant le rang “dresseur d'exception” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4048": {
     "id": 4048,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Unbreakable III",
+    "de": "Legende des Bretts III",
+    "ja": "華麗なる勝利：闘獣練 第三盤",
+    "fr": "Traversée exceptionnelle III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Legendary rank on the Third Board of the Unbroken.",
+      "de": "Das Dritte Brett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
+      "ja": "闘獣練 第三盤で評価「伝説の魔獣使い」を獲得する",
+      "fr": "Finir le Dédale bestial - 3e plateau en obtenant le rang “dresseur légendaire” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4049": {
     "id": 4049,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Built Different I",
+    "de": "Meister des Bretts IV",
+    "ja": "魅了せし勝利：闘獣練 特一盤",
+    "fr": "Périple resplendissant I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Apex rank or above on the First Master's Board.",
+      "de": "Das Erste Meisterbrett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
+      "ja": "闘獣練 特一盤で評価「特級魔獣使い」以上を獲得する",
+      "fr": "Finir le Dédale bestial - 1er plateau expert en obtenant le rang “dresseur d'exception” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4050": {
     "id": 4050,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Legends Never Die I",
+    "de": "Legende des Bretts IV",
+    "ja": "華麗なる勝利：闘獣練 特一盤",
+    "fr": "Périple glorieux I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Legendary rank on the First Master's Board.",
+      "de": "Das Erste Meisterbrett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
+      "ja": "闘獣練 特一盤で評価「伝説の魔獣使い」を獲得する",
+      "fr": "Finir le Dédale bestial - 1er plateau expert en obtenant le rang “dresseur légendaire” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4051": {
     "id": 4051,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Built Different II",
+    "de": "Meister des Bretts V",
+    "ja": "魅了せし勝利：闘獣練 特二盤",
+    "fr": "Périple resplendissant II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Apex rank or above on the Second Master's Board.",
+      "de": "Das Zweite Meisterbrett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
+      "ja": "闘獣練 特二盤で評価「特級魔獣使い」以上を獲得する",
+      "fr": "Finir le Dédale bestial - 2e plateau expert en obtenant le rang “dresseur d'exception” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4052": {
     "id": 4052,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003923.tex&format=png",
+    "patch": 108,
+    "en": "Legends Never Die II",
+    "de": "Legende des Bretts V",
+    "ja": "華麗なる勝利：闘獣練 特二盤",
+    "fr": "Périple glorieux II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Legendary rank on the Second Master's Board.",
+      "de": "Das Zweite Meisterbrett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
+      "ja": "闘獣練 特二盤で評価「伝説の魔獣使い」を獲得する",
+      "fr": "Finir le Dédale bestial - 2e plateau expert en obtenant le rang “dresseur légendaire” ou supérieur."
     },
     "item": 0,
     "title": 0
   },
   "4053": {
     "id": 4053,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003924.tex&format=png",
+    "patch": 108,
+    "en": "Freeing the Beast",
+    "de": "Meisterlicher Bändiger",
+    "ja": "闘獣練エキスパート",
+    "fr": "Expert du Dédale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Apex rank or above on the Crucible's first three boards and two master's boards.",
+      "de": "Sämtliche Bretter der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
+      "ja": "闘獣練 第一盤、第二盤、第三盤、特一盤、特二盤にて、すべて評価「特級魔獣使い」以上を獲得する",
+      "fr": "Obtenir le rang “dresseur d'exception” ou supérieur aux 1er, 2e et 3e plateaux ainsi qu'aux 1er et 2e plateaux experts du Dédale bestial."
     },
     "item": 0,
-    "title": 0
+    "title": 877
   },
   "4054": {
     "id": 4054,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003924.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Master",
+    "de": "Legendärer Bändiger",
+    "ja": "闘獣練マスター",
+    "fr": "Maître du Dédale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve Legendary rank on the Crucible's first three boards and two master's boards.",
+      "de": "Sämtliche Bretter der Bestie mit der Wertung „Legendär“ abgeschlossen.",
+      "ja": "闘獣練 第一盤、第二盤、第三盤、特一盤、特二盤にて、すべて評価「伝説の魔獣使い」を獲得する",
+      "fr": "Obtenir le rang “dresseur légendaire” ou supérieur aux 1er, 2e et 3e plateaux ainsi qu'aux 1er et 2e plateaux experts du Dédale bestial."
     },
     "item": 0,
-    "title": 0
+    "title": 891
   },
   "4055": {
     "id": 4055,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003927.tex&format=png",
+    "patch": 108,
+    "en": "Unbroken Endgame",
+    "de": "Bestialischer Bändiger",
+    "ja": "闘獣練グランドマスター",
+    "fr": "Grand maître du Dédale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear the Crucible's first three boards and two master's boards under the third degree.",
+      "de": "Sämtliche Bretter der Bestie mit der Wertung „Bestialisch“ abgeschlossen.",
+      "ja": "闘獣練 第一盤、第二盤、第三盤、特一盤、特二盤のすべてを、獣道IIIで攻略する",
+      "fr": "Terminer les 1er, 2e et 3e plateaux ainsi que les 1er et 2e plateaux experts du Dédale bestial dans le mode de jeu “Sentier bestial III”."
     },
     "item": 0,
-    "title": 0
+    "title": 892
   },
   "4056": {
     "id": 4056,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003906.tex&format=png",
+    "patch": 108,
+    "en": "Friend to the Fierce I",
+    "de": "Sie gehorchen aufs Wort I",
+    "ja": "ビーストトレーナー：ランク1",
+    "fr": "Entraînement bestial I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve rank 25 or higher with 10 beasts.",
+      "de": "10 verschiedene Bestien auf Rang 25 gebracht.",
+      "ja": "ビーストランク25以上のペットが10体に到達する",
+      "fr": "Atteindre le rang 25 ou spérieur avec 10 bêtes."
     },
     "item": 0,
     "title": 0
   },
   "4057": {
     "id": 4057,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003906.tex&format=png",
+    "patch": 108,
+    "en": "Friend to the Fierce II",
+    "de": "Sie gehorchen aufs Wort II",
+    "ja": "ビーストトレーナー：ランク2",
+    "fr": "Entraînement bestial II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve rank 25 or higher with 20 beasts.",
+      "de": "20 verschiedene Bestien auf Rang 25 gebracht.",
+      "ja": "ビーストランク25以上のペットが20体に到達する",
+      "fr": "Atteindre le rang 25 ou spérieur avec 20 bêtes."
     },
     "item": 0,
     "title": 0
   },
   "4058": {
     "id": 4058,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003906.tex&format=png",
+    "patch": 108,
+    "en": "Friend to the Fierce III",
+    "de": "Sie gehorchen aufs Wort III",
+    "ja": "ビーストトレーナー：ランク3",
+    "fr": "Entraînement bestial III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve rank 25 or higher with 30 beasts.",
+      "de": "30 verschiedene Bestien auf Rang 25 gebracht.",
+      "ja": "ビーストランク25以上のペットが30体に到達する",
+      "fr": "Atteindre le rang 25 ou spérieur avec 30 bêtes."
     },
     "item": 0,
     "title": 0
   },
   "4059": {
     "id": 4059,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003906.tex&format=png",
+    "patch": 108,
+    "en": "Friend to the Fierce IV",
+    "de": "Sie gehorchen aufs Wort IV",
+    "ja": "ビーストトレーナー：ランク4",
+    "fr": "Entraînement bestial IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve rank 25 or higher with 40 beasts.",
+      "de": "40 verschiedene Bestien auf Rang 25 gebracht.",
+      "ja": "ビーストランク25以上のペットが40体に到達する",
+      "fr": "Atteindre le rang 25 ou spérieur avec 40 bêtes."
     },
     "item": 0,
     "title": 0
   },
   "4060": {
     "id": 4060,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003906.tex&format=png",
+    "patch": 108,
+    "en": "Friend to the Fierce V",
+    "de": "Sie gehorchen aufs Wort V",
+    "ja": "ビーストトレーナー：ランク5",
+    "fr": "Entraînement bestial V",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Achieve rank 25 or higher with 50 beasts.",
+      "de": "50 verschiedene Bestien auf Rang 25 gebracht.",
+      "ja": "ビーストランク25以上のペットが50体に到達する",
+      "fr": "Atteindre le rang 25 ou spérieur avec 50 bêtes."
     },
     "item": 0,
     "title": 0
   },
   "4061": {
     "id": 4061,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003915.tex&format=png",
+    "patch": 108,
+    "en": "Beastkin Mate",
+    "de": "Freund der Biestlinge",
+    "ja": "百獣を統べる者",
+    "fr": "Ami des thériens",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Beastkin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Biestlinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「百獣を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des thériens” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 878
   },
   "4062": {
     "id": 4062,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003916.tex&format=png",
+    "patch": 108,
+    "en": "Vilekin Mate",
+    "de": "Freund der Gezieferlinge",
+    "ja": "百蟲を統べる者",
+    "fr": "Ami des insectoïdes",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Vilekin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Gezieferlinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「百蟲を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des insectoïdes” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 879
   },
   "4063": {
     "id": 4063,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003917.tex&format=png",
+    "patch": 108,
+    "en": "Cloudkin Mate",
+    "de": "Freund der Wölklinge",
+    "ja": "有翼を統べる者",
+    "fr": "Ami des ptériens",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Cloudkin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Wölklinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「有翼を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des ptériens” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 880
   },
   "4064": {
     "id": 4064,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003918.tex&format=png",
+    "patch": 108,
+    "en": "Seedkin Mate",
+    "de": "Freund der Saatlinge",
+    "ja": "草木を統べる者",
+    "fr": "Ami des floréens",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Seedkin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Saatlinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「草木を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des floréens” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 881
   },
   "4065": {
     "id": 4065,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003919.tex&format=png",
+    "patch": 108,
+    "en": "Wavekin Mate",
+    "de": "Freund der Woglinge",
+    "ja": "水棲を統べる者",
+    "fr": "Ami des hydrides",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Wavekin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Woglinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「水棲を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des hydrides” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 882
   },
   "4066": {
     "id": 4066,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003920.tex&format=png",
+    "patch": 108,
+    "en": "Scalekin Mate",
+    "de": "Freund der Schupplinge",
+    "ja": "甲鱗を統べる者",
+    "fr": "Ami des cuirassiens",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Scalekin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Schupplinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「甲鱗を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des cuirassiens” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 883
   },
   "4067": {
     "id": 4067,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003921.tex&format=png",
+    "patch": 108,
+    "en": "Soulkin Mate",
+    "de": "Freund der Ätherlinge",
+    "ja": "呪具を統べる者",
+    "fr": "Ami des animides",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Soulkin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Ätherlinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「呪具を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des animides” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 884
   },
   "4068": {
     "id": 4068,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003922.tex&format=png",
+    "patch": 108,
+    "en": "Ashkin Mate",
+    "de": "Freund der Todlinge",
+    "ja": "死屍を統べる者",
+    "fr": "Ami des nécroïdes",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the bonus “Ashkin Gambit” on the Second Master's Board.",
+      "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Todlinge“ erhalten.",
+      "ja": "闘獣練 特二盤にて、スコアボーナス「死屍を統べる者」を達成する",
+      "fr": "Obtenir le bonus “maîtrise des nécroïdes” dans le Dédale bestial - 2e plateau expert."
     },
     "item": 0,
-    "title": 0
+    "title": 885
   },
   "4069": {
     "id": 4069,
     "icon": "/api/asset?path=ui/icon/000000/000317.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Son of a...",
     "de": "Der mit dem Wahn tanzt",
     "ja": "絶妖星乱舞を踊破せし者",
     "fr": "Triompher de la démence",
     "ko": "절 요성난무의 막을 내린 자",
+    "zh": "征服绝境·妖星乱舞",
     "description": {
       "en": "Silence the sound and fury in Dancing Mad (Ultimate).",
       "de": "Der wahnsinnigen Symphonie des Gauklers ein Ende bereitet.",
       "ja": "道化師の奏でる楽章に終止線を打つ",
       "fr": "Survivre à la dernière note de la partition du bouffon.",
-      "ko": "광대가 연주하는 악장에 끝세로줄 긋기"
+      "ko": "광대가 연주하는 악장에 끝세로줄 긋기",
+      "zh": "为小丑演奏的乐章画上终止线。"
     },
     "item": 0,
     "title": 886
   },
   "4070": {
     "id": 4070,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/001000/001981.tex&format=png",
+    "patch": 108,
+    "en": "Masterstroke I",
+    "de": "Taskforce Taste I",
+    "ja": "キーバウンドチャレンジ：ランク1",
+    "fr": "Prodige du pianotage I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear Keybound Brawler for the first time.",
+      "de": "Das erste Mal Tastenschläger abgeschlossen.",
+      "ja": "キーバウンド・ブロウラーを初めて攻略する",
+      "fr": "Réussir 1 fois Frappe fatale."
     },
     "item": 0,
     "title": 0
   },
   "4071": {
     "id": 4071,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/001000/001981.tex&format=png",
+    "patch": 108,
+    "en": "Masterstroke II",
+    "de": "Taskforce Taste II",
+    "ja": "キーバウンドチャレンジ：ランク2",
+    "fr": "Prodige du pianotage II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear Keybound Brawler 10 times.",
+      "de": "10 Mal Tastenschläger abgeschlossen.",
+      "ja": "キーバウンド・ブロウラーを10回攻略する",
+      "fr": "Réussir 10 fois Frappe fatale."
     },
     "item": 0,
     "title": 0
   },
   "4072": {
     "id": 4072,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/001000/001981.tex&format=png",
+    "patch": 108,
+    "en": "Masterstroke III",
+    "de": "Taskforce Taste III",
+    "ja": "キーバウンドチャレンジ：ランク3",
+    "fr": "Prodige du pianotage III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear Keybound Brawler 50 times.",
+      "de": "50 Mal Tastenschläger abgeschlossen.",
+      "ja": "キーバウンド・ブロウラーを50回攻略する",
+      "fr": "Réussir 50 fois Frappe fatale."
     },
     "item": 0,
     "title": 0
   },
   "4073": {
     "id": 4073,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/001000/001981.tex&format=png",
+    "patch": 108,
+    "en": "Masterstroke IV",
+    "de": "Taskforce Taste IV",
+    "ja": "キーバウンドチャレンジ：ランク4",
+    "fr": "Prodige du pianotage IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Clear Keybound Brawler 100 times.",
+      "de": "100 Mal Tastenschläger abgeschlossen.",
+      "ja": "キーバウンド・ブロウラーを100回攻略する",
+      "fr": "Réussir 100 fois Frappe fatale."
     },
     "item": 0,
-    "title": 0
+    "title": 887
   },
   "4074": {
     "id": 4074,
     "icon": "/api/asset?path=ui/icon/001000/001001.tex&format=png",
-    "patch": 1,
+    "patch": 108,
     "en": "Mapping the Realm: The Occult Crescent: North Horn",
     "de": "Kartograph: Nördliches Kreszentia",
     "ja": "三日月島北部を踏破せし者",
     "fr": "Cartographe du continent : Île de Lunule septentrionale",
+    "ko": "초승달 섬 북부 탐험가",
+    "zh": "踏遍新月岛北部",
     "description": {
       "en": "Discover every location on the Occult Crescent: North Horn.",
       "de": "Alle Orte im nördlichen Kreszentia erkundet.",
       "ja": "三日月島北部を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte de l'île de Lunule septentrionale."
+      "fr": "Découvrir toute la carte de l'île de Lunule septentrionale.",
+      "ko": "초승달 섬 북부를 탐험하여 모든 지역 발견",
+      "zh": "成功探索新月岛北部的所有地区。"
     },
     "item": 0,
     "title": 0
   },
   "4075": {
     "id": 4075,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003945.tex&format=png",
+    "patch": 108,
+    "en": "Beast of the Best",
+    "de": "Beherrscher der Bestien",
+    "ja": "闘獣練の王者",
+    "fr": "Roi du Dédale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place first in Crucible Rankings.",
+      "de": "Die höchste Platzierung in den Brettranglisten erzielt.",
+      "ja": "闘獣練ランキングにて1位になる",
+      "fr": "Terminer le Dédale bestial à la 1re place du classement."
     },
     "item": 0,
-    "title": 0
+    "title": 888
   },
   "4076": {
     "id": 4076,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003945.tex&format=png",
+    "patch": 108,
+    "en": "Running Feral",
+    "de": "Bezwinger der Bestien",
+    "ja": "闘獣練の勇者",
+    "fr": "Prince du Dédale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place highly in Crucible Rankings.",
+      "de": "Eine hohe Platzierung in den Brettranglisten erzielt.",
+      "ja": "闘獣練ランキングにて上位に入賞する",
+      "fr": "Terminer le Dédale bestial dans les premières places du classement."
     },
     "item": 0,
-    "title": 0
+    "title": 889
   },
   "4077": {
     "id": 4077,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/api/asset?path=ui/icon/003000/003945.tex&format=png",
+    "patch": 108,
+    "en": "Crucible Contender",
+    "de": "Befrieder der Bestien",
+    "ja": "闘獣練の入賞者",
+    "fr": "As du Dédale",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place in Crucible Rankings.",
+      "de": "Eine Platzierung in den Brettranglisten erzielt.",
+      "ja": "闘獣練ランキングにて入賞する",
+      "fr": "Obtenir une place au classement du Dédale bestial."
     },
-    "item": 0,
+    "item": 52639,
     "title": 0
   }
 }

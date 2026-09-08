@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.30...v11.4.31) (2026-09-08)
+
+
+### Features
+
+* **db:** global 7.56 data ([8e62945](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e62945d81bd9ae57da661fbf0baaa3a7f1fbac4))
+* **db:** support for korean v7.56 update ([#3296](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3296)) ([05611ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05611abf420d70917b43d07f3519022097b86e4f))
+* **simulator:** you can now pick which actions to use in solver ([0280752](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/028075274161dcbbc31f5c6272ff204c9684c1cd))
+
+
+### Bug Fixes
+
+* **allagan-reports:** For oceanfishing, Allagan Reports editor showing all weathers is helpful ([589ab97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/589ab9744755d13bb461c73261c015b8bcc1faf2))
+* **data-exporter:** update asset URL format to XIVAPI v2 ([5117866](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/511786616c247829baea63c317e84b6d96809d59))
+* **db:** Adjust status icon in Fishing Overlay and others for KR ([a058384](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a058384196e9631dea8b3a7633bb421a04e4b1d5))
+* **fishing-reporter:** refer to Large flag for caught fish ([5c2c919](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c2c919e4dff0756f2ec3ee2458bd491bf17e6f7))
+* **fishing-reporter:** toggling the eorzean date format will toggle fishing cast time ([203f78a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/203f78ac811d9b31bbf1fa7caced4da870882869))
+* **fishing-reporter:** use packet header timestamps ([486a18e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/486a18e763e3225d791cc2bd0a11e1b6f40b4502))
+* **pcap:** resolve protonprefix instead of wineprefix when XIVLauncher uses Proton ([ada13aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ada13aa08d0fc7f606bd3e8ce40a9ae6c4acaca1))
+* **pcap:** resolve the launcher's wine binary when XIVLauncher is the Steam compat tool ([4edca0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4edca0fa64b2b23076d2d3df33a0b4cc97fccbed))
+* **pcap:** resolve wine binary for XIVLauncher RB custom Proton distros ([cd76b25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd76b25af3c55f9e53aebbc6c7d8c5e97e142961))
+* update fishing-report miss-type messages ([446ae5b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/446ae5b9a7b4f9d122940635760818a1ec5aa722))
+
 ### [11.4.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.29...v11.4.30) (2026-08-12)
 
 
