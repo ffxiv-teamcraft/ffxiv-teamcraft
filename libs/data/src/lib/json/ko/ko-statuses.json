@@ -17359,6 +17359,66 @@
     "ko": "죽음의 선고",
     "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
   },
+  "4595": {
+    "ko": "수심기 1: 비상",
+    "icon": "/api/asset?path=ui/icon/229000/229001.tex&format=png"
+  },
+  "4596": {
+    "ko": "수심기 1: 맹렬",
+    "icon": "/api/asset?path=ui/icon/229000/229002.tex&format=png"
+  },
+  "4597": {
+    "ko": "수심기 1: 견고",
+    "icon": "/api/asset?path=ui/icon/229000/229003.tex&format=png"
+  },
+  "4598": {
+    "ko": "수심기 1: 마력",
+    "icon": "/api/asset?path=ui/icon/229000/229004.tex&format=png"
+  },
+  "4599": {
+    "ko": "수심기 2: 활명격",
+    "icon": "/api/asset?path=ui/icon/229000/229005.tex&format=png"
+  },
+  "4600": {
+    "ko": "수심기 2: 멸명격",
+    "icon": "/api/asset?path=ui/icon/229000/229006.tex&format=png"
+  },
+  "4601": {
+    "ko": "인간 마수 동조",
+    "icon": "/api/asset?path=ui/icon/229000/229007.tex&format=png"
+  },
+  "4602": {
+    "ko": "백수강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229008.tex&format=png"
+  },
+  "4603": {
+    "ko": "백충강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229009.tex&format=png"
+  },
+  "4604": {
+    "ko": "유익강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229010.tex&format=png"
+  },
+  "4605": {
+    "ko": "초목강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229011.tex&format=png"
+  },
+  "4606": {
+    "ko": "수서강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229012.tex&format=png"
+  },
+  "4607": {
+    "ko": "갑린강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229013.tex&format=png"
+  },
+  "4608": {
+    "ko": "주술강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229014.tex&format=png"
+  },
+  "4609": {
+    "ko": "시체강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229015.tex&format=png"
+  },
   "4610": {
     "ko": "강력한 타격",
     "icon": "/api/asset?path=ui/icon/214000/214258.tex&format=png"
@@ -17374,6 +17434,10 @@
   "4613": {
     "ko": "삽날 충전",
     "icon": "/api/asset?path=ui/icon/219000/219866.tex&format=png"
+  },
+  "4614": {
+    "ko": "마지막 일격 효과 향상",
+    "icon": "/api/asset?path=ui/icon/229000/229016.tex&format=png"
   },
   "4615": {
     "ko": "폭발가루 저주: 분산",
@@ -17391,9 +17455,33 @@
     "ko": "버티기",
     "icon": "/api/asset?path=ui/icon/215000/215250.tex&format=png"
   },
+  "4620": {
+    "ko": "백충강 외피",
+    "icon": "/api/asset?path=ui/icon/229000/229017.tex&format=png"
+  },
+  "4621": {
+    "ko": "백수강 외피",
+    "icon": "/api/asset?path=ui/icon/229000/229018.tex&format=png"
+  },
+  "4622": {
+    "ko": "씨앗 살포",
+    "icon": "/api/asset?path=ui/icon/229000/229019.tex&format=png"
+  },
+  "4623": {
+    "ko": "갑린강 외피",
+    "icon": "/api/asset?path=ui/icon/229000/229020.tex&format=png"
+  },
+  "4624": {
+    "ko": "포획하기",
+    "icon": "/api/asset?path=ui/icon/229000/229021.tex&format=png"
+  },
   "4625": {
     "ko": "강풍 무효",
     "icon": "/api/asset?path=ui/icon/216000/216824.tex&format=png"
+  },
+  "4626": {
+    "ko": "포획하기 대상",
+    "icon": "/api/asset?path=ui/icon/229000/229022.tex&format=png"
   },
   "4627": {
     "ko": "격노",
@@ -17402,6 +17490,42 @@
   "4628": {
     "ko": "풀베기 참가",
     "icon": "/api/asset?path=ui/icon/216000/216258.tex&format=png"
+  },
+  "4643": {
+    "ko": "수심기 속성: 무효",
+    "icon": "/api/asset?path=ui/icon/229000/229023.tex&format=png"
+  },
+  "4644": {
+    "ko": "백수강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229008.tex&format=png"
+  },
+  "4645": {
+    "ko": "백충강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229009.tex&format=png"
+  },
+  "4646": {
+    "ko": "유익강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229010.tex&format=png"
+  },
+  "4647": {
+    "ko": "초목강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229011.tex&format=png"
+  },
+  "4648": {
+    "ko": "수서강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229012.tex&format=png"
+  },
+  "4649": {
+    "ko": "갑린강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229013.tex&format=png"
+  },
+  "4650": {
+    "ko": "주술강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229014.tex&format=png"
+  },
+  "4651": {
+    "ko": "시체강 본능",
+    "icon": "/api/asset?path=ui/icon/229000/229015.tex&format=png"
   },
   "4652": {
     "ko": "맹독",
@@ -17871,9 +17995,113 @@
     "ko": "불꽃 사슬 저주 β",
     "icon": "/api/asset?path=ui/icon/216000/216767.tex&format=png"
   },
+  "4846": {
+    "ko": "리레이즈",
+    "icon": "/api/asset?path=ui/icon/216000/216695.tex&format=png"
+  },
+  "4847": {
+    "ko": "아이템 금지: 마수 시련장",
+    "icon": "/api/asset?path=ui/icon/229000/229024.tex&format=png"
+  },
+  "4848": {
+    "ko": "양날의 검",
+    "icon": "/api/asset?path=ui/icon/215000/215754.tex&format=png"
+  },
+  "4849": {
+    "ko": "블링크",
+    "icon": "/api/asset?path=ui/icon/220000/220041.tex&format=png"
+  },
+  "4850": {
+    "ko": "항독약",
+    "icon": "/api/asset?path=ui/icon/229000/229025.tex&format=png"
+  },
+  "4851": {
+    "ko": "항마비약",
+    "icon": "/api/asset?path=ui/icon/229000/229026.tex&format=png"
+  },
+  "4852": {
+    "ko": "항실명약",
+    "icon": "/api/asset?path=ui/icon/229000/229027.tex&format=png"
+  },
+  "4853": {
+    "ko": "항석화약",
+    "icon": "/api/asset?path=ui/icon/229000/229028.tex&format=png"
+  },
+  "4854": {
+    "ko": "항수면약",
+    "icon": "/api/asset?path=ui/icon/229000/229029.tex&format=png"
+  },
+  "4855": {
+    "ko": "전리품 획득률 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229030.tex&format=png"
+  },
+  "4856": {
+    "ko": "마수 동전 획득량 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229031.tex&format=png"
+  },
+  "4857": {
+    "ko": "경화약",
+    "icon": "/api/asset?path=ui/icon/229000/229032.tex&format=png"
+  },
+  "4858": {
+    "ko": "단축약",
+    "icon": "/api/asset?path=ui/icon/229000/229033.tex&format=png"
+  },
+  "4859": {
+    "ko": "괴력약",
+    "icon": "/api/asset?path=ui/icon/229000/229034.tex&format=png"
+  },
+  "4860": {
+    "ko": "마력약",
+    "icon": "/api/asset?path=ui/icon/229000/229035.tex&format=png"
+  },
+  "4861": {
+    "ko": "특공약",
+    "icon": "/api/asset?path=ui/icon/229000/229036.tex&format=png"
+  },
+  "4862": {
+    "ko": "민첩약",
+    "icon": "/api/asset?path=ui/icon/229000/229037.tex&format=png"
+  },
+  "4863": {
+    "ko": "체력약",
+    "icon": "/api/asset?path=ui/icon/229000/229038.tex&format=png"
+  },
+  "4864": {
+    "ko": "불 저항약",
+    "icon": "/api/asset?path=ui/icon/229000/229039.tex&format=png"
+  },
+  "4865": {
+    "ko": "물 저항약",
+    "icon": "/api/asset?path=ui/icon/229000/229040.tex&format=png"
+  },
+  "4866": {
+    "ko": "땅 저항약",
+    "icon": "/api/asset?path=ui/icon/229000/229041.tex&format=png"
+  },
+  "4867": {
+    "ko": "번개 저항약",
+    "icon": "/api/asset?path=ui/icon/229000/229042.tex&format=png"
+  },
+  "4868": {
+    "ko": "바람 저항약",
+    "icon": "/api/asset?path=ui/icon/229000/229043.tex&format=png"
+  },
+  "4869": {
+    "ko": "얼음 저항약",
+    "icon": "/api/asset?path=ui/icon/229000/229044.tex&format=png"
+  },
+  "4870": {
+    "ko": "시간의 모래",
+    "icon": "/api/asset?path=ui/icon/229000/229045.tex&format=png"
+  },
   "4873": {
     "ko": "분신술법",
     "icon": "/api/asset?path=ui/icon/218000/218957.tex&format=png"
+  },
+  "4874": {
+    "ko": "주는 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/218000/218441.tex&format=png"
   },
   "4875": {
     "ko": "무적",
@@ -17894,6 +18122,10 @@
   "4879": {
     "ko": "성큼성큼 텔레포",
     "icon": "/api/asset?path=ui/icon/214000/214404.tex&format=png"
+  },
+  "4880": {
+    "ko": "열상",
+    "icon": "/api/asset?path=ui/icon/215000/215526.tex&format=png"
   },
   "4882": {
     "ko": "무의 침식",
@@ -17923,9 +18155,17 @@
     "ko": "_rsv_4888_-1_6_0_0_S74CFC3B0_E74CFC3B0",
     "icon": "/api/asset?path=ui/icon/215000/215783.tex&format=png"
   },
+  "4891": {
+    "ko": "석화",
+    "icon": "/api/asset?path=ui/icon/215000/215001.tex&format=png"
+  },
   "4892": {
     "ko": "변형 독수리의 눈 설정",
     "icon": "/api/asset?path=ui/icon/216000/216765.tex&format=png"
+  },
+  "4893": {
+    "ko": "치고 빠지기",
+    "icon": "/api/asset?path=ui/icon/218000/218315.tex&format=png"
   },
   "4894": {
     "ko": "수면",
@@ -17934,6 +18174,38 @@
   "4955": {
     "ko": "받는 피해량 감소",
     "icon": "/api/asset?path=ui/icon/215000/215021.tex&format=png"
+  },
+  "4957": {
+    "ko": "수면 저항 증가",
+    "icon": "/api/asset?path=ui/icon/214000/214834.tex&format=png"
+  },
+  "4958": {
+    "ko": "마비 저항 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229046.tex&format=png"
+  },
+  "4959": {
+    "ko": "석화 저항 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229047.tex&format=png"
+  },
+  "4960": {
+    "ko": "실명 저항 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229048.tex&format=png"
+  },
+  "4961": {
+    "ko": "독 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215648.tex&format=png"
+  },
+  "4962": {
+    "ko": "헤이스트",
+    "icon": "/api/asset?path=ui/icon/215000/215008.tex&format=png"
+  },
+  "4963": {
+    "ko": "받는 물리 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/215000/215052.tex&format=png"
+  },
+  "4964": {
+    "ko": "받는 마법 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/215000/215056.tex&format=png"
   },
   "4965": {
     "ko": "눈의 정령의 축복",
@@ -17975,6 +18247,30 @@
     "ko": "강화 인양 광선 사용 가능",
     "icon": "/api/asset?path=ui/icon/216000/216256.tex&format=png"
   },
+  "4997": {
+    "ko": "불속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215028.tex&format=png"
+  },
+  "4998": {
+    "ko": "물속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215033.tex&format=png"
+  },
+  "4999": {
+    "ko": "바람속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215030.tex&format=png"
+  },
+  "5000": {
+    "ko": "번개속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215032.tex&format=png"
+  },
+  "5001": {
+    "ko": "땅속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215031.tex&format=png"
+  },
+  "5002": {
+    "ko": "얼음속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215029.tex&format=png"
+  },
   "5014": {
     "ko": "덧칠하기 +1",
     "icon": "/api/asset?path=ui/icon/219000/219426.tex&format=png"
@@ -17994,6 +18290,38 @@
   "5018": {
     "ko": "덧칠하기 +5",
     "icon": "/api/asset?path=ui/icon/219000/219430.tex&format=png"
+  },
+  "5019": {
+    "ko": "주는 물리 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215050.tex&format=png"
+  },
+  "5020": {
+    "ko": "주는 마법 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215054.tex&format=png"
+  },
+  "5021": {
+    "ko": "물속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217421.tex&format=png"
+  },
+  "5022": {
+    "ko": "바람속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/218000/218292.tex&format=png"
+  },
+  "5023": {
+    "ko": "불속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217941.tex&format=png"
+  },
+  "5024": {
+    "ko": "번개속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217741.tex&format=png"
+  },
+  "5025": {
+    "ko": "땅속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/218000/218512.tex&format=png"
+  },
+  "5026": {
+    "ko": "얼음속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/218000/218692.tex&format=png"
   },
   "5043": {
     "ko": "기절",
@@ -18095,6 +18423,18 @@
     "ko": "좀비 항체",
     "icon": "/api/asset?path=ui/icon/229000/229999.tex&format=png"
   },
+  "5139": {
+    "ko": "ＨＰ自然回復無効",
+    "icon": "/api/asset?path=ui/icon/216000/216825.tex&format=png"
+  },
+  "5140": {
+    "ko": "독",
+    "icon": "/api/asset?path=ui/icon/215000/215007.tex&format=png"
+  },
+  "5141": {
+    "ko": "독",
+    "icon": "/api/asset?path=ui/icon/217000/217001.tex&format=png"
+  },
   "5142": {
     "ko": "이동 명령: 전",
     "icon": "/api/asset?path=ui/icon/215000/215774.tex&format=png"
@@ -18106,6 +18446,34 @@
   "5144": {
     "ko": "_rsv_5144_-1_6_0_0_S74CFC3B0_E74CFC3B0",
     "icon": "/api/asset?path=ui/icon/214000/214407.tex&format=png"
+  },
+  "5145": {
+    "ko": "가시털 세우기",
+    "icon": "/api/asset?path=ui/icon/229000/229052.tex&format=png"
+  },
+  "5146": {
+    "ko": "서서히 혼란",
+    "icon": "/api/asset?path=ui/icon/220000/220221.tex&format=png"
+  },
+  "5147": {
+    "ko": "주는 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215519.tex&format=png"
+  },
+  "5148": {
+    "ko": "계산 처리: 짝수",
+    "icon": "/api/asset?path=ui/icon/229000/229053.tex&format=png"
+  },
+  "5149": {
+    "ko": "계산 처리: 홀수",
+    "icon": "/api/asset?path=ui/icon/229000/229054.tex&format=png"
+  },
+  "5150": {
+    "ko": "계산 처리: 소수",
+    "icon": "/api/asset?path=ui/icon/229000/229055.tex&format=png"
+  },
+  "5151": {
+    "ko": "계산 처리: 3의 배수",
+    "icon": "/api/asset?path=ui/icon/229000/229056.tex&format=png"
   },
   "5152": {
     "ko": "과중 운반",
@@ -18119,6 +18487,42 @@
     "ko": "강제 이동",
     "icon": "/api/asset?path=ui/icon/215000/215773.tex&format=png"
   },
+  "5175": {
+    "ko": "과중력",
+    "icon": "/api/asset?path=ui/icon/218000/218132.tex&format=png"
+  },
+  "5176": {
+    "ko": "가시밭",
+    "icon": "/api/asset?path=ui/icon/215000/215601.tex&format=png"
+  },
+  "5177": {
+    "ko": "서서히 빙결",
+    "icon": "/api/asset?path=ui/icon/220000/220161.tex&format=png"
+  },
+  "5178": {
+    "ko": "서서히 공황",
+    "icon": "/api/asset?path=ui/icon/220000/220181.tex&format=png"
+  },
+  "5179": {
+    "ko": "독소 보유",
+    "icon": "/api/asset?path=ui/icon/215000/215538.tex&format=png"
+  },
+  "5180": {
+    "ko": "받는 물리 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215053.tex&format=png"
+  },
+  "5181": {
+    "ko": "받는 마법 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215057.tex&format=png"
+  },
+  "5182": {
+    "ko": "서서히 팽창",
+    "icon": "/api/asset?path=ui/icon/220000/220201.tex&format=png"
+  },
+  "5183": {
+    "ko": "맹독",
+    "icon": "/api/asset?path=ui/icon/218000/218561.tex&format=png"
+  },
   "5184": {
     "ko": "죽음의 선고",
     "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
@@ -18126,6 +18530,10 @@
   "5185": {
     "ko": "죽음의 선고",
     "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
+  },
+  "5186": {
+    "ko": "짐승길",
+    "icon": "/api/asset?path=ui/icon/218000/218311.tex&format=png"
   },
   "5187": {
     "ko": "죽음의 선고",
@@ -18162,6 +18570,14 @@
   "5195": {
     "ko": "이동 명령: 우",
     "icon": "/api/asset?path=ui/icon/215000/215777.tex&format=png"
+  },
+  "5198": {
+    "ko": "별빛 극성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229049.tex&format=png"
+  },
+  "5199": {
+    "ko": "그림자 극성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/229000/229050.tex&format=png"
   },
   "5314": {
     "ko": "번개 충전",
@@ -18251,6 +18667,30 @@
     "ko": "서포트 강령술사",
     "icon": "/api/asset?path=ui/icon/216000/216894.tex&format=png"
   },
+  "5336": {
+    "ko": "불속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217941.tex&format=png"
+  },
+  "5337": {
+    "ko": "물속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217421.tex&format=png"
+  },
+  "5338": {
+    "ko": "받는 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217301.tex&format=png"
+  },
+  "5339": {
+    "ko": "주는 물리 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/218000/218461.tex&format=png"
+  },
+  "5340": {
+    "ko": "주는 마법 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/218000/218481.tex&format=png"
+  },
+  "5341": {
+    "ko": "소멸의 마력날: 충격파",
+    "icon": "/api/asset?path=ui/icon/229000/229057.tex&format=png"
+  },
   "5342": {
     "ko": "버스트 타임",
     "icon": "/api/asset?path=ui/icon/000000/000000.tex&format=png"
@@ -18290,6 +18730,10 @@
   "5355": {
     "ko": "치유의 원",
     "icon": "/api/asset?path=ui/icon/215000/215119.tex&format=png"
+  },
+  "5356": {
+    "ko": "과중력",
+    "icon": "/api/asset?path=ui/icon/215000/215002.tex&format=png"
   },
   "5357": {
     "ko": "사투 대상",
@@ -18371,6 +18815,62 @@
     "ko": "절대 방어",
     "icon": "/api/asset?path=ui/icon/214000/214391.tex&format=png"
   },
+  "5381": {
+    "ko": "실명",
+    "icon": "/api/asset?path=ui/icon/215000/215012.tex&format=png"
+  },
+  "5382": {
+    "ko": "마비",
+    "icon": "/api/asset?path=ui/icon/215000/215006.tex&format=png"
+  },
+  "5383": {
+    "ko": "악몽",
+    "icon": "/api/asset?path=ui/icon/215000/215573.tex&format=png"
+  },
+  "5384": {
+    "ko": "열상",
+    "icon": "/api/asset?path=ui/icon/215000/215526.tex&format=png"
+  },
+  "5387": {
+    "ko": "맹독",
+    "icon": "/api/asset?path=ui/icon/215000/215517.tex&format=png"
+  },
+  "5388": {
+    "ko": "마비",
+    "icon": "/api/asset?path=ui/icon/215000/215006.tex&format=png"
+  },
+  "5389": {
+    "ko": "실명",
+    "icon": "/api/asset?path=ui/icon/215000/215012.tex&format=png"
+  },
+  "5390": {
+    "ko": "헤이스트+",
+    "icon": "/api/asset?path=ui/icon/217000/217381.tex&format=png"
+  },
+  "5391": {
+    "ko": "주는 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/217000/217061.tex&format=png"
+  },
+  "5392": {
+    "ko": "받는 마법 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217761.tex&format=png"
+  },
+  "5393": {
+    "ko": "받는 물리 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/217000/217781.tex&format=png"
+  },
+  "5394": {
+    "ko": "서서히 HP 회복",
+    "icon": "/api/asset?path=ui/icon/217000/217521.tex&format=png"
+  },
+  "5395": {
+    "ko": "고양감",
+    "icon": "/api/asset?path=ui/icon/218000/218601.tex&format=png"
+  },
+  "5396": {
+    "ko": "둔화",
+    "icon": "/api/asset?path=ui/icon/215000/215009.tex&format=png"
+  },
   "5398": {
     "ko": "동풍 마법각인",
     "icon": "/api/asset?path=ui/icon/214000/214394.tex&format=png"
@@ -18395,6 +18895,10 @@
     "ko": "시한 저주: 서풍",
     "icon": "/api/asset?path=ui/icon/229000/229994.tex&format=png"
   },
+  "5406": {
+    "ko": "마력 공급",
+    "icon": "/api/asset?path=ui/icon/220000/220141.tex&format=png"
+  },
   "5407": {
     "ko": "실 들어올리기",
     "icon": "/api/asset?path=ui/icon/214000/214410.tex&format=png"
@@ -18402,6 +18906,10 @@
   "5408": {
     "ko": "무력화",
     "icon": "/api/asset?path=ui/icon/215000/215405.tex&format=png"
+  },
+  "5409": {
+    "ko": "주는 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215519.tex&format=png"
   },
   "5411": {
     "ko": "기절",
@@ -18415,9 +18923,53 @@
     "ko": "촉진제 물자함",
     "icon": "/api/asset?path=ui/icon/216000/216256.tex&format=png"
   },
+  "5421": {
+    "ko": "죽음의 선고",
+    "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
+  },
+  "5423": {
+    "ko": "꿈틀이 외피",
+    "icon": "/api/asset?path=ui/icon/215000/215021.tex&format=png"
+  },
+  "5424": {
+    "ko": "서서히 혼란",
+    "icon": "/api/asset?path=ui/icon/220000/220221.tex&format=png"
+  },
   "5425": {
     "ko": "독",
     "icon": "/api/asset?path=ui/icon/215000/215007.tex&format=png"
+  },
+  "5426": {
+    "ko": "ストンスキン",
+    "icon": "/api/asset?path=ui/icon/210000/210401.tex&format=png"
+  },
+  "5429": {
+    "ko": "속박+",
+    "icon": "/api/asset?path=ui/icon/215000/215602.tex&format=png"
+  },
+  "5431": {
+    "ko": "突属性耐性低下［強］",
+    "icon": "/api/asset?path=ui/icon/215000/215818.tex&format=png"
+  },
+  "5432": {
+    "ko": "風属性耐性低下［強］",
+    "icon": "/api/asset?path=ui/icon/215000/215721.tex&format=png"
+  },
+  "5433": {
+    "ko": "어미새의 분노",
+    "icon": "/api/asset?path=ui/icon/217000/217221.tex&format=png"
+  },
+  "5434": {
+    "ko": "파라이즈 보호막",
+    "icon": "/api/asset?path=ui/icon/215000/215502.tex&format=png"
+  },
+  "5435": {
+    "ko": "被物理ダメージ軽減",
+    "icon": "/api/asset?path=ui/icon/215000/215052.tex&format=png"
+  },
+  "5436": {
+    "ko": "被魔法ダメージ軽減",
+    "icon": "/api/asset?path=ui/icon/215000/215056.tex&format=png"
   },
   "5438": {
     "ko": "연속 마법",
@@ -18431,6 +18983,22 @@
     "ko": "ダーククローク",
     "icon": "/api/asset?path=ui/icon/214000/214412.tex&format=png"
   },
+  "5442": {
+    "ko": "고통",
+    "icon": "/api/asset?path=ui/icon/215000/215530.tex&format=png"
+  },
+  "5449": {
+    "ko": "주는 물리 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/218000/218461.tex&format=png"
+  },
+  "5450": {
+    "ko": "주는 피해량 증가",
+    "icon": "/api/asset?path=ui/icon/217000/217061.tex&format=png"
+  },
+  "5451": {
+    "ko": "주는 피해량 감소",
+    "icon": "/api/asset?path=ui/icon/215000/215520.tex&format=png"
+  },
   "5452": {
     "ko": "_rsv_5452_-1_6_0_0_S74CFC3B0_E74CFC3B0",
     "icon": "/api/asset?path=ui/icon/217000/217398.tex&format=png"
@@ -18443,9 +19011,21 @@
     "ko": "_rsv_5454_-1_6_0_0_S74CFC3B0_E74CFC3B0",
     "icon": "/api/asset?path=ui/icon/215000/215907.tex&format=png"
   },
+  "5455": {
+    "ko": "속박",
+    "icon": "/api/asset?path=ui/icon/215000/215003.tex&format=png"
+  },
+  "5463": {
+    "ko": "엑설런스",
+    "icon": "/api/asset?path=ui/icon/216000/216701.tex&format=png"
+  },
   "5464": {
     "ko": "_rsv_5464_-1_6_0_0_S74CFC3B0_E74CFC3B0",
     "icon": "/api/asset?path=ui/icon/215000/215780.tex&format=png"
+  },
+  "5465": {
+    "ko": "화염 보호막",
+    "icon": "/api/asset?path=ui/icon/215000/215508.tex&format=png"
   },
   "5467": {
     "ko": "받는 피해량 감소",
@@ -18467,6 +19047,34 @@
     "ko": "죽음의 선고",
     "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
   },
+  "5495": {
+    "ko": "화상",
+    "icon": "/api/asset?path=ui/icon/215000/215524.tex&format=png"
+  },
+  "5496": {
+    "ko": "물독",
+    "icon": "/api/asset?path=ui/icon/215000/215529.tex&format=png"
+  },
+  "5497": {
+    "ko": "열상",
+    "icon": "/api/asset?path=ui/icon/215000/215526.tex&format=png"
+  },
+  "5498": {
+    "ko": "감전",
+    "icon": "/api/asset?path=ui/icon/215000/215528.tex&format=png"
+  },
+  "5499": {
+    "ko": "진흙탕",
+    "icon": "/api/asset?path=ui/icon/215000/215527.tex&format=png"
+  },
+  "5500": {
+    "ko": "동상",
+    "icon": "/api/asset?path=ui/icon/215000/215525.tex&format=png"
+  },
+  "5501": {
+    "ko": "고통",
+    "icon": "/api/asset?path=ui/icon/215000/215530.tex&format=png"
+  },
   "5531": {
     "ko": "산 쪼개기",
     "icon": "/api/asset?path=ui/icon/212000/212698.tex&format=png"
@@ -18486,6 +19094,14 @@
   "5535": {
     "ko": "봉인된 무기: 하프",
     "icon": "/api/asset?path=ui/icon/214000/214418.tex&format=png"
+  },
+  "5536": {
+    "ko": "비탄의 낙인",
+    "icon": "/api/asset?path=ui/icon/218000/218041.tex&format=png"
+  },
+  "5537": {
+    "ko": "분노의 낙인",
+    "icon": "/api/asset?path=ui/icon/218000/218061.tex&format=png"
   },
   "5541": {
     "ko": "산 자의 상처",
@@ -18518,5 +19134,45 @@
   "5548": {
     "ko": "혼돈의 물",
     "icon": "/api/asset?path=ui/icon/215000/215903.tex&format=png"
+  },
+  "5551": {
+    "ko": "불속성 저항 증가",
+    "icon": "/api/asset?path=ui/icon/215000/215028.tex&format=png"
+  },
+  "5552": {
+    "ko": "번개속성 저항 감소",
+    "icon": "/api/asset?path=ui/icon/215000/215271.tex&format=png"
+  },
+  "5553": {
+    "ko": "맹독",
+    "icon": "/api/asset?path=ui/icon/215000/215517.tex&format=png"
+  },
+  "5554": {
+    "ko": "맹독",
+    "icon": "/api/asset?path=ui/icon/215000/215517.tex&format=png"
+  },
+  "5555": {
+    "ko": "속박+",
+    "icon": "/api/asset?path=ui/icon/215000/215602.tex&format=png"
+  },
+  "5562": {
+    "ko": "고양감",
+    "icon": "/api/asset?path=ui/icon/218000/218601.tex&format=png"
+  },
+  "5586": {
+    "ko": "적개심 상승",
+    "icon": "/api/asset?path=ui/icon/216000/216722.tex&format=png"
+  },
+  "5710": {
+    "ko": "속박",
+    "icon": "/api/asset?path=ui/icon/215000/215003.tex&format=png"
+  },
+  "5803": {
+    "ko": "기절",
+    "icon": "/api/asset?path=ui/icon/215000/215004.tex&format=png"
+  },
+  "5804": {
+    "ko": "둔화",
+    "icon": "/api/asset?path=ui/icon/215000/215009.tex&format=png"
   }
 }
