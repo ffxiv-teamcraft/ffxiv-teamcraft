@@ -145,6 +145,7 @@ export enum Job {
   Sge = "SGE",
   Smn = "SMN",
   Thm = "THM",
+  Unknown0 = "Unknown0",
   Vpr = "VPR",
   War = "WAR",
   Whm = "WHM",

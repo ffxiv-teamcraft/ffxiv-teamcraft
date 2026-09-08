@@ -8,7 +8,7 @@ export interface LazyStatusSearch {
   ko?:   string;
   patch: number;
   tw?:   string;
-  zh:    string;
+  zh?:   string;
 }
 
 export interface Data {

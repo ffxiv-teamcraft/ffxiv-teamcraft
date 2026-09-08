@@ -9,8 +9,8 @@ export interface LazyTraitSearch {
   ko:    string;
   lvl:   number;
   patch: number;
-  tw:    string;
-  zh:    string;
+  tw?:   string;
+  zh?:   string;
 }
 
 export interface Data {
