@@ -44542,7 +44542,7 @@
     "description": {
       "en": "With a single cursed gemstone in place of an eye, this dread beast prowls the wastes of the North Horn. Dispense with the creature before you succumb to its baleful gaze.",
       "ja": "呪詛の籠もった宝玉を<br>眼球に埋め込まれた獣が現れた<br>呪いの宝珠、イビルシーアを倒せ",
-      "de": "Eine Bestie, in dessen Auge ein verfluchter Edelstein eingelassen wurde, ist in Kreszentia aufgetaucht. Pass auf, wo du im Kampf hinsiehst!",
+      "de": "Eine Bestie, in deren Auge ein verfluchter Edelstein eingelassen wurde, ist auf Kreszentia aufgetaucht. Pass auf, wo du im Kampf hinsiehst!",
       "fr": "Une vile créature dont l'œil sinistre recèle un joyau porteur de malédictions a décidé de s'en servir... Apprenez-lui que c'est malpoli de fixer du regard."
     },
     "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
@@ -44593,7 +44593,7 @@
     "description": {
       "en": "In some parts of the North Horn, a near-constant stream of seductive sighs can be heard on the breeze, beckoning wayward souls closer. Few can believe their eyes when they discover the source of these breathy enticements─fewer still survive the ordeal.",
       "ja": "悪環境に生息する巨大モルボルが<br>艶かしくため息を吐き続けている<br>ため息モルボル、センシュアル・サンディを倒せ",
-      "de": "Um sich von ihrem tristen Alltag abzulenken, lockt dieses Ungeheuer andere Lebewesen mit verführerischen Seufzern an. Vorsicht vor ihrer toxischen Seite!",
+      "de": "Um sich von seinem tristen Alltag abzulenken, lockt dieses Ungeheuer andere Lebewesen mit verführerischen Seufzern an. Vorsicht vor seiner toxischen Seite!",
       "fr": "Sandy, comme la plupart de ses congénères morbols, possède une haleine toxique qui afflige ses victimes de toutes sortes de maladies. Mais elle s'en sert aussi pour mettre en avant ses charmes. Refusez poliment ses avances."
     },
     "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",
@@ -44610,7 +44610,7 @@
     "description": {
       "en": "This leaf-clad familiar once labored to maintain the island's delicate ecological balance. Alas, when aetherial anomalies began to plague the North Horn, Iambe was corrupted─much like the land they once nurtured. Ensure they can do no further harm.",
       "ja": "植物の育成を担う使い魔が<br>異常環境で暴走している<br>自滅の歌い手、イアムベーを倒せ",
-      "de": "Dieses Familiar wurde ursprünglich mit der Züchtung von Pflanzen beauftragt, doch nun läuft es auf Kreszentia Amok. Hüte dich vor ihrem unheilvollem Gesang!",
+      "de": "Dieses Familiar wurde ursprünglich mit der Züchtung von Pflanzen beauftragt, doch nun läuft es auf Kreszentia Amok. Hüte dich vor seinem unheilvollen Gesang!",
       "fr": "Iambé était un simple familier chargé de la culture des plantes, mais elle a mal tourné lorsque son environnement a été chamboulé. Remettez-la dans le droit chemin."
     },
     "icon": "/api/asset?path=ui/icon/060000/060502.tex&format=png",

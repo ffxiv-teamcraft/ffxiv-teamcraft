@@ -2528,7 +2528,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Movement speed and HP recovered via healing magic are reduced.",
-      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich ist verringert.",
+      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich sind verringert.",
       "ja": "移動速度が低下し、かつ回復魔法による自身に対するＨＰ回復効果が低下した状態。",
       "fr": "La vitesse de déplacement et l'effet des sorts de restauration des PV sont réduits."
     }
@@ -6868,7 +6868,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Slashing resistance and HP recovery via healing magic and actions are reduced.<br>※HP recovery unaffected in PvP.",
-      "de": "Hiebresistenz und Wirkung von Heilmagie auf sich ist verringert.<br>Keine Reduktion der Heilwirkung bei <span style=\"color:#ffffff\">PvP</span>.",
+      "de": "Hiebresistenz und Wirkung von Heilmagie auf sich sind verringert.<br>Keine Reduktion der Heilwirkung bei <span style=\"color:#ffffff\">PvP</span>.",
       "ja": "斬耐性が低下し、かつ回復魔法による自身に対するＨＰ回復効果が低下した状態。<br>※PvPエリアでは回復魔法の効果量低下効果は無効となる。",
       "fr": "La résistance au tranchant et les PV récupérés avec la magie curative sont réduits.<br>* Pas de réduction de l'effet de la magie curative en zone JcJ."
     }
@@ -8716,7 +8716,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Movement speed and HP recovered via healing magic are reduced.",
-      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich ist verringert.",
+      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich sind verringert.",
       "ja": "移動速度が低下し、かつ回復魔法による自身に対するＨＰ回復効果が低下した状態。",
       "fr": "La vitesse de déplacement et les effets des sorts de restauration des PV sont réduits.<br>* Pas d'effet sur la vitesse de déplacement en zone JcJ"
     }
@@ -15590,7 +15590,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Movement speed and HP recovery via healing magic are reduced.",
-      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich ist verringert.",
+      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich sind verringert.",
       "ja": "移動速度が低下し、かつ回復魔法による自身に対するＨＰ回復効果が低下した状態。",
       "fr": "La vitesse de déplacement et les effets des sorts de restauration des PV sont réduits."
     }
@@ -27314,7 +27314,7 @@
     }
   },
   "1952": {
-    "en": "Hide",
+    "en": "Hidden",
     "de": "Versteckt",
     "ja": "かくれる",
     "fr": "Dissimulation",
@@ -30192,7 +30192,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Covered in a sticky oil. Both movement speed and fire resistance are reduced.",
-      "de": "In Öl gebadet. Bewegungsgeschwindigkeit und Resistenz gegen Feuer ist verringert.",
+      "de": "In Öl gebadet. Bewegungsgeschwindigkeit und Resistenz gegen Feuer sind verringert.",
       "ja": "オイルにまみれた状態。移動速度と火属性に対する耐性が低下する。",
       "fr": "De l'huile recouvre le corps. La vitesse de déplacement et la résistance au feu sont réduites."
     }
@@ -32706,7 +32706,7 @@
   "2337": {
     "en": "Reflect",
     "de": "Reflexion",
-    "ja": "ロスト・リフレク",
+    "ja": "リフレク",
     "fr": "Miroir",
     "icon": "/api/asset?path=ui/icon/216000/216680.tex&format=png",
     "maxStacks": 0,
@@ -55196,7 +55196,7 @@
     "maxStacks": 0,
     "description": {
       "en": "Movement speed and HP recovery via healing magic are reduced.",
-      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich ist verringert.",
+      "de": "Bewegungsgeschwindigkeit und Wirkung von Heilmagie auf sich sind verringert.",
       "ja": "移動速度が低下し、かつ回復魔法による自身に対するＨＰ回復効果が低下した状態。",
       "fr": "La vitesse de déplacement et l'effet des sorts de restauration des PV sont réduits."
     }
@@ -57715,10 +57715,10 @@
     "icon": "/api/asset?path=ui/icon/214000/214216.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "Attacks generate HP equal to the amount of damage dealt.",
+      "en": "Attacks generate HP equal to a portion of damage dealt.",
       "de": "Ausgeteilter Schaden wird in LP umgewandelt.",
       "ja": "攻撃にＨＰ吸収効果が付与された状態。",
-      "fr": "Les attaques physiques absorbent des PV."
+      "fr": "Les attaques absorbent des PV."
     }
   },
   "4124": {
@@ -64316,213 +64316,213 @@
     }
   },
   "4595": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Volant Heart",
+    "de": "Sanftes Herz",
+    "ja": "獣心技I・翔",
+    "fr": "Instinct aérien",
+    "icon": "/api/asset?path=ui/icon/229000/229001.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Feeling <span style=\"color:#ffffff\">Volant</span>. Using instinctual skills with a <span style=\"color:#ffffff\">Rampant</span> affinity will trigger an intentional combo.",
+      "de": "Im Gemütszustand <span style=\"color:#ffffff\">Sanft</span>. Instinktive Fertigkeiten der Affinität <span style=\"color:#ffffff\">Wild</span> lösen in diesem Zustand eine intendierte Kombo aus.",
+      "ja": "「翔」の獣心を身に宿した状態。効果中に「猛」のウェポンスキルを使用すると、さらなる獣心技連携効果が発生する。",
+      "fr": "A utilisé une technique instinctive aérienne. Les techniques instinctives féroces déclenchent un combo instinctif II."
     }
   },
   "4596": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rampant Heart",
+    "de": "Wildes Herz",
+    "ja": "獣心技I・猛",
+    "fr": "Instinct féroce",
+    "icon": "/api/asset?path=ui/icon/229000/229002.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Feeling <span style=\"color:#ffffff\">Rampant</span>. Using instinctual skills with a <span style=\"color:#ffffff\">Durant</span> affinity will trigger an intentional combo.",
+      "de": "Im Gemütszustand <span style=\"color:#ffffff\">Wild</span>. Instinktive Fertigkeiten der Affinität <span style=\"color:#ffffff\">Stet</span> lösen in diesem Zustand eine intendierte Kombo aus.",
+      "ja": "「猛」の獣心を身に宿した状態。効果中に「堅」のウェポンスキルを使用すると、さらなる獣心技連携効果が発生する。",
+      "fr": "A utilisé une technique instinctive féroce. Les techniques instinctives robustes déclenchent un combo instinctif II."
     }
   },
   "4597": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Durant Heart",
+    "de": "Stetes Herz",
+    "ja": "獣心技I・堅",
+    "fr": "Instinct robuste",
+    "icon": "/api/asset?path=ui/icon/229000/229003.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Feeling <span style=\"color:#ffffff\">Durant</span>. Using instinctual skills with an <span style=\"color:#ffffff\">Eldritch</span> affinity will trigger an intentional combo.",
+      "de": "Im Gemütszustand <span style=\"color:#ffffff\">Stet</span>. Instinktive Fertigkeiten der Affinität <span style=\"color:#ffffff\">Dämonisch</span> lösen in diesem Zustand eine intendierte Kombo aus.",
+      "ja": "「堅」の獣心を身に宿した状態。効果中に「魔」のウェポンスキルを使用すると、さらなる獣心技連携効果が発生する。",
+      "fr": "A utilisé une technique instinctive robuste. Les techniques instinctives arcaniques déclenchent un combo instinctif II."
     }
   },
   "4598": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Eldritch Heart",
+    "de": "Dämonisches Herz",
+    "ja": "獣心技I・魔",
+    "fr": "Instinct arcanique",
+    "icon": "/api/asset?path=ui/icon/229000/229004.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Feeling <span style=\"color:#ffffff\">Eldritch</span>. Using instinctual skills with a <span style=\"color:#ffffff\">Volant</span> affinity will trigger an intentional combo.",
+      "de": "Im Gemütszustand <span style=\"color:#ffffff\">Dämonisch</span>. Instinktive Fertigkeiten der Affinität <span style=\"color:#ffffff\">Sanft</span> lösen in diesem Zustand eine intendierte Kombo aus.",
+      "ja": "「魔」の獣心を身に宿した状態。効果中に「翔」のウェポンスキルを使用すると、さらなる獣心技連携効果が発生する。",
+      "fr": "A utilisé une technique instinctive arcanique. Les techniques instinctives aériennes déclenchent un combo instinctif II."
     }
   },
   "4599": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sunstrider",
+    "de": "Sonnenhatz",
+    "ja": "獣心技II・活命撃",
+    "fr": "Instinct vital",
+    "icon": "/api/asset?path=ui/icon/229000/229005.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Striding boldly beneath the sun. Using instinctual skills with a <span style=\"color:#ffffff\">Moonstalker</span> affinity will trigger an infinitive combo.",
+      "de": "Jagd kühn im strahlendern Schein der Sonne. Instinktive Fertigkeiten der Affinität <span style=\"color:#ffffff\">Mondpirsch</span> lösen in diesem Zustand eine umfassende Kombo aus.",
+      "ja": "「活命撃」の獣心を身に宿した状態。効果中に「滅命撃」のウェポンスキルを使用すると、さらなる獣心技連携効果が発生する。",
+      "fr": "A utilisé une technique instinctive vitale. Les techniques instinctives létales déclenchent un combo instinctif III."
     }
   },
   "4600": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Moonstalker",
+    "de": "Mondpirsch",
+    "ja": "獣心技II・滅命撃",
+    "fr": "Instinct létal",
+    "icon": "/api/asset?path=ui/icon/229000/229006.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Stealthily stalking the moon. Using instinctual skills with a <span style=\"color:#ffffff\">Sunstrider</span> affinity will trigger an infinitive combo.",
+      "de": "Jagd verwegen im Schatten des Mondes. Instinktive Fertigkeiten der Affinität <span style=\"color:#ffffff\">Sonnenhatz</span> lösen in diesem Zustand eine umfassende Kombo aus.",
+      "ja": "「滅命撃」の獣心を身に宿した状態。効果中に「活命撃」のウェポンスキルを使用すると、さらなる獣心技連携効果が発生する。",
+      "fr": "A utilisé une technique instinctive létale. Les techniques instinctives vitales déclenchent un combo instinctif III."
     }
   },
   "4601": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "One with Nature",
+    "de": "Eins mit der Natur",
+    "ja": "人獣同調",
+    "fr": "Connexion animale",
+    "icon": "/api/asset?path=ui/icon/229000/229007.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Communing with the wilds. Able to execute <span style=\"color:#ffffff\">Tempered Release</span> or <span style=\"color:#ffffff\">Borrow</span>.",
+      "de": "Kann einmalig <span style=\"color:#ffffff\">Entfesseln</span> oder <span style=\"color:#ffffff\">Borgen</span> ausführen.",
+      "ja": "はなつおよびかりるを実行できる状態。",
+      "fr": "Salve et Assimilation peuvent être lancées."
     }
   },
   "4602": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beast Kinship",
+    "de": "Innerer Biestling",
+    "ja": "百獣本能",
+    "fr": "Assimilation de thérien",
+    "icon": "/api/asset?path=ui/icon/229000/229008.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a beastkin familiar. Able to execute <span style=\"color:#ffffff\">Beastskin</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Biestlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Biesthaut</span>.",
+      "ja": "百獣綱の本能を一時的に借りた状態。効果中は「ビーストスキン」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête thérienne. Cuir de thérien peut être lancé."
     }
   },
   "4603": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vile Kinship",
+    "de": "Innerer Gezieferling",
+    "ja": "百蟲本能",
+    "fr": "Assimilation d'insectoïde",
+    "icon": "/api/asset?path=ui/icon/229000/229009.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a vilekin familiar. Able to execute <span style=\"color:#ffffff\">Vileskin</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Gezieferlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Gezieferpanzer</span>.",
+      "ja": "百蟲綱の本能を一時的に借りた状態。効果中は「ヴァイルスキン」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête insectoïde. Carapace d'insectoïde peut être lancée."
     }
   },
   "4604": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cloud Kinship",
+    "de": "Innerer Wölkling",
+    "ja": "有翼本能",
+    "fr": "Assimilation de ptérien",
+    "icon": "/api/asset?path=ui/icon/229000/229010.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a cloudkin familiar. Able to execute <span style=\"color:#ffffff\">Cloud Skim</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Wölklings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Wolkenstreich</span>.",
+      "ja": "有翼綱の本能を一時的に借りた状態。効果中は「クラウドスキム」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête ptérienne. Rase-nuages peut être lancé."
     }
   },
   "4605": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seed Kinship",
+    "de": "Innerer Saatling",
+    "ja": "草木本能",
+    "fr": "Assimilation de floréen",
+    "icon": "/api/asset?path=ui/icon/229000/229011.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a seedkin familiar. Able to execute <span style=\"color:#ffffff\">Seedsower</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Saatlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Saatsäher</span>.",
+      "ja": "草木綱の本能を一時的に借りた状態。効果中は「シードサワー」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête floréenne. Plante-graines peut être lancé."
     }
   },
   "4606": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wave Kinship",
+    "de": "Innerer Wogling",
+    "ja": "水棲本能",
+    "fr": "Assimilation d'hydride",
+    "icon": "/api/asset?path=ui/icon/229000/229012.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a wavekin familiar. Able to execute <span style=\"color:#ffffff\">Quelling Wave</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Woglings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Brechende Welle</span>.",
+      "ja": "水棲綱の本能を一時的に借りた状態。効果中は「クェリングウェーブ」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête hydride. Vague répressive peut être lancée."
     }
   },
   "4607": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Scale Kinship",
+    "de": "Innerer Schuppling",
+    "ja": "甲鱗本能",
+    "fr": "Assimilation de cuirassien",
+    "icon": "/api/asset?path=ui/icon/229000/229013.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a scalekin familiar. Able to execute <span style=\"color:#ffffff\">Scaleskin</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Schupplings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Schuppenpanzer</span>.",
+      "ja": "甲鱗綱の本能を一時的に借りた状態。効果中は「スケイルスキン」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête cuirassienne. Peau d'écailles peut être lancée."
     }
   },
   "4608": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Soul Kinship",
+    "de": "Innerer Ätherling",
+    "ja": "呪具本能",
+    "fr": "Assimilation d'animide",
+    "icon": "/api/asset?path=ui/icon/229000/229014.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a soulkin familiar. Able to execute <span style=\"color:#ffffff\">Soul Crush</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Ätherlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Seelenschmerz</span>.",
+      "ja": "呪具綱の本能を一時的に借りた状態。効果中は「ソウルクラッシュ」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête animide. Sape psychique peut être lancée."
     }
   },
   "4609": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ash Kinship",
+    "de": "Innerer Todling",
+    "ja": "死屍本能",
+    "fr": "Assimilation de nécroïde",
+    "icon": "/api/asset?path=ui/icon/229000/229015.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from an ashkin familiar. Able to execute <span style=\"color:#ffffff\">Scouring Ash</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Todlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Läuternde Asche</span>.",
+      "ja": "死屍綱の本能を一時的に借りた状態。効果中は「アッシュクレンズ」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête nécroïde. Cendres purifiantes peuvent être lancées."
     }
   },
   "4610": {
@@ -64582,17 +64582,17 @@
     }
   },
   "4614": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Lingering Vantage",
+    "de": "Schleichender Vorteil",
+    "ja": "さいごのいちげき効果アップ",
+    "fr": "Va-tout amélioré",
+    "icon": "/api/asset?path=ui/icon/229000/229016.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Next <span style=\"color:#ffffff\">Parting Blow</span> will deal increased damage.",
+      "de": "Erhöht den Attacke-Wert des nächsten <span style=\"color:#ffffff\">Scheidenden Schlags</span>.",
+      "ja": "次に実行する「さいごのいちげき」の威力が上昇する状態。",
+      "fr": "La puissance du prochain Va-tout est augmentée."
     }
   },
   "4615": {
@@ -64666,73 +64666,73 @@
     }
   },
   "4620": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vileskin",
+    "de": "Gezieferpanzer",
+    "ja": "ヴァイルスキン",
+    "fr": "Carapace d'insectoïde",
+    "icon": "/api/asset?path=ui/icon/229000/229017.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Immune to most knockback and draw-in effects. Blocking incoming attacks, and TP is increased for each successful block. ",
+      "de": "Immun gegen fast alle Rückstoß- und Heranzieheffekte. Gegnerische Attacken werden geblockt. Jedes Blocken gewährt TP.",
+      "ja": "一部を除くすべてのノックバックと引き寄せを無効化し、かつ攻撃を確実にブロックする状態。<br>ブロックするとTPが増加する。",
+      "fr": "Certaines projections et attractions sont sans effet, et les attaques sont immanquablement bloquées. Les PT sont augmentés à chaque blocage."
     }
   },
   "4621": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beastskin",
+    "de": "Biesthaut",
+    "ja": "ビーストスキン",
+    "fr": "Cuir de thérien",
+    "icon": "/api/asset?path=ui/icon/229000/229018.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage taken is reduced and critical hit rate is increased.",
+      "de": "Erlittener physischer Schaden ist verringert und die kritische Trefferrate erhöht.",
+      "ja": "受ける物理ダメージが軽減され、かつクリティカル発動率が向上した状態。",
+      "fr": "Les dégâts physiques reçus sont réduits, et les chances de critiques sont augmentées."
     }
   },
   "4622": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seeds Sown",
+    "de": "Saatsäher",
+    "ja": "シードサワー",
+    "fr": "Plante-graines",
+    "icon": "/api/asset?path=ui/icon/229000/229019.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time and damage dealt is reduced.",
+      "de": "Erleidet schrittweise Schaden durch Gift. Ausgeteilter Schaden ist verringert.",
+      "ja": "毒に冒された状態。与ダメージが低下し、ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis et les dégâts infligés sont réduits."
     }
   },
   "4623": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Scaleskin",
+    "de": "Schuppenpanzer",
+    "ja": "スケイルスキン",
+    "fr": "Peau d'écailles",
+    "icon": "/api/asset?path=ui/icon/229000/229020.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A scaly barrier is reducing magical damage. When the barrier is fully absorbed, TP will increase.",
+      "de": "Erlittener magischer Schaden ist um einen bestimmten Betrag verringert. Wenn der Panzer seine Belastungsgrenze erreicht hat, verschwindet er und gewährt TP.",
+      "ja": "一定量の魔法ダメージを軽減する状態。<br>バリアがダメージを完全に吸収して消滅すると、TPが増加する。",
+      "fr": "Insensible à un certain montant de dégâts magiques. Quand la barrière a absorbé son montant de dégâts, les PT sont augmentés."
     }
   },
   "4624": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Capturing Interest",
+    "de": "Freundschaftsangebot",
+    "ja": "とらえる",
+    "fr": "Capture",
+    "icon": "/api/asset?path=ui/icon/229000/229021.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Attempting to prove worthiness as a beastmaster.",
+      "de": "Hat einer Bestie signalisiert, einen Pakt mit ihr schließen zu wollen.",
+      "ja": "「とらえる」態勢を整えた状態。",
+      "fr": "Se prépare à capturer une bête."
     }
   },
   "4625": {
@@ -64750,17 +64750,17 @@
     }
   },
   "4626": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Interest Captured",
+    "de": "Freundschaftsempfänglich",
+    "ja": "とらえる［被］",
+    "fr": "Marquage pour capture",
+    "icon": "/api/asset?path=ui/icon/229000/229022.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weighing worthiness. Alliance will be determined upon incapacitation.",
+      "de": "Hat die Aufforderung zu einem Pakt zur Kenntnis genommen. Ob der Pakt gelingt, zeigt sich bei Kampfunfähigkeit.",
+      "ja": "「とらえる」を受けた状態。戦闘不能時に成否判定が行われる。",
+      "fr": "La bête a une chance d'être capturée une fois vaincue."
     }
   },
   "4627": {
@@ -64988,129 +64988,129 @@
     }
   },
   "4643": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wavering Heart",
+    "de": "Wankendes Herz",
+    "ja": "獣心技属性：無効",
+    "fr": "Instinct neutre",
+    "icon": "/api/asset?path=ui/icon/229000/229023.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Otherwise engaged. Unable to perform combos with your familiar.",
+      "de": "Unfähig, Kombos mit einer Bestie auszuführen.",
+      "ja": "獣心技連携を受け付けない状態。",
+      "fr": "Ne peut pas déclencher de combo instinctif."
     }
   },
   "4644": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beast Kinship",
+    "de": "Innerer Biestling",
+    "ja": "百獣本能",
+    "fr": "Assimilation de thérien",
+    "icon": "/api/asset?path=ui/icon/229000/229008.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a beastkin familiar. Able to execute <span style=\"color:#ffffff\">Beastskin</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Biestlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Biesthaut</span>.",
+      "ja": "百獣綱の本能を一時的に借りた状態。効果中は「ビーストスキン」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête thérienne. Cuir de thérien peut être lancé."
     }
   },
   "4645": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vile Kinship",
+    "de": "Innerer Gezieferling",
+    "ja": "百蟲本能",
+    "fr": "Assimilation d'insectoïde",
+    "icon": "/api/asset?path=ui/icon/229000/229009.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a vilekin familiar. Able to execute <span style=\"color:#ffffff\">Vileskin</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Gezieferlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Gezieferpanzer</span>.",
+      "ja": "百蟲綱の本能を一時的に借りた状態。効果中は「ヴァイルスキン」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête insectoïde. Carapace d'insectoïde peut être lancée."
     }
   },
   "4646": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Cloud Kinship",
+    "de": "Innerer Wölkling",
+    "ja": "有翼本能",
+    "fr": "Assimilation de ptérien",
+    "icon": "/api/asset?path=ui/icon/229000/229010.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a cloudkin familiar. Able to execute <span style=\"color:#ffffff\">Cloud Skim</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Wölklings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Wolkenstreich</span>.",
+      "ja": "有翼綱の本能を一時的に借りた状態。効果中は「クラウドスキム」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête ptérienne. Rase-nuages peut être lancé."
     }
   },
   "4647": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seed Kinship",
+    "de": "Innerer Saatling",
+    "ja": "草木本能",
+    "fr": "Assimilation de floréen",
+    "icon": "/api/asset?path=ui/icon/229000/229011.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a seedkin familiar. Able to execute <span style=\"color:#ffffff\">Seedsower</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Saatlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Saatsäher</span>.",
+      "ja": "草木綱の本能を一時的に借りた状態。効果中は「シードサワー」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête floréenne. Plante-graines peut être lancé."
     }
   },
   "4648": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wave Kinship",
+    "de": "Innerer Wogling",
+    "ja": "水棲本能",
+    "fr": "Assimilation d'hydride",
+    "icon": "/api/asset?path=ui/icon/229000/229012.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a wavekin familiar. Able to execute <span style=\"color:#ffffff\">Quelling Wave</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Woglings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Brechende Welle</span>.",
+      "ja": "水棲綱の本能を一時的に借りた状態。効果中は「クェリングウェーブ」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête hydride. Vague répressive peut être lancée."
     }
   },
   "4649": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Scale Kinship",
+    "de": "Innerer Schuppling",
+    "ja": "甲鱗本能",
+    "fr": "Assimilation de cuirassien",
+    "icon": "/api/asset?path=ui/icon/229000/229013.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a scalekin familiar. Able to execute <span style=\"color:#ffffff\">Scaleskin</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Schupplings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Schuppenpanzer</span>.",
+      "ja": "甲鱗綱の本能を一時的に借りた状態。効果中は「スケイルスキン」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête cuirassienne. Peau d'écailles peut être lancée."
     }
   },
   "4650": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Soul Kinship",
+    "de": "Innerer Ätherling",
+    "ja": "呪具本能",
+    "fr": "Assimilation d'animide",
+    "icon": "/api/asset?path=ui/icon/229000/229014.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from a soulkin familiar. Able to execute <span style=\"color:#ffffff\">Soul Crush</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Ätherlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Seelenschmerz</span>.",
+      "ja": "呪具綱の本能を一時的に借りた状態。効果中は「ソウルクラッシュ」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête animide. Sape psychique peut être lancée."
     }
   },
   "4651": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ash Kinship",
+    "de": "Innerer Todling",
+    "ja": "死屍本能",
+    "fr": "Assimilation de nécroïde",
+    "icon": "/api/asset?path=ui/icon/229000/229015.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Borrowing aether from an ashkin familiar. Able to execute <span style=\"color:#ffffff\">Scouring Ash</span>.",
+      "de": "Borgt sich vorübergehend den Äther eines Todlings. Erlaubt die Ausführung von <span style=\"color:#ffffff\">Läuternde Asche</span>.",
+      "ja": "死屍綱の本能を一時的に借りた状態。効果中は「アッシュクレンズ」を実行できる。",
+      "fr": "A emprunté l'éther d'une bête nécroïde. Cendres purifiantes peuvent être lancées."
     }
   },
   "4652": {
@@ -67830,353 +67830,353 @@
     }
   },
   "4846": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Reraise",
+    "de": "Schutzengel",
+    "ja": "リレイズ",
+    "fr": "Auréole",
+    "icon": "/api/asset?path=ui/icon/216000/216695.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance of automatic revival upon KO.",
+      "de": "Bei Kampfunfähigkeit automatische Wiederbelebung möglich.",
+      "ja": "戦闘不能になったときに自動的に蘇生する可能性がある状態。",
+      "fr": "Une résurrection automatique a des chances de survenir à la prochaine perte de connaissance."
     }
   },
   "4847": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Crucible Item Penalty",
+    "de": "Gegenstandssperre",
+    "ja": "アイテム禁止：闘獣練",
+    "fr": "Objets désactivés (Dédale bestial)",
+    "icon": "/api/asset?path=ui/icon/229000/229024.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to use any items other than ephemeral items or meals.",
+      "de": "Außer Bändigerutensilien und Futter können keine anderen Gegenstände benutzt werden.",
+      "ja": "テンポラリアイテムと食事以外の、すべてのアイテムが使用できない状態。",
+      "fr": "L'utilisation des objets est désactivée, à l'exception des objets temporaires et des repas."
     }
   },
   "4848": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Keen Edge",
+    "de": "Zweischneidig",
+    "ja": "諸刃の剣",
+    "fr": "Double tranchant",
+    "icon": "/api/asset?path=ui/icon/215000/215754.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time in exchange for dealing increased damage.",
+      "de": "Erleidet schrittweise Schaden, teilt aber auch mehr Schaden aus.",
+      "ja": "与ダメージが増加する状態。ただし、ＨＰが徐々に失われる。",
+      "fr": "Les dégâts infligés sont augmentés, mais des dégâts périodiques sont subis."
     }
   },
   "4849": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Blink",
+    "de": "Blinzeln",
+    "ja": "ブリンク",
+    "fr": "Leurre",
+    "icon": "/api/asset?path=ui/icon/220000/220041.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Impervious to most physical attacks. Each nullified attack reduces one stack.",
+      "de": "Ist unempfindlich gegen die meisten physischen Attacken. Jede aufgehobene Attacke verbraucht einen Stapel.",
+      "ja": "一部を除く物理攻撃を無効化する状態。無効化に成功するたびに1スタックずつ減少する。",
+      "fr": "Insensible à la plupart des attaques physiques. Un degré est consommé à chaque attaque neutralisée."
     }
   },
   "4850": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Antipoison",
+    "de": "Antigift",
+    "ja": "抗毒薬",
+    "fr": "Sérum antipoison",
+    "icon": "/api/asset?path=ui/icon/229000/229025.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Poison resistance is increased.",
+      "de": "Resistenz gegen Gift ist erhöht.",
+      "ja": "毒に対する耐性が向上した状態。",
+      "fr": "La résistance au poison est augmentée."
     }
   },
   "4851": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Antiparalysis",
+    "de": "Antiparalyse",
+    "ja": "抗麻痺薬",
+    "fr": "Sérum anti paralysie",
+    "icon": "/api/asset?path=ui/icon/229000/229026.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Paralysis resistance is increased.",
+      "de": "Resistenz gegen Paralyse ist erhöht.",
+      "ja": "麻痺に対する耐性が向上した状態。",
+      "fr": "La résistance à la paralysie est augmentée."
     }
   },
   "4852": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Antiblind",
+    "de": "Antiblind",
+    "ja": "抗暗闇薬",
+    "fr": "Sérum anti cécité",
+    "icon": "/api/asset?path=ui/icon/229000/229027.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Blind resistance is increased.",
+      "de": "Resistenz gegen Blind ist erhöht.",
+      "ja": "暗闇に対する耐性が向上した状態。",
+      "fr": "La résistance à la cécité est augmentée."
     }
   },
   "4853": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Antipetrification",
+    "de": "Antistein",
+    "ja": "抗石化薬",
+    "fr": "Sérum anti pétrification",
+    "icon": "/api/asset?path=ui/icon/229000/229028.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Petrification resistance is increased.",
+      "de": "Resistenz gegen Stein ist erhöht.",
+      "ja": "石化に対する耐性が向上した状態。",
+      "fr": "La résistance à la pétrification est augmentée."
     }
   },
   "4854": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Antisleep",
+    "de": "Antischlaf",
+    "ja": "抗睡眠薬",
+    "fr": "Sérum anti sommeil",
+    "icon": "/api/asset?path=ui/icon/229000/229029.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sleep resistance is increased.",
+      "de": "Resistenz gegen Schlaf ist erhöht.",
+      "ja": "睡眠に対する耐性が向上した状態。",
+      "fr": "La résistance au sommeil est augmentée."
     }
   },
   "4855": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Winners Keepers",
+    "de": "Fette Beute",
+    "ja": "戦利品獲得率上昇",
+    "fr": "Chances de butin augmentées",
+    "icon": "/api/asset?path=ui/icon/229000/229030.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The next victorious battle within the Crucible of the Unbroken is likely to yield ample loot.",
+      "de": "Der nächste Sieg auf dem Brett der Bestie beschert mehr Beute.",
+      "ja": "闘獣練において、次の戦闘に勝利した際に戦利品を見つけやすくなっている状態。",
+      "fr": "Dans le Dédale bestial, le prochain combat remporté a plus de chances d'octroyer du butin."
     }
   },
   "4856": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Token Benefits",
+    "de": "Talerregen",
+    "ja": "ビーストコイン獲得量上昇",
+    "fr": "Jetons bestiaux augmentés",
+    "icon": "/api/asset?path=ui/icon/229000/229031.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The next victorious battle within the Crucible of the Unbroken is likely to yield ample territory tokens.",
+      "de": "Der nächste Sieg auf dem Brett der Bestie beschert mehr Bestientaler.",
+      "ja": "闘獣練において、次の戦闘に勝利した際のビーストコイン獲得量が増加している状態。",
+      "fr": "Dans le Dédale bestial, le prochain combat remporté octroie davantage de jetons bestiaux."
     }
   },
   "4857": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Tough Skin",
+    "de": "Dicke Haut",
+    "ja": "硬皮薬",
+    "fr": "Solidification",
+    "icon": "/api/asset?path=ui/icon/229000/229032.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージが軽減される状態。",
+      "fr": "Les dégâts reçus sont réduits."
     }
   },
   "4858": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hasty Spirit",
+    "de": "Keile mit Eile",
+    "ja": "短縮薬",
+    "fr": "Rapidité",
+    "icon": "/api/asset?path=ui/icon/229000/229033.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are reduced.",
+      "de": "Die Ausführungs- und Reaktivierungszeit von Waffenfertigkeiten und Zaubern sowie die Intervalle zwischen Auto-Attacken sind verkürzt.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが短縮された状態。",
+      "fr": "La vitesse des attaques automatiques est augmentée, et les temps de lancement et de recharge des sorts et des techniques d'arme sont réduits."
     }
   },
   "4859": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Liquid Strength",
+    "de": "Kraftstärkung",
+    "ja": "剛力薬",
+    "fr": "Force accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229034.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage dealt is increased.",
+      "de": "Ausgeteilter physischer Schaden ist erhöht.",
+      "ja": "物理ダメージが上昇した状態。",
+      "fr": "Les dégâts physiques infligés sont augmentés."
     }
   },
   "4860": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Liquid Magic",
+    "de": "Magiestärkung",
+    "ja": "魔力薬",
+    "fr": "Magie accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229035.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magic damage dealt is increased.",
+      "de": "Ausgeteilter Magieschaden ist erhöht.",
+      "ja": "魔法ダメージが上昇した状態。",
+      "fr": "Les dégâts magiques infligés sont augmentés."
     }
   },
   "4861": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Liquid Intensity",
+    "de": "Aufbrausen",
+    "ja": "特攻薬",
+    "fr": "Précision accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229036.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Critical hit rate is increased.",
+      "de": "Kritische Trefferrate ist erhöht.",
+      "ja": "クリティカル発動率が向上した状態。",
+      "fr": "Les chances de critiques sont augmentées."
     }
   },
   "4862": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Liquid Evasion",
+    "de": "Wendigkeit",
+    "ja": "敏捷薬",
+    "fr": "Esquive accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229037.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Evasion is enhanced.",
+      "de": "Ausweichrate ist erhöht.",
+      "ja": "回避率が向上した状態。",
+      "fr": "L'esquive est augmentée."
     }
   },
   "4863": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Liquid Constitution",
+    "de": "Ausdauer",
+    "ja": "体力薬",
+    "fr": "Endurance accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229038.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Maximum HP is increased.",
+      "de": "Maximal-LP sind erhöht.",
+      "ja": "最大ＨＰが増加した状態。",
+      "fr": "Les PV maximums sont augmentés."
     }
   },
   "4864": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through Fire",
+    "de": "Feueraffinität",
+    "ja": "耐火薬",
+    "fr": "Ignifuge",
+    "icon": "/api/asset?path=ui/icon/229000/229039.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance that fire damage will be absorbed.",
+      "de": "Absorbiert mit einer gewissen Wahrscheinlichkeit Feuerschaden.",
+      "ja": "一定確率で火属性ダメージを無効化し、吸収する状態。",
+      "fr": "Les dégâts de feu ont une chance d'être annulés et absorbés."
     }
   },
   "4865": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through Water",
+    "de": "Wasseraffinität",
+    "ja": "耐水薬",
+    "fr": "Imperméabilité",
+    "icon": "/api/asset?path=ui/icon/229000/229040.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance that water damage will be absorbed.",
+      "de": "Absorbiert mit einer gewissen Wahrscheinlichkeit Wasserschaden.",
+      "ja": "一定確率で水属性ダメージを無効化し、吸収する状態。",
+      "fr": "Les dégâts d'eau ont une chance d'être annulés et absorbés."
     }
   },
   "4866": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through Earth",
+    "de": "Erdaffinität",
+    "ja": "耐地薬",
+    "fr": "Géofuge",
+    "icon": "/api/asset?path=ui/icon/229000/229041.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance that earth damage will be absorbed.",
+      "de": "Absorbiert mit einer gewissen Wahrscheinlichkeit Erdschaden.",
+      "ja": "一定確率で土属性ダメージを無効化し、吸収する状態。",
+      "fr": "Les dégâts de terre ont une chance d'être annulés et absorbés."
     }
   },
   "4867": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through Thunder",
+    "de": "Blitzaffinität",
+    "ja": "耐雷薬",
+    "fr": "Paratonnerre",
+    "icon": "/api/asset?path=ui/icon/229000/229042.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance that lightning damage will be absorbed.",
+      "de": "Absorbiert mit einer gewissen Wahrscheinlichkeit Blitzschaden.",
+      "ja": "一定確率で雷属性ダメージを無効化し、吸収する状態。",
+      "fr": "Les dégâts de foudre ont une chance d'être annulés et absorbés."
     }
   },
   "4868": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through Wind",
+    "de": "Windaffinität",
+    "ja": "耐風薬",
+    "fr": "Coupe-vent",
+    "icon": "/api/asset?path=ui/icon/229000/229043.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance that wind damage will be absorbed.",
+      "de": "Absorbiert mit einer gewissen Wahrscheinlichkeit Windschaden.",
+      "ja": "一定確率で風属性ダメージを無効化し、吸収する状態。",
+      "fr": "Les dégâts de vent ont une chance d'être annulés et absorbés."
     }
   },
   "4869": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Through Ice",
+    "de": "Eisaffinität",
+    "ja": "耐氷薬",
+    "fr": "Gélifuge",
+    "icon": "/api/asset?path=ui/icon/229000/229044.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Chance that ice damage will be absorbed.",
+      "de": "Absorbiert mit einer gewissen Wahrscheinlichkeit Eisschaden.",
+      "ja": "一定確率で氷属性ダメージを無効化し、吸収する状態。",
+      "fr": "Les dégâts de glace ont une chance d'être annulés et absorbés."
     }
   },
   "4870": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sandstill",
+    "de": "Sand der Zeit",
+    "ja": "時の砂",
+    "fr": "Retournement de sablier",
+    "icon": "/api/asset?path=ui/icon/229000/229045.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Protected by sands that will turn back time should you suffer defeat within the Crucible of the Unbroken.",
+      "de": "Dreht bei einer Niederlage auf dem Brett der Bestie die Zeit zum Kampfbeginn zurück.",
+      "ja": "闘獣練において、敗北時に戦闘開始直前からやりなおせる状態。",
+      "fr": "Reviendra avant le début du combat en cas de défaite dans le Dédale bestial."
     }
   },
   "4871": {
@@ -68222,17 +68222,17 @@
     }
   },
   "4874": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Damage Down",
+    "de": "Schaden -",
+    "ja": "ダメージ低下",
+    "fr": "Malus de dégâts",
+    "icon": "/api/asset?path=ui/icon/218000/218441.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is reduced.",
+      "de": "Ausgeteilter Schaden ist verringert.",
+      "ja": "与ダメージが低下した状態。",
+      "fr": "Les dégâts infligés sont réduits."
     }
   },
   "4875": {
@@ -68306,17 +68306,17 @@
     }
   },
   "4880": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Windburn",
+    "de": "Beißender Wind",
+    "ja": "裂傷",
+    "fr": "Brûlure du vent",
+    "icon": "/api/asset?path=ui/icon/215000/215526.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining wind damage over time.",
+      "de": "Erleidet schrittweise Windschaden.",
+      "ja": "風属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de vent sont subis."
     }
   },
   "4881": {
@@ -68460,17 +68460,17 @@
     }
   },
   "4891": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Petrification",
+    "de": "Stein",
+    "ja": "石化",
+    "fr": "Pétrification",
+    "icon": "/api/asset?path=ui/icon/215000/215001.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Stone-like rigidity is preventing the execution of actions.",
+      "de": "Die Versteinerung des Körpers verhindert das Ausführen jeglicher Kommandos.",
+      "ja": "手足が石化し、行動できなくなった状態。",
+      "fr": "Une rigidité semblable à celle de la pierre empêche toute action."
     }
   },
   "4892": {
@@ -68488,17 +68488,17 @@
     }
   },
   "4893": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Guerrilla Tactics",
+    "de": "Nadelstichtaktik",
+    "ja": "ヒット＆アウェイ",
+    "fr": "Tape & trace",
+    "icon": "/api/asset?path=ui/icon/218000/218315.tex&format=png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased and evasion is enhanced.",
+      "de": "Ausgeteilter Schaden und Ausweichrate sind erhöht.",
+      "ja": "与ダメージが上昇し、かつ回避率が向上した状態。",
+      "fr": "Les dégâts infligés et l'esquive sont augmentés."
     }
   },
   "4894": {
@@ -69384,115 +69384,115 @@
     }
   },
   "4957": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sleep Resistance Up",
+    "de": "Schlafresistenz +",
+    "ja": "睡眠耐性向上",
+    "fr": "Résistance au sommeil accrue",
+    "icon": "/api/asset?path=ui/icon/214000/214834.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sleep resistance is increased.",
+      "de": "Resistenz gegen Schlaf ist erhöht.",
+      "ja": "睡眠に対する耐性が向上した状態。",
+      "fr": "La résistance au sommeil est augmentée."
     }
   },
   "4958": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Paralysis Resistance Up",
+    "de": "Paralyseresistenz +",
+    "ja": "麻痺耐性向上",
+    "fr": "Résistance à la paralysie accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229046.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Paralysis resistance is increased.",
+      "de": "Resistenz gegen Paralyse ist erhöht.",
+      "ja": "麻痺に対する耐性が向上した状態。",
+      "fr": "La résistance à la paralysie est augmentée."
     }
   },
   "4959": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Petrification Resistance Up",
+    "de": "Steinresistenz +",
+    "ja": "石化耐性向上",
+    "fr": "Résistance à la pétrification accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229047.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Petrification resistance is increased.",
+      "de": "Resistenz gegen Stein ist erhöht.",
+      "ja": "石化に対する耐性が向上した状態。",
+      "fr": "La résistance à la pétrification est augmentée."
     }
   },
   "4960": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blind Resistance Up",
+    "de": "Blindresistenz +",
+    "ja": "暗闇耐性向上",
+    "fr": "Résistance à la cécité accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229048.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Blind resistance is increased.",
+      "de": "Resistenz gegen Blind ist erhöht.",
+      "ja": "暗闇に対する耐性が向上した状態。",
+      "fr": "La résistance à la cécité est augmentée."
     }
   },
   "4961": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Poison Resistance Up",
+    "de": "Giftresistenz +",
+    "ja": "毒耐性向上",
+    "fr": "Résistance au poison accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215648.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Poison resistance is increased.",
+      "de": "Resistenz gegen Gift ist erhöht.",
+      "ja": "毒に対する耐性が向上した状態。",
+      "fr": "La résistance au poison est augmentée."
     }
   },
   "4962": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Haste",
+    "de": "Hast",
+    "ja": "ヘイスト",
+    "fr": "Hâte",
+    "icon": "/api/asset?path=ui/icon/215000/215008.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are reduced.",
+      "de": "Die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verkürzt.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが短縮された状態。",
+      "fr": "La vitesse des attaques automatiques est augmentée, et les temps de lancement et de recharge des sorts et des techniques d'arme sont réduits."
     }
   },
   "4963": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Physical Vulnerability Down",
+    "de": "Verringerte physische Verwundbarkeit",
+    "ja": "被物理ダメージ軽減",
+    "fr": "Vulnérabilité physique diminuée",
+    "icon": "/api/asset?path=ui/icon/215000/215052.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage taken is reduced.",
+      "de": "Erlittener physischer Schaden ist verringert.",
+      "ja": "受ける物理ダメージが軽減される状態。",
+      "fr": "Les dégâts physiques reçus sont réduits."
     }
   },
   "4964": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Magic Vulnerability Down",
+    "de": "Verringerte Magie-Verwundbarkeit",
+    "ja": "被魔法ダメージ軽減",
+    "fr": "Vulnérabilité magique diminuée",
+    "icon": "/api/asset?path=ui/icon/215000/215056.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magic damage taken is reduced.",
+      "de": "Erlittener Magieschaden ist verringert.",
+      "ja": "受ける魔法ダメージが軽減される状態。",
+      "fr": "Les dégâts magiques reçus sont réduits."
     }
   },
   "4965": {
@@ -69944,87 +69944,87 @@
     }
   },
   "4997": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fire Resistance Up",
+    "de": "Feuerresistenz +",
+    "ja": "火属性耐性向上",
+    "fr": "Résistance au feu accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215028.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire resistance is increased.",
+      "de": "Resistenz gegen Feuer ist erhöht.",
+      "ja": "火属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément feu est augmentée."
     }
   },
   "4998": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Water Resistance Up",
+    "de": "Wasserresistenz +",
+    "ja": "水属性耐性向上",
+    "fr": "Résistance à l'eau accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215033.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Water resistance is increased.",
+      "de": "Resistenz gegen Wasser ist erhöht.",
+      "ja": "水属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément eau est augmentée."
     }
   },
   "4999": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Wind Resistance Up",
+    "de": "Windresistenz +",
+    "ja": "風属性耐性向上",
+    "fr": "Résistance au vent accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215030.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wind resistance is increased.",
+      "de": "Resistenz gegen Wind ist erhöht.",
+      "ja": "風属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément vent est augmentée."
     }
   },
   "5000": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Lightning Resistance Up",
+    "de": "Blitzresistenz +",
+    "ja": "雷属性耐性向上",
+    "fr": "Résistance à la foudre accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215032.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Lightning resistance is increased.",
+      "de": "Resistenz gegen Blitz ist erhöht.",
+      "ja": "雷属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément foudre est augmentée."
     }
   },
   "5001": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Earth Resistance Up",
+    "de": "Erdresistenz +",
+    "ja": "土属性耐性向上",
+    "fr": "Résistance à la terre accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215031.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earth resistance is increased.",
+      "de": "Resistenz gegen Erde ist erhöht.",
+      "ja": "土属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément terre est augmentée."
     }
   },
   "5002": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Ice Resistance Up",
+    "de": "Eisresistenz +",
+    "ja": "氷属性耐性向上",
+    "fr": "Résistance à la glace accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215029.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ice resistance is increased.",
+      "de": "Resistenz gegen Eis ist erhöht.",
+      "ja": "氷属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément glace est augmentée."
     }
   },
   "5003": {
@@ -70252,115 +70252,115 @@
     }
   },
   "5019": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Physical Damage Up",
+    "de": "Schadenswert +",
+    "ja": "物理ダメージ上昇",
+    "fr": "Bonus de dégâts physiques",
+    "icon": "/api/asset?path=ui/icon/215000/215050.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage dealt is increased.",
+      "de": "Ausgeteilter physischer Schaden ist erhöht.",
+      "ja": "物理ダメージが上昇した状態。",
+      "fr": "Les dégâts physiques infligés sont augmentés."
     }
   },
   "5020": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Magic Damage Up",
+    "de": "Magieschaden +",
+    "ja": "魔法ダメージ上昇",
+    "fr": "Bonus de dégâts magiques",
+    "icon": "/api/asset?path=ui/icon/215000/215054.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magic damage dealt is increased.",
+      "de": "Ausgeteilter Magieschaden ist erhöht.",
+      "ja": "魔法ダメージが上昇した状態。",
+      "fr": "Les dégâts magiques infligés sont augmentés."
     }
   },
   "5021": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Water Resistance Down",
+    "de": "Wasserresistenz -",
+    "ja": "水属性耐性低下",
+    "fr": "Résistance à l'eau réduite",
+    "icon": "/api/asset?path=ui/icon/217000/217421.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Water resistance is reduced.",
+      "de": "Resistenz gegen Wasser ist verringert.",
+      "ja": "水属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément eau est réduite."
     }
   },
   "5022": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Wind Resistance Down",
+    "de": "Windresistenz -",
+    "ja": "風属性耐性低下",
+    "fr": "Résistance au vent réduite",
+    "icon": "/api/asset?path=ui/icon/218000/218292.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wind resistance is reduced.",
+      "de": "Resistenz gegen Wind ist verringert.",
+      "ja": "風属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément vent est réduite."
     }
   },
   "5023": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Fire Resistance Down",
+    "de": "Feuerresistenz -",
+    "ja": "火属性耐性低下",
+    "fr": "Résistance au feu réduite",
+    "icon": "/api/asset?path=ui/icon/217000/217941.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire resistance is reduced.",
+      "de": "Resistenz gegen Feuer ist verringert.",
+      "ja": "火属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément feu est réduite."
     }
   },
   "5024": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Lightning Resistance Down",
+    "de": "Blitzresistenz -",
+    "ja": "雷属性耐性低下",
+    "fr": "Résistance à la foudre réduite",
+    "icon": "/api/asset?path=ui/icon/217000/217741.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Lightning resistance is reduced.",
+      "de": "Resistenz gegen Blitz ist verringert.",
+      "ja": "雷属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément foudre est réduite."
     }
   },
   "5025": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Earth Resistance Down",
+    "de": "Erdresistenz -",
+    "ja": "土属性耐性低下",
+    "fr": "Résistance à la terre réduite",
+    "icon": "/api/asset?path=ui/icon/218000/218512.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Earth resistance is reduced.",
+      "de": "Resistenz gegen Erde ist verringert.",
+      "ja": "土属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément terre est réduite."
     }
   },
   "5026": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Ice Resistance Down",
+    "de": "Eisresistenz -",
+    "ja": "氷属性耐性低下",
+    "fr": "Résistance à la glace réduite",
+    "icon": "/api/asset?path=ui/icon/218000/218692.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ice resistance is reduced.",
+      "de": "Resistenz gegen Eis ist verringert.",
+      "ja": "氷属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément glace est réduite."
     }
   },
   "5027": {
@@ -71932,45 +71932,45 @@
     }
   },
   "5139": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "ＨＰ自然回復無効",
+    "de": "LP-Regeneration unwirksam",
+    "ja": "ＨＰ自然回復無効",
+    "fr": "ＨＰ自然回復無効",
+    "icon": "/api/asset?path=ui/icon/216000/216825.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "ＨＰ自然回復が無効化された状態。",
+      "de": "Keine automatische LP-Regeneration.",
+      "ja": "ＨＰ自然回復が無効化された状態。",
+      "fr": "ＨＰ自然回復が無効化された状態。"
     }
   },
   "5140": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Poison",
+    "de": "Gift",
+    "ja": "毒",
+    "fr": "Poison",
+    "icon": "/api/asset?path=ui/icon/215000/215007.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5141": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Poison",
+    "de": "Gift",
+    "ja": "毒",
+    "fr": "Poison",
+    "icon": "/api/asset?path=ui/icon/217000/217001.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5142": {
@@ -72016,101 +72016,101 @@
     }
   },
   "5145": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Needles Out",
+    "de": "Nadeln ausfahren",
+    "ja": "針出し",
+    "fr": "Ça pique",
+    "icon": "/api/asset?path=ui/icon/229000/229052.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced while countering physical attacks.",
+      "de": "Erlittener Schaden ist verringert und physische Attacken werden gekontert.",
+      "ja": "受けるダメージが軽減された状態。物理攻撃を受けた場合、反撃ダメージを与える。",
+      "fr": "Les dégâts reçus sont réduits, et des dégâts sont infligés chaque fois qu'un coup est reçu."
     }
   },
   "5146": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Wit's End",
+    "de": "Zunehmende Verwirrung",
+    "ja": "徐々に混乱",
+    "fr": "Confusion progressive",
+    "icon": "/api/asset?path=ui/icon/220000/220221.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Feeling increasingly perplexed. Will become <span style=\"color:#ffffff\">Confused</span> upon reaching 16 stacks.",
+      "de": "Fühlt sich immer verwirrter. Wird bei 16 Stapeln <span style=\"color:#ffffff\">Konfus</span>.",
+      "ja": "徐々に混乱しつつある状態。スタック数が16になると混乱状態になる。",
+      "fr": "La folie s'installe peu à peu. L'effet inflige Confusion s'il est cumulé 16 fois."
     }
   },
   "5147": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/api/asset?path=ui/icon/215000/215519.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "5148": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "All Evens",
+    "de": "Alle Geraden",
+    "ja": "算術処理：偶数",
+    "fr": "Énigme paire",
+    "icon": "/api/asset?path=ui/icon/229000/229053.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Challenged by a riddle. Will result in punishment for those not standing on an even number when this effect expires.",
+      "de": "Vor ein Rätsel gestellt. Erleidet am Ende des Effekts abseits von geraden Zahlen Schaden.",
+      "ja": "算術の処理を課された状態。効果時間終了時に「偶数」以外のパネルに立っていた場合、ペナルティを受ける。",
+      "fr": "Une contrainte arithmétique est imposée. Se tenir sur une case n'étant pas un nombre pair causera une pénalité à la fin de l'effet."
     }
   },
   "5149": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "All Odds",
+    "de": "Alle Ungeraden",
+    "ja": "算術処理：奇数",
+    "fr": "Énigme impaire",
+    "icon": "/api/asset?path=ui/icon/229000/229054.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Challenged by a riddle. Will result in punishment for those not standing on an odd number when this effect expires.",
+      "de": "Vor ein Rätsel gestellt. Erleidet am Ende des Effekts abseits von ungeraden Zahlen Schaden.",
+      "ja": "算術の処理を課された状態。効果時間終了時に「奇数」以外のパネルに立っていた場合、ペナルティを受ける。",
+      "fr": "Une contrainte arithmétique est imposée. Se tenir sur une case n'étant pas un nombre impair causera une pénalité à la fin de l'effet."
     }
   },
   "5150": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "All Prime",
+    "de": "Alle Prim",
+    "ja": "算術処理：素数",
+    "fr": "Énigme première",
+    "icon": "/api/asset?path=ui/icon/229000/229055.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Challenged by a riddle. Will result in punishment for those not standing on a prime number when this effect expires.",
+      "de": "Vor ein Rätsel gestellt. Erleidet am Ende des Effekts abseits von Primzahlen Schaden.",
+      "ja": "算術の処理を課された状態。効果時間終了時に「素数」以外のパネルに立っていた場合、ペナルティを受ける。",
+      "fr": "Une contrainte arithmétique est imposée. Se tenir sur une case n'étant pas un nombre premier causera une pénalité à la fin de l'effet."
     }
   },
   "5151": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "All Three",
+    "de": "Alle Dreier",
+    "ja": "算術処理：3の倍数",
+    "fr": "Énigme triple",
+    "icon": "/api/asset?path=ui/icon/229000/229056.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Challenged by a riddle. Will result in punishment for those not standing on a multiple of three when this effect expires.",
+      "de": "Vor ein Rätsel gestellt. Erleidet am Ende des Effekts abseits von Vielfachen von drei Schaden.",
+      "ja": "算術の処理を課された状態。効果時間終了時に「3の倍数」以外のパネルに立っていた場合、ペナルティを受ける。",
+      "fr": "Une contrainte arithmétique est imposée. Se tenir sur une case n'étant pas un multiple de trois causera une pénalité à la fin de l'effet."
     }
   },
   "5152": {
@@ -72436,129 +72436,129 @@
     }
   },
   "5175": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Heavy",
+    "de": "Gewicht",
+    "ja": "ヘヴィ",
+    "fr": "Pesanteur",
+    "icon": "/api/asset?path=ui/icon/218000/218132.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is reduced.",
+      "de": "Bewegungsgeschwindigkeit ist verringert.",
+      "ja": "移動速度が低下した状態。",
+      "fr": "La vitesse de déplacement est réduite."
     }
   },
   "5176": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Briar",
+    "de": "Dorngestrüpp",
+    "ja": "野茨",
+    "fr": "Ronces sauvages",
+    "icon": "/api/asset?path=ui/icon/215000/215601.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Thick briar is reducing movement speed and causing damage over time. Prevents draw-in and knockback effects.",
+      "de": "Wuchernde Dornen verringern die Bewegungsgeschwindigkeit und verursachen schrittweise Schaden. Verhindern dafür Heranzieh- und Rückstoßeffekte. ",
+      "ja": "茨に足を絡め取られた状態。移動速度が低下し、ＨＰが徐々に失われる。ただし、引き寄せ、ノックバックを無効化する。",
+      "fr": "Les pieds sont bloqués par des ronces. La vitesse de déplacement est réduite et des PV sont graduellement perdus, en revanche l'état empêche d'être attiré ou projeté en arrière."
     }
   },
   "5177": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Freezing",
+    "de": "Allmähliche Kühlung",
+    "ja": "徐々に氷結",
+    "fr": "Congélation graduelle",
+    "icon": "/api/asset?path=ui/icon/220000/220161.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Body is slowly turning to ice. Will experience a <span style=\"color:#ffffff\">Deep Freeze</span> upon reaching 8 stacks.",
+      "de": "Wird allmählich zu Eis. Bei 8 Stapeln tritt <span style=\"color:#ffffff\">Tiefkühlung</span> ein.",
+      "ja": "徐々に氷結しつつある状態。スタック数が8になると氷結状態になる。",
+      "fr": "Le corps gèle petit à petit. L'effet devient Congélation s'il est accumulé 8 fois."
     }
   },
   "5178": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Growing Dread",
+    "de": "Wachsende Furcht",
+    "ja": "徐々に恐慌",
+    "fr": "Panique graduelle",
+    "icon": "/api/asset?path=ui/icon/220000/220181.tex&format=png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Slowly succumbing to inner demons. Will suffer <span style=\"color:#ffffff\">Hysteria</span> upon reaching 5 stacks.",
+      "de": "Wird immer ängstlicher. Bei 5 Stapeln tritt <span style=\"color:#ffffff\">Panik</span> ein.",
+      "ja": "恐怖が蓄積しつつある状態。スタック数が5になると恐慌状態になる。",
+      "fr": "Le corps cède petit à petit à la panique. L'effet devient Hystérie s'il est accumulé 5 fois."
     }
   },
   "5179": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "毒素保持",
+    "de": "Verborgenes Gift",
+    "ja": "毒素保持",
+    "fr": "毒素保持",
+    "icon": "/api/asset?path=ui/icon/215000/215538.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "潜在的に毒素を保持した状態。戦闘不能時、周囲に毒素を飛散させる。",
+      "de": "Trägt unbemerkt Gift in sich, das bei Kampfunfähigkeit in die Umgebung verteilt wird.",
+      "ja": "潜在的に毒素を保持した状態。戦闘不能時、周囲に毒素を飛散させる。",
+      "fr": "潜在的に毒素を保持した状態。戦闘不能時、周囲に毒素を飛散させる。"
     }
   },
   "5180": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Physical Vulnerability Up",
+    "de": "Erhöhte physische Verwundbarkeit",
+    "ja": "被物理ダメージ増加",
+    "fr": "Vulnérabilité physique augmentée",
+    "icon": "/api/asset?path=ui/icon/215000/215053.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage taken is increased.",
+      "de": "Erlittener physischer Schaden ist erhöht.",
+      "ja": "受ける物理ダメージが増加する状態。",
+      "fr": "Les dégâts physiques reçus sont augmentés."
     }
   },
   "5181": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Magic Vulnerability Up",
+    "de": "Erhöhte Magie-Verwundbarkeit",
+    "ja": "被魔法ダメージ増加",
+    "fr": "Vulnérabilité magique augmentée",
+    "icon": "/api/asset?path=ui/icon/215000/215057.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magic damage taken is increased.",
+      "de": "Erlittener Magieschaden ist erhöht.",
+      "ja": "受ける魔法ダメージが増加する状態。",
+      "fr": "Les dégâts magiques reçus sont augmentés."
     }
   },
   "5182": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Swelling",
+    "de": "Schwellung",
+    "ja": "徐々に膨張",
+    "fr": "Dilatation graduelle",
+    "icon": "/api/asset?path=ui/icon/220000/220201.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Slowly increasing in volume. Will become <span style=\"color:#ffffff\">Bloated</span> upon reaching 16 stacks.",
+      "de": "Wird stetig größer und bei 16 Stapeln zu  <span style=\"color:#ffffff\">Aufgebläht</span>.",
+      "ja": "徐々に膨張しつつある状態。スタック数が16になると膨張状態になる。",
+      "fr": "Le corps se dilate petit à petit. L'effet devient Dilatation s'il est accumulé 16 fois."
     }
   },
   "5183": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Toxicosis",
+    "de": "Giftlache",
+    "ja": "猛毒",
+    "fr": "Poison violent",
+    "icon": "/api/asset?path=ui/icon/218000/218561.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5184": {
@@ -72590,17 +72590,17 @@
     }
   },
   "5186": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Trailblazing",
+    "de": "Kühnheit",
+    "ja": "獣道",
+    "fr": "Sentier bestial",
+    "icon": "/api/asset?path=ui/icon/218000/218311.tex&format=png",
+    "maxStacks": 3,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Turning up the heat of battle. Maximum HP and damage dealt are increased.",
+      "de": "Maximal-LP und erteilter Schaden sind erhöht.",
+      "ja": "最大ＨＰが増加し、与えるダメージが上昇した状態。",
+      "fr": "Les PV maximums et les dégâts infligés sont augmentés."
     }
   },
   "5187": {
@@ -72758,31 +72758,31 @@
     }
   },
   "5198": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Astral Ascendancy",
+    "de": "Astraler Anstieg",
+    "ja": "星極性耐性向上",
+    "fr": "Résistance astrale accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229049.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire, wind, and lightning resistances are increased.",
+      "de": "Erhöhte Feuer-, Wind- und Blitzresistenz.",
+      "ja": "火属性、風属性、雷属性に対する耐性が向上した状態。",
+      "fr": "La résistance aux éléments feu, vent et foudre est augmentée."
     }
   },
   "5199": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Umbral Ascendancy",
+    "de": "Umbraler Anstieg",
+    "ja": "霊極性耐性向上",
+    "fr": "Résistance ombrale accrue",
+    "icon": "/api/asset?path=ui/icon/229000/229050.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Water, earth, and ice resistances are increased.",
+      "de": "Erhöhte Wasser-, Erd- und Eisresistenz.",
+      "ja": "水属性、土属性、氷属性に対する耐性が向上した状態。",
+      "fr": "La résistance aux éléments eau, terre et glace est augmentée."
     }
   },
   "5200": {
@@ -74690,87 +74690,87 @@
     }
   },
   "5336": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Fire Resistance Down",
+    "de": "Feuerresistenz -",
+    "ja": "火属性耐性低下",
+    "fr": "Résistance au feu réduite",
+    "icon": "/api/asset?path=ui/icon/217000/217941.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire resistance is reduced.",
+      "de": "Resistenz gegen Feuer ist verringert.",
+      "ja": "火属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément feu est réduite."
     }
   },
   "5337": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Water Resistance Down",
+    "de": "Wasserresistenz -",
+    "ja": "水属性耐性低下",
+    "fr": "Résistance à l'eau réduite",
+    "icon": "/api/asset?path=ui/icon/217000/217421.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Water resistance is reduced.",
+      "de": "Resistenz gegen Wasser ist verringert.",
+      "ja": "水属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément eau est réduite."
     }
   },
   "5338": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Vulnerability Down",
+    "de": "Verringerte Verwundbarkeit",
+    "ja": "被ダメージ低下",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/api/asset?path=ui/icon/217000/217301.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージが軽減される状態。",
+      "fr": "Les dégâts reçus sont réduits."
     }
   },
   "5339": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Physical Damage Up",
+    "de": "Schadenswert +",
+    "ja": "物理ダメージ上昇",
+    "fr": "Bonus de dégâts physiques",
+    "icon": "/api/asset?path=ui/icon/218000/218461.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage dealt is increased.",
+      "de": "Ausgeteilter physischer Schaden ist erhöht.",
+      "ja": "物理ダメージが上昇した状態。",
+      "fr": "Les dégâts physiques infligés sont augmentés."
     }
   },
   "5340": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Magic Damage Up",
+    "de": "Magieschaden +",
+    "ja": "魔法ダメージ上昇",
+    "fr": "Bonus de dégâts magiques",
+    "icon": "/api/asset?path=ui/icon/218000/218481.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magic damage dealt is increased.",
+      "de": "Ausgeteilter Magieschaden ist erhöht.",
+      "ja": "魔法ダメージが上昇した状態。",
+      "fr": "Les dégâts magiques infligés sont augmentés."
     }
   },
   "5341": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Unseen Force",
+    "de": "Pulsierende Ruinklinge",
+    "ja": "消失の魔刃・衝波",
+    "fr": "Force invisible",
+    "icon": "/api/asset?path=ui/icon/229000/229057.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Wounded by an invisible dagger and sustaining damage over time. A shockwave will erupt from where the dagger struck when this effect expires.",
+      "de": "Durch einen unsichtbaren Dolch verwundet, der Schaden über Zeit erteilt. Beim Enden des Effekts sendet der Dolch vom Einstichpunkt aus eine Schockwelle aus.",
+      "ja": "消失の魔刃を刺された状態。ＨＰが徐々に失われ、効果時間終了時に、刺さった魔刃から衝撃波が発生する。",
+      "fr": "Une monstrolame évanescente est plantée dans le corps. Des dégâts périodiques sont subis, et une onde de choc est lancée à la fin de l'effet."
     }
   },
   "5342": {
@@ -74970,17 +74970,17 @@
     }
   },
   "5356": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Heavy",
+    "de": "Gewicht",
+    "ja": "ヘヴィ",
+    "fr": "Pesanteur",
+    "icon": "/api/asset?path=ui/icon/215000/215002.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is reduced.",
+      "de": "Bewegungsgeschwindigkeit ist verringert.",
+      "ja": "移動速度が低下した状態。",
+      "fr": "La vitesse de déplacement est réduite."
     }
   },
   "5357": {
@@ -75320,59 +75320,59 @@
     }
   },
   "5381": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blind",
+    "de": "Blind",
+    "ja": "暗闇",
+    "fr": "Cécité",
+    "icon": "/api/asset?path=ui/icon/215000/215012.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Encroaching darkness is lowering accuracy.",
+      "de": "Vorübergehende Blindheit senkt die Präzision.",
+      "ja": "闇に囚われ、命中率が低下した状態。",
+      "fr": "Un voile d'obscurité diminue la précision."
     }
   },
   "5382": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Paralysis",
+    "de": "Paralyse",
+    "ja": "麻痺",
+    "fr": "Paralysie",
+    "icon": "/api/asset?path=ui/icon/215000/215006.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deadened nerves are sometimes preventing the execution of actions.",
+      "de": "Paralysierte Nerven lassen Kommandos ab und zu aussetzen.",
+      "ja": "身体が痺れ、時々行動できなくなる状態。",
+      "fr": "Une paralysie empêche parfois d'effectuer des actions."
     }
   },
   "5383": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Nightmare",
+    "de": "Albtraum",
+    "ja": "悪夢",
+    "fr": "Cauchemar",
+    "icon": "/api/asset?path=ui/icon/215000/215573.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Troubled sleep is preventing the execution of actions.",
+      "de": "In einem bösen Traum gefangen und handlungsunfähig.",
+      "ja": "深い眠りに落ち、行動できなくなった状態。",
+      "fr": "Un profond sommeil empêche toute action."
     }
   },
   "5384": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Windburn",
+    "de": "Beißender Wind",
+    "ja": "裂傷",
+    "fr": "Brûlure du vent",
+    "icon": "/api/asset?path=ui/icon/215000/215526.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining wind damage over time.",
+      "de": "Erleidet schrittweise Windschaden.",
+      "ja": "風属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de vent sont subis."
     }
   },
   "5385": {
@@ -75404,143 +75404,143 @@
     }
   },
   "5387": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Toxicosis",
+    "de": "Giftlache",
+    "ja": "猛毒",
+    "fr": "Poison violent",
+    "icon": "/api/asset?path=ui/icon/215000/215517.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5388": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Paralysis",
+    "de": "Paralyse",
+    "ja": "麻痺",
+    "fr": "Paralysie",
+    "icon": "/api/asset?path=ui/icon/215000/215006.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Deadened nerves are sometimes preventing the execution of actions.",
+      "de": "Paralysierte Nerven lassen Kommandos ab und zu aussetzen.",
+      "ja": "身体が痺れ、時々行動できなくなる状態。",
+      "fr": "Une paralysie empêche parfois d'effectuer des actions."
     }
   },
   "5389": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blind",
+    "de": "Blind",
+    "ja": "暗闇",
+    "fr": "Cécité",
+    "icon": "/api/asset?path=ui/icon/215000/215012.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Encroaching darkness is lowering accuracy.",
+      "de": "Vorübergehende Blindheit senkt die Präzision.",
+      "ja": "闇に囚われ、命中率が低下した状態。",
+      "fr": "Un voile d'obscurité diminue la précision."
     }
   },
   "5390": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Haste+",
+    "de": "Hast +",
+    "ja": "ヘイスト＋",
+    "fr": "Hâte +",
+    "icon": "/api/asset?path=ui/icon/217000/217381.tex&format=png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are reduced.",
+      "de": "Die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verkürzt.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが短縮された状態。",
+      "fr": "La vitesse des attaques automatiques est augmentée, et les temps de lancement et de recharge des sorts et des techniques d'arme sont réduits."
     }
   },
   "5391": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/api/asset?path=ui/icon/217000/217061.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "5392": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Magic Vulnerability Down",
+    "de": "Magie-Verwundbarkeit -",
+    "ja": "被魔法ダメージ軽減",
+    "fr": "Vulnérabilité magique diminuée",
+    "icon": "/api/asset?path=ui/icon/217000/217761.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Magic damage taken is reduced.",
+      "de": "Erlittener Magieschaden ist verringert.",
+      "ja": "受ける魔法ダメージが軽減される状態。",
+      "fr": "Les dégâts magiques reçus sont réduits."
     }
   },
   "5393": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Physical Vulnerability Down",
+    "de": "Physische Verwundbarkeit -",
+    "ja": "被物理ダメージ軽減",
+    "fr": "Vulnérabilité physique diminuée",
+    "icon": "/api/asset?path=ui/icon/217000/217781.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage taken is reduced.",
+      "de": "Erlittener physischer Schaden ist verringert.",
+      "ja": "受ける物理ダメージが軽減される状態。",
+      "fr": "Les dégâts physiques reçus sont réduits."
     }
   },
   "5394": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Rehabilitation",
+    "de": "Rehabilitation",
+    "ja": "徐々にＨＰ回復",
+    "fr": "Recouvrement",
+    "icon": "/api/asset?path=ui/icon/217000/217521.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "連続してＨＰが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "5395": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "High Wire",
+    "de": "Hochstimmung",
+    "ja": "ハイテンション",
+    "fr": "Excitation",
+    "icon": "/api/asset?path=ui/icon/218000/218601.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Heightened excitement is causing actions to become erratic.",
+      "de": "Bestens gelaunt.",
+      "ja": "テンションが高くなった状態。",
+      "fr": "L'état d'activité est décuplé du fait d'une grande excitation."
     }
   },
   "5396": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Slow",
+    "de": "Gemach",
+    "ja": "スロウ",
+    "fr": "Lenteur",
+    "icon": "/api/asset?path=ui/icon/215000/215009.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are increased.",
+      "de": "Die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verlängert.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長された状態。",
+      "fr": "La vitesse des attaques automatiques est réduite, et les temps de lancement et de recharge des sorts et des techniques d'arme sont allongés."
     }
   },
   "5397": {
@@ -75649,7 +75649,7 @@
     "icon": "/api/asset?path=ui/icon/229000/229994.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "Will be hit by a surge of wind from the east when this effect expires.",
+      "en": "Will be hit by a surge of wind from the west when this effect expires.",
       "de": "Mit einem zeitlich befristeten Fluch belegt. Wird bei Ablauf der Wirkungsdauer von einer Windböe aus Westen getroffen.",
       "ja": "時限の呪詛が刻まれた状態。効果時間終了時に、西から突風を受ける。",
       "fr": "Un puissant vent d'ouest est subi à la fin de l'effet."
@@ -75670,17 +75670,17 @@
     }
   },
   "5406": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Recharge",
+    "de": "Aufladung",
+    "ja": "魔力供給",
+    "fr": "Recharge",
+    "icon": "/api/asset?path=ui/icon/220000/220141.tex&format=png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Charged with aether.",
+      "de": "Ausgeteilter Schaden ist erhöht, <br>(Re-)Aktivierungszeiten und Auto-Attacke beschleunigt.",
+      "ja": "魔力が供給された状態。",
+      "fr": "Le corps a reçu de l'énergie éthérée."
     }
   },
   "5407": {
@@ -75712,17 +75712,17 @@
     }
   },
   "5409": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/api/asset?path=ui/icon/215000/215519.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "5410": {
@@ -75880,17 +75880,17 @@
     }
   },
   "5421": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Certain death when counter reaches zero.",
+      "de": "Wird kampfunfähig, sobald der Timer des Fluchs auf 0 sinkt.",
+      "ja": "カウント0で戦闘不能に陥る状態。",
+      "fr": "Mort certaine lorsque le compteur atteint zéro."
     }
   },
   "5422": {
@@ -75908,31 +75908,31 @@
     }
   },
   "5423": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Popoto Skin",
+    "de": "Töffelchenhaut",
+    "ja": "お芋ちゃんスキン",
+    "fr": "Peau de Patatoune",
+    "icon": "/api/asset?path=ui/icon/215000/215021.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Relying upon a beloved companion. All damage taken is reduced.",
+      "de": "Erhält Kraft von treuem Gefährten. Sämtlicher erlittener Schaden ist verringert.",
+      "ja": "相棒の力を借りて自身を強化し、全ての被ダメージが軽減した状態。",
+      "fr": "A emprunté le pouvoir du compagnon. Tous les dégâts reçus sont réduits."
     }
   },
   "5424": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Wit's End",
+    "de": "Zunehmende Verwirrung",
+    "ja": "徐々に混乱",
+    "fr": "Confusion progressive",
+    "icon": "/api/asset?path=ui/icon/220000/220221.tex&format=png",
+    "maxStacks": 12,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Feeling increasingly perplexed. Will become <span style=\"color:#ffffff\">Confused</span> upon reaching 12 stacks.",
+      "de": "Fühlt sich immer verwirrter. Wird bei 16 Stapeln <span style=\"color:#ffffff\">Konfus</span>.",
+      "ja": "徐々に混乱しつつある状態。スタック数が12になると混乱状態になる。",
+      "fr": "La folie s'installe peu à peu. L'effet inflige Confusion s'il est cumulé 12 fois."
     }
   },
   "5425": {
@@ -75950,17 +75950,17 @@
     }
   },
   "5426": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "ストンスキン",
+    "de": "Steinhaut",
+    "ja": "ストンスキン",
+    "fr": "ストンスキン",
+    "icon": "/api/asset?path=ui/icon/210000/210401.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "一定量のダメージを軽減する状態。",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "一定量のダメージを軽減する状態。",
+      "fr": "一定量のダメージを軽減する状態。"
     }
   },
   "5427": {
@@ -75992,17 +75992,17 @@
     }
   },
   "5429": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind+",
+    "de": "Fessel +",
+    "ja": "バインド＋",
+    "fr": "Entrave +",
+    "icon": "/api/asset?path=ui/icon/215000/215602.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "5430": {
@@ -76020,87 +76020,87 @@
     }
   },
   "5431": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "突属性耐性低下［強］",
+    "de": "Stichresistenz - (stark)",
+    "ja": "突属性耐性低下［強］",
+    "fr": "突属性耐性低下［強］",
+    "icon": "/api/asset?path=ui/icon/215000/215818.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "突属性に対する耐性が著しく低下した状態。",
+      "de": "Stichresistenz ist stark verringert.",
+      "ja": "突属性に対する耐性が著しく低下した状態。",
+      "fr": "突属性に対する耐性が著しく低下した状態。"
     }
   },
   "5432": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "風属性耐性低下［強］",
+    "de": "Windresistenz - (stark)",
+    "ja": "風属性耐性低下［強］",
+    "fr": "風属性耐性低下［強］",
+    "icon": "/api/asset?path=ui/icon/215000/215721.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "風属性に対する耐性が著しく低下した状態。",
+      "de": "Windresistenz ist stark verringert.",
+      "ja": "風属性に対する耐性が著しく低下した状態。",
+      "fr": "風属性に対する耐性が著しく低下した状態。"
     }
   },
   "5433": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Brood Rage",
+    "de": "Brutrage",
+    "ja": "母鳥の怒り",
+    "fr": "Colère maternelle",
+    "icon": "/api/asset?path=ui/icon/217000/217221.tex&format=png",
+    "maxStacks": 16,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The mother zu is maddened by the death of her brood. Damage dealt is increased.",
+      "de": "Rasend vor Wut über den Verlust des Geleges. Ausgeteilter Schaden ist erhöht.",
+      "ja": "卵を壊され怒り狂った状態。与ダメージが上昇する。",
+      "fr": "La colère due à la destruction des œufs augmente les dégâts infligés."
     }
   },
   "5434": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Paralyzing Spikes",
+    "de": "Paralysestachel",
+    "ja": "パライズスパイク",
+    "fr": "Pics paralysants",
+    "icon": "/api/asset?path=ui/icon/215000/215502.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental spikes are dealing lightning damage to and paralyzing attackers.",
+      "de": "Elementare Stacheln erteilen Blitzschaden und paralysieren.",
+      "ja": "雷属性の反撃ダメージを与え、麻痺効果を付与する状態。",
+      "fr": "Inflige des dégâts de foudre ainsi que l'effet Paralysie chaque fois qu'un coup est reçu."
     }
   },
   "5435": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "被物理ダメージ軽減",
+    "de": "Physische Verwundbarkeit -",
+    "ja": "被物理ダメージ軽減",
+    "fr": "被物理ダメージ軽減",
+    "icon": "/api/asset?path=ui/icon/215000/215052.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "受ける物理ダメージが軽減される状態。",
+      "de": "Erlittener physischer Schaden ist verringert.",
+      "ja": "受ける物理ダメージが軽減される状態。",
+      "fr": "受ける物理ダメージが軽減される状態。"
     }
   },
   "5436": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "被魔法ダメージ軽減",
+    "de": "Magie-Verwundbarkeit -",
+    "ja": "被魔法ダメージ軽減",
+    "fr": "被魔法ダメージ軽減",
+    "icon": "/api/asset?path=ui/icon/215000/215056.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "受ける魔法ダメージが軽減される状態。",
+      "de": "Erlittener Magieschaden ist verringert.",
+      "ja": "受ける魔法ダメージが軽減される状態。",
+      "fr": "受ける魔法ダメージが軽減される状態。"
     }
   },
   "5437": {
@@ -76174,17 +76174,17 @@
     }
   },
   "5442": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bleeding",
+    "de": "Schmerz",
+    "ja": "ペイン",
+    "fr": "Saignement",
+    "icon": "/api/asset?path=ui/icon/215000/215530.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time.",
+      "de": "Erleidet schrittweise Schaden.",
+      "ja": "無属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques neutres sont subis."
     }
   },
   "5443": {
@@ -76272,45 +76272,45 @@
     }
   },
   "5449": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Physical Damage Up",
+    "de": "Schadenswert +",
+    "ja": "物理ダメージ上昇",
+    "fr": "Bonus de dégâts physiques",
+    "icon": "/api/asset?path=ui/icon/218000/218461.tex&format=png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Physical damage dealt is increased.",
+      "de": "Ausgeteilter physischer Schaden ist erhöht.",
+      "ja": "物理ダメージが上昇した状態。",
+      "fr": "Les dégâts physiques infligés sont augmentés."
     }
   },
   "5450": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/api/asset?path=ui/icon/217000/217061.tex&format=png",
+    "maxStacks": 5,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is increased.",
+      "de": "Ausgeteilter Schaden ist erhöht.",
+      "ja": "与ダメージが上昇した状態。",
+      "fr": "Les dégâts infligés sont augmentés."
     }
   },
   "5451": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Damage Down",
+    "de": "Schaden -",
+    "ja": "ダメージ低下",
+    "fr": "Malus de dégâts",
+    "icon": "/api/asset?path=ui/icon/215000/215520.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is reduced.",
+      "de": "Ausgeteilter Schaden ist verringert.",
+      "ja": "与ダメージが低下した状態。",
+      "fr": "Les dégâts infligés sont réduits."
     }
   },
   "5452": {
@@ -76356,17 +76356,17 @@
     }
   },
   "5455": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/api/asset?path=ui/icon/215000/215003.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "5456": {
@@ -76468,17 +76468,17 @@
     }
   },
   "5463": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Excellence",
+    "de": "Exzellenz",
+    "ja": "エクセレンス",
+    "fr": "Excellence",
+    "icon": "/api/asset?path=ui/icon/216000/216701.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Impervious to most attacks. Damage dealt is increased.",
+      "de": "Immun gegen fast alle Attacken. Ausgeteilter Schaden ist erhöht.",
+      "ja": "一部を除くすべてのダメージを無効化し、かつ与えるダメージが増加する状態。",
+      "fr": "Insensible à la plupart des attaques, et les dégâts infligés sont augmentés."
     }
   },
   "5464": {
@@ -76496,17 +76496,17 @@
     }
   },
   "5465": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Blaze Spikes",
+    "de": "Feuerstachel",
+    "ja": "ブレイズスパイク",
+    "fr": "Pointes de feu",
+    "icon": "/api/asset?path=ui/icon/215000/215508.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Elemental spikes are dealing fire damage to attackers.",
+      "de": "Der Gegner erleidet bei jedem Angriff Feuerschaden.",
+      "ja": "火属性の反撃ダメージを与える状態。",
+      "fr": "Une barrière protectrice de feu blesse les attaquants."
     }
   },
   "5466": {
@@ -76916,101 +76916,101 @@
     }
   },
   "5495": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Burns",
+    "de": "Brandwunde",
+    "ja": "火傷",
+    "fr": "Brûlure",
+    "icon": "/api/asset?path=ui/icon/215000/215524.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining fire damage over time.",
+      "de": "Erleidet schrittweise Feuerschaden.",
+      "ja": "火属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de feu sont subis."
     }
   },
   "5496": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dropsy",
+    "de": "Wassersucht",
+    "ja": "水毒",
+    "fr": "Œdème",
+    "icon": "/api/asset?path=ui/icon/215000/215529.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining water damage over time.",
+      "de": "Erleidet schrittweise Wasserschaden.",
+      "ja": "水属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques d'eau sont subis."
     }
   },
   "5497": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Windburn",
+    "de": "Beißender Wind",
+    "ja": "裂傷",
+    "fr": "Brûlure du vent",
+    "icon": "/api/asset?path=ui/icon/215000/215526.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining wind damage over time.",
+      "de": "Erleidet schrittweise Windschaden.",
+      "ja": "風属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de vent sont subis."
     }
   },
   "5498": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Electrocution",
+    "de": "Stromschlag",
+    "ja": "感電",
+    "fr": "Électrocution",
+    "icon": "/api/asset?path=ui/icon/215000/215528.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining lightning damage over time.",
+      "de": "Erleidet schrittweise Blitzschaden.",
+      "ja": "雷属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de foudre sont subis."
     }
   },
   "5499": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sludge",
+    "de": "Schlamm",
+    "ja": "汚泥",
+    "fr": "Emboué",
+    "icon": "/api/asset?path=ui/icon/215000/215527.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining earth damage over time.",
+      "de": "Erleidet schrittweise Erdschaden.",
+      "ja": "土属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de terre sont subis."
     }
   },
   "5500": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Frostbite",
+    "de": "Erfrierung",
+    "ja": "凍傷",
+    "fr": "Gelure",
+    "icon": "/api/asset?path=ui/icon/215000/215525.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining ice damage over time.",
+      "de": "Erleidet schrittweise Eisschaden.",
+      "ja": "氷属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de glace sont subis."
     }
   },
   "5501": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bleeding",
+    "de": "Schmerz",
+    "ja": "ペイン",
+    "fr": "Saignement",
+    "icon": "/api/asset?path=ui/icon/215000/215530.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time.",
+      "de": "Erleidet schrittweise Schaden.",
+      "ja": "無属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques neutres sont subis."
     }
   },
   "5502": {
@@ -77490,31 +77490,31 @@
     }
   },
   "5536": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Brand of the Sullen",
+    "de": "Mal des Leids",
+    "ja": "悲嘆の烙印",
+    "fr": "Marque de la désolation",
+    "icon": "/api/asset?path=ui/icon/218000/218041.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken by <span style=\"color:#ffffff\">Sullen Gaze</span> is increased.",
+      "de": "Erlittener Schaden durch <span style=\"color:#ffffff\">Blick des Leids</span> ist erhöht.",
+      "ja": "悲嘆の烙印を押された状態。「悲嘆の視線」を受けた際の被ダメージが上昇する。",
+      "fr": "Les dégâts infligés par Vision de désolation sont augmentés."
     }
   },
   "5537": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "Brand of the Ireful",
+    "de": "Mal des Zorns",
+    "ja": "憤怒の烙印",
+    "fr": "Marque de la fureur",
+    "icon": "/api/asset?path=ui/icon/218000/218061.tex&format=png",
+    "maxStacks": 4,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken by <span style=\"color:#ffffff\">Ireful Gaze</span> is increased.",
+      "de": "Erlittener Schaden durch <span style=\"color:#ffffff\">Blick des Zorns</span> ist erhöht.",
+      "ja": "憤怒の烙印を押された状態。「憤怒の視線」を受けた際の被ダメージが上昇する。",
+      "fr": "Les dégâts infligés par Vision de fureur sont augmentés."
     }
   },
   "5538": {
@@ -77700,73 +77700,73 @@
     }
   },
   "5551": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fire Resistance Up",
+    "de": "Feuerresistenz +",
+    "ja": "火属性耐性向上",
+    "fr": "Résistance au feu accrue",
+    "icon": "/api/asset?path=ui/icon/215000/215028.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fire resistance is increased.",
+      "de": "Resistenz gegen Feuer ist erhöht.",
+      "ja": "火属性に対する耐性が向上する。",
+      "fr": "La résistance à l'élément feu est augmentée."
     }
   },
   "5552": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Lightning Resistance Down",
+    "de": "Blitzresistenz -",
+    "ja": "雷属性耐性低下",
+    "fr": "Résistance à la foudre réduite",
+    "icon": "/api/asset?path=ui/icon/215000/215271.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Lightning resistance is reduced.",
+      "de": "Resistenz gegen Blitz ist verringert.",
+      "ja": "雷属性に対する耐性が低下した状態。",
+      "fr": "La résistance à l'élément foudre est réduite."
     }
   },
   "5553": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Toxicosis",
+    "de": "Giftlache",
+    "ja": "猛毒",
+    "fr": "Poison violent",
+    "icon": "/api/asset?path=ui/icon/215000/215517.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5554": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Toxicosis",
+    "de": "Giftlache",
+    "ja": "猛毒",
+    "fr": "Poison violent",
+    "icon": "/api/asset?path=ui/icon/215000/215517.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Toxins are causing damage over time.",
+      "de": "Erleidet schrittweise Schaden durch Gift.",
+      "ja": "毒に冒された状態。ＨＰが徐々に失われる。",
+      "fr": "Des dégâts périodiques de poison sont subis."
     }
   },
   "5555": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind+",
+    "de": "Fessel +",
+    "ja": "バインド＋",
+    "fr": "Entrave +",
+    "icon": "/api/asset?path=ui/icon/215000/215602.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "5556": {
@@ -77854,17 +77854,17 @@
     }
   },
   "5562": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "maxStacks": 0,
+    "en": "High Wire",
+    "de": "Hochstimmung",
+    "ja": "ハイテンション",
+    "fr": "Excitation",
+    "icon": "/api/asset?path=ui/icon/218000/218601.tex&format=png",
+    "maxStacks": 8,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Heightened excitement is causing actions to become erratic.",
+      "de": "Bestens gelaunt.",
+      "ja": "テンションが高くなった状態。",
+      "fr": "L'état d'activité est décuplé du fait d'une grande excitation."
     }
   },
   "5563": {
@@ -78190,17 +78190,17 @@
     }
   },
   "5586": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Enmity Up",
+    "de": "Erhöhte Feindseligkeit",
+    "ja": "敵視上昇",
+    "fr": "Inimitié augmentée",
+    "icon": "/api/asset?path=ui/icon/216000/216722.tex&format=png",
     "maxStacks": 0,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Enmity is increased.",
+      "de": "Feindseligkeit ist erhöht.",
+      "ja": "自身に向けられる敵視が上昇する状態。",
+      "fr": "La génération d'inimitié est augmentée."
     }
   },
   "5587": {
@@ -78386,6 +78386,3506 @@
     }
   },
   "5600": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5601": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5602": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5603": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5604": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5605": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5606": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5607": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5608": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5609": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5610": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5611": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5612": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5613": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5614": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5615": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5616": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5617": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5618": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5619": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5620": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5621": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5622": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5623": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5624": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5625": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5626": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5627": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5628": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5629": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5630": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5631": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5632": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5633": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5634": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5635": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5636": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5637": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5638": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5639": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5640": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5641": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5642": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5643": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5644": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5645": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5646": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5647": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5648": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5649": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5650": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5651": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5652": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5653": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5654": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5655": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5656": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5657": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5658": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5659": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5660": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5661": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5662": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5663": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5664": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5665": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5666": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5667": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5668": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5669": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5670": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5671": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5672": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5673": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5674": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5675": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5676": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5677": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5678": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5679": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5680": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5681": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5682": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5683": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5684": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5685": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5686": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5687": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5688": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5689": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5690": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5691": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5692": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5693": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5694": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5695": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5696": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5697": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5698": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5699": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5700": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5701": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5702": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5703": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5704": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5705": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5706": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5707": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5708": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5709": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5710": {
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/api/asset?path=ui/icon/215000/215003.tex&format=png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
+    }
+  },
+  "5711": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5712": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5713": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5714": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5715": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5716": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5717": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5718": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5719": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5720": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5721": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5722": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5723": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5724": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5725": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5726": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5727": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5728": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5729": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5730": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5731": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5732": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5733": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5734": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5735": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5736": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5737": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5738": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5739": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5740": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5741": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5742": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5743": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5744": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5745": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5746": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5747": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5748": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5749": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5750": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5751": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5752": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5753": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5754": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5755": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5756": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5757": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5758": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5759": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5760": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5761": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5762": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5763": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5764": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5765": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5766": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5767": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5768": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5769": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5770": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5771": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5772": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5773": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5774": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5775": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5776": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5777": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5778": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5779": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5780": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5781": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5782": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5783": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5784": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5785": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5786": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5787": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5788": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5789": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5790": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5791": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5792": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5793": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5794": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5795": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5796": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5797": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5798": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5799": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5800": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5801": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5802": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5803": {
+    "en": "Stun",
+    "de": "Betäubung",
+    "ja": "スタン",
+    "fr": "Étourdissement",
+    "icon": "/api/asset?path=ui/icon/215000/215004.tex&format=png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Unable to execute actions.",
+      "de": "Betäubte Sinne verhindern das Ausführen jeglicher Kommandos.",
+      "ja": "行動できなくなった状態。",
+      "fr": "Toute action est impossible."
+    }
+  },
+  "5804": {
+    "en": "Slow",
+    "de": "Gemach",
+    "ja": "スロウ",
+    "fr": "Lenteur",
+    "icon": "/api/asset?path=ui/icon/215000/215009.tex&format=png",
+    "maxStacks": 0,
+    "description": {
+      "en": "Weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay are increased.",
+      "de": "Die Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verlängert.",
+      "ja": "オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムが延長された状態。",
+      "fr": "La vitesse des attaques automatiques est réduite, et les temps de lancement et de recharge des sorts et des techniques d'arme sont allongés."
+    }
+  },
+  "5805": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5806": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5807": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5808": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5809": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5810": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5811": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5812": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5813": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5814": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5815": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5816": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5817": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5818": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5819": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5820": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5821": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5822": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5823": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5824": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5825": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5826": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5827": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5828": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5829": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5830": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5831": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5832": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5833": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5834": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5835": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5836": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5837": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5838": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5839": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5840": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5841": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5842": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5843": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5844": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5845": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5846": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5847": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5848": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5849": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "maxStacks": 0,
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "5850": {
     "en": "",
     "de": "",
     "ja": "",

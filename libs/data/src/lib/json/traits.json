@@ -10335,78 +10335,78 @@
     }
   },
   "690": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Wild Heart",
+    "de": "Wildes Herz",
+    "ja": "獣心",
+    "fr": "Instinct de bête",
+    "icon": "/api/asset?path=ui/icon/006000/006601.tex&format=png",
+    "level": 4,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows for <span style=\"color:#ffffff\">TP Gauge</span> accumulation upon landing certain weaponskill combos.",
+      "de": "Erlaubt es, mit Kombos bestimmter Waffenfertigkeiten den <span style=\"color:#ffffff\">TP-Balken</span> aufzuladen.",
+      "ja": "<span style=\"color:#ffffff\">ＴＰ</span>が上昇するようになる。<br><span style=\"color:#ffffff\">発動条件：</span>特定のウェポンスキルのコンボ成功時",
+      "fr": "Permet à votre <span style=\"color:#ffffff\">Jauge de PT</span> de se remplir lorsque vous réalisez des combos de techniques d'arme (hors combos instinctifs) avec succès."
     }
   },
   "691": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Wild Heart II",
+    "de": "Wildes Herz II",
+    "ja": "獣心II",
+    "fr": "Instinct de bête II",
+    "icon": "/api/asset?path=ui/icon/006000/006602.tex&format=png",
+    "level": 8,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows for <span style=\"color:#ffffff\">Familiar TP Gauge</span> accumulation upon the landing of auto-attacks or <span style=\"color:#ffffff\">Aetheric Burst</span>.",
+      "de": "Erlaubt es, mit Kombos bestimmter Waffenfertigkeiten den <span style=\"color:#ffffff\">TP-Balken der Bestie</span> aufzuladen.",
+      "ja": "<span style=\"color:#ffffff\">ペットのＴＰ</span>が上昇するようになる。<br><span style=\"color:#ffffff\">発動条件：</span>ペットのオートアタックおよびエーテルバーストの命中時",
+      "fr": "Permet à la <span style=\"color:#ffffff\">Jauge de PT de la bête</span> de se remplir lorsque votre bête réussit une attaque automatique ou utilise Explosion éthérée avec succès."
     }
   },
   "692": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Battlehorn Mastery",
+    "de": "Einender Ruf",
+    "ja": "呼び笛マスタリー",
+    "fr": "Maîtrise de Corne d'appel",
+    "icon": "/api/asset?path=ui/icon/006000/006603.tex&format=png",
+    "level": 18,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Grants the effect of <span style=\"color:#ffffff\">One with Nature</span> upon summoning a familiar.",
+      "de": "Gewährt beim Rufen einer Bestie den Status <span style=\"color:#ffffff\">Eins mit der Natur</span>.",
+      "ja": "自身に<span style=\"color:#ffffff\">「人獣同調」</span>が付与される。<br><span style=\"color:#ffffff\">効果時間：</span>永続<br><span style=\"color:#ffffff\">発動条件：</span>ペットの召喚時",
+      "fr": "Permet de recevoir <span style=\"color:#ffffff\">Connexion animale</span> lorsque vous appelez une bête."
     }
   },
   "693": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Wild Heart IV",
+    "de": "Wildes Herz IV",
+    "ja": "獣心IV",
+    "fr": "Instinct de bête IV",
+    "icon": "/api/asset?path=ui/icon/006000/006608.tex&format=png",
+    "level": 40,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Grants 1 stack of <span style=\"color:#ffffff\">Natural Instinct</span> upon completing a combo with a familiar instinctual skill.",
+      "de": "Gewährt bei erfolgreichem Abschluss einer Kombo mit einer instinktiven Bestien-Fertigkeit 1 Stapel <span style=\"color:#ffffff\">Natürlicher Instinkt</span>.",
+      "ja": "自身に<span style=\"color:#ffffff\">「獣心［従］」</span>が付与される。<br><span style=\"color:#ffffff\">発動条件：</span>ペットのウェポンスキルを使用して獣心技連携を成功させたとき",
+      "fr": "Permet de recevoir un degré d'<span style=\"color:#ffffff\">Instinct compagnon</span> lorsque votre bête utilise une technique d'arme déclenchant avec succès un combo instinctif."
     }
   },
   "694": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Wild Heart III",
+    "de": "Wildes Herz III",
+    "ja": "獣心III",
+    "fr": "Instinct de bête III",
+    "icon": "/api/asset?path=ui/icon/006000/006604.tex&format=png",
+    "level": 28,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Grants 1 stack of <span style=\"color:#ffffff\">Mastered Instinct</span> upon completing a combo with a beastmaster instinctual skill.",
+      "de": "Gewährt bei erfolgreichem Abschluss einer Kombo mit einer instinktiven Bestienbändiger-Fertigkeit 1 Stapel <span style=\"color:#ffffff\">Rationaler Instinkt</span>.",
+      "ja": "自身に<span style=\"color:#ffffff\">「獣心［主］」</span>が付与される。<br><span style=\"color:#ffffff\">発動条件：</span>魔獣使いのウェポンスキルを使用して獣心技連携を成功させたとき",
+      "fr": "Permet de recevoir un degré d'<span style=\"color:#ffffff\">Instinct maître</span> lorsque vous utilisez une technique d'arme déclenchant avec succès un combo instinctif."
     }
   },
   "695": {
@@ -11220,63 +11220,63 @@
     }
   },
   "749": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Tempered Release Mastery",
+    "de": "Verbessertes Entfesseln",
+    "ja": "はなつマスタリー",
+    "fr": "Maîtrise de Salve",
+    "icon": "/api/asset?path=ui/icon/006000/006610.tex&format=png",
+    "level": 44,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Grants <span style=\"color:#ffffff\">Lingering Vantage</span> upon using <span style=\"color:#ffffff\">Tempered Release</span>.<br><span style=\"color:#ffffff\">Duration:</span> 60s",
+      "de": "Das Ausführen von <span style=\"color:#ffffff\">Entfesseln</span> gewährt <span style=\"color:#ffffff\">Schleichender Vorteil</span>.<br>Dauer: 60 Sekunden",
+      "ja": "自身に<span style=\"color:#ffffff\">「さいごのいちげき効果アップ」</span>が付与される。<br><span style=\"color:#ffffff\">効果時間：</span>60秒<br><span style=\"color:#ffffff\">発動条件：</span>はなつ実行時",
+      "fr": "Permet de recevoir <span style=\"color:#ffffff\">Va-tout amélioré</span> lorsque vous utilisez <span style=\"color:#ffffff\">Salve</span>.<br><span style=\"color:#ffffff\">Durée&nbsp;:</span> 60s"
     }
   },
   "750": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Enhanced Borrow",
+    "de": "Verbessertes Borgen",
+    "ja": "かりるマスタリー",
+    "fr": "Maîtrise d'Assimilation",
+    "icon": "/api/asset?path=ui/icon/006000/006611.tex&format=png",
+    "level": 46,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Grants <span style=\"color:#ffffff\">Lingering Vantage</span> upon using <span style=\"color:#ffffff\">Borrow</span>.<br><span style=\"color:#ffffff\">Duration:</span> 60s",
+      "de": "Das Ausführen von <span style=\"color:#ffffff\">Borgen</span> gewährt <span style=\"color:#ffffff\">Schleichender Vorteil</span>.<br>Dauer: 60 Sekunden",
+      "ja": "自身に<span style=\"color:#ffffff\">「さいごのいちげき効果アップ」</span>が付与される。<br><span style=\"color:#ffffff\">効果時間：</span>60秒<br><span style=\"color:#ffffff\">発動条件：</span>かりる実行時",
+      "fr": "Permet de recevoir <span style=\"color:#ffffff\">Va-tout amélioré</span> lorsque vous utilisez <span style=\"color:#ffffff\">Assimilation</span>.<br><span style=\"color:#ffffff\">Durée&nbsp;:</span> 60s"
     }
   },
   "751": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Enhanced Shield Charge",
+    "de": "Verbesserter Schildansturm",
+    "ja": "シールドチャージ効果アップ",
+    "fr": "Charge de bouclier améliorée",
+    "icon": "/api/asset?path=ui/icon/006000/006607.tex&format=png",
+    "level": 36,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows the accumulation of charges for consecutive uses of <span style=\"color:#ffffff\">Shield Charge</span>.<br><span style=\"color:#ffffff\">Maximum Charges:</span> 3",
+      "de": "Erlaubt es, Aufladungen für <span style=\"color:#ffffff\">Schildansturm</span> zu sammeln, um ihn wiederholt einzusetzen.<br>Maximale Ladungen: 3",
+      "ja": "シールドチャージがチャージアクションに変化する。<br><span style=\"color:#ffffff\">最大チャージ数：</span>3",
+      "fr": "Permet de cumuler plusieurs charges pour <span style=\"color:#ffffff\">Charge de bouclier</span>.<br><span style=\"color:#ffffff\">Maximum de charges&nbsp;:</span> 3"
     }
   },
   "752": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Beastmastery",
+    "de": "Angriffslust",
+    "ja": "アクション威力アップ",
+    "fr": "Actions améliorées",
+    "icon": "/api/asset?path=ui/icon/006000/006806.tex&format=png",
+    "level": 38,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Increases the potency of <span style=\"color:#ffffff\">Smash Axe</span> to 160 and <span style=\"color:#ffffff\">Shield Charge</span> to 300.",
+      "de": "Erhöht den Attacke-Wert von <span style=\"color:#ffffff\">Schmetteraxt</span> auf 160 und den von <span style=\"color:#ffffff\">Schildansturm</span> auf 300.",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffffff\">スマッシュの威力：</span>160<br><span style=\"color:#ffffff\">シールドチャージの威力：</span>300",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffffff\">Puissance de Fracas&nbsp;:</span> 160<br><span style=\"color:#ffffff\">Puissance de Charge de bouclier&nbsp;:</span> 300"
     }
   },
   "753": {
@@ -11295,78 +11295,78 @@
     }
   },
   "754": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Battlehorn Mastery II",
+    "de": "Einender Ruf II",
+    "ja": "呼び笛マスタリーII",
+    "fr": "Maîtrise de Corne d'appel II",
+    "icon": "/api/asset?path=ui/icon/006000/006605.tex&format=png",
+    "level": 30,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resets the recast timer for <span style=\"color:#ffffff\">Tempered Release</span> upon summoning a familiar.",
+      "de": "Setzt beim Rufen einer Bestie die Reaktivierungszeit von <span style=\"color:#ffffff\">Entfesseln</span> zurück.",
+      "ja": "はなつのリキャストタイムをリセットする。<br><span style=\"color:#ffffff\">発動条件：</span>ペットの召喚時",
+      "fr": "Réinitialise le temps de recharge de <span style=\"color:#ffffff\">Salve</span> lorsque vous appelez une bête."
     }
   },
   "755": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Battlehorn Mastery III",
+    "de": "Einender Ruf III",
+    "ja": "呼び笛マスタリーIII",
+    "fr": "Maîtrise de Corne d'appel III",
+    "icon": "/api/asset?path=ui/icon/006000/006606.tex&format=png",
+    "level": 34,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Resets the recast timer for <span style=\"color:#ffffff\">Borrow</span> upon summoning a familiar.",
+      "de": "Setzt beim Rufen einer Bestie die Reaktivierungszeit von <span style=\"color:#ffffff\">Borgen</span> zurück.",
+      "ja": "かりるのリキャストタイムをリセットする。<br><span style=\"color:#ffffff\">発動条件：</span>ペットの召喚時",
+      "fr": "Réinitialise le temps de recharge d'<span style=\"color:#ffffff\">Assimilation</span> lorsque vous appelez une bête."
     }
   },
   "756": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Enhanced Rally",
+    "de": "Animiertes Anspornen",
+    "ja": "きあい効果アップ",
+    "fr": "Poussée d'énergie améliorée",
+    "icon": "/api/asset?path=ui/icon/006000/006609.tex&format=png",
+    "level": 42,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Reduces <span style=\"color:#ffffff\">Rally</span> recast time to 90 seconds.",
+      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#ffffff\">Anspornen</span> auf 90 Sekunden.",
+      "ja": "きあいのリキャストタイムを90秒に短縮する。",
+      "fr": "Réduit à 90s le temps de recharge de <span style=\"color:#ffffff\">Poussée d'énergie</span>."
     }
   },
   "757": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Enhanced Rallying Cheer",
+    "de": "Animiertes Anfeuern",
+    "ja": "おうえん効果アップ",
+    "fr": "Encouragements améliorés",
+    "icon": "/api/asset?path=ui/icon/006000/006612.tex&format=png",
+    "level": 48,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Reduces <span style=\"color:#ffffff\">Rallying Cheer</span> recast time to 90 seconds.",
+      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#ffffff\">Anfeuern</span> auf 90 Sekunden.",
+      "ja": "おうえんのリキャストタイムを90秒に短縮する。",
+      "fr": "Réduit à 90s le temps de recharge d'<span style=\"color:#ffffff\">Encouragements</span>."
     }
   },
   "758": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
-    "level": 0,
-    "job": 0,
+    "en": "Instinctual Mastery",
+    "de": "Synergieschub",
+    "ja": "獣心技マスタリー",
+    "fr": "Maîtrise des techniques instinctives",
+    "icon": "/api/asset?path=ui/icon/006000/006613.tex&format=png",
+    "level": 50,
+    "job": 43,
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ffffff\">Avalanche Axe</span> to <span style=\"color:#ffffff\">Brutal Rage</span>, <span style=\"color:#ffffff\">Mistral Axe</span> to <span style=\"color:#ffffff\">Hawkish Talons</span>, <span style=\"color:#ffffff\">Spinning Axe</span> to <span style=\"color:#ffffff\">Risen Fall</span>, and <span style=\"color:#ffffff\">Gale Axe</span> to <span style=\"color:#ffffff\">Calamity</span> upon accumulating 250 TP.",
+      "de": "Verbessert bei 250 TP <span style=\"color:#ffffff\">Hieblawine</span> zu <span style=\"color:#ffffff\">Brachiale Wut</span>, <span style=\"color:#ffffff\">Mistralaxt</span> zu <span style=\"color:#ffffff\">Falkenklaue</span>, <span style=\"color:#ffffff\">Axtwirbel</span> zu <span style=\"color:#ffffff\">Aufstieg und Fall</span> und <span style=\"color:#ffffff\">Hiebsturm</span> zu <span style=\"color:#ffffff\">Kalamität</span>.",
+      "ja": "アバランチアクスがブルータルレイジに、ミストラルアクスがホークスパイクに、スピニングアクスがライジングフォールに、ラファールアクスがカラミティに変化する。<br><span style=\"color:#ffffff\">発動条件：</span>ＴＰ250",
+      "fr": "Lorsque vos PT sont à 250, remplace <span style=\"color:#ffffff\">Hache avalanche</span> par <span style=\"color:#ffffff\">Rage brutale</span>, <span style=\"color:#ffffff\">Hache mistral</span> par <span style=\"color:#ffffff\">Piqué du faucon</span>, <span style=\"color:#ffffff\">Hache tournoyante</span> par <span style=\"color:#ffffff\">Montée-descente</span> et <span style=\"color:#ffffff\">Hache rafale</span> par <span style=\"color:#ffffff\">Calamité</span>."
     }
   },
   "759": {

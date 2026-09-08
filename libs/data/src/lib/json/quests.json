@@ -96386,39 +96386,78 @@
   },
   "71011": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Winter's Dream",
+      "ja": "いつかの雪景色",
+      "de": "Irgendwo im Nirgendwo",
+      "fr": "Nostalgie dans les neiges"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071201.tex&format=png",
+    "rewards": [
+      {
+        "id": 41758,
+        "amount": 1
+      },
+      {
+        "id": 41759,
+        "amount": 1
+      },
+      {
+        "id": 41760,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101496.tex&format=png"
   },
   "71012": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Rush of Cold Wind",
+      "ja": "寒風の吹くとき",
+      "de": "Wo die kalten Winde wehen",
+      "fr": "L'heure de briser la glace"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071201.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101497.tex&format=png"
   },
   "71013": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The World Locked in Ice",
+      "ja": "凍てついた世界",
+      "de": "Ein Land von Eis und Schnee",
+      "fr": "Le monde gelé"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071201.tex&format=png"
   },
   "71014": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Windborne",
+      "ja": "風の向かう先へ",
+      "de": "Wohin der Wind weht",
+      "fr": "Portés par le vent"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/071000/071201.tex&format=png",
+    "rewards": [
+      {
+        "id": 52428,
+        "amount": 1
+      },
+      {
+        "id": 52429,
+        "amount": 1
+      },
+      {
+        "id": 52430,
+        "amount": 1
+      },
+      {
+        "id": 52431,
+        "amount": 1
+      },
+      {
+        "id": 52432,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101498.tex&format=png"
   },
   "71015": {
     "name": {
@@ -96584,109 +96623,219 @@
   },
   "71026": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Strangers in the Wood",
+      "ja": "魔獣の使い手たち",
+      "de": "Unbekannte Spezies",
+      "fr": "Un drôle d'animal"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 47474,
+        "amount": 1
+      },
+      {
+        "id": 47470,
+        "amount": 1
+      },
+      {
+        "id": 47472,
+        "amount": 1
+      },
+      {
+        "id": 52649,
+        "amount": 1
+      },
+      {
+        "id": 49805,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71027": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Wilds Call",
+      "ja": "初めての相棒",
+      "de": "Der erste Gefährte",
+      "fr": "Mon premier compagnon"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 50732,
+        "amount": 1
+      },
+      {
+        "id": 50733,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71028": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hearts Aligned",
+      "ja": "魔獣と心通わせて",
+      "de": "Die perfekte Wellenlänge",
+      "fr": "La leçon de dressage"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 50734,
+        "amount": 1
+      },
+      {
+        "id": 50735,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71029": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Master of the Lhu",
+      "ja": "ルー派の使役術",
+      "de": "Die Schule der Lhu",
+      "fr": "La bête humaine"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 50736,
+        "amount": 1
+      },
+      {
+        "id": 50737,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71030": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Into the Crucible",
+      "ja": "盤上の戦い、闘獣練",
+      "de": "Die Bretter, die die Bestienwelt bedeuten",
+      "fr": "Un voyage d'apprentissage"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 50738,
+        "amount": 1
+      },
+      {
+        "id": 50739,
+        "amount": 1
+      },
+      {
+        "id": 52650,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71031": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Wit as Weaponry",
+      "ja": "姉弟子と勉強ゴブ！",
+      "de": "Willzzu sammenlernen?",
+      "fr": "La fierté de l'aînée"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71032": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gobsmacked",
+      "ja": "同門対決、第二盤",
+      "de": "Schlagabtausch der Schüler",
+      "fr": "Double rivalité"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 50740,
+        "amount": 1
+      },
+      {
+        "id": 50741,
+        "amount": 1
+      },
+      {
+        "id": 52651,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71033": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sin of Blood",
+      "ja": "贖罪の魔獣使い",
+      "de": "Die büßende Bändigerin",
+      "fr": "La repentance d'une dresseuse"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71034": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Beastmaster's Path",
+      "ja": "貪食のガトラー",
+      "de": "Guttler der Ausweider",
+      "fr": "La gardienne affamée"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 50742,
+        "amount": 1
+      },
+      {
+        "id": 50743,
+        "amount": 1
+      },
+      {
+        "id": 52652,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71035": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bonds Unbroken",
+      "ja": "人と獣が結ぶ絆",
+      "de": "Bestialische Bande",
+      "fr": "Des liens incassables"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/062000/062423.tex&format=png",
+    "rewards": [
+      {
+        "id": 52263,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101486.tex&format=png"
   },
   "71036": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Free for All",
+      "ja": "猛者の試練、特一盤",
+      "de": "Eine neue Herausforderung",
+      "fr": "Un défi pour les mordus"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
   "71037": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mastery Rematch",
+      "ja": "盤上の王者、特二盤",
+      "de": "Der Rückkampf",
+      "fr": "Soif de revanche"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },
@@ -97371,10 +97520,10 @@
   },
   "71045": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Blazing Trails",
+      "ja": "極めるは獣の道",
+      "de": "Mit Kühnheit voran",
+      "fr": "Arpenter le sentier bestial"
     },
     "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
   },

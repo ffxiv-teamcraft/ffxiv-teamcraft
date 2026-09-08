@@ -105864,7 +105864,7 @@
     "fr": "Rouleau “Moebius”"
   },
   "17645": {
-    "en": "Aetherosphere Orchestrion Roll",
+    "en": "Aetherpause Orchestrion Roll",
     "de": "Notenrolle von „Aetherosphere“",
     "ja": "オーケストリオン譜:エーテル圏",
     "fr": "Rouleau “Aetherosphere”"
@@ -266088,10 +266088,10 @@
     "fr": "Mémoquartz inhabituel fantasmagorique"
   },
   "44349": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Presumably Special Timeworn Map",
+    "de": "Vergilbte Epenleder-Karten",
+    "ja": "古ぼけた地図S5",
+    "fr": "Vieille carte au trésor inhabituelle V"
   },
   "44350": {
     "en": "Seal Rock Framer's Kit",
@@ -284814,10 +284814,10 @@
     "fr": "Coton mycélien pour l'exploration cosmique"
   },
   "47470": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Hand Axe",
+    "de": "Bestienpfleger-Handaxt",
+    "ja": "ビーストハーダー・ハンドアクス",
+    "fr": "Hachette de soigneur de bêtes"
   },
   "47471": {
     "en": "Ultralight Fungal Cloth",
@@ -284826,10 +284826,10 @@
     "fr": "Tissu mycélien ultra léger"
   },
   "47472": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Hoplon",
+    "de": "Bestienpfleger-Hoplon",
+    "ja": "ビーストハーダー・ホプロン",
+    "fr": "Hoplon de soigneur de bêtes"
   },
   "47473": {
     "en": "Spare Cloth",
@@ -284838,10 +284838,10 @@
     "fr": "Tissu d'entretien"
   },
   "47474": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Soul of the Beastmaster",
+    "de": "Bestienbändiger-Kristall",
+    "ja": "魔獣使いの証",
+    "fr": "Cristal de dresseur"
   },
   "47475": {
     "en": "Flame-resistant Work Cloth",
@@ -298824,100 +298824,100 @@
     "fr": "L'Art du mahjong&nbsp;: Metem"
   },
   "49805": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Cu Sith Gourd",
+    "de": "Cu Sith-Schale",
+    "ja": "コルナゴの壺:クーシー",
+    "fr": "Urne de cu sith"
   },
   "49806": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crab Gourd",
+    "de": "Krabben-Schale",
+    "ja": "コルナゴの壺:クラブ",
+    "fr": "Urne de crabe"
   },
   "49807": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Slime Gourd",
+    "de": "Schleim-Schale",
+    "ja": "コルナゴの壺:スライム",
+    "fr": "Urne de gluant"
   },
   "49808": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dullahan Gourd",
+    "de": "Dullahan-Schale",
+    "ja": "コルナゴの壺:デュラハン",
+    "fr": "Urne de dullahan"
   },
   "49809": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Worm Gourd",
+    "de": "Riesenwurm-Schale",
+    "ja": "コルナゴの壺:ジャイアントウォーム",
+    "fr": "Urne de ver géant"
   },
   "49810": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Drake Gourd",
+    "de": "Drakon-Schale",
+    "ja": "コルナゴの壺:ドレイク",
+    "fr": "Urne de draconide"
   },
   "49811": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Antling Gourd",
+    "de": "Treiberameisen-Schale",
+    "ja": "コルナゴの壺:アントリング",
+    "fr": "Urne de fourmi"
   },
   "49812": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Chimera Gourd",
+    "de": "Chimären-Schale",
+    "ja": "コルナゴの壺:キマイラ",
+    "fr": "Urne de chimère"
   },
   "49813": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hydra Gourd",
+    "de": "Hydra-Schale",
+    "ja": "コルナゴの壺:ハイドラ",
+    "fr": "Urne d'hydre"
   },
   "49814": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Damselfly Gourd",
+    "de": "Kleinlibellen-Schale",
+    "ja": "コルナゴの壺:ダムゼルフライ",
+    "fr": "Urne de demoiselle"
   },
   "49815": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Rotting Goobbue Gourd",
+    "de": "Verrottende-Goobbue-Schale",
+    "ja": "コルナゴの壺:ロッティング・グゥーブー",
+    "fr": "Urne de goobbue putrescent"
   },
   "49816": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Zu Gourd",
+    "de": "Montisaurus-Schale",
+    "ja": "コルナゴの壺:ズー",
+    "fr": "Urne de zu"
   },
   "49817": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ice Golem Gourd",
+    "de": "Eisgolem-Schale",
+    "ja": "コルナゴの壺:アイスゴーレム",
+    "fr": "Urne de golem de glace"
   },
   "49818": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Karlabos Gourd",
+    "de": "Karlabos-Schale",
+    "ja": "コルナゴの壺:カーラボス",
+    "fr": "Urne de karlabos"
   },
   "49819": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Rafflesia Gourd",
+    "de": "Rafflesia-Schale",
+    "ja": "コルナゴの壺:ラフレシア",
+    "fr": "Urne de rafflesia"
   },
   "49820": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Behemoth Gourd",
+    "de": "Behemoth-Schale",
+    "ja": "コルナゴの壺:ベヒーモス",
+    "fr": "Urne de béhémoth"
   },
   "49821": {
     "en": "Gallant Shepherd",
@@ -304356,316 +304356,316 @@
     "fr": "Tenue de seigneur Casque Sombre"
   },
   "50727": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Circlet",
+    "de": "Bestienpfleger-Haarreif",
+    "ja": "ビーストハーダー・サークレット",
+    "fr": "Diadème de soigneur de bêtes"
   },
   "50728": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Coat",
+    "de": "Bestienpfleger-Mantel",
+    "ja": "ビーストハーダー・コート",
+    "fr": "Manteau de soigneur de bêtes"
   },
   "50729": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Gloves",
+    "de": "Bestienpfleger-Handschuhe",
+    "ja": "ビーストハーダー・グローブ",
+    "fr": "Gants de soigneur de bêtes"
   },
   "50730": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Bottoms",
+    "de": "Bestienpfleger-Hose",
+    "ja": "ビーストハーダー・ボトム",
+    "fr": "Bas-de-corps de soigneur de bêtes"
   },
   "50731": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Boots",
+    "de": "Bestienpfleger-Stiefel",
+    "ja": "ビーストハーダー・ブーツ",
+    "fr": "Bottes de soigneur de bêtes"
   },
   "50732": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Tender's Hand Axe",
+    "de": "Bestienhirten-Handaxt",
+    "ja": "ビーストテンダー・ハンドアクス",
+    "fr": "Hachette d'éleveur de bêtes"
   },
   "50733": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Tender's Hoplon",
+    "de": "Bestienhirten-Hoplon",
+    "ja": "ビーストテンダー・ホプロン",
+    "fr": "Hoplon d'éleveur de bêtes"
   },
   "50734": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Handler's Tabar",
+    "de": "Bestienführer-Tabar",
+    "ja": "ビーストハンドラー・タバール",
+    "fr": "Tabar de dompteur de bêtes"
   },
   "50735": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Handler's Pelta",
+    "de": "Bestienführer-Pelte",
+    "ja": "ビーストハンドラー・ペルタ",
+    "fr": "Pelte de dompteur de bêtes"
   },
   "50736": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Whisperer's Hand Axe",
+    "de": "Bestienflüsterer-Handaxt",
+    "ja": "ビーストウィスパラー・ハンドアクス",
+    "fr": "Hachette de chuchoteur de bêtes"
   },
   "50737": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Whisperer's Round Shield",
+    "de": "Bestienflüsterer-Rundschild",
+    "ja": "ビーストウィスパラー・ラウンドシールド",
+    "fr": "Bouclier rond de chuchoteur de bêtes"
   },
   "50738": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Tamer's Tabar",
+    "de": "Bestienbesänftiger-Tabar",
+    "ja": "ビーストテイマー・タバール",
+    "fr": "Tabar d'apprivoiseur de bêtes"
   },
   "50739": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Tamer's Hoplon",
+    "de": "Bestienbesänftiger-Hoplon",
+    "ja": "ビーストテイマー・ホプロン",
+    "fr": "Hoplon d'apprivoiseur de bêtes"
   },
   "50740": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastwarden's Hand Axe",
+    "de": "Bestienwärter-Handaxt",
+    "ja": "ビーストワーデン・ハンドアクス",
+    "fr": "Hachette de gardien de bêtes"
   },
   "50741": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastwarden's Buckler",
+    "de": "Bestienwärter-Faustschild",
+    "ja": "ビーストワーデン・バックラー",
+    "fr": "Rondache de gardien de bêtes"
   },
   "50742": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hand Axe",
+    "de": "Bestienbändiger-Handaxt",
+    "ja": "ビーストマスター・ハンドアクス",
+    "fr": "Hachette de dresseur de bêtes"
   },
   "50743": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hoplon",
+    "de": "Bestienbändiger-Hoplon",
+    "ja": "ビーストマスター・ホプロン",
+    "fr": "Hoplon de dresseur de bêtes"
   },
   "50744": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Horns",
+    "de": "Bestienbändiger-Hörner",
+    "ja": "ビーストマスター・ホーン",
+    "fr": "Cornes de dresseur de bêtes"
   },
   "50745": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Furs",
+    "de": "Bestienbändiger-Fell",
+    "ja": "ビーストマスター・ファーズ",
+    "fr": "Fourrure de dresseur de bêtes"
   },
   "50746": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Armguards",
+    "de": "Bestienbändiger-Armschützer",
+    "ja": "ビーストマスター・アームガード",
+    "fr": "Garde-bras de dresseur de bêtes"
   },
   "50747": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Slops",
+    "de": "Bestienbändiger-Beinlinge",
+    "ja": "ビーストマスター・スロップ",
+    "fr": "Trousses de dresseur de bêtes"
   },
   "50748": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Boots",
+    "de": "Bestienbändiger-Stiefel",
+    "ja": "ビーストマスター・ブーツ",
+    "fr": "Bottes de dresseur de bêtes"
   },
   "50749": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hand Axe +1",
+    "de": "Bestienbändiger-Handaxt +1",
+    "ja": "ビーストマスター・ハンドアクス+1",
+    "fr": "Hachette de dresseur de bêtes +1"
   },
   "50750": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hoplon +1",
+    "de": "Bestienbändiger-Hoplon +1",
+    "ja": "ビーストマスター・ホプロン+1",
+    "fr": "Hoplon de dresseur de bêtes +1"
   },
   "50751": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Horns +1",
+    "de": "Bestienbändiger-Hörner +1",
+    "ja": "ビーストマスター・ホーン+1",
+    "fr": "Cornes de dresseur de bêtes +1"
   },
   "50752": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Furs +1",
+    "de": "Bestienbändiger-Fell +1",
+    "ja": "ビーストマスター・ファーズ+1",
+    "fr": "Fourrure de dresseur de bêtes +1"
   },
   "50753": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Armguards +1",
+    "de": "Bestienbändiger-Armschützer +1",
+    "ja": "ビーストマスター・アームガード+1",
+    "fr": "Garde-bras de dresseur de bêtes +1"
   },
   "50754": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Slops +1",
+    "de": "Bestienbändiger-Beinlinge +1",
+    "ja": "ビーストマスター・スロップ+1",
+    "fr": "Trousses de dresseur de bêtes +1"
   },
   "50755": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Boots +1",
+    "de": "Bestienbändiger-Stiefel +1",
+    "ja": "ビーストマスター・ブーツ+1",
+    "fr": "Bottes de dresseur de bêtes +1"
   },
   "50756": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hand Axe +2",
+    "de": "Bestienbändiger-Handaxt +2",
+    "ja": "ビーストマスター・ハンドアクス+2",
+    "fr": "Hachette de dresseur de bêtes +2"
   },
   "50757": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hoplon +2",
+    "de": "Bestienbändiger-Hoplon +2",
+    "ja": "ビーストマスター・ホプロン+2",
+    "fr": "Hoplon de dresseur de bêtes +2"
   },
   "50758": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Horns +2",
+    "de": "Bestienbändiger-Hörner +2",
+    "ja": "ビーストマスター・ホーン+2",
+    "fr": "Cornes de dresseur de bêtes +2"
   },
   "50759": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Furs +2",
+    "de": "Bestienbändiger-Fell +2",
+    "ja": "ビーストマスター・ファーズ+2",
+    "fr": "Fourrure de dresseur de bêtes +2"
   },
   "50760": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Armguards +2",
+    "de": "Bestienbändiger-Armschützer +2",
+    "ja": "ビーストマスター・アームガード+2",
+    "fr": "Garde-bras de dresseur de bêtes +2"
   },
   "50761": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Slops +2",
+    "de": "Bestienbändiger-Beinlinge +2",
+    "ja": "ビーストマスター・スロップ+2",
+    "fr": "Trousses de dresseur de bêtes +2"
   },
   "50762": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Boots +2",
+    "de": "Bestienbändiger-Stiefel +2",
+    "ja": "ビーストマスター・ブーツ+2",
+    "fr": "Bottes de dresseur de bêtes +2"
   },
   "50763": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hand Axe +3",
+    "de": "Bestienbändiger-Handaxt +3",
+    "ja": "ビーストマスター・ハンドアクス+3",
+    "fr": "Hachette de dresseur de bêtes +3"
   },
   "50764": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hoplon +3",
+    "de": "Bestienbändiger-Hoplon +3",
+    "ja": "ビーストマスター・ホプロン+3",
+    "fr": "Hoplon de dresseur de bêtes +3"
   },
   "50765": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Horns +3",
+    "de": "Bestienbändiger-Hörner +3",
+    "ja": "ビーストマスター・ホーン+3",
+    "fr": "Cornes de dresseur de bêtes +3"
   },
   "50766": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Furs +3",
+    "de": "Bestienbändiger-Fell +3",
+    "ja": "ビーストマスター・ファーズ+3",
+    "fr": "Fourrure de dresseur de bêtes +3"
   },
   "50767": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Armguards +3",
+    "de": "Bestienbändiger-Armschützer +3",
+    "ja": "ビーストマスター・アームガード+3",
+    "fr": "Garde-bras de dresseur de bêtes +3"
   },
   "50768": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Slops +3",
+    "de": "Bestienbändiger-Beinlinge +3",
+    "ja": "ビーストマスター・スロップ+3",
+    "fr": "Trousses de dresseur de bêtes +3"
   },
   "50769": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Boots +3",
+    "de": "Bestienbändiger-Stiefel +3",
+    "ja": "ビーストマスター・ブーツ+3",
+    "fr": "Bottes de dresseur de bêtes +3"
   },
   "50770": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hand Axe +4",
+    "de": "Bestienbändiger-Handaxt +4",
+    "ja": "ビーストマスター・ハンドアクス+4",
+    "fr": "Hachette de dresseur de bêtes +4"
   },
   "50771": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Hoplon +4",
+    "de": "Bestienbändiger-Hoplon +4",
+    "ja": "ビーストマスター・ホプロン+4",
+    "fr": "Hoplon de dresseur de bêtes +4"
   },
   "50772": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Horns +4",
+    "de": "Bestienbändiger-Hörner +4",
+    "ja": "ビーストマスター・ホーン+4",
+    "fr": "Cornes de dresseur de bêtes +4"
   },
   "50773": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Furs +4",
+    "de": "Bestienbändiger-Fell +4",
+    "ja": "ビーストマスター・ファーズ+4",
+    "fr": "Fourrure de dresseur de bêtes +4"
   },
   "50774": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Armguards +4",
+    "de": "Bestienbändiger-Armschützer +4",
+    "ja": "ビーストマスター・アームガード+4",
+    "fr": "Garde-bras de dresseur de bêtes +4"
   },
   "50775": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Slops +4",
+    "de": "Bestienbändiger-Beinlinge +4",
+    "ja": "ビーストマスター・スロップ+4",
+    "fr": "Trousses de dresseur de bêtes +4"
   },
   "50776": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Boots +4",
+    "de": "Bestienbändiger-Stiefel +4",
+    "ja": "ビーストマスター・ブーツ+4",
+    "fr": "Bottes de dresseur de bêtes +4"
   },
   "50777": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Guttler",
+    "de": "Guttler",
+    "ja": "ガトラー",
+    "fr": "Dévoreuse"
   },
   "50778": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Kornago Hoplon",
+    "de": "Kornago-Hoplon",
+    "ja": "コルナゴホプロン",
+    "fr": "Hoplon du cornago"
   },
   "50779": {
     "en": "Dark City Treno (Dawntrail) Orchestrion Roll",
@@ -307632,10 +307632,10 @@
     "fr": "Aqueduc en ruines"
   },
   "51273": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster Display Crystal",
+    "de": "Bestienbändiger-Tischkristall",
+    "ja": "クリスタルトロフィー:魔獣使い",
+    "fr": "Trophée en cristal de dresseur"
   },
   "51274": {
     "en": "",
@@ -310398,28 +310398,28 @@
     "fr": "L'Art du portrait&nbsp;: Ultima S21"
   },
   "51734": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Faded Remnant of Resilience",
+    "de": "Matter Bestienkern",
+    "ja": "低純度ビーストコア",
+    "fr": "Essence bestiale de basse qualité"
   },
   "51735": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Bright Remnant of Resilience",
+    "de": "Strahlender Bestienkern",
+    "ja": "高純度ビーストコア",
+    "fr": "Essence bestiale de haute qualité"
   },
   "51736": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastliege's Hand Axe",
+    "de": "Bestienherrscher-Handaxt",
+    "ja": "ビーストリージュ・ハンドアクス",
+    "fr": "Hachette de seigneur belliciste"
   },
   "51737": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastliege's Hoplon",
+    "de": "Bestienherrscher-Hoplon",
+    "ja": "ビーストリージュ・ホプロン",
+    "fr": "Hoplon de seigneur belliciste"
   },
   "51738": {
     "en": "",
@@ -310428,16 +310428,16 @@
     "fr": ""
   },
   "51739": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Guttler Unleashed",
+    "de": "Entfesselter Guttler",
+    "ja": "ガトラーRE",
+    "fr": "Dévoreuse affranchie"
   },
   "51740": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Augmented Kornago Hoplon",
+    "de": "Modifiziertes Kornago-Hoplon",
+    "ja": "コルナゴホプロンRE",
+    "fr": "Hoplon du cornago amélioré"
   },
   "51741": {
     "en": "",
@@ -310458,16 +310458,16 @@
     "fr": ""
   },
   "51744": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Pitchfork",
+    "de": "Heugabel",
+    "ja": "ピッチフォーク",
+    "fr": "Fourche"
   },
   "51745": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Earrings",
+    "de": "Bestienbändiger-Ohrringe",
+    "ja": "ビーストマスター・イヤリング",
+    "fr": "Boucles d'oreilles de dresseur de bêtes"
   },
   "51746": {
     "en": "",
@@ -310476,22 +310476,22 @@
     "fr": ""
   },
   "51747": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Modern Aesthetics - Loosened Locks",
+    "de": "Magazin „Moderne Ästhetik - Lockere Duttlocken“",
+    "ja": "ヘアカタログ:ハーフアップボブ",
+    "fr": "Méthode de coiffure “Carré avec demi-chignon”"
   },
   "51748": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Faces We Wear - Teardrop Glasses",
+    "de": "Magazin „Der Durchblick - Tränenbrille“",
+    "ja": "スタイルカタログ:ティアドロップグラス",
+    "fr": "Lunettes aviateur (magazine de mode)"
   },
   "51749": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Laudouble",
+    "de": "Laudoppelgängerin",
+    "ja": "ラウダブル",
+    "fr": "Laudouble"
   },
   "51750": {
     "en": "Irregular Tomestone of Astronomy I",
@@ -311958,10 +311958,10 @@
     "fr": "L'Art du portrait&nbsp;: Échos de Vana'diel"
   },
   "51994": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster Framer's Kit",
+    "de": "Portraitmaterial (Bestienbändiger)",
+    "ja": "ポートレート教材:魔獣使い",
+    "fr": "L'Art du portrait&nbsp;: dresseur"
   },
   "51995": {
     "en": "Occult Omniscience Framer's Kit",
@@ -313572,10 +313572,10 @@
     "fr": "Clef d'activation d'astéropoing"
   },
   "52263": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Cu Sith Horn",
+    "de": "Cu Sith-Horn",
+    "ja": "クーシー・ホルン",
+    "fr": "Cor cu sith"
   },
   "52264": {
     "en": "Colibri Callado Whistle",
@@ -313584,10 +313584,10 @@
     "fr": "Sifflet colibri silencieux"
   },
   "52265": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hydra Horn",
+    "de": "Hydra-Horn",
+    "ja": "ハイドラ・ホルン",
+    "fr": "Cor hydre"
   },
   "52266": {
     "en": "Duck-billed Porter Whistle",
@@ -314208,22 +314208,22 @@
     "fr": "Rouleau “To the North Mountain (Dawntrail)”"
   },
   "52369": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Starkest Scale Orchestrion Roll",
+    "de": "Notenrolle von „Starkest Scale“",
+    "ja": "オーケストリオン譜:堅固なる鱗",
+    "fr": "Rouleau “Starkest Scale”"
   },
   "52370": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fiercest Fang Orchestrion Roll",
+    "de": "Notenrolle von „Fiercest Fang“",
+    "ja": "オーケストリオン譜:凶猛なる牙",
+    "fr": "Rouleau “Fiercest Fang”"
   },
   "52371": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Swiftest Wing Orchestrion Roll",
+    "de": "Notenrolle von „Swiftest Wing“",
+    "ja": "オーケストリオン譜:飛翔する翼",
+    "fr": "Rouleau “Swiftest Wing”"
   },
   "52372": {
     "en": "Triumph (Orchestral Version) Orchestrion Roll",
@@ -314562,34 +314562,34 @@
     "fr": "Bottes d'opérateur cosmique"
   },
   "52428": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Successor's Hood",
+    "de": "Kapuze des Erben",
+    "ja": "サクセサー・フード",
+    "fr": "Capuche de successeur"
   },
   "52429": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Successor's Tunic",
+    "de": "Tunika des Erben",
+    "ja": "サクセサー・チュニック",
+    "fr": "Tunique de successeur"
   },
   "52430": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Successor's Fingerless Gloves",
+    "de": "Fingerlinge des Erben",
+    "ja": "サクセサー・フィンガレスグローブ",
+    "fr": "Mitaines de successeur"
   },
   "52431": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Successor's Breeches",
+    "de": "Reiterhose des Erben",
+    "ja": "サクセサー・ブリーチ",
+    "fr": "Braies de successeur"
   },
   "52432": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Successor's Highboots",
+    "de": "Kniestiefel des Erben",
+    "ja": "サクセサー・ハイブーツ",
+    "fr": "Bottes de successeur"
   },
   "52433": {
     "en": "Graffiti Neotunic",
@@ -314641,7 +314641,7 @@
   },
   "52441": {
     "en": "The Faces We Wear - Simple Oval Spectacles",
-    "de": "Magazin „Der Durchblick - Schlichte Ovale Brille“",
+    "de": "Magazin „Der Durchblick - Schlichte ovale Brille“",
     "ja": "スタイルカタログ:ベーシック・オーバルグラス",
     "fr": "Lunettes ovales basiques (magazine de mode)"
   },
@@ -314670,10 +314670,10 @@
     "fr": "Cache-œil clouté droit (magazine de mode)"
   },
   "52446": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Faces We Wear - Antique Monocle",
+    "de": "Magazin „Der Durchblick - Antikes Monokel“",
+    "ja": "スタイルカタログ:アンティーク・モノクル",
+    "fr": "Monocle antique (magazine de mode)"
   },
   "52447": {
     "en": "The Faces We Wear - Thick-rimmed Goggles",
@@ -315600,16 +315600,16 @@
     "fr": "Tenue d'opérateur cosmique"
   },
   "52601": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Successor's Attire",
+    "de": "Kleidungsset des Erben",
+    "ja": "サクセサー・アタイア",
+    "fr": "Tenue de successeur"
   },
   "52602": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Attire",
+    "de": "Bestienbändiger-Ausrüstungsset",
+    "ja": "ビーストマスターアタイア",
+    "fr": "Tenue de dresseur de bêtes"
   },
   "52603": {
     "en": "Cosmic Explorer's Attire [F]",
@@ -315828,10 +315828,10 @@
     "fr": "Minou sucré"
   },
   "52639": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tourmaline Golem Horn",
+    "de": "Turmalingolem-Horn",
+    "ja": "トルマリンゴーレム・ホルン",
+    "fr": "Cor golem de tourmaline"
   },
   "52640": {
     "en": "Starlight Sleigh Bell",
@@ -315858,22 +315858,22 @@
     "fr": "Résine alchimique pour aqueduc en ruines"
   },
   "52644": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crucible Champion Certification",
+    "de": "Auszeichnung: Beherrscher der Bestien",
+    "ja": "闘獣練チャンピオンの証",
+    "fr": "Attestation de champion du Dédale bestial"
   },
   "52645": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crucible Finalist Certification",
+    "de": "Auszeichnung: Bezwinger der Bestien",
+    "ja": "闘獣練ファイナリストの証",
+    "fr": "Attestation de finaliste du Dédale bestial"
   },
   "52646": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crucible Ranker Certification",
+    "de": "Auszeichnung: Befrieder der Bestien",
+    "ja": "闘獣練ランカーの証",
+    "fr": "Attestation de classé du Dédale bestial"
   },
   "52647": {
     "en": "Avalanche Leader's Earring",
@@ -315888,28 +315888,28 @@
     "fr": "Rouleau “Carrots of Brilliance”"
   },
   "52649": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Herder's Coffer (IL 1)",
+    "de": "Bestienpfleger-Ausrüstungskiste (G.-St. 1)",
+    "ja": "ビーストハーダー・チェスト【ILv1】",
+    "fr": "Coffre de soigneur de bêtes [NvObj 1]"
   },
   "52650": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beast Tamer's Coffer (IL 30)",
+    "de": "Bestienbesänftiger-Ausrüstungskiste (G.-St. 30)",
+    "ja": "ビーストテイマー・チェスト【ILv30】",
+    "fr": "Coffre d'apprivoiseur de bêtes [NvObj 30]"
   },
   "52651": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastwarden's Coffer (IL 40)",
+    "de": "Bestienwärter-Ausrüstungskiste (G.-St. 40)",
+    "ja": "ビーストワーデン・チェスト【ILv40】",
+    "fr": "Coffre de gardien de bêtes [NvObj 40]"
   },
   "52652": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beastmaster's Coffer (IL 90)",
+    "de": "Bestienbändiger-Ausrüstungskiste (G.-St. 90)",
+    "ja": "ビーストマスター・チェスト【ILv90】",
+    "fr": "Coffre de dresseur de bêtes [NvObj 90]"
   },
   "52653": {
     "en": "Tradewinds Attire",
@@ -315924,10 +315924,10 @@
     "fr": "Cria alpaga d'orchestre"
   },
   "52655": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crucible Framer's Kit",
+    "de": "Portraitmaterial (Brett der Bestie)",
+    "ja": "ポートレート教材:闘獣練",
+    "fr": "L'Art du portrait&nbsp;: Dédale bestial"
   },
   "52656": {
     "en": "Zero's Luminary Mail",

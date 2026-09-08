@@ -28603,7 +28603,7 @@
   },
   "4768": {
     "en": "The Dire Deepcroft",
-    "ja": "",
+    "ja": "廃墓所",
     "de": "Düsterer Totenacker",
     "fr": "Cimetière désaffecté"
   },
@@ -29772,10 +29772,10 @@
     "fr": "Square des clavistes"
   },
   "4963": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unmoored Isle",
+    "ja": "名もなき浮島",
+    "de": "Schwebende Insel",
+    "fr": "Île flottante sans nom"
   },
   "4964": {
     "en": "",
@@ -31926,10 +31926,10 @@
     "fr": "Transports d'urgence"
   },
   "5322": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Beastmaster",
+    "ja": "魔獣使い",
+    "de": "Bestienbändiger",
+    "fr": "Dresseur"
   },
   "5323": {
     "en": "",
@@ -32906,7 +32906,7 @@
   "5485": {
     "en": "Upper Passage",
     "ja": "上層1",
-    "de": "Obergeschoß des Turmes 1",
+    "de": "Obergeschoss des Turmes 1",
     "fr": "Quartiers supérieurs I"
   },
   "5486": {
@@ -32918,7 +32918,7 @@
   "5487": {
     "en": "Transcendence",
     "ja": "上層2",
-    "de": "Obergeschoß des Turmes 2",
+    "de": "Obergeschoss des Turmes 2",
     "fr": "Quartiers supérieurs II"
   },
   "5488": {
@@ -33570,82 +33570,82 @@
     "fr": "Camp de base nord"
   },
   "5596": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Crucible of the Unbroken",
+    "ja": "闘獣練",
+    "de": "Brett der Bestie",
+    "fr": "Dédale bestial"
   },
   "5597": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "First Board of the Unbroken",
+    "ja": "闘獣練 第一盤",
+    "de": "Erstes Brett der Bestie",
+    "fr": "1er plateau"
   },
   "5598": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Second Board of the Unbroken",
+    "ja": "闘獣練 第二盤",
+    "de": "Zweites Brett der Bestie",
+    "fr": "2e plateau"
   },
   "5599": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Third Board of the Unbroken",
+    "ja": "闘獣練 第三盤",
+    "de": "Drittes Brett der Bestie",
+    "fr": "3e plateau"
   },
   "5600": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "First Master's Board",
+    "ja": "闘獣練 特一盤",
+    "de": "Erstes Meisterbrett der Bestie",
+    "fr": "1er plateau expert"
   },
   "5601": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Second Master's Board",
+    "ja": "闘獣練 特二盤",
+    "de": "Zweites Meisterbrett der Bestie",
+    "fr": "2e plateau expert"
   },
   "5602": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Campsite",
+    "ja": "テント",
+    "de": "Zelt",
+    "fr": "Campement"
   },
   "5603": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shop",
+    "ja": "ショップ",
+    "de": "Geschäft",
+    "fr": "Marchand"
   },
   "5604": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Treasure",
+    "ja": "トレジャー",
+    "de": "Schatz",
+    "fr": "Coffre au trésor"
   },
   "5605": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Random",
+    "ja": "ランダム",
+    "de": "Schicksalsfeld",
+    "fr": "Carte chance"
   },
   "5606": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Enemy",
+    "ja": "エネミー",
+    "de": "Gegner",
+    "fr": "Affrontement"
   },
   "5607": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elite Enemy",
+    "ja": "エリートエネミー",
+    "de": "Elitegegner",
+    "fr": "Cible d'élite"
   },
   "5608": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Boss",
+    "ja": "ボスエネミー",
+    "de": "Endgegner",
+    "fr": "Gardien du plateau"
   },
   "5609": {
     "en": "",

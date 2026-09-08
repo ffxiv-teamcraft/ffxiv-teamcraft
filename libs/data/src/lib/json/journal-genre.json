@@ -1182,10 +1182,10 @@
     "fr": "Quêtes de mage bleu"
   },
   "198": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Beastmaster Quests",
+    "ja": "魔獣使いクエスト",
+    "de": "Bestienbändiger-Jobaufträge",
+    "fr": "Quêtes de dresseur"
   },
   "199": {
     "en": "Facet of Forging Quests",
@@ -1872,16 +1872,16 @@
     "fr": "Donjons alternatifs"
   },
   "313": {
+    "en": "Crucible of the Unbroken",
+    "ja": "闘獣練",
+    "de": "Brett der Bestie",
+    "fr": "Dédale bestial"
+  },
+  "314": {
     "en": "Guildhests",
     "ja": "ギルドオーダー",
     "de": "Gildengeheiße",
     "fr": "Opérations de guilde"
-  },
-  "314": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
   },
   "315": {
     "en": "",

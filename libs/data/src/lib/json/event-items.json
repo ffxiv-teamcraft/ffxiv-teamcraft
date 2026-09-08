@@ -25928,18 +25928,18 @@
     "icon": "/api/asset?path=ui/icon/025000/025919.tex&format=png"
   },
   "2003704": {
-    "en": "",
+    "en": "Presumably Special Treasure Map",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Epenleder-Schatzkarte",
+    "fr": "Carte au trésor inhabituelle V",
+    "icon": "/api/asset?path=ui/icon/026000/026151.tex&format=png"
   },
   "2003705": {
-    "en": "",
+    "en": "Presumably Special Thief's Map",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Exotische Äthergramm-Karte V",
+    "fr": "Carte de portail magique inhabituelle V",
+    "icon": "/api/asset?path=ui/icon/026000/026151.tex&format=png"
   },
   "2003706": {
     "en": "Audition Handbill",
@@ -26768,11 +26768,11 @@
     "icon": "/api/asset?path=ui/icon/026000/026086.tex&format=png"
   },
   "2003824": {
-    "en": "",
+    "en": "Low-quality Fire Crystal",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Minderwertiger Feuerkristall",
+    "fr": "Cristal de feu impur",
+    "icon": "/api/asset?path=ui/icon/020000/020007.tex&format=png"
   },
   "2003825": {
     "en": "Flute of Wings",
@@ -26810,11 +26810,11 @@
     "icon": "/api/asset?path=ui/icon/023000/023553.tex&format=png"
   },
   "2003830": {
-    "en": "",
+    "en": "Raw Meat",
     "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "de": "Saftiges Fleischstück",
+    "fr": "Jambonneau",
+    "icon": "/api/asset?path=ui/icon/025000/025159.tex&format=png"
   },
   "2003831": {
     "en": "Prototype Attire",
