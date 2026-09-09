@@ -1,4 +1,4 @@
-import { ApplicationRef, inject, Injectable, NgZone } from "@angular/core";
+import { inject, Injectable, NgZone } from "@angular/core";
 import { Observable } from "rxjs";
 import { Craft, CrafterStats } from "@ffxiv-teamcraft/simulator";
 import { SettingsService } from "../../../modules/settings/settings.service";
@@ -16,7 +16,6 @@ export class SolverService {
   private settings: SettingsService = inject(SettingsService);
   private simulationService: SimulationService = inject(SimulationService);
   private zone: NgZone = inject(NgZone);
-  private appRef: ApplicationRef = inject(ApplicationRef);
 
   /**
    * Starts a solver run in a dedicated Web Worker for the given recipe and crafter
@@ -40,7 +39,7 @@ export class SolverService {
   solve(recipe: Craft, stats: CrafterStats,
     hqIngredients: { id: number; amount: number }[] = [],
     beamWidth = 4000, maxSteps = 45, maxComputeMs = 55000,
-    enabledActionNames: string[] = []
+    enabledActionIds: number[] = []
   ): Observable<SolverEvent> {
     return new Observable(subscriber => {
       if (typeof Worker === 'undefined') {
@@ -93,7 +92,7 @@ export class SolverService {
         beamWidth,
         maxSteps,
         maxComputeMs,
-        enabledActionNames
+        enabledActionIds: enabledActionIds
       });
 
       return () => worker.terminate();
