@@ -6,7 +6,7 @@ here is a table to keep track of the IDs and the corresponding Action Names:
 ## Table
 
 |id|name|
-|---|---
+|---|---|
 |100001|'BasicSynthesis2'|
 |100203|'CarefulSynthesis2'|
 |100427|'PrudentSynthesis2'|
