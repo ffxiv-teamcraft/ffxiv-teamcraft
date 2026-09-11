@@ -4,25 +4,24 @@ import { SolverProgress } from './solver-progress';
 import { Node } from './node';
 
 /**
- * Class names (as reported by `action.constructor.name`) of actions, that are only available
+ * Class Ids (as reported by `action.getIds()[0]`) of actions, that are only available
  * through the Cosmic Exploration content and only applies to specific recipes there. These must never be part
- * of a generated rotation unless the caller explicitly opts in via {@link SolverInput["shouldUseCosmicExploration"]}.
+ * of a generated rotation unless the caller explicitly opts in.
  */
-const COSMIC_EXPLORATION_ACTION_NAMES = new Set<string>([
-  'MaterialMiracle2',
-  'StellarSteadyHand2'
+const COSMIC_EXPLORATION_ACTION_NAMES = new Set<number>([
+  41269, // MaterialMiracle2
+  46843 // StellarSteadyHand2
 ]);
 
 /**
- * Class names of Specialist-only actions. These require both the crafter's "Specialist"
- * flag to be active (see {@link CrafterStats.specialist}) AND the caller opting in
- * via {@link SolverInput["shouldUseSpecialistCommands"]}. Without both conditions, these
- * actions are excluded from the candidate action pool entirely.
+ * Class Ids of Specialist-only actions. These require both the crafter's "Specialist"
+ * flag to be active (see {@link CrafterStats.specialist}) AND the caller opting in.
+ * Without both conditions, these actions are excluded from the candidate action pool entirely.
  */
-const SPECIALIST_ACTION_NAMES = new Set<string>([
-  'CarefulObservation2',
-  'HeartAndSoul2',
-  'QuickInnovation2'
+const SPECIALIST_ACTION_NAMES = new Set<number>([
+  100395, // CarefulObservation2
+  100419, // HeartAndSoul2
+  100459 // QuickInnovation2
 ]);
 
 /**
@@ -30,13 +29,13 @@ const SPECIALIST_ACTION_NAMES = new Set<string>([
  * solver can detet when re-activating a buff would be redundant (i.e. the buff is 
  * already active and not close to expiring).)
  */
-const BUFF_ACTION_TO_BUFF_KEY: Record<string, string> = {
-  Veneration2: 'VENERATION',
-  Innovation2: 'INNOVATION',
-  GreatStrides2: 'GREAT_STRIDES',
-  Manipulation2: 'MANIPULATION',
-  WasteNot2: 'WASTE_NOT',
-  WasteNotII2: 'WASTE_NOT_II'
+const BUFF_ACTION_TO_BUFF_KEY: Record<number, string> = {
+  19297: 'VENERATION',
+  19004: 'INNOVATION',
+  260: 'GREAT_STRIDES',
+  4574: 'MANIPULATION',
+  4631: 'WASTE_NOT',
+  4639: 'WASTE_NOT_II'
 };
 
 /**
@@ -83,8 +82,8 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     shouldUseSpecialistCommands = false } = input;
   const startTime = performance.now();
 
-  const enabledActionNames = input.enabledActionNames
-    ? new Set(input.enabledActionNames)
+  const enabledActionIds = input.enabledActionIds
+    ? new Set(input.enabledActionIds)
     : null;
 
   /**
@@ -94,11 +93,11 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
    * @returns Returns if the action is allowed or not
    */
   const isActionAllowed = (action: CraftingAction): boolean => {
-    const name = (action as any).constructor?.name;
-    if (enabledActionNames)
-      return enabledActionNames.has(name);
-    if (COSMIC_EXPLORATION_ACTION_NAMES.has(name)) return shouldUseCosmicExploration;
-    if (SPECIALIST_ACTION_NAMES.has(name)) return shouldUseSpecialistCommands && !!stats.specialist;
+    const id = action.getIds()[0];
+    if (enabledActionIds)
+      return enabledActionIds.has(id);
+    if (COSMIC_EXPLORATION_ACTION_NAMES.has(id)) return shouldUseCosmicExploration;
+    if (SPECIALIST_ACTION_NAMES.has(id)) return shouldUseSpecialistCommands && !!stats.specialist;
     return true;
   }
 
@@ -110,6 +109,14 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
     ...registry.getActionsByType(ActionType.OTHER),
     ...registry.getActionsByType(ActionType.CP_RECOVERY)
   ].filter(isActionAllowed);
+
+
+  // Kept in the Code so it is later easier to create a logging for new or changed actions
+  /*console.log('[diagnose] action id/name map:');
+  console.table(candidateActions.map(a => ({
+    id: a.getIds()[0],
+    name: a.constructor.name
+  })));*/
 
   const progressionActions = registry.getActionsByType(ActionType.PROGRESSION).filter(isActionAllowed);
 
@@ -160,7 +167,7 @@ export function runSolver(input: SolverInput, onProgress?: (p: SolverProgress) =
    * @returns Returns true if the action would redundantly re-activate an already active buff, false otherwise
    */
   const isRedundantBuffActivation = (action: CraftingAction, simulation: any): boolean => {
-    const buffKey = BUFF_ACTION_TO_BUFF_KEY[action.constructor?.name];
+    const buffKey = BUFF_ACTION_TO_BUFF_KEY[action.getIds()[0]];
     if (!buffKey) return false;
     const active = findActiveBuff(simulation, buffKey);
     if (!active) return false;
