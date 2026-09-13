@@ -49,8 +49,14 @@ export class TrayMenu {
             type: 'checkbox',
             checked: this.store.get<boolean>('machina', false),
             click: (menuItem) => {
-              this.store.set('machina', menuItem.checked);
-              if (menuItem.checked) {
+              // The menu is built once at startup, so menuItem.checked drifts as soon as
+              // the setting is toggled anywhere else. Toggle from the store instead, or we
+              // start a second bridge on top of a running one and it dies on the busy port.
+              const enabled = !this.store.get<boolean>('machina', false);
+              this.store.set('machina', enabled);
+              menuItem.checked = enabled;
+              this.mainWindow.win?.webContents.send('toggle-pcap:value', enabled);
+              if (enabled) {
                 this.pcap.startPcap();
               } else {
                 this.pcap.stop();
