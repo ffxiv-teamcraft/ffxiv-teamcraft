@@ -45,8 +45,15 @@
           nzIcon="user"></nz-avatar>
           <nz-comment-content>
             @if (!comment.deleted) {
-              <p (click)="$event.preventDefault(); handleClick($event)"
-              [innerHTML]="comment.message | commentLinks:translate.currentLang:comment | async"></p>
+              <p (click)="$event.preventDefault(); handleClick($event)">
+                @for (segment of comment.message | commentLinks:translate.currentLang:comment | async; track $index) {
+                  @if (segment.href) {
+                    <a [href]="segment.href" target="_blank" rel="noopener noreferrer">{{ segment.text }}</a>
+                  } @else {
+                    <ng-container>{{ segment.text }}</ng-container>
+                  }
+                }
+              </p>
             } @else {
               <p><i class="deleted">{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
             }
