@@ -11,6 +11,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { PlatformService } from '../tools/platform.service';
 import { Router } from '@angular/router';
 import { OauthService } from '../auth/oauth.service';
+import { createOauthState } from '../auth/oauth-state';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,7 @@ export class SupportService {
       });
     } else {
       window.open(`https://www.patreon.com/oauth2/authorize?response_type=code&client_id=MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE&redirect_uri=${
-        window.location.protocol}//${window.location.host}/patreon-redirect&scope=identity`);
+        window.location.protocol}//${window.location.host}/patreon-redirect&scope=identity&state=${createOauthState('patreon')}`);
     }
   }
 
@@ -102,7 +103,7 @@ export class SupportService {
       });
     } else {
       window.open(`https://tipeee.com/oauth/v2/auth?response_type=code&client_id=4_M3H9Otm5Td79MwS2IXQPJ9LCyYmGtOrMFgA3fLA0aM3rzDCAJ7&redirect_uri=${
-        window.location.protocol}//${window.location.host}/tipeee-redirect&scope=PARTNER`);
+        window.location.protocol}//${window.location.host}/tipeee-redirect&scope=PARTNER&state=${createOauthState('tipeee')}`);
     }
   }
 
