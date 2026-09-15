@@ -497,7 +497,15 @@ export const saveReplay = functions.runWith(runtimeOpts).https.onCall((data, con
 });
 
 
-export const getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+export const getUserByEmail = functions.runWith(runtimeOpts).https.onCall(async (data, context) => {
+  if (!context.auth) {
+    throw new functions.https.HttpsError('unauthenticated', 'Authentication required');
+  }
+  // Used by the admin area, which is restricted to admins and moderators.
+  const caller = await firestore.collection('users').doc(context.auth.uid).get().then(doc => doc.data());
+  if (!caller || (!caller.admin && !caller.moderator)) {
+    throw new functions.https.HttpsError('permission-denied', 'Admin or moderator role required');
+  }
   return admin.auth().getUserByEmail(data.email)
     .then(res => {
       return {
@@ -548,19 +556,24 @@ function getTokenClaims(user) {
 }
 
 export const setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall(async (data, context) => {
-  const user = await firestore.collection('users').doc(data.uid).get().then(doc => doc.data());
+  if (!context.auth) {
+    throw new functions.https.HttpsError('unauthenticated', 'Authentication required');
+  }
+  // Only ever set claims for the caller, never for a uid taken from the payload.
+  const uid = context.auth.uid;
+  const user = await firestore.collection('users').doc(uid).get().then(doc => doc.data());
   // Check if user meets role criteria:
   // Your custom logic here: to decide what roles and other `x-hasura-*` should the user get
   const customClaims = {
     'https://hasura.io/jwt/claims': {
       ...getTokenClaims(user),
-      'x-hasura-user-id': data.uid
+      'x-hasura-user-id': uid
     }
   };
   // Set custom user claims on this newly created user.
-  return admin.auth().setCustomUserClaims(data.uid, customClaims)
+  return admin.auth().setCustomUserClaims(uid, customClaims)
     .then(() => {
-      return admin.auth().getUser(data.uid);
+      return admin.auth().getUser(uid);
     })
     .then(() => {
       return { response: 'ok' };
