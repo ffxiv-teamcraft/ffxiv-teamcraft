@@ -48,6 +48,8 @@ export class OauthService {
           subscriber.complete();
         });
       });
+      // The desktop app only listens for the redirect while a login is in progress.
+      this._ipc.send('oauth:start');
       window.open(authUrl, '_blank');
     });
   }

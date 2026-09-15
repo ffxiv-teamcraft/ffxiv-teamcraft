@@ -758,19 +758,7 @@ export class AppComponent implements OnInit {
 
   openInApp(): void {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
-      this.http
-        .get(`http://localhost:14500${window.location.pathname}`)
-        .pipe(
-          map(() => true),
-          catchError(() => {
-            return of(false);
-          })
-        )
-        .subscribe((opened) => {
-          if (!opened) {
-            window.open(`teamcraft://${window.location.pathname}`);
-          }
-        });
+      window.open(`teamcraft://${window.location.pathname}`);
       setTimeout(() => {
         this.hasDesktopReloader$.next(null);
       }, 30000);
