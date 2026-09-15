@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { catchError, first, map, switchMap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SupportUsPopupComponent } from './support-us-popup/support-us-popup.component';
@@ -55,11 +55,12 @@ export class SupportService {
   }
 
   public refreshPatreonToken(user: TeamcraftUser): Observable<TeamcraftUser> {
-    return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth-refresh?refresh_token=${user.patreonRefreshToken}`)
-      .pipe(catchError(() => {
-          return of(null);
-        }),
+    return this.refreshToken('patreon-oauth-refresh')
+      .pipe(
         map((response: any) => {
+          if (response === undefined) {
+            return user;
+          }
           if (response === null) {
             delete user.patreonToken;
             delete user.patreonRefreshToken;
@@ -106,11 +107,12 @@ export class SupportService {
   }
 
   public refreshTipeeeToken(user: TeamcraftUser): Observable<TeamcraftUser> {
-    return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/tipeee-oauth-refresh?refresh_token=${user.tipeeeRefreshToken}`)
-      .pipe(catchError(() => {
-          return of(null);
-        }),
+    return this.refreshToken('tipeee-oauth-refresh')
+      .pipe(
         map((response: any) => {
+          if (response === undefined) {
+            return user;
+          }
           if (response === null) {
             delete user.tipeeeToken;
             delete user.tipeeeRefreshToken;
@@ -135,5 +137,21 @@ export class SupportService {
         nzFooter: null
       });
     });
+  }
+
+  /**
+   * Calls a token refresh function as the signed-in user; the function reads the refresh token from the user's data.
+   * Emits the provider response, null if the provider rejected the refresh token (the account should be unlinked),
+   * or undefined if the refresh couldn't be attempted (network, authentication), in which case nothing changes.
+   */
+  private refreshToken(functionName: string): Observable<any> {
+    return from(this.authFacade.getIdTokenResult()).pipe(
+      switchMap(({ token }) => {
+        return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/${functionName}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+      }),
+      catchError((error: HttpErrorResponse) => of(error?.status === 400 ? null : undefined))
+    );
   }
 }
