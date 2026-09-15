@@ -25,13 +25,24 @@ service cloud.firestore {
     	return user.admin || user.moderator;
     }
 
+    function getPrivateProfilePath(uid) {
+    	return /databases/$(database)/documents/users/$(uid)/private/profile;
+    }
+
+    function hasFcPermissionLevel(fcId, level) {
+    	return fcId != null
+      	&& resource.data.registry.keys().hasAny([fcId])
+      	&& resource.data.registry[fcId] >= level;
+    }
+
+    // currentFcId lives in the private profile; users who haven't migrated yet still have it on the public document.
     function isAdminOrModOrFcShared(level) {
     	let user = getUser(request.auth.uid);
     	return user.admin
       || user.moderator
-      || (user.keys().hasAny(['currentFcId'])
-              		&& resource.data.registry.keys().hasAny([user.currentFcId])
-              		&& resource.data.registry[user.currentFcId] >= level)
+      || (exists(getPrivateProfilePath(request.auth.uid))
+      		&& hasFcPermissionLevel(get(getPrivateProfilePath(request.auth.uid)).data.get('currentFcId', null), level))
+      || hasFcPermissionLevel(user.get('currentFcId', null), level)
     }
 
   	function hasPermissionLevel(level) {
@@ -283,9 +294,17 @@ service cloud.firestore {
       	&& (resource.data.leader == request.auth.uid || isSelfJoinOrLeave());
       allow delete: if isSignedIn() && resource.data.leader == request.auth.uid;
     }
+    // Kickstarter emails reserved by users, keyed by SHA-256 of the lowercased email so they can't be listed.
+    match /ks-emails/{emailHash} {
+      allow get: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.uid == request.auth.uid;
+    }
+    // Public profile. Private fields live in users/{userId}/private/profile (#3309).
     match /users/{userId} {
-      // Still public: the client reads other users' docs and queries by nickname / lodestone id.
-      // Stops exposing secrets only once tokens and ksEmail move out of this document (#3309).
+      match /private/{docId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
     	allow read;
       allow create: if isSignedIn() && request.auth.uid == userId && hasNoPrivileges();
       allow update: if (request.auth.uid == userId
