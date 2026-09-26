@@ -1174,7 +1174,8 @@
       "Malleable": "高進捗",
       "Primed": "長持続",
       "Normal": "通常",
-      "Good_omen": "Good Omen"
+      "Good_omen": "良兆候",
+      "Robust": "頑強"
     },
     "SOLVER": {
       "Hq_target": "HQ目標値",
