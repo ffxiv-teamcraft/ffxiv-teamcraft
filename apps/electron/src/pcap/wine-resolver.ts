@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { existsSync, readdirSync, readFileSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'fs';
 import log from 'electron-log';
 import { app } from 'electron';
 import { Store } from '../store';
@@ -275,19 +275,16 @@ export class WineResolver {
       }
     }
 
-    // 2b. Managed: use the explicitly stored version name
-    if (iniValues['WineManagedVersion']) {
-      const versionDir = join(wineBaseDir, iniValues['WineManagedVersion']);
-      for (const exe of ['bin/wine64', 'bin/wine']) {
-        const candidate = join(versionDir, exe);
-        if (existsSync(candidate)) {
-          log.info(`[bridge] Auto-detected Wine from XIVLauncher managed version (${iniValues['WineManagedVersion']}): ${candidate}`);
-          return candidate;
-        }
-      }
-    }
+    // 2b. Managed mode: unlike the RB fork, standard XIVLauncher's
+    // WineManagedVersion only stores the label the user picked in settings
+    // ("Stable" / "Beta" / "Legacy"), not the on-disk folder name — the
+    // actual build is named after a release string (e.g.
+    // wine-xiv-staging-fsync-git-10.8.r0.a2ca9e4-nolsc) that's hardcoded in
+    // XIVLauncher's own source and changes with every wine update, so it
+    // can't be derived from the ini. Fall through to scanning instead.
 
-    // Last resort: scan the managed wine directory for the newest version
+    // Last resort: scan the managed wine directory for the most recently
+    // installed version
     return this.scanManagedWineDir(wineBaseDir);
   }
 
@@ -338,13 +335,19 @@ export class WineResolver {
   }
 
   /**
-   * Scans a managed wine directory and returns the binary from the newest
-   * installed version, or null if the directory is empty or unreadable.
+   * Scans a managed wine directory and returns the binary from the most
+   * recently installed version, or null if the directory is empty or
+   * unreadable. Version folder names are opaque release identifiers, not
+   * sortable version numbers, so recency is determined by directory
+   * modification time instead of name.
    */
   private scanManagedWineDir(dir: string): string | null {
     if (!existsSync(dir)) return null;
     try {
-      const versions = readdirSync(dir).sort().reverse();
+      const versions = readdirSync(dir)
+        .map(version => ({ version, mtime: statSync(join(dir, version)).mtimeMs }))
+        .sort((a, b) => b.mtime - a.mtime)
+        .map(({ version }) => version);
       for (const version of versions) {
         for (const exe of ['bin/wine64', 'bin/wine']) {
           const candidate = join(dir, version, exe);
