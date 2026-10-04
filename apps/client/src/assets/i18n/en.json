@@ -2012,7 +2012,21 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Loading trades data for the selected currency",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard",
+    "Mode_lowest": "Lowest",
+    "Mode_average": "Average",
+    "Mode_median": "Median",
+    "Mode_weighted": "Qty-weighted",
+    "Mode_p95": "P95",
+    "Mode_recency_weighted": "Recency-weighted",
+    "Mode_current_listing": "Current listing",
+    "Mode_desc_lowest": "Cheapest historical sale",
+    "Mode_desc_average": "Simple mean of all sales",
+    "Mode_desc_median": "Middle value, resistant to outliers",
+    "Mode_desc_weighted": "Average weighted by quantity sold",
+    "Mode_desc_p95": "95% of sales were at or below this price",
+    "Mode_desc_recency_weighted": "Recent sales count more",
+    "Mode_desc_current_listing": "Cheapest active sell order"
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",
