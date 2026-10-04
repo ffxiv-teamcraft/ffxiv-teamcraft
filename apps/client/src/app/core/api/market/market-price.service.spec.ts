@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { MarketboardHistory } from './marketboard-history';
+import { MarketboardItem } from './marketboard-item';
 import { MarketboardPrice } from './marketboard-price';
 import { MarketPriceService, PriceModeOption } from './market-price.service';
 
@@ -118,6 +119,24 @@ describe('MarketPriceService', () => {
     expect(service.getCurrentListingPrice(mixed, true)).toBe(800);
     expect(service.getCurrentListingPrice(mixed, false)).toBe(500);
     expect(service.getCurrentListingPrice([], true)).toBe(0);
+  });
+
+  it('should report units sold last week for the HQ/NQ kind, not always NQ', () => {
+    const item: MarketboardItem = {
+      ID: '',
+      ItemId: 0,
+      History: [],
+      Prices: [],
+      Server: 0,
+      Updated: 0,
+      currentAveragePriceHQ: 0,
+      currentAveragePriceNQ: 0,
+      hqSaleVelocity: 12.5,
+      nqSaleVelocity: 40,
+    };
+    expect(service.getUnitsSoldLastWeek(item, true)).toBe(87); // floor(12.5 * 7)
+    expect(service.getUnitsSoldLastWeek(item, false)).toBe(280); // floor(40 * 7)
+    expect(service.getUnitsSoldLastWeek(undefined, true)).toBe(0);
   });
 
   it('should offer one option per price mode', () => {

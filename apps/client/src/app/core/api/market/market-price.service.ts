@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MarketboardHistory } from './marketboard-history';
+import { MarketboardItem } from './marketboard-item';
 import { MarketboardPrice } from './marketboard-price';
 
 export type PriceCalculationMode =
@@ -17,6 +18,22 @@ export interface PriceModeOption {
   descriptionKey: string;
 }
 
+/**
+ * One entry per price mode, keyed by the mode itself: `Record` over the union
+ * rejects both a mode added without a label and a label for a mode that no
+ * longer exists, so the dropdown cannot drift from `PriceCalculationMode`.
+ * Dropdown order is declaration order.
+ */
+const PRICE_MODE_OPTIONS: Record<PriceCalculationMode, PriceModeOption> = {
+  lowest: { key: 'lowest', labelKey: 'CURRENCY_SPENDING.Mode_lowest', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_lowest' },
+  average: { key: 'average', labelKey: 'CURRENCY_SPENDING.Mode_average', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_average' },
+  median: { key: 'median', labelKey: 'CURRENCY_SPENDING.Mode_median', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_median' },
+  weighted: { key: 'weighted', labelKey: 'CURRENCY_SPENDING.Mode_weighted', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_weighted' },
+  p95: { key: 'p95', labelKey: 'CURRENCY_SPENDING.Mode_p95', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_p95' },
+  recencyWeighted: { key: 'recencyWeighted', labelKey: 'CURRENCY_SPENDING.Mode_recency_weighted', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_recency_weighted' },
+  currentListing: { key: 'currentListing', labelKey: 'CURRENCY_SPENDING.Mode_current_listing', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_current_listing' },
+};
+
 @Injectable({ providedIn: 'root' })
 export class MarketPriceService {
 
@@ -24,15 +41,7 @@ export class MarketPriceService {
   private static readonly RECENCY_HALF_LIFE_SEC = 7 * 24 * 60 * 60;
 
   getModeOptions(): PriceModeOption[] {
-    return [
-      { key: 'lowest', labelKey: 'CURRENCY_SPENDING.Mode_lowest', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_lowest' },
-      { key: 'average', labelKey: 'CURRENCY_SPENDING.Mode_average', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_average' },
-      { key: 'median', labelKey: 'CURRENCY_SPENDING.Mode_median', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_median' },
-      { key: 'weighted', labelKey: 'CURRENCY_SPENDING.Mode_weighted', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_weighted' },
-      { key: 'p95', labelKey: 'CURRENCY_SPENDING.Mode_p95', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_p95' },
-      { key: 'recencyWeighted', labelKey: 'CURRENCY_SPENDING.Mode_recency_weighted', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_recency_weighted' },
-      { key: 'currentListing', labelKey: 'CURRENCY_SPENDING.Mode_current_listing', descriptionKey: 'CURRENCY_SPENDING.Mode_desc_current_listing' },
-    ];
+    return Object.values(PRICE_MODE_OPTIONS);
   }
 
   /**
@@ -92,6 +101,17 @@ export class MarketPriceService {
       return 0;
     }
     return Math.min(...listings.map(p => p.PricePerUnit));
+  }
+
+  /**
+   * Units sold over the last week, for the HQ/NQ kind the entry is priced as.
+   * Universalis reports sale velocity in units per day, and the history request
+   * this page runs is already bounded to 7 days, so the two kinds are not
+   * interchangeable: an HQ entry priced from HQ sales needs the HQ velocity.
+   */
+  getUnitsSoldLastWeek(marketItem: MarketboardItem | undefined, hq: boolean): number {
+    const velocityPerDay = marketItem && (hq ? marketItem.hqSaleVelocity : marketItem.nqSaleVelocity);
+    return Math.floor((velocityPerDay || 0) * 7);
   }
 
   // ---- Private calculation methods ----
