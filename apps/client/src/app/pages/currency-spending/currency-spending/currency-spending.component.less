@@ -20,6 +20,13 @@
   @media @mobile {
     flex-wrap: wrap-reverse;
   }
+
+  // nzShowSearch hides the placeholder without this
+  ::ng-deep {
+    .ant-select-selection-placeholder {
+      z-index: 1 !important;
+    }
+  }
 }
 
 .loader {
@@ -31,6 +38,65 @@
   }
 }
 
-.spending-table { 
+.spending-table {
   padding-top: 10px;
+}
+
+.price-col {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.price-col-label {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.price-mode-trigger {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.75);
+  }
+
+  i {
+    display: block;
+  }
+}
+
+.price-mode-menu {
+  ::ng-deep {
+    .ng-zorro-antd-menu-item {
+      min-width: 180px;
+
+      &.selected {
+        background-color: rgba(24, 144, 255, 0.06);
+
+        .mode-label {
+          font-weight: 600;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+
+      .mode-label {
+        margin-right: 4px;
+      }
+
+      .mode-desc {
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 12px;
+      }
+    }
+  }
 }
