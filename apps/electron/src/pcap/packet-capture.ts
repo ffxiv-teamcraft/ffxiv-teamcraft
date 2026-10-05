@@ -355,11 +355,12 @@ export class PacketCapture {
           return;
         }
 
-        // Steam's Proton session prevents the game from booting if the bridge
-        // (Wine) starts before ffxiv_dx11.exe is already running. XIVLauncher
-        // manages its own Wine session and doesn't have this constraint.
-        if (this.wineResolver.detectAutoSource() === 'steam' && !this.isGameRunningViaWine()) {
-          log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start bridge under Steam Proton');
+        // Require the game to already be running before starting the bridge, matching
+        // Windows (where DLL injection fails immediately if the process isn't found).
+        // Starting the bridge first can otherwise leave it waiting indefinitely on a
+        // stale or mismatched Wine session with no way to tell the two cases apart.
+        if (!this.isGameRunningViaWine()) {
+          log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start the bridge');
           this.store.set('machina', false);
           this.mainWindow.win.webContents.send('toggle-pcap:value', false);
           this.mainWindow.win.webContents.send('pcap:status', 'error');
