@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, of, shareReplay, Subject, timeout } from 'rxjs';
-import { bufferCount, catchError, distinctUntilChanged, filter, first, map, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, of, shareReplay, Subject } from 'rxjs';
+import { bufferCount, filter, first, map, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
-import { chunk } from 'lodash';
+import { chunk, uniqBy } from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -61,8 +61,8 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   public server$: Subject<string> = new Subject<string>();
 
   public sort$: BehaviorSubject<SortPair> = new BehaviorSubject<SortPair>({
-    key: 'score',
-    value: 'ascend'
+    key: 'exchangeRate',
+    value: 'descend'
   });
 
   public loading = false;
@@ -131,9 +131,12 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     
     // Historical data: cached per currency/server
     const historicalMarketData$ = combineLatest([this.server$, itemInfos$]).pipe(
-      switchMap(([server, items]) => 
-        this.getMarketboardListings(items, server, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds))
-      ),
+      switchMap(([server, items]) => {
+        this.loading = true;
+        this.tradesCount = items.length;
+        this.loadedPrices = 0;
+        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds));
+      }),
       shareReplay(1)
     );
 
@@ -141,11 +144,14 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     const currentMarketData$: Observable<MarketboardItem[]> = combineLatest([this.server$, itemInfos$, this.priceMode$]).pipe(
       // can also `filter` the observable, emitting no value, instead of emitting an empty array:
       filter(([, , mode]) => mode === 'currentListing'),
-      switchMap(([server, items, priceMode]) => {
+      switchMap(([server, items]) => {
         // if (priceMode !== 'currentListing') return of([]);
         // set loading if pricemode changed and need to fetch
         this.loading = true;
-        return this.getMarketboardListings(items, server, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds))
+        // Relies on the historical pipeline being declared first: on shared triggers
+        // (server/currency) its switchMap resets tradesCount before this one adds to it
+        this.tradesCount += items.length;
+        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds));
       }),
       startWith([]),
       shareReplay(1)
@@ -159,11 +165,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         const currentById = new Map(
           currentMarketData.map(item => [item.ItemId, item])
         );
-        const mapped = items.map(item => {
+        const mapped = uniqBy(items, 'item').map(item => {
           const hist = historyById.get(item.item);
           const cur = currentById.get(item.item);
-          if (cur && !hist) {
-            console.warn(`[Debug] Missing history data for item: ${item.item}. Hist found: ${!!hist}, Cur found: ${!!cur}`);
+          if (!hist && !cur) {
             return null;
           }
           return this.getNpcsSellingItemForCurrency(item.item, currency).pipe(
@@ -196,7 +201,12 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     // When priceMode$ or amount$ changes, this recomputes — no refetch.
     this.priceModeResults$ = combineLatest([this.results$, this.amount$, this.priceMode$, this.sort$]).pipe(
       map(([entries, currencyAmount, priceMode, sort]) => {
-        return entries.map(entry => {
+        // Keep only entries that have data for the active mode
+        const relevant = entries.filter(entry => priceMode === 'currentListing'
+          ? entry.rawPrices.length > 0
+          : entry.rawHistory.length > 0
+        );
+        return relevant.map(entry => {
           const amountPurchaseable = Math.floor(entry.rate! * (currencyAmount || 0));
           // History and listings hold both HQ and NQ rows for the same item
           const hq = entry.HQ ?? false;
@@ -210,10 +220,14 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
             price: price,
             total: amountPurchaseable * price,
             exchangeRate: exchangeRate,
+            score: price / entry.rate! * (entry.amountSoldLastWeek ?? 0),
           };
         }).sort((a, b) => {
           const aVal = (a as any)[sort.key] ?? 0;
           const bVal = (b as any)[sort.key] ?? 0;
+          if (aVal === bVal) {
+            return a.score! > b.score! ? 1 : -1;
+          }
           if (sort.value === 'ascend') {
             return aVal > bVal ? 1 : -1;
           } else {
@@ -222,9 +236,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         });
       })
     );
-
-    // Default to sorting by Gil / currency
-    this.sort$.next({key: 'exchangeRate', value: 'descend'})
   }
 
   private getItemInfos(shops: LazyShop[], marketItems: number[], currency: number): ItemInfo[] {
@@ -262,7 +273,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   }
 
   // Get the universalis market entries for all of the items requested on a server
-  private getMarketboardListings(entries: ItemInfo[], server: string, method: (...itemIds: number[]) => Observable<MarketboardItem[]>): Observable<MarketboardItem[]> {
+  private getMarketboardListings(entries: ItemInfo[], method: (...itemIds: number[]) => Observable<MarketboardItem[]>): Observable<MarketboardItem[]> {
     // Batch items into max items in universalis request
     const batches = chunk(entries, 100)
       .map((chunk) => {
@@ -271,7 +282,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           ...chunk.map(entry => entry.item)
         );
       });
-    this.tradesCount = entries.length;
     // Make sure unviersalis isn't overloaded with requests
     return requestsWithDelay(batches, 250, true).pipe(
       // Update loading count of prices
