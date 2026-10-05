@@ -144,6 +144,8 @@ export class ActionComponent {
         return 'darkmagenta';
       case StepState.GOOD_OMEN:
         return 'gold';
+      case StepState.ROBUST:
+        return 'lightblue';
     }
   }
 
