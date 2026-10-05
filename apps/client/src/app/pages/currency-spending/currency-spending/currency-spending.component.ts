@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
-import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, of, shareReplay, Subject, timeout } from 'rxjs';
+import { bufferCount, catchError, distinctUntilChanged, filter, first, map, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
-import { chunk, uniqBy } from 'lodash';
+import { chunk } from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -31,13 +31,17 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { LazyShop } from '@ffxiv-teamcraft/data/model/lazy-shop';
 import { MarketboardItem } from '../../../core/api/market/marketboard-item';
+import { MarketPriceService, PriceCalculationMode, PriceModeOption } from '../../../core/api/market/market-price.service';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-currency-spending',
   templateUrl: './currency-spending.component.html',
   styleUrls: ['./currency-spending.component.less'],
   standalone: true,
-  imports: [FlexModule, NzSelectModule, FormsModule, I18nNameComponent, NzInputNumberModule, NzProgressModule, NzTableModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
+  imports: [FlexModule, NzSelectModule, FormsModule, I18nNameComponent, NzInputNumberModule, NzProgressModule, NzTableModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe, NzDropDownModule, NzMenuModule, NzIconModule]
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 
@@ -46,6 +50,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   public currency$ = new Subject<number>();
 
   public results$: Observable<SpendingEntry[]>;
+
+  /** Derived results: applies price mode to cached data (no refetch) */
+  public priceModeResults$: Observable<SpendingEntry[]>;
 
   public amount$: BehaviorSubject<number | null> = new BehaviorSubject<number | null>(null);
 
@@ -64,9 +71,22 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   public loadedPrices = 0;
 
+  /** The currently selected price calculation mode */
+  public priceMode$: BehaviorSubject<PriceCalculationMode> = new BehaviorSubject<PriceCalculationMode>('lowest');
+
+  /** Getter for the current price mode value (for template access) */
+  public get priceMode(): PriceCalculationMode {
+    return this.priceMode$.value;
+  }
+
+  /** Available price mode options for the dropdown */
+  public priceModeOptions: PriceModeOption[];
+
   constructor(private dataService: DataService, private lazyData: LazyDataFacade,
-              private authFacade: AuthFacade, private universalis: UniversalisService) {
+              private authFacade: AuthFacade, private universalis: UniversalisService,
+              private marketPriceService: MarketPriceService) {
     super();
+    this.priceModeOptions = marketPriceService.getModeOptions();
     this.servers$ = lazyData.servers$.pipe(
       map(servers => {
         return servers.sort();
@@ -96,38 +116,74 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       })
     );
 
-    this.results$ = combineLatest([this.currency$, this.server$]).pipe(
-      switchMap(([currency, server]) => {
-        this.loading = true;
-        const spendingEntries = combineLatest([
+    // relevant items
+    const itemInfos$ = combineLatest([this.currency$, this.server$]).pipe(
+      switchMap(([currency]) => {
+        return combineLatest([
           this.lazyData.getEntry('shops'),
           this.lazyData.getEntry('marketItems'),
         ]).pipe(
-          map(([shops, marketItems]) => this.getItemInfos(shops, marketItems, currency)),
-          switchMap(entries => this.processMarketData(entries, server, currency))
+          map(([shops, marketItems]) => this.getItemInfos(shops, marketItems, currency))
         );
+      }),
+      shareReplay(1)
+    );
+    
+    // Historical data: cached per currency/server
+    const historicalMarketData$ = combineLatest([this.server$, itemInfos$]).pipe(
+      switchMap(([server, items]) => 
+        this.getMarketboardListings(items, server, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds))
+      ),
+      shareReplay(1)
+    );
 
-        // Extend spending entries with amount information, don't trigger universalis requests
-        const extendedSpendingEntries = combineLatest([spendingEntries, this.amount$]).pipe(
-          map(([entries, currencyAmount]) => this.computeValueWithAmount(entries, currencyAmount))
-        )
+    // Current prices: only fetched when currentListing is active
+    const currentMarketData$: Observable<MarketboardItem[]> = combineLatest([this.server$, itemInfos$, this.priceMode$]).pipe(
+      // can also `filter` the observable, emitting no value, instead of emitting an empty array:
+      filter(([, , mode]) => mode === 'currentListing'),
+      switchMap(([server, items, priceMode]) => {
+        // if (priceMode !== 'currentListing') return of([]);
+        // set loading if pricemode changed and need to fetch
+        this.loading = true;
+        return this.getMarketboardListings(items, server, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds))
+      }),
+      startWith([]),
+      shareReplay(1)
+    );
 
-        // Sort with full entries
-        return combineLatest([extendedSpendingEntries, this.sort$]).pipe(
-          map(([data, sort]) => [...data].sort((a, b) => {
-            if (sort.value === 'ascend') {
-              if (a[sort.key] === b[sort.key]) {
-                return a.score! > b.score! ? 1 : -1;
-              }
-              return a[sort.key] > b[sort.key] ? 1 : -1;
-            } else {
-              if (a[sort.key] === b[sort.key]) {
-                return a.score! > b.score! ? 1 : -1;
-              }
-              return a[sort.key] < b[sort.key] ? 1 : -1;
-            }
-          }))
+    this.results$ = combineLatest([this.currency$, itemInfos$, historicalMarketData$, currentMarketData$]).pipe(
+      switchMap(([currency, items, historicalMarketData, currentMarketData]) => {
+        const historyById = new Map(
+          historicalMarketData.map(item => [item.ItemId, item])
         );
+        const currentById = new Map(
+          currentMarketData.map(item => [item.ItemId, item])
+        );
+        const mapped = items.map(item => {
+          const hist = historyById.get(item.item);
+          const cur = currentById.get(item.item);
+          if (cur && !hist) {
+            console.warn(`[Debug] Missing history data for item: ${item.item}. Hist found: ${!!hist}, Cur found: ${!!cur}`);
+            return null;
+          }
+          return this.getNpcsSellingItemForCurrency(item.item, currency).pipe(
+            map(npcs => <SpendingEntry>{
+              ...item,
+              HQ: item.HQ,
+              itemID: item.item,
+              npcs: npcs,
+              price: 0, // Computed later based on price mode
+              score: 0, // computed later // avgPrice / entry.rate * amountSoldLastWeek,
+              rate: item.rate,
+              exchangeRate: 0, // computed later // avgPrice * entry.rate,
+              // raw prices comes from the current prices, history from historical
+              rawPrices: cur?.Prices || [],
+              rawHistory: hist?.History || [],
+              amountSoldLastWeek: this.marketPriceService.getUnitsSoldLastWeek(hist, item.HQ),
+            })
+          );
+        }).filter(e => e !== null);
+        return safeCombineLatest(mapped);
       }),
       tap(() => {
         this.loading = false;
@@ -136,11 +192,42 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       })
     );
 
+    // Derived observable: enrich with amount, compute price based on mode, and apply sort.
+    // When priceMode$ or amount$ changes, this recomputes — no refetch.
+    this.priceModeResults$ = combineLatest([this.results$, this.amount$, this.priceMode$, this.sort$]).pipe(
+      map(([entries, currencyAmount, priceMode, sort]) => {
+        return entries.map(entry => {
+          const amountPurchaseable = Math.floor(entry.rate! * (currencyAmount || 0));
+          // History and listings hold both HQ and NQ rows for the same item
+          const hq = entry.HQ ?? false;
+          const price = priceMode === 'currentListing'
+            ? this.marketPriceService.getCurrentListingPrice(entry.rawPrices, hq)
+            : this.marketPriceService.calculatePrice(entry.rawHistory, priceMode, hq);
+          const exchangeRate = price * entry.rate!;
+          return {
+            ...entry,
+            amount: amountPurchaseable,
+            price: price,
+            total: amountPurchaseable * price,
+            exchangeRate: exchangeRate,
+          };
+        }).sort((a, b) => {
+          const aVal = (a as any)[sort.key] ?? 0;
+          const bVal = (b as any)[sort.key] ?? 0;
+          if (sort.value === 'ascend') {
+            return aVal > bVal ? 1 : -1;
+          } else {
+            return aVal < bVal ? 1 : -1;
+          }
+        });
+      })
+    );
+
     // Default to sorting by Gil / currency
     this.sort$.next({key: 'exchangeRate', value: 'descend'})
   }
 
-  getItemInfos(shops: LazyShop[], marketItems: number[], currency: number): ItemInfo[] {
+  private getItemInfos(shops: LazyShop[], marketItems: number[], currency: number): ItemInfo[] {
     return shops
       .filter(shop => {
         return shop.trades.some(t => {
@@ -164,56 +251,23 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       .flat();
   }
 
-  processMarketData(entries: ItemInfo[], server: string, currency: number) {
-    if (entries.length === 0) {
-      return of([]);
-    }
-    this.tradesCount = entries.length;
-    return this.getMarketboardListings(entries, server).pipe(
-      switchMap((res) => {
-        return safeCombineLatest(entries
-          .filter(entry => {
-            return res.some(r => r.ItemId === entry.item);
-          })
-          .map(entry => {
-            return this.lazyData.getRow('extracts', entry.item).pipe(
-              map(extract => {
-                const mbRow = res.find(r => r.ItemId === entry.item)!;
-                const avgPrice = mbRow.History.reduce((prev, curr) => {
-                  return prev.PricePerUnit < curr.PricePerUnit ? prev : curr;
-                }).PricePerUnit;
-                const amountSoldLastWeek = Math.floor(mbRow.nqSaleVelocity * 7);
-                const exchangeRate = avgPrice * entry.rate;
-                return <SpendingEntry>{
-                  ...entry,
-                  HQ: entry.HQ,
-                  itemID: entry.item,
-                  npcs: getItemSource(extract!, DataType.TRADE_SOURCES)
-                    .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
-                    .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)).flat(),
-                  price: avgPrice,
-                  score: avgPrice / entry.rate * amountSoldLastWeek,
-                  amountSoldLastWeek: amountSoldLastWeek,
-                  exchangeRate: exchangeRate
-                };
-              })
-            );
-          })
-        );
-      }),
-      map((res: SpendingEntry[]) => {
-        return uniqBy(res.filter(entry => entry.price), 'itemID');
-      })
-    );
+  private getNpcsSellingItemForCurrency(itemId: number, currency: number): Observable<number[]> {
+    return this.lazyData.getRow('extracts', itemId).pipe(
+      map(extract => 
+        getItemSource(extract!, DataType.TRADE_SOURCES)
+          .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
+          .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)).flat()
+      )
+    )
   }
 
   // Get the universalis market entries for all of the items requested on a server
-  getMarketboardListings(entries: ItemInfo[], server: string): Observable<MarketboardItem[]> {
+  private getMarketboardListings(entries: ItemInfo[], server: string, method: (...itemIds: number[]) => Observable<MarketboardItem[]>): Observable<MarketboardItem[]> {
     // Batch items into max items in universalis request
     const batches = chunk(entries, 100)
       .map((chunk) => {
-        return this.universalis.getServerHistoryPrices(
-          server,
+        console.debug(`Requesting chunk of ${chunk.length} items from Universalis`);
+        return method(
           ...chunk.map(entry => entry.item)
         );
       });
@@ -228,25 +282,11 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       first(),
       map(res => {
         return res.flat()
-          // make sure the item has been sold
+          // make sure the item has data
           .filter(mbRow => {
             return mbRow.History && mbRow.History.length > 0 || mbRow.Prices && mbRow.Prices.length > 0;
           });
     }));
-  }
-
-  computeValueWithAmount(entries: SpendingEntry[], currencyAmount: number | null): SpendingEntry[] {
-    return entries.map((entry) => {
-      // If null, assume no currency
-      currencyAmount = currencyAmount || 0;
-      const amountPurchaseable = Math.floor(entry.rate! * currencyAmount)
-      const totalValue = amountPurchaseable * entry.price;
-      return {
-        ...entry,
-        amount: amountPurchaseable,
-        total: totalValue
-      };
-    });
   }
 
   ngOnInit(): void {
@@ -271,6 +311,15 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   sort(event: any): void {
     this.sort$.next({ key: event.key, value: event.value });
+  }
+
+  setPriceMode(mode: PriceCalculationMode): void {
+    this.priceMode$.next(mode);
+  }
+
+  /** The label key for the currently selected price mode */
+  get currentPriceModeLabelKey(): string {
+    return this.priceModeOptions.find(m => m.key === this.priceMode)?.labelKey ?? '';
   }
 
 }
