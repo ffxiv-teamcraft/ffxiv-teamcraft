@@ -16,6 +16,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { WebhookSetting } from '../../../model/team/webhook-setting';
 import { OauthService } from '../../../core/auth/oauth.service';
+import { consumeOauthState, createOauthState, OAUTH_STATE_ERROR } from '../../../core/auth/oauth-state';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TeamcraftLinkPipe } from '../../../pipes/pipes/teamcraft-link.pipe';
 import { CharacterNamePipe } from '../../../pipes/pipes/character-name.pipe';
@@ -78,10 +79,16 @@ export class TeamsComponent implements OnInit {
     this.redirectUri = window.location.href.replace(/\?.*/, '');
 
     if (this.params.code && this.params.state) {
+      // The state is a random value this browser stored along with the team the webhook is for.
+      const teamKey = consumeOauthState('discord', this.params.state)?.data;
+      if (!teamKey) {
+        this.errorCode$.next(OAUTH_STATE_ERROR);
+        return;
+      }
       this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${this.params.code}&redirect_uri=${this.redirectUri}`)
         .pipe(
           switchMap((response: any) => {
-            return this.setWebhook(this.params.state, response.webhook.url);
+            return this.setWebhook(teamKey, response.webhook.url);
           })
         ).subscribe({
         error: error => this.errorCode$.next(error.error)
@@ -205,7 +212,7 @@ export class TeamsComponent implements OnInit {
         error: error => this.errorCode$.next(error.error)
       });
     } else {
-      window.open(this.discordWebhook.oauthUrl(team.$key, this.redirectUri));
+      window.open(this.discordWebhook.oauthUrl(createOauthState('discord', team.$key), this.redirectUri));
     }
   }
 

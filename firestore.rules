@@ -1,0 +1,354 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+		function getHoursInDay(millis){
+    	return (millis % 86400000) / 3600000;
+    }
+
+    function getUser(uid){
+    	return get(/databases/$(database)/documents/users/$(uid)).data;
+    }
+
+    function getTeam(tid){
+    	return get(/databases/$(database)/documents/teams/$(tid)).data;
+    }
+
+    function adminOrSekrit() {
+    	let user = getUser(request.auth.uid);
+    	return user.admin || user.sekrit;
+    }
+
+    function adminOrMod() {
+    	let user = getUser(request.auth.uid);
+    	return user.admin || user.moderator;
+    }
+
+    function getPrivateProfilePath(uid) {
+    	return /databases/$(database)/documents/users/$(uid)/private/profile;
+    }
+
+    function hasFcPermissionLevel(fcId, level) {
+    	return fcId != null
+      	&& resource.data.registry.keys().hasAny([fcId])
+      	&& resource.data.registry[fcId] >= level;
+    }
+
+    // currentFcId lives in the private profile; users who haven't migrated yet still have it on the public document.
+    function isAdminOrModOrFcShared(level) {
+    	let user = getUser(request.auth.uid);
+    	return user.admin
+      || user.moderator
+      || (exists(getPrivateProfilePath(request.auth.uid))
+      		&& hasFcPermissionLevel(get(getPrivateProfilePath(request.auth.uid)).data.get('currentFcId', null), level))
+      || hasFcPermissionLevel(user.get('currentFcId', null), level)
+    }
+
+  	function hasPermissionLevel(level) {
+    	let user = getUser(request.auth.uid);
+      return 	resource.data.authorId == request.auth.uid
+              || (resource.data.registry.keys().hasAny([request.auth.uid])
+              		&& resource.data.registry[request.auth.uid] >= level)
+              || resource.data.everyone >= level
+              || isAdminOrModOrFcShared(level);
+    }
+
+    function hasTeamPermissionLevel(teamId, uuid, level) {
+    	let team = getTeam(teamId);
+      return 	teamId != null &&
+      				(
+              	(team.leader == uuid && level < 40) ||
+              	(uuid in team.members && level < 30) ||
+              	(uuid in team.members && resource.data.registry['team:' + teamId] >= level)
+              )
+    }
+
+    // ---------------------------------------------------------------------
+    // Security helpers (added)
+    // ---------------------------------------------------------------------
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Every visitor gets an anonymous Firebase account, so anonymous doesn't count as registered.
+    function isRegistered() {
+      return isSignedIn() && request.auth.token.firebase.sign_in_provider != 'anonymous';
+    }
+
+    function isAdmin() {
+      return isSignedIn() && getUser(request.auth.uid).get('admin', false) == true;
+    }
+
+    function isModerator() {
+      return isSignedIn() && getUser(request.auth.uid).get('moderator', false) == true;
+    }
+
+    function changedKeys() {
+      return request.resource.data.diff(resource.data).affectedKeys();
+    }
+
+    // Compares a field before and after the write, treating a missing field as `fallback`
+    // (older documents don't have every flag, and the client adds them as false on save).
+    function unchanged(field, fallback) {
+      return request.resource.data.get(field, fallback) == resource.data.get(field, fallback);
+    }
+
+    // The only change to an array field is the caller adding or removing their own uid.
+    function onlySelfToggled(field) {
+      let before = resource.data.get(field, []).toSet();
+      let after = request.resource.data.get(field, []).toSet();
+      return after.difference(before).hasOnly([request.auth.uid])
+        && before.difference(after).hasOnly([request.auth.uid]);
+    }
+
+    // The client saves documents through JSON.parse(JSON.stringify()), which turns a Timestamp
+    // into a {seconds, nanoseconds} map, so an untouched value may still change type.
+    function patreonBenefitsUnchanged() {
+      let before = resource.data.get('patreonBenefitsUntil', null);
+      let after = request.resource.data.get('patreonBenefitsUntil', null);
+      return before == after
+        || (before is timestamp && after is map
+            && after.get('seconds', -1) == math.floor(before.toMillis() / 1000));
+    }
+
+    // Flags that grant access in these rules (editor, sekrit, trustedMJI), in Cloud Functions
+    // (admin, moderator, allaganChecker -> Hasura roles) or perks (patreonBenefitsUntil).
+    function userPrivilegesUnchanged() {
+      return unchanged('admin', false)
+        && unchanged('moderator', false)
+        && unchanged('editor', false)
+        && unchanged('sekrit', false)
+        && unchanged('allaganChecker', false)
+        && unchanged('trustedMJI', false)
+        && unchanged('dbBan', false)
+        && patreonBenefitsUnchanged();
+    }
+
+    function hasNoPrivileges() {
+      let data = request.resource.data;
+      return data.get('admin', false) == false
+        && data.get('moderator', false) == false
+        && data.get('editor', false) == false
+        && data.get('sekrit', false) == false
+        && data.get('allaganChecker', false) == false
+        && data.get('trustedMJI', false) == false
+        && data.get('dbBan', false) == false
+        && data.get('patreonBenefitsUntil', null) == null;
+    }
+
+    // A registered user adding or removing only themselves (joining through an invite, or leaving).
+    // webhookSettings is allowed because Team fills in missing default settings when it's loaded.
+    function isSelfJoinOrLeave() {
+      let before = resource.data.members.toSet();
+      let after = request.resource.data.members.toSet();
+      return isRegistered()
+        && changedKeys().hasOnly(['members', 'webhookSettings', 'appVersion'])
+        && after.difference(before).hasOnly([request.auth.uid])
+        && before.difference(after).hasOnly([request.auth.uid]);
+    }
+
+    // Forking a public list: the client re-saves the original with forks + 1 and a new etag.
+    function isForkCounterBump() {
+      return resource.data.get('public', false) == true
+        && changedKeys().hasOnly(['forks', 'etag', 'appVersion'])
+        && request.resource.data.get('forks', 0) == resource.data.get('forks', 0) + 1;
+    }
+
+    // The commission's author hiring or firing a crafter moves list ownership.
+    // A commission uses the same document id as its list.
+    function isCommissionOwnershipChange(listId) {
+      let commissionPath = /databases/$(database)/documents/commissions/$(listId);
+      return isSignedIn()
+        && resource.data.get('hasCommission', false) == true
+        && exists(commissionPath)
+        && get(commissionPath).data.authorId == request.auth.uid
+        && changedKeys().hasOnly(['authorId', 'registry', 'everyone', 'appVersion']);
+    }
+
+    match /db-comments/{document} {
+    	allow read: if isSignedIn();
+      allow create: if isRegistered()
+      	&& request.resource.data.author == request.auth.uid
+      	&& getUser(request.auth.uid).get('dbBan', false) != true;
+      // Authors and moderators edit; everyone else may only toggle their own like/dislike.
+      allow update: if isSignedIn() && (
+      	(resource.data.author == request.auth.uid && request.resource.data.author == request.auth.uid)
+      	|| isAdmin()
+      	|| isModerator()
+      	|| (changedKeys().hasOnly(['likes', 'dislikes', 'appVersion'])
+      			&& onlySelfToggled('likes')
+      			&& onlySelfToggled('dislikes'))
+      );
+      allow delete: if request.auth.uid == resource.data.author
+      	|| adminOrMod();
+    }
+
+    match /mji-workshop-status/{document=**}{
+    	function requestIsValid(){
+      	return  request.auth != null && request.resource.data.appVersion > "11.0";
+      }
+      function canOverride() {
+      	let user = getUser(request.auth.uid);
+      	return user.admin || user.trustedMJI;
+      }
+      function isLocked() {
+      	return resource.data.lock || getHoursInDay(request.time.toMillis()) < 8.05;
+      }
+    	allow read, create: if request.auth != null;
+      allow update: if requestIsValid() && ((!isLocked()) || canOverride());
+    }
+
+    match /mji-workshop-status-pre63/{document=**}{
+    	allow read, create: if request.auth != null;
+    }
+
+    match /log-tracking/{document=**}{
+    	allow read, create: if request.auth.uid != null;
+      allow update: if request.auth.uid != null;
+      allow delete: if false;
+    }
+
+    match /alarm-groups/{document=**}{
+    	allow read, create: if request.auth != null;
+    	allow write: if request.auth.uid == resource.data.userId;
+    }
+
+		match /gearsets/{document=**}{
+    	allow read;
+      allow create: if request.auth != null;
+    	allow write: if request.auth.uid == resource.data.authorId;
+    }
+    match /alarms/{document=**}{
+    	allow read, create: if request.auth != null;
+      allow write: if request.auth.uid == resource.data.userId;
+    }
+    match /compacts/{document=**}{
+    	allow read, create: if request.auth != null;
+      allow update: if hasPermissionLevel(20);
+      allow delete: if hasPermissionLevel(40) || resource.data.ephemeral;
+    }
+    match /comments/{document=**}{
+    	allow read, create: if request.auth != null;
+      allow write: if request.auth.uid == resource.data.authorId;
+      allow delete: if request.auth.uid == resource.data.authorId;
+    }
+    match /custom-items/{document=**}{
+    	allow read, create: if request.auth != null;
+      allow write: if request.auth.uid == resource.data.authorId;
+    }
+    match /custom-item-folders/{document=**}{
+    	allow read, create: if request.auth != null;
+      allow write: if request.auth.uid == resource.data.authorId;
+    }
+    match /fish-train/{document=**}{
+    	allow read, create: if request.auth != null;
+      allow write: if request.resource.data.passengers != resource.data.passengers
+      || request.auth.uid == resource.data.conductor || !('conductor' in resource.data);
+    }
+    match /layouts/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if request.auth.uid == resource.data.userId;
+    }
+    match /lists/{listId} {
+    	allow read, create;
+      allow update: if hasPermissionLevel(20)
+      || hasTeamPermissionLevel(resource.data.teamId, request.auth.uid, 20)
+      || isForkCounterBump()
+      || isCommissionOwnershipChange(listId);
+      allow delete: if hasPermissionLevel(40) || resource.data.ephemeral;
+    }
+    match /notifications/{notificationId} {
+    	allow read: if isSignedIn() && resource.data.targetId == request.auth.uid;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn()
+      	&& resource.data.targetId == request.auth.uid
+      	&& request.resource.data.targetId == resource.data.targetId;
+      allow delete: if isSignedIn() && resource.data.targetId == request.auth.uid;
+    }
+    match /folders/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if hasPermissionLevel(30);
+    }
+    match /rotations/{document=**} {
+    	allow read;
+      allow create: if request.auth != null;
+      allow write: if hasPermissionLevel(30);
+    }
+    match /crafting-rotations-folders/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if hasPermissionLevel(30);
+    }
+    match /crafting-replays/{document=**} {
+    	allow read: if request.auth.uid != null;
+      allow delete: if request.auth.uid == resource.data.authorId;
+    }
+    match /team-invites/{document=**} {
+    	allow read, write: if request.auth != null;
+    }
+    match /teams/{teamId} {
+    	allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.leader == request.auth.uid;
+      allow update: if isSignedIn()
+      	&& (resource.data.leader == request.auth.uid || isSelfJoinOrLeave());
+      allow delete: if isSignedIn() && resource.data.leader == request.auth.uid;
+    }
+    // Kickstarter emails reserved by users, keyed by SHA-256 of the lowercased email so they can't be listed.
+    match /ks-emails/{emailHash} {
+      allow get: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.uid == request.auth.uid;
+    }
+    // Public profile. Private fields live in users/{userId}/private/profile (#3309).
+    match /users/{userId} {
+      match /private/{docId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+    	allow read;
+      allow create: if isSignedIn() && request.auth.uid == userId && hasNoPrivileges();
+      allow update: if (request.auth.uid == userId
+      && (request.resource.data.lodestoneIds.size() > 0 || resource.data.lodestoneIds.size() == 0)
+      && userPrivilegesUnchanged())
+      || isAdmin()
+      || (isModerator() && unchanged('admin', false) && unchanged('moderator', false));
+      // A banned user can't delete and re-create their profile to clear the ban.
+      allow delete: if request.auth.uid == userId && resource.data.get('dbBan', false) != true;
+    }
+    match /custom-links/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if resource.data.authorId == request.auth.uid;
+    }
+    match /commissions/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if resource.data.authorId == request.auth.uid
+      	|| resource.data.crafterId == request.auth.uid
+      	|| request.resource.data.candidates != resource.data.candidates;
+    }
+    match /commission-profile/{userId} {
+    	allow read, create: if request.auth != null;
+      allow write: if userId == request.auth.uid
+      	|| request.resource.data.firedFeedbacks != resource.data.firedFeedbacks;
+    }
+    match /workshops/{document=**} {
+    	allow read, create: if request.auth != null;
+        allow write: if hasPermissionLevel(30)
+        || request.resource.data.registry[request.auth.uid] != resource.data.registry[request.auth.uid];
+    }
+    match /metrics-dashboards/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if resource.data.authorId == request.auth.uid;
+    }
+    match /list-aggregates/{document=**} {
+    	allow read, create: if request.auth != null;
+      allow write: if resource.data.authorId == request.auth.uid;
+    }
+    match /guides/{document=**} {
+    	allow read;
+      allow write: if request.auth != null && (getUser(request.auth.uid).editor || getUser(request.auth.uid).admin);
+    }
+    match /mappy/{document=**} {
+    	allow read, write: if adminOrSekrit();
+    }
+  }
+}

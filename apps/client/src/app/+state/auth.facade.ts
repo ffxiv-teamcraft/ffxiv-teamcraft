@@ -423,10 +423,10 @@ export class AuthFacade {
           return this.user$.pipe(
             first(),
             switchMap(user => {
-              return combineLatest([
-                from(this.auth.currentUser.delete()),
-                this.userService.remove(user.$key),
-              ])
+              // Delete data first: Firestore rules need the account to still exist.
+              return this.userService.deleteUser(user).pipe(
+                switchMap(() => from(this.auth.currentUser.delete()))
+              );
             }),
             tap(() => {
               this.store.dispatch(new Logout());

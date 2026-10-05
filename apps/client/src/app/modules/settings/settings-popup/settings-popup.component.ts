@@ -540,10 +540,13 @@ export class SettingsPopupComponent {
     this.userService.checkNicknameAvailability(nickname).pipe(first()).subscribe(res => this.nicknameAvailable = res);
   }
 
-  checkKsEmailAvailability(uid: string, email: string): void {
-    this.userService.checkKsEmailAvailability(uid, email).pipe(first()).subscribe(res => {
+  checkKsEmailAvailability(user: TeamcraftUser, email: string): void {
+    this.userService.checkKsEmailAvailability(user.$key, email).pipe(first()).subscribe(res => {
       this.ksEmailValid = res;
       if (res === true) {
+        user.ksEmail = email;
+        user.backer = true;
+        this.authFacade.updateUser(user);
         this.message.success(this.translate.instant('SETTINGS.Ks_email_applied'));
       }
     });

@@ -75,4 +75,8 @@ export class TeamcraftUser extends DataModel {
   world?: number;
 
   dbBan?: boolean;
+
+  // Set in memory on the signed-in user once its private profile is loaded, never saved.
+  // Only users loaded this way write users/{uid}/private/profile (see user-private-data.ts).
+  privateDataLoaded?: boolean;
 }
