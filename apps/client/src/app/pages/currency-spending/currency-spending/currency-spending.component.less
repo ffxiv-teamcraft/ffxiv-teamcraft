@@ -43,6 +43,8 @@
 }
 
 .price-col {
+  // anchors the absolutely positioned price-mode dropdown menu to this header cell
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,11 +62,11 @@
   border: none;
   padding: 4px 6px;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.45);
+  opacity: 0.55;
   font-size: 14px;
 
   &:hover {
-    color: rgba(0, 0, 0, 0.75);
+    opacity: 0.85;
   }
 
   i {
@@ -94,7 +96,7 @@
       }
 
       .mode-desc {
-        color: rgba(0, 0, 0, 0.45);
+        opacity: 0.55;
         font-size: 12px;
       }
     }
