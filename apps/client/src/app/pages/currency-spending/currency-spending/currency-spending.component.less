@@ -89,10 +89,21 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  // clip hover/selected row backgrounds to the rounded corners
+  overflow: hidden;
 
   ::ng-deep {
-    .ng-zorro-antd-menu-item {
-      min-width: 180px;
+    // nz-menu-item inside nz-dropdown-menu gets `ant-dropdown-menu-item`
+    // (not `ant-menu-item`); the library already sets display:flex, align-items:center
+    .ant-dropdown-menu-item {
+      min-width: 220px;
+      padding: 8px 16px;
+
+      // hairline between rows; safe — the menu is an opaque CDK overlay
+      // floating above the table, so dividers never touch the table
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+      }
 
       &.selected {
         background-color: rgba(24, 144, 255, 0.12);
@@ -103,19 +114,25 @@
         }
       }
 
-      &:hover {
-        // white overlay: black-on-#141414 was invisible
-        background-color: rgba(255, 255, 255, 0.08);
-      }
-
-      .mode-label {
-        margin-right: 4px;
-      }
+      // hover background comes from the global styles.less rule
+      // (.ant-dropdown-menu-item:hover, rgba(255,255,255,.2) !important)
 
       .mode-desc {
         opacity: 0.55;
         font-size: 12px;
       }
+    }
+
+    // nz-menu-item wraps its children in this span, so the two-column
+    // layout targets it — the li itself has a single flex child
+    .ant-menu-title-content {
+      // stretch to the full row width, otherwise space-between has no
+      // free space to distribute and the desc hugs the label
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
   }
 }

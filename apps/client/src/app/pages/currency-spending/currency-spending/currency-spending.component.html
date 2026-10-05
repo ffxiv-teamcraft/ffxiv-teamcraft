@@ -87,8 +87,8 @@
                   <li (click)="setPriceMode(mode.key)"
                     [class.selected]="mode.key === priceMode"
                     nz-menu-item>
-                  <span class="mode-label">{{ mode.labelKey | translate }}</span>&nbsp;
-                  <span class="mode-desc">({{ mode.descriptionKey | translate }})</span>
+                  <span class="mode-label">{{ mode.labelKey | translate }}</span>
+                  <span class="mode-desc">{{ mode.descriptionKey | translate }}</span>
                   </li>
                 }
               </ul>
