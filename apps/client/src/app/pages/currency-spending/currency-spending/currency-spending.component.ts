@@ -198,7 +198,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     );
 
     // Derived observable: enrich with amount, compute price based on mode, and apply sort.
-    // When priceMode$ or amount$ changes, this recomputes — no refetch.
+    // When priceMode$ or amount$ changes, this recomputes without a refetch.
     this.priceModeResults$ = combineLatest([this.results$, this.amount$, this.priceMode$, this.sort$]).pipe(
       map(([entries, currencyAmount, priceMode, sort]) => {
         // Keep only entries that have data for the active mode
