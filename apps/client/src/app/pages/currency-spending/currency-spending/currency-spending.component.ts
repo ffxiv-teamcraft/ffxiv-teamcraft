@@ -65,7 +65,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     value: 'descend'
   });
 
-  public loading = false;
+  /** The spinner is on while any Universalis chunk is in flight */
+  public get loading(): boolean {
+    return this.pendingChunks.historical + this.pendingChunks.current > 0;
+  }
 
   public tradesCount = 0;
 
@@ -154,7 +157,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         if (mode !== 'currentListing') {
           // Drop the stale payload and clear any in-flight current requests
           this.pendingChunks.current = 0;
-          this.loading = this.pendingChunks.historical + this.pendingChunks.current > 0;
           return of({ server: null, currency: null, data: [] } as MarketData);
         }
         // Relies on the historical pipeline being declared first: on shared triggers
@@ -297,7 +299,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     // Reset this pipeline's count on re-key: chunks abandoned by a later switchMap
     // never decrement, so the count must not carry over from the previous key
     this.pendingChunks[pipeline] = batches.length;
-    this.loading = this.pendingChunks.historical + this.pendingChunks.current > 0;
     // Make sure unviersalis isn't overloaded with requests
     return requestsWithDelay(batches, 250, true).pipe(
       // Update loading count of prices; the spinner stays on until every
@@ -305,7 +306,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       tap(res => {
         this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
         this.pendingChunks[pipeline] = Math.max(0, this.pendingChunks[pipeline] - 1);
-        this.loading = this.pendingChunks.historical + this.pendingChunks.current > 0;
       }),
       bufferCount(batches.length),
       first(),
