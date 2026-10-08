@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of, shareReplay, Subject } from 'rxjs';
-import { bufferCount, filter, first, map, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { bufferCount, first, map, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
 import { chunk, uniqBy } from 'lodash';
@@ -71,6 +71,11 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   public loadedPrices = 0;
 
+  /** In-flight Universalis chunk counts per pipeline. Each pipeline's switchMap
+      resets its own count on re-key, so requests abandoned by a server/currency/mode
+      change can't leak and keep the spinner stuck */
+  private pendingChunks = { historical: 0, current: 0 };
+
   /** The currently selected price calculation mode */
   public priceMode$: BehaviorSubject<PriceCalculationMode> = new BehaviorSubject<PriceCalculationMode>('lowest');
 
@@ -129,41 +134,53 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       shareReplay(1)
     );
     
-    // Historical data: cached per currency/server
-    const historicalMarketData$ = combineLatest([this.server$, itemInfos$]).pipe(
-      switchMap(([server, items]) => {
-        this.loading = true;
+    // Historical data: cached per currency/server. Each payload is tagged with
+    // the (server, currency) it was fetched for so results$ can detect stale cached values.
+    const historicalMarketData$: Observable<MarketData> = combineLatest([this.server$, this.currency$, itemInfos$]).pipe(
+      switchMap(([server, currency, items]) => {
         this.tradesCount = items.length;
         this.loadedPrices = 0;
-        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds));
+        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds), 'historical')
+          .pipe(map(data => ({ server, currency, data })));
       }),
       shareReplay(1)
     );
 
-    // Current prices: only fetched when currentListing is active
-    const currentMarketData$: Observable<MarketboardItem[]> = combineLatest([this.server$, itemInfos$, this.priceMode$]).pipe(
-      // can also `filter` the observable, emitting no value, instead of emitting an empty array:
-      filter(([, , mode]) => mode === 'currentListing'),
-      switchMap(([server, items]) => {
-        // if (priceMode !== 'currentListing') return of([]);
-        // set loading if pricemode changed and need to fetch
-        this.loading = true;
+    // Current prices: only fetched when currentListing is active. The mode check
+    // lives inside the switchMap (instead of a filter) so the pipeline still runs
+    // on mode changes and can zero its pending count, clearing abandoned requests.
+    const currentMarketData$: Observable<MarketData> = combineLatest([this.server$, this.currency$, itemInfos$, this.priceMode$]).pipe(
+      switchMap(([server, currency, items, mode]) => {
+        if (mode !== 'currentListing') {
+          // Drop the stale payload and clear any in-flight current requests
+          this.pendingChunks.current = 0;
+          this.loading = this.pendingChunks.historical + this.pendingChunks.current > 0;
+          return of({ server: null, currency: null, data: [] } as MarketData);
+        }
         // Relies on the historical pipeline being declared first: on shared triggers
         // (server/currency) its switchMap resets tradesCount before this one adds to it
         this.tradesCount += items.length;
-        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds));
+        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds), 'current')
+          .pipe(map(data => ({ server, currency, data })));
       }),
-      startWith([]),
+      startWith({ server: null, currency: null, data: [] } as MarketData),
       shareReplay(1)
     );
 
     this.results$ = combineLatest([this.currency$, itemInfos$, historicalMarketData$, currentMarketData$]).pipe(
-      switchMap(([currency, items, historicalMarketData, currentMarketData]) => {
+      switchMap(([currency, items, historical, current]) => {
+        // combineLatest keeps the last value of each source: on a server or
+        // currency change, the (slower) current-price requests are still in
+        // flight, so the cached current payload still belongs to the previous
+        // key. Treat it as empty until both tags match the history we have.
+        const currentData = (current.server === historical.server && current.currency === historical.currency)
+          ? current.data
+          : [];
         const historyById = new Map(
-          historicalMarketData.map(item => [item.ItemId, item])
+          historical.data.map(item => [item.ItemId, item])
         );
         const currentById = new Map(
-          currentMarketData.map(item => [item.ItemId, item])
+          currentData.map(item => [item.ItemId, item])
         );
         const mapped = uniqBy(items, 'item').map(item => {
           const hist = historyById.get(item.item);
@@ -189,11 +206,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           );
         }).filter(e => e !== null);
         return safeCombineLatest(mapped);
-      }),
-      tap(() => {
-        this.loading = false;
-        this.tradesCount = 0;
-        this.loadedPrices = 0;
       })
     );
 
@@ -273,7 +285,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   }
 
   // Get the universalis market entries for all of the items requested on a server
-  private getMarketboardListings(entries: ItemInfo[], method: (...itemIds: number[]) => Observable<MarketboardItem[]>): Observable<MarketboardItem[]> {
+  private getMarketboardListings(entries: ItemInfo[], method: (...itemIds: number[]) => Observable<MarketboardItem[]>, pipeline: 'historical' | 'current'): Observable<MarketboardItem[]> {
     // Batch items into max items in universalis request
     const batches = chunk(entries, 100)
       .map((chunk) => {
@@ -282,11 +294,18 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           ...chunk.map(entry => entry.item)
         );
       });
+    // Reset this pipeline's count on re-key: chunks abandoned by a later switchMap
+    // never decrement, so the count must not carry over from the previous key
+    this.pendingChunks[pipeline] = batches.length;
+    this.loading = this.pendingChunks.historical + this.pendingChunks.current > 0;
     // Make sure unviersalis isn't overloaded with requests
     return requestsWithDelay(batches, 250, true).pipe(
-      // Update loading count of prices
+      // Update loading count of prices; the spinner stays on until every
+      // chunk started by both pipelines has come back
       tap(res => {
         this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
+        this.pendingChunks[pipeline] = Math.max(0, this.pendingChunks[pipeline] - 1);
+        this.loading = this.pendingChunks.historical + this.pendingChunks.current > 0;
       }),
       bufferCount(batches.length),
       first(),
@@ -344,4 +363,11 @@ type ItemInfo = {
   item: number;
   HQ: boolean;
   rate: number;
+}
+
+/** Marketboard data tagged with the (server, currency) it was fetched for */
+type MarketData = {
+  server: string | null;
+  currency: number | null;
+  data: MarketboardItem[];
 }
