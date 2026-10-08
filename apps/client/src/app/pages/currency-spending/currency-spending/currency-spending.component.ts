@@ -70,9 +70,18 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     return this.pendingChunks.historical + this.pendingChunks.current > 0;
   }
 
-  public tradesCount = 0;
+  /** Per-pipeline fetch progress, summed for the template's loaded/total display */
+  private expectedRows = { historical: 0, current: 0 };
 
-  public loadedPrices = 0;
+  private loadedRows = { historical: 0, current: 0 };
+
+  public get tradesCount(): number {
+    return this.expectedRows.historical + this.expectedRows.current;
+  }
+
+  public get loadedPrices(): number {
+    return this.loadedRows.historical + this.loadedRows.current;
+  }
 
   /** In-flight Universalis chunk counts per pipeline. Each pipeline's switchMap
       resets its own count on re-key, so requests abandoned by a server/currency/mode
@@ -141,8 +150,8 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     // the (server, currency) it was fetched for so results$ can detect stale cached values.
     const historicalMarketData$: Observable<MarketData> = combineLatest([this.server$, this.currency$, itemInfos$]).pipe(
       switchMap(([server, currency, items]) => {
-        this.tradesCount = items.length;
-        this.loadedPrices = 0;
+        this.expectedRows.historical = items.length;
+        this.loadedRows.historical = 0;
         return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds), 'historical')
           .pipe(map(data => ({ server, currency, data })));
       }),
@@ -157,11 +166,14 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         if (mode !== 'currentListing') {
           // Drop the stale payload and clear any in-flight current requests
           this.pendingChunks.current = 0;
+          this.expectedRows.current = 0;
+          this.loadedRows.current = 0;
           return of({ server: null, currency: null, data: [] } as MarketData);
         }
-        // Relies on the historical pipeline being declared first: on shared triggers
-        // (server/currency) its switchMap resets tradesCount before this one adds to it
-        this.tradesCount += items.length;
+        // Each pipeline owns its expected/loaded counts, so the display total
+        // is the sum of both — no ordering dependency between the pipelines
+        this.expectedRows.current = items.length;
+        this.loadedRows.current = 0;
         return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds), 'current')
           .pipe(map(data => ({ server, currency, data })));
       }),
@@ -304,7 +316,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       // Update loading count of prices; the spinner stays on until every
       // chunk started by both pipelines has come back
       tap(res => {
-        this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
+        this.loadedRows[pipeline] = Math.min(this.expectedRows[pipeline], this.loadedRows[pipeline] + res.length);
         this.pendingChunks[pipeline] = Math.max(0, this.pendingChunks[pipeline] - 1);
       }),
       bufferCount(batches.length),
