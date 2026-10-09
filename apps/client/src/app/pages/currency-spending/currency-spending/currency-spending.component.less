@@ -20,6 +20,13 @@
   @media @mobile {
     flex-wrap: wrap-reverse;
   }
+
+  // nzShowSearch hides the placeholder without this
+  ::ng-deep {
+    .ant-select-selection-placeholder {
+      z-index: 1 !important;
+    }
+  }
 }
 
 .loader {
@@ -31,6 +38,101 @@
   }
 }
 
-.spending-table { 
+.spending-table {
   padding-top: 10px;
+}
+
+.price-col {
+  // anchors the absolutely positioned price-mode dropdown menu to this header cell
+  position: relative;
+
+  // nzShowSort renders our content inside an `ant-table-column-title` span (flex:1,
+  // stretched full width) with the sort caret as its sibling; flex the title span
+  // so label/icon/cog pack together instead of leaving dead space before the caret
+  ::ng-deep {
+    .ant-table-column-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
+
+.price-col-label {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.price-mode-trigger {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  font-size: 16px;
+
+  &:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  i {
+    display: block;
+  }
+}
+
+.price-mode-menu {
+  // the dark theme paints the menu #141414 — same as the page — and strips
+  // the elevation shadow, so give it its own card treatment
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  // clip hover/selected row backgrounds to the rounded corners
+  overflow: hidden;
+
+  ::ng-deep {
+    // nz-menu-item inside nz-dropdown-menu gets `ant-dropdown-menu-item`
+    // (not `ant-menu-item`); the library already sets display:flex, align-items:center
+    .ant-dropdown-menu-item {
+      min-width: 220px;
+      padding: 8px 16px;
+
+      // hairline between rows; safe — the menu is an opaque CDK overlay
+      // floating above the table, so dividers never touch the table
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+      }
+
+      &.selected {
+        background-color: rgba(24, 144, 255, 0.12);
+        border-left: 3px solid #1890ff;
+
+        .mode-label {
+          font-weight: 600;
+        }
+      }
+
+      // hover background comes from the global styles.less rule
+      // (.ant-dropdown-menu-item:hover, rgba(255,255,255,.2) !important)
+
+      .mode-desc {
+        opacity: 0.55;
+        font-size: 12px;
+      }
+    }
+
+    // nz-menu-item wraps its children in this span, so the two-column
+    // layout targets it — the li itself has a single flex child
+    .ant-menu-title-content {
+      // stretch to the full row width, otherwise space-between has no
+      // free space to distribute and the desc hugs the label
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
 }

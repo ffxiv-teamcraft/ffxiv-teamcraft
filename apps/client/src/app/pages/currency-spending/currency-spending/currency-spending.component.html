@@ -5,6 +5,19 @@
   </div>
   <div fxLayout="row" fxLayoutGap="5px" class="currency-select">
     <nz-select
+      (ngModelChange)="server$.next($event)"
+      [ngModel]="server$ | async"
+      [nzPlaceHolder]="'Server_name' | translate"
+      class="server-picker"
+      nzShowSearch
+      >
+      @for (server of servers$ | async; track server) {
+        <nz-option [nzLabel]="server"
+          [nzValue]="server">
+        </nz-option>
+      }
+    </nz-select>
+    <nz-select
       (ngModelChange)="currency$.next($event)"
       [ngModel]="null"
       [nzPlaceHolder]="'CURRENCY_SPENDING.Pick_currency' | translate"
@@ -25,19 +38,6 @@
     </nz-select>
     <nz-input-number (ngModelChange)="amount$.next($event)" [ngModel]="amount$ | async" [nzPlaceHolder]="'COMMON.Amount' | translate"
     [nzStep]="1" [nzMin]="0"></nz-input-number>
-    <nz-select
-      (ngModelChange)="server$.next($event)"
-      [ngModel]="server$ | async"
-      [nzPlaceHolder]="'Server_name' | translate"
-      class="server-picker"
-      nzShowSearch
-      >
-      @for (server of servers$ | async; track server) {
-        <nz-option [nzLabel]="server"
-          [nzValue]="server">
-        </nz-option>
-      }
-    </nz-select>
   </div>
 </div>
 
@@ -57,7 +57,7 @@
   </div>
 }
 
-@if (results$ | async; as results) {
+@if (priceModeResults$ | async; as results) {
   @if (!loading) {
     <nz-table #currencySpendingTable [nzData]="results" [nzNoResult]="noTrades" class="spending-table" nzSize="small">
       <ng-template #noTrades>
@@ -68,9 +68,31 @@
           <th>Name</th>
           <th nzShowSort [nzSortFn]="true" nzColumnKey="amount">{{ 'CURRENCY_SPENDING.You_can_buy' | translate }}</th>
           <th nzShowSort [nzSortFn]="true" nzColumnKey="exchangeRate">{{ 'CURRENCY_SPENDING.Exchange_rate' | translate }}</th>
-          <th nzShowSort [nzSortFn]="true" nzColumnKey="price">
-            {{ 'CURRENCY_SPENDING.Price' | translate }}
+          <th nzShowSort [nzSortFn]="true" nzColumnKey="price" class="price-col">
+            <span class="price-col-label">
+              {{ 'CURRENCY_SPENDING.Price' | translate }}
+              - {{ currentPriceModeLabelKey | translate }}
+            </span>
             <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+            <button nz-button nzType="text" nz-dropdown
+              [nzDropdownMenu]="priceModeMenu"
+              nzTrigger="click" class="price-mode-trigger"
+              (mousedown)="$event.stopPropagation()"
+              (click)="$event.stopPropagation()">
+              <i nz-icon nzType="setting" nzTheme="twotone"></i>
+            </button>
+            <nz-dropdown-menu #priceModeMenu="nzDropdownMenu">
+              <ul nz-menu nzType="basic" class="price-mode-menu">
+                @for (mode of priceModeOptions; track mode.key) {
+                  <li (click)="setPriceMode(mode.key)"
+                    [class.selected]="mode.key === priceMode"
+                    nz-menu-item>
+                  <span class="mode-label">{{ mode.labelKey | translate }}</span>
+                  <span class="mode-desc">{{ mode.descriptionKey | translate }}</span>
+                  </li>
+                }
+              </ul>
+            </nz-dropdown-menu>
           </th>
           <th nzShowSort [nzSortFn]="true" nzColumnKey="total">
             {{ 'CURRENCY_SPENDING.Total_earnings' | translate }}
@@ -81,7 +103,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (item of currencySpendingTable.data; track item) {
+        @for (item of currencySpendingTable.data; track item.item) {
           <tr>
             <td fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <app-item-icon [hq]="item.HQ" [icon]="item.item | lazyIcon" [itemId]="item.item"
