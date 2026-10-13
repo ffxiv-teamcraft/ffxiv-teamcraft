@@ -5,7 +5,6 @@ import {
   ElementRef,
   HostListener,
   Inject,
-  Injector,
   OnInit,
   PLATFORM_ID,
   ViewChild
@@ -38,7 +37,6 @@ import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
 import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { REQUEST } from '../express.tokens';
 import * as semver from 'semver';
 import { UniversalisService } from './core/api/universalis.service';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
@@ -251,7 +249,6 @@ export class AppComponent implements OnInit {
     private lazyDataFacade: LazyDataFacade,
     private dirtyFacade: DirtyFacade,
     private seoService: SeoService,
-    private injector: Injector,
     private universalis: UniversalisService,
     private inventoryService: InventoryService,
     @Inject(PLATFORM_ID) private platform: any,
@@ -616,8 +613,7 @@ export class AppComponent implements OnInit {
         return this.translate.getBrowserLang();
       }
     } else {
-      const request: any = this.injector.get(REQUEST) || {};
-      return request.lang || 'en';
+      return 'en';
     }
   }
 
@@ -762,19 +758,7 @@ export class AppComponent implements OnInit {
 
   openInApp(): void {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
-      this.http
-        .get(`http://localhost:14500${window.location.pathname}`)
-        .pipe(
-          map(() => true),
-          catchError(() => {
-            return of(false);
-          })
-        )
-        .subscribe((opened) => {
-          if (!opened) {
-            window.open(`teamcraft://${window.location.pathname}`);
-          }
-        });
+      window.open(`teamcraft://${window.location.pathname}`);
       setTimeout(() => {
         this.hasDesktopReloader$.next(null);
       }, 30000);

@@ -677,6 +677,7 @@
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list. The items will be added to this list and you'll be redirected to it.",
+    "Import_callback_confirmation": "The site this import came from wants to receive the link to your list. Send it to {{host}}?",
     "Delete_after_merge": "Delete original lists after merge",
     "Favorite_lists": "Favorite lists",
     "No_favorite_lists": "You have no favorite lists",

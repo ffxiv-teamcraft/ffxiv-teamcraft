@@ -87,6 +87,7 @@ const allowedChannels = [
   'app-state:set',
   'mappy-state:set',
   'oauth',
+  'oauth:start',
   'free-company-workshops:get',
   'free-company-workshops:set',
   'inventory:set',

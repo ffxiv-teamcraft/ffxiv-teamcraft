@@ -7,6 +7,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../../core/database/user.service';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { consumeOauthState, OAUTH_STATE_ERROR } from '../../../core/auth/oauth-state';
 
 
 @Component({
@@ -27,6 +28,11 @@ export class TipeeeRedirectComponent {
       first()
     ).subscribe(params => {
       if (params.code) {
+        // Only accept authorizations started from this browser (prevents linking someone else's Tipeee account).
+        if (!consumeOauthState('tipeee', params.state)) {
+          this.errorCode = OAUTH_STATE_ERROR;
+          return;
+        }
         this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/tipeee-oauth?code=${params.code}&redirect_uri=${
           window.location.protocol}//${window.location.host}/tipeee-redirect`)
           .pipe(

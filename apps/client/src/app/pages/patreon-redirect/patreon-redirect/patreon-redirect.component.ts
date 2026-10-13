@@ -6,6 +6,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { consumeOauthState, OAUTH_STATE_ERROR } from '../../../core/auth/oauth-state';
 
 
 @Component({
@@ -25,6 +26,11 @@ export class PatreonRedirectComponent {
       first()
     ).subscribe(params => {
       if (params.code) {
+        // Only accept authorizations started from this browser (prevents linking someone else's Patreon account).
+        if (!consumeOauthState('patreon', params.state)) {
+          this.errorCode = OAUTH_STATE_ERROR;
+          return;
+        }
         this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth?code=${params.code}&redirect_uri=${
           window.location.protocol}//${window.location.host}/patreon-redirect`)
           .pipe(

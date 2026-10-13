@@ -534,27 +534,11 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-server@~18.0.1":
-  version "18.0.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-18.0.1.tgz#0c8053e89fd6b42a9d66fb0d24a4a4a39eb52391"
-  integrity sha512-Z5yLgto/wcoc1VFPoN+U1OdF8Ze6guAZB/cYr6EMY/MebtkasfaZXU6ou23b3C86oMM7eLKqKlHSWzL+Xb3Yzg==
-  dependencies:
-    tslib "^2.3.0"
-    xhr2 "^0.2.0"
-
 "@angular/router@~18.0.1":
   version "18.0.1"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-18.0.1.tgz#27d864a9114db872f4dab9bc61fad3af0c348b20"
   integrity sha512-PapdvfATjRZI0cJ/RH8n/ixHDHa4HIBaOMwhgU73InU9t6NIhBXg6aRECYV2qGt7NtpLYSHmG5Z1Ws86rm5Tyw==
   dependencies:
-    tslib "^2.3.0"
-
-"@angular/ssr@~18.0.2":
-  version "18.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/ssr/-/ssr-18.0.2.tgz#4114b3c259bed1773e0fa7df117edd8690b26f0b"
-  integrity sha512-x8+xDr/I5MHP9yv/9UaCjlB81c4t7CySthGeaoBg9w/Sr0h0M8XysNihjjzN5xgf9Xa9BwmZ6Bvramaiaxl/tg==
-  dependencies:
-    critters "0.0.22"
     tslib "^2.3.0"
 
 "@ant-design/colors@^7.0.0":
@@ -21640,7 +21624,7 @@ ts-jest@^29.0.0:
     semver "^7.5.3"
     yargs-parser "^21.0.1"
 
-ts-loader@^9.3.1, ts-loader@^9.4.1:
+ts-loader@^9.3.1:
   version "9.4.1"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-9.4.1.tgz#b6f3d82db0eac5a8295994f8cb5e4940ff6b1060"
   integrity sha512-384TYAqGs70rn9F0VBnh6BPTfhga7yFNdC5gXbQpDrBj9/KsT4iRkGqKXhziofHOlE2j6YEaiTYVGKKvPhGWvw==
@@ -22839,7 +22823,7 @@ xdg-basedir@^4.0.0:
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-4.0.0.tgz#4bc8d9984403696225ef83a1573cbbcb4e79db13"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
 
-xhr2@^0.2.0, xhr2@^0.2.1:
+xhr2@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/xhr2/-/xhr2-0.2.1.tgz#4e73adc4f9cfec9cbd2157f73efdce3a5f108a93"
   integrity sha512-sID0rrVCqkVNUn8t6xuv9+6FViXjUVXq8H5rWOH2rz9fDNQEd4g0EA2XlcEdJXRz5BMEn4O1pJFdT+z4YHhoWw==
