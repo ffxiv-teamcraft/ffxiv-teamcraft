@@ -59,7 +59,7 @@ export interface Trait {
   icon:        string;
   id:          number;
   ja:          string;
-  ko?:         string;
+  ko:          string;
   tw?:         string;
   zh?:         string;
 }
