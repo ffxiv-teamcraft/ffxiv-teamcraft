@@ -1174,7 +1174,8 @@
       "Malleable": "Formbar",
       "Primed": "Präpariert",
       "Normal": "Normal",
-      "Good_omen": "Gutes Omen"
+      "Good_omen": "Gutes Omen",
+      "Robust": "Durabel"
     },
     "SOLVER": {
       "Hq_target": "Zielwert für HQ%",

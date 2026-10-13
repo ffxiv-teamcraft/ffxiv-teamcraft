@@ -1182,7 +1182,8 @@
       "Malleable": "Malleable",
       "Primed": "Primed",
       "Normal": "Normal",
-      "Good_omen": "Good Omen"
+      "Good_omen": "Good Omen",
+      "Robust": "Robust"
     },
     "SOLVER": {
       "Hq_target": "Target HQ%",
