@@ -1,4 +1,4 @@
-import { ApplicationRef, inject, Injectable, NgZone } from "@angular/core";
+import { inject, Injectable, NgZone } from "@angular/core";
 import { Observable } from "rxjs";
 import { Craft, CrafterStats } from "@ffxiv-teamcraft/simulator";
 import { SettingsService } from "../../../modules/settings/settings.service";
@@ -16,7 +16,35 @@ export class SolverService {
   private settings: SettingsService = inject(SettingsService);
   private simulationService: SimulationService = inject(SimulationService);
   private zone: NgZone = inject(NgZone);
-  private appRef: ApplicationRef = inject(ApplicationRef);
+
+  /**
+   * Creates the web worker in a way that is safe even when the built worker
+   * script is served from a different origin than the page (CDN). Worker
+   * construction requires same-origin script URLs unconditionally
+   * so instead we fetch the script's source as text ourselves (which IS allowed cross-origin given
+   * permissive CORS headers) and construct the worker from a same-origin `blob:` URL.
+   */
+  private async createWorker(): Promise<Worker> {
+    try {
+      return new Worker(new URL('./solver.worker', import.meta.url), { type: 'module' });
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'SecurityError') {
+        const match = /Script at '([^']+)/.exec(err.message);
+        const scriptUrl = match?.[1];
+        if (!scriptUrl) throw err;
+
+        const response = await fetch(scriptUrl);
+        if (!response.ok)
+          throw new Error(`Failed to fetch solver worker script: ${response.status} ${response.statusText}`);
+
+        const source = await response.text();
+        const blob = new Blob([source], { type: 'application/javascript' });
+        const blobUrl = URL.createObjectURL(blob);
+        return new Worker(blobUrl, { type: 'module' });
+      }
+      throw err;
+    }
+  }
 
   /**
    * Starts a solver run in a dedicated Web Worker for the given recipe and crafter
@@ -40,63 +68,65 @@ export class SolverService {
   solve(recipe: Craft, stats: CrafterStats,
     hqIngredients: { id: number; amount: number }[] = [],
     beamWidth = 4000, maxSteps = 45, maxComputeMs = 55000,
-    enabledActionNames: string[] = []
+    enabledActionIds: number[] = []
   ): Observable<SolverEvent> {
     return new Observable(subscriber => {
       if (typeof Worker === 'undefined') {
-        subscriber.error(new Error('Web Workers are not supported in this environment.'));
+        subscriber.error(new Error('Web Workers are not supported in this environment'));
         return;
       }
-
-      const worker = new Worker(new URL('./solver.worker', import.meta.url), { type: 'module' });
+      
       const registry = this.simulationService.getSimulator(this.settings.region).CraftingActionsRegistry;
+      let worker: Worker;
 
-      worker.onmessage = ({ data }) => {
-        // Web Worker messages run outside Angular's zone by default, so change
-        // detection would otherwise never be triggered by these updates
-        this.zone.run(() => {
-          if (data.type === 'progress') {
-            subscriber.next({ progress: data.progress });
-          } else if (data.type === 'done') {
-            subscriber.next({
-              result: registry.deserializeRotation(data.serializedActions),
-              reliablity: data.reliablity
+      this.createWorker()
+        .then(createdWorker => {
+          worker = createdWorker;
+
+          worker.onmessage = ({ data }) => {
+            this.zone.run(() => {
+              if (data.type === 'progress')
+                subscriber.next({ progress: data.progress });
+              else if (data.type === 'done') {
+                subscriber.next({
+                  result: registry.deserializeRotation(data.serializedActions),
+                  reliablity: data.reliablity
+                });
+                subscriber.complete();
+                worker.terminate();
+              }
+              else if (data.type === 'error')
+                subscriber.error(new Error(data.message));
             });
-            subscriber.complete();
+          };
+
+          worker.onerror = err => {
+            this.zone.run(() => subscriber.error(err));
             worker.terminate();
-          } else if (data.type === 'error') {
-            subscriber.error(new Error(data.message));
-          }
-        });
-      };
+          };
 
-      worker.onerror = err => {
-        this.zone.run(() => {
-          subscriber.error(err);
-          worker.terminate();
-        });
-      };
+          worker.postMessage({
+            recipe,
+            stats: {
+              jobId: stats.jobId,
+              craftsmanship: stats.craftsmanship,
+              control: stats._control,
+              cp: stats.cp,
+              specialist: stats.specialist,
+              relicTool: stats.relicTool,
+              level: stats.level,
+              levels: stats.levels
+            },
+            hqIngredients,
+            beamWidth,
+            maxSteps,
+            maxComputeMs,
+            enabledActionIds
+          });
+        })
+        .catch(err => this.zone.run(() => subscriber.error(err)));
 
-      worker.postMessage({
-        recipe,
-        stats: {
-          jobId: stats.jobId,
-          craftsmanship: stats.craftsmanship,
-          control: stats._control,
-          cp: stats.cp,
-          specialist: stats.specialist,
-          relicTool: stats.relicTool,
-          level: stats.level,
-          levels: stats.levels
-        },
-        hqIngredients,
-        beamWidth,
-        maxSteps,
-        maxComputeMs,
-        enabledActionNames
-      });
-
-      return () => worker.terminate();
+        return () => worker?.terminate();
     });
   }
 }

@@ -29,7 +29,7 @@ export interface SolverInput {
    * actions whose class name is included, are considered by the search - the
    * 'shouldUseCosmicExploration' / 'shouldUseSpecialistCommands' flags are ignored.
    */
-  enabledActionNames?: string[] | Set<string>;
+  enabledActionIds?: number[] | Set<number>;
 
   /**
    * @deprecated

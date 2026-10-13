@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.31...v11.4.32) (2026-10-13)
+
+
+### Features
+
+* **db:** 7.57 content ([ca634a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca634a20561a1178fea3eb948be82e8fcccb8e2e))
+* **users:** move private user data to an owner-only profile document ([b0bc0db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0bc0db5f9ff6406abb677220b4032f95ed4b919)), closes [#3309](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3309)
+
+
+### Bug Fixes
+
+* added a color-indicator for Robust crafting steps ([b103a4a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b103a4a9b39b5f31830bb2237b6bf88aa4ebe3c4))
+* **db-comments:** render comments as text instead of trusted HTML ([def118f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/def118fdf36f8f3b615966893a132dd81d9cc3dc)), closes [#3307](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3307)
+* **desktop:** always require the game to be running before starting the pcap bridge ([ae950a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae950a4c58bb29bca0d8892f32f2b4d2ebf8ecca))
+* **desktop:** only listen for OAuth redirects during a login ([6df6284](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6df628413535f1c72dfc0fcd1fcdac946b523174)), closes [#3308](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3308)
+* **desktop:** tray packet capture toggle desyncs and kills a running capture ([dc42fb3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc42fb3deddd4af2961defb2e4aab6ac60276e49))
+* **firestore:** version security rules and close privilege escalation paths ([6fe203c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fe203c657215252f11a5ec996d501cbc168da48)), closes [#3309](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3309)
+* **functions:** require auth on setCustomUserClaims and getUserByEmail ([cdbfe97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdbfe979c5dff3b57a25d3d50fe6296257e3a989))
+* **gc-supply:** prevent duplicate item suggestions ([e34a6b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e34a6b41675f9adf802a21ae2cfd6beca9a0f855))
+* **oauth:** check state on web OAuth redirects and confirm import callbacks ([42b97ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42b97ff6026e97cf23fda8f1fd33b6dec58ec948)), closes [#3308](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3308)
+* **pcap:** update deucalion for 7.57 ([0d1c751](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d1c751cfd992fc7902b0b26f2bbd2334e92c83c))
+* **support:** authenticate Patreon/Tipeee token refreshes ([ab996cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab996cce92d778353c74df56c0ed5863e456592a)), closes [#3309](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3309)
+
 ### [11.4.31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.30...v11.4.31) (2026-09-08)
 
 

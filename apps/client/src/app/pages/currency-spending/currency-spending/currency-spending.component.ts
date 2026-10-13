@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
-import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, of, shareReplay, Subject } from 'rxjs';
+import { bufferCount, first, map, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
 import { chunk, uniqBy } from 'lodash';
@@ -31,13 +31,17 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { LazyShop } from '@ffxiv-teamcraft/data/model/lazy-shop';
 import { MarketboardItem } from '../../../core/api/market/marketboard-item';
+import { MarketPriceService, PriceCalculationMode, PriceModeOption } from '../../../core/api/market/market-price.service';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-currency-spending',
   templateUrl: './currency-spending.component.html',
   styleUrls: ['./currency-spending.component.less'],
   standalone: true,
-  imports: [FlexModule, NzSelectModule, FormsModule, I18nNameComponent, NzInputNumberModule, NzProgressModule, NzTableModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
+  imports: [FlexModule, NzSelectModule, FormsModule, I18nNameComponent, NzInputNumberModule, NzProgressModule, NzTableModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe, NzDropDownModule, NzMenuModule, NzIconModule]
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 
@@ -47,6 +51,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   public results$: Observable<SpendingEntry[]>;
 
+  /** Derived results: applies price mode to cached data (no refetch) */
+  public priceModeResults$: Observable<SpendingEntry[]>;
+
   public amount$: BehaviorSubject<number | null> = new BehaviorSubject<number | null>(null);
 
   public servers$: Observable<string[]>;
@@ -54,19 +61,49 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   public server$: Subject<string> = new Subject<string>();
 
   public sort$: BehaviorSubject<SortPair> = new BehaviorSubject<SortPair>({
-    key: 'score',
-    value: 'ascend'
+    key: 'exchangeRate',
+    value: 'descend'
   });
 
-  public loading = false;
+  /** The spinner is on while any Universalis chunk is in flight */
+  public get loading(): boolean {
+    return this.pendingChunks.historical + this.pendingChunks.current > 0;
+  }
 
-  public tradesCount = 0;
+  /** Per-pipeline fetch progress, summed for the template's loaded/total display */
+  private expectedRows = { historical: 0, current: 0 };
 
-  public loadedPrices = 0;
+  private loadedRows = { historical: 0, current: 0 };
+
+  public get tradesCount(): number {
+    return this.expectedRows.historical + this.expectedRows.current;
+  }
+
+  public get loadedPrices(): number {
+    return this.loadedRows.historical + this.loadedRows.current;
+  }
+
+  /** In-flight Universalis chunk counts per pipeline. Each pipeline's switchMap
+      resets its own count on re-key, so requests abandoned by a server/currency/mode
+      change can't leak and keep the spinner stuck */
+  private pendingChunks = { historical: 0, current: 0 };
+
+  /** The currently selected price calculation mode */
+  public priceMode$: BehaviorSubject<PriceCalculationMode> = new BehaviorSubject<PriceCalculationMode>('lowest');
+
+  /** Getter for the current price mode value (for template access) */
+  public get priceMode(): PriceCalculationMode {
+    return this.priceMode$.value;
+  }
+
+  /** Available price mode options for the dropdown */
+  public priceModeOptions: PriceModeOption[];
 
   constructor(private dataService: DataService, private lazyData: LazyDataFacade,
-              private authFacade: AuthFacade, private universalis: UniversalisService) {
+              private authFacade: AuthFacade, private universalis: UniversalisService,
+              private marketPriceService: MarketPriceService) {
     super();
+    this.priceModeOptions = marketPriceService.getModeOptions();
     this.servers$ = lazyData.servers$.pipe(
       map(servers => {
         return servers.sort();
@@ -96,51 +133,138 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       })
     );
 
-    this.results$ = combineLatest([this.currency$, this.server$]).pipe(
-      switchMap(([currency, server]) => {
-        this.loading = true;
-        const spendingEntries = combineLatest([
+    // relevant items
+    const itemInfos$ = combineLatest([this.currency$, this.server$]).pipe(
+      switchMap(([currency]) => {
+        return combineLatest([
           this.lazyData.getEntry('shops'),
           this.lazyData.getEntry('marketItems'),
         ]).pipe(
-          map(([shops, marketItems]) => this.getItemInfos(shops, marketItems, currency)),
-          switchMap(entries => this.processMarketData(entries, server, currency))
-        );
-
-        // Extend spending entries with amount information, don't trigger universalis requests
-        const extendedSpendingEntries = combineLatest([spendingEntries, this.amount$]).pipe(
-          map(([entries, currencyAmount]) => this.computeValueWithAmount(entries, currencyAmount))
-        )
-
-        // Sort with full entries
-        return combineLatest([extendedSpendingEntries, this.sort$]).pipe(
-          map(([data, sort]) => [...data].sort((a, b) => {
-            if (sort.value === 'ascend') {
-              if (a[sort.key] === b[sort.key]) {
-                return a.score! > b.score! ? 1 : -1;
-              }
-              return a[sort.key] > b[sort.key] ? 1 : -1;
-            } else {
-              if (a[sort.key] === b[sort.key]) {
-                return a.score! > b.score! ? 1 : -1;
-              }
-              return a[sort.key] < b[sort.key] ? 1 : -1;
-            }
-          }))
+          map(([shops, marketItems]) => this.getItemInfos(shops, marketItems, currency))
         );
       }),
-      tap(() => {
-        this.loading = false;
-        this.tradesCount = 0;
-        this.loadedPrices = 0;
+      shareReplay(1)
+    );
+    
+    // Historical data: cached per currency/server. Each payload is tagged with
+    // the (server, currency) it was fetched for so results$ can detect stale cached values.
+    const historicalMarketData$: Observable<MarketData> = combineLatest([this.server$, this.currency$, itemInfos$]).pipe(
+      switchMap(([server, currency, items]) => {
+        this.expectedRows.historical = items.length;
+        this.loadedRows.historical = 0;
+        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerHistoryPrices(server, ...itemIds), 'historical')
+          .pipe(map(data => ({ server, currency, data })));
+      }),
+      shareReplay(1)
+    );
+
+    // Current prices: only fetched when currentListing is active. The mode check
+    // lives inside the switchMap (instead of a filter) so the pipeline still runs
+    // on mode changes and can zero its pending count, clearing abandoned requests.
+    const currentMarketData$: Observable<MarketData> = combineLatest([this.server$, this.currency$, itemInfos$, this.priceMode$]).pipe(
+      switchMap(([server, currency, items, mode]) => {
+        if (mode !== 'currentListing') {
+          // Drop the stale payload and clear any in-flight current requests
+          this.pendingChunks.current = 0;
+          this.expectedRows.current = 0;
+          this.loadedRows.current = 0;
+          return of({ server: null, currency: null, data: [] } as MarketData);
+        }
+        // Each pipeline owns its expected/loaded counts, so the display total
+        // is the sum of both — no ordering dependency between the pipelines
+        this.expectedRows.current = items.length;
+        this.loadedRows.current = 0;
+        return this.getMarketboardListings(items, (...itemIds) => this.universalis.getServerPrices(server, ...itemIds), 'current')
+          .pipe(map(data => ({ server, currency, data })));
+      }),
+      startWith({ server: null, currency: null, data: [] } as MarketData),
+      shareReplay(1)
+    );
+
+    this.results$ = combineLatest([this.currency$, itemInfos$, historicalMarketData$, currentMarketData$]).pipe(
+      switchMap(([currency, items, historical, current]) => {
+        // combineLatest keeps the last value of each source: on a server or
+        // currency change, the (slower) current-price requests are still in
+        // flight, so the cached current payload still belongs to the previous
+        // key. Treat it as empty until both tags match the history we have.
+        const currentData = (current.server === historical.server && current.currency === historical.currency)
+          ? current.data
+          : [];
+        const historyById = new Map(
+          historical.data.map(item => [item.ItemId, item])
+        );
+        const currentById = new Map(
+          currentData.map(item => [item.ItemId, item])
+        );
+        const mapped = uniqBy(items, 'item').map(item => {
+          const hist = historyById.get(item.item);
+          const cur = currentById.get(item.item);
+          if (!hist && !cur) {
+            return null;
+          }
+          return this.getNpcsSellingItemForCurrency(item.item, currency).pipe(
+            map(npcs => <SpendingEntry>{
+              ...item,
+              HQ: item.HQ,
+              itemID: item.item,
+              npcs: npcs,
+              price: 0, // Computed later based on price mode
+              score: 0, // computed later // avgPrice / entry.rate * amountSoldLastWeek,
+              rate: item.rate,
+              exchangeRate: 0, // computed later // avgPrice * entry.rate,
+              // raw prices comes from the current prices, history from historical
+              rawPrices: cur?.Prices || [],
+              rawHistory: hist?.History || [],
+              amountSoldLastWeek: this.marketPriceService.getUnitsSoldLastWeek(hist, item.HQ),
+            })
+          );
+        }).filter(e => e !== null);
+        return safeCombineLatest(mapped);
       })
     );
 
-    // Default to sorting by Gil / currency
-    this.sort$.next({key: 'exchangeRate', value: 'descend'})
+    // Derived observable: enrich with amount, compute price based on mode, and apply sort.
+    // When priceMode$ or amount$ changes, this recomputes without a refetch.
+    this.priceModeResults$ = combineLatest([this.results$, this.amount$, this.priceMode$, this.sort$]).pipe(
+      map(([entries, currencyAmount, priceMode, sort]) => {
+        // Keep only entries that have data for the active mode
+        const relevant = entries.filter(entry => priceMode === 'currentListing'
+          ? entry.rawPrices.length > 0
+          : entry.rawHistory.length > 0
+        );
+        return relevant.map(entry => {
+          const amountPurchaseable = Math.floor(entry.rate! * (currencyAmount || 0));
+          // History and listings hold both HQ and NQ rows for the same item
+          const hq = entry.HQ ?? false;
+          const price = priceMode === 'currentListing'
+            ? this.marketPriceService.getCurrentListingPrice(entry.rawPrices, hq)
+            : this.marketPriceService.calculatePrice(entry.rawHistory, priceMode, hq);
+          const exchangeRate = price * entry.rate!;
+          return {
+            ...entry,
+            amount: amountPurchaseable,
+            price: price,
+            total: amountPurchaseable * price,
+            exchangeRate: exchangeRate,
+            score: price / entry.rate! * (entry.amountSoldLastWeek ?? 0),
+          };
+        }).sort((a, b) => {
+          const aVal = (a as any)[sort.key] ?? 0;
+          const bVal = (b as any)[sort.key] ?? 0;
+          if (aVal === bVal) {
+            return a.score! > b.score! ? 1 : -1;
+          }
+          if (sort.value === 'ascend') {
+            return aVal > bVal ? 1 : -1;
+          } else {
+            return aVal < bVal ? 1 : -1;
+          }
+        });
+      })
+    );
   }
 
-  getItemInfos(shops: LazyShop[], marketItems: number[], currency: number): ItemInfo[] {
+  private getItemInfos(shops: LazyShop[], marketItems: number[], currency: number): ItemInfo[] {
     return shops
       .filter(shop => {
         return shop.trades.some(t => {
@@ -164,89 +288,46 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       .flat();
   }
 
-  processMarketData(entries: ItemInfo[], server: string, currency: number) {
-    if (entries.length === 0) {
-      return of([]);
-    }
-    this.tradesCount = entries.length;
-    return this.getMarketboardListings(entries, server).pipe(
-      switchMap((res) => {
-        return safeCombineLatest(entries
-          .filter(entry => {
-            return res.some(r => r.ItemId === entry.item);
-          })
-          .map(entry => {
-            return this.lazyData.getRow('extracts', entry.item).pipe(
-              map(extract => {
-                const mbRow = res.find(r => r.ItemId === entry.item)!;
-                const avgPrice = mbRow.History.reduce((prev, curr) => {
-                  return prev.PricePerUnit < curr.PricePerUnit ? prev : curr;
-                }).PricePerUnit;
-                const amountSoldLastWeek = Math.floor(mbRow.nqSaleVelocity * 7);
-                const exchangeRate = avgPrice * entry.rate;
-                return <SpendingEntry>{
-                  ...entry,
-                  HQ: entry.HQ,
-                  itemID: entry.item,
-                  npcs: getItemSource(extract!, DataType.TRADE_SOURCES)
-                    .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
-                    .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)).flat(),
-                  price: avgPrice,
-                  score: avgPrice / entry.rate * amountSoldLastWeek,
-                  amountSoldLastWeek: amountSoldLastWeek,
-                  exchangeRate: exchangeRate
-                };
-              })
-            );
-          })
-        );
-      }),
-      map((res: SpendingEntry[]) => {
-        return uniqBy(res.filter(entry => entry.price), 'itemID');
-      })
-    );
+  private getNpcsSellingItemForCurrency(itemId: number, currency: number): Observable<number[]> {
+    return this.lazyData.getRow('extracts', itemId).pipe(
+      map(extract => 
+        getItemSource(extract!, DataType.TRADE_SOURCES)
+          .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
+          .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)).flat()
+      )
+    )
   }
 
   // Get the universalis market entries for all of the items requested on a server
-  getMarketboardListings(entries: ItemInfo[], server: string): Observable<MarketboardItem[]> {
+  private getMarketboardListings(entries: ItemInfo[], method: (...itemIds: number[]) => Observable<MarketboardItem[]>, pipeline: 'historical' | 'current'): Observable<MarketboardItem[]> {
     // Batch items into max items in universalis request
     const batches = chunk(entries, 100)
       .map((chunk) => {
-        return this.universalis.getServerHistoryPrices(
-          server,
+        console.debug(`Requesting chunk of ${chunk.length} items from Universalis`);
+        return method(
           ...chunk.map(entry => entry.item)
         );
       });
-    this.tradesCount = entries.length;
+    // Reset this pipeline's count on re-key: chunks abandoned by a later switchMap
+    // never decrement, so the count must not carry over from the previous key
+    this.pendingChunks[pipeline] = batches.length;
     // Make sure unviersalis isn't overloaded with requests
     return requestsWithDelay(batches, 250, true).pipe(
-      // Update loading count of prices
+      // Update loading count of prices; the spinner stays on until every
+      // chunk started by both pipelines has come back
       tap(res => {
-        this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
+        this.loadedRows[pipeline] = Math.min(this.expectedRows[pipeline], this.loadedRows[pipeline] + res.length);
+        this.pendingChunks[pipeline] = Math.max(0, this.pendingChunks[pipeline] - 1);
       }),
       bufferCount(batches.length),
       first(),
       map(res => {
         return res.flat()
-          // make sure the item has been sold
+          // make sure the item has data
           .filter(mbRow => {
             return mbRow.History && mbRow.History.length > 0 || mbRow.Prices && mbRow.Prices.length > 0;
           });
     }));
-  }
-
-  computeValueWithAmount(entries: SpendingEntry[], currencyAmount: number | null): SpendingEntry[] {
-    return entries.map((entry) => {
-      // If null, assume no currency
-      currencyAmount = currencyAmount || 0;
-      const amountPurchaseable = Math.floor(entry.rate! * currencyAmount)
-      const totalValue = amountPurchaseable * entry.price;
-      return {
-        ...entry,
-        amount: amountPurchaseable,
-        total: totalValue
-      };
-    });
   }
 
   ngOnInit(): void {
@@ -273,6 +354,15 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     this.sort$.next({ key: event.key, value: event.value });
   }
 
+  setPriceMode(mode: PriceCalculationMode): void {
+    this.priceMode$.next(mode);
+  }
+
+  /** The label key for the currently selected price mode */
+  get currentPriceModeLabelKey(): string {
+    return this.priceModeOptions.find(m => m.key === this.priceMode)?.labelKey ?? '';
+  }
+
 }
 
 type SortPair = {
@@ -285,4 +375,11 @@ type ItemInfo = {
   item: number;
   HQ: boolean;
   rate: number;
+}
+
+/** Marketboard data tagged with the (server, currency) it was fetched for */
+type MarketData = {
+  server: string | null;
+  currency: number | null;
+  data: MarketboardItem[];
 }

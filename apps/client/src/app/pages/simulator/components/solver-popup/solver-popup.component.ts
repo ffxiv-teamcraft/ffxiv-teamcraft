@@ -20,13 +20,13 @@ import { NzSpinModule } from "ng-zorro-antd/spin";
  * actions, excluded from the default selection since they only apply to a small
  * subset of recipes. Kept in sync with the same list in `solver-core.ts`.
  */
-const COSMIC_EXPLORATION_ACTION_NAMES = new Set<string>(['MaterialMiracle2', 'StellarSteadyHand2']);
+const COSMIC_EXPLORATION_ACTION_IDS = new Set<number>([41269, 46843]); // ['MaterialMiracle2', 'StellarSteadyHand2']
 
 /**
  * Class names of Specialist-only actions, excluded from the default selection.
  * Kept in sync with the same list in `solver-core.ts`.
  */
-const SPECIALIST_ACTION_NAMES = new Set<string>(['CarefulObservation2', 'HeartAndSoul2', 'QuickInnovation2']);
+const SPECIALIST_ACTION_IDs = new Set<number>([100395, 100419, 100459]); // ['CarefulObservation2', 'HeartAndSoul2', 'QuickInnovation2']
 
 /**
  * Class names of actions, that are technically safe by the recipe's starting-state
@@ -34,9 +34,7 @@ const SPECIALIST_ACTION_NAMES = new Set<string>(['CarefulObservation2', 'HeartAn
  * used reiably in practice. Excluded from the default selection, but still manually selectable
  * by the user
  */
-const DEFAULT_EXCLUDED_UNRELIABLE_ACTION_NAMES = new Set<string>([
-  'TricksOfTheTrade2'
-]);
+const DEFAULT_EXCLUDED_UNRELIABLE_ACTION_IDS = new Set<number>([100371]); // ['TricksOfTheTrade2']
 
 /** The three high-level phases the popup walks through. */
 type SolverPhase = 'selection' | 'running' | 'done';
@@ -88,7 +86,7 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
   /** Actions grouped by category for the selection grid, build in {@link ngOnInit} */
   categories: ActionCategory[] = [];
   /** Class names of actions the user has enabled for the solver to use */
-  selectedActionNames = new Set<string>()
+  selectedActionIds = new Set<number>()
 
   /** Whether the solver is currently still searching */
   running = true;
@@ -166,21 +164,20 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
    */
   private initializeDefaultSelection(): void {
     const sim = new this.simulator.Simulation(this.recipe, [], this.stats, this.hqIngredients);
-    const baselineResult = sim.run(true, Infinity, true);
-    const baselineSimulation = baselineResult.simulation;
+    const baselineSimulation = sim.run(true, Infinity, true).simulation;
     
     for (const category of this.categories) {
       for (const action of category.actions) {
         if (this.isLevelLocked(action)) continue;
 
-        const name = this.actionName(action);
-        if (COSMIC_EXPLORATION_ACTION_NAMES.has(name)) continue;
-        if (SPECIALIST_ACTION_NAMES.has(name)) continue;
-        if (DEFAULT_EXCLUDED_UNRELIABLE_ACTION_NAMES.has(name)) continue;
+        const id = this.actionId(action);
+        if (COSMIC_EXPLORATION_ACTION_IDS.has(id)) continue;
+        if (SPECIALIST_ACTION_IDs.has(id)) continue;
+        if (DEFAULT_EXCLUDED_UNRELIABLE_ACTION_IDS.has(id)) continue;
 
         if ((action as any).getSuccessRate?.(baselineSimulation) < 100) continue;
 
-        this.selectedActionNames.add(name);
+        this.selectedActionIds.add(id);
       }
     }
   }
@@ -201,24 +198,24 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
 
   /** Wheter the given action is currently selected for the solver to use */
   isEnabled(action: CraftingAction): boolean {
-    return this.selectedActionNames.has(this.actionName(action));
+    return this.selectedActionIds.has(this.actionId(action));
   }
 
   /** Toggles an action's inclusion in the solver's candidate pool. No-op for level-locked */
   toggleAction(action: CraftingAction): void {
     if (this.isLevelLocked(action)) return;
-    const name = this.actionName(action);
-    if (this.selectedActionNames.has(name))
-      this.selectedActionNames.delete(name);
+    const id = this.actionId(action);
+    if (this.selectedActionIds.has(id))
+      this.selectedActionIds.delete(id);
     else
-      this.selectedActionNames.add(name);
+      this.selectedActionIds.add(id);
 
     this.cd.markForCheck();
   }
 
   /** Returns the name of the Action */
-  private actionName(action: CraftingAction): string {
-    return (action as any).constructor?.name;
+  private actionId(action: CraftingAction): number {
+    return action.getIds()[0];
   }
 
   /** Advances from the selection step to actually running the solver */
@@ -235,7 +232,7 @@ export class SolverPopupComponent extends DialogComponent implements OnInit, OnD
           this.beamWidth,
           this.maxSteps,
           this.maxComputeMs,
-          [...this.selectedActionNames]
+          [...this.selectedActionIds]
         )
         .subscribe({
           next: ({ progress, result, reliablity }) => {

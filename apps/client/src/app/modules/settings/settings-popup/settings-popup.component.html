@@ -540,7 +540,7 @@
                 </nz-form-control>
               </nz-form-item>
               @if (!ksEmailValid && ksEmail.value !== user.ksEmail) {
-                <button (click)="checkKsEmailAvailability(user.$key, ksEmail.value)"
+                <button (click)="checkKsEmailAvailability(user, ksEmail.value)"
                         nz-button
                         nzBlock>Verify and Apply
                 </button>

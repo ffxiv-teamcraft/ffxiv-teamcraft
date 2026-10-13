@@ -98,6 +98,8 @@ export class GcSupplyComponent {
                 const jobEntry = entriesByJob.find(e => e.job === entry.job);
                 if (jobEntry !== undefined) {
                   jobEntry.items.push(...entry.items);
+                  // remove duplicates
+                  jobEntry.items = uniq(jobEntry.items)
                 } else {
                   entriesByJob.push(entry);
                 }

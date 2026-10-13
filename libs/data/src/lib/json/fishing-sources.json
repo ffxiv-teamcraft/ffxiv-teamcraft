@@ -6988,7 +6988,10 @@
       "tug": 1,
       "bait": 2586,
       "snagging": false,
-      "minGathering": 290
+      "minGathering": 290,
+      "video": "https://youtu.be/8RYE1-PD_ps",
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "7682": [
@@ -11545,7 +11548,9 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 730,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "17583": [
@@ -28841,6 +28846,17 @@
       ],
       "minGathering": 4570,
       "video": "https://youtu.be/aB9r8BGOn7s",
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52012": [
+    {
+      "spot": 301,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 28634,
+      "minGathering": 0,
       "aLure": 0,
       "mLure": 0
     }
