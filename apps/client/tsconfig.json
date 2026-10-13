@@ -4,7 +4,9 @@
     "outDir": "../../dist/out-tsc",
     "types": [],
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "target": "es2020",
+    "module": "es2020"
   },
   "exclude": [
     "test.ts",

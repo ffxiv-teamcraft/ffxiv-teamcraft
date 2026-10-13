@@ -1,7 +1,7 @@
 {
   "-11010": {
     "key": 1,
-    "icon": "/i/053000/053914_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053914_hr1.tex&format=png",
     "en": "Quixotic Windmill",
     "de": "Windmühle",
     "ja": "風車",
@@ -31,7 +31,7 @@
   },
   "-11020": {
     "key": 2,
-    "icon": "/i/053000/053911_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053911_hr1.tex&format=png",
     "en": "Towering Tree Fort",
     "de": "Baumhaus",
     "ja": "ツリーハウス",
@@ -61,7 +61,7 @@
   },
   "-11030": {
     "key": 3,
-    "icon": "/i/053000/053910_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053910_hr1.tex&format=png",
     "en": "Boiling Bathhouse",
     "de": "Heiße Quelle",
     "ja": "温泉小屋",
@@ -91,7 +91,7 @@
   },
   "-11040": {
     "key": 4,
-    "icon": "/i/053000/053913_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053913_hr1.tex&format=png",
     "en": "Lominsan Lighthouse",
     "de": "Leuchtturm",
     "ja": "灯台",
@@ -121,7 +121,7 @@
   },
   "-11050": {
     "key": 5,
-    "icon": "/i/053000/053912_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053912_hr1.tex&format=png",
     "en": "Water Otter Fountain",
     "de": "Otterborn",
     "ja": "ウソウソの泉",
@@ -151,7 +151,7 @@
   },
   "-11060": {
     "key": 6,
-    "icon": "/i/053000/053927_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053927_hr1.tex&format=png",
     "en": "Gamboling Garden",
     "de": "Inselgärtchen",
     "ja": "アイランドガーデン",
@@ -181,7 +181,7 @@
   },
   "-11070": {
     "key": 7,
-    "icon": "/i/053000/053931_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053931_hr1.tex&format=png",
     "en": "Uncharted Course",
     "de": "Gymnastikutter",
     "ja": "アイランドアスレチックシップ",
@@ -211,7 +211,7 @@
   },
   "-11080": {
     "key": 8,
-    "icon": "/i/053000/053932_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053932_hr1.tex&format=png",
     "en": "Quaint Clock Tower",
     "de": "Glockenturm",
     "ja": "アイランドクロックタワー",
@@ -241,7 +241,7 @@
   },
   "-11090": {
     "key": 9,
-    "icon": "/i/053000/053943_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053943_hr1.tex&format=png",
     "en": "Aetherial Arbor",
     "de": "Hagenhain",
     "ja": "アイランドマジカルツリー",
@@ -271,7 +271,7 @@
   },
   "-11100": {
     "key": 10,
-    "icon": "/i/053000/053942_hr1.png",
+    "icon": "/api/asset?path=ui/icon/053000/053942_hr1.tex&format=png",
     "en": "Sanctuary Sanctuary",
     "de": "Inselschrein",
     "ja": "アイランドサンクタム",

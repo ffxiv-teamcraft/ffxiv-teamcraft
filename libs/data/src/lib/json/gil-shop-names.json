@@ -6660,9 +6660,9 @@
     "fr": ""
   },
   "263294": {
-    "en": "アイテムの購入",
+    "en": "Purchase Items",
     "ja": "アイテムの購入",
-    "de": "アイテムの購入",
+    "de": "Waren",
     "fr": "Objets"
   },
   "263295": {
@@ -6684,15 +6684,15 @@
     "fr": ""
   },
   "263298": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
   },
   "263299": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Beastmaster Arms & Gear",
+    "ja": "魔獣使い用装備の再購入",
+    "de": "Bestienbändiger-Ausrüstung",
+    "fr": "Équipement de dresseur"
   }
 }

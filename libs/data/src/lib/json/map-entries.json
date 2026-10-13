@@ -625,11 +625,11 @@
   },
   {
     "id": 79,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 2720,
+    "name": "Sigmascape V4.0",
+    "territory": 1363,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 80,
@@ -9073,19 +9073,19 @@
   },
   {
     "id": 1135,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5577,
+    "name": "North Horn",
+    "territory": 1346,
+    "scale": 100,
+    "weatherRate": 168
   },
   {
     "id": 1136,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1137,
@@ -9321,11 +9321,11 @@
   },
   {
     "id": 1166,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5466,
+    "name": "Kanilokka Corpus Substructure",
+    "territory": 1329,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1167,
@@ -9417,115 +9417,115 @@
   },
   {
     "id": 1178,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1179,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1180,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1181,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1182,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1183,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1184,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1185,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1186,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1187,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1188,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1189,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1190,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5475,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1191,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5578,
+    "name": "Tower of Magic",
+    "territory": 1346,
+    "scale": 200,
+    "weatherRate": 168
   },
   {
     "id": 1192,
@@ -9625,203 +9625,203 @@
   },
   {
     "id": 1204,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5597,
+    "name": "First Board of the Unbroken",
+    "territory": 1339,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1205,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5597,
+    "name": "First Board of the Unbroken",
+    "territory": 1339,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1206,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5597,
+    "name": "First Board of the Unbroken",
+    "territory": 1339,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1207,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5597,
+    "name": "First Board of the Unbroken",
+    "territory": 1339,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1208,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5597,
+    "name": "First Board of the Unbroken",
+    "territory": 1339,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1209,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5598,
+    "name": "Second Board of the Unbroken",
+    "territory": 1340,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1210,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5598,
+    "name": "Second Board of the Unbroken",
+    "territory": 1340,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1211,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5598,
+    "name": "Second Board of the Unbroken",
+    "territory": 1340,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1212,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5598,
+    "name": "Second Board of the Unbroken",
+    "territory": 1340,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1213,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5598,
+    "name": "Second Board of the Unbroken",
+    "territory": 1340,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1214,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5599,
+    "name": "Third Board of the Unbroken",
+    "territory": 1341,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1215,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5599,
+    "name": "Third Board of the Unbroken",
+    "territory": 1341,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1216,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5599,
+    "name": "Third Board of the Unbroken",
+    "territory": 1341,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1217,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5599,
+    "name": "Third Board of the Unbroken",
+    "territory": 1341,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1218,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5599,
+    "name": "Third Board of the Unbroken",
+    "territory": 1341,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1219,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5600,
+    "name": "First Master's Board",
+    "territory": 1342,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1220,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5600,
+    "name": "First Master's Board",
+    "territory": 1342,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1221,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5600,
+    "name": "First Master's Board",
+    "territory": 1342,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1222,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5600,
+    "name": "First Master's Board",
+    "territory": 1342,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1223,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5600,
+    "name": "First Master's Board",
+    "territory": 1342,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1224,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5601,
+    "name": "Second Master's Board",
+    "territory": 1343,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1225,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5601,
+    "name": "Second Master's Board",
+    "territory": 1343,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1226,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5601,
+    "name": "Second Master's Board",
+    "territory": 1343,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1227,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5601,
+    "name": "Second Master's Board",
+    "territory": 1343,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1228,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5601,
+    "name": "Second Master's Board",
+    "territory": 1343,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1229,
@@ -9833,8 +9833,8 @@
   },
   {
     "id": 1230,
-    "zone": 3696,
-    "name": "The Phantoms' Feast",
+    "zone": 4768,
+    "name": "The Dire Deepcroft",
     "territory": 1369,
     "scale": 200,
     "weatherRate": 0
@@ -9857,24 +9857,24 @@
   },
   {
     "id": 1233,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4962,
+    "name": "Keybound Square",
+    "territory": 1360,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1234,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4963,
+    "name": "Unmoored Isle",
+    "territory": 1364,
+    "scale": 400,
+    "weatherRate": 0
   },
   {
     "id": 1235,
-    "zone": 3696,
-    "name": "The Phantoms' Feast",
+    "zone": 4768,
+    "name": "The Dire Deepcroft",
     "territory": 1369,
     "scale": 400,
     "weatherRate": 0
@@ -9945,187 +9945,187 @@
   },
   {
     "id": 1244,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5577,
+    "name": "North Horn",
+    "territory": 1346,
+    "scale": 100,
+    "weatherRate": 168
   },
   {
     "id": 1245,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1246,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1247,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1248,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1249,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1250,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1251,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1252,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1253,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1254,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1255,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1256,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1257,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1258,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1259,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1260,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1261,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1262,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1263,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1264,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1265,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1266,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 5551,
+    "name": "Auxesia",
+    "territory": 1319,
+    "scale": 100,
+    "weatherRate": 172
   },
   {
     "id": 1267,

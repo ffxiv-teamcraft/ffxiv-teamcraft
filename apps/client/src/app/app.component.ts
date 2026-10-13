@@ -5,7 +5,6 @@ import {
   ElementRef,
   HostListener,
   Inject,
-  Injector,
   OnInit,
   PLATFORM_ID,
   ViewChild
@@ -38,7 +37,6 @@ import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
 import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { REQUEST } from '../express.tokens';
 import * as semver from 'semver';
 import { UniversalisService } from './core/api/universalis.service';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
@@ -251,7 +249,6 @@ export class AppComponent implements OnInit {
     private lazyDataFacade: LazyDataFacade,
     private dirtyFacade: DirtyFacade,
     private seoService: SeoService,
-    private injector: Injector,
     private universalis: UniversalisService,
     private inventoryService: InventoryService,
     @Inject(PLATFORM_ID) private platform: any,
@@ -317,6 +314,22 @@ export class AppComponent implements OnInit {
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
+        this.ipc.on('checking-for-update', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
+        });
+        this.ipc.on('update-not-available', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.NO_UPDATE);
+        });
+        this.ipc.on('update-downloaded', () => {
+          this.checkingForUpdate$.next(UpdaterStatus.UPDATE_AVAILABLE);
+        });
+        if (this.platformService.isLinux && !this.platformService.isOverlay()) {
+          this.ipc.on('update-available', () => {
+            this.newVersionAvailable$ = of(true);
+            this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
+          });
+          setTimeout(() => this.ipc.send('update:check'), 5000);
+        }
         this.ipc.on('displayed', () => {
           setTimeout(() => {
             window.resizeBy(100, 100);
@@ -390,6 +403,9 @@ export class AppComponent implements OnInit {
             case Region.China:
               key = 'chineseGameVersion';
               break;
+            case Region.Taiwan:
+              key = 'traditionalChineseGameVersion';
+              break;
             default:
               key = 'globalGameVersion';
               break;
@@ -406,6 +422,9 @@ export class AppComponent implements OnInit {
             break;
           case 'zh':
             suggestedRegion = Region.China;
+            break;
+          case 'tw':
+            suggestedRegion = Region.Taiwan;
             break;
           default:
             suggestedRegion = Region.Global;
@@ -594,8 +613,7 @@ export class AppComponent implements OnInit {
         return this.translate.getBrowserLang();
       }
     } else {
-      const request: any = this.injector.get(REQUEST) || {};
-      return request.lang || 'en';
+      return 'en';
     }
   }
 
@@ -740,19 +758,7 @@ export class AppComponent implements OnInit {
 
   openInApp(): void {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
-      this.http
-        .get(`http://localhost:14500${window.location.pathname}`)
-        .pipe(
-          map(() => true),
-          catchError(() => {
-            return of(false);
-          })
-        )
-        .subscribe((opened) => {
-          if (!opened) {
-            window.open(`teamcraft://${window.location.pathname}`);
-          }
-        });
+      window.open(`teamcraft://${window.location.pathname}`);
       setTimeout(() => {
         this.hasDesktopReloader$.next(null);
       }, 30000);

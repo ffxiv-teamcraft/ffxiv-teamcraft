@@ -69,7 +69,7 @@ export abstract class AbstractExtractor {
   }
 
   protected getIconHD(icon: string): string {
-    return icon.replace('.png', '_hr1.png');
+    return icon.replace('.tex', '_hr1.tex');
   }
 
   protected getCompositeID(row: ParsedRow): string {

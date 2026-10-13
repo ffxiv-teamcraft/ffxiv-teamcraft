@@ -4212,258 +4212,6 @@
     "category": 17
   },
   {
-    "id": 119,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5814,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
-    "id": 120,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5815,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
-    "id": 121,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5816,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
-    "id": 122,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5817,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
-    "id": 123,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5818,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
-    "id": 124,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5819,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
-    "id": 125,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5820,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 17
-  },
-  {
     "id": 126,
     "exp": 34500,
     "reqGathering": 96,
@@ -8993,258 +8741,6 @@
       },
       {
         "quantity": 1,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 255,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5814,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 256,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5815,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 257,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5816,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 258,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5817,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 259,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5818,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 260,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5819,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
-        "stat": "perception",
-        "value": 198
-      }
-    ],
-    "category": 18
-  },
-  {
-    "id": 261,
-    "exp": 34500,
-    "reqGathering": 95,
-    "reqIlvl": 0,
-    "lvl": 28,
-    "cost": 1,
-    "item": 5820,
-    "quantities": [
-      {
-        "quantity": 15,
-        "stat": "perception"
-      },
-      {
-        "quantity": 20,
-        "stat": "perception",
-        "value": 116
-      },
-      {
-        "quantity": 30,
-        "stat": "perception",
-        "value": 165
-      },
-      {
-        "quantity": 40,
-        "stat": "perception",
-        "value": 182
-      },
-      {
-        "quantity": 50,
         "stat": "perception",
         "value": 198
       }
@@ -35278,5 +34774,77 @@
       }
     ],
     "category": 19
+  },
+  {
+    "id": 1113,
+    "exp": 34500,
+    "reqGathering": 95,
+    "reqIlvl": 0,
+    "lvl": 28,
+    "cost": 1,
+    "item": 52712,
+    "quantities": [
+      {
+        "quantity": 15,
+        "stat": "perception"
+      },
+      {
+        "quantity": 20,
+        "stat": "perception",
+        "value": 116
+      },
+      {
+        "quantity": 30,
+        "stat": "perception",
+        "value": 165
+      },
+      {
+        "quantity": 40,
+        "stat": "perception",
+        "value": 182
+      },
+      {
+        "quantity": 50,
+        "stat": "perception",
+        "value": 198
+      }
+    ],
+    "category": 17
+  },
+  {
+    "id": 1114,
+    "exp": 34500,
+    "reqGathering": 95,
+    "reqIlvl": 0,
+    "lvl": 28,
+    "cost": 1,
+    "item": 52712,
+    "quantities": [
+      {
+        "quantity": 15,
+        "stat": "perception"
+      },
+      {
+        "quantity": 20,
+        "stat": "perception",
+        "value": 116
+      },
+      {
+        "quantity": 30,
+        "stat": "perception",
+        "value": 165
+      },
+      {
+        "quantity": 40,
+        "stat": "perception",
+        "value": 182
+      },
+      {
+        "quantity": 50,
+        "stat": "perception",
+        "value": 198
+      }
+    ],
+    "category": 18
   }
 ]

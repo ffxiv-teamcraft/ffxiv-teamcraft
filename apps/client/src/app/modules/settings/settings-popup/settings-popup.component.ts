@@ -99,6 +99,14 @@ export class SettingsPopupComponent {
 
   watchFilesPath = '';
 
+  winePrefixResolved = '';
+  winePrefixCustom: string | null = null;
+
+  wineBinResolved = '';
+  wineBinCustom: string | null = null;
+
+  wineExtraEnv = '';
+
   proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
 
   proxyValue = '';
@@ -289,6 +297,21 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-pac:get');
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
+    if (!this.platform.isWindows) {
+      this.ipc.on('bridge:wineprefix:value', (event, value: { resolved: string | null, custom: string | null }) => {
+        this.winePrefixResolved = value?.resolved ?? '';
+        this.winePrefixCustom = value?.custom ?? null;
+      });
+      this.ipc.on('bridge:winebin:value', (event, value: { resolved: string | null, custom: string | null }) => {
+        this.wineBinResolved = value?.resolved ?? '';
+        this.wineBinCustom = value?.custom ?? null;
+      });
+      this.ipc.send('bridge:winepaths:get');
+      this.ipc.on('bridge:wineenv:value', (event, value: string) => {
+        this.wineExtraEnv = value ?? '';
+      });
+      this.ipc.send('bridge:wineenv:get');
+    }
     this.customTheme = this.settings.customTheme;
   }
 
@@ -315,6 +338,22 @@ export class SettingsPopupComponent {
 
   changeWatchFilesPath(): void {
     this.ipc.send('dat:path:set');
+  }
+
+  changeWinePrefix(): void {
+    this.ipc.send('bridge:wineprefix:set');
+  }
+
+  changeWineBin(): void {
+    this.ipc.send('bridge:winebin:set');
+  }
+
+  resetWinePaths(): void {
+    this.ipc.send('bridge:winepaths:reset');
+  }
+
+  setWineExtraEnv(value: string): void {
+    this.ipc.send('bridge:wineenv:set', value);
   }
 
   setProxy({ rule = '', pac = '' } = {}): void {
@@ -501,10 +540,13 @@ export class SettingsPopupComponent {
     this.userService.checkNicknameAvailability(nickname).pipe(first()).subscribe(res => this.nicknameAvailable = res);
   }
 
-  checkKsEmailAvailability(uid: string, email: string): void {
-    this.userService.checkKsEmailAvailability(uid, email).pipe(first()).subscribe(res => {
+  checkKsEmailAvailability(user: TeamcraftUser, email: string): void {
+    this.userService.checkKsEmailAvailability(user.$key, email).pipe(first()).subscribe(res => {
       this.ksEmailValid = res;
       if (res === true) {
+        user.ksEmail = email;
+        user.backer = true;
+        this.authFacade.updateUser(user);
         this.message.success(this.translate.instant('SETTINGS.Ks_email_applied'));
       }
     });

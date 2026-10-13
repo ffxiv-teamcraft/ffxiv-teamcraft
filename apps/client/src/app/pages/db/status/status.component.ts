@@ -55,7 +55,7 @@ export class StatusComponent extends TeamcraftPageComponent {
           title: this.getName(status),
           description: this.getDescription(status),
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/status/${status.id}/${this.getName(status).split(' ').join('-')}`,
-          image: `https://xivapi.com${status.icon}`
+          image: `https://v2.xivapi.com${status.icon}`
         };
       })
     );

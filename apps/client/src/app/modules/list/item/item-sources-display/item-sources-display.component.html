@@ -26,14 +26,14 @@
         <button (click)="openIslandAnimalsPopup(item)" nz-button [nzSize]="size"
           nz-tooltip
           nzShape="circle" nzTooltipTitle="{{'Island_animal' | translate}}">
-          <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
+          <img class="gathering-icon" src="https://v2.xivapi.com/api/asset?path=ui/icon/063000/063949.tex&format=png" alt="Island animals">
         </button>
       }
       @case (dataTypes.ISLAND_CROP) {
         <button (click)="openIslandCropPopup(item)" nz-button [nzSize]="size"
           nz-tooltip
           nzShape="circle" nzTooltipTitle="{{'Island_crop' | translate}}">
-          <img class="gathering-icon" src="https://xivapi.com/i/063000/063950_hr1.png" alt="Island crop">
+          <img class="gathering-icon" src="https://v2.xivapi.com/api/asset?path=ui/icon/063000/063950_hr1.tex&format=png" alt="Island crop">
         </button>
       }
       @case (dataTypes.TRADE_SOURCES) {
@@ -95,7 +95,7 @@
         <button (click)="openVendorsPopup(item)"
           [nzTooltipTitle]="'Vendors' | translate"
           nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-          <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
+          <img alt="Gil" class="img-icon" src="https://v2.xivapi.com/api/asset?path=ui/icon/065000/065002.tex&format=png">
         </button>
       }
       @case (dataTypes.VOYAGES) {

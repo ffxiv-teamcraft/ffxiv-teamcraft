@@ -12,8 +12,8 @@ export class MapsExtractor extends AbstractExtractor {
       this.getSheet<any>(xiv, 'HousingMapMarkerInfo', ['Map#'])
     ]).subscribe(([xivapiMaps, territories, contentFinderConditions, housingMapMarkerInfo]) => {
       xivapiMaps.forEach(mapData => {
-        const [folder, layer] = mapData.Id.split('/');
-        const filename = `/m/${folder}/${folder}.${layer}.jpg`;
+        const [folder, _layer] = mapData.Id.split('/');
+        const filename = `/api/asset/map/${mapData.Id}`;
 
 
         const territory = territories.find(t => t.index === mapData.TerritoryType);
@@ -22,7 +22,7 @@ export class MapsExtractor extends AbstractExtractor {
           id: mapData.index,
           hierarchy: mapData.Hierarchy,
           priority_ui: mapData.PriorityUI,
-          image: `https://xivapi.com${filename}`,
+          image: `https://v2.xivapi.com${filename}`,
           offset_x: +mapData.OffsetX,
           offset_y: +mapData.OffsetY,
           offset_z: offsetZ === -10000 ? 0 : offsetZ,

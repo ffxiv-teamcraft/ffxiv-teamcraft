@@ -2002,5 +2002,47 @@
   },
   "678": {
     "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>레드 파이어 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 490\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>그린 에어로 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 530\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>블루 워터 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 570\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>레드 파이라 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 180\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>그린 에어로라 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>블루 워터라 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>망치 찍기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 560\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>시안 블리자드 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 860\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>옐로 스톤 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 900\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>마젠타 선더 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 940\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>시안 블리자라 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 360\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>옐로 스톤라 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 380\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>마젠타 선더라 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>화이트 홀리 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 570\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>망치 붓질 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 580\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>망치 다듬기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>블랙 코멧 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 940"
+  },
+  "690": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>TP<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 활성화됩니다.\n특정 무기 기술 콤보가 성공하면 TP가 증가합니다."
+  },
+  "691": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>사역마수 TP<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 활성화됩니다.\n사역마수의 자동 공격 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 분출<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 명중하면 TP가 증가합니다."
+  },
+  "692": {
+    "ko": "사역마수를 소환하면 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인간 마수 동조<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 해제 시까지"
+  },
+  "693": {
+    "ko": "사역마수의 무기 기술을 사용하여 수심기 연계를 성공시키면 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>수심[종]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 부여됩니다."
+  },
+  "694": {
+    "ko": "마수조련사의 무기 기술을 사용하여 수심기 연계를 성공시키면 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>수심[주]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다."
+  },
+  "749": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>능력 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 자신에게 60초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마지막 일격 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 부여됩니다."
+  },
+  "750": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>빌리기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행하면 자신에게 60초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마지막 일격 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 부여됩니다."
+  },
+  "751": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>방패 돌진<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 3회 사용 가능한 누적 기술로 변화합니다."
+  },
+  "752": {
+    "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>도끼 강타 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 160\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>방패 돌진 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300"
+  },
+  "754": {
+    "ko": "사역마수를 소환하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>능력 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 재사용 대기 시간이 초기화됩니다."
+  },
+  "755": {
+    "ko": "사역마수를 소환하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>빌리기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 재사용 대기 시간이 초기화됩니다."
+  },
+  "756": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>기 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 재사용 대기 시간이 90초로 단축됩니다."
+  },
+  "757": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>응원하기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 재사용 대기 시간이 90초로 단축됩니다."
+  },
+  "758": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>산사태 도끼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>잔혹한 분노<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>삭풍 도끼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>매의 발톱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>회전 도끼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>도약 낙하<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>돌풍 도끼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>재앙<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: TP 250"
   }
 }

@@ -5,7 +5,7 @@
       37603,
       37611
     ],
-    "icon": "/i/070000/070121_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070121_hr1.tex&format=png",
     "bnpcName": 392,
     "bnpcBase": 14906,
     "size": 1
@@ -16,7 +16,7 @@
       37611,
       37603
     ],
-    "icon": "/i/070000/070122_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070122_hr1.tex&format=png",
     "bnpcName": 795,
     "bnpcBase": 14907,
     "size": 1
@@ -27,7 +27,7 @@
       37604,
       37605
     ],
-    "icon": "/i/070000/070123_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070123_hr1.tex&format=png",
     "bnpcName": 5,
     "bnpcBase": 14908,
     "size": 1
@@ -38,7 +38,7 @@
       37605,
       37604
     ],
-    "icon": "/i/070000/070124_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070124_hr1.tex&format=png",
     "bnpcName": 6,
     "bnpcBase": 14909,
     "size": 1
@@ -49,7 +49,7 @@
       37603,
       37607
     ],
-    "icon": "/i/070000/070125_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070125_hr1.tex&format=png",
     "bnpcName": 341,
     "bnpcBase": 14910,
     "size": 1
@@ -60,7 +60,7 @@
       37607,
       37603
     ],
-    "icon": "/i/070000/070126_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070126_hr1.tex&format=png",
     "bnpcName": 11448,
     "bnpcBase": 14911,
     "size": 1
@@ -71,7 +71,7 @@
       37604,
       37605
     ],
-    "icon": "/i/070000/070127_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070127_hr1.tex&format=png",
     "bnpcName": 37,
     "bnpcBase": 14912,
     "size": 1
@@ -82,7 +82,7 @@
       37605,
       37604
     ],
-    "icon": "/i/070000/070128_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070128_hr1.tex&format=png",
     "bnpcName": 262,
     "bnpcBase": 14913,
     "size": 1
@@ -93,7 +93,7 @@
       37609,
       37608
     ],
-    "icon": "/i/070000/070129_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070129_hr1.tex&format=png",
     "bnpcName": 11449,
     "bnpcBase": 14914,
     "size": 1
@@ -104,7 +104,7 @@
       37608,
       37609
     ],
-    "icon": "/i/070000/070130_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070130_hr1.tex&format=png",
     "bnpcName": 11450,
     "bnpcBase": 14915,
     "size": 1
@@ -115,7 +115,7 @@
       37607,
       37606
     ],
-    "icon": "/i/070000/070131_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070131_hr1.tex&format=png",
     "bnpcName": 393,
     "bnpcBase": 14916,
     "size": 2
@@ -126,7 +126,7 @@
       37606,
       37607
     ],
-    "icon": "/i/070000/070132_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070132_hr1.tex&format=png",
     "bnpcName": 11451,
     "bnpcBase": 14917,
     "size": 2
@@ -137,7 +137,7 @@
       37605,
       37611
     ],
-    "icon": "/i/070000/070133_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070133_hr1.tex&format=png",
     "bnpcName": 11452,
     "bnpcBase": 14918,
     "size": 2
@@ -148,7 +148,7 @@
       37605,
       37610
     ],
-    "icon": "/i/070000/070134_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070134_hr1.tex&format=png",
     "bnpcName": 11453,
     "bnpcBase": 14919,
     "size": 2
@@ -159,7 +159,7 @@
       37605,
       37606
     ],
-    "icon": "/i/070000/070135_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070135_hr1.tex&format=png",
     "bnpcName": 780,
     "bnpcBase": 14920,
     "size": 2
@@ -170,7 +170,7 @@
       37606,
       37605
     ],
-    "icon": "/i/070000/070136_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070136_hr1.tex&format=png",
     "bnpcName": 6942,
     "bnpcBase": 14921,
     "size": 2
@@ -181,7 +181,7 @@
       37608,
       37604
     ],
-    "icon": "/i/070000/070137_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070137_hr1.tex&format=png",
     "bnpcName": 11454,
     "bnpcBase": 14922,
     "size": 2
@@ -192,7 +192,7 @@
       37604,
       37608
     ],
-    "icon": "/i/070000/070138_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070138_hr1.tex&format=png",
     "bnpcName": 10173,
     "bnpcBase": 14923,
     "size": 2
@@ -203,7 +203,7 @@
       37611,
       37610
     ],
-    "icon": "/i/070000/070139_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070139_hr1.tex&format=png",
     "bnpcName": 357,
     "bnpcBase": 14924,
     "size": 3
@@ -214,7 +214,7 @@
       37610,
       37611
     ],
-    "icon": "/i/070000/070140_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070140_hr1.tex&format=png",
     "bnpcName": 11455,
     "bnpcBase": 14925,
     "size": 3
@@ -225,7 +225,7 @@
       37611,
       37610
     ],
-    "icon": "/i/070000/070141_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070141_hr1.tex&format=png",
     "bnpcName": 11456,
     "bnpcBase": 14926,
     "size": 3
@@ -236,7 +236,7 @@
       37610,
       37603
     ],
-    "icon": "/i/070000/070142_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070142_hr1.tex&format=png",
     "bnpcName": 11457,
     "bnpcBase": 14927,
     "size": 3
@@ -247,7 +247,7 @@
       37607,
       37606
     ],
-    "icon": "/i/070000/070143_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070143_hr1.tex&format=png",
     "bnpcName": 1281,
     "bnpcBase": 14928,
     "size": 3
@@ -258,7 +258,7 @@
       37606,
       37607
     ],
-    "icon": "/i/070000/070144_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070144_hr1.tex&format=png",
     "bnpcName": 2769,
     "bnpcBase": 14929,
     "size": 3
@@ -269,7 +269,7 @@
       37603,
       37605
     ],
-    "icon": "/i/070000/070145_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070145_hr1.tex&format=png",
     "bnpcName": 11458,
     "bnpcBase": 14930,
     "size": 1
@@ -280,7 +280,7 @@
       37608,
       37604
     ],
-    "icon": "/i/070000/070146_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070146_hr1.tex&format=png",
     "bnpcName": 11459,
     "bnpcBase": 14931,
     "size": 1
@@ -291,7 +291,7 @@
       37604,
       37603
     ],
-    "icon": "/i/070000/070147_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070147_hr1.tex&format=png",
     "bnpcName": 3499,
     "bnpcBase": 14932,
     "size": 2
@@ -302,7 +302,7 @@
       37604,
       37609
     ],
-    "icon": "/i/070000/070148_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070148_hr1.tex&format=png",
     "bnpcName": 11460,
     "bnpcBase": 14933,
     "size": 3
@@ -313,7 +313,7 @@
       37609,
       37604
     ],
-    "icon": "/i/070000/070149_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070149_hr1.tex&format=png",
     "bnpcName": 353,
     "bnpcBase": 14934,
     "size": 3
@@ -324,7 +324,7 @@
       37606,
       37604
     ],
-    "icon": "/i/070000/070150_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070150_hr1.tex&format=png",
     "bnpcName": 12313,
     "bnpcBase": 14935,
     "size": 3
@@ -335,7 +335,7 @@
       37609,
       37605
     ],
-    "icon": "/i/070000/070151_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070151_hr1.tex&format=png",
     "bnpcName": 12314,
     "bnpcBase": 16068,
     "size": 2
@@ -346,7 +346,7 @@
       37608,
       37609
     ],
-    "icon": "/i/070000/070152_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070152_hr1.tex&format=png",
     "bnpcName": 12315,
     "bnpcBase": 16069,
     "size": 1
@@ -357,7 +357,7 @@
       37609,
       37605
     ],
-    "icon": "/i/070000/070153_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070153_hr1.tex&format=png",
     "bnpcName": 12456,
     "bnpcBase": 14936,
     "size": 1
@@ -368,7 +368,7 @@
       37605,
       37609
     ],
-    "icon": "/i/070000/070154_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070154_hr1.tex&format=png",
     "bnpcName": 12457,
     "bnpcBase": 14937,
     "size": 1
@@ -379,7 +379,7 @@
       37609,
       37610
     ],
-    "icon": "/i/070000/070155_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070155_hr1.tex&format=png",
     "bnpcName": 12458,
     "bnpcBase": 14938,
     "size": 3
@@ -390,7 +390,7 @@
       37610,
       37609
     ],
-    "icon": "/i/070000/070156_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070156_hr1.tex&format=png",
     "bnpcName": 12459,
     "bnpcBase": 14939,
     "size": 3
@@ -401,7 +401,7 @@
       37609,
       37605
     ],
-    "icon": "/i/070000/070157_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070157_hr1.tex&format=png",
     "bnpcName": 12460,
     "bnpcBase": 14940,
     "size": 3
@@ -412,7 +412,7 @@
       37603,
       37605
     ],
-    "icon": "/i/070000/070158_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070158_hr1.tex&format=png",
     "bnpcName": 12461,
     "bnpcBase": 16340,
     "size": 1
@@ -423,7 +423,7 @@
       37606,
       37607
     ],
-    "icon": "/i/070000/070159_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070159_hr1.tex&format=png",
     "bnpcName": 12462,
     "bnpcBase": 16341,
     "size": 2
@@ -434,7 +434,7 @@
       37609,
       37608
     ],
-    "icon": "/i/070000/070163_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070163_hr1.tex&format=png",
     "bnpcName": 12627,
     "bnpcBase": 16628,
     "size": 3
@@ -445,7 +445,7 @@
       37608,
       37604
     ],
-    "icon": "/i/070000/070160_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070160_hr1.tex&format=png",
     "bnpcName": 12628,
     "bnpcBase": 16629,
     "size": 3
@@ -456,7 +456,7 @@
       37604,
       37610
     ],
-    "icon": "/i/070000/070162_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070162_hr1.tex&format=png",
     "bnpcName": 12629,
     "bnpcBase": 16630,
     "size": 3
@@ -467,7 +467,7 @@
       37609,
       37608
     ],
-    "icon": "/i/070000/070161_hr1.png",
+    "icon": "/api/asset?path=ui/icon/070000/070161_hr1.tex&format=png",
     "bnpcName": 12630,
     "bnpcBase": 16631,
     "size": 3

@@ -260,6 +260,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profits-helper/profits-helper.module').then(m => m.ProfitsHelperModule)
   },
   {
+    path: 'cactpot-solver',
+    loadChildren: () => import('./pages/cactpot-solver/cactpot-solver.module').then(m => m.CactpotSolverModule)
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
     canLoad: [ModeratorGuard]

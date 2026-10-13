@@ -211,7 +211,7 @@ export class DiscordWebhookService {
 
   private getIcon(itemId: number): Observable<string> {
     return this.lazyData.getRow('itemIcons', itemId).pipe(
-      map(icon => `https://xivapi.com${icon}`)
+      map(icon => `https://v2.xivapi.com${icon}`)
     );
   }
 }

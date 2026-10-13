@@ -181,6 +181,25 @@ jobs:
             - ffxiv-teamcraft/release/*
 
 
+  release-desktop-linux:
+    <<: *defaults
+    resource_class: large
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install --immutable
+      - run:
+          name: Build and publish AppImage
+          command: yarn build:appimage:publish
+          no_output_timeout: 30m
+          environment:
+            NODE_OPTIONS: --max-old-space-size=4096
+
+
   deploy-staging:
     <<: *defaults
     steps:
@@ -224,6 +243,12 @@ workflows:
             branches:
               only: master
       - release-desktop:
+          requires:
+            - lint
+          filters:
+            branches:
+              only: master
+      - release-desktop-linux:
           requires:
             - lint
           filters:

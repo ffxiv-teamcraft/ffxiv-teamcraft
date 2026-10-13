@@ -10102,5 +10102,555 @@
       50228,
       50229
     ]
+  },
+  {
+    "id": 10193,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5537,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10194,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5538,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10195,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5539,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10196,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5540,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10197,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10198,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5542,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10199,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5543,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10200,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5544,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": []
+  },
+  {
+    "id": 10201,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5537,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52096,
+      52097,
+      52098
+    ]
+  },
+  {
+    "id": 10202,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5538,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52099,
+      52100,
+      52101
+    ]
+  },
+  {
+    "id": 10203,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5537,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52102,
+      52103,
+      52104
+    ]
+  },
+  {
+    "id": 10204,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5538,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52105,
+      52106,
+      52107
+    ]
+  },
+  {
+    "id": 10205,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5537,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52108,
+      52109,
+      52110,
+      52111
+    ]
+  },
+  {
+    "id": 10206,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5538,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52112,
+      52113,
+      52114,
+      52115
+    ]
+  },
+  {
+    "id": 10207,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5537,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52116,
+      52117,
+      52118,
+      52119
+    ]
+  },
+  {
+    "id": 10208,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5538,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52120,
+      52121,
+      52122,
+      52123
+    ]
+  },
+  {
+    "id": 10209,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5539,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52124,
+      52125,
+      52126,
+      52127,
+      52128
+    ]
+  },
+  {
+    "id": 10210,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52129,
+      52130,
+      52131,
+      52132,
+      52133
+    ]
+  },
+  {
+    "id": 10211,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5539,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52134,
+      52135,
+      52136,
+      52137,
+      52138
+    ]
+  },
+  {
+    "id": 10212,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52139,
+      52140,
+      52141,
+      52142,
+      52143
+    ]
+  },
+  {
+    "id": 10213,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5539,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52144,
+      52145,
+      52146,
+      52147
+    ]
+  },
+  {
+    "id": 10214,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5539,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52148,
+      52149,
+      52150,
+      52151,
+      52152,
+      52153
+    ]
+  },
+  {
+    "id": 10215,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52154,
+      52155,
+      52156,
+      52157,
+      52158
+    ]
+  },
+  {
+    "id": 10216,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5540,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52159,
+      52160,
+      52161,
+      52162,
+      52163
+    ]
+  },
+  {
+    "id": 10217,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5539,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52164,
+      52165,
+      52166,
+      52167,
+      52168
+    ]
+  },
+  {
+    "id": 10218,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52169,
+      52170,
+      52171,
+      52172,
+      52173
+    ]
+  },
+  {
+    "id": 10219,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5540,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52174,
+      52175,
+      52176,
+      52177,
+      52178,
+      52179
+    ]
+  },
+  {
+    "id": 10220,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52180,
+      52181,
+      52182,
+      52183,
+      52184
+    ]
+  },
+  {
+    "id": 10221,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5540,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52185,
+      52186,
+      52187,
+      52188,
+      52189,
+      52190
+    ]
+  },
+  {
+    "id": 10222,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5542,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52191,
+      52192,
+      52193,
+      52194,
+      52195
+    ]
+  },
+  {
+    "id": 10223,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52196,
+      52197,
+      52198,
+      52199,
+      52200,
+      52201
+    ]
+  },
+  {
+    "id": 10224,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5540,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52202,
+      52203,
+      52204,
+      52205,
+      52206,
+      52207
+    ]
+  },
+  {
+    "id": 10225,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5543,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52208,
+      52209,
+      52210,
+      52211,
+      52212,
+      52213
+    ]
+  },
+  {
+    "id": 10226,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5544,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52214,
+      52215,
+      52216,
+      52217,
+      52218,
+      52219
+    ]
+  },
+  {
+    "id": 10227,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5544,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52220,
+      52221,
+      52222,
+      52223,
+      52224,
+      52225
+    ]
+  },
+  {
+    "id": 10228,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5544,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52226,
+      52227,
+      52228,
+      52229,
+      52230,
+      52231
+    ]
+  },
+  {
+    "id": 10229,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5540,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52232,
+      52233
+    ]
+  },
+  {
+    "id": 10230,
+    "mapId": 584,
+    "placeId": 1647,
+    "zoneId": 5541,
+    "level": 1,
+    "category": 2,
+    "radius": 0,
+    "fishes": [
+      52234,
+      52235
+    ]
   }
 ]

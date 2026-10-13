@@ -1363,5 +1363,18 @@
     "ko": "Patch 7.5",
     "zh": "Patch 7.5",
     "version": "7.5"
+  },
+  "108": {
+    "id": 108,
+    "banner": null,
+    "ex": 5,
+    "release": 1788852416,
+    "en": "Patch 7.56",
+    "de": "Patch 7.56",
+    "ja": "Patch 7.56",
+    "fr": "Patch 7.56",
+    "ko": "Patch 7.56",
+    "zh": "Patch 7.56",
+    "version": "7.56"
   }
 }

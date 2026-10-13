@@ -1,0 +1,70 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  @if (phase === 'selection') {
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div>{{ 'SIMULATOR.SOLVER.Select_actions_hint' | translate }}</div>
+
+      @for (category of categories; track category.titleKey) {
+        <div fxLayout="column" fxLayoutGap="5px">
+          <h4>{{ category.titleKey | translate }}</h4>
+          <div fxLayout="row wrap" fxLayoutGap="10px">
+            @for (action of category.actions; track action.getIds()[0]) {
+              <div class="action-toggle"
+                    [class.locked]="isLevelLocked(action)"
+                    (click)="toggleAction(action)">
+                <app-action
+                    [action]="action"
+                    [hideCost]="true"
+                    [disabled]="isLevelLocked(action)"
+                    [safe]="isEnabled(action) || isLevelLocked(action)"
+                    [ignoreDisabled]="false"
+                    [tooltipDisabled]="false"></app-action>
+                @if (isEnabled(action) && !isLevelLocked(action)) {
+                  <i nz-icon nzType="check-circle" nzTheme="twotone" [nzTwotoneColor]="'#52c41a'" class="toggle-icon"></i>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      <button (click)="startSolving()" nz-button nzType="primary" nzBlock>
+        {{ 'SIMULATOR.SOLVER.Start' | translate }}
+      </button>
+    </div>
+  }
+
+  @if (phase === 'running') {
+    <div class="running-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+      <nz-spin nzSize="large"></nz-spin>
+      <div class="running-hint">{{ 'SIMULATOR.SOLVER.Searching_indeterminate' | translate }}</div>
+    </div>
+  }
+
+  @if (phase === 'done') {
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div>{{ 'SIMULATOR.SOLVER.Done' | translate }}</div>
+      @if (reliablity) {
+        <div fxLayout="row wrap" fxLayoutGap="10px">
+          <nz-tag [nzColor]="'geekblue'">
+            {{ 'SIMULATOR.Reliablity' | translate}}: {{ reliablity.successPercent }}
+          </nz-tag>
+          <nz-tag [nzColor]="'purple'">
+            {{ 'SIMULATOR.Average_hq' | translate }}: {{ reliablity.averageHQPercent}}
+          </nz-tag>
+        </div>
+      }
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        @for (action of resultActions; track $index) {
+          <app-action [action]="action" [hideCost]="true"></app-action>
+        }
+      </div>
+      <button (click)="apply()" nz-button nzType="primary">
+        {{ 'SIMULATOR.SOLVER.Apply' | translate }}
+      </button>
+    </div>
+  }
+
+  @if (error) {
+    <div class="error-message">{{ errorMessage }}</div>
+  }
+</div>

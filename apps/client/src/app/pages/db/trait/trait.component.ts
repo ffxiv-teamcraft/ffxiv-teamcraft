@@ -82,7 +82,7 @@ export class TraitComponent extends TeamcraftPageComponent {
           title: this.getName(trait),
           description: this.getDescription(trait),
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/trait/${trait.id}/${this.getName(trait).split(' ').join('-')}`,
-          image: `https://xivapi.com${trait.icon}`
+          image: `https://v2.xivapi.com${trait.icon}`
         };
       })
     );

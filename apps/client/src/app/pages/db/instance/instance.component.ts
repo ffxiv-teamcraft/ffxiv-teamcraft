@@ -93,7 +93,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
           title: this.getName(instance),
           description: this.getDescription(instance),
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/instance/${instance.id}/${this.getName(instance).split(' ').join('-')}`,
-          image: `https://xivapi.com/${instance.banner}`
+          image: `https://v2.xivapi.com/${instance.banner}`
         };
       })
     );

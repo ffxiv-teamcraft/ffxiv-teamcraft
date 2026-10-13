@@ -1,4 +1,4 @@
-import { app, clipboard, ipcMain, nativeImage, shell } from 'electron';
+import { app, clipboard, ipcMain, nativeImage, Notification, shell } from 'electron';
 import log from 'electron-log';
 import { PacketCapture } from '../pcap/packet-capture';
 import { Store } from '../store';
@@ -216,7 +216,14 @@ export class IpcListenersManager {
     ipcMain.on('overlay:set-opacity', (event, data) => {
       const overlayWindow = this.overlayManager.getOverlay(data.uri);
       if (overlayWindow !== undefined && overlayWindow) {
-        overlayWindow.setOpacity(data.opacity);
+        if (process.platform === 'linux') {
+          // setOpacity() is a no-op on Linux; persist the value and let the
+          // renderer apply it as a CSS opacity instead.
+          this.store.set(`overlay:${data.uri}:opacity`, data.opacity);
+          this.overlayManager.sendToOverlay(data.uri, 'overlay:css-opacity', data.opacity);
+        } else {
+          overlayWindow.setOpacity(data.opacity);
+        }
       }
     });
 
@@ -228,7 +235,11 @@ export class IpcListenersManager {
     ipcMain.on('overlay:get-opacity', (event, data) => {
       const overlayWindow = this.overlayManager.getOverlay(data.uri);
       if (overlayWindow !== undefined) {
-        event.sender.send(`overlay:${data.uri}:opacity`, overlayWindow.getOpacity());
+        // getOpacity() always returns 1 on Linux, so read from the store instead.
+        const opacity = process.platform === 'linux'
+          ? (this.store.get(`overlay:${data.uri}:opacity`, 1) || 1)
+          : overlayWindow.getOpacity();
+        event.sender.send(`overlay:${data.uri}:opacity`, opacity);
       }
     });
 
@@ -387,10 +398,20 @@ export class IpcListenersManager {
 
     ipcMain.on('notification', (event, config) => {
       const iconPath = join(Constants.BASE_APP_PATH, 'assets/app-icon.png');
-      // Override icon for now, as getting the icon from url doesn't seem to be working properly.
-      config.icon = nativeImage.createFromPath(iconPath);
-      config.silent = true;
-      this.trayMenu.tray.displayBalloon(config);
+      if (process.platform === 'win32' && this.trayMenu.tray) {
+        // Windows: use tray balloon
+        config.icon = nativeImage.createFromPath(iconPath);
+        config.silent = true;
+        this.trayMenu.tray.displayBalloon(config);
+      } else {
+        // Linux/macOS: use the cross-platform Notification API
+        new Notification({
+          title: config.title || 'FFXIV Teamcraft',
+          body: config.content || config.body || '',
+          icon: iconPath,
+          silent: true
+        }).show();
+      }
     });
 
     ipcMain.on('clear-cache', () => {

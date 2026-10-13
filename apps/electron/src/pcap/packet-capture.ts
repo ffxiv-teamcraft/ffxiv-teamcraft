@@ -1,9 +1,12 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
+import { existsSync } from 'fs';
+import { spawn, execSync, ChildProcess } from 'child_process';
 import log from 'electron-log';
 import type { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
-import { app } from 'electron';
+import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
+import { WineResolver } from './wine-resolver';
 
 export class PacketCapture {
 
@@ -27,6 +30,7 @@ export class PacketCapture {
     'eventPlay4',
     'eventPlay8',
     'eventStart',
+    'fishCaught',
     'freeCompanyInfo',
     'freeCompanyDialog',
     'gatheringLog',
@@ -81,12 +85,166 @@ export class PacketCapture {
   ];
 
   private captureInterface: CaptureInterface;
+  private bridgeProcess: ChildProcess | null = null;
+  private wineResolver: WineResolver;
 
   private overlayListeners = [];
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
+    this.wineResolver = new WineResolver(store);
+
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
+    });
+
+    if (process.platform !== 'win32') {
+      const region = this.store.get<Region>('region', 'Global');
+      this.registerWinePathIpc(region);
+    }
+  }
+
+  /**
+   * Starts the deucalion bridge. Resolves Wine paths from user overrides first,
+   * then falls back to autodetection (XIVLauncher or Steam Proton).
+   * Throws if the paths cannot be resolved or if spawning fails.
+   */
+  private startBridge(region: Region): void {
+    const { prefix: winePrefix, bin: wineBin } = this.wineResolver.resolveWinePaths();
+    if (!winePrefix || !wineBin) {
+      throw new Error('Wine paths not configured and could not be auto-detected');
+    }
+    const dllWinPath = this.toWinePath(this.getDeucalionDllPath(region));
+    const extraEnv = this.parseWineExtraEnv(this.store.get<string>('wineExtraEnv', ''));
+    this.spawnBridge(dllWinPath, 31594, winePrefix, wineBin, extraEnv);
+  }
+
+  /**
+   * Parses a whitespace-separated list of KEY=VALUE pairs into an env record.
+   * e.g. "WINESYNC=1 WINEFSYNC=1" → { WINESYNC: '1', WINEFSYNC: '1' }
+   * Entries that don't match KEY=VALUE are silently ignored.
+   */
+  private parseWineExtraEnv(raw: string): Record<string, string> {
+    const result: Record<string, string> = {};
+    for (const token of raw.trim().split(/\s+/)) {
+      const eq = token.indexOf('=');
+      if (eq > 0) {
+        result[token.slice(0, eq)] = token.slice(eq + 1);
+      }
+    }
+    return result;
+  }
+
+  private registerWinePathIpc(region: Region): void {
+    // Combined handler: resolves once and sends both prefix and bin values.
+    // Used on initial settings load and after resetting both paths together.
+    ipcMain.on('bridge:winepaths:get', (event) => {
+      const paths = this.wineResolver.resolveWinePaths();
+      event.sender.send('bridge:wineprefix:value', {
+        resolved: paths.prefix,
+        custom: this.store.get<string | null>('winePrefix', null)
+      });
+      event.sender.send('bridge:winebin:value', {
+        resolved: paths.bin,
+        custom: this.store.get<string | null>('wineBin', null)
+      });
+    });
+
+    ipcMain.on('bridge:winepaths:reset', (event) => {
+      this.store.delete('winePrefix');
+      this.store.delete('wineBin');
+      const paths = this.wineResolver.resolveWinePaths();
+      event.sender.send('bridge:wineprefix:value', {
+        resolved: paths.prefix,
+        custom: null
+      });
+      event.sender.send('bridge:winebin:value', {
+        resolved: paths.bin,
+        custom: null
+      });
+      if (this.captureInterface) {
+        try {
+          this.startBridge(region);
+        } catch (e) {
+          log.error('[bridge] Failed to restart bridge after settings change:', e);
+        }
+      }
+    });
+
+    ipcMain.on('bridge:wineprefix:get', (event) => {
+      event.sender.send('bridge:wineprefix:value', {
+        resolved: this.wineResolver.resolveWinePaths().prefix,
+        custom: this.store.get<string | null>('winePrefix', null)
+      });
+    });
+
+    ipcMain.on('bridge:wineprefix:set', (event) => {
+      const current = this.wineResolver.resolveWinePaths().prefix;
+      const opts: OpenDialogOptions = {
+        defaultPath: current ?? app.getPath('home'),
+        properties: ['openDirectory']
+      };
+      dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
+        if (result.canceled) return;
+        this.store.set('winePrefix', result.filePaths[0]);
+        event.sender.send('bridge:wineprefix:value', {
+          resolved: this.wineResolver.resolveWinePaths().prefix,
+          custom: this.store.get<string | null>('winePrefix', null)
+        });
+        if (this.captureInterface) {
+          try {
+            this.startBridge(region);
+          } catch (e) {
+            log.error('[bridge] Failed to restart bridge after settings change:', e);
+          }
+        }
+      });
+    });
+
+
+    ipcMain.on('bridge:winebin:get', (event) => {
+      event.sender.send('bridge:winebin:value', {
+        resolved: this.wineResolver.resolveWinePaths().bin,
+        custom: this.store.get<string | null>('wineBin', null)
+      });
+    });
+
+    ipcMain.on('bridge:winebin:set', (event) => {
+      const current = this.wineResolver.resolveWinePaths().bin;
+      const opts: OpenDialogOptions = {
+        defaultPath: current ? join(current, '..') : app.getPath('home'),
+        properties: ['openFile']
+      };
+      dialog.showOpenDialog(this.mainWindow.win, opts).then((result) => {
+        if (result.canceled) return;
+        this.store.set('wineBin', result.filePaths[0]);
+        event.sender.send('bridge:winebin:value', {
+          resolved: this.wineResolver.resolveWinePaths().bin,
+          custom: this.store.get<string | null>('wineBin', null)
+        });
+        if (this.captureInterface) {
+          try {
+            this.startBridge(region);
+          } catch (e) {
+            log.error('[bridge] Failed to restart bridge after settings change:', e);
+          }
+        }
+      });
+    });
+
+    ipcMain.on('bridge:wineenv:get', (event) => {
+      event.sender.send('bridge:wineenv:value', this.store.get<string>('wineExtraEnv', ''));
+    });
+
+    ipcMain.on('bridge:wineenv:set', (event, value: string) => {
+      this.store.set('wineExtraEnv', value ?? '');
+      event.sender.send('bridge:wineenv:value', this.store.get<string>('wineExtraEnv', ''));
+      if (this.captureInterface) {
+        try {
+          this.startBridge(region);
+        } catch (e) {
+          log.error('[bridge] Failed to restart bridge after settings change:', e);
+        }
+      }
     });
   }
 
@@ -99,6 +257,10 @@ export class PacketCapture {
   }
 
   async stop(): Promise<void> {
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
     if (this.captureInterface) {
       await this.captureInterface.stop();
       delete this.captureInterface;
@@ -181,14 +343,50 @@ export class PacketCapture {
         name: 'FFXIV_Teamcraft'
       };
 
-      if (!app.isPackaged) {
+      if (process.platform !== 'win32') {
+        const { prefix: winePrefix, bin: wineBin } = this.wineResolver.resolveWinePaths();
+
+        if (!winePrefix || !wineBin) {
+          log.error('[pcap] Wine paths could not be resolved (not configured and autodetection failed):', { winePrefix, wineBin });
+          this.store.set('machina', false);
+          this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_PATHS_NOT_CONFIGURED' });
+          return;
+        }
+
+        // Require the game to already be running before starting the bridge, matching
+        // Windows (where DLL injection fails immediately if the process isn't found).
+        // Starting the bridge first can otherwise leave it waiting indefinitely on a
+        // stale or mismatched Wine session with no way to tell the two cases apart.
+        if (!this.isGameRunningViaWine()) {
+          log.error('[pcap] ffxiv_dx11.exe is not running; refusing to start the bridge');
+          this.store.set('machina', false);
+          this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_GAME_NOT_RUNNING' });
+          return;
+        }
+
+        // deucalion-bridge.exe runs under Wine and forwards the deucalion
+        // named pipe over TCP.
+        try {
+          this.startBridge(region);
+          options.bridgeTcpPort = 31594;
+        } catch (e) {
+          log.error('[pcap] Failed to set up deucalion bridge:', e);
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_SETUP_FAILED' });
+          return;
+        }
+      } else if (!app.isPackaged) {
         const localDataPath = this.getLocalDataPath();
         if (localDataPath) {
           options.localDataPath = localDataPath;
           log.info('[pcap] Using localOpcodes:', localDataPath);
         }
       } else {
-        options.deucalionDllPath = region === 'KR' ? join(app.getAppPath(), '../../deucalion/deucalion.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
+        options.deucalionDllPath = this.getDeucalionDllPath(region);
       }
 
       log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
@@ -213,6 +411,7 @@ export class PacketCapture {
       this.captureInterface.on('ready', () => {
         // Give it 200ms to make sure pipe is created
         setTimeout(() => {
+          if (!this.captureInterface) return;
           this.captureInterface.start()
             .then(() => {
               this.mainWindow.win.webContents.send('pcap:status', 'running');
@@ -243,13 +442,127 @@ export class PacketCapture {
       if (e.message.includes('dll-inject')) {
         this.mainWindow.win.webContents.send('pcap:status', 'error');
         this.mainWindow.win.webContents.send('pcap:error', {
-          message: "MISSING_INJECTOR"
+          message: 'MISSING_INJECTOR'
         });
-        log.error("[pcap] MISSING_INJECTOR");
+        log.error('[pcap] MISSING_INJECTOR');
       } else {
-        log.error(e)
+        log.error(e);
       }
     }
+  }
+
+  /**
+   * Returns true if ffxiv_dx11.exe is currently running as a Wine process.
+   * Uses pgrep to search the full command line so it matches regardless of
+   * how Wine surfaces the executable name in the process table.
+   */
+  private isGameRunningViaWine(): boolean {
+    try {
+      execSync('pgrep -f ffxiv_dx11.exe', { stdio: 'ignore' });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  /**
+   * Walks up the directory tree from __dirname to locate deucalion.dll inside
+   * node_modules. Necessary in dev/unpackaged builds because webpack compiles
+   * require.resolve() to a numeric module ID rather than a real path.
+   */
+  private findDevDeucalionDll(): string {
+    const rel = 'node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion/deucalion.dll';
+    let dir = __dirname;
+    for (let i = 0; i < 8; i++) {
+      const candidate = join(dir, rel);
+      if (existsSync(candidate)) {
+        return candidate;
+      }
+      const parent = join(dir, '..');
+      if (parent === dir) break;
+      dir = parent;
+    }
+    throw new Error(`Cannot find deucalion.dll in node_modules (searched up from ${__dirname})`);
+  }
+
+  /**
+   * Returns the native path to the bundled deucalion.dll.
+   * Packaged builds find it in extraFiles next to the app; dev builds walk up
+   * from __dirname to locate it inside node_modules.
+   */
+  private getDeucalionDllPath(region: Region): string {
+    if (app.isPackaged) {
+      return region === 'TW' ? join(app.getAppPath(), '../../deucalion/deucalion_12.dll') : join(app.getAppPath(), '../../deucalion/deucalion.dll');
+    }
+    return this.findDevDeucalionDll();
+  }
+
+  /**
+   * Converts a Unix absolute path to a Wine Z: drive path.
+   * Wine's Z: drive maps directly to the root filesystem.
+   */
+  private toWinePath(unixPath: string): string {
+    return 'Z:' + unixPath.replace(/\//g, '\\');
+  }
+
+  /**
+   * Spawns deucalion-bridge.exe under Wine. The bridge will:
+   * 1. Wait for ffxiv_dx11.exe to appear
+   * 2. Inject deucalion.dll
+   * 3. Forward the named pipe over TCP on the given port
+   *
+   * The bridge process runs in the background; Deucalion.startTcp() will
+   * keep retrying the TCP connection until the bridge is ready.
+   */
+  private spawnBridge(dllWinPath: string, port: number, winePrefix: string, wineBin: string, extraEnv: Record<string, string> = {}): void {
+    if (this.bridgeProcess) {
+      this.bridgeProcess.kill();
+      this.bridgeProcess = null;
+    }
+
+    const bridgeExe = app.isPackaged
+      ? join(app.getAppPath(), '../../deucalion-bridge/deucalion-bridge.exe')
+      : join(__dirname, '../../../deucalion-bridge/deucalion-bridge.exe');
+
+    const extraEnvStr = Object.entries(extraEnv).map(([k, v]) => `${k}=${v}`).join(' ');
+    log.info(`[bridge] spawning: ${extraEnvStr ? `${extraEnvStr} ` : ''}${wineBin} ${bridgeExe} --dll-path ${dllWinPath} --port ${port}`);
+
+    this.bridgeProcess = spawn(wineBin, [bridgeExe, '--dll-path', dllWinPath, '--port', String(port)], {
+      env: { ...process.env, WINEPREFIX: winePrefix, ...extraEnv }
+    });
+
+    let stderrBuffer = '';
+
+    this.bridgeProcess.stdout?.on('data', (data: Buffer) => {
+      for (const line of data.toString().split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
+    this.bridgeProcess.stderr?.on('data', (data: Buffer) => {
+      const chunk = data.toString();
+      stderrBuffer += chunk;
+      for (const line of chunk.split(/\r?\n/).filter(Boolean)) {
+        log.info(line);
+      }
+    });
+
+    this.bridgeProcess.on('error', err => log.error('[bridge] spawn error:', err));
+
+    this.bridgeProcess.on('exit', (code, signal) => {
+      log.info(`[bridge] exited code=${code} signal=${signal}`);
+      this.bridgeProcess = null;
+      // We only ever kill the bridge ourselves with the default SIGTERM, so any other
+      // signal (e.g. SIGFPE, SIGSEGV) means it actually crashed, not that we stopped it.
+      if (((code !== null && code !== 0) || (signal !== null && signal !== 'SIGTERM')) && this.captureInterface) {
+        log.error(`[bridge] Abnormal exit (stderr: ${stderrBuffer.trim()})`);
+        this.store.set('machina', false);
+        this.mainWindow.win.webContents.send('toggle-pcap:value', false);
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        this.mainWindow.win.webContents.send('pcap:error', { message: 'BRIDGE_CRASHED' });
+        this.stop();
+      }
+    });
   }
 
 }

@@ -46,19 +46,16 @@ export class FishingReporter implements DataReporter {
     const packets$ = _packets$.pipe(
       filter(packet => packet.header.sourceActor === packet.header.targetActor)
     );
-    const actorControlSelf$ = packets$.pipe(
-      ofMessageType('actorControlSelf'),
-      toIpcData(),
-      filter(packet => packet.category === 320)
-    );
 
-    const fishCaught$ = actorControlSelf$.pipe(
+    const fishCaught$ = packets$.pipe(
+      ofMessageType('fishCaught'),
+      toIpcData(),
       map(packet => {
         return {
-          id: packet.param1,
-          hq: (packet.param3 >> 4 & 1) === 1,
-          moochable: (packet.param3 & 0x0000000F) === 5,
-          size: packet.param2 >> 16
+          id: packet.itemId,
+          hq: (packet.flags >> 4 & 1) === 1,
+          moochable: (packet.flags & 5) === 5,
+          size: packet.size
         };
       })
     );
@@ -122,17 +119,16 @@ export class FishingReporter implements DataReporter {
 
     const throw$ = packets$.pipe(
       ofMessageType('eventPlay4'),
-      toIpcData(),
-      filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001 && packet.parsedIpcData.scene === 1),
       delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
         this.eorzea.weatherId$,
         this.eorzea.previousWeatherId$
       ),
-      map(([, statuses, weatherId, previousWeatherId]) => {
+      map(([packet, statuses, weatherId, previousWeatherId]) => {
         return {
-          timestamp: Date.now(),
+          timestamp: parseInt(packet.header.ipcTimestamp),
           etime: this.etime.toEorzeanDate(new Date()),
           statuses,
           weatherId,
@@ -141,14 +137,15 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-
-    const bite$ = eventPlay$.pipe(
-      filter(packet => packet.scene === 5),
+    const bite$ = packets$.pipe(
+      ofMessageType('eventPlay'),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001),
+      filter(packet => packet.parsedIpcData.scene === 5),
       withLatestFrom(this.eorzea.statuses$),
       map(([packet, statuses]) => {
         return {
-          timestamp: Date.now(),
-          tug: this.getTug(packet.param5),
+          timestamp: parseInt(packet.header.ipcTimestamp),
+          tug: this.getTug(packet.parsedIpcData.param5),
           statuses
         };
       })
@@ -186,11 +183,10 @@ export class FishingReporter implements DataReporter {
     const misses$ = combineLatest([
       packets$.pipe(
         ofMessageType('systemLogMessage'),
-        toIpcData(),
         map(packet => {
           return {
-            logMessage: packet.param1,
-            timestamp: Date.now()
+            logMessage: packet.parsedIpcData.param1,
+            timestamp: parseInt(packet.header.ipcTimestamp)
           };
         })
       ),
@@ -198,10 +194,28 @@ export class FishingReporter implements DataReporter {
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
         /**
-         * 1119: snap?
-         * 1120: Fish left
+         * systemLogMessage types
+         * fisher ignored bite (by waiting):
+         *  bait: 1117
+         *  lure: 1119
+         *
+         * fisher rested bite:
+         *  bait: 1117
+         *  lure: 1119
+         *
+         * hooked but fish slipped:
+         *  bait: 1119
+         *  lure: 1119
+         *
+         * lost your lure: 1118
+         * line snapped: 1120
          */
-        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 ) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
+        return (
+          rodAnimation.logMessage === 1117 ||
+          rodAnimation.logMessage === 1118 ||
+          rodAnimation.logMessage === 1119 ||
+          rodAnimation.logMessage === 1120
+        ) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {
@@ -212,33 +226,12 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const resetFromLogMessage$ = packets$.pipe(
-      ofMessageType('systemLogMessage'),
-      toIpcData(),
-      map(packet => {
-        return {
-          logMessage: packet.param1,
-          timestamp: Date.now()
-        };
-      }),
-      filter(rodAnimation => {
-        /**
-         * 1111: Early hook
-         * 1117: Ignored the fish
-         */
-        return rodAnimation.logMessage === 1111 || rodAnimation.logMessage === 1117
-      }),
-      map(() => true)
-    );
-
-    const resetFromAction$ = packets$.pipe(
+    const reset$ = packets$.pipe(
       ofMessageType('eventPlay4'),
       toIpcData(),
       // 271 = fishing idle
       filter(packet => packet.eventId === 0x150001 && packet.params[0] === 271)
     );
-
-    const reset$ = merge(resetFromLogMessage$, resetFromAction$);
 
     const resetMooch$ = merge(packets$.pipe(
         ofMessageType('actorControlSelf', 'fishingBaitMsg')

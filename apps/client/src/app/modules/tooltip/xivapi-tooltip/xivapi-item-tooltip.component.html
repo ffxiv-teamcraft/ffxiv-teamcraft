@@ -2,7 +2,7 @@
   <div nz-col [nzSpan]="12" class="stats">
     <div class="flex-row align-center gap-5">
       <div class="icon">
-        <img alt="{{item | i18n}}" src="https://xivapi.com{{item.icon}}">
+        <img alt="{{item | i18n}}" src="{{item.id | lazyIcon}}">
       </div>
       <div class="name" fxLayout="column">
         <span [appItemRarity]="item.id">{{item | i18n}}</span>

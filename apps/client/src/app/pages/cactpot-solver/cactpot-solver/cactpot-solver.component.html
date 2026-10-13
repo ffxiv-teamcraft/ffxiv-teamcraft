@@ -1,0 +1,20 @@
+<div fxLayout="column" fxFill>
+  <!-- Header -->
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2>{{ 'TITLE.Cactpot_Solver' | translate }}</h2>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="0" fxFlex>
+    <!-- Board Area -->
+    <div fxFlex="50" class="board-section">
+      <app-board-area [board]="board"
+                      (boardChange)="onBoardChange($event)"
+                      (boardReset)="onBoardReset()" />
+    </div>
+    
+    <!-- Payout Area -->
+    <div fxFlex="50" class="payout-section">
+       <app-payout-area />
+    </div>
+  </div>
+</div>

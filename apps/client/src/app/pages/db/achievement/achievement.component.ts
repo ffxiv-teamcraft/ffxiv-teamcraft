@@ -97,7 +97,7 @@ export class AchievementComponent extends TeamcraftPageComponent {
           title: this.getName(achievement),
           description: this.getDescription(achievement),
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/achievement/${achievement.id}/${this.getName(achievement).split(' ').join('-')}`,
-          image: `https://xivapi.com${achievement.icon}`
+          image: `https://v2.xivapi.com${achievement.icon}`
         };
       })
     );

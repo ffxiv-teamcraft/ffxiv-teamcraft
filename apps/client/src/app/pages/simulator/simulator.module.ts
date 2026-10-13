@@ -46,6 +46,7 @@ import { SimulatorOpenerComponent } from './components/simulator-opener/simulato
 import { SimulationSharePopupComponent } from './components/simulation-share-popup/simulation-share-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SimulationResultComponent } from './components/simulation-result/simulation-result.component';
+import { SolverPopupComponent } from './components/solver-popup/solver-popup.component';
 
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -157,6 +158,7 @@ const routes: Routes = [
     SimulationSharePopupComponent,
     SimulationResultComponent,
     RotationResultTagComponent,
+    SolverPopupComponent,
     CommunityRotationFinderPopupComponent
 ],
     exports: [

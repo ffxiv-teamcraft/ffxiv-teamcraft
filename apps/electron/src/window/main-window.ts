@@ -33,7 +33,7 @@ export class MainWindow {
       backgroundColor: '#2f3237',
       autoHideMenuBar: true,
       frame: true,
-      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
+      icon: join(Constants.BASE_APP_PATH, 'assets', 'app-icon.png'),
       title: title,
       webPreferences: {
         backgroundThrottling: false,

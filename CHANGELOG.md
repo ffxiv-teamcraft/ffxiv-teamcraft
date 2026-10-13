@@ -2,6 +2,106 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.30...v11.4.31) (2026-09-08)
+
+
+### Features
+
+* **db:** global 7.56 data ([8e62945](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e62945d81bd9ae57da661fbf0baaa3a7f1fbac4))
+* **db:** support for korean v7.56 update ([#3296](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3296)) ([05611ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05611abf420d70917b43d07f3519022097b86e4f))
+* **simulator:** you can now pick which actions to use in solver ([0280752](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/028075274161dcbbc31f5c6272ff204c9684c1cd))
+
+
+### Bug Fixes
+
+* **allagan-reports:** For oceanfishing, Allagan Reports editor showing all weathers is helpful ([589ab97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/589ab9744755d13bb461c73261c015b8bcc1faf2))
+* **data-exporter:** update asset URL format to XIVAPI v2 ([5117866](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/511786616c247829baea63c317e84b6d96809d59))
+* **db:** Adjust status icon in Fishing Overlay and others for KR ([a058384](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a058384196e9631dea8b3a7633bb421a04e4b1d5))
+* **fishing-reporter:** refer to Large flag for caught fish ([5c2c919](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c2c919e4dff0756f2ec3ee2458bd491bf17e6f7))
+* **fishing-reporter:** toggling the eorzean date format will toggle fishing cast time ([203f78a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/203f78ac811d9b31bbf1fa7caced4da870882869))
+* **fishing-reporter:** use packet header timestamps ([486a18e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/486a18e763e3225d791cc2bd0a11e1b6f40b4502))
+* **pcap:** resolve protonprefix instead of wineprefix when XIVLauncher uses Proton ([ada13aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ada13aa08d0fc7f606bd3e8ce40a9ae6c4acaca1))
+* **pcap:** resolve the launcher's wine binary when XIVLauncher is the Steam compat tool ([4edca0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4edca0fa64b2b23076d2d3df33a0b4cc97fccbed))
+* **pcap:** resolve wine binary for XIVLauncher RB custom Proton distros ([cd76b25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd76b25af3c55f9e53aebbc6c7d8c5e97e142961))
+* update fishing-report miss-type messages ([446ae5b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/446ae5b9a7b4f9d122940635760818a1ec5aa722))
+
+### [11.4.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.29...v11.4.30) (2026-08-12)
+
+
+### Features
+
+* **db:** allagan reports import ([88f8a83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88f8a8357f2a85e5710c83e223d2471adea9327a))
+
+
+### Bug Fixes
+
+* **fishing-reporter:** stop reporting the applied bait as a mooch ([015be9e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/015be9e78991950baaafb82fd8d94a31797296d1))
+
+### [11.4.29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.28...v11.4.29) (2026-07-30)
+
+
+### Features
+
+* **db:** CN 7.55 data ([a41f97b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a41f97b69f986ee53801b74e101a7bb7fa092f3a))
+* **db:** TW 7.2 data ([336cb45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/336cb45350bb03e936b986c737c5a683d029173b))
+
+### [11.4.28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.27...v11.4.28) (2026-07-29)
+
+
+### Features
+
+* 7.55 data import ([66b7ce4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66b7ce46adc7605ed9b44ddd58057c80b620141a))
+* **db:** support for korean v7.55 update ([e16b840](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e16b840998064beec5f5431634a1a4d98b8d39d8))
+
+### [11.4.27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.26...v11.4.27) (2026-07-20)
+
+
+### Bug Fixes
+
+* map images and tooltip icons not loading ([2be852c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2be852c4ca4bbd3a946bfaa206872664e4136e5f))
+
+### [11.4.26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.25...v11.4.26) (2026-07-19)
+
+
+### Features
+
+* **db:** new reports import ([46dde90](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46dde90c0b070fb13197977fb01fdf288fd56aec))
+* **linux:** autodetect Wine prefix and binary from Steam and XIVLauncher ([4d9eb55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d9eb5502284924b2da3e0631e941616e794ebc9))
+* Mini-Cactpot Solver by PawanaMcKay ([f68557c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f68557c3e9535e43290003e5397597827a62d436))
+* **pcap:** Add setting for extra Wine env for older Wine versions ([011e287](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/011e287524ab6d658bdc2468ab8a910402e8d764))
+
+
+### Bug Fixes
+
+* AppArmor error on boot in Ubuntu ([0cdf6aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cdf6aa102157c2a7beb554d8f41d22e67cd4e42))
+* capture signals from linux pcap bridge crashes and show error ([349aa92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/349aa924df71b3d34a90fdcb8d94cd2e9e86f2ec))
+
+### [11.4.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.24...v11.4.25) (2026-06-06)
+
+
+### Bug Fixes
+
+* icons not loading in many features ([1711e06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1711e06f3a3202afa0fc4c772f8f1cdeb77e1085))
+
+### [11.4.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.23...v11.4.24) (2026-06-02)
+
+
+### Features
+
+* **db:** support for korean v7.51 update ([35732e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35732e02d4d3d80219a309fb2ba6ca6df13c7a6f))
+* **electron:** add shared cross-platform desktop plumbing and bundled bridge ([6c95dca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c95dca0925fa545733bc5186742b186ad32bdaa)), closes [#3197](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3197) [#3201](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/3201)
+* **pcap:** Add bridge start logic and wine settings ([08811de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08811de3a957792a1d7121dbe49d45f4c2921f82))
+* **pcap:** support TW version ([805486e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/805486e34598d20c6b7ea1e271cdcdd6f12cfedc))
+* use XIVAPI v2 as icons source ([2b46d5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b46d5aa93ea420665142a4e9cfe2de71de06d04))
+
+### [11.4.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.22...v11.4.23) (2026-05-05)
+
+
+### Bug Fixes
+
+* support for new fishing-related packet ([73706ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73706ce112ec8bf1429c09a723f5ad1341a78a7e))
+* support for new fishing-related packet ([f34757a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f34757a3ab4ddf59ad0b323f40d77fc123b1f143))
+
 ### [11.4.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.21...v11.4.22) (2026-04-29)
 
 

@@ -1,5 +1,5 @@
 import log from 'electron-log';
-import { FSWatcher, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
+import { FSWatcher, existsSync, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
 import { join } from 'path';
 import { MainWindow } from '../window/main-window';
 import BufferReader from 'buffer-reader';
@@ -61,14 +61,21 @@ export class DatFilesWatcher {
       this.stop();
     });
 
+    ipcMain.on('dat:all-odr', (event) => {
+      const watchDir = this.getWatchDir();
+      if (watchDir) {
+        event.sender.send('dat:all-odr:value', this.getAllItemODRs(watchDir));
+      }
+    });
+
     ipcMain.on('dat:path:get', (event) => {
-      event.sender.send('dat:path:value', this.getWatchDir());
+      event.sender.send('dat:path:value', this.getWatchDir() ?? '');
     });
 
     ipcMain.on('dat:path:set', (event, value) => {
+      const current = this.getWatchDir();
       const folderPickerOptions: OpenDialogOptions = {
-        // See place holder 2 in above image
-        defaultPath: this.getWatchDir(),
+        defaultPath: current ?? app.getPath('home'),
         properties: ['openDirectory']
       };
       dialog.showOpenDialog(this.mainWindow.win, folderPickerOptions).then((result) => {
@@ -77,7 +84,7 @@ export class DatFilesWatcher {
         }
         const filePath = result.filePaths[0];
         this.store.set('dat-watcher:dir', filePath);
-        event.sender.send('dat:path:value', this.getWatchDir());
+        event.sender.send('dat:path:value', this.getWatchDir() ?? '');
         this.stop();
         this.start();
       });
@@ -158,30 +165,47 @@ export class DatFilesWatcher {
     }, {});
   }
 
-  private getWatchDir(): string {
+  private getWatchDir(): string | null {
     const region = this.store.get('region', null);
     const customDir = this.store.get('dat-watcher:dir', null);
     if (customDir) {
       return customDir;
     }
+    if (process.platform === 'linux') {
+      const home = app.getPath('home');
+      // Steam first: try both Documents and My Documents (varies by Proton version)
+      const steamPrefix = join(home, '.local', 'share', 'Steam', 'steamapps', 'compatdata', '39210', 'pfx');
+      for (const docs of ['Documents', 'My Documents']) {
+        const p = join(steamPrefix, 'drive_c', 'users', 'steamuser', docs, 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+        if (existsSync(p)) return p;
+      }
+      // XIVLauncher second
+      const xlcorePath = join(home, '.xlcore', 'ffxivConfig');
+      if (existsSync(xlcorePath)) return xlcorePath;
+      // Nothing found
+      return null;
+    }
     switch (region) {
       case 'KR':
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - KOREA`;
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - KOREA');
       case 'CN':
-        return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
+        return join('C:\\', 'Program Files (x86)', '上海数龙科技有限公司', '最终幻想XIV', 'game', 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
+      case 'TW':
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - TC');
       default:
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
+        return join(app.getPath('documents'), 'My Games', 'FINAL FANTASY XIV - A Realm Reborn');
     }
   }
 
   start(): void {
-    this.mainWindow.closed$.subscribe(() => {
-      this.stop();
-    });
     if (!!this.watcher) {
       return;
     }
     const watchDir = this.getWatchDir();
+    if (!watchDir) {
+      log.warn('[dat-watcher] No FFXIV config directory found; skipping watch.');
+      return;
+    }
     try {
       // Prepare hash cache
       const dirs = readdirSync(watchDir);
@@ -207,9 +231,6 @@ export class DatFilesWatcher {
 
       this.watcher = watch(watchDir, { recursive: true }, (event, filename) => {
         this.onEvent(event, filename, watchDir);
-      });
-      ipcMain.on('dat:all-odr', event => {
-        event.sender.send('dat:all-odr:value', this.getAllItemODRs(watchDir));
       });
       log.log(`DAT Watcher started on ${watchDir}`);
     } catch (e) {
