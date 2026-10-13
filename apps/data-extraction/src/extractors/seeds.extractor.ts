@@ -34,6 +34,9 @@ export class SeedsExtractor extends AbstractExtractor {
           gardeningSeedIds[entry.SeedID] = +entry.ApiID_seed;
         });
         seeds.forEach(({ entry, crosses }) => {
+          if (!Array.isArray(crosses)) {
+            return;
+          }
           entries[+entry.ApiID_plant] = {
             seedItemId: +entry.ApiID_seed,
             duration: +entry.Duration <= 10 ? +entry.Duration * 24 : +entry.Duration,

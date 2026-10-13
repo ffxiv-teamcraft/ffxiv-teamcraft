@@ -89733,11 +89733,13 @@
     "de": "Mit Wind in den Segeln",
     "ja": "風の向かう先へ",
     "fr": "Portés par le vent",
+    "ko": "바람이 부는 곳으로",
     "description": {
       "en": "Complete the main scenario quest “Windborne.”",
       "de": "Den Auftrag „Wohin der Wind weht“ abgeschlossen.",
       "ja": "クエスト「風の向かう先へ」をコンプリートする",
-      "fr": "Accomplir la quête “Portés par le vent”."
+      "fr": "Accomplir la quête “Portés par le vent”.",
+      "ko": "퀘스트 '바람이 부는 곳으로' 완료"
     },
     "item": 0,
     "title": 857
@@ -91401,11 +91403,13 @@
     "de": "Von der wilden Seite I",
     "ja": "魔獣使い：レベル10",
     "fr": "Apprenti dresseur",
+    "ko": "마수조련사: 레벨 10",
     "description": {
       "en": "Achieve beastmaster level 10.",
       "de": "Erfahrungsstufe 10 als Bestienbändiger erreicht.",
       "ja": "魔獣使いのレベルが10に到達する",
-      "fr": "Atteindre le niveau 10 avec le job dresseur."
+      "fr": "Atteindre le niveau 10 avec le job dresseur.",
+      "ko": "마수조련사 레벨 10 달성"
     },
     "item": 0,
     "title": 0
@@ -91418,11 +91422,13 @@
     "de": "Von der wilden Seite II",
     "ja": "魔獣使い：レベル20",
     "fr": "Dresseur novice",
+    "ko": "마수조련사: 레벨 20",
     "description": {
       "en": "Achieve beastmaster level 20.",
       "de": "Erfahrungsstufe 20 als Bestienbändiger erreicht.",
       "ja": "魔獣使いのレベルが20に到達する",
-      "fr": "Atteindre le niveau 20 avec le job dresseur."
+      "fr": "Atteindre le niveau 20 avec le job dresseur.",
+      "ko": "마수조련사 레벨 20 달성"
     },
     "item": 0,
     "title": 0
@@ -91435,11 +91441,13 @@
     "de": "Von der wilden Seite III",
     "ja": "魔獣使い：レベル30",
     "fr": "Dresseur intermédiaire",
+    "ko": "마수조련사: 레벨 30",
     "description": {
       "en": "Achieve beastmaster level 30.",
       "de": "Erfahrungsstufe 30 als Bestienbändiger erreicht.",
       "ja": "魔獣使いのレベルが30に到達する",
-      "fr": "Atteindre le niveau 30 avec le job dresseur."
+      "fr": "Atteindre le niveau 30 avec le job dresseur.",
+      "ko": "마수조련사 레벨 30 달성"
     },
     "item": 0,
     "title": 0
@@ -91452,11 +91460,13 @@
     "de": "Von der wilden Seite IV",
     "ja": "魔獣使い：レベル40",
     "fr": "Dresseur confirmé",
+    "ko": "마수조련사: 레벨 40",
     "description": {
       "en": "Achieve beastmaster level 40.",
       "de": "Erfahrungsstufe 40 als Bestienbändiger erreicht.",
       "ja": "魔獣使いのレベルが40に到達する",
-      "fr": "Atteindre le niveau 40 avec le job dresseur."
+      "fr": "Atteindre le niveau 40 avec le job dresseur.",
+      "ko": "마수조련사 레벨 40 달성"
     },
     "item": 0,
     "title": 0
@@ -91469,11 +91479,13 @@
     "de": "Von der wilden Seite V",
     "ja": "魔獣使い：レベル50",
     "fr": "Dresseur vétéran",
+    "ko": "마수조련사: 레벨 50",
     "description": {
       "en": "Achieve beastmaster level 50.",
       "de": "Erfahrungsstufe 50 als Bestienbändiger erreicht.",
       "ja": "魔獣使いのレベルが50に到達する",
-      "fr": "Atteindre le niveau 50 avec le job dresseur."
+      "fr": "Atteindre le niveau 50 avec le job dresseur.",
+      "ko": "마수조련사 레벨 50 달성"
     },
     "item": 0,
     "title": 0
@@ -91486,11 +91498,13 @@
     "de": "Ein Herz für Bestien I",
     "ja": "ビーストマニア：ランク1",
     "fr": "Adepte des bêtes I",
+    "ko": "마수 애호가: 1단계",
     "description": {
       "en": "Befriend 10 unique beasts.",
       "de": "Mit 10 Bestienarten angefreundet.",
       "ja": "ペットを10種類仲間にする",
-      "fr": "Obtenir 10 bêtes dans le bestiaire de dresseur."
+      "fr": "Obtenir 10 bêtes dans le bestiaire de dresseur.",
+      "ko": "사역마수 10종류 동료로 삼기"
     },
     "item": 0,
     "title": 0
@@ -91503,11 +91517,13 @@
     "de": "Ein Herz für Bestien II",
     "ja": "ビーストマニア：ランク2",
     "fr": "Adepte des bêtes II",
+    "ko": "마수 애호가: 2단계",
     "description": {
       "en": "Befriend 20 unique beasts.",
       "de": "Mit 20 Bestienarten angefreundet.",
       "ja": "ペットを20種類仲間にする",
-      "fr": "Obtenir 20 bêtes dans le bestiaire de dresseur."
+      "fr": "Obtenir 20 bêtes dans le bestiaire de dresseur.",
+      "ko": "사역마수 20종류 동료로 삼기"
     },
     "item": 0,
     "title": 0
@@ -91520,11 +91536,13 @@
     "de": "Ein Herz für Bestien III",
     "ja": "ビーストマニア：ランク3",
     "fr": "Adepte des bêtes III",
+    "ko": "마수 애호가: 3단계",
     "description": {
       "en": "Befriend 30 unique beasts.",
       "de": "Mit 30 Bestienarten angefreundet.",
       "ja": "ペットを30種類仲間にする",
-      "fr": "Obtenir 30 bêtes dans le bestiaire de dresseur."
+      "fr": "Obtenir 30 bêtes dans le bestiaire de dresseur.",
+      "ko": "사역마수 30종류 동료로 삼기"
     },
     "item": 0,
     "title": 0
@@ -91537,11 +91555,13 @@
     "de": "Ein Herz für Bestien IV",
     "ja": "ビーストマニア：ランク4",
     "fr": "Adepte des bêtes IV",
+    "ko": "마수 애호가: 4단계",
     "description": {
       "en": "Befriend 40 unique beasts.",
       "de": "Mit 40 Bestienarten angefreundet.",
       "ja": "ペットを40種類仲間にする",
-      "fr": "Obtenir 40 bêtes dans le bestiaire de dresseur."
+      "fr": "Obtenir 40 bêtes dans le bestiaire de dresseur.",
+      "ko": "사역마수 40종류 동료로 삼기"
     },
     "item": 0,
     "title": 0
@@ -91554,11 +91574,13 @@
     "de": "Ein Herz für Bestien V",
     "ja": "ビーストマニア：ランク5",
     "fr": "Adepte des bêtes V",
+    "ko": "마수 애호가: 5단계",
     "description": {
       "en": "Befriend 50 unique beasts.",
       "de": "Mit 50 Bestienarten angefreundet.",
       "ja": "ペットを50種類仲間にする",
-      "fr": "Obtenir 50 bêtes dans le bestiaire de dresseur."
+      "fr": "Obtenir 50 bêtes dans le bestiaire de dresseur.",
+      "ko": "사역마수 50종류 동료로 삼기"
     },
     "item": 0,
     "title": 0
@@ -91571,11 +91593,13 @@
     "de": "Ungestümer Stratege I",
     "ja": "闘獣練 第一盤を制覇せし者",
     "fr": "Échec et mat I",
+    "ko": "마수 시련장 첫 번째 시련을 제패한 자",
     "description": {
       "en": "Clear the First Board of the Unbroken.",
       "de": "Das Erste Brett der Bestie abgeschlossen.",
       "ja": "闘獣練 第一盤を攻略する",
-      "fr": "Finir le Dédale bestial - 1er plateau."
+      "fr": "Finir le Dédale bestial - 1er plateau.",
+      "ko": "마수 시련장 첫 번째 시련 완료"
     },
     "item": 0,
     "title": 0
@@ -91588,11 +91612,13 @@
     "de": "Ungestümer Stratege II",
     "ja": "闘獣練 第二盤を制覇せし者",
     "fr": "Échec et mat II",
+    "ko": "마수 시련장 두 번째 시련을 제패한 자",
     "description": {
       "en": "Clear the Second Board of the Unbroken.",
       "de": "Das Zweite Brett der Bestie abgeschlossen.",
       "ja": "闘獣練 第二盤を攻略する",
-      "fr": "Finir le Dédale bestial - 2e plateau."
+      "fr": "Finir le Dédale bestial - 2e plateau.",
+      "ko": "마수 시련장 두 번째 시련 완료"
     },
     "item": 0,
     "title": 0
@@ -91605,11 +91631,13 @@
     "de": "Ungestümer Stratege III",
     "ja": "闘獣練 第三盤を制覇せし者",
     "fr": "Échec et mat III",
+    "ko": "마수 시련장 세 번째 시련을 제패한 자",
     "description": {
       "en": "Clear the Third Board of the Unbroken.",
       "de": "Das Dritte Brett der Bestie abgeschlossen.",
       "ja": "闘獣練 第三盤を攻略する",
-      "fr": "Finir le Dédale bestial - 3e plateau."
+      "fr": "Finir le Dédale bestial - 3e plateau.",
+      "ko": "마수 시련장 세 번째 시련 완료"
     },
     "item": 0,
     "title": 0
@@ -91622,11 +91650,13 @@
     "de": "Ungestümer Meisterstratege I",
     "ja": "闘獣練 特一盤を制覇せし者",
     "fr": "Expert et mat I",
+    "ko": "마수 시련장 첫 번째 특급 시련을 제패한 자",
     "description": {
       "en": "Clear the First Master's Board.",
       "de": "Das Erste Meisterbrett der Bestie abgeschlossen.",
       "ja": "闘獣練 特一盤を攻略する",
-      "fr": "Finir le Dédale bestial - 1er plateau expert."
+      "fr": "Finir le Dédale bestial - 1er plateau expert.",
+      "ko": "마수 시련장 첫 번째 특급 시련 완료"
     },
     "item": 0,
     "title": 0
@@ -91639,11 +91669,13 @@
     "de": "Ungestümer Meisterstratege II",
     "ja": "闘獣練 特二盤を制覇せし者",
     "fr": "Expert et mat II",
+    "ko": "마수 시련장 두 번째 특급 시련을 제패한 자",
     "description": {
       "en": "Clear the Second Master's Board.",
       "de": "Das Zweite Meisterbrett der Bestie abgeschlossen.",
       "ja": "闘獣練 特二盤を攻略する",
-      "fr": "Finir le Dédale bestial - 2e plateau expert."
+      "fr": "Finir le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련 완료"
     },
     "item": 0,
     "title": 0
@@ -91656,11 +91688,13 @@
     "de": "Unbeherrschter Stratege I",
     "ja": "闘獣練 第一盤を完全制覇せし者",
     "fr": "Arpenteur du sentier I",
+    "ko": "마수 시련장 첫 번째 시련을 완벽히 제패한 자",
     "description": {
       "en": "Clear the First Board of the Unbroken under the third degree.",
       "de": "Das Erste Brett der Bestie auf „Bestialisch III“ abgeschlossen.",
       "ja": "闘獣練 第一盤を獣道IIIで攻略する",
-      "fr": "Finir le Dédale bestial - 1er plateau dans le mode de jeu “Sentier bestial III”."
+      "fr": "Finir le Dédale bestial - 1er plateau dans le mode de jeu “Sentier bestial III”.",
+      "ko": "마수 시련장 첫 번째 시련을 짐승길 3으로 완료"
     },
     "item": 0,
     "title": 0
@@ -91673,11 +91707,13 @@
     "de": "Unbeherrschter Stratege II",
     "ja": "闘獣練 第二盤を完全制覇せし者",
     "fr": "Arpenteur du sentier II",
+    "ko": "마수 시련장 두 번째 시련을 완벽히 제패한 자",
     "description": {
       "en": "Clear the Second Board of the Unbroken under the third degree.",
       "de": "Das Zweite Brett der Bestie auf „Bestialisch III“ abgeschlossen.",
       "ja": "闘獣練 第二盤を獣道IIIで攻略する",
-      "fr": "Finir le Dédale bestial - 2e plateau dans le mode de jeu “Sentier bestial III”."
+      "fr": "Finir le Dédale bestial - 2e plateau dans le mode de jeu “Sentier bestial III”.",
+      "ko": "마수 시련장 두 번째 시련을 짐승길 3으로 완료"
     },
     "item": 0,
     "title": 0
@@ -91690,11 +91726,13 @@
     "de": "Unbeherrschter Stratege III",
     "ja": "闘獣練 第三盤を完全制覇せし者",
     "fr": "Arpenteur du sentier III",
+    "ko": "마수 시련장 세 번째 시련을 완벽히 제패한 자",
     "description": {
       "en": "Clear the Third Board of the Unbroken under the third degree.",
       "de": "Das Dritte Brett der Bestie auf „Bestialisch III“ abgeschlossen.",
       "ja": "闘獣練 第三盤を獣道IIIで攻略する",
-      "fr": "Finir le Dédale bestial - 3e plateau dans le mode de jeu “Sentier bestial III”."
+      "fr": "Finir le Dédale bestial - 3e plateau dans le mode de jeu “Sentier bestial III”.",
+      "ko": "마수 시련장 세 번째 시련을 짐승길 3으로 완료"
     },
     "item": 0,
     "title": 0
@@ -91707,11 +91745,13 @@
     "de": "Unbeherrschter Meisterstratege I",
     "ja": "闘獣練 特一盤を完全制覇せし者",
     "fr": "Expert du sentier I",
+    "ko": "마수 시련장 첫 번째 특급 시련을 완벽히 제패한 자",
     "description": {
       "en": "Clear the First Master's Board under the third degree.",
       "de": "Das Erste Meisterbrett der Bestie auf „Bestialisch III“ abgeschlossen.",
       "ja": "闘獣練 特一盤を獣道IIIで攻略する",
-      "fr": "Finir le Dédale bestial - 1er plateau expert dans le mode de jeu “Sentier bestial III”."
+      "fr": "Finir le Dédale bestial - 1er plateau expert dans le mode de jeu “Sentier bestial III”.",
+      "ko": "마수 시련장 첫 번째 특급 시련을 짐승길 3으로 완료"
     },
     "item": 0,
     "title": 0
@@ -91724,11 +91764,13 @@
     "de": "Unbeherrschter Meisterstratege II",
     "ja": "闘獣練 特二盤を完全制覇せし者",
     "fr": "Expert du sentier II",
+    "ko": "마수 시련장 두 번째 특급 시련을 완벽히 제패한 자",
     "description": {
       "en": "Clear the Second Master's Board under the third degree.",
       "de": "Das Zweite Meisterbrett der Bestie auf „Bestialisch III“ abgeschlossen.",
       "ja": "闘獣練 特二盤を獣道IIIで攻略する",
-      "fr": "Finir le Dédale bestial - 2e plateau expert dans le mode de jeu “Sentier bestial III”."
+      "fr": "Finir le Dédale bestial - 2e plateau expert dans le mode de jeu “Sentier bestial III”.",
+      "ko": "마수 시련장 두 번째 특급 시련을 짐승길 3으로 완료"
     },
     "item": 0,
     "title": 0
@@ -91741,11 +91783,13 @@
     "de": "Meister des Bretts I",
     "ja": "魅了せし勝利：闘獣練 第一盤",
     "fr": "Traversée éclatante I",
+    "ko": "매혹적인 승리: 마수 시련장 첫 번째 시련",
     "description": {
       "en": "Achieve Apex rank or above on the First Board of the Unbroken.",
       "de": "Das Erste Brett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
       "ja": "闘獣練 第一盤で評価「特級魔獣使い」以上を獲得する",
-      "fr": "Finir le Dédale bestial - 1er plateau en obtenant le rang “dresseur d'exception” ou supérieur."
+      "fr": "Finir le Dédale bestial - 1er plateau en obtenant le rang “dresseur d'exception” ou supérieur.",
+      "ko": "마수 시련장 첫 번째 시련을 '특급 마수조련사' 이상의 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91758,11 +91802,13 @@
     "de": "Legende des Bretts I",
     "ja": "華麗なる勝利：闘獣練 第一盤",
     "fr": "Traversée exceptionnelle I",
+    "ko": "화려한 승리: 마수 시련장 첫 번째 시련",
     "description": {
       "en": "Achieve Legendary rank on the First Board of the Unbroken.",
       "de": "Das Erste Brett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
       "ja": "闘獣練 第一盤で評価「伝説の魔獣使い」を獲得する",
-      "fr": "Finir le Dédale bestial - 1er plateau en obtenant le rang “dresseur légendaire” ou supérieur."
+      "fr": "Finir le Dédale bestial - 1er plateau en obtenant le rang “dresseur légendaire” ou supérieur.",
+      "ko": "마수 시련장 첫 번째 시련을 '전설의 마수조련사' 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91775,11 +91821,13 @@
     "de": "Meister des Bretts II",
     "ja": "魅了せし勝利：闘獣練 第二盤",
     "fr": "Traversée éclatante II",
+    "ko": "매혹적인 승리: 마수 시련장 두 번째 시련",
     "description": {
       "en": "Achieve Apex rank or above on the Second Board of the Unbroken.",
       "de": "Das Zweite Brett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
       "ja": "闘獣練 第二盤で評価「特級魔獣使い」以上を獲得する",
-      "fr": "Finir le Dédale bestial - 2e plateau en obtenant le rang “dresseur d'exception” ou supérieur."
+      "fr": "Finir le Dédale bestial - 2e plateau en obtenant le rang “dresseur d'exception” ou supérieur.",
+      "ko": "마수 시련장 두 번째 시련을 '특급 마수조련사' 이상의 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91792,11 +91840,13 @@
     "de": "Legende des Bretts II",
     "ja": "華麗なる勝利：闘獣練 第二盤",
     "fr": "Traversée exceptionnelle II",
+    "ko": "화려한 승리: 마수 시련장 두 번째 시련",
     "description": {
       "en": "Achieve Legendary rank on the Second Board of the Unbroken.",
       "de": "Das Zweite Brett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
       "ja": "闘獣練 第二盤で評価「伝説の魔獣使い」を獲得する",
-      "fr": "Finir le Dédale bestial - 2e plateau en obtenant le rang “dresseur légendaire” ou supérieur."
+      "fr": "Finir le Dédale bestial - 2e plateau en obtenant le rang “dresseur légendaire” ou supérieur.",
+      "ko": "마수 시련장 두 번째 시련을 '전설의 마수조련사' 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91809,11 +91859,13 @@
     "de": "Meister des Bretts III",
     "ja": "魅了せし勝利：闘獣練 第三盤",
     "fr": "Traversée éclatante III",
+    "ko": "매혹적인 승리: 마수 시련장 세 번째 시련",
     "description": {
       "en": "Achieve Apex rank or above on the Third Board of the Unbroken.",
       "de": "Das Dritte Brett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
       "ja": "闘獣練 第三盤で評価「特級魔獣使い」以上を獲得する",
-      "fr": "Finir le Dédale bestial - 3e plateau en obtenant le rang “dresseur d'exception” ou supérieur."
+      "fr": "Finir le Dédale bestial - 3e plateau en obtenant le rang “dresseur d'exception” ou supérieur.",
+      "ko": "마수 시련장 세 번째 시련을 '특급 마수조련사' 이상의 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91826,11 +91878,13 @@
     "de": "Legende des Bretts III",
     "ja": "華麗なる勝利：闘獣練 第三盤",
     "fr": "Traversée exceptionnelle III",
+    "ko": "화려한 승리: 마수 시련장 세 번째 시련",
     "description": {
       "en": "Achieve Legendary rank on the Third Board of the Unbroken.",
       "de": "Das Dritte Brett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
       "ja": "闘獣練 第三盤で評価「伝説の魔獣使い」を獲得する",
-      "fr": "Finir le Dédale bestial - 3e plateau en obtenant le rang “dresseur légendaire” ou supérieur."
+      "fr": "Finir le Dédale bestial - 3e plateau en obtenant le rang “dresseur légendaire” ou supérieur.",
+      "ko": "마수 시련장 세 번째 시련을 '전설의 마수조련사' 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91843,11 +91897,13 @@
     "de": "Meister des Bretts IV",
     "ja": "魅了せし勝利：闘獣練 特一盤",
     "fr": "Périple resplendissant I",
+    "ko": "매혹적인 승리: 마수 시련장 첫 번째 특급 시련",
     "description": {
       "en": "Achieve Apex rank or above on the First Master's Board.",
       "de": "Das Erste Meisterbrett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
       "ja": "闘獣練 特一盤で評価「特級魔獣使い」以上を獲得する",
-      "fr": "Finir le Dédale bestial - 1er plateau expert en obtenant le rang “dresseur d'exception” ou supérieur."
+      "fr": "Finir le Dédale bestial - 1er plateau expert en obtenant le rang “dresseur d'exception” ou supérieur.",
+      "ko": "마수 시련장 첫 번째 특급 시련을 '특급 마수조련사' 이상의 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91860,11 +91916,13 @@
     "de": "Legende des Bretts IV",
     "ja": "華麗なる勝利：闘獣練 特一盤",
     "fr": "Périple glorieux I",
+    "ko": "화려한 승리: 마수 시련장 첫 번째 특급 시련",
     "description": {
       "en": "Achieve Legendary rank on the First Master's Board.",
       "de": "Das Erste Meisterbrett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
       "ja": "闘獣練 特一盤で評価「伝説の魔獣使い」を獲得する",
-      "fr": "Finir le Dédale bestial - 1er plateau expert en obtenant le rang “dresseur légendaire” ou supérieur."
+      "fr": "Finir le Dédale bestial - 1er plateau expert en obtenant le rang “dresseur légendaire” ou supérieur.",
+      "ko": "마수 시련장 첫 번째 특급 시련을 '전설의 마수조련사' 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91877,11 +91935,13 @@
     "de": "Meister des Bretts V",
     "ja": "魅了せし勝利：闘獣練 特二盤",
     "fr": "Périple resplendissant II",
+    "ko": "매혹적인 승리: 마수 시련장 두 번째 특급 시련",
     "description": {
       "en": "Achieve Apex rank or above on the Second Master's Board.",
       "de": "Das Zweite Meisterbrett der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
       "ja": "闘獣練 特二盤で評価「特級魔獣使い」以上を獲得する",
-      "fr": "Finir le Dédale bestial - 2e plateau expert en obtenant le rang “dresseur d'exception” ou supérieur."
+      "fr": "Finir le Dédale bestial - 2e plateau expert en obtenant le rang “dresseur d'exception” ou supérieur.",
+      "ko": "마수 시련장 두 번째 특급 시련을 '특급 마수조련사' 이상의 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91894,11 +91954,13 @@
     "de": "Legende des Bretts V",
     "ja": "華麗なる勝利：闘獣練 特二盤",
     "fr": "Périple glorieux II",
+    "ko": "화려한 승리: 마수 시련장 두 번째 특급 시련",
     "description": {
       "en": "Achieve Legendary rank on the Second Master's Board.",
       "de": "Das Zweite Meisterbrett der Bestie mit der Wertung „Legendär“ abgeschlossen.",
       "ja": "闘獣練 特二盤で評価「伝説の魔獣使い」を獲得する",
-      "fr": "Finir le Dédale bestial - 2e plateau expert en obtenant le rang “dresseur légendaire” ou supérieur."
+      "fr": "Finir le Dédale bestial - 2e plateau expert en obtenant le rang “dresseur légendaire” ou supérieur.",
+      "ko": "마수 시련장 두 번째 특급 시련을 '전설의 마수조련사' 평가로 완료"
     },
     "item": 0,
     "title": 0
@@ -91911,11 +91973,13 @@
     "de": "Meisterlicher Bändiger",
     "ja": "闘獣練エキスパート",
     "fr": "Expert du Dédale",
+    "ko": "마수 시련장 숙련자",
     "description": {
       "en": "Achieve Apex rank or above on the Crucible's first three boards and two master's boards.",
       "de": "Sämtliche Bretter der Bestie mit der Wertung „Meisterlich“ oder höher abgeschlossen.",
       "ja": "闘獣練 第一盤、第二盤、第三盤、特一盤、特二盤にて、すべて評価「特級魔獣使い」以上を獲得する",
-      "fr": "Obtenir le rang “dresseur d'exception” ou supérieur aux 1er, 2e et 3e plateaux ainsi qu'aux 1er et 2e plateaux experts du Dédale bestial."
+      "fr": "Obtenir le rang “dresseur d'exception” ou supérieur aux 1er, 2e et 3e plateaux ainsi qu'aux 1er et 2e plateaux experts du Dédale bestial.",
+      "ko": "마수 시련장 첫 번째 시련, 두 번째 시련, 세 번째 시련, 첫 번째 특급 시련, 두 번째 특급 시련에서 모두 '특급 마수조련사' 이상의 평가 획득"
     },
     "item": 0,
     "title": 877
@@ -91928,11 +91992,13 @@
     "de": "Legendärer Bändiger",
     "ja": "闘獣練マスター",
     "fr": "Maître du Dédale",
+    "ko": "마수 시련장 전문가",
     "description": {
       "en": "Achieve Legendary rank on the Crucible's first three boards and two master's boards.",
       "de": "Sämtliche Bretter der Bestie mit der Wertung „Legendär“ abgeschlossen.",
       "ja": "闘獣練 第一盤、第二盤、第三盤、特一盤、特二盤にて、すべて評価「伝説の魔獣使い」を獲得する",
-      "fr": "Obtenir le rang “dresseur légendaire” ou supérieur aux 1er, 2e et 3e plateaux ainsi qu'aux 1er et 2e plateaux experts du Dédale bestial."
+      "fr": "Obtenir le rang “dresseur légendaire” ou supérieur aux 1er, 2e et 3e plateaux ainsi qu'aux 1er et 2e plateaux experts du Dédale bestial.",
+      "ko": "마수 시련장 첫 번째 시련, 두 번째 시련, 세 번째 시련, 첫 번째 특급 시련, 두 번째 특급 시련에서 모두 '전설의 마수조련사' 평가 획득"
     },
     "item": 0,
     "title": 891
@@ -91945,11 +92011,13 @@
     "de": "Bestialischer Bändiger",
     "ja": "闘獣練グランドマスター",
     "fr": "Grand maître du Dédale",
+    "ko": "마수 시련장 권위자",
     "description": {
       "en": "Clear the Crucible's first three boards and two master's boards under the third degree.",
       "de": "Sämtliche Bretter der Bestie mit der Wertung „Bestialisch“ abgeschlossen.",
       "ja": "闘獣練 第一盤、第二盤、第三盤、特一盤、特二盤のすべてを、獣道IIIで攻略する",
-      "fr": "Terminer les 1er, 2e et 3e plateaux ainsi que les 1er et 2e plateaux experts du Dédale bestial dans le mode de jeu “Sentier bestial III”."
+      "fr": "Terminer les 1er, 2e et 3e plateaux ainsi que les 1er et 2e plateaux experts du Dédale bestial dans le mode de jeu “Sentier bestial III”.",
+      "ko": "마수 시련장 첫 번째 시련, 두 번째 시련, 세 번째 시련, 첫 번째 특급 시련, 두 번째 특급 시련을 모두 짐승길 3으로 완료"
     },
     "item": 0,
     "title": 892
@@ -91962,11 +92030,13 @@
     "de": "Sie gehorchen aufs Wort I",
     "ja": "ビーストトレーナー：ランク1",
     "fr": "Entraînement bestial I",
+    "ko": "마수 훈련사: 1단계",
     "description": {
       "en": "Achieve rank 25 or higher with 10 beasts.",
       "de": "10 verschiedene Bestien auf Rang 25 gebracht.",
       "ja": "ビーストランク25以上のペットが10体に到達する",
-      "fr": "Atteindre le rang 25 ou spérieur avec 10 bêtes."
+      "fr": "Atteindre le rang 25 ou spérieur avec 10 bêtes.",
+      "ko": "마수 랭크 25 이상의 사역마수 10마리 달성"
     },
     "item": 0,
     "title": 0
@@ -91979,11 +92049,13 @@
     "de": "Sie gehorchen aufs Wort II",
     "ja": "ビーストトレーナー：ランク2",
     "fr": "Entraînement bestial II",
+    "ko": "마수 훈련사: 2단계",
     "description": {
       "en": "Achieve rank 25 or higher with 20 beasts.",
       "de": "20 verschiedene Bestien auf Rang 25 gebracht.",
       "ja": "ビーストランク25以上のペットが20体に到達する",
-      "fr": "Atteindre le rang 25 ou spérieur avec 20 bêtes."
+      "fr": "Atteindre le rang 25 ou spérieur avec 20 bêtes.",
+      "ko": "마수 랭크 25 이상의 사역마수 20마리 달성"
     },
     "item": 0,
     "title": 0
@@ -91996,11 +92068,13 @@
     "de": "Sie gehorchen aufs Wort III",
     "ja": "ビーストトレーナー：ランク3",
     "fr": "Entraînement bestial III",
+    "ko": "마수 훈련사: 3단계",
     "description": {
       "en": "Achieve rank 25 or higher with 30 beasts.",
       "de": "30 verschiedene Bestien auf Rang 25 gebracht.",
       "ja": "ビーストランク25以上のペットが30体に到達する",
-      "fr": "Atteindre le rang 25 ou spérieur avec 30 bêtes."
+      "fr": "Atteindre le rang 25 ou spérieur avec 30 bêtes.",
+      "ko": "마수 랭크 25 이상의 사역마수 30마리 달성"
     },
     "item": 0,
     "title": 0
@@ -92013,11 +92087,13 @@
     "de": "Sie gehorchen aufs Wort IV",
     "ja": "ビーストトレーナー：ランク4",
     "fr": "Entraînement bestial IV",
+    "ko": "마수 훈련사: 4단계",
     "description": {
       "en": "Achieve rank 25 or higher with 40 beasts.",
       "de": "40 verschiedene Bestien auf Rang 25 gebracht.",
       "ja": "ビーストランク25以上のペットが40体に到達する",
-      "fr": "Atteindre le rang 25 ou spérieur avec 40 bêtes."
+      "fr": "Atteindre le rang 25 ou spérieur avec 40 bêtes.",
+      "ko": "마수 랭크 25 이상의 사역마수 40마리 달성"
     },
     "item": 0,
     "title": 0
@@ -92030,11 +92106,13 @@
     "de": "Sie gehorchen aufs Wort V",
     "ja": "ビーストトレーナー：ランク5",
     "fr": "Entraînement bestial V",
+    "ko": "마수 훈련사: 5단계",
     "description": {
       "en": "Achieve rank 25 or higher with 50 beasts.",
       "de": "50 verschiedene Bestien auf Rang 25 gebracht.",
       "ja": "ビーストランク25以上のペットが50体に到達する",
-      "fr": "Atteindre le rang 25 ou spérieur avec 50 bêtes."
+      "fr": "Atteindre le rang 25 ou spérieur avec 50 bêtes.",
+      "ko": "마수 랭크 25 이상의 사역마수 50마리 달성"
     },
     "item": 0,
     "title": 0
@@ -92047,11 +92125,13 @@
     "de": "Freund der Biestlinge",
     "ja": "百獣を統べる者",
     "fr": "Ami des thériens",
+    "ko": "백수강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Beastkin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Biestlinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「百獣を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des thériens” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des thériens” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '백수강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 878
@@ -92064,11 +92144,13 @@
     "de": "Freund der Gezieferlinge",
     "ja": "百蟲を統べる者",
     "fr": "Ami des insectoïdes",
+    "ko": "백충강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Vilekin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Gezieferlinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「百蟲を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des insectoïdes” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des insectoïdes” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '백충강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 879
@@ -92081,11 +92163,13 @@
     "de": "Freund der Wölklinge",
     "ja": "有翼を統べる者",
     "fr": "Ami des ptériens",
+    "ko": "유익강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Cloudkin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Wölklinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「有翼を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des ptériens” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des ptériens” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '유익강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 880
@@ -92098,11 +92182,13 @@
     "de": "Freund der Saatlinge",
     "ja": "草木を統べる者",
     "fr": "Ami des floréens",
+    "ko": "초목강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Seedkin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Saatlinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「草木を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des floréens” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des floréens” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '초목강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 881
@@ -92115,11 +92201,13 @@
     "de": "Freund der Woglinge",
     "ja": "水棲を統べる者",
     "fr": "Ami des hydrides",
+    "ko": "수서강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Wavekin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Woglinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「水棲を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des hydrides” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des hydrides” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '수서강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 882
@@ -92132,11 +92220,13 @@
     "de": "Freund der Schupplinge",
     "ja": "甲鱗を統べる者",
     "fr": "Ami des cuirassiens",
+    "ko": "갑린강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Scalekin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Schupplinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「甲鱗を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des cuirassiens” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des cuirassiens” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '갑린강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 883
@@ -92149,11 +92239,13 @@
     "de": "Freund der Ätherlinge",
     "ja": "呪具を統べる者",
     "fr": "Ami des animides",
+    "ko": "주술강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Soulkin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Ätherlinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「呪具を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des animides” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des animides” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '주술강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 884
@@ -92166,11 +92258,13 @@
     "de": "Freund der Todlinge",
     "ja": "死屍を統べる者",
     "fr": "Ami des nécroïdes",
+    "ko": "시체강을 통솔하는 자",
     "description": {
       "en": "Obtain the bonus “Ashkin Gambit” on the Second Master's Board.",
       "de": "Auf dem Zweiten Meisterbrett der Bestie den Bonus „Freund der Todlinge“ erhalten.",
       "ja": "闘獣練 特二盤にて、スコアボーナス「死屍を統べる者」を達成する",
-      "fr": "Obtenir le bonus “maîtrise des nécroïdes” dans le Dédale bestial - 2e plateau expert."
+      "fr": "Obtenir le bonus “maîtrise des nécroïdes” dans le Dédale bestial - 2e plateau expert.",
+      "ko": "마수 시련장 두 번째 특급 시련에서 점수 보너스 '시체강을 통솔하는 자' 달성"
     },
     "item": 0,
     "title": 885
@@ -92204,11 +92298,13 @@
     "de": "Taskforce Taste I",
     "ja": "キーバウンドチャレンジ：ランク1",
     "fr": "Prodige du pianotage I",
+    "ko": "난타전 도전: 1단계",
     "description": {
       "en": "Clear Keybound Brawler for the first time.",
       "de": "Das erste Mal Tastenschläger abgeschlossen.",
       "ja": "キーバウンド・ブロウラーを初めて攻略する",
-      "fr": "Réussir 1 fois Frappe fatale."
+      "fr": "Réussir 1 fois Frappe fatale.",
+      "ko": "마법자판 난타전 1회 완료"
     },
     "item": 0,
     "title": 0
@@ -92221,11 +92317,13 @@
     "de": "Taskforce Taste II",
     "ja": "キーバウンドチャレンジ：ランク2",
     "fr": "Prodige du pianotage II",
+    "ko": "난타전 도전: 2단계",
     "description": {
       "en": "Clear Keybound Brawler 10 times.",
       "de": "10 Mal Tastenschläger abgeschlossen.",
       "ja": "キーバウンド・ブロウラーを10回攻略する",
-      "fr": "Réussir 10 fois Frappe fatale."
+      "fr": "Réussir 10 fois Frappe fatale.",
+      "ko": "마법자판 난타전 10회 완료"
     },
     "item": 0,
     "title": 0
@@ -92238,11 +92336,13 @@
     "de": "Taskforce Taste III",
     "ja": "キーバウンドチャレンジ：ランク3",
     "fr": "Prodige du pianotage III",
+    "ko": "난타전 도전: 3단계",
     "description": {
       "en": "Clear Keybound Brawler 50 times.",
       "de": "50 Mal Tastenschläger abgeschlossen.",
       "ja": "キーバウンド・ブロウラーを50回攻略する",
-      "fr": "Réussir 50 fois Frappe fatale."
+      "fr": "Réussir 50 fois Frappe fatale.",
+      "ko": "마법자판 난타전 50회 완료"
     },
     "item": 0,
     "title": 0
@@ -92255,11 +92355,13 @@
     "de": "Taskforce Taste IV",
     "ja": "キーバウンドチャレンジ：ランク4",
     "fr": "Prodige du pianotage IV",
+    "ko": "난타전 도전: 4단계",
     "description": {
       "en": "Clear Keybound Brawler 100 times.",
       "de": "100 Mal Tastenschläger abgeschlossen.",
       "ja": "キーバウンド・ブロウラーを100回攻略する",
-      "fr": "Réussir 100 fois Frappe fatale."
+      "fr": "Réussir 100 fois Frappe fatale.",
+      "ko": "마법자판 난타전 100회 완료"
     },
     "item": 0,
     "title": 887
@@ -92293,11 +92395,13 @@
     "de": "Beherrscher der Bestien",
     "ja": "闘獣練の王者",
     "fr": "Roi du Dédale",
+    "ko": "마수 시련장의 제왕",
     "description": {
       "en": "Place first in Crucible Rankings.",
       "de": "Die höchste Platzierung in den Brettranglisten erzielt.",
       "ja": "闘獣練ランキングにて1位になる",
-      "fr": "Terminer le Dédale bestial à la 1re place du classement."
+      "fr": "Terminer le Dédale bestial à la 1re place du classement.",
+      "ko": "마수 시련장 랭킹에서 1위 입상"
     },
     "item": 0,
     "title": 888
@@ -92310,11 +92414,13 @@
     "de": "Bezwinger der Bestien",
     "ja": "闘獣練の勇者",
     "fr": "Prince du Dédale",
+    "ko": "마수 시련장의 용사",
     "description": {
       "en": "Place highly in Crucible Rankings.",
       "de": "Eine hohe Platzierung in den Brettranglisten erzielt.",
       "ja": "闘獣練ランキングにて上位に入賞する",
-      "fr": "Terminer le Dédale bestial dans les premières places du classement."
+      "fr": "Terminer le Dédale bestial dans les premières places du classement.",
+      "ko": "마수 시련장 랭킹에서 상위 랭킹에 입상"
     },
     "item": 0,
     "title": 889
@@ -92327,11 +92433,13 @@
     "de": "Befrieder der Bestien",
     "ja": "闘獣練の入賞者",
     "fr": "As du Dédale",
+    "ko": "마수 시련장의 입상자",
     "description": {
       "en": "Place in Crucible Rankings.",
       "de": "Eine Platzierung in den Brettranglisten erzielt.",
       "ja": "闘獣練ランキングにて入賞する",
-      "fr": "Obtenir une place au classement du Dédale bestial."
+      "fr": "Obtenir une place au classement du Dédale bestial.",
+      "ko": "마수 시련장 랭킹에서 랭킹에 입상"
     },
     "item": 52639,
     "title": 0
