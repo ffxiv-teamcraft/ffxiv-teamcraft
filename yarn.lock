@@ -3004,10 +3004,10 @@
     node-abi "^4.28.0"
     prebuild-install "^7.1.3"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.2.33":
-  version "1.2.33"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.33.tgz#d6730e445aa7f72ac53429da3577a9b53f355de7"
-  integrity sha512-dBlDfrKyF8Hb1gsfn14QWPLelfAdCFQeumgzWOE7NXzVvczNhF2laRCWA5sPyjn5pA/dkCADPI2Ori9zvJcnlQ==
+"@ffxiv-teamcraft/pcap-ffxiv@1.2.35":
+  version "1.2.35"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.2.35.tgz#cbe22c22c75bb550dd04afe7588f98339d913001"
+  integrity sha512-yuSHuJINS3eZIKe1ZSB0SjsiJp8lqK9yz9jYDV4ToAnjF4dhdU7OljlQUJip9ORSurqRBBN5b//W4q6obqMG2Q==
   optionalDependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.17"
 
