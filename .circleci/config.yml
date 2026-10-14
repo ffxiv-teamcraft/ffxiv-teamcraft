@@ -7,39 +7,38 @@ defaults: &defaults
 version: 2.1
 orbs:
   win: circleci/windows@5.0.0
-jobs:
-  setup:
-    <<: *defaults
-    resource_class: xlarge
+
+commands:
+  install-dependencies:
     steps:
-      - checkout
-      - run:
-          name: Show current branch
-          command: echo ${CIRCLE_BRANCH}
       - restore_cache:
-          name: Restore Yarn Package Cache
+          name: Restore node_modules
           keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
+            - node-modules-v1-{{ arch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Install local dependencies
-          command: yarn install --immutable --ignore-scripts
+          command: yarn install --frozen-lockfile --ignore-scripts
       - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
+          name: Save node_modules
+          key: node-modules-v1-{{ arch }}-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yarn
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ffxiv-teamcraft/*
-            - .cache/*
+            - node_modules
 
+  firebase-deploy:
+    parameters:
+      project:
+        type: string
+    steps:
+      - run:
+          name: Deploying web
+          command: npx --yes firebase-tools@13.10.0 deploy -P << parameters.project >> --only hosting --token "$FIREBASE_TOKEN"
 
+jobs:
   lint:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
+      - install-dependencies
       - run:
           name: Lint code and JSON
           command: yarn run lint
@@ -48,8 +47,8 @@ jobs:
   test:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
+      - install-dependencies
       - run:
           name: Testing
           command: yarn run test
@@ -62,8 +61,8 @@ jobs:
     <<: *defaults
     resource_class: large
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
+      - install-dependencies
       - run:
           name: Building
           command: |
@@ -76,38 +75,49 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ffxiv-teamcraft/dist/*
-            - .cache/*
+            - ffxiv-teamcraft/dist
 
 
   build-api:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
+      - install-dependencies
       - run:
           name: Building
           command: yarn api:build
       - persist_to_workspace:
           root: ~/
           paths:
-            - ffxiv-teamcraft/dist/*
-            - .cache/*
+            - ffxiv-teamcraft/dist
 
 
   deploy-hosting:
     working_directory: ~/ffxiv-teamcraft
     docker:
-      - image: google/cloud-sdk
+      - image: cimg/base:2026.09
     steps:
+      - checkout
       - attach_workspace:
           at: ~/
       - add_ssh_keys:
           fingerprints:
             - "fe:16:5e:5a:4c:4a:3e:36:80:a7:13:5b:1f:64:7b:e0"
       - run:
+          name: Install rsync
+          command: sudo apt-get update && sudo apt-get install -y rsync
+      - run:
           name: Deploying cdn to OVH server
           command: bash tools/cdn/deploy.sh
+      # For a manual upload: extract the archive at the root of the repository, then run tools/cdn/deploy.sh
+      - run:
+          name: Packaging client build for a manual upload
+          when: on_fail
+          command: |
+            mkdir -p /tmp/artifacts
+            tar -czf /tmp/artifacts/client-$(jq -r .version package.json).tar.gz dist/apps/client
+      - store_artifacts:
+          path: /tmp/artifacts
       - store_artifacts:
           path: ./rsync.log
 
@@ -115,17 +125,18 @@ jobs:
   deploy-firebase-hosting:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/
-      - run:
-          name: Deploying web
-          command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
+      - firebase-deploy:
+          project: default
 
   deploy-api:
     working_directory: ~/ffxiv-teamcraft
     docker:
-      - image: google/cloud-sdk
+      - image: google/cloud-sdk:587.0.0
     steps:
+      - checkout
       - attach_workspace:
           at: ~/
       - run:
@@ -142,11 +153,7 @@ jobs:
       name: win/default
     working_directory: ~/ffxiv-teamcraft
     steps:
-      - attach_workspace:
-          at: ~/
-      - restore_cache:
-          keys:
-            - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
+      - checkout
       - run: choco install wget -y
       - run:
           command: wget https://bootstrap.pypa.io/get-pip.py -P C:\Users\circleci\Downloads\
@@ -169,16 +176,12 @@ jobs:
              nvm use 20.14.0
              npm i -g yarn
       - run:
-          name: Reinstalling dependencies for windows
-          command: yarn install --immutable
+          name: Installing dependencies for windows
+          command: yarn install --frozen-lockfile
       - run:
           name: Deploying desktop on github
           no_output_timeout: 30m
           command: yarn run electron:setup:publish
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ffxiv-teamcraft/release/*
 
 
   release-desktop-linux:
@@ -187,11 +190,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: yarn install --immutable
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
       - run:
           name: Build and publish AppImage
           command: yarn build:appimage:publish
@@ -203,35 +212,30 @@ jobs:
   deploy-staging:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/
-      - run:
-          name: Deploying web
-          command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
+      - firebase-deploy:
+          project: beta
 
 
 workflows:
   version: 2
   flow:
     jobs:
-      - setup
-      - lint:
-          requires:
-            - setup
-      - build:
-          requires:
-            - lint
-      - build-api:
-          requires:
-            - lint
+      - lint
+      - build
+      - build-api
       - deploy-hosting:
           requires:
+            - lint
             - build
           filters:
             branches:
               only: master
       - deploy-api:
           requires:
+            - lint
             - build-api
           filters:
             branches:
@@ -256,8 +260,8 @@ workflows:
               only: master
       - deploy-staging:
           requires:
+            - lint
             - build
           filters:
             branches:
               only: staging
-

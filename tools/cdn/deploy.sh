@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-apt-get install rsync -y
+# Stop on the first error, so the latest symlink is never switched to a version that was not uploaded
+set -e
 
 PACKAGE_VERSION=$(cat package.json \
   | grep version \
