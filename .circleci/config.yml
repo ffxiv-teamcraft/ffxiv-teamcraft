@@ -29,9 +29,15 @@ commands:
       project:
         type: string
     steps:
+      # Standalone binary: its dependencies are bundled at release time, npx would resolve the latest transitive versions
+      - run:
+          name: Install Firebase CLI
+          command: |
+            curl -fsSL -o /tmp/firebase https://github.com/firebase/firebase-tools/releases/download/v13.10.0/firebase-tools-linux
+            chmod +x /tmp/firebase
       - run:
           name: Deploying web
-          command: npx --yes firebase-tools@13.10.0 deploy -P << parameters.project >> --only hosting --token "$FIREBASE_TOKEN"
+          command: /tmp/firebase deploy -P << parameters.project >> --only hosting --token "$FIREBASE_TOKEN"
 
 jobs:
   lint:
