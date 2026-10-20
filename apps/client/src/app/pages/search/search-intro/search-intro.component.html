@@ -93,11 +93,15 @@
     <div nz-col [nzMd]="24" [nzXXl]="8">
       <nz-card [nzCover]="teamcrafterCoverRef" class="teamcrafter-card">
         <ng-template #teamcrafterCoverRef>
-          <a href="https://store.steampowered.com/app/3405680/Teamcrafter/?utm_source=Teamcraft_Website&utm_medium=Mid_Site_Ad&utm_campaign=Pre_Launch" target="_blank" pirschEvent="Banner Steam click">
-            <img src="./assets/teamcrafter/wishlist.png"
-                 class="teamcrafter-cover"
-                 alt="">
-          </a>
+          @if(platform.isDesktop()){
+            <a href="https://store.steampowered.com/app/3405680/Teamcrafter/?utm_source=Teamcraft_Website&utm_medium=Mid_Site_Ad&utm_campaign=Pre_Launch" target="_blank" pirschEvent="Banner Steam click">
+              <img src="./assets/teamcrafter/wishlist.png"
+                   class="teamcrafter-cover"
+                   alt="">
+            </a>
+          } @else {
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.spawnd.gg/-/games/embed/66?description=true" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; clipboard-write; clipboard-read; web-share; cross-origin-isolated" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          }
         </ng-template>
         <h2>{{ 'TEAMCRAFTER.Teamcrafter_description' | translate }}</h2>
         <p>{{ 'TEAMCRAFTER.Teamcrafter_description_text' | translate }}</p>
