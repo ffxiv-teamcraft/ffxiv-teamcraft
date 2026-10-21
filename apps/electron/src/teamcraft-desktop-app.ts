@@ -10,6 +10,7 @@ import { join } from 'path';
 import { parse, pathToFileURL } from 'url';
 import { MetricsSystem } from './ipc/metrics-system';
 import { toAppRoute } from './tools/deep-link';
+import { isSpawndUrl } from './tools/spawnd';
 
 export class TeamcraftDesktopApp {
 
@@ -57,12 +58,12 @@ export class TeamcraftDesktopApp {
 
     app.whenReady().then(() => {
       session.defaultSession
-        .setPermissionRequestHandler((webContents, permission, callback) => {
+        .setPermissionRequestHandler((webContents, permission, callback, details) => {
           const parsedUrl = new URL(webContents.getURL());
 
           if (permission === 'notifications') {
             // Approves the permissions request
-            callback(true);
+            return callback(true);
           }
 
           // Verify URL
@@ -70,6 +71,11 @@ export class TeamcraftDesktopApp {
             // Denies the permissions request
             return callback(false);
           }
+
+          // The callback must always be called, otherwise the request hangs forever.
+          // Fullscreen and pointer lock are limited to the spawnd embed so ad iframes can't take over the screen or the mouse.
+          const isSpawndPermission = permission === 'fullscreen' || permission === 'pointerLock';
+          callback(isSpawndPermission && isSpawndUrl(details.requestingUrl));
         });
 
 
