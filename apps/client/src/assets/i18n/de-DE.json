@@ -613,7 +613,7 @@
     "Wine_extra_env": "Extra Wine env",
     "Wine_extra_env_tooltip": "Space-separated KEY=VALUE pairs injected into Wine's environment when starting the bridge. Useful for older Wine (pre-11.0) sync flags, e.g. WINESYNC=1 WINEFSYNC=1.",
     "Wine_extra_env_placeholder": "e.g. WINESYNC=1 WINEFSYNC=1",
-    "Path_not_found": "Not found. Did you boot the game at least once?",
+    "Path_not_found": "Not found",
     "Reset_to_auto": "Auto-detect Wine settings",
     "Reset_to_auto_button": "Detect"
   },
@@ -677,6 +677,7 @@
     "Add_to_a_list": "Einer Liste hinzufügen",
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
     "Import_description": "Wähle das Rezept, das du für den herstellbaren Gegenstand nutzen möchtest und wähle eine Liste. Die Gegenstände werden der Liste hinzugefügt und du wirst weitergeleitet.",
+    "Import_callback_confirmation": "The site this import came from wants to receive the link to your list. Send it to {{host}}?",
     "Delete_after_merge": "Ursprüngliche Listen nach Zusammenfassung löschen",
     "Favorite_lists": "Favorisierte Listen",
     "No_favorite_lists": "Du hast keine favorisierten Listen",
@@ -2013,7 +2014,21 @@
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix, da wir nichts daran ändern können.",
     "Loading_data": "Lade Handelsdaten für die ausgewählte Währung",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
-    "No_trades": "Diese Währung kann nicht mit etwas gehandelt werden, das auf dem Marktbrett verkauft werden kann"
+    "No_trades": "Diese Währung kann nicht mit etwas gehandelt werden, das auf dem Marktbrett verkauft werden kann",
+    "Mode_lowest": "Lowest",
+    "Mode_average": "Average",
+    "Mode_median": "Median",
+    "Mode_weighted": "Qty-weighted",
+    "Mode_p95": "P95",
+    "Mode_recency_weighted": "Recency-weighted",
+    "Mode_current_listing": "Current listing",
+    "Mode_desc_lowest": "Cheapest historical sale",
+    "Mode_desc_average": "Simple mean of all sales",
+    "Mode_desc_median": "Middle value, resistant to outliers",
+    "Mode_desc_weighted": "Average weighted by quantity sold",
+    "Mode_desc_p95": "95% of sales were at or below this price",
+    "Mode_desc_recency_weighted": "Recent sales count more",
+    "Mode_desc_current_listing": "Cheapest active sell order"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
@@ -3138,10 +3153,12 @@
       "MISSING_INJECTOR": "Die Werkzeuge zur Paketerfassung fehlen, wahrscheinlich wurde sie vom Antivirus wegen eines Falschalarms entfernt. Vergewissere dich, dass du den Installationsordner von Teamcraft auf der Whitelist hast und installiere sie neu.",
       "BRIDGE_PATHS_NOT_CONFIGURED": "Eine oder mehrere erforderliche Einstellungen für die Paketerfassung (Wine/Proton prefix, Wine binary, oder FFXIV config Verzeichnis) fehlen. Bitte bearbeite sie in den Einstellungen.",
       "BRIDGE_CRASHED": "The packet capture bridge crashed unexpectedly. Try using a different version of Wine or Proton, and if you still have issues, please report to discord's #troubleshooting channel.",
-      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages."
+      "BRIDGE_GAME_NOT_RUNNING": "Please make sure the game is running before enabling packet capture.<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
+      "BRIDGE_TIMEOUT": "The packet capture bridge never connected. This usually means Wine couldn't find or attach to the running game. Try a different Wine/Proton version, and if you still have issues, please report to discord's #troubleshooting channel."
     },
     "BRIDGE_PATHS_NOT_CONFIGURED": "Wine paths not configured",
     "BRIDGE_CRASHED": "Packet capture crashed",
+    "BRIDGE_TIMEOUT": "Packet capture failed to start",
     "BRIDGE_GAME_NOT_RUNNING": "Packet capture failed to start"
   },
   "ISLAND_SANCTUARY": {
