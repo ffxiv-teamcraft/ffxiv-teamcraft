@@ -25119,6 +25119,43 @@
       "mLure": 0
     }
   ],
+  "40525": [
+    {
+      "spot": 286,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "40526": [
+    {
+      "spot": 286,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        1,
+        2,
+        7,
+        9
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "40527": [
     {
       "spot": 286,
@@ -25143,7 +25180,17 @@
       "hookset": 1,
       "tug": 1,
       "bait": 29716,
-      "minGathering": 0
+      "weathers": [
+        2,
+        3,
+        4,
+        7,
+        9
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40530": [
@@ -25260,6 +25307,9 @@
       "hookset": 1,
       "tug": 1,
       "bait": 36593,
+      "weathers": [
+        145
+      ],
       "predators": [
         {
           "id": 40534,
@@ -25267,7 +25317,9 @@
         }
       ],
       "oceanFishingTime": 2,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40541": [
@@ -25315,6 +25367,43 @@
       "minGathering": 0
     }
   ],
+  "40545": [
+    {
+      "spot": 288,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29716,
+      "weathers": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "40546": [
+    {
+      "spot": 288,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29715,
+      "weathers": [
+        1,
+        2,
+        7,
+        8
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "40547": [
     {
       "spot": 288,
@@ -25339,7 +25428,16 @@
       "hookset": 1,
       "tug": 1,
       "bait": 29714,
-      "minGathering": 0
+      "weathers": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40550": [
@@ -25456,6 +25554,9 @@
       "hookset": 1,
       "tug": 1,
       "bait": 40551,
+      "weathers": [
+        145
+      ],
       "predators": [
         {
           "id": 40558,
@@ -25463,7 +25564,9 @@
         }
       ],
       "oceanFishingTime": 3,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40561": [
@@ -25484,6 +25587,45 @@
       "minGathering": 0
     }
   ],
+  "40563": [
+    {
+      "spot": 290,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        1,
+        2,
+        3,
+        4,
+        9
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "40564": [
+    {
+      "spot": 290,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "40565": [
     {
       "spot": 290,
@@ -25491,6 +25633,23 @@
       "tug": 2,
       "bait": 29714,
       "minGathering": 0
+    }
+  ],
+  "40566": [
+    {
+      "spot": 290,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29714,
+      "weathers": [
+        1,
+        5,
+        9
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40567": [
@@ -25517,7 +25676,18 @@
       "hookset": 1,
       "tug": 1,
       "bait": 29715,
-      "minGathering": 0
+      "weathers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        9
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40570": [
@@ -25626,6 +25796,9 @@
       "hookset": 1,
       "tug": 1,
       "bait": 27590,
+      "weathers": [
+        145
+      ],
       "predators": [
         {
           "id": 40579,
@@ -25637,7 +25810,9 @@
         }
       ],
       "oceanFishingTime": 1,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40581": [
@@ -25676,6 +25851,43 @@
       "minGathering": 0
     }
   ],
+  "40584": [
+    {
+      "spot": 292,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        1,
+        2,
+        7,
+        8
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "40585": [
+    {
+      "spot": 292,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29716,
+      "weathers": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "40586": [
     {
       "spot": 292,
@@ -25708,8 +25920,14 @@
       "spot": 292,
       "hookset": 1,
       "tug": 1,
-      "bait": 29716,
-      "minGathering": 0
+      "bait": 29715,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "40590": [
@@ -25818,6 +26036,9 @@
       "hookset": 1,
       "tug": 1,
       "bait": 12704,
+      "weathers": [
+        145
+      ],
       "predators": [
         {
           "id": 40595,
@@ -25829,7 +26050,9 @@
         }
       ],
       "oceanFishingTime": 2,
-      "minGathering": 0
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
     }
   ],
   "41058": [
@@ -28393,6 +28616,140 @@
       "mLure": 0
     }
   ],
+  "51209": [
+    {
+      "spot": 334,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51210": [
+    {
+      "spot": 334,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51211": [
+    {
+      "spot": 334,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29716,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51212": [
+    {
+      "spot": 334,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29715,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51213": [
+    {
+      "spot": 334,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51214": [
+    {
+      "spot": 334,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29716,
+      "weathers": [
+        1,
+        2,
+        7,
+        8
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51215": [
+    {
+      "spot": 334,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 29716,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51216": [
+    {
+      "spot": 334,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51217": [
+    {
+      "spot": 334,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 29714,
+      "weathers": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
   "51218": [
     {
       "spot": 334,
@@ -28405,6 +28762,7 @@
           "amount": 3
         }
       ],
+      "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
       "mLure": 0
@@ -28416,6 +28774,39 @@
       "hookset": 2,
       "tug": 2,
       "bait": 29714,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51220": [
+    {
+      "spot": 335,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29715,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51221": [
+    {
+      "spot": 335,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
@@ -28428,7 +28819,40 @@
       "hookset": 2,
       "tug": 2,
       "bait": 29714,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 3,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51223": [
+    {
+      "spot": 335,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51224": [
+    {
+      "spot": 335,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 29716,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
       "mLure": 0
@@ -28440,6 +28864,9 @@
       "hookset": 1,
       "tug": 0,
       "bait": 51223,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
@@ -28452,6 +28879,9 @@
       "hookset": 1,
       "tug": 1,
       "bait": 29716,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 1,
       "minGathering": 0,
       "aLure": 0,
@@ -28464,6 +28894,9 @@
       "hookset": 1,
       "tug": 0,
       "bait": 29715,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 2,
       "minGathering": 0,
       "aLure": 0,
@@ -28476,13 +28909,138 @@
       "hookset": 1,
       "tug": 1,
       "bait": 51225,
+      "weathers": [
+        145
+      ],
       "predators": [
         {
           "id": 51225,
           "amount": 2
         }
       ],
-      "oceanFishingTime": 3,
+      "oceanFishingTime": 1,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51229": [
+    {
+      "spot": 336,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51230": [
+    {
+      "spot": 336,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51231": [
+    {
+      "spot": 336,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51232": [
+    {
+      "spot": 336,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        1,
+        2,
+        4,
+        3,
+        7
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51233": [
+    {
+      "spot": 336,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        1,
+        2,
+        7,
+        8
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51234": [
+    {
+      "spot": 336,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29716,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51235": [
+    {
+      "spot": 336,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 29716,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51237": [
+    {
+      "spot": 336,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 2606,
+      "weathers": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
       "mLure": 0
@@ -28500,6 +29058,52 @@
           "amount": 3
         }
       ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51239": [
+    {
+      "spot": 337,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51240": [
+    {
+      "spot": 337,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29715,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51241": [
+    {
+      "spot": 337,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29715,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 2,
       "minGathering": 0,
       "aLure": 0,
       "mLure": 0
@@ -28511,6 +29115,9 @@
       "hookset": 1,
       "tug": 0,
       "bait": 29715,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 1,
       "minGathering": 0,
       "aLure": 0,
@@ -28523,6 +29130,52 @@
       "hookset": 1,
       "tug": 1,
       "bait": 29716,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51244": [
+    {
+      "spot": 337,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 3,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    },
+    {
+      "spot": 337,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 1,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51245": [
+    {
+      "spot": 337,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 29716,
+      "weathers": [
+        145
+      ],
       "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
@@ -28547,6 +29200,9 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2591,
+      "weathers": [
+        145
+      ],
       "predators": [
         {
           "id": 51243,
@@ -28554,6 +29210,31 @@
         }
       ],
       "oceanFishingTime": 3,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "51687": [
+    {
+      "spot": 336,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29715,
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    },
+    {
+      "spot": 337,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29716,
+      "weathers": [
+        145
+      ],
+      "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,
       "mLure": 0
@@ -28766,6 +29447,7 @@
         }
       ],
       "minGathering": 4570,
+      "video": "https://youtu.be/4kyFGQfn9R0",
       "aLure": 0,
       "mLure": 0
     }
@@ -28866,6 +29548,28 @@
       "spot": 296,
       "hookset": 2,
       "tug": 2,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52014": [
+    {
+      "spot": 309,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    }
+  ],
+  "52015": [
+    {
+      "spot": 321,
+      "hookset": 1,
+      "tug": 0,
       "bait": 28634,
       "minGathering": 0,
       "aLure": 0,
