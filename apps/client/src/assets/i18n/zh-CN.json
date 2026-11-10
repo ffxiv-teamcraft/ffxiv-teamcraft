@@ -613,7 +613,7 @@
     "Wine_extra_env": "额外的 Wine 环境变量",
     "Wine_extra_env_tooltip": "以空格分隔的 KEY=VALUE 键值对，将在启动网桥进程时注入 Wine 的环境变量中。常用于较旧版本 Wine（11.0 之前）的同步标志，例如 WINESYNC=1 WINEFSYNC=1。",
     "Wine_extra_env_placeholder": "例如：WINESYNC=1 WINEFSYNC=1",
-    "Path_not_found": "找不到。您是否至少启动过一次游戏？",
+    "Path_not_found": "Not found",
     "Reset_to_auto": "自动检测 Wine 设置",
     "Reset_to_auto_button": "检测"
   },
@@ -677,6 +677,7 @@
     "Add_to_a_list": "添加到清单",
     "Please_pick_recipe": "请为该物品选择配方",
     "Import_description": "选择你想制作这个物品的配方，然后选择一个清单。这些物品将被添加到该清单，然后你会被带到清单页。",
+    "Import_callback_confirmation": "The site this import came from wants to receive the link to your list. Send it to {{host}}?",
     "Delete_after_merge": "合并后删除原始清单",
     "Favorite_lists": "收藏列表",
     "No_favorite_lists": "您还没有收藏列表",
@@ -1182,7 +1183,8 @@
       "Malleable": "大进展",
       "Primed": "长持续",
       "Normal": "通常",
-      "Good_omen": "好兆头"
+      "Good_omen": "好兆头",
+      "Robust": "Robust"
     },
     "SOLVER": {
       "Hq_target": "目标HQ率",
@@ -2012,7 +2014,21 @@
     "Disabled_description": "由于 Square Enix 禁止我们读取交易板信息，此功能已关闭。如您有意见，请向 Square Enix 投诉。",
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
-    "No_trades": "该货币无法与可在交易板上出售的物品交换"
+    "No_trades": "该货币无法与可在交易板上出售的物品交换",
+    "Mode_lowest": "Lowest",
+    "Mode_average": "Average",
+    "Mode_median": "Median",
+    "Mode_weighted": "Qty-weighted",
+    "Mode_p95": "P95",
+    "Mode_recency_weighted": "Recency-weighted",
+    "Mode_current_listing": "Current listing",
+    "Mode_desc_lowest": "Cheapest historical sale",
+    "Mode_desc_average": "Simple mean of all sales",
+    "Mode_desc_median": "Middle value, resistant to outliers",
+    "Mode_desc_weighted": "Average weighted by quantity sold",
+    "Mode_desc_p95": "95% of sales were at or below this price",
+    "Mode_desc_recency_weighted": "Recent sales count more",
+    "Mode_desc_current_listing": "Cheapest active sell order"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
@@ -3137,10 +3153,12 @@
       "MISSING_INJECTOR": "数据包捕获工具丢失，极有可能因为误报病毒而被杀毒软件移除。 确保将Teamcraft的安装文件夹加入白名单并重新安装。",
       "BRIDGE_PATHS_NOT_CONFIGURED": "缺少一个或多个所需的数据包捕获设置 (Wine/Proton prefix、Wine 二进制文件 或 FFXIV配置目录) 。请在“设置”中更改这些设置。",
       "BRIDGE_CRASHED": "数据包捕获网桥意外崩溃。 尝试使用不同版本的 Wine 或 Proton，如果您仍然有问题，请报告至 discord 的 #troubleshooting频道。",
-      "BRIDGE_GAME_NOT_RUNNING": "在启动数据包捕获之前，请确保游戏正在运行。<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。"
+      "BRIDGE_GAME_NOT_RUNNING": "在启动数据包捕获之前，请确保游戏正在运行。<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
+      "BRIDGE_TIMEOUT": "The packet capture bridge never connected. This usually means Wine couldn't find or attach to the running game. Try a different Wine/Proton version, and if you still have issues, please report to discord's #troubleshooting channel."
     },
     "BRIDGE_PATHS_NOT_CONFIGURED": "Wine 路径未配置",
     "BRIDGE_CRASHED": "数据包捕获已崩溃",
+    "BRIDGE_TIMEOUT": "Packet capture failed to start",
     "BRIDGE_GAME_NOT_RUNNING": "数据包捕获启动失败"
   },
   "ISLAND_SANCTUARY": {
