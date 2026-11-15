@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.32...v11.4.34) (2026-11-15)
+
+
+### Features
+
+* add embedded playable demo of Teamcrafter in search intro ([f2918cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f2918cca2b159d05f569e24b5828b5af38444d0a))
+* **db:** allagan reports import ([aba53c5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aba53c5b185cdcb5f1e625dfe1ef1f3680c019a4))
+* **db:** support for korean v7.58 update ([f810e47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f810e47058becc50a2725333ccbfd30cfad437f0))
+* **db:** sync after latest global patch ([c421025](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c42102575cfeaa2cb71e51c2aba13e2b27490872))
+* **db:** TW 7.25 data ([9ca91eb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ca91eb3f57f72ba854ba58f69d768ac60873312))
+* **search:** show the Teamcrafter embed on desktop too ([530fa7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/530fa7c1db312aea5f9c1697e3539da0c474e34e))
+
+
+### Bug Fixes
+
+* **ci:** use firebase standalone binary for hosting deploys ([0e4d940](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e4d9400f587fe660775ef4f3bed6d9cb65a7b4e))
+* **currency-spending-helper:** no longer crashes if currency has no relevant items ([2fc0562](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2fc0562d496588cf1077ddeff6e51328bd1dedc9))
+* deploy logic for web in CI ([8925c7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8925c7b73a99e8ba4fb2aa10719a3b3f48109ea7))
+* **desktop:** allow the spawnd embed to enter fullscreen ([fd53373](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd53373a9e3999d59dfce47359953b87a800556b))
+
+### [11.4.33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.32...v11.4.33) (2026-11-07)
+
+
+### Features
+
+* add embedded playable demo of Teamcrafter in search intro ([f2918cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f2918cca2b159d05f569e24b5828b5af38444d0a))
+* **db:** allagan reports import ([aba53c5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aba53c5b185cdcb5f1e625dfe1ef1f3680c019a4))
+* **search:** show the Teamcrafter embed on desktop too ([530fa7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/530fa7c1db312aea5f9c1697e3539da0c474e34e))
+
+
+### Bug Fixes
+
+* **ci:** use firebase standalone binary for hosting deploys ([0e4d940](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e4d9400f587fe660775ef4f3bed6d9cb65a7b4e))
+* **currency-spending-helper:** no longer crashes if currency has no relevant items ([2fc0562](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2fc0562d496588cf1077ddeff6e51328bd1dedc9))
+* deploy logic for web in CI ([8925c7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8925c7b73a99e8ba4fb2aa10719a3b3f48109ea7))
+* **desktop:** allow the spawnd embed to enter fullscreen ([fd53373](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd53373a9e3999d59dfce47359953b87a800556b))
+
 ### [11.4.32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.4.31...v11.4.32) (2026-10-13)
 
 

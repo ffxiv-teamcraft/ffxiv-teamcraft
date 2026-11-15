@@ -311,6 +311,11 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     // Reset this pipeline's count on re-key: chunks abandoned by a later switchMap
     // never decrement, so the count must not carry over from the previous key
     this.pendingChunks[pipeline] = batches.length;
+    // if we don't have any items to search,
+    // return instead of hitting universalis
+    if (batches.length === 0) {
+      return of([]);
+    }
     // Make sure unviersalis isn't overloaded with requests
     return requestsWithDelay(batches, 250, true).pipe(
       // Update loading count of prices; the spinner stays on until every

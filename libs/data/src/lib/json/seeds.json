@@ -93,24 +93,6 @@
       }
     ]
   },
-  "4788": {
-    "seedItemId": 7722,
-    "duration": 120,
-    "crossBreeds": [
-      {
-        "adjacentSeed": 7722,
-        "baseSeed": 17547
-      },
-      {
-        "adjacentSeed": 8174,
-        "baseSeed": 7722
-      },
-      {
-        "adjacentSeed": 7722,
-        "baseSeed": 8182
-      }
-    ]
-  },
   "4789": {
     "seedItemId": 7723,
     "duration": 120,
@@ -706,6 +688,24 @@
       }
     ]
   },
+  "7898": {
+    "seedItemId": 8172,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7722
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7742
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7742
+      }
+    ]
+  },
   "7900": {
     "seedItemId": 8173,
     "duration": 120,
@@ -744,6 +744,11 @@
   },
   "8157": {
     "seedItemId": 8174,
+    "duration": 48,
+    "crossBreeds": []
+  },
+  "8158": {
+    "seedItemId": 8175,
     "duration": 48,
     "crossBreeds": []
   },
@@ -876,6 +881,11 @@
         "baseSeed": 7743
       }
     ]
+  },
+  "12877": {
+    "seedItemId": 13767,
+    "duration": 120,
+    "crossBreeds": []
   },
   "12882": {
     "seedItemId": 13768,

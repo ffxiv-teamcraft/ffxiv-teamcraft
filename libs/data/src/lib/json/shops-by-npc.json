@@ -1385690,6 +1385690,42 @@
               "amount": 1
             }
           ]
+        },
+        {
+          "currencies": [
+            {
+              "id": 50892,
+              "amount": 99
+            }
+          ],
+          "items": [
+            {
+              "id": 52270,
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "currencies": [
+            {
+              "id": 44549,
+              "amount": 1
+            },
+            {
+              "id": 46978,
+              "amount": 1
+            },
+            {
+              "id": 50888,
+              "amount": 1
+            }
+          ],
+          "items": [
+            {
+              "id": 49757,
+              "amount": 1
+            }
+          ]
         }
       ]
     },
@@ -1564655,6 +1564691,123 @@
           "items": [
             {
               "id": 46820,
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "1054717": [
+    {
+      "id": 263288,
+      "type": "GilShop",
+      "npcs": [
+        1054717
+      ],
+      "trades": [
+        {
+          "currencies": [
+            {
+              "id": 1,
+              "amount": 16
+            }
+          ],
+          "items": [
+            {
+              "id": 4680,
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "currencies": [
+            {
+              "id": 1,
+              "amount": 19
+            }
+          ],
+          "items": [
+            {
+              "id": 24238,
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "1054718": [
+    {
+      "id": 263289,
+      "type": "GilShop",
+      "npcs": [
+        1054718
+      ],
+      "trades": [
+        {
+          "currencies": [
+            {
+              "id": 1,
+              "amount": 16
+            }
+          ],
+          "items": [
+            {
+              "id": 4680,
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "currencies": [
+            {
+              "id": 1,
+              "amount": 19
+            }
+          ],
+          "items": [
+            {
+              "id": 24238,
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "1054719": [
+    {
+      "id": 263290,
+      "type": "GilShop",
+      "npcs": [
+        1054719
+      ],
+      "trades": [
+        {
+          "currencies": [
+            {
+              "id": 1,
+              "amount": 16
+            }
+          ],
+          "items": [
+            {
+              "id": 4680,
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "currencies": [
+            {
+              "id": 1,
+              "amount": 19
+            }
+          ],
+          "items": [
+            {
+              "id": 24238,
               "amount": 1
             }
           ]
