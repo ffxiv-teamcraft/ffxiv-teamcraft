@@ -29217,16 +29217,6 @@
   ],
   "51687": [
     {
-      "spot": 336,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 29715,
-      "oceanFishingTime": 0,
-      "minGathering": 0,
-      "aLure": 0,
-      "mLure": 0
-    },
-    {
       "spot": 337,
       "hookset": 2,
       "tug": 2,
@@ -29234,6 +29224,16 @@
       "weathers": [
         145
       ],
+      "oceanFishingTime": 0,
+      "minGathering": 0,
+      "aLure": 0,
+      "mLure": 0
+    },
+    {
+      "spot": 336,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29715,
       "oceanFishingTime": 0,
       "minGathering": 0,
       "aLure": 0,

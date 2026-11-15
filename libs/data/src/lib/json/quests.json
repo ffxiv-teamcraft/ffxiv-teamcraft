@@ -94458,12 +94458,19 @@
   },
   "70913": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bringer of Dreams, Maker of Luck",
+      "ja": "夢回しと降神祭",
+      "de": "Die Traumtauschbörse",
+      "fr": "Troqueur et transition"
     },
-    "icon": "/api/asset?path=ui/icon/071000/071221.tex&format=png"
+    "icon": "/api/asset?path=ui/icon/080000/080112.tex&format=png",
+    "rewards": [
+      {
+        "id": 46786,
+        "amount": 1
+      }
+    ],
+    "banner": "/api/asset?path=ui/icon/101000/101442.tex&format=png"
   },
   "70914": {
     "name": {

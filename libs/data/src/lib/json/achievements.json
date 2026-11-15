@@ -30312,11 +30312,11 @@
     "itemReward": 0
   },
   "3790": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "A Happy Hatsuyume to One and All",
+    "ja": "ぐっすり良き初夢を",
+    "de": "Ein wunderschönes Träumelein",
+    "fr": "Merveilleux premiers rêves",
+    "icon": "/api/asset?path=ui/icon/059000/059963.tex&format=png",
     "itemReward": 0
   },
   "3791": {
