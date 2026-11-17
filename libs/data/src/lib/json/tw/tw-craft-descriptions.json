@@ -915,25 +915,25 @@
     "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100356": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100357": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100358": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100359": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100360": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100361": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100362": {
-    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%"
+    "tw": "消耗耐久以提高製品品質\n不會消耗CP，但是成功率比較低\n效率：100\n成功率：60%<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),96))>\n追加效果：工匠的良機\n持續時間：一次作業<Else/></If><Else/></If>"
   },
   "100363": {
     "tw": "消耗耐久以推動作業進展\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"

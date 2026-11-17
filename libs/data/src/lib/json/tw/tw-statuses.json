@@ -16743,6 +16743,10 @@
     "tw": "無敵",
     "icon": "/api/asset?path=ui/icon/215000/215024.tex&format=png"
   },
+  "4415": {
+    "tw": "貢獻之星",
+    "icon": "/api/asset?path=ui/icon/216000/216255.tex&format=png"
+  },
   "4416": {
     "tw": "專心詠唱",
     "icon": "/api/asset?path=ui/icon/214000/214188.tex&format=png"
@@ -17075,6 +17079,10 @@
     "tw": "感電",
     "icon": "/api/asset?path=ui/icon/215000/215528.tex&format=png"
   },
+  "4509": {
+    "tw": "浮游拘束",
+    "icon": "/api/asset?path=ui/icon/215000/215301.tex&format=png"
+  },
   "4513": {
     "tw": "駕駛員傳送中",
     "icon": "/api/asset?path=ui/icon/215000/215765.tex&format=png"
@@ -17111,7 +17119,95 @@
     "tw": "突刺耐性降低",
     "icon": "/api/asset?path=ui/icon/215000/215065.tex&format=png"
   },
+  "4542": {
+    "tw": "罪犯被捕α",
+    "icon": "/api/asset?path=ui/icon/214000/214255.tex&format=png"
+  },
+  "4543": {
+    "tw": "罪犯被捕β",
+    "icon": "/api/asset?path=ui/icon/214000/214256.tex&format=png"
+  },
+  "4544": {
+    "tw": "罪犯被捕γ",
+    "icon": "/api/asset?path=ui/icon/214000/214257.tex&format=png"
+  },
+  "4545": {
+    "tw": "罪犯被捕δ",
+    "icon": "/api/asset?path=ui/icon/214000/214292.tex&format=png"
+  },
+  "4546": {
+    "tw": "捕捉罪犯α",
+    "icon": "/api/asset?path=ui/icon/214000/214252.tex&format=png"
+  },
+  "4547": {
+    "tw": "捕捉罪犯β",
+    "icon": "/api/asset?path=ui/icon/214000/214253.tex&format=png"
+  },
+  "4548": {
+    "tw": "捕捉罪犯γ",
+    "icon": "/api/asset?path=ui/icon/214000/214254.tex&format=png"
+  },
+  "4549": {
+    "tw": "捕捉罪犯δ",
+    "icon": "/api/asset?path=ui/icon/214000/214291.tex&format=png"
+  },
+  "4550": {
+    "tw": "逃獄",
+    "icon": "/api/asset?path=ui/icon/214000/214293.tex&format=png"
+  },
+  "4551": {
+    "tw": "磁力（+）",
+    "icon": "/api/asset?path=ui/icon/215000/215663.tex&format=png"
+  },
+  "4552": {
+    "tw": "磁力（-）",
+    "icon": "/api/asset?path=ui/icon/215000/215664.tex&format=png"
+  },
+  "4553": {
+    "tw": "知覺異常",
+    "icon": "/api/asset?path=ui/icon/214000/214290.tex&format=png"
+  },
   "4558": {
+    "tw": "死亡宣告",
+    "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
+  },
+  "4578": {
+    "tw": "拘束",
+    "icon": "/api/asset?path=ui/icon/215000/215545.tex&format=png"
+  },
+  "4580": {
+    "tw": "預測射擊目標",
+    "icon": "/api/asset?path=ui/icon/214000/214311.tex&format=png"
+  },
+  "4581": {
+    "tw": "真世界的改變者",
+    "icon": "/api/asset?path=ui/icon/214000/214318.tex&format=png"
+  },
+  "4594": {
+    "tw": "死亡宣告",
+    "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
+  },
+  "4610": {
+    "tw": "強力衝擊",
+    "icon": "/api/asset?path=ui/icon/214000/214258.tex&format=png"
+  },
+  "4611": {
+    "tw": "拖曳光束預備",
+    "icon": "/api/asset?path=ui/icon/216000/216256.tex&format=png"
+  },
+  "4612": {
+    "tw": "電漿鏟刃衝鋒預備",
+    "icon": "/api/asset?path=ui/icon/216000/216256.tex&format=png"
+  },
+  "4613": {
+    "tw": "鏟刃蓄能",
+    "icon": "/api/asset?path=ui/icon/219000/219866.tex&format=png"
+  },
+  "4618": {
+    "tw": "抵禦衝擊",
+    "icon": "/api/asset?path=ui/icon/215000/215250.tex&format=png"
+  },
+  "4683": {
     "tw": "死亡宣告",
     "icon": "/api/asset?path=ui/icon/215000/215503.tex&format=png"
   }
