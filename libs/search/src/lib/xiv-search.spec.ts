@@ -28,6 +28,24 @@ describe('search', () => {
       expect(search.search(SearchType.ITEM, 'gr 8 he m')[0].itemId).toBe(39726);
     });
 
+    it('should be case insensitive', () => {
+      expect(search.search(SearchType.ITEM, 'iron ingot')[0].itemId).toBe(5057);
+      expect(search.search(SearchType.ITEM, 'IRON INGOT')[0].itemId).toBe(5057);
+      expect(search.search(SearchType.ITEM, 'iRoN oRe')[0].itemId).toBe(5111);
+    });
+
+    it('should handle typos', () => {
+      expect(search.search(SearchType.ITEM, 'Iron Ingto').slice(0, 5).map(r => r.itemId)).toContain(5057);
+      expect(search.search(SearchType.ITEM, 'irn ingot').slice(0, 5).map(r => r.itemId)).toContain(5057);
+      expect(search.search(SearchType.ITEM, 'Iorn Ore').slice(0, 5).map(r => r.itemId)).toContain(5111);
+    });
+
+    it('should search typos fast', () => {
+      const start = performance.now();
+      search.search(SearchType.ITEM, 'Mythirl Ingto');
+      expect(performance.now() - start).toBeLessThan(500);
+    });
+
     it('should ingest fast', (done) => {
       const start = performance.now();
       const test = new XIVSearch('en', join(__dirname, '../../../data/src/lib/json'));
